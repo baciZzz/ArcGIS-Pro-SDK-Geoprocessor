@@ -3,6 +3,8 @@
 #### Introduction
 In the ArcGIS Pro SDK (2.8), it mimics the Geoprocessor and IGPProcess in ArcGIS Engine.
 
+You'll better modify the Geoprocessor and IGPProcessExtension to suit your habits.
+
 ## Implementation
 1. Generation of all tools under version 2.8, including obsolete tools (1808).
 2. 'Annotations' of methods, parameters, and enumerations.
