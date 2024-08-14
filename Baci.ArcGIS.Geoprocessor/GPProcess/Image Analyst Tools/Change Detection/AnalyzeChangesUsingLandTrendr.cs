@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMultidimensionalRaster, OutMultidimensionalRaster, ProcessingBand, SnappingDate, MaxNumSegments, VertexCountOvershoot, SpikeThreshold, RecoveryThreshold, PreventOneYearRecovery, RecoveryTrend, MinNumObservations, BestModelProportion, PvalueThreshold, OutputOtherBands };
+		public override object[] Parameters => new object[] { InMultidimensionalRaster, OutMultidimensionalRaster, ProcessingBand!, SnappingDate!, MaxNumSegments!, VertexCountOvershoot!, SpikeThreshold!, RecoveryThreshold!, PreventOneYearRecovery!, RecoveryTrend!, MinNumObservations!, BestModelProportion!, PvalueThreshold!, OutputOtherBands! };
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ProcessingBand { get; set; }
+		public object? ProcessingBand { get; set; }
 
 		/// <summary>
 		/// <para>Snapping Date</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object SnappingDate { get; set; } = "06-30";
+		public object? SnappingDate { get; set; } = "06-30";
 
 		/// <summary>
 		/// <para>Maximum Number of Segments</para>
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object MaxNumSegments { get; set; } = "5";
+		public object? MaxNumSegments { get; set; } = "5";
 
 		/// <summary>
 		/// <para>Vertex Count Overshoot Threshold</para>
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object VertexCountOvershoot { get; set; } = "2";
+		public object? VertexCountOvershoot { get; set; } = "2";
 
 		/// <summary>
 		/// <para>Spike Threshold</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object SpikeThreshold { get; set; } = "0.9";
+		public object? SpikeThreshold { get; set; } = "0.9";
 
 		/// <summary>
 		/// <para>Recovery Threshold</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object RecoveryThreshold { get; set; } = "0.25";
+		public object? RecoveryThreshold { get; set; } = "0.25";
 
 		/// <summary>
 		/// <para>Prevent One Year Recovery</para>
@@ -148,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object PreventOneYearRecovery { get; set; } = "true";
+		public object? PreventOneYearRecovery { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Recovery Has Increasing Trend</para>
@@ -160,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object RecoveryTrend { get; set; } = "true";
+		public object? RecoveryTrend { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Minimum Number of Observations</para>
@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[GPLong()]
 		[GPNumericDomain()]
 		[Category("Advanced Fitting Options")]
-		public object MinNumObservations { get; set; } = "6";
+		public object? MinNumObservations { get; set; } = "6";
 
 		/// <summary>
 		/// <para>Best Model Proportion</para>
@@ -179,7 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Advanced Fitting Options")]
-		public object BestModelProportion { get; set; } = "1.25";
+		public object? BestModelProportion { get; set; } = "1.25";
 
 		/// <summary>
 		/// <para>P-Value Threshold</para>
@@ -188,7 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Advanced Fitting Options")]
-		public object PvalueThreshold { get; set; } = "0.01";
+		public object? PvalueThreshold { get; set; } = "0.01";
 
 		/// <summary>
 		/// <para>Include Other Bands</para>
@@ -200,12 +200,12 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object OutputOtherBands { get; set; } = "false";
+		public object? OutputOtherBands { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AnalyzeChangesUsingLandTrendr SetEnviroment(object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object nodata = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object pyramid = null , object rasterStatistics = null , object resamplingMethod = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public AnalyzeChangesUsingLandTrendr SetEnviroment(object? cellSize = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? nodata = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? pyramid = null , object? rasterStatistics = null , object? resamplingMethod = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
 			base.SetEnv(cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, nodata: nodata, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, rasterStatistics: rasterStatistics, resamplingMethod: resamplingMethod, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;

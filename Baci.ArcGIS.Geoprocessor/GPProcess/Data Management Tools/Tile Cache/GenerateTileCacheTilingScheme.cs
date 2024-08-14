@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutTilingScheme, TilingSchemeGenerationMethod, NumberOfScales, PredefinedTilingScheme, Scales, ScalesType, TileOrigin, Dpi, TileSize, TileFormat, TileCompressionQuality, StorageFormat, LercError };
+		public override object[] Parameters => new object[] { InDataset, OutTilingScheme, TilingSchemeGenerationMethod, NumberOfScales!, PredefinedTilingScheme!, Scales!, ScalesType!, TileOrigin!, Dpi!, TileSize!, TileFormat!, TileCompressionQuality!, StorageFormat!, LercError! };
 
 		/// <summary>
 		/// <para>Input Data Source</para>
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object PredefinedTilingScheme { get; set; }
+		public object? PredefinedTilingScheme { get; set; }
 
 		/// <summary>
 		/// <para>Scales</para>
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object Scales { get; set; }
+		public object? Scales { get; set; }
 
 		/// <summary>
 		/// <para>Cell Size</para>
@@ -144,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ScalesType { get; set; } = "false";
+		public object? ScalesType { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Tile Origin in map units</para>
@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPPoint()]
 		[Category("Advanced Options")]
-		public object TileOrigin { get; set; } = "0 0";
+		public object? TileOrigin { get; set; } = "0 0";
 
 		/// <summary>
 		/// <para>Dots (Pixels) Per Inch</para>
@@ -162,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Advanced Options")]
-		public object Dpi { get; set; } = "96";
+		public object? Dpi { get; set; } = "96";
 
 		/// <summary>
 		/// <para>Tile Size (in pixels)</para>
@@ -178,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object TileSize { get; set; } = "256 x 256";
+		public object? TileSize { get; set; } = "256 x 256";
 
 		/// <summary>
 		/// <para>Tile Format</para>
@@ -196,7 +196,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object TileFormat { get; set; } = "MIXED";
+		public object? TileFormat { get; set; } = "MIXED";
 
 		/// <summary>
 		/// <para>Tile Compression Quality</para>
@@ -206,7 +206,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Advanced Options")]
-		public object TileCompressionQuality { get; set; } = "75";
+		public object? TileCompressionQuality { get; set; } = "75";
 
 		/// <summary>
 		/// <para>Storage Format</para>
@@ -219,7 +219,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object StorageFormat { get; set; } = "COMPACT";
+		public object? StorageFormat { get; set; } = "COMPACT";
 
 		/// <summary>
 		/// <para>LERC Error</para>
@@ -228,7 +228,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Advanced Options")]
-		public object LercError { get; set; }
+		public object? LercError { get; set; }
 
 		#region InnerClass
 

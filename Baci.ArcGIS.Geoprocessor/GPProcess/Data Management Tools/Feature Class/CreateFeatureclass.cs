@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutPath, OutName, GeometryType, Template, HasM, HasZ, SpatialReference, ConfigKeyword, SpatialGrid1, SpatialGrid2, SpatialGrid3, OutFeatureClass, OutAlias };
+		public override object[] Parameters => new object[] { OutPath, OutName, GeometryType!, Template!, HasM!, HasZ!, SpatialReference!, ConfigKeyword!, SpatialGrid1!, SpatialGrid2!, SpatialGrid3!, OutFeatureClass!, OutAlias! };
 
 		/// <summary>
 		/// <para>Feature Class Location</para>
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object GeometryType { get; set; } = "POLYGON";
+		public object? GeometryType { get; set; } = "POLYGON";
 
 		/// <summary>
 		/// <para>Template Dataset</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Template { get; set; }
+		public object? Template { get; set; }
 
 		/// <summary>
 		/// <para>Has M</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object HasM { get; set; } = "DISABLED";
+		public object? HasM { get; set; } = "DISABLED";
 
 		/// <summary>
 		/// <para>Has Z</para>
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object HasZ { get; set; } = "DISABLED";
+		public object? HasZ { get; set; } = "DISABLED";
 
 		/// <summary>
 		/// <para>Coordinate System</para>
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
-		public object SpatialReference { get; set; }
+		public object? SpatialReference { get; set; }
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Geodatabase Settings (optional)")]
-		public object ConfigKeyword { get; set; }
+		public object? ConfigKeyword { get; set; }
 
 		/// <summary>
 		/// <para>Output Spatial Grid 1</para>
@@ -159,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Geodatabase Settings (optional)")]
-		public object SpatialGrid1 { get; set; } = "0";
+		public object? SpatialGrid1 { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Output Spatial Grid 2</para>
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Geodatabase Settings (optional)")]
-		public object SpatialGrid2 { get; set; } = "0";
+		public object? SpatialGrid2 { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Output Spatial Grid 3</para>
@@ -177,14 +177,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Geodatabase Settings (optional)")]
-		public object SpatialGrid3 { get; set; } = "0";
+		public object? SpatialGrid3 { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Feature Class Alias</para>
@@ -192,12 +192,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object OutAlias { get; set; }
+		public object? OutAlias { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateFeatureclass SetEnviroment(object MResolution = null , object MTolerance = null , object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZResolution = null , object ZTolerance = null , object configKeyword = null , object geographicTransformations = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null )
+		public CreateFeatureclass SetEnviroment(double? MResolution = null , double? MTolerance = null , object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZResolution = null , object? ZTolerance = null , object? configKeyword = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null )
 		{
 			base.SetEnv(MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZResolution: ZResolution, ZTolerance: ZTolerance, configKeyword: configKeyword, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue);
 			return this;

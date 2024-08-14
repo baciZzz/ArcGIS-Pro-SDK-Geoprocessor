@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Eliminate</para>
-	/// <para>Eliminates polygons by merging them with neighboring polygons that have the largest area or the longest shared border. Eliminate is often used to remove small sliver polygons that are the result of overlay operations, such as Intersect or Union.</para>
+	/// <para>Eliminates polygons by merging them with neighboring polygons that have the largest area or the longest shared border. Eliminate is often used to remove small sliver polygons that are the result of overlay operations, such as those performed by Intersect and Union tools.</para>
 	/// </summary>
 	public class Eliminate : AbstractGPProcess
 	{
@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Layer</para>
-		/// <para>The layer whose polygons will be merged into neighboring polygons.</para>
+		/// <para>The layer with the polygons that will be merged with neighboring polygons.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
@@ -65,11 +65,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Selection, ExWhereClause, ExFeatures };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Selection!, ExWhereClause!, ExFeatures! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>The layer whose polygons will be merged into neighboring polygons.</para>
+		/// <para>The layer with the polygons that will be merged with neighboring polygons.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -85,36 +85,36 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Eliminating polygon by border</para>
-		/// <para>These options specify which method will be used for eliminating features.</para>
-		/// <para>Checked—Merges a selected polygon with a neighboring unselected polygon by dropping the shared border. The neighboring polygon is the one with the longest shared border. This is the default.</para>
-		/// <para>Unchecked—Merges a selected polygon with a neighboring unselected polygon by dropping the shared border. The neighboring polygon is the one with the largest area.</para>
+		/// <para>Specifies whether the selected polygon will be merged with a polygon with the longest shared border or the largest area.</para>
+		/// <para>Checked—The selected polygon will be merged with the neighboring polygon with the longest shared border. This is the default.</para>
+		/// <para>Unchecked—The selected polygon will be merged with the neighboring polygon with the largest area.</para>
 		/// <para><see cref="SelectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Selection { get; set; } = "true";
+		public object? Selection { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Exclusion Expression</para>
-		/// <para>An SQL expression used to identify features that will not be altered.</para>
+		/// <para>An SQL expression that will be used to identify features that will not be altered.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object ExWhereClause { get; set; }
+		public object? ExWhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Exclusion Layer</para>
-		/// <para>An input polyline or polygon feature class or layer that defines polygon boundaries, or portions thereof, that should not be eliminated.</para>
+		/// <para>An input polyline or polygon feature class or layer that defines polygon boundaries, or portions thereof, that will not be eliminated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
-		public object ExFeatures { get; set; }
+		public object? ExFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Eliminate SetEnviroment(object MDomain = null , object MResolution = null , object MTolerance = null , object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , int? autoCommit = null , object configKeyword = null , object extent = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , bool? qualifiedFieldNames = null , object scratchWorkspace = null , object workspace = null )
+		public Eliminate SetEnviroment(object? MDomain = null , double? MResolution = null , double? MTolerance = null , object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , int? autoCommit = null , object? configKeyword = null , object? extent = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , bool? qualifiedFieldNames = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -128,14 +128,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SelectionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Merges a selected polygon with a neighboring unselected polygon by dropping the shared border. The neighboring polygon is the one with the longest shared border. This is the default.</para>
+			/// <para>Checked—The selected polygon will be merged with the neighboring polygon with the longest shared border. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("LENGTH")]
 			LENGTH,
 
 			/// <summary>
-			/// <para>Unchecked—Merges a selected polygon with a neighboring unselected polygon by dropping the shared border. The neighboring polygon is the one with the largest area.</para>
+			/// <para>Unchecked—The selected polygon will be merged with the neighboring polygon with the largest area.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("AREA")]

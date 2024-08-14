@@ -28,7 +28,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The new feature class that will be created containing the split lines.</para>
+		/// <para>The output feature class that will contain the split lines.</para>
 		/// </param>
 		public SplitLineAtPoint(object InFeatures, object PointFeatures, object OutFeatureClass)
 		{
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, PointFeatures, OutFeatureClass, SearchRadius };
+		public override object[] Parameters => new object[] { InFeatures, PointFeatures, OutFeatureClass, SearchRadius! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The new feature class that will be created containing the split lines.</para>
+		/// <para>The output feature class that will contain the split lines.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -100,17 +100,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Search Radius</para>
-		/// <para>Used to split lines by their proximity to point features. Points within the search distance to an input line will be used to split those lines at the nearest location to the point along the line segment.</para>
-		/// <para>If this parameter is unspecified, the single nearest point will be used to split the line feature. If a radius is specified, all points within the radius will be used to split the line.</para>
+		/// <para>The distance that will be used to split lines by their proximity to point features. Points within the search distance to an input line will be used to split those lines at the nearest location to the point along the line segment.</para>
+		/// <para>If this parameter is not specified, the single nearest point will be used to split the line feature. If a radius is specified, all points within the radius will be used to split the line.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object SearchRadius { get; set; }
+		public object? SearchRadius { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SplitLineAtPoint SetEnviroment(object MDomain = null , object MResolution = null , object MTolerance = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , object extent = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , object workspace = null )
+		public SplitLineAtPoint SetEnviroment(object? MDomain = null , double? MResolution = null , double? MTolerance = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , object? extent = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , object? workspace = null )
 		{
 			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, extent: extent, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, workspace: workspace);
 			return this;

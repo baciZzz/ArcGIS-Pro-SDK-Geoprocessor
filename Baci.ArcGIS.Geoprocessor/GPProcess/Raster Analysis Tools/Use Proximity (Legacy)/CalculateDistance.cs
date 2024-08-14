@@ -64,12 +64,12 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
+		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputsourcerasterorfeatures, Outputdistancename, Maximumdistance, Outputcellsize, Outputdirectionname, Outputallocationname, Allocationfield, Outputdistanceraster, Outputdirectionraster, Outputallocationraster, Distancemethod, Inputbarrierrasterorfeatures, Outputbackdirectionname, Outputbackdirectionraster };
+		public override object[] Parameters => new object[] { Inputsourcerasterorfeatures, Outputdistancename, Maximumdistance!, Outputcellsize!, Outputdirectionname!, Outputallocationname!, Allocationfield!, Outputdistanceraster!, Outputdirectionraster!, Outputallocationraster!, Distancemethod!, Inputbarrierrasterorfeatures!, Outputbackdirectionname!, Outputbackdirectionraster! };
 
 		/// <summary>
 		/// <para>Input Source Raster or Features</para>
@@ -95,24 +95,22 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <para>The maximum distance to calculate out to.</para>
 		/// <para>The units can be Kilometers, Meters, Miles, Yards, or Feet.</para>
 		/// <para>The default units are Meters.</para>
-		/// <para><see cref="MaximumdistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object Maximumdistance { get; set; }
+		[GPUnitDomain()]
+		public object? Maximumdistance { get; set; }
 
 		/// <summary>
 		/// <para>Output Cell Size</para>
 		/// <para>Set the cell size and units for the output raster.</para>
 		/// <para>The units can be Kilometers, Meters, Miles, Yards, or Feet.</para>
 		/// <para>The default units are Meters.</para>
-		/// <para><see cref="OutputcellsizeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object Outputcellsize { get; set; }
+		[GPUnitDomain()]
+		public object? Outputcellsize { get; set; }
 
 		/// <summary>
 		/// <para>Output Direction Name</para>
@@ -120,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Outputdirectionname { get; set; }
+		public object? Outputdirectionname { get; set; }
 
 		/// <summary>
 		/// <para>Output Allocation Name</para>
@@ -128,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Outputallocationname { get; set; }
+		public object? Outputallocationname { get; set; }
 
 		/// <summary>
 		/// <para>Allocation Field</para>
@@ -136,28 +134,28 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Allocationfield { get; set; }
+		public object? Allocationfield { get; set; }
 
 		/// <summary>
 		/// <para>Output Distance Raster</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRasterLayer()]
-		public object Outputdistanceraster { get; set; }
+		public object? Outputdistanceraster { get; set; }
 
 		/// <summary>
 		/// <para>Output Direction Raster</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRasterLayer()]
-		public object Outputdirectionraster { get; set; }
+		public object? Outputdirectionraster { get; set; }
 
 		/// <summary>
 		/// <para>Output Allocation Raster</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRasterLayer()]
-		public object Outputallocationraster { get; set; }
+		public object? Outputallocationraster { get; set; }
 
 		/// <summary>
 		/// <para>Distance Method</para>
@@ -169,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Distancemethod { get; set; } = "Planar";
+		public object? Distancemethod { get; set; } = "Planar";
 
 		/// <summary>
 		/// <para>Input Barrier Raster or Features</para>
@@ -179,7 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object Inputbarrierrasterorfeatures { get; set; }
+		public object? Inputbarrierrasterorfeatures { get; set; }
 
 		/// <summary>
 		/// <para>Output Back Direction Name</para>
@@ -187,109 +185,25 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Outputbackdirectionname { get; set; }
+		public object? Outputbackdirectionname { get; set; }
 
 		/// <summary>
 		/// <para>Output Back Direction Raster</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRasterLayer()]
-		public object Outputbackdirectionraster { get; set; }
+		public object? Outputbackdirectionraster { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateDistance SetEnviroment(object cellSize = null , object extent = null , object mask = null , object outputCoordinateSystem = null , object snapRaster = null )
+		public CalculateDistance SetEnviroment(object? cellSize = null , object? extent = null , object? mask = null , object? outputCoordinateSystem = null , object? pyramid = null , object? snapRaster = null )
 		{
-			base.SetEnv(cellSize: cellSize, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, snapRaster: snapRaster);
+			base.SetEnv(cellSize: cellSize, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, pyramid: pyramid, snapRaster: snapRaster);
 			return this;
 		}
 
 		#region InnerClass
-
-		/// <summary>
-		/// <para>Maximum Distance</para>
-		/// </summary>
-		public enum MaximumdistanceEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-		}
-
-		/// <summary>
-		/// <para>Output Cell Size</para>
-		/// </summary>
-		public enum OutputcellsizeEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-		}
 
 		/// <summary>
 		/// <para>Distance Method</para>

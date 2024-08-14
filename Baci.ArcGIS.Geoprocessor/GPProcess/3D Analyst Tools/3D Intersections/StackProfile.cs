@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLineFeatures, ProfileTargets, OutTable, OutGraph };
+		public override object[] Parameters => new object[] { InLineFeatures, ProfileTargets, OutTable, OutGraph! };
 
 		/// <summary>
 		/// <para>Input Line Features</para>
@@ -104,12 +104,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGraph()]
-		public object OutGraph { get; set; }
+		public object? OutGraph { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public StackProfile SetEnviroment(object extent = null , object workspace = null )
+		public StackProfile SetEnviroment(object? extent = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

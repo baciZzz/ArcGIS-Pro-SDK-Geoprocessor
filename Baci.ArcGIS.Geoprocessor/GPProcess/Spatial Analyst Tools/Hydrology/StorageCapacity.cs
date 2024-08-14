@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurfaceRaster, OutTable, InZoneData, ZoneField, AnalysisType, MinElevation, MaxElevation, IncrementType, Increment, ZUnit, OutChart };
+		public override object[] Parameters => new object[] { InSurfaceRaster, OutTable, InZoneData!, ZoneField!, AnalysisType!, MinElevation!, MaxElevation!, IncrementType!, Increment!, ZUnit!, OutChart! };
 
 		/// <summary>
 		/// <para>Input surface raster</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object InZoneData { get; set; }
+		public object? InZoneData { get; set; }
 
 		/// <summary>
 		/// <para>Zone field</para>
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
-		public object ZoneField { get; set; }
+		public object? ZoneField { get; set; }
 
 		/// <summary>
 		/// <para>Analysis type</para>
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object AnalysisType { get; set; } = "AREA_VOLUME";
+		public object? AnalysisType { get; set; } = "AREA_VOLUME";
 
 		/// <summary>
 		/// <para>Minimum elevation</para>
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MinElevation { get; set; }
+		public object? MinElevation { get; set; }
 
 		/// <summary>
 		/// <para>Maximum elevation</para>
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MaxElevation { get; set; }
+		public object? MaxElevation { get; set; }
 
 		/// <summary>
 		/// <para>Increment type</para>
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object IncrementType { get; set; } = "NUMBER_OF_INCREMENTS";
+		public object? IncrementType { get; set; } = "NUMBER_OF_INCREMENTS";
 
 		/// <summary>
 		/// <para>Increment</para>
@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Increment { get; set; }
+		public object? Increment { get; set; }
 
 		/// <summary>
 		/// <para>Z unit</para>
@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ZUnit { get; set; }
+		public object? ZUnit { get; set; }
 
 		/// <summary>
 		/// <para>Output chart name</para>
@@ -179,14 +179,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object OutChart { get; set; }
+		public object? OutChart { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public StorageCapacity SetEnviroment(int? autoCommit = null , object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public StorageCapacity SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 

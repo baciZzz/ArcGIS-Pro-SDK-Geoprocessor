@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSignatureFile, OutDendrogramFile, DistanceCalculation, LineWidth };
+		public override object[] Parameters => new object[] { InSignatureFile, OutDendrogramFile, DistanceCalculation!, LineWidth! };
 
 		/// <summary>
 		/// <para>Input signature file</para>
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DistanceCalculation { get; set; } = "true";
+		public object? DistanceCalculation { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Line width of dendrogram</para>
@@ -109,12 +109,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object LineWidth { get; set; } = "78";
+		public object? LineWidth { get; set; } = "78";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Dendrogram SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public Dendrogram SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

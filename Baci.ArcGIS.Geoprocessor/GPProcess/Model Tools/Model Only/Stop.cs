@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InValues, Condition, Continue };
+		public override object[] Parameters => new object[] { InValues, Condition!, Continue! };
 
 		/// <summary>
 		/// <para>Input Values</para>
@@ -80,14 +80,14 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Condition { get; set; } = "TRUE";
+		public object? Condition { get; set; } = "TRUE";
 
 		/// <summary>
 		/// <para>Continue</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
-		public object Continue { get; set; }
+		public object? Continue { get; set; }
 
 		#region InnerClass
 

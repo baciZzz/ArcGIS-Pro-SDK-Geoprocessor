@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeostatLayer, NumberOutputPoints, OutFeatureClass, SelectionCriteria, Threshold, InWeightRaster, InCandidatePointFeatures, InhibitionDistance };
+		public override object[] Parameters => new object[] { InGeostatLayer, NumberOutputPoints, OutFeatureClass, SelectionCriteria!, Threshold!, InWeightRaster!, InCandidatePointFeatures!, InhibitionDistance! };
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SelectionCriteria { get; set; } = "STDERR";
+		public object? SelectionCriteria { get; set; } = "STDERR";
 
 		/// <summary>
 		/// <para>Threshold value</para>
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object Threshold { get; set; }
+		public object? Threshold { get; set; }
 
 		/// <summary>
 		/// <para>Input weight raster</para>
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRasterLayer()]
-		public object InWeightRaster { get; set; }
+		public object? InWeightRaster { get; set; }
 
 		/// <summary>
 		/// <para>Input candidate point features</para>
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object InCandidatePointFeatures { get; set; }
+		public object? InCandidatePointFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Inhibition distance</para>
@@ -148,12 +148,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[GPNumericDomain()]
-		public object InhibitionDistance { get; set; }
+		public object? InhibitionDistance { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DensifySamplingNetwork SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public DensifySamplingNetwork SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

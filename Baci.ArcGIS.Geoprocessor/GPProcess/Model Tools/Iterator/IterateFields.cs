@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, FieldType, Wildcard, InputFields, OutputField, OutputCount };
+		public override object[] Parameters => new object[] { InTable, FieldType!, Wildcard!, InputFields!, OutputField!, OutputCount! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object FieldType { get; set; }
+		public object? FieldType { get; set; }
 
 		/// <summary>
 		/// <para>Wildcard</para>
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Wildcard { get; set; }
+		public object? Wildcard { get; set; }
 
 		/// <summary>
 		/// <para>Field Names</para>
@@ -105,21 +105,21 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
-		public object InputFields { get; set; }
+		public object? InputFields { get; set; }
 
 		/// <summary>
 		/// <para>Value</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[Field()]
-		public object OutputField { get; set; }
+		public object? OutputField { get; set; }
 
 		/// <summary>
 		/// <para>Count</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLong()]
-		public object OutputCount { get; set; }
+		public object? OutputCount { get; set; }
 
 		#region InnerClass
 

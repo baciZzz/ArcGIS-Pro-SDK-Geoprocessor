@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutputData, Fields, Method, Scale, CategoricalField, MinVariance, MinComponents, AppendFields, OutputEigenvaluesTable, OutputEigenvectorsTable, NumberOfPermutations, AppendToInput, UpdatedTable };
+		public override object[] Parameters => new object[] { InTable, OutputData!, Fields, Method!, Scale!, CategoricalField!, MinVariance!, MinComponents!, AppendFields!, OutputEigenvaluesTable!, OutputEigenvectorsTable!, NumberOfPermutations!, AppendToInput!, UpdatedTable! };
 
 		/// <summary>
 		/// <para>Input Table or Features</para>
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object OutputData { get; set; }
+		public object? OutputData { get; set; }
 
 		/// <summary>
 		/// <para>Analysis Fields</para>
@@ -102,19 +102,19 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "PCA";
+		public object? Method { get; set; } = "PCA";
 
 		/// <summary>
 		/// <para>Scale Data</para>
-		/// <para>Specifies whether the values of each analysis will be scaled to have a variance equal to one. This scaling ensures that each analysis field is given equal priority in the components. Scaling also removes the effect of linear units, for example, the same data measured in meters and feet will result in equivalent components. The values of the analysis fields will be shifted to have mean zero for both options.</para>
-		/// <para>Checked—The values of each analysis field will be scaled to have a variance equal to one. This is the default.</para>
-		/// <para>Unchecked—The variance of each analysis fields will not be scaled.</para>
+		/// <para>Specifies whether the values of each analysis will be scaled to have a variance equal to one. This scaling ensures that each analysis field is given equal priority in the components. Scaling also removes the effect of linear units; for example, the same data measured in meters and feet will result in equivalent components. The values of the analysis fields will be shifted to have mean zero for both options.</para>
+		/// <para>Checked—The values of each analysis field will be scaled to have a variance equal to one by dividing each value by the standard deviation of the analysis field. This is the default.</para>
+		/// <para>Unchecked—The variance of each analysis field will not be scaled.</para>
 		/// <para><see cref="ScaleEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Scale { get; set; } = "true";
+		public object? Scale { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Categorical Field</para>
@@ -123,16 +123,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object CategoricalField { get; set; }
+		public object? CategoricalField { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Percent Variance to Maintain</para>
-		/// <para>The minimum percent of total variance of the analysis fields that must be maintained in the components. The total variance depends on whether the analysis fields were scaled using the Scale Data parameter.</para>
+		/// <para>The minimum percent of total variance of the analysis fields that must be maintained in the components. The total variance depends on whether the analysis fields were scaled using the Scale Data parameter(scale in Python).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object MinVariance { get; set; }
+		public object? MinVariance { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Number of Components</para>
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object MinComponents { get; set; }
+		public object? MinComponents { get; set; }
 
 		/// <summary>
 		/// <para>Copy All Fields to Output Dataset</para>
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Additional Options")]
-		public object AppendFields { get; set; } = "false";
+		public object? AppendFields { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Eigenvalues Table</para>
@@ -163,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
 		[Category("Additional Options")]
-		public object OutputEigenvaluesTable { get; set; }
+		public object? OutputEigenvaluesTable { get; set; }
 
 		/// <summary>
 		/// <para>Output Eigenvectors Table</para>
@@ -172,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
 		[Category("Additional Options")]
-		public object OutputEigenvectorsTable { get; set; }
+		public object? OutputEigenvectorsTable { get; set; }
 
 		/// <summary>
 		/// <para>Number of Permutations</para>
@@ -183,7 +183,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPLong()]
 		[GPCodedValueDomain()]
 		[Category("Additional Options")]
-		public object NumberOfPermutations { get; set; } = "0";
+		public object? NumberOfPermutations { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Append Fields to Input Data</para>
@@ -195,19 +195,19 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AppendToInput { get; set; } = "false";
+		public object? AppendToInput { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Table or Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
-		public object UpdatedTable { get; set; }
+		public object? UpdatedTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DimensionReduction SetEnviroment(object outputCoordinateSystem = null , object randomGenerator = null )
+		public DimensionReduction SetEnviroment(object? outputCoordinateSystem = null , object? randomGenerator = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, randomGenerator: randomGenerator);
 			return this;
@@ -242,14 +242,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum ScaleEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The values of each analysis field will be scaled to have a variance equal to one. This is the default.</para>
+			/// <para>Checked—The values of each analysis field will be scaled to have a variance equal to one by dividing each value by the standard deviation of the analysis field. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SCALE_DATA")]
 			SCALE_DATA,
 
 			/// <summary>
-			/// <para>Unchecked—The variance of each analysis fields will not be scaled.</para>
+			/// <para>Unchecked—The variance of each analysis field will not be scaled.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SCALE_DATA")]

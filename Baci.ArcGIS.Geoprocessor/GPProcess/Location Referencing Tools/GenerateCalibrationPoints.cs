@@ -28,11 +28,11 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </param>
 		/// <param name="FromDateField">
 		/// <para>From Date Field</para>
-		/// <para>The field containing the From Date values of a route.</para>
+		/// <para>The field containing the from date values of a route.</para>
 		/// </param>
 		/// <param name="ToDateField">
 		/// <para>To Date Field</para>
-		/// <para>The field containing the To Date values of a route.</para>
+		/// <para>The field containing the to date values of a route.</para>
 		/// </param>
 		/// <param name="InCalibrationPointFeatureClass">
 		/// <para>Calibration Point Feature Class</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPolylineFeatures, RouteIdField, FromDateField, ToDateField, InCalibrationPointFeatureClass, LrsNetwork, CalibrationDirection, CalibrationMethod, OutCalibrationPointFeatureClass, OutDetailsFile };
+		public override object[] Parameters => new object[] { InPolylineFeatures, RouteIdField, FromDateField, ToDateField, InCalibrationPointFeatureClass, LrsNetwork, CalibrationDirection!, CalibrationMethod!, OutCalibrationPointFeatureClass!, OutDetailsFile!, FromMeasureField!, ToMeasureField! };
 
 		/// <summary>
 		/// <para>Input Polyline Features</para>
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>From Date Field</para>
-		/// <para>The field containing the From Date values of a route.</para>
+		/// <para>The field containing the from date values of a route.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>To Date Field</para>
-		/// <para>The field containing the To Date values of a route.</para>
+		/// <para>The field containing the to date values of a route.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -143,45 +143,67 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Calibration Direction</para>
-		/// <para>Specifies the direction of increasing calibration on a route when creating new calibration points.</para>
-		/// <para>Digitized direction—The direction of digitization of the Input Polyline Features determines the direction of calibration for the route. This is the default.</para>
-		/// <para>Measure direction—The direction of increasing m-values of the Input Polyline Features determines the direction of calibration for the route. If Input Polyline Features does not include m-values, the digitized direction will be used instead.</para>
+		/// <para>Specifies the direction of increasing calibration on a route when creating calibration points.</para>
+		/// <para>Digitized direction—The direction of digitization of the Input Polyline Features parameter value determines the direction of calibration for the route. This is the default.</para>
+		/// <para>Measure direction—The direction of increasing m-values of the Input Polyline Features parameter value determines the direction of calibration for the route. If the Input Polyline Features parameter value does not include m-values, the digitized direction will be used instead.</para>
 		/// <para><see cref="CalibrationDirectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object CalibrationDirection { get; set; } = "DIGITIZED_DIRECTION";
+		public object? CalibrationDirection { get; set; } = "DIGITIZED_DIRECTION";
 
 		/// <summary>
 		/// <para>Calibration Method</para>
-		/// <para>The method used to determine the measures on a route when creating calibration points.</para>
-		/// <para>Geometry length—Only geometry length is supported as the calibration method.</para>
+		/// <para>Specifies the method that will be used to determine the measures on a route when creating calibration points.</para>
+		/// <para>Geometry length—The geometrical length of the input route feature will be used as the calibration method. This is the default.</para>
+		/// <para>M on route—The measure values on the input route feature will be used as the calibration method.</para>
+		/// <para>Attribute fields—The measure values stored in attribute fields of the input route feature will be used as the calibration method.</para>
 		/// <para><see cref="CalibrationMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object CalibrationMethod { get; set; } = "GEOMETRY_LENGTH";
+		public object? CalibrationMethod { get; set; } = "GEOMETRY_LENGTH";
 
 		/// <summary>
 		/// <para>Updated Calibration Point Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutCalibrationPointFeatureClass { get; set; }
+		public object? OutCalibrationPointFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Output Details File</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETextFile()]
-		public object OutDetailsFile { get; set; }
+		public object? OutDetailsFile { get; set; }
+
+		/// <summary>
+		/// <para>From Measure Field</para>
+		/// <para>The field containing the from measure for the selected route.</para>
+		/// <para>This parameter is active when the Calibration Method parameter is set to Attribute fields.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[Field()]
+		[GPFieldDomain()]
+		public object? FromMeasureField { get; set; }
+
+		/// <summary>
+		/// <para>To Measure Field</para>
+		/// <para>The field containing the to measure for the selected route.</para>
+		/// <para>This parameter is active when the Calibration Method parameter is set to Attribute fields.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[Field()]
+		[GPFieldDomain()]
+		public object? ToMeasureField { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateCalibrationPoints SetEnviroment(object parallelProcessingFactor = null , object workspace = null )
+		public GenerateCalibrationPoints SetEnviroment(object? parallelProcessingFactor = null , object? workspace = null )
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;
@@ -195,14 +217,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum CalibrationDirectionEnum 
 		{
 			/// <summary>
-			/// <para>Digitized direction—The direction of digitization of the Input Polyline Features determines the direction of calibration for the route. This is the default.</para>
+			/// <para>Digitized direction—The direction of digitization of the Input Polyline Features parameter value determines the direction of calibration for the route. This is the default.</para>
 			/// </summary>
 			[GPValue("DIGITIZED_DIRECTION")]
 			[Description("Digitized direction")]
 			Digitized_direction,
 
 			/// <summary>
-			/// <para>Measure direction—The direction of increasing m-values of the Input Polyline Features determines the direction of calibration for the route. If Input Polyline Features does not include m-values, the digitized direction will be used instead.</para>
+			/// <para>Measure direction—The direction of increasing m-values of the Input Polyline Features parameter value determines the direction of calibration for the route. If the Input Polyline Features parameter value does not include m-values, the digitized direction will be used instead.</para>
 			/// </summary>
 			[GPValue("MEASURE_DIRECTION")]
 			[Description("Measure direction")]
@@ -216,11 +238,25 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum CalibrationMethodEnum 
 		{
 			/// <summary>
-			/// <para>Geometry length—Only geometry length is supported as the calibration method.</para>
+			/// <para>Geometry length—The geometrical length of the input route feature will be used as the calibration method. This is the default.</para>
 			/// </summary>
 			[GPValue("GEOMETRY_LENGTH")]
 			[Description("Geometry length")]
 			Geometry_length,
+
+			/// <summary>
+			/// <para>M on route—The measure values on the input route feature will be used as the calibration method.</para>
+			/// </summary>
+			[GPValue("M_ON_ROUTE")]
+			[Description("M on route")]
+			M_on_route,
+
+			/// <summary>
+			/// <para>Attribute fields—The measure values stored in attribute fields of the input route feature will be used as the calibration method.</para>
+			/// </summary>
+			[GPValue("ATTRIBUTE_FIELDS")]
+			[Description("Attribute fields")]
+			Attribute_fields,
 
 		}
 

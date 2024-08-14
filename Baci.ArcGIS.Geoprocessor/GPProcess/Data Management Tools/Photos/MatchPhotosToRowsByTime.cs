@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFolder, InputTable, TimeField, OutputTable, UnmatchedPhotosTable, AddPhotosAsAttachments, TimeTolerance, ClockOffset };
+		public override object[] Parameters => new object[] { InputFolder, InputTable, TimeField, OutputTable, UnmatchedPhotosTable!, AddPhotosAsAttachments!, TimeTolerance!, ClockOffset! };
 
 		/// <summary>
 		/// <para>Input Folder</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object UnmatchedPhotosTable { get; set; }
+		public object? UnmatchedPhotosTable { get; set; }
 
 		/// <summary>
 		/// <para>Add Photos As Attachments</para>
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AddPhotosAsAttachments { get; set; } = "true";
+		public object? AddPhotosAsAttachments { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Time Tolerance</para>
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object TimeTolerance { get; set; } = "0";
+		public object? TimeTolerance { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Clock Offset</para>
@@ -147,12 +147,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ClockOffset { get; set; } = "0";
+		public object? ClockOffset { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MatchPhotosToRowsByTime SetEnviroment(object extent = null , object workspace = null )
+		public MatchPhotosToRowsByTime SetEnviroment(object? extent = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

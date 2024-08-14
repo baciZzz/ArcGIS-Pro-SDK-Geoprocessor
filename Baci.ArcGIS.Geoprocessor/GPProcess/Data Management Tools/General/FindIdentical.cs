@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutDataset, Fields, XyTolerance, ZTolerance, OutputRecordOption };
+		public override object[] Parameters => new object[] { InDataset, OutDataset, Fields, XyTolerance!, ZTolerance!, OutputRecordOption! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object XyTolerance { get; set; }
+		public object? XyTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Z Tolerance</para>
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ZTolerance { get; set; } = "0";
+		public object? ZTolerance { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Output only duplicated records</para>
@@ -123,12 +123,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object OutputRecordOption { get; set; } = "false";
+		public object? OutputRecordOption { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FindIdentical SetEnviroment(object XYTolerance = null , object ZTolerance = null , object extent = null , object scratchWorkspace = null , object workspace = null )
+		public FindIdentical SetEnviroment(object? XYTolerance = null , object? ZTolerance = null , object? extent = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(XYTolerance: XYTolerance, ZTolerance: ZTolerance, extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

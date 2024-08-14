@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, PathsList, WhereClause, OutMosaicDataset };
+		public override object[] Parameters => new object[] { InMosaicDataset, PathsList, WhereClause!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -89,19 +89,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Repaired Input Mosaic Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMosaicLayer()]
-		public object OutMosaicDataset { get; set; }
+		public object? OutMosaicDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RepairMosaicDatasetPaths SetEnviroment(object extent = null , object parallelProcessingFactor = null )
+		public RepairMosaicDatasetPaths SetEnviroment(object? extent = null , object? parallelProcessingFactor = null )
 		{
 			base.SetEnv(extent: extent, parallelProcessingFactor: parallelProcessingFactor);
 			return this;

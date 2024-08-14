@@ -11,8 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Prepare Point Cloud Training Data</para>
-	/// <para>Generates the data that will be used to train and validate </para>
-	/// <para>a PointCNN model for classifying a point cloud.</para>
+	/// <para>Generates the data that will be used to train and validate a PointCNN model for point cloud classification.</para>
 	/// </summary>
 	public class PreparePointCloudTrainingData : AbstractGPProcess
 	{
@@ -25,7 +24,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </param>
 		/// <param name="BlockSize">
 		/// <para>Block Size</para>
-		/// <para>The two-dimensional width and height of each HDF5 tile created from the input point cloud. As a general rule, the block size should be large enough to capture the objects of interest and their surrounding context.</para>
+		/// <para>The diameter size of each circular HDF5 tile created from the input point cloud. As a general rule, the block size should be large enough to capture the objects of interest and their surrounding context.</para>
 		/// </param>
 		/// <param name="OutTrainingData">
 		/// <para>Output Training Data</para>
@@ -71,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointCloud, BlockSize, OutTrainingData, TrainingBoundary, ValidationPointCloud, ValidationBoundary, ClassCodesOfInterest, BlockPointLimit };
+		public override object[] Parameters => new object[] { InPointCloud, BlockSize, OutTrainingData, TrainingBoundary!, ValidationPointCloud!, ValidationBoundary!, ClassCodesOfInterest!, BlockPointLimit!, ReferenceHeight!, ExcludedClassCodes! };
 
 		/// <summary>
 		/// <para>Input Point Cloud</para>
@@ -84,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Block Size</para>
-		/// <para>The two-dimensional width and height of each HDF5 tile created from the input point cloud. As a general rule, the block size should be large enough to capture the objects of interest and their surrounding context.</para>
+		/// <para>The diameter size of each circular HDF5 tile created from the input point cloud. As a general rule, the block size should be large enough to capture the objects of interest and their surrounding context.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -106,47 +105,64 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object TrainingBoundary { get; set; }
+		public object? TrainingBoundary { get; set; }
 
 		/// <summary>
 		/// <para>Validation Point Cloud</para>
-		/// <para>The source of the point cloud that will be used to validate the deep learning model. This dataset must reference a different set of points than the input point cloud in order to ensure the quality of the trained model . If the validation point cloud is not specified, both the Training Boundary Features and Validation Boundary Features parameter values must be provided.</para>
+		/// <para>The point cloud that will be used to validate the deep learning model during the training process. This dataset must reference a different set of points than the input point cloud to ensure the quality of the trained model. If a validation point cloud is not specified, the input point cloud can be used to define the training and validation datasets by providing polygon feature classes for the Training Boundary Features and Validation Boundary Features parameters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object ValidationPointCloud { get; set; }
+		public object? ValidationPointCloud { get; set; }
 
 		/// <summary>
 		/// <para>Validation Boundary Features</para>
-		/// <para>The polygon features that will delineate the subset of points to be used for validating the trained model. If a validation point cloud is not specified, the points will be sourced from the input point cloud.</para>
+		/// <para>The polygon features that will delineate the subset of points to be used for evaluating the model during the training process. If a validation point cloud is not specified, the points will be sourced from the input point cloud.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object ValidationBoundary { get; set; }
+		public object? ValidationBoundary { get; set; }
 
 		/// <summary>
-		/// <para>Class Codes of Interest</para>
-		/// <para>The class codes that will limit the exported training data blocks to only those that contain the specified values. All points in the block will be exported for any block which contains at least one of the class codes listed in this parameter.</para>
+		/// <para>Filter Blocks By Class Code</para>
+		/// <para>The class codes that will be used to limit the exported training data blocks. All points in the blocks that contain at least one of the values listed for this parameter will be exported, except the classes specified in the Excluded Class Codes parameter or the points that are flagged as Withheld. Any value in the range of 0 to 255 can be specified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object ClassCodesOfInterest { get; set; }
+		public object? ClassCodesOfInterest { get; set; }
 
 		/// <summary>
 		/// <para>Block Point Limit</para>
-		/// <para>The maximum number of points allowed in each block of the training data. When a block contains points in excess of this value, multiple blocks will be created for the same location to ensure that all of the points are used when training.</para>
+		/// <para>The maximum number of points that will be allowed in each block of the training data. When a block contains points in excess of this value, multiple blocks will be created for the same location to ensure that all of the points are used when training.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object BlockPointLimit { get; set; } = "8192";
+		public object? BlockPointLimit { get; set; } = "8192";
+
+		/// <summary>
+		/// <para>Reference Surface</para>
+		/// <para>The raster surface that will be used to provide relative height values for each point in the point cloud data. Points that do not overlap with the raster will be omitted from the analysis.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPComposite()]
+		public object? ReferenceHeight { get; set; }
+
+		/// <summary>
+		/// <para>Excluded Class Codes</para>
+		/// <para>The class codes that will be excluded from the training data. Any value in the range of 0 to 255 can be specified.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPMultiValue()]
+		[GPRangeDomain()]
+		public object? ExcludedClassCodes { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PreparePointCloudTrainingData SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public PreparePointCloudTrainingData SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

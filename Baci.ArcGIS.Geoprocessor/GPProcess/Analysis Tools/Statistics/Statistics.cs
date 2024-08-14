@@ -27,7 +27,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <para>The output table that will store the calculated statistics.</para>
 		/// </param>
 		/// <param name="StatisticsFields">
-		/// <para>Statistics Field(s)</para>
+		/// <para>Statistics Fields</para>
 		/// <para>Specifies the numeric field or fields containing the attribute values that will be used to calculate the specified statistic. Multiple statistic and field combinations can be specified. Null values are excluded from all statistical calculations.</para>
 		/// <para>Text attribute fields can be summarized using first and last statistics. Numeric attribute fields can be summarized using any statistic.</para>
 		/// <para>Available statistics types are as follows:</para>
@@ -43,6 +43,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <para>Median—The median for all records of the specified field will be calculated.</para>
 		/// <para>Variance—The variance for all records of the specified field will be calculated.</para>
 		/// <para>Unique—The number of unique values of the specified field will be counted.</para>
+		/// <para>Concatenate—The values for the specified field will be concatenated. The values can be separated using the Concatenation Separator parameter.</para>
 		/// </param>
 		public Statistics(object InTable, object OutTable, object StatisticsFields)
 		{
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutTable, StatisticsFields, CaseField };
+		public override object[] Parameters => new object[] { InTable, OutTable, StatisticsFields, CaseField!, ConcatenationSeparator! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -103,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public object OutTable { get; set; }
 
 		/// <summary>
-		/// <para>Statistics Field(s)</para>
+		/// <para>Statistics Fields</para>
 		/// <para>Specifies the numeric field or fields containing the attribute values that will be used to calculate the specified statistic. Multiple statistic and field combinations can be specified. Null values are excluded from all statistical calculations.</para>
 		/// <para>Text attribute fields can be summarized using first and last statistics. Numeric attribute fields can be summarized using any statistic.</para>
 		/// <para>Available statistics types are as follows:</para>
@@ -119,6 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <para>Median—The median for all records of the specified field will be calculated.</para>
 		/// <para>Variance—The variance for all records of the specified field will be calculated.</para>
 		/// <para>Unique—The number of unique values of the specified field will be counted.</para>
+		/// <para>Concatenate—The values for the specified field will be concatenated. The values can be separated using the Concatenation Separator parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -126,17 +128,25 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public object StatisticsFields { get; set; }
 
 		/// <summary>
-		/// <para>Case field</para>
-		/// <para>The field or fields in the input used to calculate statistics separately for each unique attribute value (or combination of attribute values when multiple fields are specified).</para>
+		/// <para>Case Field</para>
+		/// <para>The field or fields in the input that will be used to calculate statistics separately for each unique attribute value (or combination of attribute values when multiple fields are specified).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object CaseField { get; set; }
+		public object? CaseField { get; set; }
+
+		/// <summary>
+		/// <para>Concatenation Separator</para>
+		/// <para>A character or characters that will be used to concatenate values when the Concatenation option is used for the Statistics Fields parameter.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		public object? ConcatenationSeparator { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Statistics SetEnviroment(object configKeyword = null , object scratchWorkspace = null , object workspace = null )
+		public Statistics SetEnviroment(object? configKeyword = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(configKeyword: configKeyword, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

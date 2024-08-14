@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, Map, OutNetworkDiagramLayer };
+		public override object[] Parameters => new object[] { InNetworkDiagramLayer, Map, OutNetworkDiagramLayer! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDiagramLayer()]
-		public object OutNetworkDiagramLayer { get; set; }
+		public object? OutNetworkDiagramLayer { get; set; }
 
 	}
 }

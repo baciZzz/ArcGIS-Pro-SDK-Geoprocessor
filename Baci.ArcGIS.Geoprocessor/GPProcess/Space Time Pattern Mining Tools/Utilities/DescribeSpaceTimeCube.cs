@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCube, OutCharacteristicsTable!, OutSpatialExtent };
+		public override object[] Parameters => new object[] { InCube, OutCharacteristicsTable!, OutSpatialExtent! };
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>

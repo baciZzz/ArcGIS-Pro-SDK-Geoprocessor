@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, Level, InBarrierFeatures, BarrierType, AppendData, OutTerritorySolution };
+		public override object[] Parameters => new object[] { InTerritorySolution, Level, InBarrierFeatures, BarrierType!, AppendData!, OutTerritorySolution! };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object BarrierType { get; set; }
+		public object? BarrierType { get; set; }
 
 		/// <summary>
 		/// <para>Append to existing barriers</para>
@@ -120,19 +120,19 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AppendData { get; set; } = "false";
+		public object? AppendData { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Territory Solution</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPGroupLayer()]
-		public object OutTerritorySolution { get; set; }
+		public object? OutTerritorySolution { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddTerritoryBarriers SetEnviroment(object workspace = null )
+		public AddTerritoryBarriers SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

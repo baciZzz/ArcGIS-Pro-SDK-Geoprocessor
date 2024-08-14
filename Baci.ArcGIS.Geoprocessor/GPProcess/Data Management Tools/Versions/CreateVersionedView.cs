@@ -61,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, InName, OutDataset };
+		public override object[] Parameters => new object[] { InDataset, InName!, OutDataset! };
 
 		/// <summary>
 		/// <para>Input Table or Feature Class</para>
@@ -77,19 +77,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object InName { get; set; }
+		public object? InName { get; set; }
 
 		/// <summary>
 		/// <para>Output Table or Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
-		public object OutDataset { get; set; }
+		public object? OutDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateVersionedView SetEnviroment(object workspace = null )
+		public CreateVersionedView SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

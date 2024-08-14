@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { SdcxFile, UpdatedSdcxFile };
+		public override object[] Parameters => new object[] { SdcxFile, UpdatedSdcxFile! };
 
 		/// <summary>
 		/// <para>Input SDCX File</para>
@@ -77,12 +77,12 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object UpdatedSdcxFile { get; set; }
+		public object? UpdatedSdcxFile { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateSDCXIndex SetEnviroment(object workspace = null )
+		public GenerateSDCXIndex SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

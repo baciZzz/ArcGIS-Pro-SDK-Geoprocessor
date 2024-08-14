@@ -61,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabase, OutWorkspace };
+		public override object[] Parameters => new object[] { InputDatabase, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
@@ -77,12 +77,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutWorkspace { get; set; }
+		public object? OutWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateRasterType SetEnviroment(object workspace = null )
+		public CreateRasterType SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

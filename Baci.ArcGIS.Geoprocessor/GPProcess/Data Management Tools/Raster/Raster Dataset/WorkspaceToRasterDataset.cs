@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, InRasterDataset, IncludeSubdirectories, MosaicType, Colormap, BackgroundValue, NodataValue, OnebitToEightbit, MosaickingTolerance, Matchingmethod, ColormapToRGB, OutRasterDataset };
+		public override object[] Parameters => new object[] { InWorkspace, InRasterDataset, IncludeSubdirectories!, MosaicType!, Colormap!, BackgroundValue!, NodataValue!, OnebitToEightbit!, MosaickingTolerance!, Matchingmethod!, ColormapToRGB!, OutRasterDataset! };
 
 		/// <summary>
 		/// <para>Input Workspace</para>
@@ -85,15 +85,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Include Sub-directories</para>
-		/// <para>Specify whether to include subdirectories.</para>
-		/// <para>Unchecked—Does not include subdirectories. This is the default.</para>
-		/// <para>Checked—Includes all the raster datasets in the subdirectories when loading.</para>
+		/// <para>Specifies whether subdirectories will be included.</para>
+		/// <para>Unchecked—Subdirectories will not be included. This is the default.</para>
+		/// <para>Checked—All raster datasets in the subdirectories will be included when loading.</para>
 		/// <para><see cref="IncludeSubdirectoriesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeSubdirectories { get; set; } = "false";
+		public object? IncludeSubdirectories { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Mosaic Operator</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object MosaicType { get; set; } = "LAST";
+		public object? MosaicType { get; set; } = "LAST";
 
 		/// <summary>
 		/// <para>Mosaic Colormap Mode</para>
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Colormap { get; set; } = "FIRST";
+		public object? Colormap { get; set; } = "FIRST";
 
 		/// <summary>
 		/// <para>Ignore Background Value</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object BackgroundValue { get; set; }
+		public object? BackgroundValue { get; set; }
 
 		/// <summary>
 		/// <para>NoData Value</para>
@@ -142,19 +142,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object NodataValue { get; set; }
+		public object? NodataValue { get; set; }
 
 		/// <summary>
 		/// <para>Convert 1 bit data to 8 bit</para>
-		/// <para>Choose whether the input 1-bit raster dataset will be converted to an 8-bit raster dataset. In this conversion, the value 1 in the input raster dataset will be changed to 255 in the output raster dataset. This is useful when importing a 1-bit raster dataset to a geodatabase. One-bit raster datasets have 8-bit pyramid layers when stored in a file system, but in a geodatabase, 1-bit raster datasets can only have 1-bit pyramid layers, which makes the display unpleasant. By converting the data to 8 bit in a geodatabase, the pyramid layers are built as 8 bit instead of 1 bit, resulting in a proper raster dataset in the display.</para>
-		/// <para>Unchecked—No conversion will be done. This is the default.</para>
+		/// <para>Specifies whether the input 1-bit raster dataset will be converted to an 8-bit raster dataset. In this conversion, the value 1 in the input raster dataset will be changed to 255 in the output raster dataset. This is useful when importing a 1-bit raster dataset to a geodatabase. One-bit raster datasets have 8-bit pyramid layers when stored in a file system, but in a geodatabase, 1-bit raster datasets can only have 1-bit pyramid layers, which results in a lower-quality display. By converting the data to 8 bit in a geodatabase, the pyramid layers are built as 8 bit instead of 1 bit, resulting in a proper raster dataset in the display.</para>
+		/// <para>Unchecked—No conversion will occur. This is the default.</para>
 		/// <para>Checked—The input raster will be converted.</para>
 		/// <para><see cref="OnebitToEightbitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object OnebitToEightbit { get; set; } = "false";
+		public object? OnebitToEightbit { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Mosaicking Tolerance</para>
@@ -165,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MosaickingTolerance { get; set; } = "0";
+		public object? MosaickingTolerance { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Color Matching Method</para>
@@ -179,11 +179,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Matchingmethod { get; set; } = "NONE";
+		public object? Matchingmethod { get; set; } = "NONE";
 
 		/// <summary>
 		/// <para>Colormap to RGB</para>
-		/// <para>If the input raster dataset has a color map, the output raster dataset can be converted to a three-band output raster dataset. This is useful when mosaicking rasters with different color maps.</para>
+		/// <para>Specifies whether the input raster dataset will be converted to a three-band output raster dataset if the input raster dataset includes a color map. This is useful when mosaicking rasters with different color maps.</para>
 		/// <para>Unchecked—No conversion will occur. This is the default.</para>
 		/// <para>Checked—The input dataset will be converted.</para>
 		/// <para><see cref="ColormapToRGBEnum"/></para>
@@ -191,14 +191,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ColormapToRGB { get; set; } = "false";
+		public object? ColormapToRGB { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Target Raster Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DERasterDataset()]
-		public object OutRasterDataset { get; set; }
+		public object? OutRasterDataset { get; set; }
 
 		#region InnerClass
 
@@ -208,14 +208,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum IncludeSubdirectoriesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Includes all the raster datasets in the subdirectories when loading.</para>
+			/// <para>Checked—All raster datasets in the subdirectories will be included when loading.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_SUBDIRECTORIES")]
 			INCLUDE_SUBDIRECTORIES,
 
 			/// <summary>
-			/// <para>Unchecked—Does not include subdirectories. This is the default.</para>
+			/// <para>Unchecked—Subdirectories will not be included. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]
@@ -327,7 +327,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			OneBitTo8Bit,
 
 			/// <summary>
-			/// <para>Unchecked—No conversion will be done. This is the default.</para>
+			/// <para>Unchecked—No conversion will occur. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]

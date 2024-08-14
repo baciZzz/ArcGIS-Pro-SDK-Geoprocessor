@@ -30,9 +30,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// </param>
 		/// <param name="AddressFields">
 		/// <para>Address Field Mapping</para>
-		/// <para>The address fields used by the locator are mapped to fields in the input table of addresses. Select Single Field if the complete address is stored in one field in the input table, for example, 303 Peachtree St NE, Atlanta, GA 30308. Select Multiple Fields if the input addresses are divided into multiple fields such as Address, City, State, and ZIP for a general United States address.</para>
-		/// <para>Some locators support multiple input addresses fields such as Address, Address2, and Address3. In this case, the address component can be separated into multiple fields and the address fields will be concatenated at the time of geocoding. For example, 100, Main St, and Apt 140 across three fields or 100 Main St and Apt 140 across two fields both become 100 Main St Apt 140 when geocoding.</para>
-		/// <para>If you choose not to map an optional input address field used by the locator to a field in the input table of addresses, specify that there is no mapping using &lt;None&gt; in place of a field name.</para>
+		/// <para>The address fields used by the locator are mapped to fields in the input table of addresses. Select Single Field if the complete address is stored in one field in the input table, for example, 303 Peachtree St NE, Atlanta, GA 30308. Select Multiple Fields if the input addresses are divided into multiple fields such as Address, City, State, and ZIP for a general United States address. Select Single Field and Country Field if the complete address, for example, 303 Peachtree St NE, Atlanta, GA 30308, and the country, for example, USA, are divided into separate fields such as Address and Country.</para>
+		/// <para>Some locators support multiple input addresses fields such as Address, Address2, and Address3. In this case, the address component can be separated into multiple fields and the address fields will be concatenated at the time of geocoding. For example, 100, Main st, and Apt 140 across three fields, or 100 Main st and Apt 140 across two fields, both become 100 Main st Apt 140 when geocoding.</para>
+		/// <para>If you do not map an optional input address field used by the locator to a field in the input table of addresses, specify that there is no mapping using &lt;None&gt; in place of a field name.</para>
 		/// </param>
 		/// <param name="OutputType">
 		/// <para>Output Type</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Locator, AddressFields, OutputType, OutputLocation, OutputName, Country, LocationType, Category, OutFeatureClass, OutTable, OutputFields };
+		public override object[] Parameters => new object[] { InTable, Locator, AddressFields, OutputType, OutputLocation, OutputName, Country!, LocationType!, Category!, OutFeatureClass!, OutTable!, OutputFields! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -118,9 +118,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Address Field Mapping</para>
-		/// <para>The address fields used by the locator are mapped to fields in the input table of addresses. Select Single Field if the complete address is stored in one field in the input table, for example, 303 Peachtree St NE, Atlanta, GA 30308. Select Multiple Fields if the input addresses are divided into multiple fields such as Address, City, State, and ZIP for a general United States address.</para>
-		/// <para>Some locators support multiple input addresses fields such as Address, Address2, and Address3. In this case, the address component can be separated into multiple fields and the address fields will be concatenated at the time of geocoding. For example, 100, Main St, and Apt 140 across three fields or 100 Main St and Apt 140 across two fields both become 100 Main St Apt 140 when geocoding.</para>
-		/// <para>If you choose not to map an optional input address field used by the locator to a field in the input table of addresses, specify that there is no mapping using &lt;None&gt; in place of a field name.</para>
+		/// <para>The address fields used by the locator are mapped to fields in the input table of addresses. Select Single Field if the complete address is stored in one field in the input table, for example, 303 Peachtree St NE, Atlanta, GA 30308. Select Multiple Fields if the input addresses are divided into multiple fields such as Address, City, State, and ZIP for a general United States address. Select Single Field and Country Field if the complete address, for example, 303 Peachtree St NE, Atlanta, GA 30308, and the country, for example, USA, are divided into separate fields such as Address and Country.</para>
+		/// <para>Some locators support multiple input addresses fields such as Address, Address2, and Address3. In this case, the address component can be separated into multiple fields and the address fields will be concatenated at the time of geocoding. For example, 100, Main st, and Apt 140 across three fields, or 100 Main st and Apt 140 across two fields, both become 100 Main st Apt 140 when geocoding.</para>
+		/// <para>If you do not map an optional input address field used by the locator to a field in the input table of addresses, specify that there is no mapping using &lt;None&gt; in place of a field name.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFieldInfo()]
@@ -160,14 +160,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Country</para>
-		/// <para>The country or countries to search for the geocoded addresses. This parameter is available for locators that support a country parameter and will limit geocoding to the selected countries. Making a country selection will improve the accuracy of geocoding in most cases. If a field representing countries in the Input Table parameter is mapped to the Country Role: Field Name, the country value from the Input Table parameter will override the Country parameter.</para>
-		/// <para>If no country is specified, geocoding is performed on all supported countries of the locator.</para>
+		/// <para>This parameter is available for locators that support a country parameter and will limit geocoding to the selected countries. Making a country selection will improve the accuracy of geocoding in most cases. When you select Single Field and Country Field in Address Field Mapping and map a field representing countries in Input Table to the Country field in Address Field Mapping, the country value from Input Table will override the Country parameter.</para>
+		/// <para>This is limited to the selected country or countries. If no country is specified, geocoding is performed using all supported countries of the locator.</para>
 		/// <para>The Country parameter is not supported for all locators.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object Country { get; set; }
+		public object? Country { get; set; }
 
 		/// <summary>
 		/// <para>Preferred Location Type</para>
@@ -180,7 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LocationType { get; set; } = "ROUTING_LOCATION";
+		public object? LocationType { get; set; } = "ROUTING_LOCATION";
 
 		/// <summary>
 		/// <para>Category</para>
@@ -193,41 +193,41 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object Category { get; set; }
+		public object? Category { get; set; }
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Output Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETable()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		/// <summary>
 		/// <para>Output Fields</para>
-		/// <para>Specifies which locator output fields are returned in the geocode results.</para>
+		/// <para>Specifies which locator output fields will be returned in the geocode results.</para>
 		/// <para>This parameter can be used with input locators created with the Create Locator tool or Create Feature Locator tool published to Enterprise 10.9 or later. Composite locators that contain at least one locator created with the Create Address Locator tool do not support this parameter.</para>
 		/// <para>All— Includes all available locator output fields in the geocode results. This is the default.</para>
-		/// <para>Location Only—The Shape field is stored if the geocode result is a feature class. The Shape X and Shape Y fields are stored if the result is either a .csv or .xls file. The original field names from the Input Table parameter are maintained with their original field names. Rematching geocode results is not available with this option.</para>
-		/// <para>Minimal—Adds the following fields that describe the location and how well it matches to information in the locator in the geocode results: Shape, Status, Score, Match_type, Match_addr, and Addr_type. The original field names from the Input Table parameter are maintained with their original field names.</para>
+		/// <para>Location Only—The Shape field is stored if the geocode result is a feature class. The Shape X and Shape Y fields are stored if the result is either a .csv or .xls file. The original field names from the Input Table parameter are maintained with their original field names.</para>
+		/// <para>Minimal—Adds the following fields that describe the location and how well it matches information in the locator in the geocode results: Shape, Status, Score, Match_type, Match_addr, and Addr_type. The original field names from the Input Table parameter are maintained.</para>
 		/// <para><see cref="OutputFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Optional parameters")]
-		public object OutputFields { get; set; } = "ALL";
+		public object? OutputFields { get; set; } = "ALL";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GeocodeFile SetEnviroment(object outputCoordinateSystem = null , object workspace = null )
+		public GeocodeFile SetEnviroment(object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;
@@ -297,14 +297,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 			All,
 
 			/// <summary>
-			/// <para>Minimal—Adds the following fields that describe the location and how well it matches to information in the locator in the geocode results: Shape, Status, Score, Match_type, Match_addr, and Addr_type. The original field names from the Input Table parameter are maintained with their original field names.</para>
+			/// <para>Minimal—Adds the following fields that describe the location and how well it matches information in the locator in the geocode results: Shape, Status, Score, Match_type, Match_addr, and Addr_type. The original field names from the Input Table parameter are maintained.</para>
 			/// </summary>
 			[GPValue("MINIMAL")]
 			[Description("Minimal")]
 			Minimal,
 
 			/// <summary>
-			/// <para>Location Only—The Shape field is stored if the geocode result is a feature class. The Shape X and Shape Y fields are stored if the result is either a .csv or .xls file. The original field names from the Input Table parameter are maintained with their original field names. Rematching geocode results is not available with this option.</para>
+			/// <para>Location Only—The Shape field is stored if the geocode result is a feature class. The Shape X and Shape Y fields are stored if the result is either a .csv or .xls file. The original field names from the Input Table parameter are maintained with their original field names.</para>
 			/// </summary>
 			[GPValue("LOCATION_ONLY")]
 			[Description("Location Only")]

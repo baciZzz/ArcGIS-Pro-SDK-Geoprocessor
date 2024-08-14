@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Field, Method, Classes, Interval, StandardDeviations, ReclassTable, ReverseValues, OutputFieldName, UpdatedTable };
+		public override object[] Parameters => new object[] { InTable, Field, Method!, Classes!, Interval!, StandardDeviations!, ReclassTable!, ReverseValues!, OutputFieldName!, UpdatedTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "EQUAL_INTERVAL";
+		public object? Method { get; set; } = "EQUAL_INTERVAL";
 
 		/// <summary>
 		/// <para>Number of Classes</para>
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object Classes { get; set; }
+		public object? Classes { get; set; }
 
 		/// <summary>
 		/// <para>Interval Size</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Interval { get; set; }
+		public object? Interval { get; set; }
 
 		/// <summary>
 		/// <para>Number of Standard Deviations</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object StandardDeviations { get; set; } = "ONE";
+		public object? StandardDeviations { get; set; } = "ONE";
 
 		/// <summary>
 		/// <para>Reclassification Table</para>
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object ReclassTable { get; set; }
+		public object? ReclassTable { get; set; }
 
 		/// <summary>
 		/// <para>Reverse Values (Descending)</para>
@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ReverseValues { get; set; } = "false";
+		public object? ReverseValues { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Field Name</para>
@@ -161,19 +161,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object OutputFieldName { get; set; }
+		public object? OutputFieldName { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object UpdatedTable { get; set; }
+		public object? UpdatedTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ReclassifyField SetEnviroment(object extent = null )
+		public ReclassifyField SetEnviroment(object? extent = null )
 		{
 			base.SetEnv(extent: extent);
 			return this;

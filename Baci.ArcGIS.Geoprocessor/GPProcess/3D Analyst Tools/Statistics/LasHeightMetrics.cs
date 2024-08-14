@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, OutLocation, BaseName, Statistics, HeightPercentiles, MinHeight, MinPoints, CellSize, DerivedOutLocation, OutputRasters, RasterFormat };
+		public override object[] Parameters => new object[] { InLasDataset, OutLocation, BaseName!, Statistics!, HeightPercentiles!, MinHeight!, MinPoints!, CellSize!, DerivedOutLocation!, OutputRasters!, RasterFormat! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object BaseName { get; set; } = "height_";
+		public object? BaseName { get; set; } = "height_";
 
 		/// <summary>
 		/// <para>Statistics Options</para>
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object Statistics { get; set; }
+		public object? Statistics { get; set; }
 
 		/// <summary>
 		/// <para>Height Percentiles</para>
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object HeightPercentiles { get; set; }
+		public object? HeightPercentiles { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Height</para>
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[GPNumericDomain()]
-		public object MinHeight { get; set; } = "2 Meters";
+		public object? MinHeight { get; set; } = "2 Meters";
 
 		/// <summary>
 		/// <para>Minimum Number of Points</para>
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object MinPoints { get; set; } = "4";
+		public object? MinPoints { get; set; } = "4";
 
 		/// <summary>
 		/// <para>Cell Size</para>
@@ -139,21 +139,21 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[GPNumericDomain()]
-		public object CellSize { get; set; } = "20 Meters";
+		public object? CellSize { get; set; } = "20 Meters";
 
 		/// <summary>
 		/// <para>Output Location</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object DerivedOutLocation { get; set; }
+		public object? DerivedOutLocation { get; set; }
 
 		/// <summary>
 		/// <para>Output Raster</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutputRasters { get; set; }
+		public object? OutputRasters { get; set; }
 
 		/// <summary>
 		/// <para>Raster Format</para>
@@ -166,12 +166,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object RasterFormat { get; set; } = "TIFF";
+		public object? RasterFormat { get; set; } = "TIFF";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LasHeightMetrics SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object workspace = null )
+		public LasHeightMetrics SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

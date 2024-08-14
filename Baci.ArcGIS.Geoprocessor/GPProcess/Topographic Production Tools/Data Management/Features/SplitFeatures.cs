@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 	/// <summary>
 	/// <para>Split Features</para>
 	/// <para>Splits features on input feature classes for any number of polyline or polygon target feature classes using the cutting features and inserts points on the cutting feature.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class SplitFeatures : AbstractGPProcess
 	{
 		/// <summary>
@@ -20,7 +22,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		/// <param name="CuttingFeatures">
 		/// <para>Cutting Features</para>
-		/// <para>The cutting feature used to split the target features where they intersect the target feature class geometries.</para>
+		/// <para>The cutting features used to split the target features where they intersect the target feature class geometries.</para>
 		/// </param>
 		/// <param name="TargetFeatures">
 		/// <para>Target Features</para>
@@ -28,9 +30,9 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </param>
 		/// <param name="UseTargetZ">
 		/// <para>Use Target Z Values</para>
-		/// <para>Specifies the source of the z-value from the source or target.</para>
-		/// <para>Checked—Uses the z-value from the source or target.</para>
-		/// <para>Unchecked—Does not use the z-value. This is the default.</para>
+		/// <para>Specifies whether the z-value from the source or target will be used.</para>
+		/// <para>Checked—The z-value from the source or target will be used.</para>
+		/// <para>Unchecked—The z-value from the source or target will not be used. This is the default.</para>
 		/// <para><see cref="UseTargetZEnum"/></para>
 		/// </param>
 		public SplitFeatures(object CuttingFeatures, object TargetFeatures, object UseTargetZ)
@@ -73,11 +75,11 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { CuttingFeatures, TargetFeatures, UseTargetZ, OutFeatureLayer };
+		public override object[] Parameters => new object[] { CuttingFeatures, TargetFeatures, UseTargetZ, OutFeatureLayer! };
 
 		/// <summary>
 		/// <para>Cutting Features</para>
-		/// <para>The cutting feature used to split the target features where they intersect the target feature class geometries.</para>
+		/// <para>The cutting features used to split the target features where they intersect the target feature class geometries.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -95,9 +97,9 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 
 		/// <summary>
 		/// <para>Use Target Z Values</para>
-		/// <para>Specifies the source of the z-value from the source or target.</para>
-		/// <para>Checked—Uses the z-value from the source or target.</para>
-		/// <para>Unchecked—Does not use the z-value. This is the default.</para>
+		/// <para>Specifies whether the z-value from the source or target will be used.</para>
+		/// <para>Checked—The z-value from the source or target will be used.</para>
+		/// <para>Unchecked—The z-value from the source or target will not be used. This is the default.</para>
 		/// <para><see cref="UseTargetZEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -110,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatureLayer { get; set; }
+		public object? OutFeatureLayer { get; set; }
 
 		#region InnerClass
 
@@ -120,14 +122,14 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		public enum UseTargetZEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Uses the z-value from the source or target.</para>
+			/// <para>Checked—The z-value from the source or target will be used.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("USE_TARGET_Z")]
 			USE_TARGET_Z,
 
 			/// <summary>
-			/// <para>Unchecked—Does not use the z-value. This is the default.</para>
+			/// <para>Unchecked—The z-value from the source or target will not be used. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DONT_USE_TARGET_Z")]

@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ValueField, OutCvTable, OutGeostatLayer!, InterpMethods!, ComparisonMethod!, Criterion!, CriteriaHierarchy!, WeightedCriteria!, ExclusionCriteria };
+		public override object[] Parameters => new object[] { InFeatures, ValueField, OutCvTable, OutGeostatLayer!, InterpMethods!, ComparisonMethod!, Criterion!, CriteriaHierarchy!, WeightedCriteria!, ExclusionCriteria! };
 
 		/// <summary>
 		/// <para>Input features</para>

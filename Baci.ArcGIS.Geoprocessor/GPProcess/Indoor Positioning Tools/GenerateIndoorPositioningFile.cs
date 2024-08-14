@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorPositioningTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InIpsRecordings, TargetIpsPositioning, InIpsTransitions!, InIpsComment!, OutIpsPositioning };
+		public override object[] Parameters => new object[] { InIpsRecordings, TargetIpsPositioning, InIpsTransitions!, InIpsComment!, OutIpsPositioning! };
 
 		/// <summary>
 		/// <para>IPS Recordings Features</para>

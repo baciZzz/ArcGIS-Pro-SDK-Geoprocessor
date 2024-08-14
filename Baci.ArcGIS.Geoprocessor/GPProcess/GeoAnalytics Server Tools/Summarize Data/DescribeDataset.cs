@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutputName, SampleFeatures, CreateExtentLayer, DataStore, Output, ExtentLayer, SampleLayer, OutputJson };
+		public override object[] Parameters => new object[] { InputLayer, OutputName, SampleFeatures!, CreateExtentLayer!, DataStore!, Output!, ExtentLayer!, SampleLayer!, OutputJson! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object SampleFeatures { get; set; }
+		public object? SampleFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Create Extent Layer</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CreateExtentLayer { get; set; }
+		public object? CreateExtentLayer { get; set; }
 
 		/// <summary>
 		/// <para>Data Store</para>
@@ -115,40 +115,40 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Data Store")]
-		public object DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
+		public object? DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
 
 		/// <summary>
 		/// <para>Output</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object Output { get; set; }
+		public object? Output { get; set; }
 
 		/// <summary>
 		/// <para>Extent Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object ExtentLayer { get; set; }
+		public object? ExtentLayer { get; set; }
 
 		/// <summary>
 		/// <para>Sample Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object SampleLayer { get; set; }
+		public object? SampleLayer { get; set; }
 
 		/// <summary>
 		/// <para>Output JSON</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutputJson { get; set; }
+		public object? OutputJson { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DescribeDataset SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public DescribeDataset SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

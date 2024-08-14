@@ -24,7 +24,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </param>
 		/// <param name="SelectionCondition">
 		/// <para>Selection Condition</para>
-		/// <para>Specifies the selection condition to be used for the field values of the records matching the SQL expression.</para>
+		/// <para>Specifies the selection condition that will be used for the field values of the records matching the SQL expression.</para>
 		/// <para>Exists—Checks whether the field value exists for the records matching the SQL expression. This is the default.</para>
 		/// <para>No Selection—Checks whether none of the records matching the SQL expression are selected.</para>
 		/// <para>All Selected—Checks whether all of the records matching the SQL expression are selected.</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayerOrView, SelectionCondition, Count, CountMin, CountMax, True, False };
+		public override object[] Parameters => new object[] { InLayerOrView, SelectionCondition, Count!, CountMin!, CountMax!, True!, False! };
 
 		/// <summary>
 		/// <para>Layer Name or Table View</para>
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Selection Condition</para>
-		/// <para>Specifies the selection condition to be used for the field values of the records matching the SQL expression.</para>
+		/// <para>Specifies the selection condition that will be used for the field values of the records matching the SQL expression.</para>
 		/// <para>Exists—Checks whether the field value exists for the records matching the SQL expression. This is the default.</para>
 		/// <para>No Selection—Checks whether none of the records matching the SQL expression are selected.</para>
 		/// <para>All Selected—Checks whether all of the records matching the SQL expression are selected.</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object Count { get; set; } = "0";
+		public object? Count { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Minimum Count</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object CountMin { get; set; } = "0";
+		public object? CountMin { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Maximum Count</para>
@@ -126,21 +126,21 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object CountMax { get; set; } = "0";
+		public object? CountMax { get; set; } = "0";
 
 		/// <summary>
 		/// <para>True</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
-		public object True { get; set; } = "false";
+		public object? True { get; set; } = "false";
 
 		/// <summary>
 		/// <para>False</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
-		public object False { get; set; } = "false";
+		public object? False { get; set; } = "false";
 
 		#region InnerClass
 

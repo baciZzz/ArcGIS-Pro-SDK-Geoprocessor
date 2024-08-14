@@ -61,12 +61,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "extent", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, OutputFolder, ConvertData, ConvertArcsdeData, Extent, ApplyExtentToArcsde, PreserveSqlite, SelectRelatedRows };
+		public override object[] Parameters => new object[] { InMap, OutputFolder, ConvertData!, ConvertArcsdeData!, Extent!, ApplyExtentToArcsde!, PreserveSqlite!, SelectRelatedRows! };
 
 		/// <summary>
 		/// <para>Input Map</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ConvertData { get; set; } = "false";
+		public object? ConvertData { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Include Enterprise Geodatabase data instead of referencing the data</para>
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ConvertArcsdeData { get; set; } = "true";
+		public object? ConvertArcsdeData { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Extent</para>
@@ -121,11 +121,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Apply Extent only to enterprise geodatabase layers</para>
-		/// <para>Specifies whether the specified extent will be applied to all layers or only to enterprise geodatabase layers.</para>
+		/// <para>Specifies whether the specified extent will be applied to all layers or to enterprise geodatabase layers only.</para>
 		/// <para>Unchecked—The extent will be applied to all layers. This is the default.</para>
 		/// <para>Checked—The extent will be applied to enterprise geodatabase layers only.</para>
 		/// <para><see cref="ApplyExtentToArcsdeEnum"/></para>
@@ -133,19 +133,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ApplyExtentToArcsde { get; set; } = "false";
+		public object? ApplyExtentToArcsde { get; set; } = "false";
 
 		/// <summary>
-		/// <para>Preserve SQLite</para>
-		/// <para>Instead of converting to a file geodatabase format, input SQLite data can be preserved as SQLite output. This parameter overrides the Convert data to file geodatabase parameter when the input data is SQLite. If the input data is a SQLite network dataset, the output will always be SQLite.</para>
-		/// <para>Unchecked—SQLite data will be converted to file geodatabase. This is the default.</para>
-		/// <para>Checked—SQLite data will be preserved as SQLite in the consolidated folder.</para>
+		/// <para>Preserve Mobile Geodatabase</para>
+		/// <para>Specifies whether input mobile geodatabase data will be preserved as mobile geodatabase in the output. This parameter overrides the Convert data to file geodatabase parameter when the input data is mobile geodatabase. If the input data is a mobile geodatabase network dataset, the output will always be mobile geodatabase.</para>
+		/// <para>Unchecked—Mobile geodatabase data will be converted to file geodatabase. This is the default.</para>
+		/// <para>Checked—Mobile geodatabase data will be preserved as SQLite in the consolidated folder.</para>
 		/// <para><see cref="PreserveSqliteEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object PreserveSqlite { get; set; } = "false";
+		public object? PreserveSqlite { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Keep only the rows which are related to features within the extent</para>
@@ -157,14 +157,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SelectRelatedRows { get; set; } = "false";
+		public object? SelectRelatedRows { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConsolidateMap SetEnviroment(object extent = null , object workspace = null )
+		public ConsolidateMap SetEnviroment(object? extent = null , object? parallelProcessingFactor = null , object? workspace = null )
 		{
-			base.SetEnv(extent: extent, workspace: workspace);
+			base.SetEnv(extent: extent, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;
 		}
 
@@ -234,19 +234,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Preserve SQLite</para>
+		/// <para>Preserve Mobile Geodatabase</para>
 		/// </summary>
 		public enum PreserveSqliteEnum 
 		{
 			/// <summary>
-			/// <para>Checked—SQLite data will be preserved as SQLite in the consolidated folder.</para>
+			/// <para>Checked—Mobile geodatabase data will be preserved as SQLite in the consolidated folder.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PRESERVE_SQLITE")]
 			PRESERVE_SQLITE,
 
 			/// <summary>
-			/// <para>Unchecked—SQLite data will be converted to file geodatabase. This is the default.</para>
+			/// <para>Unchecked—Mobile geodatabase data will be converted to file geodatabase. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("CONVERT_SQLITE")]

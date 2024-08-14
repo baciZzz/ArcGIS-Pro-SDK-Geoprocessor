@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Topology, Location, FileName, OutFile };
+		public override object[] Parameters => new object[] { Topology, Location, FileName, OutFile! };
 
 		/// <summary>
 		/// <para>Input Topology</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
-		public object OutFile { get; set; }
+		public object? OutFile { get; set; }
 
 	}
 }

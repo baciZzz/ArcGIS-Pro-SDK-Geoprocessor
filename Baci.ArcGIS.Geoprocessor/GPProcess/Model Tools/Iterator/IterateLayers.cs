@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputMap, Wildcard, LayerType, WorkspaceType, FeatureType, RasterFormatType, LayerVisibility, LayerState, Recursive, OutputLayer, OutputName, OutputLayerType, OutputWorkspaceType };
+		public override object[] Parameters => new object[] { InputMap, Wildcard!, LayerType!, WorkspaceType!, FeatureType!, RasterFormatType!, LayerVisibility!, LayerState!, Recursive!, OutputLayer!, OutputName!, OutputLayerType!, OutputWorkspaceType! };
 
 		/// <summary>
 		/// <para>Input Map</para>
@@ -72,15 +72,15 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Wildcard</para>
-		/// <para>A combination of * and characters that help to limit the results. The asterisk is the same as saying ALL. If no wildcard is specified, all inputs will be returned. For example, it can be used to restrict Iteration over input names starting with a certain character or word (for example, A* or Ari* or Land* and so on).</para>
+		/// <para>A combination of * and characters that help to limit the results. The asterisk is the same as specifying ALL. If no wildcard is specified, all inputs will be returned. For example, it can be used to restrict Iteration over input names starting with a certain character or word (for example, A* or Ari* or Land* and so on).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Wildcard { get; set; }
+		public object? Wildcard { get; set; }
 
 		/// <summary>
 		/// <para>Layer Type</para>
-		/// <para>Specifies the layer type used to filter the layers. If a layer type is not specified, all supported layer types will be iterated. More than one layer type can be used to filter the layers.</para>
+		/// <para>Specifies the layer type that will be used to filter the layers. If a layer type is not specified, all supported layer types will be iterated. More than one layer type can be used to filter the layers.</para>
 		/// <para>Annotation Layer—Annotation layers will be iterated.</para>
 		/// <para>Building Layer—Building layers will be iterated.</para>
 		/// <para>Building Scene Layer— Building scene layers will be iterated.</para>
@@ -108,13 +108,13 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object LayerType { get; set; }
+		public object? LayerType { get; set; }
 
 		/// <summary>
 		/// <para>Workspace Type</para>
-		/// <para>Specifies the workspace type used to filter the layers. If a workspace type is not specified, all layers of the supported workspace types will be iterated.</para>
+		/// <para>Specifies the workspace type that will be used to filter the layers. If a workspace type is not specified, all layers of the supported workspace types will be iterated.</para>
 		/// <para>The Workspace Type parameter is only enabled when the Layer Type parameter is set to Feature Layer, Raster Layer, or Table View.</para>
-		/// <para>Big Data Connection—Layers in a big data connection workspace will be iterated.</para>
+		/// <para>Multifle Feature Connection—Layers in a multifile feature connection workspace will be iterated.</para>
 		/// <para>BIM File—Layers in a BIM File workspace will be iterated.</para>
 		/// <para>CAD—Layers in a CAD workspace will be iterated.</para>
 		/// <para>Delimited Text File—Layers in a delimited text file workspace will be iterated.</para>
@@ -135,11 +135,11 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object WorkspaceType { get; set; }
+		public object? WorkspaceType { get; set; }
 
 		/// <summary>
 		/// <para>Feature Type</para>
-		/// <para>Specifies the feature type used to filter the layers. If a feature type is not specified, all supported feature types will be iterated.</para>
+		/// <para>Specifies the feature type that will be used to filter the layers. If a feature type is not specified, all supported feature types will be iterated.</para>
 		/// <para>Annotation—Annotation feature classes will be iterated.</para>
 		/// <para>Dimension—Dimension feature classes will be iterated.</para>
 		/// <para>Simple Edge—Simple edge feature classes will be iterated.</para>
@@ -155,33 +155,35 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object FeatureType { get; set; }
+		public object? FeatureType { get; set; }
 
 		/// <summary>
 		/// <para>Raster Type</para>
-		/// <para>The raster format type used to filter the raster layers when the Workspace Type parameter is set to Raster. If a raster type is not specified, all layers of the supported raster types will be iterated.</para>
+		/// <para>The raster format type that will be used to filter the raster layers when the Workspace Type parameter is set to Raster. If a raster type is not specified, all layers of the supported raster types will be iterated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object RasterFormatType { get; set; }
+		public object? RasterFormatType { get; set; }
 
 		/// <summary>
 		/// <para>Visibility</para>
-		/// <para>Specifies whether layer visibility is used to filter the layers. If layer visibility is not specified, all layers will be iterated.</para>
-		/// <para>Visible—Layer visibility will be used to filter the layers and visible layers will be iterated.</para>
-		/// <para>Not Visible—Layer visibility will not be used to filter the layers and nonvisible layers will be iterated.</para>
+		/// <para>Specifies whether layer visibility will be used to filter the layers.</para>
+		/// <para>All—Layer visibility will not be used to filter layers.</para>
+		/// <para>Visible—Visible layers will be iterated.</para>
+		/// <para>Not Visible—Nonvisible layers will be iterated.</para>
 		/// <para><see cref="LayerVisibilityEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Layer Properties")]
-		public object LayerVisibility { get; set; }
+		public object? LayerVisibility { get; set; } = "ALL";
 
 		/// <summary>
 		/// <para>State</para>
-		/// <para>Specifies the layer state that will be used to filter the layers. Layers with broken source path layers are returned if the parameter is set to invalid. If a layer state is not specified, all layers will be iterated.</para>
+		/// <para>Specifies the layer state that will be used to filter the layers. Layers with broken source path layers will be returned if the parameter is set to invalid.</para>
+		/// <para>All—Layer state will not be used to filter layers.</para>
 		/// <para>Valid—Valid layers will be iterated.</para>
 		/// <para>Invalid—Invalid layers will be iterated.</para>
 		/// <para><see cref="LayerStateEnum"/></para>
@@ -190,7 +192,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Layer Properties")]
-		public object LayerState { get; set; }
+		public object? LayerState { get; set; } = "ALL";
 
 		/// <summary>
 		/// <para>Recursive</para>
@@ -202,35 +204,35 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Recursive { get; set; } = "true";
+		public object? Recursive { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPType()]
-		public object OutputLayer { get; set; }
+		public object? OutputLayer { get; set; }
 
 		/// <summary>
 		/// <para>Name</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutputName { get; set; }
+		public object? OutputName { get; set; }
 
 		/// <summary>
 		/// <para>Output Layer Type</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutputLayerType { get; set; }
+		public object? OutputLayerType { get; set; }
 
 		/// <summary>
 		/// <para>Workspace or Format Type</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutputWorkspaceType { get; set; }
+		public object? OutputWorkspaceType { get; set; }
 
 		#region InnerClass
 
@@ -317,14 +319,21 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		public enum LayerVisibilityEnum 
 		{
 			/// <summary>
-			/// <para>Visible—Layer visibility will be used to filter the layers and visible layers will be iterated.</para>
+			/// <para>All—Layer visibility will not be used to filter layers.</para>
+			/// </summary>
+			[GPValue("ALL")]
+			[Description("All")]
+			All,
+
+			/// <summary>
+			/// <para>Visible—Visible layers will be iterated.</para>
 			/// </summary>
 			[GPValue("VISIBLE")]
 			[Description("Visible")]
 			Visible,
 
 			/// <summary>
-			/// <para>Not Visible—Layer visibility will not be used to filter the layers and nonvisible layers will be iterated.</para>
+			/// <para>Not Visible—Nonvisible layers will be iterated.</para>
 			/// </summary>
 			[GPValue("NOT_VISIBLE")]
 			[Description("Not Visible")]
@@ -337,6 +346,13 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		public enum LayerStateEnum 
 		{
+			/// <summary>
+			/// <para>All—Layer state will not be used to filter layers.</para>
+			/// </summary>
+			[GPValue("ALL")]
+			[Description("All")]
+			All,
+
 			/// <summary>
 			/// <para>Valid—Valid layers will be iterated.</para>
 			/// </summary>

@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Repair Geometry</para>
-	/// <para>Inspects each  feature in a feature class for problems with its geometry.  Upon discovery of a problem, a fix will be applied, and a one-line description will identify the feature, as well as the geometry problem that was fixed.</para>
+	/// <para>Inspects features for geometry problems and repairs them.  If a problem is found, a repair will be performed, and a one-line description will identify the feature, as well as the geometry problem that was repaired.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,6 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
 		/// <para>The feature class or layer to be processed.</para>
+		/// <para>A Desktop Basic license only allows shapefiles and feature classes stored in a file geodatabase, GeoPackage, or SpatiaLite database as valid input feature formats. A Desktop Standard or Desktop Advanced license also allows feature classes stored in an enterprise database or enterprise geodatabase to be used as valid input feature formats.</para>
 		/// </param>
 		public RepairGeometry(object InFeatures)
 		{
@@ -57,16 +58,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "extent", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DeleteNull, OutFeatureClass, ValidationMethod };
+		public override object[] Parameters => new object[] { InFeatures, DeleteNull!, OutFeatureClass!, ValidationMethod! };
 
 		/// <summary>
 		/// <para>Input Features</para>
 		/// <para>The feature class or layer to be processed.</para>
+		/// <para>A Desktop Basic license only allows shapefiles and feature classes stored in a file geodatabase, GeoPackage, or SpatiaLite database as valid input feature formats. A Desktop Standard or Desktop Advanced license also allows feature classes stored in an enterprise database or enterprise geodatabase to be used as valid input feature formats.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -77,23 +79,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Specifies whether features with null geometries will be deleted.</para>
 		/// <para>Checked—Features with null geometry will be deleted from the input. This is the default.</para>
 		/// <para>Unchecked—Features with null geometry will not be deleted from the input.</para>
+		/// <para>Delete null is not available for data stored in an enterprise database, enterprise geodatabase, GeoPackage, or SpatiaLite database.</para>
 		/// <para><see cref="DeleteNullEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DeleteNull { get; set; } = "true";
+		public object? DeleteNull { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Repaired Input Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Validation Method</para>
-		/// <para>Specifies which geometry validation method will be used to identify geometry problems.</para>
+		/// <para>Specifies the geometry validation method that will be used to identify geometry problems.</para>
 		/// <para>Esri—The Esri geometry validation method will be used. This is the default.</para>
 		/// <para>OGC—The OGC geometry validation method will be used.</para>
 		/// <para><see cref="ValidationMethodEnum"/></para>
@@ -101,14 +104,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ValidationMethod { get; set; } = "ESRI";
+		public object? ValidationMethod { get; set; } = "ESRI";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RepairGeometry SetEnviroment(object extent = null , object workspace = null )
+		public RepairGeometry SetEnviroment(object? extent = null , object? parallelProcessingFactor = null , object? workspace = null )
 		{
-			base.SetEnv(extent: extent, workspace: workspace);
+			base.SetEnv(extent: extent, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;
 		}
 

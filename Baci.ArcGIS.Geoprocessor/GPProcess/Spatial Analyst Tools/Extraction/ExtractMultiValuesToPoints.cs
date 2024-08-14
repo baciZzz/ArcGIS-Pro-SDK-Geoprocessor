@@ -20,11 +20,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InPointFeatures">
 		/// <para>Input point features</para>
-		/// <para>The input point features to which you want to add raster values.</para>
+		/// <para>The input point features to which raster values will be added.</para>
 		/// </param>
 		/// <param name="InRasters">
 		/// <para>Input rasters</para>
-		/// <para>The input raster (or rasters) values you want to extract based on the input point feature location.</para>
+		/// <para>The input raster (or rasters) values that will be extracted based on the input point feature location.</para>
 		/// <para>Optionally, you can supply the name for the field to store the raster value. By default, a unique field name will be created based on the input raster dataset name.</para>
 		/// </param>
 		public ExtractMultiValuesToPoints(object InPointFeatures, object InRasters)
@@ -66,11 +66,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, InRasters, BilinearInterpolateValues, OutPointFeatures };
+		public override object[] Parameters => new object[] { InPointFeatures, InRasters, BilinearInterpolateValues!, OutPointFeatures! };
 
 		/// <summary>
 		/// <para>Input point features</para>
-		/// <para>The input point features to which you want to add raster values.</para>
+		/// <para>The input point features to which raster values will be added.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input rasters</para>
-		/// <para>The input raster (or rasters) values you want to extract based on the input point feature location.</para>
+		/// <para>The input raster (or rasters) values that will be extracted based on the input point feature location.</para>
 		/// <para>Optionally, you can supply the name for the field to store the raster value. By default, a unique field name will be created based on the input raster dataset name.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -97,19 +97,19 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object BilinearInterpolateValues { get; set; } = "false";
+		public object? BilinearInterpolateValues { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated point features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutPointFeatures { get; set; }
+		public object? OutPointFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExtractMultiValuesToPoints SetEnviroment(int? autoCommit = null , object configKeyword = null , object extent = null , object mask = null , object scratchWorkspace = null , object workspace = null )
+		public ExtractMultiValuesToPoints SetEnviroment(int? autoCommit = null , object? configKeyword = null , object? extent = null , object? mask = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, mask: mask, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

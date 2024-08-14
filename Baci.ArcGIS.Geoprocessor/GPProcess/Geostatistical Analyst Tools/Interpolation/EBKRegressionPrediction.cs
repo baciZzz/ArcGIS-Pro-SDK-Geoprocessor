@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DependentField, InExplanatoryRasters, OutGaLayer, OutRaster, OutDiagnosticFeatureClass, MeasurementErrorField, MinCumulativeVariance, InSubsetFeatures, TransformationType, SemivariogramModelType, MaxLocalPoints, OverlapFactor, NumberSimulations, SearchNeighborhood };
+		public override object[] Parameters => new object[] { InFeatures, DependentField, InExplanatoryRasters, OutGaLayer, OutRaster!, OutDiagnosticFeatureClass!, MeasurementErrorField!, MinCumulativeVariance!, InSubsetFeatures!, TransformationType!, SemivariogramModelType!, MaxLocalPoints!, OverlapFactor!, NumberSimulations!, SearchNeighborhood! };
 
 		/// <summary>
 		/// <para>Input dependent variable features</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
-		public object OutRaster { get; set; }
+		public object? OutRaster { get; set; }
 
 		/// <summary>
 		/// <para>Output diagnostic feature class</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object OutDiagnosticFeatureClass { get; set; }
+		public object? OutDiagnosticFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Dependent variable measurement error field</para>
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object MeasurementErrorField { get; set; }
+		public object? MeasurementErrorField { get; set; }
 
 		/// <summary>
 		/// <para>Minimum cumulative percent of variance</para>
@@ -157,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[GPDouble()]
 		[GPRangeDomain()]
 		[Category("Additional Model Parameters")]
-		public object MinCumulativeVariance { get; set; } = "95";
+		public object? MinCumulativeVariance { get; set; } = "95";
 
 		/// <summary>
 		/// <para>Subset polygon features</para>
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
 		[Category("Additional Model Parameters")]
-		public object InSubsetFeatures { get; set; }
+		public object? InSubsetFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Dependent variable transformation type</para>
@@ -182,7 +182,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Additional Model Parameters")]
-		public object TransformationType { get; set; } = "NONE";
+		public object? TransformationType { get; set; } = "NONE";
 
 		/// <summary>
 		/// <para>Semivariogram model type</para>
@@ -197,7 +197,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Additional Model Parameters")]
-		public object SemivariogramModelType { get; set; } = "EXPONENTIAL";
+		public object? SemivariogramModelType { get; set; } = "EXPONENTIAL";
 
 		/// <summary>
 		/// <para>Maximum number of points in each local model</para>
@@ -207,7 +207,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Additional Model Parameters")]
-		public object MaxLocalPoints { get; set; } = "100";
+		public object? MaxLocalPoints { get; set; } = "100";
 
 		/// <summary>
 		/// <para>Local model area overlap factor</para>
@@ -217,7 +217,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[GPDouble()]
 		[GPRangeDomain()]
 		[Category("Additional Model Parameters")]
-		public object OverlapFactor { get; set; } = "1";
+		public object? OverlapFactor { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Number of simulations</para>
@@ -227,7 +227,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Additional Model Parameters")]
-		public object NumberSimulations { get; set; } = "100";
+		public object? NumberSimulations { get; set; } = "100";
 
 		/// <summary>
 		/// <para>Search neighborhood</para>
@@ -250,12 +250,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[GPGASearchNeighborhood()]
 		[GPGASearchNeighborhoodDomain()]
 		[Category("Search Neighborhood Parameters")]
-		public object SearchNeighborhood { get; set; } = "NBRTYPE=StandardCircular RADIUS=nan ANGLE=0 NBR_MAX=15 NBR_MIN=10 SECTOR_TYPE=ONE_SECTOR";
+		public object? SearchNeighborhood { get; set; } = "NBRTYPE=StandardCircular RADIUS=nan ANGLE=0 NBR_MAX=15 NBR_MIN=10 SECTOR_TYPE=ONE_SECTOR";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EBKRegressionPrediction SetEnviroment(object cellSize = null , object coincidentPoints = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object snapRaster = null , object workspace = null )
+		public EBKRegressionPrediction SetEnviroment(object? cellSize = null , object? coincidentPoints = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? snapRaster = null , object? workspace = null )
 		{
 			base.SetEnv(cellSize: cellSize, coincidentPoints: coincidentPoints, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, workspace: workspace);
 			return this;

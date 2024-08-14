@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutView, WhereClause, Workspace, FieldInfo };
+		public override object[] Parameters => new object[] { InTable, OutView, WhereClause!, Workspace!, FieldInfo! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Output Workspace</para>
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEWorkspace()]
-		public object Workspace { get; set; }
+		public object? Workspace { get; set; }
 
 		/// <summary>
 		/// <para>Field Info</para>
@@ -105,12 +105,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFieldInfo()]
-		public object FieldInfo { get; set; }
+		public object? FieldInfo { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeTableView SetEnviroment(object workspace = null )
+		public MakeTableView SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

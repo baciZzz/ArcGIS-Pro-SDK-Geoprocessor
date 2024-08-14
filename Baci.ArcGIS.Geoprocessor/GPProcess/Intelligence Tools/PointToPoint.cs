@@ -21,6 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		/// <param name="InputPointFeatures">
 		/// <para>Input Points</para>
+		/// <para>The input point layer. These points are the similar points to be found within the search Distance.</para>
 		/// </param>
 		/// <param name="InputSearchDistance">
 		/// <para>Distance</para>
@@ -64,10 +65,11 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputPointFeatures, InputSearchDistance, InputSearchExpression, OutputIdList };
+		public override object[] Parameters => new object[] { InputPointFeatures, InputSearchDistance, InputSearchExpression!, OutputIdList! };
 
 		/// <summary>
 		/// <para>Input Points</para>
+		/// <para>The input point layer. These points are the similar points to be found within the search Distance.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -86,14 +88,14 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object InputSearchExpression { get; set; }
+		public object? InputSearchExpression { get; set; }
 
 		/// <summary>
 		/// <para>Output OIDs</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutputIdList { get; set; }
+		public object? OutputIdList { get; set; }
 
 	}
 }

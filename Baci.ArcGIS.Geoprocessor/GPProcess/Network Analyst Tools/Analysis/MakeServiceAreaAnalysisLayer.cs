@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { NetworkDataSource, LayerName, TravelMode, TravelDirection, Cutoffs, TimeOfDay, TimeZone, OutputType, PolygonDetail, GeometryAtOverlaps, GeometryAtCutoffs, PolygonTrimDistance, ExcludeSourcesFromPolygonGeneration, AccumulateAttributes, OutNetworkAnalysisLayer };
+		public override object[] Parameters => new object[] { NetworkDataSource, LayerName!, TravelMode!, TravelDirection!, Cutoffs!, TimeOfDay!, TimeZone!, OutputType!, PolygonDetail!, GeometryAtOverlaps!, GeometryAtCutoffs!, PolygonTrimDistance!, ExcludeSourcesFromPolygonGeneration!, AccumulateAttributes!, OutNetworkAnalysisLayer!, IgnoreInvalidLocations! };
 
 		/// <summary>
 		/// <para>Network Data Source</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object LayerName { get; set; }
+		public object? LayerName { get; set; }
 
 		/// <summary>
 		/// <para>Travel Mode</para>
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TravelMode { get; set; }
+		public object? TravelMode { get; set; }
 
 		/// <summary>
 		/// <para>Travel Direction</para>
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TravelDirection { get; set; } = "FROM_FACILITIES";
+		public object? TravelDirection { get; set; } = "FROM_FACILITIES";
 
 		/// <summary>
 		/// <para>Cutoffs</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object Cutoffs { get; set; }
+		public object? Cutoffs { get; set; }
 
 		/// <summary>
 		/// <para>Time of Day</para>
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Time of Day")]
-		public object TimeOfDay { get; set; }
+		public object? TimeOfDay { get; set; }
 
 		/// <summary>
 		/// <para>Time Zone</para>
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Time of Day")]
-		public object TimeZone { get; set; } = "LOCAL_TIME_AT_LOCATIONS";
+		public object? TimeZone { get; set; } = "LOCAL_TIME_AT_LOCATIONS";
 
 		/// <summary>
 		/// <para>Output Type</para>
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Output Geometry")]
-		public object OutputType { get; set; } = "POLYGONS";
+		public object? OutputType { get; set; } = "POLYGONS";
 
 		/// <summary>
 		/// <para>Polygon Detail</para>
@@ -176,7 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Output Geometry")]
-		public object PolygonDetail { get; set; } = "STANDARD";
+		public object? PolygonDetail { get; set; } = "STANDARD";
 
 		/// <summary>
 		/// <para>Geometry at Overlaps</para>
@@ -190,7 +190,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Output Geometry")]
-		public object GeometryAtOverlaps { get; set; } = "OVERLAP";
+		public object? GeometryAtOverlaps { get; set; } = "OVERLAP";
 
 		/// <summary>
 		/// <para>Geometry at Cutoffs</para>
@@ -203,7 +203,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Output Geometry")]
-		public object GeometryAtCutoffs { get; set; } = "RINGS";
+		public object? GeometryAtCutoffs { get; set; } = "RINGS";
 
 		/// <summary>
 		/// <para>Polygon Trim Distance</para>
@@ -213,7 +213,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Output Geometry")]
-		public object PolygonTrimDistance { get; set; } = "100 Meters";
+		public object? PolygonTrimDistance { get; set; } = "100 Meters";
 
 		/// <summary>
 		/// <para>Exclude Sources From Polygon Generation</para>
@@ -226,11 +226,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Output Geometry")]
-		public object ExcludeSourcesFromPolygonGeneration { get; set; }
+		public object? ExcludeSourcesFromPolygonGeneration { get; set; }
 
 		/// <summary>
 		/// <para>Accumulate Attributes</para>
-		/// <para>A list of cost attributes to be accumulated during analysis. These accumulated attributes are for reference only; the solver only uses the cost attribute used by your designated travel mode when solving the analysis.</para>
+		/// <para><para/>A list of cost attributes to be accumulated during analysis. These accumulated attributes are for reference only; the solver only uses the cost attribute used by the designated travel mode when solving the analysis.</para>
 		/// <para>For each cost attribute that is accumulated, a Total_[Impedance] property is populated in the network analysis output features.</para>
 		/// <para>This parameter is not available if the analysis layer is not configured to output lines, the network data source is an ArcGIS Online service, or the network data source is a service on a version of Portal for ArcGIS that does not support accumulation.</para>
 		/// </summary>
@@ -238,19 +238,32 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Accumulate Attributes")]
-		public object AccumulateAttributes { get; set; }
+		public object? AccumulateAttributes { get; set; }
 
 		/// <summary>
 		/// <para>Network Analyst Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPNALayer()]
-		public object OutNetworkAnalysisLayer { get; set; }
+		public object? OutNetworkAnalysisLayer { get; set; }
+
+		/// <summary>
+		/// <para>Ignore Invalid Locations at Solve Time</para>
+		/// <para>Specifies whether invalid input locations will be ignored. Typically, locations are invalid if they cannot be located on the network. When invalid locations are ignored, the solver will skip them and attempt to perform the analysis using the remaining locations.</para>
+		/// <para>Checked—Invalid input locations will be ignored and only valid locations will be used. This is the default.</para>
+		/// <para>Unchecked—All input locations will be used. Invalid locations will cause the analysis to fail.</para>
+		/// <para><see cref="IgnoreInvalidLocationsEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		[Category("Locations")]
+		public object? IgnoreInvalidLocations { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeServiceAreaAnalysisLayer SetEnviroment(object workspace = null )
+		public MakeServiceAreaAnalysisLayer SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -402,6 +415,27 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 			[GPValue("DISKS")]
 			[Description("Disks")]
 			Disks,
+
+		}
+
+		/// <summary>
+		/// <para>Ignore Invalid Locations at Solve Time</para>
+		/// </summary>
+		public enum IgnoreInvalidLocationsEnum 
+		{
+			/// <summary>
+			/// <para>Checked—Invalid input locations will be ignored and only valid locations will be used. This is the default.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("SKIP")]
+			SKIP,
+
+			/// <summary>
+			/// <para>Unchecked—All input locations will be used. Invalid locations will cause the analysis to fail.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("HALT")]
+			HALT,
 
 		}
 

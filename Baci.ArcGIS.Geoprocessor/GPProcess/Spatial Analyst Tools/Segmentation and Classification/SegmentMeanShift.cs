@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRasterDataset, SpectralDetail, SpatialDetail, MinSegmentSize, BandIndexes, MaxSegmentSize };
+		public override object[] Parameters => new object[] { InRaster, OutRasterDataset, SpectralDetail!, SpatialDetail!, MinSegmentSize!, BandIndexes!, MaxSegmentSize! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object SpectralDetail { get; set; } = "15.5";
+		public object? SpectralDetail { get; set; } = "15.5";
 
 		/// <summary>
 		/// <para>Spatial Detail</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object SpatialDetail { get; set; } = "15";
+		public object? SpatialDetail { get; set; } = "15";
 
 		/// <summary>
 		/// <para>Minimum Segment Size In Pixels</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MinSegmentSize { get; set; } = "20";
+		public object? MinSegmentSize { get; set; } = "20";
 
 		/// <summary>
 		/// <para>Band Indexes</para>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object BandIndexes { get; set; }
+		public object? BandIndexes { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Segment Size In Pixels</para>
@@ -133,12 +133,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MaxSegmentSize { get; set; } = "-1";
+		public object? MaxSegmentSize { get; set; } = "-1";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SegmentMeanShift SetEnviroment(object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object nodata = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object pyramid = null , object rasterStatistics = null , object resamplingMethod = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public SegmentMeanShift SetEnviroment(object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? nodata = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? pyramid = null , object? rasterStatistics = null , object? resamplingMethod = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
 			base.SetEnv(compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, nodata: nodata, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, rasterStatistics: rasterStatistics, resamplingMethod: resamplingMethod, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;

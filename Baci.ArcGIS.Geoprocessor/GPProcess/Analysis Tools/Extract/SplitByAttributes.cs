@@ -19,12 +19,12 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <para>Constructor that takes all required parameters for geoprocessor execution.</para>
 		/// </summary>
 		/// <param name="InputTable">
-		/// <para>Input Table</para>
-		/// <para>The input feature class or table whose data will be split into the target workspace.</para>
+		/// <para>Input Table or Features</para>
+		/// <para>The input feature class or table containing the data that will be split into the target workspace.</para>
 		/// </param>
 		/// <param name="TargetWorkspace">
 		/// <para>Target Workspace</para>
-		/// <para>The existing workspace where the output feature classes or tables are written.</para>
+		/// <para>The existing workspace where the output feature classes or tables will be written.</para>
 		/// </param>
 		/// <param name="SplitFields">
 		/// <para>Split Fields</para>
@@ -70,11 +70,11 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputTable, TargetWorkspace, SplitFields, TargetWorkspace2 };
+		public override object[] Parameters => new object[] { InputTable, TargetWorkspace, SplitFields, TargetWorkspace2! };
 
 		/// <summary>
-		/// <para>Input Table</para>
-		/// <para>The input feature class or table whose data will be split into the target workspace.</para>
+		/// <para>Input Table or Features</para>
+		/// <para>The input feature class or table containing the data that will be split into the target workspace.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Target Workspace</para>
-		/// <para>The existing workspace where the output feature classes or tables are written.</para>
+		/// <para>The existing workspace where the output feature classes or tables will be written.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -102,12 +102,12 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object TargetWorkspace2 { get; set; }
+		public object? TargetWorkspace2 { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SplitByAttributes SetEnviroment(object MDomain = null , object MResolution = null , object MTolerance = null , object XYDomain = null , object XYResolution = null , object XYTolerance = null , object configKeyword = null , object extent = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , object scratchWorkspace = null , object workspace = null )
+		public SplitByAttributes SetEnviroment(object? MDomain = null , double? MResolution = null , double? MTolerance = null , object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? configKeyword = null , object? extent = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, configKeyword: configKeyword, extent: extent, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

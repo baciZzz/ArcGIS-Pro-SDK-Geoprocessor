@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ZField, OutGaLayer, OutRaster, CellSize, InBarrierFeatures, KernelFunction, Bandwidth, Power, Ridge, OutputType };
+		public override object[] Parameters => new object[] { InFeatures, ZField, OutGaLayer!, OutRaster!, CellSize!, InBarrierFeatures!, KernelFunction!, Bandwidth!, Power!, Ridge!, OutputType! };
 
 		/// <summary>
 		/// <para>Input features</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGALayer()]
-		public object OutGaLayer { get; set; }
+		public object? OutGaLayer { get; set; }
 
 		/// <summary>
 		/// <para>Output raster</para>
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
-		public object OutRaster { get; set; }
+		public object? OutRaster { get; set; }
 
 		/// <summary>
 		/// <para>Output cell size</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
 		[GPSAGeoDataDomain()]
-		public object CellSize { get; set; }
+		public object? CellSize { get; set; }
 
 		/// <summary>
 		/// <para>Input absolute barrier features</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object InBarrierFeatures { get; set; }
+		public object? InBarrierFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Kernel function</para>
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object KernelFunction { get; set; } = "POLYNOMIAL5";
+		public object? KernelFunction { get; set; } = "POLYNOMIAL5";
 
 		/// <summary>
 		/// <para>Bandwidth</para>
@@ -144,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object Bandwidth { get; set; }
+		public object? Bandwidth { get; set; }
 
 		/// <summary>
 		/// <para>Order of polynomial</para>
@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object Power { get; set; } = "1";
+		public object? Power { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Ridge parameter</para>
@@ -162,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object Ridge { get; set; } = "50";
+		public object? Ridge { get; set; } = "50";
 
 		/// <summary>
 		/// <para>Output surface type</para>
@@ -174,12 +174,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object OutputType { get; set; } = "PREDICTION";
+		public object? OutputType { get; set; } = "PREDICTION";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public KernelInterpolationWithBarriers SetEnviroment(object cellSize = null , object coincidentPoints = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object snapRaster = null , object workspace = null )
+		public KernelInterpolationWithBarriers SetEnviroment(object? cellSize = null , object? coincidentPoints = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? snapRaster = null , object? workspace = null )
 		{
 			base.SetEnv(cellSize: cellSize, coincidentPoints: coincidentPoints, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, snapRaster: snapRaster, workspace: workspace);
 			return this;

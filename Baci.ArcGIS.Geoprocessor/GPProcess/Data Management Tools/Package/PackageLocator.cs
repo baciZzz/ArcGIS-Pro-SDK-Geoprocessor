@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLocator, OutputFile, CopyArcsdeLocator, AdditionalFiles, Summary, Tags };
+		public override object[] Parameters => new object[] { InLocator, OutputFile, CopyArcsdeLocator!, AdditionalFiles!, Summary!, Tags! };
 
 		/// <summary>
 		/// <para>Input Locator</para>
@@ -92,15 +92,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CopyArcsdeLocator { get; set; } = "true";
+		public object? CopyArcsdeLocator { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Additional Files</para>
-		/// <para>Adds additional files to a package. Additional files, such as .doc, .txt, .pdf, and so on, are used to provide more information about the contents and purpose of the package.</para>
+		/// <para>Adds files to a package. Additional files, such as .doc, .txt, .pdf, and so on, are used to provide more information about the contents and purpose of the package.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object AdditionalFiles { get; set; }
+		public object? AdditionalFiles { get; set; }
 
 		/// <summary>
 		/// <para>Summary</para>
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Summary { get; set; }
+		public object? Summary { get; set; }
 
 		/// <summary>
 		/// <para>Tags</para>
@@ -116,12 +116,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Tags { get; set; }
+		public object? Tags { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PackageLocator SetEnviroment(object workspace = null )
+		public PackageLocator SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

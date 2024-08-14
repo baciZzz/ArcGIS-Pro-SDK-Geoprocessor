@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ZField, OutGaLayer, OutRaster, CellSize, InBarrierFeatures, Bandwidth, NumberIterations, WeightField, InAdditiveBarrierRaster, InCumulativeBarrierRaster, InFlowBarrierRaster };
+		public override object[] Parameters => new object[] { InFeatures, ZField, OutGaLayer!, OutRaster!, CellSize!, InBarrierFeatures!, Bandwidth!, NumberIterations!, WeightField!, InAdditiveBarrierRaster!, InCumulativeBarrierRaster!, InFlowBarrierRaster! };
 
 		/// <summary>
 		/// <para>Input features</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGALayer()]
-		public object OutGaLayer { get; set; }
+		public object? OutGaLayer { get; set; }
 
 		/// <summary>
 		/// <para>Output raster</para>
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
-		public object OutRaster { get; set; }
+		public object? OutRaster { get; set; }
 
 		/// <summary>
 		/// <para>Output cell size</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
 		[GPSAGeoDataDomain()]
-		public object CellSize { get; set; }
+		public object? CellSize { get; set; }
 
 		/// <summary>
 		/// <para>Input absolute barrier features</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object InBarrierFeatures { get; set; }
+		public object? InBarrierFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Bandwidth</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object Bandwidth { get; set; }
+		public object? Bandwidth { get; set; }
 
 		/// <summary>
 		/// <para>Number of iterations</para>
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object NumberIterations { get; set; } = "100";
+		public object? NumberIterations { get; set; } = "100";
 
 		/// <summary>
 		/// <para>Weight field</para>
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object WeightField { get; set; }
+		public object? WeightField { get; set; }
 
 		/// <summary>
 		/// <para>Input additive barrier raster</para>
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRasterLayer()]
 		[Category("Additional raster barriers")]
-		public object InAdditiveBarrierRaster { get; set; }
+		public object? InAdditiveBarrierRaster { get; set; }
 
 		/// <summary>
 		/// <para>Input cumulative barrier raster</para>
@@ -166,7 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRasterLayer()]
 		[Category("Additional raster barriers")]
-		public object InCumulativeBarrierRaster { get; set; }
+		public object? InCumulativeBarrierRaster { get; set; }
 
 		/// <summary>
 		/// <para>Input flow barrier raster</para>
@@ -177,12 +177,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRasterLayer()]
 		[Category("Additional raster barriers")]
-		public object InFlowBarrierRaster { get; set; }
+		public object? InFlowBarrierRaster { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DiffusionInterpolationWithBarriers SetEnviroment(object cellSize = null , object coincidentPoints = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object snapRaster = null , object workspace = null )
+		public DiffusionInterpolationWithBarriers SetEnviroment(object? cellSize = null , object? coincidentPoints = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? snapRaster = null , object? workspace = null )
 		{
 			base.SetEnv(cellSize: cellSize, coincidentPoints: coincidentPoints, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, snapRaster: snapRaster, workspace: workspace);
 			return this;

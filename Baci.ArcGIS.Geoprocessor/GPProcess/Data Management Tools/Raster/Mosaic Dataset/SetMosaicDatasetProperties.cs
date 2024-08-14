@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset with the properties that need to be set.</para>
+		/// <para>The mosaic dataset with the properties that will be set.</para>
 		/// </param>
 		public SetMosaicDatasetProperties(object InMosaicDataset)
 		{
@@ -60,11 +60,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, RowsMaximumImagesize, ColumnsMaximumImagesize, AllowedCompressions, DefaultCompressionType, JPEGQuality, LERCTolerance, ResamplingType, ClipToFootprints, FootprintsMayContainNodata, ClipToBoundary, ColorCorrection, AllowedMensurationCapabilities, DefaultMensurationCapabilities, AllowedMosaicMethods, DefaultMosaicMethod, OrderField, OrderBase, SortingOrder, MosaicOperator, BlendWidth, ViewPointX, ViewPointY, MaxNumPerMosaic, CellSizeTolerance, CellSize, MetadataLevel, TransmissionFields, UseTime, StartTimeField, EndTimeField, TimeFormat, GeographicTransform, MaxNumOfDownloadItems, MaxNumOfRecordsReturned, DataSourceType, MinimumPixelContribution, ProcessingTemplates, DefaultProcessingTemplate, OutMosaicDataset, TimeInterval, TimeIntervalUnits, ProductDefinition, ProductBandDefinitions };
+		public override object[] Parameters => new object[] { InMosaicDataset, RowsMaximumImagesize!, ColumnsMaximumImagesize!, AllowedCompressions!, DefaultCompressionType!, JPEGQuality!, LERCTolerance!, ResamplingType!, ClipToFootprints!, FootprintsMayContainNodata!, ClipToBoundary!, ColorCorrection!, AllowedMensurationCapabilities!, DefaultMensurationCapabilities!, AllowedMosaicMethods!, DefaultMosaicMethod!, OrderField!, OrderBase!, SortingOrder!, MosaicOperator!, BlendWidth!, ViewPointX!, ViewPointY!, MaxNumPerMosaic!, CellSizeTolerance!, CellSize!, MetadataLevel!, TransmissionFields!, UseTime!, StartTimeField!, EndTimeField!, TimeFormat!, GeographicTransform!, MaxNumOfDownloadItems!, MaxNumOfRecordsReturned!, DataSourceType!, MinimumPixelContribution!, ProcessingTemplates!, DefaultProcessingTemplate!, OutMosaicDataset!, TimeInterval!, TimeIntervalUnits!, ProductDefinition!, ProductBandDefinitions! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset with the properties that need to be set.</para>
+		/// <para>The mosaic dataset with the properties that will be set.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMosaicLayer()]
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Image Properties")]
-		public object RowsMaximumImagesize { get; set; } = "4100";
+		public object? RowsMaximumImagesize { get; set; } = "4100";
 
 		/// <summary>
 		/// <para>Columns of Maximum Image Size of Requests</para>
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Image Properties")]
-		public object ColumnsMaximumImagesize { get; set; } = "15000";
+		public object? ColumnsMaximumImagesize { get; set; } = "15000";
 
 		/// <summary>
 		/// <para>Allowed Transmission Compression</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Image Properties")]
-		public object AllowedCompressions { get; set; } = "None;JPEG;LZ77;LERC";
+		public object? AllowedCompressions { get; set; } = "LERC;LERC;LERC;LERC";
 
 		/// <summary>
 		/// <para>Default Compression Type</para>
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Image Properties")]
-		public object DefaultCompressionType { get; set; } = "None";
+		public object? DefaultCompressionType { get; set; } = "None";
 
 		/// <summary>
 		/// <para>JPEG Quality</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Image Properties")]
-		public object JPEGQuality { get; set; } = "75";
+		public object? JPEGQuality { get; set; } = "75";
 
 		/// <summary>
 		/// <para>LERC Tolerance</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Image Properties")]
-		public object LERCTolerance { get; set; } = "0";
+		public object? LERCTolerance { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Resampling Technique</para>
@@ -149,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Image Properties")]
-		public object ResamplingType { get; set; } = "BILINEAR";
+		public object? ResamplingType { get; set; } = "BILINEAR";
 
 		/// <summary>
 		/// <para>Clip To Footprints</para>
@@ -162,20 +162,20 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Image Properties")]
-		public object ClipToFootprints { get; set; } = "false";
+		public object? ClipToFootprints { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Footprints May Contain NoData</para>
 		/// <para>Specifies whether pixels with NoData values will be shown.</para>
 		/// <para>Checked—Pixels with NoData values will be shown.</para>
-		/// <para>Unchecked—Pixels with NoData values will not be shown. You may notice an improvement in performance; however, if your imagery does include NoData values, they will appear as holes in the mosaic dataset.</para>
+		/// <para>Unchecked—Pixels with NoData values will not be shown. You may notice an improvement in performance; however, if the imagery does include NoData values, they will appear as holes in the mosaic dataset.</para>
 		/// <para><see cref="FootprintsMayContainNodataEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Image Properties")]
-		public object FootprintsMayContainNodata { get; set; } = "true";
+		public object? FootprintsMayContainNodata { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Clip To Boundary</para>
@@ -188,7 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Image Properties")]
-		public object ClipToBoundary { get; set; } = "true";
+		public object? ClipToBoundary { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Color Correction</para>
@@ -201,7 +201,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Image Properties")]
-		public object ColorCorrection { get; set; } = "false";
+		public object? ColorCorrection { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Allowed Mensuration Capabilities</para>
@@ -218,7 +218,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Image Properties")]
-		public object AllowedMensurationCapabilities { get; set; }
+		public object? AllowedMensurationCapabilities { get; set; }
 
 		/// <summary>
 		/// <para>Default Mensuration</para>
@@ -235,7 +235,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Image Properties")]
-		public object DefaultMensurationCapabilities { get; set; } = "None";
+		public object? DefaultMensurationCapabilities { get; set; } = "None";
 
 		/// <summary>
 		/// <para>Allowed Mosaic Methods</para>
@@ -254,7 +254,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Mosaic Properties")]
-		public object AllowedMosaicMethods { get; set; } = "Center;NorthWest;LockRaster;ByAttribute;Nadir;Viewpoint;Seamline;None";
+		public object? AllowedMosaicMethods { get; set; } = "Center;NorthWest;LockRaster;ByAttribute;Nadir;Viewpoint;Seamline;None";
 
 		/// <summary>
 		/// <para>Default Mosaic Methods</para>
@@ -273,7 +273,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Mosaic Properties")]
-		public object DefaultMosaicMethod { get; set; } = "Center";
+		public object? DefaultMosaicMethod { get; set; } = "Center";
 
 		/// <summary>
 		/// <para>Order Field</para>
@@ -293,7 +293,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Mosaic Properties")]
-		public object OrderField { get; set; }
+		public object? OrderField { get; set; }
 
 		/// <summary>
 		/// <para>Order Base</para>
@@ -311,7 +311,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Mosaic Properties")]
-		public object OrderBase { get; set; }
+		public object? OrderBase { get; set; }
 
 		/// <summary>
 		/// <para>Sorting Order Ascending</para>
@@ -325,11 +325,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Mosaic Properties")]
-		public object SortingOrder { get; set; } = "true";
+		public object? SortingOrder { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Mosaic Operator</para>
-		/// <para>Specifies the rules for resolving overlapping pixels.</para>
+		/// <para>Specifies the rule that will be used for resolving overlapping pixels.</para>
 		/// <para>First—The first image in the attribute table will be displayed.</para>
 		/// <para>Last—The last image in the attribute table will be displayed.</para>
 		/// <para>Minimum—The lowest pixel values will be displayed.</para>
@@ -343,16 +343,16 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Mosaic Properties")]
-		public object MosaicOperator { get; set; } = "FIRST";
+		public object? MosaicOperator { get; set; } = "FIRST";
 
 		/// <summary>
 		/// <para>Blend Width</para>
-		/// <para>The number of pixels over which the Blend value of the Mosaic Operator parameter will be applied.</para>
+		/// <para>The number of pixels to which the Blend value of the Mosaic Operator parameter will be applied.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Mosaic Properties")]
-		public object BlendWidth { get; set; } = "10";
+		public object? BlendWidth { get; set; } = "10";
 
 		/// <summary>
 		/// <para>View Point Spacing X</para>
@@ -362,7 +362,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Mosaic Properties")]
-		public object ViewPointX { get; set; } = "600";
+		public object? ViewPointX { get; set; } = "600";
 
 		/// <summary>
 		/// <para>View Point Spacing Y</para>
@@ -372,7 +372,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Mosaic Properties")]
-		public object ViewPointY { get; set; } = "300";
+		public object? ViewPointY { get; set; } = "300";
 
 		/// <summary>
 		/// <para>Max Number Per Mosaic</para>
@@ -381,7 +381,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Mosaic Properties")]
-		public object MaxNumPerMosaic { get; set; } = "20";
+		public object? MaxNumPerMosaic { get; set; } = "20";
 
 		/// <summary>
 		/// <para>Cell Size Tolerance Factor</para>
@@ -391,7 +391,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Mosaic Properties")]
-		public object CellSizeTolerance { get; set; } = "0.8";
+		public object? CellSizeTolerance { get; set; } = "0.8";
 
 		/// <summary>
 		/// <para>Output Cell Size</para>
@@ -400,7 +400,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCellSizeXY()]
 		[Category("Mosaic Properties")]
-		public object CellSize { get; set; }
+		public object? CellSize { get; set; }
 
 		/// <summary>
 		/// <para>Metadata Level</para>
@@ -414,7 +414,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Catalog Item Properties")]
-		public object MetadataLevel { get; set; } = "FULL";
+		public object? MetadataLevel { get; set; } = "FULL";
 
 		/// <summary>
 		/// <para>Allowed Transmission Field</para>
@@ -436,7 +436,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[Category("Catalog Item Properties")]
-		public object TransmissionFields { get; set; }
+		public object? TransmissionFields { get; set; }
 
 		/// <summary>
 		/// <para>Use Time</para>
@@ -449,25 +449,25 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Catalog Item Properties")]
-		public object UseTime { get; set; } = "false";
+		public object? UseTime { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Start Time Field</para>
-		/// <para>The field from the attribute table that shows the start time.</para>
+		/// <para>The field in the attribute table that shows the start time.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Catalog Item Properties")]
-		public object StartTimeField { get; set; }
+		public object? StartTimeField { get; set; }
 
 		/// <summary>
 		/// <para>End Time Field</para>
-		/// <para>The field from the attribute table that shows the end time.</para>
+		/// <para>The field in the attribute table that shows the end time.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Catalog Item Properties")]
-		public object EndTimeField { get; set; }
+		public object? EndTimeField { get; set; }
 
 		/// <summary>
 		/// <para>Time Format</para>
@@ -490,7 +490,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Catalog Item Properties")]
-		public object TimeFormat { get; set; }
+		public object? TimeFormat { get; set; }
 
 		/// <summary>
 		/// <para>Geographic Transformation</para>
@@ -499,7 +499,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[Category("Catalog Item Properties")]
-		public object GeographicTransform { get; set; }
+		public object? GeographicTransform { get; set; }
 
 		/// <summary>
 		/// <para>Max Number of Download Items</para>
@@ -508,7 +508,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Catalog Item Properties")]
-		public object MaxNumOfDownloadItems { get; set; } = "20";
+		public object? MaxNumOfDownloadItems { get; set; } = "20";
 
 		/// <summary>
 		/// <para>Max Number of Records Returned</para>
@@ -517,7 +517,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Catalog Item Properties")]
-		public object MaxNumOfRecordsReturned { get; set; } = "1000";
+		public object? MaxNumOfRecordsReturned { get; set; } = "1000";
 
 		/// <summary>
 		/// <para>Data Source Type</para>
@@ -535,16 +535,16 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Image Properties")]
-		public object DataSourceType { get; set; } = "GENERIC";
+		public object? DataSourceType { get; set; } = "GENERIC";
 
 		/// <summary>
 		/// <para>Minimum Pixel Contribution</para>
-		/// <para>The minimum number of pixels required for a mosaic dataset item to be considered significant enough to be used in the mosaic dataset. Because of overlapping imagery, an item that may display only a small sliver of its overall image. Skipping these mosaic dataset items will improve performance of the mosaic dataset.</para>
+		/// <para>The minimum number of pixels required for a mosaic dataset item to be considered significant enough to be used in the mosaic dataset. Because of overlapping imagery, an item may display only a small sliver of its overall image. Skipping these mosaic dataset items will improve performance of the mosaic dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Catalog Item Properties")]
-		public object MinimumPixelContribution { get; set; } = "1";
+		public object? MinimumPixelContribution { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Processing Templates</para>
@@ -556,24 +556,23 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPMultiValue()]
 		[GPFileDomain()]
 		[Category("Image Properties")]
-		public object ProcessingTemplates { get; set; }
+		public object? ProcessingTemplates { get; set; }
 
 		/// <summary>
 		/// <para>Default Processing Template</para>
 		/// <para>The default function chain. The default function chain will be applied when the mosaic dataset is accessed.</para>
-		/// <para>None—No processing template.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Image Properties")]
-		public object DefaultProcessingTemplate { get; set; } = "None";
+		public object? DefaultProcessingTemplate { get; set; } = "None";
 
 		/// <summary>
 		/// <para>Updated Mosaic Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMosaicLayer()]
-		public object OutMosaicDataset { get; set; }
+		public object? OutMosaicDataset { get; set; }
 
 		/// <summary>
 		/// <para>Time Interval</para>
@@ -582,78 +581,80 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Catalog Item Properties")]
-		public object TimeInterval { get; set; }
+		public object? TimeInterval { get; set; }
 
 		/// <summary>
 		/// <para>Time Interval Units</para>
-		/// <para>Specifies the units of the time interval.</para>
-		/// <para>None—There are no time units or they are unknown.</para>
-		/// <para>Milliseconds—The time units are in milliseconds.</para>
-		/// <para>Seconds—The time units are in seconds.</para>
-		/// <para>Minutes—The time units are in minutes.</para>
-		/// <para>Hours—The time units are in hours.</para>
-		/// <para>Days—The time units are in days.</para>
-		/// <para>Weeks—The time units are in weeks.</para>
-		/// <para>Months—The time units are in months.</para>
-		/// <para>Years—The time units are in years.</para>
-		/// <para>Decades—The time units are in decades.</para>
-		/// <para>Centuries—The time units are in centuries.</para>
+		/// <para>Specifies the measurement unit that will be used for the time interval.</para>
+		/// <para>None—No time unit exists or it is unknown.</para>
+		/// <para>Milliseconds—The time unit will be milliseconds.</para>
+		/// <para>Seconds—The time unit will be seconds.</para>
+		/// <para>Minutes—The time unit will be minutes.</para>
+		/// <para>Hours—The time unit will be hours.</para>
+		/// <para>Days—The time unit will be days.</para>
+		/// <para>Weeks—The time unit will be weeks.</para>
+		/// <para>Months—The time unit will be months.</para>
+		/// <para>Years—The time unit will be years.</para>
+		/// <para>Decades—The time unit will be decades.</para>
+		/// <para>Centuries—The time unit will be centuries.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Catalog Item Properties")]
-		public object TimeIntervalUnits { get; set; }
+		public object? TimeIntervalUnits { get; set; }
 
 		/// <summary>
 		/// <para>Product Definition</para>
 		/// <para>Specifies a template that is either specific to the type of imagery you are working with or generic. The generic options include the standard supported raster sensor types as follows:</para>
 		/// <para>None—No band ordering is specified for the mosaic dataset. This is the default.</para>
-		/// <para>Natural color—Create a 3-band mosaic dataset, with red, green, and blue wavelength ranges. This is designed for natural color imagery.</para>
-		/// <para>Natural color and infrared—Create a 4-band mosaic dataset, with red, green, blue, and near infrared wavelength ranges.</para>
-		/// <para>U and V—Create a mosaic dataset displaying two variables.</para>
-		/// <para>Magnitude and Direction—Create a mosaic dataset displaying magnitude and direction.</para>
-		/// <para>Color infrared—Create a 3-band mosaic dataset, with near infrared, red, and green wavelength ranges.</para>
-		/// <para>DMCii—Create a 3-band mosaic dataset using the DMCii wavelength ranges.</para>
-		/// <para>Deimos-2—Create a 4-band mosaic dataset using the Deimos-2 wavelength ranges.</para>
-		/// <para>DubaiSat-2—Create a 4-band mosaic dataset using the DubaiSat-2 wavelength ranges.</para>
-		/// <para>FORMOSAT-2—Create a 4-band mosaic dataset using the FORMOSAT-2 wavelength ranges.</para>
-		/// <para>GeoEye-1—Create a 4-band mosaic dataset using the GeoEye-1 wavelength ranges.</para>
-		/// <para>GF-1 Panchromatic/Multispectral (PMS)—Create a 4-band mosaic dataset using the Gaofen-1 Panchromatic Multispectral Sensor wavelength ranges.</para>
-		/// <para>GF-1 Wide Field of View (WFV)—Create a 4-band mosaic dataset using the Gaofen-1 Wide Field of View Sensor wavelength ranges.</para>
-		/// <para>GF-2 Panchromatic/Multispectral (PMS)—Create a 4-band mosaic dataset using the Gaofen-2 Panchromatic Multispectral Sensor wavelength ranges.</para>
-		/// <para>GF-4 Panchromatic/Multispectral Imagery (PMI)—Create a 4-band mosaic dataset using the Gaofen-4 panchromatic and multispectral wavelength ranges.</para>
-		/// <para>HJ 1A/1B Multispectral/Hyperspectral—Create a 4-band mosaic dataset using the Huan Jing-1 CCD Multispectral or Hyperspectral Sensor wavelength ranges.</para>
-		/// <para>IKONOS—Create a 4-band mosaic dataset using the IKONOS wavelength ranges.</para>
-		/// <para>Jilin-1—Create a 3-band mosaic dataset using the Jilin-1 wavelength ranges.</para>
-		/// <para>KOMPSAT-2—Create a 4-band mosaic dataset using the KOMPSAT-2 wavelength ranges.</para>
-		/// <para>KOMPSAT-3—Create a 4-band mosaic dataset using the KOMPSAT-3 wavelength ranges.</para>
-		/// <para>Landsat TM and ETM+—Create a 6-band mosaic dataset using the Landsat 5 and 7 wavelength ranges from the TM and ETM+ sensors.</para>
-		/// <para>Landsat OLI—Create an 8-band mosaic dataset using the LANDSAT 8 wavelength ranges.</para>
-		/// <para>Landsat MSS—Create a 4-band mosaic dataset using the Landsat wavelength ranges from the MSS sensor.</para>
-		/// <para>PlanetScope—Create a mosaic dataset using the PlanetScope wavelength ranges.</para>
-		/// <para>Pleiades 1—Create a 4-band mosaic dataset using the PLEIADES-1 wavelength ranges.</para>
-		/// <para>QuickBird—Create a 4-band mosaic dataset using the QuickBird wavelength ranges.</para>
-		/// <para>RapidEye—Create a 5-band mosaic dataset using the RapidEye wavelength ranges.</para>
-		/// <para>Sentinel 2 MSI—Create a 13-band mosaic dataset using the Sentinel 2 MSI wavelength ranges.</para>
-		/// <para>SkySat-C—Create a 4-band mosaic dataset using the SkySat-C MSI wavelength ranges.</para>
-		/// <para>Spot 5—Create a 4-band mosaic dataset using the SPOT-5 wavelength ranges.</para>
-		/// <para>Spot 6—Create a 4-band mosaic dataset using the SPOT-6 wavelength ranges.</para>
-		/// <para>Spot 7—Create a 4-band mosaic dataset using the SPOT-7 wavelength ranges.</para>
-		/// <para>TH-01—Create a 4-band mosaic dataset using the Tian Hui-1 wavelength ranges.</para>
-		/// <para>WorldView 2—Create an 8-band mosaic dataset using the WorldView-2 wavelength ranges.</para>
-		/// <para>WorldView 3—Create an 8-band mosaic dataset using the WorldView-3 wavelength ranges.</para>
-		/// <para>WorldView 4—Create a 4-band mosaic dataset using the WorldView-4 wavelength ranges.</para>
-		/// <para>ZY-1 Panchromatic/Multispectral—Create a 3-band mosaic dataset using the ZiYuan-1 panchromatic/multispectral wavelength ranges.</para>
-		/// <para>ZY-3 CRESDA—Create a 4-band mosaic dataset using the ZiYuan-3 CRESDA wavelength ranges.</para>
-		/// <para>ZY3 SASMAC—Create a 4-band mosaic dataset using the ZiYuan-3 SASMAC wavelength ranges.</para>
-		/// <para>Custom—Define the number of bands and the average wavelength for each band.</para>
+		/// <para>Natural color—A 3-band mosaic dataset, with red, green, and blue wavelength ranges will be created. This is designed for natural color imagery.</para>
+		/// <para>Natural color and infrared—A 4-band mosaic dataset, with red, green, blue, and near infrared wavelength ranges will be created.</para>
+		/// <para>U and V—A mosaic dataset displaying two variables will be created.</para>
+		/// <para>Magnitude and Direction—A mosaic dataset displaying magnitude and direction will be created.</para>
+		/// <para>Color infrared—A 3-band mosaic dataset, with near infrared, red, and green wavelength ranges will be created.</para>
+		/// <para>DMCii—A 3-band mosaic dataset using the DMCii wavelength ranges will be created.</para>
+		/// <para>Deimos-2—A 4-band mosaic dataset using the Deimos-2 wavelength ranges will be created.</para>
+		/// <para>DubaiSat-2—A 4-band mosaic dataset using the DubaiSat-2 wavelength ranges will be created.</para>
+		/// <para>FORMOSAT-2—A 4-band mosaic dataset using the FORMOSAT-2 wavelength ranges will be created.</para>
+		/// <para>GeoEye-1—A 4-band mosaic dataset using the GeoEye-1 wavelength ranges will be created.</para>
+		/// <para>GF-1 Panchromatic/Multispectral (PMS)—A 4-band mosaic dataset using the Gaofen-1 Panchromatic Multispectral Sensor wavelength ranges will be created.</para>
+		/// <para>GF-1 Wide Field of View (WFV)—A 4-band mosaic dataset using the Gaofen-1 Wide Field of View Sensor wavelength ranges will be created.</para>
+		/// <para>GF-2 Panchromatic/Multispectral (PMS)—A 4-band mosaic dataset using the Gaofen-2 Panchromatic Multispectral Sensor wavelength ranges will be created.</para>
+		/// <para>GF-4 Panchromatic/Multispectral Imagery (PMI)—A 4-band mosaic dataset using the Gaofen-4 panchromatic and multispectral wavelength ranges will be created.</para>
+		/// <para>HJ 1A/1B Multispectral/Hyperspectral—A 4-band mosaic dataset using the Huan Jing-1 CCD Multispectral or Hyperspectral Sensor wavelength ranges will be created.</para>
+		/// <para>IKONOS—A 4-band mosaic dataset using the IKONOS wavelength ranges will be created.</para>
+		/// <para>Jilin-1—A 3-band mosaic dataset using the Jilin-1 wavelength ranges will be created.</para>
+		/// <para>KOMPSAT-2—A 4-band mosaic dataset using the KOMPSAT-2 wavelength ranges will be created.</para>
+		/// <para>KOMPSAT-3—A 4-band mosaic dataset using the KOMPSAT-3 wavelength ranges will be created.</para>
+		/// <para>Landsat TM and ETM+—A 6-band mosaic dataset using the Landsat 5 and 7 wavelength ranges from the TM and ETM+ sensors will be created.</para>
+		/// <para>Landsat OLI—An 8-band mosaic dataset using the LANDSAT 8 wavelength ranges will be created.</para>
+		/// <para>Landsat 9—An 8-band mosaic dataset using the LANDSAT 9 wavelength ranges will be created.</para>
+		/// <para>Landsat MSS—A 4-band mosaic dataset using the Landsat wavelength ranges from the MSS sensor will be created.</para>
+		/// <para>Pleiades 1—A 4-band mosaic dataset using the PLEIADES-1 wavelength ranges will be created.</para>
+		/// <para>Pleiades Neo—A 6-band mosaic dataset using the Pleiades Neo wavelength ranges will be created.</para>
+		/// <para>QuickBird—A 4-band mosaic dataset using the QuickBird wavelength ranges will be created.</para>
+		/// <para>RapidEye—A 5-band mosaic dataset using the RapidEye wavelength ranges will be created.</para>
+		/// <para>Sentinel 2 MSI—A 13-band mosaic dataset using the Sentinel 2 MSI wavelength ranges will be created.</para>
+		/// <para>SkySat-C—A 4-band mosaic dataset using the SkySat-C MSI wavelength ranges will be created.</para>
+		/// <para>SPOT-5—A 4-band mosaic dataset using the SPOT-5 wavelength ranges will be created.</para>
+		/// <para>SPOT-6—A 4-band mosaic dataset using the SPOT-6 wavelength ranges will be created.</para>
+		/// <para>SPOT-7—A 4-band mosaic dataset using the SPOT-7 wavelength ranges will be created.</para>
+		/// <para>SuperView-1—A 4-band mosaic dataset using the SuperView-1 wavelength ranges will be created.</para>
+		/// <para>TH-01—A 4-band mosaic dataset using the Tian Hui-1 wavelength ranges will be created.</para>
+		/// <para>WorldView-2—An 8-band mosaic dataset using the WorldView-2 wavelength ranges will be created.</para>
+		/// <para>WorldView-3—An 8-band mosaic dataset using the WorldView-3 wavelength ranges will be created.</para>
+		/// <para>WorldView-4—A 4-band mosaic dataset using the WorldView-4 wavelength ranges will be created.</para>
+		/// <para>ZY-1 Panchromatic/Multispectral—A 3-band mosaic dataset using the ZiYuan-1 panchromatic/multispectral wavelength ranges will be created.</para>
+		/// <para>ZY-3 CRESDA—A 4-band mosaic dataset using the ZiYuan-3 CRESDA wavelength ranges will be created.</para>
+		/// <para>ZY3 SASMAC—A 4-band mosaic dataset using the ZiYuan-3 SASMAC wavelength ranges will be created.</para>
+		/// <para>Custom—The number of bands and the average wavelength for each band are defined using the Product Band Definitions parameter (product_band_definitions in Python).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Mosaic Properties")]
-		public object ProductDefinition { get; set; } = "NONE";
+		public object? ProductDefinition { get; set; } = "NONE";
 
 		/// <summary>
 		/// <para>Product Band Definitions</para>
@@ -662,7 +663,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[Category("Mosaic Properties")]
-		public object ProductBandDefinitions { get; set; }
+		public object? ProductBandDefinitions { get; set; }
 
 		#region InnerClass
 
@@ -805,7 +806,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			FOOTPRINTS_MAY_CONTAIN_NODATA,
 
 			/// <summary>
-			/// <para>Unchecked—Pixels with NoData values will not be shown. You may notice an improvement in performance; however, if your imagery does include NoData values, they will appear as holes in the mosaic dataset.</para>
+			/// <para>Unchecked—Pixels with NoData values will not be shown. You may notice an improvement in performance; however, if the imagery does include NoData values, they will appear as holes in the mosaic dataset.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("FOOTPRINTS_DO_NOT_CONTAIN_NODATA")]

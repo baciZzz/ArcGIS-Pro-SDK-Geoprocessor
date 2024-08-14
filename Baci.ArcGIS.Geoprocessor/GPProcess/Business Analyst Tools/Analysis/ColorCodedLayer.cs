@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ClassificationVariable, OutLayerName, ClassificationMethod, NumberOfClasses, OutLayer };
+		public override object[] Parameters => new object[] { ClassificationVariable, OutLayerName, ClassificationMethod, NumberOfClasses, OutLayer! };
 
 		/// <summary>
 		/// <para>Classification Variable</para>
@@ -126,14 +126,14 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPGroupLayer()]
-		public object OutLayer { get; set; }
+		public object? OutLayer { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ColorCodedLayer SetEnviroment(object workspace = null )
+		public ColorCodedLayer SetEnviroment(object? baDataSource = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, workspace: workspace);
 			return this;
 		}
 

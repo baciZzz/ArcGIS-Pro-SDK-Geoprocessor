@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Country, DataCollection, Variables, BufferType, Distance, Unit, Collectionmemory };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Country, DataCollection, Variables!, BufferType!, Distance!, Unit!, Collectionmemory! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Variables { get; set; }
+		public object? Variables { get; set; }
 
 		/// <summary>
 		/// <para>Define areas to enrich</para>
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object BufferType { get; set; } = "STRAIGHT_LINE";
+		public object? BufferType { get; set; } = "STRAIGHT_LINE";
 
 		/// <summary>
 		/// <para>Distance or time</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Distance { get; set; } = "1";
+		public object? Distance { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Unit</para>
@@ -161,19 +161,19 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Unit { get; set; } = "MILES";
+		public object? Unit { get; set; } = "MILES";
 
 		/// <summary>
 		/// <para>Temporary data used for tool execution</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object Collectionmemory { get; set; }
+		public object? Collectionmemory { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EnrichLayer SetEnviroment(object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object outputZFlag = null , object outputZValue = null , object scratchWorkspace = null , object workspace = null )
+		public EnrichLayer SetEnviroment(object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? outputZFlag = null , double? outputZValue = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, outputZFlag: outputZFlag, outputZValue: outputZValue, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

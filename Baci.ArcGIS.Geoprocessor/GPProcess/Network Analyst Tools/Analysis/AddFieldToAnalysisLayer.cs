@@ -33,13 +33,13 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <param name="FieldType">
 		/// <para>Field Type</para>
 		/// <para>Specifies the field type that will be used in the creation of the new field.</para>
-		/// <para>Long (large integer)— Whole numbers between -2,147,483,648 and 2,147,483,647.</para>
-		/// <para>Text—Any string of characters.</para>
-		/// <para>Float (single precision)— Fractional numbers between -3.4E38 and 1.2E38.</para>
-		/// <para>Double (double precision)— Fractional numbers between -2.2E308 and 1.8E308.</para>
-		/// <para>Short (small integer)— Whole numbers between -32,768 and 32,767.</para>
-		/// <para>Date—Date and/or time.</para>
-		/// <para>Blob (binary data)—Long sequence of binary numbers. You need a custom loader or viewer or a third-party application to load items into a BLOB field or view the contents of a BLOB field.</para>
+		/// <para>Long (large integer)—The field type will be long. Long fields support whole numbers between -2,147,483,648 and 2,147,483,647.</para>
+		/// <para>Text—The field type will be text. Text fields support a string of characters.</para>
+		/// <para>Float (single precision)—The field type will be float. Float fields support fractional numbers between -3.4E38 and 1.2E38.</para>
+		/// <para>Double (double precision)—The field type will be double. Double fields support fractional numbers between -2.2E308 and 1.8E308.</para>
+		/// <para>Short (small integer)—The field type will be short. Short fields support whole numbers between -32,768 and 32,767.</para>
+		/// <para>Date—The field type will be date. Date fields support date and time values.</para>
+		/// <para>Blob (binary data)—The field type will be BLOB. BLOB fields support data stored as a long sequence of binary numbers. You need a custom loader or viewer or a third-party application to load items into a BLOB field or view the contents of a BLOB field.</para>
 		/// <para><see cref="FieldTypeEnum"/></para>
 		/// </param>
 		public AddFieldToAnalysisLayer(object InNetworkAnalysisLayer, object SubLayer, object FieldName, object FieldType)
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkAnalysisLayer, SubLayer, FieldName, FieldType, FieldPrecision, FieldScale, FieldLength, FieldAlias, FieldIsNullable, OutputLayer };
+		public override object[] Parameters => new object[] { InNetworkAnalysisLayer, SubLayer, FieldName, FieldType, FieldPrecision!, FieldScale!, FieldLength!, FieldAlias!, FieldIsNullable!, OutputLayer! };
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer</para>
@@ -113,13 +113,13 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Field Type</para>
 		/// <para>Specifies the field type that will be used in the creation of the new field.</para>
-		/// <para>Long (large integer)— Whole numbers between -2,147,483,648 and 2,147,483,647.</para>
-		/// <para>Text—Any string of characters.</para>
-		/// <para>Float (single precision)— Fractional numbers between -3.4E38 and 1.2E38.</para>
-		/// <para>Double (double precision)— Fractional numbers between -2.2E308 and 1.8E308.</para>
-		/// <para>Short (small integer)— Whole numbers between -32,768 and 32,767.</para>
-		/// <para>Date—Date and/or time.</para>
-		/// <para>Blob (binary data)—Long sequence of binary numbers. You need a custom loader or viewer or a third-party application to load items into a BLOB field or view the contents of a BLOB field.</para>
+		/// <para>Long (large integer)—The field type will be long. Long fields support whole numbers between -2,147,483,648 and 2,147,483,647.</para>
+		/// <para>Text—The field type will be text. Text fields support a string of characters.</para>
+		/// <para>Float (single precision)—The field type will be float. Float fields support fractional numbers between -3.4E38 and 1.2E38.</para>
+		/// <para>Double (double precision)—The field type will be double. Double fields support fractional numbers between -2.2E308 and 1.8E308.</para>
+		/// <para>Short (small integer)—The field type will be short. Short fields support whole numbers between -32,768 and 32,767.</para>
+		/// <para>Date—The field type will be date. Date fields support date and time values.</para>
+		/// <para>Blob (binary data)—The field type will be BLOB. BLOB fields support data stored as a long sequence of binary numbers. You need a custom loader or viewer or a third-party application to load items into a BLOB field or view the contents of a BLOB field.</para>
 		/// <para><see cref="FieldTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -134,55 +134,55 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object FieldPrecision { get; set; }
+		public object? FieldPrecision { get; set; }
 
 		/// <summary>
 		/// <para>Field Scale</para>
-		/// <para>The number of decimal places stored in a field. This parameter is only used in float and double data field types.</para>
+		/// <para>The number of decimal places stored in a field.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object FieldScale { get; set; }
+		public object? FieldScale { get; set; }
 
 		/// <summary>
 		/// <para>Field Length</para>
-		/// <para>The length of the field being added. This sets the maximum number of allowable characters for each record of the field. This parameter is only applicable to fields of type text.</para>
+		/// <para>The length of the field. This sets the maximum number of allowable characters for each record of the field.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object FieldLength { get; set; }
+		public object? FieldLength { get; set; }
 
 		/// <summary>
 		/// <para>Field Alias</para>
-		/// <para>The alternate name given to the field name. This name is used to describe cryptic field names. This parameter only applies to geodatabases.</para>
+		/// <para>The alternate name for the field name. This name is used to describe cryptic field names. This parameter only applies to geodatabases.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object FieldAlias { get; set; }
+		public object? FieldAlias { get; set; }
 
 		/// <summary>
 		/// <para>Field IsNullable</para>
 		/// <para>Specifies whether the field can contain null values. Null values are different from zero or empty fields and are only supported for fields in a geodatabase.</para>
-		/// <para>Checked—The field will allow null values. This is the default.</para>
-		/// <para>Unchecked—The field will not allow null values.</para>
+		/// <para>Checked—The field can contain null values. This is the default.</para>
+		/// <para>Unchecked—The field cannot contain null values.</para>
 		/// <para><see cref="FieldIsNullableEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object FieldIsNullable { get; set; } = "true";
+		public object? FieldIsNullable { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Updated Input Sublayer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPNALayer()]
-		public object OutputLayer { get; set; }
+		public object? OutputLayer { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddFieldToAnalysisLayer SetEnviroment(object workspace = null )
+		public AddFieldToAnalysisLayer SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -196,14 +196,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum FieldTypeEnum 
 		{
 			/// <summary>
-			/// <para>Text—Any string of characters.</para>
+			/// <para>Text—The field type will be text. Text fields support a string of characters.</para>
 			/// </summary>
 			[GPValue("TEXT")]
 			[Description("Text")]
 			Text,
 
 			/// <summary>
-			/// <para>Float (single precision)— Fractional numbers between -3.4E38 and 1.2E38.</para>
+			/// <para>Float (single precision)—The field type will be float. Float fields support fractional numbers between -3.4E38 and 1.2E38.</para>
 			/// </summary>
 			[GPValue("FLOAT")]
 			[Description("Float (single precision)")]
@@ -217,28 +217,28 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 			DOUBLE,
 
 			/// <summary>
-			/// <para>Short (small integer)— Whole numbers between -32,768 and 32,767.</para>
+			/// <para>Short (small integer)—The field type will be short. Short fields support whole numbers between -32,768 and 32,767.</para>
 			/// </summary>
 			[GPValue("SHORT")]
 			[Description("Short (small integer)")]
 			SHORT,
 
 			/// <summary>
-			/// <para>Long (large integer)— Whole numbers between -2,147,483,648 and 2,147,483,647.</para>
+			/// <para>Long (large integer)—The field type will be long. Long fields support whole numbers between -2,147,483,648 and 2,147,483,647.</para>
 			/// </summary>
 			[GPValue("LONG")]
 			[Description("Long (large integer)")]
 			LONG,
 
 			/// <summary>
-			/// <para>Date—Date and/or time.</para>
+			/// <para>Date—The field type will be date. Date fields support date and time values.</para>
 			/// </summary>
 			[GPValue("DATE")]
 			[Description("Date")]
 			Date,
 
 			/// <summary>
-			/// <para>Blob (binary data)—Long sequence of binary numbers. You need a custom loader or viewer or a third-party application to load items into a BLOB field or view the contents of a BLOB field.</para>
+			/// <para>Blob (binary data)—The field type will be BLOB. BLOB fields support data stored as a long sequence of binary numbers. You need a custom loader or viewer or a third-party application to load items into a BLOB field or view the contents of a BLOB field.</para>
 			/// </summary>
 			[GPValue("BLOB")]
 			[Description("Blob (binary data)")]
@@ -252,14 +252,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum FieldIsNullableEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The field will allow null values. This is the default.</para>
+			/// <para>Checked—The field can contain null values. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("NULLABLE")]
 			NULLABLE,
 
 			/// <summary>
-			/// <para>Unchecked—The field will not allow null values.</para>
+			/// <para>Unchecked—The field cannot contain null values.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NON_NULLABLE")]

@@ -94,9 +94,9 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateTargetGroup SetEnviroment(object workspace = null )
+		public CreateTargetGroup SetEnviroment(object? baDataSource = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, workspace: workspace);
 			return this;
 		}
 

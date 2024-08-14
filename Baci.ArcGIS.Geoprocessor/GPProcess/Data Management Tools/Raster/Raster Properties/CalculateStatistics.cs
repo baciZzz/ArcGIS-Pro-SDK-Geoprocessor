@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasterDataset, XSkipFactor, YSkipFactor, IgnoreValues, SkipExisting, AreaOfInterest, OutRaster };
+		public override object[] Parameters => new object[] { InRasterDataset, XSkipFactor!, YSkipFactor!, IgnoreValues!, SkipExisting!, AreaOfInterest!, OutRaster! };
 
 		/// <summary>
 		/// <para>Input Raster Dataset</para>
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object XSkipFactor { get; set; }
+		public object? XSkipFactor { get; set; }
 
 		/// <summary>
 		/// <para>Y Skip Factor</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object YSkipFactor { get; set; }
+		public object? YSkipFactor { get; set; }
 
 		/// <summary>
 		/// <para>Ignore Values</para>
@@ -99,19 +99,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object IgnoreValues { get; set; }
+		public object? IgnoreValues { get; set; }
 
 		/// <summary>
 		/// <para>Skip Existing</para>
-		/// <para>Specify whether to calculate statistics only where they are missing or regenerate them even if they exist.</para>
-		/// <para>Unchecked—Statistics will be calculated even if they already exist; therefore, existing statistics will be overwritten. This is the default.</para>
+		/// <para>Specifies whether statistics will be calculated only where they are missing or will be regenerated even if they exist.</para>
+		/// <para>Unchecked—Statistics will be calculated even if they already exist, and existing statistics will be overwritten. This is the default.</para>
 		/// <para>Checked—Statistics will only be calculated if they do not already exist.</para>
 		/// <para><see cref="SkipExistingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SkipExisting { get; set; } = "false";
+		public object? SkipExisting { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Area of Interest</para>
@@ -119,19 +119,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
-		public object AreaOfInterest { get; set; }
+		public object? AreaOfInterest { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Raster Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DERasterDataset()]
-		public object OutRaster { get; set; }
+		public object? OutRaster { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateStatistics SetEnviroment(object rasterStatistics = null , object scratchWorkspace = null , object workspace = null )
+		public CalculateStatistics SetEnviroment(object? rasterStatistics = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(rasterStatistics: rasterStatistics, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			SKIP_EXISTING,
 
 			/// <summary>
-			/// <para>Unchecked—Statistics will be calculated even if they already exist; therefore, existing statistics will be overwritten. This is the default.</para>
+			/// <para>Unchecked—Statistics will be calculated even if they already exist, and existing statistics will be overwritten. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("OVERWRITE")]

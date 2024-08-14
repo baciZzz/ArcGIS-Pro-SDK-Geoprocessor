@@ -92,12 +92,12 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutFeatureClass, XOrLonField, MajorField, MinorField, InCoordinateFormat, DistanceUnits, YOrLatField, AzimuthField, AzimuthUnits, CoordinateSystem };
+		public override object[] Parameters => new object[] { InTable, OutFeatureClass, XOrLonField, MajorField, MinorField, InCoordinateFormat, DistanceUnits!, YOrLatField!, AzimuthField!, AzimuthUnits!, CoordinateSystem! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -175,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Units Options")]
-		public object DistanceUnits { get; set; } = "METERS";
+		public object? DistanceUnits { get; set; } = "METERS";
 
 		/// <summary>
 		/// <para>Y Field (latitude)</para>
@@ -184,7 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
-		public object YOrLatField { get; set; }
+		public object? YOrLatField { get; set; }
 
 		/// <summary>
 		/// <para>Azimuth Field</para>
@@ -192,7 +192,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
-		public object AzimuthField { get; set; }
+		public object? AzimuthField { get; set; }
 
 		/// <summary>
 		/// <para>Azimuth Units</para>
@@ -207,7 +207,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Units Options")]
-		public object AzimuthUnits { get; set; } = "DEGREES";
+		public object? AzimuthUnits { get; set; } = "DEGREES";
 
 		/// <summary>
 		/// <para>Output Coordinate System</para>
@@ -215,14 +215,14 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
-		public object CoordinateSystem { get; set; }
+		public object? CoordinateSystem { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CoordinateTableToEllipse SetEnviroment(object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public CoordinateTableToEllipse SetEnviroment(object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
-			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
+			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
 		}
 

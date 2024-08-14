@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurface, OutFeatureClass, Units, ClassBreaksTable, SlopeField, ZFactor, PyramidLevelResolution };
+		public override object[] Parameters => new object[] { InSurface, OutFeatureClass, Units!, ClassBreaksTable!, SlopeField!, ZFactor!, PyramidLevelResolution! };
 
 		/// <summary>
 		/// <para>Input Surface</para>
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Units { get; set; } = "PERCENT";
+		public object? Units { get; set; } = "PERCENT";
 
 		/// <summary>
 		/// <para>Class Breaks Table</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object ClassBreaksTable { get; set; }
+		public object? ClassBreaksTable { get; set; }
 
 		/// <summary>
 		/// <para>Slope Field</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object SlopeField { get; set; } = "SlopeCode";
+		public object? SlopeField { get; set; } = "SlopeCode";
 
 		/// <summary>
 		/// <para>Z Factor</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ZFactor { get; set; } = "1";
+		public object? ZFactor { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Pyramid Level Resolution</para>
@@ -125,12 +125,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object PyramidLevelResolution { get; set; } = "0";
+		public object? PyramidLevelResolution { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SurfaceSlope SetEnviroment(object XYDomain = null , object XYResolution = null , object XYTolerance = null , int? autoCommit = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object terrainMemoryUsage = null , object workspace = null )
+		public SurfaceSlope SetEnviroment(object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , int? autoCommit = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , bool? terrainMemoryUsage = null , object? workspace = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, terrainMemoryUsage: terrainMemoryUsage, workspace: workspace);
 			return this;

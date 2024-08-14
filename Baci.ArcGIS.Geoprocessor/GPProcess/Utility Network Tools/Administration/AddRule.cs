@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, RuleType, FromClass, FromAssetgroup, FromAssettype, ToClass, ToAssetgroup, ToAssettype, FromTerminal, ToTerminal, ViaClass, ViaAssetgroup, ViaAssettype, ViaTerminal, OutUtilityNetwork };
+		public override object[] Parameters => new object[] { InUtilityNetwork, RuleType, FromClass, FromAssetgroup, FromAssettype, ToClass, ToAssetgroup, ToAssettype, FromTerminal!, ToTerminal!, ViaClass!, ViaAssetgroup!, ViaAssettype!, ViaTerminal!, OutUtilityNetwork! };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
@@ -189,7 +189,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object FromTerminal { get; set; }
+		public object? FromTerminal { get; set; }
 
 		/// <summary>
 		/// <para>To Terminal</para>
@@ -198,7 +198,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ToTerminal { get; set; }
+		public object? ToTerminal { get; set; }
 
 		/// <summary>
 		/// <para>Via Table</para>
@@ -206,7 +206,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ViaClass { get; set; }
+		public object? ViaClass { get; set; }
 
 		/// <summary>
 		/// <para>Via Asset Group</para>
@@ -214,7 +214,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ViaAssetgroup { get; set; }
+		public object? ViaAssetgroup { get; set; }
 
 		/// <summary>
 		/// <para>Via Asset Type</para>
@@ -222,7 +222,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ViaAssettype { get; set; }
+		public object? ViaAssettype { get; set; }
 
 		/// <summary>
 		/// <para>Via Terminal</para>
@@ -230,14 +230,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ViaTerminal { get; set; }
+		public object? ViaTerminal { get; set; }
 
 		/// <summary>
 		/// <para>Updated Utility Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEUtilityNetwork()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		#region InnerClass
 

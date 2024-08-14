@@ -11,8 +11,10 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Table To Table</para>
-	/// <para>Exports the rows of a table, table view, feature layer, feature class, or raster with attribute table to a new geodatabase, .csv, .txt, or .dbf table.</para>
+	/// <para>Exports the rows of a table   to a different table.</para>
+	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.ConversionTools.ExportTable"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
+	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.ConversionTools.ExportTable))]
 	public class TableToTable : AbstractGPProcess
 	{
 		/// <summary>
@@ -66,12 +68,12 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "extent", "maintainAttachments", "qualifiedFieldNames", "scratchWorkspace", "transferDomains", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "configKeyword", "extent", "maintainAttachments", "preserveGlobalIds", "qualifiedFieldNames", "scratchWorkspace", "transferDomains", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRows, OutPath, OutName, WhereClause, FieldMapping, ConfigKeyword, OutTable };
+		public override object[] Parameters => new object[] { InRows, OutPath, OutName, WhereClause!, FieldMapping!, ConfigKeyword!, OutTable! };
 
 		/// <summary>
 		/// <para>Input Rows</para>
@@ -100,15 +102,15 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>An SQL expression used to select a subset of records.</para>
+		/// <para>An SQL expression that will be used to select a subset of records.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Field Map</para>
-		/// <para>Controls which attribute fields will be in the output. By default, all fields from the inputs will be included.</para>
+		/// <para>The attribute fields that will be in the output with the corresponding field properties and source fields. By default, all fields from the inputs will be included.</para>
 		/// <para>Fields can be added, deleted, renamed, and reordered, and you can change their properties.</para>
 		/// <para>Merge rules allow you to specify how values from two or more input fields are merged or combined into a single output value. There are several merge rules you can use to determine how the output field will be populated with values.</para>
 		/// <para>First—Use the input fields&apos; first value.</para>
@@ -126,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFieldMapping()]
 		[Category("Fields")]
-		public object FieldMapping { get; set; }
+		public object? FieldMapping { get; set; }
 
 		/// <summary>
 		/// <para>Config Keyword</para>
@@ -136,21 +138,21 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Geodatabase Settings (optional)")]
-		public object ConfigKeyword { get; set; }
+		public object? ConfigKeyword { get; set; }
 
 		/// <summary>
 		/// <para>Output Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETable()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TableToTable SetEnviroment(object configKeyword = null , object extent = null , bool? qualifiedFieldNames = null , object scratchWorkspace = null , bool? transferDomains = null , object workspace = null )
+		public TableToTable SetEnviroment(object? configKeyword = null , object? extent = null , bool? maintainAttachments = null , bool? preserveGlobalIds = null , bool? qualifiedFieldNames = null , object? scratchWorkspace = null , bool? transferDomains = null , object? workspace = null )
 		{
-			base.SetEnv(configKeyword: configKeyword, extent: extent, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, transferDomains: transferDomains, workspace: workspace);
+			base.SetEnv(configKeyword: configKeyword, extent: extent, maintainAttachments: maintainAttachments, preserveGlobalIds: preserveGlobalIds, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, transferDomains: transferDomains, workspace: workspace);
 			return this;
 		}
 

@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, UniqueIDField, OutputSpatialWeightsMatrixFile, InputNetwork, ImpedanceAttribute, ImpedanceCutoff, MaximumNumberOfNeighbors, Barriers, UTurnPolicy, Restrictions, UseHierarchyInAnalysis, SearchTolerance, ConceptualizationOfSpatialRelationships, Exponent, RowStandardization, TravelMode, TimeOfDay };
+		public override object[] Parameters => new object[] { InputFeatureClass, UniqueIDField, OutputSpatialWeightsMatrixFile, InputNetwork, ImpedanceAttribute, ImpedanceCutoff!, MaximumNumberOfNeighbors!, Barriers!, UTurnPolicy!, Restrictions!, UseHierarchyInAnalysis!, SearchTolerance!, ConceptualizationOfSpatialRelationships!, Exponent!, RowStandardization!, TravelMode!, TimeOfDay! };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Network Analysis Options")]
-		public object ImpedanceCutoff { get; set; }
+		public object? ImpedanceCutoff { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Number of Neighbors</para>
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Network Analysis Options")]
-		public object MaximumNumberOfNeighbors { get; set; }
+		public object? MaximumNumberOfNeighbors { get; set; }
 
 		/// <summary>
 		/// <para>Barriers</para>
@@ -155,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
 		[Category("Network Analysis Options")]
-		public object Barriers { get; set; }
+		public object? Barriers { get; set; }
 
 		/// <summary>
 		/// <para>U-turn Policy</para>
@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Custom Travel Mode Options")]
-		public object UTurnPolicy { get; set; } = "ALLOW_UTURNS";
+		public object? UTurnPolicy { get; set; } = "ALLOW_UTURNS";
 
 		/// <summary>
 		/// <para>Restrictions</para>
@@ -180,7 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Custom Travel Mode Options")]
-		public object Restrictions { get; set; }
+		public object? Restrictions { get; set; }
 
 		/// <summary>
 		/// <para>Use Hierarchy in Analysis</para>
@@ -193,7 +193,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Custom Travel Mode Options")]
-		public object UseHierarchyInAnalysis { get; set; } = "false";
+		public object? UseHierarchyInAnalysis { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Search Tolerance</para>
@@ -202,7 +202,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Network Analysis Options")]
-		public object SearchTolerance { get; set; } = "5000 Meters";
+		public object? SearchTolerance { get; set; } = "5000 Meters";
 
 		/// <summary>
 		/// <para>Conceptualization of Spatial Relationships</para>
@@ -215,7 +215,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Weights Options")]
-		public object ConceptualizationOfSpatialRelationships { get; set; } = "INVERSE";
+		public object? ConceptualizationOfSpatialRelationships { get; set; } = "INVERSE";
 
 		/// <summary>
 		/// <para>Exponent</para>
@@ -224,7 +224,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Weights Options")]
-		public object Exponent { get; set; } = "1";
+		public object? Exponent { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Row Standardization</para>
@@ -237,7 +237,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Weights Options")]
-		public object RowStandardization { get; set; } = "true";
+		public object? RowStandardization { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Travel Mode</para>
@@ -247,7 +247,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TravelMode { get; set; }
+		public object? TravelMode { get; set; }
 
 		/// <summary>
 		/// <para>Time of Day</para>
@@ -256,12 +256,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Network Analysis Options")]
-		public object TimeOfDay { get; set; }
+		public object? TimeOfDay { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateNetworkSpatialWeights SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public GenerateNetworkSpatialWeights SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

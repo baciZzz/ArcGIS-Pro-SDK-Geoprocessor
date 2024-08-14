@@ -30,7 +30,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <param name="Outputtablename">
 		/// <para>Output Table Name</para>
 		/// <para>The name of the output table.</para>
-		/// <para>If the table already exists, you will be prompted to provide another name.</para>
+		/// <para>If it&apos;s an existing table, you will be prompted to provide another name.</para>
 		/// </param>
 		/// <param name="Zonefield">
 		/// <para>Zone Field</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputzonerasterorfeatures, Inputvalueraster, Outputtablename, Zonefield, Ignorenodata, Statistictype, Percentilevalues, Processasmultidimensional, Outputtable, Percentileinterpolationtype };
+		public override object[] Parameters => new object[] { Inputzonerasterorfeatures, Inputvalueraster, Outputtablename, Zonefield, Ignorenodata!, Statistictype!, Percentilevalues!, Processasmultidimensional!, Outputtable!, Percentileinterpolationtype!, Circularcalculation!, Circularwrapvalue! };
 
 		/// <summary>
 		/// <para>Input Zone Raster or Features</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Output Table Name</para>
 		/// <para>The name of the output table.</para>
-		/// <para>If the table already exists, you will be prompted to provide another name.</para>
+		/// <para>If it&apos;s an existing table, you will be prompted to provide another name.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public object Zonefield { get; set; }
 
 		/// <summary>
-		/// <para>Ignore Nodata</para>
+		/// <para>Ignore NoData in Calculations</para>
 		/// <para>Specifies whether NoData values in the value input will be ignored in the results of the zone that they fall within.</para>
 		/// <para>Checked—Within any particular zone, only cells that have a value in the input value raster will be used in determining the output value for that zone. NoData cells in the value raster will be ignored in the statistic calculation. This is the default.</para>
 		/// <para>Unchecked—Within any particular zone, if NoData cells exist in the value raster, they will not be ignored and their existence indicates that there is insufficient information to perform statistical calculations for all the cells in that zone. Consequently, the entire zone will receive the NoData value on the output raster.</para>
@@ -127,11 +127,11 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Ignorenodata { get; set; } = "false";
+		public object? Ignorenodata { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Statistic Type</para>
-		/// <para>Specifies the statistic type to calculate.</para>
+		/// <para>Specifies the statistic type that will be calculated.</para>
 		/// <para>The available options when the value raster is integer are All, Mean, Majority, Maximum, Median, Minimum, Minority, Percentile, Range, Standard deviation, Sum, Variety, Minimum and Maximum, Mean and Standard deviation, and Minimum, Maximum and Mean.</para>
 		/// <para>If the value raster is float, the options are All, Mean, Maximum, Median, Percentile, Minimum, Range, Standard deviation, and Sum.</para>
 		/// <para>All—All of the statistics will be calculated for an integer type value raster. All statistics except Median and Percentile will be calculated for a floating-point type value raster. This is the default.</para>
@@ -153,17 +153,17 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Statistictype { get; set; } = "ALL";
+		public object? Statistictype { get; set; } = "ALL";
 
 		/// <summary>
 		/// <para>Percentile Values</para>
-		/// <para>The percentile to calculate. The default is 90, indicating the 90th percentile.</para>
+		/// <para>The percentile that will be calculated. The default is 90, indicating the 90th percentile.</para>
 		/// <para>The values can range from 0 to 100. The 0th percentile is essentially equivalent to the minimum statistic, and the 100th percentile is equivalent to maximum. A value of 50 will produce essentially the same result as the median statistic.</para>
-		/// <para>This option is only available if the Statistic Type parameter is set to Percentile or All.</para>
+		/// <para>This parameter is only available while calculating percentile.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Percentilevalues { get; set; } = "90";
+		public object? Percentilevalues { get; set; } = "90";
 
 		/// <summary>
 		/// <para>Process as Multidimensional</para>
@@ -175,32 +175,53 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Processasmultidimensional { get; set; } = "false";
+		public object? Processasmultidimensional { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
-		public object Outputtable { get; set; }
+		public object? Outputtable { get; set; }
 
 		/// <summary>
 		/// <para>Percentile Interpolation Type</para>
-		/// <para>Specifies the method of percentile interpolation to be used when the number of values from the input raster to be calculated are even.</para>
-		/// <para>Auto-detect—If the input value raster is of integer pixel type, the Nearest method is used. If the input value raster is of floating point pixel type, the Linear method is used. This is the default.</para>
-		/// <para>Nearest—The nearest available value to the desired percentile is used.</para>
-		/// <para>Linear—The weighted average of the two surrounding values from the desired percentile is used.</para>
+		/// <para>Specifies the method of interpolation that will be used when the percentile value falls between two cell values from the input value raster.</para>
+		/// <para>Auto-detect—If the input value raster is of integer pixel type, the Nearest method will be used. If the input value raster is of floating-point pixel type, the Linear method used. This is the default.</para>
+		/// <para>Nearest—The nearest available value to the desired percentile will be used.</para>
+		/// <para>Linear—The weighted average of the two surrounding values from the desired percentile will be used.</para>
 		/// <para><see cref="PercentileinterpolationtypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Percentileinterpolationtype { get; set; } = "AUTO_DETECT";
+		public object? Percentileinterpolationtype { get; set; } = "AUTO_DETECT";
+
+		/// <summary>
+		/// <para>Calculate Circular Statistics</para>
+		/// <para>Specifies how the statistics type will be calculated.</para>
+		/// <para>Unchecked—Arithmetic statistics will be calculated. This is the default.</para>
+		/// <para>Checked—Circular statistics that are appropriate for cyclic quantities will be calculated, such as compass direction in degrees, daytimes, and fractional parts of real numbers.</para>
+		/// <para><see cref="CircularcalculationEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		public object? Circularcalculation { get; set; } = "false";
+
+		/// <summary>
+		/// <para>Circular Wrap Value</para>
+		/// <para>The highest possible value (upper bound) in the cyclic data. It is a positive number, with a default value of 360. This value also represents the same quantity as the lowest possible value (lower bound).</para>
+		/// <para>This parameter is only applicable when circular statistics are calculated.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPDouble()]
+		public object? Circularwrapvalue { get; set; } = "360";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ZonalStatisticsAsTable SetEnviroment(object cellSize = null , object extent = null , object mask = null , object outputCoordinateSystem = null , object snapRaster = null )
+		public ZonalStatisticsAsTable SetEnviroment(object? cellSize = null , object? extent = null , object? mask = null , object? outputCoordinateSystem = null , object? snapRaster = null )
 		{
 			base.SetEnv(cellSize: cellSize, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, snapRaster: snapRaster);
 			return this;
@@ -209,7 +230,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		#region InnerClass
 
 		/// <summary>
-		/// <para>Ignore Nodata</para>
+		/// <para>Ignore NoData in Calculations</para>
 		/// </summary>
 		public enum IgnorenodataEnum 
 		{
@@ -217,15 +238,15 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 			/// <para>Checked—Within any particular zone, only cells that have a value in the input value raster will be used in determining the output value for that zone. NoData cells in the value raster will be ignored in the statistic calculation. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
-			[Description("NODATA")]
-			NODATA,
+			[Description("DATA")]
+			DATA,
 
 			/// <summary>
 			/// <para>Unchecked—Within any particular zone, if NoData cells exist in the value raster, they will not be ignored and their existence indicates that there is insufficient information to perform statistical calculations for all the cells in that zone. Consequently, the entire zone will receive the NoData value on the output raster.</para>
 			/// </summary>
 			[GPValue("false")]
-			[Description("DATA")]
-			DATA,
+			[Description("NODATA")]
+			NODATA,
 
 		}
 
@@ -256,25 +277,46 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public enum PercentileinterpolationtypeEnum 
 		{
 			/// <summary>
-			/// <para>Auto-detect—If the input value raster is of integer pixel type, the Nearest method is used. If the input value raster is of floating point pixel type, the Linear method is used. This is the default.</para>
+			/// <para>Auto-detect—If the input value raster is of integer pixel type, the Nearest method will be used. If the input value raster is of floating-point pixel type, the Linear method used. This is the default.</para>
 			/// </summary>
 			[GPValue("AUTO_DETECT")]
 			[Description("Auto-detect")]
 			AUTO_DETECT,
 
 			/// <summary>
-			/// <para>Nearest—The nearest available value to the desired percentile is used.</para>
+			/// <para>Nearest—The nearest available value to the desired percentile will be used.</para>
 			/// </summary>
 			[GPValue("NEAREST")]
 			[Description("Nearest")]
 			Nearest,
 
 			/// <summary>
-			/// <para>Linear—The weighted average of the two surrounding values from the desired percentile is used.</para>
+			/// <para>Linear—The weighted average of the two surrounding values from the desired percentile will be used.</para>
 			/// </summary>
 			[GPValue("LINEAR")]
 			[Description("Linear")]
 			Linear,
+
+		}
+
+		/// <summary>
+		/// <para>Calculate Circular Statistics</para>
+		/// </summary>
+		public enum CircularcalculationEnum 
+		{
+			/// <summary>
+			/// <para>Checked—Circular statistics that are appropriate for cyclic quantities will be calculated, such as compass direction in degrees, daytimes, and fractional parts of real numbers.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("CIRCULAR")]
+			CIRCULAR,
+
+			/// <summary>
+			/// <para>Unchecked—Arithmetic statistics will be calculated. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("ARITHMETIC")]
+			ARITHMETIC,
 
 		}
 

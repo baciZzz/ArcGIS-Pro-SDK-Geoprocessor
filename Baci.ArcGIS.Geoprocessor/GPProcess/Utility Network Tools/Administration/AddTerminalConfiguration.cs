@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TerminalConfigurationName, TraversabilityModel, TerminalsDirectional, TerminalsBidirectional, ValidPaths, DefaultPath, OutUtilityNetwork };
+		public override object[] Parameters => new object[] { InUtilityNetwork, TerminalConfigurationName, TraversabilityModel, TerminalsDirectional!, TerminalsBidirectional!, ValidPaths!, DefaultPath!, OutUtilityNetwork! };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object TerminalsDirectional { get; set; }
+		public object? TerminalsDirectional { get; set; }
 
 		/// <summary>
 		/// <para>Terminals</para>
@@ -121,11 +121,11 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object TerminalsBidirectional { get; set; }
+		public object? TerminalsBidirectional { get; set; }
 
 		/// <summary>
 		/// <para>Valid Path(s)</para>
-		/// <para>The name or names and valid path or paths for the terminal configuration. For bidirectional traversability, this parameter is required if you have three or more terminals. If you are using directional traversability, one of the terminals must be upstream to have valid configurations. Valid paths must be created to indicate which path or paths in a device or junction object are valid for a resource to travel through. Provide a name for each valid path as well as a value.</para>
+		/// <para>The name or names and valid path or paths for the terminal configuration. For bidirectional traversability, this parameter is required if you have three or four terminals. If you are using directional traversability, one of the terminals must be upstream to have valid configurations. Valid paths must be created to indicate which path or paths in a device or junction object are valid for a resource to travel through. Provide a name for each valid path as well as a value.</para>
 		/// <para>Name—The name of the valid path.</para>
 		/// <para>Value—The value of the valid path.</para>
 		/// <para>All—Enter a value of All to create an option that indicates all paths are valid.</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object ValidPaths { get; set; }
+		public object? ValidPaths { get; set; }
 
 		/// <summary>
 		/// <para>Default Path</para>
@@ -147,14 +147,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DefaultPath { get; set; }
+		public object? DefaultPath { get; set; }
 
 		/// <summary>
 		/// <para>Updated Utility Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEUtilityNetwork()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		#region InnerClass
 

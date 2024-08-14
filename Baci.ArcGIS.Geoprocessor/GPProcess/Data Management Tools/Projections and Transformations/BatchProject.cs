@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClassOrDataset, OutputWorkspace, OutputCoordinateSystem, TemplateDataset, Transformation, DerivedOutput };
+		public override object[] Parameters => new object[] { InputFeatureClassOrDataset, OutputWorkspace, OutputCoordinateSystem!, TemplateDataset!, Transformation!, DerivedOutput! };
 
 		/// <summary>
 		/// <para>Input Feature Class or Dataset</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
-		public object OutputCoordinateSystem { get; set; }
+		public object? OutputCoordinateSystem { get; set; }
 
 		/// <summary>
 		/// <para>Template dataset</para>
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEGeoDatasetType()]
-		public object TemplateDataset { get; set; }
+		public object? TemplateDataset { get; set; }
 
 		/// <summary>
 		/// <para>Transformation</para>
@@ -105,19 +105,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Transformation { get; set; }
+		public object? Transformation { get; set; }
 
 		/// <summary>
 		/// <para>Updated Output Workspace</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object DerivedOutput { get; set; }
+		public object? DerivedOutput { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BatchProject SetEnviroment(object XYResolution = null , object XYTolerance = null , object scratchWorkspace = null , object workspace = null )
+		public BatchProject SetEnviroment(object? XYResolution = null , object? XYTolerance = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(XYResolution: XYResolution, XYTolerance: XYTolerance, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

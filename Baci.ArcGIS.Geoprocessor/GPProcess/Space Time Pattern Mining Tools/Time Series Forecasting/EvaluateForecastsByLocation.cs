@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCubes, OutputFeatures, OutputCube, EvaluateUsingValidationResults };
+		public override object[] Parameters => new object[] { InCubes, OutputFeatures, OutputCube!, EvaluateUsingValidationResults! };
 
 		/// <summary>
 		/// <para>Input Forecast Space Time Cubes</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object OutputCube { get; set; }
+		public object? OutputCube { get; set; }
 
 		/// <summary>
 		/// <para>Evaluate Using Validation Results</para>
@@ -103,12 +103,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object EvaluateUsingValidationResults { get; set; } = "true";
+		public object? EvaluateUsingValidationResults { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EvaluateForecastsByLocation SetEnviroment(object outputCoordinateSystem = null , object workspace = null )
+		public EvaluateForecastsByLocation SetEnviroment(object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

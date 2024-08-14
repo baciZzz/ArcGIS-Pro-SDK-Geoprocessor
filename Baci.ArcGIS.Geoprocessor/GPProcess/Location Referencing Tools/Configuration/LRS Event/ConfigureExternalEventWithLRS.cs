@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InEvent, ParentNetwork, EventName, EventIdField, RouteIdField, MeasureField, GeometryType, ToMeasureField, FromDateField, ToDateField, EventSpansRoutes, ToRouteIdField, StoreRouteName, RouteNameField, ToRouteNameField, CalibrateRule, RetireRule, ExtendRule, ReassignRule, RealignRule, OutExternalEventTable };
+		public override object[] Parameters => new object[] { InEvent, ParentNetwork, EventName, EventIdField, RouteIdField, MeasureField, GeometryType!, ToMeasureField!, FromDateField!, ToDateField!, EventSpansRoutes!, ToRouteIdField!, StoreRouteName!, RouteNameField!, ToRouteNameField!, CalibrateRule!, RetireRule!, ExtendRule!, ReassignRule!, RealignRule!, OutExternalEventTable!, ReverseRule!, CartoRealignRule! };
 
 		/// <summary>
 		/// <para>Input Event</para>
@@ -149,16 +149,16 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object GeometryType { get; set; } = "POINT";
+		public object? GeometryType { get; set; } = "POINT";
 
 		/// <summary>
 		/// <para>To Measure Field</para>
-		/// <para>The name of the to measure field. A field is only required for line events.</para>
+		/// <para>The name of the to measure field. This field is only required for line events.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ToMeasureField { get; set; }
+		public object? ToMeasureField { get; set; }
 
 		/// <summary>
 		/// <para>From Date Field</para>
@@ -167,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object FromDateField { get; set; }
+		public object? FromDateField { get; set; }
 
 		/// <summary>
 		/// <para>To Date Field</para>
@@ -176,7 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ToDateField { get; set; }
+		public object? ToDateField { get; set; }
 
 		/// <summary>
 		/// <para>Event Spans Routes</para>
@@ -189,7 +189,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object EventSpansRoutes { get; set; } = "AS_IS";
+		public object? EventSpansRoutes { get; set; } = "AS_IS";
 
 		/// <summary>
 		/// <para>To Route ID Field</para>
@@ -198,7 +198,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ToRouteIdField { get; set; }
+		public object? ToRouteIdField { get; set; }
 
 		/// <summary>
 		/// <para>Store Route Name</para>
@@ -211,7 +211,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object StoreRouteName { get; set; } = "AS_IS";
+		public object? StoreRouteName { get; set; } = "AS_IS";
 
 		/// <summary>
 		/// <para>Route Name Field</para>
@@ -220,7 +220,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object RouteNameField { get; set; }
+		public object? RouteNameField { get; set; }
 
 		/// <summary>
 		/// <para>To Route Name Field</para>
@@ -229,7 +229,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ToRouteNameField { get; set; }
+		public object? ToRouteNameField { get; set; }
 
 		/// <summary>
 		/// <para>Calibrate Rule</para>
@@ -243,7 +243,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Behavior Rules")]
-		public object CalibrateRule { get; set; } = "STAY_PUT";
+		public object? CalibrateRule { get; set; } = "STAY_PUT";
 
 		/// <summary>
 		/// <para>Retire Rule</para>
@@ -257,7 +257,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Behavior Rules")]
-		public object RetireRule { get; set; } = "STAY_PUT";
+		public object? RetireRule { get; set; } = "STAY_PUT";
 
 		/// <summary>
 		/// <para>Extend Rule</para>
@@ -265,13 +265,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <para>Stay put— The geographic location of the event will be preserved; measures may change. This is the default.</para>
 		/// <para>Retire— Both measure and geographic location will be preserved; the event will be retired.</para>
 		/// <para>Move— The measures of the event will be preserved; the geographic location may change.</para>
+		/// <para>Cover—The geometric location and measure of a line event will be modified to include a new or newly modified section.</para>
 		/// <para><see cref="ExtendRuleEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Behavior Rules")]
-		public object ExtendRule { get; set; } = "STAY_PUT";
+		public object? ExtendRule { get; set; } = "STAY_PUT";
 
 		/// <summary>
 		/// <para>Reassign Rule</para>
@@ -286,7 +287,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Behavior Rules")]
-		public object ReassignRule { get; set; } = "STAY_PUT";
+		public object? ReassignRule { get; set; } = "STAY_PUT";
 
 		/// <summary>
 		/// <para>Realign Rule</para>
@@ -294,20 +295,48 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <para>Stay put— The geographic location of the event will be preserved; measures may change. This is the default.</para>
 		/// <para>Retire— Both measure and geographic location will be preserved; the event will be retired.</para>
 		/// <para>Move— The measures of the event will be preserved; the geographic location may change.</para>
+		/// <para>Snap—The geographic location of an event will be preserved by snapping the event to a concurrent route; measures may change.</para>
+		/// <para>Cover—The geometric location and measure of a line event will be modified to include a new or newly modified section.</para>
 		/// <para><see cref="RealignRuleEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Behavior Rules")]
-		public object RealignRule { get; set; } = "STAY_PUT";
+		public object? RealignRule { get; set; } = "STAY_PUT";
 
 		/// <summary>
 		/// <para>Output External Event Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETable()]
-		public object OutExternalEventTable { get; set; }
+		public object? OutExternalEventTable { get; set; }
+
+		/// <summary>
+		/// <para>Reverse Rule</para>
+		/// <para>Specifies the event behavior rule for the reverse activity.</para>
+		/// <para>Stay put— The geographic location of the event will be preserved; measures may change. This is the default.</para>
+		/// <para>Retire— Both measure and geographic location will be preserved; the event will be retired.</para>
+		/// <para>Move— The measures of the event will be preserved; the geographic location may change.</para>
+		/// <para><see cref="ReverseRuleEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		[GPCodedValueDomain()]
+		[Category("Behavior Rules")]
+		public object? ReverseRule { get; set; } = "STAY_PUT";
+
+		/// <summary>
+		/// <para>Carto Realign Rule</para>
+		/// <para>Specifies the event behavior rule for the cartographic realign activity.</para>
+		/// <para>Honor Route Measure—The measure of the event will be preserved or changed proportionally to the route&apos;s measure change. This is the default.</para>
+		/// <para><see cref="CartoRealignRuleEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		[GPCodedValueDomain()]
+		[Category("Behavior Rules")]
+		public object? CartoRealignRule { get; set; } = "HONOR_ROUTE_MEASURE";
 
 		#region InnerClass
 
@@ -470,6 +499,13 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 			[Description("Move")]
 			Move,
 
+			/// <summary>
+			/// <para>Cover—The geometric location and measure of a line event will be modified to include a new or newly modified section.</para>
+			/// </summary>
+			[GPValue("COVER")]
+			[Description("Cover")]
+			Cover,
+
 		}
 
 		/// <summary>
@@ -532,6 +568,62 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 			[GPValue("MOVE")]
 			[Description("Move")]
 			Move,
+
+			/// <summary>
+			/// <para>Snap—The geographic location of an event will be preserved by snapping the event to a concurrent route; measures may change.</para>
+			/// </summary>
+			[GPValue("SNAP")]
+			[Description("Snap")]
+			Snap,
+
+			/// <summary>
+			/// <para>Cover—The geometric location and measure of a line event will be modified to include a new or newly modified section.</para>
+			/// </summary>
+			[GPValue("COVER")]
+			[Description("Cover")]
+			Cover,
+
+		}
+
+		/// <summary>
+		/// <para>Reverse Rule</para>
+		/// </summary>
+		public enum ReverseRuleEnum 
+		{
+			/// <summary>
+			/// <para>Stay put— The geographic location of the event will be preserved; measures may change. This is the default.</para>
+			/// </summary>
+			[GPValue("STAY_PUT")]
+			[Description("Stay put")]
+			Stay_put,
+
+			/// <summary>
+			/// <para>Retire— Both measure and geographic location will be preserved; the event will be retired.</para>
+			/// </summary>
+			[GPValue("RETIRE")]
+			[Description("Retire")]
+			Retire,
+
+			/// <summary>
+			/// <para>Move— The measures of the event will be preserved; the geographic location may change.</para>
+			/// </summary>
+			[GPValue("MOVE")]
+			[Description("Move")]
+			Move,
+
+		}
+
+		/// <summary>
+		/// <para>Carto Realign Rule</para>
+		/// </summary>
+		public enum CartoRealignRuleEnum 
+		{
+			/// <summary>
+			/// <para>Honor Route Measure—The measure of the event will be preserved or changed proportionally to the route&apos;s measure change. This is the default.</para>
+			/// </summary>
+			[GPValue("HONOR_ROUTE_MEASURE")]
+			[Description("Honor Route Measure")]
+			Honor_Route_Measure,
 
 		}
 

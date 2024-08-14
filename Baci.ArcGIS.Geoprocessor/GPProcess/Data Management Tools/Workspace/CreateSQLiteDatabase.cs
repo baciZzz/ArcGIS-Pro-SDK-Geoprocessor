@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutDatabaseName, SpatialType };
+		public override object[] Parameters => new object[] { OutDatabaseName, SpatialType! };
 
 		/// <summary>
 		/// <para>Output Database Name</para>
@@ -85,12 +85,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SpatialType { get; set; } = "ST_GEOMETRY";
+		public object? SpatialType { get; set; } = "ST_GEOMETRY";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateSQLiteDatabase SetEnviroment(object workspace = null )
+		public CreateSQLiteDatabase SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

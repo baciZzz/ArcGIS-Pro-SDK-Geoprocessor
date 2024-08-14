@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Compute Confusion Matrix</para>
-	/// <para>Computes a confusion matrix with errors of omission and commission and derives a kappa index of agreement and an overall accuracy between the classified map and the reference data.</para>
+	/// <para>Computes a confusion matrix with errors of omission and commission and derives a kappa index of agreement, Intersection over Union (IoU),  and an overall accuracy between the classified map and the reference data.</para>
 	/// </summary>
 	public class ComputeConfusionMatrix : AbstractGPProcess
 	{
@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InAccuracyAssessmentPoints">
 		/// <para>Input Accuracy Assessment Points</para>
-		/// <para>The accuracy assessment point feature class, created from the Create Accuracy Assessment Points tool, containing the CLASSIFIED and GROUND_TRUTH fields.</para>
+		/// <para>The accuracy assessment point feature class created from the Create Accuracy Assessment Points tool, containing the Classified and GrndTruth fields. The Classified and GrndTruth fields are both long integer field types.</para>
 		/// </param>
 		/// <param name="OutConfusionMatrix">
 		/// <para>Output Confusion Matrix</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input Accuracy Assessment Points</para>
-		/// <para>The accuracy assessment point feature class, created from the Create Accuracy Assessment Points tool, containing the CLASSIFIED and GROUND_TRUTH fields.</para>
+		/// <para>The accuracy assessment point feature class created from the Create Accuracy Assessment Points tool, containing the Classified and GrndTruth fields. The Classified and GrndTruth fields are both long integer field types.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]

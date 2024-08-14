@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutPath, OutName, Template, ConfigKeyword, OutTable };
+		public override object[] Parameters => new object[] { OutPath, OutName, Template!, ConfigKeyword!, OutTable! };
 
 		/// <summary>
 		/// <para>Table Location</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Template { get; set; }
+		public object? Template { get; set; }
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
@@ -99,19 +99,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ConfigKeyword { get; set; }
+		public object? ConfigKeyword { get; set; }
 
 		/// <summary>
 		/// <para>Output Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETable()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateUnRegisteredTable SetEnviroment(object configKeyword = null , object workspace = null )
+		public CreateUnRegisteredTable SetEnviroment(object? configKeyword = null , object? workspace = null )
 		{
 			base.SetEnv(configKeyword: configKeyword, workspace: workspace);
 			return this;

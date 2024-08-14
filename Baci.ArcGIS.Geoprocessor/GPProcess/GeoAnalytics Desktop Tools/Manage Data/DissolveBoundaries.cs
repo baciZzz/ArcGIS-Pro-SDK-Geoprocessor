@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutFeatureClass, Multipart, DissolveFields, Fields, SummaryFields };
+		public override object[] Parameters => new object[] { InputLayer, OutFeatureClass, Multipart!, DissolveFields!, Fields!, SummaryFields! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Multipart { get; set; } = "false";
+		public object? Multipart { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Dissolve by Field Value(s)</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DissolveFields { get; set; }
+		public object? DissolveFields { get; set; }
 
 		/// <summary>
 		/// <para>Dissolve Field(s)</para>
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
-		public object Fields { get; set; }
+		public object? Fields { get; set; }
 
 		/// <summary>
 		/// <para>Summary Fields</para>
@@ -133,12 +133,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object SummaryFields { get; set; }
+		public object? SummaryFields { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DissolveBoundaries SetEnviroment(object extent = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object workspace = null )
+		public DissolveBoundaries SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;

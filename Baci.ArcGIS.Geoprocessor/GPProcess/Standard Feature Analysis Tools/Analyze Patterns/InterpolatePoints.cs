@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputlayer, Outputname, Field, Interpolateoption, Outputpredictionerror, Classificationtype, Numclasses, Classbreaks, Boundingpolygonlayer, Predictatpointlayer, Outputlayer, Outputpredictionerrorlayer, Outputpredictedpointslayer };
+		public override object[] Parameters => new object[] { Inputlayer, Outputname, Field!, Interpolateoption!, Outputpredictionerror!, Classificationtype!, Numclasses!, Classbreaks!, Boundingpolygonlayer!, Predictatpointlayer!, Outputlayer!, Outputpredictionerrorlayer!, Outputpredictedpointslayer! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object Field { get; set; }
+		public object? Field { get; set; }
 
 		/// <summary>
 		/// <para>Interpolate Option</para>
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Interpolateoption { get; set; } = "5";
+		public object? Interpolateoption { get; set; } = "5";
 
 		/// <summary>
 		/// <para>Output prediction error</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Outputpredictionerror { get; set; } = "false";
+		public object? Outputpredictionerror { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Classification Type</para>
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Additional Options")]
-		public object Classificationtype { get; set; } = "GEOMETRICINTERVAL";
+		public object? Classificationtype { get; set; } = "GEOMETRICINTERVAL";
 
 		/// <summary>
 		/// <para>Number of Classes</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Additional Options")]
-		public object Numclasses { get; set; } = "10";
+		public object? Numclasses { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Class Breaks</para>
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[Category("Additional Options")]
-		public object Classbreaks { get; set; }
+		public object? Classbreaks { get; set; }
 
 		/// <summary>
 		/// <para>Bounding Polygons</para>
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
 		[Category("Additional Options")]
-		public object Boundingpolygonlayer { get; set; }
+		public object? Boundingpolygonlayer { get; set; }
 
 		/// <summary>
 		/// <para>Predict At Point Layer</para>
@@ -170,33 +170,33 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
 		[Category("Additional Options")]
-		public object Predictatpointlayer { get; set; }
+		public object? Predictatpointlayer { get; set; }
 
 		/// <summary>
 		/// <para>Output Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Outputlayer { get; set; }
+		public object? Outputlayer { get; set; }
 
 		/// <summary>
 		/// <para>Output Prediction Error Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Outputpredictionerrorlayer { get; set; }
+		public object? Outputpredictionerrorlayer { get; set; }
 
 		/// <summary>
 		/// <para>Output Predicted Points Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Outputpredictedpointslayer { get; set; }
+		public object? Outputpredictedpointslayer { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public InterpolatePoints SetEnviroment(object extent = null )
+		public InterpolatePoints SetEnviroment(object? extent = null )
 		{
 			base.SetEnv(extent: extent);
 			return this;

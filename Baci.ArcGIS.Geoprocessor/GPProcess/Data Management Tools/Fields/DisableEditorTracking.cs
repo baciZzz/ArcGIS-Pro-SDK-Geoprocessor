@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, Creator, CreationDate, LastEditor, LastEditDate, OutDataset };
+		public override object[] Parameters => new object[] { InDataset, Creator!, CreationDate!, LastEditor!, LastEditDate!, OutDataset! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Creator { get; set; } = "true";
+		public object? Creator { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Disable Creation Date Tracking</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CreationDate { get; set; } = "true";
+		public object? CreationDate { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Disable Last Editor Tracking</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object LastEditor { get; set; } = "true";
+		public object? LastEditor { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Disable Last Edit Date Tracking</para>
@@ -118,14 +118,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object LastEditDate { get; set; } = "true";
+		public object? LastEditDate { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Updated Input Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEDatasetType()]
-		public object OutDataset { get; set; }
+		public object? OutDataset { get; set; }
 
 		#region InnerClass
 

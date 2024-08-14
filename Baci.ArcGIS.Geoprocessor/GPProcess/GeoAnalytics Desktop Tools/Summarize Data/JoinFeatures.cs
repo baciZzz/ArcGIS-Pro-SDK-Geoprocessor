@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetLayer, JoinLayer, Output, JoinOperation, SpatialRelationship, SpatialNearDistance, TemporalRelationship, TemporalNearDistance, AttributeRelationship, SummaryFields, JoinCondition, KeepAllTargetFeatures };
+		public override object[] Parameters => new object[] { TargetLayer, JoinLayer, Output, JoinOperation, SpatialRelationship!, SpatialNearDistance!, TemporalRelationship!, TemporalNearDistance!, AttributeRelationship!, SummaryFields!, JoinCondition!, KeepAllTargetFeatures! };
 
 		/// <summary>
 		/// <para>Target Layer</para>
@@ -133,17 +133,16 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SpatialRelationship { get; set; }
+		public object? SpatialRelationship { get; set; }
 
 		/// <summary>
 		/// <para>Spatial Near Distance</para>
 		/// <para>The distance from a target feature within which join features will be considered for the spatial join. A search radius is only valid when the Spatial Relationship parameter value is Planar Near or Geodesic Near.</para>
-		/// <para><see cref="SpatialNearDistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object SpatialNearDistance { get; set; }
+		[GPUnitDomain()]
+		public object? SpatialNearDistance { get; set; }
 
 		/// <summary>
 		/// <para>Temporal Relationship</para>
@@ -167,17 +166,16 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TemporalRelationship { get; set; }
+		public object? TemporalRelationship { get; set; }
 
 		/// <summary>
 		/// <para>Temporal Near Distance</para>
 		/// <para>The distance in time from a target feature within which join features will be considered for the spatial join. A time is only valid when the Temporal Relationship parameter value is Near, Near Before, or Near After and both features are time enabled.</para>
-		/// <para><see cref="TemporalNearDistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
-		public object TemporalNearDistance { get; set; }
+		[GPUnitDomain()]
+		public object? TemporalNearDistance { get; set; }
 
 		/// <summary>
 		/// <para>Attribute Relationship</para>
@@ -188,7 +186,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object AttributeRelationship { get; set; }
+		public object? AttributeRelationship { get; set; }
 
 		/// <summary>
 		/// <para>Summary Fields</para>
@@ -197,7 +195,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object SummaryFields { get; set; }
+		public object? SummaryFields { get; set; }
 
 		/// <summary>
 		/// <para>Join Condition</para>
@@ -207,7 +205,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Advanced Options")]
-		public object JoinCondition { get; set; }
+		public object? JoinCondition { get; set; }
 
 		/// <summary>
 		/// <para>Keep All Target Features</para>
@@ -219,12 +217,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object KeepAllTargetFeatures { get; set; }
+		public object? KeepAllTargetFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public JoinFeatures SetEnviroment(object extent = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object workspace = null )
+		public JoinFeatures SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;
@@ -320,118 +318,6 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 			[GPValue("NEAR_GEODESIC")]
 			[Description("Geodesic Near")]
 			Geodesic_Near,
-
-		}
-
-		/// <summary>
-		/// <para>Spatial Near Distance</para>
-		/// </summary>
-		public enum SpatialNearDistanceEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("NauticalMiles")]
-			[Description("NauticalMiles")]
-			NauticalMiles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-		}
-
-		/// <summary>
-		/// <para>Temporal Near Distance</para>
-		/// </summary>
-		public enum TemporalNearDistanceEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Milliseconds")]
-			[Description("Milliseconds")]
-			Milliseconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Seconds")]
-			[Description("Seconds")]
-			Seconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Days")]
-			[Description("Days")]
-			Days,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Weeks")]
-			[Description("Weeks")]
-			Weeks,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Months")]
-			[Description("Months")]
-			Months,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Years")]
-			[Description("Years")]
-			Years,
 
 		}
 

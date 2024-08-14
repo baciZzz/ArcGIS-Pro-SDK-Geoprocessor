@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPolygons, OutFeatureClass, Method, NumAreas, TargetArea, TargetWidth, SplitAngle, SubdivisionType };
+		public override object[] Parameters => new object[] { InPolygons, OutFeatureClass, Method, NumAreas!, TargetArea!, TargetWidth!, SplitAngle!, SubdivisionType! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object NumAreas { get; set; }
+		public object? NumAreas { get; set; }
 
 		/// <summary>
 		/// <para>Target Area</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPArealUnit()]
-		public object TargetArea { get; set; }
+		public object? TargetArea { get; set; }
 
 		/// <summary>
 		/// <para>RESERVED</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[GPNumericDomain()]
-		public object TargetWidth { get; set; }
+		public object? TargetWidth { get; set; }
 
 		/// <summary>
 		/// <para>Split Angle</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object SplitAngle { get; set; } = "0";
+		public object? SplitAngle { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Subdivision Type</para>
@@ -148,12 +148,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SubdivisionType { get; set; } = "STRIPS";
+		public object? SubdivisionType { get; set; } = "STRIPS";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SubdividePolygon SetEnviroment(object parallelProcessingFactor = null )
+		public SubdividePolygon SetEnviroment(object? parallelProcessingFactor = null )
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

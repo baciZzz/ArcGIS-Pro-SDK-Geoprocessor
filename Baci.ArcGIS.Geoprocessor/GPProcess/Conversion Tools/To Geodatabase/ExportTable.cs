@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutTable, WhereClause!, UseFieldAliasAsName!, FieldMapping!, SortField };
+		public override object[] Parameters => new object[] { InTable, OutTable, WhereClause!, UseFieldAliasAsName!, FieldMapping!, SortField! };
 
 		/// <summary>
 		/// <para>Input Table</para>

@@ -40,12 +40,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <param name="SpatialSearchDistance">
 		/// <para>Spatial Search Distance</para>
 		/// <para>The maximum distance between two points to be considered in proximity. Features within the spatial search distance and temporal search distance criteria are considered to be in proximity of each other.</para>
-		/// <para><see cref="SpatialSearchDistanceEnum"/></para>
 		/// </param>
 		/// <param name="TemporalSearchDistance">
 		/// <para>Temporal Search Distance</para>
 		/// <para>The maximum duration between two points to be considered in proximity. Features within the temporal search distance and that meet the spatial search distance criteria are considered to be in proximity of each other.</para>
-		/// <para><see cref="TemporalSearchDistanceEnum"/></para>
 		/// </param>
 		/// <param name="EntitiesOfInterestInputType">
 		/// <para>Define Entities of Interest Using</para>
@@ -98,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPoints, EntityIdField, OutputName, DistanceMethod, SpatialSearchDistance, TemporalSearchDistance, EntitiesOfInterestInputType, EntitiesInterestIds, EntitiesInterestLayer, IncludeTracksLayer, MaxTraceDepth, AttributeMatchCriteria, DataStore, Output, TracksLayer };
+		public override object[] Parameters => new object[] { InPoints, EntityIdField, OutputName, DistanceMethod, SpatialSearchDistance, TemporalSearchDistance, EntitiesOfInterestInputType, EntitiesInterestIds!, EntitiesInterestLayer!, IncludeTracksLayer!, MaxTraceDepth!, AttributeMatchCriteria!, DataStore!, Output!, TracksLayer! };
 
 		/// <summary>
 		/// <para>Input Points</para>
@@ -141,21 +139,19 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Spatial Search Distance</para>
 		/// <para>The maximum distance between two points to be considered in proximity. Features within the spatial search distance and temporal search distance criteria are considered to be in proximity of each other.</para>
-		/// <para><see cref="SpatialSearchDistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
+		[GPUnitDomain()]
 		public object SpatialSearchDistance { get; set; }
 
 		/// <summary>
 		/// <para>Temporal Search Distance</para>
 		/// <para>The maximum duration between two points to be considered in proximity. Features within the temporal search distance and that meet the spatial search distance criteria are considered to be in proximity of each other.</para>
-		/// <para><see cref="TemporalSearchDistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
+		[GPUnitDomain()]
 		public object TemporalSearchDistance { get; set; }
 
 		/// <summary>
@@ -179,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object EntitiesInterestIds { get; set; }
+		public object? EntitiesInterestIds { get; set; }
 
 		/// <summary>
 		/// <para>Entities of Interest Layer</para>
@@ -188,7 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRecordSet()]
 		[GPTablesDomain()]
-		public object EntitiesInterestLayer { get; set; }
+		public object? EntitiesInterestLayer { get; set; }
 
 		/// <summary>
 		/// <para>Output Tracks</para>
@@ -201,7 +197,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Additional Outputs")]
-		public object IncludeTracksLayer { get; set; } = "false";
+		public object? IncludeTracksLayer { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Maximum Trace Depth</para>
@@ -210,7 +206,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Advanced Options")]
-		public object MaxTraceDepth { get; set; }
+		public object? MaxTraceDepth { get; set; }
 
 		/// <summary>
 		/// <para>Attribute Match Criteria</para>
@@ -220,7 +216,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPMultiValue()]
 		[GPFieldDomain()]
 		[Category("Advanced Options")]
-		public object AttributeMatchCriteria { get; set; }
+		public object? AttributeMatchCriteria { get; set; }
 
 		/// <summary>
 		/// <para>Data Store</para>
@@ -233,26 +229,26 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Data Store")]
-		public object DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
+		public object? DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
 
 		/// <summary>
 		/// <para>Output Proximity Events</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object Output { get; set; }
+		public object? Output { get; set; }
 
 		/// <summary>
 		/// <para>Output Tracks</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object TracksLayer { get; set; }
+		public object? TracksLayer { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TraceProximityEvents SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public TraceProximityEvents SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;
@@ -278,118 +274,6 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 			[GPValue("GEODESIC")]
 			[Description("Geodesic")]
 			Geodesic,
-
-		}
-
-		/// <summary>
-		/// <para>Spatial Search Distance</para>
-		/// </summary>
-		public enum SpatialSearchDistanceEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("NauticalMiles")]
-			[Description("NauticalMiles")]
-			NauticalMiles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-		}
-
-		/// <summary>
-		/// <para>Temporal Search Distance</para>
-		/// </summary>
-		public enum TemporalSearchDistanceEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Milliseconds")]
-			[Description("Milliseconds")]
-			Milliseconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Seconds")]
-			[Description("Seconds")]
-			Seconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Days")]
-			[Description("Days")]
-			Days,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Weeks")]
-			[Description("Weeks")]
-			Weeks,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Months")]
-			[Description("Months")]
-			Months,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Years")]
-			[Description("Years")]
-			Years,
 
 		}
 

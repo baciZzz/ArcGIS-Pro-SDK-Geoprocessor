@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Analyze Airport Features</para>
-	/// <para>Analyzes specified point features around an airfield to find and record information such as distance from a given runway centerline or the end of the nearest runway, and the designation for that nearest runway.</para>
+	/// <para>Analyzes specified point features around an airfield to find and record information such as distance from a given runway centerline or the end of the nearest runway and its designation.</para>
 	/// </summary>
 	public class AnalyzeAirportFeatures : AbstractGPProcess
 	{
@@ -19,8 +19,8 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <para>Constructor that takes all required parameters for geoprocessor execution.</para>
 		/// </summary>
 		/// <param name="InFeatures">
-		/// <para>Input Features</para>
-		/// <para>The input point features that will be analyzed and recorded, in terms of their physical relationships to features in the other inputs.</para>
+		/// <para>Input Analysis Features</para>
+		/// <para>The input point features that will be analyzed and recorded in terms of their physical relationships to features in the other inputs.</para>
 		/// </param>
 		/// <param name="InRunwayFeatures">
 		/// <para>Input Runway Features</para>
@@ -28,7 +28,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
-		/// <para>The output table, with a row for each input airport feature, containing the analytical results.</para>
+		/// <para>The output table, with a row for each input airport feature, containing the analyzed results. The EGL and MSL columns will no longer be output.</para>
 		/// </param>
 		public AnalyzeAirportFeatures(object InFeatures, object InRunwayFeatures, object OutTable)
 		{
@@ -70,11 +70,11 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InRunwayFeatures, OutTable, InFeaturesHeight, InFeaturesHeightUnit, RunwayEndFeatures, AirportRefPointFeatures, RefPointHeight, RefPointHeightUnit };
+		public override object[] Parameters => new object[] { InFeatures, InRunwayFeatures, OutTable, InFeaturesHeight!, InFeaturesHeightUnit!, RunwayEndFeatures!, AirportRefPointFeatures!, RefPointHeight!, RefPointHeightUnit!, InOutHorizontalUnit! };
 
 		/// <summary>
-		/// <para>Input Features</para>
-		/// <para>The input point features that will be analyzed and recorded, in terms of their physical relationships to features in the other inputs.</para>
+		/// <para>Input Analysis Features</para>
+		/// <para>The input point features that will be analyzed and recorded in terms of their physical relationships to features in the other inputs.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -92,93 +92,113 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>The output table, with a row for each input airport feature, containing the analytical results.</para>
+		/// <para>The output table, with a row for each input airport feature, containing the analyzed results. The EGL and MSL columns will no longer be output.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
 		public object OutTable { get; set; }
 
 		/// <summary>
-		/// <para>Input Features Height</para>
-		/// <para>The name of a field in the input airport features dataset. The specified field must contain numeric values. The values in this field will be used to identify the height of each input airport feature.</para>
+		/// <para>Input Analysis Features Height</para>
+		/// <para>Specifies the name of a field in the input airport features dataset. The specified field must contain numeric values. The values in this field will be used to identify the height of each input airport feature. If the SHAPE_Z value is chosen as the location of the height, the Input Analysis Features Height Unit parameter value will be ignored.</para>
 		/// <para>SHAPE_Z—Height values will be derived from the z-values of the input point features. This is the default.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object InFeaturesHeight { get; set; } = "SHAPE_Z";
+		public object? InFeaturesHeight { get; set; } = "SHAPE_Z";
 
 		/// <summary>
-		/// <para>Input Features Height Unit</para>
-		/// <para>Specifies the linear unit of measure that will be used when the Input Features Height parameter is specified.</para>
-		/// <para>Kilometers—Kilometers</para>
-		/// <para>Meters—Meters</para>
-		/// <para>Decimeters—Decimeters</para>
-		/// <para>Centimeters—Centimeters</para>
-		/// <para>Millimeters—Millimeters</para>
-		/// <para>Nautical Miles—Nautical miles</para>
-		/// <para>Miles—Miles</para>
-		/// <para>Yards—Yards</para>
-		/// <para>Feet—Feet</para>
-		/// <para>Inches—Inches</para>
-		/// <para>Decimal Degrees—Decimal degrees</para>
-		/// <para>Points—Points</para>
-		/// <para>Unknown—Unknown</para>
+		/// <para>Input Analysis Features Height Unit</para>
+		/// <para>Specifies the linear unit of measure that will be used when the Input Analysis Features Height parameter value is specified.</para>
+		/// <para>Kilometers—The unit will be kilometers.</para>
+		/// <para>Meters—The unit will be meters.</para>
+		/// <para>Decimeters—The unit will be decimeters.</para>
+		/// <para>Centimeters—The unit will be centimeters.</para>
+		/// <para>Millimeters—The unit will be millimeters.</para>
+		/// <para>Nautical Miles—The unit will be nautical miles.</para>
+		/// <para>Miles—The unit will be miles.</para>
+		/// <para>Yards—The unit will be yards.</para>
+		/// <para>Feet—The unit will be feet.</para>
+		/// <para>Inches—The unit will be inches.</para>
+		/// <para>Decimal Degrees—The unit will be decimal degrees.</para>
+		/// <para>Points—The unit will be points.</para>
+		/// <para>Unknown—The unit will be unknown.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object InFeaturesHeightUnit { get; set; } = "METERS";
+		public object? InFeaturesHeightUnit { get; set; } = "METERS";
 
 		/// <summary>
 		/// <para>Runway End Features</para>
-		/// <para>The input runway end point features associated with the runways in the Input Features Height Unit parameter that represent the thresholds of those runways.</para>
+		/// <para>The input runway end point features associated with the runways in the Input Runway Features parameter that represent the thresholds of those runways.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object RunwayEndFeatures { get; set; }
+		public object? RunwayEndFeatures { get; set; }
 
 		/// <summary>
-		/// <para>Airport Reference Point Features</para>
-		/// <para>The input airport reference point features that define the center point of an airport, located at the geometric center of all the usable runways and computed as a weighted average of the end of runway coordinates.</para>
+		/// <para>Airport Control Point Features</para>
+		/// <para>The input airport control point features that contain the runway threshold points. The runway threshold points will be identified by searching for the POINTTYPE attribute equal to DISPLACED_THRESHOLD, and the attribute RUNWAYENDD equal to the runway end designator.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object AirportRefPointFeatures { get; set; }
+		public object? AirportRefPointFeatures { get; set; }
 
 		/// <summary>
-		/// <para>Airport Reference Point Height</para>
-		/// <para>The name of a field in the input airport reference point features dataset. The specified field must contain numeric values. The values in this field will be used to identify the height of each input airport reference point feature.</para>
-		/// <para>SHAPE_Z—The z-value of each point. This is the default.</para>
+		/// <para>Airport Control Point Elevation</para>
+		/// <para>Specifies the name of a field in the input airport reference point features dataset. The specified field must contain numeric values. The values in this field will be used to identify the height of each input airport reference point feature. If SHAPE_Z is chosen as the location of the height, the Airport Control Point Elevation Unit parameter value will be ignored.</para>
+		/// <para>SHAPE_Z—The z-value of each point will be used. This is the default.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object RefPointHeight { get; set; } = "SHAPE_Z";
+		public object? RefPointHeight { get; set; } = "SHAPE_Z";
 
 		/// <summary>
-		/// <para>Airport Reference Point Height Unit</para>
-		/// <para>The linear unit of measure that will be used when the airport reference point height is specified.</para>
-		/// <para>Kilometers—Kilometers</para>
-		/// <para>Meters—Meters</para>
-		/// <para>Decimeters—Decimeters</para>
-		/// <para>Centimeters—Centimeters</para>
-		/// <para>Millimeters—Millimeters</para>
-		/// <para>Nautical Miles—Nautical miles</para>
-		/// <para>Miles—Miles</para>
-		/// <para>Yards—Yards</para>
-		/// <para>Feet—Feet</para>
-		/// <para>Inches—Inches</para>
-		/// <para>Decimal Degrees—Decimal degrees</para>
-		/// <para>Points—Points</para>
-		/// <para>Unknown—Unknown</para>
+		/// <para>Airport Reference Point Elevation Unit</para>
+		/// <para>Specifies the linear unit of measure that will be used when an airport reference point height is specified.</para>
+		/// <para>Kilometers—The unit will be kilometers.</para>
+		/// <para>Meters—The unit will be meters.</para>
+		/// <para>Decimeters—The unit will be decimeters.</para>
+		/// <para>Centimeters—The unit will be centimeters.</para>
+		/// <para>Millimeters—The unit will be millimeters.</para>
+		/// <para>Nautical Miles—The unit will be nautical miles.</para>
+		/// <para>Miles—The unit will be miles.</para>
+		/// <para>Yards—The unit will be yards.</para>
+		/// <para>Feet—The unit will be feet.</para>
+		/// <para>Inches—The unit will be inches.</para>
+		/// <para>Decimal Degrees—The unit will be decimal degrees.</para>
+		/// <para>Points—The unit will be points.</para>
+		/// <para>Unknown—The unit will be unknown.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object RefPointHeightUnit { get; set; } = "METERS";
+		public object? RefPointHeightUnit { get; set; } = "METERS";
+
+		/// <summary>
+		/// <para>Output Horizontal Unit of Measure</para>
+		/// <para>Specifies the output unit of measurement for the five output distances produced.</para>
+		/// <para>Same as input—The horizontal units from the input coordinate system will be used. If the input data is not projected, this will be meters. This is the default</para>
+		/// <para>Kilometers—The unit will be kilometers.</para>
+		/// <para>Meters—The unit will be meters.</para>
+		/// <para>Decimeters—The unit will be decimeters.</para>
+		/// <para>Centimeters—The unit will be centimeters.</para>
+		/// <para>Millimeters—The unit will be millimeters.</para>
+		/// <para>Nautical Miles—The unit will be nautical miles.</para>
+		/// <para>Miles—The unit will be miles.</para>
+		/// <para>Yards—The unit will be yards.</para>
+		/// <para>Feet—The unit will be feet.</para>
+		/// <para>Inches—The unit will be inches.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		[GPCodedValueDomain()]
+		public object? InOutHorizontalUnit { get; set; } = "SAME_AS_INPUT";
 
 	}
 }

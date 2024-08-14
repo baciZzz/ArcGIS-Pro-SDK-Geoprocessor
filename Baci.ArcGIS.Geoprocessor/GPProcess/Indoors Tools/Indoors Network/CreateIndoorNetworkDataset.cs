@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetGdb, IndoorNetworkDatasetName, SpatialReference, OutputDataset };
+		public override object[] Parameters => new object[] { TargetGdb, IndoorNetworkDatasetName, SpatialReference, OutputDataset! };
 
 		/// <summary>
 		/// <para>Target Geodatabase</para>
@@ -102,12 +102,12 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureDataset()]
-		public object OutputDataset { get; set; }
+		public object? OutputDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateIndoorNetworkDataset SetEnviroment(object configKeyword = null , object workspace = null )
+		public CreateIndoorNetworkDataset SetEnviroment(object? configKeyword = null , object? workspace = null )
 		{
 			base.SetEnv(configKeyword: configKeyword, workspace: workspace);
 			return this;

@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Set Default Subtype</para>
 	/// <para>Sets the default value or code for the input table's subtype.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class SetDefaultSubtype : AbstractGPProcess
 	{
 		/// <summary>
@@ -65,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, SubtypeCode, OutTable };
+		public override object[] Parameters => new object[] { InTable, SubtypeCode, OutTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -88,12 +90,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetDefaultSubtype SetEnviroment(int? autoCommit = null , object workspace = null )
+		public SetDefaultSubtype SetEnviroment(int? autoCommit = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

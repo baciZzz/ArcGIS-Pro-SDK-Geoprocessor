@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, InLineOrPolygonFeatures, SearchDistance, MarkerOrientation, OutRepresentations };
+		public override object[] Parameters => new object[] { InPointFeatures, InLineOrPolygonFeatures, SearchDistance, MarkerOrientation!, OutRepresentations! };
 
 		/// <summary>
 		/// <para>Input Point Features</para>
@@ -110,19 +110,19 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object MarkerOrientation { get; set; } = "PERPENDICULAR";
+		public object? MarkerOrientation { get; set; } = "PERPENDICULAR";
 
 		/// <summary>
 		/// <para>Updated Input Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLayer()]
-		public object OutRepresentations { get; set; }
+		public object? OutRepresentations { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AlignMarkerToStrokeOrFill SetEnviroment(object cartographicCoordinateSystem = null , object cartographicPartitions = null , object referenceScale = null )
+		public AlignMarkerToStrokeOrFill SetEnviroment(object? cartographicCoordinateSystem = null , object? cartographicPartitions = null , double? referenceScale = null )
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem, cartographicPartitions: cartographicPartitions, referenceScale: referenceScale);
 			return this;

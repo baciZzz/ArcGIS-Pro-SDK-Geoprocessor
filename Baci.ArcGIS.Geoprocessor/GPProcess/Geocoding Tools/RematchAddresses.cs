@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeocodedFeatureClass, InWhereClause, OutGeocodedFeatureClass };
+		public override object[] Parameters => new object[] { InGeocodedFeatureClass, InWhereClause!, OutGeocodedFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
@@ -78,19 +78,19 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object InWhereClause { get; set; }
+		public object? InWhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutGeocodedFeatureClass { get; set; }
+		public object? OutGeocodedFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RematchAddresses SetEnviroment(object workspace = null )
+		public RematchAddresses SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeaturesName, GenerateCoefficientTable, InputFeaturesToPredict, ExplanatoryVariablesToMatch, DependentVariableMapping, DataStore, Output, OutputPredictedFeatures, CoefficientTable };
+		public override object[] Parameters => new object[] { InputFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeaturesName, GenerateCoefficientTable!, InputFeaturesToPredict!, ExplanatoryVariablesToMatch!, DependentVariableMapping!, DataStore!, Output!, OutputPredictedFeatures!, CoefficientTable! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object GenerateCoefficientTable { get; set; }
+		public object? GenerateCoefficientTable { get; set; }
 
 		/// <summary>
 		/// <para>Input Prediction Features</para>
@@ -155,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPRecordSet()]
 		[GPTablesDomain()]
 		[Category("Prediction Options")]
-		public object InputFeaturesToPredict { get; set; }
+		public object? InputFeaturesToPredict { get; set; }
 
 		/// <summary>
 		/// <para>Match Explanatory Variables</para>
@@ -165,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Prediction Options")]
-		public object ExplanatoryVariablesToMatch { get; set; }
+		public object? ExplanatoryVariablesToMatch { get; set; }
 
 		/// <summary>
 		/// <para>Map Dependent Variables</para>
@@ -173,7 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object DependentVariableMapping { get; set; }
+		public object? DependentVariableMapping { get; set; }
 
 		/// <summary>
 		/// <para>Data Store</para>
@@ -186,33 +186,33 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Data Store")]
-		public object DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
+		public object? DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
 
 		/// <summary>
 		/// <para>Output</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object Output { get; set; }
+		public object? Output { get; set; }
 
 		/// <summary>
 		/// <para>Output Predicted Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object OutputPredictedFeatures { get; set; }
+		public object? OutputPredictedFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Table of Coefficients</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object CoefficientTable { get; set; }
+		public object? CoefficientTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GeneralizedLinearRegression SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public GeneralizedLinearRegression SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

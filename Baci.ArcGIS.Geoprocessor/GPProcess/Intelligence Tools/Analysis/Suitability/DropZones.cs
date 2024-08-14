@@ -24,11 +24,11 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </param>
 		/// <param name="InVegetationFeatures">
 		/// <para>Input Combined Vegetation Features</para>
-		/// <para>The features that define the combined vegetation and land cover types. These features are used to find areas with suitable vegetation coverage for DZs.</para>
+		/// <para>The features that define the combined vegetation and land cover types. These features will be used to find areas with suitable vegetation coverage for DZs.</para>
 		/// </param>
 		/// <param name="ClipFeatures">
 		/// <para>Clip Features</para>
-		/// <para>The area within which to find suitable DZs.</para>
+		/// <para>The area within which suitable DZs will be found.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Combined Vegetation Features</para>
-		/// <para>The features that define the combined vegetation and land cover types. These features are used to find areas with suitable vegetation coverage for DZs.</para>
+		/// <para>The features that define the combined vegetation and land cover types. These features will be used to find areas with suitable vegetation coverage for DZs.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Clip Features</para>
-		/// <para>The area within which to find suitable DZs.</para>
+		/// <para>The area within which suitable DZs will be found.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]

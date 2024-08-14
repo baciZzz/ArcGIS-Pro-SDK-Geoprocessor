@@ -64,7 +64,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFiles, OutPersonalGdb, SpatialReference, ExplodeComplex };
+		public override object[] Parameters => new object[] { InputFiles, OutPersonalGdb, SpatialReference!, ExplodeComplex! };
 
 		/// <summary>
 		/// <para>Input Files</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
-		public object SpatialReference { get; set; }
+		public object? SpatialReference { get; set; }
 
 		/// <summary>
 		/// <para>Explode Complex Objects</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ExplodeComplex { get; set; } = "false";
+		public object? ExplodeComplex { get; set; } = "false";
 
 		#region InnerClass
 

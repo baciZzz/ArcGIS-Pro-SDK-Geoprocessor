@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, OverviewImageFolder, InTemplateDataset, Extent, PixelSize, NumberOfLevels, TileRows, TileCols, OverviewFactor, ForceOverviewTiles, ResamplingMethod, CompressionMethod, CompressionQuality, OutMosaicDataset };
+		public override object[] Parameters => new object[] { InMosaicDataset, OverviewImageFolder!, InTemplateDataset!, Extent!, PixelSize!, NumberOfLevels!, TileRows!, TileCols!, OverviewFactor!, ForceOverviewTiles!, ResamplingMethod!, CompressionMethod!, CompressionQuality!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
-		public object OverviewImageFolder { get; set; }
+		public object? OverviewImageFolder { get; set; }
 
 		/// <summary>
 		/// <para>Extent from Dataset</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object InTemplateDataset { get; set; }
+		public object? InTemplateDataset { get; set; }
 
 		/// <summary>
 		/// <para>Extent</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPEnvelope()]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Pixel Size</para>
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Overview Tile Parameters")]
-		public object PixelSize { get; set; }
+		public object? PixelSize { get; set; }
 
 		/// <summary>
 		/// <para>Number Of Levels</para>
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Overview Tile Parameters")]
-		public object NumberOfLevels { get; set; }
+		public object? NumberOfLevels { get; set; }
 
 		/// <summary>
 		/// <para>Number Of Rows</para>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Overview Tile Parameters")]
-		public object TileRows { get; set; } = "5120";
+		public object? TileRows { get; set; } = "5120";
 
 		/// <summary>
 		/// <para>Number Of Columns</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Overview Tile Parameters")]
-		public object TileCols { get; set; } = "5120";
+		public object? TileCols { get; set; } = "5120";
 
 		/// <summary>
 		/// <para>Overview Sampling Factor</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Overview Tile Parameters")]
-		public object OverviewFactor { get; set; } = "3";
+		public object? OverviewFactor { get; set; } = "3";
 
 		/// <summary>
 		/// <para>Force Overview Tiles</para>
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Overview Tile Parameters")]
-		public object ForceOverviewTiles { get; set; } = "false";
+		public object? ForceOverviewTiles { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Resampling Method</para>
@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Overview Image Parameters")]
-		public object ResamplingMethod { get; set; } = "BILINEAR";
+		public object? ResamplingMethod { get; set; } = "BILINEAR";
 
 		/// <summary>
 		/// <para>Compression Method</para>
@@ -183,7 +183,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Overview Image Parameters")]
-		public object CompressionMethod { get; set; } = "JPEG";
+		public object? CompressionMethod { get; set; } = "JPEG";
 
 		/// <summary>
 		/// <para>Compression Quality</para>
@@ -192,19 +192,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Overview Image Parameters")]
-		public object CompressionQuality { get; set; } = "80";
+		public object? CompressionQuality { get; set; } = "80";
 
 		/// <summary>
 		/// <para>Updated Mosaic Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMosaicLayer()]
-		public object OutMosaicDataset { get; set; }
+		public object? OutMosaicDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DefineOverviews SetEnviroment(object extent = null , object parallelProcessingFactor = null , double[] tileSize = null )
+		public DefineOverviews SetEnviroment(object? extent = null , object? parallelProcessingFactor = null , object? tileSize = null )
 		{
 			base.SetEnv(extent: extent, parallelProcessingFactor: parallelProcessingFactor, tileSize: tileSize);
 			return this;

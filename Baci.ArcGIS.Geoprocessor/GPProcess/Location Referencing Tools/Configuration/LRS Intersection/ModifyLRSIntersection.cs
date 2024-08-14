@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, IntersectionIdField, IntersectionNameField, RouteIdField, FeatureIdField, FeatureClassNameField, FromDateField, ToDateField, IntersectingLayers, MeasureField, OutFeatureClass };
+		public override object[] Parameters => new object[] { InFeatureClass, IntersectionIdField!, IntersectionNameField!, RouteIdField!, FeatureIdField!, FeatureClassNameField!, FromDateField!, ToDateField!, IntersectingLayers!, MeasureField!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Intersection Feature Class</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object IntersectionIdField { get; set; }
+		public object? IntersectionIdField { get; set; }
 
 		/// <summary>
 		/// <para>Intersection Name Field</para>
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object IntersectionNameField { get; set; }
+		public object? IntersectionNameField { get; set; }
 
 		/// <summary>
 		/// <para>Route ID Field</para>
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object RouteIdField { get; set; }
+		public object? RouteIdField { get; set; }
 
 		/// <summary>
 		/// <para>Feature ID Field</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object FeatureIdField { get; set; }
+		public object? FeatureIdField { get; set; }
 
 		/// <summary>
 		/// <para>Feature Class Name Field</para>
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object FeatureClassNameField { get; set; }
+		public object? FeatureClassNameField { get; set; }
 
 		/// <summary>
 		/// <para>From Date Field</para>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object FromDateField { get; set; }
+		public object? FromDateField { get; set; }
 
 		/// <summary>
 		/// <para>To Date Field</para>
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ToDateField { get; set; }
+		public object? ToDateField { get; set; }
 
 		/// <summary>
 		/// <para>Intersecting Layers</para>
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object IntersectingLayers { get; set; }
+		public object? IntersectingLayers { get; set; }
 
 		/// <summary>
 		/// <para>Measure Field</para>
@@ -154,14 +154,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object MeasureField { get; set; }
+		public object? MeasureField { get; set; }
 
 		/// <summary>
 		/// <para>Output Details File</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 	}
 }

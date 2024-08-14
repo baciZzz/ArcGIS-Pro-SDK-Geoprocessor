@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { NetworkDataSource, LayerName, TravelMode, TravelDirection, Cutoff, NumberOfFacilitiesToFind, TimeOfDay, TimeZone, TimeOfDayUsage, LineShape, AccumulateAttributes, GenerateDirectionsOnSolve, OutNetworkAnalysisLayer };
+		public override object[] Parameters => new object[] { NetworkDataSource, LayerName!, TravelMode!, TravelDirection!, Cutoff!, NumberOfFacilitiesToFind!, TimeOfDay!, TimeZone!, TimeOfDayUsage!, LineShape!, AccumulateAttributes!, GenerateDirectionsOnSolve!, OutNetworkAnalysisLayer!, IgnoreInvalidLocations! };
 
 		/// <summary>
 		/// <para>Network Data Source</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object LayerName { get; set; }
+		public object? LayerName { get; set; }
 
 		/// <summary>
 		/// <para>Travel Mode</para>
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TravelMode { get; set; }
+		public object? TravelMode { get; set; }
 
 		/// <summary>
 		/// <para>Travel Direction</para>
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TravelDirection { get; set; } = "TO_FACILITIES";
+		public object? TravelDirection { get; set; } = "TO_FACILITIES";
 
 		/// <summary>
 		/// <para>Cutoff</para>
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Cutoff { get; set; }
+		public object? Cutoff { get; set; }
 
 		/// <summary>
 		/// <para>Number of Facilities to Find</para>
@@ -115,11 +115,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object NumberOfFacilitiesToFind { get; set; } = "1";
+		public object? NumberOfFacilitiesToFind { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Time of Day</para>
-		/// <para>Specifies the time and date at which the routes should begin or end. The interpretation of this value depends on whether Time of Day Usage is set to be the start time or the end time of the route.</para>
+		/// <para>The time and date at which the routes should begin or end. The interpretation of this value depends on whether Time of Day Usage is set to be the start time or the end time of the route.</para>
 		/// <para>If you have chosen a traffic-based impedance attribute, the solution will be generated given dynamic traffic conditions at the time of day specified here. A date and time can be specified as 5/14/2012 10:30 AM.</para>
 		/// <para>Instead of using a particular date, a day of the week can be specified using the following dates:</para>
 		/// <para>Today—12/30/1899</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Time of Day")]
-		public object TimeOfDay { get; set; }
+		public object? TimeOfDay { get; set; }
 
 		/// <summary>
 		/// <para>Time Zone</para>
@@ -151,11 +151,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Time of Day")]
-		public object TimeZone { get; set; } = "LOCAL_TIME_AT_LOCATIONS";
+		public object? TimeZone { get; set; } = "LOCAL_TIME_AT_LOCATIONS";
 
 		/// <summary>
 		/// <para>Time of Day Usage</para>
-		/// <para>Indicates whether the value of the Time of Day parameter represents the arrival or departure time for the route or routes.</para>
+		/// <para>Specifies whether the value of the Time of Day parameter represents the arrival or departure time for the route or routes.</para>
 		/// <para>Start time—Time of Day is interpreted as the departure time from the facility or incident. This is the default.When this setting is chosen, Time of Day indicates the solver should find the best route given a departure time.</para>
 		/// <para>End time—Time of Day is interpreted as the arrival time at the facility or incident. This option is useful if you want to know what time to depart from a location so you arrive at the destination at the time specified in Time of Day.</para>
 		/// <para><see cref="TimeOfDayUsageEnum"/></para>
@@ -164,12 +164,12 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Time of Day")]
-		public object TimeOfDayUsage { get; set; } = "START_TIME";
+		public object? TimeOfDayUsage { get; set; } = "START_TIME";
 
 		/// <summary>
 		/// <para>Line Shape</para>
-		/// <para>Specifies the shape type for the route features that are output by the analysis.</para>
-		/// <para>No matter which output shape type is chosen, the best route is always determined by the network impedance, never Euclidean distance. This means that only the route shapes are different, not the underlying traversal of the network.</para>
+		/// <para>Specifies the shape type that will be used for the route features that are output by the analysis.</para>
+		/// <para>Regardless of the output shape type specified, the best route is always determined by the network impedance, never Euclidean distance. This means that only the route shapes are different, not the underlying traversal of the network.</para>
 		/// <para>Along network—The output routes will have the exact shape of the underlying network sources. The output includes route measurements for linear referencing. The measurements increase from the first stop and record the cumulative impedance to reach a given position.</para>
 		/// <para>No lines—No shape will be generated for the output routes.</para>
 		/// <para>Straight lines—The output route shape will be a single straight line between the stops.</para>
@@ -179,11 +179,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Output Geometry")]
-		public object LineShape { get; set; } = "ALONG_NETWORK";
+		public object? LineShape { get; set; } = "ALONG_NETWORK";
 
 		/// <summary>
 		/// <para>Accumulate Attributes</para>
-		/// <para>A list of cost attributes to be accumulated during analysis. These accumulated attributes are for reference only; the solver only uses the cost attribute used by your designated travel mode when solving the analysis.</para>
+		/// <para>A list of cost attributes to be accumulated during analysis. These accumulated attributes are for reference only; the solver only uses the cost attribute used by the designated travel mode when solving the analysis.</para>
 		/// <para>For each cost attribute that is accumulated, a Total_[Impedance] property is populated in the network analysis output features.</para>
 		/// <para>This parameter is not available if the network data source is an ArcGIS Online service or the network data source is a service on a version of Portal for ArcGIS that does not support accumulation.</para>
 		/// </summary>
@@ -191,7 +191,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Accumulate Attributes")]
-		public object AccumulateAttributes { get; set; }
+		public object? AccumulateAttributes { get; set; }
 
 		/// <summary>
 		/// <para>Generate Directions on Solve</para>
@@ -205,19 +205,32 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Directions")]
-		public object GenerateDirectionsOnSolve { get; set; } = "false";
+		public object? GenerateDirectionsOnSolve { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Network Analyst Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPNALayer()]
-		public object OutNetworkAnalysisLayer { get; set; }
+		public object? OutNetworkAnalysisLayer { get; set; }
+
+		/// <summary>
+		/// <para>Ignore Invalid Locations at Solve Time</para>
+		/// <para>Specifies whether invalid input locations will be ignored. Typically, locations are invalid if they cannot be located on the network. When invalid locations are ignored, the solver will skip them and attempt to perform the analysis using the remaining locations.</para>
+		/// <para>Checked—Invalid input locations will be ignored and only valid locations will be used. This is the default.</para>
+		/// <para>Unchecked—All input locations will be used. Invalid locations will cause the analysis to fail.</para>
+		/// <para><see cref="IgnoreInvalidLocationsEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		[Category("Locations")]
+		public object? IgnoreInvalidLocations { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeClosestFacilityAnalysisLayer SetEnviroment(object workspace = null )
+		public MakeClosestFacilityAnalysisLayer SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -334,6 +347,27 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 			[GPValue("false")]
 			[Description("NO_DIRECTIONS")]
 			NO_DIRECTIONS,
+
+		}
+
+		/// <summary>
+		/// <para>Ignore Invalid Locations at Solve Time</para>
+		/// </summary>
+		public enum IgnoreInvalidLocationsEnum 
+		{
+			/// <summary>
+			/// <para>Checked—Invalid input locations will be ignored and only valid locations will be used. This is the default.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("SKIP")]
+			SKIP,
+
+			/// <summary>
+			/// <para>Unchecked—All input locations will be used. Invalid locations will cause the analysis to fail.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("HALT")]
+			HALT,
 
 		}
 

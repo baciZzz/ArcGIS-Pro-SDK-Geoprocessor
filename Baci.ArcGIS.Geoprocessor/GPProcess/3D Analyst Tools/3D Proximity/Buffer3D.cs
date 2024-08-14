@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, BufferDistanceOrField, BufferJointType, BufferQuality, SimplificationTolerance };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, BufferDistanceOrField, BufferJointType!, BufferQuality!, SimplificationTolerance! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object BufferJointType { get; set; } = "STRAIGHT";
+		public object? BufferJointType { get; set; } = "STRAIGHT";
 
 		/// <summary>
 		/// <para>Buffer Quality</para>
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object BufferQuality { get; set; } = "20";
+		public object? BufferQuality { get; set; } = "20";
 
 		/// <summary>
 		/// <para>Simplification (Maximum Allowable Offset)</para>
@@ -155,12 +155,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object SimplificationTolerance { get; set; }
+		public object? SimplificationTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Buffer3D SetEnviroment(object XYDomain = null , object ZDomain = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object workspace = null )
+		public Buffer3D SetEnviroment(object? XYDomain = null , object? ZDomain = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, ZDomain: ZDomain, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

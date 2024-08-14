@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InVpfFeatures, TargetWorkspace, OutputWorkspace };
+		public override object[] Parameters => new object[] { InVpfFeatures, TargetWorkspace, OutputWorkspace! };
 
 		/// <summary>
 		/// <para>Input VPF Features</para>

@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurfaceRaster, OutStreamFeatures, InDepressionsData!, InWeightRaster!, AccumulationThreshold!, StreamDesignationMethod!, Simplify };
+		public override object[] Parameters => new object[] { InSurfaceRaster, OutStreamFeatures, InDepressionsData!, InWeightRaster!, AccumulationThreshold!, StreamDesignationMethod!, Simplify! };
 
 		/// <summary>
 		/// <para>Input surface raster</para>

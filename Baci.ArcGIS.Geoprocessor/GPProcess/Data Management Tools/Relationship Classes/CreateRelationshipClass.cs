@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Create Relationship Class</para>
 	/// <para>This tool creates a relationship class to store an association between fields or features in the origin table and the destination table.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class CreateRelationshipClass : AbstractGPProcess
 	{
 		/// <summary>
@@ -125,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OriginTable, DestinationTable, OutRelationshipClass, RelationshipType, ForwardLabel, BackwardLabel, MessageDirection, Cardinality, Attributed, OriginPrimaryKey, OriginForeignKey, DestinationPrimaryKey, DestinationForeignKey };
+		public override object[] Parameters => new object[] { OriginTable, DestinationTable, OutRelationshipClass, RelationshipType, ForwardLabel, BackwardLabel, MessageDirection, Cardinality, Attributed, OriginPrimaryKey, OriginForeignKey, DestinationPrimaryKey!, DestinationForeignKey! };
 
 		/// <summary>
 		/// <para>Origin Table</para>
@@ -240,7 +242,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DestinationPrimaryKey { get; set; }
+		public object? DestinationPrimaryKey { get; set; }
 
 		/// <summary>
 		/// <para>Destination Foreign Key</para>
@@ -248,12 +250,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DestinationForeignKey { get; set; }
+		public object? DestinationForeignKey { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateRelationshipClass SetEnviroment(int? autoCommit = null , object workspace = null )
+		public CreateRelationshipClass SetEnviroment(int? autoCommit = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

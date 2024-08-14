@@ -10,8 +10,8 @@ using System;
 namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
-	/// <para>Create Point Scene Layer Package</para>
-	/// <para>Creates a point scene layer package (.slpk file) from a point feature layer.</para>
+	/// <para>Create Point Scene Layer Content</para>
+	/// <para>Creates a point scene layer package (.slpk) or scene layer content (.i3sREST) from a point feature layer.</para>
 	/// </summary>
 	public class CreatePointSceneLayerPackage : AbstractGPProcess
 	{
@@ -22,20 +22,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Input Dataset</para>
 		/// <para>The input point feature layer.</para>
 		/// </param>
-		/// <param name="OutSlpk">
-		/// <para>Output Scene Layer Package</para>
-		/// <para>The output scene layer package (.slpk).</para>
-		/// </param>
-		public CreatePointSceneLayerPackage(object InDataset, object OutSlpk)
+		public CreatePointSceneLayerPackage(object InDataset)
 		{
 			this.InDataset = InDataset;
-			this.OutSlpk = OutSlpk;
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Point Scene Layer Package</para>
+		/// <para>Tool Display Name : Create Point Scene Layer Content</para>
 		/// </summary>
-		public override string DisplayName => "Create Point Scene Layer Package";
+		public override string DisplayName => "Create Point Scene Layer Content";
 
 		/// <summary>
 		/// <para>Tool Name : CreatePointSceneLayerPackage</para>
@@ -65,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutSlpk, OutCoorSystem, TransformMethod };
+		public override object[] Parameters => new object[] { InDataset, OutSlpk!, OutCoorSystem!, TransformMethod!, TargetCloudConnection! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -80,10 +75,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Output Scene Layer Package</para>
 		/// <para>The output scene layer package (.slpk).</para>
 		/// </summary>
-		[ParamType(ParamTypeEnum.must)]
+		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object OutSlpk { get; set; }
+		public object? OutSlpk { get; set; }
 
 		/// <summary>
 		/// <para>Output Coordinate System</para>
@@ -94,16 +89,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
-		public object OutCoorSystem { get; set; } = "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],VERTCS[\"EGM96_Geoid\",VDATUM[\"EGM96_Geoid\"],PARAMETER[\"Vertical_Shift\",0.0],PARAMETER[\"Direction\",1.0],UNIT[\"Meter\",1.0]];-400 -400 1000000000;-100000 10000;-100000 10000;8.98315284119521E-09;0.001;0.001;IsHighPrecision";
+		public object? OutCoorSystem { get; set; } = "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],VERTCS[\"EGM96_Geoid\",VDATUM[\"EGM96_Geoid\"],PARAMETER[\"Vertical_Shift\",0.0],PARAMETER[\"Direction\",1.0],UNIT[\"Meter\",1.0]];-400 -400 1000000000;-100000 10000;-100000 10000;8.98315284119521E-09;0.001;0.001;IsHighPrecision";
 
 		/// <summary>
 		/// <para>Geographic Transformation</para>
 		/// <para>The datum transformation method that will be used when the input layer&apos;s coordinate system uses a datum that differs from the output coordinate system. All transformations are bidirectional, regardless of the direction implied by their names. For example, NAD_1927_to_WGS_1984_3 will work correctly even if the datum conversion is from WGS 1984 to NAD 1927.</para>
-		/// <para>The ArcGIS Coordinate System data is required for vertical datum transformations between ellipsoidal and gravity-related and two gravity-related datums.</para>
+		/// <para>The ArcGIS coordinate system data is required for vertical datum transformations between ellipsoidal and gravity-related and two gravity-related datums.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object TransformMethod { get; set; }
+		public object? TransformMethod { get; set; }
+
+		/// <summary>
+		/// <para>Target Cloud Connection</para>
+		/// <para>The target cloud connection file (.acs) where the scene layer content (.i3sREST) will be output.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[DEFolder()]
+		public object? TargetCloudConnection { get; set; }
 
 	}
 }

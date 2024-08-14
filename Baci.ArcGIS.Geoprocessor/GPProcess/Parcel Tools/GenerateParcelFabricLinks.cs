@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetParcelFabric, OutLinksFeatureClass, OutAnchorPointsFeatureClass, FromDate, ToDate, MinLinkLength, Extent };
+		public override object[] Parameters => new object[] { TargetParcelFabric, OutLinksFeatureClass, OutAnchorPointsFeatureClass, FromDate, ToDate!, MinLinkLength!, Extent! };
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object ToDate { get; set; }
+		public object? ToDate { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Link Length</para>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object MinLinkLength { get; set; } = "0.01 Meters";
+		public object? MinLinkLength { get; set; } = "0.01 Meters";
 
 		/// <summary>
 		/// <para>Extent</para>
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 	}
 }

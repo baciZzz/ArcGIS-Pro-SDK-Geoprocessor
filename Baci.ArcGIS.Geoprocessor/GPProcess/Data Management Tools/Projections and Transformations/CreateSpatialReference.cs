@@ -55,7 +55,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { SpatialReference, SpatialReferenceTemplate, XyDomain, ZDomain, MDomain, Template, ExpandRatio, OutSpatialReference };
+		public override object[] Parameters => new object[] { SpatialReference!, SpatialReferenceTemplate!, XyDomain!, ZDomain!, MDomain!, Template!, ExpandRatio!, OutSpatialReference! };
 
 		/// <summary>
 		/// <para>Spatial Reference</para>
@@ -63,7 +63,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
-		public object SpatialReference { get; set; }
+		public object? SpatialReference { get; set; }
 
 		/// <summary>
 		/// <para>Spatial Reference Template</para>
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object SpatialReferenceTemplate { get; set; }
+		public object? SpatialReferenceTemplate { get; set; }
 
 		/// <summary>
 		/// <para>XY Domain</para>
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPEnvelope()]
-		public object XyDomain { get; set; }
+		public object? XyDomain { get; set; }
 
 		/// <summary>
 		/// <para>Z Domain (min max)</para>
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ZDomain { get; set; }
+		public object? ZDomain { get; set; }
 
 		/// <summary>
 		/// <para>M Domain (min max)</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object MDomain { get; set; }
+		public object? MDomain { get; set; }
 
 		/// <summary>
 		/// <para>Template XYDomains</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Template { get; set; }
+		public object? Template { get; set; }
 
 		/// <summary>
 		/// <para>Grow XYDomain By Percentage</para>
@@ -111,14 +111,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ExpandRatio { get; set; } = "0";
+		public object? ExpandRatio { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Output Spatial Reference</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPSpatialReference()]
-		public object OutSpatialReference { get; set; }
+		public object? OutSpatialReference { get; set; }
 
 	}
 }

@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, OutputFile, ServiceType, TilingScheme, TileStructure, MinCachedScale, MaxCachedScale, IndexPolygons, Summary, Tags };
+		public override object[] Parameters => new object[] { InMap, OutputFile, ServiceType, TilingScheme!, TileStructure!, MinCachedScale, MaxCachedScale, IndexPolygons!, Summary!, Tags! };
 
 		/// <summary>
 		/// <para>Input Map</para>
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object TilingScheme { get; set; }
+		public object? TilingScheme { get; set; }
 
 		/// <summary>
 		/// <para>Tiling Format</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TileStructure { get; set; } = "INDEXED";
+		public object? TileStructure { get; set; } = "INDEXED";
 
 		/// <summary>
 		/// <para>Minimum Cached Scale</para>
@@ -160,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object IndexPolygons { get; set; }
+		public object? IndexPolygons { get; set; }
 
 		/// <summary>
 		/// <para>Summary</para>
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Summary { get; set; }
+		public object? Summary { get; set; }
 
 		/// <summary>
 		/// <para>Tags</para>
@@ -176,7 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Tags { get; set; }
+		public object? Tags { get; set; }
 
 		#region InnerClass
 

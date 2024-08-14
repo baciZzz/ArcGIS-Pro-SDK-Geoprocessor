@@ -65,12 +65,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYResolution", "XYTolerance", "maintainAttachments", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "XYResolution", "XYTolerance", "maintainAttachments", "scratchWorkspace", "transferGDBAttributeProperties", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutDataset, OutCoorSystem, TransformMethod, InCoorSystem, PreserveShape, MaxDeviation, Vertical };
+		public override object[] Parameters => new object[] { InDataset, OutDataset, OutCoorSystem, TransformMethod!, InCoorSystem!, PreserveShape!, MaxDeviation!, Vertical! };
 
 		/// <summary>
 		/// <para>Input Dataset or Feature Class</para>
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object TransformMethod { get; set; }
+		public object? TransformMethod { get; set; }
 
 		/// <summary>
 		/// <para>Input Coordinate System</para>
@@ -112,19 +112,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
-		public object InCoorSystem { get; set; }
+		public object? InCoorSystem { get; set; }
 
 		/// <summary>
 		/// <para>Preserve Shape</para>
 		/// <para>Specifies whether vertices will be added to the output lines or polygons so their projected shape is more accurate.</para>
 		/// <para>Unchecked—Extra vertices will not be added to the output lines or polygons. This is the default.</para>
-		/// <para>Checked—Extra vertices will be added to the output lines or polygons, as needed, so their projected shape is more accurate.</para>
+		/// <para>Checked—Extra vertices will be added to the output lines or polygons as needed, so their projected shape is more accurate.</para>
 		/// <para><see cref="PreserveShapeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object PreserveShape { get; set; } = "false";
+		public object? PreserveShape { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Maximum Offset Deviation</para>
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object MaxDeviation { get; set; }
+		public object? MaxDeviation { get; set; }
 
 		/// <summary>
 		/// <para>Vertical</para>
@@ -140,21 +140,21 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>The parameter is only active when the input and output coordinate systems have a vertical coordinate system and the input feature class coordinates have z-values. Also, many vertical transformations require additional data files that must be installed using the ArcGIS Coordinate Systems Data installation package.</para>
 		/// <para>When Vertical is checked, the Geographic Transformation parameter can include ellipsoidal transformations and transformations between vertical datums. For example, ~NAD_1983_To_NAVD88_CONUS_GEOID12B_Height + NAD_1983_To_WGS_1984_1 transforms geometry vertices that are defined on NAD 1983 datum with NAVD 1988 heights into vertices on the WGS 1984 ellipsoid (with z-values representing ellipsoidal heights). The tilde (~) indicates the reversed direction of transformation.</para>
 		/// <para>This parameter is not compatible with the Preserve Shape parameter.</para>
-		/// <para>Unchecked—No vertical transformation will be applied. The z-values of geometry coordinates will be ignored and the z-values will not be modified. This is the default.</para>
+		/// <para>Unchecked—A vertical transformation will not be applied. The z-values of geometry coordinates will be ignored and the z-values will not be modified. This is the default.</para>
 		/// <para>Checked—The transformation specified in the Geographic Transformation parameter will be applied. The Project tool transforms x-, y-, and z-values of geometry coordinates.</para>
 		/// <para><see cref="VerticalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Vertical { get; set; } = "false";
+		public object? Vertical { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Project SetEnviroment(object XYResolution = null , object XYTolerance = null , object scratchWorkspace = null , object workspace = null )
+		public Project SetEnviroment(object? XYResolution = null , object? XYTolerance = null , bool? maintainAttachments = null , object? scratchWorkspace = null , bool? transferGDBAttributeProperties = null , object? workspace = null )
 		{
-			base.SetEnv(XYResolution: XYResolution, XYTolerance: XYTolerance, scratchWorkspace: scratchWorkspace, workspace: workspace);
+			base.SetEnv(XYResolution: XYResolution, XYTolerance: XYTolerance, maintainAttachments: maintainAttachments, scratchWorkspace: scratchWorkspace, transferGDBAttributeProperties: transferGDBAttributeProperties, workspace: workspace);
 			return this;
 		}
 
@@ -166,7 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum PreserveShapeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Extra vertices will be added to the output lines or polygons, as needed, so their projected shape is more accurate.</para>
+			/// <para>Checked—Extra vertices will be added to the output lines or polygons as needed, so their projected shape is more accurate.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PRESERVE_SHAPE")]
@@ -194,7 +194,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			VERTICAL,
 
 			/// <summary>
-			/// <para>Unchecked—No vertical transformation will be applied. The z-values of geometry coordinates will be ignored and the z-values will not be modified. This is the default.</para>
+			/// <para>Unchecked—A vertical transformation will not be applied. The z-values of geometry coordinates will be ignored and the z-values will not be modified. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_VERTICAL")]

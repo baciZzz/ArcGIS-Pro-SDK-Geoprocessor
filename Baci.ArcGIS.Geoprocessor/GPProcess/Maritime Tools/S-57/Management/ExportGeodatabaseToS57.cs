@@ -28,7 +28,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// </param>
 		/// <param name="ExportType">
 		/// <para>Export Type</para>
-		/// <para>Specifies the type of file to be created during the export.</para>
+		/// <para>Specifies the type of file that will be created during the export.</para>
 		/// <para>New Dataset— A new dataset including information that has not been previously distributed by updates will be created.</para>
 		/// <para>New Edition— A new edition of a dataset including information that has not been previously distributed by updates will be created.</para>
 		/// <para>Update— Changes in a dataset since the last export will be reflected in the file.</para>
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSourceGdb, Product, ExportType, OutLocation, InProductConfig, ClipDataOption, SampleExport, OutFile, InScaminFile };
+		public override object[] Parameters => new object[] { InSourceGdb, Product, ExportType, OutLocation, InProductConfig!, ClipDataOption!, SampleExport!, OutFile!, InScaminFile! };
 
 		/// <summary>
 		/// <para>Source Geodatabase</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 
 		/// <summary>
 		/// <para>Export Type</para>
-		/// <para>Specifies the type of file to be created during the export.</para>
+		/// <para>Specifies the type of file that will be created during the export.</para>
 		/// <para>New Dataset— A new dataset including information that has not been previously distributed by updates will be created.</para>
 		/// <para>New Edition— A new edition of a dataset including information that has not been previously distributed by updates will be created.</para>
 		/// <para>Update— Changes in a dataset since the last export will be reflected in the file.</para>
@@ -125,12 +125,12 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 
 		/// <summary>
 		/// <para>Product Configuration File</para>
-		/// <para>The configuration file to use to export the product.</para>
+		/// <para>The configuration file that will be used to export the product.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object InProductConfig { get; set; }
+		public object? InProductConfig { get; set; }
 
 		/// <summary>
 		/// <para>Clip Features at M_CSCL</para>
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ClipDataOption { get; set; } = "false";
+		public object? ClipDataOption { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Sample Export</para>
@@ -154,28 +154,28 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SampleExport { get; set; } = "false";
+		public object? SampleExport { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output File</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
-		public object OutFile { get; set; }
+		public object? OutFile { get; set; }
 
 		/// <summary>
 		/// <para>SCAMIN Configuration File</para>
-		/// <para>A custom configuration file that contains the rules for calculating a feature's SCAMIN that overrides the default Radar Range SCAMIN method.</para>
+		/// <para>A custom configuration file that contains the rules for calculating a feature's SCAMIN value that overrides the default Radar Range SCAMIN method.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object InScaminFile { get; set; }
+		public object? InScaminFile { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportGeodatabaseToS57 SetEnviroment(object workspace = null )
+		public ExportGeodatabaseToS57 SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

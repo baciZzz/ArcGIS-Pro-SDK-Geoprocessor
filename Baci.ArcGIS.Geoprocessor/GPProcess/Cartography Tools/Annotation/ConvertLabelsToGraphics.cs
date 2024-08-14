@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputMap, ConversionScale, WhichLayers, SingleLayer, GraphicsSuffix, Extent, MultipleGraphicsLayers, GenerateUnplaced, OutputGroupLayer };
+		public override object[] Parameters => new object[] { InputMap, ConversionScale, WhichLayers!, SingleLayer!, GraphicsSuffix!, Extent!, MultipleGraphicsLayers!, GenerateUnplaced!, OutputGroupLayer! };
 
 		/// <summary>
 		/// <para>Input Map</para>
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object WhichLayers { get; set; } = "ALL_LAYERS";
+		public object? WhichLayers { get; set; } = "ALL_LAYERS";
 
 		/// <summary>
 		/// <para>Feature Layer</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object SingleLayer { get; set; }
+		public object? SingleLayer { get; set; }
 
 		/// <summary>
 		/// <para>Graphics Layer Suffix</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object GraphicsSuffix { get; set; } = "Graphics";
+		public object? GraphicsSuffix { get; set; } = "Graphics";
 
 		/// <summary>
 		/// <para>Extent</para>
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Convert labels from all layers to a single output graphics layer</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object MultipleGraphicsLayers { get; set; } = "false";
+		public object? MultipleGraphicsLayers { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Convert unplaced labels to graphics</para>
@@ -148,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object GenerateUnplaced { get; set; } = "false";
+		public object? GenerateUnplaced { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Layer</para>
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGroupLayer()]
-		public object OutputGroupLayer { get; set; } = "GroupGraphics";
+		public object? OutputGroupLayer { get; set; } = "GroupGraphics";
 
 		#region InnerClass
 

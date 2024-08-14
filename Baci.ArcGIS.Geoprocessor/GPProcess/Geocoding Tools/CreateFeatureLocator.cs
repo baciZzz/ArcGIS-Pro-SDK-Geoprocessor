@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, SearchFields, OutputLocator, LocatorFields };
+		public override object[] Parameters => new object[] { InFeatures, SearchFields, OutputLocator, LocatorFields! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -111,12 +111,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		[GPFieldInfo()]
 		[xmlserialize()]
 		[Category("Optional parameters")]
-		public object LocatorFields { get; set; } = "Rank <None> VISIBLE NONE;'Min X' <None> VISIBLE NONE;'Max X' <None> VISIBLE NONE;'Min Y' <None> VISIBLE NONE;'Max Y' <None> VISIBLE NONE";
+		public object? LocatorFields { get; set; } = "Rank <None> VISIBLE NONE;'Min X' <None> VISIBLE NONE;'Max X' <None> VISIBLE NONE;'Min Y' <None> VISIBLE NONE;'Max Y' <None> VISIBLE NONE";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateFeatureLocator SetEnviroment(object workspace = null )
+		public CreateFeatureLocator SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

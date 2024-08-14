@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, JunctionSource, WhereClause, ConnectivityOptions, UnconnectedJunctions, OneConnectedJunction, TwoConnectedJunctions, EdgesAttributes, Description, OutUtilityNetwork, OutTemplateName };
+		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, JunctionSource, WhereClause!, ConnectivityOptions!, UnconnectedJunctions!, OneConnectedJunction!, TwoConnectedJunctions!, EdgesAttributes!, Description!, OutUtilityNetwork!, OutTemplateName! };
 
 		/// <summary>
 		/// <para>Input Network</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Reduce Junctions With</para>
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Connectivity constraints")]
-		public object ConnectivityOptions { get; set; } = "MAX_2_CONNECTED_JUNCTIONS";
+		public object? ConnectivityOptions { get; set; } = "MAX_2_CONNECTED_JUNCTIONS";
 
 		/// <summary>
 		/// <para>Reduce if unconnected</para>
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Connectivity constraints")]
-		public object UnconnectedJunctions { get; set; } = "false";
+		public object? UnconnectedJunctions { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Reduce if connected to a single junction</para>
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Connectivity constraints")]
-		public object OneConnectedJunction { get; set; } = "false";
+		public object? OneConnectedJunction { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Reduce if connected to 2 different junctions</para>
@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Connectivity constraints")]
-		public object TwoConnectedJunctions { get; set; } = "true";
+		public object? TwoConnectedJunctions { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Edge Attribute Names</para>
@@ -158,28 +158,28 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[Category("Connected edges constraints")]
-		public object EdgesAttributes { get; set; }
+		public object? EdgesAttributes { get; set; }
 
 		/// <summary>
 		/// <para>Description</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Description { get; set; }
+		public object? Description { get; set; }
 
 		/// <summary>
 		/// <para>Output Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		/// <summary>
 		/// <para>Output Diagram Template</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutTemplateName { get; set; }
+		public object? OutTemplateName { get; set; }
 
 		#region InnerClass
 

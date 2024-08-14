@@ -33,10 +33,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <param name="OverlayType">
 		/// <para>Overlay Type</para>
 		/// <para>Specifies the type of overlay to be performed.</para>
-		/// <para>Intersect—Computes a geometric intersection of the input layers. Features or portions of features that overlap in both the input layer and overlay layer will be written to the output layer. This is the default.</para>
-		/// <para>Erase—Only those features or portions of features in the overlay layer that are not within the features in the input layer are written to the output.</para>
-		/// <para>Union— Computes a geometric union of the input layer and overlay layer. All features and their attributes will be written to the layer.</para>
-		/// <para>Identity— Computes a geometric intersection of the input features and identity features. Features or portions of features that overlap in both input layer and overlay layer will be written to the output layer.</para>
+		/// <para>Intersect—A geometric intersection of the input layers will be computed. Features or portions of features that overlap in both the input layer and overlay layer will be written to the output layer. This is the default.</para>
+		/// <para>Erase—Only those features or portions of features in the input layer that do not overlap the features in the overlay layer will be written to the output.</para>
+		/// <para>Union—A geometric union of the input layer and overlay layer will be computed. All features and their attributes will be written to the layer.</para>
+		/// <para>Identity—A geometric intersection of the input features and identity features will be computed. Features or portions of features that overlap in both the input layer and the overlay layer will be written to the output layer.</para>
 		/// <para>Symmetrical Difference— Features or portions of features in the input layer and overlay layer that do not overlap will be written to the output layer.</para>
 		/// <para><see cref="OverlayTypeEnum"/></para>
 		/// </param>
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OverlayLayer, OutputName, OverlayType, IncludeOverlaps, DataStore, Output };
+		public override object[] Parameters => new object[] { InputLayer, OverlayLayer, OutputName, OverlayType, IncludeOverlaps!, DataStore!, Output! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -112,10 +112,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Overlay Type</para>
 		/// <para>Specifies the type of overlay to be performed.</para>
-		/// <para>Intersect—Computes a geometric intersection of the input layers. Features or portions of features that overlap in both the input layer and overlay layer will be written to the output layer. This is the default.</para>
-		/// <para>Erase—Only those features or portions of features in the overlay layer that are not within the features in the input layer are written to the output.</para>
-		/// <para>Union— Computes a geometric union of the input layer and overlay layer. All features and their attributes will be written to the layer.</para>
-		/// <para>Identity— Computes a geometric intersection of the input features and identity features. Features or portions of features that overlap in both input layer and overlay layer will be written to the output layer.</para>
+		/// <para>Intersect—A geometric intersection of the input layers will be computed. Features or portions of features that overlap in both the input layer and overlay layer will be written to the output layer. This is the default.</para>
+		/// <para>Erase—Only those features or portions of features in the input layer that do not overlap the features in the overlay layer will be written to the output.</para>
+		/// <para>Union—A geometric union of the input layer and overlay layer will be computed. All features and their attributes will be written to the layer.</para>
+		/// <para>Identity—A geometric intersection of the input features and identity features will be computed. Features or portions of features that overlap in both the input layer and the overlay layer will be written to the output layer.</para>
 		/// <para>Symmetrical Difference— Features or portions of features in the input layer and overlay layer that do not overlap will be written to the output layer.</para>
 		/// <para><see cref="OverlayTypeEnum"/></para>
 		/// </summary>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Include Overlapping Input Layers</para>
-		/// <para>Specifies whether one or both of the input layers have self-intersecting features. This parameter is only supported for ArcGIS Enterprise 10.6.1.</para>
+		/// <para>Specifies whether one or both of the input layers have overlapping features. This parameter is only supported for ArcGIS Enterprise 10.6.1.</para>
 		/// <para>Checked—One or both of the layers have overlapping features. This is the default.</para>
 		/// <para>Unchecked—Neither layer has overlapping features.</para>
 		/// <para><see cref="IncludeOverlapsEnum"/></para>
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced")]
-		public object IncludeOverlaps { get; set; } = "true";
+		public object? IncludeOverlaps { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Data Store</para>
@@ -148,19 +148,19 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Data Store")]
-		public object DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
+		public object? DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
 
 		/// <summary>
 		/// <para>Output Feature Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Output { get; set; }
+		public object? Output { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public OverlayLayers SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public OverlayLayers SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;
@@ -174,28 +174,28 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum OverlayTypeEnum 
 		{
 			/// <summary>
-			/// <para>Intersect—Computes a geometric intersection of the input layers. Features or portions of features that overlap in both the input layer and overlay layer will be written to the output layer. This is the default.</para>
+			/// <para>Intersect—A geometric intersection of the input layers will be computed. Features or portions of features that overlap in both the input layer and overlay layer will be written to the output layer. This is the default.</para>
 			/// </summary>
 			[GPValue("INTERSECT")]
 			[Description("Intersect")]
 			Intersect,
 
 			/// <summary>
-			/// <para>Erase—Only those features or portions of features in the overlay layer that are not within the features in the input layer are written to the output.</para>
+			/// <para>Erase—Only those features or portions of features in the input layer that do not overlap the features in the overlay layer will be written to the output.</para>
 			/// </summary>
 			[GPValue("ERASE")]
 			[Description("Erase")]
 			Erase,
 
 			/// <summary>
-			/// <para>Identity— Computes a geometric intersection of the input features and identity features. Features or portions of features that overlap in both input layer and overlay layer will be written to the output layer.</para>
+			/// <para>Identity—A geometric intersection of the input features and identity features will be computed. Features or portions of features that overlap in both the input layer and the overlay layer will be written to the output layer.</para>
 			/// </summary>
 			[GPValue("IDENTITY")]
 			[Description("Identity")]
 			Identity,
 
 			/// <summary>
-			/// <para>Union— Computes a geometric union of the input layer and overlay layer. All features and their attributes will be written to the layer.</para>
+			/// <para>Union—A geometric union of the input layer and overlay layer will be computed. All features and their attributes will be written to the layer.</para>
 			/// </summary>
 			[GPValue("UNION")]
 			[Description("Union")]

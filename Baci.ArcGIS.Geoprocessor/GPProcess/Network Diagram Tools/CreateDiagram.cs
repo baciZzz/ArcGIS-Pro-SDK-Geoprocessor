@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, Features, OutUtilityNetwork, OutName };
+		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, Features!, OutUtilityNetwork!, OutName! };
 
 		/// <summary>
 		/// <para>Input Network</para>
@@ -85,27 +85,27 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Features</para>
-		/// <para>One or more feature layers to be used as input for diagram generation.</para>
-		/// <para>When feature layers are specified and there are network elements selected in the active map, the selected elements set is ignored and all the features in the specified layers are used as input for diagram creation.</para>
+		/// <para>One or more feature layers that will be used as input for diagram generation.</para>
+		/// <para>When feature layers are specified and network elements are selected in the active map, the selected elements set is ignored and all the features in the specified layers are used as input for diagram creation.</para>
 		/// <para>When no feature layers are specified, the process searches for the network elements selected in the active map and creates the diagram from those elements.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Features { get; set; }
+		public object? Features { get; set; }
 
 		/// <summary>
 		/// <para>Output Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		/// <summary>
 		/// <para>Network Diagram Name</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutName { get; set; }
+		public object? OutName { get; set; }
 
 	}
 }

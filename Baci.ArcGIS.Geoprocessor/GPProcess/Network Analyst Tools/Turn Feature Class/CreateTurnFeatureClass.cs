@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutLocation, OutFeatureClassName, MaximumEdges, InNetworkDataset, InTemplateFeatureClass, SpatialReference, ConfigKeyword, SpatialGrid1, SpatialGrid2, SpatialGrid3, HasZ, OutTurnFeatures };
+		public override object[] Parameters => new object[] { OutLocation, OutFeatureClassName, MaximumEdges!, InNetworkDataset!, InTemplateFeatureClass!, SpatialReference!, ConfigKeyword!, SpatialGrid1!, SpatialGrid2!, SpatialGrid3!, HasZ!, OutTurnFeatures! };
 
 		/// <summary>
 		/// <para>Output Location</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MaximumEdges { get; set; } = "5";
+		public object? MaximumEdges { get; set; } = "5";
 
 		/// <summary>
 		/// <para>Input Network Dataset</para>
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPNetworkDatasetLayer()]
-		public object InNetworkDataset { get; set; }
+		public object? InNetworkDataset { get; set; }
 
 		/// <summary>
 		/// <para>Template Feature Class</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
-		public object InTemplateFeatureClass { get; set; }
+		public object? InTemplateFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Spatial Reference</para>
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
-		public object SpatialReference { get; set; }
+		public object? SpatialReference { get; set; }
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Geodatabase Settings")]
-		public object ConfigKeyword { get; set; }
+		public object? ConfigKeyword { get; set; }
 
 		/// <summary>
 		/// <para>Output Spatial Grid 1</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Geodatabase Settings")]
-		public object SpatialGrid1 { get; set; } = "1000";
+		public object? SpatialGrid1 { get; set; } = "1000";
 
 		/// <summary>
 		/// <para>Output Spatial Grid 2</para>
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Geodatabase Settings")]
-		public object SpatialGrid2 { get; set; } = "0";
+		public object? SpatialGrid2 { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Output Spatial Grid 3</para>
@@ -151,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Geodatabase Settings")]
-		public object SpatialGrid3 { get; set; } = "0";
+		public object? SpatialGrid3 { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Has Z</para>
@@ -162,19 +162,19 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object HasZ { get; set; } = "false";
+		public object? HasZ { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Turn Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutTurnFeatures { get; set; }
+		public object? OutTurnFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateTurnFeatureClass SetEnviroment(object configKeyword = null , object outputCoordinateSystem = null , object workspace = null )
+		public CreateTurnFeatureClass SetEnviroment(object? configKeyword = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(configKeyword: configKeyword, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

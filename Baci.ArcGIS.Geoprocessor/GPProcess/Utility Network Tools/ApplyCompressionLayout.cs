@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, AreContainersPreserved, GroupingDistanceAbsolute, VerticesRemovalRule, OutNetworkDiagramLayer, RunAsync };
+		public override object[] Parameters => new object[] { InNetworkDiagramLayer, AreContainersPreserved!, GroupingDistanceAbsolute!, VerticesRemovalRule!, OutNetworkDiagramLayer!, RunAsync! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
@@ -76,14 +76,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AreContainersPreserved { get; set; } = "true";
+		public object? AreContainersPreserved { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Maximum Distance for Grouping</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object GroupingDistanceAbsolute { get; set; } = "20 Unknown";
+		public object? GroupingDistanceAbsolute { get; set; } = "20 Unknown";
 
 		/// <summary>
 		/// <para>Vertex Removal Rule</para>
@@ -92,14 +92,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object VerticesRemovalRule { get; set; } = "OUTER";
+		public object? VerticesRemovalRule { get; set; } = "OUTER";
 
 		/// <summary>
 		/// <para>Output Network Diagram</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDiagramLayer()]
-		public object OutNetworkDiagramLayer { get; set; }
+		public object? OutNetworkDiagramLayer { get; set; }
 
 		/// <summary>
 		/// <para>Run in asynchronous mode on the server</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object RunAsync { get; set; } = "false";
+		public object? RunAsync { get; set; } = "false";
 
 		#region InnerClass
 

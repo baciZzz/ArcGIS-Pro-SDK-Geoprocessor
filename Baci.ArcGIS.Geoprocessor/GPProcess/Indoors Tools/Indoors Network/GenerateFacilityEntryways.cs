@@ -20,15 +20,15 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		/// <param name="InLevelFeatures">
 		/// <para>Input Level Features</para>
-		/// <para>The input polygon features representing a level or levels in one or more facilities. In the Indoors model, this will be the Levels layer. The tool processes only the levels represented by these features.</para>
+		/// <para>The input polygon features representing a level or levels in one or more facilities. In the Indoors model, this is the Levels layer. The tool will process only the levels represented by these features.</para>
 		/// </param>
 		/// <param name="InUnitFeatures">
 		/// <para>Input Unit Features</para>
-		/// <para>The input polygon features representing building spaces. In the Indoors model, this will be the Units layer. The tool uses these features when identifying exterior edges of a facility.</para>
+		/// <para>The input polygon features representing building spaces. In the Indoors model, this is the Units layer. The tool will use these features when identifying exterior edges of a facility.</para>
 		/// </param>
 		/// <param name="InDoorFeatures">
 		/// <para>Input Door Features</para>
-		/// <para>The input polyline features representing doors. In the Indoors model, this will be a subset of features from the Details layer. The tool uses these features when identifying entryways along the exterior of a facility.The layer must have one or more door features selected for the tool to run. Use the Select Layer By Attribute tool to make a selection.</para>
+		/// <para>The input polyline features representing doors. In the Indoors model, this is a subset of features from the Details layer. The tool will use these features when identifying entryways along the exterior of a facility.The layer must have one or more door features selected for the tool to run. Use the Select Layer By Attribute tool to make a selection.</para>
 		/// </param>
 		/// <param name="TargetEntryways">
 		/// <para>Target Entryways</para>
@@ -75,11 +75,11 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLevelFeatures, InUnitFeatures, InDoorFeatures, TargetEntryways, BufferSize, EntrywayUseType, ExteriorUnitExp, DeleteExistingEntryways, UpdatedEntryways, LevelIdField, UseTypeField };
+		public override object[] Parameters => new object[] { InLevelFeatures, InUnitFeatures, InDoorFeatures, TargetEntryways, BufferSize!, EntrywayUseType!, ExteriorUnitExp!, DeleteExistingEntryways!, UpdatedEntryways!, LevelIdField!, UseTypeField! };
 
 		/// <summary>
 		/// <para>Input Level Features</para>
-		/// <para>The input polygon features representing a level or levels in one or more facilities. In the Indoors model, this will be the Levels layer. The tool processes only the levels represented by these features.</para>
+		/// <para>The input polygon features representing a level or levels in one or more facilities. In the Indoors model, this is the Levels layer. The tool will process only the levels represented by these features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Input Unit Features</para>
-		/// <para>The input polygon features representing building spaces. In the Indoors model, this will be the Units layer. The tool uses these features when identifying exterior edges of a facility.</para>
+		/// <para>The input polygon features representing building spaces. In the Indoors model, this is the Units layer. The tool will use these features when identifying exterior edges of a facility.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Input Door Features</para>
-		/// <para>The input polyline features representing doors. In the Indoors model, this will be a subset of features from the Details layer. The tool uses these features when identifying entryways along the exterior of a facility.The layer must have one or more door features selected for the tool to run. Use the Select Layer By Attribute tool to make a selection.</para>
+		/// <para>The input polyline features representing doors. In the Indoors model, this is a subset of features from the Details layer. The tool will use these features when identifying entryways along the exterior of a facility.The layer must have one or more door features selected for the tool to run. Use the Select Layer By Attribute tool to make a selection.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object BufferSize { get; set; } = "0.5";
+		public object? BufferSize { get; set; } = "0.5";
 
 		/// <summary>
 		/// <para>Entryway Use Type</para>
@@ -128,15 +128,15 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object EntrywayUseType { get; set; } = "Entry";
+		public object? EntrywayUseType { get; set; } = "Entry";
 
 		/// <summary>
 		/// <para>Exterior Unit Expression</para>
-		/// <para>An SQL expression used to define which Input Unit Features values represent a facility's exterior spaces, such as patios or fire escapes. Spaces matching this expression will be treated as exterior during entryway generation.</para>
+		/// <para>An SQL expression used to define which Input Unit Features values represent a facility's exterior spaces, such as patios or fire escapes. Spaces matching this expression will be treated as exterior features during entryway generation.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object ExteriorUnitExp { get; set; }
+		public object? ExteriorUnitExp { get; set; }
 
 		/// <summary>
 		/// <para>Delete Existing Entryways</para>
@@ -148,14 +148,14 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DeleteExistingEntryways { get; set; } = "false";
+		public object? DeleteExistingEntryways { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Entryways</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object UpdatedEntryways { get; set; }
+		public object? UpdatedEntryways { get; set; }
 
 		/// <summary>
 		/// <para>Level ID Field</para>
@@ -163,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
-		public object LevelIdField { get; set; } = "LEVEL_ID";
+		public object? LevelIdField { get; set; } = "LEVEL_ID";
 
 		/// <summary>
 		/// <para>Use Type Field</para>
@@ -171,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
-		public object UseTypeField { get; set; } = "USE_TYPE";
+		public object? UseTypeField { get; set; } = "USE_TYPE";
 
 		#region InnerClass
 

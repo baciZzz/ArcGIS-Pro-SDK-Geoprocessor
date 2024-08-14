@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutSiteFeatureClass, OutSectorFeatureClass, IdFields, XField, YField, InCoordinateSystem, OutCoordinateSystem, AzimuthField, DefaultAzimuth, BeamwidthField, BeamwidthType, DefaultBeamwidth, RadiusField, RadiusUnit, DefaultRadiusLength };
+		public override object[] Parameters => new object[] { InTable, OutSiteFeatureClass, OutSectorFeatureClass, IdFields, XField, YField, InCoordinateSystem, OutCoordinateSystem, AzimuthField!, DefaultAzimuth!, BeamwidthField!, BeamwidthType!, DefaultBeamwidth!, RadiusField!, RadiusUnit!, DefaultRadiusLength! };
 
 		/// <summary>
 		/// <para>Input Cell Site Table</para>
@@ -192,7 +192,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object AzimuthField { get; set; }
+		public object? AzimuthField { get; set; }
 
 		/// <summary>
 		/// <para>Default Start Azimuth</para>
@@ -204,7 +204,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object DefaultAzimuth { get; set; } = "0";
+		public object? DefaultAzimuth { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Beamwidth Field</para>
@@ -214,7 +214,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object BeamwidthField { get; set; }
+		public object? BeamwidthField { get; set; }
 
 		/// <summary>
 		/// <para>Beamwidth Type</para>
@@ -226,7 +226,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object BeamwidthType { get; set; } = "FULL_BEAMWIDTH";
+		public object? BeamwidthType { get; set; } = "FULL_BEAMWIDTH";
 
 		/// <summary>
 		/// <para>Default Beamwidth</para>
@@ -236,7 +236,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object DefaultBeamwidth { get; set; } = "90";
+		public object? DefaultBeamwidth { get; set; } = "90";
 
 		/// <summary>
 		/// <para>Radius Field</para>
@@ -245,7 +245,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object RadiusField { get; set; }
+		public object? RadiusField { get; set; }
 
 		/// <summary>
 		/// <para>Radius Unit</para>
@@ -260,7 +260,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object RadiusUnit { get; set; } = "MILES";
+		public object? RadiusUnit { get; set; } = "MILES";
 
 		/// <summary>
 		/// <para>Default Radius Length</para>
@@ -269,14 +269,14 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object DefaultRadiusLength { get; set; } = "2";
+		public object? DefaultRadiusLength { get; set; } = "2";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CellSiteRecordsToFeatureClass SetEnviroment(object MDomain = null , object MResolution = null , object MTolerance = null , object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , int? autoCommit = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , bool? qualifiedFieldNames = null , object scratchWorkspace = null , object workspace = null )
+		public CellSiteRecordsToFeatureClass SetEnviroment(object? MDomain = null , double? MResolution = null , double? MTolerance = null , object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , int? autoCommit = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , bool? maintainAttachments = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , bool? qualifiedFieldNames = null , object? scratchWorkspace = null , object? workspace = null )
 		{
-			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, workspace: workspace);
+			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, maintainAttachments: maintainAttachments, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
 		}
 

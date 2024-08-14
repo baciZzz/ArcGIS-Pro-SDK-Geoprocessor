@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeaturesNumerator, InFeaturesDenominator, PopulationFieldNumerator, PopulationFieldDenominator, OutRaster, CellSize!, SearchRadiusNumerator!, SearchRadiusDenominator!, OutCellValues!, Method!, InBarriersNumerator!, InBarriersDenominator };
+		public override object[] Parameters => new object[] { InFeaturesNumerator, InFeaturesDenominator, PopulationFieldNumerator, PopulationFieldDenominator, OutRaster, CellSize!, SearchRadiusNumerator!, SearchRadiusDenominator!, OutCellValues!, Method!, InBarriersNumerator!, InBarriersDenominator! };
 
 		/// <summary>
 		/// <para>Input point or polyline features as numerator</para>

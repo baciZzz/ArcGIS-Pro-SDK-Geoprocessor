@@ -31,7 +31,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <param name="OutTable">
 		/// <para>Output table</para>
 		/// <para>Output table that will contain the summary of the values in each zone.</para>
-		/// <para>The format of the table is determined by the output location and path. By default, the output will be a geodatabase table. If the path is not in a geodatabase, the format is determined by the extension. If the extension is .dbf, it will be in dBASE format. If no extension is specified, the output will be an INFO table. Note that INFO tables are not supported as input in ArcGIS Pro and cannot be displayed.</para>
+		/// <para>The format of the table is determined by the output location and path. By default, the output will be a geodatabase table. If the path is not in a geodatabase, the format is determined by the extension. If the extension is .dbf, it will be in dBASE format. If no extension is specified, the output will be an INFO table. INFO tables are not supported as input in ArcGIS Pro and cannot be displayed</para>
 		/// </param>
 		public ZonalGeometryAsTable(object InZoneData, object ZoneField, object OutTable)
 		{
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InZoneData, ZoneField, OutTable, ProcessingCellSize };
+		public override object[] Parameters => new object[] { InZoneData, ZoneField, OutTable, ProcessingCellSize! };
 
 		/// <summary>
 		/// <para>Input raster or feature zone data</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Output table</para>
 		/// <para>Output table that will contain the summary of the values in each zone.</para>
-		/// <para>The format of the table is determined by the output location and path. By default, the output will be a geodatabase table. If the path is not in a geodatabase, the format is determined by the extension. If the extension is .dbf, it will be in dBASE format. If no extension is specified, the output will be an INFO table. Note that INFO tables are not supported as input in ArcGIS Pro and cannot be displayed.</para>
+		/// <para>The format of the table is determined by the output location and path. By default, the output will be a geodatabase table. If the path is not in a geodatabase, the format is determined by the extension. If the extension is .dbf, it will be in dBASE format. If no extension is specified, the output will be an INFO table. INFO tables are not supported as input in ArcGIS Pro and cannot be displayed</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -112,14 +112,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
 		[GPSAGeoDataDomain()]
-		public object ProcessingCellSize { get; set; }
+		public object? ProcessingCellSize { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ZonalGeometryAsTable SetEnviroment(int? autoCommit = null , object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , bool? qualifiedFieldNames = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , bool? transferDomains = null , object workspace = null )
+		public ZonalGeometryAsTable SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , bool? qualifiedFieldNames = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , bool? transferDomains = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, transferDomains: transferDomains, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, transferDomains: transferDomains, workspace: workspace);
 			return this;
 		}
 

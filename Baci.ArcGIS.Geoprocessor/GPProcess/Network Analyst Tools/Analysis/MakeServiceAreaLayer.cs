@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDataset, OutNetworkAnalysisLayer, ImpedanceAttribute, TravelFromTo, DefaultBreakValues, PolygonType, Merge, NestingType, LineType, Overlap, Split, ExcludedSourceName, AccumulateAttributeName, UturnPolicy, RestrictionAttributeName, PolygonTrim, PolyTrimValue, LinesSourceFields, Hierarchy, TimeOfDay, OutputLayer };
+		public override object[] Parameters => new object[] { InNetworkDataset, OutNetworkAnalysisLayer, ImpedanceAttribute, TravelFromTo!, DefaultBreakValues!, PolygonType!, Merge!, NestingType!, LineType!, Overlap!, Split!, ExcludedSourceName!, AccumulateAttributeName!, UturnPolicy!, RestrictionAttributeName!, PolygonTrim!, PolyTrimValue!, LinesSourceFields!, Hierarchy!, TimeOfDay!, OutputLayer! };
 
 		/// <summary>
 		/// <para>Input Analysis Network</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TravelFromTo { get; set; } = "TRAVEL_FROM";
+		public object? TravelFromTo { get; set; } = "TRAVEL_FROM";
 
 		/// <summary>
 		/// <para>Default Break Values</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DefaultBreakValues { get; set; }
+		public object? DefaultBreakValues { get; set; }
 
 		/// <summary>
 		/// <para>Polygon Type</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Polygon Generation Options")]
-		public object PolygonType { get; set; } = "SIMPLE_POLYS";
+		public object? PolygonType { get; set; } = "SIMPLE_POLYS";
 
 		/// <summary>
 		/// <para>Merge Polygons with Similar Ranges</para>
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Polygon Generation Options")]
-		public object Merge { get; set; } = "NO_MERGE";
+		public object? Merge { get; set; } = "NO_MERGE";
 
 		/// <summary>
 		/// <para>Polygon Nest Option</para>
@@ -160,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Polygon Generation Options")]
-		public object NestingType { get; set; } = "RINGS";
+		public object? NestingType { get; set; } = "RINGS";
 
 		/// <summary>
 		/// <para>Line Type</para>
@@ -174,7 +174,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Line Generation Options")]
-		public object LineType { get; set; } = "NO_LINES";
+		public object? LineType { get; set; } = "NO_LINES";
 
 		/// <summary>
 		/// <para>Overlap Lines</para>
@@ -187,7 +187,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Line Generation Options")]
-		public object Overlap { get; set; } = "true";
+		public object? Overlap { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Split Lines when They Cross a Service Area Break</para>
@@ -199,7 +199,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Line Generation Options")]
-		public object Split { get; set; } = "true";
+		public object? Split { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Exclude Sources from Polygon Generation</para>
@@ -211,7 +211,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Polygon Generation Options")]
-		public object ExcludedSourceName { get; set; }
+		public object? ExcludedSourceName { get; set; }
 
 		/// <summary>
 		/// <para>Accumulators</para>
@@ -222,7 +222,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Accumulators")]
-		public object AccumulateAttributeName { get; set; }
+		public object? AccumulateAttributeName { get; set; }
 
 		/// <summary>
 		/// <para>U-Turn Policy</para>
@@ -238,7 +238,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Restrictions")]
-		public object UturnPolicy { get; set; } = "ALLOW_UTURNS";
+		public object? UturnPolicy { get; set; } = "ALLOW_UTURNS";
 
 		/// <summary>
 		/// <para>Restrictions</para>
@@ -248,7 +248,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Restrictions")]
-		public object RestrictionAttributeName { get; set; }
+		public object? RestrictionAttributeName { get; set; }
 
 		/// <summary>
 		/// <para>Trim Polygons</para>
@@ -260,7 +260,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Polygon Generation Options")]
-		public object PolygonTrim { get; set; } = "true";
+		public object? PolygonTrim { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Polygon Trim</para>
@@ -269,7 +269,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Polygon Generation Options")]
-		public object PolyTrimValue { get; set; } = "100 Meters";
+		public object? PolyTrimValue { get; set; } = "100 Meters";
 
 		/// <summary>
 		/// <para>Include Network Source Fields in Lines</para>
@@ -281,7 +281,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Line Generation Options")]
-		public object LinesSourceFields { get; set; } = "true";
+		public object? LinesSourceFields { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Use Hierarchy in Analysis</para>
@@ -294,7 +294,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Hierarchy")]
-		public object Hierarchy { get; set; } = "false";
+		public object? Hierarchy { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Time of Day</para>
@@ -315,19 +315,19 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object TimeOfDay { get; set; }
+		public object? TimeOfDay { get; set; }
 
 		/// <summary>
 		/// <para>Network Analyst Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPNALayer()]
-		public object OutputLayer { get; set; }
+		public object? OutputLayer { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeServiceAreaLayer SetEnviroment(object workspace = null )
+		public MakeServiceAreaLayer SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

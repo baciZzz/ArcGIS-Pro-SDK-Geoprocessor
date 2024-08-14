@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ZField, OutGaLayer, OutRaster, CellSize, Power, WeightField };
+		public override object[] Parameters => new object[] { InFeatures, ZField, OutGaLayer!, OutRaster!, CellSize!, Power!, WeightField! };
 
 		/// <summary>
 		/// <para>Input features</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGALayer()]
-		public object OutGaLayer { get; set; }
+		public object? OutGaLayer { get; set; }
 
 		/// <summary>
 		/// <para>Output raster</para>
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
-		public object OutRaster { get; set; }
+		public object? OutRaster { get; set; }
 
 		/// <summary>
 		/// <para>Output cell size</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
 		[GPSAGeoDataDomain()]
-		public object CellSize { get; set; }
+		public object? CellSize { get; set; }
 
 		/// <summary>
 		/// <para>Order of polynomial</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object Power { get; set; } = "1";
+		public object? Power { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Weight field</para>
@@ -128,12 +128,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object WeightField { get; set; }
+		public object? WeightField { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GlobalPolynomialInterpolation SetEnviroment(object cellSize = null , object coincidentPoints = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object snapRaster = null , object workspace = null )
+		public GlobalPolynomialInterpolation SetEnviroment(object? cellSize = null , object? coincidentPoints = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? snapRaster = null , object? workspace = null )
 		{
 			base.SetEnv(cellSize: cellSize, coincidentPoints: coincidentPoints, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, snapRaster: snapRaster, workspace: workspace);
 			return this;

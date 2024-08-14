@@ -64,7 +64,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatures };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -80,12 +80,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatures { get; set; }
+		public object? OutFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddXY SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object workspace = null )
+		public AddXY SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

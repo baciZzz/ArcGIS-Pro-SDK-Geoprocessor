@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { UpperLines, LowerLines, OutputFeatureClass, OutputType, FullyConnected, SearchDistance, Interval, MinimumLength, AlternateHachures, Perpendicular, PolygonBaseWidth };
+		public override object[] Parameters => new object[] { UpperLines, LowerLines, OutputFeatureClass, OutputType!, FullyConnected!, SearchDistance!, Interval!, MinimumLength!, AlternateHachures!, Perpendicular!, PolygonBaseWidth! };
 
 		/// <summary>
 		/// <para>Upper Line Features</para>
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object OutputType { get; set; } = "POLYGON_TRIANGLES";
+		public object? OutputType { get; set; } = "POLYGON_TRIANGLES";
 
 		/// <summary>
 		/// <para>Fully connected</para>
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object FullyConnected { get; set; } = "false";
+		public object? FullyConnected { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Search Distance</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object SearchDistance { get; set; } = "20 Meters";
+		public object? SearchDistance { get; set; } = "20 Meters";
 
 		/// <summary>
 		/// <para>Hachure Interval</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object Interval { get; set; } = "10 Meters";
+		public object? Interval { get; set; } = "10 Meters";
 
 		/// <summary>
 		/// <para>Minimum Length</para>
@@ -144,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object MinimumLength { get; set; } = "0 Meters";
+		public object? MinimumLength { get; set; } = "0 Meters";
 
 		/// <summary>
 		/// <para>Alternate length of every other hachure</para>
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AlternateHachures { get; set; } = "false";
+		public object? AlternateHachures { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Perpendicular to upper line</para>
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Perpendicular { get; set; } = "false";
+		public object? Perpendicular { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Polygon Base Width</para>
@@ -176,12 +176,12 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object PolygonBaseWidth { get; set; } = "5 Meters";
+		public object? PolygonBaseWidth { get; set; } = "5 Meters";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateHachuresForDefinedSlopes SetEnviroment(object MDomain = null , object ZDomain = null , object extent = null , object outputCoordinateSystem = null )
+		public GenerateHachuresForDefinedSlopes SetEnviroment(object? MDomain = null , object? ZDomain = null , object? extent = null , object? outputCoordinateSystem = null )
 		{
 			base.SetEnv(MDomain: MDomain, ZDomain: ZDomain, extent: extent, outputCoordinateSystem: outputCoordinateSystem);
 			return this;

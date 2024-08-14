@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause, ResetFootprint, MinDataValue, MaxDataValue, ApproxNumVertices, ShrinkDistance, MaintainEdges, SkipDerivedImages, UpdateBoundary, RequestSize, MinRegionSize, SimplificationMethod, EdgeTolerance, MaxSliverSize, MinThinnessRatio, OutMosaicDataset };
+		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause!, ResetFootprint!, MinDataValue!, MaxDataValue!, ApproxNumVertices!, ShrinkDistance!, MaintainEdges!, SkipDerivedImages!, UpdateBoundary!, RequestSize!, MinRegionSize!, SimplificationMethod!, EdgeTolerance!, MaxSliverSize!, MinThinnessRatio!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Computation Method</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCodedValueDomain()]
-		public object ResetFootprint { get; set; } = "RADIOMETRY";
+		public object? ResetFootprint { get; set; } = "RADIOMETRY";
 
 		/// <summary>
 		/// <para>Minimum Data Value</para>
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MinDataValue { get; set; } = "1";
+		public object? MinDataValue { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Maximum Data Value</para>
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MaxDataValue { get; set; } = "254";
+		public object? MaxDataValue { get; set; } = "254";
 
 		/// <summary>
 		/// <para>Approximate number of vertices</para>
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object ApproxNumVertices { get; set; } = "80";
+		public object? ApproxNumVertices { get; set; } = "80";
 
 		/// <summary>
 		/// <para>Shrink distance</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ShrinkDistance { get; set; } = "0";
+		public object? ShrinkDistance { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Maintain sheet edges</para>
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object MaintainEdges { get; set; } = "false";
+		public object? MaintainEdges { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Skip overviews</para>
@@ -149,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SkipDerivedImages { get; set; } = "true";
+		public object? SkipDerivedImages { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Update Boundary</para>
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UpdateBoundary { get; set; } = "true";
+		public object? UpdateBoundary { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Request Size</para>
@@ -171,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Advanced Options")]
-		public object RequestSize { get; set; } = "2000";
+		public object? RequestSize { get; set; } = "2000";
 
 		/// <summary>
 		/// <para>Minimum Region Size</para>
@@ -181,7 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Advanced Options")]
-		public object MinRegionSize { get; set; } = "100";
+		public object? MinRegionSize { get; set; } = "100";
 
 		/// <summary>
 		/// <para>Simplification Method</para>
@@ -194,7 +194,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SimplificationMethod { get; set; } = "NONE";
+		public object? SimplificationMethod { get; set; } = "NONE";
 
 		/// <summary>
 		/// <para>Edge tolerance</para>
@@ -205,7 +205,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Advanced Options")]
-		public object EdgeTolerance { get; set; }
+		public object? EdgeTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Sliver Size</para>
@@ -215,7 +215,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Sliver Removal Options")]
-		public object MaxSliverSize { get; set; } = "20";
+		public object? MaxSliverSize { get; set; } = "20";
 
 		/// <summary>
 		/// <para>Minimum Thinness Ratio</para>
@@ -225,19 +225,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Sliver Removal Options")]
-		public object MinThinnessRatio { get; set; } = "0.05";
+		public object? MinThinnessRatio { get; set; } = "0.05";
 
 		/// <summary>
 		/// <para>Updated Mosaic Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutMosaicDataset { get; set; }
+		public object? OutMosaicDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BuildFootprints SetEnviroment(object parallelProcessingFactor = null )
+		public BuildFootprints SetEnviroment(object? parallelProcessingFactor = null )
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

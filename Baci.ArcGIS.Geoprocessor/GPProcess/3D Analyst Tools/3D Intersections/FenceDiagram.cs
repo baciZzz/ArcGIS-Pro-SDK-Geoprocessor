@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLineFeatures, InSurface, OutFeatureClass, Method, FloorHeight, CeilingHeight, SampleDistance };
+		public override object[] Parameters => new object[] { InLineFeatures, InSurface, OutFeatureClass, Method!, FloorHeight!, CeilingHeight!, SampleDistance! };
 
 		/// <summary>
 		/// <para>Input Line Features</para>
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "LINEAR";
+		public object? Method { get; set; } = "LINEAR";
 
 		/// <summary>
 		/// <para>Floor Height</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Height Extensions")]
-		public object FloorHeight { get; set; }
+		public object? FloorHeight { get; set; }
 
 		/// <summary>
 		/// <para>Ceiling Height</para>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Height Extensions")]
-		public object CeilingHeight { get; set; }
+		public object? CeilingHeight { get; set; }
 
 		/// <summary>
 		/// <para>Sample Distance</para>
@@ -134,12 +134,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object SampleDistance { get; set; }
+		public object? SampleDistance { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FenceDiagram SetEnviroment(object XYDomain = null , object ZDomain = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object workspace = null )
+		public FenceDiagram SetEnviroment(object? XYDomain = null , object? ZDomain = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, ZDomain: ZDomain, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

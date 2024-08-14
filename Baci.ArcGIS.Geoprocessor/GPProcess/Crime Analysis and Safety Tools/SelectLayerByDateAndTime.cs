@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayerOrView, SelectionType, TimeType, DateField, StartDateField, EndDateField, SelectionOptions, DateSelectionType, SingleDate, StartDate, EndDate, UseSystemTime, TimeSlice, StartTime, EndTime, DaysOfWeek, Months, Years, OutLayerOrView, Count };
+		public override object[] Parameters => new object[] { InLayerOrView, SelectionType, TimeType, DateField!, StartDateField!, EndDateField!, SelectionOptions!, DateSelectionType!, SingleDate!, StartDate!, EndDate!, UseSystemTime!, TimeSlice!, StartTime!, EndTime!, DaysOfWeek!, Months!, Years!, OutLayerOrView!, Count! };
 
 		/// <summary>
 		/// <para>Input Rows</para>
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object DateField { get; set; }
+		public object? DateField { get; set; }
 
 		/// <summary>
 		/// <para>Start Date Field</para>
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object StartDateField { get; set; }
+		public object? StartDateField { get; set; }
 
 		/// <summary>
 		/// <para>End Date Field</para>
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object EndDateField { get; set; }
+		public object? EndDateField { get; set; }
 
 		/// <summary>
 		/// <para>Selection Options</para>
@@ -155,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object SelectionOptions { get; set; }
+		public object? SelectionOptions { get; set; }
 
 		/// <summary>
 		/// <para>Date Selection Type</para>
@@ -171,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Select by Date")]
-		public object DateSelectionType { get; set; }
+		public object? DateSelectionType { get; set; }
 
 		/// <summary>
 		/// <para>Date</para>
@@ -181,7 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Select by Date")]
-		public object SingleDate { get; set; }
+		public object? SingleDate { get; set; }
 
 		/// <summary>
 		/// <para>Start Date</para>
@@ -191,7 +191,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Select by Date")]
-		public object StartDate { get; set; }
+		public object? StartDate { get; set; }
 
 		/// <summary>
 		/// <para>End Date</para>
@@ -201,7 +201,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Select by Date")]
-		public object EndDate { get; set; }
+		public object? EndDate { get; set; }
 
 		/// <summary>
 		/// <para>Use Current System time as End Time</para>
@@ -216,19 +216,18 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Select by Date")]
-		public object UseSystemTime { get; set; } = "false";
+		public object? UseSystemTime { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Time Slice</para>
 		/// <para>The number of time units (minutes, hours, days, weeks, months, or years) defining the recent time period on which the selection will be based, for example, events within the last 14 days.</para>
 		/// <para>This parameter is only active when the Date Selection Type parameter is set to By Comparative Time Period or By Recency.</para>
-		/// <para><see cref="TimeSliceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
+		[GPUnitDomain()]
 		[Category("Select by Date")]
-		public object TimeSlice { get; set; }
+		public object? TimeSlice { get; set; }
 
 		/// <summary>
 		/// <para>Start Time</para>
@@ -238,7 +237,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Select by Time of Day")]
-		public object StartTime { get; set; }
+		public object? StartTime { get; set; }
 
 		/// <summary>
 		/// <para>End Time</para>
@@ -248,7 +247,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Select by Time of Day")]
-		public object EndTime { get; set; }
+		public object? EndTime { get; set; }
 
 		/// <summary>
 		/// <para>Days of Week</para>
@@ -267,7 +266,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Select by Days of Week")]
-		public object DaysOfWeek { get; set; }
+		public object? DaysOfWeek { get; set; }
 
 		/// <summary>
 		/// <para>Months</para>
@@ -290,7 +289,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Select by Month")]
-		public object Months { get; set; }
+		public object? Months { get; set; }
 
 		/// <summary>
 		/// <para>Years</para>
@@ -301,7 +300,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[GPMultiValue()]
 		[GPRangeDomain()]
 		[Category("Select by Year")]
-		public object Years { get; set; }
+		public object? Years { get; set; }
 
 		/// <summary>
 		/// <para>Updated Layer or Table View</para>
@@ -309,14 +308,14 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object OutLayerOrView { get; set; }
+		public object? OutLayerOrView { get; set; }
 
 		/// <summary>
 		/// <para>Row Count</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLong()]
-		public object Count { get; set; }
+		public object? Count { get; set; }
 
 		#region InnerClass
 
@@ -471,55 +470,6 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 			[GPValue("false")]
 			[Description("NO_SYSTEM_TIME")]
 			NO_SYSTEM_TIME,
-
-		}
-
-		/// <summary>
-		/// <para>Time Slice</para>
-		/// </summary>
-		public enum TimeSliceEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Days")]
-			[Description("Days")]
-			Days,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Weeks")]
-			[Description("Weeks")]
-			Weeks,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Months")]
-			[Description("Months")]
-			Months,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Years")]
-			[Description("Years")]
-			Years,
 
 		}
 

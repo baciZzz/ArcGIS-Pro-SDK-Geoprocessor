@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, LookupTable, FieldAppliedTo, LookupKey, LookupDisplay, AllowAnyLookupValue, OutFeatureClass };
+		public override object[] Parameters => new object[] { InFeatureClass, LookupTable, FieldAppliedTo, LookupKey, LookupDisplay!, AllowAnyLookupValue!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>LRS Network Feature Class</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LookupDisplay { get; set; }
+		public object? LookupDisplay { get; set; }
 
 		/// <summary>
 		/// <para>Allow any lookup value</para>
@@ -131,19 +131,19 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AllowAnyLookupValue { get; set; } = "false";
+		public object? AllowAnyLookupValue { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Network Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConfigureLookupTable SetEnviroment(object workspace = null )
+		public ConfigureLookupTable SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -157,18 +157,18 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum AllowAnyLookupValueEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Don&apos;t allow a lookup display value to be configured. This is the default.</para>
-			/// </summary>
-			[GPValue("false")]
-			[Description("DO_NOT_ALLOW_ANY_VALUE")]
-			DO_NOT_ALLOW_ANY_VALUE,
-
-			/// <summary>
 			/// <para>Checked—Allow a value to be configured when one is not present in the table.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ALLOW_ANY_VALUE")]
 			ALLOW_ANY_VALUE,
+
+			/// <summary>
+			/// <para>Unchecked—Don&apos;t allow a lookup display value to be configured. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("DO_NOT_ALLOW_ANY_VALUE")]
+			DO_NOT_ALLOW_ANY_VALUE,
 
 		}
 

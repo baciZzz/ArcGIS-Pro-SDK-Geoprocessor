@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, ConfigureType, RuleName, UpdatedRuleName!, SourceTableName!, Fields!, OrderMethod!, OrderType!, PrioritizedExceptions!, OutFeatureClass };
+		public override object[] Parameters => new object[] { InFeatureClass, ConfigureType, RuleName, UpdatedRuleName!, SourceTableName!, Fields!, OrderMethod!, OrderType!, PrioritizedExceptions!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>LRS Network Feature Class</para>

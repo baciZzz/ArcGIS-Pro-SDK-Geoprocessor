@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Merge Multidimensional Rasters</para>
-	/// <para>Combines multiple multidimensional raster datasets spatially, or across variables and dimensions.</para>
+	/// <para>Combines multiple multidimensional raster datasets spatially or across variables and dimensions.</para>
 	/// </summary>
 	public class MergeMultidimensionalRasters : AbstractGPProcess
 	{
@@ -24,7 +24,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output Raster</para>
-		/// <para>The merged multidimensional raster dataset in Cloud Raster Format (a .crf file).</para>
+		/// <para>The merged multidimensional raster dataset in Cloud Raster Format (a .crf file) or NetCDF format (an .nc file).</para>
 		/// </param>
 		public MergeMultidimensionalRasters(object InMultidimensionalRasters, object OutRaster)
 		{
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMultidimensionalRasters, OutRaster, ResolveOverlapMethod };
+		public override object[] Parameters => new object[] { InMultidimensionalRasters, OutRaster, ResolveOverlapMethod! };
 
 		/// <summary>
 		/// <para>Input Multidimensional Rasters</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Output Raster</para>
-		/// <para>The merged multidimensional raster dataset in Cloud Raster Format (a .crf file).</para>
+		/// <para>The merged multidimensional raster dataset in Cloud Raster Format (a .crf file) or NetCDF format (an .nc file).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Resolve Overlap Method</para>
-		/// <para>Specifies the method to use to resolve overlapping pixels in the combined datasets.</para>
+		/// <para>Specifies the method that will be used to resolve overlapping pixels in the combined datasets.</para>
 		/// <para>First—The pixel value in the overlapping areas will be the value from the first raster in the list of input rasters. This is the default.</para>
 		/// <para>Last—The pixel value in the overlapping areas will be the value from the last raster in the list of input rasters.</para>
 		/// <para>Minimum—The pixel value in the overlapping areas will be the minimum value of the overlapping pixels.</para>
@@ -98,12 +98,12 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ResolveOverlapMethod { get; set; } = "FIRST";
+		public object? ResolveOverlapMethod { get; set; } = "FIRST";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MergeMultidimensionalRasters SetEnviroment(object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object nodata = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object pyramid = null , object rasterStatistics = null , object resamplingMethod = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public MergeMultidimensionalRasters SetEnviroment(object? cellSize = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? nodata = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? pyramid = null , object? rasterStatistics = null , object? resamplingMethod = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
 			base.SetEnv(cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, nodata: nodata, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, rasterStatistics: rasterStatistics, resamplingMethod: resamplingMethod, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;

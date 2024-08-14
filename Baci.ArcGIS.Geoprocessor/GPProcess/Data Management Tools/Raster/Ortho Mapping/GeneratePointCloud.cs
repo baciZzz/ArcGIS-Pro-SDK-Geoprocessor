@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, MatchingMethod, OutFolder, OutBaseName, ObjectSize, GroundSpacing, MinimumPairs, MinimumArea, MinimumAdjustmentQuality, MaximumDiffGsd, MaximumDiffOP };
+		public override object[] Parameters => new object[] { InMosaicDataset, MatchingMethod, OutFolder, OutBaseName, ObjectSize!, GroundSpacing!, MinimumPairs!, MinimumArea!, MinimumAdjustmentQuality!, MaximumDiffGsd!, MaximumDiffOP! };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ObjectSize { get; set; } = "10";
+		public object? ObjectSize { get; set; } = "10";
 
 		/// <summary>
 		/// <para>DSM Ground Spacing (in meter)</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object GroundSpacing { get; set; }
+		public object? GroundSpacing { get; set; }
 
 		/// <summary>
 		/// <para>Number of Image Pairs</para>
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MinimumPairs { get; set; } = "4";
+		public object? MinimumPairs { get; set; } = "4";
 
 		/// <summary>
 		/// <para>Overlap Area Threshold</para>
@@ -160,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MinimumArea { get; set; } = "0.6";
+		public object? MinimumArea { get; set; } = "0.6";
 
 		/// <summary>
 		/// <para>Adjustment Quality Threshold</para>
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MinimumAdjustmentQuality { get; set; } = "0.2";
+		public object? MinimumAdjustmentQuality { get; set; } = "0.2";
 
 		/// <summary>
 		/// <para>GSD Difference Threshold</para>
@@ -176,7 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MaximumDiffGsd { get; set; } = "2";
+		public object? MaximumDiffGsd { get; set; } = "2";
 
 		/// <summary>
 		/// <para>Omega/Phi Difference Threshold</para>
@@ -184,12 +184,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MaximumDiffOP { get; set; } = "8";
+		public object? MaximumDiffOP { get; set; } = "8";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GeneratePointCloud SetEnviroment(object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public GeneratePointCloud SetEnviroment(object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

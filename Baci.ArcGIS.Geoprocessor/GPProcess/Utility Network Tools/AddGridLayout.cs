@@ -69,7 +69,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved, CellWidthAbsolute, CellHeightAbsolute, OutUtilityNetwork, OutTemplateName };
+		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved!, CellWidthAbsolute!, CellHeightAbsolute!, OutUtilityNetwork!, OutTemplateName! };
 
 		/// <summary>
 		/// <para>Input Network</para>
@@ -101,35 +101,35 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AreContainersPreserved { get; set; } = "false";
+		public object? AreContainersPreserved { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Cell Width</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object CellWidthAbsolute { get; set; } = "2 Unknown";
+		public object? CellWidthAbsolute { get; set; } = "2 Unknown";
 
 		/// <summary>
 		/// <para>Cell Height</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object CellHeightAbsolute { get; set; } = "2 Unknown";
+		public object? CellHeightAbsolute { get; set; } = "2 Unknown";
 
 		/// <summary>
 		/// <para>Output Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		/// <summary>
 		/// <para>Output Diagram Template</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutTemplateName { get; set; }
+		public object? OutTemplateName { get; set; }
 
 		#region InnerClass
 

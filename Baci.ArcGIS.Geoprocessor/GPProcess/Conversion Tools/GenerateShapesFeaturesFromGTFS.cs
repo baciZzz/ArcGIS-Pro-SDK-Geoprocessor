@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGtfsFolder, OutShapeLines, OutShapeStops, OutGtfsTrips, NetworkModes!, NetworkDataSource!, TravelMode!, DriveSide!, BearingTolerance!, MaxBearingAngle };
+		public override object[] Parameters => new object[] { InGtfsFolder, OutShapeLines, OutShapeStops, OutGtfsTrips, NetworkModes!, NetworkDataSource!, TravelMode!, DriveSide!, BearingTolerance!, MaxBearingAngle! };
 
 		/// <summary>
 		/// <para>Input GTFS Folder</para>

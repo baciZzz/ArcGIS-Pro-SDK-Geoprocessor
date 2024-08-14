@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Upload Service Definition</para>
-	/// <para>Uploads and shares a web layer, web tool, or service to ArcGIS Online, ArcGIS Enterprise, or ArcGIS Server.</para>
+	/// <para>Uploads and shares a web layer, locator, web tool, or service to ArcGIS Online, ArcGIS Enterprise, or ArcGIS Server.</para>
 	/// </summary>
 	public class UploadServiceDefinition : AbstractGPProcess
 	{
@@ -27,9 +27,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <para>The server type. The following server types are supported:</para>
 		/// <para>My Hosted Services—Use when sharing a hosted web layer to ArcGIS Online or ArcGIS Enterprise. Enter My Hosted Services for the server connection. Capitalize the first letter of each word and include a space between each word.</para>
 		/// <para>HOSTING_SERVER—Use when sharing a hosted web layer to ArcGIS Online or ArcGIS Enterprise.</para>
-		/// <para>The URL to the ArcGIS Enterprise portal federated server—Use when sharing a web tool or map image layer to an ArcGIS Enterprise portal federated server.</para>
-		/// <para>An ArcGIS Server connection—Use when sharing a map or geoprocessing service to ArcGIS Server. You can use ArcGIS Server connections listed under the Servers node in the Project window, or you can browse to a folder where server connection files are stored.</para>
-		/// <para>A URL to ArcGIS Server—Use when sharing a map or geoprocessing service to ArcGIS Server. You can specify the URL to ArcGIS Server provided a publisher connection to ArcGIS Server has been added to the ArcGIS Pro project, and you&apos;re opening the project in the script or you&apos;re running the tool in ArcGIS Pro.</para>
+		/// <para>URL to the ArcGIS Enterprise portal federated server—Use when sharing a web tool or map image layer to an ArcGIS Enterprise portal federated server.</para>
+		/// <para>ArcGIS Server connection—Use when sharing a map or geoprocessing service to ArcGIS Server. You can use ArcGIS Server connections listed under the Servers node in the Project window, or you can browse to a folder where server connection files are stored.</para>
+		/// <para>URL to ArcGIS Server—Use when sharing a map or geoprocessing service to ArcGIS Server. You can specify the URL to ArcGIS Server provided a publisher connection to ArcGIS Server has been added to the ArcGIS Pro project, and you&apos;re opening the project in the script or you&apos;re running the tool in ArcGIS Pro.</para>
 		/// </param>
 		public UploadServiceDefinition(object InSdFile, object InServer)
 		{
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSdFile, InServer, InServiceName, InCluster, InFolderType, InFolder, InStartuptype, InOverride, InMyContents, InPublic, InOrganization, InGroups, OutSoapSvcUrl, OutRestSvcUrl, OutMapserviceitemid, OutFeatserviceitemid, OutCachedService, OutFeatureserviceurl, OutMapserviceurl, OutLayeridmap, OutStandalonetableidmap, OutVectortileserviceid, OutVectortileserviceurl };
+		public override object[] Parameters => new object[] { InSdFile, InServer, InServiceName!, InCluster!, InFolderType!, InFolder!, InStartuptype!, InOverride!, InMyContents!, InPublic!, InOrganization!, InGroups!, OutSoapSvcUrl!, OutRestSvcUrl!, OutMapserviceitemid!, OutFeatserviceitemid!, OutCachedService!, OutFeatureserviceurl!, OutMapserviceurl!, OutLayeridmap!, OutStandalonetableidmap!, OutVectortileserviceid!, OutVectortileserviceurl! };
 
 		/// <summary>
 		/// <para>Service Definition</para>
@@ -85,9 +85,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <para>The server type. The following server types are supported:</para>
 		/// <para>My Hosted Services—Use when sharing a hosted web layer to ArcGIS Online or ArcGIS Enterprise. Enter My Hosted Services for the server connection. Capitalize the first letter of each word and include a space between each word.</para>
 		/// <para>HOSTING_SERVER—Use when sharing a hosted web layer to ArcGIS Online or ArcGIS Enterprise.</para>
-		/// <para>The URL to the ArcGIS Enterprise portal federated server—Use when sharing a web tool or map image layer to an ArcGIS Enterprise portal federated server.</para>
-		/// <para>An ArcGIS Server connection—Use when sharing a map or geoprocessing service to ArcGIS Server. You can use ArcGIS Server connections listed under the Servers node in the Project window, or you can browse to a folder where server connection files are stored.</para>
-		/// <para>A URL to ArcGIS Server—Use when sharing a map or geoprocessing service to ArcGIS Server. You can specify the URL to ArcGIS Server provided a publisher connection to ArcGIS Server has been added to the ArcGIS Pro project, and you&apos;re opening the project in the script or you&apos;re running the tool in ArcGIS Pro.</para>
+		/// <para>URL to the ArcGIS Enterprise portal federated server—Use when sharing a web tool or map image layer to an ArcGIS Enterprise portal federated server.</para>
+		/// <para>ArcGIS Server connection—Use when sharing a map or geoprocessing service to ArcGIS Server. You can use ArcGIS Server connections listed under the Servers node in the Project window, or you can browse to a folder where server connection files are stored.</para>
+		/// <para>URL to ArcGIS Server—Use when sharing a map or geoprocessing service to ArcGIS Server. You can specify the URL to ArcGIS Server provided a publisher connection to ArcGIS Server has been added to the ArcGIS Pro project, and you&apos;re opening the project in the script or you&apos;re running the tool in ArcGIS Pro.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEServerConnection()]
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Override Service Properties")]
-		public object InServiceName { get; set; }
+		public object? InServiceName { get; set; }
 
 		/// <summary>
 		/// <para>Cluster</para>
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Override Service Properties")]
-		public object InCluster { get; set; }
+		public object? InCluster { get; set; }
 
 		/// <summary>
 		/// <para>Folder Type</para>
@@ -125,17 +125,17 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Override Service Properties")]
-		public object InFolderType { get; set; }
+		public object? InFolderType { get; set; }
 
 		/// <summary>
 		/// <para>Folder</para>
-		/// <para>The folder for the web layer or service. If no folder is provided, the folder specified in the service definition will be used. If you specified New for Folder Type, use this parameter to provide a folder name. If you specified Existing for Folder Type, you can choose from the existing folders on the server.</para>
+		/// <para>The folder that will be used for the web layer or service. If no folder is provided, the folder specified in the service definition will be used. If you specified New for Folder Type, use this parameter to provide a folder name. If you specified Existing for Folder Type, you can choose from the existing folders on the server.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Override Service Properties")]
-		public object InFolder { get; set; }
+		public object? InFolder { get; set; }
 
 		/// <summary>
 		/// <para>Start service immediately</para>
@@ -148,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Override Service Properties")]
-		public object InStartuptype { get; set; } = "true";
+		public object? InStartuptype { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Override service definition sharing properties</para>
@@ -163,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Override Sharing Properties")]
-		public object InOverride { get; set; } = "false";
+		public object? InOverride { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Share on ArcGIS Online</para>
@@ -179,13 +179,13 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Override Sharing Properties")]
-		public object InMyContents { get; set; } = "false";
+		public object? InMyContents { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Share With Everyone (Public)</para>
 		/// <para>Specifies whether the web layer or web tool will be available to the public.</para>
 		/// <para>Checked—The web layer or web tool will be available to the public.</para>
-		/// <para>Unchecked—The web layer web tool will not be available to the public. This is the default.</para>
+		/// <para>Unchecked—The web layer or web tool will not be available to the public. This is the default.</para>
 		/// <para>You must be signed in to a portal to override sharing properties.</para>
 		/// <para>This parameter is not honored when sharing to ArcGIS Server.</para>
 		/// <para><see cref="InPublicEnum"/></para>
@@ -194,7 +194,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Override Sharing Properties")]
-		public object InPublic { get; set; } = "false";
+		public object? InPublic { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Share With Your Organization</para>
@@ -209,11 +209,11 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Override Sharing Properties")]
-		public object InOrganization { get; set; } = "false";
+		public object? InOrganization { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Share With These Groups</para>
-		/// <para>Specifies whether the web layer or web tool will be shared with specified groups within your organization.</para>
+		/// <para>Specifies whether the web layer or web tool will be shared with specified groups in your organization.</para>
 		/// <para>Checked—The web layer or web tool will be shared with specified groups.</para>
 		/// <para>Unchecked—The web layer or web tool will not be shared with specified groups.</para>
 		/// <para>You must be signed in to ArcGIS Online or ArcGIS Enterprise to override sharing properties.</para>
@@ -223,84 +223,84 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Override Sharing Properties")]
-		public object InGroups { get; set; }
+		public object? InGroups { get; set; }
 
 		/// <summary>
 		/// <para>SOAP Service URL</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutSoapSvcUrl { get; set; }
+		public object? OutSoapSvcUrl { get; set; }
 
 		/// <summary>
 		/// <para>REST Service URL</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutRestSvcUrl { get; set; }
+		public object? OutRestSvcUrl { get; set; }
 
 		/// <summary>
 		/// <para>Hosted Map Service Item ID</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutMapserviceitemid { get; set; }
+		public object? OutMapserviceitemid { get; set; }
 
 		/// <summary>
 		/// <para>Hosted Feature Service Item ID</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutFeatserviceitemid { get; set; }
+		public object? OutFeatserviceitemid { get; set; }
 
 		/// <summary>
 		/// <para>Cached Service</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutCachedService { get; set; }
+		public object? OutCachedService { get; set; }
 
 		/// <summary>
 		/// <para>Feature Service URL</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutFeatureserviceurl { get; set; }
+		public object? OutFeatureserviceurl { get; set; }
 
 		/// <summary>
 		/// <para>Map Service URL</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutMapserviceurl { get; set; }
+		public object? OutMapserviceurl { get; set; }
 
 		/// <summary>
 		/// <para>Layer ID</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutLayeridmap { get; set; }
+		public object? OutLayeridmap { get; set; }
 
 		/// <summary>
 		/// <para>Service URL</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutStandalonetableidmap { get; set; }
+		public object? OutStandalonetableidmap { get; set; }
 
 		/// <summary>
 		/// <para>Hosted Vector Tile Service Item ID</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutVectortileserviceid { get; set; }
+		public object? OutVectortileserviceid { get; set; }
 
 		/// <summary>
 		/// <para>Vector Tile Service URL</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutVectortileserviceurl { get; set; }
+		public object? OutVectortileserviceurl { get; set; }
 
 		#region InnerClass
 
@@ -408,7 +408,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 			PUBLIC,
 
 			/// <summary>
-			/// <para>Unchecked—The web layer web tool will not be available to the public. This is the default.</para>
+			/// <para>Unchecked—The web layer or web tool will not be available to the public. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("PRIVATE")]

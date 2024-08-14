@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, Method, EditLas, Withheld, ComputeStats, Ground, LowZ, HighZ, MaxNeighbors, StepWidth, StepHeight, Extent, ProcessEntireFiles, OutFeatureClass, OutLasDataset, UpdatePyramid };
+		public override object[] Parameters => new object[] { InLasDataset, Method!, EditLas!, Withheld!, ComputeStats!, Ground!, LowZ!, HighZ!, MaxNeighbors!, StepWidth!, StepHeight!, Extent!, ProcessEntireFiles!, OutFeatureClass!, OutLasDataset!, UpdatePyramid! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "ISOLATION";
+		public object? Method { get; set; } = "ISOLATION";
 
 		/// <summary>
 		/// <para>Edit Classification</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object EditLas { get; set; } = "true";
+		public object? EditLas { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Assign Withheld Flag</para>
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Withheld { get; set; } = "false";
+		public object? Withheld { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Compute statistics</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ComputeStats { get; set; } = "true";
+		public object? ComputeStats { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Ground</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRasterLayer()]
 		[Category("Height Detection")]
-		public object Ground { get; set; }
+		public object? Ground { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Height</para>
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Height Detection")]
-		public object LowZ { get; set; }
+		public object? LowZ { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Height</para>
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Height Detection")]
-		public object HighZ { get; set; }
+		public object? HighZ { get; set; }
 
 		/// <summary>
 		/// <para>Neighborhood Point Limit</para>
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPLong()]
 		[GPNumericDomain()]
 		[Category("Isolation Detection")]
-		public object MaxNeighbors { get; set; }
+		public object? MaxNeighbors { get; set; }
 
 		/// <summary>
 		/// <para>Neighborhood Width</para>
@@ -165,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Isolation Detection")]
-		public object StepWidth { get; set; }
+		public object? StepWidth { get; set; }
 
 		/// <summary>
 		/// <para>Neighborhood Height</para>
@@ -174,7 +174,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Isolation Detection")]
-		public object StepHeight { get; set; }
+		public object? StepHeight { get; set; }
 
 		/// <summary>
 		/// <para>Processing Extent</para>
@@ -189,7 +189,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
 		[Category("Processing Extent")]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Process entire LAS files that intersect extent</para>
@@ -202,7 +202,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Processing Extent")]
-		public object ProcessEntireFiles { get; set; } = "false";
+		public object? ProcessEntireFiles { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Noise Points</para>
@@ -210,14 +210,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Output LAS Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLasDatasetLayer()]
-		public object OutLasDataset { get; set; }
+		public object? OutLasDataset { get; set; }
 
 		/// <summary>
 		/// <para>Update pyramid</para>
@@ -229,12 +229,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UpdatePyramid { get; set; } = "true";
+		public object? UpdatePyramid { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ClassifyLasNoise SetEnviroment(object geographicTransformations = null , object outputCoordinateSystem = null , object workspace = null )
+		public ClassifyLasNoise SetEnviroment(object? geographicTransformations = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

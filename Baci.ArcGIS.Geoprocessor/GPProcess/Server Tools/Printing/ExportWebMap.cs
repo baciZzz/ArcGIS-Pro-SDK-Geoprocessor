@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { WebMapAsJSON, OutputFile, Format, LayoutTemplatesFolder, LayoutTemplate };
+		public override object[] Parameters => new object[] { WebMapAsJSON, OutputFile, Format!, LayoutTemplatesFolder!, LayoutTemplate! };
 
 		/// <summary>
 		/// <para>Web Map as JSON</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Format { get; set; } = "PDF";
+		public object? Format { get; set; } = "PDF";
 
 		/// <summary>
 		/// <para>Layout Templates Folder</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
-		public object LayoutTemplatesFolder { get; set; }
+		public object? LayoutTemplatesFolder { get; set; }
 
 		/// <summary>
 		/// <para>Layout Template</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object LayoutTemplate { get; set; }
+		public object? LayoutTemplate { get; set; }
 
 		#region InnerClass
 

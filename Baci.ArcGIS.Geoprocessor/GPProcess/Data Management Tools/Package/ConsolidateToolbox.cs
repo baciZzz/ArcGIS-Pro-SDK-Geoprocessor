@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Consolidate Toolbox</para>
-	/// <para>Consolidates one or more toolboxes (a .tbx or .pyt file) to a specified output folder.</para>
+	/// <para>Consolidates one or more toolboxes into a specified output folder.</para>
 	/// </summary>
 	public class ConsolidateToolbox : AbstractGPProcess
 	{
@@ -25,7 +25,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <param name="OutputFolder">
 		/// <para>Output Folder</para>
 		/// <para>The output folder that will contain the consolidated toolbox.</para>
-		/// <para>If the specified folder does not exist, a new folder will be created.</para>
+		/// <para>If the specified folder does not exist, a folder will be created.</para>
 		/// </param>
 		public ConsolidateToolbox(object InToolbox, object OutputFolder)
 		{
@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InToolbox, OutputFolder, Version };
+		public override object[] Parameters => new object[] { InToolbox, OutputFolder, Version! };
 
 		/// <summary>
 		/// <para>Toolbox</para>
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Output Folder</para>
 		/// <para>The output folder that will contain the consolidated toolbox.</para>
-		/// <para>If the specified folder does not exist, a new folder will be created.</para>
+		/// <para>If the specified folder does not exist, a folder will be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -89,18 +89,21 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Version</para>
 		/// <para>Specifies the version of the consolidated toolbox. Specifying a version allows toolboxes to be shared with previous versions of ArcGIS and supports backward compatibility.</para>
 		/// <para>Current version—The consolidated folder will contain tools compatible with the version of the current release. This is the default.</para>
-		/// <para>2.1—The consolidated folder will contain tools compatible with version 2.1.</para>
 		/// <para>2.2— The consolidated folder will contain tools compatible with version 2.2.</para>
 		/// <para>2.3—The consolidated folder will contain tools compatible with version 2.3.</para>
 		/// <para>2.4—The consolidated folder will contain tools compatible with version 2.4.</para>
 		/// <para>2.5—The consolidated folder will contain tools compatible with version 2.5.</para>
 		/// <para>2.6—The consolidated folder will contain tools compatible with version 2.6.</para>
+		/// <para>2.7—The consolidated folder will contain tools compatible with version 2.7.</para>
+		/// <para>2.8—The consolidated folder will contain tools compatible with version 2.8.</para>
+		/// <para>2.9—The consolidated folder will contain tools compatible with version 2.9.</para>
+		/// <para>3.0—The consolidated folder will contain tools compatible with version 3.0.</para>
 		/// <para><see cref="VersionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Version { get; set; } = "CURRENT";
+		public object? Version { get; set; } = "CURRENT";
 
 		#region InnerClass
 
@@ -115,13 +118,6 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			[GPValue("CURRENT")]
 			[Description("Current version")]
 			Current_version,
-
-			/// <summary>
-			/// <para>2.1—The consolidated folder will contain tools compatible with version 2.1.</para>
-			/// </summary>
-			[GPValue("2.1")]
-			[Description("2.1")]
-			_21,
 
 			/// <summary>
 			/// <para>2.2— The consolidated folder will contain tools compatible with version 2.2.</para>
@@ -159,11 +155,32 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			_26,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>2.7—The consolidated folder will contain tools compatible with version 2.7.</para>
 			/// </summary>
 			[GPValue("2.7")]
 			[Description("2.7")]
 			_27,
+
+			/// <summary>
+			/// <para>2.8—The consolidated folder will contain tools compatible with version 2.8.</para>
+			/// </summary>
+			[GPValue("2.8")]
+			[Description("2.8")]
+			_28,
+
+			/// <summary>
+			/// <para>2.9—The consolidated folder will contain tools compatible with version 2.9.</para>
+			/// </summary>
+			[GPValue("2.9")]
+			[Description("2.9")]
+			_29,
+
+			/// <summary>
+			/// <para>3.0—The consolidated folder will contain tools compatible with version 3.0.</para>
+			/// </summary>
+			[GPValue("3.0")]
+			[Description("3.0")]
+			_30,
 
 		}
 

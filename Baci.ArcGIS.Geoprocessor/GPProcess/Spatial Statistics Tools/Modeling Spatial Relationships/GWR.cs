@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Geographically Weighted Regression (GWR)</para>
-	/// <para>Performs Geographically Weighted Regression (GWR), which is a local form of linear regression that is used to model spatially varying relationships.</para>
+	/// <para>Performs Geographically Weighted Regression, which is a local form of linear regression that is used to model spatially varying relationships.</para>
 	/// </summary>
 	public class GWR : AbstractGPProcess
 	{
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeatures, NeighborhoodType, NeighborhoodSelectionMethod, MinimumNumberOfNeighbors, MaximumNumberOfNeighbors, MinimumSearchDistance, MaximumSearchDistance, NumberOfNeighborsIncrement, SearchDistanceIncrement, NumberOfIncrements, NumberOfNeighbors, DistanceBand, PredictionLocations, ExplanatoryVariablesToMatch, OutputPredictedFeatures, RobustPrediction, LocalWeightingScheme, CoefficientRasterWorkspace, CoefficientRasterLayers };
+		public override object[] Parameters => new object[] { InFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeatures, NeighborhoodType, NeighborhoodSelectionMethod, MinimumNumberOfNeighbors!, MaximumNumberOfNeighbors!, MinimumSearchDistance!, MaximumSearchDistance!, NumberOfNeighborsIncrement!, SearchDistanceIncrement!, NumberOfIncrements!, NumberOfNeighbors!, DistanceBand!, PredictionLocations!, ExplanatoryVariablesToMatch!, OutputPredictedFeatures!, RobustPrediction!, LocalWeightingScheme!, CoefficientRasterWorkspace!, CoefficientRasterLayers!, Scale! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -183,7 +183,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object MinimumNumberOfNeighbors { get; set; }
+		public object? MinimumNumberOfNeighbors { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Number of Neighbors</para>
@@ -192,27 +192,25 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object MaximumNumberOfNeighbors { get; set; }
+		public object? MaximumNumberOfNeighbors { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Search Distance</para>
 		/// <para>The minimum neighborhood search distance. It is recommended that you use a distance at which each feature has at least 30 neighbors.</para>
-		/// <para><see cref="MinimumSearchDistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object MinimumSearchDistance { get; set; }
+		[GPUnitDomain()]
+		public object? MinimumSearchDistance { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Search Distance</para>
 		/// <para>The maximum neighborhood search distance. If a distance results in features with more than 1000 neighbors, the tool will use the first 1000 in calculations for the target feature.</para>
-		/// <para><see cref="MaximumSearchDistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object MaximumSearchDistance { get; set; }
+		[GPUnitDomain()]
+		public object? MaximumSearchDistance { get; set; }
 
 		/// <summary>
 		/// <para>Number of Neighbors Increment</para>
@@ -221,26 +219,25 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object NumberOfNeighborsIncrement { get; set; }
+		public object? NumberOfNeighborsIncrement { get; set; }
 
 		/// <summary>
 		/// <para>Search Distance Increment</para>
 		/// <para>The distance by which manual intervals will increase for each neighborhood test.</para>
-		/// <para><see cref="SearchDistanceIncrementEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object SearchDistanceIncrement { get; set; }
+		[GPUnitDomain()]
+		public object? SearchDistanceIncrement { get; set; }
 
 		/// <summary>
 		/// <para>Number of Increments</para>
-		/// <para>The number of neighborhood sizes to test starting with the Minimum Number of Neighbors or Minimum Search Distance parameter.</para>
+		/// <para>The number of neighborhood sizes to test starting with the Minimum Number of Neighbors or Minimum Search Distance parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object NumberOfIncrements { get; set; }
+		public object? NumberOfIncrements { get; set; }
 
 		/// <summary>
 		/// <para>Number of Neighbors</para>
@@ -249,27 +246,26 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object NumberOfNeighbors { get; set; }
+		public object? NumberOfNeighbors { get; set; }
 
 		/// <summary>
 		/// <para>Distance Band</para>
 		/// <para>The spatial extent of the neighborhood.</para>
-		/// <para><see cref="DistanceBandEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object DistanceBand { get; set; }
+		[GPUnitDomain()]
+		public object? DistanceBand { get; set; }
 
 		/// <summary>
 		/// <para>Prediction Locations</para>
-		/// <para>A feature class containing features representing locations where estimates will be computed. Each feature in this dataset should contain values for all the explanatory variables specified. The dependent variable for these features will be estimated using the model calibrated for the input feature class data. To be predicted, these feature locations should be within the same study area as the Input Features or be close (within the extent plus 15 percent).</para>
+		/// <para>A feature class containing features representing locations where estimates will be computed. Each feature in this dataset should contain values for all the explanatory variables specified. The dependent variable for these features will be estimated using the model calibrated for the input feature class data. To be predicted, these feature locations should be within the same study area as the Input Features values or be close (within the extent plus 15 percent).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
 		[Category("Prediction Options")]
-		public object PredictionLocations { get; set; }
+		public object? PredictionLocations { get; set; }
 
 		/// <summary>
 		/// <para>Explanatory Variables to Match</para>
@@ -279,16 +275,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Prediction Options")]
-		public object ExplanatoryVariablesToMatch { get; set; }
+		public object? ExplanatoryVariablesToMatch { get; set; }
 
 		/// <summary>
 		/// <para>Output Predicted Features</para>
-		/// <para>The output feature class that will receive dependent variable estimates for each Prediction Location.</para>
+		/// <para>The output feature class that will receive dependent variable estimates for each Prediction Location value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[Category("Prediction Options")]
-		public object OutputPredictedFeatures { get; set; }
+		public object? OutputPredictedFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Robust Prediction</para>
@@ -301,7 +297,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Prediction Options")]
-		public object RobustPrediction { get; set; } = "true";
+		public object? RobustPrediction { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Local Weighting Scheme</para>
@@ -314,28 +310,40 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Additional Options")]
-		public object LocalWeightingScheme { get; set; } = "BISQUARE";
+		public object? LocalWeightingScheme { get; set; } = "BISQUARE";
 
 		/// <summary>
 		/// <para>Coefficient Raster Workspace</para>
-		/// <para>The workspace where the coefficient rasters will be created. When this workspace is provided, rasters are created for the intercept and every explanatory variable.</para>
+		/// <para>The workspace where the coefficient rasters will be created. When this workspace is provided, rasters are created for the intercept and every explanatory variable. This parameter is only available with a Desktop Advanced license.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEWorkspace()]
 		[Category("Additional Options")]
-		public object CoefficientRasterWorkspace { get; set; }
+		public object? CoefficientRasterWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Coefficient Raster Layers</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object CoefficientRasterLayers { get; set; }
+		public object? CoefficientRasterLayers { get; set; }
+
+		/// <summary>
+		/// <para>Scale Data</para>
+		/// <para>Specifies whether the values of the explanatory and dependent variables will be scaled to have mean zero and standard deviation one prior to fitting the model.</para>
+		/// <para>Checked—The values of the variables will be scaled. The results will contain scaled and unscaled versions of the explanatory variable coefficients.</para>
+		/// <para>Unchecked—The values of the variables will not be scaled. All coefficients will be unscaled and in original data units.</para>
+		/// <para><see cref="ScaleEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		public object? Scale { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GWR SetEnviroment(object cellSize = null , object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object snapRaster = null , object workspace = null )
+		public GWR SetEnviroment(object? cellSize = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? snapRaster = null , object? workspace = null )
 		{
 			base.SetEnv(cellSize: cellSize, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, workspace: workspace);
 			return this;
@@ -421,146 +429,6 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Minimum Search Distance</para>
-		/// </summary>
-		public enum MinimumSearchDistanceEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-		}
-
-		/// <summary>
-		/// <para>Maximum Search Distance</para>
-		/// </summary>
-		public enum MaximumSearchDistanceEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-		}
-
-		/// <summary>
-		/// <para>Search Distance Increment</para>
-		/// </summary>
-		public enum SearchDistanceIncrementEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-		}
-
-		/// <summary>
-		/// <para>Distance Band</para>
-		/// </summary>
-		public enum DistanceBandEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-		}
-
-		/// <summary>
 		/// <para>Robust Prediction</para>
 		/// </summary>
 		public enum RobustPredictionEnum 
@@ -599,6 +467,27 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 			[GPValue("BISQUARE")]
 			[Description("Bisquare")]
 			Bisquare,
+
+		}
+
+		/// <summary>
+		/// <para>Scale Data</para>
+		/// </summary>
+		public enum ScaleEnum 
+		{
+			/// <summary>
+			/// <para>Checked—The values of the variables will be scaled. The results will contain scaled and unscaled versions of the explanatory variable coefficients.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("SCALE_DATA")]
+			SCALE_DATA,
+
+			/// <summary>
+			/// <para>Unchecked—The values of the variables will not be scaled. All coefficients will be unscaled and in original data units.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("NO_SCALE_DATA")]
+			NO_SCALE_DATA,
 
 		}
 

@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Update Measures From LRS</para>
-	/// <para>Populates or updates  the measures and route ID on Utility Network (UN) features such as pipes, devices, and junctions or on features in other non-UN or non-LRS feature classes.</para>
+	/// <para>Populates or updates  the measures and route ID on Utility Network (UN) features such as pipes, devices, and junctions or on features in feature classes that are not UN or LRS feature classes.</para>
 	/// </summary>
 	public class UpdateMeasuresFromLRS : AbstractGPProcess
 	{
@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="LrsNetwork">
 		/// <para>LRS Network</para>
-		/// <para>The feature service layer that contains the routes, route IDs, and measures.</para>
+		/// <para>The feature layer that contains the routes, route IDs, and measures.</para>
 		/// </param>
 		/// <param name="LrsDate">
 		/// <para>LRS Date</para>
@@ -80,11 +80,11 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { LrsNetwork, LrsDate, InFeatures, RouteIdField, FromMeasureField, ToMeasureField, OutFeatures, OutDetailsFile };
+		public override object[] Parameters => new object[] { LrsNetwork, LrsDate, InFeatures, RouteIdField, FromMeasureField, ToMeasureField!, OutFeatures!, OutDetailsFile! };
 
 		/// <summary>
 		/// <para>LRS Network</para>
-		/// <para>The feature service layer that contains the routes, route IDs, and measures.</para>
+		/// <para>The feature layer that contains the routes, route IDs, and measures.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -133,21 +133,21 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ToMeasureField { get; set; }
+		public object? ToMeasureField { get; set; }
 
 		/// <summary>
 		/// <para>Out Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatures { get; set; }
+		public object? OutFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Output Details File</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETextFile()]
-		public object OutDetailsFile { get; set; }
+		public object? OutDetailsFile { get; set; }
 
 	}
 }

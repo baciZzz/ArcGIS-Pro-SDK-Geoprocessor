@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeodatabase, InReplica, UpdatedGeodatabase };
+		public override object[] Parameters => new object[] { InGeodatabase, InReplica, UpdatedGeodatabase! };
 
 		/// <summary>
 		/// <para>Input Geodatabase</para>
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object UpdatedGeodatabase { get; set; }
+		public object? UpdatedGeodatabase { get; set; }
 
 	}
 }

@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InObserverFeatures, InSurface, OutFeatureClass, Radius, ObserverHeightAboveSurface };
+		public override object[] Parameters => new object[] { InObserverFeatures, InSurface, OutFeatureClass, Radius!, ObserverHeightAboveSurface! };
 
 		/// <summary>
 		/// <para>Input Observer Features</para>
@@ -86,7 +86,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <para>The input elevation raster surface.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
-		[GPRasterLayer()]
+		[GPComposite()]
+		[GPCompositeDomain()]
 		public object InSurface { get; set; }
 
 		/// <summary>
@@ -104,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Visibility Options")]
-		public object Radius { get; set; } = "1000";
+		public object? Radius { get; set; } = "1000";
 
 		/// <summary>
 		/// <para>Observer Height Above Surface (meters)</para>
@@ -113,12 +114,12 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Visibility Options")]
-		public object ObserverHeightAboveSurface { get; set; } = "2";
+		public object? ObserverHeightAboveSurface { get; set; } = "2";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RadialLineOfSight SetEnviroment(object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public RadialLineOfSight SetEnviroment(object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

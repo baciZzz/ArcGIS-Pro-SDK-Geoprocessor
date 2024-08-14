@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, TargetWorkspace, InExtentPolygon, InConfigurationFile!, UpdatedLandAreas };
+		public override object[] Parameters => new object[] { InWorkspace, TargetWorkspace, InExtentPolygon, InConfigurationFile!, UpdatedLandAreas! };
 
 		/// <summary>
 		/// <para>Input Workspace</para>

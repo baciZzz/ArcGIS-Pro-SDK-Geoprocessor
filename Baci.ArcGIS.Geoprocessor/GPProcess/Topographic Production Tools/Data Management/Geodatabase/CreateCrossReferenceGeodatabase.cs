@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { SourceWorkspace, TargetDatabase, OutDatabase, MappingFile };
+		public override object[] Parameters => new object[] { SourceWorkspace, TargetDatabase, OutDatabase, MappingFile! };
 
 		/// <summary>
 		/// <para>Source Workspace</para>

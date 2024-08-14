@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, LrsEntityType, LrsEntityName, OutWorkspace };
+		public override object[] Parameters => new object[] { InWorkspace, LrsEntityType, LrsEntityName, OutWorkspace! };
 
 		/// <summary>
 		/// <para>LRS Workspace</para>
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutWorkspace { get; set; }
+		public object? OutWorkspace { get; set; }
 
 		#region InnerClass
 

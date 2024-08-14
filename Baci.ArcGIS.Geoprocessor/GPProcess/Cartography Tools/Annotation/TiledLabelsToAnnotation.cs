@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputMap, PolygonIndexLayer, OutGeodatabase, OutLayer, AnnoSuffix, ReferenceScaleValue, ReferenceScaleField, TileIdField, CoordinateSysField, MapRotationField, FeatureLinked, GenerateUnplacedAnnotation, OutWorkspace, WhichLayers, SingleLayer, RequireSymbolId, AutoCreate, UpdateOnShapeChange, MultipleFeatureClasses, MergeLabelClasses };
+		public override object[] Parameters => new object[] { InputMap, PolygonIndexLayer, OutGeodatabase, OutLayer, AnnoSuffix, ReferenceScaleValue!, ReferenceScaleField!, TileIdField!, CoordinateSysField!, MapRotationField!, FeatureLinked!, GenerateUnplacedAnnotation!, OutWorkspace!, WhichLayers!, SingleLayer!, RequireSymbolId!, AutoCreate!, UpdateOnShapeChange!, MultipleFeatureClasses!, MergeLabelClasses! };
 
 		/// <summary>
 		/// <para>Input Map</para>
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ReferenceScaleValue { get; set; }
+		public object? ReferenceScaleValue { get; set; }
 
 		/// <summary>
 		/// <para>Reference Scale Field</para>
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ReferenceScaleField { get; set; }
+		public object? ReferenceScaleField { get; set; }
 
 		/// <summary>
 		/// <para>Tile ID Field</para>
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object TileIdField { get; set; }
+		public object? TileIdField { get; set; }
 
 		/// <summary>
 		/// <para>Coordinate System Field</para>
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object CoordinateSysField { get; set; }
+		public object? CoordinateSysField { get; set; }
 
 		/// <summary>
 		/// <para>Map Rotation Field</para>
@@ -165,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object MapRotationField { get; set; }
+		public object? MapRotationField { get; set; }
 
 		/// <summary>
 		/// <para>Create feature-linked annotation</para>
@@ -178,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object FeatureLinked { get; set; } = "false";
+		public object? FeatureLinked { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Convert unplaced labels to unplaced annotation</para>
@@ -190,14 +190,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object GenerateUnplacedAnnotation { get; set; } = "false";
+		public object? GenerateUnplacedAnnotation { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Geodatabase</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutWorkspace { get; set; }
+		public object? OutWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Convert</para>
@@ -209,7 +209,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object WhichLayers { get; set; } = "ALL_LAYERS";
+		public object? WhichLayers { get; set; } = "ALL_LAYERS";
 
 		/// <summary>
 		/// <para>Feature Layer</para>
@@ -218,7 +218,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object SingleLayer { get; set; }
+		public object? SingleLayer { get; set; }
 
 		/// <summary>
 		/// <para>Require symbols to be selected from the symbol table</para>
@@ -230,7 +230,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object RequireSymbolId { get; set; } = "false";
+		public object? RequireSymbolId { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Create annotation when new features are added</para>
@@ -242,7 +242,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AutoCreate { get; set; } = "true";
+		public object? AutoCreate { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Update annotation when feature's shape is modified</para>
@@ -254,7 +254,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UpdateOnShapeChange { get; set; } = "true";
+		public object? UpdateOnShapeChange { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Convert labels from all layers to a single output feature class</para>
@@ -266,7 +266,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object MultipleFeatureClasses { get; set; } = "false";
+		public object? MultipleFeatureClasses { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Merge similar label classes</para>
@@ -278,14 +278,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object MergeLabelClasses { get; set; } = "false";
+		public object? MergeLabelClasses { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TiledLabelsToAnnotation SetEnviroment(object referenceScale = null )
+		public TiledLabelsToAnnotation SetEnviroment(int? annotationTextStringFieldLength = null , double? referenceScale = null )
 		{
-			base.SetEnv(referenceScale: referenceScale);
+			base.SetEnv(annotationTextStringFieldLength: annotationTextStringFieldLength, referenceScale: referenceScale);
 			return this;
 		}
 

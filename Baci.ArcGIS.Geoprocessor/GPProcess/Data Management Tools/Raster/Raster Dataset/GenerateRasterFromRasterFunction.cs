@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Raster From Raster Function</para>
-	/// <para>Generates a raster dataset from an input raster function or function chain.</para>
+	/// <para>Generates a raster dataset from an</para>
+	/// <para>input raster function or function chain.</para>
 	/// </summary>
 	public class GenerateRasterFromRasterFunction : AbstractGPProcess
 	{
@@ -65,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { RasterFunction, OutRasterDataset, RasterFunctionArguments, RasterProperties, Format, ProcessAsMultidimensional };
+		public override object[] Parameters => new object[] { RasterFunction, OutRasterDataset, RasterFunctionArguments!, RasterProperties!, Format!, ProcessAsMultidimensional! };
 
 		/// <summary>
 		/// <para>Input Raster Function</para>
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object RasterFunctionArguments { get; set; }
+		public object? RasterFunctionArguments { get; set; }
 
 		/// <summary>
 		/// <para>Raster Properties</para>
@@ -98,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object RasterProperties { get; set; }
+		public object? RasterProperties { get; set; }
 
 		/// <summary>
 		/// <para>Format</para>
@@ -115,26 +116,26 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Format { get; set; }
+		public object? Format { get; set; }
 
 		/// <summary>
 		/// <para>Process as Multidimensional</para>
-		/// <para>Specifies whether to process the input mosaic dataset as a multidimensional raster dataset.</para>
+		/// <para>Specifies whether the input mosaic dataset will be processed as a multidimensional raster dataset.</para>
 		/// <para>Unchecked—The input will not be processed as a multidimensional raster dataset. If the input is multidimensional, only the slice that is currently displayed will be processed. This is the default.</para>
-		/// <para>Checked—The input will be processed as a multidimensional raster dataset and all slices will be processed to produce a new multidimensional raster dataset. The output Format must be set to Cloud raster format to use this option.</para>
+		/// <para>Checked—The input will be processed as a multidimensional raster dataset and all slices will be processed to produce a new multidimensional raster dataset. Set the Format parameter to Cloud raster format to use this option.</para>
 		/// <para><see cref="ProcessAsMultidimensionalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ProcessAsMultidimensional { get; set; } = "false";
+		public object? ProcessAsMultidimensional { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateRasterFromRasterFunction SetEnviroment(object cellSize = null , object compression = null , object extent = null , object geographicTransformations = null , object nodata = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object pyramid = null , object rasterStatistics = null , object resamplingMethod = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public GenerateRasterFromRasterFunction SetEnviroment(object? cellAlignment = null , object? cellSize = null , object? compression = null , object? extent = null , object? geographicTransformations = null , object? nodata = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? processorType = null , object? pyramid = null , object? rasterStatistics = null , object? resamplingMethod = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(cellSize: cellSize, compression: compression, extent: extent, geographicTransformations: geographicTransformations, nodata: nodata, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, rasterStatistics: rasterStatistics, resamplingMethod: resamplingMethod, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(cellAlignment: cellAlignment, cellSize: cellSize, compression: compression, extent: extent, geographicTransformations: geographicTransformations, nodata: nodata, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, processorType: processorType, pyramid: pyramid, rasterStatistics: rasterStatistics, resamplingMethod: resamplingMethod, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 
@@ -195,7 +196,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ProcessAsMultidimensionalEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The input will be processed as a multidimensional raster dataset and all slices will be processed to produce a new multidimensional raster dataset. The output Format must be set to Cloud raster format to use this option.</para>
+			/// <para>Checked—The input will be processed as a multidimensional raster dataset and all slices will be processed to produce a new multidimensional raster dataset. Set the Format parameter to Cloud raster format to use this option.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ALL_SLICES")]

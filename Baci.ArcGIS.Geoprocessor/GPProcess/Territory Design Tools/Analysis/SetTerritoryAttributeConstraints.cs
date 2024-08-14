@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, Level, Constraints, OutTerritorySolution };
+		public override object[] Parameters => new object[] { InTerritorySolution, Level, Constraints!, OutTerritorySolution! };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>
@@ -96,21 +96,21 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object Constraints { get; set; }
+		public object? Constraints { get; set; }
 
 		/// <summary>
 		/// <para>Updated Territory Solution</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPGroupLayer()]
-		public object OutTerritorySolution { get; set; }
+		public object? OutTerritorySolution { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetTerritoryAttributeConstraints SetEnviroment(object workspace = null )
+		public SetTerritoryAttributeConstraints SetEnviroment(object? baDataSource = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, workspace: workspace);
 			return this;
 		}
 

@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, OutFeatureClass, MinPointsPerSubset, MaxPointsPerSubset, CoincidentPoints };
+		public override object[] Parameters => new object[] { InPointFeatures, OutFeatureClass, MinPointsPerSubset!, MaxPointsPerSubset!, CoincidentPoints! };
 
 		/// <summary>
 		/// <para>Input point features</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object MinPointsPerSubset { get; set; } = "20";
+		public object? MinPointsPerSubset { get; set; } = "20";
 
 		/// <summary>
 		/// <para>Maximum number of points per subset</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object MaxPointsPerSubset { get; set; }
+		public object? MaxPointsPerSubset { get; set; }
 
 		/// <summary>
 		/// <para>Treat coincident points as a single point</para>
@@ -115,12 +115,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CoincidentPoints { get; set; } = "true";
+		public object? CoincidentPoints { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateSubsetPolygons SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateSubsetPolygons SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

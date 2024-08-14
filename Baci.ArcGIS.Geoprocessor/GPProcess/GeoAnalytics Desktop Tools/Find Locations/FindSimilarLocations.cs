@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, SearchLayer, Output, AnalysisFields, MostOrLeastSimilar, MatchMethod, NumberOfResults, AppendFields };
+		public override object[] Parameters => new object[] { InputLayer, SearchLayer, Output, AnalysisFields, MostOrLeastSimilar!, MatchMethod!, NumberOfResults!, AppendFields! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object MostOrLeastSimilar { get; set; } = "MOST_SIMILAR";
+		public object? MostOrLeastSimilar { get; set; } = "MOST_SIMILAR";
 
 		/// <summary>
 		/// <para>Match Method</para>
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object MatchMethod { get; set; } = "ATTRIBUTE_VALUES";
+		public object? MatchMethod { get; set; } = "ATTRIBUTE_VALUES";
 
 		/// <summary>
 		/// <para>Number Of Results</para>
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object NumberOfResults { get; set; } = "10";
+		public object? NumberOfResults { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Append Fields</para>
@@ -150,12 +150,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
-		public object AppendFields { get; set; }
+		public object? AppendFields { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FindSimilarLocations SetEnviroment(object extent = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object workspace = null )
+		public FindSimilarLocations SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;

@@ -74,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OverlapType, SelectFeatures, SearchDistance, InvertSpatialRelationship, SelectionCondition, Count, CountMin, CountMax, True, False };
+		public override object[] Parameters => new object[] { InFeatures, OverlapType!, SelectFeatures!, SearchDistance!, InvertSpatialRelationship!, SelectionCondition, Count!, CountMin!, CountMax!, True!, False! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object OverlapType { get; set; } = "INTERSECT";
+		public object? OverlapType { get; set; } = "INTERSECT";
 
 		/// <summary>
 		/// <para>Selecting Features</para>
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
-		public object SelectFeatures { get; set; }
+		public object? SelectFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Search Distance</para>
@@ -124,10 +124,10 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object SearchDistance { get; set; }
+		public object? SearchDistance { get; set; }
 
 		/// <summary>
-		/// <para>Invert spatial relationship</para>
+		/// <para>Invert Spatial Relationship</para>
 		/// <para>Specifies whether the spatial relationship evaluation result or the opposite result will be used. For example, this parameter can be used to get a list of features that do not intersect or are not within a given distance of features in another dataset.</para>
 		/// <para>Unchecked—The query result will be used. This is the default.</para>
 		/// <para>Checked—The opposite of the query result will be used. If the Selection Type parameter is used, the reversal of the selection occurs before it is combined with existing selections.</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object InvertSpatialRelationship { get; set; } = "false";
+		public object? InvertSpatialRelationship { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Selection Condition</para>
@@ -162,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object Count { get; set; } = "0";
+		public object? Count { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Minimum Count</para>
@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object CountMin { get; set; } = "0";
+		public object? CountMin { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Maximum Count</para>
@@ -178,26 +178,26 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object CountMax { get; set; } = "0";
+		public object? CountMax { get; set; } = "0";
 
 		/// <summary>
 		/// <para>True</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
-		public object True { get; set; } = "false";
+		public object? True { get; set; } = "false";
 
 		/// <summary>
 		/// <para>False</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
-		public object False { get; set; } = "false";
+		public object? False { get; set; } = "false";
 
 		#region InnerClass
 
 		/// <summary>
-		/// <para>Invert spatial relationship</para>
+		/// <para>Invert Spatial Relationship</para>
 		/// </summary>
 		public enum InvertSpatialRelationshipEnum 
 		{

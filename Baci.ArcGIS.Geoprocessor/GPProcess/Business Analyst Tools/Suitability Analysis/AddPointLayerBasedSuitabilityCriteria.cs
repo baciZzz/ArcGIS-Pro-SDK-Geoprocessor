@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAnalysisLayer, SiteLayerIdField, InPointFeatures, CriteriaType, DistanceType, Units, InSiteCentersFeatures, SiteCentersIdField, WeightField, StatisticsType, OutAnalysisLayer, OutCriteriaName, CutoffDistance };
+		public override object[] Parameters => new object[] { InAnalysisLayer, SiteLayerIdField, InPointFeatures, CriteriaType, DistanceType!, Units!, InSiteCentersFeatures!, SiteCentersIdField!, WeightField, StatisticsType!, OutAnalysisLayer!, OutCriteriaName!, CutoffDistance! };
 
 		/// <summary>
 		/// <para>Input Suitability Analysis Layer</para>
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DistanceType { get; set; }
+		public object? DistanceType { get; set; }
 
 		/// <summary>
 		/// <para>Measure Units</para>
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Units { get; set; }
+		public object? Units { get; set; }
 
 		/// <summary>
 		/// <para>Site Centers Features</para>
@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object InSiteCentersFeatures { get; set; }
+		public object? InSiteCentersFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Site Centers Layer ID Field</para>
@@ -158,7 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
-		public object SiteCentersIdField { get; set; }
+		public object? SiteCentersIdField { get; set; }
 
 		/// <summary>
 		/// <para>Weight Field</para>
@@ -182,21 +182,21 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object StatisticsType { get; set; }
+		public object? StatisticsType { get; set; }
 
 		/// <summary>
 		/// <para>Output Suitability Analysis Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutAnalysisLayer { get; set; }
+		public object? OutAnalysisLayer { get; set; }
 
 		/// <summary>
 		/// <para>Output Criteria Name</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutCriteriaName { get; set; }
+		public object? OutCriteriaName { get; set; }
 
 		/// <summary>
 		/// <para>Cutoff</para>
@@ -205,14 +205,14 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object CutoffDistance { get; set; }
+		public object? CutoffDistance { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddPointLayerBasedSuitabilityCriteria SetEnviroment(object workspace = null )
+		public AddPointLayerBasedSuitabilityCriteria SetEnviroment(object? baDataSource = null , object? baNetworkSource = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, baNetworkSource: baNetworkSource, workspace: workspace);
 			return this;
 		}
 

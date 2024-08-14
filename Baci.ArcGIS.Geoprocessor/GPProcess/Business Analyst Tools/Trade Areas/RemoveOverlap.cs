@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Method, DefineTradeArea, RingIdField, WeightField, StoreId, InStoresLayer, LinkField };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Method!, DefineTradeArea!, RingIdField!, WeightField!, StoreId!, InStoresLayer!, LinkField! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "CENTER_LINE";
+		public object? Method { get; set; } = "CENTER_LINE";
 
 		/// <summary>
 		/// <para>Define Trade Areas</para>
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DefineTradeArea { get; set; } = "false";
+		public object? DefineTradeArea { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Ring ID Field</para>
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object RingIdField { get; set; }
+		public object? RingIdField { get; set; }
 
 		/// <summary>
 		/// <para>Weight Field</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object WeightField { get; set; }
+		public object? WeightField { get; set; }
 
 		/// <summary>
 		/// <para>Input Feature Store ID Field</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object StoreId { get; set; }
+		public object? StoreId { get; set; }
 
 		/// <summary>
 		/// <para>Stores</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object InStoresLayer { get; set; }
+		public object? InStoresLayer { get; set; }
 
 		/// <summary>
 		/// <para>Associated Store ID Field</para>
@@ -151,12 +151,12 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
-		public object LinkField { get; set; }
+		public object? LinkField { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveOverlap SetEnviroment(object workspace = null )
+		public RemoveOverlap SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

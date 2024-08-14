@@ -92,12 +92,12 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutFeatureClass, XOrLonField, BearingField, DistanceField, InCoordinateFormat, BearingUnits, DistanceUnits, YOrLatField, LineType, CoordinateSystem };
+		public override object[] Parameters => new object[] { InTable, OutFeatureClass, XOrLonField, BearingField, DistanceField, InCoordinateFormat, BearingUnits!, DistanceUnits!, YOrLatField!, LineType!, CoordinateSystem! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -173,7 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Units Options")]
-		public object BearingUnits { get; set; } = "DEGREES";
+		public object? BearingUnits { get; set; } = "DEGREES";
 
 		/// <summary>
 		/// <para>Distance Units</para>
@@ -190,7 +190,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Units Options")]
-		public object DistanceUnits { get; set; } = "METERS";
+		public object? DistanceUnits { get; set; } = "METERS";
 
 		/// <summary>
 		/// <para>Y Field (latitude)</para>
@@ -199,7 +199,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
-		public object YOrLatField { get; set; }
+		public object? YOrLatField { get; set; }
 
 		/// <summary>
 		/// <para>Line Type</para>
@@ -213,7 +213,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LineType { get; set; } = "GEODESIC";
+		public object? LineType { get; set; } = "GEODESIC";
 
 		/// <summary>
 		/// <para>Output Coordinate System</para>
@@ -221,14 +221,14 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
-		public object CoordinateSystem { get; set; }
+		public object? CoordinateSystem { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CoordinateTableToLineOfBearing SetEnviroment(object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public CoordinateTableToLineOfBearing SetEnviroment(object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
-			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
+			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
 		}
 

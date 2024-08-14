@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, MatchedFeatures, InMatchTable, OutFeatureClass, SearchDistance, InFeaturesAs, OutPointFeatureClass, SplitDangle, MinMatchGroupLength, MinSplitLength, SplitFields };
+		public override object[] Parameters => new object[] { InFeatures, MatchedFeatures, InMatchTable, OutFeatureClass, SearchDistance, InFeaturesAs!, OutPointFeatureClass!, SplitDangle!, MinMatchGroupLength!, MinSplitLength!, SplitFields! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object InFeaturesAs { get; set; } = "AS_SOURCE";
+		public object? InFeaturesAs { get; set; } = "AS_SOURCE";
 
 		/// <summary>
 		/// <para>Output Split Points</para>
@@ -144,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
-		public object OutPointFeatureClass { get; set; }
+		public object? OutPointFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Split dangle features</para>
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SplitDangle { get; set; } = "true";
+		public object? SplitDangle { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Minimum Match Group Length</para>
@@ -164,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object MinMatchGroupLength { get; set; }
+		public object? MinMatchGroupLength { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Split Length</para>
@@ -172,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object MinSplitLength { get; set; }
+		public object? MinSplitLength { get; set; }
 
 		/// <summary>
 		/// <para>Split Field(s)</para>
@@ -181,12 +181,12 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
-		public object SplitFields { get; set; }
+		public object? SplitFields { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SplitLineByMatch SetEnviroment(object extent = null , object workspace = null )
+		public SplitLineByMatch SetEnviroment(object? extent = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

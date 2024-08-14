@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMultidimensionalRaster, OutMultidimensionalRaster, Variables, DimensionDef, DimensionRanges, DimensionValues, Dimension, StartOfFirstIteration, EndOfFirstIteration, IterationStep, IterationUnit };
+		public override object[] Parameters => new object[] { InMultidimensionalRaster, OutMultidimensionalRaster, Variables!, DimensionDef!, DimensionRanges!, DimensionValues!, Dimension!, StartOfFirstIteration!, EndOfFirstIteration!, IterationStep!, IterationUnit! };
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Variables { get; set; }
+		public object? Variables { get; set; }
 
 		/// <summary>
 		/// <para>Dimension Definition</para>
@@ -106,16 +106,16 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DimensionDef { get; set; } = "ALL";
+		public object? DimensionDef { get; set; } = "ALL";
 
 		/// <summary>
 		/// <para>Range</para>
 		/// <para>The range or list of ranges for the specified dimension.</para>
-		/// <para>This slices the data based on the dimension name and the minimum and maximum values for the range. This parameter is required when the Dimension Definition parameter is set to By Ranges.</para>
+		/// <para>The data will be sliced based on the dimension name and the minimum and maximum values for the range. This parameter is required when the Dimension Definition parameter is set to By Ranges.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object DimensionRanges { get; set; }
+		public object? DimensionRanges { get; set; }
 
 		/// <summary>
 		/// <para>Values</para>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object DimensionValues { get; set; }
+		public object? DimensionValues { get; set; }
 
 		/// <summary>
 		/// <para>Dimension</para>
@@ -131,23 +131,23 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Dimension { get; set; }
+		public object? Dimension { get; set; }
 
 		/// <summary>
 		/// <para>Start of first iteration</para>
-		/// <para>The beginning of the first interval. This interval is used to iterate through the dataset. This parameter is required when the Dimension Definition parameter is set to By Iteration.</para>
+		/// <para>The beginning of the first interval. This interval will be used to iterate through the dataset. This parameter is required when the Dimension Definition parameter is set to By Iteration.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object StartOfFirstIteration { get; set; }
+		public object? StartOfFirstIteration { get; set; }
 
 		/// <summary>
 		/// <para>End of first iteration</para>
-		/// <para>The end of the first interval. This interval is used to iterate through the dataset. This parameter is required when the Dimension Definition parameter is set to By Iteration.</para>
+		/// <para>The end of the first interval. This interval will be used to iterate through the dataset. This parameter is required when the Dimension Definition parameter is set to By Iteration.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object EndOfFirstIteration { get; set; }
+		public object? EndOfFirstIteration { get; set; }
 
 		/// <summary>
 		/// <para>Step</para>
@@ -155,22 +155,22 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object IterationStep { get; set; }
+		public object? IterationStep { get; set; }
 
 		/// <summary>
 		/// <para>Unit</para>
-		/// <para>Specifies the iteration unit. This parameter is required when the Dimension Definition parameter is set to By Iteration and the Dimension parameter is set to StdTime.</para>
+		/// <para>Specifies the iteration unit that will be used. This parameter is required when the Dimension Definition parameter is set to By Iteration and the Dimension parameter is set to StdTime.</para>
 		/// <para><see cref="IterationUnitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object IterationUnit { get; set; }
+		public object? IterationUnit { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SubsetMultidimensionalRaster SetEnviroment(object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object nodata = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object pyramid = null , object rasterStatistics = null , object resamplingMethod = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public SubsetMultidimensionalRaster SetEnviroment(object? cellSize = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? nodata = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? pyramid = null , object? rasterStatistics = null , object? resamplingMethod = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
 			base.SetEnv(cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, nodata: nodata, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, rasterStatistics: rasterStatistics, resamplingMethod: resamplingMethod, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;

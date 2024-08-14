@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, InImage, Bands, TargetFolder, NameSuffix, LasVersion, PointFormat, Compression, RearrangePoints, ComputeStats, OutLasDataset, OutputFolder };
+		public override object[] Parameters => new object[] { InLasDataset, InImage, Bands, TargetFolder, NameSuffix!, LasVersion!, PointFormat!, Compression!, RearrangePoints!, ComputeStats!, OutLasDataset!, OutputFolder! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("LAS File Options")]
-		public object NameSuffix { get; set; } = "_colorized";
+		public object? NameSuffix { get; set; } = "_colorized";
 
 		/// <summary>
 		/// <para>LAS File Version</para>
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("LAS File Options")]
-		public object LasVersion { get; set; } = "1.4";
+		public object? LasVersion { get; set; } = "1.4";
 
 		/// <summary>
 		/// <para>Point Format</para>
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPLong()]
 		[GPCodedValueDomain()]
 		[Category("LAS File Options")]
-		public object PointFormat { get; set; } = "7";
+		public object? PointFormat { get; set; } = "7";
 
 		/// <summary>
 		/// <para>Compression</para>
@@ -159,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("LAS File Options")]
-		public object Compression { get; set; } = "NO_COMPRESSION";
+		public object? Compression { get; set; } = "NO_COMPRESSION";
 
 		/// <summary>
 		/// <para>Rearrange Points</para>
@@ -172,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("LAS File Options")]
-		public object RearrangePoints { get; set; } = "true";
+		public object? RearrangePoints { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Compute Statistics</para>
@@ -185,7 +185,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("LAS File Options")]
-		public object ComputeStats { get; set; } = "true";
+		public object? ComputeStats { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output LAS Dataset</para>
@@ -193,19 +193,19 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DELasDataset()]
-		public object OutLasDataset { get; set; }
+		public object? OutLasDataset { get; set; }
 
 		/// <summary>
 		/// <para>Output Folder</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFolder()]
-		public object OutputFolder { get; set; }
+		public object? OutputFolder { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ColorizeLas SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object workspace = null )
+		public ColorizeLas SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

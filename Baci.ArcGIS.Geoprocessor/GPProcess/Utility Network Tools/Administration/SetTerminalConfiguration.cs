@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, DomainNetwork, DeviceFeatureclass, Assetgroup, Assettype, TerminalConfiguration, OutUtilityNetwork };
+		public override object[] Parameters => new object[] { InUtilityNetwork, DomainNetwork, DeviceFeatureclass, Assetgroup, Assettype, TerminalConfiguration, OutUtilityNetwork! };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
@@ -140,12 +140,12 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEUtilityNetwork()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetTerminalConfiguration SetEnviroment(object workspace = null )
+		public SetTerminalConfiguration SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

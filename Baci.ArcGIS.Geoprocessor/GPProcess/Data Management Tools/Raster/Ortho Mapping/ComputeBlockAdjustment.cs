@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, InControlPoints, TransformationType, OutSolutionTable, OutSolutionPointTable, MaximumResidualValue, AdjustmentOptions, LocationAccuracy, OutQualityTable };
+		public override object[] Parameters => new object[] { InMosaicDataset, InControlPoints, TransformationType, OutSolutionTable, OutSolutionPointTable!, MaximumResidualValue!, AdjustmentOptions!, LocationAccuracy!, OutQualityTable! };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object OutSolutionPointTable { get; set; }
+		public object? OutSolutionPointTable { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Residual</para>
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MaximumResidualValue { get; set; } = "5";
+		public object? MaximumResidualValue { get; set; } = "5";
 
 		/// <summary>
 		/// <para>Adjustment Options</para>
@@ -149,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object AdjustmentOptions { get; set; }
+		public object? AdjustmentOptions { get; set; }
 
 		/// <summary>
 		/// <para>Image Location Accuracy</para>
@@ -165,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LocationAccuracy { get; set; } = "MEDIUM";
+		public object? LocationAccuracy { get; set; } = "MEDIUM";
 
 		/// <summary>
 		/// <para>Output Adjustment Quality Table</para>
@@ -174,12 +174,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object OutQualityTable { get; set; }
+		public object? OutQualityTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ComputeBlockAdjustment SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public ComputeBlockAdjustment SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

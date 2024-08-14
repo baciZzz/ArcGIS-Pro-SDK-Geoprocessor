@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurface, InReferenceSurface, OutFeatureClass, PyramidLevelResolution, ReferencePyramidLevelResolution, OutRaster, RasterCellSize, OutTinFolder, OutTinBasename, Method, ReferenceMethod, Extent, Boundary };
+		public override object[] Parameters => new object[] { InSurface, InReferenceSurface, OutFeatureClass, PyramidLevelResolution!, ReferencePyramidLevelResolution!, OutRaster!, RasterCellSize!, OutTinFolder!, OutTinBasename!, Method!, ReferenceMethod!, Extent!, Boundary! };
 
 		/// <summary>
 		/// <para>Input Surface</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object PyramidLevelResolution { get; set; } = "0";
+		public object? PyramidLevelResolution { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Reference Analysis Resolution</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ReferencePyramidLevelResolution { get; set; } = "0";
+		public object? ReferencePyramidLevelResolution { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Output Raster</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
 		[Category("Raster Options")]
-		public object OutRaster { get; set; }
+		public object? OutRaster { get; set; }
 
 		/// <summary>
 		/// <para>Raster Cell Size</para>
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPDouble()]
 		[GPNumericDomain()]
 		[Category("Raster Options")]
-		public object RasterCellSize { get; set; } = "10";
+		public object? RasterCellSize { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Output TIN Folder</para>
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
 		[Category("TIN Options")]
-		public object OutTinFolder { get; set; }
+		public object? OutTinFolder { get; set; }
 
 		/// <summary>
 		/// <para>Output TIN Base Name</para>
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("TIN Options")]
-		public object OutTinBasename { get; set; }
+		public object? OutTinBasename { get; set; }
 
 		/// <summary>
 		/// <para>LAS Thinning Method</para>
@@ -160,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "CLOSEST_TO_MEAN";
+		public object? Method { get; set; } = "CLOSEST_TO_MEAN";
 
 		/// <summary>
 		/// <para>Reference LAS Thinning Method</para>
@@ -173,7 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ReferenceMethod { get; set; } = "CLOSEST_TO_MEAN";
+		public object? ReferenceMethod { get; set; } = "CLOSEST_TO_MEAN";
 
 		/// <summary>
 		/// <para>Processing Extent</para>
@@ -188,7 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
 		[Category("Processing Extent")]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Processing Boundary</para>
@@ -198,12 +198,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
 		[Category("Processing Extent")]
-		public object Boundary { get; set; }
+		public object? Boundary { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SurfaceDifference SetEnviroment(object XYDomain = null , object XYResolution = null , object XYTolerance = null , int? autoCommit = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object terrainMemoryUsage = null , object workspace = null )
+		public SurfaceDifference SetEnviroment(object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , int? autoCommit = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , bool? terrainMemoryUsage = null , object? workspace = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, terrainMemoryUsage: terrainMemoryUsage, workspace: workspace);
 			return this;

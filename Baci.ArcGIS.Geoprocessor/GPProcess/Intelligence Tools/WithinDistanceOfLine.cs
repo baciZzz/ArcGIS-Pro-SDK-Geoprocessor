@@ -68,7 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputPointFeatures, InputLinearFeatures, InputDistance, InputSearchExpression, InputLinearExpression, OutputIdList };
+		public override object[] Parameters => new object[] { InputPointFeatures, InputLinearFeatures, InputDistance, InputSearchExpression!, InputLinearExpression!, OutputIdList! };
 
 		/// <summary>
 		/// <para>Input Points</para>
@@ -98,21 +98,21 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object InputSearchExpression { get; set; }
+		public object? InputSearchExpression { get; set; }
 
 		/// <summary>
 		/// <para>Input Line Expression</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object InputLinearExpression { get; set; }
+		public object? InputLinearExpression { get; set; }
 
 		/// <summary>
 		/// <para>Output OIDs</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutputIdList { get; set; }
+		public object? OutputIdList { get; set; }
 
 	}
 }

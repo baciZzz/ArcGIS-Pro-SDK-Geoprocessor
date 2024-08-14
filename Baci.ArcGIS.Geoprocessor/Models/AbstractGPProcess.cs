@@ -30,25 +30,35 @@ namespace Baci.ArcGIS.Geoprocessor.Models
 
         public IGPResult GPResult { get ; set ; }
 
-        protected void SetEnv(int? autoCommit = null, object XYResolution = null, object XYDomain = null, object scratchWorkspace = null,
-            object cartographicPartitions = null, object terrainMemoryUsage = null, object MTolerance = null, object compression = null,
-            object coincidentPoints = null, object randomGenerator = null, object outputCoordinateSystem = null, bool? overwriteoutput = null,
-            object rasterStatistics = null, object ZDomain = null, bool? transferDomains = null, object resamplingMethod = null, object snapRaster = null,
-            object cartographicCoordinateSystem = null, object configKeyword = null, object outputZFlag = null, bool? qualifiedFieldNames = null,
-            double[] tileSize = null, object parallelProcessingFactor = null, object pyramid = null, object referenceScale = null, object extent = null,
-            object XYTolerance = null, object tinSaveVersion = null, object nodata = null, object MDomain = null, object cellSize = null,
-            object outputZValue = null, object outputMFlag = null, object geographicTransformations = null, object ZResolution = null,
-            object mask = null, bool? maintainSpatialIndex = null, object workspace = null, object MResolution = null, object ZTolerance = null)
+        protected void SetEnv(object? workspace = null, object? packageWorkspace = null, object? scratchFolder = null, object? scratchGDB = null,
+            object? scratchWorkspace = null, object? outputCoordinateSystem = null, object? geographicTransformations = null, object? extent = null,
+            int? retryOnFailures = null, object? parallelProcessingFactor = null, int? recycleProcessingWorkers = null, object? cellAlignment = null,
+            object? cellSize = null, object? cellSizeProjectionMethod = null, object? mask = null, object? snapRaster = null, object? configKeyword = null,
+            int? autoCommit = null, bool? maintainAttachments = null, bool? maintainSpatialIndex = null, bool? preserveGlobalIds = null, bool? transferGDBAttributeProperties = null,
+            bool? qualifiedFieldNames = null, bool? transferDomains = null, object? XYDomain = null, object? XYResolution = null, object? XYTolerance = null,
+            object? MDomain = null, object? outputMFlag = null, double? MTolerance = null, double? MResolution = null, object? ZDomain = null, double? outputZValue = null,
+            object? outputZFlag = null, object? ZResolution = null, object? ZTolerance = null, object? randomGenerator = null, object? cartographicCoordinateSystem = null,
+            double? referenceScale = null, object? cartographicPartitions = null, int? annotationTextStringFieldLength = null, object? pyramid = null,
+            object? rasterStatistics = null, object? compression = null, object? tileSize = null, object? resamplingMethod = null, object? nodata = null,
+            bool? terrainMemoryUsage = null, object? tinSaveVersion = null, object? coincidentPoints = null, object? S100FeatureCatalogueFile = null,
+            object? processorType = null, int? gpuId = null, string? processingServer = null, string? processingServerUser = null, object? processingServerPassword = null,
+            bool? matchMultidimensionalVariable = null, bool? unionDimension = null, object? baDataSource = null, object? baNetworkSource = null,
+            bool? baUseDetailedAggregation = null, bool? maintainCurveSegments = null, bool? overwriteoutput = null)
         {
-            var env = Geoprocessing.MakeEnvironmentArray(autoCommit, XYResolution, XYDomain, scratchWorkspace,
-                cartographicPartitions, terrainMemoryUsage, MTolerance, compression,
-                coincidentPoints, randomGenerator, outputCoordinateSystem, overwriteoutput,
-                rasterStatistics, ZDomain, transferDomains, resamplingMethod, snapRaster,
-                cartographicCoordinateSystem, configKeyword, outputZFlag, qualifiedFieldNames,
-                tileSize, parallelProcessingFactor, pyramid, referenceScale, extent,
-                XYTolerance, tinSaveVersion, nodata, MDomain, cellSize,
-                outputZValue, outputMFlag, geographicTransformations, ZResolution,
-                mask, maintainSpatialIndex, workspace, MResolution, ZTolerance);
+            var env = Geoprocessing.MakeEnvironmentArray(workspace, packageWorkspace, scratchFolder, scratchGDB,
+             scratchWorkspace, outputCoordinateSystem, geographicTransformations, extent,
+             retryOnFailures, parallelProcessingFactor, recycleProcessingWorkers, cellAlignment,
+             cellSize, cellSizeProjectionMethod, mask, snapRaster, configKeyword,
+             autoCommit, maintainAttachments, maintainSpatialIndex, preserveGlobalIds, transferGDBAttributeProperties,
+             qualifiedFieldNames, transferDomains, XYDomain, XYResolution, XYTolerance,
+             MDomain, outputMFlag, MTolerance, MResolution, ZDomain, outputZValue,
+             outputZFlag, ZResolution, ZTolerance, randomGenerator, cartographicCoordinateSystem,
+             referenceScale, cartographicPartitions, annotationTextStringFieldLength, pyramid,
+             rasterStatistics, compression, tileSize, resamplingMethod, nodata,
+             terrainMemoryUsage, tinSaveVersion, coincidentPoints, S100FeatureCatalogueFile,
+             processorType, gpuId, processingServer, processingServerUser, processingServerPassword,
+             matchMultidimensionalVariable, unionDimension, baDataSource, baNetworkSource,
+             baUseDetailedAggregation, maintainCurveSegments, overwriteoutput);
 
             foreach (var item in env)
             {

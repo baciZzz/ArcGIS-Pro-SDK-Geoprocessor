@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputGeodatabase, TargetGeodatabase, RuleFile, DataTheme, UpdatedGeodatabase };
+		public override object[] Parameters => new object[] { InputGeodatabase, TargetGeodatabase, RuleFile, DataTheme, UpdatedGeodatabase! };
 
 		/// <summary>
 		/// <para>Input Geodatabase</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object UpdatedGeodatabase { get; set; }
+		public object? UpdatedGeodatabase { get; set; }
 
 	}
 }

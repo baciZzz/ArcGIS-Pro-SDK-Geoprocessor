@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetOccupantFeatures, InUnitFeatures!, InOccupantTable!, OccupantIdFromTargetOccupantFeatures!, OccupantIdFromInputTable!, UnitIdFromUnitsFeatures!, UnitIdFromInputTable!, OccupantAttributesMapping!, AllowInsert!, AllowDelete!, UpdatedOccupantFeatures };
+		public override object[] Parameters => new object[] { TargetOccupantFeatures, InUnitFeatures!, InOccupantTable!, OccupantIdFromTargetOccupantFeatures!, OccupantIdFromInputTable!, UnitIdFromUnitsFeatures!, UnitIdFromInputTable!, OccupantAttributesMapping!, AllowInsert!, AllowDelete!, UpdatedOccupantFeatures! };
 
 		/// <summary>
 		/// <para>Target Occupant Features</para>

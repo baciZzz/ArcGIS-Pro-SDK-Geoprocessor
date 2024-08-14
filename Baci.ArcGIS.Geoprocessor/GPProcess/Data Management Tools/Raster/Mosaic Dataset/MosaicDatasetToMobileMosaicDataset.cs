@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, OutMobileGdb, MosaicDatasetName, WhereClause, SelectionFeature, OutDataFolder, ConvertRasters, OutNamePrefix, Format, CompressionMethod, CompressionQuality, OutMosaicDataset };
+		public override object[] Parameters => new object[] { InMosaicDataset, OutMobileGdb, MosaicDatasetName, WhereClause!, SelectionFeature!, OutDataFolder!, ConvertRasters!, OutNamePrefix!, Format!, CompressionMethod!, CompressionQuality!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
 		[Category("Search Options")]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Selection Feature</para>
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
 		[Category("Search Options")]
-		public object SelectionFeature { get; set; }
+		public object? SelectionFeature { get; set; }
 
 		/// <summary>
 		/// <para>Output Data Folder</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
 		[Category("Output Data Options")]
-		public object OutDataFolder { get; set; }
+		public object? OutDataFolder { get; set; }
 
 		/// <summary>
 		/// <para>Convert Rasters</para>
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Output Data Options")]
-		public object ConvertRasters { get; set; } = "false";
+		public object? ConvertRasters { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Base Name</para>
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Output Data Options")]
-		public object OutNamePrefix { get; set; }
+		public object? OutNamePrefix { get; set; }
 
 		/// <summary>
 		/// <para>Output Format</para>
@@ -162,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Output Data Options")]
-		public object Format { get; set; } = "TIFF";
+		public object? Format { get; set; } = "TIFF";
 
 		/// <summary>
 		/// <para>Compression Method</para>
@@ -177,7 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Output Data Options")]
-		public object CompressionMethod { get; set; } = "NONE";
+		public object? CompressionMethod { get; set; } = "NONE";
 
 		/// <summary>
 		/// <para>Compression Quality</para>
@@ -186,19 +186,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Output Data Options")]
-		public object CompressionQuality { get; set; }
+		public object? CompressionQuality { get; set; }
 
 		/// <summary>
 		/// <para>Output Mosaic Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEMosaicDataset()]
-		public object OutMosaicDataset { get; set; }
+		public object? OutMosaicDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MosaicDatasetToMobileMosaicDataset SetEnviroment(object extent = null )
+		public MosaicDatasetToMobileMosaicDataset SetEnviroment(object? extent = null )
 		{
 			base.SetEnv(extent: extent);
 			return this;

@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, TargetGdb, Filter, IncludeSubFolders, OutGeodatabase, IncludeGroundoverlay };
+		public override object[] Parameters => new object[] { InData, TargetGdb, Filter!, IncludeSubFolders!, OutGeodatabase!, IncludeGroundoverlay! };
 
 		/// <summary>
 		/// <para>Input Data</para>
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Advanced Input Data Options")]
-		public object Filter { get; set; }
+		public object? Filter { get; set; }
 
 		/// <summary>
 		/// <para>Include Sub Folders</para>
@@ -117,14 +117,14 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Input Data Options")]
-		public object IncludeSubFolders { get; set; } = "true";
+		public object? IncludeSubFolders { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Updated Geodatabase</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutGeodatabase { get; set; }
+		public object? OutGeodatabase { get; set; }
 
 		/// <summary>
 		/// <para>Include Ground Overlay</para>
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("KML/KMZ Options")]
-		public object IncludeGroundoverlay { get; set; } = "true";
+		public object? IncludeGroundoverlay { get; set; } = "true";
 
 		#region InnerClass
 

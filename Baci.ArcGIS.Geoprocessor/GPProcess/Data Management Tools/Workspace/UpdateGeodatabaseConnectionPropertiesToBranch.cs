@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabase, OutWorkspace };
+		public override object[] Parameters => new object[] { InputDatabase, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Geodatabase Connection</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutWorkspace { get; set; }
+		public object? OutWorkspace { get; set; }
 
 	}
 }

@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InKmlFile, OutputFolder, OutputData, IncludeGroundoverlay, OutputLayer, OutGeodatabase };
+		public override object[] Parameters => new object[] { InKmlFile, OutputFolder, OutputData!, IncludeGroundoverlay!, OutputLayer!, OutGeodatabase! };
 
 		/// <summary>
 		/// <para>Input KML File</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object OutputData { get; set; }
+		public object? OutputData { get; set; }
 
 		/// <summary>
 		/// <para>Include Ground Overlay</para>
@@ -102,26 +102,26 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeGroundoverlay { get; set; } = "false";
+		public object? IncludeGroundoverlay { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Layer File</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPGroupLayer()]
-		public object OutputLayer { get; set; }
+		public object? OutputLayer { get; set; }
 
 		/// <summary>
 		/// <para>Output File Geodatabase</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutGeodatabase { get; set; }
+		public object? OutGeodatabase { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public KMLToLayer SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public KMLToLayer SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -64,7 +64,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, SystemJunctions, ConnectivityAssociations, StructuralAttachments, ReductionEdges, PointSublayers, PolygonSublayers, OutUtilityNetwork, OutTemplateName, JunctionObjectPointSublayers, EdgeObjectPolylineSublayers, OverwriteAllLayers };
+		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, SystemJunctions!, ConnectivityAssociations!, StructuralAttachments!, ReductionEdges!, PointSublayers!, PolygonSublayers!, OutUtilityNetwork!, OutTemplateName!, JunctionObjectPointSublayers!, EdgeObjectPolylineSublayers!, OverwriteAllLayers! };
 
 		/// <summary>
 		/// <para>Input Network</para>
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Additional SubLayers")]
-		public object SystemJunctions { get; set; } = "true";
+		public object? SystemJunctions { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Connectivity Associations</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Additional SubLayers")]
-		public object ConnectivityAssociations { get; set; } = "true";
+		public object? ConnectivityAssociations { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Structural Attachments</para>
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Additional SubLayers")]
-		public object StructuralAttachments { get; set; } = "true";
+		public object? StructuralAttachments { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Reduction Edge</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Additional SubLayers")]
-		public object ReductionEdges { get; set; } = "true";
+		public object? ReductionEdges { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Points for edges reduced as junctions and collapsed polygons</para>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[Category("Additional SubLayers")]
-		public object PointSublayers { get; set; }
+		public object? PointSublayers { get; set; }
 
 		/// <summary>
 		/// <para>Polygons for containers</para>
@@ -134,21 +134,21 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[Category("Additional SubLayers")]
-		public object PolygonSublayers { get; set; }
+		public object? PolygonSublayers { get; set; }
 
 		/// <summary>
 		/// <para>Output Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		/// <summary>
 		/// <para>Output Diagram Template</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutTemplateName { get; set; }
+		public object? OutTemplateName { get; set; }
 
 		/// <summary>
 		/// <para>Points for junction objects</para>
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[Category("Additional SubLayers")]
-		public object JunctionObjectPointSublayers { get; set; }
+		public object? JunctionObjectPointSublayers { get; set; }
 
 		/// <summary>
 		/// <para>Polylines for edge objects</para>
@@ -164,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[Category("Additional SubLayers")]
-		public object EdgeObjectPolylineSublayers { get; set; }
+		public object? EdgeObjectPolylineSublayers { get; set; }
 
 		/// <summary>
 		/// <para>Overwrite all layers</para>
@@ -173,7 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object OverwriteAllLayers { get; set; } = "true";
+		public object? OverwriteAllLayers { get; set; } = "true";
 
 		#region InnerClass
 

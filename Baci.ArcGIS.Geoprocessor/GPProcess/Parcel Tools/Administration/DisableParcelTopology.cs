@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="InParcelFabric">
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The parcel fabric for which the topology will be disabled. The input parcel fabric can be from a file geodatabase or an enterprise geodatabase.</para>
+		/// <para>The parcel fabric for which the topology will be disabled. The input parcel fabric can be from a file, enterprise, or mobile geodatabase.</para>
 		/// </param>
 		public DisableParcelTopology(object InParcelFabric)
 		{
@@ -60,11 +60,11 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InParcelFabric, UpdatedParcelFabric };
+		public override object[] Parameters => new object[] { InParcelFabric, UpdatedParcelFabric! };
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The parcel fabric for which the topology will be disabled. The input parcel fabric can be from a file geodatabase or an enterprise geodatabase.</para>
+		/// <para>The parcel fabric for which the topology will be disabled. The input parcel fabric can be from a file, enterprise, or mobile geodatabase.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPParcelLayer()]
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEParcelDataset()]
-		public object UpdatedParcelFabric { get; set; }
+		public object? UpdatedParcelFabric { get; set; }
 
 	}
 }

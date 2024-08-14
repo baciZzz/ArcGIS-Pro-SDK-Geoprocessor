@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Name, EvaluationOrder, UpdatedTable };
+		public override object[] Parameters => new object[] { InTable, Name, EvaluationOrder, UpdatedTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -101,12 +101,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object UpdatedTable { get; set; }
+		public object? UpdatedTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ReorderAttributeRule SetEnviroment(object workspace = null )
+		public ReorderAttributeRule SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -20,11 +20,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		/// <param name="InCube">
 		/// <para>Input Space Time Cube</para>
-		/// <para>The netCDF cube that contains the variable to be displayed. This file must have an .nc extension and must have been created using either the Create Space Time Cube By Aggregating Points, Create Space Time Cube From Defined Locations, or Create Space Time Cube from Multidimensional Raster Layer tool.</para>
+		/// <para>The space-time cube containing the variable to be analyzed. Space-time cubes have a .nc file extension and are created using various tools in the Space Time Pattern Mining toolbox.</para>
 		/// </param>
 		/// <param name="CubeVariable">
 		/// <para>Cube Variable</para>
-		/// <para>The numeric variable in the netCDF cube to explore. The space-time cube will always contain the COUNT variable. Any Summary Fields or Variables values will also be available if they were included when the cube was created.</para>
+		/// <para>The numeric variable in the netCDF cube that will be explored. The space-time cube will always contain the COUNT variable. Any Summary Fields or Variables values will also be available if they were included when the cube was created.</para>
 		/// </param>
 		/// <param name="DisplayTheme">
 		/// <para>Display Theme</para>
@@ -37,16 +37,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <para>Locations with data—All locations that contain data for the Cube Variable parameter will be displayed.</para>
 		/// <para>Trends—The trend of values at each location that were determined using the Mann-Kendall statistic will be displayed.</para>
 		/// <para>Hot and cold spot trends—The trend of z-scores at each location that were determined using the Mann-Kendall statistic will be displayed.</para>
-		/// <para>Emerging Hot Spot Analysis results—The results of the Emerging Hot Spot Analysis tool for the specified Cube Variable parameter will be displayed.</para>
-		/// <para>Local Outlier Analysis results—The results of the Local Outlier Analysis tool for the specified Cube Variable parameter will be displayed.</para>
+		/// <para>Emerging Hot Spot Analysis results—The results of the Emerging Hot Spot Analysis tool for the specified Cube Variable parameter value will be displayed.</para>
+		/// <para>Local Outlier Analysis results—The results of the Local Outlier Analysis tool for the specified Cube Variable parameter value will be displayed.</para>
 		/// <para>Percentage of local outliers—The total percentage of outliers at each location will be displayed.</para>
 		/// <para>Local outlier in the most recent time period—The outliers occurring in the most recent time period will be displayed.</para>
-		/// <para>Time Series Clustering results—The results of the Time Series Clustering tool for the specified Cube Variable parameter will be displayed.</para>
+		/// <para>Time Series Clustering results—The results of the Time Series Clustering tool for the specified Cube Variable parameter value will be displayed.</para>
 		/// <para>Locations without spatial neighbors—Locations that have no spatial neighbors for the last analysis run will be displayed. These locations rely only on temporal neighbors for analysis.</para>
 		/// <para>Number of estimated bins—The number of bins that were estimated for each location will be displayed.</para>
 		/// <para>Locations excluded from analysis—The locations that were excluded from analysis because they had empty bins that did not meet the criteria for estimation will be displayed.</para>
-		/// <para>Forecast results—The results of the Time Series Forecasting tool used for the specified Analysis Variable parameter will be displayed.</para>
+		/// <para>Forecast results—The results of the Time Series Forecasting tool used for the specified Analysis Variable parameter value will be displayed.</para>
 		/// <para>Time series outlier results—The results of the Outlier Option parameter in the Time Series Forecasting tools will be displayed.</para>
+		/// <para>Time series change points—The results of the Change Point Detection tool. The output features display the number of change points at each location, along with pop-up charts that display the original time series, change points, and estimates of the mean or standard deviation of each segment.</para>
 		/// </param>
 		/// <param name="OutputFeatures">
 		/// <para>Output Features</para>
@@ -93,11 +94,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCube, CubeVariable, DisplayTheme, OutputFeatures, EnableTimeSeriesPopups };
+		public override object[] Parameters => new object[] { InCube, CubeVariable, DisplayTheme, OutputFeatures, EnableTimeSeriesPopups! };
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>
-		/// <para>The netCDF cube that contains the variable to be displayed. This file must have an .nc extension and must have been created using either the Create Space Time Cube By Aggregating Points, Create Space Time Cube From Defined Locations, or Create Space Time Cube from Multidimensional Raster Layer tool.</para>
+		/// <para>The space-time cube containing the variable to be analyzed. Space-time cubes have a .nc file extension and are created using various tools in the Space Time Pattern Mining toolbox.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -106,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Cube Variable</para>
-		/// <para>The numeric variable in the netCDF cube to explore. The space-time cube will always contain the COUNT variable. Any Summary Fields or Variables values will also be available if they were included when the cube was created.</para>
+		/// <para>The numeric variable in the netCDF cube that will be explored. The space-time cube will always contain the COUNT variable. Any Summary Fields or Variables values will also be available if they were included when the cube was created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -124,16 +125,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <para>Locations with data—All locations that contain data for the Cube Variable parameter will be displayed.</para>
 		/// <para>Trends—The trend of values at each location that were determined using the Mann-Kendall statistic will be displayed.</para>
 		/// <para>Hot and cold spot trends—The trend of z-scores at each location that were determined using the Mann-Kendall statistic will be displayed.</para>
-		/// <para>Emerging Hot Spot Analysis results—The results of the Emerging Hot Spot Analysis tool for the specified Cube Variable parameter will be displayed.</para>
-		/// <para>Local Outlier Analysis results—The results of the Local Outlier Analysis tool for the specified Cube Variable parameter will be displayed.</para>
+		/// <para>Emerging Hot Spot Analysis results—The results of the Emerging Hot Spot Analysis tool for the specified Cube Variable parameter value will be displayed.</para>
+		/// <para>Local Outlier Analysis results—The results of the Local Outlier Analysis tool for the specified Cube Variable parameter value will be displayed.</para>
 		/// <para>Percentage of local outliers—The total percentage of outliers at each location will be displayed.</para>
 		/// <para>Local outlier in the most recent time period—The outliers occurring in the most recent time period will be displayed.</para>
-		/// <para>Time Series Clustering results—The results of the Time Series Clustering tool for the specified Cube Variable parameter will be displayed.</para>
+		/// <para>Time Series Clustering results—The results of the Time Series Clustering tool for the specified Cube Variable parameter value will be displayed.</para>
 		/// <para>Locations without spatial neighbors—Locations that have no spatial neighbors for the last analysis run will be displayed. These locations rely only on temporal neighbors for analysis.</para>
 		/// <para>Number of estimated bins—The number of bins that were estimated for each location will be displayed.</para>
 		/// <para>Locations excluded from analysis—The locations that were excluded from analysis because they had empty bins that did not meet the criteria for estimation will be displayed.</para>
-		/// <para>Forecast results—The results of the Time Series Forecasting tool used for the specified Analysis Variable parameter will be displayed.</para>
+		/// <para>Forecast results—The results of the Time Series Forecasting tool used for the specified Analysis Variable parameter value will be displayed.</para>
 		/// <para>Time series outlier results—The results of the Outlier Option parameter in the Time Series Forecasting tools will be displayed.</para>
+		/// <para>Time series change points—The results of the Change Point Detection tool. The output features display the number of change points at each location, along with pop-up charts that display the original time series, change points, and estimates of the mean or standard deviation of each segment.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -158,12 +160,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object EnableTimeSeriesPopups { get; set; } = "false";
+		public object? EnableTimeSeriesPopups { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public VisualizeSpaceTimeCube2D SetEnviroment(object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public VisualizeSpaceTimeCube2D SetEnviroment(object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

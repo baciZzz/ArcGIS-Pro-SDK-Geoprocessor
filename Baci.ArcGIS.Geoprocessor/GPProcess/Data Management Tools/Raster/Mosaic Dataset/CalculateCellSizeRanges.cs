@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause, DoComputeMin, DoComputeMax, MaxRangeFactor, CellSizeToleranceFactor, UpdateMissingOnly, OutMosaicDataset };
+		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause!, DoComputeMin!, DoComputeMax!, MaxRangeFactor!, CellSizeToleranceFactor!, UpdateMissingOnly!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Compute Minimum Cell Sizes</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object DoComputeMin { get; set; } = "true";
+		public object? DoComputeMin { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Compute Maximum Cell Sizes</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object DoComputeMax { get; set; } = "true";
+		public object? DoComputeMax { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Maximum Cell Size Range Factor</para>
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Advanced Options")]
-		public object MaxRangeFactor { get; set; } = "10";
+		public object? MaxRangeFactor { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Cell Size Tolerance Factor</para>
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Advanced Options")]
-		public object CellSizeToleranceFactor { get; set; } = "0.8";
+		public object? CellSizeToleranceFactor { get; set; } = "0.8";
 
 		/// <summary>
 		/// <para>Update Missing Values Only</para>
@@ -135,19 +135,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object UpdateMissingOnly { get; set; } = "false";
+		public object? UpdateMissingOnly { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Input Mosaic Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutMosaicDataset { get; set; }
+		public object? OutMosaicDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateCellSizeRanges SetEnviroment(object parallelProcessingFactor = null )
+		public CalculateCellSizeRanges SetEnviroment(object? parallelProcessingFactor = null )
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

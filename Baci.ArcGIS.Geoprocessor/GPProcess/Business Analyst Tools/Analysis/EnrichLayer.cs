@@ -60,12 +60,12 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "baUseDetailedAggregation", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "baDataSource", "baNetworkSource", "baUseDetailedAggregation", "geographicTransformations", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Variables, BufferType, Distance, Unit };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Variables!, BufferType!, Distance!, Unit! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Variables { get; set; }
+		public object? Variables { get; set; }
 
 		/// <summary>
 		/// <para>Define areas to enrich</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object BufferType { get; set; }
+		public object? BufferType { get; set; }
 
 		/// <summary>
 		/// <para>Distance or time</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Distance { get; set; } = "1";
+		public object? Distance { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Unit</para>
@@ -114,14 +114,14 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Unit { get; set; }
+		public object? Unit { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EnrichLayer SetEnviroment(object workspace = null )
+		public EnrichLayer SetEnviroment(object? baDataSource = null , object? baNetworkSource = null , bool? baUseDetailedAggregation = null , object? geographicTransformations = null , object? parallelProcessingFactor = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, baNetworkSource: baNetworkSource, baUseDetailedAggregation: baUseDetailedAggregation, geographicTransformations: geographicTransformations, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;
 		}
 

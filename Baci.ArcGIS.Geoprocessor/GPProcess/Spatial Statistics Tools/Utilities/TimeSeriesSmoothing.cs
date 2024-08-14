@@ -11,9 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Time Series Smoothing</para>
-	/// <para>Smooths a numeric variable of one or more time series using centered, forward, and backward moving averages, as well as an adaptive method based on</para>
-	/// <para>local linear regression. After smoothing short-term</para>
-	/// <para>fluctuations, longer-term trends or cycles often become apparent.</para>
+	/// <para>Smooths a numeric variable of one or more time series using centered, forward, and backward moving averages, as well as an adaptive method based on local linear regression. After smoothing short-term fluctuations, longer-term trends or cycles often become apparent.</para>
 	/// </summary>
 	public class TimeSeriesSmoothing : AbstractGPProcess
 	{
@@ -72,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, TimeField, AnalysisField, GroupMethod, Method, TimeWindow, AppendToInput, OutputFeatures, IdField, ApplyShorterWindow, EnableTimeSeriesPopups, UpdatedFeatures };
+		public override object[] Parameters => new object[] { InFeatures, TimeField, AnalysisField, GroupMethod!, Method!, TimeWindow!, AppendToInput!, OutputFeatures!, IdField!, ApplyShorterWindow!, EnableTimeSeriesPopups!, UpdatedFeatures! };
 
 		/// <summary>
 		/// <para>Input Features or Table</para>
@@ -112,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object GroupMethod { get; set; } = "LOCATION";
+		public object? GroupMethod { get; set; } = "LOCATION";
 
 		/// <summary>
 		/// <para>Smoothing Method</para>
@@ -126,17 +124,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "BACKWARD";
+		public object? Method { get; set; } = "BACKWARD";
 
 		/// <summary>
 		/// <para>Time Window</para>
 		/// <para>The length of the time window. The value can be provided in seconds, minutes, hours, days, weeks, months, or years. For backward, forward, and centered moving averages, the value and unit must be provided. For adaptive bandwidth local linear regression, the value can be left empty and a time window will be estimated independently for each value. Values that fall on the border of the time window are included within the window. For example, if you have daily data and you use a backward moving average with a time window of four days, five values will be included in the window when smoothing a record: the value of the record and the values of the four previous days.</para>
-		/// <para><see cref="TimeWindowEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
-		public object TimeWindow { get; set; }
+		[GPUnitDomain()]
+		public object? TimeWindow { get; set; }
 
 		/// <summary>
 		/// <para>Append fields to input data</para>
@@ -148,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AppendToInput { get; set; } = "false";
+		public object? AppendToInput { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Features</para>
@@ -157,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object OutputFeatures { get; set; }
+		public object? OutputFeatures { get; set; }
 
 		/// <summary>
 		/// <para>ID Field</para>
@@ -166,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object IdField { get; set; }
+		public object? IdField { get; set; }
 
 		/// <summary>
 		/// <para>Apply shorter time window at start and end</para>
@@ -178,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ApplyShorterWindow { get; set; } = "false";
+		public object? ApplyShorterWindow { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Enable time series pop-ups</para>
@@ -190,7 +187,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object EnableTimeSeriesPopups { get; set; } = "true";
+		public object? EnableTimeSeriesPopups { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Updated Features or Table</para>
@@ -198,12 +195,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object UpdatedFeatures { get; set; }
+		public object? UpdatedFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TimeSeriesSmoothing SetEnviroment(object outputCoordinateSystem = null )
+		public TimeSeriesSmoothing SetEnviroment(object? outputCoordinateSystem = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem);
 			return this;
@@ -271,62 +268,6 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 			[GPValue("ADAPTIVE")]
 			[Description("Adaptive bandwidth local linear regression")]
 			Adaptive_bandwidth_local_linear_regression,
-
-		}
-
-		/// <summary>
-		/// <para>Time Window</para>
-		/// </summary>
-		public enum TimeWindowEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Seconds")]
-			[Description("Seconds")]
-			Seconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Days")]
-			[Description("Days")]
-			Days,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Weeks")]
-			[Description("Weeks")]
-			Weeks,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Months")]
-			[Description("Months")]
-			Months,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Years")]
-			[Description("Years")]
-			Years,
 
 		}
 

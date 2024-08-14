@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <param name="Inputs">
 		/// <para>Input Datasets</para>
 		/// <para>The input datasets containing the data to be appended to the target dataset. Input datasets can be point, line, or polygon feature classes, tables, rasters, annotation feature classes, or dimensions feature classes.</para>
-		/// <para>Tables and feature classes can be combined. If a feature class is appended to a table, attributes will be transferred, but the features will be dropped. If a table is appended to a feature class, the rows from the input table will have null geometry.</para>
+		/// <para>Tables and feature classes can be combined. If a feature class is appended to a table, attributes will be transferred; however, the features will be dropped. If a table is appended to a feature class, the rows from the input table will have null geometry.</para>
 		/// </param>
 		/// <param name="Target">
 		/// <para>Target Dataset</para>
@@ -68,12 +68,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputs, Target, SchemaType, FieldMapping, Subtype, Output, Expression };
+		public override object[] Parameters => new object[] { Inputs, Target, SchemaType!, FieldMapping!, Subtype!, Output!, Expression! };
 
 		/// <summary>
 		/// <para>Input Datasets</para>
 		/// <para>The input datasets containing the data to be appended to the target dataset. Input datasets can be point, line, or polygon feature classes, tables, rasters, annotation feature classes, or dimensions feature classes.</para>
-		/// <para>Tables and feature classes can be combined. If a feature class is appended to a table, attributes will be transferred, but the features will be dropped. If a table is appended to a feature class, the rows from the input table will have null geometry.</para>
+		/// <para>Tables and feature classes can be combined. If a feature class is appended to a table, attributes will be transferred; however, the features will be dropped. If a table is appended to a feature class, the rows from the input table will have null geometry.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -92,12 +92,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Specifies whether the fields of the input dataset must match the fields of the target dataset for data to be appended.</para>
 		/// <para>Input fields must match target fields—Fields from the input dataset must match the fields of the target dataset. An error will be returned if the fields do not match.</para>
 		/// <para>Use the field map to reconcile field differences—Fields from the input dataset do not need to match the fields of the target dataset. Any fields from the input datasets that do not match the fields of the target dataset will not be mapped to the target dataset unless the mapping is explicitly set in the Field Map parameter.</para>
+		/// <para>Skip and warn if schema does not match—Fields from the input dataset must match the fields of the target dataset. If any of the input datasets contain fields that do not match the target dataset, that input dataset will be omitted with a warning message.</para>
 		/// <para><see cref="SchemaTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SchemaType { get; set; } = "TEST";
+		public object? SchemaType { get; set; } = "TEST";
 
 		/// <summary>
 		/// <para>Field Map</para>
@@ -119,38 +120,38 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFieldMapping()]
-		public object FieldMapping { get; set; }
+		public object? FieldMapping { get; set; }
 
 		/// <summary>
 		/// <para>Subtype</para>
-		/// <para>The subtype description to assign to all new data that is appended to the target dataset.</para>
+		/// <para>The subtype description that will be assigned to all new data that is appended to the target dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Subtype { get; set; }
+		public object? Subtype { get; set; }
 
 		/// <summary>
 		/// <para>Updated Target Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object Output { get; set; }
+		public object? Output { get; set; }
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>The SQL expression used to select a subset of the input datasets&apos; records. If multiple input datasets are specified, they will all be evaluated using the expression. If no records match the expression for an input dataset, no records from that dataset will be appended to the target.</para>
+		/// <para>The SQL expression that will be used to select a subset of the input datasets&apos; records. If multiple input datasets are specified, they will all be evaluated using the expression. If no records match the expression for an input dataset, no records from that dataset will be appended to the target.</para>
 		/// <para>For more information about SQL syntax, see SQL reference for query expressions used in ArcGIS.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object Expression { get; set; }
+		public object? Expression { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Append SetEnviroment(object extent = null , object workspace = null )
+		public Append SetEnviroment(object? extent = null , bool? maintainAttachments = null , bool? preserveGlobalIds = null , object? workspace = null )
 		{
-			base.SetEnv(extent: extent, workspace: workspace);
+			base.SetEnv(extent: extent, maintainAttachments: maintainAttachments, preserveGlobalIds: preserveGlobalIds, workspace: workspace);
 			return this;
 		}
 
@@ -174,6 +175,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			[GPValue("NO_TEST")]
 			[Description("Use the field map to reconcile field differences")]
 			Use_the_field_map_to_reconcile_field_differences,
+
+			/// <summary>
+			/// <para>Skip and warn if schema does not match—Fields from the input dataset must match the fields of the target dataset. If any of the input datasets contain fields that do not match the target dataset, that input dataset will be omitted with a warning message.</para>
+			/// </summary>
+			[GPValue("TEST_AND_SKIP")]
+			[Description("Skip and warn if schema does not match")]
+			Skip_and_warn_if_schema_does_not_match,
 
 		}
 

@@ -59,7 +59,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Packages, Result };
+		public override object[] Parameters => new object[] { Packages, Result! };
 
 		/// <summary>
 		/// <para>List of packages to update</para>
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object Result { get; set; }
+		public object? Result { get; set; }
 
 	}
 }

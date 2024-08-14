@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Prepare Aviation Data</para>
-	/// <para>Evaluates aviation data based on organizationally specific JSON scripts, returning values necessary for cartographic labeling and symbolization. Returned values are stored in a single attribute of your features.</para>
+	/// <para>Migrates attributes from main  aviation data to their cartographic features based on specific JSON scripts. These attributes are used for labeling and symbolizing cartographic features. Attributes defined in the JSON will be copied from their locations in the main feature classes and formatted into output attributes also defined in the JSON.</para>
 	/// </summary>
 	public class PrepareAviationData : AbstractGPProcess
 	{
@@ -24,7 +24,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </param>
 		/// <param name="ConfigFile">
 		/// <para>Configuration File (.json)</para>
-		/// <para>The JSON file containing the evaluation criteria.</para>
+		/// <para>The .json file containing the evaluation criteria.</para>
 		/// </param>
 		public PrepareAviationData(object TargetGdb, object ConfigFile)
 		{
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetGdb, ConfigFile, InDatasetNames, OutWorkspace };
+		public override object[] Parameters => new object[] { TargetGdb, ConfigFile, InDatasetNames!, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Target Geodatabase</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 
 		/// <summary>
 		/// <para>Configuration File (.json)</para>
-		/// <para>The JSON file containing the evaluation criteria.</para>
+		/// <para>The .json file containing the evaluation criteria.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -86,19 +86,19 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 
 		/// <summary>
 		/// <para>Input Datasets</para>
-		/// <para>The names of the tables and feature classes to be evaluated.</para>
+		/// <para>The names of the tables and feature classes that will be evaluated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object InDatasetNames { get; set; }
+		public object? InDatasetNames { get; set; }
 
 		/// <summary>
 		/// <para>Output Workspace</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutWorkspace { get; set; }
+		public object? OutWorkspace { get; set; }
 
 	}
 }

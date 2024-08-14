@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, AdjustmentOperation, InputSolutionTable, PanToMsScalingFactor, OutMosaicDataset, DEM, Zoffset, ControlPointTable, AdjustFootprints, SolutionPointTable, OutControlPointTable };
+		public override object[] Parameters => new object[] { InMosaicDataset, AdjustmentOperation, InputSolutionTable!, PanToMsScalingFactor!, OutMosaicDataset!, DEM!, Zoffset!, ControlPointTable!, AdjustFootprints!, SolutionPointTable!, OutControlPointTable! };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
-		public object InputSolutionTable { get; set; }
+		public object? InputSolutionTable { get; set; }
 
 		/// <summary>
 		/// <para>Pan-To-MS Scaling Factor</para>
@@ -109,14 +109,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object PanToMsScalingFactor { get; set; }
+		public object? PanToMsScalingFactor { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Mosaic Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutMosaicDataset { get; set; }
+		public object? OutMosaicDataset { get; set; }
 
 		/// <summary>
 		/// <para>Input DEM</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object DEM { get; set; }
+		public object? DEM { get; set; }
 
 		/// <summary>
 		/// <para>Z offset</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Zoffset { get; set; }
+		public object? Zoffset { get; set; }
 
 		/// <summary>
 		/// <para>Control Point Table</para>
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
-		public object ControlPointTable { get; set; }
+		public object? ControlPointTable { get; set; }
 
 		/// <summary>
 		/// <para>Adjust Footprints</para>
@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AdjustFootprints { get; set; } = "false";
+		public object? AdjustFootprints { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Solution Point Table</para>
@@ -161,14 +161,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
-		public object SolutionPointTable { get; set; }
+		public object? SolutionPointTable { get; set; }
 
 		/// <summary>
 		/// <para>Output Control Points</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
-		public object OutControlPointTable { get; set; }
+		public object? OutControlPointTable { get; set; }
 
 		#region InnerClass
 

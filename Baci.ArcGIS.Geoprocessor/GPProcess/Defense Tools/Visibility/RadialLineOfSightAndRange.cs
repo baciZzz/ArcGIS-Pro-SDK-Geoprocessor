@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InObserverFeatures, InSurface, OutViewshedFeatureClass, OutFovFeatureClass, OutRangeRadiusFeatureClass, ObserverHeightOffset, InnerRadius, OuterRadius, HorizontalStartAngle, HorizontalEndAngle };
+		public override object[] Parameters => new object[] { InObserverFeatures, InSurface, OutViewshedFeatureClass, OutFovFeatureClass, OutRangeRadiusFeatureClass, ObserverHeightOffset!, InnerRadius!, OuterRadius!, HorizontalStartAngle!, HorizontalEndAngle! };
 
 		/// <summary>
 		/// <para>Input Observer</para>
@@ -96,7 +96,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <para>The input elevation raster surface. The elevation surface must be projected.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
-		[GPRasterLayer()]
+		[GPComposite()]
+		[GPCompositeDomain()]
 		public object InSurface { get; set; }
 
 		/// <summary>
@@ -130,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Visibility Options")]
-		public object ObserverHeightOffset { get; set; } = "2";
+		public object? ObserverHeightOffset { get; set; } = "2";
 
 		/// <summary>
 		/// <para>Minimum Distance (meters)</para>
@@ -139,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Visibility Options")]
-		public object InnerRadius { get; set; } = "1000";
+		public object? InnerRadius { get; set; } = "1000";
 
 		/// <summary>
 		/// <para>Maximum Distance (meters)</para>
@@ -148,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Visibility Options")]
-		public object OuterRadius { get; set; } = "3000";
+		public object? OuterRadius { get; set; } = "3000";
 
 		/// <summary>
 		/// <para>Horizontal Start Angle (degrees)</para>
@@ -157,7 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Visibility Options")]
-		public object HorizontalStartAngle { get; set; } = "0";
+		public object? HorizontalStartAngle { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Horizontal End Angle (degrees)</para>
@@ -166,12 +167,12 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Visibility Options")]
-		public object HorizontalEndAngle { get; set; } = "360";
+		public object? HorizontalEndAngle { get; set; } = "360";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RadialLineOfSightAndRange SetEnviroment(object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public RadialLineOfSightAndRange SetEnviroment(object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

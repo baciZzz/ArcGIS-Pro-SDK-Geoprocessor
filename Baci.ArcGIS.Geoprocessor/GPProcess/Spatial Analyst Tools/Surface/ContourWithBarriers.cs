@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutContourFeatureClass, InBarrierFeatures, InContourType, InContourValuesFile, ExplicitOnly, InBaseContour, InContourInterval, InIndexedContourInterval, InContourList, InZFactor };
+		public override object[] Parameters => new object[] { InRaster, OutContourFeatureClass, InBarrierFeatures!, InContourType!, InContourValuesFile!, ExplicitOnly!, InBaseContour!, InContourInterval!, InIndexedContourInterval!, InContourList!, InZFactor! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object InBarrierFeatures { get; set; }
+		public object? InBarrierFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Type of Contours</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object InContourType { get; set; } = "POLYLINES";
+		public object? InContourType { get; set; } = "POLYLINES";
 
 		/// <summary>
 		/// <para>File Containing Contour Value Specifications</para>
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
-		public object InContourValuesFile { get; set; }
+		public object? InContourValuesFile { get; set; }
 
 		/// <summary>
 		/// <para>Enter Explicit Contour Values Only</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ExplicitOnly { get; set; } = "false";
+		public object? ExplicitOnly { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Base Contour</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object InBaseContour { get; set; } = "0";
+		public object? InBaseContour { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Contour Interval</para>
@@ -144,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object InContourInterval { get; set; }
+		public object? InContourInterval { get; set; }
 
 		/// <summary>
 		/// <para>Indexed Contour Interval</para>
@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object InIndexedContourInterval { get; set; } = "0";
+		public object? InIndexedContourInterval { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Explicit Contour Values</para>
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object InContourList { get; set; }
+		public object? InContourList { get; set; }
 
 		/// <summary>
 		/// <para>Factor Applied to Raster Z-values</para>
@@ -172,12 +172,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object InZFactor { get; set; } = "1";
+		public object? InZFactor { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ContourWithBarriers SetEnviroment(object MDomain = null , object MResolution = null , object MTolerance = null , object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , int? autoCommit = null , object configKeyword = null , object extent = null , object geographicTransformations = null , bool? maintainSpatialIndex = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , object scratchWorkspace = null , object workspace = null )
+		public ContourWithBarriers SetEnviroment(object? MDomain = null , double? MResolution = null , double? MTolerance = null , object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , int? autoCommit = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , bool? maintainSpatialIndex = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, maintainSpatialIndex: maintainSpatialIndex, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, InControlPoints, OutControlPoints, Similarity };
+		public override object[] Parameters => new object[] { InMosaicDataset, InControlPoints, OutControlPoints, Similarity! };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
@@ -107,12 +107,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Similarity { get; set; } = "HIGH";
+		public object? Similarity { get; set; } = "HIGH";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MatchControlPoints SetEnviroment(object parallelProcessingFactor = null , object workspace = null )
+		public MatchControlPoints SetEnviroment(object? parallelProcessingFactor = null , object? workspace = null )
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;

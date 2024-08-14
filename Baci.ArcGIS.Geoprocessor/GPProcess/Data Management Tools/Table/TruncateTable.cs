@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Truncate Table</para>
 	/// <para>Removes all rows from a database table or feature class using truncate procedures in the database.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class TruncateTable : AbstractGPProcess
 	{
 		/// <summary>
@@ -60,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutTable };
+		public override object[] Parameters => new object[] { InTable, OutTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -75,12 +77,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TruncateTable SetEnviroment(object workspace = null )
+		public TruncateTable SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

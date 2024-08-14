@@ -30,12 +30,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <para>Distance Interval</para>
 		/// <para>The size of the bins will be used to aggregate the Point Layer. All points that fall within the same Distance Interval and Time Interval will be aggregated.</para>
 		/// <para>The distance that will determine the bin size.</para>
-		/// <para><see cref="DistanceIntervalEnum"/></para>
 		/// </param>
 		/// <param name="TimeStepInterval">
 		/// <para>Time Interval</para>
 		/// <para>The number of seconds, minutes, hours, days, weeks, or years that will represent a single time step. All points within the same Time Interval and Distance Interval will be aggregated. Examples of valid entries for this parameter are 1 Weeks, 13 Days, or 1 Months.</para>
-		/// <para><see cref="TimeStepIntervalEnum"/></para>
 		/// </param>
 		public CreateSpaceTimeCube(object PointLayer, object OutputName, object DistanceInterval, object TimeStepInterval)
 		{
@@ -78,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { PointLayer, OutputName, DistanceInterval, TimeStepInterval, TimeStepIntervalAlignment, ReferenceTime, SummaryFields, Output };
+		public override object[] Parameters => new object[] { PointLayer, OutputName, DistanceInterval, TimeStepInterval, TimeStepIntervalAlignment!, ReferenceTime!, SummaryFields!, Output! };
 
 		/// <summary>
 		/// <para>Point Layer</para>
@@ -101,21 +99,19 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <para>Distance Interval</para>
 		/// <para>The size of the bins will be used to aggregate the Point Layer. All points that fall within the same Distance Interval and Time Interval will be aggregated.</para>
 		/// <para>The distance that will determine the bin size.</para>
-		/// <para><see cref="DistanceIntervalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
+		[GPUnitDomain()]
 		public object DistanceInterval { get; set; }
 
 		/// <summary>
 		/// <para>Time Interval</para>
 		/// <para>The number of seconds, minutes, hours, days, weeks, or years that will represent a single time step. All points within the same Time Interval and Distance Interval will be aggregated. Examples of valid entries for this parameter are 1 Weeks, 13 Days, or 1 Months.</para>
-		/// <para><see cref="TimeStepIntervalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
+		[GPUnitDomain()]
 		public object TimeStepInterval { get; set; }
 
 		/// <summary>
@@ -129,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TimeStepIntervalAlignment { get; set; }
+		public object? TimeStepIntervalAlignment { get; set; }
 
 		/// <summary>
 		/// <para>Reference Time</para>
@@ -137,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object ReferenceTime { get; set; }
+		public object? ReferenceTime { get; set; }
 
 		/// <summary>
 		/// <para>Summary Fields</para>
@@ -158,137 +154,25 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object SummaryFields { get; set; }
+		public object? SummaryFields { get; set; }
 
 		/// <summary>
 		/// <para>Output File</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
-		public object Output { get; set; }
+		public object? Output { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateSpaceTimeCube SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public CreateSpaceTimeCube SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;
 		}
 
 		#region InnerClass
-
-		/// <summary>
-		/// <para>Distance Interval</para>
-		/// </summary>
-		public enum DistanceIntervalEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("NauticalMiles")]
-			[Description("NauticalMiles")]
-			NauticalMiles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-		}
-
-		/// <summary>
-		/// <para>Time Interval</para>
-		/// </summary>
-		public enum TimeStepIntervalEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Milliseconds")]
-			[Description("Milliseconds")]
-			Milliseconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Seconds")]
-			[Description("Seconds")]
-			Seconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Days")]
-			[Description("Days")]
-			Days,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Weeks")]
-			[Description("Weeks")]
-			Weeks,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Months")]
-			[Description("Months")]
-			Months,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Years")]
-			[Description("Years")]
-			Years,
-
-		}
 
 		/// <summary>
 		/// <para>Time Interval Alignment</para>

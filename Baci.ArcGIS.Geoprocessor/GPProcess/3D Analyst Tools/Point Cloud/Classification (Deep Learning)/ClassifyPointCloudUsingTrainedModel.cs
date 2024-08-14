@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointCloud, InTrainedModel, OutputClasses, InClassMode, TargetClasses, ComputeStats, Boundary, UpdatePyramid, OutPointCloud };
+		public override object[] Parameters => new object[] { InPointCloud, InTrainedModel, OutputClasses, InClassMode!, TargetClasses!, ComputeStats!, Boundary!, UpdatePyramid!, OutPointCloud!, ReferenceHeight!, ExcludedClassCodes!, BatchSize! };
 
 		/// <summary>
 		/// <para>Target Point Cloud</para>
@@ -103,14 +103,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <para>Existing Class Code Handling</para>
 		/// <para>Specifies how the editable points from the input point cloud will be defined.</para>
 		/// <para>EDIT_ALL—All points in the input point cloud will be edited. This is the default.</para>
-		/// <para>EDIT_SELECTED—Only points with class codes specified in the Existing Class Codes parameter will be edited; all other points remain unchanged.</para>
+		/// <para>EDIT_SELECTED—Only points with class codes specified in the Existing Class Codes parameter will be edited; all other points will remain unchanged.</para>
 		/// <para>PRESERVE_SELECTED—Points with class codes specified in the Existing Class Codes parameter will be preserved; the remaining points will be edited.</para>
 		/// <para><see cref="InClassModeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object InClassMode { get; set; } = "EDIT_ALL";
+		public object? InClassMode { get; set; } = "EDIT_ALL";
 
 		/// <summary>
 		/// <para>Existing Class Codes</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object TargetClasses { get; set; }
+		public object? TargetClasses { get; set; }
 
 		/// <summary>
 		/// <para>Compute statistics</para>
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ComputeStats { get; set; } = "true";
+		public object? ComputeStats { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Processing Boundary</para>
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object Boundary { get; set; }
+		public object? Boundary { get; set; }
 
 		/// <summary>
 		/// <para>Update pyramid</para>
@@ -152,21 +152,47 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UpdatePyramid { get; set; } = "true";
+		public object? UpdatePyramid { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output Point Cloud</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutPointCloud { get; set; }
+		public object? OutPointCloud { get; set; }
+
+		/// <summary>
+		/// <para>Reference Surface</para>
+		/// <para>The raster surface that will be used to provide relative height values for each point in the point cloud data. Points that do not overlap with the raster will be omitted from the analysis.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPComposite()]
+		public object? ReferenceHeight { get; set; }
+
+		/// <summary>
+		/// <para>Excluded Class Codes</para>
+		/// <para>The class codes that will be excluded from processing. Any value in the range of 0 to 255 can be specified.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPMultiValue()]
+		[GPNumericDomain()]
+		public object? ExcludedClassCodes { get; set; }
+
+		/// <summary>
+		/// <para>Batch Size</para>
+		/// <para>The point cloud data blocks that will be simultaneously processed by the neural network during the inferencing operation. When no value is specified, the optimal batch size will be calculated based on the available GPU memory. The amount of GPU memory used by a given block depends on the block point limit and point cloud attributes required by the model.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPLong()]
+		[GPNumericDomain()]
+		public object? BatchSize { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ClassifyPointCloudUsingTrainedModel SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null )
+		public ClassifyPointCloudUsingTrainedModel SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? processorType = null )
 		{
-			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem);
+			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, processorType: processorType);
 			return this;
 		}
 

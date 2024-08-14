@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { NetworkDatasetTemplate, OutputFeatureDataset, OutputNetwork };
+		public override object[] Parameters => new object[] { NetworkDatasetTemplate, OutputFeatureDataset, OutputNetwork! };
 
 		/// <summary>
 		/// <para>Network Dataset Template</para>
@@ -89,12 +89,12 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DENetworkDataset()]
-		public object OutputNetwork { get; set; }
+		public object? OutputNetwork { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateNetworkDatasetFromTemplate SetEnviroment(object workspace = null )
+		public CreateNetworkDatasetFromTemplate SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

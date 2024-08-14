@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 	/// <summary>
 	/// <para>Thin Hydrology Lines</para>
 	/// <para>Generates a simplified hydrographic line network for display at a smaller scale. The resulting hydrographic network maintains the main arteries while thinning less significant features based on hierarchy, length, and spacing between features.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class ThinHydrologyLines : AbstractGPProcess
 	{
 		/// <summary>
@@ -70,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InvisibilityField, MinLength, MinSpacing, HierarchyField, IntersectingFeatures, UnsplitLines, UseAngles, UpdatedFeatures };
+		public override object[] Parameters => new object[] { InFeatures, InvisibilityField, MinLength, MinSpacing!, HierarchyField!, IntersectingFeatures!, UnsplitLines!, UseAngles!, UpdatedFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -104,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object MinSpacing { get; set; }
+		public object? MinSpacing { get; set; }
 
 		/// <summary>
 		/// <para>Hierarchy Field</para>
@@ -113,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object HierarchyField { get; set; }
+		public object? HierarchyField { get; set; }
 
 		/// <summary>
 		/// <para>Intersecting Features</para>
@@ -122,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
-		public object IntersectingFeatures { get; set; }
+		public object? IntersectingFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Unsplit Lines</para>
@@ -134,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UnsplitLines { get; set; } = "true";
+		public object? UnsplitLines { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Use intersection angles to determine main waterway</para>
@@ -146,14 +148,14 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UseAngles { get; set; } = "false";
+		public object? UseAngles { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object UpdatedFeatures { get; set; }
+		public object? UpdatedFeatures { get; set; }
 
 		#region InnerClass
 

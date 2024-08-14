@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, SplitModel, OutFeatureClass };
+		public override object[] Parameters => new object[] { InFeatureClass, SplitModel!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
@@ -81,14 +81,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SplitModel { get; set; } = "UPDATE_INSERT";
+		public object? SplitModel { get; set; } = "UPDATE_INSERT";
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		#region InnerClass
 

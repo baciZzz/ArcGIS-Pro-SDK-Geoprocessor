@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetFeatureClass, TargetJoinField, RelatedTable, RelatedJoinField, OutLayer, Statistics, ParameterDefinitions, OidFields, ShapeType, Srid, SpatialReference, MValues, ZValues, Extent };
+		public override object[] Parameters => new object[] { TargetFeatureClass, TargetJoinField, RelatedTable, RelatedJoinField, OutLayer, Statistics!, ParameterDefinitions!, OidFields!, ShapeType!, Srid!, SpatialReference!, MValues!, ZValues!, Extent! };
 
 		/// <summary>
 		/// <para>Target Feature Class</para>
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object Statistics { get; set; }
+		public object? Statistics { get; set; }
 
 		/// <summary>
 		/// <para>Parameter Definitions</para>
@@ -176,7 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object ParameterDefinitions { get; set; }
+		public object? ParameterDefinitions { get; set; }
 
 		/// <summary>
 		/// <para>Unique Identifier Field(s)</para>
@@ -184,7 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object OidFields { get; set; }
+		public object? OidFields { get; set; }
 
 		/// <summary>
 		/// <para>Shape Type</para>
@@ -198,7 +198,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ShapeType { get; set; }
+		public object? ShapeType { get; set; }
 
 		/// <summary>
 		/// <para>Spatial Reference ID (SRID)</para>
@@ -206,7 +206,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Srid { get; set; }
+		public object? Srid { get; set; }
 
 		/// <summary>
 		/// <para>Coordinate System</para>
@@ -214,7 +214,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
-		public object SpatialReference { get; set; }
+		public object? SpatialReference { get; set; }
 
 		/// <summary>
 		/// <para>Coordinates include M values</para>
@@ -226,7 +226,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object MValues { get; set; } = "false";
+		public object? MValues { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Coordinates include Z values</para>
@@ -238,7 +238,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ZValues { get; set; } = "false";
+		public object? ZValues { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Extent</para>
@@ -250,12 +250,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object Extent { get; set; } = "0 0 0 0";
+		public object? Extent { get; set; } = "0 0 0 0";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeAggregationQueryLayer SetEnviroment(object outputCoordinateSystem = null , object workspace = null )
+		public MakeAggregationQueryLayer SetEnviroment(object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

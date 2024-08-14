@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Build Balanced Zones</para>
-	/// <para>Creates spatially contiguous zones in your study area using a genetic growth algorithm based on criteria that you specify.</para>
+	/// <para>Creates spatially contiguous zones in a study area using a genetic growth algorithm based on specified criteria.</para>
 	/// </summary>
 	public class BuildBalancedZones : AbstractGPProcess
 	{
@@ -28,10 +28,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </param>
 		/// <param name="ZoneCreationMethod">
 		/// <para>Zone Creation Method</para>
-		/// <para>Specifies the method that will be used to grow each zone. Zones grow until all specified criteria are satisfied.</para>
-		/// <para>Attribute target—Zones will be created based on target values of one or multiple variables. If this option is chosen, the desired sum of each attribute must be specified in the Zone Building Criteria With Target parameter, and each zone will grow until the sum of the attributes exceeds these values. For example, you can use this option to create zones that each have at least 100,000 residents and 20,000 family homes.</para>
-		/// <para>Number of zones and attribute target—A specified number of zones will be created while keeping the sum of an attribute approximately equal within each zone. If this option is chosen, the desired number of zones must be specified in the Target Number of Zones parameter. The attribute sum within each zone is equal to the sum of the total attribute divided by the number of zones.</para>
-		/// <para>Defined number of zones—A specified number of zones will be created that are each composed of approximately the same number of input features. If this option is chosen, the desired number of zones must be specified in the Target Number of Zones parameter.</para>
+		/// <para>Specifies the method that will be used to create each zone. Zones grow until all specified criteria are satisfied.</para>
+		/// <para>Attribute target—Zones will be created based on target values of one or multiple variables. The sum of each attribute must be specified in the Zone Building Criteria With Target parameter, and each zone will grow until the sum of the attributes exceeds these values. For example, you can use this option to create zones that each have at least 100,000 residents and 20,000 family homes.</para>
+		/// <para>Number of zones and attribute target—A specified number of zones will be created while keeping the sum of an attribute approximately equal within each zone. The number of zones must be specified in the Target Number of Zones parameter. The attribute sum within each zone is equal to the sum of the total attribute divided by the number of zones.</para>
+		/// <para>Defined number of zones—A specified number of zones will be created that are each composed of approximately the same number of input features. The number of zones must be specified in the Target Number of Zones parameter.</para>
 		/// <para><see cref="ZoneCreationMethodEnum"/></para>
 		/// </param>
 		public BuildBalancedZones(object InFeatures, object OutputFeatures, object ZoneCreationMethod)
@@ -74,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputFeatures, ZoneCreationMethod, NumberOfZones, ZoneBuildingCriteriaTarget, ZoneBuildingCriteria, SpatialConstraints, WeightsMatrixFile, ZoneCharacteristics, AttributeToConsider, DistanceToConsider, CategorialVariable, ProportionMethod, PopulationSize, NumberGenerations, MutationFactor, OutputConvergenceTable };
+		public override object[] Parameters => new object[] { InFeatures, OutputFeatures, ZoneCreationMethod, NumberOfZones!, ZoneBuildingCriteriaTarget!, ZoneBuildingCriteria!, SpatialConstraints!, WeightsMatrixFile!, ZoneCharacteristics!, AttributeToConsider!, DistanceToConsider!, CategorialVariable!, ProportionMethod!, PopulationSize!, NumberGenerations!, MutationFactor!, OutputConvergenceTable! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -95,10 +95,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Zone Creation Method</para>
-		/// <para>Specifies the method that will be used to grow each zone. Zones grow until all specified criteria are satisfied.</para>
-		/// <para>Attribute target—Zones will be created based on target values of one or multiple variables. If this option is chosen, the desired sum of each attribute must be specified in the Zone Building Criteria With Target parameter, and each zone will grow until the sum of the attributes exceeds these values. For example, you can use this option to create zones that each have at least 100,000 residents and 20,000 family homes.</para>
-		/// <para>Number of zones and attribute target—A specified number of zones will be created while keeping the sum of an attribute approximately equal within each zone. If this option is chosen, the desired number of zones must be specified in the Target Number of Zones parameter. The attribute sum within each zone is equal to the sum of the total attribute divided by the number of zones.</para>
-		/// <para>Defined number of zones—A specified number of zones will be created that are each composed of approximately the same number of input features. If this option is chosen, the desired number of zones must be specified in the Target Number of Zones parameter.</para>
+		/// <para>Specifies the method that will be used to create each zone. Zones grow until all specified criteria are satisfied.</para>
+		/// <para>Attribute target—Zones will be created based on target values of one or multiple variables. The sum of each attribute must be specified in the Zone Building Criteria With Target parameter, and each zone will grow until the sum of the attributes exceeds these values. For example, you can use this option to create zones that each have at least 100,000 residents and 20,000 family homes.</para>
+		/// <para>Number of zones and attribute target—A specified number of zones will be created while keeping the sum of an attribute approximately equal within each zone. The number of zones must be specified in the Target Number of Zones parameter. The attribute sum within each zone is equal to the sum of the total attribute divided by the number of zones.</para>
+		/// <para>Defined number of zones—A specified number of zones will be created that are each composed of approximately the same number of input features. The number of zones must be specified in the Target Number of Zones parameter.</para>
 		/// <para><see cref="ZoneCreationMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -112,39 +112,39 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object NumberOfZones { get; set; }
+		public object? NumberOfZones { get; set; }
 
 		/// <summary>
 		/// <para>Zone Building Criteria With Target</para>
-		/// <para>Specifies the variables that will be considered, their target values, and optional weights. The default weights are set to 1, and each variable contributes equally unless they are changed.</para>
+		/// <para>Specifies the variables that will be considered, as well as their target values and optional weights. The default weight is 1, and each variable contributes equally unless they are changed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object ZoneBuildingCriteriaTarget { get; set; }
+		public object? ZoneBuildingCriteriaTarget { get; set; }
 
 		/// <summary>
 		/// <para>Zone Building Criteria</para>
-		/// <para>Specifies the variables that will be considered and, optionally, weights. The default weights are set to 1, and each variable contributes equally unless changed.</para>
+		/// <para>Specifies the variables that will be considered and, optionally, their weights. The default weight is 1, and each variable contributes equally unless changed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object ZoneBuildingCriteria { get; set; }
+		public object? ZoneBuildingCriteria { get; set; }
 
 		/// <summary>
 		/// <para>Spatial Constraints</para>
-		/// <para>Specifies how neighbors are defined while the zones grow. Zones can only grow into new features that are neighbors of at least one of the features already in the zone. If the input features are polygons, the default spatial constraint is Contiguity edges corners. If the input features are points, the default spatial constraint is Trimmed Delaunay triangulation.</para>
+		/// <para>Specifies how neighbors will be defined while the zones grow. Zones can only grow into new features that are neighbors of at least one of the features already in the zone. If the input features are polygons, the default spatial constraint is Contiguity edges corners. If the input features are points, the default spatial constraint is Trimmed Delaunay triangulation.</para>
 		/// <para>Contiguity edges only—For zones containing contiguous polygon features, only polygons that share an edge will be part of the same zone.</para>
 		/// <para>Contiguity edges corners— For zones containing contiguous polygon features, only polygons that share an edge or a vertex will be part of the same zone.</para>
-		/// <para>Trimmed Delaunay triangulation— Features in the same zone will have at least one natural neighbor in common with another feature in the zone. Natural neighbor relationships are based on a trimmed Delaunay Triangulation. Conceptually, Delaunay Triangulation creates a non-overlapping mesh of triangles from feature centroids. Each feature is a triangle node, and nodes that share edges are considered neighbors. These triangles are then clipped to a convex hull to ensure that features cannot be neighbors with any features outside of the convex hull. This is the default.</para>
+		/// <para>Trimmed Delaunay triangulation— Features in the same zone will have at least one natural neighbor in common with another feature in the zone. Natural neighbor relationships are based on a trimmed Delaunay Triangulation. Conceptually, Delaunay Triangulation creates a nonoverlapping mesh of triangles from feature centroids. Each feature is a triangle node, and nodes that share edges are considered neighbors. These triangles are then clipped to a convex hull to ensure that features cannot be neighbors with any features outside of the convex hull. This is the default.</para>
 		/// <para>Get spatial weights from file— Spatial, and, optionally, temporal relationships will be defined by a specified spatial weights file (.swm). Create the spatial weights matrix using the Generate Spatial Weights Matrix tool or the Generate Network Spatial Weights tool. The path to the spatial weights file is specified by the Spatial Weights Matrix File parameter.</para>
 		/// <para><see cref="SpatialConstraintsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SpatialConstraints { get; set; }
+		public object? SpatialConstraints { get; set; }
 
 		/// <summary>
 		/// <para>Spatial Weight Matrix File</para>
@@ -153,13 +153,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object WeightsMatrixFile { get; set; }
+		public object? WeightsMatrixFile { get; set; }
 
 		/// <summary>
 		/// <para>Zone Characteristics</para>
-		/// <para>Specifies the desired characteristics of the zones that will be created.</para>
+		/// <para>Specifies the characteristics of the zones that will be created.</para>
 		/// <para>Equal area— Zones with total area as similar as possible will be created.</para>
-		/// <para>Compactness—Zones will be created with more closely-packed (compact) features.</para>
+		/// <para>Compactness—Zones with more closely-packed (compact) features will be created.</para>
 		/// <para>Equal number of features—Zones with an equal number of features will be created.</para>
 		/// <para><see cref="ZoneCharacteristicsEnum"/></para>
 		/// </summary>
@@ -167,27 +167,26 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Additional Zone Selection Criteria")]
-		public object ZoneCharacteristics { get; set; }
+		public object? ZoneCharacteristics { get; set; }
 
 		/// <summary>
 		/// <para>Attribute to Consider</para>
-		/// <para>Specifies attributes and statistics to consider in the selection of final zones. You can choose to homogenize attributes based on their sum, average, median, or variance. For example, if you are creating zones based on home values and want to balance the average total income within each zone, the solution with the most equal average income across zones will be preferred.</para>
+		/// <para>Specifies attributes and statistics to consider in the selection of final zones. You can homogenize attributes based on their sum, average, median, or variance. For example, if you are creating zones based on home values and want to balance the average total income within each zone, the solution with the most equal average income across zones will be preferred.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Additional Zone Selection Criteria")]
-		public object AttributeToConsider { get; set; }
+		public object? AttributeToConsider { get; set; }
 
 		/// <summary>
 		/// <para>Distance to Consider</para>
 		/// <para>The feature class that will be used to homogenize the total distance per zone. The distance is calculated from each of the input features to the closest feature provided in this parameter. This distance is then used as an additional attribute constraint when selecting the final zone solution. For example, you can create police patrol districts that are each approximately the same distance from the closest police station.</para>
-		/// <para>This optional parameter is not available with a Desktop Basic or Desktop Standard license.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[Category("Additional Zone Selection Criteria")]
-		public object DistanceToConsider { get; set; }
+		public object? DistanceToConsider { get; set; }
 
 		/// <summary>
 		/// <para>Categorical Variable to Maintain Proportions</para>
@@ -197,12 +196,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Additional Zone Selection Criteria")]
-		public object CategorialVariable { get; set; }
+		public object? CategorialVariable { get; set; }
 
 		/// <summary>
 		/// <para>Proportion Method</para>
 		/// <para>Specifies the type of proportion that will be maintained based on the chosen categorical variable.</para>
-		/// <para>Maintain within proportion—Each zone will maintain the same proportions as the overall study area for the given categorical variable. For example, given a categorical variable that is 60% Type A and 40% Type B, this method will prefer zones that are comprised of approximately 60% Type A features and 40% Type B features.</para>
+		/// <para>Maintain within proportion—Each zone will maintain the same proportions as the overall study area for the given categorical variable. For example, given a categorical variable that is 60% Type A and 40% Type B, this method will prefer zones that are composed of approximately 60% Type A features and 40% Type B features.</para>
 		/// <para>Maintain overall proportion—Zones will be created so that the overall proportions of category predominance by zone matches the proportions of the given categorical variable for the entire dataset. For example, given a categorical variable that is 60% Type A and 40% Type B, this method will prefer solutions where 60% of the zones are predominantly Type A features and 40% of the zones are predominantly Type B features.</para>
 		/// <para><see cref="ProportionMethodEnum"/></para>
 		/// </summary>
@@ -210,7 +209,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Additional Zone Selection Criteria")]
-		public object ProportionMethod { get; set; }
+		public object? ProportionMethod { get; set; }
 
 		/// <summary>
 		/// <para>Population Size</para>
@@ -220,17 +219,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Advanced Parameters")]
-		public object PopulationSize { get; set; } = "100";
+		public object? PopulationSize { get; set; } = "100";
 
 		/// <summary>
 		/// <para>Number of Generations</para>
-		/// <para>The number of times the zone search process is repeated. For larger datasets, increasing the number is recommended in order to find an optimal solution. The default is 50 generations.</para>
+		/// <para>The number of times the zone search process will be repeated. For larger datasets, increasing the number is recommended to find an optimal solution. The default is 50 generations.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Advanced Parameters")]
-		public object NumberGenerations { get; set; } = "50";
+		public object? NumberGenerations { get; set; } = "50";
 
 		/// <summary>
 		/// <para>Mutation Factor</para>
@@ -240,21 +239,21 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPDouble()]
 		[GPRangeDomain()]
 		[Category("Advanced Parameters")]
-		public object MutationFactor { get; set; } = "0.1";
+		public object? MutationFactor { get; set; } = "0.1";
 
 		/// <summary>
 		/// <para>Output Convergence Table</para>
-		/// <para>If specified, a table will be created containing the total fitness score for the best solution found in every generation as well as the fitness score for the individual zone constraints.</para>
+		/// <para>The table containing the total fitness score for the best solution found in every generation as well as the fitness score for the individual zone constraints.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
 		[Category("Advanced Parameters")]
-		public object OutputConvergenceTable { get; set; }
+		public object? OutputConvergenceTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BuildBalancedZones SetEnviroment(object outputCoordinateSystem = null , object parallelProcessingFactor = null , object randomGenerator = null )
+		public BuildBalancedZones SetEnviroment(object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? randomGenerator = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, randomGenerator: randomGenerator);
 			return this;
@@ -268,21 +267,21 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum ZoneCreationMethodEnum 
 		{
 			/// <summary>
-			/// <para>Attribute target—Zones will be created based on target values of one or multiple variables. If this option is chosen, the desired sum of each attribute must be specified in the Zone Building Criteria With Target parameter, and each zone will grow until the sum of the attributes exceeds these values. For example, you can use this option to create zones that each have at least 100,000 residents and 20,000 family homes.</para>
+			/// <para>Attribute target—Zones will be created based on target values of one or multiple variables. The sum of each attribute must be specified in the Zone Building Criteria With Target parameter, and each zone will grow until the sum of the attributes exceeds these values. For example, you can use this option to create zones that each have at least 100,000 residents and 20,000 family homes.</para>
 			/// </summary>
 			[GPValue("ATTRIBUTE_TARGET")]
 			[Description("Attribute target")]
 			Attribute_target,
 
 			/// <summary>
-			/// <para>Number of zones and attribute target—A specified number of zones will be created while keeping the sum of an attribute approximately equal within each zone. If this option is chosen, the desired number of zones must be specified in the Target Number of Zones parameter. The attribute sum within each zone is equal to the sum of the total attribute divided by the number of zones.</para>
+			/// <para>Number of zones and attribute target—A specified number of zones will be created while keeping the sum of an attribute approximately equal within each zone. The number of zones must be specified in the Target Number of Zones parameter. The attribute sum within each zone is equal to the sum of the total attribute divided by the number of zones.</para>
 			/// </summary>
 			[GPValue("NUMBER_ZONES_AND_ATTRIBUTE")]
 			[Description("Number of zones and attribute target")]
 			Number_of_zones_and_attribute_target,
 
 			/// <summary>
-			/// <para>Defined number of zones—A specified number of zones will be created that are each composed of approximately the same number of input features. If this option is chosen, the desired number of zones must be specified in the Target Number of Zones parameter.</para>
+			/// <para>Defined number of zones—A specified number of zones will be created that are each composed of approximately the same number of input features. The number of zones must be specified in the Target Number of Zones parameter.</para>
 			/// </summary>
 			[GPValue("NUMBER_OF_ZONES")]
 			[Description("Defined number of zones")]
@@ -310,7 +309,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 			Contiguity_edges_corners,
 
 			/// <summary>
-			/// <para>Trimmed Delaunay triangulation— Features in the same zone will have at least one natural neighbor in common with another feature in the zone. Natural neighbor relationships are based on a trimmed Delaunay Triangulation. Conceptually, Delaunay Triangulation creates a non-overlapping mesh of triangles from feature centroids. Each feature is a triangle node, and nodes that share edges are considered neighbors. These triangles are then clipped to a convex hull to ensure that features cannot be neighbors with any features outside of the convex hull. This is the default.</para>
+			/// <para>Trimmed Delaunay triangulation— Features in the same zone will have at least one natural neighbor in common with another feature in the zone. Natural neighbor relationships are based on a trimmed Delaunay Triangulation. Conceptually, Delaunay Triangulation creates a nonoverlapping mesh of triangles from feature centroids. Each feature is a triangle node, and nodes that share edges are considered neighbors. These triangles are then clipped to a convex hull to ensure that features cannot be neighbors with any features outside of the convex hull. This is the default.</para>
 			/// </summary>
 			[GPValue("TRIMMED_DELAUNAY_TRIANGULATION")]
 			[Description("Trimmed Delaunay triangulation")]
@@ -338,7 +337,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 			Equal_area,
 
 			/// <summary>
-			/// <para>Compactness—Zones will be created with more closely-packed (compact) features.</para>
+			/// <para>Compactness—Zones with more closely-packed (compact) features will be created.</para>
 			/// </summary>
 			[GPValue("COMPACTNESS")]
 			[Description("Compactness")]
@@ -359,7 +358,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum ProportionMethodEnum 
 		{
 			/// <summary>
-			/// <para>Maintain within proportion—Each zone will maintain the same proportions as the overall study area for the given categorical variable. For example, given a categorical variable that is 60% Type A and 40% Type B, this method will prefer zones that are comprised of approximately 60% Type A features and 40% Type B features.</para>
+			/// <para>Maintain within proportion—Each zone will maintain the same proportions as the overall study area for the given categorical variable. For example, given a categorical variable that is 60% Type A and 40% Type B, this method will prefer zones that are composed of approximately 60% Type A features and 40% Type B features.</para>
 			/// </summary>
 			[GPValue("MAINTAIN_WITHIN_PROPORTION")]
 			[Description("Maintain within proportion")]

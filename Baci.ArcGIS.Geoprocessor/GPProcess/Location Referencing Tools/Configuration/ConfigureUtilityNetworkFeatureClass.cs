@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, RouteIdField, FromMeasureField, ToMeasureField, OutFeatureClass };
+		public override object[] Parameters => new object[] { InFeatureClass, RouteIdField, FromMeasureField, ToMeasureField, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Utility Network Feature Layer</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 	}
 }

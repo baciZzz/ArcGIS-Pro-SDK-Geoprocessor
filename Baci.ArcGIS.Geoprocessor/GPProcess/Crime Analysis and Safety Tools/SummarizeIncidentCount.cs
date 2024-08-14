@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InSumFeatures, OutFeatureClass, SearchRadius, GroupField };
+		public override object[] Parameters => new object[] { InFeatures, InSumFeatures, OutFeatureClass, SearchRadius!, GroupField! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -102,12 +102,11 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <para>Search Radius</para>
 		/// <para>The maximum distance from an Input Features point or line that a point feature will be considered coincident.</para>
 		/// <para>This parameter is not active when the Input Features is a polygon.</para>
-		/// <para><see cref="SearchRadiusEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object SearchRadius { get; set; }
+		[GPUnitDomain()]
+		public object? SearchRadius { get; set; }
 
 		/// <summary>
 		/// <para>Group Field</para>
@@ -116,75 +115,16 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object GroupField { get; set; }
+		public object? GroupField { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SummarizeIncidentCount SetEnviroment(object MDomain = null , object MResolution = null , object MTolerance = null , object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , int? autoCommit = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , bool? qualifiedFieldNames = null , object scratchWorkspace = null , object workspace = null )
+		public SummarizeIncidentCount SetEnviroment(object? MDomain = null , double? MResolution = null , double? MTolerance = null , object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , int? autoCommit = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , bool? maintainAttachments = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , bool? qualifiedFieldNames = null , object? scratchWorkspace = null , object? workspace = null )
 		{
-			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, workspace: workspace);
+			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, maintainAttachments: maintainAttachments, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
 		}
 
-		#region InnerClass
-
-		/// <summary>
-		/// <para>Search Radius</para>
-		/// </summary>
-		public enum SearchRadiusEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Millimeters")]
-			[Description("Millimeters")]
-			Millimeters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Centimeters")]
-			[Description("Centimeters")]
-			Centimeters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Inches")]
-			[Description("Inches")]
-			Inches,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Points")]
-			[Description("Points")]
-			Points,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-		}
-
-#endregion
 	}
 }

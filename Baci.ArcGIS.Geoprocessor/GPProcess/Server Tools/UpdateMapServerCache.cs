@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ServerName, ObjectName, DataFrame, Layer, ConstrainingExtent, Levels, UpdateMode, ThreadCount, Antialiasing, OutServerName, OutObjectName };
+		public override object[] Parameters => new object[] { ServerName, ObjectName, DataFrame, Layer, ConstrainingExtent!, Levels, UpdateMode, ThreadCount!, Antialiasing!, OutServerName!, OutObjectName! };
 
 		/// <summary>
 		/// <para>Host</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object ConstrainingExtent { get; set; }
+		public object? ConstrainingExtent { get; set; }
 
 		/// <summary>
 		/// <para>Scales</para>
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object ThreadCount { get; set; }
+		public object? ThreadCount { get; set; }
 
 		/// <summary>
 		/// <para>Antialiasing (Smoothes edges of labels and lines for improved display quality)</para>
@@ -150,21 +150,21 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Antialiasing { get; set; } = "false";
+		public object? Antialiasing { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Host</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutServerName { get; set; }
+		public object? OutServerName { get; set; }
 
 		/// <summary>
 		/// <para>Output Map Server</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutObjectName { get; set; }
+		public object? OutObjectName { get; set; }
 
 		#region InnerClass
 

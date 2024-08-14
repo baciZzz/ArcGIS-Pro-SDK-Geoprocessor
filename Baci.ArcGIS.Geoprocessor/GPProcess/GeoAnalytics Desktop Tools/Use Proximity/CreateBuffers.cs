@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutFeatureClass, Method, BufferType, BufferField, BufferDistance, BufferExpression, DissolveOption, DissolveFields, SummaryFields, Multipart };
+		public override object[] Parameters => new object[] { InputLayer, OutFeatureClass, Method, BufferType, BufferField!, BufferDistance!, BufferExpression!, DissolveOption!, DissolveFields!, SummaryFields!, Multipart! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -134,17 +134,16 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object BufferField { get; set; }
+		public object? BufferField { get; set; }
 
 		/// <summary>
 		/// <para>Buffer Distance</para>
 		/// <para>The distance around the input features that will be buffered. Distance can be expressed in meters, kilometers, feet, yards, miles, or nautical miles.</para>
-		/// <para><see cref="BufferDistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object BufferDistance { get; set; }
+		[GPUnitDomain()]
+		public object? BufferDistance { get; set; }
 
 		/// <summary>
 		/// <para>Buffer Expression</para>
@@ -154,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCalculatorExpression()]
-		public object BufferExpression { get; set; }
+		public object? BufferExpression { get; set; }
 
 		/// <summary>
 		/// <para>Dissolve Option</para>
@@ -167,7 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DissolveOption { get; set; } = "NONE";
+		public object? DissolveOption { get; set; } = "NONE";
 
 		/// <summary>
 		/// <para>Dissolve Fields</para>
@@ -176,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
-		public object DissolveFields { get; set; }
+		public object? DissolveFields { get; set; }
 
 		/// <summary>
 		/// <para>Summary Fields</para>
@@ -194,7 +193,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object SummaryFields { get; set; }
+		public object? SummaryFields { get; set; }
 
 		/// <summary>
 		/// <para>Multipart</para>
@@ -206,12 +205,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Multipart { get; set; } = "false";
+		public object? Multipart { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateBuffers SetEnviroment(object extent = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object workspace = null )
+		public CreateBuffers SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;
@@ -265,55 +264,6 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 			[GPValue("EXPRESSION")]
 			[Description("Expression")]
 			Expression,
-
-		}
-
-		/// <summary>
-		/// <para>Buffer Distance</para>
-		/// </summary>
-		public enum BufferDistanceEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("NauticalMiles")]
-			[Description("NauticalMiles")]
-			NauticalMiles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
 
 		}
 

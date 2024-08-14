@@ -28,8 +28,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </param>
 		/// <param name="FieldMapping">
 		/// <para>Field Map</para>
-		/// <para>Controls how the attribute information in fields of the Input Event is transferred to the Target Event.</para>
-		/// <para>Because the data of the Input Event is appended into an existing event that has a predefined schema (field definitions), fields cannot be added or removed from the target dataset. While you can set merge rules for each output field, the tool ignores those rules.</para>
+		/// <para>Controls how the attribute information in fields of the Input Event parameter value is transferred to the Target Event parameter value.</para>
+		/// <para>Because the Input Event parameter value is appended into an existing event that has a predefined schema (field definitions), fields cannot be added or removed from the target dataset. While you can set merge rules for each output field, the tool ignores those rules.</para>
 		/// </param>
 		public AppendEvents(object InDataset, object InTargetEvent, object FieldMapping)
 		{
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, InTargetEvent, FieldMapping, LoadType, GenerateEventIds, GenerateShapes, OutTargetEvent, OutDetailsFile };
+		public override object[] Parameters => new object[] { InDataset, InTargetEvent, FieldMapping, LoadType!, GenerateEventIds!, GenerateShapes!, OutTargetEvent!, OutDetailsFile! };
 
 		/// <summary>
 		/// <para>Input Event</para>
@@ -92,8 +92,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Field Map</para>
-		/// <para>Controls how the attribute information in fields of the Input Event is transferred to the Target Event.</para>
-		/// <para>Because the data of the Input Event is appended into an existing event that has a predefined schema (field definitions), fields cannot be added or removed from the target dataset. While you can set merge rules for each output field, the tool ignores those rules.</para>
+		/// <para>Controls how the attribute information in fields of the Input Event parameter value is transferred to the Target Event parameter value.</para>
+		/// <para>Because the Input Event parameter value is appended into an existing event that has a predefined schema (field definitions), fields cannot be added or removed from the target dataset. While you can set merge rules for each output field, the tool ignores those rules.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFieldMapping()]
@@ -102,28 +102,28 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Load Type</para>
 		/// <para>Specifies how appended events with measure or temporality overlaps with identical Event IDs as Target Event records will be loaded into the event feature class.</para>
-		/// <para>Add—Appends the Input Event records to the Target Event. No changes are made to Target Event records.</para>
-		/// <para>Retire overlaps—Appends the Input Event records to the Target Event and retires any records in the Target Event with measure or temporality overlaps as the appended events. If the appended event eclipses the Target Event, the Target Event will be deleted. This option should only be used for linear events.</para>
-		/// <para>Retire by event ID—Appends the Input Event records to the Target Event and retires any records in the Target Event with the same Event ID and temporality overlaps as the appended events. If the appended event eclipses a Target Event with the same Event ID, the Target Event will be deleted.</para>
-		/// <para>Replace by event ID—Appends the Input Event records to the Target Event and deletes any records in the Target Event with the same Event ID as the appended events.</para>
+		/// <para>Add—The Input Event records will be appended to the Target Event parameter value. No changes are made to Target Event records.</para>
+		/// <para>Retire overlaps—The Input Event records will be appended to the Target Event parameter value and any records in the Target Event parameter value with measure or temporality overlaps as the appended events will be retired. If the appended event eclipses the Target Event parameter value, the Target Event parameter value will be deleted. This option should only be used for linear events.</para>
+		/// <para>Retire by event ID—The Input Event records will be appended to the Target Event parameter value and any records in the Target Event parameter value with the same Event ID and temporality overlaps as the appended events will be retired. If the appended event eclipses a Target Event parameter value with the same Event ID, the Target Event parameter value will be deleted.</para>
+		/// <para>Replace by event ID—The Input Event records will be appended to the Target Event parameter value and any records in the Target Event parameter value with the same Event ID as the appended events will be deleted.</para>
 		/// <para><see cref="LoadTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LoadType { get; set; } = "ADD";
+		public object? LoadType { get; set; } = "ADD";
 
 		/// <summary>
 		/// <para>Generate Event ID GUIDs for loaded events</para>
 		/// <para>Specifies whether event IDs will be generated for Input Event records being appended. Generation of event IDs will only be applied to Input Event records with a Null value for the Event ID field.</para>
-		/// <para>Checked—Generates event IDs for the Input Event records being appended.</para>
-		/// <para>Unchecked—Does not generate event IDs for the Input Event records being appended. This is the default.</para>
+		/// <para>Checked—Event IDs for the Input Event records being appended will be generated.</para>
+		/// <para>Unchecked—Event IDs for the Input Event records being appended will not be generated. This is the default.</para>
 		/// <para><see cref="GenerateEventIdsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object GenerateEventIds { get; set; } = "false";
+		public object? GenerateEventIds { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Generate Shapes</para>
@@ -135,26 +135,26 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object GenerateShapes { get; set; } = "true";
+		public object? GenerateShapes { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output Target Event</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutTargetEvent { get; set; }
+		public object? OutTargetEvent { get; set; }
 
 		/// <summary>
 		/// <para>Output Results File</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETextFile()]
-		public object OutDetailsFile { get; set; }
+		public object? OutDetailsFile { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AppendEvents SetEnviroment(object workspace = null )
+		public AppendEvents SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -168,28 +168,28 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum LoadTypeEnum 
 		{
 			/// <summary>
-			/// <para>Add—Appends the Input Event records to the Target Event. No changes are made to Target Event records.</para>
+			/// <para>Add—The Input Event records will be appended to the Target Event parameter value. No changes are made to Target Event records.</para>
 			/// </summary>
 			[GPValue("ADD")]
 			[Description("Add")]
 			Add,
 
 			/// <summary>
-			/// <para>Retire overlaps—Appends the Input Event records to the Target Event and retires any records in the Target Event with measure or temporality overlaps as the appended events. If the appended event eclipses the Target Event, the Target Event will be deleted. This option should only be used for linear events.</para>
+			/// <para>Retire overlaps—The Input Event records will be appended to the Target Event parameter value and any records in the Target Event parameter value with measure or temporality overlaps as the appended events will be retired. If the appended event eclipses the Target Event parameter value, the Target Event parameter value will be deleted. This option should only be used for linear events.</para>
 			/// </summary>
 			[GPValue("RETIRE_OVERLAPS")]
 			[Description("Retire overlaps")]
 			Retire_overlaps,
 
 			/// <summary>
-			/// <para>Retire by event ID—Appends the Input Event records to the Target Event and retires any records in the Target Event with the same Event ID and temporality overlaps as the appended events. If the appended event eclipses a Target Event with the same Event ID, the Target Event will be deleted.</para>
+			/// <para>Retire by event ID—The Input Event records will be appended to the Target Event parameter value and any records in the Target Event parameter value with the same Event ID and temporality overlaps as the appended events will be retired. If the appended event eclipses a Target Event parameter value with the same Event ID, the Target Event parameter value will be deleted.</para>
 			/// </summary>
 			[GPValue("RETIRE_BY_EVENT_ID")]
 			[Description("Retire by event ID")]
 			Retire_by_event_ID,
 
 			/// <summary>
-			/// <para>Replace by event ID—Appends the Input Event records to the Target Event and deletes any records in the Target Event with the same Event ID as the appended events.</para>
+			/// <para>Replace by event ID—The Input Event records will be appended to the Target Event parameter value and any records in the Target Event parameter value with the same Event ID as the appended events will be deleted.</para>
 			/// </summary>
 			[GPValue("REPLACE_BY_EVENT_ID")]
 			[Description("Replace by event ID")]
@@ -203,18 +203,18 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum GenerateEventIdsEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Does not generate event IDs for the Input Event records being appended. This is the default.</para>
-			/// </summary>
-			[GPValue("false")]
-			[Description("NO_GENERATE_EVENT_IDS")]
-			NO_GENERATE_EVENT_IDS,
-
-			/// <summary>
-			/// <para>Checked—Generates event IDs for the Input Event records being appended.</para>
+			/// <para>Checked—Event IDs for the Input Event records being appended will be generated.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("GENERATE_EVENT_IDS")]
 			GENERATE_EVENT_IDS,
+
+			/// <summary>
+			/// <para>Unchecked—Event IDs for the Input Event records being appended will not be generated. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("NO_GENERATE_EVENT_IDS")]
+			NO_GENERATE_EVENT_IDS,
 
 		}
 

@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InParcelFabric, TargetDataset, Name, OutParcelFabric };
+		public override object[] Parameters => new object[] { InParcelFabric, TargetDataset, Name, OutParcelFabric!, DeleteIdentical! };
 
 		/// <summary>
 		/// <para>Input Parcel Fabric For ArcMap</para>
@@ -101,7 +101,47 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEParcelDataset()]
-		public object OutParcelFabric { get; set; }
+		public object? OutParcelFabric { get; set; }
 
+		/// <summary>
+		/// <para>Delete identical overlapping lines</para>
+		/// <para>Specifies whether identical overlapping lines will be deleted. When this parameter is checked, overlapping lines will be deleted if the line shapes are identical (lines are coincident) and they have the following matching attributes:</para>
+		/// <para>Directions in the Direction field. This includes directions that are reversed by 180 degrees.</para>
+		/// <para>Distances in the Distance field. Distances are rounded to four decimal places.</para>
+		/// <para>Records in the Created By Record field.</para>
+		/// <para>Records in the Retired By Record field.</para>
+		/// <para>Checked—Identical overlapping lines will be deleted.</para>
+		/// <para>Unchecked—Identical overlapping lines will not be deleted. This is the default.</para>
+		/// <para><see cref="DeleteIdenticalEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		public object? DeleteIdentical { get; set; } = "false";
+
+		#region InnerClass
+
+		/// <summary>
+		/// <para>Delete identical overlapping lines</para>
+		/// </summary>
+		public enum DeleteIdenticalEnum 
+		{
+			/// <summary>
+			/// <para>Checked—Identical overlapping lines will be deleted.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("DELETE_IDENTICAL_LINES")]
+			DELETE_IDENTICAL_LINES,
+
+			/// <summary>
+			/// <para>Unchecked—Identical overlapping lines will not be deleted. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("KEEP_IDENTICAL_LINES")]
+			KEEP_IDENTICAL_LINES,
+
+		}
+
+#endregion
 	}
 }

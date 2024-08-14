@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutTable, InFields, AreaOverlap, BothSides, ClusterTolerance, OutLinearUnits, OutAreaUnits };
+		public override object[] Parameters => new object[] { InFeatures, OutTable, InFields!, AreaOverlap!, BothSides!, ClusterTolerance!, OutLinearUnits!, OutAreaUnits! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
-		public object InFields { get; set; }
+		public object? InFields { get; set; }
 
 		/// <summary>
 		/// <para>Include area overlaps</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AreaOverlap { get; set; } = "false";
+		public object? AreaOverlap { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Include both sides of neighbor relationship</para>
@@ -115,16 +115,16 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object BothSides { get; set; } = "true";
+		public object? BothSides { get; set; } = "true";
 
 		/// <summary>
 		/// <para>XY Tolerance</para>
 		/// <para>The minimum distance between coordinates before they will be considered equal. By default, this is the x,y tolerance of the input features.</para>
-		/// <para>Changing this parameter&apos;s value may cause failure or unexpected results. It is recommended that this parameter not be modified. It has been removed from view in the tool dialog. By default, the input feature class&apos;s spatial reference x,y tolerance property is used.</para>
+		/// <para>Changing this parameter&apos;s value may cause failure or unexpected results. It is recommended that you do not modify this parameter. It has been removed from view on the tool dialog box. By default, the input feature class&apos;s spatial reference x,y tolerance property is used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object ClusterTolerance { get; set; }
+		public object? ClusterTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Output Linear Units</para>
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object OutLinearUnits { get; set; } = "UNKNOWN";
+		public object? OutLinearUnits { get; set; } = "UNKNOWN";
 
 		/// <summary>
 		/// <para>Output Area Units</para>
@@ -168,12 +168,12 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object OutAreaUnits { get; set; } = "UNKNOWN";
+		public object? OutAreaUnits { get; set; } = "UNKNOWN";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PolygonNeighbors SetEnviroment(int? autoCommit = null , object extent = null , bool? qualifiedFieldNames = null , object scratchWorkspace = null , object workspace = null )
+		public PolygonNeighbors SetEnviroment(int? autoCommit = null , object? extent = null , bool? qualifiedFieldNames = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, extent: extent, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

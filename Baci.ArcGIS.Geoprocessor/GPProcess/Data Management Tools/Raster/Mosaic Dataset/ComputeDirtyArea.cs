@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause, Timestamp, OutFeatureClass };
+		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause!, Timestamp, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Start Date and Time</para>
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ComputeDirtyArea SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public ComputeDirtyArea SetEnviroment(object? extent = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

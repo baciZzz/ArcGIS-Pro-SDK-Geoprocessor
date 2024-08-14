@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExtractMultipatchFromMesh SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null )
+		public ExtractMultipatchFromMesh SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem);
 			return this;

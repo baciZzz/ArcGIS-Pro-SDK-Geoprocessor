@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAirspaceFeatures, TargetAirspaceLineFeatures, AoiFeatures, PreferenceTable, Preference, UpdatedAirspaceLineFeatures };
+		public override object[] Parameters => new object[] { InAirspaceFeatures, TargetAirspaceLineFeatures, AoiFeatures, PreferenceTable, Preference, UpdatedAirspaceLineFeatures! };
 
 		/// <summary>
 		/// <para>Input Airspace Features</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
 		[GPCompositeDomain()]
-		public object UpdatedAirspaceLineFeatures { get; set; }
+		public object? UpdatedAirspaceLineFeatures { get; set; }
 
 	}
 }

@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Analysislayer, Outputname, Analysisfield, Dividebyfield, Boundingpolygonlayer, Aggregatepolygonlayer, Outputlayer };
+		public override object[] Parameters => new object[] { Analysislayer, Outputname, Analysisfield!, Dividebyfield!, Boundingpolygonlayer!, Aggregatepolygonlayer!, Outputlayer! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object Analysisfield { get; set; }
+		public object? Analysisfield { get; set; }
 
 		/// <summary>
 		/// <para>Divide By Field</para>
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object Dividebyfield { get; set; }
+		public object? Dividebyfield { get; set; }
 
 		/// <summary>
 		/// <para>Bounding Polygons</para>
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
-		public object Boundingpolygonlayer { get; set; }
+		public object? Boundingpolygonlayer { get; set; }
 
 		/// <summary>
 		/// <para>Aggregation Polygons</para>
@@ -120,19 +120,19 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
-		public object Aggregatepolygonlayer { get; set; }
+		public object? Aggregatepolygonlayer { get; set; }
 
 		/// <summary>
 		/// <para>Output Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Outputlayer { get; set; }
+		public object? Outputlayer { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FindHotSpots SetEnviroment(object extent = null )
+		public FindHotSpots SetEnviroment(object? extent = null )
 		{
 			base.SetEnv(extent: extent);
 			return this;

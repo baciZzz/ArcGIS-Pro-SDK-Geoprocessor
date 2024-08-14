@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, OutFile, ExportType, StorageType, ExportMetadata };
+		public override object[] Parameters => new object[] { InData, OutFile, ExportType!, StorageType!, ExportMetadata! };
 
 		/// <summary>
 		/// <para>Input Data</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ExportType { get; set; } = "DATA";
+		public object? ExportType { get; set; } = "DATA";
 
 		/// <summary>
 		/// <para>Storage Type</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object StorageType { get; set; } = "BINARY";
+		public object? StorageType { get; set; } = "BINARY";
 
 		/// <summary>
 		/// <para>Export Metadata</para>
@@ -118,12 +118,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ExportMetadata { get; set; } = "true";
+		public object? ExportMetadata { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportXMLWorkspaceDocument SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public ExportXMLWorkspaceDocument SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

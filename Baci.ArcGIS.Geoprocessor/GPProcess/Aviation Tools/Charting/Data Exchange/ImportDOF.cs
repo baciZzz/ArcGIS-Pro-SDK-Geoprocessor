@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InObstacleFile, ObstacleFeatures, UpdatedObstacleFeatures };
+		public override object[] Parameters => new object[] { InObstacleFile, ObstacleFeatures, UpdatedObstacleFeatures! };
 
 		/// <summary>
 		/// <para>Input Digital Obstacle File</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
 		[GPCompositeDomain()]
-		public object UpdatedObstacleFeatures { get; set; }
+		public object? UpdatedObstacleFeatures { get; set; }
 
 	}
 }

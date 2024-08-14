@@ -13,6 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 	/// <para>Generate Range Rings</para>
 	/// <para>Creates a set of concentric circles from a point, given a number of rings and distance between rings or a minimum and maximum distance from center.</para>
 	/// </summary>
+	[Obsolete()]
 	public class GenerateRangeRings : AbstractGPProcess
 	{
 		/// <summary>
@@ -73,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClassRings, RangeRingsType, OutFeatureClassRadials, NumberOfRadials, DistanceUnits, NumberOfRings, IntervalBetweenRings, MinimumRange, MaximumRange };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClassRings, RangeRingsType, OutFeatureClassRadials!, NumberOfRadials!, DistanceUnits!, NumberOfRings!, IntervalBetweenRings!, MinimumRange!, MaximumRange! };
 
 		/// <summary>
 		/// <para>Input Features (Center Points)</para>
@@ -110,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object OutFeatureClassRadials { get; set; }
+		public object? OutFeatureClassRadials { get; set; }
 
 		/// <summary>
 		/// <para>Number of Radials</para>
@@ -118,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object NumberOfRadials { get; set; }
+		public object? NumberOfRadials { get; set; }
 
 		/// <summary>
 		/// <para>Distance Units</para>
@@ -135,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Units Options")]
-		public object DistanceUnits { get; set; } = "METERS";
+		public object? DistanceUnits { get; set; } = "METERS";
 
 		/// <summary>
 		/// <para>Number of Rings</para>
@@ -143,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object NumberOfRings { get; set; } = "4";
+		public object? NumberOfRings { get; set; } = "4";
 
 		/// <summary>
 		/// <para>Interval Between Rings</para>
@@ -151,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object IntervalBetweenRings { get; set; } = "100";
+		public object? IntervalBetweenRings { get; set; } = "100";
 
 		/// <summary>
 		/// <para>Minimum Range</para>
@@ -159,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MinimumRange { get; set; } = "200";
+		public object? MinimumRange { get; set; } = "200";
 
 		/// <summary>
 		/// <para>Maximum Range</para>
@@ -167,12 +168,12 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MaximumRange { get; set; } = "1000";
+		public object? MaximumRange { get; set; } = "1000";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateRangeRings SetEnviroment(object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateRangeRings SetEnviroment(object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

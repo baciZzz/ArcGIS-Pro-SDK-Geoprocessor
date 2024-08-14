@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, TargetLayers, RotateOption, UpdatedLayers };
+		public override object[] Parameters => new object[] { InMap, TargetLayers, RotateOption!, UpdatedLayers! };
 
 		/// <summary>
 		/// <para>Input Map</para>
@@ -97,14 +97,14 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object RotateOption { get; set; } = "ROTATE_TO_GRID";
+		public object? RotateOption { get; set; } = "ROTATE_TO_GRID";
 
 		/// <summary>
 		/// <para>Updated Layers</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object UpdatedLayers { get; set; }
+		public object? UpdatedLayers { get; set; }
 
 		#region InnerClass
 

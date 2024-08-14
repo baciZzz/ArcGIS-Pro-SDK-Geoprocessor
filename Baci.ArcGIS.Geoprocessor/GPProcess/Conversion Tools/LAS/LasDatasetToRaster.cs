@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, OutRaster, ValueField, InterpolationType, DataType, SamplingType, SamplingValue, ZFactor };
+		public override object[] Parameters => new object[] { InLasDataset, OutRaster, ValueField!, InterpolationType!, DataType!, SamplingType!, SamplingValue!, ZFactor! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ValueField { get; set; } = "ELEVATION";
+		public object? ValueField { get; set; } = "ELEVATION";
 
 		/// <summary>
 		/// <para>Interpolation Type</para>
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GP3DAInterpolate()]
-		public object InterpolationType { get; set; } = "BINNING AVERAGE LINEAR";
+		public object? InterpolationType { get; set; } = "BINNING AVERAGE LINEAR";
 
 		/// <summary>
 		/// <para>Output Data Type</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DataType { get; set; } = "FLOAT";
+		public object? DataType { get; set; } = "FLOAT";
 
 		/// <summary>
 		/// <para>Sampling Type</para>
@@ -148,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SamplingType { get; set; } = "CELLSIZE";
+		public object? SamplingType { get; set; } = "CELLSIZE";
 
 		/// <summary>
 		/// <para>Sampling Value</para>
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object SamplingValue { get; set; } = "10";
+		public object? SamplingValue { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Z Factor</para>
@@ -164,12 +164,12 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ZFactor { get; set; } = "1";
+		public object? ZFactor { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LasDatasetToRaster SetEnviroment(int? autoCommit = null , object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object pyramid = null , object rasterStatistics = null , object snapRaster = null , object workspace = null )
+		public LasDatasetToRaster SetEnviroment(int? autoCommit = null , object? cellSize = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? pyramid = null , object? rasterStatistics = null , object? snapRaster = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, pyramid: pyramid, rasterStatistics: rasterStatistics, snapRaster: snapRaster, workspace: workspace);
 			return this;

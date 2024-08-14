@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutTin, SpatialReference, InFeatures, ConstrainedDelaunay };
+		public override object[] Parameters => new object[] { OutTin, SpatialReference!, InFeatures!, ConstrainedDelaunay! };
 
 		/// <summary>
 		/// <para>Output TIN</para>
@@ -72,24 +72,24 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Coordinate System</para>
-		/// <para>The spatial reference of the output TIN should be set to a projected coordinate system. Geographic coordinate systems are not recommended because Delaunay triangulation cannot be guaranteed when the XY coordinates are expressed in angular units, which could have an adverse impact on the accuracy of distance-based calculations, such as slope, volume, and line of sight.</para>
+		/// <para>The spatial reference of the output TIN. Set the spatial reference to a projected coordinate system. Geographic coordinate systems are not recommended because Delaunay triangulation cannot be guaranteed when the x,y coordinates are expressed in angular units, which could have an adverse impact on the accuracy of distance-based calculations, such as slope, volume, and line of sight.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
-		public object SpatialReference { get; set; }
+		public object? SpatialReference { get; set; }
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
 		/// <para>The input features and their related properties that will contribute to the definition of the TIN.</para>
 		/// <para>Input Features—The feature with the geometry that will be imported to the TIN.</para>
-		/// <para>Height Field— The source of elevation for the input features. Any numeric field from the input feature&apos;s attribute table can be used, along with Shape.Z for the Z values of 3D features, and Shape.M for the M values stored in the geometry. Choosing the &lt;None&gt; keyword will result in the feature&apos;s elevation being interpolated from the surrounding surface.</para>
+		/// <para>Height Field—The source of elevation for the input features. Any numeric field from the input feature&apos;s attribute table can be used, along with Shape.Z for the z-values of 3D features and Shape.M for the m-values stored in the geometry. Choosing the &lt;None&gt; keyword will result in the feature&apos;s elevation being interpolated from the surrounding surface.</para>
 		/// <para>Type—The feature&apos;s role in shaping the TIN surface will be defined. See the tool&apos;s usage tips for more information about surface feature types.</para>
 		/// <para>Tag Field—A numeric attribute will be assigned to the TIN&apos;s data elements using values obtained from an integer field in the input feature&apos;s attribute table.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object InFeatures { get; set; }
+		public object? InFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Constrained Delaunay</para>
@@ -101,12 +101,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ConstrainedDelaunay { get; set; } = "false";
+		public object? ConstrainedDelaunay { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateTin SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object tinSaveVersion = null , object workspace = null )
+		public CreateTin SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? tinSaveVersion = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, tinSaveVersion: tinSaveVersion, workspace: workspace);
 			return this;

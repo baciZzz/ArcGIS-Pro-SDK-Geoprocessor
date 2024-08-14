@@ -69,7 +69,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ServiceUrl, Layer, UpdateMode, UpdateExtent!, AreaOfInterest!, OutServiceUrl };
+		public override object[] Parameters => new object[] { ServiceUrl, Layer, UpdateMode, UpdateExtent!, AreaOfInterest!, OutServiceUrl! };
 
 		/// <summary>
 		/// <para>Input Service URL</para>

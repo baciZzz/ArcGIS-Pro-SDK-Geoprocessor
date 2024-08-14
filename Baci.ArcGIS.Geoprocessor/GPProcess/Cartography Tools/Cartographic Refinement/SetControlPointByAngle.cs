@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, MaximumAngle, OutRepresentations };
+		public override object[] Parameters => new object[] { InFeatures, MaximumAngle, OutRepresentations! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -91,12 +91,12 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLayer()]
-		public object OutRepresentations { get; set; }
+		public object? OutRepresentations { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetControlPointByAngle SetEnviroment(object workspace = null )
+		public SetControlPointByAngle SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Algorithm, Tolerance, MinimumArea, ErrorOption, CollapsedPointOption, OutPointFeatureClass, InBarriers };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Algorithm, Tolerance, MinimumArea!, ErrorOption!, CollapsedPointOption!, OutPointFeatureClass!, InBarriers! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPArealUnit()]
-		public object MinimumArea { get; set; } = "0 Unknown";
+		public object? MinimumArea { get; set; } = "0 Unknown";
 
 		/// <summary>
 		/// <para>Handling Topological Errors</para>
@@ -155,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ErrorOption { get; set; } = "RESOLVE_ERRORS";
+		public object? ErrorOption { get; set; } = "RESOLVE_ERRORS";
 
 		/// <summary>
 		/// <para>Keep collapsed points</para>
@@ -167,14 +167,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CollapsedPointOption { get; set; } = "true";
+		public object? CollapsedPointOption { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Polygons Collapsed To Zero Area</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutPointFeatureClass { get; set; } = "output_feature_class_Pnt";
+		public object? OutPointFeatureClass { get; set; } = "output_feature_class_Pnt";
 
 		/// <summary>
 		/// <para>Input Barrier Layers</para>
@@ -182,12 +182,12 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object InBarriers { get; set; }
+		public object? InBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SimplifyPolygon SetEnviroment(object MDomain = null , object XYDomain = null , object XYTolerance = null , object cartographicPartitions = null , object extent = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , object scratchWorkspace = null , object workspace = null )
+		public SimplifyPolygon SetEnviroment(object? MDomain = null , object? XYDomain = null , object? XYTolerance = null , object? cartographicPartitions = null , object? extent = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(MDomain: MDomain, XYDomain: XYDomain, XYTolerance: XYTolerance, cartographicPartitions: cartographicPartitions, extent: extent, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The raster on which to perform the block statistics calculations.</para>
+		/// <para>The raster for which the block statistics will be calculated.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
@@ -65,11 +65,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, Neighborhood, StatisticsType, IgnoreNodata };
+		public override object[] Parameters => new object[] { InRaster, OutRaster, Neighborhood!, StatisticsType!, IgnoreNodata! };
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The raster on which to perform the block statistics calculations.</para>
+		/// <para>The raster for which the block statistics will be calculated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSANeighborhood()]
 		[GPSANeighborhoodDomain()]
-		public object Neighborhood { get; set; } = "Rectangle 3 3 CELL";
+		public object? Neighborhood { get; set; } = "Rectangle 3 3 CELL";
 
 		/// <summary>
 		/// <para>Statistics type</para>
@@ -117,32 +117,32 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <para>Sum—The sum of the cells in the neighborhood will be calculated.</para>
 		/// <para>Variety—The variety (the number of unique values) of the cells in the neighborhood will be calculated.</para>
 		/// <para>The default statistic type is Mean.</para>
-		/// <para>If the input raster is integer, all the statistics types are available. If the input raster is floating point, only the Mean, Maximum, Minimum, Range, Standard deviation, and Sum statistic types are available.</para>
+		/// <para>If the input raster is integer, all the statistics types will be available. If the input raster is floating point, only the Mean, Maximum, Minimum, Range, Standard deviation, and Sum statistic types will be available.</para>
 		/// <para><see cref="StatisticsTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object StatisticsType { get; set; } = "MEAN";
+		public object? StatisticsType { get; set; } = "MEAN";
 
 		/// <summary>
 		/// <para>Ignore NoData in calculations</para>
 		/// <para>Specifies whether NoData values will be ignored by the statistic calculation.</para>
 		/// <para>Checked—If a NoData value exists within a block neighborhood, the NoData value will be ignored. Only cells within the neighborhood that have data values will be used in determining the output value. This is the default.</para>
-		/// <para>Unchecked—If any cell in a block neighborhood has a value of NoData, the output for each cell in the corresponding block will be NoData. If this parameter is not checked, the presence of a NoData value implies that there is insufficient information to determine the statistic value for the neighborhood.</para>
+		/// <para>Unchecked—If any cell in a block neighborhood has a value of NoData, the output for each cell in the corresponding block will be NoData. The presence of a NoData value implies that there is insufficient information to determine the statistic value for the neighborhood.</para>
 		/// <para><see cref="IgnoreNodataEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IgnoreNodata { get; set; } = "true";
+		public object? IgnoreNodata { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BlockStatistics SetEnviroment(int? autoCommit = null , object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public BlockStatistics SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 
@@ -238,7 +238,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 			DATA,
 
 			/// <summary>
-			/// <para>Unchecked—If any cell in a block neighborhood has a value of NoData, the output for each cell in the corresponding block will be NoData. If this parameter is not checked, the presence of a NoData value implies that there is insufficient information to determine the statistic value for the neighborhood.</para>
+			/// <para>Unchecked—If any cell in a block neighborhood has a value of NoData, the output for each cell in the corresponding block will be NoData. The presence of a NoData value implies that there is insufficient information to determine the statistic value for the neighborhood.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NODATA")]

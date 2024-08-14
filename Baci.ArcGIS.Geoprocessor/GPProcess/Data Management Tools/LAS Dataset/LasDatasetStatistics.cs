@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, CalculationType, OutFile, SummaryLevel, Delimiter, DecimalSeparator, DerivedLasDataset };
+		public override object[] Parameters => new object[] { InLasDataset, CalculationType!, OutFile!, SummaryLevel!, Delimiter!, DecimalSeparator!, DerivedLasDataset! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CalculationType { get; set; } = "true";
+		public object? CalculationType { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output Statistics Report Text File</para>
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETextFile()]
-		public object OutFile { get; set; }
+		public object? OutFile { get; set; }
 
 		/// <summary>
 		/// <para>Summary Level</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SummaryLevel { get; set; } = "DATASET";
+		public object? SummaryLevel { get; set; } = "DATASET";
 
 		/// <summary>
 		/// <para>Delimiter</para>
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Delimiter { get; set; } = "COMMA";
+		public object? Delimiter { get; set; } = "COMMA";
 
 		/// <summary>
 		/// <para>Decimal Separator</para>
@@ -124,19 +124,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DecimalSeparator { get; set; } = "DECIMAL_POINT";
+		public object? DecimalSeparator { get; set; } = "DECIMAL_POINT";
 
 		/// <summary>
 		/// <para>Updated Input LAS Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLasDatasetLayer()]
-		public object DerivedLasDataset { get; set; }
+		public object? DerivedLasDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LasDatasetStatistics SetEnviroment(object workspace = null )
+		public LasDatasetStatistics SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

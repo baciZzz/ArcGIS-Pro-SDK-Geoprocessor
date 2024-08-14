@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { PointLayer, OutputName, BinSize, NeighborhoodSize, TimeStepInterval, TimeStepAlignment, TimeStepReference, Output, DataStore };
+		public override object[] Parameters => new object[] { PointLayer, OutputName, BinSize!, NeighborhoodSize!, TimeStepInterval!, TimeStepAlignment!, TimeStepReference!, Output!, DataStore! };
 
 		/// <summary>
 		/// <para>Point Layer</para>
@@ -87,32 +87,29 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Bin Size</para>
 		/// <para>The distance interval that represents the bin size and units into which the Point Layer will be aggregated. The distance interval must be a linear unit.</para>
-		/// <para><see cref="BinSizeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object BinSize { get; set; }
+		[GPUnitDomain()]
+		public object? BinSize { get; set; }
 
 		/// <summary>
 		/// <para>Neighborhood Size</para>
 		/// <para>The spatial extent of the analysis neighborhood. This value determines which features are analyzed together to assess local clustering.</para>
-		/// <para><see cref="NeighborhoodSizeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object NeighborhoodSize { get; set; }
+		[GPUnitDomain()]
+		public object? NeighborhoodSize { get; set; }
 
 		/// <summary>
 		/// <para>Time Step Interval</para>
 		/// <para>The interval that will be used for the time step. This parameter is only used if time is enabled for Point Layer.</para>
-		/// <para><see cref="TimeStepIntervalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
-		public object TimeStepInterval { get; set; }
+		[GPUnitDomain()]
+		public object? TimeStepInterval { get; set; }
 
 		/// <summary>
 		/// <para>Time Step Alignment</para>
@@ -125,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TimeStepAlignment { get; set; } = "START_TIME";
+		public object? TimeStepAlignment { get; set; } = "START_TIME";
 
 		/// <summary>
 		/// <para>Time Step Reference</para>
@@ -133,14 +130,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object TimeStepReference { get; set; }
+		public object? TimeStepReference { get; set; }
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Output { get; set; }
+		public object? Output { get; set; }
 
 		/// <summary>
 		/// <para>Data Store</para>
@@ -153,179 +150,18 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Data Store")]
-		public object DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
+		public object? DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FindHotSpots SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public FindHotSpots SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;
 		}
 
 		#region InnerClass
-
-		/// <summary>
-		/// <para>Bin Size</para>
-		/// </summary>
-		public enum BinSizeEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("NauticalMiles")]
-			[Description("NauticalMiles")]
-			NauticalMiles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-		}
-
-		/// <summary>
-		/// <para>Neighborhood Size</para>
-		/// </summary>
-		public enum NeighborhoodSizeEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("NauticalMiles")]
-			[Description("NauticalMiles")]
-			NauticalMiles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-		}
-
-		/// <summary>
-		/// <para>Time Step Interval</para>
-		/// </summary>
-		public enum TimeStepIntervalEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Milliseconds")]
-			[Description("Milliseconds")]
-			Milliseconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Seconds")]
-			[Description("Seconds")]
-			Seconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Days")]
-			[Description("Days")]
-			Days,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Weeks")]
-			[Description("Weeks")]
-			Weeks,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Months")]
-			[Description("Months")]
-			Months,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Years")]
-			[Description("Years")]
-			Years,
-
-		}
 
 		/// <summary>
 		/// <para>Time Step Alignment</para>

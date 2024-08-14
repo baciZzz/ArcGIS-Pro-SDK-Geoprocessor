@@ -56,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InValues, OutValue };
+		public override object[] Parameters => new object[] { InValues!, OutValue! };
 
 		/// <summary>
 		/// <para>In Values</para>
@@ -64,14 +64,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object InValues { get; set; }
+		public object? InValues { get; set; }
 
 		/// <summary>
 		/// <para>output_value</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPType()]
-		public object OutValue { get; set; }
+		public object? OutValue { get; set; }
 
 	}
 }

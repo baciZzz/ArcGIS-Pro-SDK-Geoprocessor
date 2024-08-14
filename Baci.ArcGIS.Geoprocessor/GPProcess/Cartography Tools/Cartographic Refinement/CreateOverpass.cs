@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAboveFeatures, InBelowFeatures, MarginAlong, MarginAcross, OutOverpassFeatureClass, OutMaskRelationshipClass, WhereClause, OutDecorationFeatureClass, WingType, WingTickLength };
+		public override object[] Parameters => new object[] { InAboveFeatures, InBelowFeatures, MarginAlong, MarginAcross, OutOverpassFeatureClass, OutMaskRelationshipClass, WhereClause!, OutDecorationFeatureClass!, WingType!, WingTickLength! };
 
 		/// <summary>
 		/// <para>Input Above Features</para>
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Output Decoration Feature Class</para>
@@ -155,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object OutDecorationFeatureClass { get; set; }
+		public object? OutDecorationFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Wing Type</para>
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object WingType { get; set; } = "ANGLED";
+		public object? WingType { get; set; } = "ANGLED";
 
 		/// <summary>
 		/// <para>Wing Tick Length</para>
@@ -177,12 +177,12 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[GPNumericDomain()]
-		public object WingTickLength { get; set; }
+		public object? WingTickLength { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateOverpass SetEnviroment(object cartographicCoordinateSystem = null , object referenceScale = null )
+		public CreateOverpass SetEnviroment(object? cartographicCoordinateSystem = null , double? referenceScale = null )
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem, referenceScale: referenceScale);
 			return this;

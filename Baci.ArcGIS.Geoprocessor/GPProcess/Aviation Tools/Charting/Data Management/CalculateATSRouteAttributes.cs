@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, AtsrouteAttributes, MagneticVariationDate!, UpdatedFeatures };
+		public override object[] Parameters => new object[] { InFeatures, AtsrouteAttributes, MagneticVariationDate!, UpdatedFeatures! };
 
 		/// <summary>
 		/// <para>Input ATS Route Feature Layer</para>

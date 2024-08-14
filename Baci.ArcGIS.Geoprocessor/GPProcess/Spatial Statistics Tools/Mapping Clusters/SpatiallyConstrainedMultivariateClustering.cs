@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputFeatures, AnalysisFields, SizeConstraints, ConstraintField, MinConstraint, MaxConstraint, NumberOfClusters, SpatialConstraints, WeightsMatrixFile, NumberOfPermutations, OutputTable };
+		public override object[] Parameters => new object[] { InFeatures, OutputFeatures, AnalysisFields, SizeConstraints!, ConstraintField!, MinConstraint!, MaxConstraint!, NumberOfClusters!, SpatialConstraints!, WeightsMatrixFile!, NumberOfPermutations!, OutputTable! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SizeConstraints { get; set; } = "NONE";
+		public object? SizeConstraints { get; set; } = "NONE";
 
 		/// <summary>
 		/// <para>Constraint Field</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ConstraintField { get; set; }
+		public object? ConstraintField { get; set; }
 
 		/// <summary>
 		/// <para>Minimum per Cluster</para>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MinConstraint { get; set; }
+		public object? MinConstraint { get; set; }
 
 		/// <summary>
 		/// <para>Fill to Limit</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MaxConstraint { get; set; }
+		public object? MaxConstraint { get; set; }
 
 		/// <summary>
 		/// <para>Number of Clusters</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object NumberOfClusters { get; set; }
+		public object? NumberOfClusters { get; set; }
 
 		/// <summary>
 		/// <para>Spatial Constraints</para>
@@ -157,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SpatialConstraints { get; set; }
+		public object? SpatialConstraints { get; set; }
 
 		/// <summary>
 		/// <para>Spatial Weights Matrix File</para>
@@ -166,7 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object WeightsMatrixFile { get; set; }
+		public object? WeightsMatrixFile { get; set; }
 
 		/// <summary>
 		/// <para>Permutations to Calculate Membership Probabilities</para>
@@ -177,7 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPCodedValueDomain()]
-		public object NumberOfPermutations { get; set; } = "0";
+		public object? NumberOfPermutations { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Output Table for Evaluating Number of Clusters</para>
@@ -185,12 +185,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object OutputTable { get; set; }
+		public object? OutputTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SpatiallyConstrainedMultivariateClustering SetEnviroment(object MResolution = null , object MTolerance = null , object XYResolution = null , object XYTolerance = null , object ZResolution = null , object ZTolerance = null , object geographicTransformations = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , object parallelProcessingFactor = null , bool? qualifiedFieldNames = null , object randomGenerator = null , object scratchWorkspace = null , object workspace = null )
+		public SpatiallyConstrainedMultivariateClustering SetEnviroment(double? MResolution = null , double? MTolerance = null , object? XYResolution = null , object? XYTolerance = null , object? ZResolution = null , object? ZTolerance = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , object? parallelProcessingFactor = null , bool? qualifiedFieldNames = null , object? randomGenerator = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(MResolution: MResolution, MTolerance: MTolerance, XYResolution: XYResolution, XYTolerance: XYTolerance, ZResolution: ZResolution, ZTolerance: ZTolerance, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, parallelProcessingFactor: parallelProcessingFactor, qualifiedFieldNames: qualifiedFieldNames, randomGenerator: randomGenerator, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

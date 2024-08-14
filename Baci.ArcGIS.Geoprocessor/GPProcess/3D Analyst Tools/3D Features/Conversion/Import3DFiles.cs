@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFiles, OutFeatureclass, RootPerFeature, SpatialReference, YIsUp, FileSuffix, InFeatureclass, SymbolField };
+		public override object[] Parameters => new object[] { InFiles, OutFeatureclass, RootPerFeature!, SpatialReference!, YIsUp!, FileSuffix!, InFeatureclass!, SymbolField! };
 
 		/// <summary>
 		/// <para>Input Files</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object RootPerFeature { get; set; } = "false";
+		public object? RootPerFeature { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Coordinate System</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
-		public object SpatialReference { get; set; }
+		public object? SpatialReference { get; set; }
 
 		/// <summary>
 		/// <para>Y Is Up</para>
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object YIsUp { get; set; } = "false";
+		public object? YIsUp { get; set; } = "false";
 
 		/// <summary>
 		/// <para>File Suffix</para>
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object FileSuffix { get; set; } = "*";
+		public object? FileSuffix { get; set; } = "*";
 
 		/// <summary>
 		/// <para>Placement Points</para>
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object InFeatureclass { get; set; }
+		public object? InFeatureclass { get; set; }
 
 		/// <summary>
 		/// <para>Symbol Field</para>
@@ -148,12 +148,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object SymbolField { get; set; }
+		public object? SymbolField { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Import3DFiles SetEnviroment(object XYDomain = null , object ZDomain = null , int? autoCommit = null , object configKeyword = null , object outputCoordinateSystem = null , object workspace = null )
+		public Import3DFiles SetEnviroment(object? XYDomain = null , object? ZDomain = null , int? autoCommit = null , object? configKeyword = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, ZDomain: ZDomain, autoCommit: autoCommit, configKeyword: configKeyword, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTin, OutRaster, DataType, Method, SampleDistance, ZFactor, SampleValue };
+		public override object[] Parameters => new object[] { InTin, OutRaster, DataType!, Method!, SampleDistance!, ZFactor!, SampleValue! };
 
 		/// <summary>
 		/// <para>Input TIN</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DataType { get; set; } = "FLOAT";
+		public object? DataType { get; set; } = "FLOAT";
 
 		/// <summary>
 		/// <para>Method</para>
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "LINEAR";
+		public object? Method { get; set; } = "LINEAR";
 
 		/// <summary>
 		/// <para>Sampling Distance</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SampleDistance { get; set; } = "OBSERVATIONS";
+		public object? SampleDistance { get; set; } = "OBSERVATIONS";
 
 		/// <summary>
 		/// <para>Z Factor</para>
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ZFactor { get; set; } = "1";
+		public object? ZFactor { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Sampling Value</para>
@@ -135,12 +135,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object SampleValue { get; set; } = "250";
+		public object? SampleValue { get; set; } = "250";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TinRaster SetEnviroment(int? autoCommit = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object pyramid = null , object rasterStatistics = null , object snapRaster = null , object workspace = null )
+		public TinRaster SetEnviroment(int? autoCommit = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? pyramid = null , object? rasterStatistics = null , object? snapRaster = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, pyramid: pyramid, rasterStatistics: rasterStatistics, snapRaster: snapRaster, workspace: workspace);
 			return this;

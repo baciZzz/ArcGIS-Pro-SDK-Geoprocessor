@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, User, View, Edit, OutDataset };
+		public override object[] Parameters => new object[] { InDataset, User, View!, Edit!, OutDataset! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object View { get; set; }
+		public object? View { get; set; }
 
 		/// <summary>
 		/// <para>Edit (Update/Insert/Delete)</para>
@@ -107,19 +107,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Edit { get; set; }
+		public object? Edit { get; set; }
 
 		/// <summary>
 		/// <para>Updated Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutDataset { get; set; }
+		public object? OutDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ChangePrivileges SetEnviroment(object workspace = null )
+		public ChangePrivileges SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

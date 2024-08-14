@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, InputField, NumberOfDistanceBands, BeginningDistance, DistanceIncrement, DistanceMethod, RowStandardization, OutputTable, OutputReportFile, FirstPeak, MaxPeak };
+		public override object[] Parameters => new object[] { InputFeatures, InputField, NumberOfDistanceBands, BeginningDistance!, DistanceIncrement!, DistanceMethod!, RowStandardization!, OutputTable!, OutputReportFile!, FirstPeak!, MaxPeak! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object BeginningDistance { get; set; }
+		public object? BeginningDistance { get; set; }
 
 		/// <summary>
 		/// <para>Distance Increment</para>
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object DistanceIncrement { get; set; }
+		public object? DistanceIncrement { get; set; }
 
 		/// <summary>
 		/// <para>Distance Method</para>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DistanceMethod { get; set; } = "EUCLIDEAN";
+		public object? DistanceMethod { get; set; } = "EUCLIDEAN";
 
 		/// <summary>
 		/// <para>Row Standardization</para>
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object RowStandardization { get; set; } = "true";
+		public object? RowStandardization { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output Table</para>
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object OutputTable { get; set; }
+		public object? OutputTable { get; set; }
 
 		/// <summary>
 		/// <para>Output Report File</para>
@@ -155,26 +155,26 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object OutputReportFile { get; set; }
+		public object? OutputReportFile { get; set; }
 
 		/// <summary>
 		/// <para>First Peak</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object FirstPeak { get; set; }
+		public object? FirstPeak { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Peak</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object MaxPeak { get; set; }
+		public object? MaxPeak { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public IncrementalSpatialAutocorrelation SetEnviroment(object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public IncrementalSpatialAutocorrelation SetEnviroment(object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

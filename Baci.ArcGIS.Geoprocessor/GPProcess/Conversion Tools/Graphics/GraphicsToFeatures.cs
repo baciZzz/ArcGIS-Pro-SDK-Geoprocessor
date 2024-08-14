@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayer, GraphicsType, OutFeatureClass, DeleteGraphics!, ReferenceScale!, UpdatedLayer };
+		public override object[] Parameters => new object[] { InLayer, GraphicsType, OutFeatureClass, DeleteGraphics!, ReferenceScale!, UpdatedLayer! };
 
 		/// <summary>
 		/// <para>Input Graphics</para>

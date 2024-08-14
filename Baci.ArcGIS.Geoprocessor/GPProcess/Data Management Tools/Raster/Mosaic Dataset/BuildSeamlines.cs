@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, CellSize, SortMethod, SortOrder, OrderByAttribute, OrderByBaseValue, ViewPoint, ComputationMethod, BlendWidth, BlendType, RequestSize, RequestSizeType, BlendWidthUnits, AreaOfInterest, WhereClause, UpdateExisting, OutMosaicDataset, MinRegionSize, MinThinnessRatio, MaxSliverSize };
+		public override object[] Parameters => new object[] { InMosaicDataset, CellSize!, SortMethod!, SortOrder!, OrderByAttribute!, OrderByBaseValue!, ViewPoint!, ComputationMethod!, BlendWidth!, BlendType!, RequestSize!, RequestSizeType!, BlendWidthUnits!, AreaOfInterest!, WhereClause!, UpdateExisting!, OutMosaicDataset!, MinRegionSize!, MinThinnessRatio!, MaxSliverSize! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[Category("Advanced Options")]
-		public object CellSize { get; set; }
+		public object? CellSize { get; set; }
 
 		/// <summary>
 		/// <para>Sort Method</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SortMethod { get; set; } = "NORTH_WEST";
+		public object? SortMethod { get; set; } = "NORTH_WEST";
 
 		/// <summary>
 		/// <para>Sort Ascending</para>
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SortOrder { get; set; } = "true";
+		public object? SortOrder { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Sort Attribute</para>
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object OrderByAttribute { get; set; }
+		public object? OrderByAttribute { get; set; }
 
 		/// <summary>
 		/// <para>Sort Base Value</para>
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPVariant()]
-		public object OrderByBaseValue { get; set; }
+		public object? OrderByBaseValue { get; set; }
 
 		/// <summary>
 		/// <para>View Point</para>
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPPoint()]
-		public object ViewPoint { get; set; }
+		public object? ViewPoint { get; set; }
 
 		/// <summary>
 		/// <para>Computation Method</para>
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ComputationMethod { get; set; } = "RADIOMETRY";
+		public object? ComputationMethod { get; set; } = "RADIOMETRY";
 
 		/// <summary>
 		/// <para>Blend Width</para>
@@ -157,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Processing")]
-		public object BlendWidth { get; set; }
+		public object? BlendWidth { get; set; }
 
 		/// <summary>
 		/// <para>Blend Type</para>
@@ -171,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Processing")]
-		public object BlendType { get; set; } = "BOTH";
+		public object? BlendType { get; set; } = "BOTH";
 
 		/// <summary>
 		/// <para>Request Size</para>
@@ -181,7 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Processing")]
-		public object RequestSize { get; set; } = "1000";
+		public object? RequestSize { get; set; } = "1000";
 
 		/// <summary>
 		/// <para>Request Size Type</para>
@@ -194,7 +194,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Processing")]
-		public object RequestSizeType { get; set; } = "PIXELS";
+		public object? RequestSizeType { get; set; } = "PIXELS";
 
 		/// <summary>
 		/// <para>Blend Width Units</para>
@@ -207,7 +207,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Processing")]
-		public object BlendWidthUnits { get; set; } = "PIXELS";
+		public object? BlendWidthUnits { get; set; } = "PIXELS";
 
 		/// <summary>
 		/// <para>Area of Interest</para>
@@ -215,7 +215,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
-		public object AreaOfInterest { get; set; }
+		public object? AreaOfInterest { get; set; }
 
 		/// <summary>
 		/// <para>Query Definition</para>
@@ -223,7 +223,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Update Existing Seamlines</para>
@@ -236,14 +236,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UpdateExisting { get; set; } = "false";
+		public object? UpdateExisting { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Mosaic Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutMosaicDataset { get; set; }
+		public object? OutMosaicDataset { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Region Size</para>
@@ -254,7 +254,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Advanced Options")]
-		public object MinRegionSize { get; set; } = "100";
+		public object? MinRegionSize { get; set; } = "100";
 
 		/// <summary>
 		/// <para>Minimum Thinness Ratio</para>
@@ -264,7 +264,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Sliver Removal Options")]
-		public object MinThinnessRatio { get; set; } = "0.05";
+		public object? MinThinnessRatio { get; set; } = "0.05";
 
 		/// <summary>
 		/// <para>Maximum Sliver Size</para>
@@ -274,12 +274,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Sliver Removal Options")]
-		public object MaxSliverSize { get; set; } = "20";
+		public object? MaxSliverSize { get; set; } = "20";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BuildSeamlines SetEnviroment(object parallelProcessingFactor = null )
+		public BuildSeamlines SetEnviroment(object? parallelProcessingFactor = null )
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

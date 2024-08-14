@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurface, InFeatureClass, InHeightField, ReferencePlane, OutVolumeField, SurfaceAreaField, PyramidLevelResolution, OutputFeatureClass };
+		public override object[] Parameters => new object[] { InSurface, InFeatureClass, InHeightField, ReferencePlane!, OutVolumeField!, SurfaceAreaField!, PyramidLevelResolution!, OutputFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Surface</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ReferencePlane { get; set; } = "BELOW";
+		public object? ReferencePlane { get; set; } = "BELOW";
 
 		/// <summary>
 		/// <para>Volume Field</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object OutVolumeField { get; set; } = "Volume";
+		public object? OutVolumeField { get; set; } = "Volume";
 
 		/// <summary>
 		/// <para>Surface Area Field</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object SurfaceAreaField { get; set; } = "SArea";
+		public object? SurfaceAreaField { get; set; } = "SArea";
 
 		/// <summary>
 		/// <para>Pyramid Level Resolution</para>
@@ -133,19 +133,19 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object PyramidLevelResolution { get; set; } = "0";
+		public object? PyramidLevelResolution { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutputFeatureClass { get; set; }
+		public object? OutputFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PolygonVolume SetEnviroment(object extent = null , object geographicTransformations = null , object terrainMemoryUsage = null , object workspace = null )
+		public PolygonVolume SetEnviroment(object? extent = null , object? geographicTransformations = null , bool? terrainMemoryUsage = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, terrainMemoryUsage: terrainMemoryUsage, workspace: workspace);
 			return this;

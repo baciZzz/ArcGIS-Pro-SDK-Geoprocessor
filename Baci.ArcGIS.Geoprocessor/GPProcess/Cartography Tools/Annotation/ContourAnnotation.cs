@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutGeodatabase, ContourLabelField, ReferenceScaleValue, OutLayer, ContourColor, ContourTypeField, ContourAlignment, EnableLaddering, OutGeodatabase2 };
+		public override object[] Parameters => new object[] { InFeatures, OutGeodatabase, ContourLabelField, ReferenceScaleValue, OutLayer, ContourColor, ContourTypeField!, ContourAlignment!, EnableLaddering!, OutGeodatabase2! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ContourTypeField { get; set; }
+		public object? ContourTypeField { get; set; }
 
 		/// <summary>
 		/// <para>Contour Alignment</para>
@@ -166,7 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ContourAlignment { get; set; } = "PAGE";
+		public object? ContourAlignment { get; set; } = "PAGE";
 
 		/// <summary>
 		/// <para>Enable Laddering</para>
@@ -178,21 +178,21 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object EnableLaddering { get; set; } = "false";
+		public object? EnableLaddering { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Workspace</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutGeodatabase2 { get; set; }
+		public object? OutGeodatabase2 { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ContourAnnotation SetEnviroment(object outputCoordinateSystem = null , object referenceScale = null )
+		public ContourAnnotation SetEnviroment(int? annotationTextStringFieldLength = null , object? outputCoordinateSystem = null , double? referenceScale = null )
 		{
-			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, referenceScale: referenceScale);
+			base.SetEnv(annotationTextStringFieldLength: annotationTextStringFieldLength, outputCoordinateSystem: outputCoordinateSystem, referenceScale: referenceScale);
 			return this;
 		}
 

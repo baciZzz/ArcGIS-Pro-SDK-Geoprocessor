@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, TargetFolder, BaseName, OutLasDataset, ComputeStats, LasVersion, PointFormat, Compression, LasOptions, TileFeature, NamingMethod, FileSize, TileWidth, TileHeight, TileOrigin, OutFolder };
+		public override object[] Parameters => new object[] { InLasDataset, TargetFolder, BaseName!, OutLasDataset!, ComputeStats!, LasVersion!, PointFormat!, Compression!, LasOptions!, TileFeature!, NamingMethod!, FileSize!, TileWidth!, TileHeight!, TileOrigin!, OutFolder! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object BaseName { get; set; } = "Tile";
+		public object? BaseName { get; set; } = "Tile";
 
 		/// <summary>
 		/// <para>Output LAS Dataset</para>
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DELasDataset()]
-		public object OutLasDataset { get; set; }
+		public object? OutLasDataset { get; set; }
 
 		/// <summary>
 		/// <para>Compute statistics</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ComputeStats { get; set; } = "true";
+		public object? ComputeStats { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output Version</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("LAS File Options")]
-		public object LasVersion { get; set; }
+		public object? LasVersion { get; set; }
 
 		/// <summary>
 		/// <para>Point Format</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPLong()]
 		[GPCodedValueDomain()]
 		[Category("LAS File Options")]
-		public object PointFormat { get; set; }
+		public object? PointFormat { get; set; }
 
 		/// <summary>
 		/// <para>Compression</para>
@@ -149,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("LAS File Options")]
-		public object Compression { get; set; } = "NO_COMPRESSION";
+		public object? Compression { get; set; } = "NO_COMPRESSION";
 
 		/// <summary>
 		/// <para>LAS Options</para>
@@ -163,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("LAS File Options")]
-		public object LasOptions { get; set; } = "REARRANGE_POINTS";
+		public object? LasOptions { get; set; } = "REARRANGE_POINTS";
 
 		/// <summary>
 		/// <para>Import from Feature Class</para>
@@ -173,7 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
 		[Category("Tiling Options")]
-		public object TileFeature { get; set; }
+		public object? TileFeature { get; set; }
 
 		/// <summary>
 		/// <para>Naming Method</para>
@@ -187,7 +187,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Tiling Options")]
-		public object NamingMethod { get; set; } = "XY_COORDS";
+		public object? NamingMethod { get; set; } = "XY_COORDS";
 
 		/// <summary>
 		/// <para>Target File Size (MB)</para>
@@ -197,7 +197,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Tiling Options")]
-		public object FileSize { get; set; } = "250";
+		public object? FileSize { get; set; } = "250";
 
 		/// <summary>
 		/// <para>Tile Width</para>
@@ -206,7 +206,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Tiling Options")]
-		public object TileWidth { get; set; }
+		public object? TileWidth { get; set; }
 
 		/// <summary>
 		/// <para>Tile Height</para>
@@ -215,7 +215,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Tiling Options")]
-		public object TileHeight { get; set; }
+		public object? TileHeight { get; set; }
 
 		/// <summary>
 		/// <para>Tile Origin</para>
@@ -224,19 +224,19 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPPoint()]
 		[Category("Tiling Options")]
-		public object TileOrigin { get; set; }
+		public object? TileOrigin { get; set; }
 
 		/// <summary>
 		/// <para>Output Folder</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFolder()]
-		public object OutFolder { get; set; }
+		public object? OutFolder { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TileLas SetEnviroment(object extent = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public TileLas SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

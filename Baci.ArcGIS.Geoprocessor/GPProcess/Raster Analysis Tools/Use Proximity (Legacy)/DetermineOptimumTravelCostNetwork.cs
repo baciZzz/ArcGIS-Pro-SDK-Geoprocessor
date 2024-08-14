@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputregionsrasterorfeatures, Inputcostraster, Outputoptimumnetworkname, Outputneighbornetworkname, Outputoptimumnetworkfeatures, Outputneighbornetworkfeatures };
+		public override object[] Parameters => new object[] { Inputregionsrasterorfeatures, Inputcostraster, Outputoptimumnetworkname, Outputneighbornetworkname!, Outputoptimumnetworkfeatures!, Outputneighbornetworkfeatures! };
 
 		/// <summary>
 		/// <para>Input Regions Raster or Features</para>
@@ -140,26 +140,26 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Outputneighbornetworkname { get; set; }
+		public object? Outputneighbornetworkname { get; set; }
 
 		/// <summary>
 		/// <para>Output Optimum Network Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object Outputoptimumnetworkfeatures { get; set; }
+		public object? Outputoptimumnetworkfeatures { get; set; }
 
 		/// <summary>
 		/// <para>Output Neighbor Network Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object Outputneighbornetworkfeatures { get; set; }
+		public object? Outputneighbornetworkfeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DetermineOptimumTravelCostNetwork SetEnviroment(object cellSize = null , object extent = null , object mask = null , object outputCoordinateSystem = null , object snapRaster = null )
+		public DetermineOptimumTravelCostNetwork SetEnviroment(object? cellSize = null , object? extent = null , object? mask = null , object? outputCoordinateSystem = null , object? snapRaster = null )
 		{
 			base.SetEnv(cellSize: cellSize, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, snapRaster: snapRaster);
 			return this;

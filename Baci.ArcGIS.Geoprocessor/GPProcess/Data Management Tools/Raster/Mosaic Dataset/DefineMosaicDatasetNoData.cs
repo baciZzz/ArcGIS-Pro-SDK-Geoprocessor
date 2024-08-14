@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, NumBands, BandsForNodataValue, BandsForValidDataRange, WhereClause, CompositeNodataValue, OutMosaicDataset };
+		public override object[] Parameters => new object[] { InMosaicDataset, NumBands, BandsForNodataValue!, BandsForValidDataRange!, WhereClause!, CompositeNodataValue!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object BandsForNodataValue { get; set; }
+		public object? BandsForNodataValue { get; set; }
 
 		/// <summary>
 		/// <para>Bands For Valid Data Range</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object BandsForValidDataRange { get; set; }
+		public object? BandsForValidDataRange { get; set; }
 
 		/// <summary>
 		/// <para>Query Definition</para>
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Composite NoData value from each band</para>
@@ -120,19 +120,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CompositeNodataValue { get; set; } = "false";
+		public object? CompositeNodataValue { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Mosaic Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMosaicLayer()]
-		public object OutMosaicDataset { get; set; }
+		public object? OutMosaicDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DefineMosaicDatasetNoData SetEnviroment(object extent = null )
+		public DefineMosaicDatasetNoData SetEnviroment(object? extent = null )
 		{
 			base.SetEnv(extent: extent);
 			return this;

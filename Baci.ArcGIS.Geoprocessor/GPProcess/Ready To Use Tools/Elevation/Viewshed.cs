@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputpoints, Maximumdistance, Maximumdistanceunits, Demresolution, Observerheight, Observerheightunits, Surfaceoffset, Surfaceoffsetunits, Generalizeviewshedpolygons, Outputviewshed };
+		public override object[] Parameters => new object[] { Inputpoints, Maximumdistance!, Maximumdistanceunits!, Demresolution!, Observerheight!, Observerheightunits!, Surfaceoffset!, Surfaceoffsetunits!, Generalizeviewshedpolygons!, Outputviewshed! };
 
 		/// <summary>
 		/// <para>Input Point Features</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Maximumdistance { get; set; }
+		public object? Maximumdistance { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Distance Units</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Maximumdistanceunits { get; set; } = "Meters";
+		public object? Maximumdistanceunits { get; set; } = "Meters";
 
 		/// <summary>
 		/// <para>DEM Resolution</para>
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Demresolution { get; set; }
+		public object? Demresolution { get; set; }
 
 		/// <summary>
 		/// <para>Observer Height</para>
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Observerheight { get; set; } = "1.75";
+		public object? Observerheight { get; set; } = "1.75";
 
 		/// <summary>
 		/// <para>Observer Height Units</para>
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Observerheightunits { get; set; } = "Meters";
+		public object? Observerheightunits { get; set; } = "Meters";
 
 		/// <summary>
 		/// <para>Surface Offset</para>
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Surfaceoffset { get; set; } = "0";
+		public object? Surfaceoffset { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Surface Offset Units</para>
@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Surfaceoffsetunits { get; set; } = "Meters";
+		public object? Surfaceoffsetunits { get; set; } = "Meters";
 
 		/// <summary>
 		/// <para>Generalize Viewshed Polygons</para>
@@ -166,14 +166,14 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Generalizeviewshedpolygons { get; set; } = "true";
+		public object? Generalizeviewshedpolygons { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output Viewshed</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Outputviewshed { get; set; }
+		public object? Outputviewshed { get; set; }
 
 		#region InnerClass
 

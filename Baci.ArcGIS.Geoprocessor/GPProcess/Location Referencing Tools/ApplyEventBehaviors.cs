@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRouteFeatures, OutEventLayers, OutDetailsFile };
+		public override object[] Parameters => new object[] { InRouteFeatures, OutEventLayers!, OutDetailsFile! };
 
 		/// <summary>
 		/// <para>Input Route Features</para>
@@ -76,14 +76,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutEventLayers { get; set; }
+		public object? OutEventLayers { get; set; }
 
 		/// <summary>
 		/// <para>Output Details File</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETextFile()]
-		public object OutDetailsFile { get; set; }
+		public object? OutDetailsFile { get; set; }
 
 	}
 }

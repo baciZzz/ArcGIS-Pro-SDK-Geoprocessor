@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ServerName, ObjectName, UpdateExtent, Layer, LodFrom, LodTo, ThreadCount, UpdateMode };
+		public override object[] Parameters => new object[] { ServerName, ObjectName, UpdateExtent!, Layer, LodFrom, LodTo, ThreadCount!, UpdateMode };
 
 		/// <summary>
 		/// <para>Host</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object UpdateExtent { get; set; }
+		public object? UpdateExtent { get; set; }
 
 		/// <summary>
 		/// <para>Input Layers</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object ThreadCount { get; set; }
+		public object? ThreadCount { get; set; }
 
 		/// <summary>
 		/// <para>Update Mode</para>

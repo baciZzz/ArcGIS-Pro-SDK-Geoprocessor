@@ -64,7 +64,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Layer, OutKmzFile, LayerOutputScale, IsComposite, BoundaryBoxExtent, ImageSize, DpiOfClient, IgnoreZvalue };
+		public override object[] Parameters => new object[] { Layer, OutKmzFile, LayerOutputScale!, IsComposite!, BoundaryBoxExtent!, ImageSize!, DpiOfClient!, IgnoreZvalue! };
 
 		/// <summary>
 		/// <para>Layer</para>
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object LayerOutputScale { get; set; } = "0";
+		public object? LayerOutputScale { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Return single composite image</para>
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Data Content Properties")]
-		public object IsComposite { get; set; } = "false";
+		public object? IsComposite { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Extent to Export</para>
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
 		[Category("Extent Properties")]
-		public object BoundaryBoxExtent { get; set; }
+		public object? BoundaryBoxExtent { get; set; }
 
 		/// <summary>
 		/// <para>Size of returned image (pixels)</para>
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Output Image Properties")]
-		public object ImageSize { get; set; } = "1024";
+		public object? ImageSize { get; set; } = "1024";
 
 		/// <summary>
 		/// <para>DPI of output image</para>
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Output Image Properties")]
-		public object DpiOfClient { get; set; } = "96";
+		public object? DpiOfClient { get; set; } = "96";
 
 		/// <summary>
 		/// <para>Clamped features to ground</para>
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IgnoreZvalue { get; set; } = "true";
+		public object? IgnoreZvalue { get; set; } = "true";
 
 		#region InnerClass
 

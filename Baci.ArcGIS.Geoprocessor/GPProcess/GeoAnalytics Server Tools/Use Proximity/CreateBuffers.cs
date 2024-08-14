@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutputName, Method, BufferType, BufferField, BufferDistance, BufferExpression, DissolveOption, DissolveFields, SummaryFields, Multipart, Output, DataStore };
+		public override object[] Parameters => new object[] { InputLayer, OutputName, Method, BufferType, BufferField!, BufferDistance!, BufferExpression!, DissolveOption!, DissolveFields!, SummaryFields!, Multipart!, Output!, DataStore! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -133,27 +133,26 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object BufferField { get; set; }
+		public object? BufferField { get; set; }
 
 		/// <summary>
 		/// <para>Buffer Distance</para>
 		/// <para>The distance around the input features that will be buffered. Distance can be expressed in meters, kilometers, feet, yards, miles, or nautical miles.</para>
-		/// <para><see cref="BufferDistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object BufferDistance { get; set; }
+		[GPUnitDomain()]
+		public object? BufferDistance { get; set; }
 
 		/// <summary>
 		/// <para>Buffer Expression</para>
 		/// <para>An equation using fields and mathematical operators that will be applied as a buffer to each feature. Fields must be numeric, and the expression can include [+ - * / ] operators and multiple fields. Calculated values are applied in meters unless otherwise specified. For example, apply a buffer that multiples a numeric field named distance in kilometers by 2 and adds 15 meters.</para>
 		/// <para>ArcGIS Enterprise 10.5 and 10.5.1 expressions are formatted as as_kilometers(distance) * 2 + as_meters(15). For ArcGIS Enterprise 10.6 or later, use an Arcade expression such as as_kilometers($feature[&quot;distance&quot;]) * 2 + as_meters(15).</para>
-		/// <para><para/></para>
+		/// <para>If the layer is added to the map, the Fields and Helpers filters can be used to build an expression.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCalculatorExpression()]
-		public object BufferExpression { get; set; }
+		public object? BufferExpression { get; set; }
 
 		/// <summary>
 		/// <para>Dissolve Option</para>
@@ -166,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DissolveOption { get; set; } = "NONE";
+		public object? DissolveOption { get; set; } = "NONE";
 
 		/// <summary>
 		/// <para>Dissolve Fields</para>
@@ -175,7 +174,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
-		public object DissolveFields { get; set; }
+		public object? DissolveFields { get; set; }
 
 		/// <summary>
 		/// <para>Summary Fields</para>
@@ -193,7 +192,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object SummaryFields { get; set; }
+		public object? SummaryFields { get; set; }
 
 		/// <summary>
 		/// <para>Multipart</para>
@@ -205,14 +204,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Multipart { get; set; } = "false";
+		public object? Multipart { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Output { get; set; }
+		public object? Output { get; set; }
 
 		/// <summary>
 		/// <para>Data Store</para>
@@ -225,12 +224,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Data Store")]
-		public object DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
+		public object? DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateBuffers SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public CreateBuffers SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;
@@ -284,55 +283,6 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 			[GPValue("EXPRESSION")]
 			[Description("Expression")]
 			Expression,
-
-		}
-
-		/// <summary>
-		/// <para>Buffer Distance</para>
-		/// </summary>
-		public enum BufferDistanceEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("NauticalMiles")]
-			[Description("NauticalMiles")]
-			NauticalMiles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
 
 		}
 

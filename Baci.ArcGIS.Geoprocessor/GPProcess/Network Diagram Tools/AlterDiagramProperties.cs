@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, OutName, AccessRightType, Tags, OutNetworkDiagramLayer };
+		public override object[] Parameters => new object[] { InNetworkDiagramLayer, OutName!, AccessRightType!, Tags!, OutNetworkDiagramLayer! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object OutName { get; set; }
+		public object? OutName { get; set; }
 
 		/// <summary>
 		/// <para>Network Diagram Access Rights</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object AccessRightType { get; set; } = "PUBLIC";
+		public object? AccessRightType { get; set; } = "PUBLIC";
 
 		/// <summary>
 		/// <para>Tags (optional)</para>
@@ -98,14 +98,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Tags { get; set; } = " ";
+		public object? Tags { get; set; } = " ";
 
 		/// <summary>
 		/// <para>Altered Network Diagram Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDiagramLayer()]
-		public object OutNetworkDiagramLayer { get; set; }
+		public object? OutNetworkDiagramLayer { get; set; }
 
 		#region InnerClass
 

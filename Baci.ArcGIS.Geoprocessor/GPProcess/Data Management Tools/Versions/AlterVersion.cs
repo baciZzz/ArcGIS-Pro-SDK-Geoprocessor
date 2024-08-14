@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, InVersion, Name, Description, Access, OutWorkspace, TargetOwner };
+		public override object[] Parameters => new object[] { InWorkspace, InVersion, Name!, Description!, Access!, OutWorkspace!, TargetOwner! };
 
 		/// <summary>
 		/// <para>Input Workspace</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Name { get; set; }
+		public object? Name { get; set; }
 
 		/// <summary>
 		/// <para>Version Description</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Description { get; set; }
+		public object? Description { get; set; }
 
 		/// <summary>
 		/// <para>Access Permission</para>
@@ -113,14 +113,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Access { get; set; }
+		public object? Access { get; set; }
 
 		/// <summary>
 		/// <para>Updated Geodatabase</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutWorkspace { get; set; }
+		public object? OutWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Target Owner</para>
@@ -128,12 +128,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object TargetOwner { get; set; }
+		public object? TargetOwner { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AlterVersion SetEnviroment(object workspace = null )
+		public AlterVersion SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

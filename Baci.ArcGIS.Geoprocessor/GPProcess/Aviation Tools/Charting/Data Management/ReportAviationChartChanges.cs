@@ -20,12 +20,11 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		/// <param name="AviationWorkspace">
 		/// <para>Aviation Workspace</para>
-		/// <para>The versioned enterprise ArcGIS Aviation Charting AIS geodatabase.</para>
-		/// <para>The workspace cannot be a file geodatabase.</para>
+		/// <para>The versioned enterprise ArcGIS Aviation Charting AIS geodatabase. The workspace cannot be a file geodatabase.</para>
 		/// </param>
 		/// <param name="BaseVersion">
 		/// <para>Base Version</para>
-		/// <para>The version of the ArcGIS Aviation Charting AIS geodatabase to compare to.</para>
+		/// <para>The version of the ArcGIS Aviation Charting AIS geodatabase to be compared.</para>
 		/// </param>
 		/// <param name="ComparisonVersion">
 		/// <para>Comparison Version</para>
@@ -33,8 +32,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </param>
 		/// <param name="ReportPreference">
 		/// <para>Report Preference</para>
-		/// <para>The Report Chart Changes preference setting from the preference table.</para>
-		/// <para>This preference will define which feature classes will be included in your report.</para>
+		/// <para>The Report Chart Changes preference setting from the preference table. This preference will define which feature classes will be included in the report.</para>
 		/// </param>
 		/// <param name="ReportName">
 		/// <para>Report Name</para>
@@ -82,12 +80,11 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { AviationWorkspace, BaseVersion, ComparisonVersion, ReportPreference, ReportName, AoiFeatures, ReportId };
+		public override object[] Parameters => new object[] { AviationWorkspace, BaseVersion, ComparisonVersion, ReportPreference, ReportName, AoiFeatures!, ReportId! };
 
 		/// <summary>
 		/// <para>Aviation Workspace</para>
-		/// <para>The versioned enterprise ArcGIS Aviation Charting AIS geodatabase.</para>
-		/// <para>The workspace cannot be a file geodatabase.</para>
+		/// <para>The versioned enterprise ArcGIS Aviation Charting AIS geodatabase. The workspace cannot be a file geodatabase.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -95,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 
 		/// <summary>
 		/// <para>Base Version</para>
-		/// <para>The version of the ArcGIS Aviation Charting AIS geodatabase to compare to.</para>
+		/// <para>The version of the ArcGIS Aviation Charting AIS geodatabase to be compared.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -111,8 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 
 		/// <summary>
 		/// <para>Report Preference</para>
-		/// <para>The Report Chart Changes preference setting from the preference table.</para>
-		/// <para>This preference will define which feature classes will be included in your report.</para>
+		/// <para>The Report Chart Changes preference setting from the preference table. This preference will define which feature classes will be included in the report.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -128,19 +124,19 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 
 		/// <summary>
 		/// <para>Area of Interest Features</para>
-		/// <para>The boundary within which features will be processed.</para>
+		/// <para>The boundary within which the features will be processed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object AoiFeatures { get; set; }
+		public object? AoiFeatures { get; set; }
 
 		/// <summary>
 		/// <para>ID of Generated Report</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object ReportId { get; set; }
+		public object? ReportId { get; set; }
 
 	}
 }

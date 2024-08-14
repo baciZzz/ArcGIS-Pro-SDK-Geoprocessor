@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InOpendapURL, Variable, XDimension, YDimension, OutRasterLayer, Extent, DimensionValues, ValueSelectionMethod, CellRegistration };
+		public override object[] Parameters => new object[] { InOpendapURL, Variable, XDimension, YDimension, OutRasterLayer, Extent!, DimensionValues!, ValueSelectionMethod!, CellRegistration! };
 
 		/// <summary>
 		/// <para>Input OPeNDAP URL</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPEnvelope()]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Dimension Values</para>
@@ -139,32 +139,32 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object DimensionValues { get; set; }
+		public object? DimensionValues { get; set; }
 
 		/// <summary>
 		/// <para>Value Selection Method</para>
 		/// <para>Specifies the dimension value selection method that will be used.</para>
-		/// <para>By value—The input value is matched with the actual dimension value.</para>
-		/// <para>By index—The input value is matched with the position or index of a dimension value. The index is 0 based; that is, the position starts at 0.</para>
+		/// <para>By value—The input value will be matched with the actual dimension value.</para>
+		/// <para>By index—The input value will be matched with the position or index of a dimension value. The index is 0 based; that is, the position starts at 0.</para>
 		/// <para><see cref="ValueSelectionMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ValueSelectionMethod { get; set; } = "BY_VALUE";
+		public object? ValueSelectionMethod { get; set; } = "BY_VALUE";
 
 		/// <summary>
 		/// <para>Cell Registration</para>
-		/// <para>Specifies how the cells will be registered with respect to the XY coordinate.</para>
-		/// <para>Center—The XY coordinate represents the center of the cell. This is the default.</para>
-		/// <para>Lower Left—The XY coordinate represents the lower left of the cell.</para>
-		/// <para>Upper Left—The XY coordinate represents the upper left of the cell.</para>
+		/// <para>Specifies how the cells will be registered with respect to the x,y coordinate.</para>
+		/// <para>Center—The x,y coordinate represents the center of the cell. This is the default.</para>
+		/// <para>Lower Left—The x,y coordinate represents the lower left of the cell.</para>
+		/// <para>Upper Left—The x,y coordinate represents the upper left of the cell.</para>
 		/// <para><see cref="CellRegistrationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object CellRegistration { get; set; } = "CENTER";
+		public object? CellRegistration { get; set; } = "CENTER";
 
 		#region InnerClass
 
@@ -174,14 +174,14 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		public enum ValueSelectionMethodEnum 
 		{
 			/// <summary>
-			/// <para>By index—The input value is matched with the position or index of a dimension value. The index is 0 based; that is, the position starts at 0.</para>
+			/// <para>By index—The input value will be matched with the position or index of a dimension value. The index is 0 based; that is, the position starts at 0.</para>
 			/// </summary>
 			[GPValue("BY_INDEX")]
 			[Description("By index")]
 			By_index,
 
 			/// <summary>
-			/// <para>By value—The input value is matched with the actual dimension value.</para>
+			/// <para>By value—The input value will be matched with the actual dimension value.</para>
 			/// </summary>
 			[GPValue("BY_VALUE")]
 			[Description("By value")]
@@ -195,21 +195,21 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		public enum CellRegistrationEnum 
 		{
 			/// <summary>
-			/// <para>Center—The XY coordinate represents the center of the cell. This is the default.</para>
+			/// <para>Center—The x,y coordinate represents the center of the cell. This is the default.</para>
 			/// </summary>
 			[GPValue("CENTER")]
 			[Description("Center")]
 			Center,
 
 			/// <summary>
-			/// <para>Lower Left—The XY coordinate represents the lower left of the cell.</para>
+			/// <para>Lower Left—The x,y coordinate represents the lower left of the cell.</para>
 			/// </summary>
 			[GPValue("LOWER_LEFT")]
 			[Description("Lower Left")]
 			Lower_Left,
 
 			/// <summary>
-			/// <para>Upper Left—The XY coordinate represents the upper left of the cell.</para>
+			/// <para>Upper Left—The x,y coordinate represents the upper left of the cell.</para>
 			/// </summary>
 			[GPValue("UPPER_LEFT")]
 			[Description("Upper Left")]

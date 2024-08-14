@@ -22,15 +22,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The feature layer with a field that will be updated with geometry calculations.</para>
+		/// <para>The features with a field that will be updated with geometry calculations.</para>
 		/// </param>
 		/// <param name="GeometryProperty">
 		/// <para>Geometry Attributes</para>
 		/// <para>Specifies the fields in which the selected geometry properties will be calculated.</para>
-		/// <para>You can select an existing field or provide a new field name. If a new field name is specified, the field type is determined by the type of values that are written to the field.</para>
-		/// <para>Count attributes are written to long integer fields.</para>
-		/// <para>Area, length, and x-, y-, z-, and m-coordinate attributes are written to double fields.</para>
-		/// <para>Coordinate notations such as Degrees Minutes Seconds or MGRS are written to text fields.</para>
+		/// <para>You can select an existing field or provide a new field name. If a new field name is specified, the field type is determined by the type of values that are written to the field. Count attributes are written to long integer fields, area, length, and x-, y-, z-, and m-coordinate attributes are written to double fields, and coordinate notations such as Degrees Minutes Seconds or MGRS are written to text fields.</para>
 		/// <para>AREA—The area of each polygon feature.</para>
 		/// <para>AREA_GEODESIC—The shape-preserving geodesic area of each polygon feature.</para>
 		/// <para>CENTROID_X—The centroid x-coordinate of each feature.</para>
@@ -105,16 +102,16 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, GeometryProperty, LengthUnit, AreaUnit, CoordinateSystem, UpdatedFeatures, CoordinateFormat };
+		public override object[] Parameters => new object[] { InFeatures, GeometryProperty, LengthUnit!, AreaUnit!, CoordinateSystem!, UpdatedFeatures!, CoordinateFormat! };
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The feature layer with a field that will be updated with geometry calculations.</para>
+		/// <para>The features with a field that will be updated with geometry calculations.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -124,10 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Geometry Attributes</para>
 		/// <para>Specifies the fields in which the selected geometry properties will be calculated.</para>
-		/// <para>You can select an existing field or provide a new field name. If a new field name is specified, the field type is determined by the type of values that are written to the field.</para>
-		/// <para>Count attributes are written to long integer fields.</para>
-		/// <para>Area, length, and x-, y-, z-, and m-coordinate attributes are written to double fields.</para>
-		/// <para>Coordinate notations such as Degrees Minutes Seconds or MGRS are written to text fields.</para>
+		/// <para>You can select an existing field or provide a new field name. If a new field name is specified, the field type is determined by the type of values that are written to the field. Count attributes are written to long integer fields, area, length, and x-, y-, z-, and m-coordinate attributes are written to double fields, and coordinate notations such as Degrees Minutes Seconds or MGRS are written to text fields.</para>
 		/// <para>AREA—The area of each polygon feature.</para>
 		/// <para>AREA_GEODESIC—The shape-preserving geodesic area of each polygon feature.</para>
 		/// <para>CENTROID_X—The centroid x-coordinate of each feature.</para>
@@ -176,52 +170,59 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Length Unit</para>
 		/// <para>Specifies the unit that will be used to calculate length.</para>
-		/// <para>Feet (United States)—The length unit will be feet (United States).</para>
-		/// <para>Meters—The length unit will be meters.</para>
-		/// <para>Kilometers—The length unit will be kilometers.</para>
-		/// <para>Miles (United States)—The length unit will be miles (United States).</para>
-		/// <para>Nautical miles (United States)—The length unit will be nautical miles (United States).</para>
-		/// <para>Yards (United States)—The length unit will be yards (United States).</para>
+		/// <para>Kilometers—The length unit will be Kilometers.</para>
+		/// <para>Meters—The length unit will be Meters.</para>
+		/// <para>Statute Miles—The length unit will be Statute Miles.</para>
+		/// <para>International Nautical Miles—The length unit will be International Nautical Miles.</para>
+		/// <para>International Yards—The length unit will be International Yards.</para>
+		/// <para>International Feet—The length unit will be International Feet.</para>
+		/// <para>US Survey Miles—The length unit will be US Survey Miles.</para>
+		/// <para>US Survey Nautical Miles—The length unit will be US Survey Nautical Miles.</para>
+		/// <para>US Survey Yards—The length unit will be US Survey Yards.</para>
+		/// <para>US Survey Feet—The length unit will be US Survey Feet.</para>
 		/// <para><see cref="LengthUnitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LengthUnit { get; set; }
+		public object? LengthUnit { get; set; }
 
 		/// <summary>
 		/// <para>Area Unit</para>
 		/// <para>Specifies the unit that will be used to calculate area.</para>
-		/// <para>Acres—The area unit will be acres.</para>
-		/// <para>Hectares—The area unit will be hectares.</para>
-		/// <para>Square miles (United States)—The area unit will be square miles (United States).</para>
-		/// <para>Square kilometers—The area unit will be square kilometers.</para>
-		/// <para>Square meters—The area unit will be square meters.</para>
-		/// <para>Square feet (United States)—The area unit will be square feet (United States).</para>
-		/// <para>Square yards (United States)—The area unit will be square yards (United States).</para>
-		/// <para>Square nautical miles (United States)—The area unit will be square nautical miles (United States).</para>
-		/// <para><see cref="AreaUnitEnum"/></para>
+		/// <para>Square Kilometers—The area unit will be Square Kilometers.</para>
+		/// <para>Hectares—The area unit will be Hectares.</para>
+		/// <para>Square Meters—The area unit will be Square Meters.</para>
+		/// <para>Square Statute Miles—The area unit will be Square Statute Miles.</para>
+		/// <para>Square International Nautical Miles—The area unit will be Square International Nautical Miles.</para>
+		/// <para>International Acres—The area unit will be International Acres.</para>
+		/// <para>Square International Yards—The area unit will be Square International Yards.</para>
+		/// <para>Square International Feet—The area unit will be Square International Feet.</para>
+		/// <para>Square US Survey Miles—The area unit will be Square US Survey Miles.</para>
+		/// <para>Square US Survey Nautical Miles—The area unit will be Square US Survey Nautical Miles.</para>
+		/// <para>US Survey Acres—The area unit will be US Survey Acres.</para>
+		/// <para>Square US Survey Yards—The area unit will be Square US Survey Yards.</para>
+		/// <para>Square US Survey Feet—The area unit will be Square US Survey Feet.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object AreaUnit { get; set; }
+		public object? AreaUnit { get; set; }
 
 		/// <summary>
 		/// <para>Coordinate System</para>
 		/// <para>The coordinate system in which the coordinates, length, and area will be calculated. The coordinate system of the input features is used by default.</para>
-		/// <para>For coordinate-based geometry properties, the coordinate system will only be applied when the coordinate format is the same as input; otherwise, the geographic coordinate system WGS84 will be used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
-		public object CoordinateSystem { get; set; }
+		public object? CoordinateSystem { get; set; }
 
 		/// <summary>
 		/// <para>Updated Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object UpdatedFeatures { get; set; }
+		public object? UpdatedFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Coordinate Format</para>
@@ -246,14 +247,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object CoordinateFormat { get; set; } = "SAME_AS_INPUT";
+		public object? CoordinateFormat { get; set; } = "SAME_AS_INPUT";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateGeometryAttributes SetEnviroment(object outputCoordinateSystem = null , object workspace = null )
+		public CalculateGeometryAttributes SetEnviroment(object? geographicTransformations = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
-			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
+			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;
 		}
 
@@ -265,109 +266,74 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum LengthUnitEnum 
 		{
 			/// <summary>
-			/// <para>Feet (United States)—The length unit will be feet (United States).</para>
-			/// </summary>
-			[GPValue("FEET_US")]
-			[Description("Feet (United States)")]
-			FEET_US,
-
-			/// <summary>
-			/// <para>Meters—The length unit will be meters.</para>
-			/// </summary>
-			[GPValue("METERS")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para>Yards (United States)—The length unit will be yards (United States).</para>
-			/// </summary>
-			[GPValue("YARDS")]
-			[Description("Yards (United States)")]
-			YARDS,
-
-			/// <summary>
-			/// <para>Kilometers—The length unit will be kilometers.</para>
+			/// <para>Kilometers—The length unit will be Kilometers.</para>
 			/// </summary>
 			[GPValue("KILOMETERS")]
 			[Description("Kilometers")]
 			Kilometers,
 
 			/// <summary>
-			/// <para>Miles (United States)—The length unit will be miles (United States).</para>
+			/// <para>Meters—The length unit will be Meters.</para>
 			/// </summary>
-			[GPValue("MILES_US")]
-			[Description("Miles (United States)")]
-			MILES_US,
+			[GPValue("METERS")]
+			[Description("Meters")]
+			Meters,
 
 			/// <summary>
-			/// <para>Nautical miles (United States)—The length unit will be nautical miles (United States).</para>
+			/// <para>International Nautical Miles—The length unit will be International Nautical Miles.</para>
+			/// </summary>
+			[GPValue("NAUTICAL_MILES_INT")]
+			[Description("International Nautical Miles")]
+			International_Nautical_Miles,
+
+			/// <summary>
+			/// <para>Statute Miles—The length unit will be Statute Miles.</para>
+			/// </summary>
+			[GPValue("MILES_INT")]
+			[Description("Statute Miles")]
+			Statute_Miles,
+
+			/// <summary>
+			/// <para>International Yards—The length unit will be International Yards.</para>
+			/// </summary>
+			[GPValue("YARDS_INT")]
+			[Description("International Yards")]
+			International_Yards,
+
+			/// <summary>
+			/// <para>International Feet—The length unit will be International Feet.</para>
+			/// </summary>
+			[GPValue("FEET_INT")]
+			[Description("International Feet")]
+			International_Feet,
+
+			/// <summary>
+			/// <para>US Survey Nautical Miles—The length unit will be US Survey Nautical Miles.</para>
 			/// </summary>
 			[GPValue("NAUTICAL_MILES")]
-			[Description("Nautical miles (United States)")]
-			NAUTICAL_MILES,
-
-		}
-
-		/// <summary>
-		/// <para>Area Unit</para>
-		/// </summary>
-		public enum AreaUnitEnum 
-		{
-			/// <summary>
-			/// <para>Acres—The area unit will be acres.</para>
-			/// </summary>
-			[GPValue("ACRES")]
-			[Description("Acres")]
-			Acres,
+			[Description("US Survey Nautical Miles")]
+			US_Survey_Nautical_Miles,
 
 			/// <summary>
-			/// <para>Hectares—The area unit will be hectares.</para>
+			/// <para>US Survey Miles—The length unit will be US Survey Miles.</para>
 			/// </summary>
-			[GPValue("HECTARES")]
-			[Description("Hectares")]
-			Hectares,
+			[GPValue("MILES_US")]
+			[Description("US Survey Miles")]
+			US_Survey_Miles,
 
 			/// <summary>
-			/// <para>Square miles (United States)—The area unit will be square miles (United States).</para>
+			/// <para>US Survey Yards—The length unit will be US Survey Yards.</para>
 			/// </summary>
-			[GPValue("SQUARE_MILES_US")]
-			[Description("Square miles (United States)")]
-			SQUARE_MILES_US,
+			[GPValue("YARDS")]
+			[Description("US Survey Yards")]
+			US_Survey_Yards,
 
 			/// <summary>
-			/// <para>Square kilometers—The area unit will be square kilometers.</para>
+			/// <para>US Survey Feet—The length unit will be US Survey Feet.</para>
 			/// </summary>
-			[GPValue("SQUARE_KILOMETERS")]
-			[Description("Square kilometers")]
-			Square_kilometers,
-
-			/// <summary>
-			/// <para>Square meters—The area unit will be square meters.</para>
-			/// </summary>
-			[GPValue("SQUARE_METERS")]
-			[Description("Square meters")]
-			Square_meters,
-
-			/// <summary>
-			/// <para>Square feet (United States)—The area unit will be square feet (United States).</para>
-			/// </summary>
-			[GPValue("SQUARE_FEET_US")]
-			[Description("Square feet (United States)")]
-			SQUARE_FEET_US,
-
-			/// <summary>
-			/// <para>Square yards (United States)—The area unit will be square yards (United States).</para>
-			/// </summary>
-			[GPValue("SQUARE_YARDS")]
-			[Description("Square yards (United States)")]
-			SQUARE_YARDS,
-
-			/// <summary>
-			/// <para>Square nautical miles (United States)—The area unit will be square nautical miles (United States).</para>
-			/// </summary>
-			[GPValue("SQUARE_NAUTICAL_MILES")]
-			[Description("Square nautical miles (United States)")]
-			SQUARE_NAUTICAL_MILES,
+			[GPValue("FEET_US")]
+			[Description("US Survey Feet")]
+			US_Survey_Feet,
 
 		}
 

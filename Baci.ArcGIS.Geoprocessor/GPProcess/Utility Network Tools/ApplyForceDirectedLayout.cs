@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, AreContainersPreserved, IterationsNumber, RepelFactor, DegreeFreedom, OutNetworkDiagramLayer, BreakpointPosition, EdgeDisplayType, RunAsync };
+		public override object[] Parameters => new object[] { InNetworkDiagramLayer, AreContainersPreserved!, IterationsNumber!, RepelFactor!, DegreeFreedom!, OutNetworkDiagramLayer!, BreakpointPosition!, EdgeDisplayType!, RunAsync! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
@@ -76,21 +76,21 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AreContainersPreserved { get; set; } = "false";
+		public object? AreContainersPreserved { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Number of Iterations</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object IterationsNumber { get; set; } = "20";
+		public object? IterationsNumber { get; set; } = "20";
 
 		/// <summary>
 		/// <para>Repel Factor</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object RepelFactor { get; set; } = "1";
+		public object? RepelFactor { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Degree of Freedom</para>
@@ -99,21 +99,21 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DegreeFreedom { get; set; } = "LOW";
+		public object? DegreeFreedom { get; set; } = "LOW";
 
 		/// <summary>
 		/// <para>Output Network Diagram</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDiagramLayer()]
-		public object OutNetworkDiagramLayer { get; set; }
+		public object? OutNetworkDiagramLayer { get; set; }
 
 		/// <summary>
 		/// <para>Break Point Relative Position (%)</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object BreakpointPosition { get; set; } = "30";
+		public object? BreakpointPosition { get; set; } = "30";
 
 		/// <summary>
 		/// <para>Edge Display Type</para>
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object EdgeDisplayType { get; set; } = "REGULAR_EDGES";
+		public object? EdgeDisplayType { get; set; } = "REGULAR_EDGES";
 
 		/// <summary>
 		/// <para>Run in asynchronous mode on the server</para>
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object RunAsync { get; set; } = "false";
+		public object? RunAsync { get; set; } = "false";
 
 		#region InnerClass
 

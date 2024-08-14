@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, RestoreEdgesGeoPositions, OutNetworkDiagramLayer, RunAsync };
+		public override object[] Parameters => new object[] { InNetworkDiagramLayer, RestoreEdgesGeoPositions!, OutNetworkDiagramLayer!, RunAsync! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
@@ -76,14 +76,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object RestoreEdgesGeoPositions { get; set; } = "true";
+		public object? RestoreEdgesGeoPositions { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output Network Diagram</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDiagramLayer()]
-		public object OutNetworkDiagramLayer { get; set; }
+		public object? OutNetworkDiagramLayer { get; set; }
 
 		/// <summary>
 		/// <para>Run in asynchronous mode on the server</para>
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object RunAsync { get; set; } = "false";
+		public object? RunAsync { get; set; } = "false";
 
 		#region InnerClass
 

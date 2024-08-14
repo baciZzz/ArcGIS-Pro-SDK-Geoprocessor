@@ -61,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMultidimensionalRaster, UpdatedMultidimensionalRaster!, DeleteTranspose };
+		public override object[] Parameters => new object[] { InMultidimensionalRaster, UpdatedMultidimensionalRaster!, DeleteTranspose! };
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>

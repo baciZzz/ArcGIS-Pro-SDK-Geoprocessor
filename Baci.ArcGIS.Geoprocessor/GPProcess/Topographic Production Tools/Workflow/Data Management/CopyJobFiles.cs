@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { JobId, SourcePath, TargetPath, ArchiveSource, DeleteSource, CreateJobFolder, DatabasePath, UpdatedJobId };
+		public override object[] Parameters => new object[] { JobId, SourcePath, TargetPath, ArchiveSource!, DeleteSource!, CreateJobFolder!, DatabasePath!, UpdatedJobId! };
 
 		/// <summary>
 		/// <para>Job ID</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ArchiveSource { get; set; }
+		public object? ArchiveSource { get; set; }
 
 		/// <summary>
 		/// <para>Delete Source Files</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DeleteSource { get; set; }
+		public object? DeleteSource { get; set; }
 
 		/// <summary>
 		/// <para>Create Job Folder</para>
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CreateJobFolder { get; set; }
+		public object? CreateJobFolder { get; set; }
 
 		/// <summary>
 		/// <para>Input Database Path</para>
@@ -139,14 +139,14 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object DatabasePath { get; set; }
+		public object? DatabasePath { get; set; }
 
 		/// <summary>
 		/// <para>Updated Job ID</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLong()]
-		public object UpdatedJobId { get; set; } = "-1";
+		public object? UpdatedJobId { get; set; } = "-1";
 
 		#region InnerClass
 

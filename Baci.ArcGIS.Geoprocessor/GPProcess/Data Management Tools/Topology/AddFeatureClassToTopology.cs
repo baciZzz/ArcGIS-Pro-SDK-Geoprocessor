@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Add Feature Class To Topology</para>
 	/// <para>Adds a feature class to a topology.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class AddFeatureClassToTopology : AbstractGPProcess
 	{
 		/// <summary>
@@ -75,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTopology, InFeatureclass, XyRank, ZRank, OutTopology };
+		public override object[] Parameters => new object[] { InTopology, InFeatureclass, XyRank, ZRank, OutTopology! };
 
 		/// <summary>
 		/// <para>Input Topology</para>
@@ -114,12 +116,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTopologyLayer()]
-		public object OutTopology { get; set; }
+		public object? OutTopology { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddFeatureClassToTopology SetEnviroment(object workspace = null )
+		public AddFeatureClassToTopology SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

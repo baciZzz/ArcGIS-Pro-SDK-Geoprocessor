@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, InTrainingFeatures, OutClassifierDefinition, InAdditionalRaster, UsedAttributes, DimensionValueField };
+		public override object[] Parameters => new object[] { InRaster, InTrainingFeatures, OutClassifierDefinition, InAdditionalRaster!, UsedAttributes!, DimensionValueField! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -109,25 +109,25 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object InAdditionalRaster { get; set; }
+		public object? InAdditionalRaster { get; set; }
 
 		/// <summary>
 		/// <para>Segment Attributes Used</para>
 		/// <para>Specifies the attributes that will be included in the attribute table associated with the output raster.</para>
-		/// <para>Converged color—The RGB color values will be derived from the input raster on a per-segment basis.</para>
+		/// <para>Converged color—The RGB color values will be derived from the input raster on a per-segment basis. This is also known as average chromaticity color.</para>
 		/// <para>Mean digital number—The average digital number (DN) will be derived from the optional pixel image on a per-segment basis.</para>
 		/// <para>Standard deviation—The standard deviation will be derived from the optional pixel image on a per-segment basis.</para>
 		/// <para>Count of pixels—The number of pixels composing the segment, on a per-segment basis.</para>
 		/// <para>Compactness—The degree to which a segment is compact or circular, on a per-segment basis. The values range from 0 to 1, in which 1 is a circle.</para>
 		/// <para>Rectangularity—The degree to which the segment is rectangular, on a per-segment basis. The values range from 0 to 1, in which 1 is a rectangle.</para>
-		/// <para>This parameter is only active if the Segmented key property is set to true on the input raster. If the only input to the tool is a segmented image, the default attributes are Average chromaticity color, Count of pixels, Compactness, and Rectangularity. If an Additional Input Raster value is included as an input with a segmented image, Mean digital number and Standard deviation are also available attributes.</para>
+		/// <para>This parameter is only active if the Segmented key property is set to true on the input raster. If the only input to the tool is a segmented image, the default attributes are Converged color, Count of pixels, Compactness, and Rectangularity. If an Additional Input Raster value is included as an input with a segmented image, Mean digital number and Standard deviation are also available attributes.</para>
 		/// <para><see cref="UsedAttributesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Segment Attributes")]
-		public object UsedAttributes { get; set; } = "COLOR;MEAN";
+		public object? UsedAttributes { get; set; } = "COLOR;MEAN";
 
 		/// <summary>
 		/// <para>Dimension Value Field</para>
@@ -137,12 +137,12 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object DimensionValueField { get; set; }
+		public object? DimensionValueField { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TrainMaximumLikelihoodClassifier SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object snapRaster = null , object workspace = null )
+		public TrainMaximumLikelihoodClassifier SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? snapRaster = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, workspace: workspace);
 			return this;
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum UsedAttributesEnum 
 		{
 			/// <summary>
-			/// <para>Converged color—The RGB color values will be derived from the input raster on a per-segment basis.</para>
+			/// <para>Converged color—The RGB color values will be derived from the input raster on a per-segment basis. This is also known as average chromaticity color.</para>
 			/// </summary>
 			[GPValue("COLOR")]
 			[Description("Converged color")]

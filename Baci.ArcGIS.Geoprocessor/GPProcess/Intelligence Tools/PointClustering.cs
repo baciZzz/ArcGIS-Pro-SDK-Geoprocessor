@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputPointFeatures, InputSearchDistance, MinimumFeaturesCluster, OutputIdList };
+		public override object[] Parameters => new object[] { InputPointFeatures, InputSearchDistance!, MinimumFeaturesCluster!, OutputIdList! };
 
 		/// <summary>
 		/// <para>Input Points</para>
@@ -75,21 +75,21 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object InputSearchDistance { get; set; } = "100 Meters";
+		public object? InputSearchDistance { get; set; } = "100 Meters";
 
 		/// <summary>
 		/// <para>Minimum Features per Cluster</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MinimumFeaturesCluster { get; set; } = "5";
+		public object? MinimumFeaturesCluster { get; set; } = "5";
 
 		/// <summary>
 		/// <para>Output OIDs</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutputIdList { get; set; }
+		public object? OutputIdList { get; set; }
 
 	}
 }

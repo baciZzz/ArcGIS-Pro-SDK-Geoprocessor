@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Add Surface Information</para>
-	/// <para>Attributes features with spatial information derived from a  surface.</para>
+	/// <para>Attributes features with statistics derived from a  surface.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -30,16 +30,16 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </param>
 		/// <param name="OutProperty">
 		/// <para>Output Property</para>
-		/// <para>The surface elevation property that will be added to the attribute table of the input feature class. The following list summarizes the available property keywords and their supported geometry types:</para>
-		/// <para>Z—Surface Z values interpolated for the XY location of each single-point feature.</para>
-		/// <para>Minimum Z—Lowest surface Z values in the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record.</para>
-		/// <para>Maximum Z—Highest surface elevation in the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record.</para>
-		/// <para>Mean Z—Average surface elevation of the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record.</para>
-		/// <para>Surface Area—3D surface area for the region defined by each polygon.</para>
-		/// <para>Surface Length—3D distance of the line along the surface.</para>
-		/// <para>Minimum Slope—Slope value closest to zero along the line or within the area defined by the polygon.</para>
-		/// <para>Maximum Slope—Highest slope value along the line or within the area defined by the polygon.</para>
-		/// <para>Average Slope—Average slope value along the line or within the area defined by the polygon.</para>
+		/// <para>Specifies the surface elevation properties that will be added to the attribute table of the input feature class.</para>
+		/// <para>Z—The surface z-values interpolated for the x,y-location of each single-point feature will be added.</para>
+		/// <para>Minimum Z—The lowest surface z-values in the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record will be added.</para>
+		/// <para>Maximum Z—The highest surface elevation in the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record will be added.</para>
+		/// <para>Mean Z—The average surface elevation of the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record will be added.</para>
+		/// <para>Surface Area—The 3D surface area for the region defined by each polygon will be added.</para>
+		/// <para>Surface Length—The 3D distance of the line along the surface will be added.</para>
+		/// <para>Minimum Slope—The slope value closest to zero along the line or within the area defined by the polygon will be added.</para>
+		/// <para>Maximum Slope—The highest slope value along the line or within the area defined by the polygon will be added.</para>
+		/// <para>Average Slope—The average slope value along the line or within the area defined by the polygon will be added.</para>
 		/// <para><see cref="OutPropertyEnum"/></para>
 		/// </param>
 		public AddSurfaceInformation(object InFeatureClass, object InSurface, object OutProperty)
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, InSurface, OutProperty, Method, SampleDistance, ZFactor, PyramidLevelResolution, NoiseFiltering, OutputFeatureClass };
+		public override object[] Parameters => new object[] { InFeatureClass, InSurface, OutProperty, Method!, SampleDistance!, ZFactor!, PyramidLevelResolution!, NoiseFiltering!, OutputFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -103,16 +103,16 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Property</para>
-		/// <para>The surface elevation property that will be added to the attribute table of the input feature class. The following list summarizes the available property keywords and their supported geometry types:</para>
-		/// <para>Z—Surface Z values interpolated for the XY location of each single-point feature.</para>
-		/// <para>Minimum Z—Lowest surface Z values in the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record.</para>
-		/// <para>Maximum Z—Highest surface elevation in the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record.</para>
-		/// <para>Mean Z—Average surface elevation of the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record.</para>
-		/// <para>Surface Area—3D surface area for the region defined by each polygon.</para>
-		/// <para>Surface Length—3D distance of the line along the surface.</para>
-		/// <para>Minimum Slope—Slope value closest to zero along the line or within the area defined by the polygon.</para>
-		/// <para>Maximum Slope—Highest slope value along the line or within the area defined by the polygon.</para>
-		/// <para>Average Slope—Average slope value along the line or within the area defined by the polygon.</para>
+		/// <para>Specifies the surface elevation properties that will be added to the attribute table of the input feature class.</para>
+		/// <para>Z—The surface z-values interpolated for the x,y-location of each single-point feature will be added.</para>
+		/// <para>Minimum Z—The lowest surface z-values in the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record will be added.</para>
+		/// <para>Maximum Z—The highest surface elevation in the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record will be added.</para>
+		/// <para>Mean Z—The average surface elevation of the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record will be added.</para>
+		/// <para>Surface Area—The 3D surface area for the region defined by each polygon will be added.</para>
+		/// <para>Surface Length—The 3D distance of the line along the surface will be added.</para>
+		/// <para>Minimum Slope—The slope value closest to zero along the line or within the area defined by the polygon will be added.</para>
+		/// <para>Maximum Slope—The highest slope value along the line or within the area defined by the polygon will be added.</para>
+		/// <para>Average Slope—The average slope value along the line or within the area defined by the polygon will be added.</para>
 		/// <para><see cref="OutPropertyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -122,20 +122,20 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>Interpolation method used in determining information about the surface. The available options depend on the data type of the input surface:</para>
-		/// <para>Bilinear—An interpolation method exclusive to the raster surface which determines cell values from the four nearest cells. This is the only option available for a raster surface.</para>
-		/// <para>Linear— Default interpolation method for TIN, terrain, and LAS dataset. Obtains elevation from the plane defined by the triangle that contains the XY location of a query point.</para>
-		/// <para>Natural Neighbors— Obtains elevation by applying area-based weights to the natural neighbors of a query point.</para>
-		/// <para>Conflate Minimum Z— Obtains elevation from the smallest Z value found among the natural neighbors of a query point.</para>
-		/// <para>Conflate Maximum Z— Obtains elevation from the largest Z value found among the natural neighbors of a query point.</para>
-		/// <para>Conflate Nearest Z— Obtains elevation from the nearest value among the natural neighbors of a query point.</para>
-		/// <para>Conflate Z Closest To Mean— Obtains elevation from the Z value that is closest to the average of all the natural neighbors of a query point.</para>
+		/// <para>Specifies the interpolation method that will be used to determine information about the surface.</para>
+		/// <para>Bilinear—An interpolation method exclusive to the raster surface which determines cell values from the four nearest cells will be used. This is the only option available for a raster surface.</para>
+		/// <para>Linear— Elevation will be obtained from the plane defined by the triangle that contains the x,y-location of a query point. This is the default interpolation method for TINs, terrains, and LAS datasets.</para>
+		/// <para>Natural Neighbors—Elevation will be obtained by applying area-based weights to the natural neighbors of a query point.</para>
+		/// <para>Conflate Minimum Z— Elevation will be obtained from the smallest z-value found among the natural neighbors of a query point.</para>
+		/// <para>Conflate Maximum Z— Elevation will be obtained from the largest z-value found among the natural neighbors of a query point.</para>
+		/// <para>Conflate Nearest Z— Elevation will be obtained from the nearest value among the natural neighbors of a query point.</para>
+		/// <para>Conflate Z Closest To Mean— Elevation will be obtained from the z-value that is closest to the average of all the natural neighbors of a query point.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "LINEAR";
+		public object? Method { get; set; } = "LINEAR";
 
 		/// <summary>
 		/// <para>Sampling Distance</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object SampleDistance { get; set; }
+		public object? SampleDistance { get; set; }
 
 		/// <summary>
 		/// <para>Z Factor</para>
@@ -151,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ZFactor { get; set; } = "1";
+		public object? ZFactor { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Pyramid Level Resolution</para>
@@ -159,27 +159,28 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object PyramidLevelResolution { get; set; } = "0";
+		public object? PyramidLevelResolution { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Noise Filtering</para>
-		/// <para>Excludes portions of the surface that are potentially characterized by anomalous measurements from contributing to slope calculations. Line features offer a length filter, whereas polygons provide an area filter. The value corresponding with either filtering option is evaluated in the linear units of the feature's coordinate system. Non-slope properties are not affected by this parameter.</para>
+		/// <para>Exclude portions of the surface that are potentially characterized by anomalous measurements from contributing to slope calculations. Other properties are not affected by this parameter.</para>
+		/// <para>Line features offer a length filter in which line segments with 3D lengths that are shorter than the specified value will be excluded from slope calculations. Polygon features offer an area filter in which polygons covering a surface area smaller than the specified value will be excluded.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object NoiseFiltering { get; set; }
+		public object? NoiseFiltering { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutputFeatureClass { get; set; }
+		public object? OutputFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddSurfaceInformation SetEnviroment(int? autoCommit = null , object extent = null , object geographicTransformations = null , object workspace = null )
+		public AddSurfaceInformation SetEnviroment(int? autoCommit = null , object? extent = null , object? geographicTransformations = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, extent: extent, geographicTransformations: geographicTransformations, workspace: workspace);
 			return this;
@@ -193,63 +194,63 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum OutPropertyEnum 
 		{
 			/// <summary>
-			/// <para>Z—Surface Z values interpolated for the XY location of each single-point feature.</para>
+			/// <para>Z—The surface z-values interpolated for the x,y-location of each single-point feature will be added.</para>
 			/// </summary>
 			[GPValue("Z")]
 			[Description("Z")]
 			Z,
 
 			/// <summary>
-			/// <para>Minimum Z—Lowest surface Z values in the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record.</para>
+			/// <para>Minimum Z—The lowest surface z-values in the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record will be added.</para>
 			/// </summary>
 			[GPValue("Z_MIN")]
 			[Description("Minimum Z")]
 			Minimum_Z,
 
 			/// <summary>
-			/// <para>Maximum Z—Highest surface elevation in the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record.</para>
+			/// <para>Maximum Z—The highest surface elevation in the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record will be added.</para>
 			/// </summary>
 			[GPValue("Z_MAX")]
 			[Description("Maximum Z")]
 			Maximum_Z,
 
 			/// <summary>
-			/// <para>Mean Z—Average surface elevation of the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record.</para>
+			/// <para>Mean Z—The average surface elevation of the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record will be added.</para>
 			/// </summary>
 			[GPValue("Z_MEAN")]
 			[Description("Mean Z")]
 			Mean_Z,
 
 			/// <summary>
-			/// <para>Surface Length—3D distance of the line along the surface.</para>
+			/// <para>Surface Length—The 3D distance of the line along the surface will be added.</para>
 			/// </summary>
 			[GPValue("SURFACE_LENGTH")]
 			[Description("Surface Length")]
 			Surface_Length,
 
 			/// <summary>
-			/// <para>Surface Area—3D surface area for the region defined by each polygon.</para>
+			/// <para>Surface Area—The 3D surface area for the region defined by each polygon will be added.</para>
 			/// </summary>
 			[GPValue("SURFACE_AREA")]
 			[Description("Surface Area")]
 			Surface_Area,
 
 			/// <summary>
-			/// <para>Minimum Slope—Slope value closest to zero along the line or within the area defined by the polygon.</para>
+			/// <para>Minimum Slope—The slope value closest to zero along the line or within the area defined by the polygon will be added.</para>
 			/// </summary>
 			[GPValue("MIN_SLOPE")]
 			[Description("Minimum Slope")]
 			Minimum_Slope,
 
 			/// <summary>
-			/// <para>Maximum Slope—Highest slope value along the line or within the area defined by the polygon.</para>
+			/// <para>Maximum Slope—The highest slope value along the line or within the area defined by the polygon will be added.</para>
 			/// </summary>
 			[GPValue("MAX_SLOPE")]
 			[Description("Maximum Slope")]
 			Maximum_Slope,
 
 			/// <summary>
-			/// <para>Average Slope—Average slope value along the line or within the area defined by the polygon.</para>
+			/// <para>Average Slope—The average slope value along the line or within the area defined by the polygon will be added.</para>
 			/// </summary>
 			[GPValue("AVG_SLOPE")]
 			[Description("Average Slope")]
@@ -263,49 +264,49 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Linear— Default interpolation method for TIN, terrain, and LAS dataset. Obtains elevation from the plane defined by the triangle that contains the XY location of a query point.</para>
+			/// <para>Linear— Elevation will be obtained from the plane defined by the triangle that contains the x,y-location of a query point. This is the default interpolation method for TINs, terrains, and LAS datasets.</para>
 			/// </summary>
 			[GPValue("LINEAR")]
 			[Description("Linear")]
 			Linear,
 
 			/// <summary>
-			/// <para>Natural Neighbors— Obtains elevation by applying area-based weights to the natural neighbors of a query point.</para>
+			/// <para>Natural Neighbors—Elevation will be obtained by applying area-based weights to the natural neighbors of a query point.</para>
 			/// </summary>
 			[GPValue("NATURAL_NEIGHBORS")]
 			[Description("Natural Neighbors")]
 			Natural_Neighbors,
 
 			/// <summary>
-			/// <para>Conflate Minimum Z— Obtains elevation from the smallest Z value found among the natural neighbors of a query point.</para>
+			/// <para>Conflate Minimum Z— Elevation will be obtained from the smallest z-value found among the natural neighbors of a query point.</para>
 			/// </summary>
 			[GPValue("CONFLATE_ZMIN")]
 			[Description("Conflate Minimum Z")]
 			Conflate_Minimum_Z,
 
 			/// <summary>
-			/// <para>Conflate Maximum Z— Obtains elevation from the largest Z value found among the natural neighbors of a query point.</para>
+			/// <para>Conflate Maximum Z— Elevation will be obtained from the largest z-value found among the natural neighbors of a query point.</para>
 			/// </summary>
 			[GPValue("CONFLATE_ZMAX")]
 			[Description("Conflate Maximum Z")]
 			Conflate_Maximum_Z,
 
 			/// <summary>
-			/// <para>Conflate Nearest Z— Obtains elevation from the nearest value among the natural neighbors of a query point.</para>
+			/// <para>Conflate Nearest Z— Elevation will be obtained from the nearest value among the natural neighbors of a query point.</para>
 			/// </summary>
 			[GPValue("CONFLATE_NEAREST")]
 			[Description("Conflate Nearest Z")]
 			Conflate_Nearest_Z,
 
 			/// <summary>
-			/// <para>Conflate Z Closest To Mean— Obtains elevation from the Z value that is closest to the average of all the natural neighbors of a query point.</para>
+			/// <para>Conflate Z Closest To Mean— Elevation will be obtained from the z-value that is closest to the average of all the natural neighbors of a query point.</para>
 			/// </summary>
 			[GPValue("CONFLATE_CLOSEST_TO_MEAN")]
 			[Description("Conflate Z Closest To Mean")]
 			Conflate_Z_Closest_To_Mean,
 
 			/// <summary>
-			/// <para>Bilinear—An interpolation method exclusive to the raster surface which determines cell values from the four nearest cells. This is the only option available for a raster surface.</para>
+			/// <para>Bilinear—An interpolation method exclusive to the raster surface which determines cell values from the four nearest cells will be used. This is the only option available for a raster surface.</para>
 			/// </summary>
 			[GPValue("BILINEAR")]
 			[Description("Bilinear")]

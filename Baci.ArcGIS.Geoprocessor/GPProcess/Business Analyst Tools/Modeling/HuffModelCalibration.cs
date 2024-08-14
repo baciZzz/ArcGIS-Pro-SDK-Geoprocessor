@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFacilityFeatures, FacilityIdField, InCustomerFeatures, LinkField, InSalesPotentialFeatures, SalesPotentialIdField, OutCalibration, AttractivenessVariables, CustomerWeightField, DistanceType, DistanceUnits, TravelDirection, TimeOfDay, TimeZone };
+		public override object[] Parameters => new object[] { InFacilityFeatures, FacilityIdField, InCustomerFeatures, LinkField, InSalesPotentialFeatures, SalesPotentialIdField, OutCalibration, AttractivenessVariables, CustomerWeightField!, DistanceType!, DistanceUnits!, TravelDirection!, TimeOfDay!, TimeZone! };
 
 		/// <summary>
 		/// <para>Input Facility Features</para>
@@ -176,7 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object CustomerWeightField { get; set; }
+		public object? CustomerWeightField { get; set; }
 
 		/// <summary>
 		/// <para>Distance Type</para>
@@ -185,7 +185,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DistanceType { get; set; } = "STRAIGHT_LINE_DISTANCE";
+		public object? DistanceType { get; set; } = "STRAIGHT_LINE_DISTANCE";
 
 		/// <summary>
 		/// <para>Distance Units</para>
@@ -194,7 +194,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DistanceUnits { get; set; }
+		public object? DistanceUnits { get; set; }
 
 		/// <summary>
 		/// <para>Travel Direction</para>
@@ -207,7 +207,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Network Parameters")]
-		public object TravelDirection { get; set; } = "TOWARD_STORES";
+		public object? TravelDirection { get; set; }
 
 		/// <summary>
 		/// <para>Time of Day</para>
@@ -216,7 +216,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Network Parameters")]
-		public object TimeOfDay { get; set; }
+		public object? TimeOfDay { get; set; }
 
 		/// <summary>
 		/// <para>Time Zone</para>
@@ -229,14 +229,14 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Network Parameters")]
-		public object TimeZone { get; set; } = "TIME_ZONE_AT_LOCATION";
+		public object? TimeZone { get; set; } = "TIME_ZONE_AT_LOCATION";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public HuffModelCalibration SetEnviroment(object workspace = null )
+		public HuffModelCalibration SetEnviroment(object? baDataSource = null , object? baNetworkSource = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, baNetworkSource: baNetworkSource, workspace: workspace);
 			return this;
 		}
 

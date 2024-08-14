@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Target, HighendClearWayLength, LowendClearWayLength, DerivedOutfeatureclass, CustomJsonFile, AirportControlPointFeatureClass };
+		public override object[] Parameters => new object[] { InFeatures, Target, HighendClearWayLength!, LowendClearWayLength!, DerivedOutfeatureclass!, CustomJsonFile!, AirportControlPointFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Runway Features</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object HighendClearWayLength { get; set; } = "0";
+		public object? HighendClearWayLength { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Length of Low Runway End Clearway</para>
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object LowendClearWayLength { get; set; } = "0";
+		public object? LowendClearWayLength { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Output OIS Features</para>
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
 		[GPCompositeDomain()]
-		public object DerivedOutfeatureclass { get; set; }
+		public object? DerivedOutfeatureclass { get; set; }
 
 		/// <summary>
 		/// <para>Custom JSON File</para>
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object CustomJsonFile { get; set; }
+		public object? CustomJsonFile { get; set; }
 
 		/// <summary>
 		/// <para>Input Airport Control Point Feature</para>
@@ -125,12 +125,12 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object AirportControlPointFeatureClass { get; set; }
+		public object? AirportControlPointFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ICAOAnnex15 SetEnviroment(object workspace = null )
+		public ICAOAnnex15 SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

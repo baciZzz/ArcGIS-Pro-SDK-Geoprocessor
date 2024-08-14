@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Fields, Method, MinValue, MaxValue, UpdatedTable };
+		public override object[] Parameters => new object[] { InTable, Fields, Method!, MinValue!, MaxValue!, UpdatedTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "Z-SCORE";
+		public object? Method { get; set; } = "Z-SCORE";
 
 		/// <summary>
 		/// <para>Minimum Value</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MinValue { get; set; } = "0";
+		public object? MinValue { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Maximum Value</para>
@@ -114,19 +114,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MaxValue { get; set; } = "1";
+		public object? MaxValue { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Updated Input Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object UpdatedTable { get; set; }
+		public object? UpdatedTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public StandardizeField SetEnviroment(object extent = null )
+		public StandardizeField SetEnviroment(object? extent = null )
 		{
 			base.SetEnv(extent: extent);
 			return this;

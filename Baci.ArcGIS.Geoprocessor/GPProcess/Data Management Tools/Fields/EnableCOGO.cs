@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLineFeatures, UpdatedLineFeatures };
+		public override object[] Parameters => new object[] { InLineFeatures, UpdatedLineFeatures! };
 
 		/// <summary>
 		/// <para>Input Line Features</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
-		public object UpdatedLineFeatures { get; set; }
+		public object? UpdatedLineFeatures { get; set; }
 
 	}
 }

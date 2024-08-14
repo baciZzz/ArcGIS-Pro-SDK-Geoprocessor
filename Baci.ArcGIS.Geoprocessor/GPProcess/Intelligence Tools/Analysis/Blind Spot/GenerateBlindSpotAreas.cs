@@ -12,6 +12,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 	/// <summary>
 	/// <para>Generate Blind Spot Areas</para>
 	/// <para>Creates an output nonvisible area, or blind spot, for input Intelligence, Surveillance, Reconnaissance (ISR) or patrol visible buffer features based on start and end times. The output blind spot layer is used with the  time slider to visualize and explore areas that are not visible to ISR or patrol assets at specified times.</para>
+	/// <para>For example, the output can show areas that a guard is not able to observe for given input time periods at posts along a patrol route.</para>
 	/// </summary>
 	public class GenerateBlindSpotAreas : AbstractGPProcess
 	{
@@ -65,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, ClipFeatures, StartTimeField, EndTimeField };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, ClipFeatures!, StartTimeField!, EndTimeField! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -91,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
-		public object ClipFeatures { get; set; }
+		public object? ClipFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Start Time Field</para>
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object StartTimeField { get; set; }
+		public object? StartTimeField { get; set; }
 
 		/// <summary>
 		/// <para>End Time Field</para>
@@ -109,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object EndTimeField { get; set; }
+		public object? EndTimeField { get; set; }
 
 	}
 }

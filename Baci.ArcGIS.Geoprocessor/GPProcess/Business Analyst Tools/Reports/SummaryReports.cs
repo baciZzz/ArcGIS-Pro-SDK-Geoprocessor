@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Summary Reports</para>
-	/// <para>Populates and creates demographic style summary reports for any boundary layer using Esri report templates.</para>
+	/// <para>Creates and populates demographic style summary reports for a boundary layer using Esri report templates.</para>
 	/// </summary>
 	public class SummaryReports : AbstractGPProcess
 	{
@@ -65,12 +65,12 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "baDataSource", "geographicTransformations", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ReportTemplates, ReportsFolder, SummarizationOptions, SingleReport, Formats, StoreIdField, StoreNameField, StoreAddressField, StoreLatitudeField, StoreLongitudeField, RingIdField, AreaDescriptionField, Title, Subtitle, OutputFiles };
+		public override object[] Parameters => new object[] { InFeatures, ReportTemplates, ReportsFolder, SummarizationOptions!, SingleReport!, Formats!, StoreIdField!, StoreNameField!, StoreAddressField!, StoreLatitudeField!, StoreLongitudeField!, RingIdField!, AreaDescriptionField!, Title!, Subtitle!, OutputFiles!, ReportPerFeature! };
 
 		/// <summary>
 		/// <para>Boundary Layer</para>
@@ -110,20 +110,20 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Report Formatting")]
-		public object SummarizationOptions { get; set; } = "INDIVIDUAL_FEATURES";
+		public object? SummarizationOptions { get; set; } = "INDIVIDUAL_FEATURES";
 
 		/// <summary>
 		/// <para>Single Report</para>
-		/// <para>Specifies whether a single output will be generated or if a separate file will be generated for each report.</para>
+		/// <para>Specifies whether a single output will be created or a separate file will be created for each report.</para>
 		/// <para>Checked—All reports will be combined into a single output.</para>
-		/// <para>Unchecked—A separate file will be generated for each selected report. This is the default.</para>
+		/// <para>Unchecked—A separate file will be created for each selected report. This is the default.</para>
 		/// <para><see cref="SingleReportEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Report Formatting")]
-		public object SingleReport { get; set; } = "false";
+		public object? SingleReport { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Report Output Formats</para>
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[Category("Report Formatting")]
-		public object Formats { get; set; } = "PDF";
+		public object? Formats { get; set; } = "PDF";
 
 		/// <summary>
 		/// <para>Store ID Field</para>
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Report Header Options")]
-		public object StoreIdField { get; set; }
+		public object? StoreIdField { get; set; }
 
 		/// <summary>
 		/// <para>Store Name Field</para>
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Report Header Options")]
-		public object StoreNameField { get; set; }
+		public object? StoreNameField { get; set; }
 
 		/// <summary>
 		/// <para>Store Address Field</para>
@@ -162,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Report Header Options")]
-		public object StoreAddressField { get; set; }
+		public object? StoreAddressField { get; set; }
 
 		/// <summary>
 		/// <para>Store Latitude Field</para>
@@ -172,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Report Header Options")]
-		public object StoreLatitudeField { get; set; }
+		public object? StoreLatitudeField { get; set; }
 
 		/// <summary>
 		/// <para>Store Longitude Field</para>
@@ -182,7 +182,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Report Header Options")]
-		public object StoreLongitudeField { get; set; }
+		public object? StoreLongitudeField { get; set; }
 
 		/// <summary>
 		/// <para>Ring ID Field</para>
@@ -192,49 +192,61 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Report Header Options")]
-		public object RingIdField { get; set; }
+		public object? RingIdField { get; set; }
 
 		/// <summary>
 		/// <para>Area Description Field</para>
-		/// <para>The field that will be displayed as the output template header with values corresponding to each input polygons' data.</para>
+		/// <para>The field that will be displayed as the output template header with values corresponding to each input polygon's data.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Report Header Options")]
-		public object AreaDescriptionField { get; set; }
+		public object? AreaDescriptionField { get; set; }
 
 		/// <summary>
 		/// <para>Report Title</para>
-		/// <para>The title on the report header.</para>
+		/// <para>The title in the report header.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Report Header Options")]
-		public object Title { get; set; }
+		public object? Title { get; set; }
 
 		/// <summary>
 		/// <para>Report Subtitle</para>
-		/// <para>The subtitle on the report header. The default value is Prepared by Business Analyst Pro.</para>
+		/// <para>The subtitle in the report header. The default value is Prepared by Business Analyst Pro.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Report Header Options")]
-		public object Subtitle { get; set; } = "Prepared By Business Analyst for ArcGIS Pro";
+		public object? Subtitle { get; set; } = "Prepared By Business Analyst for ArcGIS Pro";
 
 		/// <summary>
 		/// <para>Output Files</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutputFiles { get; set; }
+		public object? OutputFiles { get; set; }
+
+		/// <summary>
+		/// <para>Create Report Per Feature</para>
+		/// <para>Specifies whether a single report or multiple reports will be created.</para>
+		/// <para>Checked—A report will be created per feature.</para>
+		/// <para>Unchecked—A single report will be created. This is the default.</para>
+		/// <para><see cref="ReportPerFeatureEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		public object? ReportPerFeature { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SummaryReports SetEnviroment(object workspace = null )
+		public SummaryReports SetEnviroment(object? baDataSource = null , object? geographicTransformations = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, geographicTransformations: geographicTransformations, workspace: workspace);
 			return this;
 		}
 
@@ -281,11 +293,32 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 			CREATE_SINGLE_REPORT,
 
 			/// <summary>
-			/// <para>Unchecked—A separate file will be generated for each selected report. This is the default.</para>
+			/// <para>Unchecked—A separate file will be created for each selected report. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("CREATE_REPORT_PER_TEMPLATE")]
 			CREATE_REPORT_PER_TEMPLATE,
+
+		}
+
+		/// <summary>
+		/// <para>Create Report Per Feature</para>
+		/// </summary>
+		public enum ReportPerFeatureEnum 
+		{
+			/// <summary>
+			/// <para>Checked—A report will be created per feature.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("CREATE_REPORT_PER_FEATURE")]
+			CREATE_REPORT_PER_FEATURE,
+
+			/// <summary>
+			/// <para>Unchecked—A single report will be created. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("CREATE_SINGLE_REPORT")]
+			CREATE_SINGLE_REPORT,
 
 		}
 

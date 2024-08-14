@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputService, ServiceCacheDirectory, TilingSchemeType, ScalesType, NumOfScales, DotsPerInch, TileSize, PredefinedTilingScheme, TileOrigin, Scales, CacheTileFormat, TileCompressionQuality, StorageFormat, OutServiceUrl };
+		public override object[] Parameters => new object[] { InputService, ServiceCacheDirectory, TilingSchemeType, ScalesType, NumOfScales!, DotsPerInch, TileSize, PredefinedTilingScheme!, TileOrigin!, Scales!, CacheTileFormat!, TileCompressionQuality!, StorageFormat!, OutServiceUrl! };
 
 		/// <summary>
 		/// <para>Input Service</para>
@@ -180,7 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
-		public object PredefinedTilingScheme { get; set; }
+		public object? PredefinedTilingScheme { get; set; }
 
 		/// <summary>
 		/// <para>Tiling origin in map units</para>
@@ -188,7 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPPoint()]
-		public object TileOrigin { get; set; } = "0 0";
+		public object? TileOrigin { get; set; } = "0 0";
 
 		/// <summary>
 		/// <para>Scales</para>
@@ -196,7 +196,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object Scales { get; set; }
+		public object? Scales { get; set; }
 
 		/// <summary>
 		/// <para>Cache Tile Format</para>
@@ -212,7 +212,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object CacheTileFormat { get; set; } = "PNG";
+		public object? CacheTileFormat { get; set; } = "PNG";
 
 		/// <summary>
 		/// <para>Tile Compression Quality</para>
@@ -221,7 +221,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object TileCompressionQuality { get; set; } = "0";
+		public object? TileCompressionQuality { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Storage Format</para>
@@ -233,14 +233,14 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object StorageFormat { get; set; } = "COMPACT";
+		public object? StorageFormat { get; set; } = "COMPACT";
 
 		/// <summary>
 		/// <para>Output Map Service URL</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutServiceUrl { get; set; }
+		public object? OutServiceUrl { get; set; }
 
 		#region InnerClass
 

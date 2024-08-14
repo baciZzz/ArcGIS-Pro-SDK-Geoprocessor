@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, DataType, OutResults };
+		public override object[] Parameters => new object[] { InData, DataType!, OutResults! };
 
 		/// <summary>
 		/// <para>Input Data Element</para>
@@ -76,14 +76,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DataType { get; set; }
+		public object? DataType { get; set; }
 
 		/// <summary>
 		/// <para>Delete Succeeded</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
-		public object OutResults { get; set; } = "false";
+		public object? OutResults { get; set; } = "false";
 
 	}
 }

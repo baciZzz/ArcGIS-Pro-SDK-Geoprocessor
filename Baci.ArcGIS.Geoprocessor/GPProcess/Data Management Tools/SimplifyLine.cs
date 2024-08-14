@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Algorithm, Tolerance, ErrorResolvingOption!, CollapsedPointOption!, ErrorCheckingOption!, OutPointFeatureClass!, InBarriers };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Algorithm, Tolerance, ErrorResolvingOption!, CollapsedPointOption!, ErrorCheckingOption!, OutPointFeatureClass!, InBarriers! };
 
 		/// <summary>
 		/// <para>Input Features</para>

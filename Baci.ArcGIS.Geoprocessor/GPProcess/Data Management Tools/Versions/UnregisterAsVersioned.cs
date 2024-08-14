@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Unregister As Versioned</para>
 	/// <para>Unregisters an enterprise geodatabase dataset as versioned.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class UnregisterAsVersioned : AbstractGPProcess
 	{
 		/// <summary>
@@ -60,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, KeepEdit, CompressDefault, OutDataset };
+		public override object[] Parameters => new object[] { InDataset, KeepEdit!, CompressDefault!, OutDataset! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -80,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object KeepEdit { get; set; } = "true";
+		public object? KeepEdit { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Compress all edits in the Default version into the base table</para>
@@ -92,19 +94,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CompressDefault { get; set; } = "false";
+		public object? CompressDefault { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Unregistered Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutDataset { get; set; }
+		public object? OutDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public UnregisterAsVersioned SetEnviroment(object workspace = null )
+		public UnregisterAsVersioned SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

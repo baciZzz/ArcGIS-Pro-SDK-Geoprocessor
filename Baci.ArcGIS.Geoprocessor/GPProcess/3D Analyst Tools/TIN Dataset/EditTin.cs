@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTin, InFeatures, ConstrainedDelaunay, DerivedOutTin };
+		public override object[] Parameters => new object[] { InTin, InFeatures, ConstrainedDelaunay!, DerivedOutTin! };
 
 		/// <summary>
 		/// <para>Input TIN</para>
@@ -104,19 +104,19 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ConstrainedDelaunay { get; set; } = "false";
+		public object? ConstrainedDelaunay { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated TIN</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTinLayer()]
-		public object DerivedOutTin { get; set; }
+		public object? DerivedOutTin { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EditTin SetEnviroment(object extent = null , object workspace = null )
+		public EditTin SetEnviroment(object? extent = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

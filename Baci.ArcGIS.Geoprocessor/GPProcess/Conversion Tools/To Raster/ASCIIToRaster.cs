@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAsciiFile, OutRaster, DataType };
+		public override object[] Parameters => new object[] { InAsciiFile, OutRaster, DataType! };
 
 		/// <summary>
 		/// <para>Input ASCII raster file</para>
@@ -97,12 +97,12 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DataType { get; set; } = "INTEGER";
+		public object? DataType { get; set; } = "INTEGER";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ASCIIToRaster SetEnviroment(int? autoCommit = null , object compression = null , object configKeyword = null , object pyramid = null , object rasterStatistics = null , object scratchWorkspace = null , double[] tileSize = null , object workspace = null )
+		public ASCIIToRaster SetEnviroment(int? autoCommit = null , object? compression = null , object? configKeyword = null , object? pyramid = null , object? rasterStatistics = null , object? scratchWorkspace = null , object? tileSize = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, compression: compression, configKeyword: configKeyword, pyramid: pyramid, rasterStatistics: rasterStatistics, scratchWorkspace: scratchWorkspace, tileSize: tileSize, workspace: workspace);
 			return this;

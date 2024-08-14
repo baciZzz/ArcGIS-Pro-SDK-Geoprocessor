@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Import S-57 To Geodatabase</para>
-	/// <para>Imports an S-57 file into an ArcGIS Maritime geodatabase. Sources that can be imported include Electronic Navigational Chart (ENC), Additional Military layers (AML), and Inland Electronic Navigational Chart (IENC).</para>
+	/// <para>Imports an S-57 file into an ArcGIS Maritime geodatabase. Sources that can be imported include Electronic Navigational Chart (ENC), Inland Electronic Navigational Chart (IENC), and bathymetric Inland Electronic Navigational Chart (bIENC).</para>
 	/// </summary>
 	public class ImportS57ToGeodatabase : AbstractGPProcess
 	{
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InBaseCell, TargetWorkspace, InUpdateCells, InProductConfig, OutputWorkspace };
+		public override object[] Parameters => new object[] { InBaseCell, TargetWorkspace, InUpdateCells!, InProductConfig!, OutputWorkspace! };
 
 		/// <summary>
 		/// <para>Input Base S-57 Cell</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFileDomain()]
-		public object InUpdateCells { get; set; }
+		public object? InUpdateCells { get; set; }
 
 		/// <summary>
 		/// <para>Product Configuration File</para>
@@ -101,19 +101,19 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object InProductConfig { get; set; }
+		public object? InProductConfig { get; set; }
 
 		/// <summary>
 		/// <para>Output Workspace</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutputWorkspace { get; set; }
+		public object? OutputWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportS57ToGeodatabase SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public ImportS57ToGeodatabase SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

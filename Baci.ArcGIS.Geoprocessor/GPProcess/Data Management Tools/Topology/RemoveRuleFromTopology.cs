@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Remove Rule From Topology</para>
 	/// <para>Removes a rule from a topology.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class RemoveRuleFromTopology : AbstractGPProcess
 	{
 		/// <summary>
@@ -65,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTopology, InRule, OutTopology };
+		public override object[] Parameters => new object[] { InTopology, InRule, OutTopology! };
 
 		/// <summary>
 		/// <para>Input Topology</para>
@@ -88,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTopologyLayer()]
-		public object OutTopology { get; set; }
+		public object? OutTopology { get; set; }
 
 	}
 }

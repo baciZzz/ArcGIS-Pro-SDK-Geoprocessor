@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, DissolveField, StatisticsFields, MultiPart };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, DissolveField!, StatisticsFields!, MultiPart!, ConcatenationSeparator! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -85,17 +85,16 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public object OutFeatureClass { get; set; }
 
 		/// <summary>
-		/// <para>Dissolve_Field(s)</para>
-		/// <para>The field or fields on which to aggregate features.</para>
-		/// <para>The Add Field button, which is used only in ModelBuilder, allows you to add expected fields so you can complete the dialog box and continue to build your model.</para>
+		/// <para>Dissolve Fields</para>
+		/// <para>The field or fields on which features will be aggregated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
-		public object DissolveField { get; set; }
+		public object? DissolveField { get; set; }
 
 		/// <summary>
-		/// <para>Statistics Field(s)</para>
+		/// <para>Statistics Fields</para>
 		/// <para>Specifies the numeric field or fields containing the attribute values that will be used to calculate the specified statistic. Multiple statistic and field combinations can be specified. Null values are excluded from all statistical calculations.</para>
 		/// <para>Text attribute fields can be summarized using first and last statistics. Numeric attribute fields can be summarized using any statistic.</para>
 		/// <para>Available statistics types are as follows:</para>
@@ -111,30 +110,39 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <para>Median—The median for all records of the specified field will be calculated.</para>
 		/// <para>Variance—The variance for all records of the specified field will be calculated.</para>
 		/// <para>Unique—The number of unique values of the specified field will be counted.</para>
+		/// <para>Concatenate—The values for the specified field will be concatenated. The values can be separated using the Concatenation Separator parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object StatisticsFields { get; set; }
+		public object? StatisticsFields { get; set; }
 
 		/// <summary>
 		/// <para>Create multipart features</para>
-		/// <para>Specifies whether multipart features are allowed in the output feature class.</para>
-		/// <para>Checked—Specifies multipart features are allowed. This is the default.</para>
-		/// <para>Unchecked—Specifies multipart features are not allowed. Instead of creating multipart features, individual features will be created for each part.</para>
+		/// <para>Specifies whether multipart features will be included in the output.</para>
+		/// <para>Checked—Multipart features will be included in the output. This is the default.</para>
+		/// <para>Unchecked—Multipart features will not be included in the output. Individual features will be created for each part.</para>
 		/// <para><see cref="MultiPartEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object MultiPart { get; set; } = "true";
+		public object? MultiPart { get; set; } = "true";
+
+		/// <summary>
+		/// <para>Concatenation Separator</para>
+		/// <para>A character or characters that will be used to concatenate values when the Concatenation option is used for the Statistics Fields parameter.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		public object? ConcatenationSeparator { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PairwiseDissolve SetEnviroment(object MDomain = null , object MResolution = null , object MTolerance = null , object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , int? autoCommit = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , object parallelProcessingFactor = null , bool? qualifiedFieldNames = null , object scratchWorkspace = null , object workspace = null )
+		public PairwiseDissolve SetEnviroment(object? MDomain = null , double? MResolution = null , double? MTolerance = null , object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , int? autoCommit = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , bool? maintainCurveSegments = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , object? parallelProcessingFactor = null , bool? qualifiedFieldNames = null , object? scratchWorkspace = null , object? workspace = null )
 		{
-			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, parallelProcessingFactor: parallelProcessingFactor, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, workspace: workspace);
+			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, maintainCurveSegments: maintainCurveSegments, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, parallelProcessingFactor: parallelProcessingFactor, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
 		}
 
@@ -146,14 +154,14 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum MultiPartEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Specifies multipart features are allowed. This is the default.</para>
+			/// <para>Checked—Multipart features will be included in the output. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MULTI_PART")]
 			MULTI_PART,
 
 			/// <summary>
-			/// <para>Unchecked—Specifies multipart features are not allowed. Instead of creating multipart features, individual features will be created for each part.</para>
+			/// <para>Unchecked—Multipart features will not be included in the output. Individual features will be created for each part.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("SINGLE_PART")]

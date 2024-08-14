@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <para>The unit for this field value is specified by the Time Field Units parameter (time_units in Python).</para>
 		/// <para>For example, if the driver is to be paid overtime when the total route duration extends beyond eight hours, OvertimeStartTime is specified as 480 (8 hours * 60 minutes/hour), given the Time Field Units parameter is set to Minutes.</para>
 		/// <para>CostPerUnitOvertime:</para>
-		/// <para>The monetary cost incurred per time unit of overtime work. This field can contain null values; a null value indicates that the CostPerUnitOvertime value is the same as the CostPerUnitTime value.</para>
+		/// <para>The monetary cost incurred per time unit of overtime work. This can only contain a null value if OvertimeStartTime is also null. Otherwise it must be a positive value greater than the CostPerUnitTime.</para>
 		/// <para>MaxOrderCount:</para>
 		/// <para>The maximum allowable number of orders on the route. This field can&apos;t contain null values and has a default value of 30.</para>
 		/// <para>MaxTotalTime:</para>
@@ -247,7 +247,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Orders, Depots, Routes, Breaks, TimeUnits, DistanceUnits, NetworkDataset, OutputWorkspaceLocation, OutputUnassignedStopsName, OutputStopsName, OutputRoutesName, OutputDirectionsName, DefaultDate, UturnPolicy, TimeWindowFactor, SpatiallyClusterRoutes, RouteZones, RouteRenewals, OrderPairs, ExcessTransitFactor, PointBarriers, LineBarriers, PolygonBarriers, TimeAttribute, DistanceAttribute, UseHierarchyInAnalysis, Restrictions, AttributeParameterValues, MaximumSnapTolerance, ExcludeRestrictedPortionsOfTheNetwork, FeatureLocatorWhereClause, PopulateRouteLines, RouteLineSimplificationTolerance, PopulateDirections, DirectionsLanguage, DirectionsStyleName, SaveOutputLayer, ServiceCapabilities, IgnoreInvalidOrderLocations, TravelMode, SolveSucceeded, OutUnassignedStops, OutStops, OutRoutes, OutDirections, OutNetworkAnalysisLayer, IgnoreNetworkLocationFields, TimeZoneUsageForTimeFields, Overrides, SaveRouteData, OutRouteData };
+		public override object[] Parameters => new object[] { Orders, Depots, Routes, Breaks!, TimeUnits, DistanceUnits, NetworkDataset, OutputWorkspaceLocation, OutputUnassignedStopsName, OutputStopsName, OutputRoutesName, OutputDirectionsName, DefaultDate!, UturnPolicy!, TimeWindowFactor!, SpatiallyClusterRoutes!, RouteZones!, RouteRenewals!, OrderPairs!, ExcessTransitFactor!, PointBarriers!, LineBarriers!, PolygonBarriers!, TimeAttribute!, DistanceAttribute!, UseHierarchyInAnalysis!, Restrictions!, AttributeParameterValues!, MaximumSnapTolerance!, ExcludeRestrictedPortionsOfTheNetwork!, FeatureLocatorWhereClause!, PopulateRouteLines!, RouteLineSimplificationTolerance!, PopulateDirections!, DirectionsLanguage!, DirectionsStyleName!, SaveOutputLayer!, ServiceCapabilities!, IgnoreInvalidOrderLocations!, TravelMode!, SolveSucceeded!, OutUnassignedStops!, OutStops!, OutRoutes!, OutDirections!, OutNetworkAnalysisLayer!, IgnoreNetworkLocationFields!, TimeZoneUsageForTimeFields!, Overrides!, SaveRouteData!, OutRouteData! };
 
 		/// <summary>
 		/// <para>Orders</para>
@@ -364,7 +364,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <para>The unit for this field value is specified by the Time Field Units parameter (time_units in Python).</para>
 		/// <para>For example, if the driver is to be paid overtime when the total route duration extends beyond eight hours, OvertimeStartTime is specified as 480 (8 hours * 60 minutes/hour), given the Time Field Units parameter is set to Minutes.</para>
 		/// <para>CostPerUnitOvertime:</para>
-		/// <para>The monetary cost incurred per time unit of overtime work. This field can contain null values; a null value indicates that the CostPerUnitOvertime value is the same as the CostPerUnitTime value.</para>
+		/// <para>The monetary cost incurred per time unit of overtime work. This can only contain a null value if OvertimeStartTime is also null. Otherwise it must be a positive value greater than the CostPerUnitTime.</para>
 		/// <para>MaxOrderCount:</para>
 		/// <para>The maximum allowable number of orders on the route. This field can&apos;t contain null values and has a default value of 30.</para>
 		/// <para>MaxTotalTime:</para>
@@ -441,7 +441,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRecordSet()]
-		public object Breaks { get; set; }
+		public object? Breaks { get; set; }
 
 		/// <summary>
 		/// <para>Time Field Units</para>
@@ -535,7 +535,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Advanced Analysis")]
-		public object DefaultDate { get; set; }
+		public object? DefaultDate { get; set; }
 
 		/// <summary>
 		/// <para>U-Turn Policy</para>
@@ -552,7 +552,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Custom Travel Mode")]
-		public object UturnPolicy { get; set; } = "ALLOW_UTURNS";
+		public object? UturnPolicy { get; set; } = "ALLOW_UTURNS";
 
 		/// <summary>
 		/// <para>Time Window Violation Importance</para>
@@ -566,7 +566,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Analysis")]
-		public object TimeWindowFactor { get; set; } = "Medium";
+		public object? TimeWindowFactor { get; set; } = "Medium";
 
 		/// <summary>
 		/// <para>Spatially Cluster Routes</para>
@@ -579,7 +579,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Analysis")]
-		public object SpatiallyClusterRoutes { get; set; } = "true";
+		public object? SpatiallyClusterRoutes { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Route Zones</para>
@@ -599,7 +599,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
 		[Category("Advanced Analysis")]
-		public object RouteZones { get; set; }
+		public object? RouteZones { get; set; }
 
 		/// <summary>
 		/// <para>Route Renewals</para>
@@ -625,7 +625,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRecordSet()]
 		[Category("Advanced Analysis")]
-		public object RouteRenewals { get; set; }
+		public object? RouteRenewals { get; set; }
 
 		/// <summary>
 		/// <para>Order Pairs</para>
@@ -648,7 +648,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRecordSet()]
 		[Category("Advanced Analysis")]
-		public object OrderPairs { get; set; }
+		public object? OrderPairs { get; set; }
 
 		/// <summary>
 		/// <para>Excess Transit Time Importance</para>
@@ -662,7 +662,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Analysis")]
-		public object ExcessTransitFactor { get; set; } = "Medium";
+		public object? ExcessTransitFactor { get; set; } = "Medium";
 
 		/// <summary>
 		/// <para>Point Barriers</para>
@@ -687,7 +687,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
 		[Category("Barriers")]
-		public object PointBarriers { get; set; }
+		public object? PointBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Line Barriers</para>
@@ -702,7 +702,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
 		[Category("Barriers")]
-		public object LineBarriers { get; set; }
+		public object? LineBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Polygon Barriers</para>
@@ -725,7 +725,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
 		[Category("Barriers")]
-		public object PolygonBarriers { get; set; }
+		public object? PolygonBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Time Attribute</para>
@@ -736,7 +736,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Custom Travel Mode")]
-		public object TimeAttribute { get; set; }
+		public object? TimeAttribute { get; set; }
 
 		/// <summary>
 		/// <para>Distance Attribute</para>
@@ -747,7 +747,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Custom Travel Mode")]
-		public object DistanceAttribute { get; set; }
+		public object? DistanceAttribute { get; set; }
 
 		/// <summary>
 		/// <para>Use Hierarchy in Analysis</para>
@@ -761,7 +761,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Custom Travel Mode")]
-		public object UseHierarchyInAnalysis { get; set; }
+		public object? UseHierarchyInAnalysis { get; set; }
 
 		/// <summary>
 		/// <para>Restrictions</para>
@@ -772,7 +772,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Custom Travel Mode")]
-		public object Restrictions { get; set; }
+		public object? Restrictions { get; set; }
 
 		/// <summary>
 		/// <para>Attribute Parameter Values</para>
@@ -791,7 +791,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRecordSet()]
 		[Category("Custom Travel Mode")]
-		public object AttributeParameterValues { get; set; }
+		public object? AttributeParameterValues { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Snap Tolerance</para>
@@ -800,7 +800,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Network Locations")]
-		public object MaximumSnapTolerance { get; set; } = "20 Kilometers";
+		public object? MaximumSnapTolerance { get; set; } = "20 Kilometers";
 
 		/// <summary>
 		/// <para>Exclude Restricted Portions of the Network</para>
@@ -813,7 +813,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Network Locations")]
-		public object ExcludeRestrictedPortionsOfTheNetwork { get; set; } = "true";
+		public object? ExcludeRestrictedPortionsOfTheNetwork { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Feature Locator WHERE Clause</para>
@@ -823,7 +823,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Network Locations")]
-		public object FeatureLocatorWhereClause { get; set; }
+		public object? FeatureLocatorWhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Populate Route Lines</para>
@@ -836,7 +836,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Output")]
-		public object PopulateRouteLines { get; set; } = "true";
+		public object? PopulateRouteLines { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Route Line Simplification Tolerance</para>
@@ -847,7 +847,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Custom Travel Mode")]
-		public object RouteLineSimplificationTolerance { get; set; } = "10 Meters";
+		public object? RouteLineSimplificationTolerance { get; set; } = "10 Meters";
 
 		/// <summary>
 		/// <para>Populate Directions</para>
@@ -860,7 +860,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Output")]
-		public object PopulateDirections { get; set; } = "false";
+		public object? PopulateDirections { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Directions Language</para>
@@ -871,7 +871,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Output")]
-		public object DirectionsLanguage { get; set; }
+		public object? DirectionsLanguage { get; set; }
 
 		/// <summary>
 		/// <para>Directions Style Name</para>
@@ -885,7 +885,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Output")]
-		public object DirectionsStyleName { get; set; }
+		public object? DirectionsStyleName { get; set; }
 
 		/// <summary>
 		/// <para>Save Output Network Analysis Layer</para>
@@ -900,7 +900,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Output")]
-		public object SaveOutputLayer { get; set; } = "false";
+		public object? SaveOutputLayer { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Service Capabilities</para>
@@ -917,7 +917,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[Category("Service Capabilities")]
-		public object ServiceCapabilities { get; set; } = "'MAXIMUM POINT BARRIERS' #;'MAXIMUM FEATURES INTERSECTING LINE BARRIERS' #;'MAXIMUM FEATURES INTERSECTING POLYGON BARRIERS' #;'MAXIMUM ORDERS' #;'MAXIMUM ROUTES' #;'FORCE HIERARCHY BEYOND DISTANCE' #;'MAXIMUM ORDERS PER ROUTE' #";
+		public object? ServiceCapabilities { get; set; } = "'MAXIMUM POINT BARRIERS' #;'MAXIMUM FEATURES INTERSECTING LINE BARRIERS' #;'MAXIMUM FEATURES INTERSECTING POLYGON BARRIERS' #;'MAXIMUM ORDERS' #;'MAXIMUM ROUTES' #;'FORCE HIERARCHY BEYOND DISTANCE' #;'MAXIMUM ORDERS PER ROUTE' #";
 
 		/// <summary>
 		/// <para>Ignore Invalid Order Locations</para>
@@ -931,7 +931,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Network Locations")]
-		public object IgnoreInvalidOrderLocations { get; set; } = "false";
+		public object? IgnoreInvalidOrderLocations { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Travel Mode</para>
@@ -949,49 +949,49 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TravelMode { get; set; }
+		public object? TravelMode { get; set; }
 
 		/// <summary>
 		/// <para>Output Solve Succeeded</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
-		public object SolveSucceeded { get; set; } = "false";
+		public object? SolveSucceeded { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Unassigned Stops</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETable()]
-		public object OutUnassignedStops { get; set; }
+		public object? OutUnassignedStops { get; set; }
 
 		/// <summary>
 		/// <para>Output Stops</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETable()]
-		public object OutStops { get; set; }
+		public object? OutStops { get; set; }
 
 		/// <summary>
 		/// <para>Output Routes</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutRoutes { get; set; }
+		public object? OutRoutes { get; set; }
 
 		/// <summary>
 		/// <para>Output Directions</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutDirections { get; set; }
+		public object? OutDirections { get; set; }
 
 		/// <summary>
 		/// <para>Output Network Analysis Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
-		public object OutNetworkAnalysisLayer { get; set; }
+		public object? OutNetworkAnalysisLayer { get; set; }
 
 		/// <summary>
 		/// <para>Ignore Network Location Fields</para>
@@ -1004,7 +1004,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Network Locations")]
-		public object IgnoreNetworkLocationFields { get; set; } = "false";
+		public object? IgnoreNetworkLocationFields { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Time Zone Usage for Time Fields</para>
@@ -1018,19 +1018,16 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Analysis")]
-		public object TimeZoneUsageForTimeFields { get; set; } = "GEO_LOCAL";
+		public object? TimeZoneUsageForTimeFields { get; set; } = "GEO_LOCAL";
 
 		/// <summary>
 		/// <para>Overrides</para>
-		/// <para>Specifies additional settings that can influence the behavior of the solver when finding solutions for the network analysis problems.</para>
-		/// <para>The value for this parameter must be specified in JavaScript Object Notation (JSON). For example, a valid value is of the following form {&quot;overrideSetting1&quot; : &quot;value1&quot;, &quot;overrideSetting2&quot; : &quot;value2&quot;}. The override setting name is always enclosed in double quotes. The values can be a number, Boolean, or string.</para>
-		/// <para>The default value for this parameter is no value, which indicates not to override any solver settings.</para>
-		/// <para>Overrides are advanced settings that should be used only after careful analysis of the results obtained before and after applying the settings. A list of supported override settings for each solver and their acceptable values can be obtained by contacting Esri Technical Support.</para>
+		/// <para>This parameter is for internal use only.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Advanced Analysis")]
-		public object Overrides { get; set; }
+		public object? Overrides { get; set; }
 
 		/// <summary>
 		/// <para>Save Route Data</para>
@@ -1044,19 +1041,19 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Output")]
-		public object SaveRouteData { get; set; } = "false";
+		public object? SaveRouteData { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Route Data</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
-		public object OutRouteData { get; set; }
+		public object? OutRouteData { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SolveVehicleRoutingProblem SetEnviroment(object outputCoordinateSystem = null , object workspace = null )
+		public SolveVehicleRoutingProblem SetEnviroment(object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

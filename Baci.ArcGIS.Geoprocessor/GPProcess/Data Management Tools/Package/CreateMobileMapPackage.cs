@@ -60,12 +60,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "extent", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, OutputFile, InLocator, AreaOfInterest, Extent, ClipFeatures, Title, Summary, Description, Tags, Credits, UseLimitations, AnonymousUse, EnableMapExpiration, MapExpirationType, ExpirationDate, ExpirationMessage, SelectRelatedRows, ReferenceOnlineContent };
+		public override object[] Parameters => new object[] { InMap, OutputFile, InLocator!, AreaOfInterest!, Extent!, ClipFeatures!, Title!, Summary!, Description!, Tags!, Credits!, UseLimitations!, AnonymousUse!, EnableMapExpiration!, MapExpirationType!, ExpirationDate!, ExpirationMessage!, SelectRelatedRows!, ReferenceOnlineContent! };
 
 		/// <summary>
 		/// <para>Input Map</para>
@@ -92,16 +92,16 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPLocatorsDomain()]
-		public object InLocator { get; set; }
+		public object? InLocator { get; set; }
 
 		/// <summary>
 		/// <para>Area of Interest</para>
-		/// <para>Polygon layer that defines the area of interest. Only those features that intersect the Area of Interest will be included in the mobile map package.</para>
+		/// <para>Polygon layer that defines the area of interest. Only those features that intersect the Area of Interest value will be included in the mobile map package.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object AreaOfInterest { get; set; }
+		public object? AreaOfInterest { get; set; }
 
 		/// <summary>
 		/// <para>Extent</para>
@@ -115,19 +115,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Clip Features</para>
-		/// <para>Determines if the output features will be clipped to the given Area of Interest or Extent.</para>
-		/// <para>Checked—The geometry of the features will be clipped to the given Area of Interest or Extent.</para>
+		/// <para>Specifies whether the output features will be clipped to the given Area of Interest value or Extent value.</para>
+		/// <para>Checked—The geometry of the features will be clipped to the given Area of Interest value or Extent value.</para>
 		/// <para>Unchecked—Features in the map will be selected and their geometry will remain unaltered. This is the default.</para>
 		/// <para><see cref="ClipFeaturesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ClipFeatures { get; set; } = "false";
+		public object? ClipFeatures { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Title</para>
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Title { get; set; }
+		public object? Title { get; set; }
 
 		/// <summary>
 		/// <para>Summary</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Summary { get; set; }
+		public object? Summary { get; set; }
 
 		/// <summary>
 		/// <para>Description</para>
@@ -151,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Description { get; set; }
+		public object? Description { get; set; }
 
 		/// <summary>
 		/// <para>Tags</para>
@@ -159,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Tags { get; set; }
+		public object? Tags { get; set; }
 
 		/// <summary>
 		/// <para>Credits</para>
@@ -167,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Credits { get; set; }
+		public object? Credits { get; set; }
 
 		/// <summary>
 		/// <para>Use Limitations</para>
@@ -175,12 +175,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object UseLimitations { get; set; }
+		public object? UseLimitations { get; set; }
 
 		/// <summary>
 		/// <para>Enable Anonymous Use</para>
-		/// <para>Determines if the mobile map can be used by anyone.</para>
-		/// <para>Checked—Enables anyone with access to the package to use the mobile map without signing in with an Esri Named User account.</para>
+		/// <para>Specifies whether the mobile map can be used by anyone.</para>
+		/// <para>Checked—Anyone with access to the package can use the mobile map without signing in with an Esri Named User account.</para>
 		/// <para>Unchecked—Anyone with access to the package must be signed in with a Named User account to use the mobile map. This is the default.</para>
 		/// <para>This optional parameter is only available with the Publisher extension.</para>
 		/// <para><see cref="AnonymousUseEnum"/></para>
@@ -188,51 +188,51 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AnonymousUse { get; set; } = "false";
+		public object? AnonymousUse { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Enable Map Expiration</para>
-		/// <para>Specifies whether the mobile map package will time out.</para>
-		/// <para>Checked—Time-out is enabled on the mobile map package.</para>
-		/// <para>Unchecked—Time-out is disabled on the mobile map package. This is the default.</para>
+		/// <para>Specifies whether a time-out will be enabled on the mobile map package.</para>
+		/// <para>Checked—Time-out will be enabled on the mobile map package.</para>
+		/// <para>Unchecked—Time-out will not be enabled on the mobile map package. This is the default.</para>
 		/// <para>This optional parameter is only available with the Publisher extension.</para>
 		/// <para><see cref="EnableMapExpirationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object EnableMapExpiration { get; set; } = "false";
+		public object? EnableMapExpiration { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Map Expiration Type</para>
-		/// <para>Specifies the type of access for the expired mobile map package.</para>
-		/// <para>Allow to open—Warns the user of the package that the map has expired, but allow to open. This is the default.</para>
-		/// <para>Do not allow to open—Warns the user of the package that the map has expired, and do not allow to open.</para>
+		/// <para>Specifies the type of access a user will have to the expired mobile map package.</para>
+		/// <para>Allow to open—A user of the package will be warned that the map has expired, but will be allowed to open it. This is the default.</para>
+		/// <para>Do not allow to open—A user of the package will be warned that the map has expired, and will not be allowed to open it.</para>
 		/// <para>This optional parameter is only available with the Publisher extension.</para>
 		/// <para><see cref="MapExpirationTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object MapExpirationType { get; set; } = "ALLOW_TO_OPEN";
+		public object? MapExpirationType { get; set; } = "ALLOW_TO_OPEN";
 
 		/// <summary>
 		/// <para>Expiration Date</para>
-		/// <para>Specifies the date for the mobile map package to expire.</para>
+		/// <para>Specifies the date the mobile map package will expire.</para>
 		/// <para>This optional parameter is only available with the Publisher extension.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object ExpirationDate { get; set; }
+		public object? ExpirationDate { get; set; }
 
 		/// <summary>
 		/// <para>Expiration Message</para>
-		/// <para>A text message to display when an expired map is accessed.</para>
+		/// <para>A text message that will display when an expired map is accessed.</para>
 		/// <para>This optional parameter is only available with the Publisher extension.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ExpirationMessage { get; set; } = "This map is expired.  Contact the map publisher for an updated map.";
+		public object? ExpirationMessage { get; set; } = "This map is expired.  Contact the map publisher for an updated map.";
 
 		/// <summary>
 		/// <para>Keep only the rows which are related to features within the extent</para>
@@ -244,7 +244,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SelectRelatedRows { get; set; } = "false";
+		public object? SelectRelatedRows { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Reference Online Content</para>
@@ -256,14 +256,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ReferenceOnlineContent { get; set; } = "false";
+		public object? ReferenceOnlineContent { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateMobileMapPackage SetEnviroment(object extent = null , object workspace = null )
+		public CreateMobileMapPackage SetEnviroment(object? extent = null , object? parallelProcessingFactor = null , object? workspace = null )
 		{
-			base.SetEnv(extent: extent, workspace: workspace);
+			base.SetEnv(extent: extent, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;
 		}
 
@@ -275,7 +275,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ClipFeaturesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The geometry of the features will be clipped to the given Area of Interest or Extent.</para>
+			/// <para>Checked—The geometry of the features will be clipped to the given Area of Interest value or Extent value.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CLIP")]
@@ -296,7 +296,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AnonymousUseEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Enables anyone with access to the package to use the mobile map without signing in with an Esri Named User account.</para>
+			/// <para>Checked—Anyone with access to the package can use the mobile map without signing in with an Esri Named User account.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ANONYMOUS_USE")]
@@ -317,14 +317,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum EnableMapExpirationEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Time-out is enabled on the mobile map package.</para>
+			/// <para>Checked—Time-out will be enabled on the mobile map package.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ENABLE_MAP_EXPIRATION")]
 			ENABLE_MAP_EXPIRATION,
 
 			/// <summary>
-			/// <para>Unchecked—Time-out is disabled on the mobile map package. This is the default.</para>
+			/// <para>Unchecked—Time-out will not be enabled on the mobile map package. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DISABLE_MAP_EXPIRATION")]
@@ -338,14 +338,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MapExpirationTypeEnum 
 		{
 			/// <summary>
-			/// <para>Allow to open—Warns the user of the package that the map has expired, but allow to open. This is the default.</para>
+			/// <para>Allow to open—A user of the package will be warned that the map has expired, but will be allowed to open it. This is the default.</para>
 			/// </summary>
 			[GPValue("ALLOW_TO_OPEN")]
 			[Description("Allow to open")]
 			Allow_to_open,
 
 			/// <summary>
-			/// <para>Do not allow to open—Warns the user of the package that the map has expired, and do not allow to open.</para>
+			/// <para>Do not allow to open—A user of the package will be warned that the map has expired, and will not be allowed to open it.</para>
 			/// </summary>
 			[GPValue("DONOT_ALLOW_TO_OPEN")]
 			[Description("Do not allow to open")]

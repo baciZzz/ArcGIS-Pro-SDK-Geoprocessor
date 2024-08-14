@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, OutputFeatureclass, ReferenceScale, CreateSingleClass, RequireSymbolFromTable, CreateAnnotationWhenFeatureAdded, UpdateAnnotationWhenFeatureModified };
+		public override object[] Parameters => new object[] { InputFeatures, OutputFeatureclass, ReferenceScale, CreateSingleClass!, RequireSymbolFromTable!, CreateAnnotationWhenFeatureAdded!, UpdateAnnotationWhenFeatureModified! };
 
 		/// <summary>
 		/// <para>Input features</para>
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CreateSingleClass { get; set; } = "false";
+		public object? CreateSingleClass { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Require symbols to be selected from the symbol table</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object RequireSymbolFromTable { get; set; } = "false";
+		public object? RequireSymbolFromTable { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Create annotation when new features are added (Feature-linked only)</para>
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CreateAnnotationWhenFeatureAdded { get; set; } = "true";
+		public object? CreateAnnotationWhenFeatureAdded { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Update annotation when the shape of the linked feature is modified (Feature-linked only)</para>
@@ -145,12 +145,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UpdateAnnotationWhenFeatureModified { get; set; } = "true";
+		public object? UpdateAnnotationWhenFeatureModified { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AppendAnnotation SetEnviroment(int? autoCommit = null , object scratchWorkspace = null , object workspace = null )
+		public AppendAnnotation SetEnviroment(int? autoCommit = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDataset, OutputLayer, DrawElements };
+		public override object[] Parameters => new object[] { InNetworkDataset, OutputLayer, DrawElements! };
 
 		/// <summary>
 		/// <para>Input Network Dataset</para>
@@ -94,12 +94,12 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object DrawElements { get; set; }
+		public object? DrawElements { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeNetworkDatasetLayer SetEnviroment(object workspace = null )
+		public MakeNetworkDatasetLayer SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

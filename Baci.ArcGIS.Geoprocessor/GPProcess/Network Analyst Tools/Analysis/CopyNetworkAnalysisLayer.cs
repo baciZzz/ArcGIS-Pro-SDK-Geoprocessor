@@ -61,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkAnalysisLayer, OutLayerName!, OutNetworkAnalysisLayer };
+		public override object[] Parameters => new object[] { InNetworkAnalysisLayer, OutLayerName!, OutNetworkAnalysisLayer! };
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer</para>

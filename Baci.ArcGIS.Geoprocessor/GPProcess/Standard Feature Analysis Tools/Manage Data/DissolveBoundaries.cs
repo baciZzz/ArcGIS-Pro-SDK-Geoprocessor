@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputlayer, Outputname, Dissolvefields, Summaryfields, Output };
+		public override object[] Parameters => new object[] { Inputlayer, Outputname, Dissolvefields!, Summaryfields!, Output! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
-		public object Dissolvefields { get; set; }
+		public object? Dissolvefields { get; set; }
 
 		/// <summary>
 		/// <para>Summary Fields</para>
@@ -105,19 +105,19 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object Summaryfields { get; set; }
+		public object? Summaryfields { get; set; }
 
 		/// <summary>
 		/// <para>Output</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Output { get; set; }
+		public object? Output { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DissolveBoundaries SetEnviroment(object extent = null )
+		public DissolveBoundaries SetEnviroment(object? extent = null )
 		{
 			base.SetEnv(extent: extent);
 			return this;

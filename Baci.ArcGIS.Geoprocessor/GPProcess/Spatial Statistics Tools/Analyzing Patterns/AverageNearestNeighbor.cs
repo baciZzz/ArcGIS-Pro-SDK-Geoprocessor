@@ -68,7 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, DistanceMethod, GenerateReport, Area, Nnratio, Nnzscore, Pvalue, Nnexpected, Nnobserved, ReportFile };
+		public override object[] Parameters => new object[] { InputFeatureClass, DistanceMethod, GenerateReport!, Area!, Nnratio!, Nnzscore!, Pvalue!, Nnexpected!, Nnobserved!, ReportFile! };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object GenerateReport { get; set; } = "false";
+		public object? GenerateReport { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Area</para>
@@ -109,54 +109,54 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object Area { get; set; }
+		public object? Area { get; set; }
 
 		/// <summary>
 		/// <para>Nearest Neighbor Index</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object Nnratio { get; set; } = "0";
+		public object? Nnratio { get; set; } = "0";
 
 		/// <summary>
 		/// <para>z-score</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object Nnzscore { get; set; } = "0";
+		public object? Nnzscore { get; set; } = "0";
 
 		/// <summary>
 		/// <para>p-value</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object Pvalue { get; set; } = "0";
+		public object? Pvalue { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Expected Mean Distance</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object Nnexpected { get; set; } = "0";
+		public object? Nnexpected { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Observed Mean Distance</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object Nnobserved { get; set; } = "0";
+		public object? Nnobserved { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Report File</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
-		public object ReportFile { get; set; }
+		public object? ReportFile { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AverageNearestNeighbor SetEnviroment(object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public AverageNearestNeighbor SetEnviroment(object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

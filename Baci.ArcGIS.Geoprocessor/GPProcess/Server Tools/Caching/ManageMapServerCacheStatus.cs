@@ -68,7 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputService, ManageMode, Scales, NumOfCachingServiceInstances, ReportFolder, AreaOfInterest, ReportExtent, OutputFolder };
+		public override object[] Parameters => new object[] { InputService, ManageMode, Scales!, NumOfCachingServiceInstances!, ReportFolder!, AreaOfInterest!, ReportExtent!, OutputFolder! };
 
 		/// <summary>
 		/// <para>Input Service</para>
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Scales { get; set; }
+		public object? Scales { get; set; }
 
 		/// <summary>
 		/// <para>Number of caching service instances</para>
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object NumOfCachingServiceInstances { get; set; }
+		public object? NumOfCachingServiceInstances { get; set; }
 
 		/// <summary>
 		/// <para>Output Folder</para>
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
-		public object ReportFolder { get; set; }
+		public object? ReportFolder { get; set; }
 
 		/// <summary>
 		/// <para>Area Of Interest</para>
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
-		public object AreaOfInterest { get; set; }
+		public object? AreaOfInterest { get; set; }
 
 		/// <summary>
 		/// <para>Report Extent</para>
@@ -134,14 +134,14 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
 		[Category("Area of Interest (Envelope)")]
-		public object ReportExtent { get; set; }
+		public object? ReportExtent { get; set; }
 
 		/// <summary>
 		/// <para>Output Map Service URL</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutputFolder { get; set; }
+		public object? OutputFolder { get; set; }
 
 		#region InnerClass
 

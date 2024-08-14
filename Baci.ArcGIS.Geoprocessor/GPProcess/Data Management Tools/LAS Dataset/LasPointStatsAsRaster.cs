@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, OutRaster, Method, SamplingType, SamplingValue };
+		public override object[] Parameters => new object[] { InLasDataset, OutRaster, Method!, SamplingType!, SamplingValue! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "PULSE_COUNT";
+		public object? Method { get; set; } = "PULSE_COUNT";
 
 		/// <summary>
 		/// <para>Sampling Type</para>
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SamplingType { get; set; } = "CELLSIZE";
+		public object? SamplingType { get; set; } = "CELLSIZE";
 
 		/// <summary>
 		/// <para>Sampling Value</para>
@@ -119,12 +119,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object SamplingValue { get; set; } = "10";
+		public object? SamplingValue { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LasPointStatsAsRaster SetEnviroment(int? autoCommit = null , object cellSize = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object pyramid = null , object rasterStatistics = null , object workspace = null )
+		public LasPointStatsAsRaster SetEnviroment(int? autoCommit = null , object? cellSize = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? pyramid = null , object? rasterStatistics = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, pyramid: pyramid, rasterStatistics: rasterStatistics, workspace: workspace);
 			return this;

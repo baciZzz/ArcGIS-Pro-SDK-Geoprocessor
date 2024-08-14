@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutMosaicDataset, CoordinateSystem, NumberOfBands, PixelType, WhereClause, InTemplateDataset, Extent, SelectUsingFeatures, LodField, MinpsField, MaxpsField, Pixelsize, BuildBoundary };
+		public override object[] Parameters => new object[] { InDataset, OutMosaicDataset, CoordinateSystem!, NumberOfBands!, PixelType!, WhereClause!, InTemplateDataset!, Extent!, SelectUsingFeatures!, LodField!, MinpsField!, MaxpsField!, Pixelsize!, BuildBoundary! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
-		public object CoordinateSystem { get; set; }
+		public object? CoordinateSystem { get; set; }
 
 		/// <summary>
 		/// <para>Number of Bands</para>
@@ -98,28 +98,28 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Pixel Properties")]
-		public object NumberOfBands { get; set; }
+		public object? NumberOfBands { get; set; }
 
 		/// <summary>
 		/// <para>Pixel Type</para>
 		/// <para>The bit depth, or radiometric resolution, of the mosaic dataset. If this is not defined, it will be taken from the first raster dataset.</para>
-		/// <para>1-bit—A 1-bit unsigned integer. The values can be 0 or 1.</para>
-		/// <para>2-bit—A 2-bit unsigned integer. The values supported can be from 0 to 3.</para>
-		/// <para>4-bit—A 4-bit unsigned integer. The values supported can be from 0 to 15.</para>
-		/// <para>8-bit unsigned—An unsigned 8-bit data type. The values supported can be from 0 to 255.</para>
-		/// <para>8-bit signed—A signed 8-bit data type. The values supported can be from -128 to 127.</para>
-		/// <para>16-bit unsigned—A 16-bit unsigned data type. The values can range from 0 to 65,535.</para>
-		/// <para>16-bit signed—A 16-bit signed data type. The values can range from -32,768 to 32,767.</para>
-		/// <para>32-bit unsigned—A 32-bit unsigned data type. The values can range from 0 to 4,294,967,295.</para>
-		/// <para>32-bit signed—A 32-bit signed data type. The values can range from -2,147,483,648 to 2,147,483,647.</para>
-		/// <para>32-bit floating point—A 32-bit data type supporting decimals.</para>
-		/// <para>64-bit—A 64-bit data type supporting decimals.</para>
+		/// <para>1-bit—The pixel type will be a 1-bit unsigned integer. The values can be 0 or 1.</para>
+		/// <para>2-bit—The pixel type will be a 2-bit unsigned integer. The values supported can range from 0 to 3.</para>
+		/// <para>4-bit—The pixel type will be a 4-bit unsigned integer. The values supported can range from 0 to 15.</para>
+		/// <para>8-bit unsigned—The pixel type will be an unsigned 8-bit data type. The values supported can range from 0 to 255.</para>
+		/// <para>8-bit signed—The pixel type will be a signed 8-bit data type. The values supported can range from -128 to 127.</para>
+		/// <para>16-bit unsigned—The pixel type will be a 16-bit unsigned data type. The values can range from 0 to 65,535.</para>
+		/// <para>16-bit signed—The pixel type will be a 16-bit signed data type. The values can range from -32,768 to 32,767.</para>
+		/// <para>32-bit unsigned—The pixel type will be a 32-bit unsigned data type. The values can range from 0 to 4,294,967,295.</para>
+		/// <para>32-bit signed—The pixel type will be a 32-bit signed data type. The values can range from -2,147,483,648 to 2,147,483,647.</para>
+		/// <para>32-bit floating point—The pixel type will be a 32-bit data type supporting decimals.</para>
+		/// <para>64-bit—The pixel type will be a 64-bit data type supporting decimals.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Pixel Properties")]
-		public object PixelType { get; set; }
+		public object? PixelType { get; set; }
 
 		/// <summary>
 		/// <para>Query Definition</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
 		[Category("Selection")]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Extent from Dataset</para>
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[Category("Selection")]
-		public object InTemplateDataset { get; set; }
+		public object? InTemplateDataset { get; set; }
 
 		/// <summary>
 		/// <para>Extent</para>
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPEnvelope()]
 		[Category("Selection")]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Using Input Geometry for Selection</para>
@@ -159,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Selection")]
-		public object SelectUsingFeatures { get; set; } = "true";
+		public object? SelectUsingFeatures { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Scale Field</para>
@@ -169,7 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Visibility")]
-		public object LodField { get; set; }
+		public object? LodField { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Cell Size Field</para>
@@ -179,7 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Visibility")]
-		public object MinpsField { get; set; }
+		public object? MinpsField { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Cell Size Field</para>
@@ -189,7 +189,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Visibility")]
-		public object MaxpsField { get; set; }
+		public object? MaxpsField { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Visible Cell Size</para>
@@ -198,7 +198,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Visibility")]
-		public object Pixelsize { get; set; }
+		public object? Pixelsize { get; set; }
 
 		/// <summary>
 		/// <para>Build Boundary</para>
@@ -211,12 +211,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object BuildBoundary { get; set; } = "true";
+		public object? BuildBoundary { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateReferencedMosaicDataset SetEnviroment(object configKeyword = null , object extent = null , object scratchWorkspace = null , object workspace = null )
+		public CreateReferencedMosaicDataset SetEnviroment(object? configKeyword = null , object? extent = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(configKeyword: configKeyword, extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

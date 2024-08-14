@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSegmentedRaster, OutIndexRasterDataset, InAdditionalRaster, UsedAttributes };
+		public override object[] Parameters => new object[] { InSegmentedRaster, OutIndexRasterDataset, InAdditionalRaster!, UsedAttributes! };
 
 		/// <summary>
 		/// <para>Input Segmented RGB Or Gray Raster</para>
@@ -89,12 +89,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object InAdditionalRaster { get; set; }
+		public object? InAdditionalRaster { get; set; }
 
 		/// <summary>
 		/// <para>Segment Attributes Used</para>
 		/// <para>Specifies the attributes that will be included in the attribute table associated with the output raster.</para>
-		/// <para>Converged color—The RGB color values will be derived from the input raster on a per-segment basis.</para>
+		/// <para>Converged color—The RGB color values will be derived from the input raster on a per-segment basis. This is also known as average chromaticity color.</para>
 		/// <para>Mean digital number—The average digital number (DN) will be derived from the optional pixel image on a per-segment basis.</para>
 		/// <para>Standard deviation—The standard deviation will be derived from the optional pixel image on a per-segment basis.</para>
 		/// <para>Count of pixels—The number of pixels composing the segment, on a per-segment basis.</para>
@@ -108,12 +108,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Segment Attributes")]
-		public object UsedAttributes { get; set; } = "COLOR;MEAN";
+		public object? UsedAttributes { get; set; } = "COLOR;MEAN";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ComputeSegmentAttributes SetEnviroment(object compression = null , object extent = null , object geographicTransformations = null , object nodata = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object pyramid = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public ComputeSegmentAttributes SetEnviroment(object? compression = null , object? extent = null , object? geographicTransformations = null , object? nodata = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? pyramid = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
 			base.SetEnv(compression: compression, extent: extent, geographicTransformations: geographicTransformations, nodata: nodata, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum UsedAttributesEnum 
 		{
 			/// <summary>
-			/// <para>Converged color—The RGB color values will be derived from the input raster on a per-segment basis.</para>
+			/// <para>Converged color—The RGB color values will be derived from the input raster on a per-segment basis. This is also known as average chromaticity color.</para>
 			/// </summary>
 			[GPValue("COLOR")]
 			[Description("Converged color")]

@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeatures, NeighborhoodType, NeighborhoodSelectionMethod, NumberOfNeighbors, DistanceBand, LocalWeightingScheme, DataStore, Output };
+		public override object[] Parameters => new object[] { InFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeatures, NeighborhoodType, NeighborhoodSelectionMethod, NumberOfNeighbors!, DistanceBand!, LocalWeightingScheme!, DataStore!, Output! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -175,17 +175,16 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object NumberOfNeighbors { get; set; }
+		public object? NumberOfNeighbors { get; set; }
 
 		/// <summary>
 		/// <para>Distance Band</para>
 		/// <para>The spatial extent of the neighborhood.</para>
-		/// <para><see cref="DistanceBandEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object DistanceBand { get; set; }
+		[GPUnitDomain()]
+		public object? DistanceBand { get; set; }
 
 		/// <summary>
 		/// <para>Local Weighting Scheme</para>
@@ -198,7 +197,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Additional Options")]
-		public object LocalWeightingScheme { get; set; } = "BISQUARE";
+		public object? LocalWeightingScheme { get; set; } = "BISQUARE";
 
 		/// <summary>
 		/// <para>Data Store</para>
@@ -211,19 +210,19 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Data Store")]
-		public object DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
+		public object? DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
 
 		/// <summary>
 		/// <para>Output</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object Output { get; set; }
+		public object? Output { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GWR SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public GWR SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;
@@ -277,55 +276,6 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 			[GPValue("USER_DEFINED")]
 			[Description("User defined")]
 			User_defined,
-
-		}
-
-		/// <summary>
-		/// <para>Distance Band</para>
-		/// </summary>
-		public enum DistanceBandEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("NauticalMiles")]
-			[Description("NauticalMiles")]
-			NauticalMiles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
 
 		}
 

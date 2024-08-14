@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <param name="InSourceData">
 		/// <para>Input raster or feature source data</para>
 		/// <para>The input source locations.</para>
-		/// <para>This is a raster or feature dataset that identifies the cells or locations to which the Euclidean distance for every output cell location is calculated.</para>
+		/// <para>This is a raster or feature identifying the cells or locations that will be used to calculate the Euclidean distance for each output cell location.</para>
 		/// <para>For rasters, the input type can be integer or floating point.</para>
 		/// <para>If the input source raster is floating point, the Input value raster parameter must be set, and it must be integer. The value raster will take precedence over the Source field parameter setting.</para>
 		/// </param>
@@ -72,12 +72,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSourceData, OutAllocationRaster, MaximumDistance, InValueRaster, CellSize, SourceField, OutDistanceRaster, OutDirectionRaster, DistanceMethod, InBarrierData, OutBackDirectionRaster };
+		public override object[] Parameters => new object[] { InSourceData, OutAllocationRaster, MaximumDistance!, InValueRaster!, CellSize!, SourceField!, OutDistanceRaster!, OutDirectionRaster!, DistanceMethod!, InBarrierData!, OutBackDirectionRaster! };
 
 		/// <summary>
 		/// <para>Input raster or feature source data</para>
 		/// <para>The input source locations.</para>
-		/// <para>This is a raster or feature dataset that identifies the cells or locations to which the Euclidean distance for every output cell location is calculated.</para>
+		/// <para>This is a raster or feature identifying the cells or locations that will be used to calculate the Euclidean distance for each output cell location.</para>
 		/// <para>For rasters, the input type can be integer or floating point.</para>
 		/// <para>If the input source raster is floating point, the Input value raster parameter must be set, and it must be integer. The value raster will take precedence over the Source field parameter setting.</para>
 		/// </summary>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object MaximumDistance { get; set; }
+		public object? MaximumDistance { get; set; }
 
 		/// <summary>
 		/// <para>Input value raster</para>
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
 		[GPSAGeoDataDomain()]
-		public object InValueRaster { get; set; }
+		public object? InValueRaster { get; set; }
 
 		/// <summary>
 		/// <para>Output cell size</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
 		[GPSAGeoDataDomain()]
-		public object CellSize { get; set; }
+		public object? CellSize { get; set; }
 
 		/// <summary>
 		/// <para>Source field</para>
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object SourceField { get; set; }
+		public object? SourceField { get; set; }
 
 		/// <summary>
 		/// <para>Output distance raster</para>
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
-		public object OutDistanceRaster { get; set; }
+		public object? OutDistanceRaster { get; set; }
 
 		/// <summary>
 		/// <para>Output direction raster</para>
@@ -156,29 +156,29 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
-		public object OutDirectionRaster { get; set; }
+		public object? OutDirectionRaster { get; set; }
 
 		/// <summary>
 		/// <para>Distance Method</para>
-		/// <para>Specifies whether to calculate the distance using a planar (flat earth) or a geodesic (ellipsoid) method.</para>
+		/// <para>Specifies whether the distance will be calculated using a planar (flat earth) or a geodesic (ellipsoid) method.</para>
 		/// <para>Planar—The distance calculation will be performed on a projected flat plane using a 2D Cartesian coordinate system. This is the default.</para>
-		/// <para>Geodesic—The distance calculation will be performed on the ellipsoid. Therefore, regardless of input or output projection, the results do not change.</para>
+		/// <para>Geodesic—The distance calculation will be performed on the ellipsoid. Regardless of input or output projection, the results will not change.</para>
 		/// <para><see cref="DistanceMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DistanceMethod { get; set; } = "PLANAR";
+		public object? DistanceMethod { get; set; } = "PLANAR";
 
 		/// <summary>
 		/// <para>Input raster or feature barrier data</para>
 		/// <para>The dataset that defines the barriers.</para>
-		/// <para>The barriers can be defined by an integer or a floating-point raster, or by a feature layer.</para>
+		/// <para>The barriers can be defined by an integer or a floating-point raster, or by a point, line, or polygon feature.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
 		[GPSAGeoDataDomain()]
-		public object InBarrierData { get; set; }
+		public object? InBarrierData { get; set; }
 
 		/// <summary>
 		/// <para>Out back direction raster</para>
@@ -189,14 +189,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
-		public object OutBackDirectionRaster { get; set; }
+		public object? OutBackDirectionRaster { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EucAllocation SetEnviroment(int? autoCommit = null , object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public EucAllocation SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 
@@ -215,7 +215,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 			Planar,
 
 			/// <summary>
-			/// <para>Geodesic—The distance calculation will be performed on the ellipsoid. Therefore, regardless of input or output projection, the results do not change.</para>
+			/// <para>Geodesic—The distance calculation will be performed on the ellipsoid. Regardless of input or output projection, the results will not change.</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
 			[Description("Geodesic")]

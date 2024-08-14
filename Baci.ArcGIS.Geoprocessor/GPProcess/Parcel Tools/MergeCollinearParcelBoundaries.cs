@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InParcelBoundaries, OffsetTolerance, OutParcelBoundaries };
+		public override object[] Parameters => new object[] { InParcelBoundaries, OffsetTolerance, OutParcelBoundaries! };
 
 		/// <summary>
 		/// <para>Input Parcel Boundaries</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutParcelBoundaries { get; set; }
+		public object? OutParcelBoundaries { get; set; }
 
 	}
 }

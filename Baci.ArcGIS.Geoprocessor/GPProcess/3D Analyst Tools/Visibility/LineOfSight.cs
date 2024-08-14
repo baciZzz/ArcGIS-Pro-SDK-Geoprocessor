@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurface, InLineFeatureClass, OutLosFeatureClass, OutObstructionFeatureClass, UseCurvature, UseRefraction, RefractionFactor, PyramidLevelResolution, InFeatures };
+		public override object[] Parameters => new object[] { InSurface, InLineFeatureClass, OutLosFeatureClass, OutObstructionFeatureClass!, UseCurvature!, UseRefraction!, RefractionFactor!, PyramidLevelResolution!, InFeatures! };
 
 		/// <summary>
 		/// <para>Input Surface</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object OutObstructionFeatureClass { get; set; }
+		public object? OutObstructionFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Use Curvature</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Surface Options")]
-		public object UseCurvature { get; set; } = "false";
+		public object? UseCurvature { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Use Refraction</para>
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Surface Options")]
-		public object UseRefraction { get; set; } = "false";
+		public object? UseRefraction { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Refraction Factor</para>
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Surface Options")]
-		public object RefractionFactor { get; set; } = "0.13";
+		public object? RefractionFactor { get; set; } = "0.13";
 
 		/// <summary>
 		/// <para>Pyramid Level Resolution</para>
@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Surface Options")]
-		public object PyramidLevelResolution { get; set; } = "0";
+		public object? PyramidLevelResolution { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -159,12 +159,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object InFeatures { get; set; }
+		public object? InFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LineOfSight SetEnviroment(object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , int? autoCommit = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object terrainMemoryUsage = null , object workspace = null )
+		public LineOfSight SetEnviroment(object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , int? autoCommit = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , bool? terrainMemoryUsage = null , object? workspace = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, terrainMemoryUsage: terrainMemoryUsage, workspace: workspace);
 			return this;

@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause, DefineMissingTiles, GenerateOverviews, GenerateMissingImages, RegenerateStaleImages, OutMosaicDataset };
+		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause!, DefineMissingTiles!, GenerateOverviews!, GenerateMissingImages!, RegenerateStaleImages!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Define Missing Overview Tiles</para>
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DefineMissingTiles { get; set; } = "true";
+		public object? DefineMissingTiles { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Generate Overviews</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object GenerateOverviews { get; set; } = "true";
+		public object? GenerateOverviews { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Generate Missing Overview Images Only</para>
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Overview Generation Options")]
-		public object GenerateMissingImages { get; set; } = "true";
+		public object? GenerateMissingImages { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Regenerate Stale Overview Images Only</para>
@@ -126,19 +126,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Overview Generation Options")]
-		public object RegenerateStaleImages { get; set; } = "true";
+		public object? RegenerateStaleImages { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Updated Mosaic Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutMosaicDataset { get; set; }
+		public object? OutMosaicDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BuildOverviews SetEnviroment(object parallelProcessingFactor = null )
+		public BuildOverviews SetEnviroment(object? parallelProcessingFactor = null )
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

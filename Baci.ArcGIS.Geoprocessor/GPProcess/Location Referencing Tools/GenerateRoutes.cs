@@ -55,12 +55,12 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRouteFeatures, RecordCalibrationChanges, OutRouteFeatures, OutDerivedRouteFeatures, OutDetailsFile };
+		public override object[] Parameters => new object[] { InRouteFeatures, RecordCalibrationChanges!, OutRouteFeatures!, OutDerivedRouteFeatures!, OutDetailsFile! };
 
 		/// <summary>
 		/// <para>Input Route Features</para>
@@ -81,35 +81,35 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object RecordCalibrationChanges { get; set; } = "false";
+		public object? RecordCalibrationChanges { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Route Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutRouteFeatures { get; set; }
+		public object? OutRouteFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Output Derived Route Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutDerivedRouteFeatures { get; set; }
+		public object? OutDerivedRouteFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Output Results File</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETextFile()]
-		public object OutDetailsFile { get; set; }
+		public object? OutDetailsFile { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateRoutes SetEnviroment(object workspace = null )
+		public GenerateRoutes SetEnviroment(object? parallelProcessingFactor = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;
 		}
 
@@ -121,18 +121,18 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum RecordCalibrationChangesEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Calibration changes will be applied to the routes in the LRS Network, but no event behaviors will be applied. This is the default.</para>
-			/// </summary>
-			[GPValue("false")]
-			[Description("NO_RECORD_CALIBRATION_CHANGES")]
-			NO_RECORD_CALIBRATION_CHANGES,
-
-			/// <summary>
 			/// <para>Checked—Any calibration points created, modified, or deleted outside the Location Referencing tools will be applied to the routes in the network, and event behaviors will be applied the next time Apply Event Behaviors is run.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RECORD_CALIBRATION_CHANGES")]
 			RECORD_CALIBRATION_CHANGES,
+
+			/// <summary>
+			/// <para>Unchecked—Calibration changes will be applied to the routes in the LRS Network, but no event behaviors will be applied. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("NO_RECORD_CALIBRATION_CHANGES")]
+			NO_RECORD_CALIBRATION_CHANGES,
 
 		}
 

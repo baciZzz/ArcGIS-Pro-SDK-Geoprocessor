@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutCentralFeature, OutMeanCenter, OutMedianCenter, OutEllipse, EllipseSize, WeightField, GroupByField };
+		public override object[] Parameters => new object[] { InputLayer, OutCentralFeature!, OutMeanCenter!, OutMedianCenter!, OutEllipse!, EllipseSize!, WeightField!, GroupByField! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object OutCentralFeature { get; set; }
+		public object? OutCentralFeature { get; set; }
 
 		/// <summary>
 		/// <para>Output Mean Center</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object OutMeanCenter { get; set; }
+		public object? OutMeanCenter { get; set; }
 
 		/// <summary>
 		/// <para>Output Median Center</para>
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object OutMedianCenter { get; set; }
+		public object? OutMedianCenter { get; set; }
 
 		/// <summary>
 		/// <para>Output Ellipse</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object OutEllipse { get; set; }
+		public object? OutEllipse { get; set; }
 
 		/// <summary>
 		/// <para>Ellipse Size</para>
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object EllipseSize { get; set; } = "1_STANDARD_DEVIATION";
+		public object? EllipseSize { get; set; } = "1_STANDARD_DEVIATION";
 
 		/// <summary>
 		/// <para>Weight Field</para>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object WeightField { get; set; }
+		public object? WeightField { get; set; }
 
 		/// <summary>
 		/// <para>Group By Field</para>
@@ -132,12 +132,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object GroupByField { get; set; }
+		public object? GroupByField { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SummarizeCenterAndDispersion SetEnviroment(object extent = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object workspace = null )
+		public SummarizeCenterAndDispersion SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;

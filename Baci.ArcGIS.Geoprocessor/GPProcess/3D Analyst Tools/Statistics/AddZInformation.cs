@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Add Z Information</para>
-	/// <para>Adds information about elevation properties of features in a Z-enabled feature class.</para>
+	/// <para>Adds information about elevation properties of features in a z-enabled feature class.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -26,12 +26,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </param>
 		/// <param name="OutProperty">
 		/// <para>Output Property</para>
-		/// <para>The Z properties that will be added to the attribute table of the input feature class. The following options are available:</para>
+		/// <para>Specifies the z-properties that will be added to the attribute table of the input feature class.</para>
 		/// <para>Spot Z—Spot elevation of single-point feature.</para>
 		/// <para>Point Count—Number of points in each multipoint feature.</para>
-		/// <para>Lowest Z—Lowest Z value found in each multipoint, polyline, polygon, or multipatch feature.</para>
-		/// <para>Highest Z—Highest Z value found in each multipoint, polyline, polygon, or multipatch feature.</para>
-		/// <para>Average Z—Average Z value found in each multipoint, polyline, polygon, or multipatch feature.</para>
+		/// <para>Lowest Z—Lowest z-value found in each multipoint, polyline, polygon, or multipatch feature.</para>
+		/// <para>Highest Z—Highest z-value found in each multipoint, polyline, polygon, or multipatch feature.</para>
+		/// <para>Average Z—Average z-value found in each multipoint, polyline, polygon, or multipatch feature.</para>
 		/// <para>3-Dimensional Length—3-dimensional length of each polyline or polygon feature.</para>
 		/// <para>Surface Area—Total area of the surface of a multipatch feature.</para>
 		/// <para>Vertex Count—Total number of vertices in each polyline or polygon feature.</para>
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, OutProperty, NoiseFiltering, OutputFeatureClass };
+		public override object[] Parameters => new object[] { InFeatureClass, OutProperty, NoiseFiltering!, OutputFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -92,12 +92,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Property</para>
-		/// <para>The Z properties that will be added to the attribute table of the input feature class. The following options are available:</para>
+		/// <para>Specifies the z-properties that will be added to the attribute table of the input feature class.</para>
 		/// <para>Spot Z—Spot elevation of single-point feature.</para>
 		/// <para>Point Count—Number of points in each multipoint feature.</para>
-		/// <para>Lowest Z—Lowest Z value found in each multipoint, polyline, polygon, or multipatch feature.</para>
-		/// <para>Highest Z—Highest Z value found in each multipoint, polyline, polygon, or multipatch feature.</para>
-		/// <para>Average Z—Average Z value found in each multipoint, polyline, polygon, or multipatch feature.</para>
+		/// <para>Lowest Z—Lowest z-value found in each multipoint, polyline, polygon, or multipatch feature.</para>
+		/// <para>Highest Z—Highest z-value found in each multipoint, polyline, polygon, or multipatch feature.</para>
+		/// <para>Average Z—Average z-value found in each multipoint, polyline, polygon, or multipatch feature.</para>
 		/// <para>3-Dimensional Length—3-dimensional length of each polyline or polygon feature.</para>
 		/// <para>Surface Area—Total area of the surface of a multipatch feature.</para>
 		/// <para>Vertex Count—Total number of vertices in each polyline or polygon feature.</para>
@@ -113,23 +113,23 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Noise Filtering</para>
-		/// <para>An optional numeric value used to exclude portions of features from the resulting calculations. This can be useful when the 3D input contains relatively small features with extreme slopes which may bias statistical results. If the 3D input's linear units are meters, specifying a value of 0.001 will result in the exclusion of lines or polygon edges that are shorter than 0.001 meters. For multipatch features, the same value will result in the exclusion of its subparts that have an area less than 0.001 square meters. This parameter does not apply to point and multipoint features.</para>
+		/// <para>An numeric value that will be used to exclude portions of features from the resulting calculations. This can be useful when the 3D input contains relatively small features with extreme slopes which may bias statistical results. If the 3D input's linear units are meters, specifying a value of 0.001 will result in the exclusion of lines or polygon edges that are shorter than 0.001 meters. For multipatch features, the same value will result in the exclusion of its subparts that have an area less than 0.001 square meters. This parameter does not apply to point and multipoint features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object NoiseFiltering { get; set; }
+		public object? NoiseFiltering { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutputFeatureClass { get; set; }
+		public object? OutputFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddZInformation SetEnviroment(int? autoCommit = null , object extent = null , object workspace = null )
+		public AddZInformation SetEnviroment(int? autoCommit = null , object? extent = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, extent: extent, workspace: workspace);
 			return this;

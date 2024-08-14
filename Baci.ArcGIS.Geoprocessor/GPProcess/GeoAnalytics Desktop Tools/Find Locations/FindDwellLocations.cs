@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		/// <param name="InputFeatures">
 		/// <para>Input Features</para>
-		/// <para>The point tracks from which to find dwells. The input must be a time-enabled layer with features that represent instants in time.</para>
+		/// <para>The point tracks in which dwells will be found. The input must be a time-enabled layer with features that represent instants in time.</para>
 		/// </param>
 		/// <param name="Output">
 		/// <para>Output Dataset</para>
@@ -40,21 +40,19 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <param name="DistanceTolerance">
 		/// <para>Distance Tolerance</para>
 		/// <para>The maximum distance between points to be considered a single dwell location.</para>
-		/// <para><see cref="DistanceToleranceEnum"/></para>
 		/// </param>
 		/// <param name="TimeTolerance">
 		/// <para>Time Tolerance</para>
 		/// <para>The minimum time duration to be considered a single dwell location.</para>
 		/// <para>Both time and distance are considered when finding dwells. The Distance Tolerance parameter specifies distance.</para>
-		/// <para><see cref="TimeToleranceEnum"/></para>
 		/// </param>
 		/// <param name="OutputType">
 		/// <para>Output Type</para>
 		/// <para>Specifies how the dwell features will be output.</para>
-		/// <para>Dwell features— All of the input point features that are part of a dwell are returned.</para>
-		/// <para>Mean centers— Points representing the mean centers of each dwell group are returned. This is the default.</para>
-		/// <para>Convex hulls— Polygons representing the convex hull of each dwell group are returned.</para>
-		/// <para>All features— All of the input point features are returned.</para>
+		/// <para>Dwell features— All of the input point features that are part of a dwell will be returned.</para>
+		/// <para>Mean centers— Points representing the mean centers of each dwell group will be returned. This is the default.</para>
+		/// <para>Convex hulls— Polygons representing the convex hull of each dwell group will be returned.</para>
+		/// <para>All features— All of the input point features will be returned.</para>
 		/// <para><see cref="OutputTypeEnum"/></para>
 		/// </param>
 		public FindDwellLocations(object InputFeatures, object Output, object TrackFields, object DistanceMethod, object DistanceTolerance, object TimeTolerance, object OutputType)
@@ -101,11 +99,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, Output, TrackFields, DistanceMethod, DistanceTolerance, TimeTolerance, OutputType, SummaryStatistics, TimeBoundarySplit, TimeBoundaryReference };
+		public override object[] Parameters => new object[] { InputFeatures, Output, TrackFields, DistanceMethod, DistanceTolerance, TimeTolerance, OutputType, SummaryStatistics!, TimeBoundarySplit!, TimeBoundaryReference! };
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The point tracks from which to find dwells. The input must be a time-enabled layer with features that represent instants in time.</para>
+		/// <para>The point tracks in which dwells will be found. The input must be a time-enabled layer with features that represent instants in time.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -144,31 +142,29 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Distance Tolerance</para>
 		/// <para>The maximum distance between points to be considered a single dwell location.</para>
-		/// <para><see cref="DistanceToleranceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
+		[GPUnitDomain()]
 		public object DistanceTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Time Tolerance</para>
 		/// <para>The minimum time duration to be considered a single dwell location.</para>
 		/// <para>Both time and distance are considered when finding dwells. The Distance Tolerance parameter specifies distance.</para>
-		/// <para><see cref="TimeToleranceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
+		[GPUnitDomain()]
 		public object TimeTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Output Type</para>
 		/// <para>Specifies how the dwell features will be output.</para>
-		/// <para>Dwell features— All of the input point features that are part of a dwell are returned.</para>
-		/// <para>Mean centers— Points representing the mean centers of each dwell group are returned. This is the default.</para>
-		/// <para>Convex hulls— Polygons representing the convex hull of each dwell group are returned.</para>
-		/// <para>All features— All of the input point features are returned.</para>
+		/// <para>Dwell features— All of the input point features that are part of a dwell will be returned.</para>
+		/// <para>Mean centers— Points representing the mean centers of each dwell group will be returned. This is the default.</para>
+		/// <para>Convex hulls— Polygons representing the convex hull of each dwell group will be returned.</para>
+		/// <para>All features— All of the input point features will be returned.</para>
 		/// <para><see cref="OutputTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -194,17 +190,16 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object SummaryStatistics { get; set; }
+		public object? SummaryStatistics { get; set; }
 
 		/// <summary>
 		/// <para>Time Boundary Split</para>
 		/// <para>A time span to split the input data into for analysis. A time boundary allows you to analyze values within a defined time span. For example, if you use a time boundary of 1 day, and set the time boundary reference to January 1, 1980, tracks will be split at the beginning of every day.</para>
-		/// <para><see cref="TimeBoundarySplitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
-		public object TimeBoundarySplit { get; set; }
+		[GPUnitDomain()]
+		public object? TimeBoundarySplit { get; set; }
 
 		/// <summary>
 		/// <para>Time Boundary Reference</para>
@@ -212,12 +207,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object TimeBoundaryReference { get; set; }
+		public object? TimeBoundaryReference { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FindDwellLocations SetEnviroment(object extent = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object workspace = null )
+		public FindDwellLocations SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;
@@ -247,212 +242,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		}
 
 		/// <summary>
-		/// <para>Distance Tolerance</para>
-		/// </summary>
-		public enum DistanceToleranceEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("NauticalMiles")]
-			[Description("NauticalMiles")]
-			NauticalMiles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-		}
-
-		/// <summary>
-		/// <para>Time Tolerance</para>
-		/// </summary>
-		public enum TimeToleranceEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Milliseconds")]
-			[Description("Milliseconds")]
-			Milliseconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Seconds")]
-			[Description("Seconds")]
-			Seconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Days")]
-			[Description("Days")]
-			Days,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Weeks")]
-			[Description("Weeks")]
-			Weeks,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Months")]
-			[Description("Months")]
-			Months,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Years")]
-			[Description("Years")]
-			Years,
-
-		}
-
-		/// <summary>
 		/// <para>Output Type</para>
 		/// </summary>
 		public enum OutputTypeEnum 
 		{
 			/// <summary>
-			/// <para>Mean centers— Points representing the mean centers of each dwell group are returned. This is the default.</para>
+			/// <para>Mean centers— Points representing the mean centers of each dwell group will be returned. This is the default.</para>
 			/// </summary>
 			[GPValue("DWELL_MEAN_CENTERS")]
 			[Description("Mean centers")]
 			Mean_centers,
 
 			/// <summary>
-			/// <para>Convex hulls— Polygons representing the convex hull of each dwell group are returned.</para>
+			/// <para>Convex hulls— Polygons representing the convex hull of each dwell group will be returned.</para>
 			/// </summary>
 			[GPValue("DWELL_CONVEX_HULLS")]
 			[Description("Convex hulls")]
 			Convex_hulls,
 
 			/// <summary>
-			/// <para>Dwell features— All of the input point features that are part of a dwell are returned.</para>
+			/// <para>Dwell features— All of the input point features that are part of a dwell will be returned.</para>
 			/// </summary>
 			[GPValue("DWELL_FEATURES")]
 			[Description("Dwell features")]
 			Dwell_features,
 
 			/// <summary>
-			/// <para>All features— All of the input point features are returned.</para>
+			/// <para>All features— All of the input point features will be returned.</para>
 			/// </summary>
 			[GPValue("ALL_FEATURES")]
 			[Description("All features")]
 			All_features,
-
-		}
-
-		/// <summary>
-		/// <para>Time Boundary Split</para>
-		/// </summary>
-		public enum TimeBoundarySplitEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Milliseconds")]
-			[Description("Milliseconds")]
-			Milliseconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Seconds")]
-			[Description("Seconds")]
-			Seconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Days")]
-			[Description("Days")]
-			Days,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Weeks")]
-			[Description("Weeks")]
-			Weeks,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Months")]
-			[Description("Months")]
-			Months,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Years")]
-			[Description("Years")]
-			Years,
 
 		}
 

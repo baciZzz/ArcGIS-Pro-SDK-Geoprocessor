@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		/// <param name="InCube">
 		/// <para>Input Space Time Cube</para>
-		/// <para>The netCDF cube to be analyzed. This file must have an (.nc) extension and must have been created using the Create Space Time Cube By Aggregating Points tool or the Create Space Time Cube From Defined Locations tool.</para>
+		/// <para>The space-time cube containing the variable to be analyzed. Space-time cubes have a .nc file extension and are created using various tools in the Space Time Pattern Mining toolbox.</para>
 		/// </param>
 		/// <param name="AnalysisVariable">
 		/// <para>Analysis Variable</para>
@@ -70,11 +70,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCube, AnalysisVariable, OutputFeatures, NeighborhoodDistance, NeighborhoodTimeStep, PolygonMask, ConceptualizationOfSpatialRelationships, NumberOfNeighbors, DefineGlobalWindow };
+		public override object[] Parameters => new object[] { InCube, AnalysisVariable, OutputFeatures, NeighborhoodDistance!, NeighborhoodTimeStep!, PolygonMask!, ConceptualizationOfSpatialRelationships!, NumberOfNeighbors!, DefineGlobalWindow! };
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>
-		/// <para>The netCDF cube to be analyzed. This file must have an (.nc) extension and must have been created using the Create Space Time Cube By Aggregating Points tool or the Create Space Time Cube From Defined Locations tool.</para>
+		/// <para>The space-time cube containing the variable to be analyzed. Space-time cubes have a .nc file extension and are created using various tools in the Space Time Pattern Mining toolbox.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -100,12 +100,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Neighborhood Distance</para>
 		/// <para>The spatial extent of the analysis neighborhood. This value determines which features are analyzed together in order to assess local space-time clustering.</para>
-		/// <para><see cref="NeighborhoodDistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object NeighborhoodDistance { get; set; }
+		[GPUnitDomain()]
+		public object? NeighborhoodDistance { get; set; }
 
 		/// <summary>
 		/// <para>Neighborhood Time Step</para>
@@ -114,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object NeighborhoodTimeStep { get; set; } = "1";
+		public object? NeighborhoodTimeStep { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Polygon Analysis Mask</para>
@@ -124,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object PolygonMask { get; set; }
+		public object? PolygonMask { get; set; }
 
 		/// <summary>
 		/// <para>Conceptualization of Spatial Relationships</para>
@@ -138,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ConceptualizationOfSpatialRelationships { get; set; } = "FIXED_DISTANCE";
+		public object? ConceptualizationOfSpatialRelationships { get; set; } = "FIXED_DISTANCE";
 
 		/// <summary>
 		/// <para>Number of Spatial Neighbors</para>
@@ -147,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object NumberOfNeighbors { get; set; }
+		public object? NumberOfNeighbors { get; set; }
 
 		/// <summary>
 		/// <para>Define Global Window</para>
@@ -160,53 +159,18 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DefineGlobalWindow { get; set; } = "ENTIRE_CUBE";
+		public object? DefineGlobalWindow { get; set; } = "ENTIRE_CUBE";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EmergingHotSpotAnalysis SetEnviroment(object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public EmergingHotSpotAnalysis SetEnviroment(object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
 		}
 
 		#region InnerClass
-
-		/// <summary>
-		/// <para>Neighborhood Distance</para>
-		/// </summary>
-		public enum NeighborhoodDistanceEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-		}
 
 		/// <summary>
 		/// <para>Conceptualization of Spatial Relationships</para>

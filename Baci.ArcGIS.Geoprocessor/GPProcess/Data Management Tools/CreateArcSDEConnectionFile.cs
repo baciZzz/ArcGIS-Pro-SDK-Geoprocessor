@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutFolderPath, OutName, Server, Service, Database!, AccountAuthentication!, Username!, Password!, SaveUsernamePassword!, Version!, SaveVersionInfo!, ConnectionFileName };
+		public override object[] Parameters => new object[] { OutFolderPath, OutName, Server, Service, Database!, AccountAuthentication!, Username!, Password!, SaveUsernamePassword!, Version!, SaveVersionInfo!, ConnectionFileName! };
 
 		/// <summary>
 		/// <para>ArcSDE Connection File Location</para>

@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, TargetOisFeatures, HighRunwayEndType, LowRunwayEndType!, GenerateDepartureSurfaces!, GenerateClearwaySurfaces!, ThresholdPointFeatureClass!, CustomJsonFile!, DerivedOutfeatureclass };
+		public override object[] Parameters => new object[] { InFeatures, TargetOisFeatures, HighRunwayEndType, LowRunwayEndType!, GenerateDepartureSurfaces!, GenerateClearwaySurfaces!, ThresholdPointFeatureClass!, CustomJsonFile!, DerivedOutfeatureclass! };
 
 		/// <summary>
 		/// <para>Input Runway Features</para>

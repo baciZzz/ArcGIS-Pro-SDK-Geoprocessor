@@ -46,7 +46,6 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <para>The number of seconds, minutes, hours, days, weeks, or years that will represent a single time step. Examples of valid entries for this parameter are 1 Weeks, 13 Days, or 1 Months.</para>
 		/// <para>If Temporal Aggregation is checked off, you are not aggregating temporally, and this parameter should be set to the existing temporal structure of your data.</para>
 		/// <para>If Temporal Aggregation is checked on, you are aggregating temporally, and this parameter should be set to the Time Step Interval you want to create. All features within the same Time Step Interval will be aggregated.</para>
-		/// <para><see cref="TimeStepIntervalEnum"/></para>
 		/// </param>
 		public CreateSpaceTimeCubeDefinedLocations(object InFeatures, object OutputCube, object LocationId, object TemporalAggregation, object TimeField, object TimeStepInterval)
 		{
@@ -91,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputCube, LocationId, TemporalAggregation, TimeField, TimeStepInterval, TimeStepAlignment, ReferenceTime, Variables, SummaryFields, InRelatedTable, RelatedLocationId };
+		public override object[] Parameters => new object[] { InFeatures, OutputCube, LocationId, TemporalAggregation, TimeField, TimeStepInterval, TimeStepAlignment!, ReferenceTime!, Variables!, SummaryFields!, InRelatedTable!, RelatedLocationId! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -146,11 +145,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <para>The number of seconds, minutes, hours, days, weeks, or years that will represent a single time step. Examples of valid entries for this parameter are 1 Weeks, 13 Days, or 1 Months.</para>
 		/// <para>If Temporal Aggregation is checked off, you are not aggregating temporally, and this parameter should be set to the existing temporal structure of your data.</para>
 		/// <para>If Temporal Aggregation is checked on, you are aggregating temporally, and this parameter should be set to the Time Step Interval you want to create. All features within the same Time Step Interval will be aggregated.</para>
-		/// <para><see cref="TimeStepIntervalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
+		[GPUnitDomain()]
 		public object TimeStepInterval { get; set; }
 
 		/// <summary>
@@ -164,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TimeStepAlignment { get; set; } = "END_TIME";
+		public object? TimeStepAlignment { get; set; } = "END_TIME";
 
 		/// <summary>
 		/// <para>Reference Time</para>
@@ -172,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object ReferenceTime { get; set; }
+		public object? ReferenceTime { get; set; }
 
 		/// <summary>
 		/// <para>Variables</para>
@@ -188,7 +186,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object Variables { get; set; }
+		public object? Variables { get; set; }
 
 		/// <summary>
 		/// <para>Summary Fields</para>
@@ -210,7 +208,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object SummaryFields { get; set; }
+		public object? SummaryFields { get; set; }
 
 		/// <summary>
 		/// <para>Related Table</para>
@@ -218,7 +216,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
-		public object InRelatedTable { get; set; }
+		public object? InRelatedTable { get; set; }
 
 		/// <summary>
 		/// <para>Related Location ID</para>
@@ -227,12 +225,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object RelatedLocationId { get; set; }
+		public object? RelatedLocationId { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateSpaceTimeCubeDefinedLocations SetEnviroment(object geographicTransformations = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public CreateSpaceTimeCubeDefinedLocations SetEnviroment(object? geographicTransformations = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -258,62 +256,6 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 			[GPValue("false")]
 			[Description("NO_TEMPORAL_AGGREGATION")]
 			NO_TEMPORAL_AGGREGATION,
-
-		}
-
-		/// <summary>
-		/// <para>Time Step Interval</para>
-		/// </summary>
-		public enum TimeStepIntervalEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Seconds")]
-			[Description("Seconds")]
-			Seconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Days")]
-			[Description("Days")]
-			Days,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Weeks")]
-			[Description("Weeks")]
-			Weeks,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Months")]
-			[Description("Months")]
-			Months,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Years")]
-			[Description("Years")]
-			Years,
 
 		}
 

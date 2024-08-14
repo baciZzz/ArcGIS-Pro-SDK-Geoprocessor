@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutTable, InKeyFieldOption, InKeyField, InField, WhereClause };
+		public override object[] Parameters => new object[] { InTable, OutTable, InKeyFieldOption, InKeyField!, InField!, WhereClause! };
 
 		/// <summary>
 		/// <para>Input Tables</para>
@@ -111,12 +111,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Key Fields</para>
 		/// <para>A field or combination of fields that will be used to uniquely identify a row in the query. This parameter is used only when the Key Field Options parameter is set to Use Key Fields.</para>
-		/// <para>The Add Field button, which is used only in ModelBuilder, allows you to add expected fields so you can complete the dialog box and continue to build your model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
-		public object InKeyField { get; set; }
+		public object? InKeyField { get; set; }
 
 		/// <summary>
 		/// <para>Fields</para>
@@ -125,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object InField { get; set; }
+		public object? InField { get; set; }
 
 		/// <summary>
 		/// <para>Expression</para>
@@ -133,12 +132,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeQueryTable SetEnviroment(object workspace = null )
+		public MakeQueryTable SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

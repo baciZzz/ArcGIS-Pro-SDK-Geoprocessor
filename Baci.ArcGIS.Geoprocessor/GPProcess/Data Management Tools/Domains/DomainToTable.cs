@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, DomainName, OutTable, CodeField, DescriptionField, ConfigurationKeyword };
+		public override object[] Parameters => new object[] { InWorkspace, DomainName, OutTable, CodeField, DescriptionField, ConfigurationKeyword! };
 
 		/// <summary>
 		/// <para>Input Workspace</para>
@@ -129,12 +129,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ConfigurationKeyword { get; set; }
+		public object? ConfigurationKeyword { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DomainToTable SetEnviroment(int? autoCommit = null , object configKeyword = null , object scratchWorkspace = null , object workspace = null )
+		public DomainToTable SetEnviroment(int? autoCommit = null , object? configKeyword = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, configKeyword: configKeyword, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

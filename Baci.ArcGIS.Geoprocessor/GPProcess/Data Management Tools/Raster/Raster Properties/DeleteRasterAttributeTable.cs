@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster };
+		public override object[] Parameters => new object[] { InRaster, OutRaster! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRasterLayer()]
-		public object OutRaster { get; set; }
+		public object? OutRaster { get; set; }
 
 	}
 }

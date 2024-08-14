@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputNetworkAnalysisLayer, OutputLocation, EdgeFeatureClassName, JunctionFeatureClassName, TurnTableName, EdgeFeatures, JunctionFeatures, TurnTable, ModifiedInputNetworkAnalysisLayer };
+		public override object[] Parameters => new object[] { InputNetworkAnalysisLayer, OutputLocation, EdgeFeatureClassName, JunctionFeatureClassName, TurnTableName, EdgeFeatures!, JunctionFeatures!, TurnTable!, ModifiedInputNetworkAnalysisLayer! };
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer</para>
@@ -127,33 +127,33 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object EdgeFeatures { get; set; }
+		public object? EdgeFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Junction Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object JunctionFeatures { get; set; }
+		public object? JunctionFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Turn Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETable()]
-		public object TurnTable { get; set; }
+		public object? TurnTable { get; set; }
 
 		/// <summary>
 		/// <para>Modified Input Network Analysis Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPNALayer()]
-		public object ModifiedInputNetworkAnalysisLayer { get; set; }
+		public object? ModifiedInputNetworkAnalysisLayer { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CopyTraversedSourceFeatures SetEnviroment(object outputCoordinateSystem = null , object workspace = null )
+		public CopyTraversedSourceFeatures SetEnviroment(object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

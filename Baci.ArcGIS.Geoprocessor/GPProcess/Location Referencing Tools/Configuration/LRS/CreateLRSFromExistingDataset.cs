@@ -20,11 +20,11 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="LrsName">
 		/// <para>LRS Name</para>
-		/// <para>The name of the LRS to create. The name for the LRS cannot already exist in the geodatabase.</para>
+		/// <para>The name of the LRS to create. The name cannot already exist in the geodatabase.</para>
 		/// </param>
 		/// <param name="CenterlineFeatureClass">
 		/// <para>Centerline - Feature Class</para>
-		/// <para>The feature class to be used as the centerline in the LRS.</para>
+		/// <para>The feature class to use as the centerline in the LRS.</para>
 		/// </param>
 		/// <param name="CenterlineCenterlineIdField">
 		/// <para>Centerline - Centerline ID Field</para>
@@ -32,7 +32,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </param>
 		/// <param name="CenterlineSequenceTable">
 		/// <para>Centerline Sequence - Table</para>
-		/// <para>The table to be used as the centerline sequence in the LRS.</para>
+		/// <para>The table to use as the centerline sequence in the LRS.</para>
 		/// </param>
 		/// <param name="CenterlineSequenceCenterlineIdField">
 		/// <para>Centerline Sequence - Centerline ID Field</para>
@@ -56,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </param>
 		/// <param name="CalibrationPointFeatureClass">
 		/// <para>Calibration Point - Feature Class</para>
-		/// <para>The feature class to be used as the calibration point in the LRS.</para>
+		/// <para>The feature class to use as the calibration point in the LRS.</para>
 		/// </param>
 		/// <param name="CalibrationPointMeasureField">
 		/// <para>Calibration Point - Measure Field</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </param>
 		/// <param name="CalibrationPointRouteIdField">
 		/// <para>Calibration Point - Route ID Field</para>
-		/// <para>The field containing the calibration point route ID. GUID and text field types are supported. The field type must match the routeID field type and length in the centerline sequence table and Redline feature class.</para>
+		/// <para>The field containing the calibration point route ID. GUID and text field types are supported. The field type must match the routeID field type and length in the centerline sequence table and the redline feature class.</para>
 		/// </param>
 		/// <param name="CalibrationPointNetworkIdField">
 		/// <para>Calibration Point - Network ID Field</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </param>
 		/// <param name="RedlineFeatureClass">
 		/// <para>Redline - Feature Class</para>
-		/// <para>The feature class to be used as the redline in the LRS.</para>
+		/// <para>The feature class to use as the redline in the LRS.</para>
 		/// </param>
 		/// <param name="RedlineFromMeasureField">
 		/// <para>Redline - From Measure Field</para>
@@ -170,11 +170,11 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { LrsName, CenterlineFeatureClass, CenterlineCenterlineIdField, CenterlineSequenceTable, CenterlineSequenceCenterlineIdField, CenterlineSequenceRouteIdField, CenterlineSequenceFromDateField, CenterlineSequenceToDateField, CenterlineSequenceNetworkIdField, CalibrationPointFeatureClass, CalibrationPointMeasureField, CalibrationPointFromDateField, CalibrationPointToDateField, CalibrationPointRouteIdField, CalibrationPointNetworkIdField, RedlineFeatureClass, RedlineFromMeasureField, RedlineToMeasureField, RedlineRouteIdField, RedlineRouteNameField, RedlineEffectiveDateField, RedlineActivityTypeField, RedlineNetworkIdField, OutPath };
+		public override object[] Parameters => new object[] { LrsName, CenterlineFeatureClass, CenterlineCenterlineIdField, CenterlineSequenceTable, CenterlineSequenceCenterlineIdField, CenterlineSequenceRouteIdField, CenterlineSequenceFromDateField, CenterlineSequenceToDateField, CenterlineSequenceNetworkIdField, CalibrationPointFeatureClass, CalibrationPointMeasureField, CalibrationPointFromDateField, CalibrationPointToDateField, CalibrationPointRouteIdField, CalibrationPointNetworkIdField, RedlineFeatureClass, RedlineFromMeasureField, RedlineToMeasureField, RedlineRouteIdField, RedlineRouteNameField, RedlineEffectiveDateField, RedlineActivityTypeField, RedlineNetworkIdField, OutPath! };
 
 		/// <summary>
 		/// <para>LRS Name</para>
-		/// <para>The name of the LRS to create. The name for the LRS cannot already exist in the geodatabase.</para>
+		/// <para>The name of the LRS to create. The name cannot already exist in the geodatabase.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -182,7 +182,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Centerline - Feature Class</para>
-		/// <para>The feature class to be used as the centerline in the LRS.</para>
+		/// <para>The feature class to use as the centerline in the LRS.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -202,7 +202,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Centerline Sequence - Table</para>
-		/// <para>The table to be used as the centerline sequence in the LRS.</para>
+		/// <para>The table to use as the centerline sequence in the LRS.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -261,7 +261,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Calibration Point - Feature Class</para>
-		/// <para>The feature class to be used as the calibration point in the LRS.</para>
+		/// <para>The feature class to use as the calibration point in the LRS.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -301,7 +301,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Calibration Point - Route ID Field</para>
-		/// <para>The field containing the calibration point route ID. GUID and text field types are supported. The field type must match the routeID field type and length in the centerline sequence table and Redline feature class.</para>
+		/// <para>The field containing the calibration point route ID. GUID and text field types are supported. The field type must match the routeID field type and length in the centerline sequence table and the redline feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -321,7 +321,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Redline - Feature Class</para>
-		/// <para>The feature class to be used as the redline in the LRS.</para>
+		/// <para>The feature class to use as the redline in the LRS.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -404,12 +404,12 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutPath { get; set; }
+		public object? OutPath { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateLRSFromExistingDataset SetEnviroment(object workspace = null )
+		public CreateLRSFromExistingDataset SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

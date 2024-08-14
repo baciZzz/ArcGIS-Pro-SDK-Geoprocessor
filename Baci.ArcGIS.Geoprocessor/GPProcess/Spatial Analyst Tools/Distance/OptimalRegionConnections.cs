@@ -33,7 +33,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <para>PATHCOST—The total accumulative distance or cost for the path</para>
 		/// <para>REGION1—The first region the path connects</para>
 		/// <para>REGION2—The other region the path connects</para>
-		/// <para>This information provides insight into the paths within the network.</para>
+		/// <para>This information provides insight into the paths in the network.</para>
 		/// <para>Since each path is represented by a unique line, there will be multiple lines in locations where paths travel the same route.</para>
 		/// </param>
 		public OptimalRegionConnections(object InRegions, object OutFeatureClass)
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRegions, OutFeatureClass, InBarrierData, InCostRaster, OutNeighborPaths, DistanceMethod, ConnectionsWithinRegions };
+		public override object[] Parameters => new object[] { InRegions, OutFeatureClass, InBarrierData!, InCostRaster!, OutNeighborPaths!, DistanceMethod!, ConnectionsWithinRegions! };
 
 		/// <summary>
 		/// <para>Input raster or feature region data</para>
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <para>PATHCOST—The total accumulative distance or cost for the path</para>
 		/// <para>REGION1—The first region the path connects</para>
 		/// <para>REGION2—The other region the path connects</para>
-		/// <para>This information provides insight into the paths within the network.</para>
+		/// <para>This information provides insight into the paths in the network.</para>
 		/// <para>Since each path is represented by a unique line, there will be multiple lines in locations where paths travel the same route.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -107,12 +107,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Input barrier raster or feature data</para>
 		/// <para>The dataset that defines the barriers.</para>
-		/// <para>The barriers can be defined by an integer or a floating-point raster, or by a feature layer.</para>
+		/// <para>The barriers can be defined by an integer or a floating-point raster, or by a point, line, or polygon feature.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
 		[GPSAGeoDataDomain()]
-		public object InBarrierData { get; set; }
+		public object? InBarrierData { get; set; }
 
 		/// <summary>
 		/// <para>Input cost raster</para>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
 		[GPSAGeoDataDomain()]
-		public object InCostRaster { get; set; }
+		public object? InCostRaster { get; set; }
 
 		/// <summary>
 		/// <para>Output feature class of neighboring connections</para>
@@ -133,24 +133,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <para>PATHCOST—The total accumulative distance or cost for the path</para>
 		/// <para>REGION1—The first region the path connects</para>
 		/// <para>REGION2—The other region the path connects</para>
-		/// <para>This information provides insight into the paths within the network and is useful when deciding which paths should be removed if necessary.</para>
+		/// <para>This information provides insight into the paths in the network and is useful when deciding which paths should be removed if necessary.</para>
 		/// <para>Since each path is represented by a unique line, there will be multiple lines in locations where paths travel the same route.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object OutNeighborPaths { get; set; }
+		public object? OutNeighborPaths { get; set; }
 
 		/// <summary>
 		/// <para>Distance Method</para>
-		/// <para>Specifies whether to calculate the distance using a planar (flat earth) or a geodesic (ellipsoid) method.</para>
+		/// <para>Specifies whether the distance will be calculated using a planar (flat earth) or a geodesic (ellipsoid) method.</para>
 		/// <para>Planar—The distance calculation will be performed on a projected flat plane using a 2D Cartesian coordinate system. This is the default.</para>
-		/// <para>Geodesic—The distance calculation will be performed on the ellipsoid. Therefore, regardless of input or output projection, the results do not change.</para>
+		/// <para>Geodesic—The distance calculation will be performed on the ellipsoid. Regardless of input or output projection, the results will not change.</para>
 		/// <para><see cref="DistanceMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DistanceMethod { get; set; } = "PLANAR";
+		public object? DistanceMethod { get; set; } = "PLANAR";
 
 		/// <summary>
 		/// <para>Connections within regions</para>
@@ -162,14 +162,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ConnectionsWithinRegions { get; set; } = "GENERATE_CONNECTIONS";
+		public object? ConnectionsWithinRegions { get; set; } = "GENERATE_CONNECTIONS";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public OptimalRegionConnections SetEnviroment(object MDomain = null , object MResolution = null , object MTolerance = null , object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , int? autoCommit = null , object cellSize = null , object configKeyword = null , object extent = null , object geographicTransformations = null , bool? maintainSpatialIndex = null , object mask = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , object scratchWorkspace = null , object snapRaster = null , object workspace = null )
+		public OptimalRegionConnections SetEnviroment(object? MDomain = null , double? MResolution = null , double? MTolerance = null , object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , bool? maintainSpatialIndex = null , object? mask = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , object? scratchWorkspace = null , object? snapRaster = null , object? workspace = null )
 		{
-			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, cellSize: cellSize, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, maintainSpatialIndex: maintainSpatialIndex, mask: mask, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, workspace: workspace);
+			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, maintainSpatialIndex: maintainSpatialIndex, mask: mask, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, workspace: workspace);
 			return this;
 		}
 
@@ -188,7 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 			Planar,
 
 			/// <summary>
-			/// <para>Geodesic—The distance calculation will be performed on the ellipsoid. Therefore, regardless of input or output projection, the results do not change.</para>
+			/// <para>Geodesic—The distance calculation will be performed on the ellipsoid. Regardless of input or output projection, the results will not change.</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
 			[Description("Geodesic")]

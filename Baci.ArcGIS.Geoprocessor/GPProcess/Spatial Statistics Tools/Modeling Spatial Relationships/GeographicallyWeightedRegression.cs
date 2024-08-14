@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DependentField, ExplanatoryField, OutFeatureclass, KernelType, BandwidthMethod, Distance, NumberOfNeighbors, WeightField, CoefficientRasterWorkspace, CellSize, InPredictionLocations, PredictionExplanatoryField, OutPredictionFeatureclass, OutTable, OutRegressionRasters };
+		public override object[] Parameters => new object[] { InFeatures, DependentField, ExplanatoryField, OutFeatureclass, KernelType, BandwidthMethod, Distance!, NumberOfNeighbors!, WeightField!, CoefficientRasterWorkspace!, CellSize!, InPredictionLocations!, PredictionExplanatoryField!, OutPredictionFeatureclass!, OutTable!, OutRegressionRasters! };
 
 		/// <summary>
 		/// <para>Input features</para>
@@ -162,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object Distance { get; set; }
+		public object? Distance { get; set; }
 
 		/// <summary>
 		/// <para>Number of neighbors</para>
@@ -171,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object NumberOfNeighbors { get; set; } = "30";
+		public object? NumberOfNeighbors { get; set; } = "30";
 
 		/// <summary>
 		/// <para>Weights</para>
@@ -180,7 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object WeightField { get; set; }
+		public object? WeightField { get; set; }
 
 		/// <summary>
 		/// <para>Coefficient raster workspace</para>
@@ -189,7 +189,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEWorkspace()]
 		[Category("Additional Parameters (Optional)")]
-		public object CoefficientRasterWorkspace { get; set; }
+		public object? CoefficientRasterWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Output cell size</para>
@@ -199,7 +199,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
 		[Category("Additional Parameters (Optional)")]
-		public object CellSize { get; set; }
+		public object? CellSize { get; set; }
 
 		/// <summary>
 		/// <para>Prediction locations</para>
@@ -209,7 +209,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
 		[Category("Additional Parameters (Optional)")]
-		public object InPredictionLocations { get; set; }
+		public object? InPredictionLocations { get; set; }
 
 		/// <summary>
 		/// <para>Prediction explanatory variable(s)</para>
@@ -219,7 +219,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPMultiValue()]
 		[GPFieldDomain()]
 		[Category("Additional Parameters (Optional)")]
-		public object PredictionExplanatoryField { get; set; }
+		public object? PredictionExplanatoryField { get; set; }
 
 		/// <summary>
 		/// <para>Output prediction feature class</para>
@@ -228,26 +228,26 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[Category("Additional Parameters (Optional)")]
-		public object OutPredictionFeatureclass { get; set; }
+		public object? OutPredictionFeatureclass { get; set; }
 
 		/// <summary>
 		/// <para>Output table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETable()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		/// <summary>
 		/// <para>Output regression rasters</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRasterLayer()]
-		public object OutRegressionRasters { get; set; }
+		public object? OutRegressionRasters { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GeographicallyWeightedRegression SetEnviroment(object cellSize = null , object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object snapRaster = null , object workspace = null )
+		public GeographicallyWeightedRegression SetEnviroment(object? cellSize = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? snapRaster = null , object? workspace = null )
 		{
 			base.SetEnv(cellSize: cellSize, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, workspace: workspace);
 			return this;

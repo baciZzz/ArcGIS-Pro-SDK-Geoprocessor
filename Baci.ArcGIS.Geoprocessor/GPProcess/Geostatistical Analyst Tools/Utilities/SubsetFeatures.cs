@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutTrainingFeatureClass, OutTestFeatureClass, SizeOfTrainingDataset, SubsetSizeUnits };
+		public override object[] Parameters => new object[] { InFeatures, OutTrainingFeatureClass, OutTestFeatureClass!, SizeOfTrainingDataset!, SubsetSizeUnits! };
 
 		/// <summary>
 		/// <para>Input features</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object OutTestFeatureClass { get; set; }
+		public object? OutTestFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Size of training  feature subset</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object SizeOfTrainingDataset { get; set; } = "50";
+		public object? SizeOfTrainingDataset { get; set; } = "50";
 
 		/// <summary>
 		/// <para>Subset size units</para>
@@ -110,12 +110,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SubsetSizeUnits { get; set; } = "true";
+		public object? SubsetSizeUnits { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SubsetFeatures SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object randomGenerator = null , object scratchWorkspace = null , object workspace = null )
+		public SubsetFeatures SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? randomGenerator = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, randomGenerator: randomGenerator, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

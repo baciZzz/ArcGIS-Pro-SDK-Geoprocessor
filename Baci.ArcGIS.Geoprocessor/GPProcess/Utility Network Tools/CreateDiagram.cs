@@ -64,7 +64,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, Features, OutUtilityNetwork, OutName };
+		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, Features!, OutUtilityNetwork!, OutName! };
 
 		/// <summary>
 		/// <para>Input Network</para>
@@ -85,21 +85,21 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Features { get; set; }
+		public object? Features { get; set; }
 
 		/// <summary>
 		/// <para>Output Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		/// <summary>
 		/// <para>Network Diagram Name</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutName { get; set; }
+		public object? OutName { get; set; }
 
 	}
 }

@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabase, ViewName, ViewDefinition, OutLayer };
+		public override object[] Parameters => new object[] { InputDatabase, ViewName, ViewDefinition, OutLayer! };
 
 		/// <summary>
 		/// <para>Input Workspace</para>
@@ -102,12 +102,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETable()]
-		public object OutLayer { get; set; }
+		public object? OutLayer { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateDatabaseView SetEnviroment(object workspace = null )
+		public CreateDatabaseView SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

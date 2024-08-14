@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { In3DGeostatLayers, OutNetcdfFile, ExportLocations, XSpacing, YSpacing, ElevationSpacing, InPoints3D, OutputVariables, InStudyArea };
+		public override object[] Parameters => new object[] { In3DGeostatLayers, OutNetcdfFile, ExportLocations!, XSpacing!, YSpacing!, ElevationSpacing!, InPoints3D!, OutputVariables!, InStudyArea! };
 
 		/// <summary>
 		/// <para>Input 3D geostatistical layers</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ExportLocations { get; set; } = "3D_GRIDDED_POINTS";
+		public object? ExportLocations { get; set; } = "3D_GRIDDED_POINTS";
 
 		/// <summary>
 		/// <para>X spacing</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[GPNumericDomain()]
-		public object XSpacing { get; set; }
+		public object? XSpacing { get; set; }
 
 		/// <summary>
 		/// <para>Y spacing</para>
@@ -112,17 +112,16 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[GPNumericDomain()]
-		public object YSpacing { get; set; }
+		public object? YSpacing { get; set; }
 
 		/// <summary>
 		/// <para>Elevation spacing</para>
 		/// <para>The spacing between each gridded point in the elevation (z) dimension. The default value creates 40 points along the output z-extent.</para>
-		/// <para><see cref="ElevationSpacingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[GPCodedValueDomain()]
-		public object ElevationSpacing { get; set; }
+		public object? ElevationSpacing { get; set; }
 
 		/// <summary>
 		/// <para>3D point locations</para>
@@ -131,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object InPoints3D { get; set; }
+		public object? InPoints3D { get; set; }
 
 		/// <summary>
 		/// <para>Output variables</para>
@@ -141,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object OutputVariables { get; set; }
+		public object? OutputVariables { get; set; }
 
 		/// <summary>
 		/// <para>Input study area polygons</para>
@@ -150,12 +149,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object InStudyArea { get; set; }
+		public object? InStudyArea { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GALayer3DToNetCDF SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object workspace = null )
+		public GALayer3DToNetCDF SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;
@@ -181,83 +180,6 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 			[GPValue("CUSTOM_3D_POINTS")]
 			[Description("Custom 3D points")]
 			Custom_3D_points,
-
-		}
-
-		/// <summary>
-		/// <para>Elevation spacing</para>
-		/// </summary>
-		public enum ElevationSpacingEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Inches")]
-			[Description("Inches")]
-			Inches,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("NauticalMiles")]
-			[Description("NauticalMiles")]
-			NauticalMiles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Millimeters")]
-			[Description("Millimeters")]
-			Millimeters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Centimeters")]
-			[Description("Centimeters")]
-			Centimeters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Decimeters")]
-			[Description("Decimeters")]
-			Decimeters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
 
 		}
 

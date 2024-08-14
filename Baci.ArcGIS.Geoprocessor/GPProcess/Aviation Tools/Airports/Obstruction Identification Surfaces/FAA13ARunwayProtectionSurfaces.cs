@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Target, SurfaceGeneration, VisibilityMinimums, ApproachCategory, ApproachDesignGroup, SmallAircraft!, ApproachGuidance!, RunwayDirection!, AirportElevation!, AirportControlPointFeatureClass!, RunwayEndFeatures!, LastLowLight!, LastHighLight!, CustomJsonFile!, DerivedOutfeatureclass };
+		public override object[] Parameters => new object[] { InFeatures, Target, SurfaceGeneration, VisibilityMinimums, ApproachCategory, ApproachDesignGroup, SmallAircraft!, ApproachGuidance!, RunwayDirection!, AirportElevation!, AirportControlPointFeatureClass!, RunwayEndFeatures!, LastLowLight!, LastHighLight!, CustomJsonFile!, DerivedOutfeatureclass! };
 
 		/// <summary>
 		/// <para>Input Runway Features</para>

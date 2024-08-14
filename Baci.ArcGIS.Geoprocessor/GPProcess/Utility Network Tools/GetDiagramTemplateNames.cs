@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, OutTemplateNames };
+		public override object[] Parameters => new object[] { InUtilityNetwork, OutTemplateNames! };
 
 		/// <summary>
 		/// <para>Input Network</para>
@@ -74,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutTemplateNames { get; set; }
+		public object? OutTemplateNames { get; set; }
 
 	}
 }

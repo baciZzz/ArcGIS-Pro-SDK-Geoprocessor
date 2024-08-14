@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabasepath, JobTypes, NumberOfJobs, Users, PriorityOfJobs, FeatureLayerAOI, UnionOption, JobID };
+		public override object[] Parameters => new object[] { InputDatabasepath, JobTypes, NumberOfJobs, Users!, PriorityOfJobs!, FeatureLayerAOI!, UnionOption!, JobID! };
 
 		/// <summary>
 		/// <para>Input Database Path (.jtc)</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Users { get; set; }
+		public object? Users { get; set; }
 
 		/// <summary>
 		/// <para>Job Priority</para>
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object PriorityOfJobs { get; set; }
+		public object? PriorityOfJobs { get; set; }
 
 		/// <summary>
 		/// <para>AOI Extent</para>
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object FeatureLayerAOI { get; set; }
+		public object? FeatureLayerAOI { get; set; }
 
 		/// <summary>
 		/// <para>Merge features to create one AOI</para>
@@ -134,14 +134,14 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UnionOption { get; set; }
+		public object? UnionOption { get; set; }
 
 		/// <summary>
 		/// <para>Job ID</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object JobID { get; set; }
+		public object? JobID { get; set; }
 
 		#region InnerClass
 

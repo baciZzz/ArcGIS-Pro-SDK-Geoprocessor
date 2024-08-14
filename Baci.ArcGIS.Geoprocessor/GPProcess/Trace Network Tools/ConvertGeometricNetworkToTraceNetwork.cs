@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <param name="InGeometricNetwork">
 		/// <para>Input Geometric Network</para>
 		/// <para>The geometric network that will be converted to a trace network.</para>
-		/// <para>Converting a geometric network to a trace network will drop the geometric network and create a trace network in its place. This change cannot be undone. Make a backup of your data before proceeding.</para>
+		/// <para>Converting a geometric network to a trace network will drop the geometric network and create a trace network in its place. This change cannot be undone. Create a backup of your data before proceeding.</para>
 		/// </param>
 		/// <param name="OutTraceNetworkName">
 		/// <para>Output Trace Network Name</para>
@@ -66,12 +66,12 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeometricNetwork, OutTraceNetworkName, OutTraceNetwork };
+		public override object[] Parameters => new object[] { InGeometricNetwork, OutTraceNetworkName, OutTraceNetwork! };
 
 		/// <summary>
 		/// <para>Input Geometric Network</para>
 		/// <para>The geometric network that will be converted to a trace network.</para>
-		/// <para>Converting a geometric network to a trace network will drop the geometric network and create a trace network in its place. This change cannot be undone. Make a backup of your data before proceeding.</para>
+		/// <para>Converting a geometric network to a trace network will drop the geometric network and create a trace network in its place. This change cannot be undone. Create a backup of your data before proceeding.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEGeometricNetwork()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETraceNetwork()]
-		public object OutTraceNetwork { get; set; }
+		public object? OutTraceNetwork { get; set; }
 
 	}
 }

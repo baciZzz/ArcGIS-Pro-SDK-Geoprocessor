@@ -29,7 +29,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <param name="BufferDistanceOrField">
 		/// <para>Distance [value or field]</para>
 		/// <para>The distance around the input features that will be buffered. Distances can be provided as either a value representing a linear distance or as a field from the input features that contains the distance to buffer each feature.</para>
-		/// <para>If linear units are not specified or are entered as Unknown, the linear unit of the input features&apos; spatial reference is used.</para>
+		/// <para>If linear units are not specified or are entered as Unknown, the linear unit of the input features&apos; spatial reference will be used.</para>
 		/// </param>
 		public GraphicBuffer(object InFeatures, object OutFeatureClass, object BufferDistanceOrField)
 		{
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, BufferDistanceOrField, LineCaps, LineJoins, MiterLimit, MaxDeviation };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, BufferDistanceOrField, LineCaps!, LineJoins!, MiterLimit!, MaxDeviation! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Distance [value or field]</para>
 		/// <para>The distance around the input features that will be buffered. Distances can be provided as either a value representing a linear distance or as a field from the input features that contains the distance to buffer each feature.</para>
-		/// <para>If linear units are not specified or are entered as Unknown, the linear unit of the input features&apos; spatial reference is used.</para>
+		/// <para>If linear units are not specified or are entered as Unknown, the linear unit of the input features&apos; spatial reference will be used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LineCaps { get; set; } = "SQUARE";
+		public object? LineCaps { get; set; } = "SQUARE";
 
 		/// <summary>
 		/// <para>Join Type</para>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LineJoins { get; set; } = "MITER";
+		public object? LineJoins { get; set; } = "MITER";
 
 		/// <summary>
 		/// <para>Miter Limit</para>
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MiterLimit { get; set; } = "10";
+		public object? MiterLimit { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Maximum Offset Deviation</para>
@@ -141,12 +141,12 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object MaxDeviation { get; set; } = "0 Unknown";
+		public object? MaxDeviation { get; set; } = "0 Unknown";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GraphicBuffer SetEnviroment(object MDomain = null , object MResolution = null , object MTolerance = null , object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public GraphicBuffer SetEnviroment(object? MDomain = null , double? MResolution = null , double? MTolerance = null , object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

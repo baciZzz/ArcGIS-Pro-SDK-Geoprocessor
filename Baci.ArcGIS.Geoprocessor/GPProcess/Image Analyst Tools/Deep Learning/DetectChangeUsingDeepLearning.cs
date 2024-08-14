@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { FromRaster, ToRaster, OutClassifiedRaster, InModelDefinition, Arguments };
+		public override object[] Parameters => new object[] { FromRaster, ToRaster, OutClassifiedRaster, InModelDefinition, Arguments! };
 
 		/// <summary>
 		/// <para>From Raster</para>
@@ -118,14 +118,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object Arguments { get; set; }
+		public object? Arguments { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DetectChangeUsingDeepLearning SetEnviroment(object cellSize = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public DetectChangeUsingDeepLearning SetEnviroment(object? cellSize = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? processorType = null , object? scratchWorkspace = null , object? workspace = null )
 		{
-			base.SetEnv(cellSize: cellSize, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
+			base.SetEnv(cellSize: cellSize, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, processorType: processorType, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
 		}
 

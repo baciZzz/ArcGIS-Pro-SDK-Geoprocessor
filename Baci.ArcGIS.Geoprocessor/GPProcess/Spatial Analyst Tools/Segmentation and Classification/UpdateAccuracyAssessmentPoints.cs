@@ -27,11 +27,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <param name="InPoints">
 		/// <para>Input Accuracy Assessment Points</para>
 		/// <para>The point feature class providing the accuracy assessment points to be updated.</para>
-		/// <para>All points from this input will be copied to the updated output feature class, and the Target Field will be updated from the input raster or feature class data.</para>
+		/// <para>All points from this input will be copied to the updated output feature class, and the Target Field parameter value will be updated from the input raster or feature class data.</para>
 		/// </param>
 		/// <param name="OutPoints">
 		/// <para>Output Accuracy Assessment Points</para>
-		/// <para>The output point feature class which contains the updated random point field for accuracy assessment purposes.</para>
+		/// <para>The output point feature class that contains the updated random point field for accuracy assessment purposes.</para>
 		/// </param>
 		public UpdateAccuracyAssessmentPoints(object InClassData, object InPoints, object OutPoints)
 		{
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InClassData, InPoints, OutPoints, TargetField };
+		public override object[] Parameters => new object[] { InClassData, InPoints, OutPoints, TargetField!, PolygonDimensionField!, PointDimensionField! };
 
 		/// <summary>
 		/// <para>Input Raster or Feature Class Data</para>
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Input Accuracy Assessment Points</para>
 		/// <para>The point feature class providing the accuracy assessment points to be updated.</para>
-		/// <para>All points from this input will be copied to the updated output feature class, and the Target Field will be updated from the input raster or feature class data.</para>
+		/// <para>All points from this input will be copied to the updated output feature class, and the Target Field parameter value will be updated from the input raster or feature class data.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output Accuracy Assessment Points</para>
-		/// <para>The output point feature class which contains the updated random point field for accuracy assessment purposes.</para>
+		/// <para>The output point feature class that contains the updated random point field for accuracy assessment purposes.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -112,7 +112,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TargetField { get; set; } = "CLASSIFIED";
+		public object? TargetField { get; set; } = "CLASSIFIED";
+
+		/// <summary>
+		/// <para>Dimension Field for Feature Class</para>
+		/// <para>The dimension field for the Input Accuracy Assessment Points parameter value. The assessment points will be updated based on the matching dimension values with this field.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[Field()]
+		public object? PolygonDimensionField { get; set; }
+
+		/// <summary>
+		/// <para>Dimension Field for Test Points</para>
+		/// <para>The dimension field in the Input Accuracy Assessment Points parameter value. Input data with identical dimension values will be used to update corresponding points.</para>
+		/// <para>When the Input Raster or Feature Class Data parameter value is a multidimensional raster, rasters with dimension values that match the dimension field in the test points will be used in updating. The multidimensional raster is expected to have one time dimension (StdTime). Otherwise, the first dimension will be used to match the dimension field of the test points.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[Field()]
+		public object? PointDimensionField { get; set; }
 
 		#region InnerClass
 

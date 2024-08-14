@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Pointlayer, Polygonlayer, Outputname, Keepboundarieswithnopoints, Summaryfields, Groupbyfield, Minoritymajority, Percentpoints, Aggregatedlayer, Groupsummary };
+		public override object[] Parameters => new object[] { Pointlayer, Polygonlayer, Outputname, Keepboundarieswithnopoints, Summaryfields!, Groupbyfield!, Minoritymajority!, Percentpoints!, Aggregatedlayer!, Groupsummary! };
 
 		/// <summary>
 		/// <para>Input Points</para>
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object Summaryfields { get; set; }
+		public object? Summaryfields { get; set; }
 
 		/// <summary>
 		/// <para>Group By Field</para>
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object Groupbyfield { get; set; }
+		public object? Groupbyfield { get; set; }
 
 		/// <summary>
 		/// <para>Add minority and majority attributes</para>
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Minoritymajority { get; set; } = "false";
+		public object? Minoritymajority { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Add percentage</para>
@@ -164,26 +164,26 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Percentpoints { get; set; } = "false";
+		public object? Percentpoints { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Aggregatedlayer { get; set; }
+		public object? Aggregatedlayer { get; set; }
 
 		/// <summary>
 		/// <para>Output Group Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object Groupsummary { get; set; }
+		public object? Groupsummary { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AggregatePoints SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public AggregatePoints SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

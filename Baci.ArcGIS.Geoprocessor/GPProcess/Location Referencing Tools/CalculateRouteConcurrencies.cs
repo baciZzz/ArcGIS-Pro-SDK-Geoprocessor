@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRouteFeatures, OutDataset, Tvd!, FindDominance!, IncludeGeometry };
+		public override object[] Parameters => new object[] { InRouteFeatures, OutDataset, Tvd!, FindDominance!, IncludeGeometry! };
 
 		/// <summary>
 		/// <para>Input Route Features</para>

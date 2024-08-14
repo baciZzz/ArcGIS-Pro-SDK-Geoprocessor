@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDataset, OutNetworkAnalysisLayer, ImpedanceAttribute, TravelFromTo, DefaultCutoff, DefaultNumberFacilitiesToFind, AccumulateAttributeName, UturnPolicy, RestrictionAttributeName, Hierarchy, HierarchySettings, OutputPathShape, TimeOfDay, TimeOfDayUsage, OutputLayer };
+		public override object[] Parameters => new object[] { InNetworkDataset, OutNetworkAnalysisLayer, ImpedanceAttribute, TravelFromTo!, DefaultCutoff!, DefaultNumberFacilitiesToFind!, AccumulateAttributeName!, UturnPolicy!, RestrictionAttributeName!, Hierarchy!, HierarchySettings!, OutputPathShape!, TimeOfDay!, TimeOfDayUsage!, OutputLayer! };
 
 		/// <summary>
 		/// <para>Input Analysis Network</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TravelFromTo { get; set; } = "TRAVEL_TO";
+		public object? TravelFromTo { get; set; } = "TRAVEL_TO";
 
 		/// <summary>
 		/// <para>Default Cutoff</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object DefaultCutoff { get; set; }
+		public object? DefaultCutoff { get; set; }
 
 		/// <summary>
 		/// <para>Number of Facilities to Find</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object DefaultNumberFacilitiesToFind { get; set; } = "1";
+		public object? DefaultNumberFacilitiesToFind { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Accumulators</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Accumulators")]
-		public object AccumulateAttributeName { get; set; }
+		public object? AccumulateAttributeName { get; set; }
 
 		/// <summary>
 		/// <para>U-Turn Policy</para>
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Restrictions")]
-		public object UturnPolicy { get; set; } = "ALLOW_UTURNS";
+		public object? UturnPolicy { get; set; } = "ALLOW_UTURNS";
 
 		/// <summary>
 		/// <para>Restrictions</para>
@@ -162,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Restrictions")]
-		public object RestrictionAttributeName { get; set; }
+		public object? RestrictionAttributeName { get; set; }
 
 		/// <summary>
 		/// <para>Use Hierarchy in Analysis</para>
@@ -175,32 +175,32 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Hierarchy")]
-		public object Hierarchy { get; set; }
+		public object? Hierarchy { get; set; }
 
 		/// <summary>
 		/// <para>Hierarchy Rank Settings</para>
-		/// <para>Prior to version 10, this parameter allowed you to change the hierarchy ranges for your analysis from the default hierarchy ranges established in the network dataset. At version 10, this parameter is no longer supported. To change the hierarchy ranges for your analysis, update the default hierarchy ranges in the network dataset.</para>
+		/// <para>Prior to version 10, this parameter allowed you to change the hierarchy ranges for the analysis from the default hierarchy ranges established in the network dataset. At version 10, this parameter is no longer supported. To change the hierarchy ranges for the analysis, update the default hierarchy ranges in the network dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPNAHierarchySettings()]
 		[Category("Hierarchy")]
-		public object HierarchySettings { get; set; }
+		public object? HierarchySettings { get; set; }
 
 		/// <summary>
 		/// <para>Output Path Shape</para>
-		/// <para>Specifies the shape type for the route features that are output by the analysis.</para>
+		/// <para>Specifies the shape type that will be used for the route features that are output by the analysis.</para>
 		/// <para>True lines with measures—The output routes will have the exact shape of the underlying network sources. The output includes route measurements for linear referencing. The measurements increase from the first stop and record the cumulative impedance to reach a given position.</para>
 		/// <para>True lines without measures—The output routes will have the exact shape of the underlying network sources.</para>
 		/// <para>Straight lines—The output route shape will be a single straight line between each paired incident and facility.</para>
 		/// <para>No lines—No shape will be generated for the output routes.</para>
-		/// <para>No matter which output shape type is chosen, the best route is always determined by the network impedance, never Euclidean distance. This means that only the route shapes are different, not the underlying traversal of the network.</para>
+		/// <para>Regardless of the output shape type specified, the best route is always determined by the network impedance, never Euclidean distance. This means that only the route shapes are different, not the underlying traversal of the network.</para>
 		/// <para><see cref="OutputPathShapeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Output Options")]
-		public object OutputPathShape { get; set; } = "TRUE_LINES_WITH_MEASURES";
+		public object? OutputPathShape { get; set; } = "TRUE_LINES_WITH_MEASURES";
 
 		/// <summary>
 		/// <para>Time of Day</para>
@@ -218,7 +218,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object TimeOfDay { get; set; }
+		public object? TimeOfDay { get; set; }
 
 		/// <summary>
 		/// <para>Time of Day Usage</para>
@@ -231,19 +231,19 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TimeOfDayUsage { get; set; } = "NOT_USED";
+		public object? TimeOfDayUsage { get; set; } = "NOT_USED";
 
 		/// <summary>
 		/// <para>Network Analyst Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPNALayer()]
-		public object OutputLayer { get; set; }
+		public object? OutputLayer { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeClosestFacilityLayer SetEnviroment(object workspace = null )
+		public MakeClosestFacilityLayer SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

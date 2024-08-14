@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, MinWidth, MinLength, TaperLength, ConnectingFeatures };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, MinWidth, MinLength, TaperLength!, ConnectingFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object TaperLength { get; set; }
+		public object? TaperLength { get; set; }
 
 		/// <summary>
 		/// <para>Connecting Features</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
-		public object ConnectingFeatures { get; set; }
+		public object? ConnectingFeatures { get; set; }
 
 	}
 }

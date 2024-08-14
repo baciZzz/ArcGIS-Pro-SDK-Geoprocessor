@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InBaseTin, InTestTin, CompareType, ContinueCompare, OutCompareFile, CompareStatus };
+		public override object[] Parameters => new object[] { InBaseTin, InTestTin, CompareType!, ContinueCompare!, OutCompareFile!, CompareStatus! };
 
 		/// <summary>
 		/// <para>Input Base Tin</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object CompareType { get; set; } = "ALL";
+		public object? CompareType { get; set; } = "ALL";
 
 		/// <summary>
 		/// <para>Continue Comparison</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ContinueCompare { get; set; } = "false";
+		public object? ContinueCompare { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Compare File</para>
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
-		public object OutCompareFile { get; set; }
+		public object? OutCompareFile { get; set; }
 
 		/// <summary>
 		/// <para>Compare Status</para>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CompareStatus { get; set; } = "true";
+		public object? CompareStatus { get; set; } = "true";
 
 		#region InnerClass
 

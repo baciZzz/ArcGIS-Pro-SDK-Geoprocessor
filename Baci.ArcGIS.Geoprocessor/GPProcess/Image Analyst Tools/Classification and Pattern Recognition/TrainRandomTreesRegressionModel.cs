@@ -20,11 +20,11 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRasters">
 		/// <para>Input Rasters</para>
-		/// <para>The single-band, multidimensional, or multiband raster datasets, or mosaic datasets, containing explanatory variables.</para>
+		/// <para>The single-band, multidimensional, or multiband raster datasets, or mosaic datasets containing explanatory variables.</para>
 		/// </param>
 		/// <param name="InTargetData">
 		/// <para>Target Raster or Points</para>
-		/// <para>The point feature class containing the data that will be modeled using the explanatory variables.</para>
+		/// <para>The raster or point feature class containing the target variable (dependant variable) data.</para>
 		/// </param>
 		/// <param name="OutRegressionDefinition">
 		/// <para>Output Regression Definition File</para>
@@ -70,11 +70,11 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasters, InTargetData, OutRegressionDefinition, TargetValueField, TargetDimensionField, RasterDimension, OutImportanceTable, MaxNumTrees, MaxTreeDepth, MaxSamples, AveragePointsPerCell };
+		public override object[] Parameters => new object[] { InRasters, InTargetData, OutRegressionDefinition, TargetValueField!, TargetDimensionField!, RasterDimension!, OutImportanceTable!, MaxNumTrees!, MaxTreeDepth!, MaxSamples!, AveragePointsPerCell!, PercentTesting!, OutScatterplots!, OutSampleFeatures! };
 
 		/// <summary>
 		/// <para>Input Rasters</para>
-		/// <para>The single-band, multidimensional, or multiband raster datasets, or mosaic datasets, containing explanatory variables.</para>
+		/// <para>The single-band, multidimensional, or multiband raster datasets, or mosaic datasets containing explanatory variables.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Target Raster or Points</para>
-		/// <para>The point feature class containing the data that will be modeled using the explanatory variables.</para>
+		/// <para>The raster or point feature class containing the target variable (dependant variable) data.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object TargetValueField { get; set; }
+		public object? TargetValueField { get; set; }
 
 		/// <summary>
 		/// <para>Target Dimension Field</para>
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
-		public object TargetDimensionField { get; set; }
+		public object? TargetDimensionField { get; set; }
 
 		/// <summary>
 		/// <para>Raster Dimension</para>
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object RasterDimension { get; set; }
+		public object? RasterDimension { get; set; }
 
 		/// <summary>
 		/// <para>Output Importance Table</para>
@@ -128,7 +128,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object OutImportanceTable { get; set; }
+		[Category("Additional Outputs")]
+		public object? OutImportanceTable { get; set; }
 
 		/// <summary>
 		/// <para>Max Number of Trees</para>
@@ -136,7 +137,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MaxNumTrees { get; set; } = "50";
+		[Category("Training Options")]
+		public object? MaxNumTrees { get; set; } = "50";
 
 		/// <summary>
 		/// <para>Max Tree Depth</para>
@@ -144,7 +146,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MaxTreeDepth { get; set; } = "30";
+		[Category("Training Options")]
+		public object? MaxTreeDepth { get; set; } = "30";
 
 		/// <summary>
 		/// <para>Max Number of Samples</para>
@@ -152,26 +155,55 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MaxSamples { get; set; } = "100000";
+		[Category("Training Options")]
+		public object? MaxSamples { get; set; } = "100000";
 
 		/// <summary>
 		/// <para>Average Points Per Cell</para>
 		/// <para>Specifies whether the average will be calculated when multiple training points fall into one cell. This parameter is applicable only when the input target is a point feature class.</para>
 		/// <para>Unchecked—All points will be used when multiple training points fall into a single cell. This is the default.</para>
-		/// <para>Checked—The average value of the training points within a cell will be calculated.</para>
+		/// <para>Checked—The average value of the training points in a cell will be calculated.</para>
 		/// <para>Keep all points—All points will be used when multiple training points fall into a single cell. This is the default.</para>
-		/// <para>Average points per cell—The average value of the training points within a cell will be calculated.</para>
+		/// <para>Average points per cell—The average value of the training points in a cell will be calculated.</para>
 		/// <para><see cref="AveragePointsPerCellEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AveragePointsPerCell { get; set; } = "false";
+		public object? AveragePointsPerCell { get; set; } = "false";
+
+		/// <summary>
+		/// <para>Percent of Samples for Testing</para>
+		/// <para>The percentage of test points that will be used for error checking. The tool checks for three types of errors: errors on training points, errors on test points, and errors on test location points. The default is 10.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPDouble()]
+		[Category("Training Options")]
+		public object? PercentTesting { get; set; } = "10";
+
+		/// <summary>
+		/// <para>Output Scatter Plots (pdf or html)</para>
+		/// <para>The output scatter plots in PDF or HTML format. The output will include scatter plots of training data, test data, and location test data.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[DEFile()]
+		[GPCompositeDomain()]
+		[Category("Additional Outputs")]
+		public object? OutScatterplots { get; set; }
+
+		/// <summary>
+		/// <para>Output Sample Features</para>
+		/// <para>The output feature class that will contain target values and predicted values for training points, test points, and location test points.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[DEFeatureClass()]
+		[Category("Additional Outputs")]
+		public object? OutSampleFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TrainRandomTreesRegressionModel SetEnviroment(object cellSize = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public TrainRandomTreesRegressionModel SetEnviroment(object? cellSize = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(cellSize: cellSize, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -185,7 +217,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum AveragePointsPerCellEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The average value of the training points within a cell will be calculated.</para>
+			/// <para>Checked—The average value of the training points in a cell will be calculated.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("AVERAGE_POINTS_PER_CELL")]

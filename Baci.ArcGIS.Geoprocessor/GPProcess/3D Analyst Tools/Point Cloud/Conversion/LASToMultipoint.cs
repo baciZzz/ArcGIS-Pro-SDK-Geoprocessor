@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Input, OutFeatureClass, AveragePointSpacing, ClassCode, Return, Attribute, InputCoordinateSystem, FileSuffix, ZFactor, FolderRecursion };
+		public override object[] Parameters => new object[] { Input, OutFeatureClass, AveragePointSpacing, ClassCode!, Return!, Attribute!, InputCoordinateSystem!, FileSuffix!, ZFactor!, FolderRecursion! };
 
 		/// <summary>
 		/// <para>Input</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object ClassCode { get; set; }
+		public object? ClassCode { get; set; }
 
 		/// <summary>
 		/// <para>Return Values</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object Return { get; set; } = "ANY_RETURNS";
+		public object? Return { get; set; } = "ANY_RETURNS";
 
 		/// <summary>
 		/// <para>Input Attribute Names</para>
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object Attribute { get; set; }
+		public object? Attribute { get; set; }
 
 		/// <summary>
 		/// <para>Coordinate System</para>
@@ -155,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
-		public object InputCoordinateSystem { get; set; }
+		public object? InputCoordinateSystem { get; set; }
 
 		/// <summary>
 		/// <para>File Suffix</para>
@@ -163,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object FileSuffix { get; set; } = "las";
+		public object? FileSuffix { get; set; } = "las";
 
 		/// <summary>
 		/// <para>Z Factor</para>
@@ -171,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ZFactor { get; set; } = "1";
+		public object? ZFactor { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Include Subfolders</para>
@@ -183,12 +183,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object FolderRecursion { get; set; } = "false";
+		public object? FolderRecursion { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LASToMultipoint SetEnviroment(object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , int? autoCommit = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object workspace = null )
+		public LASToMultipoint SetEnviroment(object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , int? autoCommit = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

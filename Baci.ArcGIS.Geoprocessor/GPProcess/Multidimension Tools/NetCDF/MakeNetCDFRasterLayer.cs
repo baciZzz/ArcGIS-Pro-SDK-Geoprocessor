@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetcdfFile, Variable, XDimension, YDimension, OutRasterLayer, BandDimension, DimensionValues, ValueSelectionMethod, CellRegistration };
+		public override object[] Parameters => new object[] { InNetcdfFile, Variable, XDimension, YDimension, OutRasterLayer, BandDimension!, DimensionValues!, ValueSelectionMethod!, CellRegistration! };
 
 		/// <summary>
 		/// <para>Input netCDF File</para>
@@ -131,29 +131,29 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object BandDimension { get; set; }
+		public object? BandDimension { get; set; }
 
 		/// <summary>
 		/// <para>Dimension Values</para>
-		/// <para>The value (such as 01/30/05) of the dimension (such as Time) or dimensions to use when displaying the variable in the output layer. By default, the first value of the dimension or dimensions will be used.</para>
+		/// <para>The value (such as 01/30/05) of the dimension (such as time) or dimensions to use when displaying the variable in the output layer. By default, the first value of the dimension or dimensions will be used.</para>
 		/// <para>Dimension—A netCDF dimension.</para>
 		/// <para>Value—The dimension value to use.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object DimensionValues { get; set; }
+		public object? DimensionValues { get; set; }
 
 		/// <summary>
 		/// <para>Value Selection Method</para>
 		/// <para>Specifies the dimension value selection method that will be used.</para>
-		/// <para>By value—The input value is matched with the actual dimension value.</para>
-		/// <para>By index—The input value is matched with the position or index of a dimension value. The index is 0 based; that is, the position starts at 0.</para>
+		/// <para>By value—The input value will be matched with the actual dimension value.</para>
+		/// <para>By index—The input value will be matched with the position or index of a dimension value. The index is 0 based; that is, the position starts at 0.</para>
 		/// <para><see cref="ValueSelectionMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ValueSelectionMethod { get; set; } = "BY_VALUE";
+		public object? ValueSelectionMethod { get; set; } = "BY_VALUE";
 
 		/// <summary>
 		/// <para>Cell Registration</para>
@@ -166,12 +166,12 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object CellRegistration { get; set; } = "CENTER";
+		public object? CellRegistration { get; set; } = "CENTER";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeNetCDFRasterLayer SetEnviroment(object workspace = null )
+		public MakeNetCDFRasterLayer SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -185,14 +185,14 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		public enum ValueSelectionMethodEnum 
 		{
 			/// <summary>
-			/// <para>By index—The input value is matched with the position or index of a dimension value. The index is 0 based; that is, the position starts at 0.</para>
+			/// <para>By index—The input value will be matched with the position or index of a dimension value. The index is 0 based; that is, the position starts at 0.</para>
 			/// </summary>
 			[GPValue("BY_INDEX")]
 			[Description("By index")]
 			By_index,
 
 			/// <summary>
-			/// <para>By value—The input value is matched with the actual dimension value.</para>
+			/// <para>By value—The input value will be matched with the actual dimension value.</para>
 			/// </summary>
 			[GPValue("BY_VALUE")]
 			[Description("By value")]

@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { JobId, StatusLayer, StatusField, DatabasePath, UpdatedJobId, UpdatedStatusLayer };
+		public override object[] Parameters => new object[] { JobId, StatusLayer!, StatusField!, DatabasePath!, UpdatedJobId!, UpdatedStatusLayer! };
 
 		/// <summary>
 		/// <para>Job ID</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object StatusLayer { get; set; }
+		public object? StatusLayer { get; set; }
 
 		/// <summary>
 		/// <para>Status Field</para>
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object StatusField { get; set; }
+		public object? StatusField { get; set; }
 
 		/// <summary>
 		/// <para>Input Database Path</para>
@@ -95,21 +95,21 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object DatabasePath { get; set; }
+		public object? DatabasePath { get; set; }
 
 		/// <summary>
 		/// <para>Updated Job ID</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLong()]
-		public object UpdatedJobId { get; set; } = "-1";
+		public object? UpdatedJobId { get; set; } = "-1";
 
 		/// <summary>
 		/// <para>Updated Status Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object UpdatedStatusLayer { get; set; }
+		public object? UpdatedStatusLayer { get; set; }
 
 	}
 }

@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, ParameterType, LocalSurfaceType, NeighborhoodDistance, UseAdaptiveNeighborhood, ZUnit, OutputSlopeMeasurement, ProjectGeodesicAzimuths, UseEquatorialAspect };
+		public override object[] Parameters => new object[] { InRaster, OutRaster, ParameterType!, LocalSurfaceType!, NeighborhoodDistance!, UseAdaptiveNeighborhood!, ZUnit!, OutputSlopeMeasurement!, ProjectGeodesicAzimuths!, UseEquatorialAspect! };
 
 		/// <summary>
 		/// <para>Input surface raster</para>
@@ -88,51 +88,55 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Parameter type</para>
-		/// <para>Determines the output surface parameter type to compute.</para>
-		/// <para>Slope—The rate of change in elevation. This is the default.</para>
-		/// <para>Aspect—The downslope direction of the maximum rate of change for each cell.</para>
-		/// <para>Mean curvature—Measures the overall curvature of the surface. It is computed as the average of the minimum and maximum curvature. This curvature describes the intrinsic convexity or concavity of the surface, independent of direction or gravity influence.</para>
-		/// <para>Tangential (normal contour) curvature—Measures the geometric normal curvature perpendicular to the slope line, tangent to the contour line. This curvature is typically applied to characterize the convergence or divergence of flow across the surface.</para>
-		/// <para>Profile (normal slope line) curvature—Measures the geometric normal curvature along the slope line. This curvature is typically applied to characterize the acceleration and deceleration of flow down the surface.</para>
+		/// <para>Specifies the output surface parameter type that will be computed.</para>
+		/// <para>Slope—The rate of change in elevation will be computed. This is the default.</para>
+		/// <para>Aspect—The downslope direction of the maximum rate of change for each cell will be computed.</para>
+		/// <para>Mean curvature—The overall curvature of the surface will be measured. It is computed as the average of the minimum and maximum curvature. This curvature describes the intrinsic convexity or concavity of the surface, independent of direction or gravity influence.</para>
+		/// <para>Tangential (normal contour) curvature—The geometric normal curvature perpendicular to the slope line, tangent to the contour line will be measured. This curvature is typically applied to characterize the convergence or divergence of flow across the surface.</para>
+		/// <para>Profile (normal slope line) curvature—The geometric normal curvature along the slope line will be measured. This curvature is typically applied to characterize the acceleration and deceleration of flow down the surface.</para>
+		/// <para>Plan (projected contour) curvature—The curvature along contour lines will be measured.</para>
+		/// <para>Contour geodesic torsion—The rate of change in slope angle along contour lines will be measured.</para>
+		/// <para>Gaussian curvature—The overall curvature of the surface will be measured. It is computed as the product of the minimum and maximum curvature.</para>
+		/// <para>Casorati curvature—The general curvature of the surface will be measured. It can be zero or any other positive number.</para>
 		/// <para><see cref="ParameterTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ParameterType { get; set; } = "SLOPE";
+		public object? ParameterType { get; set; } = "SLOPE";
 
 		/// <summary>
 		/// <para>Local surface type</para>
-		/// <para>Determines the type of surface function fitted around the target cell.</para>
-		/// <para>Quadratic—Fits a quadratic surface function to the neighborhood cells. This is the default.</para>
-		/// <para>Biquadratic—Fits a biquadratic surface function to the neighborhood cells.</para>
+		/// <para>Specifies the type of surface function that will be fitted around the target cell.</para>
+		/// <para>Quadratic—A quadratic surface function will be fitted to the neighborhood cells. This is the default.</para>
+		/// <para>Biquadratic—A biquadratic surface function will be fitted to the neighborhood cells.</para>
 		/// <para><see cref="LocalSurfaceTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LocalSurfaceType { get; set; } = "QUADRATIC";
+		public object? LocalSurfaceType { get; set; } = "QUADRATIC";
 
 		/// <summary>
 		/// <para>Neighborhood distance</para>
-		/// <para>The output is calculated over this distance from the target cell center. It determines the neighborhood size.</para>
-		/// <para>The default value is the input raster cell size, resulting in a 3 x 3 neighborhood.</para>
+		/// <para>The output will be calculated over this distance from the target cell center. It determines the neighborhood size.</para>
+		/// <para>The default value is the input raster cell size, resulting in a 3 by 3 neighborhood.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object NeighborhoodDistance { get; set; }
+		public object? NeighborhoodDistance { get; set; }
 
 		/// <summary>
 		/// <para>Use adaptive neighborhood</para>
-		/// <para>Allow neighborhood distance to vary with landscape changes. The maximum distance is determined by the neighborhood distance. The minimum distance is the input raster cell size.</para>
-		/// <para>Unchecked—Use a single (fixed) neighborhood distance at all locations. This is the default.</para>
-		/// <para>Checked—Use an adaptive neighborhood distance at all locations.</para>
+		/// <para>Specifies whether neighborhood distance will vary with landscape changes (adaptive). The maximum distance is determined by the neighborhood distance. The minimum distance is the input raster cell size.</para>
+		/// <para>Unchecked—A single (fixed) neighborhood distance will be used at all locations. This is the default.</para>
+		/// <para>Checked—An adaptive neighborhood distance will be used at all locations.</para>
 		/// <para><see cref="UseAdaptiveNeighborhoodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UseAdaptiveNeighborhood { get; set; } = "false";
+		public object? UseAdaptiveNeighborhood { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Z unit</para>
@@ -153,11 +157,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ZUnit { get; set; } = "METER";
+		public object? ZUnit { get; set; } = "METER";
 
 		/// <summary>
 		/// <para>Output slope measurement</para>
-		/// <para>When Parameter type is Slope, determines the measurement units (degrees or percentages) of the output slope raster.</para>
+		/// <para>The measurement units (degrees or percentages) that will be used for the output slope raster. This parameter is only active when Parameter type is Slope.</para>
 		/// <para>Degree—The inclination of slope will be calculated in degrees.</para>
 		/// <para>Percent rise—The inclination of slope will be calculated as percent rise, also referred to as the percent slope.</para>
 		/// <para><see cref="OutputSlopeMeasurementEnum"/></para>
@@ -165,7 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object OutputSlopeMeasurement { get; set; } = "DEGREE";
+		public object? OutputSlopeMeasurement { get; set; } = "DEGREE";
 
 		/// <summary>
 		/// <para>Project geodesic azimuths</para>
@@ -177,26 +181,26 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ProjectGeodesicAzimuths { get; set; } = "false";
+		public object? ProjectGeodesicAzimuths { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Use equatorial aspect</para>
-		/// <para>Measure aspect from a point on the equator.</para>
-		/// <para>Unchecked—Measure aspect from the North Pole. This is the default.</para>
-		/// <para>Checked—Measure aspect from a point on the equator.</para>
+		/// <para>Specifies whether aspect will be measured from a point on the equator or from the north pole.</para>
+		/// <para>Unchecked—Aspect will be measured from the north pole. This is the default.</para>
+		/// <para>Checked—Aspect will be measured from a point on the equator.</para>
 		/// <para><see cref="UseEquatorialAspectEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UseEquatorialAspect { get; set; } = "false";
+		public object? UseEquatorialAspect { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SurfaceParameters SetEnviroment(int? autoCommit = null , object cellSize = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public SurfaceParameters SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 
@@ -208,39 +212,67 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ParameterTypeEnum 
 		{
 			/// <summary>
-			/// <para>Slope—The rate of change in elevation. This is the default.</para>
+			/// <para>Slope—The rate of change in elevation will be computed. This is the default.</para>
 			/// </summary>
 			[GPValue("SLOPE")]
 			[Description("Slope")]
 			Slope,
 
 			/// <summary>
-			/// <para>Aspect—The downslope direction of the maximum rate of change for each cell.</para>
+			/// <para>Aspect—The downslope direction of the maximum rate of change for each cell will be computed.</para>
 			/// </summary>
 			[GPValue("ASPECT")]
 			[Description("Aspect")]
 			Aspect,
 
 			/// <summary>
-			/// <para>Mean curvature—Measures the overall curvature of the surface. It is computed as the average of the minimum and maximum curvature. This curvature describes the intrinsic convexity or concavity of the surface, independent of direction or gravity influence.</para>
+			/// <para>Mean curvature—The overall curvature of the surface will be measured. It is computed as the average of the minimum and maximum curvature. This curvature describes the intrinsic convexity or concavity of the surface, independent of direction or gravity influence.</para>
 			/// </summary>
 			[GPValue("MEAN_CURVATURE")]
 			[Description("Mean curvature")]
 			Mean_curvature,
 
 			/// <summary>
-			/// <para>Profile (normal slope line) curvature—Measures the geometric normal curvature along the slope line. This curvature is typically applied to characterize the acceleration and deceleration of flow down the surface.</para>
+			/// <para>Profile (normal slope line) curvature—The geometric normal curvature along the slope line will be measured. This curvature is typically applied to characterize the acceleration and deceleration of flow down the surface.</para>
 			/// </summary>
 			[GPValue("PROFILE_CURVATURE")]
 			[Description("Profile (normal slope line) curvature")]
 			PROFILE_CURVATURE,
 
 			/// <summary>
-			/// <para>Tangential (normal contour) curvature—Measures the geometric normal curvature perpendicular to the slope line, tangent to the contour line. This curvature is typically applied to characterize the convergence or divergence of flow across the surface.</para>
+			/// <para>Tangential (normal contour) curvature—The geometric normal curvature perpendicular to the slope line, tangent to the contour line will be measured. This curvature is typically applied to characterize the convergence or divergence of flow across the surface.</para>
 			/// </summary>
 			[GPValue("TANGENTIAL_CURVATURE")]
 			[Description("Tangential (normal contour) curvature")]
 			TANGENTIAL_CURVATURE,
+
+			/// <summary>
+			/// <para>Plan (projected contour) curvature—The curvature along contour lines will be measured.</para>
+			/// </summary>
+			[GPValue("CONTOUR_CURVATURE")]
+			[Description("Plan (projected contour) curvature")]
+			CONTOUR_CURVATURE,
+
+			/// <summary>
+			/// <para>Contour geodesic torsion—The rate of change in slope angle along contour lines will be measured.</para>
+			/// </summary>
+			[GPValue("CONTOUR_GEODESIC_TORSION")]
+			[Description("Contour geodesic torsion")]
+			Contour_geodesic_torsion,
+
+			/// <summary>
+			/// <para>Gaussian curvature—The overall curvature of the surface will be measured. It is computed as the product of the minimum and maximum curvature.</para>
+			/// </summary>
+			[GPValue("GAUSSIAN_CURVATURE")]
+			[Description("Gaussian curvature")]
+			Gaussian_curvature,
+
+			/// <summary>
+			/// <para>Casorati curvature—The general curvature of the surface will be measured. It can be zero or any other positive number.</para>
+			/// </summary>
+			[GPValue("CASORATI_CURVATURE")]
+			[Description("Casorati curvature")]
+			Casorati_curvature,
 
 		}
 
@@ -250,14 +282,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum LocalSurfaceTypeEnum 
 		{
 			/// <summary>
-			/// <para>Quadratic—Fits a quadratic surface function to the neighborhood cells. This is the default.</para>
+			/// <para>Quadratic—A quadratic surface function will be fitted to the neighborhood cells. This is the default.</para>
 			/// </summary>
 			[GPValue("QUADRATIC")]
 			[Description("Quadratic")]
 			Quadratic,
 
 			/// <summary>
-			/// <para>Biquadratic—Fits a biquadratic surface function to the neighborhood cells.</para>
+			/// <para>Biquadratic—A biquadratic surface function will be fitted to the neighborhood cells.</para>
 			/// </summary>
 			[GPValue("BIQUADRATIC")]
 			[Description("Biquadratic")]
@@ -271,14 +303,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum UseAdaptiveNeighborhoodEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Use a single (fixed) neighborhood distance at all locations. This is the default.</para>
+			/// <para>Unchecked—A single (fixed) neighborhood distance will be used at all locations. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("FIXED_NEIGHBORHOOD")]
 			FIXED_NEIGHBORHOOD,
 
 			/// <summary>
-			/// <para>Checked—Use an adaptive neighborhood distance at all locations.</para>
+			/// <para>Checked—An adaptive neighborhood distance will be used at all locations.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADAPTIVE_NEIGHBORHOOD")]
@@ -411,14 +443,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum UseEquatorialAspectEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Measure aspect from the North Pole. This is the default.</para>
+			/// <para>Unchecked—Aspect will be measured from the north pole. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NORTH_POLE_ASPECT")]
 			NORTH_POLE_ASPECT,
 
 			/// <summary>
-			/// <para>Checked—Measure aspect from a point on the equator.</para>
+			/// <para>Checked—Aspect will be measured from a point on the equator.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EQUATORIAL_ASPECT")]

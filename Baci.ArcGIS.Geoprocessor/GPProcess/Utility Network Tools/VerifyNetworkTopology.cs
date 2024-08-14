@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, OutLogFile };
+		public override object[] Parameters => new object[] { InUtilityNetwork, OutLogFile! };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
-		public object OutLogFile { get; set; }
+		public object? OutLogFile { get; set; }
 
 	}
 }

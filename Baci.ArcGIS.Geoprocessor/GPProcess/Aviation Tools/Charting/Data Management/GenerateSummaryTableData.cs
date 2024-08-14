@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetGeodatabase, InPreferences, InChartsTable, OutWorkspace };
+		public override object[] Parameters => new object[] { TargetGeodatabase, InPreferences, InChartsTable, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Target Geodatabase</para>

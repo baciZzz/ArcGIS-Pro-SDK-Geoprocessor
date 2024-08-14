@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InIntersectionFeatureClass, InNetworkLayer, StartDate, EditedByCurrentUser, OutIntersectionFeatureClass, OutDetailsFile };
+		public override object[] Parameters => new object[] { InIntersectionFeatureClass, InNetworkLayer!, StartDate!, EditedByCurrentUser!, OutIntersectionFeatureClass!, OutDetailsFile! };
 
 		/// <summary>
 		/// <para>Intersection Feature Class</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object InNetworkLayer { get; set; }
+		public object? InNetworkLayer { get; set; }
 
 		/// <summary>
 		/// <para>Start Date</para>
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object StartDate { get; set; }
+		public object? StartDate { get; set; }
 
 		/// <summary>
 		/// <para>Only use routes edited by current user</para>
@@ -98,21 +98,21 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object EditedByCurrentUser { get; set; } = "true";
+		public object? EditedByCurrentUser { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Updated Intersection Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutIntersectionFeatureClass { get; set; }
+		public object? OutIntersectionFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Output Details File</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETextFile()]
-		public object OutDetailsFile { get; set; }
+		public object? OutDetailsFile { get; set; }
 
 		#region InnerClass
 

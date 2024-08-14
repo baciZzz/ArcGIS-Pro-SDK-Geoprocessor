@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRouteFeatures, RouteIdField, InPointFeatures, PointIdField, MeasureField, OutFeatureClass, CalibrateMethod, SearchRadius, InterpolateBetween, ExtrapolateBefore, ExtrapolateAfter, IgnoreGaps, KeepAllRoutes, BuildIndex };
+		public override object[] Parameters => new object[] { InRouteFeatures, RouteIdField, InPointFeatures, PointIdField, MeasureField, OutFeatureClass, CalibrateMethod!, SearchRadius!, InterpolateBetween!, ExtrapolateBefore!, ExtrapolateAfter!, IgnoreGaps!, KeepAllRoutes!, BuildIndex! };
 
 		/// <summary>
 		/// <para>Input Route Features</para>
@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object CalibrateMethod { get; set; } = "DISTANCE";
+		public object? CalibrateMethod { get; set; } = "DISTANCE";
 
 		/// <summary>
 		/// <para>Search Radius</para>
@@ -158,7 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object SearchRadius { get; set; } = "0 Unknown";
+		public object? SearchRadius { get; set; } = "0 Unknown";
 
 		/// <summary>
 		/// <para>Interpolate between calibration points</para>
@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object InterpolateBetween { get; set; } = "true";
+		public object? InterpolateBetween { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Extrapolate before calibration points</para>
@@ -182,7 +182,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ExtrapolateBefore { get; set; } = "true";
+		public object? ExtrapolateBefore { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Extrapolate after calibration points</para>
@@ -194,7 +194,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ExtrapolateAfter { get; set; } = "true";
+		public object? ExtrapolateAfter { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Ignore spatial gaps</para>
@@ -206,7 +206,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IgnoreGaps { get; set; } = "true";
+		public object? IgnoreGaps { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Include all features in the output feature class</para>
@@ -218,7 +218,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object KeepAllRoutes { get; set; } = "true";
+		public object? KeepAllRoutes { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Build index</para>
@@ -230,12 +230,12 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object BuildIndex { get; set; } = "true";
+		public object? BuildIndex { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalibrateRoutes SetEnviroment(object MDomain = null , object MResolution = null , object MTolerance = null , object XYDomain = null , object ZDomain = null , object configKeyword = null , object extent = null , object outputCoordinateSystem = null , object outputZFlag = null , object scratchWorkspace = null , object workspace = null )
+		public CalibrateRoutes SetEnviroment(object? MDomain = null , double? MResolution = null , double? MTolerance = null , object? XYDomain = null , object? ZDomain = null , object? configKeyword = null , object? extent = null , object? outputCoordinateSystem = null , object? outputZFlag = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, ZDomain: ZDomain, configKeyword: configKeyword, extent: extent, outputCoordinateSystem: outputCoordinateSystem, outputZFlag: outputZFlag, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

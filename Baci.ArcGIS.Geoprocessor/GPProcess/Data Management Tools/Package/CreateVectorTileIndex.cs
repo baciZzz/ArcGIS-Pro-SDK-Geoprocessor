@@ -29,7 +29,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <param name="ServiceType">
 		/// <para>Package for ArcGIS Online | Bing Maps | Google Maps</para>
 		/// <para>Specifies whether the tiling scheme will be generated from an existing map service or for ArcGIS Online, Bing Maps, and Google Maps.</para>
-		/// <para>Checked—The ArcGIS Online/Bing Maps/Google Maps tiling scheme will be used. The ArcGIS Online/Bing Maps/Google Maps tiling scheme allows you to overlay your cache tiles with tiles from these online mapping services. ArcGIS Pro includes this tiling scheme as a built-in option when loading a tiling scheme. When you check this parameter, the data frame of your source map must use the WGS 1984 Web Mercator (Auxiliary Sphere) projected coordinate system. This is the default.</para>
+		/// <para>Checked—The ArcGIS Online/Bing Maps/Google Maps tiling scheme will be used. The ArcGIS Online/Bing Maps/Google Maps tiling scheme allows you to overlay cache tiles with tiles from these online mapping services. ArcGIS Pro includes this tiling scheme as a built-in option when loading a tiling scheme. When you check this parameter, the data frame of your source map must use the WGS 1984 Web Mercator (Auxiliary Sphere) projected coordinate system. This is the default.</para>
 		/// <para>Unchecked—The tiling scheme from an existing vector tile service will be used. Only tiling schemes with scales that double in progression through levels and have 512-by-512 tile size are supported. You must specify a vector tile service or tiling scheme file in the Tiling scheme parameter.</para>
 		/// <para><see cref="ServiceTypeEnum"/></para>
 		/// </param>
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, OutFeatureclass, ServiceType, TilingScheme, VertexCount };
+		public override object[] Parameters => new object[] { InMap, OutFeatureclass, ServiceType, TilingScheme!, VertexCount! };
 
 		/// <summary>
 		/// <para>Input Map</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Package for ArcGIS Online | Bing Maps | Google Maps</para>
 		/// <para>Specifies whether the tiling scheme will be generated from an existing map service or for ArcGIS Online, Bing Maps, and Google Maps.</para>
-		/// <para>Checked—The ArcGIS Online/Bing Maps/Google Maps tiling scheme will be used. The ArcGIS Online/Bing Maps/Google Maps tiling scheme allows you to overlay your cache tiles with tiles from these online mapping services. ArcGIS Pro includes this tiling scheme as a built-in option when loading a tiling scheme. When you check this parameter, the data frame of your source map must use the WGS 1984 Web Mercator (Auxiliary Sphere) projected coordinate system. This is the default.</para>
+		/// <para>Checked—The ArcGIS Online/Bing Maps/Google Maps tiling scheme will be used. The ArcGIS Online/Bing Maps/Google Maps tiling scheme allows you to overlay cache tiles with tiles from these online mapping services. ArcGIS Pro includes this tiling scheme as a built-in option when loading a tiling scheme. When you check this parameter, the data frame of your source map must use the WGS 1984 Web Mercator (Auxiliary Sphere) projected coordinate system. This is the default.</para>
 		/// <para>Unchecked—The tiling scheme from an existing vector tile service will be used. Only tiling schemes with scales that double in progression through levels and have 512-by-512 tile size are supported. You must specify a vector tile service or tiling scheme file in the Tiling scheme parameter.</para>
 		/// <para><see cref="ServiceTypeEnum"/></para>
 		/// </summary>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object TilingScheme { get; set; }
+		public object? TilingScheme { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Vertex Count</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object VertexCount { get; set; } = "10000";
+		public object? VertexCount { get; set; } = "10000";
 
 		#region InnerClass
 
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ServiceTypeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The ArcGIS Online/Bing Maps/Google Maps tiling scheme will be used. The ArcGIS Online/Bing Maps/Google Maps tiling scheme allows you to overlay your cache tiles with tiles from these online mapping services. ArcGIS Pro includes this tiling scheme as a built-in option when loading a tiling scheme. When you check this parameter, the data frame of your source map must use the WGS 1984 Web Mercator (Auxiliary Sphere) projected coordinate system. This is the default.</para>
+			/// <para>Checked—The ArcGIS Online/Bing Maps/Google Maps tiling scheme will be used. The ArcGIS Online/Bing Maps/Google Maps tiling scheme allows you to overlay cache tiles with tiles from these online mapping services. ArcGIS Pro includes this tiling scheme as a built-in option when loading a tiling scheme. When you check this parameter, the data frame of your source map must use the WGS 1984 Web Mercator (Auxiliary Sphere) projected coordinate system. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ONLINE")]

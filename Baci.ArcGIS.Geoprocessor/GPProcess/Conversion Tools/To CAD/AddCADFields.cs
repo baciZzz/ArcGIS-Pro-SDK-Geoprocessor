@@ -68,7 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputTable, Entities, Layerprops, Textprops, Docprops, Xdataprops, OutTable };
+		public override object[] Parameters => new object[] { InputTable, Entities, Layerprops!, Textprops!, Docprops!, Xdataprops!, OutTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Layerprops { get; set; } = "true";
+		public object? Layerprops { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Text Properties</para>
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Textprops { get; set; } = "true";
+		public object? Textprops { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Document Properties</para>
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Docprops { get; set; } = "true";
+		public object? Docprops { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Add CAD XData Property Fields</para>
@@ -136,19 +136,19 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Xdataprops { get; set; } = "true";
+		public object? Xdataprops { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Updated Input Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddCADFields SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public AddCADFields SetEnviroment(object? extent = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

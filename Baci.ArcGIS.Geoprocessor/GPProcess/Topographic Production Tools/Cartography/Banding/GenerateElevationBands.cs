@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, InAoi, OutFeatureClass, ContourInterval, MinArea, SmoothTolerance, InHydroFeatures, NumberOfBands };
+		public override object[] Parameters => new object[] { InRaster, InAoi, OutFeatureClass, ContourInterval, MinArea, SmoothTolerance, InHydroFeatures!, NumberOfBands! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -115,6 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
+		[GPFeatureClassDomain()]
 		public object OutFeatureClass { get; set; }
 
 		/// <summary>
@@ -154,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object InHydroFeatures { get; set; }
+		public object? InHydroFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Number of Elevation Bands</para>
@@ -168,7 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPCodedValueDomain()]
-		public object NumberOfBands { get; set; }
+		public object? NumberOfBands { get; set; }
 
 		#region InnerClass
 

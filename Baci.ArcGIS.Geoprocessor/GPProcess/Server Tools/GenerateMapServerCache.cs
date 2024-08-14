@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ServerName, ObjectName, DataFrame, OutFolder, TilingSchemeType, ScalesType, NumOfScales, Dpi, TileWidth, TileHeight, MapOrLayers, TilingSchema, TileOrigin, Levels, Layer, ThreadCount, Antialiasing, CacheFormat, TileCompressionQuality, OutServerName, OutObjectName };
+		public override object[] Parameters => new object[] { ServerName, ObjectName, DataFrame, OutFolder, TilingSchemeType, ScalesType, NumOfScales, Dpi, TileWidth, TileHeight, MapOrLayers!, TilingSchema!, TileOrigin!, Levels!, Layer!, ThreadCount!, Antialiasing!, CacheFormat!, TileCompressionQuality!, OutServerName!, OutObjectName! };
 
 		/// <summary>
 		/// <para>Host</para>
@@ -184,28 +184,28 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Cache Type(Optional)")]
-		public object MapOrLayers { get; set; } = "FUSED";
+		public object? MapOrLayers { get; set; } = "FUSED";
 
 		/// <summary>
 		/// <para>Predefined Tiling Scheme</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
-		public object TilingSchema { get; set; }
+		public object? TilingSchema { get; set; }
 
 		/// <summary>
 		/// <para>Tiling origin in map units</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPPoint()]
-		public object TileOrigin { get; set; } = "0 0";
+		public object? TileOrigin { get; set; } = "0 0";
 
 		/// <summary>
 		/// <para>Scales</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object Levels { get; set; }
+		public object? Levels { get; set; }
 
 		/// <summary>
 		/// <para>Input Layers</para>
@@ -213,14 +213,14 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[Category("Cache Type(Optional)")]
-		public object Layer { get; set; }
+		public object? Layer { get; set; }
 
 		/// <summary>
 		/// <para>Number of caching service instances</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object ThreadCount { get; set; }
+		public object? ThreadCount { get; set; }
 
 		/// <summary>
 		/// <para>Antialiasing (Smoothes edges of labels and lines for improved display quality)</para>
@@ -229,7 +229,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Antialiasing { get; set; } = "false";
+		public object? Antialiasing { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Cache Tile Format</para>
@@ -238,28 +238,28 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object CacheFormat { get; set; } = "PNG24";
+		public object? CacheFormat { get; set; } = "PNG24";
 
 		/// <summary>
 		/// <para>Tile Compression Quality</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object TileCompressionQuality { get; set; } = "0";
+		public object? TileCompressionQuality { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Output Host</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutServerName { get; set; }
+		public object? OutServerName { get; set; }
 
 		/// <summary>
 		/// <para>Output Map Server</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutObjectName { get; set; }
+		public object? OutObjectName { get; set; }
 
 		#region InnerClass
 

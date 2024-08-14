@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InS58LogFile, InS57File, InProductionDatabaseWorkspace, InReviewerWorkspace, ReviewerSession, InUpdateCells, ParseCount };
+		public override object[] Parameters => new object[] { InS58LogFile, InS57File, InProductionDatabaseWorkspace, InReviewerWorkspace, ReviewerSession, InUpdateCells!, ParseCount! };
 
 		/// <summary>
 		/// <para>Input S-58 Log File</para>
@@ -133,19 +133,19 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFileDomain()]
-		public object InUpdateCells { get; set; }
+		public object? InUpdateCells { get; set; }
 
 		/// <summary>
 		/// <para>Log Parse Count</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLong()]
-		public object ParseCount { get; set; }
+		public object? ParseCount { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ParseS58LogFile SetEnviroment(object workspace = null )
+		public ParseS58LogFile SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

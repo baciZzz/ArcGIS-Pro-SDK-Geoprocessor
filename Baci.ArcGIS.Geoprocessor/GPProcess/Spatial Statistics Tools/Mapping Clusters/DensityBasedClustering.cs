@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputFeatures, ClusterMethod, MinFeaturesCluster, SearchDistance, ClusterSensitivity, TimeField, SearchTimeInterval };
+		public override object[] Parameters => new object[] { InFeatures, OutputFeatures, ClusterMethod, MinFeaturesCluster, SearchDistance!, ClusterSensitivity!, TimeField!, SearchTimeInterval! };
 
 		/// <summary>
 		/// <para>Input Point Features</para>
@@ -126,16 +126,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <para>For the Clustering Method parameter&apos;s Defined distance (DBSCAN) option, the Minimum Features per Cluster parameter value must be found within this distance for cluster membership. Individual clusters will be separated by at least this distance. If a point is located farther than this distance from the next closest point in the cluster, it will not be included in the cluster.</para>
 		/// <para>For the Clustering Method parameter&apos;s Multi-scale (OPTICS) option, this parameter is optional and is used as the maximum search distance when creating the reachability plot. For OPTICS, the reachability plot, combined with the Cluster Sensitivity parameter value, determines cluster membership. If no distance is specified, the tool will search all distances, which will increase processing time.</para>
 		/// <para>If left blank, the default distance used will be the highest core distance found in the dataset, excluding those core distances in the top 1 percent (the most extreme core distances). If the Time Field parameter value is provided, a search distance must be provided and does not include a default value.</para>
-		/// <para>The maximum distance that will be considered.</para>
-		/// <para>For the cluster_method parameter&apos;s DBSCAN option, the min_features_cluster parameter value must be found within this distance for cluster membership. Individual clusters will be separated by at least this distance. If a point is located farther than this distance from the next closest point in the cluster, it will not be included in the cluster.</para>
-		/// <para>For the cluster_method parameter&apos;s OPTICS option, this parameter is optional and is used as the maximum search distance when creating the reachability plot. For OPTICS, the reachability plot, combined with the cluster_sensitivity parameter value, determines cluster membership. If no distance is specified, the tool will search all distances, which will increase processing time.</para>
-		/// <para>If left blank, the default distance used will be the highest core distance found in the dataset, excluding those core distances in the top 1 percent (he most extreme core distances). If the time_field parameter value is provided, a search distance must be provided and does not include a default value.</para>
-		/// <para><see cref="SearchDistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object SearchDistance { get; set; }
+		[GPUnitDomain()]
+		public object? SearchDistance { get; set; }
 
 		/// <summary>
 		/// <para>Cluster Sensitivity</para>
@@ -144,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object ClusterSensitivity { get; set; }
+		public object? ClusterSensitivity { get; set; }
 
 		/// <summary>
 		/// <para>Time Field</para>
@@ -153,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object TimeField { get; set; }
+		public object? TimeField { get; set; }
 
 		/// <summary>
 		/// <para>Search Time Interval</para>
@@ -161,17 +156,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <para>For the Clustering Method parameter&apos;s Defined distance (DBSCAN) option, the Minimum Features per Cluster parameter value must be found within the search distance and the search time interval to be included in a cluster.</para>
 		/// <para>For the Clustering Method parameter&apos;s Multi-scale (OPTICS) option, all points outside of the search time interval will be excluded when calculating core distances, neighbor-distances, and reachability distances.</para>
 		/// <para>The search time interval does not control the overall time span of the resulting space-time clusters. The time span of points within a cluster can be larger than the search time interval as long as each point has neighbors within the cluster that are within the search time interval.</para>
-		/// <para><see cref="SearchTimeIntervalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
-		public object SearchTimeInterval { get; set; }
+		[GPUnitDomain()]
+		public object? SearchTimeInterval { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DensityBasedClustering SetEnviroment(object outputCoordinateSystem = null , object outputZFlag = null , object parallelProcessingFactor = null )
+		public DensityBasedClustering SetEnviroment(object? outputCoordinateSystem = null , object? outputZFlag = null , object? parallelProcessingFactor = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, outputZFlag: outputZFlag, parallelProcessingFactor: parallelProcessingFactor);
 			return this;
@@ -204,97 +198,6 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 			[GPValue("OPTICS")]
 			[Description("Multi-scale (OPTICS)")]
 			OPTICS,
-
-		}
-
-		/// <summary>
-		/// <para>Search Distance</para>
-		/// </summary>
-		public enum SearchDistanceEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-		}
-
-		/// <summary>
-		/// <para>Search Time Interval</para>
-		/// </summary>
-		public enum SearchTimeIntervalEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Seconds")]
-			[Description("Seconds")]
-			Seconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Days")]
-			[Description("Days")]
-			Days,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Weeks")]
-			[Description("Weeks")]
-			Weeks,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Months")]
-			[Description("Months")]
-			Months,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Years")]
-			[Description("Years")]
-			Years,
 
 		}
 

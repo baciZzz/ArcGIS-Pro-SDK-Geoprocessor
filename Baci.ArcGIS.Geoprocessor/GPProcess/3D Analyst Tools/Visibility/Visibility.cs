@@ -74,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, InObserverFeatures, OutRaster, OutAglRaster, AnalysisType, NonvisibleCellValue, ZFactor, CurvatureCorrection, RefractivityCoefficient, SurfaceOffset, ObserverElevation, ObserverOffset, InnerRadius, OuterRadius, HorizontalStartAngle, HorizontalEndAngle, VerticalUpperAngle, VerticalLowerAngle };
+		public override object[] Parameters => new object[] { InRaster, InObserverFeatures, OutRaster, OutAglRaster!, AnalysisType!, NonvisibleCellValue!, ZFactor!, CurvatureCorrection!, RefractivityCoefficient!, SurfaceOffset!, ObserverElevation!, ObserverOffset!, InnerRadius!, OuterRadius!, HorizontalStartAngle!, HorizontalEndAngle!, VerticalUpperAngle!, VerticalLowerAngle! };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
-		public object OutAglRaster { get; set; }
+		public object? OutAglRaster { get; set; }
 
 		/// <summary>
 		/// <para>Analysis type</para>
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object AnalysisType { get; set; } = "FREQUENCY";
+		public object? AnalysisType { get; set; } = "FREQUENCY";
 
 		/// <summary>
 		/// <para>Use NoData for non-visible cells</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object NonvisibleCellValue { get; set; } = "false";
+		public object? NonvisibleCellValue { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Z factor</para>
@@ -148,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object ZFactor { get; set; } = "1";
+		public object? ZFactor { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Use earth curvature corrections</para>
@@ -160,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CurvatureCorrection { get; set; } = "false";
+		public object? CurvatureCorrection { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Refractivity coefficient</para>
@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object RefractivityCoefficient { get; set; } = "0.13";
+		public object? RefractivityCoefficient { get; set; } = "0.13";
 
 		/// <summary>
 		/// <para>Surface offset</para>
@@ -183,7 +183,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Observer parameters")]
-		public object SurfaceOffset { get; set; }
+		public object? SurfaceOffset { get; set; }
 
 		/// <summary>
 		/// <para>Observer elevation</para>
@@ -196,7 +196,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Observer parameters")]
-		public object ObserverElevation { get; set; }
+		public object? ObserverElevation { get; set; }
 
 		/// <summary>
 		/// <para>Observer offset</para>
@@ -209,7 +209,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Observer parameters")]
-		public object ObserverOffset { get; set; }
+		public object? ObserverOffset { get; set; }
 
 		/// <summary>
 		/// <para>Inner radius</para>
@@ -223,7 +223,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Observer parameters")]
-		public object InnerRadius { get; set; }
+		public object? InnerRadius { get; set; }
 
 		/// <summary>
 		/// <para>Outer radius</para>
@@ -237,7 +237,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Observer parameters")]
-		public object OuterRadius { get; set; }
+		public object? OuterRadius { get; set; }
 
 		/// <summary>
 		/// <para>Horizontal start angle</para>
@@ -250,7 +250,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Observer parameters")]
-		public object HorizontalStartAngle { get; set; }
+		public object? HorizontalStartAngle { get; set; }
 
 		/// <summary>
 		/// <para>Horizontal end angle</para>
@@ -263,7 +263,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Observer parameters")]
-		public object HorizontalEndAngle { get; set; }
+		public object? HorizontalEndAngle { get; set; }
 
 		/// <summary>
 		/// <para>Vertical upper angle</para>
@@ -277,7 +277,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Observer parameters")]
-		public object VerticalUpperAngle { get; set; }
+		public object? VerticalUpperAngle { get; set; }
 
 		/// <summary>
 		/// <para>Vertical lower angle</para>
@@ -291,14 +291,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Observer parameters")]
-		public object VerticalLowerAngle { get; set; }
+		public object? VerticalLowerAngle { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Visibility SetEnviroment(int? autoCommit = null , object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public Visibility SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 

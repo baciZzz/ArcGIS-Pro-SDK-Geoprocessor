@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { To, From, Subject, Text, ZipFile, MaxFileSizeMB, SMTPEmailServer, User, Password, Sent };
+		public override object[] Parameters => new object[] { To, From, Subject, Text, ZipFile, MaxFileSizeMB, SMTPEmailServer, User!, Password!, Sent! };
 
 		/// <summary>
 		/// <para>To</para>
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object User { get; set; }
+		public object? User { get; set; }
 
 		/// <summary>
 		/// <para>Password</para>
@@ -164,14 +164,14 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Password { get; set; }
+		public object? Password { get; set; }
 
 		/// <summary>
 		/// <para>Send Email Succeeded</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
-		public object Sent { get; set; }
+		public object? Sent { get; set; }
 
 	}
 }

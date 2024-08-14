@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Multiple Ring Buffer</para>
-	/// <para>Creates multiple buffers at specified distances around the input features. These buffers can optionally be merged and dissolved using the buffer distance values to create nonoverlapping buffers.</para>
+	/// <para>Creates multiple buffers at specified distances around the input features. These buffers can be merged and dissolved using the buffer distance values to create nonoverlapping buffers.</para>
 	/// </summary>
 	public class MultipleRingBuffer : AbstractGPProcess
 	{
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, OutputFeatureClass, Distances, BufferUnit, FieldName, DissolveOption, OutsidePolygonsOnly };
+		public override object[] Parameters => new object[] { InputFeatures, OutputFeatureClass, Distances, BufferUnit!, FieldName!, DissolveOption!, OutsidePolygonsOnly!, Method! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object BufferUnit { get; set; } = "Default";
+		public object? BufferUnit { get; set; } = "Default";
 
 		/// <summary>
 		/// <para>Buffer Distance Field Name</para>
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object FieldName { get; set; } = "distance";
+		public object? FieldName { get; set; } = "distance";
 
 		/// <summary>
 		/// <para>Dissolve Option</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DissolveOption { get; set; } = "ALL";
+		public object? DissolveOption { get; set; } = "ALL";
 
 		/// <summary>
 		/// <para>Outside Polygons Only</para>
@@ -148,12 +148,24 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object OutsidePolygonsOnly { get; set; } = "false";
+		public object? OutsidePolygonsOnly { get; set; } = "false";
+
+		/// <summary>
+		/// <para>Method</para>
+		/// <para>Specifies the method used to create the buffer.</para>
+		/// <para>Planar—Buffers will be created using a Euclidean buffer method. This is the default when the input has a projected coordinate system.</para>
+		/// <para>Geodesic—Buffers will be created using a shape-preserving geodesic buffer method. This is the default when the input has a geographic coordinate system.</para>
+		/// <para><see cref="MethodEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		[GPCodedValueDomain()]
+		public object? Method { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MultipleRingBuffer SetEnviroment(object MResolution = null , object MTolerance = null , object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZResolution = null , object ZTolerance = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , object scratchWorkspace = null , object workspace = null )
+		public MultipleRingBuffer SetEnviroment(double? MResolution = null , double? MTolerance = null , object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZResolution = null , object? ZTolerance = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZResolution: ZResolution, ZTolerance: ZTolerance, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -200,6 +212,27 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 			[GPValue("false")]
 			[Description("FULL")]
 			FULL,
+
+		}
+
+		/// <summary>
+		/// <para>Method</para>
+		/// </summary>
+		public enum MethodEnum 
+		{
+			/// <summary>
+			/// <para>Planar—Buffers will be created using a Euclidean buffer method. This is the default when the input has a projected coordinate system.</para>
+			/// </summary>
+			[GPValue("PLANAR")]
+			[Description("Planar")]
+			Planar,
+
+			/// <summary>
+			/// <para>Geodesic—Buffers will be created using a shape-preserving geodesic buffer method. This is the default when the input has a geographic coordinate system.</para>
+			/// </summary>
+			[GPValue("GEODESIC")]
+			[Description("Geodesic")]
+			Geodesic,
 
 		}
 

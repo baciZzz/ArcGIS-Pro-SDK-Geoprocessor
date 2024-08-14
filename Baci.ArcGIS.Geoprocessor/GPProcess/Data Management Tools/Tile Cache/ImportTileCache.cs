@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCacheTarget, InCacheSource, Scales, AreaOfInterest, Overwrite, OutTileCache };
+		public override object[] Parameters => new object[] { InCacheTarget, InCacheSource, Scales!, AreaOfInterest!, Overwrite!, OutTileCache! };
 
 		/// <summary>
 		/// <para>Target Tile Cache</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Scales { get; set; }
+		public object? Scales { get; set; }
 
 		/// <summary>
 		/// <para>Area of Interest</para>
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
-		public object AreaOfInterest { get; set; }
+		public object? AreaOfInterest { get; set; }
 
 		/// <summary>
 		/// <para>Overwrite Tiles</para>
@@ -111,19 +111,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Overwrite { get; set; } = "false";
+		public object? Overwrite { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Target Tile Cache</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRasterLayer()]
-		public object OutTileCache { get; set; }
+		public object? OutTileCache { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportTileCache SetEnviroment(object parallelProcessingFactor = null )
+		public ImportTileCache SetEnviroment(object? parallelProcessingFactor = null )
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

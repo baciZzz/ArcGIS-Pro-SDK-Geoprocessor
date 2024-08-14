@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, Fields, XyTolerance, ZTolerance, OutDataset };
+		public override object[] Parameters => new object[] { InDataset, Fields, XyTolerance!, ZTolerance!, OutDataset! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object XyTolerance { get; set; }
+		public object? XyTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Z Tolerance</para>
@@ -100,19 +100,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ZTolerance { get; set; } = "0";
+		public object? ZTolerance { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Updated Input Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
-		public object OutDataset { get; set; }
+		public object? OutDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DeleteIdentical SetEnviroment(object XYTolerance = null , object ZTolerance = null , object extent = null , bool? maintainSpatialIndex = null , object workspace = null )
+		public DeleteIdentical SetEnviroment(object? XYTolerance = null , object? ZTolerance = null , object? extent = null , bool? maintainSpatialIndex = null , object? workspace = null )
 		{
 			base.SetEnv(XYTolerance: XYTolerance, ZTolerance: ZTolerance, extent: extent, maintainSpatialIndex: maintainSpatialIndex, workspace: workspace);
 			return this;

@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DisplacementFeatures, AdjustmentStyle, OutFeatures };
+		public override object[] Parameters => new object[] { InFeatures, DisplacementFeatures, AdjustmentStyle, OutFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatures { get; set; }
+		public object? OutFeatures { get; set; }
 
 		#region InnerClass
 

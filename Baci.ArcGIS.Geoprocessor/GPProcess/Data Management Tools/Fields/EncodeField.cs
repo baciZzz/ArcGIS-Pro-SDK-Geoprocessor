@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Field, Method, TimeStepInterval, TimeStepAlignment, ReferenceTime, UpdatedTable };
+		public override object[] Parameters => new object[] { InTable, Field, Method!, TimeStepInterval!, TimeStepAlignment!, ReferenceTime!, UpdatedTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -97,17 +97,16 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "ONEHOT";
+		public object? Method { get; set; } = "ONEHOT";
 
 		/// <summary>
 		/// <para>Time Step Interval</para>
 		/// <para>The number of seconds, minutes, hours, days, weeks, or years that will represent a single time step. The temporal value will be aggregated into a certain time step it is within. If no value is provided, the default time step interval is based on two algorithms that are used to determine the optimal number and width of the time step intervals. The smaller of the two results is used as the time step interval.</para>
-		/// <para><see cref="TimeStepIntervalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
-		public object TimeStepInterval { get; set; }
+		[GPUnitDomain()]
+		public object? TimeStepInterval { get; set; }
 
 		/// <summary>
 		/// <para>Time Step Alignment</para>
@@ -120,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TimeStepAlignment { get; set; } = "END_TIME";
+		public object? TimeStepAlignment { get; set; } = "END_TIME";
 
 		/// <summary>
 		/// <para>Reference Time</para>
@@ -129,19 +128,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object ReferenceTime { get; set; }
+		public object? ReferenceTime { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object UpdatedTable { get; set; }
+		public object? UpdatedTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EncodeField SetEnviroment(object extent = null )
+		public EncodeField SetEnviroment(object? extent = null )
 		{
 			base.SetEnv(extent: extent);
 			return this;
@@ -174,62 +173,6 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			[GPValue("TEMPORAL")]
 			[Description("Temporal")]
 			Temporal,
-
-		}
-
-		/// <summary>
-		/// <para>Time Step Interval</para>
-		/// </summary>
-		public enum TimeStepIntervalEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Seconds")]
-			[Description("Seconds")]
-			Seconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Days")]
-			[Description("Days")]
-			Days,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Weeks")]
-			[Description("Weeks")]
-			Weeks,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Months")]
-			[Description("Months")]
-			Months,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Years")]
-			[Description("Years")]
-			Years,
 
 		}
 

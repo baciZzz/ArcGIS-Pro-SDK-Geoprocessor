@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ParentNetwork, NetworkDescriptionField, IntersectionFeatureClassName, IntersectingLayers, ConsiderZ, ZTolerance, OutFeatureClass };
+		public override object[] Parameters => new object[] { ParentNetwork, NetworkDescriptionField, IntersectionFeatureClassName, IntersectingLayers, ConsiderZ!, ZTolerance!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Parent LRS Network</para>
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ConsiderZ { get; set; } = "false";
+		public object? ConsiderZ { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Z Tolerance</para>
@@ -138,14 +138,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ZTolerance { get; set; }
+		public object? ZTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		#region InnerClass
 
@@ -155,18 +155,18 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum ConsiderZEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Z-values will not be used during generation of intersections. This is the default.</para>
-			/// </summary>
-			[GPValue("false")]
-			[Description("DO_NOT_CONSIDER_Z")]
-			DO_NOT_CONSIDER_Z,
-
-			/// <summary>
 			/// <para>Checked—Z-values will be used during generation of intersections.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CONSIDER_Z")]
 			CONSIDER_Z,
+
+			/// <summary>
+			/// <para>Unchecked—Z-values will not be used during generation of intersections. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("DO_NOT_CONSIDER_Z")]
+			DO_NOT_CONSIDER_Z,
 
 		}
 

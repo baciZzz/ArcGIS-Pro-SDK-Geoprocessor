@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, InTemplateRaster, InputCLRFile, OutRaster };
+		public override object[] Parameters => new object[] { InRaster, InTemplateRaster!, InputCLRFile!, OutRaster! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRasterLayer()]
-		public object InTemplateRaster { get; set; }
+		public object? InTemplateRaster { get; set; }
 
 		/// <summary>
 		/// <para>Input .clr or .act File</para>
@@ -85,14 +85,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPCompositeDomain()]
-		public object InputCLRFile { get; set; }
+		public object? InputCLRFile { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Raster</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRasterLayer()]
-		public object OutRaster { get; set; }
+		public object? OutRaster { get; set; }
 
 	}
 }

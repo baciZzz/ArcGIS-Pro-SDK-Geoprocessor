@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, CapType, DangleOption, OutRepresentations };
+		public override object[] Parameters => new object[] { InFeatures, CapType!, DangleOption!, OutRepresentations! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object CapType { get; set; } = "BUTT";
+		public object? CapType { get; set; } = "BUTT";
 
 		/// <summary>
 		/// <para>Dangle Option</para>
@@ -95,14 +95,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DangleOption { get; set; } = "CASED_LINE_DANGLE";
+		public object? DangleOption { get; set; } = "CASED_LINE_DANGLE";
 
 		/// <summary>
 		/// <para>Updated Input Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLayer()]
-		public object OutRepresentations { get; set; }
+		public object? OutRepresentations { get; set; }
 
 		#region InnerClass
 

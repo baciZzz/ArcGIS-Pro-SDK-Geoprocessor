@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, LineAttribute, MainlineDirection, OffsetBetweenBranches, BreakpointAngle, TypeAttribute, MainlineValues, BranchValues, ExcludedValues, IsCompressing, CompressionRatio, MinimalDistance, AlignmentAttribute, InitialDistances, LengthAttribute, OutUtilityNetwork, OutTemplateName };
+		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, LineAttribute, MainlineDirection!, OffsetBetweenBranches!, BreakpointAngle!, TypeAttribute!, MainlineValues!, BranchValues!, ExcludedValues!, IsCompressing!, CompressionRatio!, MinimalDistance!, AlignmentAttribute!, InitialDistances!, LengthAttribute!, OutUtilityNetwork!, OutTemplateName! };
 
 		/// <summary>
 		/// <para>Input Network</para>
@@ -112,21 +112,21 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object MainlineDirection { get; set; } = "FROM_LEFT_TO_RIGHT";
+		public object? MainlineDirection { get; set; } = "FROM_LEFT_TO_RIGHT";
 
 		/// <summary>
 		/// <para>Offset Between Branches</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object OffsetBetweenBranches { get; set; } = "2 Unknown";
+		public object? OffsetBetweenBranches { get; set; } = "2 Unknown";
 
 		/// <summary>
 		/// <para>Break Point angle (in degree)</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object BreakpointAngle { get; set; } = "45";
+		public object? BreakpointAngle { get; set; } = "45";
 
 		/// <summary>
 		/// <para>Type Attribute</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Line Classification")]
-		public object TypeAttribute { get; set; }
+		public object? TypeAttribute { get; set; }
 
 		/// <summary>
 		/// <para>Mainline Values</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Line Classification")]
-		public object MainlineValues { get; set; }
+		public object? MainlineValues { get; set; }
 
 		/// <summary>
 		/// <para>Branch Values</para>
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Line Classification")]
-		public object BranchValues { get; set; }
+		public object? BranchValues { get; set; }
 
 		/// <summary>
 		/// <para>Excluded Values</para>
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Line Classification")]
-		public object ExcludedValues { get; set; }
+		public object? ExcludedValues { get; set; }
 
 		/// <summary>
 		/// <para>Compression along the direction</para>
@@ -171,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Line Compression")]
-		public object IsCompressing { get; set; } = "false";
+		public object? IsCompressing { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Ratio (%)</para>
@@ -179,7 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Line Compression")]
-		public object CompressionRatio { get; set; } = "0";
+		public object? CompressionRatio { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Minimal Distance</para>
@@ -187,7 +187,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Line Compression")]
-		public object MinimalDistance { get; set; } = "0 Unknown";
+		public object? MinimalDistance { get; set; } = "0 Unknown";
 
 		/// <summary>
 		/// <para>Alignment Attribute</para>
@@ -195,7 +195,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Advanced Options")]
-		public object AlignmentAttribute { get; set; }
+		public object? AlignmentAttribute { get; set; }
 
 		/// <summary>
 		/// <para>Initial Distances</para>
@@ -205,7 +205,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object InitialDistances { get; set; } = "FROM_CURRENT_EDGE_GEOMETRY";
+		public object? InitialDistances { get; set; } = "FROM_CURRENT_EDGE_GEOMETRY";
 
 		/// <summary>
 		/// <para>Length Attribute</para>
@@ -213,21 +213,21 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Advanced Options")]
-		public object LengthAttribute { get; set; }
+		public object? LengthAttribute { get; set; }
 
 		/// <summary>
 		/// <para>Output Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		/// <summary>
 		/// <para>Output Diagram Template</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutTemplateName { get; set; }
+		public object? OutTemplateName { get; set; }
 
 		#region InnerClass
 

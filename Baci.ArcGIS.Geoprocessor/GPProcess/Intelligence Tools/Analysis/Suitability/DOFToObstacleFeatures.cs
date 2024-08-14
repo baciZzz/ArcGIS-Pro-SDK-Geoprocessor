@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutObstacleFeatures, OutObstacleBuffers, ClipFeatures };
+		public override object[] Parameters => new object[] { InTable, OutObstacleFeatures, OutObstacleBuffers, ClipFeatures! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object ClipFeatures { get; set; }
+		public object? ClipFeatures { get; set; }
 
 	}
 }

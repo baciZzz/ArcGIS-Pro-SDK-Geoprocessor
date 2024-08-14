@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		/// <param name="InEvents">
 		/// <para>Input Event Table</para>
-		/// <para>The table whose rows will be aggregated.</para>
+		/// <para>The table with the rows that will be aggregated.</para>
 		/// </param>
 		/// <param name="InEventProperties">
 		/// <para>Event Table Properties</para>
@@ -34,11 +34,11 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </param>
 		/// <param name="DissolveField">
 		/// <para>Dissolve Fields</para>
-		/// <para>The field(s) used to aggregate rows.</para>
+		/// <para>The fields that will be used to aggregate rows.</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Event Table</para>
-		/// <para>The table to be created.</para>
+		/// <para>The table that will be created.</para>
 		/// </param>
 		/// <param name="OutEventProperties">
 		/// <para>Output Event Table Properties</para>
@@ -92,11 +92,11 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InEvents, InEventProperties, DissolveField, OutTable, OutEventProperties, DissolveType, BuildIndex };
+		public override object[] Parameters => new object[] { InEvents, InEventProperties, DissolveField, OutTable, OutEventProperties, DissolveType!, BuildIndex! };
 
 		/// <summary>
 		/// <para>Input Event Table</para>
-		/// <para>The table whose rows will be aggregated.</para>
+		/// <para>The table with the rows that will be aggregated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Dissolve Fields</para>
-		/// <para>The field(s) used to aggregate rows.</para>
+		/// <para>The fields that will be used to aggregate rows.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Output Event Table</para>
-		/// <para>The table to be created.</para>
+		/// <para>The table that will be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Combine adjacent events only</para>
-		/// <para>Specifies whether the input events will be concatenated or dissolved.</para>
+		/// <para>Specifies whether the input events will be aggregated or dissolved.</para>
 		/// <para>Unchecked—Events will be aggregated wherever there is measure overlap. This is the default.</para>
 		/// <para>Checked—Events will be aggregated where the to-measure of one event matches the from-measure of the next event. This option is applicable only for line events.</para>
 		/// <para><see cref="DissolveTypeEnum"/></para>
@@ -158,24 +158,24 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DissolveType { get; set; } = "false";
+		public object? DissolveType { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Build index</para>
 		/// <para>Specifies whether an attribute index will be created for the route identifier field that is written to the output event table.</para>
-		/// <para>Checked—Creates an attribute index. This is the default.</para>
-		/// <para>Unchecked—Does not create an attribute index.</para>
+		/// <para>Checked—An attribute index will be created. This is the default.</para>
+		/// <para>Unchecked—An attribute index will not be created.</para>
 		/// <para><see cref="BuildIndexEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object BuildIndex { get; set; } = "true";
+		public object? BuildIndex { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DissolveRouteEvents SetEnviroment(object configKeyword = null , object scratchWorkspace = null , object workspace = null )
+		public DissolveRouteEvents SetEnviroment(object? configKeyword = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(configKeyword: configKeyword, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -210,14 +210,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum BuildIndexEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Creates an attribute index. This is the default.</para>
+			/// <para>Checked—An attribute index will be created. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INDEX")]
 			INDEX,
 
 			/// <summary>
-			/// <para>Unchecked—Does not create an attribute index.</para>
+			/// <para>Unchecked—An attribute index will not be created.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_INDEX")]

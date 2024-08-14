@@ -68,7 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InParcelFabric, AnalysisType, ConvergenceTolerance, UpdatedParcelFabric, UpdatedAdjustmentPoints, UpdatedAdjustmentLines, UpdatedAdjustmentVectors };
+		public override object[] Parameters => new object[] { InParcelFabric, AnalysisType, ConvergenceTolerance!, UpdatedParcelFabric!, UpdatedAdjustmentPoints!, UpdatedAdjustmentLines!, UpdatedAdjustmentVectors! };
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>
@@ -96,35 +96,35 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object ConvergenceTolerance { get; set; } = "0.05 Meters";
+		public object? ConvergenceTolerance { get; set; } = "0.05 Meters";
 
 		/// <summary>
 		/// <para>Updated Parcel Fabric</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEParcelDataset()]
-		public object UpdatedParcelFabric { get; set; }
+		public object? UpdatedParcelFabric { get; set; }
 
 		/// <summary>
 		/// <para>Updated Adjustment Points</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object UpdatedAdjustmentPoints { get; set; }
+		public object? UpdatedAdjustmentPoints { get; set; }
 
 		/// <summary>
 		/// <para>Updated Adjustment Lines</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object UpdatedAdjustmentLines { get; set; }
+		public object? UpdatedAdjustmentLines { get; set; }
 
 		/// <summary>
 		/// <para>Updated Adjustment Vectors</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object UpdatedAdjustmentVectors { get; set; }
+		public object? UpdatedAdjustmentVectors { get; set; }
 
 		#region InnerClass
 

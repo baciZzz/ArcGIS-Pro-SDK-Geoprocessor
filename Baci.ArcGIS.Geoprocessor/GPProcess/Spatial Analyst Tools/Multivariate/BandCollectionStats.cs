@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasterBands, OutStatFile, ComputeMatrices };
+		public override object[] Parameters => new object[] { InRasterBands, OutStatFile, ComputeMatrices! };
 
 		/// <summary>
 		/// <para>Input raster bands</para>
@@ -99,12 +99,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ComputeMatrices { get; set; } = "false";
+		public object? ComputeMatrices { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BandCollectionStats SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public BandCollectionStats SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

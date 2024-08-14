@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetProfile, BaseProfile, ReportTitle, ReportFolder, ReportFormat, OutputReport };
+		public override object[] Parameters => new object[] { TargetProfile, BaseProfile, ReportTitle!, ReportFolder!, ReportFormat!, OutputReport! };
 
 		/// <summary>
 		/// <para>Target Profile</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Report Options")]
-		public object ReportTitle { get; set; }
+		public object? ReportTitle { get; set; }
 
 		/// <summary>
 		/// <para>Output Report Folder</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
 		[Category("Report Options")]
-		public object ReportFolder { get; set; }
+		public object? ReportFolder { get; set; }
 
 		/// <summary>
 		/// <para>Report Output Formats</para>
@@ -110,21 +110,21 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[Category("Report Options")]
-		public object ReportFormat { get; set; }
+		public object? ReportFormat { get; set; }
 
 		/// <summary>
 		/// <para>Output Report</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutputReport { get; set; }
+		public object? OutputReport { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateSegmentationProfileReport SetEnviroment(object workspace = null )
+		public GenerateSegmentationProfileReport SetEnviroment(object? baDataSource = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, workspace: workspace);
 			return this;
 		}
 

@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, OutTerritorySolution, InBoundaryMask };
+		public override object[] Parameters => new object[] { InTerritorySolution, OutTerritorySolution!, InBoundaryMask! };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPGroupLayer()]
-		public object OutTerritorySolution { get; set; }
+		public object? OutTerritorySolution { get; set; }
 
 		/// <summary>
 		/// <para>Boundary Mask</para>
@@ -84,12 +84,12 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object InBoundaryMask { get; set; }
+		public object? InBoundaryMask { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RebuildTerritorySolution SetEnviroment(object workspace = null )
+		public RebuildTerritorySolution SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

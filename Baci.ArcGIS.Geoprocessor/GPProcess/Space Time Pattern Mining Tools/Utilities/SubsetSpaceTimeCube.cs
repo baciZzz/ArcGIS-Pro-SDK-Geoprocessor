@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCube, OutCube, SpatialSubsetMethod, TemporalSubsetMethod, InSubsetFeatures!, SpatialRelationship!, SpatialExtent!, InSpatialCube!, TimeSpanSubset!, RemoveTimeSteps!, InTemporalCube };
+		public override object[] Parameters => new object[] { InCube, OutCube, SpatialSubsetMethod, TemporalSubsetMethod, InSubsetFeatures!, SpatialRelationship!, SpatialExtent!, InSpatialCube!, TimeSpanSubset!, RemoveTimeSteps!, InTemporalCube! };
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>

@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Input, InFileType, OutFeatureClass, OutGeometryType, ZFactor, InputCoordinateSystem, AveragePointSpacing, FileSuffix, DecimalSeparator };
+		public override object[] Parameters => new object[] { Input, InFileType, OutFeatureClass, OutGeometryType, ZFactor!, InputCoordinateSystem!, AveragePointSpacing!, FileSuffix!, DecimalSeparator! };
 
 		/// <summary>
 		/// <para>ASCII 3D Data</para>
@@ -94,6 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
+		[GPCompositeDomain()]
 		public object Input { get; set; }
 
 		/// <summary>
@@ -137,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ZFactor { get; set; } = "1";
+		public object? ZFactor { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Coordinate System</para>
@@ -145,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
-		public object InputCoordinateSystem { get; set; }
+		public object? InputCoordinateSystem { get; set; }
 
 		/// <summary>
 		/// <para>Average Point Spacing</para>
@@ -153,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object AveragePointSpacing { get; set; }
+		public object? AveragePointSpacing { get; set; }
 
 		/// <summary>
 		/// <para>File Suffix</para>
@@ -161,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object FileSuffix { get; set; }
+		public object? FileSuffix { get; set; }
 
 		/// <summary>
 		/// <para>Decimal Separator</para>
@@ -173,12 +174,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DecimalSeparator { get; set; } = "DECIMAL_POINT";
+		public object? DecimalSeparator { get; set; } = "DECIMAL_POINT";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ASCII3DToFeatureClass SetEnviroment(object XYResolution = null , object XYTolerance = null , object ZResolution = null , object ZTolerance = null , int? autoCommit = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object workspace = null )
+		public ASCII3DToFeatureClass SetEnviroment(object? XYResolution = null , object? XYTolerance = null , object? ZResolution = null , object? ZTolerance = null , int? autoCommit = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(XYResolution: XYResolution, XYTolerance: XYTolerance, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, MinimumSpacing, DispersalPattern, OutRepresentations };
+		public override object[] Parameters => new object[] { InPointFeatures, MinimumSpacing, DispersalPattern!, OutRepresentations! };
 
 		/// <summary>
 		/// <para>Input Point Features</para>
@@ -103,19 +103,19 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DispersalPattern { get; set; } = "EXPANDED";
+		public object? DispersalPattern { get; set; } = "EXPANDED";
 
 		/// <summary>
 		/// <para>Updated Input Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutRepresentations { get; set; }
+		public object? OutRepresentations { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DisperseMarkers SetEnviroment(object cartographicCoordinateSystem = null , object referenceScale = null )
+		public DisperseMarkers SetEnviroment(object? cartographicCoordinateSystem = null , double? referenceScale = null )
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem, referenceScale: referenceScale);
 			return this;

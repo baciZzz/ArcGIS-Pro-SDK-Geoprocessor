@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLandxmlPath, OutTinFolder, TinBasename, Tinnames, DerivedTinFolder };
+		public override object[] Parameters => new object[] { InLandxmlPath, OutTinFolder, TinBasename, Tinnames!, DerivedTinFolder! };
 
 		/// <summary>
 		/// <para>Input</para>
@@ -103,19 +103,19 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Tinnames { get; set; }
+		public object? Tinnames { get; set; }
 
 		/// <summary>
 		/// <para>Updated Output TIN Folder</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFolder()]
-		public object DerivedTinFolder { get; set; }
+		public object? DerivedTinFolder { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LandXMLToTin SetEnviroment(object scratchWorkspace = null , object tinSaveVersion = null , object workspace = null )
+		public LandXMLToTin SetEnviroment(object? scratchWorkspace = null , object? tinSaveVersion = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, tinSaveVersion: tinSaveVersion, workspace: workspace);
 			return this;

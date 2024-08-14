@@ -61,12 +61,12 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
+		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputsurfaceraster, Outputflowdirectionname, Forceflow, Flowdirectiontype, Outputdropname, Outputflowdirectionraster, Outputdropraster };
+		public override object[] Parameters => new object[] { Inputsurfaceraster, Outputflowdirectionname, Forceflow!, Flowdirectiontype!, Outputdropname!, Outputflowdirectionraster!, Outputdropraster! };
 
 		/// <summary>
 		/// <para>Input Surface Raster</para>
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Forceflow { get; set; } = "false";
+		public object? Forceflow { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Flow Direction Type</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Flowdirectiontype { get; set; } = "D8";
+		public object? Flowdirectiontype { get; set; } = "D8";
 
 		/// <summary>
 		/// <para>Output Drop Name</para>
@@ -118,28 +118,28 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Outputdropname { get; set; }
+		public object? Outputdropname { get; set; }
 
 		/// <summary>
 		/// <para>Output Flow Direction Raster</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRasterLayer()]
-		public object Outputflowdirectionraster { get; set; }
+		public object? Outputflowdirectionraster { get; set; }
 
 		/// <summary>
 		/// <para>Output Drop Raster</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRasterLayer()]
-		public object Outputdropraster { get; set; }
+		public object? Outputdropraster { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FlowDirection SetEnviroment(object cellSize = null , object extent = null , object mask = null , object outputCoordinateSystem = null , object snapRaster = null )
+		public FlowDirection SetEnviroment(object? cellSize = null , object? extent = null , object? mask = null , object? outputCoordinateSystem = null , object? pyramid = null , object? snapRaster = null )
 		{
-			base.SetEnv(cellSize: cellSize, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, snapRaster: snapRaster);
+			base.SetEnv(cellSize: cellSize, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, pyramid: pyramid, snapRaster: snapRaster);
 			return this;
 		}
 

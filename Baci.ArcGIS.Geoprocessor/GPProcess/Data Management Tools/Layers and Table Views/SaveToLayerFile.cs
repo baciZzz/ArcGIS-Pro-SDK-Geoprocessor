@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayer, OutLayer, IsRelativePath, Version };
+		public override object[] Parameters => new object[] { InLayer, OutLayer, IsRelativePath!, Version! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IsRelativePath { get; set; }
+		public object? IsRelativePath { get; set; }
 
 		/// <summary>
 		/// <para>Layer Version</para>
@@ -104,12 +104,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Version { get; set; } = "CURRENT";
+		public object? Version { get; set; } = "CURRENT";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SaveToLayerFile SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public SaveToLayerFile SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

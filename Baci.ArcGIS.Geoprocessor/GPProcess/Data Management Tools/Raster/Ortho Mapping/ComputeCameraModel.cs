@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>The mosaic dataset on which to build and calculate the camera model.</para>
+		/// <para>The mosaic dataset on which the camera model will be built and calculated.</para>
 		/// <para>Although not mandatory, it is recommended that you run the Apply Block Adjustment tool on the input mosaic dataset first.</para>
 		/// </param>
 		public ComputeCameraModel(object InMosaicDataset)
@@ -56,16 +56,16 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "gpuID", "parallelProcessingFactor", "processorType", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, OutDsm, GpsAccuracy, Estimate, Refine, ApplyAdjustment, MaximumResidual, InitialTiepointResolution, OutControlPoints, OutSolutionTable, OutSolutionPointTable, OutFlightPath, MaximumOverlap, MinimumCoverage, Remove, InControlPoints, Options, OutMosaicDataset };
+		public override object[] Parameters => new object[] { InMosaicDataset, OutDsm!, GpsAccuracy!, Estimate!, Refine!, ApplyAdjustment!, MaximumResidual!, InitialTiepointResolution!, OutControlPoints!, OutSolutionTable!, OutSolutionPointTable!, OutFlightPath!, MaximumOverlap!, MinimumCoverage!, Remove!, InControlPoints!, Options!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>The mosaic dataset on which to build and calculate the camera model.</para>
+		/// <para>The mosaic dataset on which the camera model will be built and calculated.</para>
 		/// <para>Although not mandatory, it is recommended that you run the Apply Block Adjustment tool on the input mosaic dataset first.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -74,11 +74,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output DSM</para>
-		/// <para>A digital surface model raster dataset generated from the adjusted images in the mosaic dataset. If Apply Adjustment is checked, this DSM will be used to replace the DEM in the geometric function to achieve better orthorectification.</para>
+		/// <para>A DSM raster dataset generated from the adjusted images in the mosaic dataset. If Apply Adjustment is checked, this DSM will replace the DEM in the geometric function to achieve better orthorectification.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
-		public object OutDsm { get; set; }
+		public object? OutDsm { get; set; }
 
 		/// <summary>
 		/// <para>GPS Location Accuracy</para>
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object GpsAccuracy { get; set; } = "HIGH";
+		public object? GpsAccuracy { get; set; } = "HIGH";
 
 		/// <summary>
 		/// <para>Estimate Camera Model</para>
@@ -105,19 +105,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Estimate { get; set; } = "true";
+		public object? Estimate { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Refine Camera Model</para>
 		/// <para>Specifies whether the camera model will be refined by computing the adjustment at the mosaic dataset resolution. Computing the adjustment at this level will provide the most accurate result.</para>
-		/// <para>Checked—The computed at the source resolution. This is the default.</para>
-		/// <para>Unchecked—The adjustment will not be computed at the source resolution. This option will be faster, so it is a good option when the computation does not need to be performed at the source resolution.</para>
+		/// <para>Checked—The camera model will be refined by computing the adjustment at the source resolution. This is the default.</para>
+		/// <para>Unchecked—The camera model will not be refined. This option will be faster, so it is a good option when the computation does not need to be performed at the source resolution.</para>
 		/// <para><see cref="RefineEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Refine { get; set; } = "true";
+		public object? Refine { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Apply Adjustment</para>
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ApplyAdjustment { get; set; } = "true";
+		public object? ApplyAdjustment { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Maximum Residual</para>
@@ -137,16 +137,16 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MaximumResidual { get; set; } = "5";
+		public object? MaximumResidual { get; set; } = "5";
 
 		/// <summary>
 		/// <para>Initial Tie Point Resolution</para>
-		/// <para>The resolution factor at which tie points are generated when estimating the camera model. The default value is 8, which means eight times the source pixel resolution.</para>
+		/// <para>The resolution factor at which tie points will be generated when estimating the camera model. The default value is 8, which means eight times the source pixel resolution.</para>
 		/// <para>For images with only minor differentiation of features, such as agriculture fields, a lower value such as 2 can be used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object InitialTiepointResolution { get; set; } = "8";
+		public object? InitialTiepointResolution { get; set; } = "8";
 
 		/// <summary>
 		/// <para>Output Control Point Table</para>
@@ -155,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[Category("Additional Outputs")]
-		public object OutControlPoints { get; set; }
+		public object? OutControlPoints { get; set; }
 
 		/// <summary>
 		/// <para>Output Solution Table</para>
@@ -164,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
 		[Category("Additional Outputs")]
-		public object OutSolutionTable { get; set; }
+		public object? OutSolutionTable { get; set; }
 
 		/// <summary>
 		/// <para>Output Solution Point Table</para>
@@ -173,7 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[Category("Additional Outputs")]
-		public object OutSolutionPointTable { get; set; }
+		public object? OutSolutionPointTable { get; set; }
 
 		/// <summary>
 		/// <para>Output Flight Path</para>
@@ -182,7 +182,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[Category("Additional Outputs")]
-		public object OutFlightPath { get; set; }
+		public object? OutFlightPath { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Area Overlap</para>
@@ -192,7 +192,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Advanced Options")]
-		public object MaximumOverlap { get; set; }
+		public object? MaximumOverlap { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Control Point Coverage</para>
@@ -201,7 +201,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Advanced Options")]
-		public object MinimumCoverage { get; set; } = "0.05";
+		public object? MinimumCoverage { get; set; } = "0.05";
 
 		/// <summary>
 		/// <para>Remove Off-Strip Images</para>
@@ -214,7 +214,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object Remove { get; set; } = "false";
+		public object? Remove { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Input Tie Point Table</para>
@@ -223,30 +223,30 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[Category("Advanced Options")]
-		public object InControlPoints { get; set; }
+		public object? InControlPoints { get; set; }
 
 		/// <summary>
 		/// <para>Additional Options</para>
-		/// <para>Additional options for the adjustment engine. These options are only for use by third-party adjustment engines.</para>
+		/// <para>Additional options for the adjustment engine. These options are only used by third-party adjustment engines.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[Category("Advanced Options")]
-		public object Options { get; set; }
+		public object? Options { get; set; }
 
 		/// <summary>
 		/// <para>Output Camera Model</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutMosaicDataset { get; set; }
+		public object? OutMosaicDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ComputeCameraModel SetEnviroment(object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public ComputeCameraModel SetEnviroment(object? parallelProcessingFactor = null , object? processorType = null , object? scratchWorkspace = null , object? workspace = null )
 		{
-			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
+			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, processorType: processorType, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
 		}
 
@@ -321,14 +321,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum RefineEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The computed at the source resolution. This is the default.</para>
+			/// <para>Checked—The camera model will be refined by computing the adjustment at the source resolution. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REFINE")]
 			REFINE,
 
 			/// <summary>
-			/// <para>Unchecked—The adjustment will not be computed at the source resolution. This option will be faster, so it is a good option when the computation does not need to be performed at the source resolution.</para>
+			/// <para>Unchecked—The camera model will not be refined. This option will be faster, so it is a good option when the computation does not need to be performed at the source resolution.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_REFINE")]

@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputMap, TilingScheme, OutputFeatureClass, UseMapExtent, ClipToHorizon, Antialiasing, Levels };
+		public override object[] Parameters => new object[] { InputMap, TilingScheme, OutputFeatureClass, UseMapExtent, ClipToHorizon, Antialiasing!, Levels! };
 
 		/// <summary>
 		/// <para>Input Map</para>
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Antialiasing { get; set; } = "false";
+		public object? Antialiasing { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Scales</para>
@@ -155,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Levels { get; set; }
+		public object? Levels { get; set; }
 
 		#region InnerClass
 

@@ -60,12 +60,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InScene, OutputFile, InLocator, AreaOfInterest, Extent, ClipFeatures, Title, Summary, Description, Tags, Credits, UseLimitations, AnonymousUse, TextureOptimization, EnableSceneExpiration, SceneExpirationType, ExpirationDate, ExpirationMessage, SelectRelatedRows, ReferenceOnlineContent };
+		public override object[] Parameters => new object[] { InScene, OutputFile, InLocator!, AreaOfInterest!, Extent!, ClipFeatures!, Title!, Summary!, Description!, Tags!, Credits!, UseLimitations!, AnonymousUse!, TextureOptimization!, EnableSceneExpiration!, SceneExpirationType!, ExpirationDate!, ExpirationMessage!, SelectRelatedRows!, ReferenceOnlineContent! };
 
 		/// <summary>
 		/// <para>Input Scene</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPLocatorsDomain()]
-		public object InLocator { get; set; }
+		public object? InLocator { get; set; }
 
 		/// <summary>
 		/// <para>Area of Interest</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object AreaOfInterest { get; set; }
+		public object? AreaOfInterest { get; set; }
 
 		/// <summary>
 		/// <para>Extent</para>
@@ -115,68 +115,68 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Clip Features</para>
 		/// <para>Specifies whether the output features will be clipped to the given area of interest or extent.</para>
 		/// <para>Checked—The geometry of the features will be clipped to the given area of interest or extent.</para>
 		/// <para>Unchecked—Features in the scene will be selected and their geometry will remain unaltered. This is the default.</para>
-		/// <para>Multipatch feature layers, 3D point feature layers, LAS dataset layers, service layers, tile packages, and scene layer packages, cannot be clipped and will be completely copied to the mobile scene package.</para>
+		/// <para>Multipatch feature layers, 3D point feature layers, LAS dataset layers, service layers, and tile packages cannot be clipped and will be completely copied to the mobile scene package.</para>
 		/// <para><see cref="ClipFeaturesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ClipFeatures { get; set; } = "false";
+		public object? ClipFeatures { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Title</para>
-		/// <para>Adds title information to the properties of the package.</para>
+		/// <para>Title information that will be added to the properties of the package.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Title { get; set; }
+		public object? Title { get; set; }
 
 		/// <summary>
 		/// <para>Summary</para>
-		/// <para>Adds summary information to the properties of the package.</para>
+		/// <para>Summary information that will be added to the properties of the package.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Summary { get; set; }
+		public object? Summary { get; set; }
 
 		/// <summary>
 		/// <para>Description</para>
-		/// <para>Adds description information to the properties of the package.</para>
+		/// <para>Description information that will be added to the properties of the package.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Description { get; set; }
+		public object? Description { get; set; }
 
 		/// <summary>
 		/// <para>Tags</para>
-		/// <para>Adds tag information to the properties of the package. Multiple tags can be added, separated by a comma or semicolon.</para>
+		/// <para>Tag information that will be added to the properties of the package. Multiple tags can be added, separated by a comma or semicolon.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Tags { get; set; }
+		public object? Tags { get; set; }
 
 		/// <summary>
 		/// <para>Credits</para>
-		/// <para>Adds credit information to the properties of the package.</para>
+		/// <para>Credit information that will be added to the properties of the package.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Credits { get; set; }
+		public object? Credits { get; set; }
 
 		/// <summary>
 		/// <para>Use Limitations</para>
-		/// <para>Adds use limitations to the properties of the package.</para>
+		/// <para>Use limitations that will be added to the properties of the package.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object UseLimitations { get; set; }
+		public object? UseLimitations { get; set; }
 
 		/// <summary>
 		/// <para>Enable Anonymous Use</para>
@@ -189,40 +189,39 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AnonymousUse { get; set; } = "false";
+		public object? AnonymousUse { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Texture Optimization</para>
-		/// <para>Specifies the texture optimization that will be used. Textures are optimized according to the target platform where the scene layer package will be used. This parameter applies to scene layer packages only.</para>
-		/// <para>Optimizations that include ETC2 may take significant time to process. For fastest results, use Desktop or None.</para>
-		/// <para>All—All texture formats including JPEG, DXT, and ETC2 for use in desktop, web, and mobile can be used.</para>
-		/// <para>Desktop—Windows-, Linux-, and Mac-supported textures including JPEG and DXT can be used in the ArcGIS Pro client on Windows and ArcGIS Runtime desktop clients on Windows, Linux, and Mac. This is the default.</para>
-		/// <para>Mobile—Android- and iOS-supported textures including JPEG and ETC2 can be used in ArcGIS Runtime mobile applications.</para>
-		/// <para>None—JPEG textures can be used in desktop and web platforms.</para>
+		/// <para>Specifies the textures that will be optimized according to the target platform where the scene layer package is used.Optimizations that include KTX2 may take significant time to process. For fastest results, use the Desktop or None options.</para>
+		/// <para>All—All texture formats will be optimized including JPEG, DXT, and KTX2 for use in desktop, web, and mobile platforms.</para>
+		/// <para>Desktop—Windows, Linux, and Mac supported textures will be optimized including JPEG and DXT for use in ArcGIS Pro clients on Windows and ArcGIS Runtime desktop clients on Windows, Linux, and Mac. This is the default.</para>
+		/// <para>Mobile—Android and iOS supported textures will be optimized including JPEG and KTX2 for use in ArcGIS Runtime mobile applications.</para>
+		/// <para>None—JPEG textures will be optimized for use in desktop and web platforms.</para>
 		/// <para><see cref="TextureOptimizationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TextureOptimization { get; set; } = "DESKTOP";
+		public object? TextureOptimization { get; set; } = "DESKTOP";
 
 		/// <summary>
 		/// <para>Enable Scene Expiration</para>
 		/// <para>Specifies whether the mobile scene package will time out.</para>
-		/// <para>Checked—Time-out is enabled on the mobile scene package.</para>
-		/// <para>Unchecked—Time-out is not enabled on the mobile scene package. This is the default.</para>
+		/// <para>Checked—Time-out functionality will be enabled on the mobile scene package.</para>
+		/// <para>Unchecked—Time-out functionality will not be enabled on the mobile scene package. This is the default.</para>
 		/// <para>This optional parameter is only available with the Publisher extension.</para>
 		/// <para><see cref="EnableSceneExpirationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object EnableSceneExpiration { get; set; } = "false";
+		public object? EnableSceneExpiration { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Scene Expiration Type</para>
-		/// <para>Specifies the type of scene access for the expired mobile scene package.</para>
-		/// <para>Allow to open—The user of the package will be warned that the scene has expired, and allowed to open the scene. This is the default.</para>
+		/// <para>Specifies the type of scene access that will be used for the expired mobile scene package.</para>
+		/// <para>Allow to open—The user of the package will be warned that the scene has expired and allowed to open the scene. This is the default.</para>
 		/// <para>Do not allow to open—The user of the package will be warned that the scene has expired and will not be allowed to open the package.</para>
 		/// <para>This optional parameter is only available with the Publisher extension.</para>
 		/// <para><see cref="SceneExpirationTypeEnum"/></para>
@@ -230,7 +229,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SceneExpirationType { get; set; } = "ALLOW_TO_OPEN";
+		public object? SceneExpirationType { get; set; } = "ALLOW_TO_OPEN";
 
 		/// <summary>
 		/// <para>Expiration Date</para>
@@ -239,7 +238,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object ExpirationDate { get; set; }
+		public object? ExpirationDate { get; set; }
 
 		/// <summary>
 		/// <para>Expiration Message</para>
@@ -248,7 +247,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ExpirationMessage { get; set; } = "This scene is expired, Contact the scene publisher for an updated scene";
+		public object? ExpirationMessage { get; set; } = "This scene is expired, Contact the scene publisher for an updated scene";
 
 		/// <summary>
 		/// <para>Keep only the rows which are related to features within the extent</para>
@@ -260,7 +259,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SelectRelatedRows { get; set; } = "false";
+		public object? SelectRelatedRows { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Reference Online Content</para>
@@ -272,7 +271,16 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ReferenceOnlineContent { get; set; } = "false";
+		public object? ReferenceOnlineContent { get; set; } = "false";
+
+		/// <summary>
+		/// <para>Only Set The Valid Environment For This Tool</para>
+		/// </summary>
+		public CreateMobileScenePackage SetEnviroment(object? parallelProcessingFactor = null )
+		{
+			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
+			return this;
+		}
 
 		#region InnerClass
 
@@ -324,28 +332,28 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum TextureOptimizationEnum 
 		{
 			/// <summary>
-			/// <para>All—All texture formats including JPEG, DXT, and ETC2 for use in desktop, web, and mobile can be used.</para>
+			/// <para>All—All texture formats will be optimized including JPEG, DXT, and KTX2 for use in desktop, web, and mobile platforms.</para>
 			/// </summary>
 			[GPValue("ALL")]
 			[Description("All")]
 			All,
 
 			/// <summary>
-			/// <para>Desktop—Windows-, Linux-, and Mac-supported textures including JPEG and DXT can be used in the ArcGIS Pro client on Windows and ArcGIS Runtime desktop clients on Windows, Linux, and Mac. This is the default.</para>
+			/// <para>Desktop—Windows, Linux, and Mac supported textures will be optimized including JPEG and DXT for use in ArcGIS Pro clients on Windows and ArcGIS Runtime desktop clients on Windows, Linux, and Mac. This is the default.</para>
 			/// </summary>
 			[GPValue("DESKTOP")]
 			[Description("Desktop")]
 			Desktop,
 
 			/// <summary>
-			/// <para>Mobile—Android- and iOS-supported textures including JPEG and ETC2 can be used in ArcGIS Runtime mobile applications.</para>
+			/// <para>Mobile—Android and iOS supported textures will be optimized including JPEG and KTX2 for use in ArcGIS Runtime mobile applications.</para>
 			/// </summary>
 			[GPValue("MOBILE")]
 			[Description("Mobile")]
 			Mobile,
 
 			/// <summary>
-			/// <para>None—JPEG textures can be used in desktop and web platforms.</para>
+			/// <para>None—JPEG textures will be optimized for use in desktop and web platforms.</para>
 			/// </summary>
 			[GPValue("NONE")]
 			[Description("None")]
@@ -359,14 +367,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum EnableSceneExpirationEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Time-out is enabled on the mobile scene package.</para>
+			/// <para>Checked—Time-out functionality will be enabled on the mobile scene package.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ENABLE_SCENE_EXPIRATION")]
 			ENABLE_SCENE_EXPIRATION,
 
 			/// <summary>
-			/// <para>Unchecked—Time-out is not enabled on the mobile scene package. This is the default.</para>
+			/// <para>Unchecked—Time-out functionality will not be enabled on the mobile scene package. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DISABLE_SCENE_EXPIRATION")]
@@ -380,7 +388,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SceneExpirationTypeEnum 
 		{
 			/// <summary>
-			/// <para>Allow to open—The user of the package will be warned that the scene has expired, and allowed to open the scene. This is the default.</para>
+			/// <para>Allow to open—The user of the package will be warned that the scene has expired and allowed to open the scene. This is the default.</para>
 			/// </summary>
 			[GPValue("ALLOW_TO_OPEN")]
 			[Description("Allow to open")]

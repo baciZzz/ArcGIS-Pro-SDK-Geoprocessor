@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputraster, Inputmodel, Outputname, Inputfeatures, Modelarguments, Classlabelfield, Processingmode, Outobjects };
+		public override object[] Parameters => new object[] { Inputraster, Inputmodel, Outputname, Inputfeatures!, Modelarguments!, Classlabelfield!, Processingmode!, Outobjects! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object Inputfeatures { get; set; }
+		public object? Inputfeatures { get; set; }
 
 		/// <summary>
 		/// <para>Model Arguments</para>
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object Modelarguments { get; set; }
+		public object? Modelarguments { get; set; }
 
 		/// <summary>
 		/// <para>Class Label Field</para>
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Classlabelfield { get; set; } = "ClassLabel";
+		public object? Classlabelfield { get; set; } = "ClassLabel";
 
 		/// <summary>
 		/// <para>Processing Mode</para>
@@ -136,21 +136,21 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Processingmode { get; set; } = "PROCESS_AS_MOSAICKED_IMAGE";
+		public object? Processingmode { get; set; } = "PROCESS_AS_MOSAICKED_IMAGE";
 
 		/// <summary>
 		/// <para>Output Objects</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object Outobjects { get; set; }
+		public object? Outobjects { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ClassifyObjectsUsingDeepLearning SetEnviroment(object cellSize = null , object extent = null , object parallelProcessingFactor = null )
+		public ClassifyObjectsUsingDeepLearning SetEnviroment(object? cellSize = null , object? extent = null , object? parallelProcessingFactor = null , object? processorType = null )
 		{
-			base.SetEnv(cellSize: cellSize, extent: extent, parallelProcessingFactor: parallelProcessingFactor);
+			base.SetEnv(cellSize: cellSize, extent: extent, parallelProcessingFactor: parallelProcessingFactor, processorType: processorType);
 			return this;
 		}
 

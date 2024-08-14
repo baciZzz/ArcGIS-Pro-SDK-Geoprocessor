@@ -22,7 +22,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <param name="InResult">
 		/// <para>Result</para>
 		/// <para>The result that will be packaged.</para>
-		/// <para>The input can be either a result from the history of your current project or a Result object&apos;s resultID property when the tool is being used in a Python script.</para>
+		/// <para>The input can be either a result from the history of the current project or a Result object&apos;s resultID property when the tool is being used in a Python script.</para>
 		/// </param>
 		/// <param name="OutputFile">
 		/// <para>Output File</para>
@@ -67,12 +67,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InResult, OutputFile, ConvertData, ConvertArcsdeData, Extent, ApplyExtentToArcsde, SchemaOnly, Arcgisruntime, AdditionalFiles, Summary, Tags, Version, SelectRelatedRows };
+		public override object[] Parameters => new object[] { InResult, OutputFile, ConvertData!, ConvertArcsdeData!, Extent!, ApplyExtentToArcsde!, SchemaOnly!, Arcgisruntime!, AdditionalFiles!, Summary!, Tags!, Version!, SelectRelatedRows! };
 
 		/// <summary>
 		/// <para>Result</para>
 		/// <para>The result that will be packaged.</para>
-		/// <para>The input can be either a result from the history of your current project or a Result object&apos;s resultID property when the tool is being used in a Python script.</para>
+		/// <para>The input can be either a result from the history of the current project or a Result object&apos;s resultID property when the tool is being used in a Python script.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ConvertData { get; set; } = "false";
+		public object? ConvertData { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Include Enterprise Geodatabase data instead of referencing the data</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ConvertArcsdeData { get; set; } = "true";
+		public object? ConvertArcsdeData { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Extent</para>
@@ -123,11 +123,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Apply Extent only to enterprise geodatabase layers</para>
-		/// <para>Specifies whether the specified extent will be applied to all layers or only to enterprise geodatabase layers.</para>
+		/// <para>Specifies whether the specified extent will be applied to all layers or to enterprise geodatabase layers only.</para>
 		/// <para>Unchecked—The extent will be applied to all layers. This is the default.</para>
 		/// <para>Checked—The extent will be applied to enterprise geodatabase layers only.</para>
 		/// <para><see cref="ApplyExtentToArcsdeEnum"/></para>
@@ -135,11 +135,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ApplyExtentToArcsde { get; set; } = "false";
+		public object? ApplyExtentToArcsde { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Schema only</para>
-		/// <para>Specifies whether only the schema of input and output datasets will be consolidated or packaged.</para>
+		/// <para>Specifies whether all features and records for input and output datasets or only the schema of input and output datasets will be consolidated or packaged.</para>
 		/// <para>Unchecked—All features and records for input and output datasets will be included in the consolidated folder or package. This is the default.</para>
 		/// <para>Checked—Only the schema of input and output datasets will be consolidated or packaged. No features or records will be consolidated or packaged in the output folder.</para>
 		/// <para><see cref="SchemaOnlyEnum"/></para>
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SchemaOnly { get; set; } = "false";
+		public object? SchemaOnly { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Support ArcGIS Runtime</para>
@@ -159,15 +159,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Arcgisruntime { get; set; } = "false";
+		public object? Arcgisruntime { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Additional Files</para>
-		/// <para>Adds additional files to a package. Additional files, such as .doc, .txt, .pdf, and so on, are used to provide more information about the contents and purpose of the package.</para>
+		/// <para>Adds files to a package. Additional files, such as .doc, .txt, .pdf, and so on, are used to provide more information about the contents and purpose of the package.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object AdditionalFiles { get; set; }
+		public object? AdditionalFiles { get; set; }
 
 		/// <summary>
 		/// <para>Summary</para>
@@ -175,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Summary { get; set; }
+		public object? Summary { get; set; }
 
 		/// <summary>
 		/// <para>Tags</para>
@@ -183,25 +183,27 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Tags { get; set; }
+		public object? Tags { get; set; }
 
 		/// <summary>
 		/// <para>Package version</para>
-		/// <para>Specifies the version of the geodatabases that will be created in the resulting package. Specifying a version allows packages to be shared with previous versions of ArcGIS and supports backward compatibility.A package saved to a previous version may lose properties available only in the newer version.</para>
+		/// <para>Specifies the version of the geodatabases that will be created in the resulting package. Specifying a version allows packages to be shared with earlier versions of ArcGIS and supports backward compatibility.A package saved to an earlier version may lose properties that are only available in the later version.</para>
 		/// <para>All versions— The package will contain geodatabases and maps compatible with all versions (ArcGIS Pro 2.1 and later).</para>
 		/// <para>Current version— The package will contain geodatabases and maps compatible with the version of the current release.</para>
-		/// <para>2.1—The package will contain geodatabases and maps compatible with version 2.1.</para>
 		/// <para>2.2— The package will contain geodatabases and maps compatible with version 2.2.</para>
 		/// <para>2.3—The package will contain geodatabases and maps compatible with version 2.3.</para>
 		/// <para>2.4—The package will contain geodatabases and maps compatible with version 2.4.</para>
 		/// <para>2.5—The package will contain geodatabases and maps compatible with version 2.5.</para>
 		/// <para>2.6—The package will contain geodatabases and maps compatible with version 2.6.</para>
-		/// <para><see cref="VersionEnum"/></para>
+		/// <para>2.7—The package will contain geodatabases and maps compatible with version 2.7.</para>
+		/// <para>2.8—The package will contain geodatabases and maps compatible with version 2.8.</para>
+		/// <para>2.9—The package will contain geodatabases and maps compatible with version 2.9.</para>
+		/// <para>3.0—The package will contain geodatabases and maps compatible with version 3.0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object Version { get; set; } = "ALL";
+		public object? Version { get; set; } = "ALL";
 
 		/// <summary>
 		/// <para>Keep only the rows which are related to features within the extent</para>
@@ -213,7 +215,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SelectRelatedRows { get; set; } = "false";
+		public object? SelectRelatedRows { get; set; } = "false";
 
 		#region InnerClass
 
@@ -319,76 +321,6 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			[GPValue("false")]
 			[Description("DESKTOP")]
 			DESKTOP,
-
-		}
-
-		/// <summary>
-		/// <para>Package version</para>
-		/// </summary>
-		public enum VersionEnum 
-		{
-			/// <summary>
-			/// <para>All versions— The package will contain geodatabases and maps compatible with all versions (ArcGIS Pro 2.1 and later).</para>
-			/// </summary>
-			[GPValue("ALL")]
-			[Description("All versions")]
-			All_versions,
-
-			/// <summary>
-			/// <para>Current version— The package will contain geodatabases and maps compatible with the version of the current release.</para>
-			/// </summary>
-			[GPValue("CURRENT")]
-			[Description("Current version")]
-			Current_version,
-
-			/// <summary>
-			/// <para>2.1—The package will contain geodatabases and maps compatible with version 2.1.</para>
-			/// </summary>
-			[GPValue("2.1")]
-			[Description("2.1")]
-			_21,
-
-			/// <summary>
-			/// <para>2.2— The package will contain geodatabases and maps compatible with version 2.2.</para>
-			/// </summary>
-			[GPValue("2.2")]
-			[Description("2.2")]
-			_22,
-
-			/// <summary>
-			/// <para>2.3—The package will contain geodatabases and maps compatible with version 2.3.</para>
-			/// </summary>
-			[GPValue("2.3")]
-			[Description("2.3")]
-			_23,
-
-			/// <summary>
-			/// <para>2.4—The package will contain geodatabases and maps compatible with version 2.4.</para>
-			/// </summary>
-			[GPValue("2.4")]
-			[Description("2.4")]
-			_24,
-
-			/// <summary>
-			/// <para>2.5—The package will contain geodatabases and maps compatible with version 2.5.</para>
-			/// </summary>
-			[GPValue("2.5")]
-			[Description("2.5")]
-			_25,
-
-			/// <summary>
-			/// <para>2.6—The package will contain geodatabases and maps compatible with version 2.6.</para>
-			/// </summary>
-			[GPValue("2.6")]
-			[Description("2.6")]
-			_26,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("2.7")]
-			[Description("2.7")]
-			_27,
 
 		}
 

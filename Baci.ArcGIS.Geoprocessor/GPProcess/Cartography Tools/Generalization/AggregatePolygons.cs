@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, AggregationDistance, MinimumArea, MinimumHoleSize, OrthogonalityOption, BarrierFeatures, OutTable, AggregateField };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, AggregationDistance, MinimumArea!, MinimumHoleSize!, OrthogonalityOption!, BarrierFeatures!, OutTable!, AggregateField! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPArealUnit()]
-		public object MinimumArea { get; set; } = "0 Unknown";
+		public object? MinimumArea { get; set; } = "0 Unknown";
 
 		/// <summary>
 		/// <para>Minimum Hole Size</para>
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPArealUnit()]
-		public object MinimumHoleSize { get; set; } = "0 Unknown";
+		public object? MinimumHoleSize { get; set; } = "0 Unknown";
 
 		/// <summary>
 		/// <para>Preserve orthogonal shape</para>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object OrthogonalityOption { get; set; } = "false";
+		public object? OrthogonalityOption { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Barrier Features</para>
@@ -132,15 +132,15 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
-		public object BarrierFeatures { get; set; }
+		public object? BarrierFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>A one-to-many relationship table that links the aggregated polygons to their source polygon features. This table contains two fields, OUTPUT_FID and INPUT_FID, that store the aggregated feature IDs and their source feature IDs, respectively. Use this table to derive necessary attributes for the output features from their source features. The default name for this table is the name of the output feature class, appended with _tbl. The default path is the same as the output feature class. No table is created when this parameter is left blank.</para>
+		/// <para>A one-to-many relationship table that links the aggregated polygons to their source polygon features. This table contains two fields, OUTPUT_FID and INPUT_FID, that store the aggregated feature IDs and their source feature IDs, respectively. Use this table to derive necessary attributes for the output features from their source features. The default name for this table is the name of the output feature class, appended with _tbl. The default path is the same as the output feature class. If the output features location is specified in a feature dataset, this table will be created one level higher, at the geodatabase level. No table is created when this parameter is left blank.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		/// <summary>
 		/// <para>Aggregate Field</para>
@@ -149,12 +149,12 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object AggregateField { get; set; }
+		public object? AggregateField { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AggregatePolygons SetEnviroment(object MDomain = null , object XYDomain = null , object XYTolerance = null , object cartographicPartitions = null , object extent = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , object scratchWorkspace = null , object workspace = null )
+		public AggregatePolygons SetEnviroment(object? MDomain = null , object? XYDomain = null , object? XYTolerance = null , object? cartographicPartitions = null , object? extent = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(MDomain: MDomain, XYDomain: XYDomain, XYTolerance: XYTolerance, cartographicPartitions: cartographicPartitions, extent: extent, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

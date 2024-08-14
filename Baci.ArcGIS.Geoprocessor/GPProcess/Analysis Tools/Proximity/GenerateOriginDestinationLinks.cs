@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OriginFeatures, DestinationFeatures, OutFeatureClass, OriginGroupField, DestinationGroupField, LineType, NumNearest, SearchDistance, DistanceUnit, AggregateLinks, SumFields };
+		public override object[] Parameters => new object[] { OriginFeatures, DestinationFeatures, OutFeatureClass, OriginGroupField!, DestinationGroupField!, LineType!, NumNearest!, SearchDistance!, DistanceUnit!, AggregateLinks!, SumFields! };
 
 		/// <summary>
 		/// <para>Origin Features</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
-		public object OriginGroupField { get; set; }
+		public object? OriginGroupField { get; set; }
 
 		/// <summary>
 		/// <para>Destination Group Field</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
-		public object DestinationGroupField { get; set; }
+		public object? DestinationGroupField { get; set; }
 
 		/// <summary>
 		/// <para>Line Type</para>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LineType { get; set; } = "PLANAR";
+		public object? LineType { get; set; } = "PLANAR";
 
 		/// <summary>
 		/// <para>Number of Nearest Destinations</para>
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object NumNearest { get; set; }
+		public object? NumNearest { get; set; }
 
 		/// <summary>
 		/// <para>Search Distance</para>
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object SearchDistance { get; set; }
+		public object? SearchDistance { get; set; }
 
 		/// <summary>
 		/// <para>Distance Unit</para>
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DistanceUnit { get; set; }
+		public object? DistanceUnit { get; set; }
 
 		/// <summary>
 		/// <para>Aggregate Overlapping Links</para>
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AggregateLinks { get; set; } = "false";
+		public object? AggregateLinks { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Summary Fields</para>
@@ -191,12 +191,12 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object SumFields { get; set; }
+		public object? SumFields { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateOriginDestinationLinks SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateOriginDestinationLinks SetEnviroment(object? extent = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

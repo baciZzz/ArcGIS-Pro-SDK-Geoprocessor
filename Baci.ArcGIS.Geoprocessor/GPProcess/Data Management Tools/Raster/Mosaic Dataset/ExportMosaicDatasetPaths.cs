@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, OutTable, WhereClause, ExportMode, TypesOfPaths };
+		public override object[] Parameters => new object[] { InMosaicDataset, OutTable, WhereClause!, ExportMode!, TypesOfPaths! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Export Mode</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ExportMode { get; set; } = "ALL";
+		public object? ExportMode { get; set; } = "ALL";
 
 		/// <summary>
 		/// <para>Types of paths to export</para>
@@ -116,12 +116,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object TypesOfPaths { get; set; }
+		public object? TypesOfPaths { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportMosaicDatasetPaths SetEnviroment(object configKeyword = null , object extent = null , object scratchWorkspace = null , object workspace = null )
+		public ExportMosaicDatasetPaths SetEnviroment(object? configKeyword = null , object? extent = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(configKeyword: configKeyword, extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ZValue, OutFeatureClass, GeometryType, Group, GroupField, MbvFields };
+		public override object[] Parameters => new object[] { InFeatures, ZValue, OutFeatureClass, GeometryType!, Group!, GroupField!, MbvFields! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object GeometryType { get; set; } = "CONVEX_HULL";
+		public object? GeometryType { get; set; } = "CONVEX_HULL";
 
 		/// <summary>
 		/// <para>Group Options</para>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Group { get; set; } = "NONE";
+		public object? Group { get; set; } = "NONE";
 
 		/// <summary>
 		/// <para>Group Field(s)</para>
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
-		public object GroupField { get; set; }
+		public object? GroupField { get; set; }
 
 		/// <summary>
 		/// <para>Add geometry characteristics as attributes to output</para>
@@ -144,12 +144,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object MbvFields { get; set; } = "false";
+		public object? MbvFields { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MinimumBoundingVolume SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object workspace = null )
+		public MinimumBoundingVolume SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

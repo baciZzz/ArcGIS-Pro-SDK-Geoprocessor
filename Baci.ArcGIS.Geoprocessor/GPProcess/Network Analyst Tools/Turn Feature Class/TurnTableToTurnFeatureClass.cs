@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTurnTable, ReferenceLineFeatures, OutFeatureClassName, ReferenceNodesTable, MaximumEdges, ConfigKeyword, SpatialGrid1, SpatialGrid2, SpatialGrid3, OutTurnFeatures };
+		public override object[] Parameters => new object[] { InTurnTable, ReferenceLineFeatures, OutFeatureClassName, ReferenceNodesTable!, MaximumEdges!, ConfigKeyword!, SpatialGrid1!, SpatialGrid2!, SpatialGrid3!, OutTurnFeatures! };
 
 		/// <summary>
 		/// <para>Input Turn Table</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEDbaseTable()]
-		public object ReferenceNodesTable { get; set; }
+		public object? ReferenceNodesTable { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Edges</para>
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MaximumEdges { get; set; } = "5";
+		public object? MaximumEdges { get; set; } = "5";
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ConfigKeyword { get; set; }
+		public object? ConfigKeyword { get; set; }
 
 		/// <summary>
 		/// <para>Output Spatial Grid 1</para>
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object SpatialGrid1 { get; set; } = "1000";
+		public object? SpatialGrid1 { get; set; } = "1000";
 
 		/// <summary>
 		/// <para>Output Spatial Grid 2</para>
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object SpatialGrid2 { get; set; } = "0";
+		public object? SpatialGrid2 { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Output Spatial Grid 3</para>
@@ -147,19 +147,19 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object SpatialGrid3 { get; set; } = "0";
+		public object? SpatialGrid3 { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Output Turn Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEGeoDatasetType()]
-		public object OutTurnFeatures { get; set; }
+		public object? OutTurnFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TurnTableToTurnFeatureClass SetEnviroment(object configKeyword = null , object workspace = null )
+		public TurnTableToTurnFeatureClass SetEnviroment(object? configKeyword = null , object? workspace = null )
 		{
 			base.SetEnv(configKeyword: configKeyword, workspace: workspace);
 			return this;

@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InClassData, OutPoints, TargetField, NumRandomPoints, Sampling };
+		public override object[] Parameters => new object[] { InClassData, OutPoints, TargetField!, NumRandomPoints!, Sampling!, PolygonDimensionField! };
 
 		/// <summary>
 		/// <para>Input Raster or Feature Class Data</para>
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TargetField { get; set; } = "CLASSIFIED";
+		public object? TargetField { get; set; } = "CLASSIFIED";
 
 		/// <summary>
 		/// <para>Number of Random Points</para>
@@ -106,25 +106,33 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object NumRandomPoints { get; set; } = "500";
+		public object? NumRandomPoints { get; set; } = "500";
 
 		/// <summary>
 		/// <para>Sampling Strategy</para>
-		/// <para>Specify a sampling scheme to use.</para>
-		/// <para>Stratified random—Create points that are randomly distributed within each class, where each class has a number of points proportional to its relative area. This is the default</para>
-		/// <para>Equalized stratified random—Create points that are randomly distributed within each class, where each class has the same number of points.</para>
-		/// <para>Random—Create points that are randomly distributed throughout the image.</para>
+		/// <para>Specifies the sampling scheme that will be used.</para>
+		/// <para>Stratified random—Randomly distributed points will be created in each class, in which each class has a number of points proportional to its relative area. This is the default</para>
+		/// <para>Equalized stratified random—Randomly distributed points will be created in each class, in which each class has the same number of points.</para>
+		/// <para>Random—Randomly distributed points will be created throughout the image.</para>
 		/// <para><see cref="SamplingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Sampling { get; set; } = "STRATIFIED_RANDOM";
+		public object? Sampling { get; set; } = "STRATIFIED_RANDOM";
+
+		/// <summary>
+		/// <para>Dimension Field for Feature Class</para>
+		/// <para>A field that defines the dimension (time) of the features. This parameter is used only if the classification result is multidimensional raster and you want to generate assessment points from a feature class, such as land classification polygons for multiple years.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[Field()]
+		public object? PolygonDimensionField { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateAccuracyAssessmentPoints SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null )
+		public CreateAccuracyAssessmentPoints SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem);
 			return this;
@@ -159,21 +167,21 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum SamplingEnum 
 		{
 			/// <summary>
-			/// <para>Stratified random—Create points that are randomly distributed within each class, where each class has a number of points proportional to its relative area. This is the default</para>
+			/// <para>Stratified random—Randomly distributed points will be created in each class, in which each class has a number of points proportional to its relative area. This is the default</para>
 			/// </summary>
 			[GPValue("STRATIFIED_RANDOM")]
 			[Description("Stratified random")]
 			Stratified_random,
 
 			/// <summary>
-			/// <para>Equalized stratified random—Create points that are randomly distributed within each class, where each class has the same number of points.</para>
+			/// <para>Equalized stratified random—Randomly distributed points will be created in each class, in which each class has the same number of points.</para>
 			/// </summary>
 			[GPValue("EQUALIZED_STRATIFIED_RANDOM")]
 			[Description("Equalized stratified random")]
 			Equalized_stratified_random,
 
 			/// <summary>
-			/// <para>Random—Create points that are randomly distributed throughout the image.</para>
+			/// <para>Random—Randomly distributed points will be created throughout the image.</para>
 			/// </summary>
 			[GPValue("RANDOM")]
 			[Description("Random")]

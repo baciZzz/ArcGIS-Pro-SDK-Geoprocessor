@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, AggregationDistance, MinimumArea!, MinimumHoleSize!, OrthogonalityOption!, BarrierFeatures!, OutTable!, AggregateField };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, AggregationDistance, MinimumArea!, MinimumHoleSize!, OrthogonalityOption!, BarrierFeatures!, OutTable!, AggregateField! };
 
 		/// <summary>
 		/// <para>Input Features</para>

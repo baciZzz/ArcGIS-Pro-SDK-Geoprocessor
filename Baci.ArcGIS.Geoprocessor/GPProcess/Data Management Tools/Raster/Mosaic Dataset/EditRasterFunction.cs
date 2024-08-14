@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, EditMosaicDatasetItem, EditOptions, FunctionChainDefinition, LocationFunctionName, OutRaster };
+		public override object[] Parameters => new object[] { InMosaicDataset, EditMosaicDatasetItem!, EditOptions!, FunctionChainDefinition!, LocationFunctionName!, OutRaster! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object EditMosaicDatasetItem { get; set; } = "false";
+		public object? EditMosaicDatasetItem { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Edit Options</para>
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object EditOptions { get; set; } = "INSERT";
+		public object? EditOptions { get; set; } = "INSERT";
 
 		/// <summary>
 		/// <para>Raster Function Template</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object FunctionChainDefinition { get; set; }
+		public object? FunctionChainDefinition { get; set; }
 
 		/// <summary>
 		/// <para>Function Name</para>
@@ -111,19 +111,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object LocationFunctionName { get; set; }
+		public object? LocationFunctionName { get; set; }
 
 		/// <summary>
 		/// <para>Updated Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutRaster { get; set; }
+		public object? OutRaster { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EditRasterFunction SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public EditRasterFunction SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

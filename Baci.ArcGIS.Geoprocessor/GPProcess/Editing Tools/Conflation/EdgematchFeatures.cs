@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InLinkFeatures, Method, AdjacentFeatures, BorderFeatures, OutFeatureClass };
+		public override object[] Parameters => new object[] { InFeatures, InLinkFeatures, Method!, AdjacentFeatures!, BorderFeatures!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "MOVE_ENDPOINT";
+		public object? Method { get; set; } = "MOVE_ENDPOINT";
 
 		/// <summary>
 		/// <para>Adjacent Features</para>
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object AdjacentFeatures { get; set; }
+		public object? AdjacentFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Border Features</para>
@@ -116,19 +116,19 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object BorderFeatures { get; set; }
+		public object? BorderFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EdgematchFeatures SetEnviroment(object extent = null , object workspace = null )
+		public EdgematchFeatures SetEnviroment(object? extent = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

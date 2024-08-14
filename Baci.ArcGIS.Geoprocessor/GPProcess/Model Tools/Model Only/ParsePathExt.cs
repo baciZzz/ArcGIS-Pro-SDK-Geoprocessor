@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataElement, Format, Path, Name, ExtensionType, WorkspaceName };
+		public override object[] Parameters => new object[] { InDataElement, Format!, Path!, Name!, ExtensionType!, WorkspaceName! };
 
 		/// <summary>
 		/// <para>Input Values</para>
@@ -82,35 +82,35 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Format { get; set; } = "false";
+		public object? Format { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Path</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object Path { get; set; }
+		public object? Path { get; set; }
 
 		/// <summary>
 		/// <para>Name</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object Name { get; set; }
+		public object? Name { get; set; }
 
 		/// <summary>
 		/// <para>Extension</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object ExtensionType { get; set; }
+		public object? ExtensionType { get; set; }
 
 		/// <summary>
 		/// <para>Workspace Name</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object WorkspaceName { get; set; }
+		public object? WorkspaceName { get; set; }
 
 		#region InnerClass
 

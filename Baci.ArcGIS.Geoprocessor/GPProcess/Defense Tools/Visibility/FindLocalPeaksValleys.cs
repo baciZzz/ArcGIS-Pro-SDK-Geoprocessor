@@ -78,14 +78,15 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurface, OutFeatureClass, PeakValleyOpType, NumPeaksValleys, InFeature };
+		public override object[] Parameters => new object[] { InSurface, OutFeatureClass, PeakValleyOpType, NumPeaksValleys, InFeature! };
 
 		/// <summary>
 		/// <para>Input Surface</para>
 		/// <para>The input elevation raster surface.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
-		[GPRasterLayer()]
+		[GPComposite()]
+		[GPCompositeDomain()]
 		public object InSurface { get; set; }
 
 		/// <summary>
@@ -123,12 +124,12 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
-		public object InFeature { get; set; }
+		public object? InFeature { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FindLocalPeaksValleys SetEnviroment(object extent = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public FindLocalPeaksValleys SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

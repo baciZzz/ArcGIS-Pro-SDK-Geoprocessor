@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputOisFeatures, InputObstacleFeatures, OutFeatureClass, HeightField, UnitField, HeightOption, ElevationOption, ElevationField, ElevationFieldUnit, InDems };
+		public override object[] Parameters => new object[] { InputOisFeatures, InputObstacleFeatures, OutFeatureClass, HeightField!, UnitField!, HeightOption!, ElevationOption!, ElevationField!, ElevationFieldUnit!, InDems! };
 
 		/// <summary>
 		/// <para>Input OIS Features</para>
@@ -107,53 +107,53 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object HeightField { get; set; } = "FEATURE_GEOMETRY";
+		public object? HeightField { get; set; } = "FEATURE_GEOMETRY";
 
 		/// <summary>
 		/// <para>Unit</para>
-		/// <para>Specifies the linear unit of the obstacle height.</para>
-		/// <para>Kilometers—The linear unit is kilometers.</para>
-		/// <para>Meters—The linear unit is meters.</para>
-		/// <para>Decimeters—The linear unit is decimeters.</para>
-		/// <para>Centimeters—The linear unit is centimeters.</para>
-		/// <para>Millimeters—The linear unit is millimeters.</para>
-		/// <para>Nautical miles—The linear unit is nautical miles.</para>
-		/// <para>Miles—The linear unit is miles.</para>
-		/// <para>Yards—The linear unit is yards.</para>
-		/// <para>Feet—The linear unit is feet.</para>
-		/// <para>Inches—The linear unit is inches.</para>
-		/// <para>Decimal degrees—The linear unit is decimal degrees.</para>
-		/// <para>Points—The linear unit is points.</para>
-		/// <para>Unknown—The linear unit is unknown.</para>
+		/// <para>Specifies the linear unit that will be used for the obstacle height. This parameter is active if the Obstacle Features parameter is set to Relative height.</para>
+		/// <para>Kilometers—The linear unit will be kilometers.</para>
+		/// <para>Meters—The linear unit will be meters.</para>
+		/// <para>Decimeters—The linear unit will be decimeters.</para>
+		/// <para>Centimeters—The linear unit will be centimeters.</para>
+		/// <para>Millimeters—The linear unit will be millimeters.</para>
+		/// <para>Nautical miles—The linear unit will be nautical miles.</para>
+		/// <para>Miles—The linear unit will be miles.</para>
+		/// <para>Yards—The linear unit will be yards.</para>
+		/// <para>Feet—The linear unit will be feet.</para>
+		/// <para>Inches—The linear unit will be inches.</para>
+		/// <para>Decimal degrees—The linear unit will be decimal degrees.</para>
+		/// <para>Points—The linear unit will be points.</para>
+		/// <para>Unknown—The linear unit will be unknown.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object UnitField { get; set; } = "METERS";
+		public object? UnitField { get; set; } = "METERS";
 
 		/// <summary>
 		/// <para>Obstacle Features</para>
 		/// <para>Specifies how obstacle height values will be interpreted.</para>
-		/// <para>Absolute height— Obstacle heights are measured from sea level. This is the default.</para>
-		/// <para>Relative height— Obstacle heights are measured from ground level.</para>
+		/// <para>Absolute height— Obstacle heights will be measured from sea level. This is the default.</para>
+		/// <para>Relative height— Obstacle heights will be measured from ground level.</para>
 		/// <para><see cref="HeightOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object HeightOption { get; set; } = "ABSOLUTE_HEIGHT";
+		public object? HeightOption { get; set; } = "ABSOLUTE_HEIGHT";
 
 		/// <summary>
 		/// <para>Elevations</para>
-		/// <para>Specifies how obstacle base elevation heights are identified. This parameter is enabled if the Obstacle Features parameter is set to Relative height.</para>
-		/// <para>Elevation field— Base elevation heights are derived from a numeric field of the obstacle feature class. This is the default.</para>
-		/// <para>Elevation DEM— Base elevation heights are derived from one or more DEMs.</para>
+		/// <para>Specifies how obstacle base elevation heights will be identified. This parameter is active if the Obstacle Features parameter is set to Relative height.</para>
+		/// <para>Elevation field— Base elevation heights will be derived from a numeric field of the obstacle feature class. This is the default.</para>
+		/// <para>Elevation DEM— Base elevation heights will be derived from one or more DEMs.</para>
 		/// <para><see cref="ElevationOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ElevationOption { get; set; } = "ELEVATION_FIELD";
+		public object? ElevationOption { get; set; } = "ELEVATION_FIELD";
 
 		/// <summary>
 		/// <para>Elevation Field</para>
@@ -163,29 +163,29 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ElevationField { get; set; }
+		public object? ElevationField { get; set; }
 
 		/// <summary>
 		/// <para>Elevation Field Units</para>
-		/// <para>Specifies the linear unit of the base elevation values. This parameter is active if the Obstacle Features parameter is set to Relative height and the Elevations parameter is set to Elevation field.</para>
+		/// <para>Specifies the linear unit that will be used for the base elevation values. This parameter is active if the Obstacle Features parameter is set to Relative height and the Elevations parameter is set to Elevation field.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ElevationFieldUnit { get; set; } = "METERS";
+		public object? ElevationFieldUnit { get; set; } = "METERS";
 
 		/// <summary>
 		/// <para>Input Elevation Model</para>
-		/// <para>The DEMs covering the obstacles, used to derive base elevation values. This parameter is active if the Obstacle Features parameter is set to Relative height and the Elevations parameter is set to Elevation DEM.</para>
+		/// <para>The DEMs covering the obstacles that will be used to derive base elevation values. This parameter is active if the Obstacle Features parameter is set to Relative height and the Elevations parameter is set to Elevation DEM.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object InDems { get; set; }
+		public object? InDems { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AnalyzeRunwayObstacles SetEnviroment(object workspace = null )
+		public AnalyzeRunwayObstacles SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -213,14 +213,14 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		public enum HeightOptionEnum 
 		{
 			/// <summary>
-			/// <para>Absolute height— Obstacle heights are measured from sea level. This is the default.</para>
+			/// <para>Absolute height— Obstacle heights will be measured from sea level. This is the default.</para>
 			/// </summary>
 			[GPValue("ABSOLUTE_HEIGHT")]
 			[Description("Absolute height")]
 			Absolute_height,
 
 			/// <summary>
-			/// <para>Relative height— Obstacle heights are measured from ground level.</para>
+			/// <para>Relative height— Obstacle heights will be measured from ground level.</para>
 			/// </summary>
 			[GPValue("RELATIVE_HEIGHT")]
 			[Description("Relative height")]
@@ -234,14 +234,14 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		public enum ElevationOptionEnum 
 		{
 			/// <summary>
-			/// <para>Elevation field— Base elevation heights are derived from a numeric field of the obstacle feature class. This is the default.</para>
+			/// <para>Elevation field— Base elevation heights will be derived from a numeric field of the obstacle feature class. This is the default.</para>
 			/// </summary>
 			[GPValue("ELEVATION_FIELD")]
 			[Description("Elevation field")]
 			Elevation_field,
 
 			/// <summary>
-			/// <para>Elevation DEM— Base elevation heights are derived from one or more DEMs.</para>
+			/// <para>Elevation DEM— Base elevation heights will be derived from one or more DEMs.</para>
 			/// </summary>
 			[GPValue("ELEVATION_DEM")]
 			[Description("Elevation DEM")]

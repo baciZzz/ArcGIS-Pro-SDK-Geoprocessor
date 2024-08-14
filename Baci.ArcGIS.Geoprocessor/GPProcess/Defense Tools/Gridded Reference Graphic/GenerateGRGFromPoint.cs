@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeature, OutFeatureClass, HorizontalCells, VerticalCells, CellWidth, CellHeight, CellUnits, LabelStartPosition, LabelFormat, LabelSeparator, GridAngle, GridAngleUnits };
+		public override object[] Parameters => new object[] { InFeature, OutFeatureClass, HorizontalCells!, VerticalCells!, CellWidth!, CellHeight!, CellUnits!, LabelStartPosition!, LabelFormat!, LabelSeparator!, GridAngle!, GridAngleUnits! };
 
 		/// <summary>
 		/// <para>Input Feature</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Cell Options")]
-		public object HorizontalCells { get; set; } = "10";
+		public object? HorizontalCells { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Number of Columns</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Cell Options")]
-		public object VerticalCells { get; set; } = "10";
+		public object? VerticalCells { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Cell Width</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Cell Options")]
-		public object CellWidth { get; set; } = "1000";
+		public object? CellWidth { get; set; } = "1000";
 
 		/// <summary>
 		/// <para>Cell Height</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Cell Options")]
-		public object CellHeight { get; set; } = "1000";
+		public object? CellHeight { get; set; } = "1000";
 
 		/// <summary>
 		/// <para>Cell Units</para>
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Cell Options")]
-		public object CellUnits { get; set; } = "METERS";
+		public object? CellUnits { get; set; } = "METERS";
 
 		/// <summary>
 		/// <para>Label Start Position</para>
@@ -143,20 +143,20 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <para>Upper left—The label position will be the upper left. This is the default.</para>
 		/// <para>Lower left—The label position will be the lower left.</para>
 		/// <para>Upper right—The label position will be the upper right.</para>
-		/// <para>Lower right—The label position will be in the lower right.</para>
+		/// <para>Lower right—The label position will be the lower right.</para>
 		/// <para><see cref="LabelStartPositionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Label Options")]
-		public object LabelStartPosition { get; set; } = "UPPER_LEFT";
+		public object? LabelStartPosition { get; set; } = "UPPER_LEFT";
 
 		/// <summary>
 		/// <para>Label Format</para>
 		/// <para>Specifies the labeling type for each grid cell.</para>
-		/// <para>Alpha-numeric—The label will use an alpha character, a separator, and a number for the label. This is the default.</para>
-		/// <para>Alpha-alpha—The label will use an alpha character, a separator, and an additional alpha character for the label.</para>
+		/// <para>Alpha-numeric—The label will use an alpha character, a separator, and a number. This is the default.</para>
+		/// <para>Alpha-alpha—The label will use an alpha character, a separator, and an additional alpha character.</para>
 		/// <para>Numeric—The label will be numeric.</para>
 		/// <para><see cref="LabelFormatEnum"/></para>
 		/// </summary>
@@ -164,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Label Options")]
-		public object LabelFormat { get; set; } = "ALPHA_NUMERIC";
+		public object? LabelFormat { get; set; } = "ALPHA_NUMERIC";
 
 		/// <summary>
 		/// <para>Label Separator</para>
@@ -179,7 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Label Options")]
-		public object LabelSeparator { get; set; } = "-";
+		public object? LabelSeparator { get; set; } = "-";
 
 		/// <summary>
 		/// <para>Grid Rotation Angle</para>
@@ -187,7 +187,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object GridAngle { get; set; } = "0";
+		public object? GridAngle { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Grid Rotation Angular Units</para>
@@ -201,12 +201,12 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object GridAngleUnits { get; set; } = "DEGREES";
+		public object? GridAngleUnits { get; set; } = "DEGREES";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateGRGFromPoint SetEnviroment(object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateGRGFromPoint SetEnviroment(object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -290,7 +290,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 			Upper_right,
 
 			/// <summary>
-			/// <para>Lower right—The label position will be in the lower right.</para>
+			/// <para>Lower right—The label position will be the lower right.</para>
 			/// </summary>
 			[GPValue("LOWER_RIGHT")]
 			[Description("Lower right")]
@@ -304,14 +304,14 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		public enum LabelFormatEnum 
 		{
 			/// <summary>
-			/// <para>Alpha-numeric—The label will use an alpha character, a separator, and a number for the label. This is the default.</para>
+			/// <para>Alpha-numeric—The label will use an alpha character, a separator, and a number. This is the default.</para>
 			/// </summary>
 			[GPValue("ALPHA_NUMERIC")]
 			[Description("Alpha-numeric")]
 			ALPHA_NUMERIC,
 
 			/// <summary>
-			/// <para>Alpha-alpha—The label will use an alpha character, a separator, and an additional alpha character for the label.</para>
+			/// <para>Alpha-alpha—The label will use an alpha character, a separator, and an additional alpha character.</para>
 			/// </summary>
 			[GPValue("ALPHA_ALPHA")]
 			[Description("Alpha-alpha")]

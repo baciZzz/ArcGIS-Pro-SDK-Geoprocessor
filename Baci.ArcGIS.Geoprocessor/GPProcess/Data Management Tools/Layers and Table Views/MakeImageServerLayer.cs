@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InImageService, OutImageserverLayer, Template, BandIndex, MosaicMethod, OrderField, OrderBaseValue, LockRasterid, CellSize, WhereClause, ProcessingTemplate };
+		public override object[] Parameters => new object[] { InImageService, OutImageserverLayer, Template!, BandIndex!, MosaicMethod!, OrderField!, OrderBaseValue!, LockRasterid!, CellSize!, WhereClause!, ProcessingTemplate! };
 
 		/// <summary>
 		/// <para>Input Image Service</para>
@@ -97,15 +97,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object Template { get; set; }
+		public object? Template { get; set; }
 
 		/// <summary>
 		/// <para>Bands</para>
-		/// <para>Choose which bands to export for the layer. If no bands are specified, all the bands will be used in the output.</para>
+		/// <para>The bands that will be exported for the layer. If no bands are specified, all the bands will be used in the output.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object BandIndex { get; set; }
+		public object? BandIndex { get; set; }
 
 		/// <summary>
 		/// <para>Mosaic Method</para>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Mosaic Properties")]
-		public object MosaicMethod { get; set; }
+		public object? MosaicMethod { get; set; }
 
 		/// <summary>
 		/// <para>Order Field</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Mosaic Properties")]
-		public object OrderField { get; set; }
+		public object? OrderField { get; set; }
 
 		/// <summary>
 		/// <para>Order Base Value</para>
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Mosaic Properties")]
-		public object OrderBaseValue { get; set; }
+		public object? OrderBaseValue { get; set; }
 
 		/// <summary>
 		/// <para>Lock Raster ID</para>
@@ -151,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Mosaic Properties")]
-		public object LockRasterid { get; set; }
+		public object? LockRasterid { get; set; }
 
 		/// <summary>
 		/// <para>Output Cell Size</para>
@@ -159,15 +159,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object CellSize { get; set; }
+		public object? CellSize { get; set; }
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>Using SQL, you can define a query or use the Query Builder to build a query.</para>
+		/// <para>Define a query using SQL or use the Query Builder to build a query.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Processing Template</para>
@@ -176,12 +176,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ProcessingTemplate { get; set; } = "None";
+		public object? ProcessingTemplate { get; set; } = "None";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeImageServerLayer SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null )
+		public MakeImageServerLayer SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem);
 			return this;

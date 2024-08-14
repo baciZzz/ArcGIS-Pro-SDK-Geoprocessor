@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { JobId, DatabasePath!, OutJobIds };
+		public override object[] Parameters => new object[] { JobId, DatabasePath!, OutJobIds! };
 
 		/// <summary>
 		/// <para>Job ID</para>

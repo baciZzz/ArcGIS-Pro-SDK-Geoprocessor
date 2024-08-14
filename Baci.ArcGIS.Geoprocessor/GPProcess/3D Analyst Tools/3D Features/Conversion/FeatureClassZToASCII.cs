@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, OutputLocation, OutFile, Format, Delimiter, DecimalFormat, DigitsAfterDecimal, DecimalSeparator, DerivedOutput };
+		public override object[] Parameters => new object[] { InFeatureClass, OutputLocation, OutFile, Format!, Delimiter!, DecimalFormat!, DigitsAfterDecimal!, DecimalSeparator!, DerivedOutput! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Format { get; set; } = "GENERATE";
+		public object? Format { get; set; } = "GENERATE";
 
 		/// <summary>
 		/// <para>Delimiter</para>
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Delimiter { get; set; } = "SPACE";
+		public object? Delimiter { get; set; } = "SPACE";
 
 		/// <summary>
 		/// <para>Decimal Notation</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DecimalFormat { get; set; } = "AUTOMATIC";
+		public object? DecimalFormat { get; set; } = "AUTOMATIC";
 
 		/// <summary>
 		/// <para>Digits after Decimal</para>
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object DigitsAfterDecimal { get; set; } = "3";
+		public object? DigitsAfterDecimal { get; set; } = "3";
 
 		/// <summary>
 		/// <para>Decimal Separator</para>
@@ -154,19 +154,19 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DecimalSeparator { get; set; } = "DECIMAL_POINT";
+		public object? DecimalSeparator { get; set; } = "DECIMAL_POINT";
 
 		/// <summary>
 		/// <para>Updated Folder</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object DerivedOutput { get; set; }
+		public object? DerivedOutput { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FeatureClassZToASCII SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object workspace = null )
+		public FeatureClassZToASCII SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

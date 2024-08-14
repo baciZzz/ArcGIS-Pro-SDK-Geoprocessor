@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, ReconFolder, ReconOptions!, Scenario!, FwdOverlap!, SwdOverlap!, Quality!, Products!, CellSize!, Aoi!, WaterbodyFeatures!, CorrectionFeatures!, DerivedReconFolder };
+		public override object[] Parameters => new object[] { InMosaicDataset, ReconFolder, ReconOptions!, Scenario!, FwdOverlap!, SwdOverlap!, Quality!, Products!, CellSize!, Aoi!, WaterbodyFeatures!, CorrectionFeatures!, DerivedReconFolder! };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>

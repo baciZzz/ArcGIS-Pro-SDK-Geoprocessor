@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, InputTimeField, InputTimeZone, OutputTimeField, OutputTimeZone, InputDst, OutputDst, OutTable };
+		public override object[] Parameters => new object[] { InTable, InputTimeField, InputTimeZone, OutputTimeField, OutputTimeZone, InputDst!, OutputDst!, OutTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Daylight Saving Time")]
-		public object InputDst { get; set; } = "true";
+		public object? InputDst { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output time field values are adjusted for Daylight Saving Time</para>
@@ -151,19 +151,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Daylight Saving Time")]
-		public object OutputDst { get; set; } = "true";
+		public object? OutputDst { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Updated Input Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConvertTimeZone SetEnviroment(object workspace = null )
+		public ConvertTimeZone SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

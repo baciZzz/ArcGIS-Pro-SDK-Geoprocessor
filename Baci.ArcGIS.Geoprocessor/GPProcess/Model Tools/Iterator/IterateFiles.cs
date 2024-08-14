@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFolder, Wildcard, Extension, Recursive, File, Name };
+		public override object[] Parameters => new object[] { InFolder, Wildcard!, Extension!, Recursive!, File!, Name! };
 
 		/// <summary>
 		/// <para>Folder</para>
@@ -72,11 +72,11 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Wildcard</para>
-		/// <para>A combination of * and characters that help to limit the results. The asterisk is the same as saying ALL. If no wildcard is specified, all inputs will be returned. For example, it can be used to restrict Iteration over input names starting with a certain character or word (for example, A* or Ari* or Land* and so on).</para>
+		/// <para>A combination of * and characters that help to limit the results. The asterisk is the same as specifying ALL. If no wildcard is specified, all inputs will be returned. For example, it can be used to restrict Iteration over input names starting with a certain character or word (for example, A* or Ari* or Land* and so on).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Wildcard { get; set; }
+		public object? Wildcard { get; set; }
 
 		/// <summary>
 		/// <para>FileType</para>
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Extension { get; set; }
+		public object? Extension { get; set; }
 
 		/// <summary>
 		/// <para>Recursive</para>
@@ -96,21 +96,21 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Recursive { get; set; } = "false";
+		public object? Recursive { get; set; } = "false";
 
 		/// <summary>
 		/// <para>File</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
-		public object File { get; set; }
+		public object? File { get; set; }
 
 		/// <summary>
 		/// <para>Name</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object Name { get; set; }
+		public object? Name { get; set; }
 
 		#region InnerClass
 

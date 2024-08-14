@@ -10,8 +10,8 @@ using System;
 namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
-	/// <para>Generalized Linear Regression (GLR)</para>
-	/// <para>Performs Generalized Linear Regression </para>
+	/// <para>Generalized Linear Regression</para>
+	/// <para>Performs generalized linear regression </para>
 	/// <para>(GLR) to generate predictions or to model a dependent variable in terms of its relationship to a set of explanatory variables.  This tool can be used to fit continuous (OLS), binary (logistic), and count (Poisson) models.</para>
 	/// </summary>
 	public class GeneralizedLinearRegression : AbstractGPProcess
@@ -30,9 +30,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <param name="ModelType">
 		/// <para>Model Type</para>
 		/// <para>Specifies the type of data that will be modeled.</para>
-		/// <para>Continuous (Gaussian)— The Dependent Variable is continuous. The model used is Gaussian, and the tool performs ordinary least squares regression.</para>
-		/// <para>Binary (Logistic)— The Dependent Variable represents presence or absence. This can be either conventional 1s and 0s, or continuous data that has been recoded based on some threshold value. The model used is Logistic Regression.</para>
-		/// <para>Count (Poisson)—The Dependent Variable is discrete and represents events, for example, crime counts, disease incidents, or traffic accidents. The model used is Poisson regression.</para>
+		/// <para>Continuous (Gaussian)— The Dependent Variable value is continuous. The model used is Gaussian, and the tool performs ordinary least squares regression.</para>
+		/// <para>Binary (Logistic)— The Dependent Variable value represents presence or absence. This can be either conventional 1s and 0s, or continuous data that has been recoded based on some threshold value. The model used is Logistic Regression.</para>
+		/// <para>Count (Poisson)—The Dependent Variable value is discrete and represents events—for example, crime counts, disease incidents, or traffic accidents. The model used is Poisson regression.</para>
 		/// <para><see cref="ModelTypeEnum"/></para>
 		/// </param>
 		/// <param name="OutputFeatures">
@@ -48,9 +48,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generalized Linear Regression (GLR)</para>
+		/// <para>Tool Display Name : Generalized Linear Regression</para>
 		/// </summary>
-		public override string DisplayName => "Generalized Linear Regression (GLR)";
+		public override string DisplayName => "Generalized Linear Regression";
 
 		/// <summary>
 		/// <para>Tool Name : GeneralizedLinearRegression</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DependentVariable, ModelType, OutputFeatures, ExplanatoryVariables, DistanceFeatures, PredictionLocations, ExplanatoryVariablesToMatch, ExplanatoryDistanceMatching, OutputPredictedFeatures };
+		public override object[] Parameters => new object[] { InFeatures, DependentVariable, ModelType, OutputFeatures, ExplanatoryVariables!, DistanceFeatures!, PredictionLocations!, ExplanatoryVariablesToMatch!, ExplanatoryDistanceMatching!, OutputPredictedFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -103,9 +103,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Model Type</para>
 		/// <para>Specifies the type of data that will be modeled.</para>
-		/// <para>Continuous (Gaussian)— The Dependent Variable is continuous. The model used is Gaussian, and the tool performs ordinary least squares regression.</para>
-		/// <para>Binary (Logistic)— The Dependent Variable represents presence or absence. This can be either conventional 1s and 0s, or continuous data that has been recoded based on some threshold value. The model used is Logistic Regression.</para>
-		/// <para>Count (Poisson)—The Dependent Variable is discrete and represents events, for example, crime counts, disease incidents, or traffic accidents. The model used is Poisson regression.</para>
+		/// <para>Continuous (Gaussian)— The Dependent Variable value is continuous. The model used is Gaussian, and the tool performs ordinary least squares regression.</para>
+		/// <para>Binary (Logistic)— The Dependent Variable value represents presence or absence. This can be either conventional 1s and 0s, or continuous data that has been recoded based on some threshold value. The model used is Logistic Regression.</para>
+		/// <para>Count (Poisson)—The Dependent Variable value is discrete and represents events—for example, crime counts, disease incidents, or traffic accidents. The model used is Poisson regression.</para>
 		/// <para><see cref="ModelTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -128,16 +128,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
-		public object ExplanatoryVariables { get; set; }
+		public object? ExplanatoryVariables { get; set; }
 
 		/// <summary>
 		/// <para>Explanatory Distance Features</para>
-		/// <para>Automatically creates explanatory variables by calculating a distance from the provided features to the Input Features. Distances will be calculated from each of the input Explanatory Distance Features to the nearest Input Features. If the input Explanatory Distance Features are polygons or lines, the distance attributes are calculated as the distance between the closest segments of the pair of features.</para>
+		/// <para>Automatically creates explanatory variables by calculating a distance from the provided features to the Input Features values. Distances will be calculated from each of the input Explanatory Distance Features values to the nearest Input Features value. If the input Explanatory Distance Features values are polygons or lines, the distance attributes are calculated as the distance between the closest segments of the pair of features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
-		public object DistanceFeatures { get; set; }
+		public object? DistanceFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Prediction Locations</para>
@@ -147,41 +147,41 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
 		[Category("Prediction Options")]
-		public object PredictionLocations { get; set; }
+		public object? PredictionLocations { get; set; }
 
 		/// <summary>
 		/// <para>Match Explanatory Variables</para>
-		/// <para>Matches the explanatory variables in the Prediction Locations to corresponding explanatory variables from the Input Feature Class.</para>
+		/// <para>Matches the explanatory variables in the Prediction Locations parameter to corresponding explanatory variables from the Input Feature Class parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Prediction Options")]
-		public object ExplanatoryVariablesToMatch { get; set; }
+		public object? ExplanatoryVariablesToMatch { get; set; }
 
 		/// <summary>
 		/// <para>Match Distance Features</para>
-		/// <para>Matches the distance features specified for the Prediction Locations on the left to corresponding distance features for the Input Features on the right.</para>
+		/// <para>Matches the distance features specified for the Prediction Locations parameter on the left to corresponding distance features for the Input Features parameter on the right.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Prediction Options")]
-		public object ExplanatoryDistanceMatching { get; set; }
+		public object? ExplanatoryDistanceMatching { get; set; }
 
 		/// <summary>
 		/// <para>Output Predicted Features</para>
-		/// <para>The output feature class to receive dependent variable estimates for each Prediction Location.</para>
+		/// <para>The output feature class that will receive dependent variable estimates for each Prediction Location value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[Category("Prediction Options")]
-		public object OutputPredictedFeatures { get; set; }
+		public object? OutputPredictedFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GeneralizedLinearRegression SetEnviroment(object outputCoordinateSystem = null )
+		public GeneralizedLinearRegression SetEnviroment(object? outputCoordinateSystem = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem);
 			return this;
@@ -195,21 +195,21 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum ModelTypeEnum 
 		{
 			/// <summary>
-			/// <para>Continuous (Gaussian)— The Dependent Variable is continuous. The model used is Gaussian, and the tool performs ordinary least squares regression.</para>
+			/// <para>Continuous (Gaussian)— The Dependent Variable value is continuous. The model used is Gaussian, and the tool performs ordinary least squares regression.</para>
 			/// </summary>
 			[GPValue("CONTINUOUS")]
 			[Description("Continuous (Gaussian)")]
 			CONTINUOUS,
 
 			/// <summary>
-			/// <para>Binary (Logistic)— The Dependent Variable represents presence or absence. This can be either conventional 1s and 0s, or continuous data that has been recoded based on some threshold value. The model used is Logistic Regression.</para>
+			/// <para>Binary (Logistic)— The Dependent Variable value represents presence or absence. This can be either conventional 1s and 0s, or continuous data that has been recoded based on some threshold value. The model used is Logistic Regression.</para>
 			/// </summary>
 			[GPValue("BINARY")]
 			[Description("Binary (Logistic)")]
 			BINARY,
 
 			/// <summary>
-			/// <para>Count (Poisson)—The Dependent Variable is discrete and represents events, for example, crime counts, disease incidents, or traffic accidents. The model used is Poisson regression.</para>
+			/// <para>Count (Poisson)—The Dependent Variable value is discrete and represents events—for example, crime counts, disease incidents, or traffic accidents. The model used is Poisson regression.</para>
 			/// </summary>
 			[GPValue("COUNT")]
 			[Description("Count (Poisson)")]

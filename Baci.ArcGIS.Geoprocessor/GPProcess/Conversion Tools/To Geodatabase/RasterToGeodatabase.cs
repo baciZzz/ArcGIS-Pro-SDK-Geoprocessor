@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputRasters, OutputGeodatabase, ConfigurationKeyword, DerivedGeodatabase };
+		public override object[] Parameters => new object[] { InputRasters, OutputGeodatabase, ConfigurationKeyword!, DerivedGeodatabase! };
 
 		/// <summary>
 		/// <para>Input Rasters</para>
@@ -85,23 +85,23 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
-		/// <para>Specifies the storage parameters (configuration) for a geodatabase. Configuration keywords are set up by your database administrator.</para>
+		/// <para>The storage parameters (configuration) for a geodatabase. Configuration keywords are set up by your database administrator.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ConfigurationKeyword { get; set; }
+		public object? ConfigurationKeyword { get; set; }
 
 		/// <summary>
 		/// <para>Updated Geodatabase</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object DerivedGeodatabase { get; set; }
+		public object? DerivedGeodatabase { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RasterToGeodatabase SetEnviroment(object XYDomain = null , object ZDomain = null , object ZResolution = null , object compression = null , object configKeyword = null , object extent = null , object outputCoordinateSystem = null , object outputZFlag = null , object pyramid = null , object rasterStatistics = null , object scratchWorkspace = null , double[] tileSize = null , object workspace = null )
+		public RasterToGeodatabase SetEnviroment(object? XYDomain = null , object? ZDomain = null , object? ZResolution = null , object? compression = null , object? configKeyword = null , object? extent = null , object? outputCoordinateSystem = null , object? outputZFlag = null , object? pyramid = null , object? rasterStatistics = null , object? scratchWorkspace = null , object? tileSize = null , object? workspace = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, ZDomain: ZDomain, ZResolution: ZResolution, compression: compression, configKeyword: configKeyword, extent: extent, outputCoordinateSystem: outputCoordinateSystem, outputZFlag: outputZFlag, pyramid: pyramid, rasterStatistics: rasterStatistics, scratchWorkspace: scratchWorkspace, tileSize: tileSize, workspace: workspace);
 			return this;

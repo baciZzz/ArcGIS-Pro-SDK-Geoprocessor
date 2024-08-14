@@ -68,12 +68,12 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
+		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputraster, Inputmaskraster, Outputname, Nibblevalues, Nibblenodata, Inputzoneraster, Outputraster };
+		public override object[] Parameters => new object[] { Inputraster, Inputmaskraster, Outputname, Nibblevalues!, Nibblenodata!, Inputzoneraster!, Outputraster! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Nibblevalues { get; set; } = "true";
+		public object? Nibblevalues { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Nibble NoData cells</para>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Nibblenodata { get; set; } = "false";
+		public object? Nibblenodata { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Input Zone Raster</para>
@@ -136,21 +136,21 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object Inputzoneraster { get; set; }
+		public object? Inputzoneraster { get; set; }
 
 		/// <summary>
 		/// <para>Output Raster</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRasterLayer()]
-		public object Outputraster { get; set; }
+		public object? Outputraster { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Nibble SetEnviroment(object cellSize = null , object extent = null , object mask = null , object outputCoordinateSystem = null , object snapRaster = null )
+		public Nibble SetEnviroment(object? cellSize = null , object? extent = null , object? mask = null , object? outputCoordinateSystem = null , object? pyramid = null , object? snapRaster = null )
 		{
-			base.SetEnv(cellSize: cellSize, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, snapRaster: snapRaster);
+			base.SetEnv(cellSize: cellSize, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, pyramid: pyramid, snapRaster: snapRaster);
 			return this;
 		}
 

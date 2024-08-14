@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Forest-based Classification and Regression</para>
-	/// <para>Creates models and generates predictions using an adaptation of Leo Breiman's random forest algorithm, which is a supervised machine learning method. Predictions can be performed for both categorical variables (classification) and continuous variables (regression). Explanatory variables can take the form of fields in the attribute table of the training features, raster datasets, and distance features used to calculate proximity values for use as additional variables. In addition to validation of model performance based on the training data, predictions can be made to either features or a prediction raster.</para>
+	/// <para>Creates models and generates predictions using an adaptation of the random forest algorithm, which is a supervised machine learning method developed by Leo Breiman and Adele Cutler. Predictions can be performed for both categorical variables (classification) and continuous variables (regression). Explanatory variables can take the form of fields in the attribute table of the training features, raster datasets, and distance features used to calculate proximity values for use as additional variables. In addition to validation of model performance based on the training data, predictions can be made to either features or a prediction raster.</para>
 	/// </summary>
 	public class Forest : AbstractGPProcess
 	{
@@ -21,14 +21,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <param name="PredictionType">
 		/// <para>Prediction Type</para>
 		/// <para>Specifies the operation mode of the tool. The tool can be run to train a model to only assess performance, predict features, or create a prediction surface.</para>
-		/// <para>Train only—A model will be trained, but no predictions will be generated. Use this option to assess the accuracy of your model before generating predictions. This option will output model diagnostics in the messages window and a chart of variable importance. This is the default</para>
+		/// <para>Train only—A model will be trained, but no predictions will be generated. Use this option to assess the accuracy of the model before generating predictions. This option will output model diagnostics in the messages window and a chart of variable importance. This is the default</para>
 		/// <para>Predict to features—Predictions or classifications will be generated for features. Explanatory variables must be provided for both the training features and the features to be predicted. The output of this option will be a feature class, model diagnostics in the messages window, and an optional table and chart of variable importance.</para>
 		/// <para>Predict to raster—A prediction raster will be generated for the area where the explanatory rasters intersect. Explanatory rasters must be provided for both the training area and the area to be predicted. The output of this option will be a prediction surface, model diagnostics in the messages window, and an optional table and chart of variable importance.</para>
 		/// <para><see cref="PredictionTypeEnum"/></para>
 		/// </param>
 		/// <param name="InFeatures">
 		/// <para>Input Training Features</para>
-		/// <para>The feature class containing the Variable to Predict parameter and, optionally, the explanatory training variables from fields.</para>
+		/// <para>The feature class containing the Variable to Predict parameter value and, optionally, the explanatory training variables from fields.</para>
 		/// </param>
 		public Forest(object PredictionType, object InFeatures)
 		{
@@ -69,12 +69,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { PredictionType, InFeatures, VariablePredict, TreatVariableAsCategorical, ExplanatoryVariables, DistanceFeatures, ExplanatoryRasters, FeaturesToPredict, OutputFeatures, OutputRaster, ExplanatoryVariableMatching, ExplanatoryDistanceMatching, ExplanatoryRastersMatching, OutputTrainedFeatures, OutputImportanceTable, UseRasterValues, NumberOfTrees, MinimumLeafSize, MaximumDepth, SampleSize, RandomVariables, PercentageForTraining, OutputClassificationTable, OutputValidationTable, CompensateSparseCategories, NumberValidationRuns, CalculateUncertainty, OutputUncertaintyRasterLayers };
+		public override object[] Parameters => new object[] { PredictionType, InFeatures, VariablePredict!, TreatVariableAsCategorical!, ExplanatoryVariables!, DistanceFeatures!, ExplanatoryRasters!, FeaturesToPredict!, OutputFeatures!, OutputRaster!, ExplanatoryVariableMatching!, ExplanatoryDistanceMatching!, ExplanatoryRastersMatching!, OutputTrainedFeatures!, OutputImportanceTable!, UseRasterValues!, NumberOfTrees!, MinimumLeafSize!, MaximumDepth!, SampleSize!, RandomVariables!, PercentageForTraining!, OutputClassificationTable!, OutputValidationTable!, CompensateSparseCategories!, NumberValidationRuns!, CalculateUncertainty!, OutputUncertaintyRasterLayers! };
 
 		/// <summary>
 		/// <para>Prediction Type</para>
 		/// <para>Specifies the operation mode of the tool. The tool can be run to train a model to only assess performance, predict features, or create a prediction surface.</para>
-		/// <para>Train only—A model will be trained, but no predictions will be generated. Use this option to assess the accuracy of your model before generating predictions. This option will output model diagnostics in the messages window and a chart of variable importance. This is the default</para>
+		/// <para>Train only—A model will be trained, but no predictions will be generated. Use this option to assess the accuracy of the model before generating predictions. This option will output model diagnostics in the messages window and a chart of variable importance. This is the default</para>
 		/// <para>Predict to features—Predictions or classifications will be generated for features. Explanatory variables must be provided for both the training features and the features to be predicted. The output of this option will be a feature class, model diagnostics in the messages window, and an optional table and chart of variable importance.</para>
 		/// <para>Predict to raster—A prediction raster will be generated for the area where the explanatory rasters intersect. Explanatory rasters must be provided for both the training area and the area to be predicted. The output of this option will be a prediction surface, model diagnostics in the messages window, and an optional table and chart of variable importance.</para>
 		/// <para><see cref="PredictionTypeEnum"/></para>
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Training Features</para>
-		/// <para>The feature class containing the Variable to Predict parameter and, optionally, the explanatory training variables from fields.</para>
+		/// <para>The feature class containing the Variable to Predict parameter value and, optionally, the explanatory training variables from fields.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -100,150 +100,150 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object VariablePredict { get; set; }
+		public object? VariablePredict { get; set; }
 
 		/// <summary>
 		/// <para>Treat Variable as Categorical</para>
-		/// <para>Specifies whether the Variable to Predict is a categorical variable.</para>
-		/// <para>Checked—The Variable to Predict is a categorical variable and the tool will perform classification.</para>
-		/// <para>Unchecked—The Variable to Predict is continuous and the tool will perform regression. This is the default.</para>
+		/// <para>Specifies whether the Variable to Predict value is a categorical variable.</para>
+		/// <para>Checked—The Variable to Predict value is a categorical variable and the tool will perform classification.</para>
+		/// <para>Unchecked—The Variable to Predict value is continuous and the tool will perform regression. This is the default.</para>
 		/// <para><see cref="TreatVariableAsCategoricalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object TreatVariableAsCategorical { get; set; }
+		public object? TreatVariableAsCategorical { get; set; }
 
 		/// <summary>
 		/// <para>Explanatory Training Variables</para>
-		/// <para>A list of fields representing the explanatory variables that help predict the value or category of the Variable to Predict. Check the Categorical check box for any variables that represent classes or categories (such as land cover or presence or absence).</para>
+		/// <para>A list of fields representing the explanatory variables that help predict the value or category of the Variable to Predict value. Check the Categorical check box for any variables that represent classes or categories (such as land cover or presence or absence).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object ExplanatoryVariables { get; set; }
+		public object? ExplanatoryVariables { get; set; }
 
 		/// <summary>
 		/// <para>Explanatory Training Distance Features</para>
-		/// <para>Automatically creates explanatory variables by calculating a distance from the provided features to the Input Training Features. Distances will be calculated from each of the input Explanatory Training Distance Features to the nearest Input Training Features. If the input Explanatory Training Distance Features are polygons or lines, the distance attributes are calculated as the distance between the closest segments of the pair of features.</para>
+		/// <para>The explanatory training distance features. Explanatory variables will be automatically created by calculating a distance from the provided features to the Input Training Features values. Distances will be calculated from each of the input Explanatory Training Distance Features values to the nearest Input Training Features value. If the input Explanatory Training Distance Features values are polygons or lines, the distance attributes will be calculated as the distance between the closest segments of the pair of features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
-		public object DistanceFeatures { get; set; }
+		public object? DistanceFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Explanatory Training Rasters</para>
-		/// <para>Automatically creates explanatory training variables in your model whose values are extracted from rasters. For each feature in the Input Training Features, the value of the raster cell is extracted at that exact location. Bilinear raster resampling is used when extracting the raster value for continuous rasters. Nearest neighbor assignment is used when extracting a raster value from categorical rasters. Check the Categorical check box for any rasters that represent classes or categories such as land cover or presence or absence.</para>
+		/// <para>The explanatory training variables extracted from rasters. Explanatory training variables will be automatically created by extracting raster cell values. For each feature in the Input Training Features parameter, the value of the raster cell is extracted at that exact location. Bilinear raster resampling is used when extracting the raster value for continuous rasters. Nearest neighbor assignment is used when extracting a raster value from categorical rasters. Check the Categorical check box for any rasters that represent classes or categories such as land cover or presence or absence.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object ExplanatoryRasters { get; set; }
+		public object? ExplanatoryRasters { get; set; }
 
 		/// <summary>
 		/// <para>Input Prediction Features</para>
-		/// <para>A feature class representing locations where predictions will be made. This feature class must also contain any explanatory variables provided as fields that correspond to those used from the training data if any.</para>
+		/// <para>A feature class representing locations where predictions will be made. This feature class must also contain any explanatory variables provided as fields that correspond to those used from the training data.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
-		public object FeaturesToPredict { get; set; }
+		public object? FeaturesToPredict { get; set; }
 
 		/// <summary>
 		/// <para>Output Predicted Features</para>
-		/// <para>The output feature class to receive the results of the prediction results.</para>
+		/// <para>The output feature class containing the prediction results.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object OutputFeatures { get; set; }
+		public object? OutputFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Output Prediction Surface</para>
-		/// <para>The output raster containing the prediction results. The default cell size will be the maximum cell size of the raster inputs. To set a different cell size, use the cell size environment setting.</para>
+		/// <para>The output raster containing the prediction results. The default cell size will be the maximum cell size of the raster inputs. To set a different cell size, use the Cell Size environment setting.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
-		public object OutputRaster { get; set; }
+		public object? OutputRaster { get; set; }
 
 		/// <summary>
 		/// <para>Match Explanatory Variables</para>
-		/// <para>A list of the Explanatory Variables specified from the Input Training Features on the right and their corresponding fields from the Input Prediction Features on the left.</para>
+		/// <para>A list of the Explanatory Variables values specified from the Input Training Features parameter on the right and corresponding fields from the Input Prediction Features parameter on the left.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object ExplanatoryVariableMatching { get; set; }
+		public object? ExplanatoryVariableMatching { get; set; }
 
 		/// <summary>
 		/// <para>Match Distance Features</para>
-		/// <para>A list of the Explanatory Distance Features specified for the Input Training Features on the right. Corresponding feature sets should be specified for the Input Prediction Features on the left.</para>
-		/// <para>Explanatory Distance Features that are more appropriate for the Input Prediction Features can be provided if those used for training are in a different study area or time period.</para>
+		/// <para>A list of the Explanatory Distance Features values specified for the Input Training Features parameter on the right and corresponding feature sets from the Input Prediction Features parameter on the left.</para>
+		/// <para>The Explanatory Distance Features values that are more appropriate for the Input Prediction Features parameter can be provided if those used for training are in a different study area or time period.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object ExplanatoryDistanceMatching { get; set; }
+		public object? ExplanatoryDistanceMatching { get; set; }
 
 		/// <summary>
 		/// <para>Match Explanatory Rasters</para>
-		/// <para>A list of the Explanatory Rasters specified for the Input Training Features on the right. Corresponding rasters should be specified for the Input Prediction Features or the Prediction Surface to be created on the left.</para>
-		/// <para>Explanatory Rasters that are more appropriate for the Input Prediction Features can be provided if those used for training are in a different study area or time period.</para>
+		/// <para>A list of the Explanatory Rasters values specified for the Input Training Features parameter on the right and corresponding rasters from the Input Prediction Features parameter or the Prediction Surface parameter to be created on the left.</para>
+		/// <para>The Explanatory Rasters values that are more appropriate for the Input Prediction Features parameter can be provided if those used for training are in a different study area or time period.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object ExplanatoryRastersMatching { get; set; }
+		public object? ExplanatoryRastersMatching { get; set; }
 
 		/// <summary>
 		/// <para>Output Trained Features</para>
-		/// <para>Output Trained Features will contain all explanatory variables used for training (including sampled raster values and distance calculations), as well as the observed Variable to Predict field and accompanying predictions that can be used to further assess performance of the trained model.</para>
+		/// <para>The explanatory variables used for training (including sampled raster values and distance calculations), as well as the observed Variable to Predict field and accompanying predictions that will be used to further assess performance of the trained model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[Category("Additional Outputs")]
-		public object OutputTrainedFeatures { get; set; }
+		public object? OutputTrainedFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Output Variable Importance Table</para>
-		/// <para>If specified, the table will contain information describing the importance of each explanatory variable (fields, distance features, and rasters) used in the model created. The chart created from this table can be accessed in the Contents pane.</para>
+		/// <para>The table that will contain information describing the importance of each explanatory variable (fields, distance features, and rasters) used in the model created. The chart created from this table can be accessed in the Contents pane.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
 		[Category("Additional Outputs")]
-		public object OutputImportanceTable { get; set; }
+		public object? OutputImportanceTable { get; set; }
 
 		/// <summary>
 		/// <para>Convert Polygons to Raster Resolution for Training</para>
-		/// <para>Specifies how polygons are treated when training the model if the Input Training Features are polygons with a categorical Variable to Predict and only Explanatory Training Rasters have been specified.</para>
-		/// <para>Checked—The polygon is divided into all of the raster cells with centroids falling within the polygon. The raster values at each centroid are then extracted and used to train the model. The model is no longer trained on the polygon itself, but rather the model is trained on the raster values extracted for each cell centroid. This is the default.</para>
-		/// <para>Unchecked—Each polygon is assigned the average value of the underlying continuous rasters and the majority for underlying categorical rasters.</para>
+		/// <para>Specifies how polygons will be treated when training the model if the Input Training Features values are polygons with a categorical Variable to Predict value and only Explanatory Training Rasters values have been specified.</para>
+		/// <para>Checked—The polygon will be divided into all of the raster cells with centroids falling within the polygon. The raster values at each centroid will be extracted and used to train the model. The model will no longer be trained on the polygon, ; it will be trained on the raster values extracted for each cell centroid. This is the default.</para>
+		/// <para>Unchecked—Each polygon will be assigned the average value of the underlying continuous rasters and the majority for underlying categorical rasters.</para>
 		/// <para><see cref="UseRasterValuesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Forest Options")]
-		public object UseRasterValues { get; set; } = "true";
+		public object? UseRasterValues { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Number of Trees</para>
-		/// <para>The number of trees to create in the forest model. More trees will generally result in more accurate model prediction, but the model will take longer to calculate. The default number of trees is 100.</para>
+		/// <para>The number of trees that will be created in the forest model. More trees generally result in more accurate model prediction, but the model will take longer to calculate. The default number of trees is 100.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Advanced Forest Options")]
-		public object NumberOfTrees { get; set; } = "100";
+		public object? NumberOfTrees { get; set; } = "100";
 
 		/// <summary>
 		/// <para>Minimum Leaf Size</para>
-		/// <para>The minimum number of observations required to keep a leaf (that is the terminal node on a tree without further splits). The default minimum for regression is 5 and the default for classification is 1. For very large data, increasing these numbers will decrease the run time of the tool.</para>
+		/// <para>The minimum number of observations required to keep a leaf (that is, the terminal node on a tree without further splits). The default minimum for regression is 5 and the default for classification is 1. For very large data, increasing these numbers will decrease the run time of the tool.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Advanced Forest Options")]
-		public object MinimumLeafSize { get; set; }
+		public object? MinimumLeafSize { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Tree Depth</para>
@@ -253,61 +253,61 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Advanced Forest Options")]
-		public object MaximumDepth { get; set; }
+		public object? MaximumDepth { get; set; }
 
 		/// <summary>
 		/// <para>Data Available per Tree (%)</para>
-		/// <para>Specifies the percentage of the Input Training Features used for each decision tree. The default is 100 percent of the data. Samples for each tree are taken randomly from two-thirds of the data specified.</para>
+		/// <para>The percentage of the Input Training Features values that will be used for each decision tree. The default is 100 percent of the data. Samples for each tree are taken randomly from two-thirds of the data specified.</para>
 		/// <para>Each decision tree in the forest is created using a random sample or subset (approximately two-thirds) of the training data available. Using a lower percentage of the input data for each decision tree increases the speed of the tool for very large datasets.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Advanced Forest Options")]
-		public object SampleSize { get; set; } = "100";
+		public object? SampleSize { get; set; } = "100";
 
 		/// <summary>
 		/// <para>Number of Randomly Sampled Variables</para>
-		/// <para>Specifies the number of explanatory variables used to create each decision tree.</para>
-		/// <para>Each of the decision trees in the forest is created using a random subset of the explanatory variables specified. Increasing the number of variables used in each decision tree will increase the chances of overfitting your model particularly if there is one or more dominant variables. A common practice is to use the square root of the total number of explanatory variables (fields, distances, and rasters combined) if your Variable to Predict is numeric or divide the total number of explanatory variables (fields, distances, and rasters combined) by 3 if Variable to Predict is categorical.</para>
+		/// <para>The number of explanatory variables that will be used to create each decision tree.</para>
+		/// <para>Each of the decision trees in the forest is created using a random subset of the explanatory variables specified. Increasing the number of variables used in each decision tree will increase the chances of overfitting the model particularly if there is one or more dominant variables. A common practice is to use the square root of the total number of explanatory variables (fields, distances, and rasters combined) if the Variable to Predict value is numeric or divide the total number of explanatory variables (fields, distances, and rasters combined) by 3 if the Variable to Predict value is categorical.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Advanced Forest Options")]
-		public object RandomVariables { get; set; }
+		public object? RandomVariables { get; set; }
 
 		/// <summary>
 		/// <para>Training Data Excluded for Validation (%)</para>
-		/// <para>Specifies the percentage (between 10 percent and 50 percent) of Input Training Features to reserve as the test dataset for validation. The model will be trained without this random subset of data, and the observed values for those features will be compared to the predicted values. The default is 10 percent.</para>
+		/// <para>The percentage (between 10 percent and 50 percent) of the Input Training Features values that will be reserved as the test dataset for validation. The model will be trained without this random subset of data, and the observed values for those features will be compared to the predicted values. The default is 10 percent.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
 		[Category("Validation Options")]
-		public object PercentageForTraining { get; set; } = "10";
+		public object? PercentageForTraining { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Output Classification Performance Table (Confusion Matrix)</para>
-		/// <para>If specified, creates a confusion matrix for classification summarizing the performance of the model created. This table can be used to calculate other diagnostics beyond the accuracy and sensitivity measures the tool calculates in the output messages.</para>
+		/// <para>A confusion matrix for classification summarizing the performance of the model created. This table can be used to calculate other diagnostics in addition to the accuracy and sensitivity measures the tool calculates in the output messages.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
 		[Category("Additional Outputs")]
-		public object OutputClassificationTable { get; set; }
+		public object? OutputClassificationTable { get; set; }
 
 		/// <summary>
 		/// <para>Output  Validation Table</para>
-		/// <para>If the Number of Runs for Validation specified is greater than 2, this table creates a chart of the distribution of R2 for each model. This distribution can be used to assess the stability of your model.</para>
+		/// <para>If the Number of Runs for Validation value is greater than 2, this table creates a chart of the distribution of R2 for each model. This distribution can be used to assess the stability of the model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
 		[Category("Validation Options")]
-		public object OutputValidationTable { get; set; }
+		public object? OutputValidationTable { get; set; }
 
 		/// <summary>
 		/// <para>Compensate for Sparse Categories</para>
-		/// <para>If there are categories in your dataset that don&apos;t occur as often as others, checking this parameter will ensure that each category is represented in each tree.</para>
+		/// <para>Specifies whether each category in the training dataset, regardless of its frequency, will be represented in each tree.</para>
 		/// <para>Checked—Each tree will include every category that is represented in the training dataset.</para>
 		/// <para>Unchecked—Each tree will be created based on a random sample of the categories in the training dataset. This is the default.</para>
 		/// <para><see cref="CompensateSparseCategoriesEnum"/></para>
@@ -316,17 +316,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Forest Options")]
-		public object CompensateSparseCategories { get; set; }
+		public object? CompensateSparseCategories { get; set; }
 
 		/// <summary>
 		/// <para>Number of Runs for Validation</para>
-		/// <para>The tool will run for the number of iterations specified. The distribution of the R2 for each run can be displayed using the Output Validation Table parameter. When this is set and predictions are being generated, only the model that produced the highest R2 value will be used for predictions.</para>
+		/// <para>The number of iterations of the tool. The distribution of the R2 for each run can be displayed using the Output Validation Table parameter. When this is set and predictions are being generated, only the model that produced the highest R2 value will be used for predictions.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Validation Options")]
-		public object NumberValidationRuns { get; set; } = "1";
+		public object? NumberValidationRuns { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Calculate Uncertainty</para>
@@ -339,19 +339,19 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Validation Options")]
-		public object CalculateUncertainty { get; set; } = "false";
+		public object? CalculateUncertainty { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Uncertainty Raster Layers</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutputUncertaintyRasterLayers { get; set; }
+		public object? OutputUncertaintyRasterLayers { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Forest SetEnviroment(object cellSize = null , object mask = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object randomGenerator = null )
+		public Forest SetEnviroment(object? cellSize = null , object? mask = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? randomGenerator = null )
 		{
 			base.SetEnv(cellSize: cellSize, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, randomGenerator: randomGenerator);
 			return this;
@@ -365,7 +365,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum PredictionTypeEnum 
 		{
 			/// <summary>
-			/// <para>Train only—A model will be trained, but no predictions will be generated. Use this option to assess the accuracy of your model before generating predictions. This option will output model diagnostics in the messages window and a chart of variable importance. This is the default</para>
+			/// <para>Train only—A model will be trained, but no predictions will be generated. Use this option to assess the accuracy of the model before generating predictions. This option will output model diagnostics in the messages window and a chart of variable importance. This is the default</para>
 			/// </summary>
 			[GPValue("TRAIN")]
 			[Description("Train only")]
@@ -393,14 +393,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum TreatVariableAsCategoricalEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The Variable to Predict is a categorical variable and the tool will perform classification.</para>
+			/// <para>Checked—The Variable to Predict value is a categorical variable and the tool will perform classification.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CATEGORICAL")]
 			CATEGORICAL,
 
 			/// <summary>
-			/// <para>Unchecked—The Variable to Predict is continuous and the tool will perform regression. This is the default.</para>
+			/// <para>Unchecked—The Variable to Predict value is continuous and the tool will perform regression. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NUMERIC")]
@@ -414,14 +414,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum UseRasterValuesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The polygon is divided into all of the raster cells with centroids falling within the polygon. The raster values at each centroid are then extracted and used to train the model. The model is no longer trained on the polygon itself, but rather the model is trained on the raster values extracted for each cell centroid. This is the default.</para>
+			/// <para>Checked—The polygon will be divided into all of the raster cells with centroids falling within the polygon. The raster values at each centroid will be extracted and used to train the model. The model will no longer be trained on the polygon, ; it will be trained on the raster values extracted for each cell centroid. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("TRUE")]
 			TRUE,
 
 			/// <summary>
-			/// <para>Unchecked—Each polygon is assigned the average value of the underlying continuous rasters and the majority for underlying categorical rasters.</para>
+			/// <para>Unchecked—Each polygon will be assigned the average value of the underlying continuous rasters and the majority for underlying categorical rasters.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("FALSE")]

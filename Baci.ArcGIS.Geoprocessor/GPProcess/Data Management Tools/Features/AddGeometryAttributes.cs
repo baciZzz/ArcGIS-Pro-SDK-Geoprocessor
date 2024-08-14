@@ -12,7 +12,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Add Geometry Attributes</para>
 	/// <para>Adds new attribute fields to the input features representing the spatial or geometric characteristics and location of each feature, such as length or area and x-, y-, z-, and m-coordinates.</para>
+	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.DataManagementTools.CalculateGeometryAttributes"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
+	[Obsolete()]
+	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.DataManagementTools.CalculateGeometryAttributes))]
 	public class AddGeometryAttributes : AbstractGPProcess
 	{
 		/// <summary>
@@ -80,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, GeometryProperties, LengthUnit, AreaUnit, CoordinateSystem, ModifiedInputFeatures };
+		public override object[] Parameters => new object[] { InputFeatures, GeometryProperties, LengthUnit!, AreaUnit!, CoordinateSystem!, ModifiedInputFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -128,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LengthUnit { get; set; }
+		public object? LengthUnit { get; set; }
 
 		/// <summary>
 		/// <para>Area Unit</para>
@@ -146,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object AreaUnit { get; set; }
+		public object? AreaUnit { get; set; }
 
 		/// <summary>
 		/// <para>Coordinate System</para>
@@ -154,19 +157,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
-		public object CoordinateSystem { get; set; }
+		public object? CoordinateSystem { get; set; }
 
 		/// <summary>
 		/// <para>Modified Input Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object ModifiedInputFeatures { get; set; }
+		public object? ModifiedInputFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddGeometryAttributes SetEnviroment(object outputCoordinateSystem = null , object workspace = null )
+		public AddGeometryAttributes SetEnviroment(object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

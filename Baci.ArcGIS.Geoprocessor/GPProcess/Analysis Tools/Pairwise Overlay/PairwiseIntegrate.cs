@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ClusterTolerance, OutFeatures };
+		public override object[] Parameters => new object[] { InFeatures, ClusterTolerance!, OutFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -76,23 +76,23 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>XY Tolerance</para>
 		/// <para>The distance that determines the range in which feature vertices are made coincident. To minimize undesired movement of vertices, the x,y tolerance should be fairly small. If no value is specified, the xy tolerance from the first dataset in the list of inputs will be used.</para>
-		/// <para>Changing this parameter&apos;s value may cause failure or unexpected results. It is recommended that this parameter not be modified. It has been removed from view in the tool dialog. By default, the input feature class&apos;s spatial reference x,y tolerance property is used.</para>
+		/// <para>Changing this parameter&apos;s value may cause failure or unexpected results. It is recommended that you do not modify this parameter. It has been removed from view on the tool dialog box. By default, the input feature class&apos;s spatial reference x,y tolerance property is used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object ClusterTolerance { get; set; }
+		public object? ClusterTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutFeatures { get; set; }
+		public object? OutFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PairwiseIntegrate SetEnviroment(object XYTolerance = null , object extent = null , object parallelProcessingFactor = null , object workspace = null )
+		public PairwiseIntegrate SetEnviroment(object? XYTolerance = null , object? extent = null , object? parallelProcessingFactor = null , object? workspace = null )
 		{
 			base.SetEnv(XYTolerance: XYTolerance, extent: extent, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;

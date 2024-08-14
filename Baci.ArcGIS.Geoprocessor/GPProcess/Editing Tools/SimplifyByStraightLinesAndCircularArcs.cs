@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, MaxOffset, FittingType, CircularArcs, MaxArcAngleStep, MinVertexCount, MinRadius, MaxRadius, MinArcAngle, ClosedEnds, OutFeatureClass, AnchorPoints, OutFeatureLayers };
+		public override object[] Parameters => new object[] { InFeatures, MaxOffset, FittingType!, CircularArcs!, MaxArcAngleStep!, MinVertexCount!, MinRadius!, MaxRadius!, MinArcAngle!, ClosedEnds!, OutFeatureClass!, AnchorPoints!, OutFeatureLayers! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object FittingType { get; set; } = "FIT_TO_VERTICES";
+		public object? FittingType { get; set; } = "FIT_TO_VERTICES";
 
 		/// <summary>
 		/// <para>Create circular arcs</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CircularArcs { get; set; } = "true";
+		public object? CircularArcs { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Maximum Arc Angle Step (decimal degrees)</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object MaxArcAngleStep { get; set; } = "20";
+		public object? MaxArcAngleStep { get; set; } = "20";
 
 		/// <summary>
 		/// <para>Minimum Number Of Vertices</para>
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object MinVertexCount { get; set; } = "4";
+		public object? MinVertexCount { get; set; } = "4";
 
 		/// <summary>
 		/// <para>Minimum Radius</para>
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object MinRadius { get; set; }
+		public object? MinRadius { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Radius</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object MaxRadius { get; set; }
+		public object? MaxRadius { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Arc Angle (decimal degrees)</para>
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object MinArcAngle { get; set; } = "2";
+		public object? MinArcAngle { get; set; } = "2";
 
 		/// <summary>
 		/// <para>Preserve endpoints for closed line</para>
@@ -164,14 +164,14 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ClosedEnds { get; set; } = "true";
+		public object? ClosedEnds { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Anchor Points</para>
@@ -180,19 +180,19 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object AnchorPoints { get; set; }
+		public object? AnchorPoints { get; set; }
 
 		/// <summary>
 		/// <para>Output Layer Names</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutFeatureLayers { get; set; }
+		public object? OutFeatureLayers { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SimplifyByStraightLinesAndCircularArcs SetEnviroment(object extent = null , object workspace = null )
+		public SimplifyByStraightLinesAndCircularArcs SetEnviroment(object? extent = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InClassData, InSeedPoints, OutTrainingFeatureClass, MinSampleArea, MaxSampleRadius };
+		public override object[] Parameters => new object[] { InClassData, InSeedPoints, OutTrainingFeatureClass, MinSampleArea!, MaxSampleRadius! };
 
 		/// <summary>
 		/// <para>Input Raster or Feature Class Data</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MinSampleArea { get; set; } = "30";
+		public object? MinSampleArea { get; set; } = "30";
 
 		/// <summary>
 		/// <para>Max Sample Radius</para>
@@ -110,12 +110,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MaxSampleRadius { get; set; } = "50";
+		public object? MaxSampleRadius { get; set; } = "50";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateTrainingSamplesFromSeedPoints SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateTrainingSamplesFromSeedPoints SetEnviroment(object? extent = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

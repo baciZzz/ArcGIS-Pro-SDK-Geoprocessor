@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, InEventProperties, InRoutes, RouteIdField, TargetRoutes, TargetRouteIdField, OutTable, OutEventProperties, ClusterTolerance, InFields };
+		public override object[] Parameters => new object[] { InTable, InEventProperties, InRoutes, RouteIdField, TargetRoutes, TargetRouteIdField, OutTable, OutEventProperties, ClusterTolerance, InFields! };
 
 		/// <summary>
 		/// <para>Input Event Table</para>
@@ -205,20 +205,20 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Include all fields from input</para>
-		/// <para>Specifies whether the output event table will contain route location fields plus all the attributes from the input events.</para>
-		/// <para>Checked—The output event table will contain route location fields plus all the attributes from the input events. This is the default.</para>
-		/// <para>Unchecked—The output event table will only contain route location fields plus the ObjectID field from the input events.</para>
+		/// <para>Specifies whether the Output Event Table parameter value will contain route location fields plus all the attributes from the input events.</para>
+		/// <para>Checked—The Output Event Table parameter value will contain route location fields plus all the attributes from the input events. This is the default.</para>
+		/// <para>Unchecked—The Output Event Table parameter value will only contain route location fields plus the ObjectID field from the input events.</para>
 		/// <para><see cref="InFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object InFields { get; set; } = "true";
+		public object? InFields { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TransformRouteEvents SetEnviroment(object configKeyword = null , object scratchWorkspace = null , object workspace = null )
+		public TransformRouteEvents SetEnviroment(object? configKeyword = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(configKeyword: configKeyword, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -232,14 +232,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum InFieldsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The output event table will contain route location fields plus all the attributes from the input events. This is the default.</para>
+			/// <para>Checked—The Output Event Table parameter value will contain route location fields plus all the attributes from the input events. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FIELDS")]
 			FIELDS,
 
 			/// <summary>
-			/// <para>Unchecked—The output event table will only contain route location fields plus the ObjectID field from the input events.</para>
+			/// <para>Unchecked—The Output Event Table parameter value will only contain route location fields plus the ObjectID field from the input events.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_FIELDS")]

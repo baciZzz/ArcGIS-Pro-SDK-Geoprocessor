@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Upgrade Scene Layer</para>
-	/// <para>Upgrades a scene layer package to the current I3S version in SLPK format or output to i3sREST format for use in ArcGIS Enterprise.</para>
+	/// <para>Upgrades a scene layer package to the current I3S version in SLPK format or output to i3sREST  for use in ArcGIS Enterprise.</para>
 	/// </summary>
 	public class UpgradeSceneLayer : AbstractGPProcess
 	{
@@ -24,7 +24,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </param>
 		/// <param name="OutFolderPath">
 		/// <para>Output Folder</para>
-		/// <para>The location where the output scene layer package will be created, or the cloud connection file (.acs) to output to i3sREST.</para>
+		/// <para>The location where the output scene layer package will be created or the cloud connection file (.acs) to output to i3sREST.</para>
 		/// </param>
 		/// <param name="OutName">
 		/// <para>Output Name</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutFolderPath, OutName, OutLog, TextureOptimization };
+		public override object[] Parameters => new object[] { InDataset, OutFolderPath, OutName, OutLog!, TextureOptimization! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Folder</para>
-		/// <para>The location where the output scene layer package will be created, or the cloud connection file (.acs) to output to i3sREST.</para>
+		/// <para>The location where the output scene layer package will be created or the cloud connection file (.acs) to output to i3sREST.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -104,19 +104,21 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object OutLog { get; set; }
+		public object? OutLog { get; set; }
 
 		/// <summary>
 		/// <para>Texture Optimization</para>
-		/// <para>Specifies the textures that will be optimized according to the target platform where the scene layer package is used. Desktop includes Windows, Linux, and Mac platforms.</para>
-		/// <para>Desktop—Texture formats will be optimized for use in desktop and web platforms. Texture formats will be JPEG and DXT. This is the default.</para>
-		/// <para>None—Textures formats will be optimized for use in a desktop platform. The texture format will be JPEG.</para>
+		/// <para>Specifies the textures that will be optimized according to the target platform where the scene layer package is used.Optimizations that include KTX2 may take significant time to process. For fastest results, use the Desktop or None options.</para>
+		/// <para>All—All texture formats will be optimized including JPEG, DXT, and KTX2 for use in desktop, web, and mobile platforms.</para>
+		/// <para>Desktop—Windows, Linux, and Mac supported textures will be optimized including JPEG and DXT for use in ArcGIS Pro clients on Windows and ArcGIS Runtime desktop clients on Windows, Linux, and Mac. This is the default.</para>
+		/// <para>Mobile—Android and iOS supported textures will be optimized including JPEG and KTX2 for use in ArcGIS Runtime mobile applications.</para>
+		/// <para>None—JPEG textures will be optimized for use in desktop and web platforms.</para>
 		/// <para><see cref="TextureOptimizationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TextureOptimization { get; set; } = "DESKTOP";
+		public object? TextureOptimization { get; set; } = "DESKTOP";
 
 		#region InnerClass
 
@@ -126,18 +128,32 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum TextureOptimizationEnum 
 		{
 			/// <summary>
-			/// <para>Desktop—Texture formats will be optimized for use in desktop and web platforms. Texture formats will be JPEG and DXT. This is the default.</para>
+			/// <para>All—All texture formats will be optimized including JPEG, DXT, and KTX2 for use in desktop, web, and mobile platforms.</para>
+			/// </summary>
+			[GPValue("ALL")]
+			[Description("All")]
+			All,
+
+			/// <summary>
+			/// <para>None—JPEG textures will be optimized for use in desktop and web platforms.</para>
+			/// </summary>
+			[GPValue("NONE")]
+			[Description("None")]
+			None,
+
+			/// <summary>
+			/// <para>Desktop—Windows, Linux, and Mac supported textures will be optimized including JPEG and DXT for use in ArcGIS Pro clients on Windows and ArcGIS Runtime desktop clients on Windows, Linux, and Mac. This is the default.</para>
 			/// </summary>
 			[GPValue("DESKTOP")]
 			[Description("Desktop")]
 			Desktop,
 
 			/// <summary>
-			/// <para>None—Textures formats will be optimized for use in a desktop platform. The texture format will be JPEG.</para>
+			/// <para>Mobile—Android and iOS supported textures will be optimized including JPEG and KTX2 for use in ArcGIS Runtime mobile applications.</para>
 			/// </summary>
-			[GPValue("NONE")]
-			[Description("None")]
-			None,
+			[GPValue("MOBILE")]
+			[Description("Mobile")]
+			Mobile,
 
 		}
 

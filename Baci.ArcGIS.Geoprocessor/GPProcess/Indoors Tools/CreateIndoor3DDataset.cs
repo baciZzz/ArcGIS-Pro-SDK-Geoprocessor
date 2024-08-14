@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetGdb, IndoorDatasetName, SpatialReference, OutputDataset };
+		public override object[] Parameters => new object[] { TargetGdb, IndoorDatasetName, SpatialReference, OutputDataset! };
 
 		/// <summary>
 		/// <para>Target Geodatabase</para>

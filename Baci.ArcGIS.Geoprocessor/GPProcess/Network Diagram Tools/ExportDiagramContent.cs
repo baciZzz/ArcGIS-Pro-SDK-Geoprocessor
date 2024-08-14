@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Export Diagram Content</para>
-	/// <para>Exports diagram content in a simple format (JSON) that reflects basic connectivity. Additional optional information such as diagram properties, diagram feature geometry, network elements attributes, and aggregated elements can also be exported.</para>
+	/// <para>Exports diagram content in a simple format (JSON) that reflects basic connectivity. Additional optional information such as diagram properties, diagram feature geometry, network element attributes, and aggregated elements can also be exported.</para>
 	/// </summary>
 	public class ExportDiagramContent : AbstractGPProcess
 	{
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, NetworkDiagramName, OutFile, IncludeDiagramProperties, IncludeGeometries, IncludeAttributes, IncludeAggregations, UseDomains };
+		public override object[] Parameters => new object[] { InUtilityNetwork, NetworkDiagramName, OutFile, IncludeDiagramProperties!, IncludeGeometries!, IncludeAttributes!, IncludeAggregations!, UseDomains! };
 
 		/// <summary>
 		/// <para>Input Network or Network Diagram Layer</para>
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeDiagramProperties { get; set; } = "false";
+		public object? IncludeDiagramProperties { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Include geometries</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeGeometries { get; set; } = "false";
+		public object? IncludeGeometries { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Include attributes</para>
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeAttributes { get; set; } = "false";
+		public object? IncludeAttributes { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Include aggregations</para>
@@ -143,11 +143,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeAggregations { get; set; } = "false";
+		public object? IncludeAggregations { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Use domain and subtype descriptions</para>
-		/// <para>Specifies how coded domain and subtype values will be exported. This parameter is enabled when the Include attributes or Include aggregations parameter is checked.</para>
+		/// <para>Specifies how coded domain and subtype values will be exported. This parameter is activated when the Include attributes or Include aggregations parameter is checked.</para>
 		/// <para>Checked—Coded domain and subtype values will be exported using their string descriptions rather than raw values.</para>
 		/// <para>Unchecked—Coded domain and subtype values will be exported as raw values. This is the default.</para>
 		/// <para><see cref="UseDomainsEnum"/></para>
@@ -155,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UseDomains { get; set; } = "false";
+		public object? UseDomains { get; set; } = "false";
 
 		#region InnerClass
 

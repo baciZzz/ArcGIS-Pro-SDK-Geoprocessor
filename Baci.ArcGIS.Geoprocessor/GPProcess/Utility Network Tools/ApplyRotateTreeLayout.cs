@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, AreContainersPreserved, RotationAngle, OutNetworkDiagramLayer, RunAsync, RotateJunction };
+		public override object[] Parameters => new object[] { InNetworkDiagramLayer, AreContainersPreserved!, RotationAngle!, OutNetworkDiagramLayer!, RunAsync!, RotateJunction! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
@@ -76,21 +76,21 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AreContainersPreserved { get; set; } = "false";
+		public object? AreContainersPreserved { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Angle</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object RotationAngle { get; set; } = "45";
+		public object? RotationAngle { get; set; } = "45";
 
 		/// <summary>
 		/// <para>Output Network Diagram</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDiagramLayer()]
-		public object OutNetworkDiagramLayer { get; set; }
+		public object? OutNetworkDiagramLayer { get; set; }
 
 		/// <summary>
 		/// <para>Run in asynchronous mode on the server</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object RunAsync { get; set; } = "false";
+		public object? RunAsync { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Rotate junction symbols with the same angle</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object RotateJunction { get; set; } = "false";
+		public object? RotateJunction { get; set; } = "false";
 
 		#region InnerClass
 

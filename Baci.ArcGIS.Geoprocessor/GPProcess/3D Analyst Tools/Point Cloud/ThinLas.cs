@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, TargetFolder, ThinningDimension, XyResolution, ZResolution, PointSelectionMethod, ClassCodesWeights, NameSuffix, OutLasDataset, PreservedClassCodes, PreservedFlags, PreservedReturns, ExcludedClassCodes, ExcludedFlags, ExcludedReturns, Compression, RemoveVlr, RearrangePoints, ComputeStats, OutputFolder };
+		public override object[] Parameters => new object[] { InLasDataset, TargetFolder, ThinningDimension, XyResolution, ZResolution!, PointSelectionMethod!, ClassCodesWeights!, NameSuffix!, OutLasDataset!, PreservedClassCodes!, PreservedFlags!, PreservedReturns!, ExcludedClassCodes!, ExcludedFlags!, ExcludedReturns!, Compression!, RemoveVlr!, RearrangePoints!, ComputeStats!, OutputFolder! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object ZResolution { get; set; }
+		public object? ZResolution { get; set; }
 
 		/// <summary>
 		/// <para>Point Selection Method</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object PointSelectionMethod { get; set; } = "CLOSEST_TO_CENTER";
+		public object? PointSelectionMethod { get; set; } = "CLOSEST_TO_CENTER";
 
 		/// <summary>
 		/// <para>Input Class Codes and Weights</para>
@@ -151,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object ClassCodesWeights { get; set; }
+		public object? ClassCodesWeights { get; set; }
 
 		/// <summary>
 		/// <para>Output File Name Suffix</para>
@@ -159,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object NameSuffix { get; set; } = "thinned";
+		public object? NameSuffix { get; set; } = "thinned";
 
 		/// <summary>
 		/// <para>Output LAS Dataset</para>
@@ -167,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DELasDataset()]
-		public object OutLasDataset { get; set; }
+		public object? OutLasDataset { get; set; }
 
 		/// <summary>
 		/// <para>Preserved Classes</para>
@@ -177,7 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPMultiValue()]
 		[GPNumericDomain()]
 		[Category("Points To Preserve")]
-		public object PreservedClassCodes { get; set; }
+		public object? PreservedClassCodes { get; set; }
 
 		/// <summary>
 		/// <para>Preserved Flags</para>
@@ -192,7 +192,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Points To Preserve")]
-		public object PreservedFlags { get; set; }
+		public object? PreservedFlags { get; set; }
 
 		/// <summary>
 		/// <para>Preserved Returns</para>
@@ -207,7 +207,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Points To Preserve")]
-		public object PreservedReturns { get; set; }
+		public object? PreservedReturns { get; set; }
 
 		/// <summary>
 		/// <para>Excluded Classes</para>
@@ -217,7 +217,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPMultiValue()]
 		[GPNumericDomain()]
 		[Category("Points To Exclude")]
-		public object ExcludedClassCodes { get; set; }
+		public object? ExcludedClassCodes { get; set; }
 
 		/// <summary>
 		/// <para>Excluded Flags</para>
@@ -232,7 +232,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Points To Exclude")]
-		public object ExcludedFlags { get; set; }
+		public object? ExcludedFlags { get; set; }
 
 		/// <summary>
 		/// <para>Excluded Returns</para>
@@ -247,7 +247,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Points To Exclude")]
-		public object ExcludedReturns { get; set; }
+		public object? ExcludedReturns { get; set; }
 
 		/// <summary>
 		/// <para>Compression</para>
@@ -260,7 +260,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("LAS File Options")]
-		public object Compression { get; set; } = "NO_COMPRESSION";
+		public object? Compression { get; set; } = "NO_COMPRESSION";
 
 		/// <summary>
 		/// <para>Remove Variable Length Records</para>
@@ -273,7 +273,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("LAS File Options")]
-		public object RemoveVlr { get; set; } = "false";
+		public object? RemoveVlr { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Rearrange LAS Points</para>
@@ -286,7 +286,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("LAS File Options")]
-		public object RearrangePoints { get; set; } = "true";
+		public object? RearrangePoints { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Compute Statistics</para>
@@ -299,19 +299,19 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("LAS File Options")]
-		public object ComputeStats { get; set; } = "true";
+		public object? ComputeStats { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output Folder</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFolder()]
-		public object OutputFolder { get; set; }
+		public object? OutputFolder { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ThinLas SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object workspace = null )
+		public ThinLas SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

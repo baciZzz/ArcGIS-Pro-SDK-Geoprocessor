@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Target, RunwayDirection, Length, Divergence, Slope, DistanceFromThreshold, FirstPapiLight, LastPapiLight, StartHeight, DerivedOutfeatureclass, AirportControlPointFeatureClass, SurfacePosition };
+		public override object[] Parameters => new object[] { InFeatures, Target, RunwayDirection!, Length!, Divergence!, Slope!, DistanceFromThreshold!, FirstPapiLight!, LastPapiLight!, StartHeight!, DerivedOutfeatureclass!, AirportControlPointFeatureClass!, SurfacePosition! };
 
 		/// <summary>
 		/// <para>Input Runway Features</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object RunwayDirection { get; set; } = "HIGH_RUNWAY_END_DESIGNATOR";
+		public object? RunwayDirection { get; set; } = "HIGH_RUNWAY_END_DESIGNATOR";
 
 		/// <summary>
 		/// <para>Length</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Length { get; set; } = "8";
+		public object? Length { get; set; } = "8";
 
 		/// <summary>
 		/// <para>Divergence</para>
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Divergence { get; set; } = "14";
+		public object? Divergence { get; set; } = "14";
 
 		/// <summary>
 		/// <para>Slope</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Slope { get; set; } = "1";
+		public object? Slope { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Distance From Threshold</para>
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object DistanceFromThreshold { get; set; } = "1000";
+		public object? DistanceFromThreshold { get; set; } = "1000";
 
 		/// <summary>
 		/// <para>First PAPI Light</para>
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object FirstPapiLight { get; set; } = "60";
+		public object? FirstPapiLight { get; set; } = "60";
 
 		/// <summary>
 		/// <para>Last PAPI Light</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object LastPapiLight { get; set; } = "120";
+		public object? LastPapiLight { get; set; } = "120";
 
 		/// <summary>
 		/// <para>Start Height</para>
@@ -151,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object StartHeight { get; set; } = "35";
+		public object? StartHeight { get; set; } = "35";
 
 		/// <summary>
 		/// <para>Output OIS Features</para>
@@ -159,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
 		[GPCompositeDomain()]
-		public object DerivedOutfeatureclass { get; set; }
+		public object? DerivedOutfeatureclass { get; set; }
 
 		/// <summary>
 		/// <para>Input Airport Control Point Feature</para>
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object AirportControlPointFeatureClass { get; set; }
+		public object? AirportControlPointFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Surface Position</para>
@@ -180,7 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SurfacePosition { get; set; } = "SURFACE_GENERATED_ON_LEFT";
+		public object? SurfacePosition { get; set; } = "SURFACE_GENERATED_ON_LEFT";
 
 		#region InnerClass
 

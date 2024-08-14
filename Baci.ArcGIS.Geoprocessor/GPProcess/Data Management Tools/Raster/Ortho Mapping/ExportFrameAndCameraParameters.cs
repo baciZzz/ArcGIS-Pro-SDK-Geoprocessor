@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputMosaicDataset, OutputFile, OutputFormat };
+		public override object[] Parameters => new object[] { InputMosaicDataset, OutputFile, OutputFormat! };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object OutputFormat { get; set; } = "ESRI_FRAME_AND_CAMERA_TABLE";
+		public object? OutputFormat { get; set; } = "ESRI_FRAME_AND_CAMERA_TABLE";
 
 		#region InnerClass
 

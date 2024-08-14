@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayerOrView, RelateName, OutLayerOrView };
+		public override object[] Parameters => new object[] { InLayerOrView, RelateName!, OutLayerOrView! };
 
 		/// <summary>
 		/// <para>Layer Name or Table View</para>
@@ -77,19 +77,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object RelateName { get; set; }
+		public object? RelateName { get; set; }
 
 		/// <summary>
 		/// <para>Layer With Relate Removed</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutLayerOrView { get; set; }
+		public object? OutLayerOrView { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveRelate SetEnviroment(object workspace = null )
+		public RemoveRelate SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

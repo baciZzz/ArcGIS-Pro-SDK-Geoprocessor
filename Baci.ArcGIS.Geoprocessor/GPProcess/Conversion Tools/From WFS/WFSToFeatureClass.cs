@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>WFS To Feature Class</para>
-	/// <para>Imports a feature type from a web feature service (WFS) to a feature class in a geodatabase.</para>
+	/// <para>Imports a feature type from a Web Feature Service (WFS) to a feature class in a geodatabase.</para>
 	/// </summary>
 	public class WFSToFeatureClass : AbstractGPProcess
 	{
@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InputWFSServer">
 		/// <para>WFS Server</para>
-		/// <para>The URL of the source WFS service (for example, http://sampleserver6.arcgisonline.com/arcgis/services/SampleWorldCities/MapServer/WFSServer?). If the input is a complex WFS service (Complex WFS service is checked), this can also be the path to the XML file.</para>
+		/// <para>The URL of the source WFS service (for example, http://sampleserver6.arcgisonline.com/arcgis/services/SampleWorldCities/MapServer/WFSServer?). If the input is a complex WFS service (Complex WFS service is checked), this can also be the path to the .xml file.</para>
 		/// </param>
 		/// <param name="WFSFeatureType">
 		/// <para>Select Feature Type to Extract</para>
@@ -29,14 +29,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <param name="OutPath">
 		/// <para>Output Location</para>
 		/// <para>The location of the output feature class or geodatabase.</para>
-		/// <para>If the input is a simple WFS service, the output location can be a geodatabase or a feature dataset in a geodatabase. If the output location is a feature dataset, the coordinates are converted from the source coordinate system to the coordinate system of the feature dataset.</para>
+		/// <para>If the input is a simple WFS, the output location can be a geodatabase or a feature dataset in a geodatabase. If the output location is a feature dataset, the coordinates will be converted from the source coordinate system to the coordinate system of the feature dataset.</para>
 		/// <para>If the input is a complex WFS service, the output location must be a folder.</para>
 		/// </param>
 		/// <param name="OutName">
 		/// <para>Name</para>
 		/// <para>The name of the output feature class or geodatabase.</para>
-		/// <para>If the input is a simple WFS service, the name is used to create a feature class in the output location. If the feature class name already exists in the geodatabase, the name will be automatically incremented. By default, the feature type name is used.</para>
-		/// <para>If the input is a complex WFS service, the name is used to create a geodatabase in the output location.</para>
+		/// <para>If the input is a simple WFS service, the name will be used to create a feature class in the output location. If the feature class name already exists in the geodatabase, the name will be automatically incremented. By default, the feature type name is used.</para>
+		/// <para>If the input is a complex WFS service, the name will be used to create a geodatabase in the output location.</para>
 		/// </param>
 		public WFSToFeatureClass(object InputWFSServer, object WFSFeatureType, object OutPath, object OutName)
 		{
@@ -79,11 +79,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputWFSServer, WFSFeatureType, OutPath, OutName, OutFeatureClass, IsComplex, OutGdb, MaxFeatures, ExposeMetadata, SwapXy };
+		public override object[] Parameters => new object[] { InputWFSServer, WFSFeatureType, OutPath, OutName, OutFeatureClass!, IsComplex!, OutGdb!, MaxFeatures!, ExposeMetadata!, SwapXy!, PageSize! };
 
 		/// <summary>
 		/// <para>WFS Server</para>
-		/// <para>The URL of the source WFS service (for example, http://sampleserver6.arcgisonline.com/arcgis/services/SampleWorldCities/MapServer/WFSServer?). If the input is a complex WFS service (Complex WFS service is checked), this can also be the path to the XML file.</para>
+		/// <para>The URL of the source WFS service (for example, http://sampleserver6.arcgisonline.com/arcgis/services/SampleWorldCities/MapServer/WFSServer?). If the input is a complex WFS service (Complex WFS service is checked), this can also be the path to the .xml file.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Output Location</para>
 		/// <para>The location of the output feature class or geodatabase.</para>
-		/// <para>If the input is a simple WFS service, the output location can be a geodatabase or a feature dataset in a geodatabase. If the output location is a feature dataset, the coordinates are converted from the source coordinate system to the coordinate system of the feature dataset.</para>
+		/// <para>If the input is a simple WFS, the output location can be a geodatabase or a feature dataset in a geodatabase. If the output location is a feature dataset, the coordinates will be converted from the source coordinate system to the coordinate system of the feature dataset.</para>
 		/// <para>If the input is a complex WFS service, the output location must be a folder.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -110,8 +110,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Name</para>
 		/// <para>The name of the output feature class or geodatabase.</para>
-		/// <para>If the input is a simple WFS service, the name is used to create a feature class in the output location. If the feature class name already exists in the geodatabase, the name will be automatically incremented. By default, the feature type name is used.</para>
-		/// <para>If the input is a complex WFS service, the name is used to create a geodatabase in the output location.</para>
+		/// <para>If the input is a simple WFS service, the name will be used to create a feature class in the output location. If the feature class name already exists in the geodatabase, the name will be automatically incremented. By default, the feature type name is used.</para>
+		/// <para>If the input is a complex WFS service, the name will be used to create a geodatabase in the output location.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -122,26 +122,26 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Complex WFS service</para>
-		/// <para>Specifies whether the input WFS service is a complex WFS service.</para>
+		/// <para>Specifies whether the WFS Server parameter value is a complex WFS service.</para>
 		/// <para>Checked—The WFS service is a complex WFS service.</para>
-		/// <para>Not checked—The WFS service is not a complex service. This is the default.</para>
+		/// <para>Not checked—The WFS service is not a complex WFS. This is the default.</para>
 		/// <para><see cref="IsComplexEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IsComplex { get; set; } = "false";
+		public object? IsComplex { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Workspace</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutGdb { get; set; }
+		public object? OutGdb { get; set; }
 
 		/// <summary>
 		/// <para>Max Features</para>
@@ -149,11 +149,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MaxFeatures { get; set; } = "1000";
+		public object? MaxFeatures { get; set; } = "1000";
 
 		/// <summary>
 		/// <para>Expose Metadata</para>
-		/// <para>Specifies whether tables with metadata will be created from the service. This is only applicable for complex WFS services.</para>
+		/// <para>Specifies whether metadata tables will be created from the service. This is only applicable for complex WFS services.</para>
 		/// <para>Checked—Metadata tables will be created in the output geodatabase.</para>
 		/// <para>Not checked—Metadata tables will not be created in the output geodatabase. This is the default.</para>
 		/// <para><see cref="ExposeMetadataEnum"/></para>
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ExposeMetadata { get; set; } = "false";
+		public object? ExposeMetadata { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Swap XY Axis Order</para>
@@ -173,12 +173,22 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SwapXy { get; set; } = "false";
+		public object? SwapXy { get; set; } = "false";
+
+		/// <summary>
+		/// <para>Page Size</para>
+		/// <para>The page size that will be used when downloading features from the WFS service. The default is 100.</para>
+		/// <para>Some servers limit the number of features that can be requested at a time or server performance may be slow when requesting a large number of features in a single request. Use this parameter to request a smaller number of features in multiple pages to avoid server timeouts or maximum feature limits.</para>
+		/// <para>This parameter is only applicable for simple WFS 2.0 services that support startIndex and count WFS parameters. It will be ignored for older versions of WFS (1.1.0, 1.0.0).</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPLong()]
+		public object? PageSize { get; set; } = "100";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public WFSToFeatureClass SetEnviroment(object configKeyword = null , object extent = null )
+		public WFSToFeatureClass SetEnviroment(object? configKeyword = null , object? extent = null )
 		{
 			base.SetEnv(configKeyword: configKeyword, extent: extent);
 			return this;

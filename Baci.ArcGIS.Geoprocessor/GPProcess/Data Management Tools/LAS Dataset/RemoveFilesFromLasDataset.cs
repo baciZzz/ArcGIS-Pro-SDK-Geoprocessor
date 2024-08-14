@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, InFiles, InSurfaceConstraints, DerivedLasDataset, DeletePyramid };
+		public override object[] Parameters => new object[] { InLasDataset, InFiles!, InSurfaceConstraints!, DerivedLasDataset!, DeletePyramid! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object InFiles { get; set; }
+		public object? InFiles { get; set; }
 
 		/// <summary>
 		/// <para>Surface Constraints</para>
@@ -88,14 +88,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object InSurfaceConstraints { get; set; }
+		public object? InSurfaceConstraints { get; set; }
 
 		/// <summary>
 		/// <para>Updated LAS Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLasDatasetLayer()]
-		public object DerivedLasDataset { get; set; }
+		public object? DerivedLasDataset { get; set; }
 
 		/// <summary>
 		/// <para>Delete Pyramid</para>
@@ -107,12 +107,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DeletePyramid { get; set; } = "false";
+		public object? DeletePyramid { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveFilesFromLasDataset SetEnviroment(object workspace = null )
+		public RemoveFilesFromLasDataset SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

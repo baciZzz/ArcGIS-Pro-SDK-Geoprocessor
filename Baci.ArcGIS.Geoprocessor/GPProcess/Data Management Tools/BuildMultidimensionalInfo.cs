@@ -61,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, VariableField!, DimensionFields!, VariableDescUnits!, OutMosaicDataset!, DeleteMultidimensionalInfo };
+		public override object[] Parameters => new object[] { InMosaicDataset, VariableField!, DimensionFields!, VariableDescUnits!, OutMosaicDataset!, DeleteMultidimensionalInfo! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

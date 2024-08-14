@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDestinationData, InCostDistanceRaster, InCostBacklinkRaster, OutPolylineFeatures, PathType, DestinationField, ForceFlowDirectionConvention };
+		public override object[] Parameters => new object[] { InDestinationData, InCostDistanceRaster, InCostBacklinkRaster, OutPolylineFeatures, PathType!, DestinationField!, ForceFlowDirectionConvention! };
 
 		/// <summary>
 		/// <para>Input raster or feature destination data</para>
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object PathType { get; set; } = "BEST_SINGLE";
+		public object? PathType { get; set; } = "BEST_SINGLE";
 
 		/// <summary>
 		/// <para>Destination field</para>
@@ -141,24 +141,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object DestinationField { get; set; }
+		public object? DestinationField { get; set; }
 
 		/// <summary>
 		/// <para>Force flow direction convention for backlink raster</para>
-		/// <para>Forces the tool to treat the input backlink raster as a flow direction raster. Flow direction rasters can have integer values that range from 0-255.</para>
-		/// <para>Unchecked—The Input cost backlink raster will be interpreted differently based on the range of values and if it is integer or float. For a value range of 0-8, the Input cost backlink raster will be treated as a backlink raster. For values 0-255 and integer, the Input cost backlink raster will be treated as a flow direction raster. For a value range of 0-360 and floating point, the Input cost backlink raster will be treated as a back direction raster.</para>
-		/// <para>Checked—The raster supplied for the Input cost backlink raster will be treated as a flow direction raster. This is necessary if the flow direction raster has a maximum value of 8 or less.</para>
+		/// <para>Specifies whether the input backlink raster will be treated as a flow direction raster. Flow direction rasters can have integer values that range from 0-255.</para>
+		/// <para>Unchecked—The Input cost backlink raster value will be interpreted based on the range of values and if it is integer or float. For a value range of 0-8, the Input cost backlink raster value will be treated as a backlink raster. For values 0-255 and integer, the Input cost backlink raster value will be treated as a flow direction raster. For a value range of 0-360 and floating point, the Input cost backlink raster value will be treated as a back direction raster.</para>
+		/// <para>Checked—The raster supplied for the Input cost backlink raster parameter will be treated as a flow direction raster. This is necessary if the flow direction raster has a maximum value of 8 or less.</para>
 		/// <para><see cref="ForceFlowDirectionConventionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ForceFlowDirectionConvention { get; set; } = "false";
+		public object? ForceFlowDirectionConvention { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CostPathAsPolyline SetEnviroment(object MDomain = null , object MResolution = null , object MTolerance = null , object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , int? autoCommit = null , object configKeyword = null , object geographicTransformations = null , bool? maintainSpatialIndex = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , object scratchWorkspace = null , object workspace = null )
+		public CostPathAsPolyline SetEnviroment(object? MDomain = null , double? MResolution = null , double? MTolerance = null , object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , int? autoCommit = null , object? configKeyword = null , object? geographicTransformations = null , bool? maintainSpatialIndex = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, geographicTransformations: geographicTransformations, maintainSpatialIndex: maintainSpatialIndex, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -200,14 +200,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ForceFlowDirectionConventionEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—The Input cost backlink raster will be interpreted differently based on the range of values and if it is integer or float. For a value range of 0-8, the Input cost backlink raster will be treated as a backlink raster. For values 0-255 and integer, the Input cost backlink raster will be treated as a flow direction raster. For a value range of 0-360 and floating point, the Input cost backlink raster will be treated as a back direction raster.</para>
+			/// <para>Unchecked—The Input cost backlink raster value will be interpreted based on the range of values and if it is integer or float. For a value range of 0-8, the Input cost backlink raster value will be treated as a backlink raster. For values 0-255 and integer, the Input cost backlink raster value will be treated as a flow direction raster. For a value range of 0-360 and floating point, the Input cost backlink raster value will be treated as a back direction raster.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INPUT_RANGE")]
 			INPUT_RANGE,
 
 			/// <summary>
-			/// <para>Checked—The raster supplied for the Input cost backlink raster will be treated as a flow direction raster. This is necessary if the flow direction raster has a maximum value of 8 or less.</para>
+			/// <para>Checked—The raster supplied for the Input cost backlink raster parameter will be treated as a flow direction raster. This is necessary if the flow direction raster has a maximum value of 8 or less.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FLOW_DIRECTION")]

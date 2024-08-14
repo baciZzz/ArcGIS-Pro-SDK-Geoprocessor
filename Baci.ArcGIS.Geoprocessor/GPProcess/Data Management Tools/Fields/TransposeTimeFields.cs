@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClassOrTable, FieldsToTranspose, OutputFeatureClassOrTable, TimeFieldName, ValueFieldName, AttributeFields };
+		public override object[] Parameters => new object[] { InputFeatureClassOrTable, FieldsToTranspose, OutputFeatureClassOrTable, TimeFieldName, ValueFieldName, AttributeFields! };
 
 		/// <summary>
 		/// <para>Input Feature Class or Table</para>
@@ -131,12 +131,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object AttributeFields { get; set; }
+		public object? AttributeFields { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TransposeTimeFields SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public TransposeTimeFields SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

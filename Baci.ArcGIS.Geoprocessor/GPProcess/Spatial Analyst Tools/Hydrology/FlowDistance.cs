@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InStreamRaster, InSurfaceRaster, OutRaster, InFlowDirectionRaster, DistanceType, FlowDirectionType, StatisticsType };
+		public override object[] Parameters => new object[] { InStreamRaster, InSurfaceRaster, OutRaster, InFlowDirectionRaster!, DistanceType!, FlowDirectionType!, StatisticsType! };
 
 		/// <summary>
 		/// <para>Input stream raster</para>
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
 		[GPSAGeoDataDomain()]
-		public object InFlowDirectionRaster { get; set; }
+		public object? InFlowDirectionRaster { get; set; }
 
 		/// <summary>
 		/// <para>Distance type</para>
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DistanceType { get; set; } = "VERTICAL";
+		public object? DistanceType { get; set; } = "VERTICAL";
 
 		/// <summary>
 		/// <para>Input flow direction type</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object FlowDirectionType { get; set; } = "MFD";
+		public object? FlowDirectionType { get; set; } = "MFD";
 
 		/// <summary>
 		/// <para>Statistics type</para>
@@ -146,14 +146,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object StatisticsType { get; set; } = "MINIMUM";
+		public object? StatisticsType { get; set; } = "MINIMUM";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FlowDistance SetEnviroment(int? autoCommit = null , object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public FlowDistance SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 

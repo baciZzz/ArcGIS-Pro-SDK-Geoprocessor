@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Interval, TransectLength, IncludeEnds };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Interval, TransectLength, IncludeEnds! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -122,12 +122,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeEnds { get; set; } = "false";
+		public object? IncludeEnds { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateTransectsAlongLines SetEnviroment(object workspace = null )
+		public GenerateTransectsAlongLines SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

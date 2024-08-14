@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Create Parcel Fabric</para>
-	/// <para>Creates a parcel fabric and its associated datasets. The parcel fabric is created  in a feature dataset that resides in a file or an enterprise geodatabase.</para>
+	/// <para>Creates a parcel fabric and its associated datasets. The parcel fabric is created  in a feature dataset that resides in a file, enterprise, or mobile  geodatabase.</para>
 	/// </summary>
 	public class CreateParcelFabric : AbstractGPProcess
 	{
@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="TargetDataset">
 		/// <para>Target Feature Dataset</para>
-		/// <para>The feature dataset in which the parcel fabric and related schema will be created. The feature dataset can reside in a file or an enterprise geodatabase.</para>
+		/// <para>The feature dataset in which the parcel fabric and related schema will be created. The feature dataset can reside in a file, enterprise, or mobile geodatabase.</para>
 		/// </param>
 		/// <param name="Name">
 		/// <para>Name</para>
@@ -65,11 +65,11 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetDataset, Name, OutParcelFabric };
+		public override object[] Parameters => new object[] { TargetDataset, Name, OutParcelFabric!, ConfigKeyword! };
 
 		/// <summary>
 		/// <para>Target Feature Dataset</para>
-		/// <para>The feature dataset in which the parcel fabric and related schema will be created. The feature dataset can reside in a file or an enterprise geodatabase.</para>
+		/// <para>The feature dataset in which the parcel fabric and related schema will be created. The feature dataset can reside in a file, enterprise, or mobile geodatabase.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureDataset()]
@@ -88,7 +88,16 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEParcelDataset()]
-		public object OutParcelFabric { get; set; }
+		public object? OutParcelFabric { get; set; }
+
+		/// <summary>
+		/// <para>Configuration Keyword</para>
+		/// <para>The configuration keyword applies to enterprise geodatabase data only. It determines the storage parameters of the database table.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		[Category("Geodatabase Settings (optional)")]
+		public object? ConfigKeyword { get; set; }
 
 	}
 }

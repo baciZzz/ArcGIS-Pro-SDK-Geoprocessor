@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, PointSelectionMethod, ClassCodesWeights, DerivedLasDataset };
+		public override object[] Parameters => new object[] { InLasDataset, PointSelectionMethod!, ClassCodesWeights!, DerivedLasDataset! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object PointSelectionMethod { get; set; } = "CLOSEST_TO_CENTER";
+		public object? PointSelectionMethod { get; set; } = "CLOSEST_TO_CENTER";
 
 		/// <summary>
 		/// <para>Input Class Codes and Weights</para>
@@ -90,19 +90,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object ClassCodesWeights { get; set; }
+		public object? ClassCodesWeights { get; set; }
 
 		/// <summary>
 		/// <para>Output LAS Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLasDatasetLayer()]
-		public object DerivedLasDataset { get; set; }
+		public object? DerivedLasDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BuildLasDatasetPyramid SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public BuildLasDatasetPyramid SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

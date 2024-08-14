@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, OutputTable, NumberOfDistanceBands, ComputeConfidenceEnvelope, DisplayResultsGraphically, WeightField, BeginningDistance, DistanceIncrement, BoundaryCorrectionMethod, StudyAreaMethod, StudyAreaFeatureClass, ResultImage };
+		public override object[] Parameters => new object[] { InputFeatureClass, OutputTable, NumberOfDistanceBands, ComputeConfidenceEnvelope!, DisplayResultsGraphically!, WeightField!, BeginningDistance!, DistanceIncrement!, BoundaryCorrectionMethod!, StudyAreaMethod!, StudyAreaFeatureClass!, ResultImage! };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ComputeConfidenceEnvelope { get; set; } = "0_PERMUTATIONS_-_NO_CONFIDENCE_ENVELOPE";
+		public object? ComputeConfidenceEnvelope { get; set; } = "0_PERMUTATIONS_-_NO_CONFIDENCE_ENVELOPE";
 
 		/// <summary>
 		/// <para>Display Results Graphically</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DisplayResultsGraphically { get; set; }
+		public object? DisplayResultsGraphically { get; set; }
 
 		/// <summary>
 		/// <para>Weight Field</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object WeightField { get; set; }
+		public object? WeightField { get; set; }
 
 		/// <summary>
 		/// <para>Beginning Distance</para>
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object BeginningDistance { get; set; }
+		public object? BeginningDistance { get; set; }
 
 		/// <summary>
 		/// <para>Distance Increment</para>
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object DistanceIncrement { get; set; }
+		public object? DistanceIncrement { get; set; }
 
 		/// <summary>
 		/// <para>Boundary Correction Method</para>
@@ -160,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object BoundaryCorrectionMethod { get; set; } = "NONE";
+		public object? BoundaryCorrectionMethod { get; set; } = "NONE";
 
 		/// <summary>
 		/// <para>Study Area Method</para>
@@ -172,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object StudyAreaMethod { get; set; } = "MINIMUM_ENCLOSING_RECTANGLE";
+		public object? StudyAreaMethod { get; set; } = "MINIMUM_ENCLOSING_RECTANGLE";
 
 		/// <summary>
 		/// <para>Study Area Feature Class</para>
@@ -181,19 +181,19 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object StudyAreaFeatureClass { get; set; }
+		public object? StudyAreaFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Result Graph</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPGraph()]
-		public object ResultImage { get; set; }
+		public object? ResultImage { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MultiDistanceSpatialClustering SetEnviroment(object geographicTransformations = null , object outputCoordinateSystem = null , object randomGenerator = null , object scratchWorkspace = null , object workspace = null )
+		public MultiDistanceSpatialClustering SetEnviroment(object? geographicTransformations = null , object? outputCoordinateSystem = null , object? randomGenerator = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, randomGenerator: randomGenerator, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

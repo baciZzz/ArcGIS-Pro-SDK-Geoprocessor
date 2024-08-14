@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetTable, Name, NewName, Fields, OutTable, IsRestrictive };
+		public override object[] Parameters => new object[] { TargetTable, Name, NewName!, Fields!, OutTable!, IsRestrictive! };
 
 		/// <summary>
 		/// <para>Target Table</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object NewName { get; set; }
+		public object? NewName { get; set; }
 
 		/// <summary>
 		/// <para>New Fields</para>
@@ -99,14 +99,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Fields { get; set; }
+		public object? Fields { get; set; }
 
 		/// <summary>
 		/// <para>Updated Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		/// <summary>
 		/// <para>Is Restrictive</para>
@@ -118,12 +118,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IsRestrictive { get; set; } = "true";
+		public object? IsRestrictive { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AlterFieldGroup SetEnviroment(object workspace = null )
+		public AlterFieldGroup SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

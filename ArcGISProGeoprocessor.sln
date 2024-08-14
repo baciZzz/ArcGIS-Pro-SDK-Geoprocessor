@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.34902.97
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baci.ArcGIS.Geoprocessor", "Baci.ArcGIS.Geoprocessor\Baci.ArcGIS.Geoprocessor.csproj", "{129EC87A-90E1-4578-92AC-D7770F32C122}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Baci.ArcGIS.Geoprocessor", "Baci.ArcGIS.Geoprocessor\Baci.ArcGIS.Geoprocessor.csproj", "{129EC87A-90E1-4578-92AC-D7770F32C122}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProAppModuleTest", "ProAppModuleTest\ProAppModuleTest.csproj", "{48BDC187-D813-4F88-BD3F-65BCB14639C7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProAppModuleTest", "ProAppModuleTest\ProAppModuleTest.csproj", "{E964CC9A-59F8-471C-B636-2C9FA67189CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,16 +29,18 @@ Global
 		{129EC87A-90E1-4578-92AC-D7770F32C122}.Release|Any CPU.Build.0 = Release|Any CPU
 		{129EC87A-90E1-4578-92AC-D7770F32C122}.Release|x64.ActiveCfg = Release|Any CPU
 		{129EC87A-90E1-4578-92AC-D7770F32C122}.Release|x64.Build.0 = Release|Any CPU
-		{48BDC187-D813-4F88-BD3F-65BCB14639C7}.2.8|Any CPU.ActiveCfg = Debug|x64
-		{48BDC187-D813-4F88-BD3F-65BCB14639C7}.2.8|Any CPU.Build.0 = Debug|x64
-		{48BDC187-D813-4F88-BD3F-65BCB14639C7}.2.8|x64.ActiveCfg = Debug|x64
-		{48BDC187-D813-4F88-BD3F-65BCB14639C7}.2.8|x64.Build.0 = Debug|x64
-		{48BDC187-D813-4F88-BD3F-65BCB14639C7}.Debug|Any CPU.ActiveCfg = Debug|x64
-		{48BDC187-D813-4F88-BD3F-65BCB14639C7}.Debug|x64.ActiveCfg = Debug|x64
-		{48BDC187-D813-4F88-BD3F-65BCB14639C7}.Debug|x64.Build.0 = Debug|x64
-		{48BDC187-D813-4F88-BD3F-65BCB14639C7}.Release|Any CPU.ActiveCfg = Release|x64
-		{48BDC187-D813-4F88-BD3F-65BCB14639C7}.Release|x64.ActiveCfg = Release|x64
-		{48BDC187-D813-4F88-BD3F-65BCB14639C7}.Release|x64.Build.0 = Release|x64
+		{E964CC9A-59F8-471C-B636-2C9FA67189CE}.2.8|Any CPU.ActiveCfg = Debug|Any CPU
+		{E964CC9A-59F8-471C-B636-2C9FA67189CE}.2.8|Any CPU.Build.0 = Debug|Any CPU
+		{E964CC9A-59F8-471C-B636-2C9FA67189CE}.2.8|x64.ActiveCfg = Debug|Any CPU
+		{E964CC9A-59F8-471C-B636-2C9FA67189CE}.2.8|x64.Build.0 = Debug|Any CPU
+		{E964CC9A-59F8-471C-B636-2C9FA67189CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E964CC9A-59F8-471C-B636-2C9FA67189CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E964CC9A-59F8-471C-B636-2C9FA67189CE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E964CC9A-59F8-471C-B636-2C9FA67189CE}.Debug|x64.Build.0 = Debug|Any CPU
+		{E964CC9A-59F8-471C-B636-2C9FA67189CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E964CC9A-59F8-471C-B636-2C9FA67189CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E964CC9A-59F8-471C-B636-2C9FA67189CE}.Release|x64.ActiveCfg = Release|Any CPU
+		{E964CC9A-59F8-471C-B636-2C9FA67189CE}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

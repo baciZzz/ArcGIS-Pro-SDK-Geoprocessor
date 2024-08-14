@@ -20,16 +20,16 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template to modify.</para>
+		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template to modify.</para>
+		/// <para>The name of the diagram template that will be modified.</para>
 		/// </param>
 		/// <param name="IsActive">
 		/// <para>Active</para>
-		/// <para>Specifies whether the layout algorithm will automatically execute when generating diagrams based on the specified template.</para>
-		/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+		/// <para>Specifies whether the layout algorithm will automatically run when generating diagrams based on the specified template.</para>
+		/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter value. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
 		/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </param>
@@ -73,11 +73,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved, TreeDirection, BranchesPlacement, IsUnitAbsolute, PerpendicularAbsolute, PerpendicularProportional, AlongAbsolute, AlongProportional, DisjoinedGraphAbsolute, DisjoinedGraphProportional, AreEdgesOrthogonal, BreakpointPosition, OutUtilityNetwork, OutTemplateName, EdgeDisplayType, OffsetAbsolute, OffsetProportional };
+		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved!, TreeDirection!, BranchesPlacement!, IsUnitAbsolute!, PerpendicularAbsolute!, PerpendicularProportional!, AlongAbsolute!, AlongProportional!, DisjoinedGraphAbsolute!, DisjoinedGraphProportional!, AreEdgesOrthogonal!, BreakpointPosition!, OutUtilityNetwork!, OutTemplateName!, EdgeDisplayType!, OffsetAbsolute!, OffsetProportional! };
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template to modify.</para>
+		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template to modify.</para>
+		/// <para>The name of the diagram template that will be modified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -93,8 +93,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Active</para>
-		/// <para>Specifies whether the layout algorithm will automatically execute when generating diagrams based on the specified template.</para>
-		/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+		/// <para>Specifies whether the layout algorithm will automatically run when generating diagrams based on the specified template.</para>
+		/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter value. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
 		/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </summary>
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AreContainersPreserved { get; set; } = "false";
+		public object? AreContainersPreserved { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Tree Direction</para>
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TreeDirection { get; set; } = "FROM_LEFT_TO_RIGHT";
+		public object? TreeDirection { get; set; } = "FROM_LEFT_TO_RIGHT";
 
 		/// <summary>
 		/// <para>Branches Placement</para>
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object BranchesPlacement { get; set; } = "BOTH_SIDES";
+		public object? BranchesPlacement { get; set; } = "BOTH_SIDES";
 
 		/// <summary>
 		/// <para>Spacing values interpreted as absolute units in the diagram coordinate system</para>
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IsUnitAbsolute { get; set; } = "false";
+		public object? IsUnitAbsolute { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Between Junctions Perpendicular to the Direction</para>
@@ -160,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object PerpendicularAbsolute { get; set; } = "2 Unknown";
+		public object? PerpendicularAbsolute { get; set; } = "2 Unknown";
 
 		/// <summary>
 		/// <para>Between Junctions Perpendicular to the Direction</para>
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object PerpendicularProportional { get; set; } = "2";
+		public object? PerpendicularProportional { get; set; } = "2";
 
 		/// <summary>
 		/// <para>Between Junctions Along the Direction</para>
@@ -176,7 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object AlongAbsolute { get; set; } = "2 Unknown";
+		public object? AlongAbsolute { get; set; } = "2 Unknown";
 
 		/// <summary>
 		/// <para>Between Junctions Along the Direction</para>
@@ -184,7 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object AlongProportional { get; set; } = "2";
+		public object? AlongProportional { get; set; } = "2";
 
 		/// <summary>
 		/// <para>Between Disjoined Graphs</para>
@@ -192,7 +192,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object DisjoinedGraphAbsolute { get; set; } = "4 Unknown";
+		public object? DisjoinedGraphAbsolute { get; set; } = "4 Unknown";
 
 		/// <summary>
 		/// <para>Between Disjoined Graphs</para>
@@ -200,11 +200,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object DisjoinedGraphProportional { get; set; } = "4";
+		public object? DisjoinedGraphProportional { get; set; } = "4";
 
 		/// <summary>
 		/// <para>Orthogonally display edges</para>
-		/// <para>Specifies how diagram edges that are related to the tree branches will display.This parameter is deprecated at ArcGIS Pro 2.8. It is systematically ignored regardless of its value when the edge_display_type parameter is specified. However, to maintain compatibility with ArcGIS Pro 2.1, it remains enabled when the edge_display_type parameter is not specified.</para>
+		/// <para>Specifies how diagram edges that are related to the tree branches will display.This parameter is deprecated at ArcGIS Pro 3.0. It is systematically ignored regardless of its value when the edge_display_type parameter is specified. However, to maintain compatibility with ArcGIS Pro 2.1, it remains enabled when the edge_display_type parameter is not specified.</para>
 		/// <para>ORTHOGONAL_EDGES—All diagram edges related to the tree branches will display with right angles.</para>
 		/// <para>SLANTED_EDGES—All diagram edges related to the tree branches will not display with right angles. This is the default.</para>
 		/// <para><see cref="AreEdgesOrthogonalEnum"/></para>
@@ -212,15 +212,15 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AreEdgesOrthogonal { get; set; } = "false";
+		public object? AreEdgesOrthogonal { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Break Point Relative Position (%)</para>
-		/// <para>The relative position of the break point that will be inserted along the diagram edges when Edge Display Type is Regular edges (edge_display_type = &quot;REGULAR_EDGES&quot; in Python) or Edge Display Type is Orthogonal edges (edge_display_type = &quot;ORTHOGONAL_EDGES&quot; in Python). It is a percentage between 0 and 100.</para>
+		/// <para>The relative position of the break point that will be inserted along the diagram edges when Edge Display Type is set to Regular edges (edge_display_type = &quot;REGULAR_EDGES&quot; in Python) or Edge Display Type is set to Orthogonal edges (edge_display_type = &quot;ORTHOGONAL_EDGES&quot; in Python). It is a percentage between 0 and 100.</para>
 		/// <para>With a Break Point Relative Position (%) value of 0, the break point is positioned at the x-coordinate of the edge&apos;s from junction and at the y-coordinate of the edge&apos;s to junction for a horizontal tree. It is positioned at the y-coordinate of the edge&apos;s from junction and at the x-coordinate of the edge&apos;s to junction for a vertical tree.</para>
 		/// <para>With a Break Point Relative Position (%) value of 100, there is no break point inserted on the diagram edges; each diagram edge directly connects its from and to junctions.</para>
 		/// <para>With a Break Point Relative Position (%) value of N between 0 and 100, the break point is positioned at N% of the length of the [XY] segment, X being the x-coordinate of the edge&apos;s from junction and Y being the y-coordinate of the edge&apos;s to junction for a horizontal tree. It is positioned at N% of the length of the [YX] segment, Y being the y-coordinate of the edge&apos;s from junction and X being the x-coordinate of the edge&apos;s to junction for a vertical tree.</para>
-		/// <para>The relative position of the two inflection points that will be inserted along the diagram edges to compute the curved edges geometry when Edge Display Type is Curved edges (edge_display_type = &quot;CURVED_EDGES&quot; in Python). It is a percentage between 15 and 40. With a Break Point Relative Position (%) value of N between 15 and 40:</para>
+		/// <para>The relative position of the two inflection points that will be inserted along the diagram edges to compute the curved edges geometry when Edge Display Type is set to Curved edges (edge_display_type = &quot;CURVED_EDGES&quot; in Python). It is a percentage between 15 and 40. With a Break Point Relative Position (%) value of N between 15 and 40:</para>
 		/// <para>X being the x-coordinate of the edge&apos;s from junction and Y being the y-coordinate of the edge&apos;s to junction for a horizontal tree:</para>
 		/// <para>The first inflection point will be positioned at N% of the length of the [XY] segment.</para>
 		/// <para>The second inflection point will be positioned at (100 - N)% of the length of the [XY] segment.</para>
@@ -231,21 +231,21 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object BreakpointPosition { get; set; } = "30";
+		public object? BreakpointPosition { get; set; } = "30";
 
 		/// <summary>
 		/// <para>Output Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		/// <summary>
 		/// <para>Output Diagram Template</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutTemplateName { get; set; }
+		public object? OutTemplateName { get; set; }
 
 		/// <summary>
 		/// <para>Edge Display Type</para>
@@ -258,23 +258,23 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object EdgeDisplayType { get; set; } = "REGULAR_EDGES";
+		public object? EdgeDisplayType { get; set; } = "REGULAR_EDGES";
 
 		/// <summary>
 		/// <para>Absolute Offset</para>
-		/// <para>The offset used to separate overlapping segments when using absolute units and Edge Display Type is Orthogonal edges. The value cannot exceed 10 percent of the smallest value specified for the other spacing parameters. The default is 0.</para>
+		/// <para>The offset that will be used to separate overlapping segments when using absolute units and Edge Display Type is set to Orthogonal edges. The value cannot exceed 10 percent of the smallest value specified for the other spacing parameters. The default is 0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object OffsetAbsolute { get; set; } = "0 Unknown";
+		public object? OffsetAbsolute { get; set; } = "0 Unknown";
 
 		/// <summary>
 		/// <para>Proportional Offset</para>
-		/// <para>The offset used to separate overlapping segments when using proportional units and Edge Display Type is Orthogonal edges. It is a double value that cannot exceed 10 percent of the smallest value specified for the other spacing parameters. The default is 0.</para>
+		/// <para>The offset that will be used to separate overlapping segments when using proportional units and Edge Display Type is set to Orthogonal edges. It is a double value that cannot exceed 10 percent of the smallest value specified for the other spacing parameters. The default is 0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object OffsetProportional { get; set; } = "0";
+		public object? OffsetProportional { get; set; } = "0";
 
 		#region InnerClass
 
@@ -284,7 +284,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsActiveEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+			/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter value. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ACTIVE")]

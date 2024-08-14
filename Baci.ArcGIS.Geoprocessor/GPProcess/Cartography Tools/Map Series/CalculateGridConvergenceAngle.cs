@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, AngleField, RotationMethod, CoordinateSysField, OutFeatures };
+		public override object[] Parameters => new object[] { InFeatures, AngleField, RotationMethod!, CoordinateSysField!, OutFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object RotationMethod { get; set; } = "GEOGRAPHIC";
+		public object? RotationMethod { get; set; } = "GEOGRAPHIC";
 
 		/// <summary>
 		/// <para>Coordinate System Field</para>
@@ -105,19 +105,19 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object CoordinateSysField { get; set; } = "NONE";
+		public object? CoordinateSysField { get; set; } = "NONE";
 
 		/// <summary>
 		/// <para>Output Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatures { get; set; }
+		public object? OutFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateGridConvergenceAngle SetEnviroment(object cartographicCoordinateSystem = null , object workspace = null )
+		public CalculateGridConvergenceAngle SetEnviroment(object? cartographicCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem, workspace: workspace);
 			return this;

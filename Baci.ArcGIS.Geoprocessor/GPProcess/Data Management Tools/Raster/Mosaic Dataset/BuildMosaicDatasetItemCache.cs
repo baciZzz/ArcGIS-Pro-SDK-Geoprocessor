@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause, DefineCache, GenerateCache, ItemCacheFolder, CompressionMethod, CompressionQuality, MaxAllowedRows, MaxAllowedColumns, RequestSizeType, RequestSize, OutMosaicDataset };
+		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause!, DefineCache!, GenerateCache!, ItemCacheFolder!, CompressionMethod!, CompressionQuality!, MaxAllowedRows!, MaxAllowedColumns!, RequestSizeType!, RequestSize!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Define Cache</para>
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DefineCache { get; set; } = "true";
+		public object? DefineCache { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Generate Cache</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object GenerateCache { get; set; } = "true";
+		public object? GenerateCache { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Cache Path</para>
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
 		[Category("Cache Properties")]
-		public object ItemCacheFolder { get; set; }
+		public object? ItemCacheFolder { get; set; }
 
 		/// <summary>
 		/// <para>Compression Method</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Cache Properties")]
-		public object CompressionMethod { get; set; } = "LOSSLESS";
+		public object? CompressionMethod { get; set; } = "LOSSLESS";
 
 		/// <summary>
 		/// <para>Compression Quality</para>
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Cache Properties")]
-		public object CompressionQuality { get; set; } = "80";
+		public object? CompressionQuality { get; set; } = "80";
 
 		/// <summary>
 		/// <para>Maximum Allowed Rows</para>
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Cache Properties")]
-		public object MaxAllowedRows { get; set; } = "200000";
+		public object? MaxAllowedRows { get; set; } = "200000";
 
 		/// <summary>
 		/// <para>Maximum Allowed Columns</para>
@@ -155,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Cache Properties")]
-		public object MaxAllowedColumns { get; set; } = "200000";
+		public object? MaxAllowedColumns { get; set; } = "200000";
 
 		/// <summary>
 		/// <para>Request Size Type</para>
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Resampling")]
-		public object RequestSizeType { get; set; } = "PIXEL_SIZE_FACTOR";
+		public object? RequestSizeType { get; set; } = "PIXEL_SIZE_FACTOR";
 
 		/// <summary>
 		/// <para>Request Size</para>
@@ -178,19 +178,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPDouble()]
 		[GPRangeDomain()]
 		[Category("Resampling")]
-		public object RequestSize { get; set; } = "1";
+		public object? RequestSize { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Updated Mosaic Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutMosaicDataset { get; set; }
+		public object? OutMosaicDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BuildMosaicDatasetItemCache SetEnviroment(object extent = null , object parallelProcessingFactor = null )
+		public BuildMosaicDatasetItemCache SetEnviroment(object? extent = null , object? parallelProcessingFactor = null )
 		{
 			base.SetEnv(extent: extent, parallelProcessingFactor: parallelProcessingFactor);
 			return this;

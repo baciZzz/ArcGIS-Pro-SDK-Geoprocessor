@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Add Field Conflict Filter</para>
 	/// <para>Adds a field conflict filter for a given field in a geodatabase table or feature class.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class AddFieldConflictFilter : AbstractGPProcess
 	{
 		/// <summary>
@@ -65,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Table, Fields, OutTable };
+		public override object[] Parameters => new object[] { Table, Fields, OutTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -88,12 +90,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddFieldConflictFilter SetEnviroment(object workspace = null )
+		public AddFieldConflictFilter SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

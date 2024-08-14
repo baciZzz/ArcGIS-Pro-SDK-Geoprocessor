@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Ground, OutRaster, CellSize, StartTime, EndTime, TimeInterval, TimeZone, Dst, MaxShadowLength };
+		public override object[] Parameters => new object[] { InFeatures, Ground, OutRaster, CellSize!, StartTime!, EndTime!, TimeInterval!, TimeZone!, Dst!, MaxShadowLength! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object CellSize { get; set; } = "10 Feet";
+		public object? CellSize { get; set; } = "10 Feet";
 
 		/// <summary>
 		/// <para>Start Time</para>
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object StartTime { get; set; }
+		public object? StartTime { get; set; }
 
 		/// <summary>
 		/// <para>End Time</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object EndTime { get; set; }
+		public object? EndTime { get; set; }
 
 		/// <summary>
 		/// <para>Time Interval</para>
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		public object TimeInterval { get; set; }
+		public object? TimeInterval { get; set; }
 
 		/// <summary>
 		/// <para>Time Zone</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TimeZone { get; set; } = "Pacific_Standard_Time";
+		public object? TimeZone { get; set; } = "Pacific_Standard_Time";
 
 		/// <summary>
 		/// <para>Adjusted for Daylight Saving Time</para>
@@ -148,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Dst { get; set; } = "true";
+		public object? Dst { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Maximum Shadow Length</para>
@@ -157,12 +157,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[GPNumericDomain()]
-		public object MaxShadowLength { get; set; }
+		public object? MaxShadowLength { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SunShadowFrequency SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public SunShadowFrequency SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -13,6 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 	/// <para>Generate Occupant Features</para>
 	/// <para>Creates or updates employee or occupant point data that conforms to the ArcGIS Indoors Information Model.</para>
 	/// </summary>
+	[Obsolete()]
 	public class GenerateOccupantFeatures : AbstractGPProcess
 	{
 		/// <summary>
@@ -23,7 +24,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <para>The input polygon features representing building spaces that may be occupied. In the ArcGIS Indoors Information Model, this is the Units layer. The centroid of each space will be used as the point location of the occupant or occupants.</para>
 		/// </param>
 		/// <param name="UnitIdField">
-		/// <para>Unit ID Field</para>
+		/// <para>Unit Identifier Field</para>
 		/// <para>The field in the Input Unit Features parameter values that will be used as the primary key to associate building spaces with records in the Input Occupant Table parameter value.</para>
 		/// </param>
 		/// <param name="InOccupantTable">
@@ -32,7 +33,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <para>The information can be stored in a geodatabase table, a sheet in an Excel workbook (.xls or .xlsx file), or a .csv file.</para>
 		/// </param>
 		/// <param name="OccupantIdField">
-		/// <para>Occupant ID Field</para>
+		/// <para>Occupant Unit Identifier Field</para>
 		/// <para>The field in the Input Occupant Table parameter value that will be used as the primary key to associate occupants with Input Unit Features parameter values.</para>
 		/// </param>
 		/// <param name="OutOccupantFeatureClass">
@@ -81,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUnitFeatures, UnitIdField, InOccupantTable, OccupantIdField, OutOccupantFeatureClass, UpdatedUnitFeatureClass };
+		public override object[] Parameters => new object[] { InUnitFeatures, UnitIdField, InOccupantTable, OccupantIdField, OutOccupantFeatureClass, UpdatedUnitFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Unit Features</para>
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		public object InUnitFeatures { get; set; }
 
 		/// <summary>
-		/// <para>Unit ID Field</para>
+		/// <para>Unit Identifier Field</para>
 		/// <para>The field in the Input Unit Features parameter values that will be used as the primary key to associate building spaces with records in the Input Occupant Table parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -111,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		public object InOccupantTable { get; set; }
 
 		/// <summary>
-		/// <para>Occupant ID Field</para>
+		/// <para>Occupant Unit Identifier Field</para>
 		/// <para>The field in the Input Occupant Table parameter value that will be used as the primary key to associate occupants with Input Unit Features parameter values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -132,12 +133,12 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object UpdatedUnitFeatureClass { get; set; }
+		public object? UpdatedUnitFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateOccupantFeatures SetEnviroment(object outputCoordinateSystem = null , object workspace = null )
+		public GenerateOccupantFeatures SetEnviroment(object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

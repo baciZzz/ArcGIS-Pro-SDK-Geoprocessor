@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DateField, OutFeatureClass, GroupField, IncludeVelocity, OutPointFeatureClass };
+		public override object[] Parameters => new object[] { InFeatures, DateField, OutFeatureClass, GroupField!, IncludeVelocity!, OutPointFeatureClass!, ErrorOnDuplicateTimestamps!, KeepInputFields! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -105,11 +105,11 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object GroupField { get; set; }
+		public object? GroupField { get; set; }
 
 		/// <summary>
 		/// <para>Include Velocity Fields</para>
-		/// <para>Specifies whether velocity fields (speed_mps, speed_mph, speed_kph, and speed_knt) will be included in the Output Feature Class parameter.</para>
+		/// <para>Specifies whether velocity fields (speed_mps, speed_mph, speed_kph, and speed_knt) will be included in the Output Feature Class parameter value.</para>
 		/// <para>Checked—Output velocity fields will be included in the output. This is the default.</para>
 		/// <para>Unchecked—Output velocity fields will not be included in the output.</para>
 		/// <para><see cref="IncludeVelocityEnum"/></para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeVelocity { get; set; } = "true";
+		public object? IncludeVelocity { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output Sequence Points</para>
@@ -125,7 +125,31 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object OutPointFeatureClass { get; set; }
+		public object? OutPointFeatureClass { get; set; }
+
+		/// <summary>
+		/// <para>Error On Duplicate Timestamps</para>
+		/// <para>Specifies whether duplicate time stamps in the Date Field parameter value or within each group in the Group Field parameter value will be accepted or cause the tool to fail.</para>
+		/// <para>Checked—Duplicate time stamps will cause the tool to fail. This is the default.</para>
+		/// <para>Unchecked—Duplicate time stamps will be accepted. The sequence of the duplicate time stamps is based on the ObjectID.</para>
+		/// <para><see cref="ErrorOnDuplicateTimestampsEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		public object? ErrorOnDuplicateTimestamps { get; set; } = "true";
+
+		/// <summary>
+		/// <para>Keep Input Fields</para>
+		/// <para>Specifies whether fields will be transferred from the Input Features parameter value to the Output Sequence Points parameter value.</para>
+		/// <para>Checked—Fields will be transferred from the Input Features parameter value to the Output Sequence Points parameter value.</para>
+		/// <para>Unchecked—Fields will not be transferred from the Input Features parameter value to the Output Sequence Points parameter value. This is the default.</para>
+		/// <para><see cref="KeepInputFieldsEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		public object? KeepInputFields { get; set; } = "false";
 
 		#region InnerClass
 
@@ -147,6 +171,48 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 			[GPValue("false")]
 			[Description("EXCLUDE_VELOCITY")]
 			EXCLUDE_VELOCITY,
+
+		}
+
+		/// <summary>
+		/// <para>Error On Duplicate Timestamps</para>
+		/// </summary>
+		public enum ErrorOnDuplicateTimestampsEnum 
+		{
+			/// <summary>
+			/// <para>Checked—Duplicate time stamps will cause the tool to fail. This is the default.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("ERROR_DUPLICATE_TIMESTAMPS")]
+			ERROR_DUPLICATE_TIMESTAMPS,
+
+			/// <summary>
+			/// <para>Unchecked—Duplicate time stamps will be accepted. The sequence of the duplicate time stamps is based on the ObjectID.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("ALLOW_DUPLICATE_TIMESTAMPS")]
+			ALLOW_DUPLICATE_TIMESTAMPS,
+
+		}
+
+		/// <summary>
+		/// <para>Keep Input Fields</para>
+		/// </summary>
+		public enum KeepInputFieldsEnum 
+		{
+			/// <summary>
+			/// <para>Checked—Fields will be transferred from the Input Features parameter value to the Output Sequence Points parameter value.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("KEEP_INPUT_FIELDS")]
+			KEEP_INPUT_FIELDS,
+
+			/// <summary>
+			/// <para>Unchecked—Fields will not be transferred from the Input Features parameter value to the Output Sequence Points parameter value. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("DISCARD_INPUT_FIELDS")]
+			DISCARD_INPUT_FIELDS,
 
 		}
 

@@ -20,12 +20,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InPointFeatures">
 		/// <para>Input point features</para>
-		/// <para>The input point features for which to calculate the statistics in a neighborhood around each output cell.</para>
+		/// <para>The input points to use in the neighborhood operation.</para>
+		/// <para>For each output cell, any input points that fall within the defined neighborhood shape around it are identified. For the selected points, values from the specified attribute are obtained, and a statistic is calculated.</para>
 		/// <para>The input can be either a point or multipoint feature class.</para>
 		/// </param>
 		/// <param name="Field">
 		/// <para>Field</para>
-		/// <para>The field for which the specified statistic will be calculated. It can be any numeric field of the input features.</para>
+		/// <para>The field for which the specified statistic will be calculated. It can be any numeric field of the input point features.</para>
 		/// <para>It can be the Shape field if the input features contain z-values.</para>
 		/// </param>
 		/// <param name="OutRaster">
@@ -72,11 +73,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, Field, OutRaster, CellSize, Neighborhood, StatisticsType };
+		public override object[] Parameters => new object[] { InPointFeatures, Field, OutRaster, CellSize!, Neighborhood!, StatisticsType! };
 
 		/// <summary>
 		/// <para>Input point features</para>
-		/// <para>The input point features for which to calculate the statistics in a neighborhood around each output cell.</para>
+		/// <para>The input points to use in the neighborhood operation.</para>
+		/// <para>For each output cell, any input points that fall within the defined neighborhood shape around it are identified. For the selected points, values from the specified attribute are obtained, and a statistic is calculated.</para>
 		/// <para>The input can be either a point or multipoint feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -86,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Field</para>
-		/// <para>The field for which the specified statistic will be calculated. It can be any numeric field of the input features.</para>
+		/// <para>The field for which the specified statistic will be calculated. It can be any numeric field of the input point features.</para>
 		/// <para>It can be the Shape field if the input features contain z-values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -110,12 +112,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
 		[GPSAGeoDataDomain()]
-		public object CellSize { get; set; }
+		public object? CellSize { get; set; }
 
 		/// <summary>
 		/// <para>Neighborhood</para>
 		/// <para>The area around each processing cell within which any input points found will be used in the statistics calculation. There are several predefined neighborhood types to choose from.</para>
-		/// <para>Once the neighbourhood type is selected, other parameters can be set to fully define the shape, size and units of measure. The default neighborhood is a rectangle.</para>
+		/// <para>Once the neighborhood type is selected, other parameters can be set to fully define the shape, size, and units of measure. The default neighborhood is a square rectangle with a width and height of three cells.</para>
 		/// <para>The following are the forms of the available neighborhood types:</para>
 		/// <para>Annulus, Inner radius, Outer radius, Units typeA torus (donut-shaped) neighborhood defined by an inner radius and an outer radius. The default annulus is an inner radius of one cell and an outer radius of three cells.</para>
 		/// <para>Circle, Radius, Units typeA circular neighborhood with the given radius. The default radius is three cells.</para>
@@ -126,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSANeighborhood()]
 		[GPSANeighborhoodDomain()]
-		public object Neighborhood { get; set; } = "Rectangle 3 3 CELL";
+		public object? Neighborhood { get; set; } = "Rectangle 3 3 CELL";
 
 		/// <summary>
 		/// <para>Statistics type</para>
@@ -142,20 +144,21 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <para>Standard Deviation—The standard deviation of the field values in each neighborhood will be calculated.</para>
 		/// <para>Sum—The sum of the field values in the neighborhood will be calculated.</para>
 		/// <para>Variety—The number of unique field values in each neighborhood will be calculated.</para>
-		/// <para>The available choices for the statistics type is determined by the numeric type of the specified field. If the field is integer, all the statistics types are available. If the field is floating point, only the maximum, mean, minimum, range, standard deviation and sum statistics are available.</para>
+		/// <para>The default statistic type is Mean.</para>
+		/// <para>The available choices for the statistic type are determined by the numeric type of the specified field. If the field is integer, all the statistics types will be available. If the field is floating point, only the maximum, mean, minimum, range, standard deviation, and sum statistics will be available.</para>
 		/// <para><see cref="StatisticsTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object StatisticsType { get; set; } = "MEAN";
+		public object? StatisticsType { get; set; } = "MEAN";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PointStatistics SetEnviroment(int? autoCommit = null , object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public PointStatistics SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 

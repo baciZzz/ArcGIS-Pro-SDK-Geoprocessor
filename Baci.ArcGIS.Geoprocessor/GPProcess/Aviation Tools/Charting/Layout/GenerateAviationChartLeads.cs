@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayout, InMapframe, InPreferencesTable, Preference, UpdatedLayout };
+		public override object[] Parameters => new object[] { InLayout, InMapframe, InPreferencesTable, Preference, UpdatedLayout! };
 
 		/// <summary>
 		/// <para>Layout</para>

@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, FieldName, DomainName, SubtypeCode, OutTable };
+		public override object[] Parameters => new object[] { InTable, FieldName, DomainName, SubtypeCode!, OutTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -105,19 +105,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object SubtypeCode { get; set; }
+		public object? SubtypeCode { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AssignDomainToField SetEnviroment(int? autoCommit = null , object workspace = null )
+		public AssignDomainToField SetEnviroment(int? autoCommit = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

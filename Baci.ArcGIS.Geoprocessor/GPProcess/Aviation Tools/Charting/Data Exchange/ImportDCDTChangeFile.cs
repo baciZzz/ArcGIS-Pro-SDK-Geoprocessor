@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InChangeFile, TargetGdb, CurrentCycleDate, UpdatedGdb };
+		public override object[] Parameters => new object[] { InChangeFile, TargetGdb, CurrentCycleDate, UpdatedGdb! };
 
 		/// <summary>
 		/// <para>Input DCDT Change File</para>

@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCellFeatures, ExportLocation, OutExportLocation };
+		public override object[] Parameters => new object[] { InCellFeatures, ExportLocation, OutExportLocation! };
 
 		/// <summary>
 		/// <para>Cell Features</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFolder()]
-		public object OutExportLocation { get; set; }
+		public object? OutExportLocation { get; set; }
 
 	}
 }

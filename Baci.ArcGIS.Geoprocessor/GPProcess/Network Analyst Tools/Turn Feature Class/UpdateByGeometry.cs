@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTurnFeatures, OutTurnFeatures };
+		public override object[] Parameters => new object[] { InTurnFeatures, OutTurnFeatures! };
 
 		/// <summary>
 		/// <para>Input Turn Feature Class</para>
@@ -76,12 +76,12 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutTurnFeatures { get; set; }
+		public object? OutTurnFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public UpdateByGeometry SetEnviroment(object workspace = null )
+		public UpdateByGeometry SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

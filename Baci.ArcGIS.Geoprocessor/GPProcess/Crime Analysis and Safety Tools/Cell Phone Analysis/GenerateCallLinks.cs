@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPrimaryFeatures, InSecondaryFeatures, OutFeatureClass, OutputType, PrimarySubscriberField, PrimaryDestinationField, PrimaryStartTimeField, SecondarySubscriberField, SecondaryDestinationField, SecondaryStartTimeField };
+		public override object[] Parameters => new object[] { InPrimaryFeatures, InSecondaryFeatures, OutFeatureClass, OutputType!, PrimarySubscriberField!, PrimaryDestinationField!, PrimaryStartTimeField!, SecondarySubscriberField!, SecondaryDestinationField!, SecondaryStartTimeField! };
 
 		/// <summary>
 		/// <para>Input Primary Phone Record Site Points or Sectors</para>
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object OutputType { get; set; } = "SUMMARY";
+		public object? OutputType { get; set; } = "SUMMARY";
 
 		/// <summary>
 		/// <para>Primary Phone Subscriber ID Field</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object PrimarySubscriberField { get; set; }
+		public object? PrimarySubscriberField { get; set; }
 
 		/// <summary>
 		/// <para>Primary Phone Call Destination Field</para>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object PrimaryDestinationField { get; set; }
+		public object? PrimaryDestinationField { get; set; }
 
 		/// <summary>
 		/// <para>Primary Phone Call Start Date and Time Field</para>
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object PrimaryStartTimeField { get; set; }
+		public object? PrimaryStartTimeField { get; set; }
 
 		/// <summary>
 		/// <para>Secondary Phone Subscriber ID Field</para>
@@ -144,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object SecondarySubscriberField { get; set; }
+		public object? SecondarySubscriberField { get; set; }
 
 		/// <summary>
 		/// <para>Secondary Phone Destination Field</para>
@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object SecondaryDestinationField { get; set; }
+		public object? SecondaryDestinationField { get; set; }
 
 		/// <summary>
 		/// <para>Secondary Phone Call Start Date and Time Field</para>
@@ -162,14 +162,14 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object SecondaryStartTimeField { get; set; }
+		public object? SecondaryStartTimeField { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateCallLinks SetEnviroment(object MDomain = null , object MResolution = null , object MTolerance = null , object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , int? autoCommit = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , bool? qualifiedFieldNames = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateCallLinks SetEnviroment(object? MDomain = null , double? MResolution = null , double? MTolerance = null , object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , int? autoCommit = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , bool? maintainAttachments = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , bool? qualifiedFieldNames = null , object? scratchWorkspace = null , object? workspace = null )
 		{
-			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, workspace: workspace);
+			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, maintainAttachments: maintainAttachments, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
 		}
 

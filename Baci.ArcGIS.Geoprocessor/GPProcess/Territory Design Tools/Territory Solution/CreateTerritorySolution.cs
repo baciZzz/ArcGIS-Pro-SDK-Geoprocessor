@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, SolutionName, IdField, NameField, TerritoryLevelName, DefaultTerritoryName, OutTerritorySolution, InBoundaryMask };
+		public override object[] Parameters => new object[] { InFeatures, SolutionName, IdField!, NameField!, TerritoryLevelName!, DefaultTerritoryName!, OutTerritorySolution!, InBoundaryMask! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object IdField { get; set; }
+		public object? IdField { get; set; }
 
 		/// <summary>
 		/// <para>Name Field</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object NameField { get; set; }
+		public object? NameField { get; set; }
 
 		/// <summary>
 		/// <para>Territory Level Name</para>
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object TerritoryLevelName { get; set; }
+		public object? TerritoryLevelName { get; set; }
 
 		/// <summary>
 		/// <para>Default Territory Name</para>
@@ -116,14 +116,14 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DefaultTerritoryName { get; set; }
+		public object? DefaultTerritoryName { get; set; }
 
 		/// <summary>
 		/// <para>Output Territory Solution</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPGroupLayer()]
-		public object OutTerritorySolution { get; set; }
+		public object? OutTerritorySolution { get; set; }
 
 		/// <summary>
 		/// <para>Boundary Mask</para>
@@ -132,12 +132,12 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object InBoundaryMask { get; set; }
+		public object? InBoundaryMask { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateTerritorySolution SetEnviroment(object workspace = null )
+		public CreateTerritorySolution SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

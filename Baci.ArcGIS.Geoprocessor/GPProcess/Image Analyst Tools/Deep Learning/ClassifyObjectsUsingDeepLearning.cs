@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>The input image used to detect objects. The input can be a single raster or multiple rasters in a mosaic dataset, image service, or folder of images. A feature class with image attachments is also supported.</para>
+		/// <para>The input image that will be used to detect objects. The input can be a single raster or multiple rasters in a mosaic dataset, image service, or folder of images. A feature class with image attachments is also supported.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Classified Objects Feature Class</para>
@@ -71,11 +71,11 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutFeatureClass, InModelDefinition, InFeatures, ClassLabelField, ProcessingMode, ModelArguments };
+		public override object[] Parameters => new object[] { InRaster, OutFeatureClass, InModelDefinition, InFeatures!, ClassLabelField!, ProcessingMode!, ModelArguments!, CaptionField! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>The input image used to detect objects. The input can be a single raster or multiple rasters in a mosaic dataset, image service, or folder of images. A feature class with image attachments is also supported.</para>
+		/// <para>The input image that will be used to detect objects. The input can be a single raster or multiple rasters in a mosaic dataset, image service, or folder of images. A feature class with image attachments is also supported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -102,20 +102,20 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Input Features</para>
 		/// <para>The point, line, or polygon input feature class that identifies the location of each object or feature to be classified and labelled. Each row in the input feature class represents a single object or feature.</para>
-		/// <para>If no input feature class is specified, the tool assumes that each input image contains a single object to be classified. If the input image or images use a spatial reference, the output from the tool is a feature class, in which the extent of each image is used as the bounding geometry for each labelled feature class. If the input image or images are not spatially referenced, the output from the tool is a table containing the image ID values and the class labels for each image.</para>
+		/// <para>If no input feature class is specified, it is assumed that each input image contains a single object to be classified. If the input image or images use a spatial reference, the output from the tool is a feature class in which the extent of each image is used as the bounding geometry for each labelled feature class. If the input image or images are not spatially referenced, the output from the tool is a table containing the image ID values and the class labels for each image.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object InFeatures { get; set; }
+		public object? InFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Class Label Field</para>
 		/// <para>The name of the field that will contain the class or category label in the output feature class.</para>
-		/// <para>If no field name is specified, a new field called ClassLabel will be generated in the output feature class.</para>
+		/// <para>If no field name is specified, a ClassLabel field will be generated in the output feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ClassLabelField { get; set; } = "ClassLabel";
+		public object? ClassLabelField { get; set; } = "ClassLabel";
 
 		/// <summary>
 		/// <para>Processing Mode</para>
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ProcessingMode { get; set; } = "PROCESS_AS_MOSAICKED_IMAGE";
+		public object? ProcessingMode { get; set; } = "PROCESS_AS_MOSAICKED_IMAGE";
 
 		/// <summary>
 		/// <para>Model Arguments</para>
@@ -135,14 +135,24 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object ModelArguments { get; set; }
+		public object? ModelArguments { get; set; }
+
+		/// <summary>
+		/// <para>Caption</para>
+		/// <para>The name of the field that will contain the text or caption in the output feature class. This parameter is only supported when an Image Captioner model is used.</para>
+		/// <para>If no field name is specified, a Caption field will be generated in the output feature class.</para>
+		/// <para>This parameter will not appear in the Geoprocessing pane. To change the default field name, use the Class Label Field parameter.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		public object? CaptionField { get; set; } = "Caption";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ClassifyObjectsUsingDeepLearning SetEnviroment(object cellSize = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null )
+		public ClassifyObjectsUsingDeepLearning SetEnviroment(object? cellSize = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? processorType = null )
 		{
-			base.SetEnv(cellSize: cellSize, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor);
+			base.SetEnv(cellSize: cellSize, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, processorType: processorType);
 			return this;
 		}
 

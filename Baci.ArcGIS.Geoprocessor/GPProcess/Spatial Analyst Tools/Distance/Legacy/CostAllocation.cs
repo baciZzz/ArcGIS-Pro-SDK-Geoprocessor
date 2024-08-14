@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <param name="InSourceData">
 		/// <para>Input raster or feature source data</para>
 		/// <para>The input source locations.</para>
-		/// <para>This is a raster or feature dataset that identifies the cells or locations from or to which the least accumulated cost distance for every output cell location is calculated.</para>
+		/// <para>This is a raster or feature (point, line, or polygon) identifying the cells or locations that will be used to calculate the least accumulated cost distance for each output cell location.</para>
 		/// <para>For rasters, the input type can be integer or floating point.</para>
 		/// <para>If the input source raster is floating point, the Input value raster parameter must be set, and it must be integer. The value raster will take precedence over the Source field parameter setting.</para>
 		/// </param>
@@ -79,12 +79,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSourceData, InCostRaster, OutAllocationRaster, MaximumDistance, InValueRaster, SourceField, OutDistanceRaster, OutBacklinkRaster, SourceCostMultiplier, SourceStartCost, SourceResistanceRate, SourceCapacity, SourceDirection };
+		public override object[] Parameters => new object[] { InSourceData, InCostRaster, OutAllocationRaster, MaximumDistance!, InValueRaster!, SourceField!, OutDistanceRaster!, OutBacklinkRaster!, SourceCostMultiplier!, SourceStartCost!, SourceResistanceRate!, SourceCapacity!, SourceDirection! };
 
 		/// <summary>
 		/// <para>Input raster or feature source data</para>
 		/// <para>The input source locations.</para>
-		/// <para>This is a raster or feature dataset that identifies the cells or locations from or to which the least accumulated cost distance for every output cell location is calculated.</para>
+		/// <para>This is a raster or feature (point, line, or polygon) identifying the cells or locations that will be used to calculate the least accumulated cost distance for each output cell location.</para>
 		/// <para>For rasters, the input type can be integer or floating point.</para>
 		/// <para>If the input source raster is floating point, the Input value raster parameter must be set, and it must be integer. The value raster will take precedence over the Source field parameter setting.</para>
 		/// </summary>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object MaximumDistance { get; set; }
+		public object? MaximumDistance { get; set; }
 
 		/// <summary>
 		/// <para>Input value raster</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
 		[GPSAGeoDataDomain()]
-		public object InValueRaster { get; set; }
+		public object? InValueRaster { get; set; }
 
 		/// <summary>
 		/// <para>Source field</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object SourceField { get; set; }
+		public object? SourceField { get; set; }
 
 		/// <summary>
 		/// <para>Output distance raster</para>
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
-		public object OutDistanceRaster { get; set; }
+		public object? OutDistanceRaster { get; set; }
 
 		/// <summary>
 		/// <para>Output backlink raster</para>
@@ -164,11 +164,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
-		public object OutBacklinkRaster { get; set; }
+		public object? OutBacklinkRaster { get; set; }
 
 		/// <summary>
 		/// <para>Multiplier to apply to costs</para>
-		/// <para>The multiplier to apply to the cost values.</para>
+		/// <para>The multiplier that will be applied to the cost values.</para>
 		/// <para>This allows for control of the mode of travel or the magnitude at a source. The greater the multiplier, the greater the cost to move through each cell.</para>
 		/// <para>The values must be greater than zero. The default is 1.</para>
 		/// </summary>
@@ -176,11 +176,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPComposite()]
 		[GPCompositeDomain()]
 		[Category("Source Characteristics")]
-		public object SourceCostMultiplier { get; set; }
+		public object? SourceCostMultiplier { get; set; }
 
 		/// <summary>
 		/// <para>Start cost</para>
-		/// <para>The starting cost from which to begin the cost calculations.</para>
+		/// <para>The starting cost that will be used to begin the cost calculations.</para>
 		/// <para>Allows for the specification of the fixed cost associated with a source. Instead of starting at a cost of zero, the cost algorithm will begin with the value set by Start cost.</para>
 		/// <para>The values must be zero or greater. The default is 0.</para>
 		/// </summary>
@@ -188,7 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPComposite()]
 		[GPCompositeDomain()]
 		[Category("Source Characteristics")]
-		public object SourceStartCost { get; set; }
+		public object? SourceStartCost { get; set; }
 
 		/// <summary>
 		/// <para>Accumulative cost resistance rate</para>
@@ -200,7 +200,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPComposite()]
 		[GPCompositeDomain()]
 		[Category("Source Characteristics")]
-		public object SourceResistanceRate { get; set; }
+		public object? SourceResistanceRate { get; set; }
 
 		/// <summary>
 		/// <para>Capacity</para>
@@ -212,13 +212,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPComposite()]
 		[GPCompositeDomain()]
 		[Category("Source Characteristics")]
-		public object SourceCapacity { get; set; }
+		public object? SourceCapacity { get; set; }
 
 		/// <summary>
 		/// <para>Travel direction</para>
 		/// <para>Specifies the direction of the traveler when applying the source resistance rate and the source starting cost.</para>
-		/// <para>Travel from source—The source resistance rate and source starting cost will be applied beginning at the input source, and travel out to the non-source cells. This is the default.</para>
-		/// <para>Travel to source—The source resistance rate and source starting cost will be applied beginning at each non-source cell, and travel back to the input source.</para>
+		/// <para>Travel from source—The source resistance rate and source starting cost will be applied beginning at the input source and travel out to the nonsource cells. This is the default.</para>
+		/// <para>Travel to source—The source resistance rate and source starting cost will be applied beginning at each nonsource cell and travel back to the input source.</para>
 		/// <para>If you select the String option, you can choose between from and to options, which will be applied to all sources.</para>
 		/// <para>If you select the Field option, you can select the field from the source data that determines the direction to use for each source. The field must contain the text string FROM_SOURCE or TO_SOURCE.</para>
 		/// </summary>
@@ -226,14 +226,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPComposite()]
 		[GPCompositeDomain()]
 		[Category("Source Characteristics")]
-		public object SourceDirection { get; set; }
+		public object? SourceDirection { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CostAllocation SetEnviroment(int? autoCommit = null , object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public CostAllocation SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 

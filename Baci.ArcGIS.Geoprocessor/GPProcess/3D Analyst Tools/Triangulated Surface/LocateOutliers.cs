@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurface, OutFeatureClass, ApplyHardLimit, AbsoluteZMin, AbsoluteZMax, ApplyComparisonFilter, ZTolerance, SlopeTolerance, ExceedToleranceRatio, OutlierCap };
+		public override object[] Parameters => new object[] { InSurface, OutFeatureClass, ApplyHardLimit!, AbsoluteZMin!, AbsoluteZMax!, ApplyComparisonFilter!, ZTolerance!, SlopeTolerance!, ExceedToleranceRatio!, OutlierCap! };
 
 		/// <summary>
 		/// <para>Input  Surface</para>
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ApplyHardLimit { get; set; } = "false";
+		public object? ApplyHardLimit { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Absolute Z Minimum</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object AbsoluteZMin { get; set; } = "0";
+		public object? AbsoluteZMin { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Absolute Z Maximum</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object AbsoluteZMax { get; set; } = "0";
+		public object? AbsoluteZMax { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Apply Comparison Filter</para>
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ApplyComparisonFilter { get; set; } = "true";
+		public object? ApplyComparisonFilter { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Z Tolerance</para>
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ZTolerance { get; set; } = "0";
+		public object? ZTolerance { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Slope Tolerance</para>
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object SlopeTolerance { get; set; } = "150";
+		public object? SlopeTolerance { get; set; } = "150";
 
 		/// <summary>
 		/// <para>Exceed Tolerance Ratio</para>
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ExceedToleranceRatio { get; set; } = "0.5";
+		public object? ExceedToleranceRatio { get; set; } = "0.5";
 
 		/// <summary>
 		/// <para>Outlier Cap</para>
@@ -153,12 +153,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object OutlierCap { get; set; } = "2500";
+		public object? OutlierCap { get; set; } = "2500";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LocateOutliers SetEnviroment(object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , int? autoCommit = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public LocateOutliers SetEnviroment(object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , int? autoCommit = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

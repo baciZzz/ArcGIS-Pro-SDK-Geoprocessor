@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputSafetyAreaFeatures, TargetOisFeatures, SurfaceClassification, OperationType, RotorDiameter, ClearwayLength, SurfaceShape, ApproachBearing, InFlightpathFeatures, HeliportElevation, CustomJsonFile, DerivedOutfeatureclass };
+		public override object[] Parameters => new object[] { InputSafetyAreaFeatures, TargetOisFeatures, SurfaceClassification, OperationType, RotorDiameter!, ClearwayLength!, SurfaceShape!, ApproachBearing!, InFlightpathFeatures!, HeliportElevation!, CustomJsonFile!, DerivedOutfeatureclass! };
 
 		/// <summary>
 		/// <para>Input Safety Area Features</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object RotorDiameter { get; set; } = "16.5";
+		public object? RotorDiameter { get; set; } = "16.5";
 
 		/// <summary>
 		/// <para>Clearway Length</para>
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ClearwayLength { get; set; } = "0";
+		public object? ClearwayLength { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Surface Shape</para>
@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SurfaceShape { get; set; } = "STRAIGHT_SURFACE";
+		public object? SurfaceShape { get; set; } = "STRAIGHT_SURFACE";
 
 		/// <summary>
 		/// <para>Approach Bearing</para>
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ApproachBearing { get; set; } = "0";
+		public object? ApproachBearing { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Input Flight Path Features</para>
@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object InFlightpathFeatures { get; set; }
+		public object? InFlightpathFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Heliport Elevation</para>
@@ -178,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object HeliportElevation { get; set; } = "0";
+		public object? HeliportElevation { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Custom JSON File</para>
@@ -187,7 +187,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object CustomJsonFile { get; set; }
+		public object? CustomJsonFile { get; set; }
 
 		/// <summary>
 		/// <para>Output OIS Features</para>
@@ -195,7 +195,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
 		[GPCompositeDomain()]
-		public object DerivedOutfeatureclass { get; set; }
+		public object? DerivedOutfeatureclass { get; set; }
 
 		#region InnerClass
 

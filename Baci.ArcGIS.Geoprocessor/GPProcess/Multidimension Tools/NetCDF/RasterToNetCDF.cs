@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutNetcdfFile, Variable, VariableUnits, XDimension, YDimension, BandDimension, FieldsToDimensions, CompressionLevel };
+		public override object[] Parameters => new object[] { InRaster, OutNetcdfFile, Variable!, VariableUnits!, XDimension!, YDimension!, BandDimension!, FieldsToDimensions!, CompressionLevel! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Variable { get; set; }
+		public object? Variable { get; set; }
 
 		/// <summary>
 		/// <para>Variable Units</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object VariableUnits { get; set; }
+		public object? VariableUnits { get; set; }
 
 		/// <summary>
 		/// <para>X Dimension</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object XDimension { get; set; }
+		public object? XDimension { get; set; }
 
 		/// <summary>
 		/// <para>Y Dimension</para>
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object YDimension { get; set; }
+		public object? YDimension { get; set; }
 
 		/// <summary>
 		/// <para>Band Dimension</para>
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object BandDimension { get; set; }
+		public object? BandDimension { get; set; }
 
 		/// <summary>
 		/// <para>Fields to Dimensions</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object FieldsToDimensions { get; set; }
+		public object? FieldsToDimensions { get; set; }
 
 		/// <summary>
 		/// <para>Compression Level</para>
@@ -144,12 +144,12 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPCodedValueDomain()]
-		public object CompressionLevel { get; set; } = "0";
+		public object? CompressionLevel { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RasterToNetCDF SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public RasterToNetCDF SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

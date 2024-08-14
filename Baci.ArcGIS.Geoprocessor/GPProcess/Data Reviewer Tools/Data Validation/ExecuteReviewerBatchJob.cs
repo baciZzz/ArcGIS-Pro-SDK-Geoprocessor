@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ReviewerWorkspace, Session, BatchJobFile, ProductionWorkspace, AnalysisArea, ChangedFeatures, Tableview, ProductionWorkspaceversion };
+		public override object[] Parameters => new object[] { ReviewerWorkspace, Session, BatchJobFile, ProductionWorkspace!, AnalysisArea!, ChangedFeatures!, Tableview!, ProductionWorkspaceversion! };
 
 		/// <summary>
 		/// <para>Reviewer Workspace</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
-		public object ProductionWorkspace { get; set; }
+		public object? ProductionWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Analysis Area</para>
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object AnalysisArea { get; set; }
+		public object? AnalysisArea { get; set; }
 
 		/// <summary>
 		/// <para>Changed Features Only</para>
@@ -127,14 +127,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ChangedFeatures { get; set; }
+		public object? ChangedFeatures { get; set; }
 
 		/// <summary>
 		/// <para>BATCHRUNTABLE_View</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
-		public object Tableview { get; set; }
+		public object? Tableview { get; set; }
 
 		/// <summary>
 		/// <para>Production Workspace Version</para>
@@ -142,12 +142,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ProductionWorkspaceversion { get; set; }
+		public object? ProductionWorkspaceversion { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExecuteReviewerBatchJob SetEnviroment(object extent = null , object workspace = null )
+		public ExecuteReviewerBatchJob SetEnviroment(object? extent = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

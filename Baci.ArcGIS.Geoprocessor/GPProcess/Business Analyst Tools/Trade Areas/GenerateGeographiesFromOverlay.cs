@@ -70,12 +70,12 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "baDataSource", "geographicTransformations", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { GeographyLevel, InFeatures, IdField, OutFeatureClass, OverlapType, Ratios };
+		public override object[] Parameters => new object[] { GeographyLevel, InFeatures, IdField, OutFeatureClass, OverlapType!, Ratios! };
 
 		/// <summary>
 		/// <para>Geography Level</para>
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object OverlapType { get; set; } = "INTERSECT";
+		public object? OverlapType { get; set; } = "INTERSECT";
 
 		/// <summary>
 		/// <para>Ratios</para>
@@ -135,14 +135,14 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Ratios { get; set; } = "NO_RATIOS";
+		public object? Ratios { get; set; } = "NO_RATIOS";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateGeographiesFromOverlay SetEnviroment(object workspace = null )
+		public GenerateGeographiesFromOverlay SetEnviroment(object? baDataSource = null , object? geographicTransformations = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, geographicTransformations: geographicTransformations, workspace: workspace);
 			return this;
 		}
 

@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 	/// <summary>
 	/// <para>Import MGCP Metadata</para>
 	/// <para>Imports Multinational Geospatial Co-production Program (MGCP) metadata into an MGCP database to perform maintenance on cells and subregions.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class ImportMetadata : AbstractGPProcess
 	{
 		/// <summary>
@@ -65,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Files, InCellFeatures, OutCells };
+		public override object[] Parameters => new object[] { Files, InCellFeatures, OutCells! };
 
 		/// <summary>
 		/// <para>Metadata Files</para>
@@ -90,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutCells { get; set; }
+		public object? OutCells { get; set; }
 
 	}
 }

@@ -22,11 +22,11 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="InParcelFabric">
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The input parcels that will be appended to the target parcel fabric. The input parcel fabric can be from a file geodatabase, an enterprise geodatabase, or a feature service.</para>
+		/// <para>The input parcels that will be appended to the target parcel fabric. The input parcel fabric can be from a file, enterprise, or mobile geodatabase, or a feature service.</para>
 		/// </param>
 		/// <param name="TargetParcelFabric">
 		/// <para>Target Parcel Fabric</para>
-		/// <para>The target parcel fabric to which the parcels will be appended. The target parcel fabric can be from a file geodatabase or an enterprise geodatabase.</para>
+		/// <para>The target parcel fabric to which the parcels will be appended. The target parcel fabric can be from a file, enterprise, or mobile geodatabase.</para>
 		/// </param>
 		public AppendParcels(object InParcelFabric, object TargetParcelFabric)
 		{
@@ -67,11 +67,11 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InParcelFabric, TargetParcelFabric, UpdatedParcelFabric };
+		public override object[] Parameters => new object[] { InParcelFabric, TargetParcelFabric, UpdatedParcelFabric! };
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The input parcels that will be appended to the target parcel fabric. The input parcel fabric can be from a file geodatabase, an enterprise geodatabase, or a feature service.</para>
+		/// <para>The input parcels that will be appended to the target parcel fabric. The input parcel fabric can be from a file, enterprise, or mobile geodatabase, or a feature service.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPParcelLayer()]
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Target Parcel Fabric</para>
-		/// <para>The target parcel fabric to which the parcels will be appended. The target parcel fabric can be from a file geodatabase or an enterprise geodatabase.</para>
+		/// <para>The target parcel fabric to which the parcels will be appended. The target parcel fabric can be from a file, enterprise, or mobile geodatabase.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPParcelLayer()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPParcelLayer()]
-		public object UpdatedParcelFabric { get; set; }
+		public object? UpdatedParcelFabric { get; set; }
 
 	}
 }

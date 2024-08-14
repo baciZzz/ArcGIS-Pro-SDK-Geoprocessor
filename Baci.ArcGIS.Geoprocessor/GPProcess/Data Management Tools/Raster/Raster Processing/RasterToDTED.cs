@@ -74,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutFolder, DtedLevel, ResamplingType, DerivedFolder };
+		public override object[] Parameters => new object[] { InRaster, OutFolder, DtedLevel, ResamplingType!, DerivedFolder! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -116,19 +116,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ResamplingType { get; set; } = "BILINEAR";
+		public object? ResamplingType { get; set; } = "BILINEAR";
 
 		/// <summary>
 		/// <para>Updated Folder</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFolder()]
-		public object DerivedFolder { get; set; }
+		public object? DerivedFolder { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RasterToDTED SetEnviroment(object resamplingMethod = null )
+		public RasterToDTED SetEnviroment(object? resamplingMethod = null )
 		{
 			base.SetEnv(resamplingMethod: resamplingMethod);
 			return this;

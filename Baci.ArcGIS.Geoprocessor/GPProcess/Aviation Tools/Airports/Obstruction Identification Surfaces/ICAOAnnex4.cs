@@ -13,6 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 	/// <para>ICAO Annex 4</para>
 	/// <para>Creates obstruction identification surfaces (OIS) based on the ICAO Annex 4 specification for the Precision Approach Terrain chart.</para>
 	/// </summary>
+	[Obsolete()]
 	public class ICAOAnnex4 : AbstractGPProcess
 	{
 		/// <summary>
@@ -65,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Target, RunwayDirection, Length, Width, Slope, Height, DerivedOutfeatureclass, AirportControlPointFeatureClass };
+		public override object[] Parameters => new object[] { InFeatures, Target, RunwayDirection!, Length!, Width!, Slope!, Height!, DerivedOutfeatureclass!, AirportControlPointFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Runway Features</para>
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object RunwayDirection { get; set; }
+		public object? RunwayDirection { get; set; }
 
 		/// <summary>
 		/// <para>Length</para>
@@ -103,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Length { get; set; } = "900";
+		public object? Length { get; set; } = "900";
 
 		/// <summary>
 		/// <para>Width</para>
@@ -111,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Width { get; set; } = "120";
+		public object? Width { get; set; } = "120";
 
 		/// <summary>
 		/// <para>Slope</para>
@@ -119,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Slope { get; set; } = "3";
+		public object? Slope { get; set; } = "3";
 
 		/// <summary>
 		/// <para>Start Height</para>
@@ -127,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Height { get; set; } = "15.24";
+		public object? Height { get; set; } = "15.24";
 
 		/// <summary>
 		/// <para>Output OIS Features</para>
@@ -135,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
 		[GPCompositeDomain()]
-		public object DerivedOutfeatureclass { get; set; }
+		public object? DerivedOutfeatureclass { get; set; }
 
 		/// <summary>
 		/// <para>Input Airport Control Point Feature</para>
@@ -144,12 +145,12 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object AirportControlPointFeatureClass { get; set; }
+		public object? AirportControlPointFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ICAOAnnex4 SetEnviroment(object workspace = null )
+		public ICAOAnnex4 SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

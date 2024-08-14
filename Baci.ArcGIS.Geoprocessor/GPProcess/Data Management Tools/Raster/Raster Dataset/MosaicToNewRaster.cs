@@ -29,7 +29,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <param name="RasterDatasetNameWithExtension">
 		/// <para>Raster Dataset Name with Extension</para>
 		/// <para>The name of the dataset you are creating.</para>
-		/// <para>When storing the raster dataset in a file format, you need to specify the file extension:</para>
+		/// <para>When storing the raster dataset in a file format, specify the file extension as follows:</para>
 		/// <para>.bil—Esri BIL</para>
 		/// <para>.bip—Esri BIP</para>
 		/// <para>.bmp—BMP</para>
@@ -43,7 +43,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>.tif—TIFF</para>
 		/// <para>No extension for Esri Grid</para>
 		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset.</para>
-		/// <para>When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a Compression Type and Compression Quality in the geoprocessing Environments.</para>
+		/// <para>When storing a raster dataset to a JPEG format file, a JPEG 2000 format file, a TIFF format file, or a geodatabase, you can specify Compression Type and Compression Quality values in the geoprocessing environments.</para>
 		/// </param>
 		/// <param name="NumberOfBands">
 		/// <para>Number of Bands</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputRasters, OutputLocation, RasterDatasetNameWithExtension, CoordinateSystemForTheRaster, PixelType, Cellsize, NumberOfBands, MosaicMethod, MosaicColormapMode, OutputRasterDataset };
+		public override object[] Parameters => new object[] { InputRasters, OutputLocation, RasterDatasetNameWithExtension, CoordinateSystemForTheRaster!, PixelType!, Cellsize!, NumberOfBands, MosaicMethod!, MosaicColormapMode!, OutputRasterDataset! };
 
 		/// <summary>
 		/// <para>Input Rasters</para>
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Raster Dataset Name with Extension</para>
 		/// <para>The name of the dataset you are creating.</para>
-		/// <para>When storing the raster dataset in a file format, you need to specify the file extension:</para>
+		/// <para>When storing the raster dataset in a file format, specify the file extension as follows:</para>
 		/// <para>.bil—Esri BIL</para>
 		/// <para>.bip—Esri BIP</para>
 		/// <para>.bmp—BMP</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>.tif—TIFF</para>
 		/// <para>No extension for Esri Grid</para>
 		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset.</para>
-		/// <para>When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a Compression Type and Compression Quality in the geoprocessing Environments.</para>
+		/// <para>When storing a raster dataset to a JPEG format file, a JPEG 2000 format file, a TIFF format file, or a geodatabase, you can specify Compression Type and Compression Quality values in the geoprocessing environments.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -137,36 +137,36 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
-		public object CoordinateSystemForTheRaster { get; set; }
+		public object? CoordinateSystemForTheRaster { get; set; }
 
 		/// <summary>
 		/// <para>Pixel Type</para>
 		/// <para>The bit depth, or radiometric resolution of the mosaic dataset.</para>
 		/// <para>If you do not set the pixel type, the 8-bit default will be used and your output may be incorrect.</para>
-		/// <para>1 bit—A 1-bit unsigned integer. The values can be 0 or 1.</para>
-		/// <para>2 bit—A 2-bit unsigned integer. The values supported can be from 0 to 3.</para>
-		/// <para>4 bit—A 4-bit unsigned integer. The values supported can be from 0 to 15.</para>
-		/// <para>8 bit unsigned—An unsigned 8-bit data type. The values supported can be from 0 to 255.</para>
-		/// <para>8 bit signed—A signed 8-bit data type. The values supported can be from -128 to 127.</para>
-		/// <para>16 bit unsigned—A 16-bit unsigned data type. The values can range from 0 to 65,535.</para>
-		/// <para>16 bit signed—A 16-bit signed data type. The values can range from -32,768 to 32,767.</para>
-		/// <para>32 bit unsigned—A 32-bit unsigned data type. The values can range from 0 to 4,294,967,295.</para>
-		/// <para>32 bit signed—A 32-bit signed data type. The values can range from -2,147,483,648 to 2,147,483,647.</para>
-		/// <para>32 bit float—A 32-bit data type supporting decimals.</para>
-		/// <para>64 bit—A 64-bit data type supporting decimals.</para>
+		/// <para>1 bit—The pixel type will be a 1-bit unsigned integer. The values can be 0 or 1.</para>
+		/// <para>2 bit—The pixel type will be a 2-bit unsigned integer. The values supported can range from 0 to 3.</para>
+		/// <para>4 bit—The pixel type will be a 4-bit unsigned integer. The values supported can range from 0 to 15.</para>
+		/// <para>8 bit unsigned—The pixel type will be an unsigned 8-bit data type. The values supported can range from 0 to 255.</para>
+		/// <para>8 bit signed—The pixel type will be a signed 8-bit data type. The values supported can range from -128 to 127.</para>
+		/// <para>16 bit unsigned—The pixel type will be a 16-bit unsigned data type. The values can range from 0 to 65,535.</para>
+		/// <para>16 bit signed—The pixel type will be a 16-bit signed data type. The values can range from -32,768 to 32,767.</para>
+		/// <para>32 bit unsigned—The pixel type will be a 32-bit unsigned data type. The values can range from 0 to 4,294,967,295.</para>
+		/// <para>32 bit signed—The pixel type will be a 32-bit signed data type. The values can range from -2,147,483,648 to 2,147,483,647.</para>
+		/// <para>32 bit float—The pixel type will be a 32-bit data type supporting decimals.</para>
+		/// <para>64 bit—The pixel type will be a 64-bit data type supporting decimals.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object PixelType { get; set; } = "8_BIT_UNSIGNED";
+		public object? PixelType { get; set; } = "8_BIT_UNSIGNED";
 
 		/// <summary>
 		/// <para>Cellsize</para>
-		/// <para>The cell size for the new raster dataset.</para>
+		/// <para>The pixel size that will be used for the new raster dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Cellsize { get; set; }
+		public object? Cellsize { get; set; }
 
 		/// <summary>
 		/// <para>Number of Bands</para>
@@ -192,7 +192,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object MosaicMethod { get; set; } = "LAST";
+		public object? MosaicMethod { get; set; } = "LAST";
 
 		/// <summary>
 		/// <para>Mosaic Colormap Mode</para>
@@ -208,19 +208,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object MosaicColormapMode { get; set; } = "FIRST";
+		public object? MosaicColormapMode { get; set; } = "FIRST";
 
 		/// <summary>
 		/// <para>Output Raster Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DERasterDataset()]
-		public object OutputRasterDataset { get; set; }
+		public object? OutputRasterDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MosaicToNewRaster SetEnviroment(object compression = null , object configKeyword = null , object extent = null , object nodata = null , object parallelProcessingFactor = null , object pyramid = null , object rasterStatistics = null , object resamplingMethod = null , double[] tileSize = null )
+		public MosaicToNewRaster SetEnviroment(object? compression = null , object? configKeyword = null , object? extent = null , object? nodata = null , object? parallelProcessingFactor = null , object? pyramid = null , object? rasterStatistics = null , object? resamplingMethod = null , object? tileSize = null )
 		{
 			base.SetEnv(compression: compression, configKeyword: configKeyword, extent: extent, nodata: nodata, parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, rasterStatistics: rasterStatistics, resamplingMethod: resamplingMethod, tileSize: tileSize);
 			return this;

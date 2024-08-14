@@ -20,8 +20,12 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InFolder">
 		/// <para>Input Training Data</para>
-		/// <para>The folder containing the image chips, labels, and statistics required to train the model. This is the output from the Export Training Data For Deep Learning tool.</para>
-		/// <para>To train a model, the input images must be 8-bit rasters with three bands.</para>
+		/// <para>The folders containing the image chips, labels, and statistics required to train the model. This is the output from the Export Training Data For Deep Learning tool.</para>
+		/// <para>Multiple input folders are supported when the following conditions are met:</para>
+		/// <para>The metadata format type must be classified tiles, labeled tiles, multilabeled tiles, PASCAL Visual Object Classes, or RCNN masks.</para>
+		/// <para>All training data must have the same metadata format.</para>
+		/// <para>All training data must have the same number of bands.</para>
+		/// <para>All training data must have the same tile size.</para>
 		/// </param>
 		/// <param name="OutFolder">
 		/// <para>Output Model</para>
@@ -61,20 +65,24 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "gpuID", "parallelProcessingFactor", "processorType", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "gpuID", "parallelProcessingFactor", "processorType", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFolder, OutFolder, MaxEpochs, ModelType, BatchSize, Arguments, LearningRate, BackboneModel, PretrainedModel, ValidationPercentage, StopTraining, OutModelFile, Freeze };
+		public override object[] Parameters => new object[] { InFolder, OutFolder, MaxEpochs!, ModelType!, BatchSize!, Arguments!, LearningRate!, BackboneModel!, PretrainedModel!, ValidationPercentage!, StopTraining!, OutModelFile!, Freeze! };
 
 		/// <summary>
 		/// <para>Input Training Data</para>
-		/// <para>The folder containing the image chips, labels, and statistics required to train the model. This is the output from the Export Training Data For Deep Learning tool.</para>
-		/// <para>To train a model, the input images must be 8-bit rasters with three bands.</para>
+		/// <para>The folders containing the image chips, labels, and statistics required to train the model. This is the output from the Export Training Data For Deep Learning tool.</para>
+		/// <para>Multiple input folders are supported when the following conditions are met:</para>
+		/// <para>The metadata format type must be classified tiles, labeled tiles, multilabeled tiles, PASCAL Visual Object Classes, or RCNN masks.</para>
+		/// <para>All training data must have the same metadata format.</para>
+		/// <para>All training data must have the same number of bands.</para>
+		/// <para>All training data must have the same tile size.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
-		[DEFolder()]
+		[GPMultiValue()]
 		public object InFolder { get; set; }
 
 		/// <summary>
@@ -91,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MaxEpochs { get; set; } = "20";
+		public object? MaxEpochs { get; set; } = "20";
 
 		/// <summary>
 		/// <para>Model Type</para>
@@ -109,67 +117,86 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <para>HED Edge Detector (Pixel classification)— The Holistically-Nested Edge Detection (HED) architecture will be used to train the model. The HED Edge Detector is used for pixel classification. This approach is useful to in edge and object boundary detection.</para>
 		/// <para>Multi Task Road Extractor (Pixel classification)— The Multi Task Road Extractor architecture will be used to train the model. The Multi Task Road Extractor is used for pixel classification. This approach is useful for road network extraction from satellite imagery.</para>
 		/// <para>ConnectNet (Pixel classification)—The ConnectNet architecture will be used to train the model. ConnectNet is used for pixel classification. This approach is useful for road network extraction from satellite imagery.</para>
-		/// <para>Pix2Pix (Image translation)—The Pix2Pix approach will be used to train the model. Pix2Pix is used for image to image translation. This approach creates a model object that generates images of one type to another. The input training data for this model type uses the Export Tiles metadata format.</para>
+		/// <para>Pix2Pix (Image translation)—The Pix2Pix approach will be used to train the model. Pix2Pix is used for image-to-image translation. This approach creates a model object that generates images of one type to another. The input training data for this model type uses the Export Tiles metadata format.</para>
 		/// <para>CycleGAN (Image translation)—The CycleGAN approach will be used to train the model. CycleGAN is used for image-to-image translation. This approach creates a model object that generates images of one type to another. This approach is unique in that the images to be trained do not need to overlap. The input training data for this model type uses the CycleGAN metadata format.</para>
-		/// <para>Super-resolution (Image translation)—The super-resolution approach will be used to train the model. Super-resolution is used for image-to-image translation. This approach creates a model object that increases the resolution and improves the quality of images. The input training data for this model type uses the Export Tiles metadata format.</para>
-		/// <para>Change detector (Pixel Classification)—The Change Detector approach will be used to train the model. Change Detector is used for pixel classification. This approach creates a model object that uses two spatial-temporal images to create a classified raster of the change. The input training data for this model type uses the Classified Tiles metadata format.</para>
-		/// <para>Image captioner (Image Translation)—The Image Captioner approach will be used to train the model. Image Captioner is used for image-to-text translation. This approach creates a model that generates text captions for an image.</para>
+		/// <para>Super-resolution (Image translation)—The Super-resolution approach will be used to train the model. Super-resolution is used for image-to-image translation. This approach creates a model object that increases the resolution and improves the quality of images. The input training data for this model type uses the Export Tiles metadata format.</para>
+		/// <para>Change detector (Pixel classification)—The Change detector approach will be used to train the model. Change detector is used for pixel classification. This approach creates a model object that uses two spatial-temporal images to create a classified raster of the change. The input training data for this model type uses the Classified Tiles metadata format.</para>
+		/// <para>Image captioner (Image translation)—The Image captioner approach will be used to train the model. Image captioner is used for image-to-text translation. This approach creates a model that generates text captions for an image.</para>
+		/// <para>Siam Mask (Object tracker)—The Siam Mask approach will be used to train the model. Siam Mask is used for object detection in videos. The model is trained using frames of the video and detects the classes and bounding boxes of the objects in each frame. The input training data for this model type uses the MaskRCNN metadata format.</para>
+		/// <para>MMDetection (Object detection)—The MMDetection approach will be used to train the model. MMDetection is used for object detection. The supported metadata formats are PASCAL Visual Object Class rectangles and KITTI rectangles.</para>
+		/// <para>MMSegmentation (Pixel classification)—The MMSegmentation approach will be used to train the model. MMDetection is used for pixel classification. The supported metadata format is Classified Tiles.</para>
+		/// <para>Deep Sort (Object tracker)—The Deep Sort approach will be used to train the model. Deep Sort is used for object detection in videos. The model is trained using frames of the video and detects the classes and bounding boxes of the objects in each frame. The input training data for this model type uses the Imagenet metadata format. Where Siam Mask is useful while tracking an object, Deep Sort is useful in training a model to track multiple objects.</para>
+		/// <para>Pix2PixHD (Image translation)—The Pix2PixHD approach will be used to train the model. Pix2PixHD is used for image-to-image translation. This approach creates a model object that generates images of one type to another. The input training data for this model type uses the Export Tiles metadata format.</para>
+		/// <para>MaX-DeepLab (Panoptic segmentation)—The MaX-DeepLab approach will be used to train the model. MaX-DeepLab is used for panoptic segmentation. This approach creates a model object that generates images and features. The input training data for this model type uses the Panoptic metadata format.</para>
+		/// <para>DETReg (Object detection)—The DETReg approach will be used to train the model. DETReg is used for object detection. The input training data for this model type uses the Pascal Visual Object Classes.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Model Parameters")]
-		public object ModelType { get; set; }
+		public object? ModelType { get; set; }
 
 		/// <summary>
 		/// <para>Batch Size</para>
-		/// <para>The number of training samples to be processed for training at one time. The default value is 2.</para>
-		/// <para>If you have a powerful GPU, this number can be increased to 8, 16, 32, or 64.</para>
+		/// <para>The number of training samples to be processed for training at one time.</para>
+		/// <para>Increasing the batch size can improve tool performance; however, as the batch size increases, more memory is used. If an out of memory error occurs, use a smaller batch size.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Model Parameters")]
-		public object BatchSize { get; set; } = "64";
+		public object? BatchSize { get; set; } = "64";
 
 		/// <summary>
 		/// <para>Model Arguments</para>
 		/// <para>The function arguments are defined in the Python raster function class. This is where you list additional deep learning parameters and arguments for experiments and refinement, such as a confidence threshold for adjusting sensitivity. The names of the arguments are populated from reading the Python module.</para>
-		/// <para>When you choose Single Shot Detector as the Model Type parameter value, the Model Arguments parameter will be populated with the following arguments:</para>
+		/// <para>When you choose Single Shot Detector (Object detection) as the Model Type parameter value, the Model Arguments parameter will be populated with the following arguments:</para>
 		/// <para>grids—The number of grids the image will be divided into for processing. Setting this argument to 4 means the image will be divided into 4 x 4 or 16 grid cells. If no value is specified, the optimal grid value will be calculated based on the input imagery.</para>
 		/// <para>zooms—The number of zoom levels each grid cell will be scaled up or down. Setting this argument to 1 means all the grid cells will remain at the same size or zoom level. A zoom level of 2 means all the grid cells will become twice as large (zoomed in 100 percent). Providing a list of zoom levels means all the grid cells will be scaled using all the numbers in the list. The default is 1.0.</para>
 		/// <para>ratios—The list of aspect ratios to use for the anchor boxes. In object detection, an anchor box represents the ideal location, shape, and size of the object being predicted. Setting this argument to [1.0,1.0], [1.0, 0.5] means the anchor box is a square (1:1) or a rectangle in which the horizontal side is half the size of the vertical side (1:0.5). The default is [1.0, 1.0].</para>
-		/// <para>When you choose a pixel classification model such as Pyramid Scene Parsing Network, U-Net, or DeepLabv3 as the Model Type parameter value, the Model Arguments parameter will be populated with the following arguments:</para>
+		/// <para>monitor—Specifies the metric to monitor while checkpointing and early stopping. Available metrics are valid_loss and average_precision. The default is valid_loss.</para>
+		/// <para>When you choose a pixel classification model such as Pyramid Scene Parsing Network (Pixel classification), U-Net (Pixel classification), or DeepLabv3 (Pixel classification) as the Model Type parameter value, the Model Arguments parameter will be populated with the following arguments:</para>
 		/// <para>use_net—Specifies whether the U-Net decoder will be used to recover data once the pyramid pooling is complete. The default is True. This argument is specific to the Pyramid Scene Parsing Network model.</para>
 		/// <para>pyramid_sizes—The number and size of convolution layers to be applied to the different subregions. The default is [1,2,3,6]. This argument is specific to the Pyramid Scene Parsing Network model.</para>
 		/// <para>mixup—Specifies whether mixup augmentation and mixup loss will be used. The default is False.</para>
 		/// <para>class_balancing—Specifies whether the cross-entropy loss inverse will be balanced to the frequency of pixels per class. The default is False.</para>
 		/// <para>focal_loss—Specifies whether focal loss will be used. The default is False.</para>
 		/// <para>ignore_classes—Contains the list of class values on which the model will not incur loss.</para>
-		/// <para>When you choose RetinaNet as the Model Type parameter value, the Model Arguments parameter will be populated with the following arguments:</para>
+		/// <para>monitor—Specifies the metric to monitor while checkpointing and early stopping. Available metrics are valid_loss and accuracy. The default is valid_loss.</para>
+		/// <para>When you choose RetinaNet (Object detection) as the Model Type parameter value, the Model Arguments parameter will be populated with the following arguments:</para>
 		/// <para>scales—The number of scale levels each cell will be scaled up or down. The default is [1, 0.8, 0.63].</para>
 		/// <para>ratios—The aspect ratio of the anchor box. The default is 0.5,1,2.</para>
-		/// <para>When you choose Multi Task Road Extractor or ConnectNet as the Model Type parameter value, the Model Arguments parameter will be populated with the following arguments:</para>
+		/// <para>monitor—Specifies the metric to monitor while checkpointing and early stopping. Available metrics are valid_loss and average_precision. The default is valid_loss.</para>
+		/// <para>When you choose Multi Task Road Extractor (Pixel classification) or ConnectNet (Pixel classification) as the Model Type parameter value, the Model Arguments parameter will be populated with the following arguments:</para>
 		/// <para>gaussian_thresh—Sets the Gaussian threshold, which sets the required road width. The valid range is 0.0 to 1.0. The default is 0.76.</para>
 		/// <para>orient_bin_size—Sets the bin size for orientation angles. The default is 20.</para>
 		/// <para>orient_theta—Sets the width of orientation mask. The default is 8.</para>
 		/// <para>mtl_model—Sets the architecture type that will be used to create the model. Valid choices are linknet or hourglass for linknet-based or hourglass-based, respectively, neural architectures. The default is hourglass.</para>
-		/// <para>When you choose Image Captioner as the Model Type parameter value, the Model Arguments parameter will be populated with the following arguments:The decode_params, are comprised of the following six parameters:</para>
-		/// <para>decode_params—A dictionary that controls how the Image Captioner will run. The default value is {&apos;embed_size&apos;:100, &apos;hidden_size&apos;:100, &apos;attention_size&apos;:100, &apos;teacher_forcing&apos;:1, &apos;dropout&apos;:0.1, &apos;pretrained_emb&apos;:False}.</para>
-		/// <para>chip_size—Sets the size of image to train the model. Images are cropped to the specified chip size. If image size is less than chip size, the image size is used. The default size is 224 pixels.</para>
+		/// <para>monitor—Specifies the metric to monitor while checkpointing and early stopping. Available metrics are valid_loss, accuracy, miou, and dice. The default is valid_loss.</para>
+		/// <para>When you choose Image captioner (Image translation) as the Model Type parameter value, the Model Arguments parameter will be populated with the following arguments:The decode_params argument is composed of the following six parameters:</para>
+		/// <para>decode_params—A dictionary that controls how the Image captioner will run. The default value is {&apos;embed_size&apos;:100, &apos;hidden_size&apos;:100, &apos;attention_size&apos;:100, &apos;teacher_forcing&apos;:1, &apos;dropout&apos;:0.1, &apos;pretrained_emb&apos;:False}.</para>
+		/// <para>chip_size—Sets the image size to train the model. Images are cropped to the specified chip size. If image size is less than chip size, image size is used. The default size is 224 pixels.</para>
+		/// <para>monitor—Specifies the metric to monitor while checkpointing and early stopping. Available metrics are valid_loss, accuracy, corpus_bleu and multi_label_fbeta. The default is valid_loss.</para>
 		/// <para>embed_size—Sets the embedding size. The default is 100 layers in the neural network.</para>
 		/// <para>hidden_size—Sets the hidden layer size. The default is 100 layers in the neural network.</para>
 		/// <para>attention_size—Sets the intermediate attention layer size . The default is 100 layers in the neural network.</para>
-		/// <para>teacher_forcing—Sets the probability of teacher forcing. Teacher forcing is a strategy for training recurrent neural networks that uses model output from a prior time step as an input, instead of the previous output, during back propagation. Valid ranges is from 0.0 to 1.0. The default is 1.</para>
-		/// <para>dropout—Sets the dropout probability. Valid ranges is from 0.0 to 1.0. The default is 0.1.</para>
+		/// <para>teacher_forcing—Sets the probability of teacher forcing. Teacher forcing is a strategy for training recurrent neural networks. It uses model output from a prior time step as an input, instead of the previous output, during back propagation. The valid range is 0.0 to 1.0. The default is 1.</para>
+		/// <para>dropout—Sets the dropout probability. The valid range is 0.0 to 1.0. The default is 0.1.</para>
 		/// <para>pretrained_emb—Sets the pretrained embedding flag. If True, it will use fast text embedding. If False, it will not use the pretrained text embedding. The default is False.</para>
-		/// <para>When you choose Change Detector as the Model Type parameter value, the Model Arguments parameter will be populated with the following argument:</para>
+		/// <para>When you choose Change detector (Pixel classification) as the Model Type parameter value, the Model Arguments parameter will be populated with the following argument:</para>
 		/// <para>attention_type—Specifies the module type. The module choices are PAM (Pyramid Attention Module) or BAM (Basic Attention Module). The default is PAM.</para>
+		/// <para>monitor—Specifies the metric to monitor while checkpointing and early stopping. Available metrics are valid_loss, precision, recall, and f1. The default is valid_loss.</para>
+		/// <para>When you choose MMDetection (Object detection) as the Model Type parameter value, the Model Arguments parameter will be populated with the following arguments:</para>
+		/// <para>model—The backbone model used to train the model. The available choices are atss, carafe, cascade_rcnn, cascade_rpn, dcn, detectors, double_heads, dynamic_rcnn, empirical_attention, fcos, foveabox, fsaf, ghm, hrnet, libra_rcnn, nas_fcos, pafpn, pisa, regnet, reppoints, res2net, sabl, and vfnet. The default is cascade_rcnn.</para>
+		/// <para>model_weight—Specifies whether pretrained model weights will be used. The default is false. The value can also be a path to a configuration file containing the weights of a model from the MMDetection repository.</para>
+		/// <para>When you choose MMSegmentation (Pixel classification) as the Model Type parameter value, the Model Arguments parameter will be populated with the following arguments:</para>
+		/// <para>model—The backbone model used to train the model. The available choices are ann, apcnet, ccnet, cgnet, danet, deeplabv3, deeplabv3plus, dmnet , dnlnet, emanet, encnet, fastscnn, fcn, gcnet, hrnet, mobilenet_v2, mobilenet_v3, nonlocal_net, ocrnet, ocrnet_base, pointrend, psanet, pspnet, resnest, sem_fpn, unet, and upernet. The default is deeplabv3.</para>
+		/// <para>model_weight—Specifies whether pretrained model weights will be used. The default is false. The value can also be a path to a configuration file containing the weights of a model from the MMSegmentation repository.</para>
 		/// <para>All model types support the chip_size argument, which is the image chip size of the training samples. The image chip size is extracted from the .emd file from the folder specified in the Input Training Data parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[Category("Model Parameters")]
-		public object Arguments { get; set; }
+		public object? Arguments { get; set; }
 
 		/// <summary>
 		/// <para>Learning Rate</para>
@@ -178,47 +205,50 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Advanced")]
-		public object LearningRate { get; set; }
+		public object? LearningRate { get; set; }
 
 		/// <summary>
 		/// <para>Backbone Model</para>
 		/// <para>Specifies the preconfigured neural network that will be used as the architecture for training the new model. This method is known as Transfer Learning.</para>
-		/// <para>DenseNet-121—The preconfigured model will be a dense network trained on the ImageNET Dataset that contains more than 1 million images and is 121 layers deep. Unlike RESNET, which combines the layer using summation, DenseNet combines the layers using concatenation.</para>
-		/// <para>DenseNet-161—The preconfigured model will be a dense network trained on the ImageNET Dataset that contains more than 1 million images and is 161 layers deep. Unlike RESNET, which combines the layer using summation, DenseNet combines the layers using concatenation.</para>
-		/// <para>DenseNet-169—The preconfigured model will be a dense network trained on the ImageNET Dataset that contains more than 1 million images and is 169 layers deep. Unlike RESNET, which combines the layer using summation, DenseNet combines the layers using concatenation.</para>
-		/// <para>DenseNet-201—The preconfigured model will be a dense network trained on the ImageNET Dataset that contains more than 1 million images and is 201 layers deep. Unlike RESNET, which combines the layer using summation, DenseNet combines the layers using concatenation.</para>
-		/// <para>MobileNet version 2—This preconfigured model will be trained on the ImageNet Database and is 54 layers deep geared toward Edge device computing, since it uses less memory.</para>
-		/// <para>ResNet-18—The preconfigured model will be a residual network trained on the ImageNET Dataset that contains more than million images and is 18 layers deep.</para>
-		/// <para>ResNet-34—The preconfigured model will be a residual network trained on the ImageNET Dataset that contains more than 1 million images and is 34 layers deep. This is the default.</para>
-		/// <para>ResNet-50—The preconfigured model will be a residual network trained on the ImageNET Dataset that contains more than 1 million images and is 50 layers deep.</para>
-		/// <para>ResNet-101—The preconfigured model will be a residual network trained on the ImageNET Dataset that contains more than 1 million images and is 101 layers deep.</para>
-		/// <para>ResNet-152—The preconfigured model will be a residual network trained on the ImageNET Dataset that contains more than 1 million images and is 152 layers deep.</para>
-		/// <para>VGG-11—The preconfigured model will be a convolution neural network trained on the ImageNET Dataset that contains more than 1 million images to classify images into 1,000 object categories and is 11 layers deep.</para>
-		/// <para>VGG-11 with batch normalization—This preconfigured model will be based on the VGG network but with batch normalization, which means each layer in the network is normalized. It trained on the ImageNet dataset and has 11 layers.</para>
-		/// <para>VGG-13—The preconfigured model will be a convolution neural network trained on the ImageNET Dataset that contains more than 1 million images to classify images into 1,000 object categories and is 13 layers deep.</para>
-		/// <para>VGG-13 with batch normalization—This preconfigured model will be based on the VGG network but with batch normalization, which means each layer in the network is normalized. It trained on the ImageNet dataset and has 13 layers.</para>
-		/// <para>VGG-16—The preconfigured model will be a convolution neural network trained on the ImageNET Dataset that contains more than 1 million images to classify images into 1,000 object categories and is 16 layers deep.</para>
-		/// <para>VGG-16 with batch normalization—This preconfigured model will be based on the VGG network but with batch normalization, which means each layer in the network is normalized. It trained on the ImageNet dataset and has 16 layers.</para>
-		/// <para>VGG-19—The preconfigured model will be a convolution neural network trained on the ImageNET Dataset that contains more than 1 million images to classify images into 1,000 object categories and is 19 layers deep.</para>
-		/// <para>VGG-19 with batch normalization—This preconfigured model will be based on the VGG network but with batch normalization, which means each layer in the network is normalized. It trained on the ImageNet dataset and has 19 layers.</para>
-		/// <para>DarkNet-53—The preconfigured model will be a convolution neural network trained on the ImageNET Dataset that contains more than 1 million images and is 53 layers deep.</para>
+		/// <para>DenseNet-121—The preconfigured model will be a dense network trained on the Imagenet Dataset that contains more than 1 million images and is 121 layers deep. Unlike RESNET, which combines the layer using summation, DenseNet combines the layers using concatenation.</para>
+		/// <para>DenseNet-161—The preconfigured model will be a dense network trained on the Imagenet Dataset that contains more than 1 million images and is 161 layers deep. Unlike RESNET, which combines the layer using summation, DenseNet combines the layers using concatenation.</para>
+		/// <para>DenseNet-169—The preconfigured model will be a dense network trained on the Imagenet Dataset that contains more than 1 million images and is 169 layers deep. Unlike RESNET, which combines the layer using summation, DenseNet combines the layers using concatenation.</para>
+		/// <para>DenseNet-201—The preconfigured model will be a dense network trained on the Imagenet Dataset that contains more than 1 million images and is 201 layers deep. Unlike RESNET, which combines the layer using summation, DenseNet combines the layers using concatenation.</para>
+		/// <para>MobileNet version 2—This preconfigured model will be trained on the Imagenet Database and is 54 layers deep geared toward Edge device computing, since it uses less memory.</para>
+		/// <para>ResNet-18—The preconfigured model will be a residual network trained on the Imagenet Dataset that contains more than million images and is 18 layers deep.</para>
+		/// <para>ResNet-34—The preconfigured model will be a residual network trained on the Imagenet Dataset that contains more than 1 million images and is 34 layers deep. This is the default.</para>
+		/// <para>ResNet-50—The preconfigured model will be a residual network trained on the Imagenet Dataset that contains more than 1 million images and is 50 layers deep.</para>
+		/// <para>ResNet-101—The preconfigured model will be a residual network trained on the Imagenet Dataset that contains more than 1 million images and is 101 layers deep.</para>
+		/// <para>ResNet-152—The preconfigured model will be a residual network trained on the Imagenet Dataset that contains more than 1 million images and is 152 layers deep.</para>
+		/// <para>VGG-11—The preconfigured model will be a convolution neural network trained on the Imagenet Dataset that contains more than 1 million images to classify images into 1,000 object categories and is 11 layers deep.</para>
+		/// <para>VGG-11 with batch normalization—This preconfigured model will be based on the VGG network but with batch normalization, which means each layer in the network is normalized. It trained on the Imagenet dataset and has 11 layers.</para>
+		/// <para>VGG-13—The preconfigured model will be a convolution neural network trained on the Imagenet Dataset that contains more than 1 million images to classify images into 1,000 object categories and is 13 layers deep.</para>
+		/// <para>VGG-13 with batch normalization—This preconfigured model will be based on the VGG network but with batch normalization, which means each layer in the network is normalized. It trained on the Imagenet dataset and has 13 layers.</para>
+		/// <para>VGG-16—The preconfigured model will be a convolution neural network trained on the Imagenet Dataset that contains more than 1 million images to classify images into 1,000 object categories and is 16 layers deep.</para>
+		/// <para>VGG-16 with batch normalization—This preconfigured model will be based on the VGG network but with batch normalization, which means each layer in the network is normalized. It trained on the Imagenet dataset and has 16 layers.</para>
+		/// <para>VGG-19—The preconfigured model will be a convolution neural network trained on the Imagenet Dataset that contains more than 1 million images to classify images into 1,000 object categories and is 19 layers deep.</para>
+		/// <para>VGG-19 with batch normalization—This preconfigured model will be based on the VGG network but with batch normalization, which means each layer in the network is normalized. It trained on the Imagenet dataset and has 19 layers.</para>
+		/// <para>DarkNet-53—The preconfigured model will be a convolution neural network trained on the Imagenet Dataset that contains more than 1 million images and is 53 layers deep.</para>
+		/// <para>Reid_v1—The preconfigured model will be a convolutional neural network trained on the Imagenet Dataset that is used for object tracking.</para>
+		/// <para>Reid_v2—The preconfigured model will be a convolutional neural network trained on the Imagenet Dataset that is used for object tracking.</para>
+		/// <para>Additionally, supported convolutional neural networks from the PyTorch Image Models (timm) can be specified using timm: as a prefix, for example, timm:resnet31 , timm:inception_v4 , timm:efficientnet_b3, and so on.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced")]
-		public object BackboneModel { get; set; }
+		public object? BackboneModel { get; set; }
 
 		/// <summary>
 		/// <para>Pre-trained Model</para>
-		/// <para>A pretrained model that will be used to fine-tune the new model. The input is an Esri Model Definition file (.emd) or a deep learning package file (.dlpk).</para>
+		/// <para>A pretrained model that will be used to fine-tune the new model. The input is an Esri model definition file (.emd) or a deep learning package file (.dlpk).</para>
 		/// <para>A pretrained model with similar classes can be fine-tuned to fit the new model. The pretrained model must have been trained with the same model type and backbone model that will be used to train the new model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
 		[Category("Advanced")]
-		public object PretrainedModel { get; set; }
+		public object? PretrainedModel { get; set; }
 
 		/// <summary>
 		/// <para>Validation %</para>
@@ -227,7 +257,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Advanced")]
-		public object ValidationPercentage { get; set; } = "10";
+		public object? ValidationPercentage { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Stop when model stops improving</para>
@@ -240,14 +270,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced")]
-		public object StopTraining { get; set; } = "true";
+		public object? StopTraining { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output Model</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
-		public object OutModelFile { get; set; }
+		public object? OutModelFile { get; set; }
 
 		/// <summary>
 		/// <para>Freeze Model</para>
@@ -260,14 +290,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced")]
-		public object Freeze { get; set; } = "true";
+		public object? Freeze { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TrainDeepLearningModel SetEnviroment(object extent = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public TrainDeepLearningModel SetEnviroment(object? parallelProcessingFactor = null , object? processorType = null , object? scratchWorkspace = null , object? workspace = null )
 		{
-			base.SetEnv(extent: extent, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
+			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, processorType: processorType, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
 		}
 

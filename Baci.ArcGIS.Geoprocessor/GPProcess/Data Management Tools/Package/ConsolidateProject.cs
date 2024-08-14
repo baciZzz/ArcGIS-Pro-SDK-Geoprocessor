@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Consolidate Project</para>
-	/// <para>Consolidates a project (.aprx file) and referenced maps and data to a specified output folder.</para>
+	/// <para>Consolidates a project (an .aprx file) and referenced maps and data into a specified output folder.</para>
 	/// </summary>
 	public class ConsolidateProject : AbstractGPProcess
 	{
@@ -24,7 +24,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </param>
 		/// <param name="OutputFolder">
 		/// <para>Output Folder</para>
-		/// <para>The output folder that will contain the consolidated project and data. If the specified folder does not exist, a new folder will be created.</para>
+		/// <para>The output folder that will contain the consolidated project and data. If the specified folder does not exist, a folder will be created.</para>
 		/// </param>
 		public ConsolidateProject(object InProject, object OutputFolder)
 		{
@@ -60,12 +60,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InProject, OutputFolder, SharingInternal, Extent, ApplyExtentToEnterpriseGeo, PackageAsTemplate, PreserveSqlite, Version, SelectRelatedRows };
+		public override object[] Parameters => new object[] { InProject, OutputFolder, SharingInternal!, Extent!, ApplyExtentToEnterpriseGeo!, PackageAsTemplate!, PreserveSqlite!, Version!, SelectRelatedRows! };
 
 		/// <summary>
 		/// <para>Input Project</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Folder</para>
-		/// <para>The output folder that will contain the consolidated project and data. If the specified folder does not exist, a new folder will be created.</para>
+		/// <para>The output folder that will contain the consolidated project and data. If the specified folder does not exist, a folder will be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -86,15 +86,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Share outside of organization</para>
-		/// <para>Specifies whether the project and all data will be consolidated into a single folder (for sharing outside your organization) or referenced (for sharing inside your organization). Data paths referenced from enterprise geodatabases or a UNC file system can be shared internally. If your project was not built with data paths like this, the data will be consolidated into the project package.Data and maps will be consolidated and packaged if the project references them from a local path, such as c:\gisdata\landrecords.gdb\ regardless of this parameter&apos;s setting.</para>
-		/// <para>Unchecked—The project and its data sources will not be consolidated to the output folder. This is the default. This parameter applies to enterprise geodatabase data sources, including enterprise geodatabases and folders referenced via a UNC path.</para>
+		/// <para>Specifies whether the project and all data will be consolidated into a single folder (for sharing outside your organization) or referenced (for sharing inside your organization). Data paths referenced from enterprise geodatabases or a UNC file system can be shared internally. If the project was not built with data paths like this, the data will be consolidated into the project package.Data and maps will be consolidated and packaged if the project references them from a local path, such as c:\gisdata\landrecords.gdb\ regardless of this parameter&apos;s setting.</para>
+		/// <para>Unchecked—The project and its data sources will not be consolidated into the output folder. This is the default. This parameter applies to enterprise geodatabase data sources, including enterprise geodatabases and folders referenced through a UNC path.</para>
 		/// <para>Checked—The project and its data sources will be copied and preserved when possible.</para>
 		/// <para><see cref="SharingInternalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SharingInternal { get; set; } = "false";
+		public object? SharingInternal { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Extent</para>
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Apply Extent only to enterprise geodatabase layers</para>
@@ -120,11 +120,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ApplyExtentToEnterpriseGeo { get; set; } = "false";
+		public object? ApplyExtentToEnterpriseGeo { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Consolidate as template</para>
-		/// <para>Specifies whether the project will be consolidated as a template or a regular project. Templates can include maps, layouts, connections to databases and servers, and so on. A project template allows you to standardize a series of maps for use in a project and ensure that the correct layers are immediately available for everyone to use in their maps.</para>
+		/// <para>Specifies whether the project will be consolidated as a template or a regular project. Templates can include maps, layouts, connections to databases and servers, and so on. A project template allows you to standardize a series of maps for use in a project and ensure that the correct layers are immediately available for use.</para>
 		/// <para>Unchecked—The project will be consolidated as a project into a folder. This is the default.</para>
 		/// <para>Checked—The project will be consolidated as a template into a folder.</para>
 		/// <para><see cref="PackageAsTemplateEnum"/></para>
@@ -132,36 +132,39 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object PackageAsTemplate { get; set; } = "false";
+		public object? PackageAsTemplate { get; set; } = "false";
 
 		/// <summary>
-		/// <para>Preserve SQLite Geodatabase</para>
-		/// <para>Specifies whether SQLite geodatabases will be preserved or converted to file geodatabases.This parameter applies only to .geodatabase files, used primarily for offline workflows in ArcGIS Runtime apps. SQLite databases with .sqlite or .gpkg file extensions will be converted to file geodatabases.</para>
-		/// <para>Unchecked—SQLite geodatabases will be converted to file geodatabases. This is the default.</para>
-		/// <para>Checked—SQLite geodatabases will be preserved.</para>
+		/// <para>Preserve Mobile Geodatabase</para>
+		/// <para>Specifies whether mobile geodatabases will be preserved or converted to file geodatabases.This parameter applies only to mobile geodatabases (.geodatabase), used primarily for offline workflows in ArcGIS Runtime apps. SQLite databases with .sqlite or .gpkg file extensions will be converted to file geodatabases.</para>
+		/// <para>Unchecked—Mobile geodatabases will be converted to file geodatabases. This is the default.</para>
+		/// <para>Checked—Mobile geodatabases will be preserved.</para>
 		/// <para><see cref="PreserveSqliteEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object PreserveSqlite { get; set; } = "false";
+		public object? PreserveSqlite { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Version</para>
-		/// <para>Specifies the ArcGIS Pro version the consolidated project will be saved as. Saving to an earlier version will ensure tool backward compatibility. If you attempt to consolidate a toolbox to an earlier version and capabilities that are only available in the newer version are included, an error will occur. You must remove tools that are incompatible with the earlier version, or specify a compatible version.</para>
+		/// <para>Specifies the ArcGIS Pro version that the consolidated project will be saved as. Saving to an earlier version will ensure tool backward compatibility. If you attempt to consolidate a toolbox to an earlier version and capabilities that are only available in the newer version are included, an error will occur. You must remove tools that are incompatible with the earlier version, or specify a compatible version.</para>
 		/// <para>Current version— The consolidated folder will contain geodatabases and maps compatible with the version of the current release.</para>
-		/// <para>2.1—The consolidated folder will contain geodatabases and maps compatible with version 2.1.</para>
 		/// <para>2.2— The consolidated folder will contain geodatabases and maps compatible with version 2.2.</para>
 		/// <para>2.3—The consolidated folder will contain geodatabases and maps compatible with version 2.3.</para>
 		/// <para>2.4—The consolidated folder will contain geodatabases and maps compatible with version 2.4.</para>
 		/// <para>2.5—The consolidated folder will contain geodatabases and maps compatible with version 2.5.</para>
 		/// <para>2.6—The consolidated folder will contain geodatabases and maps compatible with version 2.6.</para>
+		/// <para>2.7—The consolidated folder will contain geodatabases and maps compatible with version 2.7.</para>
+		/// <para>2.8—The consolidated folder will contain geodatabases and maps compatible with version 2.8.</para>
+		/// <para>2.9—The consolidated folder will contain geodatabases and maps compatible with version 2.9.</para>
+		/// <para>3.0—The consolidated folder will contain geodatabases and maps compatible with version 3.0.</para>
 		/// <para><see cref="VersionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Version { get; set; } = "CURRENT";
+		public object? Version { get; set; } = "CURRENT";
 
 		/// <summary>
 		/// <para>Keep only the rows which are related to features within the extent</para>
@@ -173,14 +176,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SelectRelatedRows { get; set; } = "false";
+		public object? SelectRelatedRows { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConsolidateProject SetEnviroment(object workspace = null )
+		public ConsolidateProject SetEnviroment(object? parallelProcessingFactor = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;
 		}
 
@@ -199,7 +202,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			EXTERNAL,
 
 			/// <summary>
-			/// <para>Unchecked—The project and its data sources will not be consolidated to the output folder. This is the default. This parameter applies to enterprise geodatabase data sources, including enterprise geodatabases and folders referenced via a UNC path.</para>
+			/// <para>Unchecked—The project and its data sources will not be consolidated into the output folder. This is the default. This parameter applies to enterprise geodatabase data sources, including enterprise geodatabases and folders referenced through a UNC path.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INTERNAL")]
@@ -250,19 +253,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Preserve SQLite Geodatabase</para>
+		/// <para>Preserve Mobile Geodatabase</para>
 		/// </summary>
 		public enum PreserveSqliteEnum 
 		{
 			/// <summary>
-			/// <para>Checked—SQLite geodatabases will be preserved.</para>
+			/// <para>Checked—Mobile geodatabases will be preserved.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PRESERVE_SQLITE")]
 			PRESERVE_SQLITE,
 
 			/// <summary>
-			/// <para>Unchecked—SQLite geodatabases will be converted to file geodatabases. This is the default.</para>
+			/// <para>Unchecked—Mobile geodatabases will be converted to file geodatabases. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("CONVERT_SQLITE")]
@@ -281,13 +284,6 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			[GPValue("CURRENT")]
 			[Description("Current version")]
 			Current_version,
-
-			/// <summary>
-			/// <para>2.1—The consolidated folder will contain geodatabases and maps compatible with version 2.1.</para>
-			/// </summary>
-			[GPValue("2.1")]
-			[Description("2.1")]
-			_21,
 
 			/// <summary>
 			/// <para>2.2— The consolidated folder will contain geodatabases and maps compatible with version 2.2.</para>
@@ -325,11 +321,32 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			_26,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>2.7—The consolidated folder will contain geodatabases and maps compatible with version 2.7.</para>
 			/// </summary>
 			[GPValue("2.7")]
 			[Description("2.7")]
 			_27,
+
+			/// <summary>
+			/// <para>2.8—The consolidated folder will contain geodatabases and maps compatible with version 2.8.</para>
+			/// </summary>
+			[GPValue("2.8")]
+			[Description("2.8")]
+			_28,
+
+			/// <summary>
+			/// <para>2.9—The consolidated folder will contain geodatabases and maps compatible with version 2.9.</para>
+			/// </summary>
+			[GPValue("2.9")]
+			[Description("2.9")]
+			_29,
+
+			/// <summary>
+			/// <para>3.0—The consolidated folder will contain geodatabases and maps compatible with version 3.0.</para>
+			/// </summary>
+			[GPValue("3.0")]
+			[Description("3.0")]
+			_30,
 
 		}
 

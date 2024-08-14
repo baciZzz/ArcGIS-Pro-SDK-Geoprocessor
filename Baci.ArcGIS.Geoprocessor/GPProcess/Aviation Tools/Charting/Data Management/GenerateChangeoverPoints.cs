@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, TargetChangeoverFeatures, DistanceSourceType, UpdatedFeatures };
+		public override object[] Parameters => new object[] { InFeatures, TargetChangeoverFeatures, DistanceSourceType, UpdatedFeatures! };
 
 		/// <summary>
 		/// <para>Input ATS Route Features</para>

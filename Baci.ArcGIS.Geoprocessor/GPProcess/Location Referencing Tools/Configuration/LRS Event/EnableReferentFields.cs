@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, FromReferentMethodField, FromReferentLocationField, FromReferentOffsetField, ToReferentMethodField, ToReferentLocationField, ToReferentOffsetField, OffsetUnits, OutFeatureClass };
+		public override object[] Parameters => new object[] { InFeatureClass, FromReferentMethodField!, FromReferentLocationField!, FromReferentOffsetField!, ToReferentMethodField!, ToReferentLocationField!, ToReferentOffsetField!, OffsetUnits!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Event Feature Class</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object FromReferentMethodField { get; set; }
+		public object? FromReferentMethodField { get; set; }
 
 		/// <summary>
 		/// <para>Referent Location Field</para>
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object FromReferentLocationField { get; set; }
+		public object? FromReferentLocationField { get; set; }
 
 		/// <summary>
 		/// <para>Referent Offset Field</para>
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object FromReferentOffsetField { get; set; }
+		public object? FromReferentOffsetField { get; set; }
 
 		/// <summary>
 		/// <para>To Referent Method Field</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ToReferentMethodField { get; set; }
+		public object? ToReferentMethodField { get; set; }
 
 		/// <summary>
 		/// <para>To Referent Location Field</para>
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ToReferentLocationField { get; set; }
+		public object? ToReferentLocationField { get; set; }
 
 		/// <summary>
 		/// <para>To Referent Offset Field</para>
@@ -123,106 +123,34 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ToReferentOffsetField { get; set; }
+		public object? ToReferentOffsetField { get; set; }
 
 		/// <summary>
 		/// <para>Offset Units</para>
-		/// <para>Specifies the offset units to be used. The default is feet.</para>
-		/// <para>Centimeters—Centimeters is the offset unit.</para>
-		/// <para>Decimeters—Decimeters is the offset unit.</para>
-		/// <para>Feet—Feet is the offset unit.</para>
-		/// <para>Inches—Inches is the offset unit.</para>
-		/// <para>Kilometers—Kilometers is the offset unit.</para>
-		/// <para>Meters—Meters is the offset unit.</para>
-		/// <para>Miles—Miles is the offset unit.</para>
-		/// <para>Millimeters—Millimeters is the offset unit.</para>
-		/// <para>Yards—Yards is the offset unit.</para>
-		/// <para><see cref="OffsetUnitsEnum"/></para>
+		/// <para>Specifies the offset units that will be used.</para>
+		/// <para>Miles (US Survey)—The unit of measure will be miles. This is the default.</para>
+		/// <para>Inches (US Survey)—The unit of measure will be inches.</para>
+		/// <para>Feet (US Survey)—The unit of measure will be feet.</para>
+		/// <para>Yards (US Survey)—The unit of measure will be yards.</para>
+		/// <para>Nautical miles (US Survey)—The unit of measure will be nautical miles.</para>
+		/// <para>Feet (International)—The unit of measure will be international feet.</para>
+		/// <para>Millimeters—The unit of measure will be millimeters.</para>
+		/// <para>Centimeters—The unit of measure will be centimeters</para>
+		/// <para>Meters—The unit of measure will be meters.</para>
+		/// <para>Kilometers—The unit of measure will be kilometers.</para>
+		/// <para>Decimeters—The unit of measure will be decimeters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object OffsetUnits { get; set; }
+		public object? OffsetUnits { get; set; }
 
 		/// <summary>
 		/// <para>Output Event Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
-		#region InnerClass
-
-		/// <summary>
-		/// <para>Offset Units</para>
-		/// </summary>
-		public enum OffsetUnitsEnum 
-		{
-			/// <summary>
-			/// <para>Inches—Inches is the offset unit.</para>
-			/// </summary>
-			[GPValue("INCHES")]
-			[Description("Inches")]
-			Inches,
-
-			/// <summary>
-			/// <para>Feet—Feet is the offset unit.</para>
-			/// </summary>
-			[GPValue("FEET")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para>Yards—Yards is the offset unit.</para>
-			/// </summary>
-			[GPValue("YARDS")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para>Miles—Miles is the offset unit.</para>
-			/// </summary>
-			[GPValue("MILES")]
-			[Description("Miles")]
-			Miles,
-
-			/// <summary>
-			/// <para>Millimeters—Millimeters is the offset unit.</para>
-			/// </summary>
-			[GPValue("MILLIMETERS")]
-			[Description("Millimeters")]
-			Millimeters,
-
-			/// <summary>
-			/// <para>Centimeters—Centimeters is the offset unit.</para>
-			/// </summary>
-			[GPValue("CENTIMETERS")]
-			[Description("Centimeters")]
-			Centimeters,
-
-			/// <summary>
-			/// <para>Meters—Meters is the offset unit.</para>
-			/// </summary>
-			[GPValue("METERS")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para>Kilometers—Kilometers is the offset unit.</para>
-			/// </summary>
-			[GPValue("KILOMETERS")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para>Decimeters—Decimeters is the offset unit.</para>
-			/// </summary>
-			[GPValue("DECIMETERS")]
-			[Description("Decimeters")]
-			Decimeters,
-
-		}
-
-#endregion
 	}
 }

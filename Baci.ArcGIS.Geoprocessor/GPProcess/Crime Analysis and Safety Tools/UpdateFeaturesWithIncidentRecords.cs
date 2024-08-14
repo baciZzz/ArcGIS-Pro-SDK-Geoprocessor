@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 {
 	/// <summary>
 	/// <para>Update Features With Incident Records</para>
-	/// <para>Converts a nonspatial table to point features based on x,y-coordinates or  street addresses and updates an existing dataset with the new or updated record information from the table.</para>
+	/// <para>Updates an existing table or converts a nonspatial table to point features based on x,y-coordinates or  street addresses, and updates an existing dataset with the new or updated record information from the table.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,24 +22,16 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The table containing the x- and y-coordinates or addresses that define the locations of the records.</para>
+		/// <para>The nonspatial table or table containing the x- and y-coordinates or addresses that define the locations of the records.</para>
 		/// </param>
 		/// <param name="TargetFeatures">
 		/// <para>Target Features</para>
-		/// <para>The point feature class or feature layer to be updated.</para>
+		/// <para>The point feature class, point feature layer, or table to be updated.</para>
 		/// </param>
-		/// <param name="LocationType">
-		/// <para>Location Type</para>
-		/// <para>Specifies whether features will be created using x,y-coordinates or addresses.</para>
-		/// <para>Coordinates—Features will be created using the x,y-coordinates of the input record.</para>
-		/// <para>Addresses—Features will be created using the address of the input record using a locator.</para>
-		/// <para><see cref="LocationTypeEnum"/></para>
-		/// </param>
-		public UpdateFeaturesWithIncidentRecords(object InTable, object TargetFeatures, object LocationType)
+		public UpdateFeaturesWithIncidentRecords(object InTable, object TargetFeatures)
 		{
 			this.InTable = InTable;
 			this.TargetFeatures = TargetFeatures;
-			this.LocationType = LocationType;
 		}
 
 		/// <summary>
@@ -75,11 +67,11 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, TargetFeatures, LocationType, XField, YField, CoordinateSystem, AddressLocator, AddressType, AddressFields, InvalidRecordsTable, WhereClause, UpdateTarget, MatchFields, InDateField, TargetDateField, UpdateMatching, UpdateGeometry, FieldMatchingType, FieldMapping, TimeFormat, UpdatedTargetFeatures };
+		public override object[] Parameters => new object[] { InTable, TargetFeatures, LocationType!, XField!, YField!, CoordinateSystem!, AddressLocator!, AddressType!, AddressFields!, InvalidRecordsTable!, WhereClause!, UpdateTarget!, MatchFields!, InDateField!, TargetDateField!, UpdateMatching!, UpdateGeometry!, FieldMatchingType!, FieldMapping!, TimeFormat!, UpdatedTargetFeatures! };
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The table containing the x- and y-coordinates or addresses that define the locations of the records.</para>
+		/// <para>The nonspatial table or table containing the x- and y-coordinates or addresses that define the locations of the records.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -87,11 +79,11 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Target Features</para>
-		/// <para>The point feature class or feature layer to be updated.</para>
+		/// <para>The point feature class, point feature layer, or table to be updated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
-		[GPFeatureLayer()]
-		[GPFeatureClassDomain()]
+		[GPComposite()]
+		[GPCompositeDomain()]
 		public object TargetFeatures { get; set; }
 
 		/// <summary>
@@ -99,66 +91,67 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <para>Specifies whether features will be created using x,y-coordinates or addresses.</para>
 		/// <para>Coordinates—Features will be created using the x,y-coordinates of the input record.</para>
 		/// <para>Addresses—Features will be created using the address of the input record using a locator.</para>
+		/// <para>This parameter is only active when the Target Features parameter value is a feature class or layer.</para>
 		/// <para><see cref="LocationTypeEnum"/></para>
 		/// </summary>
-		[ParamType(ParamTypeEnum.must)]
+		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LocationType { get; set; } = "COORDINATES";
+		public object? LocationType { get; set; } = "COORDINATES";
 
 		/// <summary>
 		/// <para>X Field</para>
 		/// <para>The field in the input table that contains the x-coordinates (or longitude).</para>
-		/// <para>This parameter is only enabled when the Location Type parameter is set to Coordinates.</para>
+		/// <para>This parameter is only active when the Location Type parameter is set to Coordinates and the Target Features parameter value is a feature class or layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object XField { get; set; }
+		public object? XField { get; set; }
 
 		/// <summary>
 		/// <para>Y Field</para>
 		/// <para>The field in the input table that contains the y-coordinates (or latitude).</para>
-		/// <para>This parameter is only enabled when the Location Type parameter is set to Coordinates.</para>
+		/// <para>This parameter is only active when the Location Type parameter is set to Coordinates and the Target Features parameter value is a feature class or layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object YField { get; set; }
+		public object? YField { get; set; }
 
 		/// <summary>
 		/// <para>Coordinate System</para>
 		/// <para>The coordinate system of the x- and y-coordinates.</para>
-		/// <para>This parameter is only enabled when the Location Type parameter is set to Coordinates.</para>
+		/// <para>This parameter is only active when the Location Type parameter is set to Coordinates and the Target Features parameter value is a feature class or layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
-		public object CoordinateSystem { get; set; } = "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]";
+		public object? CoordinateSystem { get; set; } = "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]";
 
 		/// <summary>
 		/// <para>Address Locator</para>
-		/// <para>The address locator to use to geocode the table of addresses.</para>
+		/// <para>The address locator that will be used to geocode the table of addresses.</para>
 		/// <para>When this parameter is set to use ArcGIS World Geocoding Service, this operation may consume credits.</para>
 		/// <para>When using a local address locator, adding the .loc extension after the locator name at the end of the locator path is optional.</para>
-		/// <para>This parameter is only enabled when the Location Type parameter is set to Addresses.</para>
+		/// <para>This parameter is only active when the Location Type parameter is set to Addresses and the Target Features parameter value is a feature class or layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEAddressLocator()]
-		public object AddressLocator { get; set; }
+		public object? AddressLocator { get; set; }
 
 		/// <summary>
 		/// <para>Address Type</para>
 		/// <para>Specifies how address fields used by the address locator will be mapped to fields in the input table of addresses.</para>
-		/// <para>Multiple Fields—Addresses are split into multiple fields.</para>
-		/// <para>Single Field—Addresses are contained in one field.</para>
+		/// <para>Multiple Fields—Addresses will be split into multiple fields.</para>
+		/// <para>Single Field—Addresses will be contained in one field.</para>
 		/// <para>Select Single Field if the complete address is stored in one field in the input table, for example, 303 Peachtree St NE, Atlanta, GA 30308. Select Multiple Fields if the input addresses are split into multiple fields such as Address, City, State, and ZIP for a general United States address.</para>
-		/// <para>This parameter is only enabled when the Location Type parameter is set to Addresses.</para>
+		/// <para>This parameter is only active when the Location Type parameter is set to Addresses and the Target Features parameter value is a feature class or layer.</para>
 		/// <para><see cref="AddressTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object AddressType { get; set; } = "MULTI_FIELD_ADDRESS";
+		public object? AddressType { get; set; } = "MULTI_FIELD_ADDRESS";
 
 		/// <summary>
 		/// <para>Address Fields</para>
@@ -170,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object AddressFields { get; set; }
+		public object? AddressFields { get; set; }
 
 		/// <summary>
 		/// <para>Invalid Records Table</para>
@@ -178,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object InvalidRecordsTable { get; set; }
+		public object? InvalidRecordsTable { get; set; }
 
 		/// <summary>
 		/// <para>Expression</para>
@@ -187,7 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Update Existing Target Features</para>
@@ -199,42 +192,42 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UpdateTarget { get; set; } = "false";
+		public object? UpdateTarget { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Match Fields</para>
 		/// <para>The ID field or fields that will be used to determine matches between the Input Table values and the Target Features values.</para>
-		/// <para>This parameter is only enabled when the Update Existing Target Features parameter is checked.</para>
+		/// <para>This parameter is only active when the Update Existing Target Features parameter is checked.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Define Record Update Matching")]
-		public object MatchFields { get; set; }
+		public object? MatchFields { get; set; }
 
 		/// <summary>
 		/// <para>Input Table Last Modified Date Field</para>
-		/// <para>The last modified date of the Input Features records.</para>
+		/// <para>The field containing the last modified date of the Input Features records.</para>
 		/// <para>Date and string field types are supported.</para>
-		/// <para>This parameter is only enabled when the Update Existing Target Features parameter is checked.</para>
+		/// <para>This parameter is only active when the Update Existing Target Features parameter is checked.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Define Record Update Matching")]
-		public object InDateField { get; set; }
+		public object? InDateField { get; set; }
 
 		/// <summary>
 		/// <para>Target Features Last Modified Date Field</para>
 		/// <para>The field containing the last modified date of the Target Features records.</para>
 		/// <para>This field must be a date field type.</para>
-		/// <para>This parameter is only enabled when the Update Existing Target Features parameter is checked.</para>
+		/// <para>This parameter is only active when the Update Existing Target Features parameter is checked.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Define Record Update Matching")]
-		public object TargetDateField { get; set; }
+		public object? TargetDateField { get; set; }
 
 		/// <summary>
 		/// <para>Update Only Matching Features</para>
@@ -248,21 +241,21 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Define Record Update Matching")]
-		public object UpdateMatching { get; set; } = "false";
+		public object? UpdateMatching { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Update Geometry for Existing Features</para>
 		/// <para>Specifies whether the geometry of existing features will be updated.</para>
 		/// <para>Checked—The geometry of existing records will be updated when the geometry information from the Input Table parameter is different than the geometry of the Target Features parameter. This is the default.</para>
 		/// <para>Unchecked—The geometry of existing records will not be updated.</para>
-		/// <para>This parameter is only enabled when the Update Existing Target Features parameter is checked.</para>
+		/// <para>This parameter is only active when the Update Existing Target Features parameter is checked and the Target Features parameter value is a feature class or layer.</para>
 		/// <para><see cref="UpdateGeometryEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Define Record Update Matching")]
-		public object UpdateGeometry { get; set; } = "true";
+		public object? UpdateGeometry { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Field Matching Type</para>
@@ -275,7 +268,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Fields")]
-		public object FieldMatchingType { get; set; } = "AUTOMATIC";
+		public object? FieldMatchingType { get; set; } = "AUTOMATIC";
 
 		/// <summary>
 		/// <para>Field Map</para>
@@ -298,47 +291,48 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFieldMapping()]
 		[Category("Fields")]
-		public object FieldMapping { get; set; }
+		public object? FieldMapping { get; set; }
 
 		/// <summary>
 		/// <para>Time Format</para>
 		/// <para>The format of the input field containing the time values. The type can be short, long, float, double, text, or date. You can either choose a standard time format from the drop-down list or enter a custom format.The format strings are case sensitive.</para>
 		/// <para>If the data type of the time field is date, no time format is required.</para>
-		/// <para>If the data type of the time field is numeric (Short, Long, Float, or Double), a list of standard numeric time formats is provided in the drop-down list.</para>
-		/// <para>If the data type of the time field is string, a list of standard string time formats is provided in the drop-down list. For string fields, you can also choose to specify a custom time format. For example, the time values may have been stored in a string field in one of the standard formats such as yyyy/MM/dd HH:mm:ss or in a custom format such as dd/MM/yyyy HH:mm:ss. For the custom format, you can also specify the a.m., p.m. designator. Some commonly used formats are listed below:</para>
-		/// <para>yyyy - Year represented by four digits.</para>
-		/// <para>MM - Month as digits with leading zero for single-digit months.</para>
-		/// <para>MMM - Month as a three-letter abbreviation.</para>
-		/// <para>dd - Day of month as digits with leading zero for single-digit days.</para>
-		/// <para>ddd - Day of week as a three-letter abbreviation.</para>
-		/// <para>hh - Hours with leading zero for single-digit hours; 12-hour clock.</para>
-		/// <para>HH - Hours with leading zero for single-digit hours; 24-hour clock.</para>
-		/// <para>mm - Minutes with leading zero for single-digit minutes.</para>
-		/// <para>ss - Seconds with leading zero for single-digit seconds.</para>
-		/// <para>t - One character time marker string, such as A or P.</para>
-		/// <para>tt - Multicharacter time marker string, such as AM or PM.</para>
-		/// <para>unix_us - Unix time in microseconds.</para>
-		/// <para>unix_ms - Unix time in milliseconds.</para>
-		/// <para>unix_s - Unix time in seconds.</para>
-		/// <para>unix_hex - Unix time in hexadecimal.</para>
+		/// <para>If the data type of the time field is numeric (short, long, float, or double), a list of standard numeric time formats is provided in the drop-down list.</para>
+		/// <para>If the data type of the time field is string, a list of standard string time formats is provided in the drop-down list. For string fields, you can also specify a custom time format. For example, the time values may have been stored in a string field in one of the standard formats such as yyyy/MM/dd HH:mm:ss or in a custom format such as dd/MM/yyyy HH:mm:ss. For the custom format, you can also specify the a.m. or p.m. designator. Some commonly used formats are listed below:</para>
+		/// <para>yyyy—Year represented by four digits</para>
+		/// <para>MM—Month as digits with leading zero for single-digit months</para>
+		/// <para>MMM—Month as a three-letter abbreviation</para>
+		/// <para>dd—Day of month as digits with leading zero for single-digit days</para>
+		/// <para>ddd—Day of week as a three-letter abbreviation</para>
+		/// <para>hh—Hours with leading zero for single-digit hours; 12-hour clock</para>
+		/// <para>HH—Hours with leading zero for single-digit hours; 24-hour clock</para>
+		/// <para>mm—Minutes with leading zero for single-digit minutes</para>
+		/// <para>ss—Seconds with leading zero for single-digit seconds</para>
+		/// <para>t—One character time marker string, such as A or P</para>
+		/// <para>tt—Multicharacter time marker string, such as AM or PM</para>
+		/// <para>unix_us—Unix time in microseconds</para>
+		/// <para>unix_ms—Unix time in milliseconds</para>
+		/// <para>unix_s—Unix time in seconds</para>
+		/// <para>unix_hex—Unix time in hexadecimal</para>
 		/// <para>This parameter is only active when the Input Table Last Modified Date parameter value is a text field and the Target Features Last Modified Date Field parameter value is a date field, or the Field Map parameter input value is a text field and the output value is a date field.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Define Record Update Matching")]
-		public object TimeFormat { get; set; }
+		public object? TimeFormat { get; set; }
 
 		/// <summary>
 		/// <para>Updated Target Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
-		[GPFeatureLayer()]
-		public object UpdatedTargetFeatures { get; set; }
+		[GPComposite()]
+		[GPCompositeDomain()]
+		public object? UpdatedTargetFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public UpdateFeaturesWithIncidentRecords SetEnviroment(object workspace = null )
+		public UpdateFeaturesWithIncidentRecords SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -373,14 +367,14 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		public enum AddressTypeEnum 
 		{
 			/// <summary>
-			/// <para>Single Field—Addresses are contained in one field.</para>
+			/// <para>Single Field—Addresses will be contained in one field.</para>
 			/// </summary>
 			[GPValue("SINGLE_FIELD_ADDRESS")]
 			[Description("Single Field")]
 			Single_Field,
 
 			/// <summary>
-			/// <para>Multiple Fields—Addresses are split into multiple fields.</para>
+			/// <para>Multiple Fields—Addresses will be split into multiple fields.</para>
 			/// </summary>
 			[GPValue("MULTI_FIELD_ADDRESS")]
 			[Description("Multiple Fields")]

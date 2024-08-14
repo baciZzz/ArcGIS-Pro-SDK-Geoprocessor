@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Tolerance, OutFeatureClass };
+		public override object[] Parameters => new object[] { InFeatures, Tolerance!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -79,19 +79,19 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object Tolerance { get; set; }
+		public object? Tolerance { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Generalize SetEnviroment(int? autoCommit = null , object workspace = null )
+		public Generalize SetEnviroment(int? autoCommit = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

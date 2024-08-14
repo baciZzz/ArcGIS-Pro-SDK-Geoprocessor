@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, OutFeatureClass, WhereClause, GeometryType };
+		public override object[] Parameters => new object[] { InMosaicDataset, OutFeatureClass, WhereClause!, GeometryType! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Geometry Type</para>
@@ -103,12 +103,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object GeometryType { get; set; } = "FOOTPRINT";
+		public object? GeometryType { get; set; } = "FOOTPRINT";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportMosaicDatasetGeometry SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public ExportMosaicDatasetGeometry SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

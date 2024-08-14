@@ -68,7 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetFeatures, InFeatures, Fields, OutFeatures };
+		public override object[] Parameters => new object[] { TargetFeatures, InFeatures, Fields!, OutFeatures! };
 
 		/// <summary>
 		/// <para>Target Point Features</para>
@@ -96,19 +96,19 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
-		public object Fields { get; set; }
+		public object? Fields { get; set; }
 
 		/// <summary>
 		/// <para>Updated Point Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatures { get; set; }
+		public object? OutFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public JoinAttributesFromPolygon SetEnviroment(object workspace = null )
+		public JoinAttributesFromPolygon SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

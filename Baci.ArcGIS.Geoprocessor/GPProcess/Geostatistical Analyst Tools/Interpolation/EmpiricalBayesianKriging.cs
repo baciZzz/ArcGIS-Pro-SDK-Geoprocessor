@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ZField, OutGaLayer, OutRaster, CellSize, TransformationType, MaxLocalPoints, OverlapFactor, NumberSemivariograms, SearchNeighborhood, OutputType, QuantileValue, ThresholdType, ProbabilityThreshold, SemivariogramModelType };
+		public override object[] Parameters => new object[] { InFeatures, ZField, OutGaLayer!, OutRaster!, CellSize!, TransformationType!, MaxLocalPoints!, OverlapFactor!, NumberSemivariograms!, SearchNeighborhood!, OutputType!, QuantileValue!, ThresholdType!, ProbabilityThreshold!, SemivariogramModelType! };
 
 		/// <summary>
 		/// <para>Input features</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGALayer()]
-		public object OutGaLayer { get; set; }
+		public object? OutGaLayer { get; set; }
 
 		/// <summary>
 		/// <para>Output raster</para>
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
-		public object OutRaster { get; set; }
+		public object? OutRaster { get; set; }
 
 		/// <summary>
 		/// <para>Output cell size</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
 		[GPSAGeoDataDomain()]
-		public object CellSize { get; set; }
+		public object? CellSize { get; set; }
 
 		/// <summary>
 		/// <para>Data transformation type</para>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TransformationType { get; set; } = "NONE";
+		public object? TransformationType { get; set; } = "NONE";
 
 		/// <summary>
 		/// <para>Maximum number of points in each local model</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Additional Model Parameters")]
-		public object MaxLocalPoints { get; set; } = "100";
+		public object? MaxLocalPoints { get; set; } = "100";
 
 		/// <summary>
 		/// <para>Local model area overlap factor</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[GPDouble()]
 		[GPRangeDomain()]
 		[Category("Additional Model Parameters")]
-		public object OverlapFactor { get; set; } = "1";
+		public object? OverlapFactor { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Number of simulated semivariograms</para>
@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Additional Model Parameters")]
-		public object NumberSemivariograms { get; set; } = "100";
+		public object? NumberSemivariograms { get; set; } = "100";
 
 		/// <summary>
 		/// <para>Search neighborhood</para>
@@ -176,7 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[GPGASearchNeighborhood()]
 		[GPGASearchNeighborhoodDomain()]
 		[Category("Search Neighborhood Parameters")]
-		public object SearchNeighborhood { get; set; } = "NBRTYPE=StandardCircular RADIUS=nan ANGLE=0 NBR_MAX=15 NBR_MIN=10 SECTOR_TYPE=ONE_SECTOR";
+		public object? SearchNeighborhood { get; set; } = "NBRTYPE=StandardCircular RADIUS=nan ANGLE=0 NBR_MAX=15 NBR_MIN=10 SECTOR_TYPE=ONE_SECTOR";
 
 		/// <summary>
 		/// <para>Output surface type</para>
@@ -191,7 +191,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Output Parameters")]
-		public object OutputType { get; set; } = "PREDICTION";
+		public object? OutputType { get; set; } = "PREDICTION";
 
 		/// <summary>
 		/// <para>Quantile value</para>
@@ -201,7 +201,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[GPDouble()]
 		[GPRangeDomain()]
 		[Category("Output Parameters")]
-		public object QuantileValue { get; set; } = "0.5";
+		public object? QuantileValue { get; set; } = "0.5";
 
 		/// <summary>
 		/// <para>Probability threshold type</para>
@@ -214,7 +214,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Output Parameters")]
-		public object ThresholdType { get; set; } = "EXCEED";
+		public object? ThresholdType { get; set; } = "EXCEED";
 
 		/// <summary>
 		/// <para>Probability threshold</para>
@@ -223,7 +223,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Output Parameters")]
-		public object ProbabilityThreshold { get; set; }
+		public object? ProbabilityThreshold { get; set; }
 
 		/// <summary>
 		/// <para>Semivariogram model type</para>
@@ -245,12 +245,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SemivariogramModelType { get; set; } = "POWER";
+		public object? SemivariogramModelType { get; set; } = "POWER";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EmpiricalBayesianKriging SetEnviroment(object cellSize = null , object coincidentPoints = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object snapRaster = null , object workspace = null )
+		public EmpiricalBayesianKriging SetEnviroment(object? cellSize = null , object? coincidentPoints = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? snapRaster = null , object? workspace = null )
 		{
 			base.SetEnv(cellSize: cellSize, coincidentPoints: coincidentPoints, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, snapRaster: snapRaster, workspace: workspace);
 			return this;

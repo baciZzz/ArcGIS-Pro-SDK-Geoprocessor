@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, CellSize, ResamplingType };
+		public override object[] Parameters => new object[] { InRaster, OutRaster, CellSize!, ResamplingType! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -119,26 +119,26 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCellSizeXY()]
-		public object CellSize { get; set; }
+		public object? CellSize { get; set; }
 
 		/// <summary>
 		/// <para>Resampling Technique</para>
 		/// <para>Specifies the resampling technique to be used.</para>
-		/// <para>Nearest— Nearest neighbor is the fastest resampling method; it minimizes changes to pixel values since no new values are created. It is suitable for discrete data, such as land cover.</para>
-		/// <para>Bilinear— Bilinear interpolation calculates the value of each pixel by averaging (weighted for distance) the values of the surrounding four pixels. It is suitable for continuous data.</para>
-		/// <para>Cubic— Cubic convolution calculates the value of each pixel by fitting a smooth curve based on the surrounding 16 pixels. This produces the smoothest image but can create values outside of the range found in the source data. It is suitable for continuous data.</para>
-		/// <para>Majority—Majority resampling determines the value of each pixel based on the most popular value in a 3 by 3 window. Suitable for discrete data.</para>
+		/// <para>Nearest— The nearest neighbor technique will be used. It minimizes changes to pixel values since no new values are created and is the fastest resampling technique. It is suitable for discrete data, such as land cover.</para>
+		/// <para>Bilinear— The bilinear interpolation technique will be used. It calculates the value of each pixel by averaging (weighted for distance) the values of the surrounding four pixels. It is suitable for continuous data.</para>
+		/// <para>Cubic—The cubic convolution technique will be used. It calculates the value of each pixel by fitting a smooth curve based on the surrounding 16 pixels. This produces the smoothest image but can create values outside of the range found in the source data. It is suitable for continuous data.</para>
+		/// <para>Majority—The majority resampling technique will be used. It determines the value of each pixel based on the most popular value in a 3 by 3 window. It is suitable for discrete data.</para>
 		/// <para><see cref="ResamplingTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ResamplingType { get; set; } = "NEAREST";
+		public object? ResamplingType { get; set; } = "NEAREST";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Resample SetEnviroment(object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object nodata = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object pyramid = null , object rasterStatistics = null , object resamplingMethod = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public Resample SetEnviroment(object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? nodata = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? pyramid = null , object? rasterStatistics = null , object? resamplingMethod = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
 			base.SetEnv(compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, nodata: nodata, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, rasterStatistics: rasterStatistics, resamplingMethod: resamplingMethod, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
@@ -152,28 +152,28 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ResamplingTypeEnum 
 		{
 			/// <summary>
-			/// <para>Nearest— Nearest neighbor is the fastest resampling method; it minimizes changes to pixel values since no new values are created. It is suitable for discrete data, such as land cover.</para>
+			/// <para>Nearest— The nearest neighbor technique will be used. It minimizes changes to pixel values since no new values are created and is the fastest resampling technique. It is suitable for discrete data, such as land cover.</para>
 			/// </summary>
 			[GPValue("NEAREST")]
 			[Description("Nearest")]
 			Nearest,
 
 			/// <summary>
-			/// <para>Bilinear— Bilinear interpolation calculates the value of each pixel by averaging (weighted for distance) the values of the surrounding four pixels. It is suitable for continuous data.</para>
+			/// <para>Bilinear— The bilinear interpolation technique will be used. It calculates the value of each pixel by averaging (weighted for distance) the values of the surrounding four pixels. It is suitable for continuous data.</para>
 			/// </summary>
 			[GPValue("BILINEAR")]
 			[Description("Bilinear")]
 			Bilinear,
 
 			/// <summary>
-			/// <para>Cubic— Cubic convolution calculates the value of each pixel by fitting a smooth curve based on the surrounding 16 pixels. This produces the smoothest image but can create values outside of the range found in the source data. It is suitable for continuous data.</para>
+			/// <para>Cubic—The cubic convolution technique will be used. It calculates the value of each pixel by fitting a smooth curve based on the surrounding 16 pixels. This produces the smoothest image but can create values outside of the range found in the source data. It is suitable for continuous data.</para>
 			/// </summary>
 			[GPValue("CUBIC")]
 			[Description("Cubic")]
 			Cubic,
 
 			/// <summary>
-			/// <para>Majority—Majority resampling determines the value of each pixel based on the most popular value in a 3 by 3 window. Suitable for discrete data.</para>
+			/// <para>Majority—The majority resampling technique will be used. It determines the value of each pixel based on the most popular value in a 3 by 3 window. It is suitable for discrete data.</para>
 			/// </summary>
 			[GPValue("MAJORITY")]
 			[Description("Majority")]

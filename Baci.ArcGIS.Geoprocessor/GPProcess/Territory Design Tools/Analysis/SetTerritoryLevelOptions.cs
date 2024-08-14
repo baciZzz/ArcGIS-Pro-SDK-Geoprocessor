@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, Level, Compactness, FillExtent, OutTerritorySolution, RandomSeed, SpatialRelationship, BufferTolerance };
+		public override object[] Parameters => new object[] { InTerritorySolution, Level, Compactness!, FillExtent!, OutTerritorySolution!, RandomSeed!, SpatialRelationship!, BufferTolerance! };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object Compactness { get; set; }
+		public object? Compactness { get; set; }
 
 		/// <summary>
 		/// <para>Fill Extent Automatically</para>
@@ -103,26 +103,23 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object FillExtent { get; set; }
+		public object? FillExtent { get; set; }
 
 		/// <summary>
 		/// <para>Updated Territory Solution</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPGroupLayer()]
-		public object OutTerritorySolution { get; set; }
+		public object? OutTerritorySolution { get; set; }
 
 		/// <summary>
 		/// <para>Random Number Generator Seed</para>
 		/// <para>An integer used for the seed value. The default is no value and uses a random generator.</para>
-		/// <para>Uses ACM-collected algorithm 599 to produce random territories.</para>
-		/// <para>If the seed value is greater or equal to 0, the same seed value will be used to produce consistent territories.</para>
-		/// <para><para/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object RandomSeed { get; set; }
+		public object? RandomSeed { get; set; }
 
 		/// <summary>
 		/// <para>Spatial Relationship</para>
@@ -134,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Feature Adjacency Parameters")]
-		public object SpatialRelationship { get; set; }
+		public object? SpatialRelationship { get; set; }
 
 		/// <summary>
 		/// <para>Buffer Tolerance</para>
@@ -144,14 +141,14 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[GPLinearUnit()]
 		[GPNumericDomain()]
 		[Category("Feature Adjacency Parameters")]
-		public object BufferTolerance { get; set; }
+		public object? BufferTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetTerritoryLevelOptions SetEnviroment(object workspace = null )
+		public SetTerritoryLevelOptions SetEnviroment(object? baDataSource = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, workspace: workspace);
 			return this;
 		}
 

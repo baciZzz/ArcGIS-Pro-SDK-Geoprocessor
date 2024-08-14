@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRastersOrConstants">
 		/// <para>Input rasters or constant values</para>
-		/// <para>A list of input rasters for which a statistic will be calculated for each cell in the Analysis window.</para>
+		/// <para>A list of input rasters for which a statistical operation will be calculated for each cell in the analysis window.</para>
 		/// <para>A number can be used as an input; however, the cell size and extent must first be set in the environment.</para>
 		/// <para>If the Process as multiband parameter is checked, all multiband inputs must have an equal number of bands.</para>
 		/// </param>
@@ -68,11 +68,11 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRastersOrConstants, OutRaster, StatisticsType, IgnoreNodata, ProcessAsMultiband };
+		public override object[] Parameters => new object[] { InRastersOrConstants, OutRaster, StatisticsType!, IgnoreNodata!, ProcessAsMultiband!, PercentileValue!, PercentileInterpolationType! };
 
 		/// <summary>
 		/// <para>Input rasters or constant values</para>
-		/// <para>A list of input rasters for which a statistic will be calculated for each cell in the Analysis window.</para>
+		/// <para>A list of input rasters for which a statistical operation will be calculated for each cell in the analysis window.</para>
 		/// <para>A number can be used as an input; however, the cell size and extent must first be set in the environment.</para>
 		/// <para>If the Process as multiband parameter is checked, all multiband inputs must have an equal number of bands.</para>
 		/// </summary>
@@ -93,23 +93,23 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Overlay statistic</para>
 		/// <para>Specifies the statistic type to be calculated.</para>
-		/// <para>Mean—The mean (average) of the inputs will be calculated.</para>
-		/// <para>Majority—The majority (value that occurs most often) of the inputs will be calculated.</para>
-		/// <para>Maximum—The maximum (largest value) of the inputs will be calculated.</para>
+		/// <para>Mean—The mean (average) of the inputs will be calculated. This is the default.</para>
+		/// <para>Majority—The majority (value that occurs most often) of the inputs will be determined.</para>
+		/// <para>Maximum—The maximum (largest value) of the inputs will be determined.</para>
 		/// <para>Median—The median of the inputs will be calculated.</para>
-		/// <para>Minimum—The minimum (smallest value) of the inputs will be calculated.</para>
-		/// <para>Minority—The minority (value that occurs least often) of the inputs will be calculated.</para>
+		/// <para>Minimum—The minimum (smallest value) of the inputs will be determined.</para>
+		/// <para>Minority—The minority (value that occurs least often) of the inputs will be determined.</para>
+		/// <para>Percentile—The percentile of the inputs will be calculated. The 90th percentile is calculated by default. You can specify other values (from 0 to 100) using the Percentile value parameter.</para>
 		/// <para>Range—The range (difference between largest and smallest value) of the inputs will be calculated.</para>
 		/// <para>Standard deviation—The standard deviation of the inputs will be calculated.</para>
 		/// <para>Sum—The sum (total of all values) of the inputs will be calculated.</para>
 		/// <para>Variety—The variety (number of unique values) of the inputs will be calculated.</para>
 		/// <para>The default statistic type is Mean.</para>
-		/// <para><see cref="StatisticsTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object StatisticsType { get; set; } = "MEAN";
+		public object? StatisticsType { get; set; } = "MEAN";
 
 		/// <summary>
 		/// <para>Ignore NoData in calculations</para>
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IgnoreNodata { get; set; } = "true";
+		public object? IgnoreNodata { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Process as multiband</para>
@@ -133,95 +133,42 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ProcessAsMultiband { get; set; } = "false";
+		public object? ProcessAsMultiband { get; set; } = "false";
+
+		/// <summary>
+		/// <para>Percentile value</para>
+		/// <para>The percentile value that will be calculated. The default is 90, indicating the 90th percentile.</para>
+		/// <para>The value can range from 0 to 100. The 0th percentile is essentially equivalent to the minimum statistic, and the 100th percentile is equivalent to the maximum statistic. A value of 50 will produce essentially the same result as the median statistic.</para>
+		/// <para>This parameter is only available if the Overlay statistic parameter is set to Percentile.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPDouble()]
+		[GPNumericDomain()]
+		public object? PercentileValue { get; set; } = "90";
+
+		/// <summary>
+		/// <para>Percentile interpolation type</para>
+		/// <para>Specifies the method of interpolation that will be used when the specified percentile value is between two input cell values.</para>
+		/// <para>Auto-detect—If the input rasters are of integer pixel type, the Nearest method will be used. If the input rasters are of floating point pixel type, the Linear method will be used. This is the default.</para>
+		/// <para>Nearest—The nearest available value to the desired percentile will be used. In this case, the output pixel type will be the same as that of the input rasters.</para>
+		/// <para>Linear—The weighted average of the two surrounding values from the percentile will be used. In this case, the output pixel type will be floating point.</para>
+		/// <para><see cref="PercentileInterpolationTypeEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		[GPCodedValueDomain()]
+		public object? PercentileInterpolationType { get; set; } = "AUTO_DETECT";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CellStatistics SetEnviroment(int? autoCommit = null , object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public CellStatistics SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 
 		#region InnerClass
-
-		/// <summary>
-		/// <para>Overlay statistic</para>
-		/// </summary>
-		public enum StatisticsTypeEnum 
-		{
-			/// <summary>
-			/// <para>Mean—The mean (average) of the inputs will be calculated.</para>
-			/// </summary>
-			[GPValue("MEAN")]
-			[Description("Mean")]
-			Mean,
-
-			/// <summary>
-			/// <para>Majority—The majority (value that occurs most often) of the inputs will be calculated.</para>
-			/// </summary>
-			[GPValue("MAJORITY")]
-			[Description("Majority")]
-			Majority,
-
-			/// <summary>
-			/// <para>Maximum—The maximum (largest value) of the inputs will be calculated.</para>
-			/// </summary>
-			[GPValue("MAXIMUM")]
-			[Description("Maximum")]
-			Maximum,
-
-			/// <summary>
-			/// <para>Median—The median of the inputs will be calculated.</para>
-			/// </summary>
-			[GPValue("MEDIAN")]
-			[Description("Median")]
-			Median,
-
-			/// <summary>
-			/// <para>Minimum—The minimum (smallest value) of the inputs will be calculated.</para>
-			/// </summary>
-			[GPValue("MINIMUM")]
-			[Description("Minimum")]
-			Minimum,
-
-			/// <summary>
-			/// <para>Minority—The minority (value that occurs least often) of the inputs will be calculated.</para>
-			/// </summary>
-			[GPValue("MINORITY")]
-			[Description("Minority")]
-			Minority,
-
-			/// <summary>
-			/// <para>Range—The range (difference between largest and smallest value) of the inputs will be calculated.</para>
-			/// </summary>
-			[GPValue("RANGE")]
-			[Description("Range")]
-			Range,
-
-			/// <summary>
-			/// <para>Standard deviation—The standard deviation of the inputs will be calculated.</para>
-			/// </summary>
-			[GPValue("STD")]
-			[Description("Standard deviation")]
-			Standard_deviation,
-
-			/// <summary>
-			/// <para>Sum—The sum (total of all values) of the inputs will be calculated.</para>
-			/// </summary>
-			[GPValue("SUM")]
-			[Description("Sum")]
-			Sum,
-
-			/// <summary>
-			/// <para>Variety—The variety (number of unique values) of the inputs will be calculated.</para>
-			/// </summary>
-			[GPValue("VARIETY")]
-			[Description("Variety")]
-			Variety,
-
-		}
 
 		/// <summary>
 		/// <para>Ignore NoData in calculations</para>
@@ -262,6 +209,34 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 			[GPValue("true")]
 			[Description("MULTI_BAND")]
 			MULTI_BAND,
+
+		}
+
+		/// <summary>
+		/// <para>Percentile interpolation type</para>
+		/// </summary>
+		public enum PercentileInterpolationTypeEnum 
+		{
+			/// <summary>
+			/// <para>Auto-detect—If the input rasters are of integer pixel type, the Nearest method will be used. If the input rasters are of floating point pixel type, the Linear method will be used. This is the default.</para>
+			/// </summary>
+			[GPValue("AUTO_DETECT")]
+			[Description("Auto-detect")]
+			AUTO_DETECT,
+
+			/// <summary>
+			/// <para>Nearest—The nearest available value to the desired percentile will be used. In this case, the output pixel type will be the same as that of the input rasters.</para>
+			/// </summary>
+			[GPValue("NEAREST")]
+			[Description("Nearest")]
+			Nearest,
+
+			/// <summary>
+			/// <para>Linear—The weighted average of the two surrounding values from the percentile will be used. In this case, the output pixel type will be floating point.</para>
+			/// </summary>
+			[GPValue("LINEAR")]
+			[Description("Linear")]
+			Linear,
 
 		}
 

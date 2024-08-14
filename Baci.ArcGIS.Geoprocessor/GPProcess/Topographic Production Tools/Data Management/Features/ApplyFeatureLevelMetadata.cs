@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InMetadataTable, MetadataFavorite, UpdatedFeatures };
+		public override object[] Parameters => new object[] { InFeatures, InMetadataTable, MetadataFavorite, UpdatedFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -20,11 +20,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		/// <param name="InCube">
 		/// <para>Input Space Time Cube</para>
-		/// <para>The netCDF cube that contains the variable to be displayed. This file must have an .nc extension and must have been created using either the Create Space Time Cube By Aggregating Points or Create Space Time Cube From Defined Locations tool.</para>
+		/// <para>The space-time cube containing the variable to be analyzed. Space-time cubes have a .nc file extension and are created using various tools in the Space Time Pattern Mining toolbox.</para>
 		/// </param>
 		/// <param name="CubeVariable">
 		/// <para>Cube Variable</para>
-		/// <para>The numeric variable in the netCDF cube that you want to explore. The space-time cube will always contain the COUNT variable if aggregation was used when creating the cube. Any summary fields or variables will also be available if they were included when the cube was created.</para>
+		/// <para>The numeric variable in the netCDF cube that will be explored. The space-time cube will always contain the COUNT variable if aggregation was used when creating the cube. Any summary fields or variables will also be available if they were included when the cube was created.</para>
 		/// </param>
 		/// <param name="DisplayTheme">
 		/// <para>Display Theme</para>
@@ -36,7 +36,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <para>Temporal aggregation count—The count of records aggregated into each space-time bin will be displayed.</para>
 		/// <para>Forecast results—The input time steps and the resulting forecasted values from the Time Series Forecasting tools will be displayed.</para>
 		/// <para>Time series outlier results—The results of the Outlier Option parameter in the Time Series Forecasting tools will be displayed.</para>
-		/// <para>Value is the numeric value of the Cube Variable parameter and is always available. Estimated bins values are only available for the summary fields that were included when the cube was created. Hot and cold spot results values will only be available for the Cube Variable parameter value for which Emerging Hot Spot Analysis has been run. Cluster and outlier results values will only be available for Cube Variables for which Local Outlier Analysis has been run. Temporal aggregation count values will only be available for defined location cubes that have been aggregated temporally. Forecast results values will only be available for the Cube Variable parameter value for which a Time Series Forecasting tool has been run. Time series outlier results values will only be available when the Outlier Option parameter has been set for a tool in the the Time Series Forecasting toolset.</para>
+		/// <para>Time series change points—The results of the Change Point Detection tool will be displayed. The output will contain fields indicating whether each time step is a change point along with estimates of the mean or standard deviation for the current and previous time step.</para>
+		/// <para>Value is the numeric value of the Cube Variable parameter and is always available. Estimated bins values are only available for the summary fields that were included when the cube was created. Hot and cold spot results values will only be available for the Cube Variable parameter value for which Emerging Hot Spot Analysis has been run. Cluster and outlier results values will only be available for Cube Variable values for which Local Outlier Analysis has been run. Temporal aggregation count values will only be available for defined location cubes that have been aggregated temporally. Forecast results values will only be available for the Cube Variable parameter value for which a Time Series Forecasting tool has been run. Time series outlier results values will only be available when the Outlier Option parameter has been set for a tool in the the Time Series Forecasting toolset. Time series change points values will only be available for Cube Variable values for which Change Point Detection has been run.</para>
 		/// <para>For in-depth information about each option, including descriptions of the output and created charts, see the Visualization display themes for the space-time cube topic.</para>
 		/// <para><see cref="DisplayThemeEnum"/></para>
 		/// </param>
@@ -89,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>
-		/// <para>The netCDF cube that contains the variable to be displayed. This file must have an .nc extension and must have been created using either the Create Space Time Cube By Aggregating Points or Create Space Time Cube From Defined Locations tool.</para>
+		/// <para>The space-time cube containing the variable to be analyzed. Space-time cubes have a .nc file extension and are created using various tools in the Space Time Pattern Mining toolbox.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -98,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Cube Variable</para>
-		/// <para>The numeric variable in the netCDF cube that you want to explore. The space-time cube will always contain the COUNT variable if aggregation was used when creating the cube. Any summary fields or variables will also be available if they were included when the cube was created.</para>
+		/// <para>The numeric variable in the netCDF cube that will be explored. The space-time cube will always contain the COUNT variable if aggregation was used when creating the cube. Any summary fields or variables will also be available if they were included when the cube was created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -115,7 +116,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <para>Temporal aggregation count—The count of records aggregated into each space-time bin will be displayed.</para>
 		/// <para>Forecast results—The input time steps and the resulting forecasted values from the Time Series Forecasting tools will be displayed.</para>
 		/// <para>Time series outlier results—The results of the Outlier Option parameter in the Time Series Forecasting tools will be displayed.</para>
-		/// <para>Value is the numeric value of the Cube Variable parameter and is always available. Estimated bins values are only available for the summary fields that were included when the cube was created. Hot and cold spot results values will only be available for the Cube Variable parameter value for which Emerging Hot Spot Analysis has been run. Cluster and outlier results values will only be available for Cube Variables for which Local Outlier Analysis has been run. Temporal aggregation count values will only be available for defined location cubes that have been aggregated temporally. Forecast results values will only be available for the Cube Variable parameter value for which a Time Series Forecasting tool has been run. Time series outlier results values will only be available when the Outlier Option parameter has been set for a tool in the the Time Series Forecasting toolset.</para>
+		/// <para>Time series change points—The results of the Change Point Detection tool will be displayed. The output will contain fields indicating whether each time step is a change point along with estimates of the mean or standard deviation for the current and previous time step.</para>
+		/// <para>Value is the numeric value of the Cube Variable parameter and is always available. Estimated bins values are only available for the summary fields that were included when the cube was created. Hot and cold spot results values will only be available for the Cube Variable parameter value for which Emerging Hot Spot Analysis has been run. Cluster and outlier results values will only be available for Cube Variable values for which Local Outlier Analysis has been run. Temporal aggregation count values will only be available for defined location cubes that have been aggregated temporally. Forecast results values will only be available for the Cube Variable parameter value for which a Time Series Forecasting tool has been run. Time series outlier results values will only be available when the Outlier Option parameter has been set for a tool in the the Time Series Forecasting toolset. Time series change points values will only be available for Cube Variable values for which Change Point Detection has been run.</para>
 		/// <para>For in-depth information about each option, including descriptions of the output and created charts, see the Visualization display themes for the space-time cube topic.</para>
 		/// <para><see cref="DisplayThemeEnum"/></para>
 		/// </summary>
@@ -135,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public VisualizeSpaceTimeCube3D SetEnviroment(object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public VisualizeSpaceTimeCube3D SetEnviroment(object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -196,6 +198,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 			[GPValue("TIME_SERIES_OUTLIER_RESULTS")]
 			[Description("Time series outlier results")]
 			Time_series_outlier_results,
+
+			/// <summary>
+			/// <para>Time series change points—The results of the Change Point Detection tool will be displayed. The output will contain fields indicating whether each time step is a change point along with estimates of the mean or standard deviation for the current and previous time step.</para>
+			/// </summary>
+			[GPValue("TIME_SERIES_CHANGE_POINTS")]
+			[Description("Time series change points")]
+			Time_series_change_points,
 
 		}
 

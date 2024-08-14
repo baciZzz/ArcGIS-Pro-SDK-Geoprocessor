@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>XY Table To Point</para>
-	/// <para>Creates a new point feature class based on x-, y-, and z-coordinates from a table.</para>
+	/// <para>Creates a point feature class based on x-, y-, and z-coordinates from a table.</para>
 	/// </summary>
 	public class XYTableToPoint : AbstractGPProcess
 	{
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutFeatureClass, XField, YField, ZField, CoordinateSystem };
+		public override object[] Parameters => new object[] { InTable, OutFeatureClass, XField, YField, ZField!, CoordinateSystem! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ZField { get; set; }
+		public object? ZField { get; set; }
 
 		/// <summary>
 		/// <para>Coordinate System</para>
@@ -126,12 +126,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
-		public object CoordinateSystem { get; set; }
+		public object? CoordinateSystem { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public XYTableToPoint SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public XYTableToPoint SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

@@ -68,7 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, OutPath, OutDataName, AssociatedData!, OutData };
+		public override object[] Parameters => new object[] { InData, OutPath, OutDataName, AssociatedData!, OutData! };
 
 		/// <summary>
 		/// <para>Input Data</para>

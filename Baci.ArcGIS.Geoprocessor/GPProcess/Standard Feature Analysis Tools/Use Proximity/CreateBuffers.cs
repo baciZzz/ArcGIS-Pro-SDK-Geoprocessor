@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputlayer, Outputname, Distances, Field, Units, Dissolvetype, Ringtype, Sidetype, Endtype, Output };
+		public override object[] Parameters => new object[] { Inputlayer, Outputname, Distances!, Field!, Units!, Dissolvetype!, Ringtype!, Sidetype!, Endtype!, Output! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Distances { get; set; }
+		public object? Distances { get; set; }
 
 		/// <summary>
 		/// <para>Distance Field</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object Field { get; set; }
+		public object? Field { get; set; }
 
 		/// <summary>
 		/// <para>Distance Units</para>
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Units { get; set; } = "METERS";
+		public object? Units { get; set; } = "METERS";
 
 		/// <summary>
 		/// <para>Dissolve Type</para>
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Additional Options")]
-		public object Dissolvetype { get; set; } = "NONE";
+		public object? Dissolvetype { get; set; } = "NONE";
 
 		/// <summary>
 		/// <para>Buffer Ring Type</para>
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Additional Options")]
-		public object Ringtype { get; set; } = "DISKS";
+		public object? Ringtype { get; set; } = "DISKS";
 
 		/// <summary>
 		/// <para>Side Type</para>
@@ -157,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Additional Options")]
-		public object Sidetype { get; set; }
+		public object? Sidetype { get; set; }
 
 		/// <summary>
 		/// <para>End Type</para>
@@ -170,19 +170,19 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Additional Options")]
-		public object Endtype { get; set; } = "ROUND";
+		public object? Endtype { get; set; } = "ROUND";
 
 		/// <summary>
 		/// <para>Output</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Output { get; set; }
+		public object? Output { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateBuffers SetEnviroment(object extent = null )
+		public CreateBuffers SetEnviroment(object? extent = null )
 		{
 			base.SetEnv(extent: extent);
 			return this;

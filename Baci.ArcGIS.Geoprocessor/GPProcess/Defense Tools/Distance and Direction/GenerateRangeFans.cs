@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutRangeFanFeatureClass, InnerRadius, OuterRadius, HorizontalStartAngle, HorizontalEndAngle, DistanceUnits, AngleUnits };
+		public override object[] Parameters => new object[] { InFeatures, OutRangeFanFeatureClass, InnerRadius, OuterRadius, HorizontalStartAngle, HorizontalEndAngle, DistanceUnits!, AngleUnits! };
 
 		/// <summary>
 		/// <para>Input Points</para>
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Units Options")]
-		public object DistanceUnits { get; set; } = "METERS";
+		public object? DistanceUnits { get; set; } = "METERS";
 
 		/// <summary>
 		/// <para>Angular Units</para>
@@ -167,12 +167,12 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Units Options")]
-		public object AngleUnits { get; set; } = "DEGREES";
+		public object? AngleUnits { get; set; } = "DEGREES";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateRangeFans SetEnviroment(object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateRangeFans SetEnviroment(object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

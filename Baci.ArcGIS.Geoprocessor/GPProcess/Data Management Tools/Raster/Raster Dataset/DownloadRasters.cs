@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InImageService, OutFolder, WhereClause, SelectionFeature, Clipping, ConvertRasters, Format, CompressionMethod, CompressionQuality, MAINTAINFOLDER, DerivedOutFolder };
+		public override object[] Parameters => new object[] { InImageService, OutFolder, WhereClause!, SelectionFeature!, Clipping!, ConvertRasters!, Format!, CompressionMethod!, CompressionQuality!, MAINTAINFOLDER!, DerivedOutFolder! };
 
 		/// <summary>
 		/// <para>Input</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Selection Feature</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object SelectionFeature { get; set; }
+		public object? SelectionFeature { get; set; }
 
 		/// <summary>
 		/// <para>Clipping Using Selection Feature</para>
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Clipping { get; set; } = "false";
+		public object? Clipping { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Convert Rasters</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ConvertRasters { get; set; } = "false";
+		public object? ConvertRasters { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Format</para>
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Format { get; set; } = "TIFF";
+		public object? Format { get; set; } = "TIFF";
 
 		/// <summary>
 		/// <para>Compression Method</para>
@@ -163,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object CompressionMethod { get; set; } = "NONE";
+		public object? CompressionMethod { get; set; } = "NONE";
 
 		/// <summary>
 		/// <para>Compression Quality</para>
@@ -171,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object CompressionQuality { get; set; }
+		public object? CompressionQuality { get; set; }
 
 		/// <summary>
 		/// <para>Maintain Folder Structure</para>
@@ -183,19 +183,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object MAINTAINFOLDER { get; set; } = "false";
+		public object? MAINTAINFOLDER { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Folder</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFolder()]
-		public object DerivedOutFolder { get; set; }
+		public object? DerivedOutFolder { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DownloadRasters SetEnviroment(object extent = null )
+		public DownloadRasters SetEnviroment(object? extent = null )
 		{
 			base.SetEnv(extent: extent);
 			return this;

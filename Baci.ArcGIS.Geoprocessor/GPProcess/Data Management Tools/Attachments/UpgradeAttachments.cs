@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutDataset };
+		public override object[] Parameters => new object[] { InDataset, OutDataset! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
-		public object OutDataset { get; set; }
+		public object? OutDataset { get; set; }
 
 	}
 }

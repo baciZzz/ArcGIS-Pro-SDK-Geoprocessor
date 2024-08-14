@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DangleLength, DeleteShorts, OutFeatureClass };
+		public override object[] Parameters => new object[] { InFeatures, DangleLength!, DeleteShorts!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object DangleLength { get; set; }
+		public object? DangleLength { get; set; }
 
 		/// <summary>
 		/// <para>Delete Short Features</para>
@@ -92,19 +92,19 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DeleteShorts { get; set; } = "true";
+		public object? DeleteShorts { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Updated Input Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TrimLine SetEnviroment(object extent = null , object workspace = null )
+		public TrimLine SetEnviroment(object? extent = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

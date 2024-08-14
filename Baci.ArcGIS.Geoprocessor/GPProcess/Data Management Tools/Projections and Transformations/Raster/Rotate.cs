@@ -25,7 +25,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <param name="OutRaster">
 		/// <para>Output Raster Dataset</para>
 		/// <para>The name, location, and format for the dataset you are creating. When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset. When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a compression type and compression quality.</para>
-		/// <para>When storing the raster dataset in a file format, you need to specify the file extension:</para>
+		/// <para>When storing the raster dataset in a file format, specify the file extension as follows:</para>
 		/// <para>.bil—Esri BIL</para>
 		/// <para>.bip—Esri BIP</para>
 		/// <para>.bmp—BMP</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, Angle, PivotPoint, ResamplingType, ClippingExtent };
+		public override object[] Parameters => new object[] { InRaster, OutRaster, Angle, PivotPoint!, ResamplingType!, ClippingExtent! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Output Raster Dataset</para>
 		/// <para>The name, location, and format for the dataset you are creating. When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset. When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a compression type and compression quality.</para>
-		/// <para>When storing the raster dataset in a file format, you need to specify the file extension:</para>
+		/// <para>When storing the raster dataset in a file format, specify the file extension as follows:</para>
 		/// <para>.bil—Esri BIL</para>
 		/// <para>.bip—Esri BIP</para>
 		/// <para>.bmp—BMP</para>
@@ -132,23 +132,23 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPPoint()]
-		public object PivotPoint { get; set; }
+		public object? PivotPoint { get; set; }
 
 		/// <summary>
 		/// <para>Resampling Technique</para>
-		/// <para>The resampling algorithm to be used. The default is Nearest.</para>
-		/// <para>Nearest neighbor— Nearest neighbor is the fastest resampling method; it minimizes changes to pixel values since no new values are created. It is suitable for discrete data, such as land cover.</para>
-		/// <para>Bilinear interpolation— Bilinear interpolation calculates the value of each pixel by averaging (weighted for distance) the values of the surrounding four pixels. It is suitable for continuous data.</para>
-		/// <para>Cubic convolution— Cubic convolution calculates the value of each pixel by fitting a smooth curve based on the surrounding 16 pixels. This produces the smoothest image but can create values outside of the range found in the source data. It is suitable for continuous data.</para>
-		/// <para>Majority resampling—Majority resampling determines the value of each pixel based on the most popular value in a 3 by 3 window. Suitable for discrete data.</para>
-		/// <para>The Nearest and Majority options are used for categorical data, such as a land-use classification. The Nearest option is the default since it is the quickest and also because it will not change the cell values. Do not use either of these for continuous data, such as elevation surfaces.</para>
-		/// <para>The Bilinear option and the Cubic option are most appropriate for continuous data. It is recommended that neither of these be used with categorical data because the cell values may be altered.</para>
+		/// <para>Specifies the resampling technique that will be used. The default is Nearest.</para>
+		/// <para>Nearest neighbor— The nearest neighbor technique will be used. It minimizes changes to pixel values since no new values are created and is the fastest resampling technique. It is suitable for discrete data, such as land cover.</para>
+		/// <para>Bilinear interpolation— The bilinear interpolation technique will be used. It calculates the value of each pixel by averaging (weighted for distance) the values of the surrounding four pixels. It is suitable for continuous data.</para>
+		/// <para>Cubic convolution—The cubic convolution technique will be used. It calculates the value of each pixel by fitting a smooth curve based on the surrounding 16 pixels. This produces the smoothest image but can create values outside of the range found in the source data. It is suitable for continuous data.</para>
+		/// <para>Majority resampling—The majority resampling technique will be used. It determines the value of each pixel based on the most popular value in a 3 by 3 window. It is suitable for discrete data.</para>
+		/// <para>The Nearest and Majority options are used for categorical data, such as a land-use classification. The Nearest option is the default. It is the quickest and does not change the pixel values. Do not use either of these options for continuous data, such as elevation surfaces.</para>
+		/// <para>The Bilinear and Cubic options are most appropriate for continuous data. It is recommended that you do not use either of these with categorical data because the pixel values may be altered.</para>
 		/// <para><see cref="ResamplingTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ResamplingType { get; set; } = "NEAREST";
+		public object? ResamplingType { get; set; } = "NEAREST";
 
 		/// <summary>
 		/// <para>Clipping Extent</para>
@@ -160,12 +160,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object ClippingExtent { get; set; }
+		public object? ClippingExtent { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Rotate SetEnviroment(object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object nodata = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object pyramid = null , object rasterStatistics = null , object resamplingMethod = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public Rotate SetEnviroment(object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? nodata = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? pyramid = null , object? rasterStatistics = null , object? resamplingMethod = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
 			base.SetEnv(compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, nodata: nodata, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, rasterStatistics: rasterStatistics, resamplingMethod: resamplingMethod, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
@@ -179,28 +179,28 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ResamplingTypeEnum 
 		{
 			/// <summary>
-			/// <para>Nearest neighbor— Nearest neighbor is the fastest resampling method; it minimizes changes to pixel values since no new values are created. It is suitable for discrete data, such as land cover.</para>
+			/// <para>Nearest neighbor— The nearest neighbor technique will be used. It minimizes changes to pixel values since no new values are created and is the fastest resampling technique. It is suitable for discrete data, such as land cover.</para>
 			/// </summary>
 			[GPValue("NEAREST")]
 			[Description("Nearest neighbor")]
 			Nearest_neighbor,
 
 			/// <summary>
-			/// <para>Bilinear interpolation— Bilinear interpolation calculates the value of each pixel by averaging (weighted for distance) the values of the surrounding four pixels. It is suitable for continuous data.</para>
+			/// <para>Bilinear interpolation— The bilinear interpolation technique will be used. It calculates the value of each pixel by averaging (weighted for distance) the values of the surrounding four pixels. It is suitable for continuous data.</para>
 			/// </summary>
 			[GPValue("BILINEAR")]
 			[Description("Bilinear interpolation")]
 			Bilinear_interpolation,
 
 			/// <summary>
-			/// <para>Cubic convolution— Cubic convolution calculates the value of each pixel by fitting a smooth curve based on the surrounding 16 pixels. This produces the smoothest image but can create values outside of the range found in the source data. It is suitable for continuous data.</para>
+			/// <para>Cubic convolution—The cubic convolution technique will be used. It calculates the value of each pixel by fitting a smooth curve based on the surrounding 16 pixels. This produces the smoothest image but can create values outside of the range found in the source data. It is suitable for continuous data.</para>
 			/// </summary>
 			[GPValue("CUBIC")]
 			[Description("Cubic convolution")]
 			Cubic_convolution,
 
 			/// <summary>
-			/// <para>Majority resampling—Majority resampling determines the value of each pixel based on the most popular value in a 3 by 3 window. Suitable for discrete data.</para>
+			/// <para>Majority resampling—The majority resampling technique will be used. It determines the value of each pixel based on the most popular value in a 3 by 3 window. It is suitable for discrete data.</para>
 			/// </summary>
 			[GPValue("MAJORITY")]
 			[Description("Majority resampling")]

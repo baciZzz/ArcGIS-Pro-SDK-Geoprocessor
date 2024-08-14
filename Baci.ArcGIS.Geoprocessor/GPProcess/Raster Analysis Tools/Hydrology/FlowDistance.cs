@@ -66,12 +66,12 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
+		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputstreamraster, Inputsurfaceraster, Outputname, Inputflowdirectionraster, Distancetype, Flowdirectiontype, Outputraster, Statisticstype };
+		public override object[] Parameters => new object[] { Inputstreamraster, Inputsurfaceraster, Outputname, Inputflowdirectionraster!, Distancetype!, Flowdirectiontype!, Outputraster!, Statisticstype! };
 
 		/// <summary>
 		/// <para>Input Stream Raster</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object Inputflowdirectionraster { get; set; }
+		public object? Inputflowdirectionraster { get; set; }
 
 		/// <summary>
 		/// <para>Distance Type</para>
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Distancetype { get; set; } = "VERTICAL";
+		public object? Distancetype { get; set; } = "VERTICAL";
 
 		/// <summary>
 		/// <para>Flow Direction Type</para>
@@ -134,14 +134,14 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Flowdirectiontype { get; set; } = "D8";
+		public object? Flowdirectiontype { get; set; } = "D8";
 
 		/// <summary>
 		/// <para>Output Raster</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRasterLayer()]
-		public object Outputraster { get; set; }
+		public object? Outputraster { get; set; }
 
 		/// <summary>
 		/// <para>Statistics type</para>
@@ -155,14 +155,14 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Statisticstype { get; set; } = "MINIMUM";
+		public object? Statisticstype { get; set; } = "MINIMUM";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FlowDistance SetEnviroment(object cellSize = null , object extent = null , object mask = null , object outputCoordinateSystem = null , object snapRaster = null )
+		public FlowDistance SetEnviroment(object? cellSize = null , object? extent = null , object? mask = null , object? outputCoordinateSystem = null , object? pyramid = null , object? snapRaster = null )
 		{
-			base.SetEnv(cellSize: cellSize, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, snapRaster: snapRaster);
+			base.SetEnv(cellSize: cellSize, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, pyramid: pyramid, snapRaster: snapRaster);
 			return this;
 		}
 

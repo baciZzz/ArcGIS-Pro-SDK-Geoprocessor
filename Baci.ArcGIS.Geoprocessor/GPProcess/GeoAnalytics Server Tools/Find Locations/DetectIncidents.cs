@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutputName, TrackFields, StartCondition, EndCondition, OutputMode, DataStore, Output, TimeBoundarySplit, TimeBoundaryReference };
+		public override object[] Parameters => new object[] { InputLayer, OutputName, TrackFields, StartCondition, EndCondition!, OutputMode!, DataStore!, Output!, TimeBoundarySplit!, TimeBoundaryReference! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCalculatorExpression()]
-		public object EndCondition { get; set; }
+		public object? EndCondition { get; set; }
 
 		/// <summary>
 		/// <para>Output Mode</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object OutputMode { get; set; } = "ALL_FEATURES";
+		public object? OutputMode { get; set; } = "ALL_FEATURES";
 
 		/// <summary>
 		/// <para>Data Store</para>
@@ -146,24 +146,23 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Data Store")]
-		public object DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
+		public object? DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object Output { get; set; }
+		public object? Output { get; set; }
 
 		/// <summary>
 		/// <para>Time Boundary Split</para>
 		/// <para>A time span to split the input data into for analysis. A time boundary allows you to analyze values within a defined time span. For example, if you use a time boundary of 1 day, starting on January 1, 1980, tracks will be split at the beginning of every day. This parameter is only available with ArcGIS Enterprise 10.7 and later.</para>
-		/// <para><see cref="TimeBoundarySplitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
-		public object TimeBoundarySplit { get; set; }
+		[GPUnitDomain()]
+		public object? TimeBoundarySplit { get; set; }
 
 		/// <summary>
 		/// <para>Time Boundary Reference</para>
@@ -171,12 +170,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object TimeBoundaryReference { get; set; }
+		public object? TimeBoundaryReference { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DetectIncidents SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public DetectIncidents SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;
@@ -223,69 +222,6 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 			[GPValue("RELATIONAL_DATA_STORE")]
 			[Description("Relational data store")]
 			Relational_data_store,
-
-		}
-
-		/// <summary>
-		/// <para>Time Boundary Split</para>
-		/// </summary>
-		public enum TimeBoundarySplitEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Milliseconds")]
-			[Description("Milliseconds")]
-			Milliseconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Seconds")]
-			[Description("Seconds")]
-			Seconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Days")]
-			[Description("Days")]
-			Days,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Weeks")]
-			[Description("Weeks")]
-			Weeks,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Months")]
-			[Description("Months")]
-			Months,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Years")]
-			[Description("Years")]
-			Years,
 
 		}
 

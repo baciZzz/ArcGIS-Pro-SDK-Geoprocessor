@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { JobId, SourceDatabase, TargetDatabase, ExtractOperation, FilterFeature, FilterType, ReplicaType, DatabasePath, UpdatedDatabase };
+		public override object[] Parameters => new object[] { JobId, SourceDatabase, TargetDatabase, ExtractOperation, FilterFeature!, FilterType!, ReplicaType!, DatabasePath!, UpdatedDatabase! };
 
 		/// <summary>
 		/// <para>Job ID</para>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object FilterFeature { get; set; }
+		public object? FilterFeature { get; set; }
 
 		/// <summary>
 		/// <para>Filter Spatial Relation</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object FilterType { get; set; } = "INTERSECTS";
+		public object? FilterType { get; set; } = "INTERSECTS";
 
 		/// <summary>
 		/// <para>Replica Type</para>
@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ReplicaType { get; set; } = "CHECK_OUT";
+		public object? ReplicaType { get; set; } = "CHECK_OUT";
 
 		/// <summary>
 		/// <para>Input Database Path</para>
@@ -159,14 +159,14 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object DatabasePath { get; set; }
+		public object? DatabasePath { get; set; }
 
 		/// <summary>
 		/// <para>Updated Database</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object UpdatedDatabase { get; set; }
+		public object? UpdatedDatabase { get; set; }
 
 		#region InnerClass
 

@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutFolderPath, OutName, OutGdb };
+		public override object[] Parameters => new object[] { OutFolderPath, OutName, OutGdb! };
 
 		/// <summary>
 		/// <para>Mobile Geodatabase Location</para>
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutGdb { get; set; }
+		public object? OutGdb { get; set; }
 
 	}
 }

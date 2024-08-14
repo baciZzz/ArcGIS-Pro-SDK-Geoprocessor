@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputPaths, OutputFolder, FileFilter, DerivedOutputFolder };
+		public override object[] Parameters => new object[] { InputPaths, OutputFolder, FileFilter!, DerivedOutputFolder! };
 
 		/// <summary>
 		/// <para>Input Paths</para>
@@ -89,19 +89,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object FileFilter { get; set; }
+		public object? FileFilter { get; set; }
 
 		/// <summary>
 		/// <para>Output Folder</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFolder()]
-		public object DerivedOutputFolder { get; set; }
+		public object? DerivedOutputFolder { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TransferFiles SetEnviroment(object parallelProcessingFactor = null )
+		public TransferFiles SetEnviroment(object? parallelProcessingFactor = null )
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

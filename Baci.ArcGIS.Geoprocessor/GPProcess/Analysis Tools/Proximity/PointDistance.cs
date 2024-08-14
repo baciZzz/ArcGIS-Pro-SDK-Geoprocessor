@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, NearFeatures, OutTable, SearchRadius };
+		public override object[] Parameters => new object[] { InFeatures, NearFeatures, OutTable, SearchRadius! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -105,12 +105,12 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object SearchRadius { get; set; }
+		public object? SearchRadius { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PointDistance SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public PointDistance SetEnviroment(object? extent = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

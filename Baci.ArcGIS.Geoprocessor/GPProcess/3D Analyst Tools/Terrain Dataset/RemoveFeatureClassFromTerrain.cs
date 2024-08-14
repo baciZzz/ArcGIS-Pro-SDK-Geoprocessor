@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerrain, FeatureClass, DerivedOutTerrain };
+		public override object[] Parameters => new object[] { InTerrain, FeatureClass, DerivedOutTerrain! };
 
 		/// <summary>
 		/// <para>Input Terrain</para>
@@ -91,12 +91,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTerrainLayer()]
-		public object DerivedOutTerrain { get; set; }
+		public object? DerivedOutTerrain { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveFeatureClassFromTerrain SetEnviroment(int? autoCommit = null , object scratchWorkspace = null , object workspace = null )
+		public RemoveFeatureClassFromTerrain SetEnviroment(int? autoCommit = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, ContainerType, InverseSourceSelection, ContainerSources, Description, OutUtilityNetwork, OutTemplateName, ReconnectedEdgesOption };
+		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, ContainerType, InverseSourceSelection, ContainerSources!, Description!, OutUtilityNetwork!, OutTemplateName!, ReconnectedEdgesOption! };
 
 		/// <summary>
 		/// <para>Input Network</para>
@@ -127,28 +127,28 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object ContainerSources { get; set; }
+		public object? ContainerSources { get; set; }
 
 		/// <summary>
 		/// <para>Description</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Description { get; set; }
+		public object? Description { get; set; }
 
 		/// <summary>
 		/// <para>Output Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		/// <summary>
 		/// <para>Output Diagram Template</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutTemplateName { get; set; }
+		public object? OutTemplateName { get; set; }
 
 		/// <summary>
 		/// <para>Aggregate reconnected edges</para>
@@ -157,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ReconnectedEdgesOption { get; set; } = "true";
+		public object? ReconnectedEdgesOption { get; set; } = "true";
 
 		#region InnerClass
 

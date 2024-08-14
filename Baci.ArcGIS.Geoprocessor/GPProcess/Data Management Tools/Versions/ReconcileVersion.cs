@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, VersionName, TargetName, ConflictDefinition, ConflictResolution, AquiredLocks, AbortIfConflicts, Post, OutWorkspace };
+		public override object[] Parameters => new object[] { InWorkspace, VersionName, TargetName, ConflictDefinition!, ConflictResolution!, AquiredLocks!, AbortIfConflicts!, Post!, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Workspace</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ConflictDefinition { get; set; } = "BY_OBJECT";
+		public object? ConflictDefinition { get; set; } = "BY_OBJECT";
 
 		/// <summary>
 		/// <para>Conflict Resolution</para>
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ConflictResolution { get; set; } = "FAVOR_TARGET_VERSION";
+		public object? ConflictResolution { get; set; } = "FAVOR_TARGET_VERSION";
 
 		/// <summary>
 		/// <para>Acquire locks during reconcile</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AquiredLocks { get; set; } = "true";
+		public object? AquiredLocks { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Abort if conflicts</para>
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AbortIfConflicts { get; set; } = "false";
+		public object? AbortIfConflicts { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Post version after reconcile</para>
@@ -157,19 +157,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Post { get; set; } = "false";
+		public object? Post { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Input Workspace</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutWorkspace { get; set; }
+		public object? OutWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ReconcileVersion SetEnviroment(object configKeyword = null , object scratchWorkspace = null , object workspace = null )
+		public ReconcileVersion SetEnviroment(object? configKeyword = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(configKeyword: configKeyword, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerrain, OutRaster, DataType, Method, SampleDistance, PyramidLevelResolution, SampleValue };
+		public override object[] Parameters => new object[] { InTerrain, OutRaster, DataType!, Method!, SampleDistance!, PyramidLevelResolution!, SampleValue! };
 
 		/// <summary>
 		/// <para>Input Terrain</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DataType { get; set; } = "FLOAT";
+		public object? DataType { get; set; } = "FLOAT";
 
 		/// <summary>
 		/// <para>Method</para>
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "LINEAR";
+		public object? Method { get; set; } = "LINEAR";
 
 		/// <summary>
 		/// <para>Sampling Distance</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SampleDistance { get; set; } = "OBSERVATIONS";
+		public object? SampleDistance { get; set; } = "OBSERVATIONS";
 
 		/// <summary>
 		/// <para>Pyramid Level Resolution</para>
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object PyramidLevelResolution { get; set; } = "0";
+		public object? PyramidLevelResolution { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Sampling Value</para>
@@ -135,12 +135,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object SampleValue { get; set; } = "250";
+		public object? SampleValue { get; set; } = "250";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TerrainToRaster SetEnviroment(int? autoCommit = null , object compression = null , object configKeyword = null , object extent = null , object outputCoordinateSystem = null , object pyramid = null , object rasterStatistics = null , object snapRaster = null , object terrainMemoryUsage = null , object workspace = null )
+		public TerrainToRaster SetEnviroment(int? autoCommit = null , object? compression = null , object? configKeyword = null , object? extent = null , object? outputCoordinateSystem = null , object? pyramid = null , object? rasterStatistics = null , object? snapRaster = null , bool? terrainMemoryUsage = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, compression: compression, configKeyword: configKeyword, extent: extent, outputCoordinateSystem: outputCoordinateSystem, pyramid: pyramid, rasterStatistics: rasterStatistics, snapRaster: snapRaster, terrainMemoryUsage: terrainMemoryUsage, workspace: workspace);
 			return this;

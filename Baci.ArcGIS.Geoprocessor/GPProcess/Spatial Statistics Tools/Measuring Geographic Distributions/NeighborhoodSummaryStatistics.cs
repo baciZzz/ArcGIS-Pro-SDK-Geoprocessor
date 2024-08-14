@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Neighborhood Summary Statistics</para>
-	/// <para>Calculates summary  statistics of one or more numeric fields using local neighborhoods around each feature.  The local statistics include mean (average), median, standard deviation, interquartile range, skewness, and quantile imbalance, and all statistics can be geographically weighted using kernels to give more influence to neighbors closer to the focal feature.  Various neighborhood types can be used, including distance band, number of neighbors, polygon contiguity, Delaunay triangulation, and spatial weights matrix (.swm) files.</para>
+	/// <para>Calculates summary  statistics of one or more numeric fields using local neighborhoods around each feature.  The local statistics include mean (average), median, standard deviation, interquartile range, skewness, and quantile imbalance. All statistics can be geographically weighted using kernels to give more influence to neighbors closer to the focal feature.  Various neighborhood types can be used, including distance band, number of neighbors, polygon contiguity, Delaunay triangulation, and spatial weights matrix files (.swm).</para>
 	/// <para>Summary statistics are also calculated for the distances to the neighbors of each feature.</para>
 	/// </summary>
 	public class NeighborhoodSummaryStatistics : AbstractGPProcess
@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputFeatures, AnalysisFields, LocalSummaryStatistic, IncludeFocalFeature, IgnoreNulls, NeighborhoodType, DistanceBand, NumberOfNeighbors, WeightsMatrixFile, LocalWeightingScheme, KernelBandwidth };
+		public override object[] Parameters => new object[] { InFeatures, OutputFeatures, AnalysisFields!, LocalSummaryStatistic!, IncludeFocalFeature!, IgnoreNulls!, NeighborhoodType!, DistanceBand!, NumberOfNeighbors!, WeightsMatrixFile!, LocalWeightingScheme!, KernelBandwidth! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
-		public object AnalysisFields { get; set; }
+		public object? AnalysisFields { get; set; }
 
 		/// <summary>
 		/// <para>Local Summary Statistic</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LocalSummaryStatistic { get; set; } = "ALL";
+		public object? LocalSummaryStatistic { get; set; } = "ALL";
 
 		/// <summary>
 		/// <para>Include Focal Feature in Calculations</para>
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeFocalFeature { get; set; } = "true";
+		public object? IncludeFocalFeature { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Ignore Null Values in Calculations</para>
@@ -133,11 +133,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IgnoreNulls { get; set; } = "true";
+		public object? IgnoreNulls { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Neighborhood Type</para>
 		/// <para>Specifies how neighbors will be chosen for each input feature. To calculate local statistics, neighboring features must be identified for each input feature, and these neighbors are used to calculate the local statistics for each feature. For point features, the default is Delaunay triangulation. For polygon features, the default is Contiguity edges corners.</para>
+		/// <para>The Delaunay triangulation option is only available with a Desktop Advanced license.</para>
 		/// <para>Distance band—Features within a specified critical distance of each feature will be included as neighbors.</para>
 		/// <para>Number of neighbors— The closest features will be included as neighbors.</para>
 		/// <para>Contiguity edges only— Polygon features that share an edge will be included as neighbors.</para>
@@ -149,17 +150,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object NeighborhoodType { get; set; }
+		public object? NeighborhoodType { get; set; }
 
 		/// <summary>
 		/// <para>Distance Band</para>
-		/// <para>All features within this distance will be included as neighbors. If no value is provided, one will be estimated during execution and included as a geoprocessing message. If the specified distance results in more than 1,000 neighbors, only the closest 1,000 features will be included as neighbors.</para>
-		/// <para><see cref="DistanceBandEnum"/></para>
+		/// <para>All features within this distance will be included as neighbors. If no value is provided, one will be estimated during processing and included as a geoprocessing message. If the specified distance results in more than 1,000 neighbors, only the closest 1,000 features will be included as neighbors.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object DistanceBand { get; set; }
+		[GPUnitDomain()]
+		public object? DistanceBand { get; set; }
 
 		/// <summary>
 		/// <para>Number of Neighbors</para>
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object NumberOfNeighbors { get; set; } = "8";
+		public object? NumberOfNeighbors { get; set; } = "8";
 
 		/// <summary>
 		/// <para>Weights Matrix File</para>
@@ -177,11 +177,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object WeightsMatrixFile { get; set; }
+		public object? WeightsMatrixFile { get; set; }
 
 		/// <summary>
 		/// <para>Local Weighting Scheme</para>
-		/// <para>Specifies the weighting scheme to apply to neighbors when calculating local statistics.</para>
+		/// <para>Specifies the weighting scheme that will be applied to neighbors when calculating local statistics.</para>
 		/// <para>Unweighted—Neighbors will not be weighted. This is the default.</para>
 		/// <para>Bisquare—Neighbors will be weighted using a bisquare kernel scheme.</para>
 		/// <para>Gaussian—Neighbors will be weighted using a Gaussian kernel scheme.</para>
@@ -190,22 +190,21 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LocalWeightingScheme { get; set; } = "UNWEIGHTED";
+		public object? LocalWeightingScheme { get; set; } = "UNWEIGHTED";
 
 		/// <summary>
 		/// <para>Kernel Bandwidth</para>
-		/// <para>The bandwidth of the bisquare or Gaussian local weighting schemes. If no value is provided, one will be estimated during execution and included as a geoprocessing message.</para>
-		/// <para><see cref="KernelBandwidthEnum"/></para>
+		/// <para>The bandwidth of the bisquare or Gaussian local weighting schemes. If no value is provided, one will be estimated during processing and included as a geoprocessing message.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object KernelBandwidth { get; set; }
+		[GPUnitDomain()]
+		public object? KernelBandwidth { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public NeighborhoodSummaryStatistics SetEnviroment(object outputCoordinateSystem = null )
+		public NeighborhoodSummaryStatistics SetEnviroment(object? outputCoordinateSystem = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem);
 			return this;
@@ -361,41 +360,6 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Distance Band</para>
-		/// </summary>
-		public enum DistanceBandEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-		}
-
-		/// <summary>
 		/// <para>Local Weighting Scheme</para>
 		/// </summary>
 		public enum LocalWeightingSchemeEnum 
@@ -420,41 +384,6 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 			[GPValue("GAUSSIAN")]
 			[Description("Gaussian")]
 			Gaussian,
-
-		}
-
-		/// <summary>
-		/// <para>Kernel Bandwidth</para>
-		/// </summary>
-		public enum KernelBandwidthEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
 
 		}
 

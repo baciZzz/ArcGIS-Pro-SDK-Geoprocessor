@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurface, OutFeatureClass, Interval, BaseContour, ContourField, ContourFieldPrecision, IndexInterval, IndexIntervalField, ZFactor, PyramidLevelResolution };
+		public override object[] Parameters => new object[] { InSurface, OutFeatureClass, Interval, BaseContour!, ContourField!, ContourFieldPrecision!, IndexInterval!, IndexIntervalField!, ZFactor!, PyramidLevelResolution! };
 
 		/// <summary>
 		/// <para>Input Surface</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object BaseContour { get; set; } = "0";
+		public object? BaseContour { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Contour Field</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ContourField { get; set; } = "Contour";
+		public object? ContourField { get; set; } = "Contour";
 
 		/// <summary>
 		/// <para>Contour Field Precision</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object ContourFieldPrecision { get; set; } = "0";
+		public object? ContourFieldPrecision { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Index Interval</para>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object IndexInterval { get; set; }
+		public object? IndexInterval { get; set; }
 
 		/// <summary>
 		/// <para>Index Interval Field</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object IndexIntervalField { get; set; } = "Index_Cont";
+		public object? IndexIntervalField { get; set; } = "Index_Cont";
 
 		/// <summary>
 		/// <para>Z Factor</para>
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ZFactor { get; set; } = "1";
+		public object? ZFactor { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Pyramid Level Resolution</para>
@@ -150,12 +150,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object PyramidLevelResolution { get; set; } = "0";
+		public object? PyramidLevelResolution { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SurfaceContour SetEnviroment(object XYDomain = null , object XYResolution = null , object XYTolerance = null , int? autoCommit = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object terrainMemoryUsage = null , object workspace = null )
+		public SurfaceContour SetEnviroment(object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , int? autoCommit = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , bool? terrainMemoryUsage = null , object? workspace = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, terrainMemoryUsage: terrainMemoryUsage, workspace: workspace);
 			return this;

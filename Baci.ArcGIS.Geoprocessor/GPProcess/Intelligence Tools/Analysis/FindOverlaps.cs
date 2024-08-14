@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutIntersection, OutCentroid, GroupField };
+		public override object[] Parameters => new object[] { InFeatures, OutIntersection, OutCentroid, GroupField! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object GroupField { get; set; }
+		public object? GroupField { get; set; }
 
 	}
 }

@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, MaxClasses, OutClassifierDefinition, InAdditionalRaster, MaxIterations, MinSamplesPerCluster, SkipFactor, UsedAttributes, MaxMergePerIter, MaxMergeDistance };
+		public override object[] Parameters => new object[] { InRaster, MaxClasses, OutClassifierDefinition, InAdditionalRaster!, MaxIterations!, MinSamplesPerCluster!, SkipFactor!, UsedAttributes!, MaxMergePerIter!, MaxMergeDistance! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object InAdditionalRaster { get; set; }
+		public object? InAdditionalRaster { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Number Of Iterations</para>
@@ -114,16 +114,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MaxIterations { get; set; } = "20";
+		public object? MaxIterations { get; set; } = "20";
 
 		/// <summary>
 		/// <para>Minimum Number of Samples Per Cluster</para>
 		/// <para>The minimum number of pixels or segments in a valid cluster or class.</para>
-		/// <para>The default value of 20 is effective in creating statistically significant classes. You can increase this number for more robust classes; however, it may limit the overall number of classes that are created.</para>
+		/// <para>The default value of 20 is effective in creating statistically significant classes. You can increase this number for more larger clusters and less slivers; however, it may limit the overall number of classes that are created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MinSamplesPerCluster { get; set; } = "20";
+		public object? MinSamplesPerCluster { get; set; } = "20";
 
 		/// <summary>
 		/// <para>Skip Factor</para>
@@ -131,25 +131,25 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object SkipFactor { get; set; } = "10";
+		public object? SkipFactor { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Segment Attributes Used</para>
 		/// <para>Specifies the attributes that will be included in the attribute table associated with the output raster.</para>
-		/// <para>Converged color—The RGB color values will be derived from the input raster on a per-segment basis.</para>
+		/// <para>Converged color—The RGB color values will be derived from the input raster on a per-segment basis. This is also known as average chromaticity color.</para>
 		/// <para>Mean digital number—The average digital number (DN) will be derived from the optional pixel image on a per-segment basis.</para>
 		/// <para>Standard deviation—The standard deviation will be derived from the optional pixel image on a per-segment basis.</para>
 		/// <para>Count of pixels—The number of pixels composing the segment, on a per-segment basis.</para>
 		/// <para>Compactness—The degree to which a segment is compact or circular, on a per-segment basis. The values range from 0 to 1, in which 1 is a circle.</para>
 		/// <para>Rectangularity—The degree to which the segment is rectangular, on a per-segment basis. The values range from 0 to 1, in which 1 is a rectangle.</para>
-		/// <para>This parameter is only active if the Segmented key property is set to true on the input raster. If the only input to the tool is a segmented image, the default attributes are Average chromaticity color, Count of pixels, Compactness, and Rectangularity. If an Additional Input Raster value is included as an input with a segmented image, Mean digital number and Standard deviation are also available attributes.</para>
+		/// <para>This parameter is only active if the Segmented key property is set to true on the input raster. If the only input to the tool is a segmented image, the default attributes are Converged color, Count of pixels, Compactness, and Rectangularity. If an Additional Input Raster value is included as an input with a segmented image, Mean digital number and Standard deviation are also available attributes.</para>
 		/// <para><see cref="UsedAttributesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Segment Attributes")]
-		public object UsedAttributes { get; set; } = "COLOR;MEAN";
+		public object? UsedAttributes { get; set; } = "COLOR;MEAN";
 
 		/// <summary>
 		/// <para>Maximum Number Of Cluster Merges per Iteration</para>
@@ -157,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MaxMergePerIter { get; set; } = "5";
+		public object? MaxMergePerIter { get; set; } = "5";
 
 		/// <summary>
 		/// <para>Maximum Merge Distance</para>
@@ -165,12 +165,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MaxMergeDistance { get; set; } = "0.5";
+		public object? MaxMergeDistance { get; set; } = "0.5";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TrainIsoClusterClassifier SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object snapRaster = null , object workspace = null )
+		public TrainIsoClusterClassifier SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? snapRaster = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, workspace: workspace);
 			return this;
@@ -184,7 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum UsedAttributesEnum 
 		{
 			/// <summary>
-			/// <para>Converged color—The RGB color values will be derived from the input raster on a per-segment basis.</para>
+			/// <para>Converged color—The RGB color values will be derived from the input raster on a per-segment basis. This is also known as average chromaticity color.</para>
 			/// </summary>
 			[GPValue("COLOR")]
 			[Description("Converged color")]

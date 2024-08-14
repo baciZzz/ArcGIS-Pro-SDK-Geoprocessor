@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayerOrView, InField, JoinTable, JoinField, JoinType, OutLayerOrView };
+		public override object[] Parameters => new object[] { InLayerOrView, InField, JoinTable, JoinField, JoinType!, OutLayerOrView!, IndexJoinFields! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -121,19 +121,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object JoinType { get; set; } = "true";
+		public object? JoinType { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Updated Input Layer or Table View</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutLayerOrView { get; set; }
+		public object? OutLayerOrView { get; set; }
+
+		/// <summary>
+		/// <para>Index Joined Fields</para>
+		/// <para>Specifies whether table attribute indexes will be added to both joining fields.</para>
+		/// <para>Checked—Both join fields will be indexed. If the table already has an index, a new index will not be added.</para>
+		/// <para>Unchecked—Indexes will not be added. This is the default.</para>
+		/// <para><see cref="IndexJoinFieldsEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		public object? IndexJoinFields { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddJoin SetEnviroment(object workspace = null )
+		public AddJoin SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -159,6 +171,27 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			[GPValue("false")]
 			[Description("KEEP_COMMON")]
 			KEEP_COMMON,
+
+		}
+
+		/// <summary>
+		/// <para>Index Joined Fields</para>
+		/// </summary>
+		public enum IndexJoinFieldsEnum 
+		{
+			/// <summary>
+			/// <para>Checked—Both join fields will be indexed. If the table already has an index, a new index will not be added.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("INDEX_JOIN_FIELDS")]
+			INDEX_JOIN_FIELDS,
+
+			/// <summary>
+			/// <para>Unchecked—Indexes will not be added. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("NO_INDEX_JOIN_FIELDS")]
+			NO_INDEX_JOIN_FIELDS,
 
 		}
 

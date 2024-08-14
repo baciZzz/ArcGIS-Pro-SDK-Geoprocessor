@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, AreContainersPreserved, IsUnitAbsolute, InitialRadiusAbsolute, InitialRadiusProportional, DisjoinedGraphAbsolute, DisjoinedGraphProportional, RadiusFactor, OutNetworkDiagramLayer, RunAsync };
+		public override object[] Parameters => new object[] { InNetworkDiagramLayer, AreContainersPreserved!, IsUnitAbsolute!, InitialRadiusAbsolute!, InitialRadiusProportional!, DisjoinedGraphAbsolute!, DisjoinedGraphProportional!, RadiusFactor!, OutNetworkDiagramLayer!, RunAsync! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AreContainersPreserved { get; set; } = "false";
+		public object? AreContainersPreserved { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Spacing values interpreted as absolute units in the diagram coordinate system</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IsUnitAbsolute { get; set; } = "false";
+		public object? IsUnitAbsolute { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Initial Radius</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object InitialRadiusAbsolute { get; set; } = "5 Unknown";
+		public object? InitialRadiusAbsolute { get; set; } = "5 Unknown";
 
 		/// <summary>
 		/// <para>Initial Radius</para>
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object InitialRadiusProportional { get; set; } = "5";
+		public object? InitialRadiusProportional { get; set; } = "5";
 
 		/// <summary>
 		/// <para>Between Disjoined Graphs</para>
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object DisjoinedGraphAbsolute { get; set; } = "10 Unknown";
+		public object? DisjoinedGraphAbsolute { get; set; } = "10 Unknown";
 
 		/// <summary>
 		/// <para>Between Disjoined Graphs</para>
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object DisjoinedGraphProportional { get; set; } = "10";
+		public object? DisjoinedGraphProportional { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Radius Factor</para>
@@ -132,27 +132,27 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object RadiusFactor { get; set; } = "1";
+		public object? RadiusFactor { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Output Network Diagram</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDiagramLayer()]
-		public object OutNetworkDiagramLayer { get; set; }
+		public object? OutNetworkDiagramLayer { get; set; }
 
 		/// <summary>
 		/// <para>Run in asynchronous mode on the server</para>
 		/// <para>Specifies whether the layout algorithm will run asynchronously or synchronously on the server.</para>
-		/// <para>Checked—The layout algorithm will run asynchronously on the server. This option dedicates server resources to run the layout algorithm with a longer time-out. Running asynchronously is recommended when executing layouts that are time consuming and may exceed the server time-out—for example, Partial Overlapping Edges—and applying to large diagrams—more than 25,000 features.</para>
-		/// <para>Unchecked—The layout algorithm will run synchronously on the server. It can fail without completion if its execution exceeds the service time-out: 600 seconds by default. This is the default.</para>
+		/// <para>Checked—The layout algorithm will run asynchronously on the server. This option dedicates server resources to run the layout algorithm with a longer time-out. Running asynchronously is recommended when executing layouts that are time consuming and may exceed the server time-out (for example, Partial Overlapping Edges) and applying to large diagrams (more than 25,000 features).</para>
+		/// <para>Unchecked—The layout algorithm will run synchronously on the server. It can fail without completion if its execution exceeds the service default time-out value of 600 seconds. This is the default.</para>
 		/// <para><see cref="RunAsyncEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object RunAsync { get; set; } = "false";
+		public object? RunAsync { get; set; } = "false";
 
 		#region InnerClass
 
@@ -204,14 +204,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum RunAsyncEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The layout algorithm will run asynchronously on the server. This option dedicates server resources to run the layout algorithm with a longer time-out. Running asynchronously is recommended when executing layouts that are time consuming and may exceed the server time-out—for example, Partial Overlapping Edges—and applying to large diagrams—more than 25,000 features.</para>
+			/// <para>Checked—The layout algorithm will run asynchronously on the server. This option dedicates server resources to run the layout algorithm with a longer time-out. Running asynchronously is recommended when executing layouts that are time consuming and may exceed the server time-out (for example, Partial Overlapping Edges) and applying to large diagrams (more than 25,000 features).</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RUN_ASYNCHRONOUSLY")]
 			RUN_ASYNCHRONOUSLY,
 
 			/// <summary>
-			/// <para>Unchecked—The layout algorithm will run synchronously on the server. It can fail without completion if its execution exceeds the service time-out: 600 seconds by default. This is the default.</para>
+			/// <para>Unchecked—The layout algorithm will run synchronously on the server. It can fail without completion if its execution exceeds the service default time-out value of 600 seconds. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("RUN_SYNCHRONOUSLY")]

@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, OutTin, ThinningType, ThinningMethod, ThinningValue, MaxNodes, ZFactor, ClipToExtent };
+		public override object[] Parameters => new object[] { InLasDataset, OutTin, ThinningType!, ThinningMethod!, ThinningValue!, MaxNodes!, ZFactor!, ClipToExtent! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ThinningType { get; set; } = "NONE";
+		public object? ThinningType { get; set; } = "NONE";
 
 		/// <summary>
 		/// <para>Thinning Method</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ThinningMethod { get; set; }
+		public object? ThinningMethod { get; set; }
 
 		/// <summary>
 		/// <para>Thinning Value</para>
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object ThinningValue { get; set; } = "0";
+		public object? ThinningValue { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Maximum Number of Output Nodes</para>
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object MaxNodes { get; set; } = "5000000";
+		public object? MaxNodes { get; set; } = "5000000";
 
 		/// <summary>
 		/// <para>Z Factor</para>
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ZFactor { get; set; } = "1";
+		public object? ZFactor { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Clip to Extent</para>
@@ -150,12 +150,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ClipToExtent { get; set; } = "true";
+		public object? ClipToExtent { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LasDatasetToTin SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object tinSaveVersion = null , object workspace = null )
+		public LasDatasetToTin SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? tinSaveVersion = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, tinSaveVersion: tinSaveVersion, workspace: workspace);
 			return this;

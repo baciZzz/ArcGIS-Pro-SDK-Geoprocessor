@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutputName, GenerateTypes, EllipseSize, WeightField, GroupByField, OutCentralFeatureLayer, OutMeanCenterLayer, OutMedianCenterLayer, OutEllipseLayer, DataStore };
+		public override object[] Parameters => new object[] { InputLayer, OutputName, GenerateTypes, EllipseSize!, WeightField!, GroupByField!, OutCentralFeatureLayer!, OutMeanCenterLayer!, OutMedianCenterLayer!, OutEllipseLayer!, DataStore! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object EllipseSize { get; set; } = "1_STANDARD_DEVIATION";
+		public object? EllipseSize { get; set; } = "1_STANDARD_DEVIATION";
 
 		/// <summary>
 		/// <para>Weight Field</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object WeightField { get; set; }
+		public object? WeightField { get; set; }
 
 		/// <summary>
 		/// <para>Group By Field</para>
@@ -137,35 +137,35 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object GroupByField { get; set; }
+		public object? GroupByField { get; set; }
 
 		/// <summary>
 		/// <para>Central Feature Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object OutCentralFeatureLayer { get; set; }
+		public object? OutCentralFeatureLayer { get; set; }
 
 		/// <summary>
 		/// <para>Mean Center Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object OutMeanCenterLayer { get; set; }
+		public object? OutMeanCenterLayer { get; set; }
 
 		/// <summary>
 		/// <para>Median Center Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object OutMedianCenterLayer { get; set; }
+		public object? OutMedianCenterLayer { get; set; }
 
 		/// <summary>
 		/// <para>Ellipse Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object OutEllipseLayer { get; set; }
+		public object? OutEllipseLayer { get; set; }
 
 		/// <summary>
 		/// <para>Data Store</para>
@@ -178,12 +178,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Data Store")]
-		public object DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
+		public object? DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SummarizeCenterAndDispersion SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public SummarizeCenterAndDispersion SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

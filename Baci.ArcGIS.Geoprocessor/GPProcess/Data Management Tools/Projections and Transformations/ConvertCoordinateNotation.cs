@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutFeatureclass, XField, YField, InputCoordinateFormat, OutputCoordinateFormat, IdField, SpatialReference, InCoorSystem, ExcludeInvalidRecords };
+		public override object[] Parameters => new object[] { InTable, OutFeatureclass, XField, YField, InputCoordinateFormat, OutputCoordinateFormat, IdField!, SpatialReference!, InCoorSystem!, ExcludeInvalidRecords! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -224,7 +224,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object IdField { get; set; }
+		public object? IdField { get; set; }
 
 		/// <summary>
 		/// <para>Output Coordinate System</para>
@@ -233,7 +233,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
-		public object SpatialReference { get; set; }
+		public object? SpatialReference { get; set; }
 
 		/// <summary>
 		/// <para>Input Coordinate System</para>
@@ -241,7 +241,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
-		public object InCoorSystem { get; set; }
+		public object? InCoorSystem { get; set; }
 
 		/// <summary>
 		/// <para>Exclude records with invalid notation</para>
@@ -253,12 +253,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ExcludeInvalidRecords { get; set; } = "false";
+		public object? ExcludeInvalidRecords { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConvertCoordinateNotation SetEnviroment(object XYTolerance = null , object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public ConvertCoordinateNotation SetEnviroment(object? XYTolerance = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(XYTolerance: XYTolerance, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

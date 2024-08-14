@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTrainingData">
 		/// <para>Input Training Data</para>
-		/// <para>The point cloud training data (*.pctd) that will be used to train the classification model.</para>
+		/// <para>The point cloud training data (*.pctd file) that will be used to train the classification model.</para>
 		/// </param>
 		/// <param name="OutModelLocation">
 		/// <para>Output Model Location</para>
@@ -70,11 +70,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTrainingData, OutModelLocation, OutModelName, PretrainedModel, Attributes, MinPoints, ClassRemap, TargetClasses, BackgroundClass, ClassDescriptions, ModelSelectionCriteria, MaxEpochs, EpochIterations, LearningRate, BatchSize, EarlyStop, OutModel, OutModelStats };
+		public override object[] Parameters => new object[] { InTrainingData, OutModelLocation, OutModelName, PretrainedModel!, Attributes!, MinPoints!, ClassRemap!, TargetClasses!, BackgroundClass!, ClassDescriptions!, ModelSelectionCriteria!, MaxEpochs!, EpochIterations!, LearningRate!, BatchSize!, EarlyStop!, OutModel!, OutModelStats!, LearningRateStrategy!, OutEpochStats! };
 
 		/// <summary>
 		/// <para>Input Training Data</para>
-		/// <para>The point cloud training data (*.pctd) that will be used to train the classification model.</para>
+		/// <para>The point cloud training data (*.pctd file) that will be used to train the classification model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object PretrainedModel { get; set; }
+		public object? PretrainedModel { get; set; }
 
 		/// <summary>
 		/// <para>Attribute Selection</para>
@@ -116,12 +116,13 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <para>Green Band—The green band&apos;s value from a point cloud with color information will be used.</para>
 		/// <para>Blue Band—The blue band&apos;s value from a point cloud with color information will be used.</para>
 		/// <para>Near Infrared Band—The near infrared band&apos;s value from a point cloud with near infrared information will be used.</para>
+		/// <para>Relative Height—The relative height of each point in relation to a reference surface, which would typically be a bare earth DEM.</para>
 		/// <para><see cref="AttributesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object Attributes { get; set; }
+		public object? Attributes { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Points Per Block</para>
@@ -129,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MinPoints { get; set; } = "0";
+		public object? MinPoints { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Class Remapping</para>
@@ -139,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Manage Classes")]
-		public object ClassRemap { get; set; }
+		public object? ClassRemap { get; set; }
 
 		/// <summary>
 		/// <para>Class Codes Of Interest</para>
@@ -149,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Manage Classes")]
-		public object TargetClasses { get; set; }
+		public object? TargetClasses { get; set; }
 
 		/// <summary>
 		/// <para>Background Class Code</para>
@@ -159,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPLong()]
 		[GPCodedValueDomain()]
 		[Category("Manage Classes")]
-		public object BackgroundClass { get; set; }
+		public object? BackgroundClass { get; set; }
 
 		/// <summary>
 		/// <para>Class Description</para>
@@ -169,23 +170,23 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Manage Classes")]
-		public object ClassDescriptions { get; set; }
+		public object? ClassDescriptions { get; set; }
 
 		/// <summary>
 		/// <para>Model Selection Criteria</para>
 		/// <para>Specifies the statistical basis that will be used to determine the final model.</para>
-		/// <para>Validation Loss—The model that achieves the lowest result when the entropy loss function is applied to the validation data will be selected.</para>
-		/// <para>Recall—The model that achieves the best macro average of the recall for all class codes will be selected. Each class code&apos;s recall value is determined by the ratio of correctly classified points (true positives) over all the points that should have been classified with this value (expected positives). This is the default.</para>
-		/// <para>F1 Score—The model that achieves the best harmonic mean between the macro average of the precision and recall values for all class codes will be selected. This provides a balance between precision and recall, which favors better overall performance.</para>
-		/// <para>Precision—The model that achieves the best macro average of the precision for all class codes will be selected. Each class code&apos;s precision is determined by the ratio of points that are correctly classified (true positives) over all the points that are classified (true positives and false positives).</para>
-		/// <para>Accuracy—The model that achieves the highest ratio of corrected classified points over all the points in the validation data will be selected.</para>
+		/// <para>Validation Loss—The model that achieves the lowest result when the entropy loss function is applied to the validation data will be used.</para>
+		/// <para>Recall—The model that achieves the best macro average of the recall for all class codes will be used. Each class code&apos;s recall value is determined by the ratio of correctly classified points (true positives) over all the points that should have been classified with this value (expected positives). This is the default.</para>
+		/// <para>F1 Score—The model that achieves the best harmonic mean between the macro average of the precision and recall values for all class codes will be used. This provides a balance between precision and recall, which favors better overall performance.</para>
+		/// <para>Precision—The model that achieves the best macro average of the precision for all class codes will be used. Each class code&apos;s precision is determined by the ratio of points that are correctly classified (true positives) over all the points that are classified (true positives and false positives).</para>
+		/// <para>Accuracy—The model that achieves the highest ratio of corrected classified points over all the points in the validation data will be used.</para>
 		/// <para><see cref="ModelSelectionCriteriaEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Training Parameters")]
-		public object ModelSelectionCriteria { get; set; } = "RECALL";
+		public object? ModelSelectionCriteria { get; set; } = "RECALL";
 
 		/// <summary>
 		/// <para>Maximum Number of Epochs</para>
@@ -194,7 +195,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Training Parameters")]
-		public object MaxEpochs { get; set; } = "25";
+		public object? MaxEpochs { get; set; } = "25";
 
 		/// <summary>
 		/// <para>Iterations Per Epoch (%)</para>
@@ -204,7 +205,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPDouble()]
 		[GPRangeDomain()]
 		[Category("Training Parameters")]
-		public object EpochIterations { get; set; } = "100";
+		public object? EpochIterations { get; set; } = "100";
 
 		/// <summary>
 		/// <para>Learning Rate</para>
@@ -214,7 +215,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPDouble()]
 		[GPRangeDomain()]
 		[Category("Training Parameters")]
-		public object LearningRate { get; set; }
+		public object? LearningRate { get; set; }
 
 		/// <summary>
 		/// <para>Batch Size</para>
@@ -224,11 +225,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Training Parameters")]
-		public object BatchSize { get; set; } = "2";
+		public object? BatchSize { get; set; } = "2";
 
 		/// <summary>
 		/// <para>Stop training when model no longer improves</para>
-		/// <para>Specifies whether the model training will stop when the value specified for the Model Selection Criteria parameter does not register any improvement after 5 consecutive epochs.</para>
+		/// <para>Specifies whether the model training will stop when the metric specified in the Model Selection Criteria parameter does not register any improvement after 5 consecutive epochs.</para>
 		/// <para>Checked—The model training will stop when the model is no longer improving. This is the default.</para>
 		/// <para>Unchecked—The model training will continue until the maximum number of epochs has been reached.</para>
 		/// <para><see cref="EarlyStopEnum"/></para>
@@ -237,28 +238,48 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Training Parameters")]
-		public object EarlyStop { get; set; } = "true";
+		public object? EarlyStop { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output Model</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
-		public object OutModel { get; set; }
+		public object? OutModel { get; set; }
 
 		/// <summary>
 		/// <para>Output Model Statistics</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETextFile()]
-		public object OutModelStats { get; set; }
+		public object? OutModelStats { get; set; }
+
+		/// <summary>
+		/// <para>Learning Rate Strategy</para>
+		/// <para>Specifies how the learning rate will be modified during training.</para>
+		/// <para>One Cycle Learning Rate—The learning rate will be cycled throughout each epoch using Fast.AI&apos;s implementation of the 1cycle technique for training neural networks to help improve the training of a convolutional neural network. This is the default.</para>
+		/// <para>Fixed Learning Rate—The same learning rate will be used throughout the training process.</para>
+		/// <para><see cref="LearningRateStrategyEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		[GPCodedValueDomain()]
+		[Category("Training Parameters")]
+		public object? LearningRateStrategy { get; set; } = "ONE_CYCLE";
+
+		/// <summary>
+		/// <para>Output Epoch Statistics</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.derived)]
+		[DETextFile()]
+		public object? OutEpochStats { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TrainPointCloudClassificationModel SetEnviroment()
+		public TrainPointCloudClassificationModel SetEnviroment(object? processorType = null )
 		{
-			base.SetEnv();
+			base.SetEnv(processorType: processorType);
 			return this;
 		}
 
@@ -318,6 +339,13 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 			[Description("Near Infrared Band")]
 			Near_Infrared_Band,
 
+			/// <summary>
+			/// <para>Relative Height—The relative height of each point in relation to a reference surface, which would typically be a bare earth DEM.</para>
+			/// </summary>
+			[GPValue("RELATIVE_HEIGHT")]
+			[Description("Relative Height")]
+			Relative_Height,
+
 		}
 
 		/// <summary>
@@ -326,39 +354,39 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ModelSelectionCriteriaEnum 
 		{
 			/// <summary>
-			/// <para>Validation Loss—The model that achieves the lowest result when the entropy loss function is applied to the validation data will be selected.</para>
+			/// <para>Validation Loss—The model that achieves the lowest result when the entropy loss function is applied to the validation data will be used.</para>
 			/// </summary>
 			[GPValue("VALIDATION_LOSS")]
 			[Description("Validation Loss")]
 			Validation_Loss,
 
 			/// <summary>
-			/// <para>Recall—The model that achieves the best macro average of the recall for all class codes will be selected. Each class code&apos;s recall value is determined by the ratio of correctly classified points (true positives) over all the points that should have been classified with this value (expected positives). This is the default.</para>
+			/// <para>Accuracy—The model that achieves the highest ratio of corrected classified points over all the points in the validation data will be used.</para>
+			/// </summary>
+			[GPValue("ACCURACY")]
+			[Description("Accuracy")]
+			Accuracy,
+
+			/// <summary>
+			/// <para>Recall—The model that achieves the best macro average of the recall for all class codes will be used. Each class code&apos;s recall value is determined by the ratio of correctly classified points (true positives) over all the points that should have been classified with this value (expected positives). This is the default.</para>
 			/// </summary>
 			[GPValue("RECALL")]
 			[Description("Recall")]
 			Recall,
 
 			/// <summary>
-			/// <para>F1 Score—The model that achieves the best harmonic mean between the macro average of the precision and recall values for all class codes will be selected. This provides a balance between precision and recall, which favors better overall performance.</para>
+			/// <para>F1 Score—The model that achieves the best harmonic mean between the macro average of the precision and recall values for all class codes will be used. This provides a balance between precision and recall, which favors better overall performance.</para>
 			/// </summary>
 			[GPValue("F1_SCORE")]
 			[Description("F1 Score")]
 			F1_Score,
 
 			/// <summary>
-			/// <para>Precision—The model that achieves the best macro average of the precision for all class codes will be selected. Each class code&apos;s precision is determined by the ratio of points that are correctly classified (true positives) over all the points that are classified (true positives and false positives).</para>
+			/// <para>Precision—The model that achieves the best macro average of the precision for all class codes will be used. Each class code&apos;s precision is determined by the ratio of points that are correctly classified (true positives) over all the points that are classified (true positives and false positives).</para>
 			/// </summary>
 			[GPValue("PRECISION")]
 			[Description("Precision")]
 			Precision,
-
-			/// <summary>
-			/// <para>Accuracy—The model that achieves the highest ratio of corrected classified points over all the points in the validation data will be selected.</para>
-			/// </summary>
-			[GPValue("ACCURACY")]
-			[Description("Accuracy")]
-			Accuracy,
 
 		}
 
@@ -380,6 +408,27 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 			[GPValue("false")]
 			[Description("NO_EARLY_STOP")]
 			NO_EARLY_STOP,
+
+		}
+
+		/// <summary>
+		/// <para>Learning Rate Strategy</para>
+		/// </summary>
+		public enum LearningRateStrategyEnum 
+		{
+			/// <summary>
+			/// <para>One Cycle Learning Rate—The learning rate will be cycled throughout each epoch using Fast.AI&apos;s implementation of the 1cycle technique for training neural networks to help improve the training of a convolutional neural network. This is the default.</para>
+			/// </summary>
+			[GPValue("ONE_CYCLE")]
+			[Description("One Cycle Learning Rate")]
+			One_Cycle_Learning_Rate,
+
+			/// <summary>
+			/// <para>Fixed Learning Rate—The same learning rate will be used throughout the training process.</para>
+			/// </summary>
+			[GPValue("FIXED")]
+			[Description("Fixed Learning Rate")]
+			Fixed_Learning_Rate,
 
 		}
 

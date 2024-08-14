@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerrain, UpdateExtent, DerivedOutTerrain };
+		public override object[] Parameters => new object[] { InTerrain, UpdateExtent!, DerivedOutTerrain! };
 
 		/// <summary>
 		/// <para>Input Terrain</para>
@@ -80,19 +80,19 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object UpdateExtent { get; set; } = "NO_UPDATE_EXTENT";
+		public object? UpdateExtent { get; set; } = "NO_UPDATE_EXTENT";
 
 		/// <summary>
 		/// <para>Updated Input Terrain</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTerrainLayer()]
-		public object DerivedOutTerrain { get; set; }
+		public object? DerivedOutTerrain { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BuildTerrain SetEnviroment(int? autoCommit = null , object extent = null , object workspace = null )
+		public BuildTerrain SetEnviroment(int? autoCommit = null , object? extent = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, extent: extent, workspace: workspace);
 			return this;

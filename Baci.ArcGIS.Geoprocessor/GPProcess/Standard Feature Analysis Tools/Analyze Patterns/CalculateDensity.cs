@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputlayer, Outputname, Field, Cellsize, Cellsizeunits, Radius, Radiusunits, Boundingpolygonlayer, Areaunits, Classificationtype, Numclasses, Outputlayer };
+		public override object[] Parameters => new object[] { Inputlayer, Outputname, Field!, Cellsize!, Cellsizeunits!, Radius!, Radiusunits!, Boundingpolygonlayer!, Areaunits!, Classificationtype!, Numclasses!, Outputlayer! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object Field { get; set; }
+		public object? Field { get; set; }
 
 		/// <summary>
 		/// <para>Cell Size</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Additional Options")]
-		public object Cellsize { get; set; }
+		public object? Cellsize { get; set; }
 
 		/// <summary>
 		/// <para>Cell Size Units</para>
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Additional Options")]
-		public object Cellsizeunits { get; set; }
+		public object? Cellsizeunits { get; set; }
 
 		/// <summary>
 		/// <para>Radius</para>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Additional Options")]
-		public object Radius { get; set; }
+		public object? Radius { get; set; }
 
 		/// <summary>
 		/// <para>Radius Units</para>
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Additional Options")]
-		public object Radiusunits { get; set; }
+		public object? Radiusunits { get; set; }
 
 		/// <summary>
 		/// <para>Bounding Polygons</para>
@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
 		[Category("Additional Options")]
-		public object Boundingpolygonlayer { get; set; }
+		public object? Boundingpolygonlayer { get; set; }
 
 		/// <summary>
 		/// <para>Area Units</para>
@@ -163,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Additional Options")]
-		public object Areaunits { get; set; } = "SQUAREMILES";
+		public object? Areaunits { get; set; } = "SQUAREMILES";
 
 		/// <summary>
 		/// <para>Classification Type</para>
@@ -179,7 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Additional Options")]
-		public object Classificationtype { get; set; } = "EQUALINTERVAL";
+		public object? Classificationtype { get; set; } = "EQUALINTERVAL";
 
 		/// <summary>
 		/// <para>Number of Classes</para>
@@ -190,19 +190,19 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Additional Options")]
-		public object Numclasses { get; set; } = "10";
+		public object? Numclasses { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Output Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Outputlayer { get; set; }
+		public object? Outputlayer { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateDensity SetEnviroment(object extent = null )
+		public CalculateDensity SetEnviroment(object? extent = null )
 		{
 			base.SetEnv(extent: extent);
 			return this;

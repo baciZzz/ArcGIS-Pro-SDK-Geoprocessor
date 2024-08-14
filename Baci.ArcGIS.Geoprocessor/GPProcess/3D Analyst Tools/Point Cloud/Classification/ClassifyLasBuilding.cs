@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, MinHeight, MinArea, ComputeStats, Extent, Boundary, ProcessEntireFiles, DerivedLasDataset, PointSpacing, ReuseBuilding, PhotogrammetricData, Method, ClassifyAboveRoof, AboveRoofHeight, AboveRoofCode, ClassifyBelowRoof, BelowRoofCode, UpdatePyramid };
+		public override object[] Parameters => new object[] { InLasDataset, MinHeight, MinArea, ComputeStats!, Extent!, Boundary!, ProcessEntireFiles!, DerivedLasDataset!, PointSpacing!, ReuseBuilding!, PhotogrammetricData!, Method!, ClassifyAboveRoof!, AboveRoofHeight!, AboveRoofCode!, ClassifyBelowRoof!, BelowRoofCode!, UpdatePyramid! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ComputeStats { get; set; } = "true";
+		public object? ComputeStats { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Processing Extent</para>
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
 		[Category("Processing Extent")]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Processing Boundary</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
 		[Category("Processing Extent")]
-		public object Boundary { get; set; }
+		public object? Boundary { get; set; }
 
 		/// <summary>
 		/// <para>Process entire LAS files that intersect extent</para>
@@ -147,14 +147,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Processing Extent")]
-		public object ProcessEntireFiles { get; set; } = "false";
+		public object? ProcessEntireFiles { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Derived LAS Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLasDatasetLayer()]
-		public object DerivedLasDataset { get; set; }
+		public object? DerivedLasDataset { get; set; }
 
 		/// <summary>
 		/// <para>Average Point Spacing</para>
@@ -162,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object PointSpacing { get; set; }
+		public object? PointSpacing { get; set; }
 
 		/// <summary>
 		/// <para>Reuse existing building classified points</para>
@@ -174,7 +174,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ReuseBuilding { get; set; } = "false";
+		public object? ReuseBuilding { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Is photogrammetric data</para>
@@ -186,7 +186,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object PhotogrammetricData { get; set; } = "false";
+		public object? PhotogrammetricData { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Classification Method</para>
@@ -199,7 +199,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "STANDARD";
+		public object? Method { get; set; } = "STANDARD";
 
 		/// <summary>
 		/// <para>Classify points above the roof</para>
@@ -212,7 +212,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Above-Roof Classification")]
-		public object ClassifyAboveRoof { get; set; } = "false";
+		public object? ClassifyAboveRoof { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Maximum Height Above Roof</para>
@@ -222,7 +222,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPLinearUnit()]
 		[GPNumericDomain()]
 		[Category("Above-Roof Classification")]
-		public object AboveRoofHeight { get; set; }
+		public object? AboveRoofHeight { get; set; }
 
 		/// <summary>
 		/// <para>Above Roof Class Code</para>
@@ -232,7 +232,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPLong()]
 		[GPNumericDomain()]
 		[Category("Above-Roof Classification")]
-		public object AboveRoofCode { get; set; }
+		public object? AboveRoofCode { get; set; }
 
 		/// <summary>
 		/// <para>Classify points below the roof</para>
@@ -245,7 +245,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Below-Roof Classification")]
-		public object ClassifyBelowRoof { get; set; } = "false";
+		public object? ClassifyBelowRoof { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Below Roof Class Code</para>
@@ -255,7 +255,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPLong()]
 		[GPNumericDomain()]
 		[Category("Below-Roof Classification")]
-		public object BelowRoofCode { get; set; }
+		public object? BelowRoofCode { get; set; }
 
 		/// <summary>
 		/// <para>Update pyramid</para>
@@ -267,12 +267,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UpdatePyramid { get; set; } = "true";
+		public object? UpdatePyramid { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ClassifyLasBuilding SetEnviroment(object extent = null , object parallelProcessingFactor = null )
+		public ClassifyLasBuilding SetEnviroment(object? extent = null , object? parallelProcessingFactor = null )
 		{
 			base.SetEnv(extent: extent, parallelProcessingFactor: parallelProcessingFactor);
 			return this;

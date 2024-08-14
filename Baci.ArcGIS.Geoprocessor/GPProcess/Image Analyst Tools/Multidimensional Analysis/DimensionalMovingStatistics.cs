@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, Dimension!, BackwardWindow!, ForwardWindow!, NodataHandling!, StatisticsType!, PercentileValue!, PercentileInterpolationType!, CircularWrapValue!, RasterFunctionArgumentsJson };
+		public override object[] Parameters => new object[] { InRaster, OutRaster, Dimension!, BackwardWindow!, ForwardWindow!, NodataHandling!, StatisticsType!, PercentileValue!, PercentileInterpolationType!, CircularWrapValue!, RasterFunctionArgumentsJson! };
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>

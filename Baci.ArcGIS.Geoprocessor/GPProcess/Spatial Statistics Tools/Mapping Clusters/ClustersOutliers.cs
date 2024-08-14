@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, InputField, OutputFeatureClass, ConceptualizationOfSpatialRelationships, DistanceMethod, Standardization, DistanceBandOrThresholdDistance, WeightsMatrixFile, ApplyFalseDiscoveryRateFDRCorrection, IndexFieldName, ZscoreFieldName, ProbabilityField, ClusterOutlierType, SourceID, NumberOfPermutations, NumberOfNeighbors };
+		public override object[] Parameters => new object[] { InputFeatureClass, InputField, OutputFeatureClass, ConceptualizationOfSpatialRelationships, DistanceMethod, Standardization, DistanceBandOrThresholdDistance!, WeightsMatrixFile!, ApplyFalseDiscoveryRateFDRCorrection!, IndexFieldName!, ZscoreFieldName!, ProbabilityField!, ClusterOutlierType!, SourceID!, NumberOfPermutations!, NumberOfNeighbors! };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
@@ -178,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object DistanceBandOrThresholdDistance { get; set; }
+		public object? DistanceBandOrThresholdDistance { get; set; }
 
 		/// <summary>
 		/// <para>Weights Matrix File</para>
@@ -187,7 +187,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object WeightsMatrixFile { get; set; }
+		public object? WeightsMatrixFile { get; set; }
 
 		/// <summary>
 		/// <para>Apply False Discovery Rate (FDR) Correction</para>
@@ -199,42 +199,42 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ApplyFalseDiscoveryRateFDRCorrection { get; set; } = "false";
+		public object? ApplyFalseDiscoveryRateFDRCorrection { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Index Field Name</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[Field()]
-		public object IndexFieldName { get; set; } = "LMiIndex";
+		public object? IndexFieldName { get; set; } = "LMiIndex";
 
 		/// <summary>
 		/// <para>ZScore Field Name</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[Field()]
-		public object ZscoreFieldName { get; set; } = "LMiZScore";
+		public object? ZscoreFieldName { get; set; } = "LMiZScore";
 
 		/// <summary>
 		/// <para>Probability Field</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[Field()]
-		public object ProbabilityField { get; set; } = "LMiPValue";
+		public object? ProbabilityField { get; set; } = "LMiPValue";
 
 		/// <summary>
 		/// <para>Cluster Outlier Type</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[Field()]
-		public object ClusterOutlierType { get; set; } = "CO_Type";
+		public object? ClusterOutlierType { get; set; } = "CO_Type";
 
 		/// <summary>
 		/// <para>Source ID</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[Field()]
-		public object SourceID { get; set; } = "SOURCE_ID";
+		public object? SourceID { get; set; } = "SOURCE_ID";
 
 		/// <summary>
 		/// <para>Number of Permutations</para>
@@ -250,7 +250,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPCodedValueDomain()]
-		public object NumberOfPermutations { get; set; } = "499";
+		public object? NumberOfPermutations { get; set; } = "499";
 
 		/// <summary>
 		/// <para>Number of Neighbors</para>
@@ -259,12 +259,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object NumberOfNeighbors { get; set; }
+		public object? NumberOfNeighbors { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ClustersOutliers SetEnviroment(object MResolution = null , object MTolerance = null , object XYResolution = null , object XYTolerance = null , object ZResolution = null , object ZTolerance = null , object geographicTransformations = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , bool? qualifiedFieldNames = null , object randomGenerator = null , object scratchWorkspace = null , object workspace = null )
+		public ClustersOutliers SetEnviroment(double? MResolution = null , double? MTolerance = null , object? XYResolution = null , object? XYTolerance = null , object? ZResolution = null , object? ZTolerance = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , bool? qualifiedFieldNames = null , object? randomGenerator = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(MResolution: MResolution, MTolerance: MTolerance, XYResolution: XYResolution, XYTolerance: XYTolerance, ZResolution: ZResolution, ZTolerance: ZTolerance, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, qualifiedFieldNames: qualifiedFieldNames, randomGenerator: randomGenerator, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

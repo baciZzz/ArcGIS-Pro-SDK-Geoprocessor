@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabasepath, JobType, NumberOfJobs, AssignmentType, AssignTo, Priority, FeatureLayerLOI, Union, JobID };
+		public override object[] Parameters => new object[] { InputDatabasepath, JobType, NumberOfJobs, AssignmentType!, AssignTo!, Priority!, FeatureLayerLOI!, Union!, JobID! };
 
 		/// <summary>
 		/// <para>Input Database Path (.jtc)</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object AssignmentType { get; set; }
+		public object? AssignmentType { get; set; }
 
 		/// <summary>
 		/// <para>Assigned To</para>
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object AssignTo { get; set; }
+		public object? AssignTo { get; set; }
 
 		/// <summary>
 		/// <para>Priority</para>
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Priority { get; set; }
+		public object? Priority { get; set; }
 
 		/// <summary>
 		/// <para>LOI Extent</para>
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object FeatureLayerLOI { get; set; }
+		public object? FeatureLayerLOI { get; set; }
 
 		/// <summary>
 		/// <para>Merge features to create one LOI</para>
@@ -143,14 +143,14 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Union { get; set; }
+		public object? Union { get; set; }
 
 		/// <summary>
 		/// <para>Job ID</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object JobID { get; set; }
+		public object? JobID { get; set; }
 
 		#region InnerClass
 

@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputRasters, OutputWorkspace, RasterFormat, DerivedWorkspace };
+		public override object[] Parameters => new object[] { InputRasters, OutputWorkspace, RasterFormat!, DerivedWorkspace! };
 
 		/// <summary>
 		/// <para>Input Rasters</para>
@@ -104,19 +104,19 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object RasterFormat { get; set; } = "TIFF";
+		public object? RasterFormat { get; set; } = "TIFF";
 
 		/// <summary>
 		/// <para>Updated Output Workspace</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object DerivedWorkspace { get; set; }
+		public object? DerivedWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RasterToOtherFormat SetEnviroment(object XYDomain = null , object ZDomain = null , object ZResolution = null , object compression = null , object configKeyword = null , object extent = null , object nodata = null , object outputCoordinateSystem = null , object outputZFlag = null , object pyramid = null , object rasterStatistics = null , object resamplingMethod = null , object scratchWorkspace = null , double[] tileSize = null , object workspace = null )
+		public RasterToOtherFormat SetEnviroment(object? XYDomain = null , object? ZDomain = null , object? ZResolution = null , object? compression = null , object? configKeyword = null , object? extent = null , object? nodata = null , object? outputCoordinateSystem = null , object? outputZFlag = null , object? pyramid = null , object? rasterStatistics = null , object? resamplingMethod = null , object? scratchWorkspace = null , object? tileSize = null , object? workspace = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, ZDomain: ZDomain, ZResolution: ZResolution, compression: compression, configKeyword: configKeyword, extent: extent, nodata: nodata, outputCoordinateSystem: outputCoordinateSystem, outputZFlag: outputZFlag, pyramid: pyramid, rasterStatistics: rasterStatistics, resamplingMethod: resamplingMethod, scratchWorkspace: scratchWorkspace, tileSize: tileSize, workspace: workspace);
 			return this;

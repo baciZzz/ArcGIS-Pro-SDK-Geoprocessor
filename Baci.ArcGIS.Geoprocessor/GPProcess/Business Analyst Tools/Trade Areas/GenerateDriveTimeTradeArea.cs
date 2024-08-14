@@ -65,12 +65,12 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "baNetworkSource", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "baDataSource", "baNetworkSource", "geographicTransformations", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, DistanceType, Distances, Units, IdField, DissolveOption, RemoveOverlap, TravelDirection, TimeOfDay, TimeZone, SearchTolerance, PolygonDetail, InputMethod, Expression };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, DistanceType, Distances!, Units!, IdField!, DissolveOption!, RemoveOverlap!, TravelDirection!, TimeOfDay!, TimeZone!, SearchTolerance!, PolygonDetail!, InputMethod!, Expression! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPNumericDomain()]
-		public object Distances { get; set; }
+		public object? Distances { get; set; }
 
 		/// <summary>
 		/// <para>Distance Units</para>
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Units { get; set; }
+		public object? Units { get; set; }
 
 		/// <summary>
 		/// <para>ID Field</para>
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object IdField { get; set; }
+		public object? IdField { get; set; }
 
 		/// <summary>
 		/// <para>Dissolve Option</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DissolveOption { get; set; } = "OVERLAP";
+		public object? DissolveOption { get; set; } = "OVERLAP";
 
 		/// <summary>
 		/// <para>Remove Overlap</para>
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object RemoveOverlap { get; set; } = "false";
+		public object? RemoveOverlap { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Travel Direction</para>
@@ -159,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Network Parameters")]
-		public object TravelDirection { get; set; } = "TOWARD_STORES";
+		public object? TravelDirection { get; set; } = "TOWARD_STORES";
 
 		/// <summary>
 		/// <para>Time of Day</para>
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Network Parameters")]
-		public object TimeOfDay { get; set; }
+		public object? TimeOfDay { get; set; }
 
 		/// <summary>
 		/// <para>Time Zone</para>
@@ -181,7 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Network Parameters")]
-		public object TimeZone { get; set; } = "TIME_ZONE_AT_LOCATION";
+		public object? TimeZone { get; set; } = "TIME_ZONE_AT_LOCATION";
 
 		/// <summary>
 		/// <para>Search Tolerance</para>
@@ -191,7 +191,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Network Parameters")]
-		public object SearchTolerance { get; set; }
+		public object? SearchTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Polygon Detail</para>
@@ -205,7 +205,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Network Parameters")]
-		public object PolygonDetail { get; set; } = "STANDARD";
+		public object? PolygonDetail { get; set; } = "STANDARD";
 
 		/// <summary>
 		/// <para>Input Method</para>
@@ -217,7 +217,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object InputMethod { get; set; } = "VALUES";
+		public object? InputMethod { get; set; } = "VALUES";
 
 		/// <summary>
 		/// <para>Distance Expression</para>
@@ -225,14 +225,14 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object Expression { get; set; }
+		public object? Expression { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateDriveTimeTradeArea SetEnviroment(object workspace = null )
+		public GenerateDriveTimeTradeArea SetEnviroment(object? baDataSource = null , object? baNetworkSource = null , object? geographicTransformations = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, baNetworkSource: baNetworkSource, geographicTransformations: geographicTransformations, workspace: workspace);
 			return this;
 		}
 

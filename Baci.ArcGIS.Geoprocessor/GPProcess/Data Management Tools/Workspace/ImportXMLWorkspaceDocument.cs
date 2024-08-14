@@ -24,7 +24,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </param>
 		/// <param name="InFile">
 		/// <para>Import File</para>
-		/// <para>The input XML workspace document file containing geodatabase contents to be imported. This can be an XML file (.xml) or a compressed ZIP file (.zip or .z) containing the XML file.</para>
+		/// <para>The input XML workspace document file containing geodatabase contents to be imported. The file can be an .xml file or a compressed .zip or .z file containing the .xml file.</para>
 		/// </param>
 		public ImportXMLWorkspaceDocument(object TargetGeodatabase, object InFile)
 		{
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetGeodatabase, InFile, ImportType, ConfigKeyword, OutGeodatabase };
+		public override object[] Parameters => new object[] { TargetGeodatabase, InFile, ImportType!, ConfigKeyword!, OutGeodatabase! };
 
 		/// <summary>
 		/// <para>Target Geodatabase</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Import File</para>
-		/// <para>The input XML workspace document file containing geodatabase contents to be imported. This can be an XML file (.xml) or a compressed ZIP file (.zip or .z) containing the XML file.</para>
+		/// <para>The input XML workspace document file containing geodatabase contents to be imported. The file can be an .xml file or a compressed .zip or .z file containing the .xml file.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -87,36 +87,36 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Import Options</para>
-		/// <para>Determines if both data (feature class and table records, including geometry) and schema are imported, or only schema is imported.</para>
-		/// <para>Import data and schema—Import the data and schema. This is the default.</para>
-		/// <para>Import schema only—Import the schema only.</para>
+		/// <para>Specifies whether both data (feature class and table records, including geometry) and schema will be imported, or only the schema will be imported.</para>
+		/// <para>Import data and schema—Data and schema will be imported. This is the default.</para>
+		/// <para>Import schema only—Only the schema will be imported.</para>
 		/// <para><see cref="ImportTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ImportType { get; set; } = "DATA";
+		public object? ImportType { get; set; } = "DATA";
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
-		/// <para>Geodatabase configuration keyword to be applied if the Target Geodatabase is an enterprise or file geodatabase.</para>
+		/// <para>The geodatabase configuration keyword to be applied if the Target Geodatabase parameter value is an enterprise or file geodatabase.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ConfigKeyword { get; set; }
+		public object? ConfigKeyword { get; set; }
 
 		/// <summary>
 		/// <para>Updated Target Geodatabase</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutGeodatabase { get; set; }
+		public object? OutGeodatabase { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportXMLWorkspaceDocument SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public ImportXMLWorkspaceDocument SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -130,14 +130,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ImportTypeEnum 
 		{
 			/// <summary>
-			/// <para>Import data and schema—Import the data and schema. This is the default.</para>
+			/// <para>Import data and schema—Data and schema will be imported. This is the default.</para>
 			/// </summary>
 			[GPValue("DATA")]
 			[Description("Import data and schema")]
 			Import_data_and_schema,
 
 			/// <summary>
-			/// <para>Import schema only—Import the schema only.</para>
+			/// <para>Import schema only—Only the schema will be imported.</para>
 			/// </summary>
 			[GPValue("SCHEMA_ONLY")]
 			[Description("Import schema only")]

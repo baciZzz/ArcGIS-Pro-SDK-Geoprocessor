@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayer, OutSlpk, Attributes, SpatialReference, PointSizeM, XyMaxErrorM, ZMaxErrorM, TransformMethod, InCoordinateSystem, SceneLayerVersion };
+		public override object[] Parameters => new object[] { InLayer, OutSlpk, Attributes!, SpatialReference!, PointSizeM!, XyMaxErrorM!, ZMaxErrorM!, TransformMethod!, InCoordinateSystem!, SceneLayerVersion! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Attributes { get; set; }
+		public object? Attributes { get; set; }
 
 		/// <summary>
 		/// <para>Output Coordinate System</para>
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
-		public object SpatialReference { get; set; } = "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]];-400 -400 1000000000;-100000 10000;-100000 10000;8.98315284119521E-09;0.001;0.001;IsHighPrecision";
+		public object? SpatialReference { get; set; } = "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]];-400 -400 1000000000;-100000 10000;-100000 10000;8.98315284119521E-09;0.001;0.001;IsHighPrecision";
 
 		/// <summary>
 		/// <para>Point Size (m)</para>
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Point Cloud Parameters")]
-		public object PointSizeM { get; set; } = "0";
+		public object? PointSizeM { get; set; } = "0";
 
 		/// <summary>
 		/// <para>XY Max Error_(m)</para>
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Point Cloud Parameters")]
-		public object XyMaxErrorM { get; set; } = "0.01";
+		public object? XyMaxErrorM { get; set; } = "0.01";
 
 		/// <summary>
 		/// <para>Z Max Error (m)</para>
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Point Cloud Parameters")]
-		public object ZMaxErrorM { get; set; } = "0.01";
+		public object? ZMaxErrorM { get; set; } = "0.01";
 
 		/// <summary>
 		/// <para>Geographic Transformation</para>
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object TransformMethod { get; set; }
+		public object? TransformMethod { get; set; }
 
 		/// <summary>
 		/// <para>Input Coordinate System</para>
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
-		public object InCoordinateSystem { get; set; }
+		public object? InCoordinateSystem { get; set; }
 
 		/// <summary>
 		/// <para>Scene Layer Version</para>
@@ -166,12 +166,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SceneLayerVersion { get; set; } = "1.x";
+		public object? SceneLayerVersion { get; set; } = "1.x";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateSceneLayerPackage SetEnviroment(object workspace = null )
+		public CreateSceneLayerPackage SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

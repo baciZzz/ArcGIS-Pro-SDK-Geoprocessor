@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { GeographyLevel, SegmentationBase, OutFeatureClass, InputType, TargetGroup, Target, Segments, BoundaryLayer };
+		public override object[] Parameters => new object[] { GeographyLevel, SegmentationBase, OutFeatureClass, InputType, TargetGroup!, Target!, Segments!, BoundaryLayer! };
 
 		/// <summary>
 		/// <para>Geography Level</para>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object TargetGroup { get; set; }
+		public object? TargetGroup { get; set; }
 
 		/// <summary>
 		/// <para>Target</para>
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Target { get; set; }
+		public object? Target { get; set; }
 
 		/// <summary>
 		/// <para>Segments</para>
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object Segments { get; set; }
+		public object? Segments { get; set; }
 
 		/// <summary>
 		/// <para>Boundary Layer</para>
@@ -149,14 +149,14 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object BoundaryLayer { get; set; }
+		public object? BoundaryLayer { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateTargetPenetrationLayer SetEnviroment(object extent = null , object workspace = null )
+		public GenerateTargetPenetrationLayer SetEnviroment(object? baDataSource = null , object? extent = null , object? workspace = null )
 		{
-			base.SetEnv(extent: extent, workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, extent: extent, workspace: workspace);
 			return this;
 		}
 

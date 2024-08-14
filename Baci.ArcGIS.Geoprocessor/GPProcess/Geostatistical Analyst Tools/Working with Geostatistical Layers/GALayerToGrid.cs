@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeostatLayer, OutSurfaceGrid, CellSize, PointsPerBlockHorz, PointsPerBlockVert };
+		public override object[] Parameters => new object[] { InGeostatLayer, OutSurfaceGrid, CellSize!, PointsPerBlockHorz!, PointsPerBlockVert! };
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>
@@ -92,30 +92,30 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
 		[GPSAGeoDataDomain()]
-		public object CellSize { get; set; }
+		public object? CellSize { get; set; }
 
 		/// <summary>
 		/// <para>Number of points in the cell (horizontal)</para>
-		/// <para>The number of predictions for each cell in the horizontal direction for block interpolation.</para>
+		/// <para>The number of predictions for each cell in the horizontal direction for block interpolation. The default is 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object PointsPerBlockHorz { get; set; } = "1";
+		public object? PointsPerBlockHorz { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Number of points in the cell (vertical)</para>
-		/// <para>The number of predictions for each cell in the vertical direction for block interpolation.</para>
+		/// <para>The number of predictions for each cell in the vertical direction for block interpolation. The default is 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object PointsPerBlockVert { get; set; } = "1";
+		public object? PointsPerBlockVert { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GALayerToGrid SetEnviroment(object cellSize = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object snapRaster = null , object workspace = null )
+		public GALayerToGrid SetEnviroment(object? cellSize = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? snapRaster = null , object? workspace = null )
 		{
 			base.SetEnv(cellSize: cellSize, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, workspace: workspace);
 			return this;

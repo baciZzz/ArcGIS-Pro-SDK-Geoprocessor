@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InBaseTable, InTestTable, SortField, CompareType, IgnoreOptions, AttributeTolerances, OmitField, ContinueCompare, OutCompareFile, CompareStatus };
+		public override object[] Parameters => new object[] { InBaseTable, InTestTable, SortField, CompareType!, IgnoreOptions!, AttributeTolerances!, OmitField!, ContinueCompare!, OutCompareFile!, CompareStatus! };
 
 		/// <summary>
 		/// <para>Input Base Table</para>
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object CompareType { get; set; } = "ALL";
+		public object? CompareType { get; set; } = "ALL";
 
 		/// <summary>
 		/// <para>Ignore Options</para>
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object IgnoreOptions { get; set; }
+		public object? IgnoreOptions { get; set; }
 
 		/// <summary>
 		/// <para>Attribute Tolerance</para>
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object AttributeTolerances { get; set; }
+		public object? AttributeTolerances { get; set; }
 
 		/// <summary>
 		/// <para>Omit Fields</para>
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object OmitField { get; set; }
+		public object? OmitField { get; set; }
 
 		/// <summary>
 		/// <para>Continue Comparison</para>
@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ContinueCompare { get; set; } = "false";
+		public object? ContinueCompare { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Compare File</para>
@@ -158,7 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
-		public object OutCompareFile { get; set; }
+		public object? OutCompareFile { get; set; }
 
 		/// <summary>
 		/// <para>Compare Status</para>
@@ -167,12 +167,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CompareStatus { get; set; } = "true";
+		public object? CompareStatus { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TableCompare SetEnviroment(object workspace = null )
+		public TableCompare SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

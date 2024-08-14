@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, Level, InData, IdField, NameField, FieldMap, AppendData, OutTerritorySolution };
+		public override object[] Parameters => new object[] { InTerritorySolution, Level, InData, IdField!, NameField!, FieldMap!, AppendData!, OutTerritorySolution! };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object IdField { get; set; }
+		public object? IdField { get; set; }
 
 		/// <summary>
 		/// <para>Name Field</para>
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object NameField { get; set; }
+		public object? NameField { get; set; }
 
 		/// <summary>
 		/// <para>Field Map</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object FieldMap { get; set; }
+		public object? FieldMap { get; set; }
 
 		/// <summary>
 		/// <para>Append Data</para>
@@ -137,19 +137,19 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AppendData { get; set; } = "false";
+		public object? AppendData { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Territory Solution</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPGroupLayer()]
-		public object OutTerritorySolution { get; set; }
+		public object? OutTerritorySolution { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LoadTerritoryRecords SetEnviroment(object workspace = null )
+		public LoadTerritoryRecords SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

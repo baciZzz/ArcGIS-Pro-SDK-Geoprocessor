@@ -36,7 +36,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </param>
 		/// <param name="Preference">
 		/// <para>Preference</para>
-		/// <para>The preference derived from the Preference Table parameter that will be used to process the airspace features at the chosen altitudes..</para>
+		/// <para>The preference derived from the Preference Table parameter that will be used to process the airspace features at the chosen altitudes.</para>
 		/// </param>
 		public GenerateAirspaceAreas(object InAirspaceFeatures, object TargetAirspaceAreaFeatures, object AoiFeatures, object PreferenceTable, object Preference)
 		{
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAirspaceFeatures, TargetAirspaceAreaFeatures, AoiFeatures, PreferenceTable, Preference, DerivedAirspacePartFeatures, VerticalLimitOverrideTable, UpdatedAirspaceAreaFeatures };
+		public override object[] Parameters => new object[] { InAirspaceFeatures, TargetAirspaceAreaFeatures, AoiFeatures, PreferenceTable, Preference, DerivedAirspacePartFeatures!, VerticalLimitOverrideTable!, UpdatedAirspaceAreaFeatures! };
 
 		/// <summary>
 		/// <para>Input Airspace Features</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 
 		/// <summary>
 		/// <para>Preference</para>
-		/// <para>The preference derived from the Preference Table parameter that will be used to process the airspace features at the chosen altitudes..</para>
+		/// <para>The preference derived from the Preference Table parameter that will be used to process the airspace features at the chosen altitudes.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object DerivedAirspacePartFeatures { get; set; }
+		public object? DerivedAirspacePartFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Vertical Limit Override Table</para>
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
-		public object VerticalLimitOverrideTable { get; set; }
+		public object? VerticalLimitOverrideTable { get; set; }
 
 		/// <summary>
 		/// <para>Updated Airspace Area Features</para>
@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
 		[GPCompositeDomain()]
-		public object UpdatedAirspaceAreaFeatures { get; set; }
+		public object? UpdatedAirspaceAreaFeatures { get; set; }
 
 	}
 }

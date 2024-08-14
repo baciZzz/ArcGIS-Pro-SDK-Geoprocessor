@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutputName, TrackFields, Method, BufferType, BufferField, BufferExpression, TimeSplit, SummaryFields, Output, DataStore, DistanceSplit, TimeBoundarySplit, TimeBoundaryReference, SplitExpression, SplitType };
+		public override object[] Parameters => new object[] { InputLayer, OutputName, TrackFields, Method, BufferType!, BufferField!, BufferExpression!, TimeSplit!, SummaryFields!, Output!, DataStore!, DistanceSplit!, TimeBoundarySplit!, TimeBoundaryReference!, SplitExpression!, SplitType! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object BufferType { get; set; }
+		public object? BufferType { get; set; }
 
 		/// <summary>
 		/// <para>Buffer Field</para>
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object BufferField { get; set; }
+		public object? BufferField { get; set; }
 
 		/// <summary>
 		/// <para>Buffer Expression</para>
@@ -146,18 +146,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCalculatorExpression()]
-		public object BufferExpression { get; set; }
+		public object? BufferExpression { get; set; }
 
 		/// <summary>
 		/// <para>Time Split</para>
 		/// <para>Features that are farther apart in time than the time-split duration will be split into separate tracks.</para>
-		/// <para><see cref="TimeSplitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
+		[GPUnitDomain()]
 		[Category("Track Split Options")]
-		public object TimeSplit { get; set; }
+		public object? TimeSplit { get; set; }
 
 		/// <summary>
 		/// <para>Summary Fields</para>
@@ -189,14 +188,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object SummaryFields { get; set; }
+		public object? SummaryFields { get; set; }
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Output { get; set; }
+		public object? Output { get; set; }
 
 		/// <summary>
 		/// <para>Data Store</para>
@@ -209,29 +208,27 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Data Store")]
-		public object DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
+		public object? DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
 
 		/// <summary>
 		/// <para>Distance Split</para>
 		/// <para>Features that are farther apart in distance than the distance split value will be split into separate tracks. This parameter is only available with ArcGIS Enterprise 10.6 and later.</para>
-		/// <para><see cref="DistanceSplitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
+		[GPUnitDomain()]
 		[Category("Track Split Options")]
-		public object DistanceSplit { get; set; }
+		public object? DistanceSplit { get; set; }
 
 		/// <summary>
 		/// <para>Time Boundary Split</para>
 		/// <para>A time span to split the input data into for analysis. A time boundary allows you to analyze values within a defined time span. For example, if you use a time boundary of 1 day, starting on January 1, 1980, tracks will be split at the beginning of every day. This parameter is only available with ArcGIS Enterprise 10.7 and later.</para>
-		/// <para><see cref="TimeBoundarySplitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
+		[GPUnitDomain()]
 		[Category("Track Split Options")]
-		public object TimeBoundarySplit { get; set; }
+		public object? TimeBoundarySplit { get; set; }
 
 		/// <summary>
 		/// <para>Time Boundary Reference</para>
@@ -240,7 +237,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Track Split Options")]
-		public object TimeBoundaryReference { get; set; }
+		public object? TimeBoundaryReference { get; set; }
 
 		/// <summary>
 		/// <para>Split Expression</para>
@@ -249,7 +246,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCalculatorExpression()]
 		[Category("Track Split Options")]
-		public object SplitExpression { get; set; }
+		public object? SplitExpression { get; set; }
 
 		/// <summary>
 		/// <para>Split Type</para>
@@ -263,12 +260,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Track Split Options")]
-		public object SplitType { get; set; } = "GAP";
+		public object? SplitType { get; set; } = "GAP";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ReconstructTracks SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public ReconstructTracks SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;
@@ -319,69 +316,6 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		}
 
 		/// <summary>
-		/// <para>Time Split</para>
-		/// </summary>
-		public enum TimeSplitEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Milliseconds")]
-			[Description("Milliseconds")]
-			Milliseconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Seconds")]
-			[Description("Seconds")]
-			Seconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Days")]
-			[Description("Days")]
-			Days,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Weeks")]
-			[Description("Weeks")]
-			Weeks,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Months")]
-			[Description("Months")]
-			Months,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Years")]
-			[Description("Years")]
-			Years,
-
-		}
-
-		/// <summary>
 		/// <para>Data Store</para>
 		/// </summary>
 		public enum DataStoreEnum 
@@ -399,118 +333,6 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 			[GPValue("RELATIONAL_DATA_STORE")]
 			[Description("Relational data store")]
 			Relational_data_store,
-
-		}
-
-		/// <summary>
-		/// <para>Distance Split</para>
-		/// </summary>
-		public enum DistanceSplitEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("NauticalMiles")]
-			[Description("NauticalMiles")]
-			NauticalMiles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-		}
-
-		/// <summary>
-		/// <para>Time Boundary Split</para>
-		/// </summary>
-		public enum TimeBoundarySplitEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Milliseconds")]
-			[Description("Milliseconds")]
-			Milliseconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Seconds")]
-			[Description("Seconds")]
-			Seconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Days")]
-			[Description("Days")]
-			Days,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Weeks")]
-			[Description("Weeks")]
-			Weeks,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Months")]
-			[Description("Months")]
-			Months,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Years")]
-			[Description("Years")]
-			Years,
 
 		}
 

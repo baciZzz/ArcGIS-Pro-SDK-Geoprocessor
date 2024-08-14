@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayout, AreaOfInterest, LookupTable, UpdatedLayout };
+		public override object[] Parameters => new object[] { InLayout, AreaOfInterest, LookupTable, UpdatedLayout! };
 
 		/// <summary>
 		/// <para>Input Layout</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLayout()]
-		public object UpdatedLayout { get; set; }
+		public object? UpdatedLayout { get; set; }
 
 	}
 }

@@ -61,12 +61,12 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
+		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputpointorlinefeatures, Outputname, Countfield, Searchdistance, Outputareaunits, Outputcellsize, Outputraster, Inbarriers };
+		public override object[] Parameters => new object[] { Inputpointorlinefeatures, Outputname, Countfield!, Searchdistance!, Outputareaunits!, Outputcellsize!, Outputraster!, Inbarriers! };
 
 		/// <summary>
 		/// <para>Input Point or Line Features</para>
@@ -93,19 +93,18 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object Countfield { get; set; }
+		public object? Countfield { get; set; }
 
 		/// <summary>
 		/// <para>Search Distance</para>
 		/// <para>The search distance and units for the distance. When calculating the density of a cell, all features within this distance will be used in the density calculation for that cell.</para>
 		/// <para>The units can be Kilometers, Meters, Miles, or Feet.</para>
 		/// <para>The default units are Meters.</para>
-		/// <para><see cref="SearchdistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object Searchdistance { get; set; }
+		[GPUnitDomain()]
+		public object? Searchdistance { get; set; }
 
 		/// <summary>
 		/// <para>Output Area Units</para>
@@ -119,26 +118,25 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Outputareaunits { get; set; }
+		public object? Outputareaunits { get; set; }
 
 		/// <summary>
 		/// <para>Output Cell Size</para>
 		/// <para>The cell size and units for the output raster.</para>
 		/// <para>The units can be Kilometers, Meters, Miles, or Feet.</para>
 		/// <para>The default units are Meters.</para>
-		/// <para><see cref="OutputcellsizeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object Outputcellsize { get; set; }
+		[GPUnitDomain()]
+		public object? Outputcellsize { get; set; }
 
 		/// <summary>
 		/// <para>Output Raster</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRasterLayer()]
-		public object Outputraster { get; set; }
+		public object? Outputraster { get; set; }
 
 		/// <summary>
 		/// <para>Input Barrier Features</para>
@@ -148,53 +146,18 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
-		public object Inbarriers { get; set; }
+		public object? Inbarriers { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateDensity SetEnviroment(object cellSize = null , object extent = null , object mask = null , object outputCoordinateSystem = null , object snapRaster = null )
+		public CalculateDensity SetEnviroment(object? cellSize = null , object? extent = null , object? mask = null , object? outputCoordinateSystem = null , object? pyramid = null , object? snapRaster = null )
 		{
-			base.SetEnv(cellSize: cellSize, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, snapRaster: snapRaster);
+			base.SetEnv(cellSize: cellSize, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, pyramid: pyramid, snapRaster: snapRaster);
 			return this;
 		}
 
 		#region InnerClass
-
-		/// <summary>
-		/// <para>Search Distance</para>
-		/// </summary>
-		public enum SearchdistanceEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-		}
 
 		/// <summary>
 		/// <para>Output Area Units</para>
@@ -228,41 +191,6 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 			[GPValue("Square Miles")]
 			[Description("Square Miles")]
 			Square_Miles,
-
-		}
-
-		/// <summary>
-		/// <para>Output Cell Size</para>
-		/// </summary>
-		public enum OutputcellsizeEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
 
 		}
 

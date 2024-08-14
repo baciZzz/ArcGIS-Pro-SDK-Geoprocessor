@@ -28,15 +28,22 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </param>
 		/// <param name="Product">
 		/// <para>Product</para>
-		/// <para>The list of supported map products.</para>
+		/// <para>Specifies the supported map product that will be used.</para>
+		/// <para>MTM50—An MGCP Topographic Map at 1:50,000 cartographic product scale will be used.</para>
+		/// <para>MTM100—A MGCP Topographic Map at 1:100,000 cartographic product scale will be used.</para>
+		/// <para>TM25—A Topographic Map at 1:25,000 cartographic product scale will be used.</para>
+		/// <para>TM50—A Topographic Map at 1:50,000 cartographic product scale will be used.</para>
+		/// <para>TM100—A Topographic Map at 1:100,000 cartographic product scale will be used.</para>
+		/// <para>JOGA—A Joint Operations Graphic at 1:250,000 cartographic product scale will be used.</para>
+		/// <para>CTM50—A Civilian Topographic map at 1:50,000 cartographic product scale will be used.</para>
 		/// </param>
 		/// <param name="Version">
 		/// <para>Version</para>
-		/// <para>The list of supported versions for the selected product.</para>
+		/// <para>The supported versions of the selected product.</para>
 		/// </param>
 		/// <param name="OutputLocation">
 		/// <para>Output Location</para>
-		/// <para>The full folder path to which the output .pagx file will be written.</para>
+		/// <para>The folder path to which the output .pagx file will be written.</para>
 		/// </param>
 		public GenerateProductLayout(object Geodatabase, object AoiLayer, object Product, object Version, object OutputLocation)
 		{
@@ -80,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Geodatabase, AoiLayer, Product, Version, OutputLocation, Rasters, Template, OutTemplate };
+		public override object[] Parameters => new object[] { Geodatabase, AoiLayer, Product, Version, OutputLocation, Rasters!, Template!, OutTemplate!, OutputType!, ExportFile! };
 
 		/// <summary>
 		/// <para>Input Geodatabase</para>
@@ -101,7 +108,14 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 
 		/// <summary>
 		/// <para>Product</para>
-		/// <para>The list of supported map products.</para>
+		/// <para>Specifies the supported map product that will be used.</para>
+		/// <para>MTM50—An MGCP Topographic Map at 1:50,000 cartographic product scale will be used.</para>
+		/// <para>MTM100—A MGCP Topographic Map at 1:100,000 cartographic product scale will be used.</para>
+		/// <para>TM25—A Topographic Map at 1:25,000 cartographic product scale will be used.</para>
+		/// <para>TM50—A Topographic Map at 1:50,000 cartographic product scale will be used.</para>
+		/// <para>TM100—A Topographic Map at 1:100,000 cartographic product scale will be used.</para>
+		/// <para>JOGA—A Joint Operations Graphic at 1:250,000 cartographic product scale will be used.</para>
+		/// <para>CTM50—A Civilian Topographic map at 1:50,000 cartographic product scale will be used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -110,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 
 		/// <summary>
 		/// <para>Version</para>
-		/// <para>The list of supported versions for the selected product.</para>
+		/// <para>The supported versions of the selected product.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -119,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 
 		/// <summary>
 		/// <para>Output Location</para>
-		/// <para>The full folder path to which the output .pagx file will be written.</para>
+		/// <para>The folder path to which the output .pagx file will be written.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -127,11 +141,11 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 
 		/// <summary>
 		/// <para>Input Rasters</para>
-		/// <para>The input rasters used if the product requires an elevation guide surround element to calculate the elevation bands and spot height features. If you specify more than one raster, the rasters must have the same cell size, band number, and pixel type. If no raster is specified, the tool will not process the elevation guide data frame and will give a warning.</para>
+		/// <para>The input rasters used if the product requires an elevation guide surround element to calculate the elevation bands and spot height features. If you specify more than one raster, the rasters must have the same cell size, band number, and pixel type. If no raster is specified, the tool will not process the elevation guide data frame and a warning will appear.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Rasters { get; set; }
+		public object? Rasters { get; set; }
 
 		/// <summary>
 		/// <para>Layout Template</para>
@@ -139,14 +153,75 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLayout()]
-		public object Template { get; set; }
+		public object? Template { get; set; }
 
 		/// <summary>
-		/// <para>Layout Template</para>
+		/// <para>Output File</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
-		[GPLayout()]
-		public object OutTemplate { get; set; }
+		[GPComposite()]
+		public object? OutTemplate { get; set; }
 
+		/// <summary>
+		/// <para>Output Type</para>
+		/// <para>Specifies the type of output.</para>
+		/// <para>PAGX—A layout file will be created. This is the default.</para>
+		/// <para>APRX—An ArcGIS Pro project file will be created.</para>
+		/// <para>PDF—A .pdf file will be created.</para>
+		/// <para>TIFF—A .tiff file will be created.</para>
+		/// <para><see cref="OutputTypeEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		[GPCodedValueDomain()]
+		public object? OutputType { get; set; } = "PAGX";
+
+		/// <summary>
+		/// <para>Preset File</para>
+		/// <para>Defines a set of parameter values for the specified Output Type parameter value.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[DEFile()]
+		[GPFileDomain()]
+		public object? ExportFile { get; set; }
+
+		#region InnerClass
+
+		/// <summary>
+		/// <para>Output Type</para>
+		/// </summary>
+		public enum OutputTypeEnum 
+		{
+			/// <summary>
+			/// <para>PAGX—A layout file will be created. This is the default.</para>
+			/// </summary>
+			[GPValue("PAGX")]
+			[Description("PAGX")]
+			PAGX,
+
+			/// <summary>
+			/// <para>APRX—An ArcGIS Pro project file will be created.</para>
+			/// </summary>
+			[GPValue("APRX")]
+			[Description("APRX")]
+			APRX,
+
+			/// <summary>
+			/// <para>PDF—A .pdf file will be created.</para>
+			/// </summary>
+			[GPValue("PDF")]
+			[Description("PDF")]
+			PDF,
+
+			/// <summary>
+			/// <para>TIFF—A .tiff file will be created.</para>
+			/// </summary>
+			[GPValue("TIFF")]
+			[Description("TIFF")]
+			TIFF,
+
+		}
+
+#endregion
 	}
 }

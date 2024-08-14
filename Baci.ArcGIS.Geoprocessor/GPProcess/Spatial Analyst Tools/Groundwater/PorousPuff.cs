@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTrackFile, InPorosityRaster, InThicknessRaster, OutRaster, Mass, DispersionTime, LongitudinalDispersivity, DispersivityRatio, RetardationFactor, DecayCoefficient };
+		public override object[] Parameters => new object[] { InTrackFile, InPorosityRaster, InThicknessRaster, OutRaster, Mass, DispersionTime!, LongitudinalDispersivity!, DispersivityRatio!, RetardationFactor!, DecayCoefficient! };
 
 		/// <summary>
 		/// <para>Input particle track file</para>
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object DispersionTime { get; set; }
+		public object? DispersionTime { get; set; }
 
 		/// <summary>
 		/// <para>Longitudinal dispersivity</para>
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object LongitudinalDispersivity { get; set; }
+		public object? LongitudinalDispersivity { get; set; }
 
 		/// <summary>
 		/// <para>Dispersivity ratio</para>
@@ -162,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object DispersivityRatio { get; set; } = "3";
+		public object? DispersivityRatio { get; set; } = "3";
 
 		/// <summary>
 		/// <para>Retardation factor</para>
@@ -172,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object RetardationFactor { get; set; } = "1";
+		public object? RetardationFactor { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Decay coefficient</para>
@@ -182,14 +182,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object DecayCoefficient { get; set; } = "0";
+		public object? DecayCoefficient { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PorousPuff SetEnviroment(int? autoCommit = null , object cellSize = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public PorousPuff SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 

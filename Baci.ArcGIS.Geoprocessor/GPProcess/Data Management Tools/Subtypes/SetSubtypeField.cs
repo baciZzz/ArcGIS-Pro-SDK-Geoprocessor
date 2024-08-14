@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Set Subtype Field</para>
 	/// <para>Defines the field in the input table or feature class that stores the subtype codes.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class SetSubtypeField : AbstractGPProcess
 	{
 		/// <summary>
@@ -60,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Field, ClearValue, OutTable };
+		public override object[] Parameters => new object[] { InTable, Field!, ClearValue!, OutTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -77,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object Field { get; set; }
+		public object? Field { get; set; }
 
 		/// <summary>
 		/// <para>Clear Value</para>
@@ -89,19 +91,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ClearValue { get; set; } = "false";
+		public object? ClearValue { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Input Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetSubtypeField SetEnviroment(int? autoCommit = null , object workspace = null )
+		public SetSubtypeField SetEnviroment(int? autoCommit = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

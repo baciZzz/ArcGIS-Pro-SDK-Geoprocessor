@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { AreaOfInterest, OutFeatureClass, CellType!, EnrichType!, CellSize!, H3Resolution!, Variables!, DistanceType!, Distance!, Units!, OutEnrichedBuffers!, TravelDirection!, TimeOfDay!, TimeZone!, SearchTolerance!, PolygonDetail };
+		public override object[] Parameters => new object[] { AreaOfInterest, OutFeatureClass, CellType!, EnrichType!, CellSize!, H3Resolution!, Variables!, DistanceType!, Distance!, Units!, OutEnrichedBuffers!, TravelDirection!, TimeOfDay!, TimeZone!, SearchTolerance!, PolygonDetail! };
 
 		/// <summary>
 		/// <para>Area of Interest</para>

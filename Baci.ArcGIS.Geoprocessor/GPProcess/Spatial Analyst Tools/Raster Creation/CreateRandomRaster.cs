@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutRaster, SeedValue, CellSize, Extent };
+		public override object[] Parameters => new object[] { OutRaster, SeedValue!, CellSize!, Extent! };
 
 		/// <summary>
 		/// <para>Output raster</para>
@@ -76,12 +76,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <para>Seed value</para>
 		/// <para>A value to be used to reseed the random number generator.</para>
 		/// <para>This may be an integer or floating-point number. Rasters are not permitted as input.</para>
-		/// <para>The random number generator is automatically seeded with the current value of the system clock (seconds since January 1, 1970). The range of permissible values for the seed value is -231+1 to 231 (or -2,147,483,647 to 2,147,483,648).</para>
+		/// <para>The random number generator is automatically seeded with the current value of the system clock (seconds since January 1, 1970). The range of permissible values for the seed value is -231 + 1 to 231 (or -2,147,483,647 to 2,147,483,648).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object SeedValue { get; set; }
+		public object? SeedValue { get; set; }
 
 		/// <summary>
 		/// <para>Output cell size</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
 		[GPSAGeoDataDomain()]
-		public object CellSize { get; set; }
+		public object? CellSize { get; set; }
 
 		/// <summary>
 		/// <para>Output extent</para>
@@ -101,14 +101,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateRandomRaster SetEnviroment(int? autoCommit = null , object cellSize = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public CreateRandomRaster SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 

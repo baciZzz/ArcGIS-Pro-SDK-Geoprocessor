@@ -11,8 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Compute Tie Points</para>
-	/// <para>Computes the tie points between  overlapped mosaic dataset items.</para>
-	/// <para>The tie points can then be used to compute the block adjustments for the mosaic dataset.</para>
+	/// <para>Computes the tie points between overlapped mosaic dataset items. The tie points can then be used to compute the block adjustments for the mosaic dataset.</para>
 	/// </summary>
 	public class ComputeTiePoints : AbstractGPProcess
 	{
@@ -61,12 +60,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "gpuID", "parallelProcessingFactor", "processorType", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, OutControlPoints, Similarity, InMaskDataset, OutImageFeatures, Density, Distribution, LocationAccuracy, Options };
+		public override object[] Parameters => new object[] { InMosaicDataset, OutControlPoints, Similarity!, InMaskDataset!, OutImageFeatures!, Density!, Distribution!, LocationAccuracy!, Options! };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
@@ -95,16 +94,16 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Similarity { get; set; } = "MEDIUM";
+		public object? Similarity { get; set; } = "MEDIUM";
 
 		/// <summary>
 		/// <para>Input Mask</para>
-		/// <para>A polygon feature class used to exclude areas you do not want in the computation of control points.</para>
+		/// <para>A polygon feature class used to exclude areas that will not be included in the computation of control points.</para>
 		/// <para>A field with a name of mask can control the inclusion or exclusion of areas. A value of 1 indicates that the areas defined by the polygons (inside) will be excluded from the computation. A value of 2 indicates the defined polygons (inside) will be included in the computation while areas outside of the polygons will be excluded.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
-		public object InMaskDataset { get; set; }
+		public object? InMaskDataset { get; set; }
 
 		/// <summary>
 		/// <para>Output Image Features</para>
@@ -112,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object OutImageFeatures { get; set; }
+		public object? OutImageFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Point Density</para>
@@ -125,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Density { get; set; } = "MEDIUM";
+		public object? Density { get; set; } = "MEDIUM";
 
 		/// <summary>
 		/// <para>Point Distribution</para>
@@ -137,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Distribution { get; set; } = "RANDOM";
+		public object? Distribution { get; set; } = "RANDOM";
 
 		/// <summary>
 		/// <para>Image Location Accuracy</para>
@@ -150,22 +149,22 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LocationAccuracy { get; set; } = "MEDIUM";
+		public object? LocationAccuracy { get; set; } = "MEDIUM";
 
 		/// <summary>
 		/// <para>Additional Options</para>
-		/// <para>Specifies additional options for the adjustment engine. The options are used only by third-party adjustment engines.</para>
+		/// <para>Additional options for the adjustment engine. The options are only used by third-party adjustment engines.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object Options { get; set; }
+		public object? Options { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ComputeTiePoints SetEnviroment(object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public ComputeTiePoints SetEnviroment(object? parallelProcessingFactor = null , object? processorType = null , object? scratchWorkspace = null , object? workspace = null )
 		{
-			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
+			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, processorType: processorType, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
 		}
 

@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMdRaster, OutputCube, FillEmptyBins };
+		public override object[] Parameters => new object[] { InMdRaster, OutputCube, FillEmptyBins! };
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster Layer</para>
@@ -96,12 +96,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object FillEmptyBins { get; set; } = "ZEROS";
+		public object? FillEmptyBins { get; set; } = "ZEROS";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateSpaceTimeCubeMDRasterLayer SetEnviroment(object extent = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null )
+		public CreateSpaceTimeCubeMDRasterLayer SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor);
 			return this;

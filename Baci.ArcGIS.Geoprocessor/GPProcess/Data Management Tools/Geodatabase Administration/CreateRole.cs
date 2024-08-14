@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabase, Role, GrantRevoke, UserName, OutResult };
+		public override object[] Parameters => new object[] { InputDatabase, Role, GrantRevoke!, UserName!, OutResult! };
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object GrantRevoke { get; set; } = "GRANT";
+		public object? GrantRevoke { get; set; } = "GRANT";
 
 		/// <summary>
 		/// <para>User Name(s)</para>
@@ -102,19 +102,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object UserName { get; set; }
+		public object? UserName { get; set; }
 
 		/// <summary>
 		/// <para>Create Role Succeeded</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
-		public object OutResult { get; set; } = "false";
+		public object? OutResult { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateRole SetEnviroment(object workspace = null )
+		public CreateRole SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

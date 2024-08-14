@@ -28,7 +28,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </param>
 		/// <param name="SplitField">
 		/// <para>Split Field</para>
-		/// <para>The character field used to split the input features. This field's values identify the split features used to create each output feature class. The split field's unique values provide the output feature classes' names.</para>
+		/// <para>The character field used to split the input features. This field's values identify the split features used to create each output feature class. The split field's unique values provide the names of the output feature classes.</para>
 		/// </param>
 		/// <param name="OutWorkspace">
 		/// <para>Target Workspace</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, SplitFeatures, SplitField, OutWorkspace, ClusterTolerance, OutWorkspace2 };
+		public override object[] Parameters => new object[] { InFeatures, SplitFeatures, SplitField, OutWorkspace, ClusterTolerance!, OutWorkspace2! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Split Field</para>
-		/// <para>The character field used to split the input features. This field's values identify the split features used to create each output feature class. The split field's unique values provide the output feature classes' names.</para>
+		/// <para>The character field used to split the input features. This field's values identify the split features used to create each output feature class. The split field's unique values provide the names of the output feature classes.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -113,24 +113,24 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>XY Tolerance</para>
-		/// <para>The minimum distance separating all feature coordinates (nodes and vertices) as well as the distance a coordinate can move in X or Y (or both). Set the value to be higher for data that has less coordinate accuracy and lower for datasets with extremely high accuracy.</para>
-		/// <para>Changing this parameter&apos;s value may cause failure or unexpected results. It is recommended that this parameter not be modified. It has been removed from view in the tool dialog. By default, the input feature class&apos;s spatial reference x,y tolerance property is used.</para>
+		/// <para>The minimum distance separating all feature coordinates (nodes and vertices) as well as the distance a coordinate can move in x or y (or both). Set the value higher for data that has less coordinate accuracy and lower for datasets with extremely high accuracy.</para>
+		/// <para>Changing this parameter&apos;s value may cause failure or unexpected results. It is recommended that you do not modify this parameter. It has been removed from view on the tool dialog box. By default, the input feature class&apos;s spatial reference x,y tolerance property is used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object ClusterTolerance { get; set; }
+		public object? ClusterTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Updated Target Workspace</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutWorkspace2 { get; set; }
+		public object? OutWorkspace2 { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Split SetEnviroment(object MDomain = null , object MResolution = null , object MTolerance = null , object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , object configKeyword = null , object extent = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , object parallelProcessingFactor = null )
+		public Split SetEnviroment(object? MDomain = null , double? MResolution = null , double? MTolerance = null , object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , object? configKeyword = null , object? extent = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , object? parallelProcessingFactor = null )
 		{
 			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, configKeyword: configKeyword, extent: extent, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, parallelProcessingFactor: parallelProcessingFactor);
 			return this;

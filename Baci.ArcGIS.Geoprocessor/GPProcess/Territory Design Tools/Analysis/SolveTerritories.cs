@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Solve Territories</para>
-	/// <para>Creates and balances territories on the specified territory level provided that the balancing variables are set.</para>
+	/// <para>Solves the territory solution based on specified criteria such as attribute constraints or distance constraints.</para>
 	/// </summary>
 	public class SolveTerritories : AbstractGPProcess
 	{
@@ -28,7 +28,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// </param>
 		/// <param name="Method">
 		/// <para>Number of Territories Method</para>
-		/// <para>Specifies the method that will be used to calculate the number of territories.</para>
+		/// <para>Specifies the method that will be used when calculating the number of territories.</para>
 		/// <para>User Defined—The number of territories will be provided by the user. This is the default.</para>
 		/// <para>Optimal—The number of territories will be calculated automatically.</para>
 		/// <para><see cref="MethodEnum"/></para>
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, Level, Method, NumberTerritories, OutTerritorySolution, Quality };
+		public override object[] Parameters => new object[] { InTerritorySolution, Level, Method, NumberTerritories!, OutTerritorySolution!, Quality!, IterationsLimit!, Algorithm!, CandidateSolutions! };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 
 		/// <summary>
 		/// <para>Number of Territories Method</para>
-		/// <para>Specifies the method that will be used to calculate the number of territories.</para>
+		/// <para>Specifies the method that will be used when calculating the number of territories.</para>
 		/// <para>User Defined—The number of territories will be provided by the user. This is the default.</para>
 		/// <para>Optimal—The number of territories will be calculated automatically.</para>
 		/// <para><see cref="MethodEnum"/></para>
@@ -111,14 +111,14 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object NumberTerritories { get; set; }
+		public object? NumberTerritories { get; set; }
 
 		/// <summary>
 		/// <para>Updated Territory Solution</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPGroupLayer()]
-		public object OutTerritorySolution { get; set; }
+		public object? OutTerritorySolution { get; set; }
 
 		/// <summary>
 		/// <para>Quality (%)</para>
@@ -128,12 +128,45 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[GPLong()]
 		[GPNumericDomain()]
 		[Category("Advanced Options")]
-		public object Quality { get; set; }
+		public object? Quality { get; set; }
+
+		/// <summary>
+		/// <para>Iterations Limit</para>
+		/// <para>The number of times the territory search process will be repeated. For larger datasets, increasing the number is recommended to find an optimal solution. The default value is 50.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPLong()]
+		[GPNumericDomain()]
+		[Category("Advanced Options")]
+		public object? IterationsLimit { get; set; }
+
+		/// <summary>
+		/// <para>Algorithm</para>
+		/// <para>Specifies the algorithm that will be used to solve the territory solution.</para>
+		/// <para>Classic— The original algorithm will be used to solve the territory solution. This is the default.</para>
+		/// <para>Genetic— A newer and more modern algorithm based on genetic algorithm will be used to solve the territory solution.</para>
+		/// <para><see cref="AlgorithmEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		[GPCodedValueDomain()]
+		[Category("Advanced Options")]
+		public object? Algorithm { get; set; }
+
+		/// <summary>
+		/// <para>Number of Candidate Solutions</para>
+		/// <para>The number of possible solutions. For larger datasets, increasing this number will increase the search space and the probability of finding a better solution. The default is 10 and must be greater than 1. This parameter is only used when the Genetic algorithm is specified.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPLong()]
+		[GPNumericDomain()]
+		[Category("Advanced Options")]
+		public object? CandidateSolutions { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SolveTerritories SetEnviroment(object workspace = null )
+		public SolveTerritories SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -159,6 +192,27 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 			[GPValue("OPTIMAL")]
 			[Description("Optimal")]
 			Optimal,
+
+		}
+
+		/// <summary>
+		/// <para>Algorithm</para>
+		/// </summary>
+		public enum AlgorithmEnum 
+		{
+			/// <summary>
+			/// <para>Classic— The original algorithm will be used to solve the territory solution. This is the default.</para>
+			/// </summary>
+			[GPValue("CLASSIC")]
+			[Description("Classic")]
+			Classic,
+
+			/// <summary>
+			/// <para>Genetic— A newer and more modern algorithm based on genetic algorithm will be used to solve the territory solution.</para>
+			/// </summary>
+			[GPValue("GENETIC")]
+			[Description("Genetic")]
+			Genetic,
 
 		}
 

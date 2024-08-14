@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, Neighbors, DistanceMethod, MinimumDistance, AverageDistance, MaximumDistance };
+		public override object[] Parameters => new object[] { InputFeatures, Neighbors, DistanceMethod, MinimumDistance!, AverageDistance!, MaximumDistance! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -109,26 +109,26 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object MinimumDistance { get; set; }
+		public object? MinimumDistance { get; set; }
 
 		/// <summary>
 		/// <para>Average Distance</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object AverageDistance { get; set; }
+		public object? AverageDistance { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Distance</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object MaximumDistance { get; set; }
+		public object? MaximumDistance { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateDistanceBand SetEnviroment(object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public CalculateDistanceBand SetEnviroment(object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

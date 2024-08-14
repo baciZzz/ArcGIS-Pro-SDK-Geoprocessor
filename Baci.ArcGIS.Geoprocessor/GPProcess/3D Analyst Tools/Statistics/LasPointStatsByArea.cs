@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, InFeatures, OutProperty, OutputPolygons };
+		public override object[] Parameters => new object[] { InLasDataset, InFeatures, OutProperty!, OutputPolygons! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -97,19 +97,19 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object OutProperty { get; set; }
+		public object? OutProperty { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Polygons</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutputPolygons { get; set; }
+		public object? OutputPolygons { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LasPointStatsByArea SetEnviroment(object workspace = null )
+		public LasPointStatsByArea SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

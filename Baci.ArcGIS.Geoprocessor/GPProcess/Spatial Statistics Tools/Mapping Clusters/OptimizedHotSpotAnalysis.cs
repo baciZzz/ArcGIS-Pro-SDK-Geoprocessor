@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, OutputFeatures, AnalysisField, IncidentDataAggregationMethod, BoundingPolygonsDefiningWhereIncidentsArePossible, PolygonsForAggregatingIncidentsIntoCounts, DensitySurface, CellSize, DistanceBand };
+		public override object[] Parameters => new object[] { InputFeatures, OutputFeatures, AnalysisField!, IncidentDataAggregationMethod!, BoundingPolygonsDefiningWhereIncidentsArePossible!, PolygonsForAggregatingIncidentsIntoCounts!, DensitySurface!, CellSize!, DistanceBand! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object AnalysisField { get; set; }
+		public object? AnalysisField { get; set; }
 
 		/// <summary>
 		/// <para>Incident Data Aggregation Method</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object IncidentDataAggregationMethod { get; set; } = "COUNT_INCIDENTS_WITHIN_FISHNET_POLYGONS";
+		public object? IncidentDataAggregationMethod { get; set; } = "COUNT_INCIDENTS_WITHIN_FISHNET_POLYGONS";
 
 		/// <summary>
 		/// <para>Bounding Polygons Defining Where Incidents Are Possible</para>
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object BoundingPolygonsDefiningWhereIncidentsArePossible { get; set; }
+		public object? BoundingPolygonsDefiningWhereIncidentsArePossible { get; set; }
 
 		/// <summary>
 		/// <para>Polygons For Aggregating Incidents Into Counts</para>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object PolygonsForAggregatingIncidentsIntoCounts { get; set; }
+		public object? PolygonsForAggregatingIncidentsIntoCounts { get; set; }
 
 		/// <summary>
 		/// <para>Density Surface</para>
@@ -131,34 +131,32 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
-		public object DensitySurface { get; set; }
+		public object? DensitySurface { get; set; }
 
 		/// <summary>
 		/// <para>Cell Size</para>
 		/// <para>The size of the grid cells used to aggregate the Input Features. When aggregating into a hexagon grid, this distance is used as the height to construct the hexagon polygons.</para>
-		/// <para><see cref="CellSizeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
+		[GPUnitDomain()]
 		[Category("Override Settings")]
-		public object CellSize { get; set; }
+		public object? CellSize { get; set; }
 
 		/// <summary>
 		/// <para>Distance Band</para>
 		/// <para>The spatial extent of the analysis neighborhood. This value determines which features are analyzed together in order to assess local clustering.</para>
-		/// <para><see cref="DistanceBandEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
+		[GPUnitDomain()]
 		[Category("Override Settings")]
-		public object DistanceBand { get; set; }
+		public object? DistanceBand { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public OptimizedHotSpotAnalysis SetEnviroment(object MResolution = null , object MTolerance = null , object XYResolution = null , object XYTolerance = null , object ZResolution = null , object ZTolerance = null , object geographicTransformations = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , bool? qualifiedFieldNames = null , object scratchWorkspace = null , object workspace = null )
+		public OptimizedHotSpotAnalysis SetEnviroment(double? MResolution = null , double? MTolerance = null , object? XYResolution = null , object? XYTolerance = null , object? ZResolution = null , object? ZTolerance = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , bool? qualifiedFieldNames = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(MResolution: MResolution, MTolerance: MTolerance, XYResolution: XYResolution, XYTolerance: XYTolerance, ZResolution: ZResolution, ZTolerance: ZTolerance, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -198,76 +196,6 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 			[GPValue("SNAP_NEARBY_INCIDENTS_TO_CREATE_WEIGHTED_POINTS")]
 			[Description("Snap nearby incidents to create weighted points")]
 			Snap_nearby_incidents_to_create_weighted_points,
-
-		}
-
-		/// <summary>
-		/// <para>Cell Size</para>
-		/// </summary>
-		public enum CellSizeEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-		}
-
-		/// <summary>
-		/// <para>Distance Band</para>
-		/// </summary>
-		public enum DistanceBandEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
 
 		}
 

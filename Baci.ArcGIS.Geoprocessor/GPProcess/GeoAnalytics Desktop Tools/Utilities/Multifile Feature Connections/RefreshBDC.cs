@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { BdcFile, VisibleGeometry!, VisibleTime!, UpdatedBdc };
+		public override object[] Parameters => new object[] { BdcFile, VisibleGeometry!, VisibleTime!, UpdatedBdc! };
 
 		/// <summary>
 		/// <para>Multifile Feature Connection File</para>

@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ConflictFeatures, OutFeatureClass, ConflictDistance, LineConnectionAllowance };
+		public override object[] Parameters => new object[] { InFeatures, ConflictFeatures, OutFeatureClass, ConflictDistance!, LineConnectionAllowance! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object ConflictDistance { get; set; } = "0 Points";
+		public object? ConflictDistance { get; set; } = "0 Points";
 
 		/// <summary>
 		/// <para>Line Connection Allowance</para>
@@ -110,12 +110,12 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object LineConnectionAllowance { get; set; } = "1 Points";
+		public object? LineConnectionAllowance { get; set; } = "1 Points";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DetectGraphicConflict SetEnviroment(object cartographicCoordinateSystem = null , object cartographicPartitions = null , object referenceScale = null )
+		public DetectGraphicConflict SetEnviroment(object? cartographicCoordinateSystem = null , object? cartographicPartitions = null , double? referenceScale = null )
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem, cartographicPartitions: cartographicPartitions, referenceScale: referenceScale);
 			return this;

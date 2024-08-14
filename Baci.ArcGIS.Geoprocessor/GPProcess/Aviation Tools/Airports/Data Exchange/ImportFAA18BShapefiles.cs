@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, AirportsWorkspace, OutWorkspace };
+		public override object[] Parameters => new object[] { InFeatures, AirportsWorkspace, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Shapefiles</para>
@@ -88,12 +88,12 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutWorkspace { get; set; }
+		public object? OutWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportFAA18BShapefiles SetEnviroment(object workspace = null )
+		public ImportFAA18BShapefiles SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

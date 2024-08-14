@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayer, MatchValues, InStyle, OutLayer };
+		public override object[] Parameters => new object[] { InLayer, MatchValues, InStyle, OutLayer! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutLayer { get; set; }
+		public object? OutLayer { get; set; }
 
 	}
 }

@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, Method, ReuseGround, DemResolution, ComputeStats, Extent, Boundary, ProcessEntireFiles, OutLasDataset, UpdatePyramid };
+		public override object[] Parameters => new object[] { InLasDataset, Method!, ReuseGround!, DemResolution!, ComputeStats!, Extent!, Boundary!, ProcessEntireFiles!, OutLasDataset!, UpdatePyramid! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "STANDARD";
+		public object? Method { get; set; } = "STANDARD";
 
 		/// <summary>
 		/// <para>Reuse existing ground</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ReuseGround { get; set; } = "false";
+		public object? ReuseGround { get; set; } = "false";
 
 		/// <summary>
 		/// <para>DEM Resolution</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object DemResolution { get; set; }
+		public object? DemResolution { get; set; }
 
 		/// <summary>
 		/// <para>Compute statistics</para>
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ComputeStats { get; set; } = "true";
+		public object? ComputeStats { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Processing Extent</para>
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
 		[Category("Processing Extent")]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Processing Boundary</para>
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
 		[Category("Processing Extent")]
-		public object Boundary { get; set; }
+		public object? Boundary { get; set; }
 
 		/// <summary>
 		/// <para>Process entire LAS files that intersect extent</para>
@@ -153,14 +153,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Processing Extent")]
-		public object ProcessEntireFiles { get; set; } = "false";
+		public object? ProcessEntireFiles { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output LAS Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLasDatasetLayer()]
-		public object OutLasDataset { get; set; }
+		public object? OutLasDataset { get; set; }
 
 		/// <summary>
 		/// <para>Update pyramid</para>
@@ -172,12 +172,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UpdatePyramid { get; set; } = "true";
+		public object? UpdatePyramid { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ClassifyLasGround SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public ClassifyLasGround SetEnviroment(object? extent = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ServiceName, AoiServiceName, Server, OutServiceDraftLocation, InputDatabasePath, ServerFolder, Description, OutputWorkflowServiceDraftPath, OutputMapServiceDraftPath };
+		public override object[] Parameters => new object[] { ServiceName, AoiServiceName, Server, OutServiceDraftLocation, InputDatabasePath!, ServerFolder!, Description!, OutputWorkflowServiceDraftPath!, OutputMapServiceDraftPath!, Overwrite! };
 
 		/// <summary>
 		/// <para>Service Name</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object InputDatabasePath { get; set; }
+		public object? InputDatabasePath { get; set; }
 
 		/// <summary>
 		/// <para>Server Folder</para>
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ServerFolder { get; set; }
+		public object? ServerFolder { get; set; }
 
 		/// <summary>
 		/// <para>Description</para>
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Description { get; set; }
+		public object? Description { get; set; }
 
 		/// <summary>
 		/// <para>Output Workflow Service Path (*.sddraft)</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object OutputWorkflowServiceDraftPath { get; set; }
+		public object? OutputWorkflowServiceDraftPath { get; set; }
 
 		/// <summary>
 		/// <para>Output Map Service Path (*.sddraft)</para>
@@ -151,7 +151,44 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object OutputMapServiceDraftPath { get; set; }
+		public object? OutputMapServiceDraftPath { get; set; }
 
+		/// <summary>
+		/// <para>Overwrite Existing Service</para>
+		/// <para>Specifies whether the Service Name and AOI Service Name services will be overwritten.</para>
+		/// <para>Checked—The services will be overwritten.</para>
+		/// <para>Unchecked—The services will not be overwritten. This is the default.</para>
+		/// <para>If the Service Name, AOI Service Name, and Server Folder doesn&apos;t match the existing service names and location, new services will be published.</para>
+		/// <para><see cref="OverwriteEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		public object? Overwrite { get; set; } = "false";
+
+		#region InnerClass
+
+		/// <summary>
+		/// <para>Overwrite Existing Service</para>
+		/// </summary>
+		public enum OverwriteEnum 
+		{
+			/// <summary>
+			/// <para>Checked—The services will be overwritten.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("OVERWRITE")]
+			OVERWRITE,
+
+			/// <summary>
+			/// <para>Unchecked—The services will not be overwritten. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("NO_OVERWRITE")]
+			NO_OVERWRITE,
+
+		}
+
+#endregion
 	}
 }

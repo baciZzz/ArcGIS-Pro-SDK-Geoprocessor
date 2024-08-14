@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InValues, Value };
+		public override object[] Parameters => new object[] { InValues, Value! };
 
 		/// <summary>
 		/// <para>Input Values</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPType()]
-		public object Value { get; set; }
+		public object? Value { get; set; }
 
 	}
 }

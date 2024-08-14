@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTransitFeatureDataset, AnalysisType, OutFeatureClass, TimeWindows, SeparateCountsByLine!, InPointsOfInterest!, NetworkDataSource!, TravelMode!, TravelLimit!, TravelLimitUnits!, CellSize!, Barriers };
+		public override object[] Parameters => new object[] { InTransitFeatureDataset, AnalysisType, OutFeatureClass, TimeWindows, SeparateCountsByLine!, InPointsOfInterest!, NetworkDataSource!, TravelMode!, TravelLimit!, TravelLimitUnits!, CellSize!, Barriers! };
 
 		/// <summary>
 		/// <para>Input Transit Feature Dataset</para>

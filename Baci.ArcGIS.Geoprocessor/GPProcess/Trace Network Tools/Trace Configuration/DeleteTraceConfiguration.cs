@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTraceNetwork, TraceConfigName, UpdatedTraceNetwork };
+		public override object[] Parameters => new object[] { InTraceNetwork, TraceConfigName, UpdatedTraceNetwork! };
 
 		/// <summary>
 		/// <para>Input Trace Network</para>
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETraceNetwork()]
-		public object UpdatedTraceNetwork { get; set; }
+		public object? UpdatedTraceNetwork { get; set; }
 
 	}
 }

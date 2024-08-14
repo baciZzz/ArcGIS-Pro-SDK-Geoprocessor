@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, CalibrationRule, CalibrationOffset, OutFeatureClass };
+		public override object[] Parameters => new object[] { InFeatureClass, CalibrationRule!, CalibrationOffset!, OutFeatureClass!, UpdateMeasureCartorealign! };
 
 		/// <summary>
 		/// <para>LRS Network Feature Class</para>
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object CalibrationRule { get; set; } = "AS_IS";
+		public object? CalibrationRule { get; set; } = "AS_IS";
 
 		/// <summary>
 		/// <para>Calibration Offset</para>
@@ -91,19 +91,32 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object CalibrationOffset { get; set; }
+		public object? CalibrationOffset { get; set; }
 
 		/// <summary>
 		/// <para>Output Network Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
+
+		/// <summary>
+		/// <para>Update route measures in cartographic realignment</para>
+		/// <para>Specifies whether or not to recalibrate route measures based on length changes in cartographic realignment.</para>
+		/// <para>As is—The existing defined method in the network will be used. This is the default.</para>
+		/// <para>Enable—Enable recalibration of route measures based on length changes in cartographic realignment.</para>
+		/// <para>Disable—Disable recalibration of route measures based on length changes in cartographic realignment.</para>
+		/// <para><see cref="UpdateMeasureCartorealignEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		[GPCodedValueDomain()]
+		public object? UpdateMeasureCartorealign { get; set; } = "AS_IS";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ModifyNetworkCalibrationRules SetEnviroment(object workspace = null )
+		public ModifyNetworkCalibrationRules SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -143,6 +156,34 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 			[GPValue("ADDING_INCREMENT")]
 			[Description("Adding Increment")]
 			Adding_Increment,
+
+		}
+
+		/// <summary>
+		/// <para>Update route measures in cartographic realignment</para>
+		/// </summary>
+		public enum UpdateMeasureCartorealignEnum 
+		{
+			/// <summary>
+			/// <para>As is—The existing defined method in the network will be used. This is the default.</para>
+			/// </summary>
+			[GPValue("AS_IS")]
+			[Description("As is")]
+			As_is,
+
+			/// <summary>
+			/// <para>Enable—Enable recalibration of route measures based on length changes in cartographic realignment.</para>
+			/// </summary>
+			[GPValue("ENABLE")]
+			[Description("Enable")]
+			Enable,
+
+			/// <summary>
+			/// <para>Disable—Disable recalibration of route measures based on length changes in cartographic realignment.</para>
+			/// </summary>
+			[GPValue("DISABLE")]
+			[Description("Disable")]
+			Disable,
 
 		}
 

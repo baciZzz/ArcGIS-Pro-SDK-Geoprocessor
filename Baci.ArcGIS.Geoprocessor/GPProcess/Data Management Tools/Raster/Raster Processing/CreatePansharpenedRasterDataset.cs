@@ -20,25 +20,25 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>The raster dataset that you want to pan sharpen.</para>
+		/// <para>The raster dataset that will be pan sharpened.</para>
 		/// </param>
 		/// <param name="RedChannel">
 		/// <para>Red Channel</para>
-		/// <para>The input raster band that you want to display with the red color channel.</para>
+		/// <para>The input raster band that will display with the red color channel.</para>
 		/// </param>
 		/// <param name="GreenChannel">
 		/// <para>Green Channel</para>
-		/// <para>The input raster band that you want to display with the green color channel.</para>
+		/// <para>The input raster band that will display with the green color channel.</para>
 		/// </param>
 		/// <param name="BlueChannel">
 		/// <para>Blue Channel</para>
-		/// <para>The input raster band that you want to display with the blue color channel.</para>
+		/// <para>The input raster band that will display with the blue color channel.</para>
 		/// </param>
 		/// <param name="OutRasterDataset">
 		/// <para>Output Raster Dataset</para>
-		/// <para>The name, location, and format for the dataset you are creating.</para>
-		/// <para>When storing the raster dataset in a file format, you need to specify the file extension:</para>
-		/// <para>When storing a raster dataset in a geodatabase, no file extension should be added to the name of the raster dataset. When storing the raster dataset in a file format, you need to specify the file extension:</para>
+		/// <para>The name, location, and format of the raster dataset that will be created.</para>
+		/// <para>When storing the raster dataset in a file format, specify the file extension as follows:</para>
+		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset. When storing the raster dataset in a file format, you must specify the file extension:</para>
 		/// <para>.bil for Esri BIL</para>
 		/// <para>.bip for Esri BIP</para>
 		/// <para>.bmp for BMP</para>
@@ -54,7 +54,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>.crf for CRF</para>
 		/// <para>No extension for Esri Grid</para>
 		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset.</para>
-		/// <para>When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a Compression Type and Compression Quality in the geoprocessing Environments.</para>
+		/// <para>When storing a raster dataset to a JPEG format file, a JPEG 2000 format file, a TIFF format file, or a geodatabase, you can specify Compression Type and Compression Quality values in the geoprocessing environments.</para>
 		/// </param>
 		/// <param name="InPanchromaticImage">
 		/// <para>Panchromatic Image</para>
@@ -62,12 +62,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </param>
 		/// <param name="PansharpeningType">
 		/// <para>Pan-sharpening Type</para>
-		/// <para>The algorithm to fuse the panchromatic and multispectral bands together.</para>
-		/// <para>IHS—Uses Intensity, Hue, and Saturation color space for data fusion.</para>
-		/// <para>Brovey—Uses the Brovey algorithm based on spectral modeling for data fusion.</para>
-		/// <para>Esri—Uses the Esri algorithm based on spectral modeling for data fusion.</para>
-		/// <para>Simple mean—Uses the averaged value between the red, green, and blue values and the panchromatic pixel value.</para>
-		/// <para>Gram-Schmidt—Uses the Gram-Schmidt spectral-sharpening algorithm to sharpen multispectral data.</para>
+		/// <para>Specifies the algorithm that will be used to combine the panchromatic and multispectral bands.</para>
+		/// <para>IHS—Intensity, Hue, and Saturation color space will be used.</para>
+		/// <para>Brovey—The Brovey algorithm based on spectral modeling will be used.</para>
+		/// <para>Esri—The Esri algorithm based on spectral modeling will be used.</para>
+		/// <para>Simple mean—The averaged value between the red, green, and blue values and the panchromatic pixel value will be used.</para>
+		/// <para>Gram-Schmidt—The Gram-Schmidt spectral-sharpening algorithm to sharpen multispectral data will be used.</para>
 		/// <para><see cref="PansharpeningTypeEnum"/></para>
 		/// </param>
 		public CreatePansharpenedRasterDataset(object InRaster, object RedChannel, object GreenChannel, object BlueChannel, object OutRasterDataset, object InPanchromaticImage, object PansharpeningType)
@@ -114,11 +114,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, RedChannel, GreenChannel, BlueChannel, InfraredChannel, OutRasterDataset, InPanchromaticImage, PansharpeningType, RedWeight, GreenWeight, BlueWeight, InfraredWeight, Sensor };
+		public override object[] Parameters => new object[] { InRaster, RedChannel, GreenChannel, BlueChannel, InfraredChannel!, OutRasterDataset, InPanchromaticImage, PansharpeningType, RedWeight!, GreenWeight!, BlueWeight!, InfraredWeight!, Sensor! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>The raster dataset that you want to pan sharpen.</para>
+		/// <para>The raster dataset that will be pan sharpened.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Red Channel</para>
-		/// <para>The input raster band that you want to display with the red color channel.</para>
+		/// <para>The input raster band that will display with the red color channel.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Green Channel</para>
-		/// <para>The input raster band that you want to display with the green color channel.</para>
+		/// <para>The input raster band that will display with the green color channel.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -144,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Blue Channel</para>
-		/// <para>The input raster band that you want to display with the blue color channel.</para>
+		/// <para>The input raster band that will display with the blue color channel.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -153,18 +153,18 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Infrared Channel</para>
-		/// <para>The input raster band that you want to display with the infrared color channel.</para>
+		/// <para>The input raster band that will display with the infrared color channel.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPCodedValueDomain()]
-		public object InfraredChannel { get; set; } = "1";
+		public object? InfraredChannel { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Output Raster Dataset</para>
-		/// <para>The name, location, and format for the dataset you are creating.</para>
-		/// <para>When storing the raster dataset in a file format, you need to specify the file extension:</para>
-		/// <para>When storing a raster dataset in a geodatabase, no file extension should be added to the name of the raster dataset. When storing the raster dataset in a file format, you need to specify the file extension:</para>
+		/// <para>The name, location, and format of the raster dataset that will be created.</para>
+		/// <para>When storing the raster dataset in a file format, specify the file extension as follows:</para>
+		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset. When storing the raster dataset in a file format, you must specify the file extension:</para>
 		/// <para>.bil for Esri BIL</para>
 		/// <para>.bip for Esri BIP</para>
 		/// <para>.bmp for BMP</para>
@@ -180,7 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>.crf for CRF</para>
 		/// <para>No extension for Esri Grid</para>
 		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset.</para>
-		/// <para>When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a Compression Type and Compression Quality in the geoprocessing Environments.</para>
+		/// <para>When storing a raster dataset to a JPEG format file, a JPEG 2000 format file, a TIFF format file, or a geodatabase, you can specify Compression Type and Compression Quality values in the geoprocessing environments.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -196,12 +196,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Pan-sharpening Type</para>
-		/// <para>The algorithm to fuse the panchromatic and multispectral bands together.</para>
-		/// <para>IHS—Uses Intensity, Hue, and Saturation color space for data fusion.</para>
-		/// <para>Brovey—Uses the Brovey algorithm based on spectral modeling for data fusion.</para>
-		/// <para>Esri—Uses the Esri algorithm based on spectral modeling for data fusion.</para>
-		/// <para>Simple mean—Uses the averaged value between the red, green, and blue values and the panchromatic pixel value.</para>
-		/// <para>Gram-Schmidt—Uses the Gram-Schmidt spectral-sharpening algorithm to sharpen multispectral data.</para>
+		/// <para>Specifies the algorithm that will be used to combine the panchromatic and multispectral bands.</para>
+		/// <para>IHS—Intensity, Hue, and Saturation color space will be used.</para>
+		/// <para>Brovey—The Brovey algorithm based on spectral modeling will be used.</para>
+		/// <para>Esri—The Esri algorithm based on spectral modeling will be used.</para>
+		/// <para>Simple mean—The averaged value between the red, green, and blue values and the panchromatic pixel value will be used.</para>
+		/// <para>Gram-Schmidt—The Gram-Schmidt spectral-sharpening algorithm to sharpen multispectral data will be used.</para>
 		/// <para><see cref="PansharpeningTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -211,39 +211,40 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Red Weight</para>
-		/// <para>A value from 0 to 1 to weight the red band.</para>
+		/// <para>A value from 0 to 1 that will be used to weight the red band.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object RedWeight { get; set; } = "0.166";
+		public object? RedWeight { get; set; } = "0.166";
 
 		/// <summary>
 		/// <para>Green Weight</para>
-		/// <para>A value from 0 to 1 to weight the green band.</para>
+		/// <para>A value from 0 to 1 that will be used to weight the green band.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object GreenWeight { get; set; } = "0.167";
+		public object? GreenWeight { get; set; } = "0.167";
 
 		/// <summary>
 		/// <para>Blue Weight</para>
-		/// <para>A value from 0 to 1 to weight the blue band.</para>
+		/// <para>A value from 0 to 1 that will be used to weight the blue band.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object BlueWeight { get; set; } = "0.167";
+		public object? BlueWeight { get; set; } = "0.167";
 
 		/// <summary>
 		/// <para>Infrared Weight</para>
-		/// <para>A value from 0 to 1 to weight the infrared band.</para>
+		/// <para>A value from 0 to 1 that will be used to weight the infrared band.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object InfraredWeight { get; set; } = "0.5";
+		public object? InfraredWeight { get; set; } = "0.5";
 
 		/// <summary>
 		/// <para>Sensor</para>
-		/// <para>When the Gram-Schmidt pan-sharpening method is chosen, you can also specify the sensor of the multiband raster input. Choosing the sensor type will set appropriate band weights.</para>
+		/// <para>Specifies the sensor of the multiband raster input.</para>
+		/// <para>You can specify the sensor when the Pan-sharpening Type parameter is set to Gram-Schmidt. Specifying the sensor will set appropriate band weights.</para>
 		/// <para>Unknown—An unknown or unlisted sensor</para>
 		/// <para>DubaiSat-2—The DubaiSat-2 satellite sensor</para>
 		/// <para>GeoEye-1—The GeoEye-1 and OrbView-3 satellite sensors</para>
@@ -256,12 +257,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Landsat 1-5 MSS—The Landsat MSS satellite sensors</para>
 		/// <para>Landsat 7 ETM+—The Landsat 7 satellite sensor</para>
 		/// <para>Landsat 8—The Landsat 8 satellite sensor</para>
-		/// <para>Pleiades-1—The Pleiades-1 satellite sensor</para>
+		/// <para>Landsat 9—The Landsat 9 satellite sensor</para>
+		/// <para>Pléiades-1—The Pléiades satellite sensor</para>
+		/// <para>Pléiades Neo—The Pléiades Neo satellite sensor</para>
 		/// <para>Quickbird—The QuickBird satellite sensor</para>
 		/// <para>SkySat-C—The SkySat-C satellite sensor</para>
 		/// <para>SPOT 5—The SPOT 5 satellite sensor</para>
 		/// <para>SPOT 6—The SPOT 6 satellite sensor</para>
 		/// <para>SPOT 7—The SPOT 7 satellite sensor</para>
+		/// <para>SuperView-1—The SuperView-1 satellite sensor</para>
 		/// <para>Tian Hui 1—The Tian Hui 1 satellite sensor</para>
 		/// <para>Ultracam—The UltraCam aerial sensor</para>
 		/// <para>WorldView-2—The WorldView-2 satellite sensor</para>
@@ -274,12 +278,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Sensor { get; set; } = "UNKNOWN";
+		public object? Sensor { get; set; } = "UNKNOWN";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreatePansharpenedRasterDataset SetEnviroment(object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object nodata = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object pyramid = null , object rasterStatistics = null , object resamplingMethod = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public CreatePansharpenedRasterDataset SetEnviroment(object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? nodata = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? pyramid = null , object? rasterStatistics = null , object? resamplingMethod = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
 			base.SetEnv(compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, nodata: nodata, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, rasterStatistics: rasterStatistics, resamplingMethod: resamplingMethod, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
@@ -293,35 +297,35 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum PansharpeningTypeEnum 
 		{
 			/// <summary>
-			/// <para>IHS—Uses Intensity, Hue, and Saturation color space for data fusion.</para>
+			/// <para>IHS—Intensity, Hue, and Saturation color space will be used.</para>
 			/// </summary>
 			[GPValue("IHS")]
 			[Description("IHS")]
 			IHS,
 
 			/// <summary>
-			/// <para>Brovey—Uses the Brovey algorithm based on spectral modeling for data fusion.</para>
+			/// <para>Brovey—The Brovey algorithm based on spectral modeling will be used.</para>
 			/// </summary>
 			[GPValue("BROVEY")]
 			[Description("Brovey")]
 			Brovey,
 
 			/// <summary>
-			/// <para>Esri—Uses the Esri algorithm based on spectral modeling for data fusion.</para>
+			/// <para>Esri—The Esri algorithm based on spectral modeling will be used.</para>
 			/// </summary>
 			[GPValue("Esri")]
 			[Description("Esri")]
 			Esri,
 
 			/// <summary>
-			/// <para>Simple mean—Uses the averaged value between the red, green, and blue values and the panchromatic pixel value.</para>
+			/// <para>Simple mean—The averaged value between the red, green, and blue values and the panchromatic pixel value will be used.</para>
 			/// </summary>
 			[GPValue("SIMPLE_MEAN")]
 			[Description("Simple mean")]
 			Simple_mean,
 
 			/// <summary>
-			/// <para>Gram-Schmidt—Uses the Gram-Schmidt spectral-sharpening algorithm to sharpen multispectral data.</para>
+			/// <para>Gram-Schmidt—The Gram-Schmidt spectral-sharpening algorithm to sharpen multispectral data will be used.</para>
 			/// </summary>
 			[GPValue("Gram-Schmidt")]
 			[Description("Gram-Schmidt")]

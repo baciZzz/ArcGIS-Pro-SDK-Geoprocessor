@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InSumFeatures, OutFeatureClass, DistanceType, Distances, DistanceUnits, TimeOfDay, TimeZone, KeepAllPolygons, SumFields, SumShape, ShapeUnit, GroupField, AddMinMaj, AddGroupPercent, OutputGroupedTable };
+		public override object[] Parameters => new object[] { InFeatures, InSumFeatures, OutFeatureClass, DistanceType, Distances, DistanceUnits, TimeOfDay!, TimeZone!, KeepAllPolygons!, SumFields!, SumShape!, ShapeUnit!, GroupField!, AddMinMaj!, AddGroupPercent!, OutputGroupedTable! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -186,7 +186,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object TimeOfDay { get; set; }
+		public object? TimeOfDay { get; set; }
 
 		/// <summary>
 		/// <para>Time Zone</para>
@@ -198,7 +198,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TimeZone { get; set; } = "GEOLOCAL";
+		public object? TimeZone { get; set; } = "GEOLOCAL";
 
 		/// <summary>
 		/// <para>Keep polygons with no points</para>
@@ -210,7 +210,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object KeepAllPolygons { get; set; } = "true";
+		public object? KeepAllPolygons { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Summary Fields</para>
@@ -226,7 +226,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object SumFields { get; set; }
+		public object? SumFields { get; set; }
 
 		/// <summary>
 		/// <para>Add shape summary  attributes</para>
@@ -238,7 +238,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SumShape { get; set; } = "true";
+		public object? SumShape { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Shape Unit</para>
@@ -260,7 +260,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ShapeUnit { get; set; }
+		public object? ShapeUnit { get; set; }
 
 		/// <summary>
 		/// <para>Group Field</para>
@@ -270,7 +270,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object GroupField { get; set; }
+		public object? GroupField { get; set; }
 
 		/// <summary>
 		/// <para>Add minority and majority attributes</para>
@@ -282,7 +282,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AddMinMaj { get; set; } = "false";
+		public object? AddMinMaj { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Add group percentages</para>
@@ -294,7 +294,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AddGroupPercent { get; set; } = "false";
+		public object? AddGroupPercent { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Grouped Table</para>
@@ -308,12 +308,12 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object OutputGroupedTable { get; set; }
+		public object? OutputGroupedTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SummarizeNearby SetEnviroment(object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object outputZFlag = null , object outputZValue = null , object scratchWorkspace = null , object workspace = null )
+		public SummarizeNearby SetEnviroment(object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? outputZFlag = null , double? outputZValue = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, outputZFlag: outputZFlag, outputZValue: outputZValue, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

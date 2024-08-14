@@ -20,11 +20,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InputTable">
 		/// <para>Input Table</para>
-		/// <para>The table to be converted to Microsoft Excel.</para>
+		/// <para>The table or tables to be converted to an Excel file.</para>
 		/// </param>
 		/// <param name="OutputExcelFile">
 		/// <para>Output Excel File (.xls or .xlsx)</para>
-		/// <para>The output Excel file. Specify the format of the Excel file using an .xls or .xlsx file extension.</para>
+		/// <para>The output Excel file. Specify the format of the Excel file using the .xls or .xlsx file extension.</para>
 		/// </param>
 		public TableToExcel(object InputTable, object OutputExcelFile)
 		{
@@ -65,19 +65,19 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputTable, OutputExcelFile, UseFieldAliasAsColumnHeader, UseDomainAndSubtypeDescription };
+		public override object[] Parameters => new object[] { InputTable, OutputExcelFile, UseFieldAliasAsColumnHeader!, UseDomainAndSubtypeDescription! };
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The table to be converted to Microsoft Excel.</para>
+		/// <para>The table or tables to be converted to an Excel file.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
-		[GPTableView()]
+		[GPMultiValue()]
 		public object InputTable { get; set; }
 
 		/// <summary>
 		/// <para>Output Excel File (.xls or .xlsx)</para>
-		/// <para>The output Excel file. Specify the format of the Excel file using an .xls or .xlsx file extension.</para>
+		/// <para>The output Excel file. Specify the format of the Excel file using the .xls or .xlsx file extension.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -86,19 +86,19 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Use field alias as column header</para>
-		/// <para>Specifies how column names in the output are determined.</para>
-		/// <para>Unchecked—Column headers will be set using the input&apos;s field names. This is the default.</para>
+		/// <para>Specifies whether input field names or field aliases will be used as the output column names.</para>
+		/// <para>Unchecked—Column headers will be set using the input field names. This is the default.</para>
 		/// <para>Checked—Column headers will be set using the input geodatabase table&apos;s field aliases. If the input is a layer in a map, the value set on the layer&apos;s field alias is ignored.</para>
 		/// <para><see cref="UseFieldAliasAsColumnHeaderEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UseFieldAliasAsColumnHeader { get; set; } = "false";
+		public object? UseFieldAliasAsColumnHeader { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Use domain and subtype description</para>
-		/// <para>Controls how values from subtype fields or fields with a coded value domain are transferred to the output.</para>
+		/// <para>Specifies whether values from subtype fields or fields with a coded value domain will be transferred to the output.</para>
 		/// <para>Unchecked—All field values will be used as they are stored in the table. This is the default.</para>
 		/// <para>Checked—For subtype fields, the subtype description will be used. For fields with a coded value domain, the coded value descriptions will be used.</para>
 		/// <para><see cref="UseDomainAndSubtypeDescriptionEnum"/></para>
@@ -106,14 +106,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UseDomainAndSubtypeDescription { get; set; } = "false";
+		public object? UseDomainAndSubtypeDescription { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TableToExcel SetEnviroment(object scratchWorkspace = null , bool? transferDomains = null , object workspace = null )
+		public TableToExcel SetEnviroment(object? scratchWorkspace = null , bool? transferDomains = null , bool? transferGDBAttributeProperties = null , object? workspace = null )
 		{
-			base.SetEnv(scratchWorkspace: scratchWorkspace, transferDomains: transferDomains, workspace: workspace);
+			base.SetEnv(scratchWorkspace: scratchWorkspace, transferDomains: transferDomains, transferGDBAttributeProperties: transferGDBAttributeProperties, workspace: workspace);
 			return this;
 		}
 
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 			ALIAS,
 
 			/// <summary>
-			/// <para>Unchecked—Column headers will be set using the input&apos;s field names. This is the default.</para>
+			/// <para>Unchecked—Column headers will be set using the input field names. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NAME")]

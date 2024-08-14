@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCustomersLayer, InSegmentationBase, OutProfile, InVolumeField };
+		public override object[] Parameters => new object[] { InCustomersLayer, InSegmentationBase, OutProfile, InVolumeField! };
 
 		/// <summary>
 		/// <para>Customer Layer</para>
@@ -105,14 +105,14 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object InVolumeField { get; set; }
+		public object? InVolumeField { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateCustomerProfile SetEnviroment(object workspace = null )
+		public GenerateCustomerProfile SetEnviroment(object? baDataSource = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, workspace: workspace);
 			return this;
 		}
 

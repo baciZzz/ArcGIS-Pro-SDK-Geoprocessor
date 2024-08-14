@@ -24,7 +24,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </param>
 		/// <param name="OutFlowDirectionRaster">
 		/// <para>Output flow direction raster</para>
-		/// <para>The output raster that shows the flow direction from each cell to its downslope neighbor(s) using D8, Multiple Flow Direction (MFD) or D-Infinity (DINF) methods.</para>
+		/// <para>The output raster that shows the flow direction from each cell to its downslope neighbors or neighbors using the D8, MFD, or DINF method.</para>
 		/// <para>This output is of integer type.</para>
 		/// </param>
 		public FlowDirection(object InSurfaceRaster, object OutFlowDirectionRaster)
@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurfaceRaster, OutFlowDirectionRaster, ForceFlow, OutDropRaster, FlowDirectionType };
+		public override object[] Parameters => new object[] { InSurfaceRaster, OutFlowDirectionRaster, ForceFlow!, OutDropRaster!, FlowDirectionType! };
 
 		/// <summary>
 		/// <para>Input surface raster</para>
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output flow direction raster</para>
-		/// <para>The output raster that shows the flow direction from each cell to its downslope neighbor(s) using D8, Multiple Flow Direction (MFD) or D-Infinity (DINF) methods.</para>
+		/// <para>The output raster that shows the flow direction from each cell to its downslope neighbors or neighbors using the D8, MFD, or DINF method.</para>
 		/// <para>This output is of integer type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Force all edge cells to flow outward</para>
-		/// <para>Specifies if edge cells will always flow outward or follow normal flow rules.</para>
+		/// <para>Specifies whether edge cells will always flow outward or follow normal flow rules.</para>
 		/// <para>Unchecked—If the maximum drop on the inside of an edge cell is greater than zero, the flow direction will be determined as usual; otherwise, the flow direction will be toward the edge. Cells that should flow from the edge of the surface raster inward will do so. This is the default.</para>
 		/// <para>Checked—All cells at the edge of the surface raster will flow outward from the surface raster.</para>
 		/// <para><see cref="ForceFlowEnum"/></para>
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ForceFlow { get; set; } = "false";
+		public object? ForceFlow { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output drop raster</para>
@@ -106,27 +106,27 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
-		public object OutDropRaster { get; set; }
+		public object? OutDropRaster { get; set; }
 
 		/// <summary>
 		/// <para>Flow direction type</para>
-		/// <para>Specifies the type of flow method to use while computing flow directions.</para>
-		/// <para>D8—Assign a flow direction based on the D8 flow method. This method assigns flow direction to the steepest downslope neighbor. This is the default.</para>
-		/// <para>MFD—Assign a flow direction based on the MFD flow method. This method assigns multiple flow directions towards all downslope neighbors.</para>
-		/// <para>DINF—Assign a flow direction based on the D-Infinity flow method using the steepest slope of a triangular facet.</para>
+		/// <para>Specifies the type of flow method that will be used when computing flow directions.</para>
+		/// <para>D8—Flow direction will be determined by the D8 method. This method assigns flow direction to the steepest downslope neighbor. This is the default.</para>
+		/// <para>MFD—Flow direction will be based on the MFD flow method. Flow direction will be partitioned across downslope neighbors according to an adaptive partition exponent.</para>
+		/// <para>DINF—Flow direction will be based on the DINF flow method. This method assigns flow direction to the steepest slope of a triangular facet.</para>
 		/// <para><see cref="FlowDirectionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object FlowDirectionType { get; set; } = "D8";
+		public object? FlowDirectionType { get; set; } = "D8";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FlowDirection SetEnviroment(int? autoCommit = null , object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public FlowDirection SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 
@@ -159,21 +159,21 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum FlowDirectionTypeEnum 
 		{
 			/// <summary>
-			/// <para>D8—Assign a flow direction based on the D8 flow method. This method assigns flow direction to the steepest downslope neighbor. This is the default.</para>
+			/// <para>D8—Flow direction will be determined by the D8 method. This method assigns flow direction to the steepest downslope neighbor. This is the default.</para>
 			/// </summary>
 			[GPValue("D8")]
 			[Description("D8")]
 			D8,
 
 			/// <summary>
-			/// <para>MFD—Assign a flow direction based on the MFD flow method. This method assigns multiple flow directions towards all downslope neighbors.</para>
+			/// <para>MFD—Flow direction will be based on the MFD flow method. Flow direction will be partitioned across downslope neighbors according to an adaptive partition exponent.</para>
 			/// </summary>
 			[GPValue("MFD")]
 			[Description("MFD")]
 			MFD,
 
 			/// <summary>
-			/// <para>DINF—Assign a flow direction based on the D-Infinity flow method using the steepest slope of a triangular facet.</para>
+			/// <para>DINF—Flow direction will be based on the DINF flow method. This method assigns flow direction to the steepest slope of a triangular facet.</para>
 			/// </summary>
 			[GPValue("DINF")]
 			[Description("DINF")]

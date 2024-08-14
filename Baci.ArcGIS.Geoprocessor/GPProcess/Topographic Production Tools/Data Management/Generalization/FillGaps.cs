@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 	/// <summary>
 	/// <para>Fill Gaps</para>
 	/// <para>Fills gaps between polygon features that participate in a topology where the coincident boundaries are evident.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class FillGaps : AbstractGPProcess
 	{
 		/// <summary>
@@ -65,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, MaxGapArea, FillOption, FillUnenclosedGaps, MaxGapDistance, UpdatedFeatures };
+		public override object[] Parameters => new object[] { InputFeatures, MaxGapArea, FillOption!, FillUnenclosedGaps!, MaxGapDistance!, UpdatedFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -94,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object FillOption { get; set; } = "FILL_BY_LENGTH";
+		public object? FillOption { get; set; } = "FILL_BY_LENGTH";
 
 		/// <summary>
 		/// <para>Fill Unenclosed Gaps</para>
@@ -106,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object FillUnenclosedGaps { get; set; } = "false";
+		public object? FillUnenclosedGaps { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Maximum Gap Distance</para>
@@ -114,19 +116,19 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object MaxGapDistance { get; set; }
+		public object? MaxGapDistance { get; set; }
 
 		/// <summary>
 		/// <para>Updated Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object UpdatedFeatures { get; set; }
+		public object? UpdatedFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FillGaps SetEnviroment(object scratchWorkspace = null )
+		public FillGaps SetEnviroment(object? scratchWorkspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace);
 			return this;

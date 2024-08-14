@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRadarData, OutRadarData, PolarizationBands!, FilterType!, FilterSize!, NoiseModel!, NoiseVariance!, AddNoiseMean!, MultNoiseMean!, NumberOfLooks!, DampFactor };
+		public override object[] Parameters => new object[] { InRadarData, OutRadarData, PolarizationBands!, FilterType!, FilterSize!, NoiseModel!, NoiseVariance!, AddNoiseMean!, MultNoiseMean!, NumberOfLooks!, DampFactor! };
 
 		/// <summary>
 		/// <para>Input Radar Data</para>

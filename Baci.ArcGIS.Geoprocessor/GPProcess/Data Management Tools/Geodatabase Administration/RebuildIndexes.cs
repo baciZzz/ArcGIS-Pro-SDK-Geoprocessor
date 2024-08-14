@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Rebuild Indexes</para>
 	/// <para>Rebuild existing attribute or spatial indexes in enterprise geodatabases.  Indexes  can also be rebuilt on  states and state_lineage geodatabase system tables and the delta tables of datasets that are registered to participate in traditional versioning. Out-of-date indexes can lead to poor query performance.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class RebuildIndexes : AbstractGPProcess
 	{
 		/// <summary>
@@ -70,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabase, IncludeSystem, InDatasets, DeltaOnly, OutWorkspace };
+		public override object[] Parameters => new object[] { InputDatabase, IncludeSystem, InDatasets!, DeltaOnly!, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
@@ -101,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object InDatasets { get; set; }
+		public object? InDatasets { get; set; }
 
 		/// <summary>
 		/// <para>Rebuild Delta Tables Only</para>
@@ -114,19 +116,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DeltaOnly { get; set; } = "true";
+		public object? DeltaOnly { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Updated Workspace</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutWorkspace { get; set; }
+		public object? OutWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RebuildIndexes SetEnviroment(object workspace = null )
+		public RebuildIndexes SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

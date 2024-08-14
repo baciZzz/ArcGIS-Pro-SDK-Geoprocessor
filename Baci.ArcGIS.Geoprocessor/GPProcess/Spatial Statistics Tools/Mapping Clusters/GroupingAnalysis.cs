@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, UniqueIDField, OutputFeatureClass, NumberOfGroups, AnalysisFields, SpatialConstraints, DistanceMethod, NumberOfNeighbors, WeightsMatrixFile, InitializationMethod, InitializationField, OutputReportFile, EvaluateOptimalNumberOfGroups, OutputFstat, MaxFstatGroup, MaxFstat };
+		public override object[] Parameters => new object[] { InputFeatures, UniqueIDField, OutputFeatureClass, NumberOfGroups, AnalysisFields, SpatialConstraints, DistanceMethod!, NumberOfNeighbors!, WeightsMatrixFile!, InitializationMethod!, InitializationField!, OutputReportFile!, EvaluateOptimalNumberOfGroups!, OutputFstat!, MaxFstatGroup!, MaxFstat! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -163,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DistanceMethod { get; set; } = "EUCLIDEAN";
+		public object? DistanceMethod { get; set; } = "EUCLIDEAN";
 
 		/// <summary>
 		/// <para>Number of Neighbors</para>
@@ -171,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object NumberOfNeighbors { get; set; } = "8";
+		public object? NumberOfNeighbors { get; set; } = "8";
 
 		/// <summary>
 		/// <para>Weights Matrix File</para>
@@ -180,7 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object WeightsMatrixFile { get; set; }
+		public object? WeightsMatrixFile { get; set; }
 
 		/// <summary>
 		/// <para>Initialization Method</para>
@@ -193,7 +193,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object InitializationMethod { get; set; } = "FIND_SEED_LOCATIONS";
+		public object? InitializationMethod { get; set; } = "FIND_SEED_LOCATIONS";
 
 		/// <summary>
 		/// <para>Initialization Field</para>
@@ -202,7 +202,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object InitializationField { get; set; }
+		public object? InitializationField { get; set; }
 
 		/// <summary>
 		/// <para>Output Report File</para>
@@ -211,7 +211,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object OutputReportFile { get; set; }
+		public object? OutputReportFile { get; set; }
 
 		/// <summary>
 		/// <para>Evaluate Optimal Number of Groups</para>
@@ -223,33 +223,33 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object EvaluateOptimalNumberOfGroups { get; set; } = "false";
+		public object? EvaluateOptimalNumberOfGroups { get; set; } = "false";
 
 		/// <summary>
-		/// <para>F Statistic</para>
+		/// <para>F-Statistic</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object OutputFstat { get; set; }
+		public object? OutputFstat { get; set; }
 
 		/// <summary>
-		/// <para>Maximum F Statistic Group</para>
+		/// <para>Maximum F-Statistic Group</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLong()]
-		public object MaxFstatGroup { get; set; }
+		public object? MaxFstatGroup { get; set; }
 
 		/// <summary>
-		/// <para>Maximum F Statistic</para>
+		/// <para>Maximum F-Statistic</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object MaxFstat { get; set; }
+		public object? MaxFstat { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GroupingAnalysis SetEnviroment(object MResolution = null , object MTolerance = null , object XYResolution = null , object XYTolerance = null , object ZResolution = null , object ZTolerance = null , object geographicTransformations = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , bool? qualifiedFieldNames = null , object randomGenerator = null , object scratchWorkspace = null , object workspace = null )
+		public GroupingAnalysis SetEnviroment(double? MResolution = null , double? MTolerance = null , object? XYResolution = null , object? XYTolerance = null , object? ZResolution = null , object? ZTolerance = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , bool? qualifiedFieldNames = null , object? randomGenerator = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(MResolution: MResolution, MTolerance: MTolerance, XYResolution: XYResolution, XYTolerance: XYTolerance, ZResolution: ZResolution, ZTolerance: ZTolerance, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, qualifiedFieldNames: qualifiedFieldNames, randomGenerator: randomGenerator, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

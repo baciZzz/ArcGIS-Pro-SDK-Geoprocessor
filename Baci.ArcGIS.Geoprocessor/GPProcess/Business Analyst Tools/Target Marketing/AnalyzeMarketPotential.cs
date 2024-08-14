@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetProfile, BaseProfile, GeographyLevel, OutFeatureClass, BoundaryLayer, CreateReport, ReportTitle, ReportFolder, ReportFormat, OutputReport };
+		public override object[] Parameters => new object[] { TargetProfile, BaseProfile, GeographyLevel, OutFeatureClass, BoundaryLayer!, CreateReport!, ReportTitle!, ReportFolder!, ReportFormat!, OutputReport! };
 
 		/// <summary>
 		/// <para>Target Profile</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object BoundaryLayer { get; set; }
+		public object? BoundaryLayer { get; set; }
 
 		/// <summary>
 		/// <para>Create Report</para>
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CreateReport { get; set; } = "false";
+		public object? CreateReport { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Report Title</para>
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Report Options")]
-		public object ReportTitle { get; set; }
+		public object? ReportTitle { get; set; }
 
 		/// <summary>
 		/// <para>Output Report Folder</para>
@@ -148,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
 		[Category("Report Options")]
-		public object ReportFolder { get; set; }
+		public object? ReportFolder { get; set; }
 
 		/// <summary>
 		/// <para>Report Output Formats</para>
@@ -157,21 +157,21 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[Category("Report Options")]
-		public object ReportFormat { get; set; }
+		public object? ReportFormat { get; set; }
 
 		/// <summary>
 		/// <para>Output Report</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutputReport { get; set; }
+		public object? OutputReport { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AnalyzeMarketPotential SetEnviroment(object extent = null , object workspace = null )
+		public AnalyzeMarketPotential SetEnviroment(object? baDataSource = null , object? extent = null , object? workspace = null )
 		{
-			base.SetEnv(extent: extent, workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, extent: extent, workspace: workspace);
 			return this;
 		}
 

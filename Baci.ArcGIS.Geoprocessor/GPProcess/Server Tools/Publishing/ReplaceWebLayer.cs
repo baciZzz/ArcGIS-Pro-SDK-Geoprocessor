@@ -29,7 +29,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </param>
 		/// <param name="ArchiveLayerName">
 		/// <para>Archive Layer Name</para>
-		/// <para>The web layer that is replaced remains in the portal as an archive layer. Provide a unique name for the archive layer.</para>
+		/// <para>A unique name for the archive layer. The web layer that is replaced remains in the portal as an archive layer.</para>
 		/// </param>
 		/// <param name="UpdateLayer">
 		/// <para>Update Layer</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetLayer, ArchiveLayerName, UpdateLayer, ReplaceItemInfo, UpdatedTargetLayer, CreateNewItem };
+		public override object[] Parameters => new object[] { TargetLayer, ArchiveLayerName, UpdateLayer, ReplaceItemInfo!, UpdatedTargetLayer!, CreateNewItem! };
 
 		/// <summary>
 		/// <para>Target Layer</para>
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Archive Layer Name</para>
-		/// <para>The web layer that is replaced remains in the portal as an archive layer. Provide a unique name for the archive layer.</para>
+		/// <para>A unique name for the archive layer. The web layer that is replaced remains in the portal as an archive layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -119,38 +119,38 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Replace Item Information</para>
 		/// <para>Specifies whether the thumbnail image, summary, description, and tags will be replaced. In either case, the item&apos;s credits (attribution), terms of use, and created from information are not replaced.</para>
-		/// <para>Unchecked—The target layer&apos;s item information is not replaced when the layer is updated. This is the default.</para>
-		/// <para>Checked—The target layer&apos;s item information is replaced by the update layer&apos;s item information.</para>
+		/// <para>Unchecked—The target layer&apos;s item information will not be replaced when the layer is updated. This is the default.</para>
+		/// <para>Checked—The target layer&apos;s item information will be replaced by the update layer&apos;s item information.</para>
 		/// <para><see cref="ReplaceItemInfoEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ReplaceItemInfo { get; set; } = "false";
+		public object? ReplaceItemInfo { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Target Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object UpdatedTargetLayer { get; set; }
+		public object? UpdatedTargetLayer { get; set; }
 
 		/// <summary>
 		/// <para>Create New Item For Archive Layer</para>
-		/// <para>Specifies whether a new item is created for the archive layer. This option is supported on portals in ArcGIS Online and ArcGIS Enterprise 10.8 or later.</para>
-		/// <para>Unchecked—The item ID of the update layer is used for the archive layer. This is the default for vector tile layers and tile layers.</para>
-		/// <para>Checked—A new item ID is created for the archive layer. This is the default for scene layers.</para>
+		/// <para>Specifies whether an item will be created for the archive layer. This option is supported on portals in ArcGIS Online and ArcGIS Enterprise 10.8 or later.</para>
+		/// <para>Unchecked—The item ID of the update layer will be used for the archive layer. This is the default for vector tile layers and tile layers.</para>
+		/// <para>Checked—An item ID will be created for the archive layer. This is the default for scene layers.</para>
 		/// <para><see cref="CreateNewItemEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CreateNewItem { get; set; } = "false";
+		public object? CreateNewItem { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ReplaceWebLayer SetEnviroment(object workspace = null )
+		public ReplaceWebLayer SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -164,14 +164,14 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		public enum ReplaceItemInfoEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The target layer&apos;s item information is replaced by the update layer&apos;s item information.</para>
+			/// <para>Checked—The target layer&apos;s item information will be replaced by the update layer&apos;s item information.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REPLACE")]
 			REPLACE,
 
 			/// <summary>
-			/// <para>Unchecked—The target layer&apos;s item information is not replaced when the layer is updated. This is the default.</para>
+			/// <para>Unchecked—The target layer&apos;s item information will not be replaced when the layer is updated. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("KEEP")]
@@ -185,14 +185,14 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		public enum CreateNewItemEnum 
 		{
 			/// <summary>
-			/// <para>Checked—A new item ID is created for the archive layer. This is the default for scene layers.</para>
+			/// <para>Checked—An item ID will be created for the archive layer. This is the default for scene layers.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("TRUE")]
 			TRUE,
 
 			/// <summary>
-			/// <para>Unchecked—The item ID of the update layer is used for the archive layer. This is the default for vector tile layers and tile layers.</para>
+			/// <para>Unchecked—The item ID of the update layer will be used for the archive layer. This is the default for vector tile layers and tile layers.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("FALSE")]

@@ -195,7 +195,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FeatureOutlineMasks SetEnviroment(object cartographicCoordinateSystem = null )
+		public FeatureOutlineMasks SetEnviroment(object? cartographicCoordinateSystem = null )
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem);
 			return this;

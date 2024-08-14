@@ -32,7 +32,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </param>
 		/// <param name="RouteIdField">
 		/// <para>Route ID Field</para>
-		/// <para>The route ID field if the feature class is a point event that doesn't spans routes or the from route ID field if the feature class is a line event that spans routes.</para>
+		/// <para>The route ID field if the feature class is a point event that doesn't span routes or the from route ID field if the feature class is a line event that spans routes.</para>
 		/// </param>
 		/// <param name="FromDateField">
 		/// <para>From Date Field</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ParentNetwork, InFeatureClass, EventIdField, RouteIdField, FromDateField, ToDateField, LocErrorField, MeasureField, ToMeasureField, EventSpansRoutes, ToRouteIdField, StoreRouteName, RouteNameField, ToRouteNameField, OutFeatureClass };
+		public override object[] Parameters => new object[] { ParentNetwork, InFeatureClass, EventIdField, RouteIdField, FromDateField, ToDateField, LocErrorField, MeasureField, ToMeasureField!, EventSpansRoutes!, ToRouteIdField!, StoreRouteName!, RouteNameField!, ToRouteNameField!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Parent LRS Network</para>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Route ID Field</para>
-		/// <para>The route ID field if the feature class is a point event that doesn't spans routes or the from route ID field if the feature class is a line event that spans routes.</para>
+		/// <para>The route ID field if the feature class is a point event that doesn't span routes or the from route ID field if the feature class is a line event that spans routes.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -176,7 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ToMeasureField { get; set; }
+		public object? ToMeasureField { get; set; }
 
 		/// <summary>
 		/// <para>Event Spans Routes</para>
@@ -188,7 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object EventSpansRoutes { get; set; } = "false";
+		public object? EventSpansRoutes { get; set; } = "false";
 
 		/// <summary>
 		/// <para>To Route ID Field</para>
@@ -197,7 +197,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ToRouteIdField { get; set; }
+		public object? ToRouteIdField { get; set; }
 
 		/// <summary>
 		/// <para>Store Route Name</para>
@@ -209,7 +209,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object StoreRouteName { get; set; } = "false";
+		public object? StoreRouteName { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Route Name Field</para>
@@ -218,7 +218,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object RouteNameField { get; set; }
+		public object? RouteNameField { get; set; }
 
 		/// <summary>
 		/// <para>To Route Name Field</para>
@@ -227,14 +227,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ToRouteNameField { get; set; }
+		public object? ToRouteNameField { get; set; }
 
 		/// <summary>
 		/// <para>Output Event Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		#region InnerClass
 
@@ -244,18 +244,18 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum EventSpansRoutesEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—The event records will not span routes. This is the default.</para>
-			/// </summary>
-			[GPValue("false")]
-			[Description("NO_SPANS_ROUTES")]
-			NO_SPANS_ROUTES,
-
-			/// <summary>
 			/// <para>Checked—The event records will span routes.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SPANS_ROUTES")]
 			SPANS_ROUTES,
+
+			/// <summary>
+			/// <para>Unchecked—The event records will not span routes. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("NO_SPANS_ROUTES")]
+			NO_SPANS_ROUTES,
 
 		}
 
@@ -265,18 +265,18 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum StoreRouteNameEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—The route name will not be stored with the event records. This is the default.</para>
-			/// </summary>
-			[GPValue("false")]
-			[Description("NO_STORE_ROUTE_NAME")]
-			NO_STORE_ROUTE_NAME,
-
-			/// <summary>
 			/// <para>Checked—The route name will be stored with the event records.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("STORE_ROUTE_NAME")]
 			STORE_ROUTE_NAME,
+
+			/// <summary>
+			/// <para>Unchecked—The route name will not be stored with the event records. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("NO_STORE_ROUTE_NAME")]
+			NO_STORE_ROUTE_NAME,
 
 		}
 

@@ -61,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputService, NumOfCachingServiceInstances, OutJobUrl };
+		public override object[] Parameters => new object[] { InputService, NumOfCachingServiceInstances!, OutJobUrl! };
 
 		/// <summary>
 		/// <para>Input Service</para>
@@ -78,14 +78,14 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object NumOfCachingServiceInstances { get; set; }
+		public object? NumOfCachingServiceInstances { get; set; }
 
 		/// <summary>
 		/// <para>Output Map Service URL</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutJobUrl { get; set; }
+		public object? OutJobUrl { get; set; }
 
 	}
 }

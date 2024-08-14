@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Find Cotravelers</para>
-	/// <para>Extracts unique identifiers that are moving through space and time at user-defined intervals in a point track dataset.</para>
+	/// <para>Extracts unique identifiers that are moving through space and time at specified intervals in a point track dataset.</para>
 	/// </summary>
 	public class FindCotravelers : AbstractGPProcess
 	{
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, OutFeatureclass, IdField, SearchDistance, TimeDifference, InputType, SecondaryFeatures, SecondaryIdField, CreateSummaryTable, OutSummaryTable, IncludeMinCotravelingDuration, MinCotravelingDuration };
+		public override object[] Parameters => new object[] { InputFeatures, OutFeatureclass, IdField, SearchDistance!, TimeDifference!, InputType!, SecondaryFeatures!, SecondaryIdField!, CreateSummaryTable!, OutSummaryTable!, IncludeMinCotravelingDuration!, MinCotravelingDuration! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -104,21 +104,20 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object SearchDistance { get; set; } = "100 Feet";
+		public object? SearchDistance { get; set; } = "100 Feet";
 
 		/// <summary>
 		/// <para>Time Difference</para>
 		/// <para>The maximum time difference that can separate features before they are considered not to be cotraveling features. The default is 10 seconds.</para>
-		/// <para><see cref="TimeDifferenceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
-		public object TimeDifference { get; set; } = "10 Seconds";
+		[GPUnitDomain()]
+		public object? TimeDifference { get; set; } = "10 Seconds";
 
 		/// <summary>
 		/// <para>Input Type</para>
-		/// <para>Specifies whether cotravelers will be identified in one feature class or between two.</para>
+		/// <para>Specifies whether cotravelers will be detected in one feature class or across two.</para>
 		/// <para>One Feature Class— Cotravelers will be detected in one feature class. This is the default.</para>
 		/// <para>Two Feature Classes—Cotravelers will be detected across two feature classes.</para>
 		/// <para><see cref="InputTypeEnum"/></para>
@@ -126,11 +125,11 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object InputType { get; set; } = "ONE_FEATURECLASS";
+		public object? InputType { get; set; } = "ONE_FEATURECLASS";
 
 		/// <summary>
 		/// <para>Secondary Features</para>
-		/// <para>A second feature class to identify cotravelers. Potential cotravelers will be evaluated using the following:</para>
+		/// <para>A second feature class that will identify cotravelers. Potential cotravelers will be evaluated using the following:</para>
 		/// <para>Cotravelers are cotraveling inside the input features.</para>
 		/// <para>Cotravelers are cotraveling inside the secondary features.</para>
 		/// <para>Cotravelers are cotraveling between the input features and secondary features.</para>
@@ -138,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object SecondaryFeatures { get; set; }
+		public object? SecondaryFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Secondary ID Field</para>
@@ -147,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object SecondaryIdField { get; set; }
+		public object? SecondaryIdField { get; set; }
 
 		/// <summary>
 		/// <para>Create Summary Table</para>
@@ -159,15 +158,15 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CreateSummaryTable { get; set; }
+		public object? CreateSummaryTable { get; set; }
 
 		/// <summary>
 		/// <para>Output Summary Table</para>
-		/// <para>The output table that will store the summary information. This option is only active when the Create Summary Table parameter is checked. Output files must be tables in a file geodatabase, text files, or comma separated value (CSV) files.</para>
+		/// <para>The output table that will store the summary information. This parameter is only active when the Create Summary Table parameter is checked. Output files must be tables in a file geodatabase, text files, or comma-separated value files (.csv).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object OutSummaryTable { get; set; }
+		public object? OutSummaryTable { get; set; }
 
 		/// <summary>
 		/// <para>Include Minimum Cotraveling Duration Filter</para>
@@ -179,63 +178,27 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeMinCotravelingDuration { get; set; }
+		public object? IncludeMinCotravelingDuration { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Cotraveling Duration</para>
 		/// <para>The minimum amount of time that two features must be moving through space and time together before they will be considered cotravelers.</para>
-		/// <para><see cref="MinCotravelingDurationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
-		public object MinCotravelingDuration { get; set; }
+		[GPUnitDomain()]
+		public object? MinCotravelingDuration { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FindCotravelers SetEnviroment(object extent = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object workspace = null )
+		public FindCotravelers SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;
 		}
 
 		#region InnerClass
-
-		/// <summary>
-		/// <para>Time Difference</para>
-		/// </summary>
-		public enum TimeDifferenceEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Seconds")]
-			[Description("Seconds")]
-			Seconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Days")]
-			[Description("Days")]
-			Days,
-
-		}
 
 		/// <summary>
 		/// <para>Input Type</para>
@@ -297,34 +260,6 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 			[GPValue("false")]
 			[Description("NO_MIN_COTRAVELING_DURATION")]
 			NO_MIN_COTRAVELING_DURATION,
-
-		}
-
-		/// <summary>
-		/// <para>Minimum Cotraveling Duration</para>
-		/// </summary>
-		public enum MinCotravelingDurationEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Seconds")]
-			[Description("Seconds")]
-			Seconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
 
 		}
 

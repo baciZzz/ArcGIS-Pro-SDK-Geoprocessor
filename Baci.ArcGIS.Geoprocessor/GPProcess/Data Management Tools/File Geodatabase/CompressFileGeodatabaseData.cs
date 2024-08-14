@@ -69,7 +69,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, Lossless, OutData };
+		public override object[] Parameters => new object[] { InData, Lossless, OutData! };
 
 		/// <summary>
 		/// <para>Input file geodatabase data</para>
@@ -98,12 +98,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object OutData { get; set; }
+		public object? OutData { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CompressFileGeodatabaseData SetEnviroment(object workspace = null )
+		public CompressFileGeodatabaseData SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

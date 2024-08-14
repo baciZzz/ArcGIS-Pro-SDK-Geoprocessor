@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, DomainNetwork, Name, Rank, TopologyType, TierGroupName, SubnetworkFieldName, OutUtilityNetwork };
+		public override object[] Parameters => new object[] { InUtilityNetwork, DomainNetwork, Name, Rank, TopologyType!, TierGroupName!, SubnetworkFieldName!, OutUtilityNetwork! };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TopologyType { get; set; }
+		public object? TopologyType { get; set; }
 
 		/// <summary>
 		/// <para>Tier Group Name</para>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object TierGroupName { get; set; }
+		public object? TierGroupName { get; set; }
 
 		/// <summary>
 		/// <para>Subnetwork Field Name</para>
@@ -134,14 +134,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object SubnetworkFieldName { get; set; }
+		public object? SubnetworkFieldName { get; set; }
 
 		/// <summary>
 		/// <para>Updated Utility Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEUtilityNetwork()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		#region InnerClass
 

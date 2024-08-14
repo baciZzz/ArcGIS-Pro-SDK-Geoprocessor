@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, IdField, MarketPenetrationBaseField, InCustomerFeatures, AreaDescriptionField, WeightField, CreateReport, StoreId, LinkField, ReportTitle, ReportFolder, ReportFormat, OutputReport };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, IdField, MarketPenetrationBaseField, InCustomerFeatures, AreaDescriptionField!, WeightField!, CreateReport!, StoreId!, LinkField!, ReportTitle!, ReportFolder!, ReportFormat!, OutputReport! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object AreaDescriptionField { get; set; }
+		public object? AreaDescriptionField { get; set; }
 
 		/// <summary>
 		/// <para>Customer Weight Field</para>
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object WeightField { get; set; }
+		public object? WeightField { get; set; }
 
 		/// <summary>
 		/// <para>Create Report</para>
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CreateReport { get; set; } = "false";
+		public object? CreateReport { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Input Feature Store ID Field</para>
@@ -164,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Trade Area Penetration")]
-		public object StoreId { get; set; }
+		public object? StoreId { get; set; }
 
 		/// <summary>
 		/// <para>Customer Feature Store ID Field</para>
@@ -174,7 +174,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Trade Area Penetration")]
-		public object LinkField { get; set; }
+		public object? LinkField { get; set; }
 
 		/// <summary>
 		/// <para>Report Title</para>
@@ -183,7 +183,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Report Options")]
-		public object ReportTitle { get; set; }
+		public object? ReportTitle { get; set; }
 
 		/// <summary>
 		/// <para>Output Report Folder</para>
@@ -192,7 +192,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
 		[Category("Report Options")]
-		public object ReportFolder { get; set; }
+		public object? ReportFolder { get; set; }
 
 		/// <summary>
 		/// <para>Report Format</para>
@@ -201,19 +201,19 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[Category("Report Options")]
-		public object ReportFormat { get; set; }
+		public object? ReportFormat { get; set; }
 
 		/// <summary>
 		/// <para>Output Report</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutputReport { get; set; }
+		public object? OutputReport { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateMarketPenetration SetEnviroment(object workspace = null )
+		public CalculateMarketPenetration SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

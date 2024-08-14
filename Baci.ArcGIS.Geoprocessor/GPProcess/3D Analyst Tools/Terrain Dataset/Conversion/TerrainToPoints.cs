@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerrain, OutFeatureClass, PyramidLevelResolution, SourceEmbeddedFeatureClass, OutGeometryType };
+		public override object[] Parameters => new object[] { InTerrain, OutFeatureClass, PyramidLevelResolution!, SourceEmbeddedFeatureClass!, OutGeometryType! };
 
 		/// <summary>
 		/// <para>Input Terrain</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object PyramidLevelResolution { get; set; } = "0";
+		public object? PyramidLevelResolution { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Input Embedded Feature Class</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SourceEmbeddedFeatureClass { get; set; } = "<NONE>";
+		public object? SourceEmbeddedFeatureClass { get; set; } = "<NONE>";
 
 		/// <summary>
 		/// <para>Output Feature Class Type</para>
@@ -110,12 +110,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object OutGeometryType { get; set; } = "MULTIPOINT";
+		public object? OutGeometryType { get; set; } = "MULTIPOINT";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TerrainToPoints SetEnviroment(object XYResolution = null , object XYTolerance = null , object ZResolution = null , object ZTolerance = null , int? autoCommit = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object workspace = null )
+		public TerrainToPoints SetEnviroment(object? XYResolution = null , object? XYTolerance = null , object? ZResolution = null , object? ZTolerance = null , int? autoCommit = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(XYResolution: XYResolution, XYTolerance: XYTolerance, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

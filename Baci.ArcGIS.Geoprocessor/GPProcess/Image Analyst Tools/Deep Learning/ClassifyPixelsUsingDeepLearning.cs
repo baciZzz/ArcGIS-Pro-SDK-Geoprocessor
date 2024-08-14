@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutClassifiedRaster, InModelDefinition, Arguments, ProcessingMode, OutClassifiedFolder };
+		public override object[] Parameters => new object[] { InRaster, OutClassifiedRaster, InModelDefinition, Arguments!, ProcessingMode!, OutClassifiedFolder! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object Arguments { get; set; }
+		public object? Arguments { get; set; }
 
 		/// <summary>
 		/// <para>Processing Mode</para>
@@ -117,23 +117,23 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ProcessingMode { get; set; } = "PROCESS_AS_MOSAICKED_IMAGE";
+		public object? ProcessingMode { get; set; } = "PROCESS_AS_MOSAICKED_IMAGE";
 
 		/// <summary>
 		/// <para>Output Folder</para>
 		/// <para>The folder where the output classified rasters will be stored. A mosaic dataset will be generated using the classified rasters in this folder.</para>
-		/// <para>This parameter is required when the input raster is a folder of images or a mosaic dataset in which all items are to be processed separately. The default is a folder in your project folder.</para>
+		/// <para>This parameter is required when the input raster is a folder of images or a mosaic dataset in which all items are to be processed separately. The default is a folder in the project folder.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
-		public object OutClassifiedFolder { get; set; }
+		public object? OutClassifiedFolder { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ClassifyPixelsUsingDeepLearning SetEnviroment(object cellSize = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object snapRaster = null , object workspace = null )
+		public ClassifyPixelsUsingDeepLearning SetEnviroment(object? cellSize = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? processorType = null , object? scratchWorkspace = null , object? snapRaster = null , object? workspace = null )
 		{
-			base.SetEnv(cellSize: cellSize, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, workspace: workspace);
+			base.SetEnv(cellSize: cellSize, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, processorType: processorType, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, workspace: workspace);
 			return this;
 		}
 

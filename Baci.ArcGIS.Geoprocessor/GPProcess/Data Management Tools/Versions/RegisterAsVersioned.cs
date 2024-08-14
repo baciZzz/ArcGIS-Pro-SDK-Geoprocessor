@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Register As Versioned</para>
 	/// <para>Registers an enterprise geodatabase dataset as versioned.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class RegisterAsVersioned : AbstractGPProcess
 	{
 		/// <summary>
@@ -60,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, EditToBase, OutDataset };
+		public override object[] Parameters => new object[] { InDataset, EditToBase!, OutDataset! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -80,19 +82,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object EditToBase { get; set; } = "false";
+		public object? EditToBase { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Input Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutDataset { get; set; }
+		public object? OutDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RegisterAsVersioned SetEnviroment(object workspace = null )
+		public RegisterAsVersioned SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The point layer to be measured to or from Location Points.</para>
+		/// <para>The point layer to be measured to or from the Location Points parameter value.</para>
 		/// </param>
 		/// <param name="IdField">
 		/// <para>ID Field</para>
@@ -28,7 +28,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </param>
 		/// <param name="InLocationPoints">
 		/// <para>Location Points</para>
-		/// <para>The layer that will be used to generate the output with distance and direction attributes to or from Input Features.</para>
+		/// <para>The layer that will be used to generate the output with distance and direction attributes to or from the Input Features parameter value.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
@@ -75,11 +75,11 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, IdField, InLocationPoints, OutFeatureClass, DistanceType, Units, DistanceLimit, NumberLimit, PercentLimit, CreateReport, ReportTitle, ReportFolder, ReportFormat, ReportFields, TravelDirection, TimeOfDay, TimeZone, SearchTolerance, OutputReport };
+		public override object[] Parameters => new object[] { InFeatures, IdField, InLocationPoints, OutFeatureClass, DistanceType!, Units!, DistanceLimit!, NumberLimit!, PercentLimit!, CreateReport!, ReportTitle!, ReportFolder!, ReportFormat!, ReportFields!, TravelDirection!, TimeOfDay!, TimeZone!, SearchTolerance!, OutputReport!, LocationName! };
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The point layer to be measured to or from Location Points.</para>
+		/// <para>The point layer to be measured to or from the Location Points parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 
 		/// <summary>
 		/// <para>Location Points</para>
-		/// <para>The layer that will be used to generate the output with distance and direction attributes to or from Input Features.</para>
+		/// <para>The layer that will be used to generate the output with distance and direction attributes to or from the Input Features parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DistanceType { get; set; }
+		public object? DistanceType { get; set; }
 
 		/// <summary>
 		/// <para>Distance Units</para>
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Units { get; set; }
+		public object? Units { get; set; }
 
 		/// <summary>
 		/// <para>Distance Limit</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object DistanceLimit { get; set; }
+		public object? DistanceLimit { get; set; }
 
 		/// <summary>
 		/// <para>Number of Locations Limit</para>
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object NumberLimit { get; set; }
+		public object? NumberLimit { get; set; }
 
 		/// <summary>
 		/// <para>Percentage of Locations Limit</para>
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object PercentLimit { get; set; }
+		public object? PercentLimit { get; set; }
 
 		/// <summary>
 		/// <para>Create Report</para>
@@ -166,7 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CreateReport { get; set; } = "false";
+		public object? CreateReport { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Report Title</para>
@@ -175,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Report Options")]
-		public object ReportTitle { get; set; }
+		public object? ReportTitle { get; set; }
 
 		/// <summary>
 		/// <para>Output Report Folder</para>
@@ -184,7 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
 		[Category("Report Options")]
-		public object ReportFolder { get; set; }
+		public object? ReportFolder { get; set; }
 
 		/// <summary>
 		/// <para>Report Output Formats</para>
@@ -193,7 +193,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[Category("Report Options")]
-		public object ReportFormat { get; set; }
+		public object? ReportFormat { get; set; }
 
 		/// <summary>
 		/// <para>Report Fields</para>
@@ -203,7 +203,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[GPMultiValue()]
 		[GPFieldDomain()]
 		[Category("Report Options")]
-		public object ReportFields { get; set; }
+		public object? ReportFields { get; set; }
 
 		/// <summary>
 		/// <para>Travel Direction</para>
@@ -216,29 +216,29 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Network Parameters")]
-		public object TravelDirection { get; set; } = "TOWARD_STORES";
+		public object? TravelDirection { get; set; }
 
 		/// <summary>
 		/// <para>Time of Day</para>
-		/// <para>The time at which travel begins.</para>
+		/// <para>The time at which travel will begin.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Network Parameters")]
-		public object TimeOfDay { get; set; }
+		public object? TimeOfDay { get; set; }
 
 		/// <summary>
 		/// <para>Time Zone</para>
 		/// <para>Specifies the time zone that will be used for the Time of Day parameter.</para>
 		/// <para>UTC—Coordinated universal time (UTC) will be used. Choose this option if you want the best location for a specific time, such as now, but aren&apos;t certain of the time zone in which the Location Points value will be located.</para>
-		/// <para>Local time at locations—The time zone in which the Location Points value will be located will be used. If the travel direction is input features to location points, this is the time zone of the input features. If the travel direction is location points to input features, this is the time zone of the location points. This is the default.</para>
+		/// <para>Local time at locations—The time zone in which the Location Points value is located will be used. If the travel direction is input features to location points, this is the time zone of the input features. If the travel direction is location points to input features, this is the time zone of the location points. This is the default.</para>
 		/// <para><see cref="TimeZoneEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Network Parameters")]
-		public object TimeZone { get; set; } = "TIME_ZONE_AT_LOCATION";
+		public object? TimeZone { get; set; } = "TIME_ZONE_AT_LOCATION";
 
 		/// <summary>
 		/// <para>Search Tolerance</para>
@@ -247,21 +247,30 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Network Parameters")]
-		public object SearchTolerance { get; set; }
+		public object? SearchTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Output Report</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutputReport { get; set; }
+		public object? OutputReport { get; set; }
+
+		/// <summary>
+		/// <para>Location Name</para>
+		/// <para>A field from the input Location Points parameter. This field contains the name or ID for each input point used in the Find Nearby Locations report.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[Field()]
+		[GPFieldDomain()]
+		public object? LocationName { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FindNearbyLocations SetEnviroment(object workspace = null )
+		public FindNearbyLocations SetEnviroment(object? baDataSource = null , object? baNetworkSource = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, baNetworkSource: baNetworkSource, workspace: workspace);
 			return this;
 		}
 
@@ -322,7 +331,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 			UTC,
 
 			/// <summary>
-			/// <para>Local time at locations—The time zone in which the Location Points value will be located will be used. If the travel direction is input features to location points, this is the time zone of the input features. If the travel direction is location points to input features, this is the time zone of the location points. This is the default.</para>
+			/// <para>Local time at locations—The time zone in which the Location Points value is located will be used. If the travel direction is input features to location points, this is the time zone of the input features. If the travel direction is location points to input features, this is the time zone of the location points. This is the default.</para>
 			/// </summary>
 			[GPValue("TIME_ZONE_AT_LOCATION")]
 			[Description("Local time at locations")]

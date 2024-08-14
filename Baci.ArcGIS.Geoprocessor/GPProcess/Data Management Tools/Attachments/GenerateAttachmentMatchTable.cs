@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, InFolder, OutMatchTable, InKeyField, InFileFilter, InUseRelativePaths };
+		public override object[] Parameters => new object[] { InDataset, InFolder, OutMatchTable, InKeyField, InFileFilter!, InUseRelativePaths! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object InFileFilter { get; set; }
+		public object? InFileFilter { get; set; }
 
 		/// <summary>
 		/// <para>Store Relative Path</para>
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object InUseRelativePaths { get; set; } = "true";
+		public object? InUseRelativePaths { get; set; } = "true";
 
 		#region InnerClass
 

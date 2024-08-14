@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAddressLocator, OutAddressLocator };
+		public override object[] Parameters => new object[] { InAddressLocator, OutAddressLocator! };
 
 		/// <summary>
 		/// <para>Input Address Locator</para>
@@ -68,6 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEAddressLocator()]
+		[GPLocatorsDomain()]
 		public object InAddressLocator { get; set; }
 
 		/// <summary>
@@ -75,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEAddressLocator()]
-		public object OutAddressLocator { get; set; }
+		public object? OutAddressLocator { get; set; }
 
 	}
 }

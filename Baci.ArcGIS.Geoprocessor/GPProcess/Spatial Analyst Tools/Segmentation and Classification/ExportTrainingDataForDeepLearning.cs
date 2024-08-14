@@ -62,12 +62,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutFolder, InClassData, ImageChipFormat, TileSizeX, TileSizeY, StrideX, StrideY, OutputNofeatureTiles, MetadataFormat, StartIndex, ClassValueField, BufferRadius, InMaskPolygons, RotationAngle, ReferenceSystem, ProcessingMode, BlackenAroundFeature, CropMode, InRaster2 };
+		public override object[] Parameters => new object[] { InRaster, OutFolder, InClassData!, ImageChipFormat!, TileSizeX!, TileSizeY!, StrideX!, StrideY!, OutputNofeatureTiles!, MetadataFormat!, StartIndex!, ClassValueField!, BufferRadius!, InMaskPolygons!, RotationAngle!, ReferenceSystem!, ProcessingMode!, BlackenAroundFeature!, CropMode!, InRaster2!, InInstanceData!, InstanceClassValueField!, MinPolygonOverlapRatio! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object InClassData { get; set; }
+		public object? InClassData { get; set; }
 
 		/// <summary>
 		/// <para>Image Format</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ImageChipFormat { get; set; } = "TIFF";
+		public object? ImageChipFormat { get; set; } = "TIFF";
 
 		/// <summary>
 		/// <para>Tile Size X</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object TileSizeX { get; set; } = "256";
+		public object? TileSizeX { get; set; } = "256";
 
 		/// <summary>
 		/// <para>Tile Size Y</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object TileSizeY { get; set; } = "256";
+		public object? TileSizeY { get; set; } = "256";
 
 		/// <summary>
 		/// <para>Stride X</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object StrideX { get; set; } = "128";
+		public object? StrideX { get; set; } = "128";
 
 		/// <summary>
 		/// <para>Stride Y</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object StrideY { get; set; } = "128";
+		public object? StrideY { get; set; } = "128";
 
 		/// <summary>
 		/// <para>Output No Feature Tiles</para>
@@ -156,27 +156,29 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object OutputNofeatureTiles { get; set; } = "false";
+		public object? OutputNofeatureTiles { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Metadata Format</para>
-		/// <para>Specifies the format of the output metadata labels.</para>
+		/// <para>Specifies the format that will be used for the output metadata labels.</para>
 		/// <para>If the input training sample data is a feature class layer, such as a building layer or a standard classification training sample file, use the KITTI Labels or PASCAL Visual Object Classes option (KITTI_rectangles or PASCAL_VOC_rectangles in Python). The output metadata is a .txt file or an .xml file containing the training sample data contained in the minimum bounding rectangle. The name of the metadata file matches the input source image name. If the input training sample data is a class map, use the Classified Tiles option (Classified_Tiles in Python) as the output metadata format.</para>
-		/// <para>KITTI Labels—The metadata follows the same format as the Karlsruhe Institute of Technology and Toyota Technological Institute (KITTI) Object Detection Evaluation dataset. The KITTI dataset is a vision benchmark suite. The label files are plain text files. All values, both numerical and strings, are separated by spaces, and each row corresponds to one object.This format is used for object detection.</para>
-		/// <para>PASCAL Visual Object Classes—The metadata follows the same format as the Pattern Analysis, Statistical Modeling and Computational Learning, Visual Object Classes (PASCAL_VOC) dataset. The PASCAL VOC dataset is a standardized image dataset for object class recognition. The label files are in XML format and contain information about image name, class value, and bounding boxes.This format is used for object detection. This is the default.</para>
-		/// <para>Classified Tiles—The output will be one classified image chip per input image chip. No other metadata for each image chip is used. Only the statistics output has more information on the classes, such as class names, class values, and output statistics.This format is primarily used for pixel classification. This format is also used for change detection when the output is one classified image chip from two image chips.</para>
-		/// <para>RCNN Masks—The output will be image chips that have a mask on the areas where the sample exists. The model generates bounding boxes and segmentation masks for each instance of an object in the image. This format is based on Feature Pyramid Network (FPN) and a ResNet101 backbone in the deep learning framework model.This format is used for object detection.</para>
-		/// <para>Labeled Tiles—Each output tile will be labeled with a specific class.This format is used for object classification.</para>
-		/// <para>Multi-labeled Tiles—Each output tile will be labeled with one or more classes. For example, a tile may be labeled agriculture and also cloudy.This format is used for object classification.</para>
-		/// <para>Export Tiles—The output will be image chips with no label.This format is used for image translation techniques, such as Pix2Pix and Super Resolution.</para>
+		/// <para>KITTI Labels—The metadata will follow the same format as the Karlsruhe Institute of Technology and Toyota Technological Institute (KITTI) Object Detection Evaluation dataset. The KITTI dataset is a vision benchmark suite. The label files are plain text files. All values, both numerical and strings, are separated by spaces, and each row corresponds to one object.This format is used for object detection.</para>
+		/// <para>PASCAL Visual Object Classes—The metadata will follow the same format as the Pattern Analysis, Statistical Modeling and Computational Learning, Visual Object Classes (PASCAL_VOC) dataset. The PASCAL VOC dataset is a standardized image dataset for object class recognition. The label files are in XML format and contain information about image name, class value, and bounding boxes. This format is used for object detection. This is the default.</para>
+		/// <para>Classified Tiles—The output will be one classified image chip per input image chip. No other metadata for each image chip is used. Only the statistics output has more information about the classes, such as class names, class values, and output statistics. This format is primarily used for pixel classification. This format is also used for change detection when the output is one classified image chip from two image chips.</para>
+		/// <para>RCNN Masks—The output will be image chips that have a mask on the areas where the sample exists. The model generates bounding boxes and segmentation masks for each instance of an object in the image. This format is based on Feature Pyramid Network (FPN) and a ResNet101 backbone in the deep learning framework model. This format is used for object detection, however, can also be used for object tracking when the Siam Mask model type is used during training.</para>
+		/// <para>Labeled Tiles—Each output tile will be labeled with a specific class. This format is used for object classification.</para>
+		/// <para>Multi-labeled Tiles—Each output tile will be labeled with one or more classes. For example, a tile may be labeled agriculture and also cloudy. This format is used for object classification.</para>
+		/// <para>Export Tiles—The output will be image chips with no label. This format is used for image translation techniques, such as Pix2Pix and Super Resolution.</para>
 		/// <para>CycleGAN—The output will be image chips with no label. This format is used for image translation technique CycleGAN, which is used to train images that do not overlap.</para>
+		/// <para>Imagenet—Each output tile will be labeled with a specific class. This format is used for object classification; however, it can also be used for object tracking when the Deep Sort model type is used during training.</para>
+		/// <para>Panoptic Segmentation—The output will be one classified image chip and one instance per input image chip. The output will also have image chips that mask the areas where the sample exists; these image chips will be stored in a different folder.This format is used for both pixel classification and instance segmentation, so two output labels folders will be produced.</para>
 		/// <para>For the KITTI metadata format, 15 columns are created, but only 5 of them are used in the tool. The first column is the class value. The next 3 columns are skipped. Columns 5 through 8 define the minimum bounding rectangle, which is composed of four image coordinate locations: left, top, right, and bottom pixels. The minimum bounding rectangle encompasses the training chip used in the deep learning classifier. The remaining columns are not used.</para>
 		/// <para><see cref="MetadataFormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object MetadataFormat { get; set; } = "PASCAL_VOC_rectangles";
+		public object? MetadataFormat { get; set; } = "PASCAL_VOC_rectangles";
 
 		/// <summary>
 		/// <para>Start Index</para>
@@ -184,7 +186,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object StartIndex { get; set; } = "0";
+		public object? StartIndex { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Class Value Field</para>
@@ -193,16 +195,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ClassValueField { get; set; }
+		public object? ClassValueField { get; set; }
 
 		/// <summary>
 		/// <para>Buffer Radius</para>
-		/// <para>The radius for a buffer around each training sample to delineate a training sample area. This allows you to create circular polygon training samples from points.</para>
-		/// <para>The linear unit of the Input Feature Class Or Classified Raster spatial reference is used.</para>
+		/// <para>The radius of a buffer around each training sample that will be used to delineate a training sample area. This allows you to create circular polygon training samples from points.</para>
+		/// <para>The linear unit of the Input Feature Class Or Classified Raster Or Table parameter value&apos;s spatial reference is used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object BufferRadius { get; set; } = "0";
+		public object? BufferRadius { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Input Mask Polygons</para>
@@ -211,7 +213,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
-		public object InMaskPolygons { get; set; }
+		public object? InMaskPolygons { get; set; }
 
 		/// <summary>
 		/// <para>Rotation Angle</para>
@@ -221,7 +223,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object RotationAngle { get; set; } = "0";
+		public object? RotationAngle { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Reference System</para>
@@ -233,7 +235,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ReferenceSystem { get; set; } = "MAP_SPACE";
+		public object? ReferenceSystem { get; set; } = "MAP_SPACE";
 
 		/// <summary>
 		/// <para>Processing Mode</para>
@@ -245,12 +247,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ProcessingMode { get; set; } = "PROCESS_AS_MOSAICKED_IMAGE";
+		public object? ProcessingMode { get; set; } = "PROCESS_AS_MOSAICKED_IMAGE";
 
 		/// <summary>
 		/// <para>Blacken Around Feature</para>
 		/// <para>Specifies whether the pixels around each object or feature in each image tile will be masked out.</para>
-		/// <para>This parameter only applies when the metadata format is set to Labeled Tiles and an input feature class or classified raster has been specified.</para>
+		/// <para>This parameter only applies when the Metadata Format parameter is set to Labeled Tiles and an input feature class or classified raster has been specified.</para>
 		/// <para>Unchecked—Pixels surrounding objects or features will not be masked out. This is the default.</para>
 		/// <para>Checked—Pixels surrounding objects or features will be masked out.</para>
 		/// <para><see cref="BlackenAroundFeatureEnum"/></para>
@@ -258,12 +260,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object BlackenAroundFeature { get; set; } = "false";
+		public object? BlackenAroundFeature { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Crop Mode</para>
 		/// <para>Specifies whether the exported tiles will be cropped so that they are all the same size.</para>
-		/// <para>This parameter only applies when the metadata format is set to Labeled Tiles and an input feature class or classified raster has been specified.</para>
+		/// <para>This parameter only applies when the Metadata Format parameter is set to either Labeled Tiles or Imagenet, and an input feature class or classified raster has been specified.</para>
 		/// <para>Fixed size—Exported tiles will be cropped to the same size and will center on the feature. This is the default.</para>
 		/// <para>Bounding box—Exported tiles will be cropped so that the bounding geometry surrounds only the feature in the tile.</para>
 		/// <para><see cref="CropModeEnum"/></para>
@@ -271,23 +273,54 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object CropMode { get; set; } = "FIXED_SIZE";
+		public object? CropMode { get; set; } = "FIXED_SIZE";
 
 		/// <summary>
 		/// <para>Additional Input Raster</para>
-		/// <para>An additional input imagery source for image translation methods.</para>
+		/// <para>An additional input imagery source that will be used for image translation methods.</para>
 		/// <para>This parameter is valid when the Metadata Format parameter is set to Classified Tiles, Export Tiles, or CycleGAN.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object InRaster2 { get; set; }
+		public object? InRaster2 { get; set; }
+
+		/// <summary>
+		/// <para>Instance Feature Class</para>
+		/// <para>The training sample data collected that contains classes for instance segmentation.</para>
+		/// <para>The input can also be a point feature class without a class value field or an integer raster without any class information.</para>
+		/// <para>This parameter is only valid when the Metadata Format parameter is set to Panoptic Segmentation.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPComposite()]
+		public object? InInstanceData { get; set; }
+
+		/// <summary>
+		/// <para>Instance Class Value Field</para>
+		/// <para>The field that contains the class values for instance segmentation. If no field is specified, the tool will use a value or class value field, if one is present. If the feature does not contain a class field, the tool will determine that all records belong to one class.</para>
+		/// <para>This parameter is only valid when the Metadata Format parameter is set to Panoptic Segmentation.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[Field()]
+		[GPFieldDomain()]
+		public object? InstanceClassValueField { get; set; }
+
+		/// <summary>
+		/// <para>Minimum Polygon Overlap Ratio</para>
+		/// <para>The minimum overlap percentage for a feature to be included in the training data. If the percentage overlap is less than the value specified, the feature will be excluded from the training chip, and will not be added to the label file.</para>
+		/// <para>The percent value is expressed as a decimal. For example, to specify an overlap of 20 percent, use a value of 0.2. The default value is 0, which means that all features will be included.</para>
+		/// <para>This parameter improves the performance of the tool and also improves inferencing. The speed is improved since less training chips are created. The inferencing is improved since the model is trained to only detect large patches of objects, and ignores small corners of features. This means less false positives will be detected, and less false positives will be removed by the Non Maximum Suppression tool.</para>
+		/// <para>This parameter is inactive when the Input Feature Class Or Classified Raster Or Table parameter value is a feature class.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPDouble()]
+		public object? MinPolygonOverlapRatio { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportTrainingDataForDeepLearning SetEnviroment(object cellSize = null , object extent = null , object scratchWorkspace = null , object workspace = null )
+		public ExportTrainingDataForDeepLearning SetEnviroment(object? cellSize = null , object? extent = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? workspace = null )
 		{
-			base.SetEnv(cellSize: cellSize, extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
+			base.SetEnv(cellSize: cellSize, extent: extent, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
 		}
 
@@ -355,49 +388,49 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum MetadataFormatEnum 
 		{
 			/// <summary>
-			/// <para>KITTI Labels—The metadata follows the same format as the Karlsruhe Institute of Technology and Toyota Technological Institute (KITTI) Object Detection Evaluation dataset. The KITTI dataset is a vision benchmark suite. The label files are plain text files. All values, both numerical and strings, are separated by spaces, and each row corresponds to one object.This format is used for object detection.</para>
+			/// <para>KITTI Labels—The metadata will follow the same format as the Karlsruhe Institute of Technology and Toyota Technological Institute (KITTI) Object Detection Evaluation dataset. The KITTI dataset is a vision benchmark suite. The label files are plain text files. All values, both numerical and strings, are separated by spaces, and each row corresponds to one object.This format is used for object detection.</para>
 			/// </summary>
 			[GPValue("KITTI_rectangles")]
 			[Description("KITTI Labels")]
 			KITTI_Labels,
 
 			/// <summary>
-			/// <para>PASCAL Visual Object Classes—The metadata follows the same format as the Pattern Analysis, Statistical Modeling and Computational Learning, Visual Object Classes (PASCAL_VOC) dataset. The PASCAL VOC dataset is a standardized image dataset for object class recognition. The label files are in XML format and contain information about image name, class value, and bounding boxes.This format is used for object detection. This is the default.</para>
+			/// <para>PASCAL Visual Object Classes—The metadata will follow the same format as the Pattern Analysis, Statistical Modeling and Computational Learning, Visual Object Classes (PASCAL_VOC) dataset. The PASCAL VOC dataset is a standardized image dataset for object class recognition. The label files are in XML format and contain information about image name, class value, and bounding boxes. This format is used for object detection. This is the default.</para>
 			/// </summary>
 			[GPValue("PASCAL_VOC_rectangles")]
 			[Description("PASCAL Visual Object Classes")]
 			PASCAL_Visual_Object_Classes,
 
 			/// <summary>
-			/// <para>Classified Tiles—The output will be one classified image chip per input image chip. No other metadata for each image chip is used. Only the statistics output has more information on the classes, such as class names, class values, and output statistics.This format is primarily used for pixel classification. This format is also used for change detection when the output is one classified image chip from two image chips.</para>
+			/// <para>Classified Tiles—The output will be one classified image chip per input image chip. No other metadata for each image chip is used. Only the statistics output has more information about the classes, such as class names, class values, and output statistics. This format is primarily used for pixel classification. This format is also used for change detection when the output is one classified image chip from two image chips.</para>
 			/// </summary>
 			[GPValue("Classified_Tiles")]
 			[Description("Classified Tiles")]
 			Classified_Tiles,
 
 			/// <summary>
-			/// <para>RCNN Masks—The output will be image chips that have a mask on the areas where the sample exists. The model generates bounding boxes and segmentation masks for each instance of an object in the image. This format is based on Feature Pyramid Network (FPN) and a ResNet101 backbone in the deep learning framework model.This format is used for object detection.</para>
+			/// <para>RCNN Masks—The output will be image chips that have a mask on the areas where the sample exists. The model generates bounding boxes and segmentation masks for each instance of an object in the image. This format is based on Feature Pyramid Network (FPN) and a ResNet101 backbone in the deep learning framework model. This format is used for object detection, however, can also be used for object tracking when the Siam Mask model type is used during training.</para>
 			/// </summary>
 			[GPValue("RCNN_Masks")]
 			[Description("RCNN Masks")]
 			RCNN_Masks,
 
 			/// <summary>
-			/// <para>Labeled Tiles—Each output tile will be labeled with a specific class.This format is used for object classification.</para>
+			/// <para>Labeled Tiles—Each output tile will be labeled with a specific class. This format is used for object classification.</para>
 			/// </summary>
 			[GPValue("Labeled_Tiles")]
 			[Description("Labeled Tiles")]
 			Labeled_Tiles,
 
 			/// <summary>
-			/// <para>Multi-labeled Tiles—Each output tile will be labeled with one or more classes. For example, a tile may be labeled agriculture and also cloudy.This format is used for object classification.</para>
+			/// <para>Multi-labeled Tiles—Each output tile will be labeled with one or more classes. For example, a tile may be labeled agriculture and also cloudy. This format is used for object classification.</para>
 			/// </summary>
 			[GPValue("MultiLabeled_Tiles")]
 			[Description("Multi-labeled Tiles")]
 			MultiLabeled_Tiles,
 
 			/// <summary>
-			/// <para>Export Tiles—The output will be image chips with no label.This format is used for image translation techniques, such as Pix2Pix and Super Resolution.</para>
+			/// <para>Export Tiles—The output will be image chips with no label. This format is used for image translation techniques, such as Pix2Pix and Super Resolution.</para>
 			/// </summary>
 			[GPValue("Export_Tiles")]
 			[Description("Export Tiles")]
@@ -409,6 +442,20 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 			[GPValue("CycleGAN")]
 			[Description("CycleGAN")]
 			CycleGAN,
+
+			/// <summary>
+			/// <para>Imagenet—Each output tile will be labeled with a specific class. This format is used for object classification; however, it can also be used for object tracking when the Deep Sort model type is used during training.</para>
+			/// </summary>
+			[GPValue("Imagenet")]
+			[Description("Imagenet")]
+			Imagenet,
+
+			/// <summary>
+			/// <para>Panoptic Segmentation—The output will be one classified image chip and one instance per input image chip. The output will also have image chips that mask the areas where the sample exists; these image chips will be stored in a different folder.This format is used for both pixel classification and instance segmentation, so two output labels folders will be produced.</para>
+			/// </summary>
+			[GPValue("Panoptic_Segmentation")]
+			[Description("Panoptic Segmentation")]
+			Panoptic_Segmentation,
 
 		}
 

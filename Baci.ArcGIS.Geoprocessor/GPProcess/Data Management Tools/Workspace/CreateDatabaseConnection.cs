@@ -31,17 +31,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Specifies the database management system platform to which the connection will be made. The following are valid options:</para>
 		/// <para>Dameng—Connect to Dameng.</para>
 		/// <para>Db2—Connect to IBM Db2 for Linux, UNIX, or Windows.</para>
-		/// <para>Oracle—Connect to Oracle, Amazon Relational Database Service (RDS) for Oracle, or Autonomous Transaction Processing database in Oracle Cloud.</para>
-		/// <para>PostgreSQL—Connect to PostgreSQL, Amazon Aurora PostgreSQL, Amazon Relational Database Service (RDS) for PostgreSQL, or Microsoft Azure Database for PostgreSQL.</para>
+		/// <para>Oracle—Connect to Oracle, Amazon Relational Database Service (RDS) for Oracle, or Autonomous Transaction Processing.</para>
+		/// <para>PostgreSQL—Connect to PostgreSQL, Amazon Aurora (PostgreSQL-compatible edition), Amazon Relational Database Service (RDS) for PostgreSQL, Microsoft Azure Database for PostgreSQL, or Google Cloud SQL for PostgreSQL.</para>
 		/// <para>SAP HANA—Connect to SAP HANA or SAP HANA Cloud.</para>
-		/// <para>SQL Server—Connect to Microsoft SQL Server, Microsoft Azure SQL Database, Microsoft Azure SQL Managed Instance, or Amazon Relational Database Service (RDS) for SQL Server.</para>
+		/// <para>SQL Server—Connect to Microsoft SQL Server, Microsoft Azure SQL Database, Microsoft Azure SQL Managed Instance, or Amazon Relational Database Service (RDS) for SQL Server, or Google Cloud SQL for SQL Server.</para>
 		/// <para>Teradata—Connect to Teradata Data Warehouse Appliance.</para>
 		/// <para><see cref="DatabasePlatformEnum"/></para>
 		/// </param>
 		/// <param name="Instance">
 		/// <para>Instance</para>
 		/// <para>The database server or instance to which the connection will be made.</para>
-		/// <para>The value you choose from the Database Platform drop-down list indicates the type of database to which you want to connect. The information you provide for the Instance parameter varies, depending on the connection type you choose.</para>
+		/// <para>The value you choose from the Database Platform drop-down list indicates the type of database to which the connection will be made. The information you provide for the Instance parameter varies, depending on the connection type you choose.</para>
 		/// <para>See below for information about what to provide for each database platform.</para>
 		/// <para>Dameng—The name of the server where the Dameng database is installed<bold/></para>
 		/// <para>Db2—The name of the cataloged Db2 database</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutFolderPath, OutName, DatabasePlatform, Instance, AccountAuthentication, Username, Password, SaveUserPass, Database, Schema, VersionType, Version, Date, OutWorkspace };
+		public override object[] Parameters => new object[] { OutFolderPath, OutName, DatabasePlatform, Instance, AccountAuthentication!, Username!, Password!, SaveUserPass!, Database!, Schema!, VersionType!, Version!, Date!, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Connection File Location</para>
@@ -115,10 +115,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Specifies the database management system platform to which the connection will be made. The following are valid options:</para>
 		/// <para>Dameng—Connect to Dameng.</para>
 		/// <para>Db2—Connect to IBM Db2 for Linux, UNIX, or Windows.</para>
-		/// <para>Oracle—Connect to Oracle, Amazon Relational Database Service (RDS) for Oracle, or Autonomous Transaction Processing database in Oracle Cloud.</para>
-		/// <para>PostgreSQL—Connect to PostgreSQL, Amazon Aurora PostgreSQL, Amazon Relational Database Service (RDS) for PostgreSQL, or Microsoft Azure Database for PostgreSQL.</para>
+		/// <para>Oracle—Connect to Oracle, Amazon Relational Database Service (RDS) for Oracle, or Autonomous Transaction Processing.</para>
+		/// <para>PostgreSQL—Connect to PostgreSQL, Amazon Aurora (PostgreSQL-compatible edition), Amazon Relational Database Service (RDS) for PostgreSQL, Microsoft Azure Database for PostgreSQL, or Google Cloud SQL for PostgreSQL.</para>
 		/// <para>SAP HANA—Connect to SAP HANA or SAP HANA Cloud.</para>
-		/// <para>SQL Server—Connect to Microsoft SQL Server, Microsoft Azure SQL Database, Microsoft Azure SQL Managed Instance, or Amazon Relational Database Service (RDS) for SQL Server.</para>
+		/// <para>SQL Server—Connect to Microsoft SQL Server, Microsoft Azure SQL Database, Microsoft Azure SQL Managed Instance, or Amazon Relational Database Service (RDS) for SQL Server, or Google Cloud SQL for SQL Server.</para>
 		/// <para>Teradata—Connect to Teradata Data Warehouse Appliance.</para>
 		/// <para><see cref="DatabasePlatformEnum"/></para>
 		/// </summary>
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Instance</para>
 		/// <para>The database server or instance to which the connection will be made.</para>
-		/// <para>The value you choose from the Database Platform drop-down list indicates the type of database to which you want to connect. The information you provide for the Instance parameter varies, depending on the connection type you choose.</para>
+		/// <para>The value you choose from the Database Platform drop-down list indicates the type of database to which the connection will be made. The information you provide for the Instance parameter varies, depending on the connection type you choose.</para>
 		/// <para>See below for information about what to provide for each database platform.</para>
 		/// <para>Dameng—The name of the server where the Dameng database is installed<bold/></para>
 		/// <para>Db2—The name of the cataloged Db2 database</para>
@@ -147,22 +147,22 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Database Authentication</para>
 		/// <para>Specifies the type of authentication that will be used.</para>
-		/// <para>Checked—Database authentication will be used. An internal database user name and a password will be used to connect to the database. You aren&apos;t required to type your user name and password to create a connection; however, if you don&apos;t, you will be prompted to enter them when a connection is established.</para>
-		/// <para>Unchecked—Operating system authentication will be used. You do not need to type a user name and password. The connection will be made with the user name and password that were used to log in to the operating system. If the login used for the operating system is not a valid geodatabase login, the connection will fail.</para>
+		/// <para>Checked—Database authentication will be used. An internal database username and a password will be used to connect to the database. You aren&apos;t required to type your username and password to create a connection; however, if you don&apos;t, you will be prompted to enter them when a connection is established.</para>
+		/// <para>Unchecked—Operating system authentication will be used. You do not need to type a username and password. The connection will be made with the username and password that were used to log in to the operating system. If the login used for the operating system is not a valid geodatabase login, the connection will fail.</para>
 		/// <para><see cref="AccountAuthenticationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AccountAuthentication { get; set; } = "true";
+		public object? AccountAuthentication { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Username</para>
-		/// <para>The database user name that will be used for database authentication.</para>
+		/// <para>The database username that will be used for database authentication.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Username { get; set; }
+		public object? Username { get; set; }
 
 		/// <summary>
 		/// <para>Password</para>
@@ -170,19 +170,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPEncryptedString()]
-		public object Password { get; set; }
+		public object? Password { get; set; }
 
 		/// <summary>
 		/// <para>Save username and password</para>
-		/// <para>Specifies whether the user name and password will be saved.</para>
-		/// <para>Checked—The user name and password will be saved in the connection file. This is the default. If the connection file you are creating will provide ArcGIS services with access to the geodatabase, you must save the user name and password.</para>
-		/// <para>Unchecked—The user name and password will not be saved in the connection file. Every time you attempt to connect using the file, you will be prompted for the user name and password.</para>
+		/// <para>Specifies whether the username and password will be saved.</para>
+		/// <para>Checked—The username and password will be saved in the connection file. This is the default. If the connection file you are creating will provide ArcGIS services with access to the database or geodatabase, or if you want to use the Catalog search to locate data accessed through this connection file, you must save the username and password.</para>
+		/// <para>Unchecked—The username and password will not be saved in the connection file. Every time you attempt to connect using the file, you will be prompted for the username and password.</para>
 		/// <para><see cref="SaveUserPassEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SaveUserPass { get; set; } = "true";
+		public object? SaveUserPass { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Database</para>
@@ -190,7 +190,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Database { get; set; }
+		public object? Database { get; set; }
 
 		/// <summary>
 		/// <para>Schema (Oracle user schema geodatabases only)</para>
@@ -199,7 +199,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Geodatabase Connection Properties")]
-		public object Schema { get; set; }
+		public object? Schema { get; set; }
 
 		/// <summary>
 		/// <para>Version Type</para>
@@ -208,14 +208,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Historical—Connect to an historical marker. If Historical is selected, the The following version will be used parameter will be populated with a list of historical markers, and the Date and Time parameter will be inactive.</para>
 		/// <para>Point in time—Connect to a specific point in time. If Point in time is selected, the The following version will be used parameter will be inactive, and the Date and Time parameter will become active.</para>
 		/// <para>Branch—Connect to the default branch version.</para>
-		/// <para>If Historical is selected and a name is not provided, the default transactional version is used. If Point in time is selected and a date is not provided in the Date and Time parameter, the default transactional version is used.</para>
+		/// <para>If Historical is selected and a name is not provided, the default transactional version is used. If Point in time is selected and a date is not provided for the Date and Time parameter, the default transactional version is used.</para>
 		/// <para><see cref="VersionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Geodatabase Connection Properties")]
-		public object VersionType { get; set; } = "TRANSACTIONAL";
+		public object? VersionType { get; set; } = "TRANSACTIONAL";
 
 		/// <summary>
 		/// <para>The following version will be used</para>
@@ -225,7 +225,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Geodatabase Connection Properties")]
-		public object Version { get; set; }
+		public object? Version { get; set; }
 
 		/// <summary>
 		/// <para>Date and Time</para>
@@ -242,19 +242,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Geodatabase Connection Properties")]
-		public object Date { get; set; }
+		public object? Date { get; set; }
 
 		/// <summary>
 		/// <para>Output Workspace</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutWorkspace { get; set; }
+		public object? OutWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateDatabaseConnection SetEnviroment(object workspace = null )
+		public CreateDatabaseConnection SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -268,14 +268,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DatabasePlatformEnum 
 		{
 			/// <summary>
-			/// <para>SQL Server—Connect to Microsoft SQL Server, Microsoft Azure SQL Database, Microsoft Azure SQL Managed Instance, or Amazon Relational Database Service (RDS) for SQL Server.</para>
+			/// <para>SQL Server—Connect to Microsoft SQL Server, Microsoft Azure SQL Database, Microsoft Azure SQL Managed Instance, or Amazon Relational Database Service (RDS) for SQL Server, or Google Cloud SQL for SQL Server.</para>
 			/// </summary>
 			[GPValue("SQL_SERVER")]
 			[Description("SQL Server")]
 			SQL_Server,
 
 			/// <summary>
-			/// <para>Oracle—Connect to Oracle, Amazon Relational Database Service (RDS) for Oracle, or Autonomous Transaction Processing database in Oracle Cloud.</para>
+			/// <para>Oracle—Connect to Oracle, Amazon Relational Database Service (RDS) for Oracle, or Autonomous Transaction Processing.</para>
 			/// </summary>
 			[GPValue("ORACLE")]
 			[Description("Oracle")]
@@ -289,7 +289,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			Db2,
 
 			/// <summary>
-			/// <para>PostgreSQL—Connect to PostgreSQL, Amazon Aurora PostgreSQL, Amazon Relational Database Service (RDS) for PostgreSQL, or Microsoft Azure Database for PostgreSQL.</para>
+			/// <para>PostgreSQL—Connect to PostgreSQL, Amazon Aurora (PostgreSQL-compatible edition), Amazon Relational Database Service (RDS) for PostgreSQL, Microsoft Azure Database for PostgreSQL, or Google Cloud SQL for PostgreSQL.</para>
 			/// </summary>
 			[GPValue("POSTGRESQL")]
 			[Description("PostgreSQL")]
@@ -324,14 +324,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AccountAuthenticationEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Database authentication will be used. An internal database user name and a password will be used to connect to the database. You aren&apos;t required to type your user name and password to create a connection; however, if you don&apos;t, you will be prompted to enter them when a connection is established.</para>
+			/// <para>Checked—Database authentication will be used. An internal database username and a password will be used to connect to the database. You aren&apos;t required to type your username and password to create a connection; however, if you don&apos;t, you will be prompted to enter them when a connection is established.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DATABASE_AUTH")]
 			DATABASE_AUTH,
 
 			/// <summary>
-			/// <para>Unchecked—Operating system authentication will be used. You do not need to type a user name and password. The connection will be made with the user name and password that were used to log in to the operating system. If the login used for the operating system is not a valid geodatabase login, the connection will fail.</para>
+			/// <para>Unchecked—Operating system authentication will be used. You do not need to type a username and password. The connection will be made with the username and password that were used to log in to the operating system. If the login used for the operating system is not a valid geodatabase login, the connection will fail.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("OPERATING_SYSTEM_AUTH")]
@@ -345,14 +345,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SaveUserPassEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The user name and password will be saved in the connection file. This is the default. If the connection file you are creating will provide ArcGIS services with access to the geodatabase, you must save the user name and password.</para>
+			/// <para>Checked—The username and password will be saved in the connection file. This is the default. If the connection file you are creating will provide ArcGIS services with access to the database or geodatabase, or if you want to use the Catalog search to locate data accessed through this connection file, you must save the username and password.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SAVE_USERNAME")]
 			SAVE_USERNAME,
 
 			/// <summary>
-			/// <para>Unchecked—The user name and password will not be saved in the connection file. Every time you attempt to connect using the file, you will be prompted for the user name and password.</para>
+			/// <para>Unchecked—The username and password will not be saved in the connection file. Every time you attempt to connect using the file, you will be prompted for the username and password.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_SAVE_USERNAME")]

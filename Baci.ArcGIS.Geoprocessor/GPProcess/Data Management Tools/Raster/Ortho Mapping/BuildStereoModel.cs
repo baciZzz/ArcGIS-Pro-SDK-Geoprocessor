@@ -61,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, MinimumAngle, MaximumAngle, MinimumOverlap, MaximumDiffOP, MaximumDiffGSD, GroupBy, OutMosaicDataset, SameFlight };
+		public override object[] Parameters => new object[] { InMosaicDataset, MinimumAngle!, MaximumAngle!, MinimumOverlap!, MaximumDiffOP!, MaximumDiffGSD!, GroupBy!, OutMosaicDataset!, SameFlight! };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MinimumAngle { get; set; } = "5";
+		public object? MinimumAngle { get; set; } = "5";
 
 		/// <summary>
 		/// <para>Maximum Intersection Angle (in degree)</para>
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MaximumAngle { get; set; } = "70";
+		public object? MaximumAngle { get; set; } = "90";
 
 		/// <summary>
 		/// <para>Minimum Area Overlap</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MinimumOverlap { get; set; } = "0.5";
+		public object? MinimumOverlap { get; set; } = "0.5";
 
 		/// <summary>
 		/// <para>Maximum Omega/Phi Difference (in degree)</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MaximumDiffOP { get; set; }
+		public object? MaximumDiffOP { get; set; }
 
 		/// <summary>
 		/// <para>Maximum GSD Difference</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MaximumDiffGSD { get; set; } = "2";
+		public object? MaximumDiffGSD { get; set; } = "2";
 
 		/// <summary>
 		/// <para>Group by</para>
@@ -119,14 +119,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object GroupBy { get; set; }
+		public object? GroupBy { get; set; }
 
 		/// <summary>
 		/// <para>Updated Mosaic Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutMosaicDataset { get; set; }
+		public object? OutMosaicDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only pick stereo models in the same flight line</para>
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SameFlight { get; set; } = "false";
+		public object? SameFlight { get; set; } = "false";
 
 		#region InnerClass
 

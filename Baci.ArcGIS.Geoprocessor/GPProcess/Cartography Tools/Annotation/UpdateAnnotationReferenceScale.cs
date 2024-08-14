@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAnnoFeatures, ReferenceScale, UpdatedAnnotation };
+		public override object[] Parameters => new object[] { InAnnoFeatures, ReferenceScale, UpdatedAnnotation! };
 
 		/// <summary>
 		/// <para>Input Annotation Features</para>
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object UpdatedAnnotation { get; set; }
+		public object? UpdatedAnnotation { get; set; }
 
 	}
 }

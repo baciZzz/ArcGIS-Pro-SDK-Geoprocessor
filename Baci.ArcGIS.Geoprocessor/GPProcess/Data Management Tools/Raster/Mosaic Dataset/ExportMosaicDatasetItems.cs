@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Mosaic Dataset Items</para>
-	/// <para>Saves a copy of processed images within a mosaic dataset to a specified folder and raster file format.</para>
+	/// <para>Saves a copy of processed images in a mosaic dataset to a specified folder and raster file format.</para>
 	/// </summary>
 	public class ExportMosaicDatasetItems : AbstractGPProcess
 	{
@@ -20,11 +20,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset that contains the images you want to export.</para>
+		/// <para>The mosaic dataset that contains the images to be exported.</para>
 		/// </param>
 		/// <param name="OutFolder">
 		/// <para>Output Folder</para>
-		/// <para>The folder where you want to save your images.</para>
+		/// <para>The folder where the images will be saved.</para>
 		/// </param>
 		public ExportMosaicDatasetItems(object InMosaicDataset, object OutFolder)
 		{
@@ -65,11 +65,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, OutFolder, OutBaseName, WhereClause, Format, NodataValue, ClipType, TemplateDataset, CellSize, DerivedOutFolder };
+		public override object[] Parameters => new object[] { InMosaicDataset, OutFolder, OutBaseName!, WhereClause!, Format!, NodataValue!, ClipType!, TemplateDataset!, CellSize!, DerivedOutFolder!, ImageSpace! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset that contains the images you want to export.</para>
+		/// <para>The mosaic dataset that contains the images to be exported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Folder</para>
-		/// <para>The folder where you want to save your images.</para>
+		/// <para>The folder where the images will be saved.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -85,44 +85,44 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Base Name</para>
-		/// <para>A prefix to name each item after it is copied. The prefix will be followed by the Object ID from the mosaic dataset footprints table.</para>
+		/// <para>A prefix to add to the name of each item after it is copied. The prefix will be followed by the Object ID value from the mosaic dataset footprints table.</para>
 		/// <para>If no base name is set, the text in the Name field of the mosaic dataset item will be used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object OutBaseName { get; set; }
+		public object? OutBaseName { get; set; }
 
 		/// <summary>
 		/// <para>Query Definition</para>
-		/// <para>An SQL expression to save selected images in the mosaic dataset.</para>
+		/// <para>An SQL expression that will be used to save selected images in the mosaic dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Output Format</para>
-		/// <para>Specifies the format for the output raster datasets.</para>
-		/// <para>TIFF—TIFF format. This is the default.</para>
-		/// <para>Cloud Optimized GeoTIFF—Cloud Optimized GeoTIFF format.</para>
-		/// <para>BMP—BMP format.</para>
-		/// <para>ENVI DAT—ENVI DAT format.</para>
-		/// <para>Esri BIL—Esri BIL format.</para>
-		/// <para>Esri BIP—Esri BIP format.</para>
-		/// <para>Esri BSQ—Esri BSQ format.</para>
-		/// <para>GIF—GIF format.</para>
-		/// <para>Esri Grid—Esri Grid format.</para>
-		/// <para>ERDAS IMAGINE—ERDAS IMAGINE format.</para>
-		/// <para>JPEG 2000—JPEG 2000 format.</para>
-		/// <para>JPEG—JPEG format.</para>
-		/// <para>PNG—PNG format.</para>
-		/// <para>Cloud raster format—Cloud raster format.</para>
-		/// <para>Meta raster format—Meta raster format.</para>
+		/// <para>Specifies the format that will be used for the output raster datasets.</para>
+		/// <para>TIFF—TIFF format will be used. This is the default.</para>
+		/// <para>Cloud Optimized GeoTIFF—Cloud Optimized GeoTIFF format will be used.</para>
+		/// <para>BMP—BMP format will be used.</para>
+		/// <para>ENVI DAT—ENVI DAT format will be used.</para>
+		/// <para>Esri BIL—Esri BIL format will be used.</para>
+		/// <para>Esri BIP—Esri BIP format will be used.</para>
+		/// <para>Esri BSQ—Esri BSQ format will be used.</para>
+		/// <para>GIF—GIF format will be used.</para>
+		/// <para>Esri Grid—Esri Grid format will be used.</para>
+		/// <para>ERDAS IMAGINE—ERDAS IMAGINE format will be used.</para>
+		/// <para>JPEG 2000—JPEG 2000 format will be used.</para>
+		/// <para>JPEG—JPEG format will be used.</para>
+		/// <para>PNG—PNG format will be used.</para>
+		/// <para>Cloud raster format—Cloud raster format will be used.</para>
+		/// <para>Meta raster format—Meta raster format will be used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Format { get; set; } = "TIFF";
+		public object? Format { get; set; } = "TIFF";
 
 		/// <summary>
 		/// <para>NoData Value</para>
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object NodataValue { get; set; }
+		public object? NodataValue { get; set; }
 
 		/// <summary>
 		/// <para>Clip Type</para>
@@ -145,11 +145,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Setting")]
-		public object ClipType { get; set; } = "NONE";
+		public object? ClipType { get; set; } = "NONE";
 
 		/// <summary>
 		/// <para>Clipping Template</para>
-		/// <para>A feature class or a bounding box to limit the extent.</para>
+		/// <para>The feature class or bounding box that will be used to limit the extent.</para>
 		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
 		/// <para>Current Display Extent—The extent is equal to the data frame or visible display. The option is not available when there is no active map.</para>
 		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
@@ -158,29 +158,41 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
 		[Category("Advanced Setting")]
-		public object TemplateDataset { get; set; }
+		public object? TemplateDataset { get; set; }
 
 		/// <summary>
 		/// <para>Cell Size</para>
 		/// <para>The horizontal (x) and vertical (y) dimensions of the output cells.</para>
-		/// <para>If not specified, the spatial resolution of the input will be used.</para>
+		/// <para>If the cell size is not specified, the spatial resolution of the input will be used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPPoint()]
 		[Category("Advanced Setting")]
-		public object CellSize { get; set; }
+		public object? CellSize { get; set; }
 
 		/// <summary>
 		/// <para>Updated Output Folder</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFolder()]
-		public object DerivedOutFolder { get; set; }
+		public object? DerivedOutFolder { get; set; }
+
+		/// <summary>
+		/// <para>Export images to image space</para>
+		/// <para>Specifies whether raster items will be exported in map space or image space.</para>
+		/// <para>Unchecked— Raster items will be exported in map space. This is the default.</para>
+		/// <para>Checked—Raster items will be exported in image space.</para>
+		/// <para><see cref="ImageSpaceEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		public object? ImageSpace { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportMosaicDatasetItems SetEnviroment(object compression = null , object geographicTransformations = null , object nodata = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object pyramid = null , object rasterStatistics = null , object resamplingMethod = null , object snapRaster = null , double[] tileSize = null )
+		public ExportMosaicDatasetItems SetEnviroment(object? compression = null , object? geographicTransformations = null , object? nodata = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? pyramid = null , object? rasterStatistics = null , object? resamplingMethod = null , object? snapRaster = null , object? tileSize = null )
 		{
 			base.SetEnv(compression: compression, geographicTransformations: geographicTransformations, nodata: nodata, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, rasterStatistics: rasterStatistics, resamplingMethod: resamplingMethod, snapRaster: snapRaster, tileSize: tileSize);
 			return this;
@@ -213,6 +225,27 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			[GPValue("FEATURE_CLASS")]
 			[Description("Clip to feature class")]
 			Clip_to_feature_class,
+
+		}
+
+		/// <summary>
+		/// <para>Export images to image space</para>
+		/// </summary>
+		public enum ImageSpaceEnum 
+		{
+			/// <summary>
+			/// <para>Checked—Raster items will be exported in image space.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("IMAGESPACE")]
+			IMAGESPACE,
+
+			/// <summary>
+			/// <para>Unchecked— Raster items will be exported in map space. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("MAPSPACE")]
+			MAPSPACE,
 
 		}
 

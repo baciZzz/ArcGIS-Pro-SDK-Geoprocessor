@@ -10,8 +10,8 @@ using System;
 namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
-	/// <para>Create Building Scene Layer Package</para>
-	/// <para>Creates a scene layer package (.slpk file) from a building layer input.</para>
+	/// <para>Create Building Scene Layer Content</para>
+	/// <para>Creates a scene layer package (.slpk) or scene layer content (.i3sREST) from a building layer input.</para>
 	/// </summary>
 	public class CreateBuildingSceneLayerPackage : AbstractGPProcess
 	{
@@ -22,20 +22,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Input Dataset</para>
 		/// <para>The input building layer or layer file (.lyrx).</para>
 		/// </param>
-		/// <param name="OutSlpk">
-		/// <para>Output Scene Layer Package</para>
-		/// <para>The output scene layer package (.slpk).</para>
-		/// </param>
-		public CreateBuildingSceneLayerPackage(object InDataset, object OutSlpk)
+		public CreateBuildingSceneLayerPackage(object InDataset)
 		{
 			this.InDataset = InDataset;
-			this.OutSlpk = OutSlpk;
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Building Scene Layer Package</para>
+		/// <para>Tool Display Name : Create Building Scene Layer Content</para>
 		/// </summary>
-		public override string DisplayName => "Create Building Scene Layer Package";
+		public override string DisplayName => "Create Building Scene Layer Content";
 
 		/// <summary>
 		/// <para>Tool Name : CreateBuildingSceneLayerPackage</para>
@@ -60,12 +55,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutSlpk, OutCoorSystem, TransformMethod, TextureOptimization };
+		public override object[] Parameters => new object[] { InDataset, OutSlpk!, OutCoorSystem!, TransformMethod!, TextureOptimization!, TargetCloudConnection! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -80,10 +75,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Output Scene Layer Package</para>
 		/// <para>The output scene layer package (.slpk).</para>
 		/// </summary>
-		[ParamType(ParamTypeEnum.must)]
+		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object OutSlpk { get; set; }
+		public object? OutSlpk { get; set; }
 
 		/// <summary>
 		/// <para>Output Coordinate System</para>
@@ -94,30 +89,47 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
-		public object OutCoorSystem { get; set; } = "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],VERTCS[\"EGM96_Geoid\",VDATUM[\"EGM96_Geoid\"],PARAMETER[\"Vertical_Shift\",0.0],PARAMETER[\"Direction\",1.0],UNIT[\"Meter\",1.0]];-400 -400 1000000000;-100000 10000;-100000 10000;8.98315284119521E-09;0.001;0.001;IsHighPrecision";
+		public object? OutCoorSystem { get; set; } = "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],VERTCS[\"EGM96_Geoid\",VDATUM[\"EGM96_Geoid\"],PARAMETER[\"Vertical_Shift\",0.0],PARAMETER[\"Direction\",1.0],UNIT[\"Meter\",1.0]];-400 -400 1000000000;-100000 10000;-100000 10000;8.98315284119521E-09;0.001;0.001;IsHighPrecision";
 
 		/// <summary>
 		/// <para>Geographic Transformation</para>
 		/// <para>The datum transformation method that will be used when the input layer&apos;s coordinate system uses a datum that differs from the output coordinate system. All transformations are bidirectional, regardless of the direction implied by their names. For example, NAD_1927_to_WGS_1984_3 will work correctly even if the datum conversion is from WGS84 to NAD 1927.</para>
-		/// <para>The ArcGIS Coordinate System data is required for vertical datum transformations between ellipsoidal and gravity-related and two gravity-related datums.</para>
+		/// <para>The ArcGIS coordinate system data is required for vertical datum transformations between ellipsoidal and gravity-related and two gravity-related datums.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object TransformMethod { get; set; }
+		public object? TransformMethod { get; set; }
 
 		/// <summary>
 		/// <para>Texture Optimization</para>
-		/// <para>Specifies the textures that will be optimized according to the target platform where the scene layer package is used. Desktop includes Windows, Linux, and Mac platforms. Mobile include iOS and Android.Optimizations that include ETC2 may take significant time to process. For fastest results, use the Desktop or None option.</para>
-		/// <para>All—Texture formats will be optimized for use on desktop, web, and mobile platforms. Texture formats will be JPEG, DXT, and ETC2.</para>
-		/// <para>Desktop—Texture formats will be optimized for use on desktop and web platforms. Texture formats will be JPEG and DXT.</para>
-		/// <para>Mobile—Texture formats will be optimized for use on desktop and mobile platforms. Texture formats will be JPEG and ETC2.</para>
-		/// <para>None—Textures formats will be optimized for use on a desktop platform. The texture format will be JPEG.</para>
+		/// <para>Specifies the textures that will be optimized according to the target platform where the scene layer package is used.Optimizations that include KTX2 may take significant time to process. For fastest results, use the Desktop or None options.</para>
+		/// <para>All—All texture formats will be optimized including JPEG, DXT, and KTX2 for use in desktop, web, and mobile platforms.</para>
+		/// <para>Desktop—Windows, Linux, and Mac supported textures will be optimized including JPEG and DXT for use in ArcGIS Pro clients on Windows and ArcGIS Runtime desktop clients on Windows, Linux, and Mac. This is the default.</para>
+		/// <para>Mobile—Android and iOS supported textures will be optimized including JPEG and KTX2 for use in ArcGIS Runtime mobile applications.</para>
+		/// <para>None—JPEG textures will be optimized for use in desktop and web platforms.</para>
 		/// <para><see cref="TextureOptimizationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TextureOptimization { get; set; } = "DESKTOP";
+		public object? TextureOptimization { get; set; } = "DESKTOP";
+
+		/// <summary>
+		/// <para>Target Cloud Connection</para>
+		/// <para>The target cloud connection file (.acs) where the scene layer content (.i3sREST) will be output.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[DEFolder()]
+		public object? TargetCloudConnection { get; set; }
+
+		/// <summary>
+		/// <para>Only Set The Valid Environment For This Tool</para>
+		/// </summary>
+		public CreateBuildingSceneLayerPackage SetEnviroment(object? parallelProcessingFactor = null )
+		{
+			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
+			return this;
+		}
 
 		#region InnerClass
 
@@ -127,28 +139,28 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum TextureOptimizationEnum 
 		{
 			/// <summary>
-			/// <para>All—Texture formats will be optimized for use on desktop, web, and mobile platforms. Texture formats will be JPEG, DXT, and ETC2.</para>
+			/// <para>All—All texture formats will be optimized including JPEG, DXT, and KTX2 for use in desktop, web, and mobile platforms.</para>
 			/// </summary>
 			[GPValue("ALL")]
 			[Description("All")]
 			All,
 
 			/// <summary>
-			/// <para>Desktop—Texture formats will be optimized for use on desktop and web platforms. Texture formats will be JPEG and DXT.</para>
+			/// <para>Desktop—Windows, Linux, and Mac supported textures will be optimized including JPEG and DXT for use in ArcGIS Pro clients on Windows and ArcGIS Runtime desktop clients on Windows, Linux, and Mac. This is the default.</para>
 			/// </summary>
 			[GPValue("DESKTOP")]
 			[Description("Desktop")]
 			Desktop,
 
 			/// <summary>
-			/// <para>Mobile—Texture formats will be optimized for use on desktop and mobile platforms. Texture formats will be JPEG and ETC2.</para>
+			/// <para>Mobile—Android and iOS supported textures will be optimized including JPEG and KTX2 for use in ArcGIS Runtime mobile applications.</para>
 			/// </summary>
 			[GPValue("MOBILE")]
 			[Description("Mobile")]
 			Mobile,
 
 			/// <summary>
-			/// <para>None—Textures formats will be optimized for use on a desktop platform. The texture format will be JPEG.</para>
+			/// <para>None—JPEG textures will be optimized for use in desktop and web platforms.</para>
 			/// </summary>
 			[GPValue("NONE")]
 			[Description("None")]

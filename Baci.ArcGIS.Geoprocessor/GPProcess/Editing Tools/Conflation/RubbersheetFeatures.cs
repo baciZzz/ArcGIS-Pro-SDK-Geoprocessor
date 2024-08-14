@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InLinkFeatures, InIdentityLinks, Method, OutFeatureClass };
+		public override object[] Parameters => new object[] { InFeatures, InLinkFeatures, InIdentityLinks!, Method!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object InIdentityLinks { get; set; }
+		public object? InIdentityLinks { get; set; }
 
 		/// <summary>
 		/// <para>Method</para>
@@ -106,19 +106,19 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "LINEAR";
+		public object? Method { get; set; } = "LINEAR";
 
 		/// <summary>
 		/// <para>Modified Input Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RubbersheetFeatures SetEnviroment(object extent = null , object workspace = null )
+		public RubbersheetFeatures SetEnviroment(object? extent = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkAnalysisLayer, FileType, OutDirectionsFile, ReportUnits, ReportTime, TimeAttribute, Language, StyleName, Stylesheet, OutputLayer };
+		public override object[] Parameters => new object[] { InNetworkAnalysisLayer, FileType, OutDirectionsFile, ReportUnits, ReportTime!, TimeAttribute!, Language!, StyleName!, Stylesheet!, OutputLayer! };
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ReportTime { get; set; } = "true";
+		public object? ReportTime { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Time Attribute</para>
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TimeAttribute { get; set; }
+		public object? TimeAttribute { get; set; }
 
 		/// <summary>
 		/// <para>Language</para>
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Language { get; set; }
+		public object? Language { get; set; }
 
 		/// <summary>
 		/// <para>Style Name</para>
@@ -165,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object StyleName { get; set; }
+		public object? StyleName { get; set; }
 
 		/// <summary>
 		/// <para>Stylesheet</para>
@@ -175,19 +175,19 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object Stylesheet { get; set; }
+		public object? Stylesheet { get; set; }
 
 		/// <summary>
 		/// <para>Network Analysis Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPNALayer()]
-		public object OutputLayer { get; set; }
+		public object? OutputLayer { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Directions SetEnviroment(object workspace = null )
+		public Directions SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

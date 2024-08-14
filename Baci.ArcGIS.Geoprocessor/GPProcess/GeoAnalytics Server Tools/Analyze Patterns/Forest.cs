@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { PredictionType, InFeatures, OutputTrainedName, VariablePredict, TreatVariableAsCategorical, ExplanatoryVariables, CreateVariableImportanceTable, FeaturesToPredict, ExplanatoryVariableMatching, NumberOfTrees, MinimumLeafSize, MaximumTreeDepth, SampleSize, RandomVariables, PercentageForValidation, DataStore, OutputTrained, VariableOfImportance, OutputPredicted };
+		public override object[] Parameters => new object[] { PredictionType, InFeatures, OutputTrainedName, VariablePredict, TreatVariableAsCategorical!, ExplanatoryVariables!, CreateVariableImportanceTable!, FeaturesToPredict!, ExplanatoryVariableMatching!, NumberOfTrees!, MinimumLeafSize!, MaximumTreeDepth!, SampleSize!, RandomVariables!, PercentageForValidation!, DataStore!, OutputTrained!, VariableOfImportance!, OutputPredicted! };
 
 		/// <summary>
 		/// <para>Prediction Type</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object TreatVariableAsCategorical { get; set; }
+		public object? TreatVariableAsCategorical { get; set; }
 
 		/// <summary>
 		/// <para>Explanatory Variables</para>
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object ExplanatoryVariables { get; set; }
+		public object? ExplanatoryVariables { get; set; }
 
 		/// <summary>
 		/// <para>Create Variable Importance Table</para>
@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Additional Outputs")]
-		public object CreateVariableImportanceTable { get; set; }
+		public object? CreateVariableImportanceTable { get; set; }
 
 		/// <summary>
 		/// <para>Input Prediction Features</para>
@@ -159,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRecordSet()]
 		[GPTablesDomain()]
-		public object FeaturesToPredict { get; set; }
+		public object? FeaturesToPredict { get; set; }
 
 		/// <summary>
 		/// <para>Match Explanatory Variables</para>
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object ExplanatoryVariableMatching { get; set; }
+		public object? ExplanatoryVariableMatching { get; set; }
 
 		/// <summary>
 		/// <para>Number of Trees</para>
@@ -177,7 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Advanced Forest Options")]
-		public object NumberOfTrees { get; set; } = "100";
+		public object? NumberOfTrees { get; set; } = "100";
 
 		/// <summary>
 		/// <para>Minimum Leaf Size</para>
@@ -186,7 +186,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Advanced Forest Options")]
-		public object MinimumLeafSize { get; set; }
+		public object? MinimumLeafSize { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Tree Depth</para>
@@ -195,7 +195,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Advanced Forest Options")]
-		public object MaximumTreeDepth { get; set; }
+		public object? MaximumTreeDepth { get; set; }
 
 		/// <summary>
 		/// <para>Data Available per Tree (%)</para>
@@ -206,7 +206,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Advanced Forest Options")]
-		public object SampleSize { get; set; } = "100";
+		public object? SampleSize { get; set; } = "100";
 
 		/// <summary>
 		/// <para>Number of Randomly Sampled Variables</para>
@@ -216,7 +216,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Advanced Forest Options")]
-		public object RandomVariables { get; set; }
+		public object? RandomVariables { get; set; }
 
 		/// <summary>
 		/// <para>Training Data Excluded for Validation (%)</para>
@@ -226,7 +226,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Validation Options")]
-		public object PercentageForValidation { get; set; } = "10";
+		public object? PercentageForValidation { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Data Store</para>
@@ -239,33 +239,33 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Data Store")]
-		public object DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
+		public object? DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
 
 		/// <summary>
 		/// <para>Output Trained Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object OutputTrained { get; set; }
+		public object? OutputTrained { get; set; }
 
 		/// <summary>
 		/// <para>Variable of Importance Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object VariableOfImportance { get; set; }
+		public object? VariableOfImportance { get; set; }
 
 		/// <summary>
 		/// <para>Output Predicted Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object OutputPredicted { get; set; }
+		public object? OutputPredicted { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Forest SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public Forest SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

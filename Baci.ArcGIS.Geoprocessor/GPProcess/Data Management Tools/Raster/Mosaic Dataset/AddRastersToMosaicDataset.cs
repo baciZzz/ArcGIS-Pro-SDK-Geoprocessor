@@ -28,10 +28,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Raster Type</para>
 		/// <para>The type of raster that will be added. The raster type is specific to imagery products. It identifies metadata, such as georeferencing, acquisition date, and sensor type, along with a raster format.</para>
 		/// <para>If you are using a LAS, LAS Dataset, or Terrain raster type, a cell size must be specified on the Raster Type properties page.</para>
-		/// <para>The Processing Templates drop-down list contains functions that will be applied to items added to the mosaic dataset and how, or in what order, they will be applied. You can use a single function, such as the Stretch function, or you can chain multiple functions together to create a more advanced product. Most raster types have several preexisting functions associated with them. Use this drop-down list to edit existing functions or add new functions to items that will be added to the mosaic dataset.</para>
+		/// <para>The Processing Templates drop-down list contains functions that will be applied to items that are added to the mosaic dataset and how, or in what order, they will be applied. You can use a single function, such as the Stretch function, or you can chain multiple functions together to create a more advanced product. Most raster types have several preexisting functions associated with them. Use this drop-down list to edit existing functions or add new functions to items that will be added to the mosaic dataset.</para>
 		/// <para>To edit a template, select it in the Processing Templates drop-down list, and click Edit . Once you finish editing the template, click Save to update the template, or click Save As to save it as a new item in the drop-down list. To export a template to disk for use with other mosaic datasets, click the Export button .</para>
 		/// <para>To create a template, click Create New Template in the Processing Templates drop-down list. For more information, see Raster function template.</para>
-		/// <para>To import a function chain from disk or from the Raster Function pane, click Import in the Processing Templates drop-down list. If the template was created independently of the raster type template editor, you will need to change the name of the primary input raster variable to Dataset. To do this, double-click the first function in the chain and click the Variables tab. Change the value in the Name field of the raster parameter to Dataset.</para>
+		/// <para>To import a function chain from disk or from the Raster Function pane, click Import in the Processing Templates drop-down list. If the template was created independently of the raster type template editor, you need to change the name of the primary input raster variable to Dataset. To do this, double-click the first function in the chain and click the Variables tab. Change the value in the Name field of the raster parameter to Dataset.</para>
 		/// </param>
 		/// <param name="InputPath">
 		/// <para>Input Data</para>
@@ -39,7 +39,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Not all input options will be available. The selected raster type determines the available options.</para>
 		/// <para>Dataset—An ArcGIS geographic dataset, such as a raster or mosaic dataset in a geodatabase or table, will be used as input.</para>
 		/// <para>Workspace—A folder containing multiple raster datasets will be used as input. The folder can contain subfolders.This option is affected by the Include Sub Folders and Input Data Filter parameters.</para>
-		/// <para>File—One or more raster datasets stored in a folder on disk, an image service definition file (.ISDef), or a raster process definition file (.RPDef) will be used as input. The file list will ignore files that do not correspond to the raster type being added. Do not use this option with file formats that are raster datasets, such as TIFF or MrSID files; use the Dataset input type instead.</para>
+		/// <para>File—One or more raster datasets stored in a folder on disk, an image service definition file (.ISDef), or a raster process definition file (.RPDef) will be used as input. Files that do not correspond to the raster type being added will be ignored. Do not use this option with file formats that are raster datasets, such as TIFF or MrSID files; use the Dataset input type instead.</para>
 		/// <para>Service—A WCS, a map, an image service, or a web service layer file will be used as input.</para>
 		/// </param>
 		public AddRastersToMosaicDataset(object InMosaicDataset, object RasterType, object InputPath)
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, RasterType, InputPath, UpdateCellsizeRanges, UpdateBoundary, UpdateOverviews, MaximumPyramidLevels, MaximumCellSize, MinimumDimension, SpatialReference, Filter, SubFolder, DuplicateItemsAction, BuildPyramids, CalculateStatistics, BuildThumbnails, OperationDescription, ForceSpatialReference, EstimateStatistics, AuxInputs, EnablePixelCache, CacheLocation, OutMosaicDataset };
+		public override object[] Parameters => new object[] { InMosaicDataset, RasterType, InputPath, UpdateCellsizeRanges!, UpdateBoundary!, UpdateOverviews!, MaximumPyramidLevels!, MaximumCellSize!, MinimumDimension!, SpatialReference!, Filter!, SubFolder!, DuplicateItemsAction!, BuildPyramids!, CalculateStatistics!, BuildThumbnails!, OperationDescription!, ForceSpatialReference!, EstimateStatistics!, AuxInputs!, EnablePixelCache!, CacheLocation!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -96,10 +96,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Raster Type</para>
 		/// <para>The type of raster that will be added. The raster type is specific to imagery products. It identifies metadata, such as georeferencing, acquisition date, and sensor type, along with a raster format.</para>
 		/// <para>If you are using a LAS, LAS Dataset, or Terrain raster type, a cell size must be specified on the Raster Type properties page.</para>
-		/// <para>The Processing Templates drop-down list contains functions that will be applied to items added to the mosaic dataset and how, or in what order, they will be applied. You can use a single function, such as the Stretch function, or you can chain multiple functions together to create a more advanced product. Most raster types have several preexisting functions associated with them. Use this drop-down list to edit existing functions or add new functions to items that will be added to the mosaic dataset.</para>
+		/// <para>The Processing Templates drop-down list contains functions that will be applied to items that are added to the mosaic dataset and how, or in what order, they will be applied. You can use a single function, such as the Stretch function, or you can chain multiple functions together to create a more advanced product. Most raster types have several preexisting functions associated with them. Use this drop-down list to edit existing functions or add new functions to items that will be added to the mosaic dataset.</para>
 		/// <para>To edit a template, select it in the Processing Templates drop-down list, and click Edit . Once you finish editing the template, click Save to update the template, or click Save As to save it as a new item in the drop-down list. To export a template to disk for use with other mosaic datasets, click the Export button .</para>
 		/// <para>To create a template, click Create New Template in the Processing Templates drop-down list. For more information, see Raster function template.</para>
-		/// <para>To import a function chain from disk or from the Raster Function pane, click Import in the Processing Templates drop-down list. If the template was created independently of the raster type template editor, you will need to change the name of the primary input raster variable to Dataset. To do this, double-click the first function in the chain and click the Variables tab. Change the value in the Name field of the raster parameter to Dataset.</para>
+		/// <para>To import a function chain from disk or from the Raster Function pane, click Import in the Processing Templates drop-down list. If the template was created independently of the raster type template editor, you need to change the name of the primary input raster variable to Dataset. To do this, double-click the first function in the chain and click the Variables tab. Change the value in the Name field of the raster parameter to Dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRasterBuilder()]
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Not all input options will be available. The selected raster type determines the available options.</para>
 		/// <para>Dataset—An ArcGIS geographic dataset, such as a raster or mosaic dataset in a geodatabase or table, will be used as input.</para>
 		/// <para>Workspace—A folder containing multiple raster datasets will be used as input. The folder can contain subfolders.This option is affected by the Include Sub Folders and Input Data Filter parameters.</para>
-		/// <para>File—One or more raster datasets stored in a folder on disk, an image service definition file (.ISDef), or a raster process definition file (.RPDef) will be used as input. The file list will ignore files that do not correspond to the raster type being added. Do not use this option with file formats that are raster datasets, such as TIFF or MrSID files; use the Dataset input type instead.</para>
+		/// <para>File—One or more raster datasets stored in a folder on disk, an image service definition file (.ISDef), or a raster process definition file (.RPDef) will be used as input. Files that do not correspond to the raster type being added will be ignored. Do not use this option with file formats that are raster datasets, such as TIFF or MrSID files; use the Dataset input type instead.</para>
 		/// <para>Service—A WCS, a map, an image service, or a web service layer file will be used as input.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Mosaic Post-processing")]
-		public object UpdateCellsizeRanges { get; set; } = "true";
+		public object? UpdateCellsizeRanges { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Update Boundary</para>
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Mosaic Post-processing")]
-		public object UpdateBoundary { get; set; } = "true";
+		public object? UpdateBoundary { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Update Overviews</para>
@@ -155,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Mosaic Post-processing")]
-		public object UpdateOverviews { get; set; } = "false";
+		public object? UpdateOverviews { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Maximum Levels</para>
@@ -165,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Raster Processing")]
-		public object MaximumPyramidLevels { get; set; }
+		public object? MaximumPyramidLevels { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Cell Size</para>
@@ -174,7 +174,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Raster Processing")]
-		public object MaximumCellSize { get; set; } = "0";
+		public object? MaximumCellSize { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Minimum Rows or Columns</para>
@@ -183,7 +183,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Raster Processing")]
-		public object MinimumDimension { get; set; } = "1500";
+		public object? MinimumDimension { get; set; } = "1500";
 
 		/// <summary>
 		/// <para>Coordinate System for Input Data</para>
@@ -193,7 +193,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
 		[Category("Advanced Input Data Options")]
-		public object SpatialReference { get; set; }
+		public object? SpatialReference { get; set; }
 
 		/// <summary>
 		/// <para>Input Data Filter</para>
@@ -215,7 +215,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Advanced Input Data Options")]
-		public object Filter { get; set; }
+		public object? Filter { get; set; }
 
 		/// <summary>
 		/// <para>Include Sub Folders</para>
@@ -228,21 +228,21 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Input Data Options")]
-		public object SubFolder { get; set; } = "true";
+		public object? SubFolder { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Add New Datasets Only</para>
 		/// <para>Specifies how duplicate rasters will be handled. A check will be performed to determine whether each raster has already been added, using the original path and file name. Choose the action to be performed when a duplicate path and file name are found.</para>
 		/// <para>Allow duplicates—All rasters will be added even if they already exist in the mosaic dataset. This is the default.</para>
-		/// <para>Exclude duplicates—The duplicate raster will not be added.</para>
-		/// <para>Overwrite duplicates—The duplicate raster will overwrite the existing raster.</para>
+		/// <para>Exclude duplicates—Duplicate rasters will not be added.</para>
+		/// <para>Overwrite duplicates—Duplicate rasters will overwrite existing rasters.</para>
 		/// <para><see cref="DuplicateItemsActionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Input Data Options")]
-		public object DuplicateItemsAction { get; set; } = "ALLOW_DUPLICATES";
+		public object? DuplicateItemsAction { get; set; } = "ALLOW_DUPLICATES";
 
 		/// <summary>
 		/// <para>Build Raster Pyramids</para>
@@ -255,7 +255,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Raster Processing")]
-		public object BuildPyramids { get; set; } = "false";
+		public object? BuildPyramids { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Calculate Statistics</para>
@@ -268,7 +268,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Raster Processing")]
-		public object CalculateStatistics { get; set; } = "false";
+		public object? CalculateStatistics { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Build Thumbnails</para>
@@ -281,7 +281,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Mosaic Post-processing")]
-		public object BuildThumbnails { get; set; } = "false";
+		public object? BuildThumbnails { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Operation Description</para>
@@ -290,20 +290,20 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Mosaic Post-processing")]
-		public object OperationDescription { get; set; }
+		public object? OperationDescription { get; set; }
 
 		/// <summary>
 		/// <para>Force this Coordinate System for Input Data</para>
 		/// <para>Specifies whether the Coordinate System for Input Data parameter value will be used for all the rasters when loading data into the mosaic dataset. This option does not reproject the data; it uses the coordinate system defined in the tool to construct items in the mosaic dataset. The extent of the image will be used, but the projection will be overwritten.</para>
 		/// <para>Unchecked—The coordinate system of each raster data will be used when loading data. This is the default. If unchecked and the input image does not have a coordinate system (that is, it&apos;s unknown), the mosaic dataset coordinate system will be used in constructing mosaic dataset items. If the image has a coordinate system, that coordinate system will be used.</para>
-		/// <para>Checked—The coordinate system specified in the Coordinate System for Input Data parameter will be used for each of the raster datasets when loading data.</para>
+		/// <para>Checked—The coordinate system specified in the Coordinate System for Input Data parameter will be used for each raster dataset when loading data.</para>
 		/// <para><see cref="ForceSpatialReferenceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Input Data Options")]
-		public object ForceSpatialReference { get; set; } = "false";
+		public object? ForceSpatialReference { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Estimate Mosaic Dataset Statistics</para>
@@ -316,7 +316,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Mosaic Post-processing")]
-		public object EstimateStatistics { get; set; } = "false";
+		public object? EstimateStatistics { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Auxiliary Inputs</para>
@@ -325,7 +325,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[Category("Advanced Input Data Options")]
-		public object AuxInputs { get; set; }
+		public object? AuxInputs { get; set; }
 
 		/// <summary>
 		/// <para>Enable Pixel Cache</para>
@@ -338,7 +338,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Input Data Options")]
-		public object EnablePixelCache { get; set; } = "false";
+		public object? EnablePixelCache { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Pixel Cache Location</para>
@@ -348,19 +348,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[Category("Advanced Input Data Options")]
-		public object CacheLocation { get; set; }
+		public object? CacheLocation { get; set; }
 
 		/// <summary>
 		/// <para>Updated Mosaic Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutMosaicDataset { get; set; }
+		public object? OutMosaicDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddRastersToMosaicDataset SetEnviroment(object extent = null , object geographicTransformations = null , object parallelProcessingFactor = null , object pyramid = null , object rasterStatistics = null , object scratchWorkspace = null , object workspace = null )
+		public AddRastersToMosaicDataset SetEnviroment(object? extent = null , object? geographicTransformations = null , object? parallelProcessingFactor = null , object? pyramid = null , object? rasterStatistics = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, rasterStatistics: rasterStatistics, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -465,14 +465,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			Allow_duplicates,
 
 			/// <summary>
-			/// <para>Exclude duplicates—The duplicate raster will not be added.</para>
+			/// <para>Exclude duplicates—Duplicate rasters will not be added.</para>
 			/// </summary>
 			[GPValue("EXCLUDE_DUPLICATES")]
 			[Description("Exclude duplicates")]
 			Exclude_duplicates,
 
 			/// <summary>
-			/// <para>Overwrite duplicates—The duplicate raster will overwrite the existing raster.</para>
+			/// <para>Overwrite duplicates—Duplicate rasters will overwrite existing rasters.</para>
 			/// </summary>
 			[GPValue("OVERWRITE_DUPLICATES")]
 			[Description("Overwrite duplicates")]
@@ -549,7 +549,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ForceSpatialReferenceEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The coordinate system specified in the Coordinate System for Input Data parameter will be used for each of the raster datasets when loading data.</para>
+			/// <para>Checked—The coordinate system specified in the Coordinate System for Input Data parameter will be used for each raster dataset when loading data.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FORCE_SPATIAL_REFERENCE")]

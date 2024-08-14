@@ -25,11 +25,11 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </param>
 		/// <param name="EventLayers">
 		/// <para>Event Layers</para>
-		/// <para>The event layers to be dynamically segmented together onto a target network.</para>
+		/// <para>The event layers that will be dynamically segmented together onto a target network.</para>
 		/// </param>
 		/// <param name="OutputDataset">
 		/// <para>Output Dataset</para>
-		/// <para>The table or feature class to be created, containing the output event records.</para>
+		/// <para>The table or feature class containing the output event records that will be created.</para>
 		/// </param>
 		public OverlayEvents(object InRouteFeatures, object EventLayers, object OutputDataset)
 		{
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRouteFeatures, EventLayers, OutputDataset, IncludeGeometry, NetworkFields };
+		public override object[] Parameters => new object[] { InRouteFeatures, EventLayers, OutputDataset, IncludeGeometry!, NetworkFields! };
 
 		/// <summary>
 		/// <para>Input Route Features</para>
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Event Layers</para>
-		/// <para>The event layers to be dynamically segmented together onto a target network.</para>
+		/// <para>The event layers that will be dynamically segmented together onto a target network.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Output Dataset</para>
-		/// <para>The table or feature class to be created, containing the output event records.</para>
+		/// <para>The table or feature class containing the output event records that will be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -101,15 +101,15 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Include Geometry</para>
-		/// <para>Specifies whether the Output Dataset will include event geometry.</para>
-		/// <para>Unchecked—The Output Dataset will not include event geometry. Event records will be stored as a table. This is the default.</para>
-		/// <para>Checked—The Output Dataset will include event geometry. Event records will be stored as a feature class.</para>
+		/// <para>Specifies whether the Output Dataset value will include event geometry.</para>
+		/// <para>Unchecked—The Output Dataset value will not include event geometry. Event records will be stored as a table. This is the default.</para>
+		/// <para>Checked—The Output Dataset value will include event geometry. Event records will be stored as a feature class.</para>
 		/// <para><see cref="IncludeGeometryEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeGeometry { get; set; } = "false";
+		public object? IncludeGeometry { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Network Fields</para>
@@ -118,12 +118,12 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
-		public object NetworkFields { get; set; }
+		public object? NetworkFields { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public OverlayEvents SetEnviroment(object workspace = null )
+		public OverlayEvents SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -137,18 +137,18 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum IncludeGeometryEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—The Output Dataset will not include event geometry. Event records will be stored as a table. This is the default.</para>
-			/// </summary>
-			[GPValue("false")]
-			[Description("EXCLUDE_GEOMETRY")]
-			EXCLUDE_GEOMETRY,
-
-			/// <summary>
-			/// <para>Checked—The Output Dataset will include event geometry. Event records will be stored as a feature class.</para>
+			/// <para>Checked—The Output Dataset value will include event geometry. Event records will be stored as a feature class.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_GEOMETRY")]
 			INCLUDE_GEOMETRY,
+
+			/// <summary>
+			/// <para>Unchecked—The Output Dataset value will not include event geometry. Event records will be stored as a table. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("EXCLUDE_GEOMETRY")]
+			EXCLUDE_GEOMETRY,
 
 		}
 

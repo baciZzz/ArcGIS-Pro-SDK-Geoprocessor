@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDataset, AlternateIDFieldName, OutNetworkDataset };
+		public override object[] Parameters => new object[] { InNetworkDataset, AlternateIDFieldName, OutNetworkDataset! };
 
 		/// <summary>
 		/// <para>Input Network Dataset</para>
@@ -88,12 +88,12 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPNetworkDatasetLayer()]
-		public object OutNetworkDataset { get; set; }
+		public object? OutNetworkDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PopulateAlternateIDFields SetEnviroment(object workspace = null )
+		public PopulateAlternateIDFields SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

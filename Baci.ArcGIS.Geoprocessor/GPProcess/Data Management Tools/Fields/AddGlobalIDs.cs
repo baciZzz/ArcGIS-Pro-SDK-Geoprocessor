@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDatasets, OutDatasets };
+		public override object[] Parameters => new object[] { InDatasets, OutDatasets! };
 
 		/// <summary>
 		/// <para>Input Datasets</para>
@@ -77,12 +77,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutDatasets { get; set; }
+		public object? OutDatasets { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddGlobalIDs SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public AddGlobalIDs SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

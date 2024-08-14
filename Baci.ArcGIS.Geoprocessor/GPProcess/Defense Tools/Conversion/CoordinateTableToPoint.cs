@@ -82,12 +82,12 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutFeatureClass, XOrLonField, InCoordinateFormat, YOrLatField, CoordinateSystem };
+		public override object[] Parameters => new object[] { InTable, OutFeatureClass, XOrLonField, InCoordinateFormat, YOrLatField!, CoordinateSystem! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
-		public object YOrLatField { get; set; }
+		public object? YOrLatField { get; set; }
 
 		/// <summary>
 		/// <para>Input Coordinate System</para>
@@ -149,14 +149,14 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
-		public object CoordinateSystem { get; set; }
+		public object? CoordinateSystem { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CoordinateTableToPoint SetEnviroment(object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public CoordinateTableToPoint SetEnviroment(object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
-			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
+			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
 		}
 

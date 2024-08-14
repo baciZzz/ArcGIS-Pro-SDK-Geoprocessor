@@ -24,12 +24,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </param>
 		/// <param name="CenterPoint">
 		/// <para>Center point</para>
-		/// <para>Center coordinate (x,y) of circle defining the area to be extracted.</para>
+		/// <para>The center coordinate (x,y) of the circle defining the area to be extracted.</para>
 		/// <para>The coordinates are specified in the same map units as the input raster.</para>
 		/// </param>
 		/// <param name="Radius">
 		/// <para>Radius</para>
-		/// <para>Radius of the circle defining the area to be extracted.</para>
+		/// <para>The radius of the circle defining the area to be extracted.</para>
 		/// <para>The radius is specified in map units and is in the same units as the input raster.</para>
 		/// </param>
 		/// <param name="OutRaster">
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, CenterPoint, Radius, OutRaster, ExtractionArea };
+		public override object[] Parameters => new object[] { InRaster, CenterPoint, Radius, OutRaster, ExtractionArea! };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Center point</para>
-		/// <para>Center coordinate (x,y) of circle defining the area to be extracted.</para>
+		/// <para>The center coordinate (x,y) of the circle defining the area to be extracted.</para>
 		/// <para>The coordinates are specified in the same map units as the input raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Radius</para>
-		/// <para>Radius of the circle defining the area to be extracted.</para>
+		/// <para>The radius of the circle defining the area to be extracted.</para>
 		/// <para>The radius is specified in map units and is in the same units as the input raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -116,22 +116,22 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Extraction area</para>
-		/// <para>Identifies whether to extract cells inside or outside the input circle.</para>
-		/// <para>Inside—A keyword specifying that the cells inside the input circle should be selected and written to the output raster. All cells outside the circle will receive NoData values on the output raster.</para>
-		/// <para>Outside—A keyword specifying that the cells outside the input circle should be selected and written to the output raster. All cells inside the circle will receive NoData values on the output raster.</para>
+		/// <para>Specifies whether cells inside or outside the input circle will be selected and written to the output raster.</para>
+		/// <para>Inside—Cells inside the input circle will be selected and written to the output raster. All cells outside the circle will receive NoData values on the output raster.</para>
+		/// <para>Outside—Cells outside the input circle will be selected and written to the output raster. All cells inside the circle will receive NoData values on the output raster.</para>
 		/// <para><see cref="ExtractionAreaEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ExtractionArea { get; set; } = "INSIDE";
+		public object? ExtractionArea { get; set; } = "INSIDE";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExtractByCircle SetEnviroment(int? autoCommit = null , object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public ExtractByCircle SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 
@@ -143,14 +143,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ExtractionAreaEnum 
 		{
 			/// <summary>
-			/// <para>Inside—A keyword specifying that the cells inside the input circle should be selected and written to the output raster. All cells outside the circle will receive NoData values on the output raster.</para>
+			/// <para>Inside—Cells inside the input circle will be selected and written to the output raster. All cells outside the circle will receive NoData values on the output raster.</para>
 			/// </summary>
 			[GPValue("INSIDE")]
 			[Description("Inside")]
 			Inside,
 
 			/// <summary>
-			/// <para>Outside—A keyword specifying that the cells outside the input circle should be selected and written to the output raster. All cells inside the circle will receive NoData values on the output raster.</para>
+			/// <para>Outside—Cells outside the input circle will be selected and written to the output raster. All cells inside the circle will receive NoData values on the output raster.</para>
 			/// </summary>
 			[GPValue("OUTSIDE")]
 			[Description("Outside")]

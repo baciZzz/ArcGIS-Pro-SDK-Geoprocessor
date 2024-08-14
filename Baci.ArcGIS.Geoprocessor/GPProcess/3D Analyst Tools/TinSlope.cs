@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTin, OutFeatureClass, Units, ClassBreaksTable, SlopeField, ZFactor };
+		public override object[] Parameters => new object[] { InTin, OutFeatureClass, Units!, ClassBreaksTable!, SlopeField!, ZFactor! };
 
 		/// <summary>
 		/// <para>Input TIN</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Units { get; set; } = "PERCENT";
+		public object? Units { get; set; } = "PERCENT";
 
 		/// <summary>
 		/// <para>Class Breaks Table</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object ClassBreaksTable { get; set; }
+		public object? ClassBreaksTable { get; set; }
 
 		/// <summary>
 		/// <para>Slope Field</para>
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object SlopeField { get; set; } = "SlopeCode";
+		public object? SlopeField { get; set; } = "SlopeCode";
 
 		/// <summary>
 		/// <para>Z Factor</para>
@@ -116,12 +116,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ZFactor { get; set; } = "1";
+		public object? ZFactor { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TinSlope SetEnviroment(object XYDomain = null , object XYResolution = null , object XYTolerance = null , object extent = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public TinSlope SetEnviroment(object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? extent = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, extent: extent, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

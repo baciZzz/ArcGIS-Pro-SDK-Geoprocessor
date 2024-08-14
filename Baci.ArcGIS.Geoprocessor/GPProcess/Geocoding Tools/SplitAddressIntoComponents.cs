@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { CountryCode, InAddressData, InAddressFields, OutAddressData, InExceptions };
+		public override object[] Parameters => new object[] { CountryCode, InAddressData, InAddressFields, OutAddressData, InExceptions! };
 
 		/// <summary>
 		/// <para>Country or Region</para>

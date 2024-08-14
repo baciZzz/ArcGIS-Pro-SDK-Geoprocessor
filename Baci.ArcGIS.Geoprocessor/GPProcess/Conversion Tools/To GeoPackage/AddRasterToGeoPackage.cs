@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, TargetGeopackage, RasterName, TilingScheme, TilingSchemeFile, OutGeopackageRaster, AreaOfInterest };
+		public override object[] Parameters => new object[] { InDataset, TargetGeopackage, RasterName, TilingScheme!, TilingSchemeFile!, OutGeopackageRaster!, AreaOfInterest! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TilingScheme { get; set; } = "TILED";
+		public object? TilingScheme { get; set; } = "TILED";
 
 		/// <summary>
 		/// <para>Tiling Scheme File</para>
@@ -120,14 +120,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object TilingSchemeFile { get; set; }
+		public object? TilingSchemeFile { get; set; }
 
 		/// <summary>
 		/// <para>Output GeoPackage</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DERasterDataset()]
-		public object OutGeopackageRaster { get; set; }
+		public object? OutGeopackageRaster { get; set; }
 
 		/// <summary>
 		/// <para>Area of Interest</para>
@@ -135,12 +135,12 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
-		public object AreaOfInterest { get; set; }
+		public object? AreaOfInterest { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddRasterToGeoPackage SetEnviroment(object compression = null , object pyramid = null )
+		public AddRasterToGeoPackage SetEnviroment(object? compression = null , object? pyramid = null )
 		{
 			base.SetEnv(compression: compression, pyramid: pyramid);
 			return this;

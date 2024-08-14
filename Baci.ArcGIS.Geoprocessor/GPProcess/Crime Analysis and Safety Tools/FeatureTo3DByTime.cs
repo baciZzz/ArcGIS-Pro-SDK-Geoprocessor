@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, DateField, TimeZUnit, BaseZ, BaseDate };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, DateField, TimeZUnit!, BaseZ!, BaseDate! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -103,12 +103,11 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <para>Time Z Interval and Unit</para>
 		/// <para>The time interval and unit that will be represented by one vertical linear unit in the output feature class.</para>
 		/// <para>For example, if the output feature class has a vertical coordinate system based in meters and this parameter has a value of 1 second, the resulting feature class will have features extruded in which 1 meter of elevation is equal to 1 second of time.</para>
-		/// <para><see cref="TimeZUnitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
-		public object TimeZUnit { get; set; } = "1 Seconds";
+		[GPUnitDomain()]
+		public object? TimeZUnit { get; set; } = "1 Seconds";
 
 		/// <summary>
 		/// <para>Base z-value</para>
@@ -116,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object BaseZ { get; set; } = "0";
+		public object? BaseZ { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Base Date and Time</para>
@@ -125,61 +124,16 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object BaseDate { get; set; }
+		public object? BaseDate { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FeatureTo3DByTime SetEnviroment(object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object outputZValue = null , object workspace = null )
+		public FeatureTo3DByTime SetEnviroment(object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , double? outputZValue = null , object? workspace = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, outputZValue: outputZValue, workspace: workspace);
 			return this;
 		}
 
-		#region InnerClass
-
-		/// <summary>
-		/// <para>Time Z Interval and Unit</para>
-		/// </summary>
-		public enum TimeZUnitEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Seconds")]
-			[Description("Seconds")]
-			Seconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Days")]
-			[Description("Days")]
-			Days,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Weeks")]
-			[Description("Weeks")]
-			Weeks,
-
-		}
-
-#endregion
 	}
 }

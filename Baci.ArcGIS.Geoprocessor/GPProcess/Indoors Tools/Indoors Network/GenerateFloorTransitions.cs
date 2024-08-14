@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { FacilityFeatures, TransitionUnitFeatures, PathwayFeatures, TargetTransitions, ElevatorDelay, DeleteExistingTransitions, StairwayUnitExp, ElevatorUnitExp, UpdatedTransitions };
+		public override object[] Parameters => new object[] { FacilityFeatures, TransitionUnitFeatures, PathwayFeatures, TargetTransitions, ElevatorDelay!, DeleteExistingTransitions!, StairwayUnitExp!, ElevatorUnitExp!, UpdatedTransitions! };
 
 		/// <summary>
 		/// <para>Input Facility Features</para>
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object ElevatorDelay { get; set; }
+		public object? ElevatorDelay { get; set; }
 
 		/// <summary>
 		/// <para>Delete Existing Transitions</para>
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DeleteExistingTransitions { get; set; } = "true";
+		public object? DeleteExistingTransitions { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Stairway Unit Expression</para>
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object StairwayUnitExp { get; set; }
+		public object? StairwayUnitExp { get; set; }
 
 		/// <summary>
 		/// <para>Elevator Unit Expression</para>
@@ -148,14 +148,14 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object ElevatorUnitExp { get; set; }
+		public object? ElevatorUnitExp { get; set; }
 
 		/// <summary>
 		/// <para>Updated Transitions</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object UpdatedTransitions { get; set; }
+		public object? UpdatedTransitions { get; set; }
 
 		#region InnerClass
 

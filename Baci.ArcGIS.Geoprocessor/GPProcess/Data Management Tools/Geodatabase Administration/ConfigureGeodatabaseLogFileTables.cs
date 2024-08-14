@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Configure Geodatabase Log File Tables</para>
-	/// <para>Alters the type of log file tables used by an enterprise geodatabase to maintain lists of records cached by ArcGIS.</para>
+	/// <para>Alters the type of log file tables used by an earlier release enterprise geodatabase to maintain lists of records cached by ArcGIS.</para>
 	/// </summary>
 	public class ConfigureGeodatabaseLogFileTables : AbstractGPProcess
 	{
@@ -68,7 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabase, LogFileType, LogFilePoolSize, UseTempdb, OutWorkspace };
+		public override object[] Parameters => new object[] { InputDatabase, LogFileType, LogFilePoolSize!, UseTempdb!, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
@@ -97,29 +97,29 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object LogFilePoolSize { get; set; }
+		public object? LogFilePoolSize { get; set; }
 
 		/// <summary>
 		/// <para>Create session-based log file tables in the TempDB database (Microsoft SQL Server only)</para>
-		/// <para>This parameter is no longer applicable, starting with the ArcGIS 10.5 and ArcGIS Pro 1.4 releases.</para>
+		/// <para>This parameter is no longer applicable in any supported ArcGIS release.</para>
 		/// <para><see cref="UseTempdbEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UseTempdb { get; set; } = "false";
+		public object? UseTempdb { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Input Workspace</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutWorkspace { get; set; }
+		public object? OutWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConfigureGeodatabaseLogFileTables SetEnviroment(object workspace = null )
+		public ConfigureGeodatabaseLogFileTables SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

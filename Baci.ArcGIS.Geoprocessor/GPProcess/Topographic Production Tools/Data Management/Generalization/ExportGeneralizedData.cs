@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputGeodatabase, TargetGeodatabase, RuleFile, DataTheme, ExportVisibleFeatures, UpdatedGeodatabase };
+		public override object[] Parameters => new object[] { InputGeodatabase, TargetGeodatabase, RuleFile, DataTheme, ExportVisibleFeatures!, UpdatedGeodatabase! };
 
 		/// <summary>
 		/// <para>Input Geodatabase</para>
@@ -130,14 +130,14 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ExportVisibleFeatures { get; set; }
+		public object? ExportVisibleFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Updated Geodatabase</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object UpdatedGeodatabase { get; set; }
+		public object? UpdatedGeodatabase { get; set; }
 
 		#region InnerClass
 

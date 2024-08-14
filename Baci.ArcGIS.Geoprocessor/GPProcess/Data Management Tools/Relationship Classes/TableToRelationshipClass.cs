@@ -32,34 +32,34 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </param>
 		/// <param name="RelationshipType">
 		/// <para>Relationship Type</para>
-		/// <para>The type of association to create between the origin and destination tables.</para>
-		/// <para>Simple—An association where each object is independent of each other (a parent-to-parent relationship). This is the default.</para>
-		/// <para>Composite—An association where the lifetime of one object controls the lifetime of its related object (a parent-child relationship).</para>
+		/// <para>Specifies the type of association that will be created between the origin and destination tables.</para>
+		/// <para>Simple—Each object will be independent of each other (a parent-to-parent relationship). This is the default.</para>
+		/// <para>Composite—The lifetime of one object will control the lifetime of its related object (a parent-child relationship).</para>
 		/// <para><see cref="RelationshipTypeEnum"/></para>
 		/// </param>
 		/// <param name="ForwardLabel">
 		/// <para>Forward Path Label</para>
-		/// <para>A label describing the relationship as it is traversed from the origin table/feature class to the destination table/feature class.</para>
+		/// <para>A label describing the relationship as it is traversed from the origin table or feature class to the destination table or feature class.</para>
 		/// </param>
 		/// <param name="BackwardLabel">
 		/// <para>Backward Path Label</para>
-		/// <para>A label describing the relationship as it is traversed from the destination table/feature class to the origin table/feature class.</para>
+		/// <para>A label describing the relationship as it is traversed from the destination table or feature class to the origin table or feature class.</para>
 		/// </param>
 		/// <param name="MessageDirection">
 		/// <para>Message Direction</para>
-		/// <para>The direction messages will be propagated between the objects in the relationship. For example, in a relationship between poles and transformers, when the pole is deleted, it sends a message to its related transformer objects informing them it was deleted.</para>
-		/// <para>None (no messages propagated)—No messages propagated. This is the default.</para>
-		/// <para>Forward (origin to destination)—Messages propagated from the origin to the destination.</para>
-		/// <para>Backward (destination to origin)—Messages propagated from the destination to the origin.</para>
-		/// <para>Both directions—Messages propagated from the origin to the destination and from the destination to the origin.</para>
+		/// <para>Specifies the direction messages that will be propagated between the objects in the relationship. For example, in a relationship between poles and transformers, when the pole is deleted, it sends a message to its related transformer objects informing them it was deleted.</para>
+		/// <para>None (no messages propagated)—No messages will be propagated. This is the default.</para>
+		/// <para>Forward (origin to destination)—Messages will be propagated from the origin to the destination.</para>
+		/// <para>Backward (destination to origin)—Messages will be propagated from the destination to the origin.</para>
+		/// <para>Both directions—Messages will be propagated from the origin to the destination and from the destination to the origin.</para>
 		/// <para><see cref="MessageDirectionEnum"/></para>
 		/// </param>
 		/// <param name="Cardinality">
 		/// <para>Cardinality</para>
-		/// <para>The cardinality of the relationship between the origin and destination.</para>
-		/// <para>One to one (1:1)—Each object of the origin table/feature class can be related to zero or one object of the destination table/feature class. This is the default.</para>
-		/// <para>One to many (1:M)—Each object of the origin table/feature class can be related to multiple objects in the destination table/feature class.</para>
-		/// <para>Many to many (M:N)—Multiple objects of the origin table/feature class can be related to multiple objects in the destination table/feature class.</para>
+		/// <para>Specifies the cardinality of the relationship between the origin and destination.</para>
+		/// <para>One to one (1:1)—Each object of the origin table or feature class can be related to zero or one object of the destination table or feature class. This is the default.</para>
+		/// <para>One to many (1:M)—Each object of the origin table or feature class can be related to multiple objects in the destination table or feature class.</para>
+		/// <para>Many to many (M:N)—Multiple objects of the origin table or feature class can be related to multiple objects in the destination table or feature class.</para>
 		/// <para><see cref="CardinalityEnum"/></para>
 		/// </param>
 		/// <param name="RelationshipTable">
@@ -68,24 +68,23 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </param>
 		/// <param name="AttributeFields">
 		/// <para>Attribute Fields</para>
-		/// <para>The fields containing attribute values that will be added to the relationship class.</para>
-		/// <para>The Add Field button, which is used only in ModelBuilder, allows you to add expected field(s) so you can complete the dialog and continue to build your model.</para>
+		/// <para>The names of the fields containing attribute values that will be added to the relationship class. The fields must be present in the Relationship Table parameter value.</para>
 		/// </param>
 		/// <param name="OriginPrimaryKey">
 		/// <para>Origin Primary Key</para>
-		/// <para>The field in the origin table that will be used to create the relationship. Generally, this is the object identifier field.</para>
+		/// <para>The field in the origin table that will be used to create the relationship.</para>
 		/// </param>
 		/// <param name="OriginForeignKey">
 		/// <para>Origin Foreign Key</para>
-		/// <para>The name of the Foreign Key field in the relationship table that refers to the Primary Key field in the origin table/feature class.</para>
+		/// <para>The name of the field in the relationship table that refers to the primary key field in the origin table or feature class. For table-based relationship classes, these values are used to populate the relationships in the relationship class so they cannot be null.</para>
 		/// </param>
 		/// <param name="DestinationPrimaryKey">
-		/// <para>Destination Primary Key</para>
-		/// <para>The field in the destination table that will be used to create the relationship. Generally, this is the object identifier field.</para>
+		/// <para>Destination primary key</para>
+		/// <para>The field in the destination table that will be used to create the relationship.</para>
 		/// </param>
 		/// <param name="DestinationForeignKey">
 		/// <para>Destination Foreign Key</para>
-		/// <para>The field in the relationship table that refers to the Primary Key field in the destination table.</para>
+		/// <para>The field in the relationship table that refers to the primary key field in the destination table or feature class. For table-based relationship classes, these values are used to populate the relationships in the relationship class so they cannot be null.</para>
 		/// </param>
 		public TableToRelationshipClass(object OriginTable, object DestinationTable, object OutRelationshipClass, object RelationshipType, object ForwardLabel, object BackwardLabel, object MessageDirection, object Cardinality, object RelationshipTable, object AttributeFields, object OriginPrimaryKey, object OriginForeignKey, object DestinationPrimaryKey, object DestinationForeignKey)
 		{
@@ -166,9 +165,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Relationship Type</para>
-		/// <para>The type of association to create between the origin and destination tables.</para>
-		/// <para>Simple—An association where each object is independent of each other (a parent-to-parent relationship). This is the default.</para>
-		/// <para>Composite—An association where the lifetime of one object controls the lifetime of its related object (a parent-child relationship).</para>
+		/// <para>Specifies the type of association that will be created between the origin and destination tables.</para>
+		/// <para>Simple—Each object will be independent of each other (a parent-to-parent relationship). This is the default.</para>
+		/// <para>Composite—The lifetime of one object will control the lifetime of its related object (a parent-child relationship).</para>
 		/// <para><see cref="RelationshipTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -178,7 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Forward Path Label</para>
-		/// <para>A label describing the relationship as it is traversed from the origin table/feature class to the destination table/feature class.</para>
+		/// <para>A label describing the relationship as it is traversed from the origin table or feature class to the destination table or feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -186,7 +185,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Backward Path Label</para>
-		/// <para>A label describing the relationship as it is traversed from the destination table/feature class to the origin table/feature class.</para>
+		/// <para>A label describing the relationship as it is traversed from the destination table or feature class to the origin table or feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -194,11 +193,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Message Direction</para>
-		/// <para>The direction messages will be propagated between the objects in the relationship. For example, in a relationship between poles and transformers, when the pole is deleted, it sends a message to its related transformer objects informing them it was deleted.</para>
-		/// <para>None (no messages propagated)—No messages propagated. This is the default.</para>
-		/// <para>Forward (origin to destination)—Messages propagated from the origin to the destination.</para>
-		/// <para>Backward (destination to origin)—Messages propagated from the destination to the origin.</para>
-		/// <para>Both directions—Messages propagated from the origin to the destination and from the destination to the origin.</para>
+		/// <para>Specifies the direction messages that will be propagated between the objects in the relationship. For example, in a relationship between poles and transformers, when the pole is deleted, it sends a message to its related transformer objects informing them it was deleted.</para>
+		/// <para>None (no messages propagated)—No messages will be propagated. This is the default.</para>
+		/// <para>Forward (origin to destination)—Messages will be propagated from the origin to the destination.</para>
+		/// <para>Backward (destination to origin)—Messages will be propagated from the destination to the origin.</para>
+		/// <para>Both directions—Messages will be propagated from the origin to the destination and from the destination to the origin.</para>
 		/// <para><see cref="MessageDirectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -208,10 +207,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Cardinality</para>
-		/// <para>The cardinality of the relationship between the origin and destination.</para>
-		/// <para>One to one (1:1)—Each object of the origin table/feature class can be related to zero or one object of the destination table/feature class. This is the default.</para>
-		/// <para>One to many (1:M)—Each object of the origin table/feature class can be related to multiple objects in the destination table/feature class.</para>
-		/// <para>Many to many (M:N)—Multiple objects of the origin table/feature class can be related to multiple objects in the destination table/feature class.</para>
+		/// <para>Specifies the cardinality of the relationship between the origin and destination.</para>
+		/// <para>One to one (1:1)—Each object of the origin table or feature class can be related to zero or one object of the destination table or feature class. This is the default.</para>
+		/// <para>One to many (1:M)—Each object of the origin table or feature class can be related to multiple objects in the destination table or feature class.</para>
+		/// <para>Many to many (M:N)—Multiple objects of the origin table or feature class can be related to multiple objects in the destination table or feature class.</para>
 		/// <para><see cref="CardinalityEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -229,8 +228,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Attribute Fields</para>
-		/// <para>The fields containing attribute values that will be added to the relationship class.</para>
-		/// <para>The Add Field button, which is used only in ModelBuilder, allows you to add expected field(s) so you can complete the dialog and continue to build your model.</para>
+		/// <para>The names of the fields containing attribute values that will be added to the relationship class. The fields must be present in the Relationship Table parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -239,7 +237,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Origin Primary Key</para>
-		/// <para>The field in the origin table that will be used to create the relationship. Generally, this is the object identifier field.</para>
+		/// <para>The field in the origin table that will be used to create the relationship.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -247,15 +245,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Origin Foreign Key</para>
-		/// <para>The name of the Foreign Key field in the relationship table that refers to the Primary Key field in the origin table/feature class.</para>
+		/// <para>The name of the field in the relationship table that refers to the primary key field in the origin table or feature class. For table-based relationship classes, these values are used to populate the relationships in the relationship class so they cannot be null.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
 		public object OriginForeignKey { get; set; }
 
 		/// <summary>
-		/// <para>Destination Primary Key</para>
-		/// <para>The field in the destination table that will be used to create the relationship. Generally, this is the object identifier field.</para>
+		/// <para>Destination primary key</para>
+		/// <para>The field in the destination table that will be used to create the relationship.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -263,7 +261,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Destination Foreign Key</para>
-		/// <para>The field in the relationship table that refers to the Primary Key field in the destination table.</para>
+		/// <para>The field in the relationship table that refers to the primary key field in the destination table or feature class. For table-based relationship classes, these values are used to populate the relationships in the relationship class so they cannot be null.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -272,7 +270,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TableToRelationshipClass SetEnviroment(int? autoCommit = null , object workspace = null )
+		public TableToRelationshipClass SetEnviroment(int? autoCommit = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;
@@ -286,14 +284,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum RelationshipTypeEnum 
 		{
 			/// <summary>
-			/// <para>Simple—An association where each object is independent of each other (a parent-to-parent relationship). This is the default.</para>
+			/// <para>Simple—Each object will be independent of each other (a parent-to-parent relationship). This is the default.</para>
 			/// </summary>
 			[GPValue("SIMPLE")]
 			[Description("Simple")]
 			Simple,
 
 			/// <summary>
-			/// <para>Composite—An association where the lifetime of one object controls the lifetime of its related object (a parent-child relationship).</para>
+			/// <para>Composite—The lifetime of one object will control the lifetime of its related object (a parent-child relationship).</para>
 			/// </summary>
 			[GPValue("COMPOSITE")]
 			[Description("Composite")]
@@ -307,28 +305,28 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MessageDirectionEnum 
 		{
 			/// <summary>
-			/// <para>Forward (origin to destination)—Messages propagated from the origin to the destination.</para>
+			/// <para>Forward (origin to destination)—Messages will be propagated from the origin to the destination.</para>
 			/// </summary>
 			[GPValue("FORWARD")]
 			[Description("Forward (origin to destination)")]
 			FORWARD,
 
 			/// <summary>
-			/// <para>Backward (destination to origin)—Messages propagated from the destination to the origin.</para>
+			/// <para>Backward (destination to origin)—Messages will be propagated from the destination to the origin.</para>
 			/// </summary>
 			[GPValue("BACKWARD")]
 			[Description("Backward (destination to origin)")]
 			BACKWARD,
 
 			/// <summary>
-			/// <para>Both directions—Messages propagated from the origin to the destination and from the destination to the origin.</para>
+			/// <para>Both directions—Messages will be propagated from the origin to the destination and from the destination to the origin.</para>
 			/// </summary>
 			[GPValue("BOTH")]
 			[Description("Both directions")]
 			Both_directions,
 
 			/// <summary>
-			/// <para>None (no messages propagated)—No messages propagated. This is the default.</para>
+			/// <para>None (no messages propagated)—No messages will be propagated. This is the default.</para>
 			/// </summary>
 			[GPValue("NONE")]
 			[Description("None (no messages propagated)")]
@@ -342,21 +340,21 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CardinalityEnum 
 		{
 			/// <summary>
-			/// <para>One to one (1:1)—Each object of the origin table/feature class can be related to zero or one object of the destination table/feature class. This is the default.</para>
+			/// <para>One to one (1:1)—Each object of the origin table or feature class can be related to zero or one object of the destination table or feature class. This is the default.</para>
 			/// </summary>
 			[GPValue("ONE_TO_ONE")]
 			[Description("One to one (1:1)")]
 			ONE_TO_ONE,
 
 			/// <summary>
-			/// <para>One to many (1:M)—Each object of the origin table/feature class can be related to multiple objects in the destination table/feature class.</para>
+			/// <para>One to many (1:M)—Each object of the origin table or feature class can be related to multiple objects in the destination table or feature class.</para>
 			/// </summary>
 			[GPValue("ONE_TO_MANY")]
 			[Description("One to many (1:M)")]
 			ONE_TO_MANY,
 
 			/// <summary>
-			/// <para>Many to many (M:N)—Multiple objects of the origin table/feature class can be related to multiple objects in the destination table/feature class.</para>
+			/// <para>Many to many (M:N)—Multiple objects of the origin table or feature class can be related to multiple objects in the destination table or feature class.</para>
 			/// </summary>
 			[GPValue("MANY_TO_MANY")]
 			[Description("Many to many (M:N)")]

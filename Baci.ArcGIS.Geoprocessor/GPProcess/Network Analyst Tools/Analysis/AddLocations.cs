@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Add Locations</para>
-	/// <para>Adds input features or records to a network analysis layer. The inputs are added to specific sublayers such as stops and barriers.</para>
+	/// <para>Adds input features or records to a network analysis layer. The inputs are added to specific sublayers such as stops and barriers. When the network analysis layer references a network dataset as its network data source, the tool calculates the network locations of the inputs, unless precalculated network location fields are mapped from the inputs.</para>
 	/// </summary>
 	public class AddLocations : AbstractGPProcess
 	{
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkAnalysisLayer, SubLayer, InTable, FieldMappings, SearchTolerance, SortField, SearchCriteria, MatchType, Append, SnapToPositionAlongNetwork, SnapOffset, ExcludeRestrictedElements, SearchQuery, OutputLayer };
+		public override object[] Parameters => new object[] { InNetworkAnalysisLayer, SubLayer, InTable, FieldMappings!, SearchTolerance!, SortField!, SearchCriteria!, MatchType!, Append!, SnapToPositionAlongNetwork!, SnapOffset!, ExcludeRestrictedElements!, SearchQuery!, OutputLayer!, AllowAutoRelocate! };
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer</para>
@@ -99,66 +99,68 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Field Mappings</para>
-		/// <para>The mapping between the input fields of the network analysis sublayer to which you&apos;re adding locations and the fields in your input data or specified constants.</para>
-		/// <para>Input sublayers of network analysis layers have a set of input fields that you can modify or populate according to the needs of your analysis. When adding locations to the sublayer, you can use this parameter to map field values from your input table to these fields in the sublayer. You can also use field mappings to specify a constant default value for each property.</para>
+		/// <para>The mapping between the input fields of the network analysis sublayer to which locations will be added and the fields in the input data or specified constants.</para>
+		/// <para>Input sublayers of network analysis layers have a set of input fields that can be populated to modify or control analysis behavior. When adding locations to the sublayer, you can use this parameter to map field values from the input table to these fields in the sublayer. You can also use field mappings to specify a constant default value for each property.</para>
 		/// <para>If neither the Field value nor the Default value is specified for a property, the resulting network analysis objects will have null values for that property.</para>
 		/// <para>A complete list of input fields for each sublayer for each network analysis layer type is available in the documentation for each layer. For example, examine the Route layer&apos;s Stops sublayer&apos;s input fields.</para>
-		/// <para>If the data you are loading contains network locations or location ranges based on the network dataset used for the analysis, choose the Use Network Location Fields option from the drop-down menu. Adding the network analysis objects using the network location fields is quicker than loading by geometry.</para>
+		/// <para>If the data being loaded contains precalculated network locations or location ranges based on the network data source and travel mode used for the analysis, choose the Use Network Location Fields option from the drop-down menu. Adding the network analysis objects using the network location fields is quicker than loading by geometry.</para>
+		/// <para>ArcGIS Online and some ArcGIS Enterprise portals do not support using network location fields. For network analysis layers that use one of these portals as the network data source, all inputs will be located at solve time, and any mapped location fields will be ignored.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[NAClassFieldMap()]
-		public object FieldMappings { get; set; }
+		public object? FieldMappings { get; set; }
 
 		/// <summary>
 		/// <para>Search Tolerance</para>
-		/// <para>The search tolerance that will be used to locate the input features on the network. Features that are outside the search tolerance are left unlocated. The parameter includes a value and units for the tolerance.</para>
-		/// <para>The default is 5000 meters.</para>
+		/// <para>The maximum search distance that will be used when locating the input features on the network. Features that are outside the search tolerance will be left unlocated. The parameter includes a value and units.</para>
+		/// <para>The default value for this parameter is determined based on location properties stored in the input network analysis layer. If the network analysis layer has location settings overrides for the selected sublayer, those settings will be used. Otherwise, the network analysis layer&apos;s default location settings will be used. Setting a nondefault value for this parameter updates the network analysis layer&apos;s location settings overrides for the selected sublayer.</para>
 		/// <para>The parameter is not used when adding locations to sublayers with line or polygon geometry, such as Line Barriers and Polygon Barriers.</para>
-		/// <para>This parameter is not used when the input network analysis layer&apos;s network data source is a portal service.</para>
+		/// <para>This parameter is not used when adding locations using existing network location fields.</para>
+		/// <para>This parameter is not used when the network analysis layer&apos;s network data source is a portal running a version of ArcGIS Enterprise older than 11.0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Advanced")]
-		public object SearchTolerance { get; set; }
+		public object? SearchTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Sort Field</para>
-		/// <para>The field on which the network analysis objects are sorted as they are added to the network analysis layer. The default is the ObjectID field in the input feature class or the table.</para>
+		/// <para>The field on which the network analysis objects will be sorted as they are added to the network analysis layer. The default is the ObjectID field in the input feature class or table.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Advanced")]
-		public object SortField { get; set; }
+		public object? SortField { get; set; }
 
 		/// <summary>
 		/// <para>Search Criteria</para>
-		/// <para>The sources in the network dataset that will be searched when calculating network locations and the portions of geometry (also known as snap types) that will be used. For example, if the network dataset references separate feature classes representing streets and sidewalks, you can choose to locate inputs on streets but not on sidewalks.</para>
+		/// <para>The edge and junction sources in the network dataset that will be searched when locating inputs on the network. For example, if the network dataset references separate feature classes representing streets and sidewalks, you can choose to locate inputs on streets but not on sidewalks.</para>
 		/// <para>The following are the available snap type choices for each network source:</para>
-		/// <para>SHAPE—The point will locate on the closest point of an element in this network source.</para>
-		/// <para>MIDDLE—The point will locate on the closest midpoint of an element in this network source.</para>
-		/// <para>END—The point will locate on the closest endpoint of an element in this network source.</para>
-		/// <para>NONE—The point will not locate on elements in this network source.</para>
-		/// <para>The MIDDLE and END options are maintained for backward compatibility. Use the SHAPE option to locate your inputs on a particular network source; otherwise, use NONE.</para>
-		/// <para>When calculating locations for line or polygon features, only the SHAPE snap type is used, even if other snap types are specified.</para>
-		/// <para>The default value is SHAPE for all network sources except override junctions created by running the Dissolve Network tool and system junctions, which have a default of NONE.</para>
-		/// <para>This parameter is not used when the network data source is a portal service.</para>
+		/// <para>None—The point will not locate on elements in this network source.</para>
+		/// <para>Shape—The point will locate on the closest point of an element in this network source.</para>
+		/// <para>Middle—This option is deprecated and behaves the same as Shape.</para>
+		/// <para>End—This option is deprecated and behaves the same as Shape.</para>
+		/// <para>The default value for this parameter is determined based on location properties stored in the input network analysis layer. If the network analysis layer has location settings overrides for the selected sublayer, those settings will be used. Otherwise, the network analysis layer&apos;s default location settings will be used. Setting a nondefault value for this parameter updates the network analysis layer&apos;s location settings overrides for the selected sublayer.</para>
+		/// <para>This parameter is not used when adding locations using existing network location fields.</para>
+		/// <para>This parameter is not used when the network analysis layer&apos;s network data source is ArcGIS Online.</para>
+		/// <para>This parameter is not used when the network analysis layer&apos;s network data source is a portal running a version of ArcGIS Enterprise older than 11.0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Advanced")]
-		public object SearchCriteria { get; set; }
+		public object? SearchCriteria { get; set; }
 
 		/// <summary>
 		/// <para>Find Closest among All Classes</para>
-		/// <para>This parameter is only available via Python.</para>
+		/// <para>This parameter is deprecated and maintained only for backward compatibility. Inputs will always be matched to the closest network source among all the sources used for locating, corresponding to a parameter value of MATCH_TO_CLOSEST or True.</para>
 		/// <para><see cref="MatchTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object MatchType { get; set; } = "true";
+		public object? MatchType { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Append to Existing Locations</para>
@@ -170,15 +172,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Append { get; set; } = "true";
+		public object? Append { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Snap to Network</para>
-		/// <para>Specifies whether the inputs will be snapped to their calculated network locations or will be represented at their original geographic location.</para>
-		/// <para>To use curb approach in your analysis to control which side of the road a vehicle must use to approach a location, do not snap the inputs to their network locations, or use a snap offset to ensure that the point remains clearly to one side of the road.</para>
+		/// <para>Specifies whether the inputs will be snapped to their calculated network locations or represented at their original geographic location.</para>
+		/// <para>To use curb approach in the analysis to control which side of the road a vehicle must use to approach a location, do not snap the inputs to their network locations, or use a snap offset to ensure that the point remains clearly to one side of the road.</para>
 		/// <para>The parameter is not used when adding locations to sublayers with line or polygon geometry, such as Line Barriers and Polygon Barriers.</para>
 		/// <para>This parameter is not used when the input network analysis layer&apos;s network data source is a portal service.</para>
-		/// <para>If, after adding locations, you change the network analysis layer&apos;s travel mode or add or remove barriers, the network locations of affected points are automatically recalculated at solve time to ensure that they remain valid. This automatic recalculation process will not consider any settings, such as search queries, used previously when calculating network locations. Instead, it uses only the geometry of the input feature and the network analysis layer&apos;s travel mode and barriers. To make it more likely that the same network locations will be chosen if the point&apos;s network locations are automatically recalculated, use this parameter to snap the inputs to the network locations calculated while running this tool. In this way, the desired network location will be preserved in the geometry of the input point.</para>
 		/// <para>Checked—The geometries of the network locations will be snapped to their network locations.</para>
 		/// <para>Unchecked—The geometries of the network locations will be based on the geometries of the input features. This is the default.</para>
 		/// <para><see cref="SnapToPositionAlongNetworkEnum"/></para>
@@ -186,54 +187,73 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SnapToPositionAlongNetwork { get; set; } = "false";
+		public object? SnapToPositionAlongNetwork { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Snap Offset</para>
-		/// <para>When snapping a point to the network, you can apply an offset distance. An offset distance of zero means the point will be coincident with the network feature (typically a line). To offset the point from the network feature, enter an offset distance. The offset is in relation to the original point location; that is, if the original point was on the left side, its new location will be offset to the left. If it was originally on the right side, its new location will be offset to the right.</para>
+		/// <para>An offset distance that will be applied when snapping a point to the network. An offset distance of zero means the point will be coincident with the network feature (typically a line). To offset the point from the network feature, enter an offset distance. The offset is in relation to the original point location; that is, if the original point was on the left side, its new location will be offset to the left. If it was originally on the right side, its new location will be offset to the right.</para>
 		/// <para>The default is 5 meters. However, this parameter is ignored if Snap to Network is unchecked.</para>
 		/// <para>The parameter is not used when adding locations to sublayers with line or polygon geometry, such as Line Barriers and Polygon Barriers.</para>
 		/// <para>This parameter is not used when the input network analysis layer&apos;s network data source is a portal service.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object SnapOffset { get; set; } = "5 Meters";
+		public object? SnapOffset { get; set; } = "5 Meters";
 
 		/// <summary>
 		/// <para>Exclude Restricted Portions of the Network</para>
-		/// <para>This parameter is only available via Python.</para>
+		/// <para>This parameter is deprecated and maintained only for backward compatibility. Analysis inputs will never be located on network elements that are restricted, corresponding to a parameter value of EXCLUDE or True.</para>
 		/// <para><see cref="ExcludeRestrictedElementsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ExcludeRestrictedElements { get; set; } = "true";
+		public object? ExcludeRestrictedElements { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Search Query</para>
-		/// <para>Defines a query that will restrict the search to a subset of the features in a source feature class. This is useful if you don&apos;t want to locate on features that may be unsuitable for your analysis. For example, you can use the query to exclude all features with a particular road class.</para>
-		/// <para>A separate SQL expression can be specified per source feature class of the network dataset. By default, no query is used for any source.</para>
-		/// <para>This parameter is not used when the network data source is a portal service.</para>
-		/// <para>The SQL expression for a given network source is specified by selecting the source name in the Name column and using the SQL expression builder in the Query column. For more information on SQL syntax, see SQL reference for query expressions used in ArcGIS.</para>
-		/// <para>Any network source not explicitly specified in the tool dialog box will have no query applied.</para>
+		/// <para>A query that restricts the search to a subset of the features within a source feature class. This is useful if you don&apos;t want to find features that may be unsuited for a network location. For example, if you don&apos;t want to locate on highway ramps, you can define a query to exclude them. A separate SQL expression can be specified per edge or junction source feature class of the network dataset.</para>
+		/// <para>Any network source not explicitly specified in the Geoprocessing pane will have no query applied.</para>
+		/// <para>The default value for this parameter is determined based on location properties stored in the input network analysis layer. If the network analysis layer has location settings overrides for the selected sublayer, those settings will be used. Otherwise, the network analysis layer&apos;s default location settings will be used. Setting a nondefault value for this parameter updates the network analysis layer&apos;s location settings overrides for the selected sublayer.</para>
+		/// <para>This parameter is not used when adding locations using existing network location fields.</para>
+		/// <para>This parameter is not used when the network analysis layer&apos;s network data source is ArcGIS Online.</para>
+		/// <para>This parameter is not used when the network analysis layer&apos;s network data source is a portal running a version of ArcGIS Enterprise older than 11.0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Advanced")]
-		public object SearchQuery { get; set; }
+		public object? SearchQuery { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Network Analysis Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPNALayer()]
-		public object OutputLayer { get; set; }
+		public object? OutputLayer { get; set; }
+
+		/// <summary>
+		/// <para>Allow automatic relocating at solve time</para>
+		/// <para>Specifies whether inputs with existing network location fields can be automatically relocated at solve time to ensure valid, routable location fields for the analysis.</para>
+		/// <para>Checked—Points located on restricted network elements and points affected by barriers will be relocated at solve time to the closest routable location. This is the default.</para>
+		/// <para>Unchecked—Network location fields will be used at solve time as is, even if the points are unreachable, and this may cause the solve to fail.</para>
+		/// <para>The default value for this parameter is determined based on location properties stored in the input network analysis layer. If the network analysis layer has location settings overrides for the selected sublayer, those settings will be used. Otherwise, the network analysis layer&apos;s default location settings will be used. Setting a nondefault value for this parameter updates the network analysis layer&apos;s location settings overrides for the selected sublayer.</para>
+		/// <para>Even if the automatic relocating at solve time is not allowed, inputs with no location fields or incomplete location fields will be located at solve time.</para>
+		/// <para>This parameter is not used when the network analysis layer&apos;s network data source is ArcGIS Online.</para>
+		/// <para>This parameter is not used when the network analysis layer&apos;s network data source is an ArcGIS Enterprise portal that does not support using network location fields.</para>
+		/// <para>This parameter is not used when the network analysis layer&apos;s network data source is a portal running a version of ArcGIS Enterprise older than 11.0.</para>
+		/// <para><see cref="AllowAutoRelocateEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		[Category("Advanced")]
+		public object? AllowAutoRelocate { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddLocations SetEnviroment(object workspace = null )
+		public AddLocations SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -322,6 +342,27 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 			[GPValue("false")]
 			[Description("INCLUDE")]
 			INCLUDE,
+
+		}
+
+		/// <summary>
+		/// <para>Allow automatic relocating at solve time</para>
+		/// </summary>
+		public enum AllowAutoRelocateEnum 
+		{
+			/// <summary>
+			/// <para>Checked—Points located on restricted network elements and points affected by barriers will be relocated at solve time to the closest routable location. This is the default.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("ALLOW")]
+			ALLOW,
+
+			/// <summary>
+			/// <para>Unchecked—Network location fields will be used at solve time as is, even if the points are unreachable, and this may cause the solve to fail.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("NO_ALLOW")]
+			NO_ALLOW,
 
 		}
 

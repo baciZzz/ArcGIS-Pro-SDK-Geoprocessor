@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, FieldName, DefaultValue, SubtypeCode, ClearValue, OutTable };
+		public override object[] Parameters => new object[] { InTable, FieldName, DefaultValue!, SubtypeCode!, ClearValue!, OutTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DefaultValue { get; set; }
+		public object? DefaultValue { get; set; }
 
 		/// <summary>
 		/// <para>Subtype</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object SubtypeCode { get; set; }
+		public object? SubtypeCode { get; set; }
 
 		/// <summary>
 		/// <para>Clear Value</para>
@@ -112,19 +112,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ClearValue { get; set; } = "false";
+		public object? ClearValue { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Input Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AssignDefaultToField SetEnviroment(object workspace = null )
+		public AssignDefaultToField SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

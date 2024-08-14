@@ -1,12 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ArcGIS defaultAssembly="ProAppModuleTest.dll" defaultNamespace="ProAppModuleTest" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{48bdc187-d813-4f88-bd3f-65bcb14639c7}" version="1.0" desktopVersion="2.8.29751">
+﻿<ArcGIS defaultAssembly="ProAppModuleTest.dll" defaultNamespace="ProAppModuleTest" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{fd318255-9740-427e-9975-7ac4bef0e0cd}" version="1.0" desktopVersion="3.0.36056">
     <Name>ProAppModuleTest</Name>
     <Description>ProAppModuleTest description</Description>
     <Image>Images\AddinDesktop32.png</Image>
     <Author>baci</Author>
     <Company>Acme</Company>
-    <Date>2024/8/13 17:11:11</Date>
+    <Date>2024/8/14 11:55:15</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
@@ -29,7 +28,7 @@
       </groups>
       <controls>
         <!-- add your controls here -->
-        <button id="ProAppModuleTest_Buttons_ButtonTest" caption="ButtonTest" condition="esri_mapping_mapPane" className="ProAppModuleTest.Buttons.ButtonTest" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+        <button id="ProAppModuleTest_Buttons_ButtonTest" caption="ButtonTest"  condition="esri_mapping_mapPane" className="ProAppModuleTest.Buttons.ButtonTest" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
           <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
         </button>
       </controls>

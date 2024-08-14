@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Sumnearbylayer, Summarylayer, Outputname, Neartype, Distances, Units, Timeofday, Timezonefortimeofday, Returnboundaries, Sumshape, Shapeunits, Summaryfields, Groupbyfield, Minoritymajority, Percentshape, Resultlayer, Groupbysummary };
+		public override object[] Parameters => new object[] { Sumnearbylayer, Summarylayer, Outputname, Neartype, Distances, Units, Timeofday!, Timezonefortimeofday!, Returnboundaries!, Sumshape!, Shapeunits!, Summaryfields!, Groupbyfield!, Minoritymajority!, Percentshape!, Resultlayer!, Groupbysummary! };
 
 		/// <summary>
 		/// <para>Input Nearby Layer</para>
@@ -191,7 +191,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object Timeofday { get; set; }
+		public object? Timeofday { get; set; }
 
 		/// <summary>
 		/// <para>Time Zone</para>
@@ -203,7 +203,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Timezonefortimeofday { get; set; } = "GEOLOCAL";
+		public object? Timezonefortimeofday { get; set; } = "GEOLOCAL";
 
 		/// <summary>
 		/// <para>Return boundaries</para>
@@ -215,7 +215,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Returnboundaries { get; set; } = "true";
+		public object? Returnboundaries { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Add shape summary attributes</para>
@@ -227,7 +227,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Sumshape { get; set; } = "true";
+		public object? Sumshape { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Shape Unit</para>
@@ -250,7 +250,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Shapeunits { get; set; }
+		public object? Shapeunits { get; set; }
 
 		/// <summary>
 		/// <para>Summary Fields</para>
@@ -264,7 +264,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object Summaryfields { get; set; }
+		public object? Summaryfields { get; set; }
 
 		/// <summary>
 		/// <para>Group By Field</para>
@@ -273,7 +273,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object Groupbyfield { get; set; }
+		public object? Groupbyfield { get; set; }
 
 		/// <summary>
 		/// <para>Add minority and majority attributes</para>
@@ -285,7 +285,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Minoritymajority { get; set; } = "false";
+		public object? Minoritymajority { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Add group percentages</para>
@@ -297,26 +297,26 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Percentshape { get; set; } = "false";
+		public object? Percentshape { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Feature Service</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Resultlayer { get; set; }
+		public object? Resultlayer { get; set; }
 
 		/// <summary>
 		/// <para>Output Group Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object Groupbysummary { get; set; }
+		public object? Groupbysummary { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SummarizeNearby SetEnviroment(object extent = null )
+		public SummarizeNearby SetEnviroment(object? extent = null )
 		{
 			base.SetEnv(extent: extent);
 			return this;

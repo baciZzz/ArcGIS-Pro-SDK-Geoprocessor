@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputParentRepositoryURL, InputParentRepositoryName, InputMultiName, OutputSynchronizereplicastatus, OutputLastsync };
+		public override object[] Parameters => new object[] { InputParentRepositoryURL, InputParentRepositoryName, InputMultiName, OutputSynchronizereplicastatus!, OutputLastsync! };
 
 		/// <summary>
 		/// <para>Parent Repository URL</para>
@@ -107,14 +107,14 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLong()]
-		public object OutputSynchronizereplicastatus { get; set; }
+		public object? OutputSynchronizereplicastatus { get; set; }
 
 		/// <summary>
 		/// <para>Last Synchronized</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPValueTable()]
-		public object OutputLastsync { get; set; }
+		public object? OutputLastsync { get; set; }
 
 	}
 }

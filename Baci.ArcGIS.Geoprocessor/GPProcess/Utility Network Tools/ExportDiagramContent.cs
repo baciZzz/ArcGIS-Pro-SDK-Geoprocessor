@@ -68,7 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, NetworkDiagramName, OutFile, IncludeDiagramProperties, IncludeGeometries, IncludeAttributes, IncludeAggregations, UseDomains };
+		public override object[] Parameters => new object[] { InUtilityNetwork, NetworkDiagramName, OutFile, IncludeDiagramProperties!, IncludeGeometries!, IncludeAttributes!, IncludeAggregations!, UseDomains! };
 
 		/// <summary>
 		/// <para>Input Network or Network Diagram Layer</para>
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeDiagramProperties { get; set; } = "false";
+		public object? IncludeDiagramProperties { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Include geometries</para>
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeGeometries { get; set; } = "false";
+		public object? IncludeGeometries { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Include attributes</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeAttributes { get; set; } = "false";
+		public object? IncludeAttributes { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Include aggregations</para>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeAggregations { get; set; } = "false";
+		public object? IncludeAggregations { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Use domain and subtype descriptions</para>
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UseDomains { get; set; } = "false";
+		public object? UseDomains { get; set; } = "false";
 
 		#region InnerClass
 

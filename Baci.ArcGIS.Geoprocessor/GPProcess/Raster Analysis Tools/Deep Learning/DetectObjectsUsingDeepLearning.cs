@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputraster, Inputmodel, Outputname, Modelarguments, Runnms, Confidencescorefield, Classvaluefield, Maxoverlapratio, Outobjects, Processingmode };
+		public override object[] Parameters => new object[] { Inputraster, Inputmodel, Outputname, Modelarguments!, Runnms!, Confidencescorefield!, Classvaluefield!, Maxoverlapratio!, Outobjects!, Processingmode! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object Modelarguments { get; set; }
+		public object? Modelarguments { get; set; }
 
 		/// <summary>
 		/// <para>Non Maximum Suppression</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Runnms { get; set; } = "false";
+		public object? Runnms { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Confidence Score Field</para>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Confidencescorefield { get; set; } = "Confidence";
+		public object? Confidencescorefield { get; set; } = "Confidence";
 
 		/// <summary>
 		/// <para>Class Value Field</para>
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Classvaluefield { get; set; } = "Class";
+		public object? Classvaluefield { get; set; } = "Class";
 
 		/// <summary>
 		/// <para>Max Overlap Ratio</para>
@@ -143,14 +143,14 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Maxoverlapratio { get; set; } = "0";
+		public object? Maxoverlapratio { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Out Objects</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object Outobjects { get; set; }
+		public object? Outobjects { get; set; }
 
 		/// <summary>
 		/// <para>Processing Mode</para>
@@ -162,14 +162,14 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Processingmode { get; set; } = "PROCESS_AS_MOSAICKED_IMAGE";
+		public object? Processingmode { get; set; } = "PROCESS_AS_MOSAICKED_IMAGE";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DetectObjectsUsingDeepLearning SetEnviroment(object cellSize = null , object extent = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null )
+		public DetectObjectsUsingDeepLearning SetEnviroment(object? cellSize = null , object? extent = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? processorType = null )
 		{
-			base.SetEnv(cellSize: cellSize, extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor);
+			base.SetEnv(cellSize: cellSize, extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, processorType: processorType);
 			return this;
 		}
 

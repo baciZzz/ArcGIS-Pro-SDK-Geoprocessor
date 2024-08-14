@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRunwayFeatures, InDems, TargetOisFeatures, InFlightpathFeatures, SamplingDistance, SampleProfileOis, SampleProfileRunways, OutOisFeatures };
+		public override object[] Parameters => new object[] { InRunwayFeatures, InDems, TargetOisFeatures, InFlightpathFeatures!, SamplingDistance!, SampleProfileOis!, SampleProfileRunways!, OutOisFeatures! };
 
 		/// <summary>
 		/// <para>Input Runway Features</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object InFlightpathFeatures { get; set; }
+		public object? InFlightpathFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Sampling Distance</para>
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object SamplingDistance { get; set; } = "30";
+		public object? SamplingDistance { get; set; } = "30";
 
 		/// <summary>
 		/// <para>Sample OIS Features</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SampleProfileOis { get; set; } = "false";
+		public object? SampleProfileOis { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Sample Runway Features</para>
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SampleProfileRunways { get; set; } = "false";
+		public object? SampleProfileRunways { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output OIS Features</para>
@@ -145,12 +145,12 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
 		[GPCompositeDomain()]
-		public object OutOisFeatures { get; set; }
+		public object? OutOisFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateOISProfileData SetEnviroment(object workspace = null )
+		public GenerateOISProfileData SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

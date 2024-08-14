@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		/// <param name="TargetMultidimensionalRaster">
 		/// <para>Target Multidimensional Raster</para>
-		/// <para>The multidimensional raster in Cloud Raster Format (.crf) to modify.</para>
+		/// <para>The multidimensional raster in CRF to modify.</para>
 		/// </param>
 		public ManageMultidimensionalRaster(object TargetMultidimensionalRaster)
 		{
@@ -60,11 +60,11 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetMultidimensionalRaster, ManageMode, Variables, InMultidimensionalRasters, DimensionName, DimensionValue, DimensionDescription, DimensionUnit, UpdateStatistics, UpdateTranspose, UpdatedTargetMultidimensionalRaster };
+		public override object[] Parameters => new object[] { TargetMultidimensionalRaster, ManageMode!, Variables!, InMultidimensionalRasters!, DimensionName!, DimensionValue!, DimensionDescription!, DimensionUnit!, UpdateStatistics!, UpdateTranspose!, UpdatedTargetMultidimensionalRaster! };
 
 		/// <summary>
 		/// <para>Target Multidimensional Raster</para>
-		/// <para>The multidimensional raster in Cloud Raster Format (.crf) to modify.</para>
+		/// <para>The multidimensional raster in CRF to modify.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ManageMode { get; set; } = "APPEND_SLICES";
+		public object? ManageMode { get; set; } = "APPEND_SLICES";
 
 		/// <summary>
 		/// <para>Variables</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Variables { get; set; }
+		public object? Variables { get; set; }
 
 		/// <summary>
 		/// <para>Input Multidimensional Rasters</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object InMultidimensionalRasters { get; set; }
+		public object? InMultidimensionalRasters { get; set; }
 
 		/// <summary>
 		/// <para>Dimension Name</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DimensionName { get; set; }
+		public object? DimensionName { get; set; }
 
 		/// <summary>
 		/// <para>Dimension Value</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DimensionValue { get; set; }
+		public object? DimensionValue { get; set; }
 
 		/// <summary>
 		/// <para>Dimension Description</para>
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DimensionDescription { get; set; }
+		public object? DimensionDescription { get; set; }
 
 		/// <summary>
 		/// <para>Dimension Unit</para>
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DimensionUnit { get; set; }
+		public object? DimensionUnit { get; set; }
 
 		/// <summary>
 		/// <para>Update Statistics</para>
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UpdateStatistics { get; set; } = "true";
+		public object? UpdateStatistics { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Update Transpose</para>
@@ -159,19 +159,19 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UpdateTranspose { get; set; } = "true";
+		public object? UpdateTranspose { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Target Multidimensional Raster</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRasterLayer()]
-		public object UpdatedTargetMultidimensionalRaster { get; set; }
+		public object? UpdatedTargetMultidimensionalRaster { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ManageMultidimensionalRaster SetEnviroment(object parallelProcessingFactor = null )
+		public ManageMultidimensionalRaster SetEnviroment(object? parallelProcessingFactor = null )
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

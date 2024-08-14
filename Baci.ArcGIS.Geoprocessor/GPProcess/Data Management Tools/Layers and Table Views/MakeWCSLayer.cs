@@ -69,7 +69,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWcsCoverage, OutWcsLayer, Template, BandIndex };
+		public override object[] Parameters => new object[] { InWcsCoverage, OutWcsLayer, Template!, BandIndex! };
 
 		/// <summary>
 		/// <para>Input WCS Coverage</para>
@@ -101,20 +101,20 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object Template { get; set; }
+		public object? Template { get; set; }
 
 		/// <summary>
 		/// <para>Bands</para>
-		/// <para>Choose which bands to export for the layer. If no bands are specified, all the bands will be used in the output.</para>
+		/// <para>The bands that will be exported for the layer. If no bands are specified, all the bands will be used in the output.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object BandIndex { get; set; }
+		public object? BandIndex { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeWCSLayer SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null )
+		public MakeWCSLayer SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem);
 			return this;

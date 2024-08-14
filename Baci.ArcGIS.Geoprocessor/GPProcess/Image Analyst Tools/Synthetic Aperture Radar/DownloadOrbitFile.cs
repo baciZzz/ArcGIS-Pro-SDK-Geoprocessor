@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRadarData, OrbitType!, Username!, Password!, OutOrbitFile };
+		public override object[] Parameters => new object[] { InRadarData, OrbitType!, Username!, Password!, OutOrbitFile! };
 
 		/// <summary>
 		/// <para>Input Radar Data</para>

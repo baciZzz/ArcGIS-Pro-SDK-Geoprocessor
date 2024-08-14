@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		/// <param name="InLevelFeatures">
 		/// <para>Input Level Features</para>
-		/// <para>The input polygon features representing a level or levels in one or more facilities. In the ArcGIS Indoors Information Model, this will be the Levels layer. The tool processes only the levels represented by these features.</para>
+		/// <para>The input polygon features representing a level or levels in one or more facilities. In the ArcGIS Indoors Information Model, this will be the Levels layer. Only the levels represented by these features will be processed.</para>
 		/// </param>
 		/// <param name="InPathwayFeatures">
 		/// <para>Input Pathway Features</para>
@@ -32,7 +32,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </param>
 		/// <param name="RoutableLocations">
 		/// <para>Routable Locations</para>
-		/// <para>The input point or polygon features representing the locations used to calculate routes. This can be any point or polygon features that conform to the Indoors model, or any floor-aware point or polygon layer that either is configured in the layer's Floors properties or has a LEVEL_ID field that associates the features to the level on which they are located.</para>
+		/// <para>The input point or polygon features representing the locations used to calculate routes. This can be any point or polygon features that conform to the Indoors model or are configured as floor aware.</para>
 		/// </param>
 		/// <param name="TargetPathways">
 		/// <para>Target Pathways</para>
@@ -85,11 +85,11 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLevelFeatures, InPathwayFeatures, InTransitionFeatures, RoutableLocations, TargetPathways, TargetTransitions, SearchTolerance, NeighborSolveCount, UpdatedPathways, UpdatedTransitions };
+		public override object[] Parameters => new object[] { InLevelFeatures, InPathwayFeatures, InTransitionFeatures, RoutableLocations, TargetPathways, TargetTransitions, SearchTolerance!, NeighborSolveCount!, UpdatedPathways!, UpdatedTransitions! };
 
 		/// <summary>
 		/// <para>Input Level Features</para>
-		/// <para>The input polygon features representing a level or levels in one or more facilities. In the ArcGIS Indoors Information Model, this will be the Levels layer. The tool processes only the levels represented by these features.</para>
+		/// <para>The input polygon features representing a level or levels in one or more facilities. In the ArcGIS Indoors Information Model, this will be the Levels layer. Only the levels represented by these features will be processed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Routable Locations</para>
-		/// <para>The input point or polygon features representing the locations used to calculate routes. This can be any point or polygon features that conform to the Indoors model, or any floor-aware point or polygon layer that either is configured in the layer's Floors properties or has a LEVEL_ID field that associates the features to the level on which they are located.</para>
+		/// <para>The input point or polygon features representing the locations used to calculate routes. This can be any point or polygon features that conform to the Indoors model or are configured as floor aware.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object SearchTolerance { get; set; } = "5";
+		public object? SearchTolerance { get; set; } = "5";
 
 		/// <summary>
 		/// <para>Neighbor Solve Count</para>
@@ -155,21 +155,21 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object NeighborSolveCount { get; set; } = "50";
+		public object? NeighborSolveCount { get; set; } = "50";
 
 		/// <summary>
 		/// <para>Updated Pathways</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object UpdatedPathways { get; set; }
+		public object? UpdatedPathways { get; set; }
 
 		/// <summary>
 		/// <para>Updated Transitions</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object UpdatedTransitions { get; set; }
+		public object? UpdatedTransitions { get; set; }
 
 	}
 }

@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTurnFeatures, MaximumEdges, OutTurnFeatures };
+		public override object[] Parameters => new object[] { InTurnFeatures, MaximumEdges, OutTurnFeatures! };
 
 		/// <summary>
 		/// <para>Input Turn Feature Class</para>
@@ -89,12 +89,12 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutTurnFeatures { get; set; }
+		public object? OutTurnFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public IncreaseMaximumEdges SetEnviroment(object workspace = null )
+		public IncreaseMaximumEdges SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

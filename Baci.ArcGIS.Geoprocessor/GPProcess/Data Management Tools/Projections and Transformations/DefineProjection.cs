@@ -22,11 +22,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset or Feature Class</para>
-		/// <para>The dataset or feature class whose projection is to be defined.</para>
+		/// <para>The dataset or feature class whose projection will be defined.</para>
 		/// </param>
 		/// <param name="CoorSystem">
 		/// <para>Coordinate System</para>
-		/// <para>The coordinate system to be applied to the input. The default value is set based on the Output Coordinate System environment setting.</para>
+		/// <para>The coordinate system that will be applied to the input.</para>
 		/// </param>
 		public DefineProjection(object InDataset, object CoorSystem)
 		{
@@ -67,11 +67,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, CoorSystem, OutDataset };
+		public override object[] Parameters => new object[] { InDataset, CoorSystem, OutDataset! };
 
 		/// <summary>
 		/// <para>Input Dataset or Feature Class</para>
-		/// <para>The dataset or feature class whose projection is to be defined.</para>
+		/// <para>The dataset or feature class whose projection will be defined.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Coordinate System</para>
-		/// <para>The coordinate system to be applied to the input. The default value is set based on the Output Coordinate System environment setting.</para>
+		/// <para>The coordinate system that will be applied to the input.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPCoordinateSystem()]
@@ -90,12 +90,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutDataset { get; set; }
+		public object? OutDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DefineProjection SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public DefineProjection SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

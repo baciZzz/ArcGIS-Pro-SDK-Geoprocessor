@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCrossReference, InSources, InTarget, InDatasetMapDefs, RowLevelErrors, OutTarget };
+		public override object[] Parameters => new object[] { InCrossReference, InSources, InTarget, InDatasetMapDefs!, RowLevelErrors!, OutTarget! };
 
 		/// <summary>
 		/// <para>Input Cross-reference Database</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[Category("Advanced")]
-		public object InDatasetMapDefs { get; set; }
+		public object? InDatasetMapDefs { get; set; }
 
 		/// <summary>
 		/// <para>Log row level errors</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object RowLevelErrors { get; set; } = "true";
+		public object? RowLevelErrors { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output Target Workspace</para>
@@ -125,12 +125,12 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
-		public object OutTarget { get; set; }
+		public object? OutTarget { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LoadData SetEnviroment(object workspace = null )
+		public LoadData SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

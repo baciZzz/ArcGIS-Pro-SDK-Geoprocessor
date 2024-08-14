@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InShapeLines, InShapeStops, InGtfsTrips, InGtfsStopTimes, OutGtfsShapes, OutGtfsStopTimes, DistanceUnits };
+		public override object[] Parameters => new object[] { InShapeLines, InShapeStops, InGtfsTrips, InGtfsStopTimes, OutGtfsShapes, OutGtfsStopTimes, DistanceUnits! };
 
 		/// <summary>
 		/// <para>Input Shape Lines</para>

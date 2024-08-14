@@ -12,9 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 	/// <summary>
 	/// <para>Generate Elevation Guide Features</para>
 	/// <para>Creates data required for an elevation guide diagram </para>
-	/// <para>surround element as required by various supported map product specifications.  This tool leverages existing </para>
+	/// <para>surround element as required by various supported map product specifications.  This tool uses existing </para>
 	/// <para>banding </para>
-	/// <para>and thinning tools to generate output elevation band features, spot height features, and </para>
+	/// <para>and thinning parameters to generate output elevation band features, spot height features, and </para>
 	/// <para>hydrology features.</para>
 	/// </summary>
 	public class GenerateElevationGuideFeatures : AbstractGPProcess
@@ -32,7 +32,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </param>
 		/// <param name="InRasters">
 		/// <para>Input Rasters</para>
-		/// <para>One or more rasters used to create elevation bands and supply elevation values to features created by the tool.</para>
+		/// <para>One or more rasters used to create elevation bands and supply elevation values to the created features.</para>
 		/// </param>
 		public GenerateElevationGuideFeatures(object InFeatureDataset, object AreaOfInterest, object InRasters)
 		{
@@ -74,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureDataset, AreaOfInterest, InRasters, HydroExclusionFeatures, SpotHeightFeatures, HydroLineFeatures, HydroAreaFeatures, ContourInterval, BandsMinarea, SmoothTolerance, NumberOfBands, HeightField, SearchDistance, HydrolineMinlength, HydrolineMinspacing, HydroareaMinlength, HydroareaMinwidth, OutFeatureDataset };
+		public override object[] Parameters => new object[] { InFeatureDataset, AreaOfInterest, InRasters, HydroExclusionFeatures!, SpotHeightFeatures!, HydroLineFeatures!, HydroAreaFeatures!, ContourInterval!, BandsMinarea!, SmoothTolerance!, NumberOfBands!, HeightField!, SearchDistance!, HydrolineMinlength!, HydrolineMinspacing!, HydroareaMinlength!, HydroareaMinwidth!, OutFeatureDataset! };
 
 		/// <summary>
 		/// <para>Input Feature Dataset</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 
 		/// <summary>
 		/// <para>Input Rasters</para>
-		/// <para>One or more rasters used to create elevation bands and supply elevation values to features created by the tool.</para>
+		/// <para>One or more rasters used to create elevation bands and supply elevation values to the created features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
 		[Category("Banding Settings (optional)")]
-		public object HydroExclusionFeatures { get; set; }
+		public object? HydroExclusionFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Spot Height Features</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
 		[Category("Spot Settings (optional)")]
-		public object SpotHeightFeatures { get; set; }
+		public object? SpotHeightFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Hydro Line Features</para>
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
 		[Category("Hydro Settings (optional)")]
-		public object HydroLineFeatures { get; set; }
+		public object? HydroLineFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Hydro Area Features</para>
@@ -139,11 +139,11 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
 		[Category("Hydro Settings (optional)")]
-		public object HydroAreaFeatures { get; set; }
+		public object? HydroAreaFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Contour Interval</para>
-		/// <para>The contour interval used to determine the closest available contour when calculating the elevation band area. Elevation bands are created with their limits aligned to the chosen contour interval, except low and high values, which will represent their actual calculated values.</para>
+		/// <para>Specifies the contour interval that will be used to determine the closest available contour when calculating the elevation band area. Elevation bands are created with their limits aligned to the specified contour interval, except low and high values, which will represent their actual calculated values.</para>
 		/// <para>10—A contour interval of 10 will be used.</para>
 		/// <para>20—A contour interval of 20 will be used. This is the default.</para>
 		/// <para>40—A contour interval of 40 will be used.</para>
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[GPLong()]
 		[GPCodedValueDomain()]
 		[Category("Banding Settings (optional)")]
-		public object ContourInterval { get; set; } = "20";
+		public object? ContourInterval { get; set; } = "20";
 
 		/// <summary>
 		/// <para>Minimum Feature Area</para>
@@ -163,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Banding Settings (optional)")]
-		public object BandsMinarea { get; set; } = "0.00016";
+		public object? BandsMinarea { get; set; } = "0.00016";
 
 		/// <summary>
 		/// <para>Smoothing Tolerance</para>
@@ -171,12 +171,12 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object SmoothTolerance { get; set; } = "0.002 DecimalDegrees";
+		public object? SmoothTolerance { get; set; } = "0.002 DecimalDegrees";
 
 		/// <summary>
 		/// <para>Number Of Elevation Bands</para>
 		/// <para>Specifies the number of elevation bands that will be generated.</para>
-		/// <para>1—One elevation band will be generated.</para>
+		/// <para>1 —One elevation band will be generated.</para>
 		/// <para>2—Two elevation bands will be generated.</para>
 		/// <para>3—Three elevation bands will be generated.</para>
 		/// <para>4—Four elevation bands will be generated.</para>
@@ -186,7 +186,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[GPLong()]
 		[GPCodedValueDomain()]
 		[Category("Banding Settings (optional)")]
-		public object NumberOfBands { get; set; }
+		public object? NumberOfBands { get; set; }
 
 		/// <summary>
 		/// <para>Height Field</para>
@@ -196,7 +196,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Spot Settings (optional)")]
-		public object HeightField { get; set; }
+		public object? HeightField { get; set; }
 
 		/// <summary>
 		/// <para>Search Distance</para>
@@ -205,7 +205,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Spot Settings (optional)")]
-		public object SearchDistance { get; set; } = "0 Meters";
+		public object? SearchDistance { get; set; } = "0 Meters";
 
 		/// <summary>
 		/// <para>Minimum Hydro Line Length</para>
@@ -214,16 +214,16 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Hydro Settings (optional)")]
-		public object HydrolineMinlength { get; set; }
+		public object? HydrolineMinlength { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Hydro Line Spacing</para>
-		/// <para>The shortest distance between a hydrographic segment that is sensible to display at the output scale. If the spacing between two parallel trending features is smaller than this value, one of the features will be set as invisible. It defines a sense of the density of the resulting thinned hydrography. It should correspond to the distance between two parallel trending features that is visually significant to include at the final scale. When the density of features is too high (that is, the features are too closely spaced), at least one feature will be hidden. This can result in important features or features longer than the Minimum Hydro Line Length value being hidden.</para>
+		/// <para>The shortest distance between a hydrographic segments that will display at the output scale. If the spacing between two parallel trending features is smaller than this value, one of the features will be hidden. This parameter defines a sense of the density of the resulting thinned hydrography. It should correspond to the distance between two parallel trending features that is visually significant to include at the final scale. When the density of features is too high (that is, the features are too closely spaced), at least one feature will be hidden. This can result in important features or features longer than the Minimum Hydro Line Length value being hidden.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Hydro Settings (optional)")]
-		public object HydrolineMinspacing { get; set; }
+		public object? HydrolineMinspacing { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Hydro Area Length</para>
@@ -232,7 +232,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Hydro Settings (optional)")]
-		public object HydroareaMinlength { get; set; }
+		public object? HydroareaMinlength { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Hydro Area Width</para>
@@ -241,14 +241,14 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Hydro Settings (optional)")]
-		public object HydroareaMinwidth { get; set; }
+		public object? HydroareaMinwidth { get; set; }
 
 		/// <summary>
 		/// <para>Modified Feature Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureDataset()]
-		public object OutFeatureDataset { get; set; }
+		public object? OutFeatureDataset { get; set; }
 
 		#region InnerClass
 
@@ -293,7 +293,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		public enum NumberOfBandsEnum 
 		{
 			/// <summary>
-			/// <para>1—One elevation band will be generated.</para>
+			/// <para>1 —One elevation band will be generated.</para>
 			/// </summary>
 			[GPValue("1")]
 			[Description("1")]

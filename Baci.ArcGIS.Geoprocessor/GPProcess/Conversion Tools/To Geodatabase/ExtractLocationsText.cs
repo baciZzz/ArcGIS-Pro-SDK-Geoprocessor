@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InText, OutFeatureClass, InTemplate, CoordDdLatlon, CoordDdXydeg, CoordDdXyplain, CoordDmLatlon, CoordDmXymin, CoordDmsLatlon, CoordDmsXysec, CoordDmsXysep, CoordUtm, CoordUpsNorth, CoordUpsSouth, CoordMgrs, CoordMgrsNorthpolar, CoordMgrsSouthpolar, CommaDecimal, CoordUseLonlat, InCoorSystem, InCustomLocations, FuzzyMatch, MaxFeaturesExtracted, IgnoreFirstFeatures, DateMonthname, DateMDY, DateYyyymmdd, DateYymmdd, DateYyjjj, MaxDatesExtracted, IgnoreFirstDates, DateRangeBegin, DateRangeEnd, InCustomAttributes, FileLink, FileModDatetime, PreTextLength, PostTextLength, StdCoordFmt, ReqWordBreaks };
+		public override object[] Parameters => new object[] { InText, OutFeatureClass, InTemplate!, CoordDdLatlon!, CoordDdXydeg!, CoordDdXyplain!, CoordDmLatlon!, CoordDmXymin!, CoordDmsLatlon!, CoordDmsXysec!, CoordDmsXysep!, CoordUtm!, CoordUpsNorth!, CoordUpsSouth!, CoordMgrs!, CoordMgrsNorthpolar!, CoordMgrsSouthpolar!, CommaDecimal!, CoordUseLonlat!, InCoorSystem!, InCustomLocations!, FuzzyMatch!, MaxFeaturesExtracted!, IgnoreFirstFeatures!, DateMonthname!, DateMDY!, DateYyyymmdd!, DateYymmdd!, DateYyjjj!, MaxDatesExtracted!, IgnoreFirstDates!, DateRangeBegin!, DateRangeEnd!, InCustomAttributes!, FileLink!, FileModDatetime!, PreTextLength!, PostTextLength!, StdCoordFmt!, ReqWordBreaks! };
 
 		/// <summary>
 		/// <para>Input Text or File Path</para>
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object InTemplate { get; set; }
+		public object? InTemplate { get; set; }
 
 		/// <summary>
 		/// <para>Latitude And Longitude</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Coordinate Formats - DD")]
-		public object CoordDdLatlon { get; set; } = "true";
+		public object? CoordDdLatlon { get; set; } = "true";
 
 		/// <summary>
 		/// <para>X Y With Degree Symbols</para>
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Coordinate Formats - DD")]
-		public object CoordDdXydeg { get; set; } = "true";
+		public object? CoordDdXydeg { get; set; } = "true";
 
 		/// <summary>
 		/// <para>X Y With No Symbols</para>
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Coordinate Formats - DD")]
-		public object CoordDdXyplain { get; set; } = "true";
+		public object? CoordDdXyplain { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Latitude And Longitude</para>
@@ -148,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Coordinate Formats - DM")]
-		public object CoordDmLatlon { get; set; } = "true";
+		public object? CoordDmLatlon { get; set; } = "true";
 
 		/// <summary>
 		/// <para>X Y With Minutes Symbols</para>
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Coordinate Formats - DM")]
-		public object CoordDmXymin { get; set; } = "true";
+		public object? CoordDmXymin { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Latitude And Longitude</para>
@@ -174,7 +174,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Coordinate Formats - DMS")]
-		public object CoordDmsLatlon { get; set; } = "true";
+		public object? CoordDmsLatlon { get; set; } = "true";
 
 		/// <summary>
 		/// <para>X Y With Seconds Symbols</para>
@@ -187,7 +187,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Coordinate Formats - DMS")]
-		public object CoordDmsXysec { get; set; } = "true";
+		public object? CoordDmsXysec { get; set; } = "true";
 
 		/// <summary>
 		/// <para>X Y With Separators</para>
@@ -200,7 +200,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Coordinate Formats - DMS")]
-		public object CoordDmsXysep { get; set; } = "true";
+		public object? CoordDmsXysep { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Universal Transverse Mercator</para>
@@ -213,7 +213,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Coordinate Formats - UTM")]
-		public object CoordUtm { get; set; } = "true";
+		public object? CoordUtm { get; set; } = "true";
 
 		/// <summary>
 		/// <para>UPS North Polar</para>
@@ -226,7 +226,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Coordinate Formats - UTM")]
-		public object CoordUpsNorth { get; set; } = "false";
+		public object? CoordUpsNorth { get; set; } = "false";
 
 		/// <summary>
 		/// <para>UPS South Polar</para>
@@ -239,7 +239,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Coordinate Formats - UTM")]
-		public object CoordUpsSouth { get; set; } = "false";
+		public object? CoordUpsSouth { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Military Grid Reference System</para>
@@ -252,7 +252,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Coordinate Formats - MGRS")]
-		public object CoordMgrs { get; set; } = "true";
+		public object? CoordMgrs { get; set; } = "true";
 
 		/// <summary>
 		/// <para>North Polar</para>
@@ -265,7 +265,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Coordinate Formats - MGRS")]
-		public object CoordMgrsNorthpolar { get; set; } = "false";
+		public object? CoordMgrsNorthpolar { get; set; } = "false";
 
 		/// <summary>
 		/// <para>South Polar</para>
@@ -278,7 +278,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Coordinate Formats - MGRS")]
-		public object CoordMgrsSouthpolar { get; set; } = "false";
+		public object? CoordMgrsSouthpolar { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Use Comma As Decimal Separator</para>
@@ -291,7 +291,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Coordinate Formats")]
-		public object CommaDecimal { get; set; } = "false";
+		public object? CommaDecimal { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Interpret As Longitude, Latitude</para>
@@ -304,7 +304,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Coordinate Formats")]
-		public object CoordUseLonlat { get; set; } = "false";
+		public object? CoordUseLonlat { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Input Coordinate System</para>
@@ -313,7 +313,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
 		[Category("Coordinate Formats")]
-		public object InCoorSystem { get; set; } = "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]];-400 -400 11258999068426.2;-100000 10000;-100000 10000;8.98315284119521E-09;0.001;0.001;IsHighPrecision";
+		public object? InCoorSystem { get; set; } = "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]];-400 -400 11258999068426.2;-100000 10000;-100000 10000;8.98315284119521E-09;0.001;0.001;IsHighPrecision";
 
 		/// <summary>
 		/// <para>Input Custom Locations</para>
@@ -323,7 +323,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[DEFile()]
 		[GPFileDomain()]
 		[Category("Custom Locations")]
-		public object InCustomLocations { get; set; }
+		public object? InCustomLocations { get; set; }
 
 		/// <summary>
 		/// <para>Use Fuzzy Matching</para>
@@ -336,7 +336,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Custom Locations")]
-		public object FuzzyMatch { get; set; } = "false";
+		public object? FuzzyMatch { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Maximum Number Of Extracted Features</para>
@@ -346,7 +346,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Feature Options")]
-		public object MaxFeaturesExtracted { get; set; }
+		public object? MaxFeaturesExtracted { get; set; }
 
 		/// <summary>
 		/// <para>Ignore This First Number of Features</para>
@@ -356,7 +356,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Feature Options")]
-		public object IgnoreFirstFeatures { get; set; }
+		public object? IgnoreFirstFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Month Name Used</para>
@@ -369,7 +369,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Date Formats")]
-		public object DateMonthname { get; set; } = "true";
+		public object? DateMonthname { get; set; } = "true";
 
 		/// <summary>
 		/// <para>M/D/Y and D/M/Y</para>
@@ -382,7 +382,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Date Formats")]
-		public object DateMDY { get; set; } = "true";
+		public object? DateMDY { get; set; } = "true";
 
 		/// <summary>
 		/// <para>YYYYMMDD</para>
@@ -395,7 +395,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Date Formats")]
-		public object DateYyyymmdd { get; set; } = "true";
+		public object? DateYyyymmdd { get; set; } = "true";
 
 		/// <summary>
 		/// <para>YYMMDD</para>
@@ -408,7 +408,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Date Formats")]
-		public object DateYymmdd { get; set; } = "true";
+		public object? DateYymmdd { get; set; } = "true";
 
 		/// <summary>
 		/// <para>YYJJJ</para>
@@ -421,7 +421,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Date Formats")]
-		public object DateYyjjj { get; set; } = "true";
+		public object? DateYyjjj { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Maximum Number Of Extracted Dates</para>
@@ -431,7 +431,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Date Options")]
-		public object MaxDatesExtracted { get; set; }
+		public object? MaxDatesExtracted { get; set; }
 
 		/// <summary>
 		/// <para>Ignore This First Number Of Dates</para>
@@ -441,7 +441,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Date Options")]
-		public object IgnoreFirstDates { get; set; }
+		public object? IgnoreFirstDates { get; set; }
 
 		/// <summary>
 		/// <para>Earliest Date Of Acceptable Date Range</para>
@@ -450,7 +450,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Date Options")]
-		public object DateRangeBegin { get; set; }
+		public object? DateRangeBegin { get; set; }
 
 		/// <summary>
 		/// <para>Latest Date Of Acceptable Date Range</para>
@@ -459,7 +459,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Date Options")]
-		public object DateRangeEnd { get; set; }
+		public object? DateRangeEnd { get; set; }
 
 		/// <summary>
 		/// <para>Input Custom Attributes</para>
@@ -469,7 +469,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[DEFile()]
 		[GPFileDomain()]
 		[Category("Custom Attributes")]
-		public object InCustomAttributes { get; set; }
+		public object? InCustomAttributes { get; set; }
 
 		/// <summary>
 		/// <para>Input File Link Text</para>
@@ -478,7 +478,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Input File Information")]
-		public object FileLink { get; set; }
+		public object? FileLink { get; set; }
 
 		/// <summary>
 		/// <para>Input File Date and Time</para>
@@ -487,7 +487,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Input File Information")]
-		public object FileModDatetime { get; set; }
+		public object? FileModDatetime { get; set; }
 
 		/// <summary>
 		/// <para>Pre-Text Field Length</para>
@@ -497,7 +497,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Feature Options")]
-		public object PreTextLength { get; set; } = "254";
+		public object? PreTextLength { get; set; } = "254";
 
 		/// <summary>
 		/// <para>Post-Text Field Length</para>
@@ -507,7 +507,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Feature Options")]
-		public object PostTextLength { get; set; } = "254";
+		public object? PostTextLength { get; set; } = "254";
 
 		/// <summary>
 		/// <para>Coordinate Format</para>
@@ -523,7 +523,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Standardized Coordinate")]
-		public object StdCoordFmt { get; set; } = "STD_COORD_FMT_DD";
+		public object? StdCoordFmt { get; set; } = "STD_COORD_FMT_DD";
 
 		/// <summary>
 		/// <para>Require Word Breaks</para>
@@ -537,12 +537,12 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Search Control")]
-		public object ReqWordBreaks { get; set; } = "true";
+		public object? ReqWordBreaks { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExtractLocationsText SetEnviroment(object geographicTransformations = null , object outputCoordinateSystem = null , object workspace = null )
+		public ExtractLocationsText SetEnviroment(object? geographicTransformations = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

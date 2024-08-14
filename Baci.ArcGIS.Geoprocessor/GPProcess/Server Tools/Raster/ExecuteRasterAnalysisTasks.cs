@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTasks, OutResults };
+		public override object[] Parameters => new object[] { InTasks, OutResults! };
 
 		/// <summary>
 		/// <para>Input Raster Analysis Tasks</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutResults { get; set; }
+		public object? OutResults { get; set; }
 
 	}
 }

@@ -28,7 +28,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </param>
 		/// <param name="RangeRingsType">
 		/// <para>Range Ring Type</para>
-		/// <para>Specifies how range rings will be generated..</para>
+		/// <para>Specifies how range rings will be generated.</para>
 		/// <para>Interval—Range rings will be generated based on the number of rings and distance between rings. This the default.</para>
 		/// <para>Minimum and maximum—Range rings will be generated based on a minimum and maximum distance.</para>
 		/// <para><see cref="RangeRingsTypeEnum"/></para>
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputFeatureClass, RangeRingsType, OutFeatureClassRadials, RadialCountField, MinRangeField, MaxRangeField, RingCountField, RingIntervalField, DistanceUnits };
+		public override object[] Parameters => new object[] { InFeatures, OutputFeatureClass, RangeRingsType, OutFeatureClassRadials!, RadialCountField!, MinRangeField!, MaxRangeField!, RingCountField!, RingIntervalField!, DistanceUnits! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Range Ring Type</para>
-		/// <para>Specifies how range rings will be generated..</para>
+		/// <para>Specifies how range rings will be generated.</para>
 		/// <para>Interval—Range rings will be generated based on the number of rings and distance between rings. This the default.</para>
 		/// <para>Minimum and maximum—Range rings will be generated based on a minimum and maximum distance.</para>
 		/// <para><see cref="RangeRingsTypeEnum"/></para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object OutFeatureClassRadials { get; set; }
+		public object? OutFeatureClassRadials { get; set; }
 
 		/// <summary>
 		/// <para>Radial Count Field</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object RadialCountField { get; set; }
+		public object? RadialCountField { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Range Field</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object MinRangeField { get; set; }
+		public object? MinRangeField { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Range Field</para>
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object MaxRangeField { get; set; }
+		public object? MaxRangeField { get; set; }
 
 		/// <summary>
 		/// <para>Ring Count Field</para>
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object RingCountField { get; set; }
+		public object? RingCountField { get; set; }
 
 		/// <summary>
 		/// <para>Ring Interval Field</para>
@@ -155,11 +155,11 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object RingIntervalField { get; set; }
+		public object? RingIntervalField { get; set; }
 
 		/// <summary>
 		/// <para>Distance Units</para>
-		/// <para>Specifies the linear unit of measure for the value in the Ring Interval Field parameter or the values in the Minimum Range Field and Maximum Range Field parameters.</para>
+		/// <para>Specifies the linear unit of measure for the value of the Ring Interval Field parameter or the values of the Minimum Range Field and Maximum Range Field parameters.</para>
 		/// <para>Meters—The unit will be meters. This is the default.</para>
 		/// <para>Kilometers—The unit will be kilometers.</para>
 		/// <para>Miles—The unit will be miles.</para>
@@ -171,12 +171,12 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DistanceUnits { get; set; } = "METERS";
+		public object? DistanceUnits { get; set; } = "METERS";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateRangeRingsFromFeatures SetEnviroment(object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateRangeRingsFromFeatures SetEnviroment(object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

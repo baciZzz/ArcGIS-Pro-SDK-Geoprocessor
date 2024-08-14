@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutModel, VariablePredict, TreatVariableAsCategorical!, ExplanatoryVariables!, DistanceFeatures!, ExplanatoryRasters!, TotalTimeLimit!, AutomlMode!, Algorithms!, ValidationPercent!, OutReport!, OutImportance!, OutFeatures };
+		public override object[] Parameters => new object[] { InFeatures, OutModel, VariablePredict, TreatVariableAsCategorical!, ExplanatoryVariables!, DistanceFeatures!, ExplanatoryRasters!, TotalTimeLimit!, AutomlMode!, Algorithms!, ValidationPercent!, OutReport!, OutImportance!, OutFeatures! };
 
 		/// <summary>
 		/// <para>Input Training Features</para>

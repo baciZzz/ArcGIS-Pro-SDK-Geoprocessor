@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutName, InClusterTolerance, OutTopology };
+		public override object[] Parameters => new object[] { InDataset, OutName, InClusterTolerance!, OutTopology! };
 
 		/// <summary>
 		/// <para>Input Feature Dataset</para>
@@ -89,14 +89,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object InClusterTolerance { get; set; }
+		public object? InClusterTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Output Topology</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETopology()]
-		public object OutTopology { get; set; }
+		public object? OutTopology { get; set; }
 
 	}
 }

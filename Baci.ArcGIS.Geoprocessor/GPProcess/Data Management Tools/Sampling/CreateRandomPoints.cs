@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutPath, OutName, ConstrainingFeatureClass, ConstrainingExtent, NumberOfPointsOrField, MinimumAllowedDistance, CreateMultipointOutput, MultipointSize, OutFeatureClass };
+		public override object[] Parameters => new object[] { OutPath, OutName, ConstrainingFeatureClass!, ConstrainingExtent!, NumberOfPointsOrField!, MinimumAllowedDistance!, CreateMultipointOutput!, MultipointSize!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Output Location</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object ConstrainingFeatureClass { get; set; }
+		public object? ConstrainingFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Constraining Extent</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object ConstrainingExtent { get; set; }
+		public object? ConstrainingExtent { get; set; }
 
 		/// <summary>
 		/// <para>Number of Points [value or field]</para>
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object NumberOfPointsOrField { get; set; } = "100";
+		public object? NumberOfPointsOrField { get; set; } = "100";
 
 		/// <summary>
 		/// <para>Minimum Allowed Distance [value or field]</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object MinimumAllowedDistance { get; set; } = "0 Unknown";
+		public object? MinimumAllowedDistance { get; set; } = "0 Unknown";
 
 		/// <summary>
 		/// <para>Create Multipoint Output</para>
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CreateMultipointOutput { get; set; } = "false";
+		public object? CreateMultipointOutput { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Maximum Number of Points per Multipoint</para>
@@ -138,19 +138,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object MultipointSize { get; set; } = "10";
+		public object? MultipointSize { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateRandomPoints SetEnviroment(object MDomain = null , object MResolution = null , object MTolerance = null , object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , object randomGenerator = null , object scratchWorkspace = null , object workspace = null )
+		public CreateRandomPoints SetEnviroment(object? MDomain = null , double? MResolution = null , double? MTolerance = null , object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , object? randomGenerator = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, randomGenerator: randomGenerator, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

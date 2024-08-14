@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDiagrams, TemplateNames, DiagramNames, UpdateOption, AutolayoutOption, OutDiagrams };
+		public override object[] Parameters => new object[] { InDiagrams, TemplateNames!, DiagramNames!, UpdateOption!, AutolayoutOption!, OutDiagrams! };
 
 		/// <summary>
 		/// <para>Input Network or Network Diagram Layer</para>
@@ -74,14 +74,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object TemplateNames { get; set; }
+		public object? TemplateNames { get; set; }
 
 		/// <summary>
 		/// <para>Diagram Names</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object DiagramNames { get; set; }
+		public object? DiagramNames { get; set; }
 
 		/// <summary>
 		/// <para>Update inconsistent diagrams only</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object UpdateOption { get; set; } = "true";
+		public object? UpdateOption { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Re-apply automatic layouts on the updated diagrams</para>
@@ -101,14 +101,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object AutolayoutOption { get; set; } = "false";
+		public object? AutolayoutOption { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Network or Network Diagram Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutDiagrams { get; set; }
+		public object? OutDiagrams { get; set; }
 
 		#region InnerClass
 

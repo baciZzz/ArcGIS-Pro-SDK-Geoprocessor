@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InStoresLayer, StoreIdField, InCustomersLayer, LinkField, OutFeatureClass, Method, Rings, CustomerAggregationType, CustomerWeightField, ExcludeOutlyingCustomers, CutoffDistance, DissolveOption, UseCustomerCentroids, DistanceType, Units, TravelDirection, TimeOfDay, TimeZone, SearchTolerance, PolygonDetail, IterationsLimit, MinimumStep, TargetPercentDiff };
+		public override object[] Parameters => new object[] { InStoresLayer, StoreIdField, InCustomersLayer, LinkField, OutFeatureClass, Method, Rings, CustomerAggregationType, CustomerWeightField!, ExcludeOutlyingCustomers!, CutoffDistance!, DissolveOption!, UseCustomerCentroids!, DistanceType!, Units!, TravelDirection!, TimeOfDay!, TimeZone!, SearchTolerance!, PolygonDetail!, IterationsLimit!, MinimumStep!, TargetPercentDiff! };
 
 		/// <summary>
 		/// <para>Stores</para>
@@ -195,7 +195,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object CustomerWeightField { get; set; }
+		public object? CustomerWeightField { get; set; }
 
 		/// <summary>
 		/// <para>Exclude Outlying Customers</para>
@@ -207,7 +207,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ExcludeOutlyingCustomers { get; set; } = "false";
+		public object? ExcludeOutlyingCustomers { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Cut-off Distance</para>
@@ -215,7 +215,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object CutoffDistance { get; set; }
+		public object? CutoffDistance { get; set; }
 
 		/// <summary>
 		/// <para>Dissolve Option</para>
@@ -227,7 +227,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DissolveOption { get; set; } = "OVERLAP";
+		public object? DissolveOption { get; set; } = "OVERLAP";
 
 		/// <summary>
 		/// <para>Use Customers Centroid for Trade Area Center</para>
@@ -239,7 +239,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UseCustomerCentroids { get; set; } = "false";
+		public object? UseCustomerCentroids { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Distance Type</para>
@@ -248,7 +248,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DistanceType { get; set; }
+		public object? DistanceType { get; set; }
 
 		/// <summary>
 		/// <para>Distance Units</para>
@@ -256,7 +256,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Units { get; set; }
+		public object? Units { get; set; }
 
 		/// <summary>
 		/// <para>Travel Direction</para>
@@ -269,7 +269,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Network Parameters")]
-		public object TravelDirection { get; set; } = "TOWARD_STORES";
+		public object? TravelDirection { get; set; } = "TOWARD_STORES";
 
 		/// <summary>
 		/// <para>Time of Day</para>
@@ -278,7 +278,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Network Parameters")]
-		public object TimeOfDay { get; set; }
+		public object? TimeOfDay { get; set; }
 
 		/// <summary>
 		/// <para>Time Zone</para>
@@ -291,7 +291,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Network Parameters")]
-		public object TimeZone { get; set; } = "TIME_ZONE_AT_LOCATION";
+		public object? TimeZone { get; set; } = "TIME_ZONE_AT_LOCATION";
 
 		/// <summary>
 		/// <para>Search Tolerance</para>
@@ -301,7 +301,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Network Parameters")]
-		public object SearchTolerance { get; set; }
+		public object? SearchTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Polygon Detail</para>
@@ -315,7 +315,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Network Parameters")]
-		public object PolygonDetail { get; set; } = "STANDARD";
+		public object? PolygonDetail { get; set; } = "STANDARD";
 
 		/// <summary>
 		/// <para>Iterations Limit</para>
@@ -324,7 +324,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object IterationsLimit { get; set; }
+		public object? IterationsLimit { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Step</para>
@@ -334,7 +334,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[GPDouble()]
 		[GPNumericDomain()]
 		[Category("Advanced Parameters")]
-		public object MinimumStep { get; set; }
+		public object? MinimumStep { get; set; }
 
 		/// <summary>
 		/// <para>Threshold Percent Difference</para>
@@ -344,14 +344,14 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[GPDouble()]
 		[GPNumericDomain()]
 		[Category("Advanced Parameters")]
-		public object TargetPercentDiff { get; set; } = "5";
+		public object? TargetPercentDiff { get; set; } = "5";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CustomerDerivedTA SetEnviroment(object workspace = null )
+		public CustomerDerivedTA SetEnviroment(object? baDataSource = null , object? baNetworkSource = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, baNetworkSource: baNetworkSource, workspace: workspace);
 			return this;
 		}
 

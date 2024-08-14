@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, TargetFolder, InFeatures, OutputFolder };
+		public override object[] Parameters => new object[] { InWorkspace, TargetFolder, InFeatures!, OutputFolder! };
 
 		/// <summary>
 		/// <para>Input Airport Geodatabase</para>
@@ -90,19 +90,19 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object InFeatures { get; set; }
+		public object? InFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Output Folder</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFolder()]
-		public object OutputFolder { get; set; }
+		public object? OutputFolder { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportFAA18BShapefiles SetEnviroment(object workspace = null )
+		public ExportFAA18BShapefiles SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

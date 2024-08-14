@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputPointFeatures, ContainsBackground!, PresenceIndicatorField!, ExplanatoryVariables!, DistanceFeatures!, ExplanatoryRasters!, BasisExpansionFunctions!, NumberKnots!, StudyAreaType!, StudyAreaPolygon!, SpatialThinning!, ThinningDistanceBand!, NumberOfIterations!, RelativeWeight!, LinkFunction!, PresenceProbabilityCutoff!, OutputTrainedFeatures!, OutputTrainedRaster!, OutputResponseCurveTable!, OutputSensitivityTable!, FeaturesToPredict!, OutputPredFeatures!, OutputPredRaster!, ExplanatoryVariableMatching!, ExplanatoryDistanceMatching!, ExplanatoryRastersMatching!, AllowPredictionsOutsideOfDataRanges!, ResamplingScheme!, NumberOfGroups };
+		public override object[] Parameters => new object[] { InputPointFeatures, ContainsBackground!, PresenceIndicatorField!, ExplanatoryVariables!, DistanceFeatures!, ExplanatoryRasters!, BasisExpansionFunctions!, NumberKnots!, StudyAreaType!, StudyAreaPolygon!, SpatialThinning!, ThinningDistanceBand!, NumberOfIterations!, RelativeWeight!, LinkFunction!, PresenceProbabilityCutoff!, OutputTrainedFeatures!, OutputTrainedRaster!, OutputResponseCurveTable!, OutputSensitivityTable!, FeaturesToPredict!, OutputPredFeatures!, OutputPredRaster!, ExplanatoryVariableMatching!, ExplanatoryDistanceMatching!, ExplanatoryRastersMatching!, AllowPredictionsOutsideOfDataRanges!, ResamplingScheme!, NumberOfGroups! };
 
 		/// <summary>
 		/// <para>Input Point Features</para>

@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMultidimensionalRaster, Mode, Dimension, OutPc, OutLoadings, OutEigenvalues!, Variable!, NumberOfPc };
+		public override object[] Parameters => new object[] { InMultidimensionalRaster, Mode, Dimension, OutPc, OutLoadings, OutEigenvalues!, Variable!, NumberOfPc! };
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>

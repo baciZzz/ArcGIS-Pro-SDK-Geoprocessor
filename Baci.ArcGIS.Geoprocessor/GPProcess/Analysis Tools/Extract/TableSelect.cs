@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutTable, WhereClause };
+		public override object[] Parameters => new object[] { InTable, OutTable, WhereClause! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -90,12 +90,12 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TableSelect SetEnviroment(object configKeyword = null )
+		public TableSelect SetEnviroment(object? configKeyword = null )
 		{
 			base.SetEnv(configKeyword: configKeyword);
 			return this;

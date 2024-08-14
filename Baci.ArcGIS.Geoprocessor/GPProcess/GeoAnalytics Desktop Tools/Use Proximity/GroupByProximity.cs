@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, Output, SpatialRelationship, SpatialNearDistance!, TemporalRelationship!, TemporalNearDistance!, AttributeRelationship };
+		public override object[] Parameters => new object[] { InputLayer, Output, SpatialRelationship, SpatialNearDistance!, TemporalRelationship!, TemporalNearDistance!, AttributeRelationship! };
 
 		/// <summary>
 		/// <para>Input Layer</para>

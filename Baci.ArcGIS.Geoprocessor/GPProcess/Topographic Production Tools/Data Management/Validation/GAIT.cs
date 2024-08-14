@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 	/// <summary>
 	/// <para>GAIT</para>
 	/// <para>Validates data using the Geospatial Analysis Integrity Tool (GAIT), checking geometry, feature codes, attribute values and domains, and metadata.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class GAIT : AbstractGPProcess
 	{
 		/// <summary>
@@ -102,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, GaitExe, Folder, Schema, Project, Format, Metadata, Silent, ReviewerWorkspace, Specfile, OutFeaturelayers };
+		public override object[] Parameters => new object[] { InFeatures, GaitExe, Folder, Schema, Project, Format, Metadata, Silent, ReviewerWorkspace!, Specfile!, OutFeaturelayers! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -183,7 +185,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEWorkspace()]
-		public object ReviewerWorkspace { get; set; }
+		public object? ReviewerWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Custom Inspection File</para>
@@ -191,14 +193,14 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
-		public object Specfile { get; set; }
+		public object? Specfile { get; set; }
 
 		/// <summary>
 		/// <para>Output Feature Layers</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutFeaturelayers { get; set; }
+		public object? OutFeaturelayers { get; set; }
 
 		#region InnerClass
 

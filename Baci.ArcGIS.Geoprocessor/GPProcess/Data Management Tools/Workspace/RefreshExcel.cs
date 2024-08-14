@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InExcelFile, OutExcelFile };
+		public override object[] Parameters => new object[] { InExcelFile, OutExcelFile! };
 
 		/// <summary>
 		/// <para>Input Excel File</para>

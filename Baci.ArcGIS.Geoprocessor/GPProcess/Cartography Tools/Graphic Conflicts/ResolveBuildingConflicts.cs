@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InBuildings, InvisibilityField, InBarriers, BuildingGap, MinimumSize, HierarchyField, OutLayers };
+		public override object[] Parameters => new object[] { InBuildings, InvisibilityField, InBarriers, BuildingGap, MinimumSize, HierarchyField!, OutLayers! };
 
 		/// <summary>
 		/// <para>Input Building Layers</para>
@@ -143,19 +143,19 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object HierarchyField { get; set; }
+		public object? HierarchyField { get; set; }
 
 		/// <summary>
 		/// <para>Output Layers</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutLayers { get; set; }
+		public object? OutLayers { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ResolveBuildingConflicts SetEnviroment(object cartographicCoordinateSystem = null , object cartographicPartitions = null , object referenceScale = null )
+		public ResolveBuildingConflicts SetEnviroment(object? cartographicCoordinateSystem = null , object? cartographicPartitions = null , double? referenceScale = null )
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem, cartographicPartitions: cartographicPartitions, referenceScale: referenceScale);
 			return this;

@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureDataset, AreaOfInterest, SheetIdField, WacFeatures, OncFeatures, LandFeatures, ModifiedFeatureDataset };
+		public override object[] Parameters => new object[] { InFeatureDataset, AreaOfInterest, SheetIdField, WacFeatures, OncFeatures, LandFeatures, ModifiedFeatureDataset! };
 
 		/// <summary>
 		/// <para>Input Feature Dataset</para>

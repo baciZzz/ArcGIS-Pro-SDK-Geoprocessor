@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutLayer, PointCoord, NeighborsMax, NeighborsMin, MinorSemiaxis, MajorSemiaxis, Angle, ShapeType };
+		public override object[] Parameters => new object[] { InDataset, OutLayer, PointCoord, NeighborsMax, NeighborsMin, MinorSemiaxis, MajorSemiaxis, Angle, ShapeType! };
 
 		/// <summary>
 		/// <para>Input point features</para>
@@ -179,12 +179,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ShapeType { get; set; } = "ONE_SECTOR";
+		public object? ShapeType { get; set; } = "ONE_SECTOR";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GANeighborhoodSelection SetEnviroment(object workspace = null )
+		public GANeighborhoodSelection SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

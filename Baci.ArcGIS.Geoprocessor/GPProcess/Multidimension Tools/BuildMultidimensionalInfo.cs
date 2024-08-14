@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, VariableField, DimensionFields, VariableDescUnits, OutMosaicDataset, DeleteMultidimensionalInfo };
+		public override object[] Parameters => new object[] { InMosaicDataset, VariableField!, DimensionFields!, VariableDescUnits!, OutMosaicDataset!, DeleteMultidimensionalInfo! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object VariableField { get; set; }
+		public object? VariableField { get; set; }
 
 		/// <summary>
 		/// <para>Dimension Fields</para>
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object DimensionFields { get; set; }
+		public object? DimensionFields { get; set; }
 
 		/// <summary>
 		/// <para>Variable Info</para>
@@ -94,14 +94,14 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object VariableDescUnits { get; set; }
+		public object? VariableDescUnits { get; set; }
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMosaicLayer()]
-		public object OutMosaicDataset { get; set; }
+		public object? OutMosaicDataset { get; set; }
 
 		/// <summary>
 		/// <para>Delete Multidimensional Info</para>
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DeleteMultidimensionalInfo { get; set; } = "false";
+		public object? DeleteMultidimensionalInfo { get; set; } = "false";
 
 		#region InnerClass
 

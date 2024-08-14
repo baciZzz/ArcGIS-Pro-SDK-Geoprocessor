@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { SourceFeatures, TargetFeatures, TransferFields, SearchDistance, MatchFields, OutMatchTable, OutFeatureClass, TransferRuleFields };
+		public override object[] Parameters => new object[] { SourceFeatures, TargetFeatures, TransferFields, SearchDistance, MatchFields!, OutMatchTable!, OutFeatureClass!, TransferRuleFields! };
 
 		/// <summary>
 		/// <para>Source Features</para>
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPFieldDomain()]
-		public object MatchFields { get; set; }
+		public object? MatchFields { get; set; }
 
 		/// <summary>
 		/// <para>Output Match Table</para>
@@ -129,14 +129,14 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object OutMatchTable { get; set; }
+		public object? OutMatchTable { get; set; }
 
 		/// <summary>
 		/// <para>Updated Target Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Transfer Rule Field(s)</para>
@@ -149,12 +149,12 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object TransferRuleFields { get; set; }
+		public object? TransferRuleFields { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TransferAttributes SetEnviroment(object extent = null , object workspace = null )
+		public TransferAttributes SetEnviroment(object? extent = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

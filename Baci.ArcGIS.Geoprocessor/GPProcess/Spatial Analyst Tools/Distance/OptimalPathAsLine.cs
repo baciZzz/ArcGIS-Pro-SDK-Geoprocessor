@@ -20,13 +20,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InDestinationData">
 		/// <para>Input raster or feature destination data</para>
-		/// <para>An integer raster or feature dataset that identifies locations from which the optimal path is determined to the least costly source.</para>
+		/// <para>An integer raster or feature (point, line, or polygon) that identifies locations from which the optimal path will be determined to the least costly source.</para>
 		/// <para>If the input is a raster, it must consist of cells that have valid values for the destinations, and the remaining cells must be assigned NoData. Zero is a valid value.</para>
 		/// </param>
 		/// <param name="InDistanceAccumulationRaster">
 		/// <para>Input distance accumulation raster</para>
-		/// <para>The distance accumulation raster is used to determine the optimal path from the sources to the destinations.</para>
-		/// <para>The distance accumulation raster is usually created with the Distance Accumulation or Distance Allocation tools. Each cell in the distance accumulation raster represents the minimum accumulative cost distance over a surface from each cell to a set of source cells.</para>
+		/// <para>The distance accumulation raster that will be used to determine the optimal path from the sources to the destinations.</para>
+		/// <para>The distance accumulation raster is usually created with the Distance Accumulation or Distance Allocation tool. Each cell in the distance accumulation raster represents the minimum accumulative cost distance over a surface from each cell to a set of source cells.</para>
 		/// </param>
 		/// <param name="InBackDirectionRaster">
 		/// <para>Input back direction or flow direction raster</para>
@@ -78,11 +78,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDestinationData, InDistanceAccumulationRaster, InBackDirectionRaster, OutPolylineFeatures, DestinationField, PathType, CreateNetworkPaths };
+		public override object[] Parameters => new object[] { InDestinationData, InDistanceAccumulationRaster, InBackDirectionRaster, OutPolylineFeatures, DestinationField!, PathType!, CreateNetworkPaths! };
 
 		/// <summary>
 		/// <para>Input raster or feature destination data</para>
-		/// <para>An integer raster or feature dataset that identifies locations from which the optimal path is determined to the least costly source.</para>
+		/// <para>An integer raster or feature (point, line, or polygon) that identifies locations from which the optimal path will be determined to the least costly source.</para>
 		/// <para>If the input is a raster, it must consist of cells that have valid values for the destinations, and the remaining cells must be assigned NoData. Zero is a valid value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -92,8 +92,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input distance accumulation raster</para>
-		/// <para>The distance accumulation raster is used to determine the optimal path from the sources to the destinations.</para>
-		/// <para>The distance accumulation raster is usually created with the Distance Accumulation or Distance Allocation tools. Each cell in the distance accumulation raster represents the minimum accumulative cost distance over a surface from each cell to a set of source cells.</para>
+		/// <para>The distance accumulation raster that will be used to determine the optimal path from the sources to the destinations.</para>
+		/// <para>The distance accumulation raster is usually created with the Distance Accumulation or Distance Allocation tool. Each cell in the distance accumulation raster represents the minimum accumulative cost distance over a surface from each cell to a set of source cells.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -120,25 +120,25 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Destination field</para>
-		/// <para>An integer field to be used to obtain values for the destination locations.</para>
+		/// <para>An integer field that will be used to obtain values for the destination locations.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object DestinationField { get; set; }
+		public object? DestinationField { get; set; }
 
 		/// <summary>
 		/// <para>Path type</para>
 		/// <para>Specifies a keyword defining the manner in which the values and zones on the input destination data will be interpreted in the cost path calculations.</para>
-		/// <para>Each zone—For each zone on the input destination data, a least-cost path is determined and saved on the output raster. With this option, the least-cost path for each zone begins at the cell with the lowest cost distance weighting in the zone.</para>
-		/// <para>Best single—For all cells on the input destination data, the least-cost path is derived from the cell with the minimum of the least-cost paths to source cells.</para>
-		/// <para>Each cell—For each cell with valid values on the input destination data, a least-cost path is determined and saved on the output raster. With this option, each cell of the input destination data is treated separately, and a least-cost path is determined for each cell.</para>
+		/// <para>Each zone—For each zone on the input destination data, a least-cost path will be determined and saved on the output raster. With this option, the least-cost path for each zone begins at the cell with the lowest cost distance weighting in the zone.</para>
+		/// <para>Best single—For all cells on the input destination data, the least-cost path will be derived from the cell with the minimum of the least-cost paths to source cells.</para>
+		/// <para>Each cell—For each cell with valid values on the input destination data, a least-cost path will be determined and saved on the output raster. With this option, each cell of the input destination data is treated separately, and a least-cost path is determined for each cell.</para>
 		/// <para><see cref="PathTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object PathType { get; set; } = "EACH_ZONE";
+		public object? PathType { get; set; } = "EACH_ZONE";
 
 		/// <summary>
 		/// <para>Create network paths</para>
@@ -150,12 +150,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CreateNetworkPaths { get; set; } = "false";
+		public object? CreateNetworkPaths { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public OptimalPathAsLine SetEnviroment(object MDomain = null , object MResolution = null , object MTolerance = null , object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , int? autoCommit = null , object configKeyword = null , object geographicTransformations = null , bool? maintainSpatialIndex = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , object scratchWorkspace = null , object workspace = null )
+		public OptimalPathAsLine SetEnviroment(object? MDomain = null , double? MResolution = null , double? MTolerance = null , object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , int? autoCommit = null , object? configKeyword = null , object? geographicTransformations = null , bool? maintainSpatialIndex = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, geographicTransformations: geographicTransformations, maintainSpatialIndex: maintainSpatialIndex, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -169,21 +169,21 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum PathTypeEnum 
 		{
 			/// <summary>
-			/// <para>Best single—For all cells on the input destination data, the least-cost path is derived from the cell with the minimum of the least-cost paths to source cells.</para>
+			/// <para>Best single—For all cells on the input destination data, the least-cost path will be derived from the cell with the minimum of the least-cost paths to source cells.</para>
 			/// </summary>
 			[GPValue("BEST_SINGLE")]
 			[Description("Best single")]
 			Best_single,
 
 			/// <summary>
-			/// <para>Each cell—For each cell with valid values on the input destination data, a least-cost path is determined and saved on the output raster. With this option, each cell of the input destination data is treated separately, and a least-cost path is determined for each cell.</para>
+			/// <para>Each cell—For each cell with valid values on the input destination data, a least-cost path will be determined and saved on the output raster. With this option, each cell of the input destination data is treated separately, and a least-cost path is determined for each cell.</para>
 			/// </summary>
 			[GPValue("EACH_CELL")]
 			[Description("Each cell")]
 			Each_cell,
 
 			/// <summary>
-			/// <para>Each zone—For each zone on the input destination data, a least-cost path is determined and saved on the output raster. With this option, the least-cost path for each zone begins at the cell with the lowest cost distance weighting in the zone.</para>
+			/// <para>Each zone—For each zone on the input destination data, a least-cost path will be determined and saved on the output raster. With this option, the least-cost path for each zone begins at the cell with the lowest cost distance weighting in the zone.</para>
 			/// </summary>
 			[GPValue("EACH_ZONE")]
 			[Description("Each zone")]

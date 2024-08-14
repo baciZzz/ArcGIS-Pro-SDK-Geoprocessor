@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureOrRaster, CategoricalZoneField, OverlayFeatureOrRaster, CategoricalOverlayZoneField, OutputFeatures, OutputRaster, CorrespondenceOverlayToInput, CorrespondenceInputToOverlay, GlobalMeasureOfSpatialAssociation, GlobalCorrespondenceInputToOverlay, GlobalCorrespondenceOverlayToInput };
+		public override object[] Parameters => new object[] { InputFeatureOrRaster, CategoricalZoneField, OverlayFeatureOrRaster, CategoricalOverlayZoneField, OutputFeatures!, OutputRaster!, CorrespondenceOverlayToInput!, CorrespondenceInputToOverlay!, GlobalMeasureOfSpatialAssociation!, GlobalCorrespondenceInputToOverlay!, GlobalCorrespondenceOverlayToInput! };
 
 		/// <summary>
 		/// <para>Input Polygon Feature or Raster Zones</para>
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object OutputFeatures { get; set; }
+		public object? OutputFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Output Raster</para>
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
-		public object OutputRaster { get; set; }
+		public object? OutputRaster { get; set; }
 
 		/// <summary>
 		/// <para>Correspondence of Overlay Zones within Input Zones</para>
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object CorrespondenceOverlayToInput { get; set; }
+		public object? CorrespondenceOverlayToInput { get; set; }
 
 		/// <summary>
 		/// <para>Correspondence of Input Zones within Overlay Zones</para>
@@ -147,35 +147,35 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object CorrespondenceInputToOverlay { get; set; }
+		public object? CorrespondenceInputToOverlay { get; set; }
 
 		/// <summary>
 		/// <para>Global Measure of Spatial Association</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object GlobalMeasureOfSpatialAssociation { get; set; }
+		public object? GlobalMeasureOfSpatialAssociation { get; set; }
 
 		/// <summary>
 		/// <para>Global Correspondence of Input Zones within Overlay Zones</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object GlobalCorrespondenceInputToOverlay { get; set; }
+		public object? GlobalCorrespondenceInputToOverlay { get; set; }
 
 		/// <summary>
 		/// <para>Global Correspondence of Overlay Zones within Input Zones</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object GlobalCorrespondenceOverlayToInput { get; set; }
+		public object? GlobalCorrespondenceOverlayToInput { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SpatialAssociationBetweenZones SetEnviroment(object cellSize = null , object extent = null , object mask = null , object outputCoordinateSystem = null , object snapRaster = null )
+		public SpatialAssociationBetweenZones SetEnviroment(object? cellSize = null , object? cellSizeProjectionMethod = null , object? extent = null , object? mask = null , object? outputCoordinateSystem = null , object? snapRaster = null )
 		{
-			base.SetEnv(cellSize: cellSize, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, snapRaster: snapRaster);
+			base.SetEnv(cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, snapRaster: snapRaster);
 			return this;
 		}
 

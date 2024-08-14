@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputdestinationrasterorfeatures, Inputcostdistanceraster, Inputcostbacklinkraster, Outputpolylinename, Pathtype, Destinationfield, Outputpolylinefeatures };
+		public override object[] Parameters => new object[] { Inputdestinationrasterorfeatures, Inputcostdistanceraster, Inputcostbacklinkraster, Outputpolylinename, Pathtype!, Destinationfield!, Outputpolylinefeatures! };
 
 		/// <summary>
 		/// <para>Input Destination Raster or Features</para>
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Pathtype { get; set; } = "BEST_SINGLE";
+		public object? Pathtype { get; set; } = "BEST_SINGLE";
 
 		/// <summary>
 		/// <para>Destination Field</para>
@@ -137,19 +137,19 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Destinationfield { get; set; }
+		public object? Destinationfield { get; set; }
 
 		/// <summary>
 		/// <para>Output Polyline Feature</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object Outputpolylinefeatures { get; set; }
+		public object? Outputpolylinefeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CostPathAsPolyline SetEnviroment(object outputCoordinateSystem = null )
+		public CostPathAsPolyline SetEnviroment(object? outputCoordinateSystem = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem);
 			return this;

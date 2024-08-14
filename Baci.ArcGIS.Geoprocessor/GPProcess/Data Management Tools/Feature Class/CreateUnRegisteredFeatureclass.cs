@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutPath, OutName, GeometryType, Template, HasM, HasZ, SpatialReference, ConfigKeyword, OutFeatureClass };
+		public override object[] Parameters => new object[] { OutPath, OutName, GeometryType!, Template!, HasM!, HasZ!, SpatialReference!, ConfigKeyword!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Feature Class Location</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object GeometryType { get; set; } = "POLYGON";
+		public object? GeometryType { get; set; } = "POLYGON";
 
 		/// <summary>
 		/// <para>Template Feature Class</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Template { get; set; }
+		public object? Template { get; set; }
 
 		/// <summary>
 		/// <para>Has M</para>
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object HasM { get; set; } = "DISABLED";
+		public object? HasM { get; set; } = "DISABLED";
 
 		/// <summary>
 		/// <para>Has Z</para>
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object HasZ { get; set; } = "DISABLED";
+		public object? HasZ { get; set; } = "DISABLED";
 
 		/// <summary>
 		/// <para>Spatial Reference</para>
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
-		public object SpatialReference { get; set; }
+		public object? SpatialReference { get; set; }
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
@@ -146,19 +146,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ConfigKeyword { get; set; }
+		public object? ConfigKeyword { get; set; }
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateUnRegisteredFeatureclass SetEnviroment(object configKeyword = null , object workspace = null )
+		public CreateUnRegisteredFeatureclass SetEnviroment(object? configKeyword = null , object? workspace = null )
 		{
 			base.SetEnv(configKeyword: configKeyword, workspace: workspace);
 			return this;

@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, UpdatedPointFeatures };
+		public override object[] Parameters => new object[] { InPointFeatures, UpdatedPointFeatures! };
 
 		/// <summary>
 		/// <para>Input Point Features</para>
@@ -78,12 +78,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object UpdatedPointFeatures { get; set; }
+		public object? UpdatedPointFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddGPSMetadataFields SetEnviroment(object workspace = null )
+		public AddGPSMetadataFields SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

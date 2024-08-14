@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputService, NumOfCachingServiceInstances!, OutJobUrl };
+		public override object[] Parameters => new object[] { InputService, NumOfCachingServiceInstances!, OutJobUrl! };
 
 		/// <summary>
 		/// <para>Input Service</para>

@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DensificationMethod, Distance, MaxDeviation, MaxAngle, OutFeatureClass, MaxVertexPerSegment };
+		public override object[] Parameters => new object[] { InFeatures, DensificationMethod!, Distance!, MaxDeviation!, MaxAngle!, OutFeatureClass!, MaxVertexPerSegment! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DensificationMethod { get; set; } = "DISTANCE";
+		public object? DensificationMethod { get; set; } = "DISTANCE";
 
 		/// <summary>
 		/// <para>Distance</para>
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object Distance { get; set; } = "0 Unknown";
+		public object? Distance { get; set; } = "0 Unknown";
 
 		/// <summary>
 		/// <para>Maximum Offset Deviation</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object MaxDeviation { get; set; } = "0 Unknown";
+		public object? MaxDeviation { get; set; } = "0 Unknown";
 
 		/// <summary>
 		/// <para>Maximum Deflection Angle (Degrees)</para>
@@ -110,14 +110,14 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object MaxAngle { get; set; } = "10";
+		public object? MaxAngle { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Updated Input Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Vertex Count (per segment)</para>
@@ -125,12 +125,12 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MaxVertexPerSegment { get; set; }
+		public object? MaxVertexPerSegment { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Densify SetEnviroment(int? autoCommit = null , object workspace = null )
+		public Densify SetEnviroment(int? autoCommit = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, InAreaFeatures, OutFeatureclass, PointIdField, AreaIdField, Relationship, TimeDifference };
+		public override object[] Parameters => new object[] { InPointFeatures, InAreaFeatures, OutFeatureclass, PointIdField, AreaIdField, Relationship, TimeDifference!, TimeRelationship!, IncludeTimeStatistics! };
 
 		/// <summary>
 		/// <para>Input Point Features</para>
@@ -154,12 +154,38 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		public object TimeDifference { get; set; }
+		public object? TimeDifference { get; set; }
+
+		/// <summary>
+		/// <para>Time Relationship</para>
+		/// <para>Specifies the time relationship between the Input Point Features and Input Area Features parameter values.</para>
+		/// <para>This parameter is active when the Relationship parameter is set to Location and Time and both inputs are time enabled. If the Near before or Near after option is specified, only features in the Input Point Features parameter value that are within the specified time window will be evaluated for inclusion in the Output Feature Class parameter value.</para>
+		/// <para>Near— When a point feature time is within a specified range of time from the area feature time, the point feature time is near the area feature time.</para>
+		/// <para>Near before—When a point feature time is before the area feature time but within a specified range of time from the join time, the point feature time is near before the area feature time.</para>
+		/// <para>Near after—When a point feature time is after the area feature time but within a specified range of time from the join time, the point feature time is near after the area feature time.</para>
+		/// <para><see cref="TimeRelationshipEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		[GPCodedValueDomain()]
+		public object? TimeRelationship { get; set; }
+
+		/// <summary>
+		/// <para>Include Time Statistics</para>
+		/// <para>Specifies whether time statistics fields will be added.</para>
+		/// <para>Include time statistics—Time statistics fields will be added to the output.</para>
+		/// <para>Exclude time statistics—Time statistics fields will not be added to the output.</para>
+		/// <para><see cref="IncludeTimeStatisticsEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		public object? IncludeTimeStatistics { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CompareAreas SetEnviroment(object extent = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object workspace = null )
+		public CompareAreas SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;
@@ -185,6 +211,55 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 			[GPValue("LOCATION_TIME")]
 			[Description("Location and Time")]
 			Location_and_Time,
+
+		}
+
+		/// <summary>
+		/// <para>Time Relationship</para>
+		/// </summary>
+		public enum TimeRelationshipEnum 
+		{
+			/// <summary>
+			/// <para>Near— When a point feature time is within a specified range of time from the area feature time, the point feature time is near the area feature time.</para>
+			/// </summary>
+			[GPValue("NEAR")]
+			[Description("Near")]
+			Near,
+
+			/// <summary>
+			/// <para>Near before—When a point feature time is before the area feature time but within a specified range of time from the join time, the point feature time is near before the area feature time.</para>
+			/// </summary>
+			[GPValue("NEAR_BEFORE")]
+			[Description("Near before")]
+			Near_before,
+
+			/// <summary>
+			/// <para>Near after—When a point feature time is after the area feature time but within a specified range of time from the join time, the point feature time is near after the area feature time.</para>
+			/// </summary>
+			[GPValue("NEAR_AFTER")]
+			[Description("Near after")]
+			Near_after,
+
+		}
+
+		/// <summary>
+		/// <para>Include Time Statistics</para>
+		/// </summary>
+		public enum IncludeTimeStatisticsEnum 
+		{
+			/// <summary>
+			/// <para></para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("TIME_STATISTICS")]
+			TIME_STATISTICS,
+
+			/// <summary>
+			/// <para></para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("NO_TIME_STATISTICS")]
+			NO_TIME_STATISTICS,
 
 		}
 

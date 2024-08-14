@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, InSiteFeatures, InSectorFeatures, OutSiteFeatureClass, OutSectorFeatureClass, IdFields, SubscriberField, DestinationField, AdditionalIdFields, StartTimeField, DurationField, EndTimeField, ConvertUtc, LocationXField, LocationYField, LocationCoordinateSystem, OutCallPoints };
+		public override object[] Parameters => new object[] { InTable, InSiteFeatures, InSectorFeatures, OutSiteFeatureClass, OutSectorFeatureClass, IdFields, SubscriberField, DestinationField!, AdditionalIdFields!, StartTimeField!, DurationField!, EndTimeField!, ConvertUtc!, LocationXField!, LocationYField!, LocationCoordinateSystem!, OutCallPoints! };
 
 		/// <summary>
 		/// <para>Input Phone Records Table</para>
@@ -187,7 +187,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object DestinationField { get; set; }
+		public object? DestinationField { get; set; }
 
 		/// <summary>
 		/// <para>Additional Cell Sector ID Fields</para>
@@ -207,7 +207,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object AdditionalIdFields { get; set; }
+		public object? AdditionalIdFields { get; set; }
 
 		/// <summary>
 		/// <para>Start Date and Time Field</para>
@@ -217,7 +217,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Call Duration Information")]
-		public object StartTimeField { get; set; }
+		public object? StartTimeField { get; set; }
 
 		/// <summary>
 		/// <para>Duration Field</para>
@@ -227,7 +227,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Call Duration Information")]
-		public object DurationField { get; set; }
+		public object? DurationField { get; set; }
 
 		/// <summary>
 		/// <para>End Date and Time Field</para>
@@ -237,7 +237,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Call Duration Information")]
-		public object EndTimeField { get; set; }
+		public object? EndTimeField { get; set; }
 
 		/// <summary>
 		/// <para>Convert UTC Dates to Local Time Zone</para>
@@ -250,7 +250,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Call Duration Information")]
-		public object ConvertUtc { get; set; } = "false";
+		public object? ConvertUtc { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Estimated Phone Location X Field</para>
@@ -260,7 +260,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Estimated Phone Location Output Options")]
-		public object LocationXField { get; set; }
+		public object? LocationXField { get; set; }
 
 		/// <summary>
 		/// <para>Estimated Phone Location Y Field</para>
@@ -270,7 +270,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Estimated Phone Location Output Options")]
-		public object LocationYField { get; set; }
+		public object? LocationYField { get; set; }
 
 		/// <summary>
 		/// <para>Estimated Phone Location Coordinate System</para>
@@ -279,7 +279,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
 		[Category("Estimated Phone Location Output Options")]
-		public object LocationCoordinateSystem { get; set; } = "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]";
+		public object? LocationCoordinateSystem { get; set; } = "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]";
 
 		/// <summary>
 		/// <para>Output Estimated Call Points</para>
@@ -288,14 +288,14 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[Category("Estimated Phone Location Output Options")]
-		public object OutCallPoints { get; set; }
+		public object? OutCallPoints { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CellPhoneRecordsToFeatureClass SetEnviroment(object MDomain = null , object MResolution = null , object MTolerance = null , object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , int? autoCommit = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , bool? qualifiedFieldNames = null , object scratchWorkspace = null , object workspace = null )
+		public CellPhoneRecordsToFeatureClass SetEnviroment(object? MDomain = null , double? MResolution = null , double? MTolerance = null , object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , int? autoCommit = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , bool? maintainAttachments = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , bool? qualifiedFieldNames = null , object? scratchWorkspace = null , object? workspace = null )
 		{
-			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, workspace: workspace);
+			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, maintainAttachments: maintainAttachments, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
 		}
 

@@ -24,17 +24,17 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </param>
 		/// <param name="InRoutes">
 		/// <para>Input Route Features</para>
-		/// <para>The routes with which the input features will be intersected.</para>
+		/// <para>The routes with which the Input Features parameter value will intersect.</para>
 		/// </param>
 		/// <param name="RouteIdField">
 		/// <para>Route Identifier Field</para>
-		/// <para>The field containing values that uniquely identify each route. This field can be numeric or character.</para>
+		/// <para>The field containing values that uniquely identify each route. The field can be numeric or character.</para>
 		/// </param>
 		/// <param name="RadiusOrTolerance">
 		/// <para>Search Radius</para>
-		/// <para>If the input features are points, the search radius is a numeric value defining how far around each point a search will be done to find a target route.</para>
-		/// <para>If the input features are lines, the search tolerance is really a cluster tolerance, which is a numeric value representing the maximum tolerated distance between the input lines and the target routes.</para>
-		/// <para>If the input features are polygons, this parameter is ignored and no search radius is used.</para>
+		/// <para>If the Input Features parameter value is points, the search radius will be a numeric value defining how far around each point a search will be done to find a target route.</para>
+		/// <para>If the Input Features parameter value is lines, the search tolerance will be a cluster tolerance, which is a numeric value representing the maximum tolerated distance between the input lines and the target routes.</para>
+		/// <para>If the Input Features parameter value is polygons, this parameter is ignored and no search radius will be used.</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Event Table</para>
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InRoutes, RouteIdField, RadiusOrTolerance, OutTable, OutEventProperties, RouteLocations, DistanceField, ZeroLengthEvents, InFields, MDirectionOffsetting };
+		public override object[] Parameters => new object[] { InFeatures, InRoutes, RouteIdField, RadiusOrTolerance, OutTable, OutEventProperties, RouteLocations!, DistanceField!, ZeroLengthEvents!, InFields!, MDirectionOffsetting! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Input Route Features</para>
-		/// <para>The routes with which the input features will be intersected.</para>
+		/// <para>The routes with which the Input Features parameter value will intersect.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Route Identifier Field</para>
-		/// <para>The field containing values that uniquely identify each route. This field can be numeric or character.</para>
+		/// <para>The field containing values that uniquely identify each route. The field can be numeric or character.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -123,9 +123,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Search Radius</para>
-		/// <para>If the input features are points, the search radius is a numeric value defining how far around each point a search will be done to find a target route.</para>
-		/// <para>If the input features are lines, the search tolerance is really a cluster tolerance, which is a numeric value representing the maximum tolerated distance between the input lines and the target routes.</para>
-		/// <para>If the input features are polygons, this parameter is ignored and no search radius is used.</para>
+		/// <para>If the Input Features parameter value is points, the search radius will be a numeric value defining how far around each point a search will be done to find a target route.</para>
+		/// <para>If the Input Features parameter value is lines, the search tolerance will be a cluster tolerance, which is a numeric value representing the maximum tolerated distance between the input lines and the target routes.</para>
+		/// <para>If the Input Features parameter value is polygons, this parameter is ignored and no search radius will be used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -155,68 +155,68 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Keep only the closest route location</para>
-		/// <para>When locating points along routes, it is possible that more than one route may be within the search radius of any given point. This parameter is ignored when locating lines or polygons along routes.</para>
-		/// <para>Checked—Only the closest route location will be written to the output event table. This is the default.</para>
-		/// <para>Unchecked—Every route location (within the search radius) will be written to the output event table.</para>
+		/// <para>Specifies whether the closest route location or every route location within the search radius will be written to the Output Event Table parameter value. When locating points along routes, more than one route may be within the search radius of any given point. This parameter is ignored when locating lines or polygons along routes.</para>
+		/// <para>Checked—Only the closest route location will be written to the Output Event Table parameter value. This is the default.</para>
+		/// <para>Unchecked—Every route location within the search radius will be written to the Output Event Table parameter value.</para>
 		/// <para><see cref="RouteLocationsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object RouteLocations { get; set; } = "true";
+		public object? RouteLocations { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Include distance field on output table</para>
-		/// <para>Specifies whether a field named DISTANCE will be added to the output event table. The values in this field are in the units of the specified search radius. This parameter is ignored when locating lines or polygons along routes.</para>
-		/// <para>Checked—A field containing the point-to-route distance will be added to the output event table. This is the default.</para>
+		/// <para>Specifies whether a field named DISTANCE will be added to the Output Event Table parameter value. The values in this field are in the units of the specified search radius. This parameter is ignored when locating lines or polygons along routes.</para>
+		/// <para>Checked—A field containing the point-to-route distance will be added to the Output Event Table parameter value. This is the default.</para>
 		/// <para>Unchecked—A field containing the point-to-route distance will not be added to the output event table.</para>
 		/// <para><see cref="DistanceFieldEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DistanceField { get; set; } = "true";
+		public object? DistanceField { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Keep zero length line events</para>
-		/// <para>When locating polygons along routes, it is possible that events can be created where the from-measure is equal to the to-measure. This parameter is ignored when locating points or lines along routes.</para>
-		/// <para>Checked—Zero-length line events will be written to the output event table. This is the default.</para>
-		/// <para>Unchecked—Zero-length line events will not be written to the output event table.</para>
+		/// <para>Specifies whether zero-length line events will be written to the output. When locating polygons along routes, events may be created in which the from-measure value is equal to the to-measure value. This parameter is ignored when locating points or lines along routes.</para>
+		/// <para>Checked—Zero-length line events will be written to the Output Event Table parameter value. This is the default.</para>
+		/// <para>Unchecked—Zero-length line events will not be written to the Output Event Table parameter value.</para>
 		/// <para><see cref="ZeroLengthEventsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ZeroLengthEvents { get; set; } = "true";
+		public object? ZeroLengthEvents { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Include all fields from input</para>
-		/// <para>Specifies whether the output event table will contain route location fields plus all the attributes from the input features.</para>
-		/// <para>Checked—The output event table will contain route location fields plus all the attributes from the input features. This is the default.</para>
-		/// <para>Unchecked—The output event table will only contain route location fields plus the ObjectID field from the input features.</para>
+		/// <para>Specifies whether the Output Event Table parameter value will contain route location fields and all the attributes from the Input Features parameter value.</para>
+		/// <para>Checked—The Output Event Table parameter value will contain route location fields and all the attributes from the Input Features parameter value. This is the default.</para>
+		/// <para>Unchecked—The Output Event Table parameter value will only contain route location fields and the ObjectID field from the Input Features parameter value.</para>
 		/// <para><see cref="InFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object InFields { get; set; } = "true";
+		public object? InFields { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Use M direction offsetting</para>
-		/// <para>Specifies whether the offset distance calculated should be based on the M direction or the digitized direction. Distances are included in the output event table if Include distance field on output table is checked.</para>
-		/// <para>Checked—The distance values in the output event table will be calculated based on the routes&apos; M direction. Input features to the left of the M direction of the route will be assigned a positive offset (+), and features to the right of the M direction will be assigned a negative offset value (-). This is the default.</para>
-		/// <para>Unchecked—The distance values in the output event table will be calculated based on the routes&apos; digitized direction. Input features to the left of the digitized direction of the route will be assigned a negative (-) offset, and features to the right of the digitized direction will be assigned a positive offset value (+).</para>
+		/// <para>Specifies whether the offset distance calculated will be based on the m-direction or the digitized direction. Distances are included in the Output Event Table parameter value if the Include distance field on output table parameter value is checked.</para>
+		/// <para>Checked—The distance values in the Output Event Table parameter value will be calculated based on the m-direction of the route. Input features to the left of the m-direction of the route will be assigned a positive offset (+), and features to the right of the m-direction will be assigned a negative offset value (-). This is the default.</para>
+		/// <para>Unchecked—The distance values in the Output Event Table parameter value will be calculated based on the digitized direction of the route. Input features to the left of the digitized direction of the route will be assigned a negative (-) offset, and features to the right of the digitized direction will be assigned a positive offset value (+).</para>
 		/// <para><see cref="MDirectionOffsettingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object MDirectionOffsetting { get; set; } = "true";
+		public object? MDirectionOffsetting { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LocateFeaturesAlongRoutes SetEnviroment(object configKeyword = null , object extent = null , object scratchWorkspace = null , object workspace = null )
+		public LocateFeaturesAlongRoutes SetEnviroment(object? configKeyword = null , object? extent = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(configKeyword: configKeyword, extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -230,14 +230,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum RouteLocationsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Only the closest route location will be written to the output event table. This is the default.</para>
+			/// <para>Checked—Only the closest route location will be written to the Output Event Table parameter value. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FIRST")]
 			FIRST,
 
 			/// <summary>
-			/// <para>Unchecked—Every route location (within the search radius) will be written to the output event table.</para>
+			/// <para>Unchecked—Every route location within the search radius will be written to the Output Event Table parameter value.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ALL")]
@@ -251,7 +251,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum DistanceFieldEnum 
 		{
 			/// <summary>
-			/// <para>Checked—A field containing the point-to-route distance will be added to the output event table. This is the default.</para>
+			/// <para>Checked—A field containing the point-to-route distance will be added to the Output Event Table parameter value. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DISTANCE")]
@@ -272,14 +272,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum ZeroLengthEventsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Zero-length line events will be written to the output event table. This is the default.</para>
+			/// <para>Checked—Zero-length line events will be written to the Output Event Table parameter value. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ZERO")]
 			ZERO,
 
 			/// <summary>
-			/// <para>Unchecked—Zero-length line events will not be written to the output event table.</para>
+			/// <para>Unchecked—Zero-length line events will not be written to the Output Event Table parameter value.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ZERO")]
@@ -293,14 +293,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum InFieldsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The output event table will contain route location fields plus all the attributes from the input features. This is the default.</para>
+			/// <para>Checked—The Output Event Table parameter value will contain route location fields and all the attributes from the Input Features parameter value. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FIELDS")]
 			FIELDS,
 
 			/// <summary>
-			/// <para>Unchecked—The output event table will only contain route location fields plus the ObjectID field from the input features.</para>
+			/// <para>Unchecked—The Output Event Table parameter value will only contain route location fields and the ObjectID field from the Input Features parameter value.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_FIELDS")]
@@ -314,14 +314,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum MDirectionOffsettingEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The distance values in the output event table will be calculated based on the routes&apos; M direction. Input features to the left of the M direction of the route will be assigned a positive offset (+), and features to the right of the M direction will be assigned a negative offset value (-). This is the default.</para>
+			/// <para>Checked—The distance values in the Output Event Table parameter value will be calculated based on the m-direction of the route. Input features to the left of the m-direction of the route will be assigned a positive offset (+), and features to the right of the m-direction will be assigned a negative offset value (-). This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("M_DIRECTON")]
 			M_DIRECTON,
 
 			/// <summary>
-			/// <para>Unchecked—The distance values in the output event table will be calculated based on the routes&apos; digitized direction. Input features to the left of the digitized direction of the route will be assigned a negative (-) offset, and features to the right of the digitized direction will be assigned a positive offset value (+).</para>
+			/// <para>Unchecked—The distance values in the Output Event Table parameter value will be calculated based on the digitized direction of the route. Input features to the left of the digitized direction of the route will be assigned a negative (-) offset, and features to the right of the digitized direction will be assigned a positive offset value (+).</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_M_DIRECTION")]

@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, CreatorField, CreationDateField, LastEditorField, LastEditDateField, AddFields, RecordDatesIn, OutDataset };
+		public override object[] Parameters => new object[] { InDataset, CreatorField!, CreationDateField!, LastEditorField!, LastEditDateField!, AddFields!, RecordDatesIn!, OutDataset! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -78,15 +78,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object CreatorField { get; set; }
+		public object? CreatorField { get; set; }
 
 		/// <summary>
 		/// <para>Creation Date Field</para>
-		/// <para>The name of the field that will store the date features or records are created. If this field already exists, it must be a date field.</para>
+		/// <para>The name of the field that will store the date that features or records are created. If this field already exists, it must be a date field.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object CreationDateField { get; set; }
+		public object? CreationDateField { get; set; }
 
 		/// <summary>
 		/// <para>Last Editor Field</para>
@@ -94,31 +94,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object LastEditorField { get; set; }
+		public object? LastEditorField { get; set; }
 
 		/// <summary>
 		/// <para>Last Edit Date Field</para>
-		/// <para>The name of the field that will store the date features or records were last edited. If this field already exists, it must be a date field.</para>
+		/// <para>The name of the field that will store the date that features or records were last edited. If this field already exists, it must be a date field.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object LastEditDateField { get; set; }
+		public object? LastEditDateField { get; set; }
 
 		/// <summary>
 		/// <para>Add fields</para>
-		/// <para>Specifies whether to add fields if they don&apos;t exist.</para>
-		/// <para>Unchecked—Fields will not be added. Fields specified must already exist in the input dataset. This is the default.</para>
+		/// <para>Specifies whether fields will be added if they don&apos;t exist.</para>
+		/// <para>Unchecked—Fields will not be added. Fields specified must already exist in the Input Dataset parameter value. This is the default.</para>
 		/// <para>Checked—Fields will be added if they do not exist. You must specify the names of the fields to add in the Creator Field, Creation Date Field, Last Editor Field, and Last Edit Date Field parameters.</para>
 		/// <para><see cref="AddFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AddFields { get; set; } = "false";
+		public object? AddFields { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Record Dates in</para>
-		/// <para>The time format in which created date and last edited date will be recorded. The default is UTC.</para>
+		/// <para>Specifies the time format in which the created date and last edited date will be recorded.</para>
 		/// <para>UTC (Coordinated Universal Time)—Dates will be recorded in UTC. This is the default.</para>
 		/// <para>Time zone of database—Dates will be recorded in the time zone in which the database is located.</para>
 		/// <para><see cref="RecordDatesInEnum"/></para>
@@ -126,14 +126,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object RecordDatesIn { get; set; } = "UTC";
+		public object? RecordDatesIn { get; set; } = "UTC";
 
 		/// <summary>
 		/// <para>Modified Input Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEDatasetType()]
-		public object OutDataset { get; set; }
+		public object? OutDataset { get; set; }
 
 		#region InnerClass
 
@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			ADD_FIELDS,
 
 			/// <summary>
-			/// <para>Unchecked—Fields will not be added. Fields specified must already exist in the input dataset. This is the default.</para>
+			/// <para>Unchecked—Fields will not be added. Fields specified must already exist in the Input Dataset parameter value. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ADD_FIELDS")]

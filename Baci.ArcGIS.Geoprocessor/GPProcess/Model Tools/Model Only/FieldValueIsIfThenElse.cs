@@ -74,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, WhereClause, InvertWhereClause, SelectionCondition, Count, CountMin, CountMax, True, False };
+		public override object[] Parameters => new object[] { InData, WhereClause!, InvertWhereClause!, SelectionCondition, Count!, CountMin!, CountMax!, True!, False! };
 
 		/// <summary>
 		/// <para>Input Data Element</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Invert Where Clause</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object InvertWhereClause { get; set; }
+		public object? InvertWhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Selection Condition</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object Count { get; set; } = "0";
+		public object? Count { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Minimum Count</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object CountMin { get; set; } = "0";
+		public object? CountMin { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Maximum Count</para>
@@ -144,21 +144,21 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object CountMax { get; set; } = "0";
+		public object? CountMax { get; set; } = "0";
 
 		/// <summary>
 		/// <para>True</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
-		public object True { get; set; } = "false";
+		public object? True { get; set; } = "false";
 
 		/// <summary>
 		/// <para>False</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
-		public object False { get; set; } = "false";
+		public object? False { get; set; } = "false";
 
 		#region InnerClass
 

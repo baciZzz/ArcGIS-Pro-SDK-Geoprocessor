@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputJobid, InputDatabasepath, OutputJobversion, OutputJobversionexists };
+		public override object[] Parameters => new object[] { InputJobid, InputDatabasepath!, OutputJobversion!, OutputJobversionexists! };
 
 		/// <summary>
 		/// <para>Input Job ID</para>
@@ -77,21 +77,21 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object InputDatabasepath { get; set; }
+		public object? InputDatabasepath { get; set; }
 
 		/// <summary>
 		/// <para>Job Version</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutputJobversion { get; set; }
+		public object? OutputJobversion { get; set; }
 
 		/// <summary>
 		/// <para>Job Version Exists</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
-		public object OutputJobversionexists { get; set; }
+		public object? OutputJobversionexists { get; set; }
 
 	}
 }

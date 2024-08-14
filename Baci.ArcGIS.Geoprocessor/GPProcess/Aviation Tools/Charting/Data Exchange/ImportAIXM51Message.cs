@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMessageFile, TargetGdb, InTables, UpdateExistingFeatures, UpdatedGdb };
+		public override object[] Parameters => new object[] { InMessageFile, TargetGdb, InTables!, UpdateExistingFeatures!, UpdatedGdb! };
 
 		/// <summary>
 		/// <para>Input AIXM 5.1 Message File</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPDatasetDomain()]
-		public object InTables { get; set; }
+		public object? InTables { get; set; }
 
 		/// <summary>
 		/// <para>Update Existing Features</para>
@@ -103,14 +103,14 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UpdateExistingFeatures { get; set; } = "false";
+		public object? UpdateExistingFeatures { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Geodatabase</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object UpdatedGdb { get; set; }
+		public object? UpdatedGdb { get; set; }
 
 		#region InnerClass
 

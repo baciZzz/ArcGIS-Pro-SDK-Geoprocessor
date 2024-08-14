@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Algorithm, Tolerance, SharedEdgeFeatures, InBarriers, OutFeatureClass, OutSharedEdgeFeatureClass };
+		public override object[] Parameters => new object[] { InFeatures, Algorithm, Tolerance, SharedEdgeFeatures!, InBarriers!, OutFeatureClass!, OutSharedEdgeFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
-		public object SharedEdgeFeatures { get; set; }
+		public object? SharedEdgeFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Input Barrier Layers</para>
@@ -121,26 +121,26 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object InBarriers { get; set; }
+		public object? InBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutSharedEdgeFeatureClass { get; set; }
+		public object? OutSharedEdgeFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SmoothSharedEdges SetEnviroment(object cartographicPartitions = null )
+		public SmoothSharedEdges SetEnviroment(object? cartographicPartitions = null )
 		{
 			base.SetEnv(cartographicPartitions: cartographicPartitions);
 			return this;

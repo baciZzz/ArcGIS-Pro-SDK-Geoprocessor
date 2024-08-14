@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLineFeatures, RouteIdField, OutFeatureClass, MeasureSource, FromMeasureField, ToMeasureField, CoordinatePriority, MeasureFactor, MeasureOffset, IgnoreGaps, BuildIndex };
+		public override object[] Parameters => new object[] { InLineFeatures, RouteIdField, OutFeatureClass, MeasureSource, FromMeasureField!, ToMeasureField!, CoordinatePriority!, MeasureFactor!, MeasureOffset!, IgnoreGaps!, BuildIndex! };
 
 		/// <summary>
 		/// <para>Input Line Features</para>
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object FromMeasureField { get; set; }
+		public object? FromMeasureField { get; set; }
 
 		/// <summary>
 		/// <para>To-Measure Field</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ToMeasureField { get; set; }
+		public object? ToMeasureField { get; set; }
 
 		/// <summary>
 		/// <para>Coordinate Priority</para>
@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object CoordinatePriority { get; set; } = "UPPER_LEFT";
+		public object? CoordinatePriority { get; set; } = "UPPER_LEFT";
 
 		/// <summary>
 		/// <para>Measure Factor</para>
@@ -158,7 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MeasureFactor { get; set; } = "1";
+		public object? MeasureFactor { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Measure Offset</para>
@@ -166,7 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MeasureOffset { get; set; } = "0";
+		public object? MeasureOffset { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Ignore spatial gaps</para>
@@ -178,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IgnoreGaps { get; set; } = "true";
+		public object? IgnoreGaps { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Build index</para>
@@ -190,12 +190,12 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object BuildIndex { get; set; } = "true";
+		public object? BuildIndex { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateRoutes SetEnviroment(object MDomain = null , object MResolution = null , object MTolerance = null , object XYDomain = null , object ZDomain = null , object configKeyword = null , object extent = null , object outputCoordinateSystem = null , object outputZFlag = null , object scratchWorkspace = null , object workspace = null )
+		public CreateRoutes SetEnviroment(object? MDomain = null , double? MResolution = null , double? MTolerance = null , object? XYDomain = null , object? ZDomain = null , object? configKeyword = null , object? extent = null , object? outputCoordinateSystem = null , object? outputZFlag = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, ZDomain: ZDomain, configKeyword: configKeyword, extent: extent, outputCoordinateSystem: outputCoordinateSystem, outputZFlag: outputZFlag, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

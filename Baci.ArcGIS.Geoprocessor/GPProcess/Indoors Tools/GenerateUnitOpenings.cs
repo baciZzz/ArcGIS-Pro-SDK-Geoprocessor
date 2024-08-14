@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUnitFeatures, InDetailFeatures, DoorDetailExpression, WallDetailExpression, TargetOpenings, WallThicknessTolerance, DeleteExistingOpenings, UpdatedOpenings };
+		public override object[] Parameters => new object[] { InUnitFeatures, InDetailFeatures, DoorDetailExpression, WallDetailExpression, TargetOpenings, WallThicknessTolerance!, DeleteExistingOpenings!, UpdatedOpenings! };
 
 		/// <summary>
 		/// <para>Input Unit Features</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[GPCodedValueDomain()]
-		public object WallThicknessTolerance { get; set; } = "2 Feet";
+		public object? WallThicknessTolerance { get; set; } = "2 Feet";
 
 		/// <summary>
 		/// <para>Delete Existing Openings</para>
@@ -145,19 +145,19 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DeleteExistingOpenings { get; set; } = "false";
+		public object? DeleteExistingOpenings { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Openings</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object UpdatedOpenings { get; set; }
+		public object? UpdatedOpenings { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateUnitOpenings SetEnviroment(object workspace = null )
+		public GenerateUnitOpenings SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

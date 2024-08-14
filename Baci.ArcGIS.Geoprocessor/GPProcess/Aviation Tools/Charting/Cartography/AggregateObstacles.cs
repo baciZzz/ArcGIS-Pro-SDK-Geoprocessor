@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InObstacleFeatures, HeightField, HeightFieldUnits, ElevationField, ElevationFieldUnits, ElevationInterpretation, TargetObstacleGroupFeatures, TargetObstacleGroupLabel, InObstacleAssocationTable, SearchRadius!, HeightThreshold!, BuiltupAreasFeatures!, BuiltupAreasHeightThreshold!, UpdatedObstacleGroupFeatures };
+		public override object[] Parameters => new object[] { InObstacleFeatures, HeightField, HeightFieldUnits, ElevationField, ElevationFieldUnits, ElevationInterpretation, TargetObstacleGroupFeatures, TargetObstacleGroupLabel, InObstacleAssocationTable, SearchRadius!, HeightThreshold!, BuiltupAreasFeatures!, BuiltupAreasHeightThreshold!, UpdatedObstacleGroupFeatures! };
 
 		/// <summary>
 		/// <para>Obstacle Features</para>

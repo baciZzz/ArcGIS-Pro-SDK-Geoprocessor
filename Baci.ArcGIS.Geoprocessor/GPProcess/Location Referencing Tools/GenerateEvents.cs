@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Generate Events</para>
-	/// <para>Re-creates shapes for event features registered with an LRS Network.</para>
+	/// <para>Regenerates shapes for event features registered with an LRS Network.</para>
 	/// </summary>
 	public class GenerateEvents : AbstractGPProcess
 	{
@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InEventLayer, OutEventLayers };
+		public override object[] Parameters => new object[] { InEventLayer, OutEventLayers!, OutDetailsFile! };
 
 		/// <summary>
 		/// <para>Event Layer</para>
@@ -76,12 +76,19 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutEventLayers { get; set; }
+		public object? OutEventLayers { get; set; }
+
+		/// <summary>
+		/// <para>Output Results File</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.derived)]
+		[DETextFile()]
+		public object? OutDetailsFile { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateEvents SetEnviroment(object workspace = null )
+		public GenerateEvents SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

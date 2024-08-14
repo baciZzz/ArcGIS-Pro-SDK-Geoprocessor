@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFolder, OutTable, InModelDefinitionFile, ModelArguments!, BatchSize!, LocationZone!, InLocator };
+		public override object[] Parameters => new object[] { InFolder, OutTable, InModelDefinitionFile, ModelArguments!, BatchSize!, LocationZone!, InLocator! };
 
 		/// <summary>
 		/// <para>Input Folder</para>

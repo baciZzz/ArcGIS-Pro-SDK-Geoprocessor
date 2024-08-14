@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="InParcelFabric">
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The parcel fabric from which the parcel type will be removed. The parcel fabric can be from a file geodatabase or an enterprise geodatabase.</para>
+		/// <para>The parcel fabric from which the parcel type will be removed. The parcel fabric can be from a file, enterprise, or mobile geodatabase.</para>
 		/// </param>
 		/// <param name="Name">
 		/// <para>Name</para>
@@ -65,11 +65,11 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InParcelFabric, Name, UpdatedParcelFabric, OutPolygonFc, OutLineFc };
+		public override object[] Parameters => new object[] { InParcelFabric, Name, UpdatedParcelFabric!, OutPolygonFc!, OutLineFc! };
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The parcel fabric from which the parcel type will be removed. The parcel fabric can be from a file geodatabase or an enterprise geodatabase.</para>
+		/// <para>The parcel fabric from which the parcel type will be removed. The parcel fabric can be from a file, enterprise, or mobile geodatabase.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPParcelLayer()]
@@ -88,21 +88,21 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEParcelDataset()]
-		public object UpdatedParcelFabric { get; set; }
+		public object? UpdatedParcelFabric { get; set; }
 
 		/// <summary>
 		/// <para>Output Polygon Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutPolygonFc { get; set; }
+		public object? OutPolygonFc { get; set; }
 
 		/// <summary>
 		/// <para>Output Line Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutLineFc { get; set; }
+		public object? OutLineFc { get; set; }
 
 	}
 }

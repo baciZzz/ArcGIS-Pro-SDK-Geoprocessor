@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { BdcLocation, BdcName, ConnectionType, DataSourceFolder!, VisibleGeometry!, VisibleTime!, OutputBdc };
+		public override object[] Parameters => new object[] { BdcLocation, BdcName, ConnectionType, DataSourceFolder!, VisibleGeometry!, VisibleTime!, OutputBdc! };
 
 		/// <summary>
 		/// <para>Multifile Feature Connection Output Location</para>

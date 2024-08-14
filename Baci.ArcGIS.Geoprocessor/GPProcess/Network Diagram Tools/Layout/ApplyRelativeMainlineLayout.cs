@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, LineAttribute, MainlineDirection, OffsetBetweenBranches, BreakpointAngle, TypeAttribute, MainlineValues, BranchValues, ExcludedValues, IsCompressing, CompressionRatio, MinimalDistance, AlignmentAttribute, InitialDistances, LengthAttribute, OutNetworkDiagramLayer, RunAsync };
+		public override object[] Parameters => new object[] { InNetworkDiagramLayer, LineAttribute, MainlineDirection!, OffsetBetweenBranches!, BreakpointAngle!, TypeAttribute!, MainlineValues!, BranchValues!, ExcludedValues!, IsCompressing!, CompressionRatio!, MinimalDistance!, AlignmentAttribute!, InitialDistances!, LengthAttribute!, OutNetworkDiagramLayer!, RunAsync! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object MainlineDirection { get; set; } = "FROM_LEFT_TO_RIGHT";
+		public object? MainlineDirection { get; set; } = "FROM_LEFT_TO_RIGHT";
 
 		/// <summary>
 		/// <para>Offset Between Branches</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object OffsetBetweenBranches { get; set; } = "2 Unknown";
+		public object? OffsetBetweenBranches { get; set; } = "2 Unknown";
 
 		/// <summary>
 		/// <para>Break Point Angle (in degrees)</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object BreakpointAngle { get; set; } = "45";
+		public object? BreakpointAngle { get; set; } = "45";
 
 		/// <summary>
 		/// <para>Type Attribute</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Line Classification")]
-		public object TypeAttribute { get; set; }
+		public object? TypeAttribute { get; set; }
 
 		/// <summary>
 		/// <para>Mainline Values</para>
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Line Classification")]
-		public object MainlineValues { get; set; }
+		public object? MainlineValues { get; set; }
 
 		/// <summary>
 		/// <para>Branch Values</para>
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Line Classification")]
-		public object BranchValues { get; set; }
+		public object? BranchValues { get; set; }
 
 		/// <summary>
 		/// <para>Excluded Values</para>
@@ -149,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Line Classification")]
-		public object ExcludedValues { get; set; }
+		public object? ExcludedValues { get; set; }
 
 		/// <summary>
 		/// <para>Compression along the direction</para>
@@ -162,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Line Compression")]
-		public object IsCompressing { get; set; } = "false";
+		public object? IsCompressing { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Ratio (%)</para>
@@ -171,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Line Compression")]
-		public object CompressionRatio { get; set; } = "0";
+		public object? CompressionRatio { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Minimal Distance</para>
@@ -180,7 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Line Compression")]
-		public object MinimalDistance { get; set; } = "0 Unknown";
+		public object? MinimalDistance { get; set; } = "0 Unknown";
 
 		/// <summary>
 		/// <para>Alignment Attribute</para>
@@ -189,7 +189,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Advanced Options")]
-		public object AlignmentAttribute { get; set; }
+		public object? AlignmentAttribute { get; set; }
 
 		/// <summary>
 		/// <para>Initial Distances</para>
@@ -202,7 +202,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object InitialDistances { get; set; } = "FROM_CURRENT_EDGE_GEOMETRY";
+		public object? InitialDistances { get; set; } = "FROM_CURRENT_EDGE_GEOMETRY";
 
 		/// <summary>
 		/// <para>Length Attribute</para>
@@ -211,27 +211,27 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Advanced Options")]
-		public object LengthAttribute { get; set; }
+		public object? LengthAttribute { get; set; }
 
 		/// <summary>
 		/// <para>Output Network Diagram</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDiagramLayer()]
-		public object OutNetworkDiagramLayer { get; set; }
+		public object? OutNetworkDiagramLayer { get; set; }
 
 		/// <summary>
 		/// <para>Run in asynchronous mode on the server</para>
 		/// <para>Specifies whether the layout algorithm will run asynchronously or synchronously on the server.</para>
-		/// <para>Checked—The layout algorithm will run asynchronously on the server. This option dedicates server resources to run the layout algorithm with a longer time-out. Running asynchronously is recommended when executing layouts that are time consuming and may exceed the server time-out—for example, Partial Overlapping Edges—and applying to large diagrams—more than 25,000 features.</para>
-		/// <para>Unchecked—The layout algorithm will run synchronously on the server. It can fail without completion if its execution exceeds the service time-out: 600 seconds by default. This is the default.</para>
+		/// <para>Checked—The layout algorithm will run asynchronously on the server. This option dedicates server resources to run the layout algorithm with a longer time-out. Running asynchronously is recommended when executing layouts that are time consuming and may exceed the server time-out (for example, Partial Overlapping Edges) and applying to large diagrams (more than 25,000 features).</para>
+		/// <para>Unchecked—The layout algorithm will run synchronously on the server. It can fail without completion if its execution exceeds the service default time-out value of 600 seconds. This is the default.</para>
 		/// <para><see cref="RunAsyncEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object RunAsync { get; set; } = "false";
+		public object? RunAsync { get; set; } = "false";
 
 		#region InnerClass
 
@@ -304,14 +304,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum RunAsyncEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The layout algorithm will run asynchronously on the server. This option dedicates server resources to run the layout algorithm with a longer time-out. Running asynchronously is recommended when executing layouts that are time consuming and may exceed the server time-out—for example, Partial Overlapping Edges—and applying to large diagrams—more than 25,000 features.</para>
+			/// <para>Checked—The layout algorithm will run asynchronously on the server. This option dedicates server resources to run the layout algorithm with a longer time-out. Running asynchronously is recommended when executing layouts that are time consuming and may exceed the server time-out (for example, Partial Overlapping Edges) and applying to large diagrams (more than 25,000 features).</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RUN_ASYNCHRONOUSLY")]
 			RUN_ASYNCHRONOUSLY,
 
 			/// <summary>
-			/// <para>Unchecked—The layout algorithm will run synchronously on the server. It can fail without completion if its execution exceeds the service time-out: 600 seconds by default. This is the default.</para>
+			/// <para>Unchecked—The layout algorithm will run synchronously on the server. It can fail without completion if its execution exceeds the service default time-out value of 600 seconds. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("RUN_SYNCHRONOUSLY")]

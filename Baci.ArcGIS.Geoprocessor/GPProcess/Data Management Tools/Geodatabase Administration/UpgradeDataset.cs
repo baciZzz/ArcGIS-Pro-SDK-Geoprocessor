@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Upgrade Dataset</para>
-	/// <para>Upgrades the schema of a mosaic dataset, network dataset, annotation dataset, dimension dataset, parcel fabric, parcel fabric for ArcMap, trace network, or utility network to the current ArcGIS release. Upgrading the dataset allows the dataset to use new functionality in the current software release.</para>
+	/// <para>Upgrades the schema of a mosaic dataset, network dataset, annotation dataset, dimension dataset, parcel fabric, trace network, or utility network to the current ArcGIS release. Upgrading the dataset allows the dataset to use new functionality in the current software release.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutDataset };
+		public override object[] Parameters => new object[] { InDataset, OutDataset! };
 
 		/// <summary>
 		/// <para>Dataset to upgrade</para>
@@ -77,12 +77,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutDataset { get; set; }
+		public object? OutDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public UpgradeDataset SetEnviroment(object workspace = null )
+		public UpgradeDataset SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

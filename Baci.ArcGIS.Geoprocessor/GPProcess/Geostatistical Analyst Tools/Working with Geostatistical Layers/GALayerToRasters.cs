@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeostatLayer, OutRaster, OutputType, QuantileProbabilityValue, CellSize, PointsPerBlockHorz, PointsPerBlockVert, AdditionalRasters, OutAdditionalRasters, OutElevation };
+		public override object[] Parameters => new object[] { InGeostatLayer, OutRaster, OutputType!, QuantileProbabilityValue!, CellSize!, PointsPerBlockHorz!, PointsPerBlockVert!, AdditionalRasters!, OutAdditionalRasters!, OutElevation! };
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object OutputType { get; set; } = "PREDICTION";
+		public object? OutputType { get; set; } = "PREDICTION";
 
 		/// <summary>
 		/// <para>Quantile or probability value</para>
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object QuantileProbabilityValue { get; set; }
+		public object? QuantileProbabilityValue { get; set; }
 
 		/// <summary>
 		/// <para>Output cell size</para>
@@ -117,25 +117,25 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
 		[GPSAGeoDataDomain()]
-		public object CellSize { get; set; }
+		public object? CellSize { get; set; }
 
 		/// <summary>
 		/// <para>Number of points in the cell (horizontal)</para>
-		/// <para>The number of predictions for each cell in the horizontal direction for block interpolation.</para>
+		/// <para>The number of predictions for each cell in the horizontal direction for block interpolation. The default is 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object PointsPerBlockHorz { get; set; } = "1";
+		public object? PointsPerBlockHorz { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Number of points in the cell (vertical)</para>
-		/// <para>The number of predictions for each cell in the vertical direction for block interpolation.</para>
+		/// <para>The number of predictions for each cell in the vertical direction for block interpolation. The default is 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object PointsPerBlockVert { get; set; } = "1";
+		public object? PointsPerBlockVert { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Additional output rasters</para>
@@ -144,29 +144,28 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object AdditionalRasters { get; set; }
+		public object? AdditionalRasters { get; set; }
 
 		/// <summary>
 		/// <para>Additional rasters</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutAdditionalRasters { get; set; }
+		public object? OutAdditionalRasters { get; set; }
 
 		/// <summary>
 		/// <para>Output elevation</para>
 		/// <para>For 3D interpolation models, you can export rasters at any elevation. Use this parameter to specify the elevation you want to export. If left empty, the elevation will be inherited from the input layer. The units will default to the same units of the input layer.</para>
-		/// <para><see cref="OutElevationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[GPCodedValueDomain()]
-		public object OutElevation { get; set; }
+		public object? OutElevation { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GALayerToRasters SetEnviroment(object cellSize = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object snapRaster = null , object workspace = null )
+		public GALayerToRasters SetEnviroment(object? cellSize = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? snapRaster = null , object? workspace = null )
 		{
 			base.SetEnv(cellSize: cellSize, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, workspace: workspace);
 			return this;
@@ -220,83 +219,6 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 			[GPValue("STANDARD_ERROR_INDICATORS")]
 			[Description("Standard error of indicators")]
 			Standard_error_of_indicators,
-
-		}
-
-		/// <summary>
-		/// <para>Output elevation</para>
-		/// </summary>
-		public enum OutElevationEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Inches")]
-			[Description("Inches")]
-			Inches,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("NauticalMiles")]
-			[Description("NauticalMiles")]
-			NauticalMiles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Millimeters")]
-			[Description("Millimeters")]
-			Millimeters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Centimeters")]
-			[Description("Centimeters")]
-			Centimeters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Decimeters")]
-			[Description("Decimeters")]
-			Decimeters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
 
 		}
 

@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, AreContainersPreserved, ReshapeType, IsPathPreserved, OffsetBetweenSegmentAbsolute, BreakpointAbsolute, ShiftBetweenEdgeAbsolute, AngleThreshold, OutNetworkDiagramLayer, CircularArcRadius, CircularArcPosition, RunAsync };
+		public override object[] Parameters => new object[] { InNetworkDiagramLayer, AreContainersPreserved!, ReshapeType!, IsPathPreserved!, OffsetBetweenSegmentAbsolute!, BreakpointAbsolute!, ShiftBetweenEdgeAbsolute!, AngleThreshold!, OutNetworkDiagramLayer!, CircularArcRadius!, CircularArcPosition!, RunAsync! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AreContainersPreserved { get; set; } = "false";
+		public object? AreContainersPreserved { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Reshape Operation</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ReshapeType { get; set; } = "SQUARE_EDGES";
+		public object? ReshapeType { get; set; } = "SQUARE_EDGES";
 
 		/// <summary>
 		/// <para>Preserve path</para>
@@ -94,49 +94,49 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IsPathPreserved { get; set; } = "true";
+		public object? IsPathPreserved { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Offset Between Edges</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object OffsetBetweenSegmentAbsolute { get; set; } = "5 Unknown";
+		public object? OffsetBetweenSegmentAbsolute { get; set; } = "5 Unknown";
 
 		/// <summary>
 		/// <para>Break Point Position</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object BreakpointAbsolute { get; set; } = "8.66 Unknown";
+		public object? BreakpointAbsolute { get; set; } = "8.66 Unknown";
 
 		/// <summary>
 		/// <para>Offset Between Edges</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object ShiftBetweenEdgeAbsolute { get; set; } = "0.5 Unknown";
+		public object? ShiftBetweenEdgeAbsolute { get; set; } = "0.5 Unknown";
 
 		/// <summary>
 		/// <para>Angle Threshold</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object AngleThreshold { get; set; } = "0";
+		public object? AngleThreshold { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Output Network Diagram</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDiagramLayer()]
-		public object OutNetworkDiagramLayer { get; set; }
+		public object? OutNetworkDiagramLayer { get; set; }
 
 		/// <summary>
 		/// <para>Circular Arc Radius</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object CircularArcRadius { get; set; } = "5 Unknown";
+		public object? CircularArcRadius { get; set; } = "5 Unknown";
 
 		/// <summary>
 		/// <para>Circular Arc Position</para>
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object CircularArcPosition { get; set; } = "RIGHT_OF_VERTICAL_SEGMENT";
+		public object? CircularArcPosition { get; set; } = "RIGHT_OF_VERTICAL_SEGMENT";
 
 		/// <summary>
 		/// <para>Run in asynchronous mode on the server</para>
@@ -155,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object RunAsync { get; set; } = "false";
+		public object? RunAsync { get; set; } = "false";
 
 		#region InnerClass
 

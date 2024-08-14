@@ -74,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasters, InLocationData, OutTable, ResamplingType, UniqueIdField, ProcessAsMultidimensional, AcquisitionDefinition, StatisticsType, PercentileValue, BufferDistance, Layout, GenerateFeatureClass };
+		public override object[] Parameters => new object[] { InRasters, InLocationData, OutTable, ResamplingType!, UniqueIdField!, ProcessAsMultidimensional!, AcquisitionDefinition!, StatisticsType!, PercentileValue!, BufferDistance!, Layout!, GenerateFeatureClass! };
 
 		/// <summary>
 		/// <para>Input rasters</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ResamplingType { get; set; } = "NEAREST";
+		public object? ResamplingType { get; set; } = "NEAREST";
 
 		/// <summary>
 		/// <para>Unique ID field</para>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object UniqueIdField { get; set; }
+		public object? UniqueIdField { get; set; }
 
 		/// <summary>
 		/// <para>Process as multidimensional</para>
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ProcessAsMultidimensional { get; set; } = "false";
+		public object? ProcessAsMultidimensional { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Acquisition information of location data</para>
@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object AcquisitionDefinition { get; set; }
+		public object? AcquisitionDefinition { get; set; }
 
 		/// <summary>
 		/// <para>Statistics type</para>
@@ -172,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object StatisticsType { get; set; }
+		public object? StatisticsType { get; set; }
 
 		/// <summary>
 		/// <para>Percentile value</para>
@@ -181,7 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object PercentileValue { get; set; }
+		public object? PercentileValue { get; set; }
 
 		/// <summary>
 		/// <para>Buffer distance field or value</para>
@@ -191,7 +191,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object BufferDistance { get; set; }
+		public object? BufferDistance { get; set; }
 
 		/// <summary>
 		/// <para>Column-wise layout</para>
@@ -203,7 +203,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Layout { get; set; } = "false";
+		public object? Layout { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Generate feature class</para>
@@ -215,12 +215,12 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object GenerateFeatureClass { get; set; } = "false";
+		public object? GenerateFeatureClass { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Sample SetEnviroment(int? autoCommit = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public Sample SetEnviroment(int? autoCommit = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

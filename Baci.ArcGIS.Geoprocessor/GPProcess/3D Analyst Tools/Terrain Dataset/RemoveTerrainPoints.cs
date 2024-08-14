@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerrain, DataSource, AoiExtents, DerivedOutTerrain };
+		public override object[] Parameters => new object[] { InTerrain, DataSource, AoiExtents, DerivedOutTerrain! };
 
 		/// <summary>
 		/// <para>Input Terrain</para>
@@ -103,12 +103,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTerrainLayer()]
-		public object DerivedOutTerrain { get; set; }
+		public object? DerivedOutTerrain { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveTerrainPoints SetEnviroment(object scratchWorkspace = null , object terrainMemoryUsage = null , object workspace = null )
+		public RemoveTerrainPoints SetEnviroment(object? scratchWorkspace = null , bool? terrainMemoryUsage = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, terrainMemoryUsage: terrainMemoryUsage, workspace: workspace);
 			return this;

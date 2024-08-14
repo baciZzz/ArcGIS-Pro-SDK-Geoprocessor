@@ -32,31 +32,31 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </param>
 		/// <param name="IntersectionIdField">
 		/// <para>Intersection ID Field</para>
-		/// <para>The ID field in the Intersection Feature Class. The field must have a unique ID for each intersection for a time slice.</para>
+		/// <para>The ID field in the Intersection Feature Class parameter value. The field must have a unique ID for each intersection for a time slice.</para>
 		/// </param>
 		/// <param name="IntersectionNameField">
 		/// <para>Intersection Name Field</para>
-		/// <para>The field in the Intersection Feature Class that is a concatenated field showing the descriptors for the route and the intersecting feature.</para>
+		/// <para>The field in the Intersection Feature Class parameter value that is a concatenated field showing the descriptors for the route and the intersecting feature.</para>
 		/// </param>
 		/// <param name="RouteIdField">
 		/// <para>Route ID Field</para>
-		/// <para>The field in the Intersection Feature Class that contains the route ID for the LRS Network.</para>
+		/// <para>The field in the Intersection Feature Class parameter value that contains the route ID for the LRS Network.</para>
 		/// </param>
 		/// <param name="FeatureIdField">
 		/// <para>Feature ID Field</para>
-		/// <para>The field in the Intersection Feature Class that contains the ID for the intersecting feature.</para>
+		/// <para>The field in the Intersection Feature Class parameter value that contains the ID for the intersecting feature.</para>
 		/// </param>
 		/// <param name="FeatureClassNameField">
 		/// <para>Feature Class Name Field</para>
-		/// <para>The field in the Intersection Feature Class that contains the name of the feature class that participated in the intersection.</para>
+		/// <para>The field in the Intersection Feature Class parameter value that contains the name of the feature class that participated in the intersection.</para>
 		/// </param>
 		/// <param name="FromDateField">
 		/// <para>From Date Field</para>
-		/// <para>The from date field in the Intersection Feature Class.</para>
+		/// <para>The from date field in the Intersection Feature Class parameter value.</para>
 		/// </param>
 		/// <param name="ToDateField">
 		/// <para>To Date Field</para>
-		/// <para>The to date field in the Intersection Feature Class.</para>
+		/// <para>The to date field in the Intersection Feature Class parameter value.</para>
 		/// </param>
 		/// <param name="IntersectingLayers">
 		/// <para>Intersecting Layers</para>
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ParentNetwork, NetworkDescriptionField, InFeatureClass, IntersectionIdField, IntersectionNameField, RouteIdField, FeatureIdField, FeatureClassNameField, FromDateField, ToDateField, IntersectingLayers, ConsiderZ, ZTolerance, MeasureField, OutFeatureClass };
+		public override object[] Parameters => new object[] { ParentNetwork, NetworkDescriptionField, InFeatureClass, IntersectionIdField, IntersectionNameField, RouteIdField, FeatureIdField, FeatureClassNameField, FromDateField, ToDateField, IntersectingLayers, ConsiderZ!, ZTolerance!, MeasureField!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Parent LRS Network</para>
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Intersection ID Field</para>
-		/// <para>The ID field in the Intersection Feature Class. The field must have a unique ID for each intersection for a time slice.</para>
+		/// <para>The ID field in the Intersection Feature Class parameter value. The field must have a unique ID for each intersection for a time slice.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Intersection Name Field</para>
-		/// <para>The field in the Intersection Feature Class that is a concatenated field showing the descriptors for the route and the intersecting feature.</para>
+		/// <para>The field in the Intersection Feature Class parameter value that is a concatenated field showing the descriptors for the route and the intersecting feature.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -163,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Route ID Field</para>
-		/// <para>The field in the Intersection Feature Class that contains the route ID for the LRS Network.</para>
+		/// <para>The field in the Intersection Feature Class parameter value that contains the route ID for the LRS Network.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -172,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Feature ID Field</para>
-		/// <para>The field in the Intersection Feature Class that contains the ID for the intersecting feature.</para>
+		/// <para>The field in the Intersection Feature Class parameter value that contains the ID for the intersecting feature.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -181,7 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Feature Class Name Field</para>
-		/// <para>The field in the Intersection Feature Class that contains the name of the feature class that participated in the intersection.</para>
+		/// <para>The field in the Intersection Feature Class parameter value that contains the name of the feature class that participated in the intersection.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -190,7 +190,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>From Date Field</para>
-		/// <para>The from date field in the Intersection Feature Class.</para>
+		/// <para>The from date field in the Intersection Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -199,7 +199,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>To Date Field</para>
-		/// <para>The to date field in the Intersection Feature Class.</para>
+		/// <para>The to date field in the Intersection Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -229,7 +229,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ConsiderZ { get; set; } = "false";
+		public object? ConsiderZ { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Z Tolerance</para>
@@ -237,7 +237,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ZTolerance { get; set; }
+		public object? ZTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Measure Field</para>
@@ -246,14 +246,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object MeasureField { get; set; }
+		public object? MeasureField { get; set; }
 
 		/// <summary>
 		/// <para>Output Details File</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		#region InnerClass
 
@@ -263,18 +263,18 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum ConsiderZEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Z-values will not be used during generation of intersections. This is the default.</para>
-			/// </summary>
-			[GPValue("false")]
-			[Description("DO_NOT_CONSIDER_Z")]
-			DO_NOT_CONSIDER_Z,
-
-			/// <summary>
 			/// <para>Checked—Z-values will be used during generation of intersections.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CONSIDER_Z")]
 			CONSIDER_Z,
+
+			/// <summary>
+			/// <para>Unchecked—Z-values will not be used during generation of intersections. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("DO_NOT_CONSIDER_Z")]
+			DO_NOT_CONSIDER_Z,
 
 		}
 

@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFilesOrFolders, TargetWorkspace, OutPointName, ObservationVariables!, OutTableName!, InstanceVariables!, IncludeSubdirectories!, InCfMetadata!, AnalysisExtent!, OutJoinLayer!, OutPoint!, OutTable };
+		public override object[] Parameters => new object[] { InFilesOrFolders, TargetWorkspace, OutPointName, ObservationVariables!, OutTableName!, InstanceVariables!, IncludeSubdirectories!, InCfMetadata!, AnalysisExtent!, OutJoinLayer!, OutPoint!, OutTable! };
 
 		/// <summary>
 		/// <para>Input NetCDF Files or Folders</para>

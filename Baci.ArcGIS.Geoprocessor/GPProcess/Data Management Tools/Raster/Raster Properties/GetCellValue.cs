@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, LocationPoint, BandIndex, OutString };
+		public override object[] Parameters => new object[] { InRaster, LocationPoint, BandIndex!, OutString! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -89,14 +89,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object BandIndex { get; set; }
+		public object? BandIndex { get; set; }
 
 		/// <summary>
 		/// <para>Pixel Value</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutString { get; set; }
+		public object? OutString { get; set; }
 
 	}
 }

@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayerOrView, JoinName, OutLayerOrView };
+		public override object[] Parameters => new object[] { InLayerOrView, JoinName!, OutLayerOrView! };
 
 		/// <summary>
 		/// <para>Layer Name or Table View</para>
@@ -77,14 +77,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object JoinName { get; set; }
+		public object? JoinName { get; set; }
 
 		/// <summary>
 		/// <para>Layer With Join Removed</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutLayerOrView { get; set; }
+		public object? OutLayerOrView { get; set; }
 
 	}
 }

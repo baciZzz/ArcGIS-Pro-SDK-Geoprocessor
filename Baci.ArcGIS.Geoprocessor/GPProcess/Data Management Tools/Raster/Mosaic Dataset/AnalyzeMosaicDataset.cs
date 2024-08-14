@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause, CheckerKeywords, OutMosaicDataset };
+		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause!, CheckerKeywords!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Checks Performed</para>
@@ -97,19 +97,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object CheckerKeywords { get; set; }
+		public object? CheckerKeywords { get; set; }
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutMosaicDataset { get; set; }
+		public object? OutMosaicDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AnalyzeMosaicDataset SetEnviroment(object parallelProcessingFactor = null )
+		public AnalyzeMosaicDataset SetEnviroment(object? parallelProcessingFactor = null )
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, DerivedRouteIdField, DerivedRouteNameField, DerivedFromMeasureField, DerivedToMeasureField, OutFeatureClass };
+		public override object[] Parameters => new object[] { InFeatureClass, DerivedRouteIdField!, DerivedRouteNameField!, DerivedFromMeasureField!, DerivedToMeasureField!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>LRS Event Feature Class</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object DerivedRouteIdField { get; set; }
+		public object? DerivedRouteIdField { get; set; }
 
 		/// <summary>
 		/// <para>Derived Route Name Field</para>
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object DerivedRouteNameField { get; set; }
+		public object? DerivedRouteNameField { get; set; }
 
 		/// <summary>
 		/// <para>Derived (From) Measure Field</para>
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object DerivedFromMeasureField { get; set; }
+		public object? DerivedFromMeasureField { get; set; }
 
 		/// <summary>
 		/// <para>Derived To Measure Field</para>
@@ -105,14 +105,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object DerivedToMeasureField { get; set; }
+		public object? DerivedToMeasureField { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 	}
 }

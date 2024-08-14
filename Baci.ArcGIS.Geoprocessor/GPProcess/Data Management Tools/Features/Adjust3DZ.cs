@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ReverseSign, AdjustValue, FromUnits, ToUnits, OutFeatureClass };
+		public override object[] Parameters => new object[] { InFeatures, ReverseSign!, AdjustValue!, FromUnits!, ToUnits!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ReverseSign { get; set; } = "NO_REVERSE";
+		public object? ReverseSign { get; set; } = "NO_REVERSE";
 
 		/// <summary>
 		/// <para>Adjust Z Value</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object AdjustValue { get; set; } = "0";
+		public object? AdjustValue { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Convert From Units</para>
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object FromUnits { get; set; }
+		public object? FromUnits { get; set; }
 
 		/// <summary>
 		/// <para>Convert To Units</para>
@@ -125,19 +125,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ToUnits { get; set; }
+		public object? ToUnits { get; set; }
 
 		/// <summary>
 		/// <para>Updated Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Adjust3DZ SetEnviroment(object extent = null , object workspace = null )
+		public Adjust3DZ SetEnviroment(object? extent = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

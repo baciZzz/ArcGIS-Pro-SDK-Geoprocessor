@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, VsWorkspace, Specification, InStyleFile, UpdatedMap };
+		public override object[] Parameters => new object[] { InMap, VsWorkspace, Specification, InStyleFile!, UpdatedMap! };
 
 		/// <summary>
 		/// <para>Input Map</para>
@@ -102,14 +102,14 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object InStyleFile { get; set; }
+		public object? InStyleFile { get; set; }
 
 		/// <summary>
 		/// <para>Updated Map</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMap()]
-		public object UpdatedMap { get; set; }
+		public object? UpdatedMap { get; set; }
 
 	}
 }

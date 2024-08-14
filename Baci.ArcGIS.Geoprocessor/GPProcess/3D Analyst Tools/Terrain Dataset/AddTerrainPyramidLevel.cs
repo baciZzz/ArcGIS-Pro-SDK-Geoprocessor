@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerrain, PyramidType, PyramidLevelDefinition, DerivedOutTerrain };
+		public override object[] Parameters => new object[] { InTerrain, PyramidType!, PyramidLevelDefinition, DerivedOutTerrain! };
 
 		/// <summary>
 		/// <para>Input Terrain</para>
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object PyramidType { get; set; }
+		public object? PyramidType { get; set; }
 
 		/// <summary>
 		/// <para>Pyramid Levels Definition</para>
@@ -98,12 +98,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTerrainLayer()]
-		public object DerivedOutTerrain { get; set; }
+		public object? DerivedOutTerrain { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddTerrainPyramidLevel SetEnviroment(int? autoCommit = null , object workspace = null )
+		public AddTerrainPyramidLevel SetEnviroment(int? autoCommit = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

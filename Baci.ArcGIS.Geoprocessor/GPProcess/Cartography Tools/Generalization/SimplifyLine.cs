@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Algorithm, Tolerance, ErrorResolvingOption, CollapsedPointOption, ErrorCheckingOption, OutPointFeatureClass, InBarriers };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Algorithm, Tolerance, ErrorResolvingOption!, CollapsedPointOption!, ErrorCheckingOption!, OutPointFeatureClass!, InBarriers! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ErrorResolvingOption { get; set; } = "true";
+		public object? ErrorResolvingOption { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Keep collapsed points</para>
@@ -149,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CollapsedPointOption { get; set; } = "true";
+		public object? CollapsedPointOption { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Check for topological errors</para>
@@ -159,14 +159,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ErrorCheckingOption { get; set; } = "true";
+		public object? ErrorCheckingOption { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Lines Collapsed To Zero Length</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutPointFeatureClass { get; set; } = "output_feature_class_Pnt";
+		public object? OutPointFeatureClass { get; set; } = "output_feature_class_Pnt";
 
 		/// <summary>
 		/// <para>Input Barrier Layers</para>
@@ -174,12 +174,12 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object InBarriers { get; set; }
+		public object? InBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SimplifyLine SetEnviroment(object MDomain = null , object XYDomain = null , object XYTolerance = null , object cartographicPartitions = null , object extent = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , object scratchWorkspace = null , object workspace = null )
+		public SimplifyLine SetEnviroment(object? MDomain = null , object? XYDomain = null , object? XYTolerance = null , object? cartographicPartitions = null , object? extent = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(MDomain: MDomain, XYDomain: XYDomain, XYTolerance: XYTolerance, cartographicPartitions: cartographicPartitions, extent: extent, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

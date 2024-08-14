@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Register with Geodatabase</para>
 	/// <para>Registers with the geodatabase the feature classes, tables, views, and raster layers that were created in the database using third-party tools or views created with the  Create Database View  tool. Once registered, information about the items—such as table and column names, spatial extent, and geometry type—is stored in the geodatabase's system tables, allowing these registered items to participate in geodatabase functionality.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class RegisterWithGeodatabase : AbstractGPProcess
 	{
 		/// <summary>
@@ -60,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, RegDataset, InObjectIdField, InShapeField, InGeometryType, InSpatialReference, InExtent };
+		public override object[] Parameters => new object[] { InDataset, RegDataset!, InObjectIdField!, InShapeField!, InGeometryType!, InSpatialReference!, InExtent! };
 
 		/// <summary>
 		/// <para>Input Datasets</para>
@@ -75,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETable()]
-		public object RegDataset { get; set; }
+		public object? RegDataset { get; set; }
 
 		/// <summary>
 		/// <para>Object ID Field</para>
@@ -84,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object InObjectIdField { get; set; }
+		public object? InObjectIdField { get; set; }
 
 		/// <summary>
 		/// <para>Shape Field</para>
@@ -93,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object InShapeField { get; set; }
+		public object? InShapeField { get; set; }
 
 		/// <summary>
 		/// <para>Geometry Type</para>
@@ -103,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object InGeometryType { get; set; }
+		public object? InGeometryType { get; set; }
 
 		/// <summary>
 		/// <para>Coordinate System</para>
@@ -111,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
-		public object InSpatialReference { get; set; }
+		public object? InSpatialReference { get; set; }
 
 		/// <summary>
 		/// <para>Extent</para>
@@ -119,12 +121,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPEnvelope()]
-		public object InExtent { get; set; }
+		public object? InExtent { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RegisterWithGeodatabase SetEnviroment(object workspace = null )
+		public RegisterWithGeodatabase SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

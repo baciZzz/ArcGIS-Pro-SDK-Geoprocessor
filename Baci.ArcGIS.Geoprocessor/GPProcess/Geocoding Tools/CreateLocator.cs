@@ -35,6 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <para>France—France</para>
 		/// <para>Great Britain—Great Britain</para>
 		/// <para>Guam—Guam</para>
+		/// <para>Japan—Japan</para>
+		/// <para>Israel—Israel</para>
+		/// <para>South Korea—South Korea</para>
 		/// <para>Northern Mariana Islands—Northern Mariana Islands</para>
 		/// <para>Netherlands— Netherlands</para>
 		/// <para>Puerto Rico—Puerto Rico</para>
@@ -72,9 +75,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <para>French—French</para>
 		/// <para>German—German</para>
 		/// <para>Galician—Galician</para>
+		/// <para>Hebrew—Hebrew</para>
 		/// <para>Italian— Italian</para>
+		/// <para>Japanese— Japanese</para>
+		/// <para>Korean— Korean</para>
 		/// <para>Spanish—Spanish</para>
-		/// <para><see cref="LanguageCodeEnum"/></para>
 		/// </param>
 		public CreateLocator(object CountryCode, object PrimaryReferenceData, object FieldMapping, object OutLocator, object LanguageCode)
 		{
@@ -118,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { CountryCode, PrimaryReferenceData, FieldMapping, OutLocator, LanguageCode, AlternatenameTables, AlternateFieldMapping, CustomOutputFields, PrecisionType };
+		public override object[] Parameters => new object[] { CountryCode, PrimaryReferenceData, FieldMapping, OutLocator, LanguageCode, AlternatenameTables!, AlternateFieldMapping!, CustomOutputFields!, PrecisionType! };
 
 		/// <summary>
 		/// <para>Country or Region</para>
@@ -137,6 +142,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <para>France—France</para>
 		/// <para>Great Britain—Great Britain</para>
 		/// <para>Guam—Guam</para>
+		/// <para>Japan—Japan</para>
+		/// <para>Israel—Israel</para>
+		/// <para>South Korea—South Korea</para>
 		/// <para>Northern Mariana Islands—Northern Mariana Islands</para>
 		/// <para>Netherlands— Netherlands</para>
 		/// <para>Puerto Rico—Puerto Rico</para>
@@ -192,9 +200,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <para>French—French</para>
 		/// <para>German—German</para>
 		/// <para>Galician—Galician</para>
+		/// <para>Hebrew—Hebrew</para>
 		/// <para>Italian— Italian</para>
+		/// <para>Japanese— Japanese</para>
+		/// <para>Korean— Korean</para>
 		/// <para>Spanish—Spanish</para>
-		/// <para><see cref="LanguageCodeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -211,7 +221,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Optional parameters")]
-		public object AlternatenameTables { get; set; }
+		public object? AlternatenameTables { get; set; }
 
 		/// <summary>
 		/// <para>Alternate Data Field Mapping</para>
@@ -221,7 +231,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[Category("Optional parameters")]
-		public object AlternateFieldMapping { get; set; }
+		public object? AlternateFieldMapping { get; set; }
 
 		/// <summary>
 		/// <para>Custom Output Fields</para>
@@ -233,7 +243,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[Category("Optional parameters")]
-		public object CustomOutputFields { get; set; }
+		public object? CustomOutputFields { get; set; }
 
 		/// <summary>
 		/// <para>Precision Type</para>
@@ -248,86 +258,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Optional parameters")]
-		public object PrecisionType { get; set; } = "GLOBAL_HIGH";
+		public object? PrecisionType { get; set; } = "GLOBAL_HIGH";
 
 		#region InnerClass
-
-		/// <summary>
-		/// <para>Language Code</para>
-		/// </summary>
-		public enum LanguageCodeEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("AS_DEFINED_IN_DATA")]
-			[Description("<As defined in data>")]
-			AS_DEFINED_IN_DATA,
-
-			/// <summary>
-			/// <para>Basque—Basque</para>
-			/// </summary>
-			[GPValue("BAQ")]
-			[Description("Basque")]
-			Basque,
-
-			/// <summary>
-			/// <para>Catalan—Catalan</para>
-			/// </summary>
-			[GPValue("CAT")]
-			[Description("Catalan")]
-			Catalan,
-
-			/// <summary>
-			/// <para>Dutch— Dutch</para>
-			/// </summary>
-			[GPValue("DUT")]
-			[Description("Dutch")]
-			Dutch,
-
-			/// <summary>
-			/// <para>English—English</para>
-			/// </summary>
-			[GPValue("ENG")]
-			[Description("English")]
-			English,
-
-			/// <summary>
-			/// <para>French—French</para>
-			/// </summary>
-			[GPValue("FRE")]
-			[Description("French")]
-			French,
-
-			/// <summary>
-			/// <para>German—German</para>
-			/// </summary>
-			[GPValue("GER")]
-			[Description("German")]
-			German,
-
-			/// <summary>
-			/// <para>Galician—Galician</para>
-			/// </summary>
-			[GPValue("GLG")]
-			[Description("Galician")]
-			Galician,
-
-			/// <summary>
-			/// <para>Italian— Italian</para>
-			/// </summary>
-			[GPValue("ITA")]
-			[Description("Italian")]
-			Italian,
-
-			/// <summary>
-			/// <para>Spanish—Spanish</para>
-			/// </summary>
-			[GPValue("SPA")]
-			[Description("Spanish")]
-			Spanish,
-
-		}
 
 		/// <summary>
 		/// <para>Precision Type</para>

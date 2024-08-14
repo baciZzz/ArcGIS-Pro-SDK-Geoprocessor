@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Fields, SkipNulls, Selection, Value };
+		public override object[] Parameters => new object[] { InFeatures, Fields!, SkipNulls!, Selection!, Value! };
 
 		/// <summary>
 		/// <para>In Features</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPFieldDomain()]
-		public object Fields { get; set; }
+		public object? Fields { get; set; }
 
 		/// <summary>
 		/// <para>Skip Null Values</para>
@@ -87,26 +87,26 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
-		public object SkipNulls { get; set; } = "false";
+		public object? SkipNulls { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Selected Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object Selection { get; set; }
+		public object? Selection { get; set; }
 
 		/// <summary>
 		/// <para>Value</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPVariant()]
-		public object Value { get; set; }
+		public object? Value { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public IterateFeatureSelection SetEnviroment(object workspace = null )
+		public IterateFeatureSelection SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

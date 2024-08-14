@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Names, Type, OutTable };
+		public override object[] Parameters => new object[] { InTable, Names, Type!, OutTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -97,19 +97,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Type { get; set; }
+		public object? Type { get; set; }
 
 		/// <summary>
 		/// <para>Attribute Rules Deleted</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DeleteAttributeRule SetEnviroment(object workspace = null )
+		public DeleteAttributeRule SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

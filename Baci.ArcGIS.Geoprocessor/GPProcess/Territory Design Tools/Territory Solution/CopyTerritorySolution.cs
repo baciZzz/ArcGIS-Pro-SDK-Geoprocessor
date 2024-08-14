@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, TargetGdb, TerritorySolutionName, OutTerritorySolution };
+		public override object[] Parameters => new object[] { InTerritorySolution, TargetGdb, TerritorySolutionName, OutTerritorySolution! };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>
@@ -102,12 +102,12 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPGroupLayer()]
-		public object OutTerritorySolution { get; set; }
+		public object? OutTerritorySolution { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CopyTerritorySolution SetEnviroment(object workspace = null )
+		public CopyTerritorySolution SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, PixelType, GenerateMethod, MaxRed, MaxGreen, MaxBlue, MaxWhite, MaxBlack, MaxMagenta, MaxCyan, MaxYellow, PercentageLow, PercentageHigh };
+		public override object[] Parameters => new object[] { InRaster, OutRaster, PixelType, GenerateMethod, MaxRed!, MaxGreen!, MaxBlue!, MaxWhite!, MaxBlack!, MaxMagenta!, MaxCyan!, MaxYellow!, PercentageLow!, PercentageHigh! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Color Mask")]
-		public object MaxRed { get; set; } = "255";
+		public object? MaxRed { get; set; } = "255";
 
 		/// <summary>
 		/// <para>Maximum Green</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Color Mask")]
-		public object MaxGreen { get; set; } = "255";
+		public object? MaxGreen { get; set; } = "255";
 
 		/// <summary>
 		/// <para>Maximum Blue</para>
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Color Mask")]
-		public object MaxBlue { get; set; } = "255";
+		public object? MaxBlue { get; set; } = "255";
 
 		/// <summary>
 		/// <para>Maximum White</para>
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Color Mask")]
-		public object MaxWhite { get; set; } = "255";
+		public object? MaxWhite { get; set; } = "255";
 
 		/// <summary>
 		/// <para>Maximum Black</para>
@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Color Mask")]
-		public object MaxBlack { get; set; } = "0";
+		public object? MaxBlack { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Maximum Magenta</para>
@@ -179,7 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Color Mask")]
-		public object MaxMagenta { get; set; } = "255";
+		public object? MaxMagenta { get; set; } = "255";
 
 		/// <summary>
 		/// <para>Maximum Cyan</para>
@@ -188,7 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Color Mask")]
-		public object MaxCyan { get; set; } = "255";
+		public object? MaxCyan { get; set; } = "255";
 
 		/// <summary>
 		/// <para>Maximum Yellow</para>
@@ -197,7 +197,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Color Mask")]
-		public object MaxYellow { get; set; } = "255";
+		public object? MaxYellow { get; set; } = "255";
 
 		/// <summary>
 		/// <para>Low Percentage</para>
@@ -206,7 +206,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Histogram Percentage")]
-		public object PercentageLow { get; set; } = "0";
+		public object? PercentageLow { get; set; } = "0";
 
 		/// <summary>
 		/// <para>High Percentage</para>
@@ -215,12 +215,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Histogram Percentage")]
-		public object PercentageHigh { get; set; } = "100";
+		public object? PercentageHigh { get; set; } = "100";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateExcludeArea SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object snapRaster = null , object workspace = null )
+		public GenerateExcludeArea SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? snapRaster = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, workspace: workspace);
 			return this;

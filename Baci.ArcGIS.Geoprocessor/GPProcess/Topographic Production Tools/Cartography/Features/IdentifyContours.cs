@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 	/// <summary>
 	/// <para>Identify Contours</para>
 	/// <para>Identifies types of contours and applies hypsographic codes to input features.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class IdentifyContours : AbstractGPProcess
 	{
 		/// <summary>
@@ -75,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InContourFeatures, InRasters, ContourHeightField, ContourCodeField, ContourIndexInterval, IndexCode, IntermediateCode, DepressionCode, DepressionIntermediateCode, UpdatedContourFeatures };
+		public override object[] Parameters => new object[] { InContourFeatures, InRasters, ContourHeightField, ContourCodeField, ContourIndexInterval!, IndexCode!, IntermediateCode!, DepressionCode!, DepressionIntermediateCode!, UpdatedContourFeatures!, DepressionContoursCount! };
 
 		/// <summary>
 		/// <para>Input Contours</para>
@@ -118,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object ContourIndexInterval { get; set; } = "100";
+		public object? ContourIndexInterval { get; set; } = "100";
 
 		/// <summary>
 		/// <para>Index Code</para>
@@ -126,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object IndexCode { get; set; } = "1";
+		public object? IndexCode { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Intermediate Code</para>
@@ -134,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object IntermediateCode { get; set; } = "2";
+		public object? IntermediateCode { get; set; } = "2";
 
 		/// <summary>
 		/// <para>Depression Code</para>
@@ -142,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DepressionCode { get; set; } = "5";
+		public object? DepressionCode { get; set; } = "5";
 
 		/// <summary>
 		/// <para>Depression Intermediate Code</para>
@@ -150,14 +152,22 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DepressionIntermediateCode { get; set; } = "6";
+		public object? DepressionIntermediateCode { get; set; } = "6";
 
 		/// <summary>
 		/// <para>Updated Contours</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object UpdatedContourFeatures { get; set; }
+		public object? UpdatedContourFeatures { get; set; }
+
+		/// <summary>
+		/// <para>Number of Depression Contours to Identify</para>
+		/// <para>The number of contours in a depression that will be coded as depressions. The value provided must be greater than zero. If no value is provided, all of the contours in the depression will be coded as depressions.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPLong()]
+		public object? DepressionContoursCount { get; set; }
 
 	}
 }

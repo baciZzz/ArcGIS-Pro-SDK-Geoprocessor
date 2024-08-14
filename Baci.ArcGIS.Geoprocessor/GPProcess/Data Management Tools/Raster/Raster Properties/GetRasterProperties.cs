@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, PropertyType, BandIndex, Property };
+		public override object[] Parameters => new object[] { InRaster, PropertyType!, BandIndex!, Property! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object PropertyType { get; set; } = "MINIMUM";
+		public object? PropertyType { get; set; } = "MINIMUM";
 
 		/// <summary>
 		/// <para>Band Name</para>
@@ -115,14 +115,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object BandIndex { get; set; }
+		public object? BandIndex { get; set; }
 
 		/// <summary>
 		/// <para>Property</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPVariant()]
-		public object Property { get; set; }
+		public object? Property { get; set; }
 
 	}
 }

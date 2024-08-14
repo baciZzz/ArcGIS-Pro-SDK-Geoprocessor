@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutFeatureClass, InFeatures, IntersectFeature, UsePageUnit, Scale, PolygonWidth, PolygonHeight, OriginCoord, NumberRows, NumberColumns, StartingPageNumber, LabelFromOrigin };
+		public override object[] Parameters => new object[] { OutFeatureClass, InFeatures!, IntersectFeature!, UsePageUnit!, Scale!, PolygonWidth!, PolygonHeight!, OriginCoord!, NumberRows!, NumberColumns!, StartingPageNumber!, LabelFromOrigin! };
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object InFeatures { get; set; }
+		public object? InFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Generate Polygon Grid that intersects input feature layers or datasets</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IntersectFeature { get; set; } = "false";
+		public object? IntersectFeature { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Use Page Unit and Scale</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UsePageUnit { get; set; } = "false";
+		public object? UsePageUnit { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Map Scale</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object Scale { get; set; }
+		public object? Scale { get; set; }
 
 		/// <summary>
 		/// <para>Polygon Width</para>
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object PolygonWidth { get; set; } = "1 DecimalDegrees";
+		public object? PolygonWidth { get; set; } = "1 DecimalDegrees";
 
 		/// <summary>
 		/// <para>Polygon Height</para>
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object PolygonHeight { get; set; } = "1 DecimalDegrees";
+		public object? PolygonHeight { get; set; } = "1 DecimalDegrees";
 
 		/// <summary>
 		/// <para>Polygon Grid Origin Coordinate</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPPoint()]
-		public object OriginCoord { get; set; } = "0 0";
+		public object? OriginCoord { get; set; } = "0 0";
 
 		/// <summary>
 		/// <para>Number of Rows</para>
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object NumberRows { get; set; } = "10";
+		public object? NumberRows { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Number of Columns</para>
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object NumberColumns { get; set; } = "10";
+		public object? NumberColumns { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Starting Page Number</para>
@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object StartingPageNumber { get; set; } = "1";
+		public object? StartingPageNumber { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Start labeling from the Origin</para>
@@ -182,12 +182,12 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object LabelFromOrigin { get; set; } = "false";
+		public object? LabelFromOrigin { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GridIndexFeatures SetEnviroment(object outputCoordinateSystem = null , object workspace = null )
+		public GridIndexFeatures SetEnviroment(object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

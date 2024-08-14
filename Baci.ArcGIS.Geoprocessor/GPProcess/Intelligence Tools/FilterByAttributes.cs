@@ -64,7 +64,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, InputSearchExpression, OutputIdList };
+		public override object[] Parameters => new object[] { InputFeatures, InputSearchExpression, OutputIdList! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutputIdList { get; set; }
+		public object? OutputIdList { get; set; }
 
 	}
 }

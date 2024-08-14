@@ -61,12 +61,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "extent", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayer, OutputFolder, ConvertData, ConvertArcsdeData, Extent, ApplyExtentToArcsde, SchemaOnly, SelectRelatedRows };
+		public override object[] Parameters => new object[] { InLayer, OutputFolder, ConvertData!, ConvertArcsdeData!, Extent!, ApplyExtentToArcsde!, SchemaOnly!, SelectRelatedRows! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ConvertData { get; set; } = "false";
+		public object? ConvertData { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Include Enterprise Geodatabase data instead of referencing the data</para>
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ConvertArcsdeData { get; set; } = "true";
+		public object? ConvertArcsdeData { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Extent</para>
@@ -121,11 +121,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Apply Extent only to enterprise geodatabase layers</para>
-		/// <para>Specifies whether the specified extent will be applied to all layers or only to enterprise geodatabase layers.</para>
+		/// <para>Specifies whether the specified extent will be applied to all layers or to enterprise geodatabase layers only.</para>
 		/// <para>Unchecked—The extent will be applied to all layers. This is the default.</para>
 		/// <para>Checked—The extent will be applied to enterprise geodatabase layers only.</para>
 		/// <para><see cref="ApplyExtentToArcsdeEnum"/></para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ApplyExtentToArcsde { get; set; } = "false";
+		public object? ApplyExtentToArcsde { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Schema only</para>
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SchemaOnly { get; set; } = "false";
+		public object? SchemaOnly { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Keep only the rows which are related to features within the extent</para>
@@ -157,14 +157,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SelectRelatedRows { get; set; } = "false";
+		public object? SelectRelatedRows { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConsolidateLayer SetEnviroment(object extent = null , object workspace = null )
+		public ConsolidateLayer SetEnviroment(object? extent = null , object? parallelProcessingFactor = null , object? workspace = null )
 		{
-			base.SetEnv(extent: extent, workspace: workspace);
+			base.SetEnv(extent: extent, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;
 		}
 

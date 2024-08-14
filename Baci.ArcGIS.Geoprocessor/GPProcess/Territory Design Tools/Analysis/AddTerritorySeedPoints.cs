@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, Level, InSeedPoints, FieldMap!, AppendData!, OutTerritorySolution };
+		public override object[] Parameters => new object[] { InTerritorySolution, Level, InSeedPoints, FieldMap!, AppendData!, OutTerritorySolution! };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>

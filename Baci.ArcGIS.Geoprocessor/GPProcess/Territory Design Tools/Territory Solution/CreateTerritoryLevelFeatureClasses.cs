@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Create Territory Level Feature Classes</para>
-	/// <para>Creates feature classes for a specified level.</para>
+	/// <para>Creates feature classes for a specified territory level.</para>
 	/// </summary>
 	public class CreateTerritoryLevelFeatureClasses : AbstractGPProcess
 	{
@@ -28,11 +28,15 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// </param>
 		/// <param name="FeatureClasses">
 		/// <para>Feature Classes</para>
-		/// <para>Creates a point or polygon feature class at the specified level.</para>
-		/// <para>Territory Boundaries—Polygon features that represent the territory boundaries.</para>
-		/// <para>Territory Centers—Point features that represent the territory centers.</para>
-		/// <para>Base Boundaries—Polygon features that represent the base boundaries.</para>
-		/// <para>Base Centers—Point features that represent the base centers.</para>
+		/// <para>Specifies the feature classes that will be created at the specified Level parameter value.</para>
+		/// <para>Territory Boundaries—Polygon features that represent the territory boundaries will be created.</para>
+		/// <para>Territory Centers—Point features that represent the territory centers will be created.</para>
+		/// <para>Base Boundaries—Polygon features that represent the base boundaries will be created.</para>
+		/// <para>Base Centers— Point features that represent the base centers will be created.</para>
+		/// <para>Line Barriers—Line features that restrict traversal across a line will be created.</para>
+		/// <para>Seed Points—Point features from which territories are derived will be created.</para>
+		/// <para>Restricted Areas—Polygon features that prevent the creation of territories will be created.</para>
+		/// <para>Polygon Barriers—Polygon features that restrict traversal across a polygon will be created.</para>
 		/// <para><see cref="FeatureClassesEnum"/></para>
 		/// </param>
 		public CreateTerritoryLevelFeatureClasses(object InTerritorySolution, object Level, object FeatureClasses)
@@ -75,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, Level, FeatureClasses, OutTerritorySolution };
+		public override object[] Parameters => new object[] { InTerritorySolution, Level, FeatureClasses, OutTerritorySolution! };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>
@@ -96,11 +100,15 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 
 		/// <summary>
 		/// <para>Feature Classes</para>
-		/// <para>Creates a point or polygon feature class at the specified level.</para>
-		/// <para>Territory Boundaries—Polygon features that represent the territory boundaries.</para>
-		/// <para>Territory Centers—Point features that represent the territory centers.</para>
-		/// <para>Base Boundaries—Polygon features that represent the base boundaries.</para>
-		/// <para>Base Centers—Point features that represent the base centers.</para>
+		/// <para>Specifies the feature classes that will be created at the specified Level parameter value.</para>
+		/// <para>Territory Boundaries—Polygon features that represent the territory boundaries will be created.</para>
+		/// <para>Territory Centers—Point features that represent the territory centers will be created.</para>
+		/// <para>Base Boundaries—Polygon features that represent the base boundaries will be created.</para>
+		/// <para>Base Centers— Point features that represent the base centers will be created.</para>
+		/// <para>Line Barriers—Line features that restrict traversal across a line will be created.</para>
+		/// <para>Seed Points—Point features from which territories are derived will be created.</para>
+		/// <para>Restricted Areas—Polygon features that prevent the creation of territories will be created.</para>
+		/// <para>Polygon Barriers—Polygon features that restrict traversal across a polygon will be created.</para>
 		/// <para><see cref="FeatureClassesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -113,12 +121,12 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPGroupLayer()]
-		public object OutTerritorySolution { get; set; }
+		public object? OutTerritorySolution { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateTerritoryLevelFeatureClasses SetEnviroment(object workspace = null )
+		public CreateTerritoryLevelFeatureClasses SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -132,32 +140,60 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		public enum FeatureClassesEnum 
 		{
 			/// <summary>
-			/// <para>Territory Boundaries—Polygon features that represent the territory boundaries.</para>
+			/// <para>Territory Boundaries—Polygon features that represent the territory boundaries will be created.</para>
 			/// </summary>
 			[GPValue("TERRITORY_BOUNDARIES")]
 			[Description("Territory Boundaries")]
 			Territory_Boundaries,
 
 			/// <summary>
-			/// <para>Territory Centers—Point features that represent the territory centers.</para>
+			/// <para>Territory Centers—Point features that represent the territory centers will be created.</para>
 			/// </summary>
 			[GPValue("TERRITORY_CENTERS")]
 			[Description("Territory Centers")]
 			Territory_Centers,
 
 			/// <summary>
-			/// <para>Base Boundaries—Polygon features that represent the base boundaries.</para>
+			/// <para>Base Boundaries—Polygon features that represent the base boundaries will be created.</para>
 			/// </summary>
 			[GPValue("BASE_BOUNDARIES")]
 			[Description("Base Boundaries")]
 			Base_Boundaries,
 
 			/// <summary>
-			/// <para>Base Centers—Point features that represent the base centers.</para>
+			/// <para>Base Centers— Point features that represent the base centers will be created.</para>
 			/// </summary>
 			[GPValue("BASE_CENTERS")]
 			[Description("Base Centers")]
 			Base_Centers,
+
+			/// <summary>
+			/// <para>Seed Points—Point features from which territories are derived will be created.</para>
+			/// </summary>
+			[GPValue("SEED_POINTS")]
+			[Description("Seed Points")]
+			Seed_Points,
+
+			/// <summary>
+			/// <para>Line Barriers—Line features that restrict traversal across a line will be created.</para>
+			/// </summary>
+			[GPValue("LINE_BARRIERS")]
+			[Description("Line Barriers")]
+			Line_Barriers,
+
+			/// <summary>
+			/// <para>Polygon Barriers—Polygon features that restrict traversal across a polygon will be created.</para>
+			/// </summary>
+			[GPValue("POLYGON_BARRIERS")]
+			[Description("Polygon Barriers")]
+			Polygon_Barriers,
+
+			/// <summary>
+			/// <para>Restricted Areas—Polygon features that prevent the creation of territories will be created.</para>
+			/// </summary>
+			[GPValue("RESTRICTED_AREAS")]
+			[Description("Restricted Areas")]
+			Restricted_Areas,
 
 		}
 

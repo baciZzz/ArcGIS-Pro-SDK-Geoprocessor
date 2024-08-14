@@ -44,7 +44,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <para>Storage Format Type</para>
 		/// <para>The storage format of the exported cache.</para>
 		/// <para>Compact— Tiles are grouped in bundle and bundlex files to save space on disk and allow for faster copying of caches. If the Export cache type parameter is set to Tile package, this is the default.</para>
-		/// <para>Compact V2— Tiles are grouped in bundle files only. This format provides better performance on network shares and cloudstore directories. If the Export cache type parameter is set to Tile package then the extension of the tile package is (.tpkx),which is supported by newer versions of the ArcGIS Platform such as ArcGIS Online, ArcGIS Enterprise 10.9 and ArcGIS Runtime 100.5.</para>
+		/// <para>Compact V2— Tiles are grouped in bundle files only. This format provides better performance on network shares and cloudstore directories. If the Export cache type parameter is set to Tile package then the extension of the tile package is (.tpkx),which is supported by newer versions of the ArcGIS Platform such as ArcGIS Online, ArcGIS Enterprise 11 and ArcGIS Runtime 100.5.</para>
 		/// <para>Exploded—Each tile is stored as an individual file (the way caches were stored prior to ArcGIS Server).</para>
 		/// <para><see cref="StorageFormatTypeEnum"/></para>
 		/// </param>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputService, TargetCachePath, ExportCacheType, CopyDataFromServer, StorageFormatType, Scales, NumOfCachingServiceInstances, AreaOfInterest, ExportExtent, Overwrite, OutputCachePath };
+		public override object[] Parameters => new object[] { InputService, TargetCachePath, ExportCacheType, CopyDataFromServer, StorageFormatType, Scales, NumOfCachingServiceInstances!, AreaOfInterest!, ExportExtent!, Overwrite!, OutputCachePath! };
 
 		/// <summary>
 		/// <para>Input Service</para>
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <para>Storage Format Type</para>
 		/// <para>The storage format of the exported cache.</para>
 		/// <para>Compact— Tiles are grouped in bundle and bundlex files to save space on disk and allow for faster copying of caches. If the Export cache type parameter is set to Tile package, this is the default.</para>
-		/// <para>Compact V2— Tiles are grouped in bundle files only. This format provides better performance on network shares and cloudstore directories. If the Export cache type parameter is set to Tile package then the extension of the tile package is (.tpkx),which is supported by newer versions of the ArcGIS Platform such as ArcGIS Online, ArcGIS Enterprise 10.9 and ArcGIS Runtime 100.5.</para>
+		/// <para>Compact V2— Tiles are grouped in bundle files only. This format provides better performance on network shares and cloudstore directories. If the Export cache type parameter is set to Tile package then the extension of the tile package is (.tpkx),which is supported by newer versions of the ArcGIS Platform such as ArcGIS Online, ArcGIS Enterprise 11 and ArcGIS Runtime 100.5.</para>
 		/// <para>Exploded—Each tile is stored as an individual file (the way caches were stored prior to ArcGIS Server).</para>
 		/// <para><see cref="StorageFormatTypeEnum"/></para>
 		/// </summary>
@@ -164,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object NumOfCachingServiceInstances { get; set; }
+		public object? NumOfCachingServiceInstances { get; set; }
 
 		/// <summary>
 		/// <para>Area Of Interest</para>
@@ -173,7 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
-		public object AreaOfInterest { get; set; }
+		public object? AreaOfInterest { get; set; }
 
 		/// <summary>
 		/// <para>Export Extent</para>
@@ -186,7 +186,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
 		[Category("Area of interest (Envelope)")]
-		public object ExportExtent { get; set; }
+		public object? ExportExtent { get; set; }
 
 		/// <summary>
 		/// <para>Overwrite Tiles</para>
@@ -198,14 +198,14 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Overwrite { get; set; } = "false";
+		public object? Overwrite { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Cache Path</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutputCachePath { get; set; }
+		public object? OutputCachePath { get; set; }
 
 		#region InnerClass
 
@@ -257,7 +257,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		public enum StorageFormatTypeEnum 
 		{
 			/// <summary>
-			/// <para>Compact V2— Tiles are grouped in bundle files only. This format provides better performance on network shares and cloudstore directories. If the Export cache type parameter is set to Tile package then the extension of the tile package is (.tpkx),which is supported by newer versions of the ArcGIS Platform such as ArcGIS Online, ArcGIS Enterprise 10.9 and ArcGIS Runtime 100.5.</para>
+			/// <para>Compact V2— Tiles are grouped in bundle files only. This format provides better performance on network shares and cloudstore directories. If the Export cache type parameter is set to Tile package then the extension of the tile package is (.tpkx),which is supported by newer versions of the ArcGIS Platform such as ArcGIS Online, ArcGIS Enterprise 11 and ArcGIS Runtime 100.5.</para>
 			/// </summary>
 			[GPValue("COMPACT_V2")]
 			[Description("Compact V2")]

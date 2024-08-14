@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Algorithm, Tolerance, SharedEdgeFeatures, MinimumArea, InBarriers, OutFeatureClass, OutSharedEdgeFeatureClass };
+		public override object[] Parameters => new object[] { InFeatures, Algorithm, Tolerance, SharedEdgeFeatures!, MinimumArea!, InBarriers!, OutFeatureClass!, OutSharedEdgeFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
-		public object SharedEdgeFeatures { get; set; }
+		public object? SharedEdgeFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Area</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPArealUnit()]
-		public object MinimumArea { get; set; } = "0 Unknown";
+		public object? MinimumArea { get; set; } = "0 Unknown";
 
 		/// <summary>
 		/// <para>Input Barrier Layers</para>
@@ -141,26 +141,26 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object InBarriers { get; set; }
+		public object? InBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutSharedEdgeFeatureClass { get; set; }
+		public object? OutSharedEdgeFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SimplifySharedEdges SetEnviroment(object cartographicPartitions = null )
+		public SimplifySharedEdges SetEnviroment(object? cartographicPartitions = null )
 		{
 			base.SetEnv(cartographicPartitions: cartographicPartitions);
 			return this;

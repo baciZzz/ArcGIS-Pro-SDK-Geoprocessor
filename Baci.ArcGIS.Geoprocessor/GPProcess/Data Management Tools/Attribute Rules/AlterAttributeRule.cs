@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Name, Description, ErrorNumber, ErrorMessage, Tags, UpdatedTable, TriggeringEvents, ScriptExpression, ExcludeFromClientEvaluation };
+		public override object[] Parameters => new object[] { InTable, Name, Description!, ErrorNumber!, ErrorMessage!, Tags!, UpdatedTable!, TriggeringEvents!, ScriptExpression!, ExcludeFromClientEvaluation! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Description { get; set; }
+		public object? Description { get; set; }
 
 		/// <summary>
 		/// <para>Error Number</para>
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ErrorNumber { get; set; }
+		public object? ErrorNumber { get; set; }
 
 		/// <summary>
 		/// <para>Error Message</para>
@@ -107,28 +107,28 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ErrorMessage { get; set; }
+		public object? ErrorMessage { get; set; }
 
 		/// <summary>
 		/// <para>Tags</para>
-		/// <para>The tags for the attribute rule. To clear all tags, click to remove each tag from the list, and select Reset from the drop-down menu.</para>
+		/// <para>The tags for the attribute rule. To clear all tags, click the delete button to remove each tag from the list, and choose Reset from the drop-down menu.</para>
 		/// <para><see cref="TagsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object Tags { get; set; }
+		public object? Tags { get; set; }
 
 		/// <summary>
 		/// <para>Updated Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object UpdatedTable { get; set; }
+		public object? UpdatedTable { get; set; }
 
 		/// <summary>
 		/// <para>Triggering Events</para>
-		/// <para>Specifies the editing events that will trigger the attribute rule to take effect. Triggering events are only applicable for constraint rules and calculation rules that have the Batch parameter set to false. Be aware that the new values will replace existing triggering events. To keep the current triggering events, leave this parameter empty.</para>
+		/// <para>Specifies the editing events that will trigger the attribute rule to take effect. Triggering events are only applicable for constraint rule and calculation rule types that have the Batch parameter set to false. The new values will replace existing triggering events. To keep the current triggering events, leave this parameter empty.</para>
 		/// <para>Insert—The rule will be applied when a new feature is added.</para>
 		/// <para>Update—The rule will be applied when a feature is updated.</para>
 		/// <para>Delete—The rule will be applied when a feature is deleted.</para>
@@ -137,32 +137,33 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object TriggeringEvents { get; set; }
+		public object? TriggeringEvents { get; set; }
 
 		/// <summary>
 		/// <para>Script Expression</para>
-		/// <para>An Arcade expression that defines the rule. To keep the current expression, leave this parameter empty. Be aware that if an expression is provided for this parameter, it will replace the existing Arcade expression of the rule. If you alter the script expression of a batch calculation or validation rule, the rule will need to be reevaluated.</para>
+		/// <para>An Arcade expression that defines the rule. To keep the current expression, leave this parameter empty. If an expression is provided for this parameter, it will replace the existing Arcade expression of the rule. If you alter the script expression of a batch calculation or validation rule, the rule must be reevaluated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCalculatorExpression()]
-		public object ScriptExpression { get; set; }
+		public object? ScriptExpression { get; set; }
 
 		/// <summary>
 		/// <para>Exclude From Client Evaluation</para>
-		/// <para>Specifies whether the rule will be evaluated before edits are applied. The default for this property corresponds to the current value set for the rule. That is, if the input rule has the exclude from client evaluation property set to false, the default for this parameter will be unchecked so as to not modify the property without you specifically choosing to do so. This parameter is not applicable for validation rules or batch calculation rules.</para>
+		/// <para>Specifies whether the application will evaluate the rule locally before applying the edits to the workspace.</para>
+		/// <para>The default for this parameter corresponds to the current value set for the rule. That is, if the input rule has the exclude from client evaluation parameter set to false, the default for this parameter will be unchecked so the rule will not be automatically excluded. This parameter is not applicable for validation rules or batch calculation rules.</para>
 		/// <para>Checked—The rule will be excluded from client evaluation.</para>
-		/// <para>Unchecked—The rule will be executed for all clients.</para>
+		/// <para>Unchecked—The rule will not be excluded from client evaluation.</para>
 		/// <para><see cref="ExcludeFromClientEvaluationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ExcludeFromClientEvaluation { get; set; } = "false";
+		public object? ExcludeFromClientEvaluation { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AlterAttributeRule SetEnviroment(object workspace = null )
+		public AlterAttributeRule SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -225,7 +226,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			EXCLUDE,
 
 			/// <summary>
-			/// <para>Unchecked—The rule will be executed for all clients.</para>
+			/// <para>Unchecked—The rule will not be excluded from client evaluation.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INCLUDE")]

@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPlacenamesFile, DataSource, OutLocationFile, IncludeFeatures, InRois };
+		public override object[] Parameters => new object[] { InPlacenamesFile, DataSource, OutLocationFile, IncludeFeatures!, InRois! };
 
 		/// <summary>
 		/// <para>Input Placenames File</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object IncludeFeatures { get; set; }
+		public object? IncludeFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Input Regions Of Interest</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
-		public object InRois { get; set; }
+		public object? InRois { get; set; }
 
 		#region InnerClass
 

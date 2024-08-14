@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabaseConnection, AOISpatialReference, ImportConfiguration, InputCustomConfiguration, UserStore, OutputDatabasepath };
+		public override object[] Parameters => new object[] { InputDatabaseConnection, AOISpatialReference, ImportConfiguration, InputCustomConfiguration!, UserStore!, OutputDatabasepath! };
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object InputCustomConfiguration { get; set; }
+		public object? InputCustomConfiguration { get; set; }
 
 		/// <summary>
 		/// <para>User Store</para>
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object UserStore { get; set; }
+		public object? UserStore { get; set; }
 
 		/// <summary>
 		/// <para>Output Database Path (.jtc)</para>
@@ -137,12 +137,12 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object OutputDatabasepath { get; set; }
+		public object? OutputDatabasepath { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateWorkflowDatabase SetEnviroment(object configKeyword = null )
+		public CreateWorkflowDatabase SetEnviroment(object? configKeyword = null )
 		{
 			base.SetEnv(configKeyword: configKeyword);
 			return this;

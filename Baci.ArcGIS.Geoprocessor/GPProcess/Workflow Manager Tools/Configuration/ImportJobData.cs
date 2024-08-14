@@ -68,7 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFile, InputMerge, InputDatabasepath, InputRepositoryName, OutputStatus };
+		public override object[] Parameters => new object[] { InputFile, InputMerge, InputDatabasepath!, InputRepositoryName!, OutputStatus! };
 
 		/// <summary>
 		/// <para>Input JXL/Acknowledgement</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object InputDatabasepath { get; set; }
+		public object? InputDatabasepath { get; set; }
 
 		/// <summary>
 		/// <para>Repository Name</para>
@@ -106,14 +106,14 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object InputRepositoryName { get; set; }
+		public object? InputRepositoryName { get; set; }
 
 		/// <summary>
 		/// <para>Status</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLong()]
-		public object OutputStatus { get; set; }
+		public object? OutputStatus { get; set; }
 
 		#region InnerClass
 

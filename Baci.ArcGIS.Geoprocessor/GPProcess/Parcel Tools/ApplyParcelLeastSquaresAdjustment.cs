@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InParcelFabric, MovementTolerance, UpdatedParcelFabric, UpdateAttributes };
+		public override object[] Parameters => new object[] { InParcelFabric, MovementTolerance!, UpdatedParcelFabric!, UpdateAttributes! };
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>
@@ -76,14 +76,14 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object MovementTolerance { get; set; } = "0.05 Meters";
+		public object? MovementTolerance { get; set; } = "0.05 Meters";
 
 		/// <summary>
 		/// <para>Updated Parcel Fabric</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEParcelDataset()]
-		public object UpdatedParcelFabric { get; set; }
+		public object? UpdatedParcelFabric { get; set; }
 
 		/// <summary>
 		/// <para>Update Attribute Fields</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UpdateAttributes { get; set; } = "false";
+		public object? UpdateAttributes { get; set; } = "false";
 
 		#region InnerClass
 

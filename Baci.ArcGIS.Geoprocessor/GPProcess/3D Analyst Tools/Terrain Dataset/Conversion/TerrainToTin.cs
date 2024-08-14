@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerrain, OutTin, PyramidLevelResolution, MaxNodes, ClipToExtent };
+		public override object[] Parameters => new object[] { InTerrain, OutTin, PyramidLevelResolution!, MaxNodes!, ClipToExtent! };
 
 		/// <summary>
 		/// <para>Input Terrain</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object PyramidLevelResolution { get; set; } = "0";
+		public object? PyramidLevelResolution { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Maximum Number of Nodes</para>
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MaxNodes { get; set; } = "5000000";
+		public object? MaxNodes { get; set; } = "5000000";
 
 		/// <summary>
 		/// <para>Clip to Extent</para>
@@ -109,12 +109,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ClipToExtent { get; set; } = "true";
+		public object? ClipToExtent { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TerrainToTin SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object terrainMemoryUsage = null , object tinSaveVersion = null , object workspace = null )
+		public TerrainToTin SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , bool? terrainMemoryUsage = null , object? tinSaveVersion = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, terrainMemoryUsage: terrainMemoryUsage, tinSaveVersion: tinSaveVersion, workspace: workspace);
 			return this;

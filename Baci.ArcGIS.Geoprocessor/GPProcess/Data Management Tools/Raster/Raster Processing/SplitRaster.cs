@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutFolder, OutBaseName, SplitMethod, Format, ResamplingType, NumRasters, TileSize, Overlap, Units, CellSize, Origin, SplitPolygonFeatureClass, ClipType, TemplateExtent, NodataValue, DerivedOutFolder };
+		public override object[] Parameters => new object[] { InRaster, OutFolder, OutBaseName, SplitMethod, Format, ResamplingType!, NumRasters!, TileSize!, Overlap!, Units!, CellSize!, Origin!, SplitPolygonFeatureClass!, ClipType!, TemplateExtent!, NodataValue!, DerivedOutFolder! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -167,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ResamplingType { get; set; } = "NEAREST";
+		public object? ResamplingType { get; set; } = "NEAREST";
 
 		/// <summary>
 		/// <para>Number of Output Rasters</para>
@@ -175,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPPoint()]
-		public object NumRasters { get; set; } = "1 1";
+		public object? NumRasters { get; set; } = "1 1";
 
 		/// <summary>
 		/// <para>Size of Output Rasters</para>
@@ -183,7 +183,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPPoint()]
-		public object TileSize { get; set; } = "2048 2048";
+		public object? TileSize { get; set; } = "2048 2048";
 
 		/// <summary>
 		/// <para>Overlap</para>
@@ -192,7 +192,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Other Options")]
-		public object Overlap { get; set; } = "0";
+		public object? Overlap { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Units for Output Raster Size and Overlap</para>
@@ -209,7 +209,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Other Options")]
-		public object Units { get; set; } = "PIXELS";
+		public object? Units { get; set; } = "PIXELS";
 
 		/// <summary>
 		/// <para>Cell Size</para>
@@ -218,7 +218,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPPoint()]
 		[Category("Other Options")]
-		public object CellSize { get; set; }
+		public object? CellSize { get; set; }
 
 		/// <summary>
 		/// <para>Lower left origin</para>
@@ -227,7 +227,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPPoint()]
 		[Category("Other Options")]
-		public object Origin { get; set; }
+		public object? Origin { get; set; }
 
 		/// <summary>
 		/// <para>Split Polygon Feature Class</para>
@@ -235,7 +235,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
-		public object SplitPolygonFeatureClass { get; set; }
+		public object? SplitPolygonFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Clip Type</para>
@@ -249,7 +249,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Clipping Options")]
-		public object ClipType { get; set; } = "NONE";
+		public object? ClipType { get; set; } = "NONE";
 
 		/// <summary>
 		/// <para>Template Extent</para>
@@ -262,7 +262,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
 		[Category("Clipping Options")]
-		public object TemplateExtent { get; set; }
+		public object? TemplateExtent { get; set; }
 
 		/// <summary>
 		/// <para>NoData Value</para>
@@ -271,19 +271,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Other Options")]
-		public object NodataValue { get; set; }
+		public object? NodataValue { get; set; }
 
 		/// <summary>
 		/// <para>Updated Folder</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFolder()]
-		public object DerivedOutFolder { get; set; }
+		public object? DerivedOutFolder { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SplitRaster SetEnviroment(object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object pyramid = null , object rasterStatistics = null , object resamplingMethod = null , object snapRaster = null , double[] tileSize = null )
+		public SplitRaster SetEnviroment(object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? pyramid = null , object? rasterStatistics = null , object? resamplingMethod = null , object? snapRaster = null , object? tileSize = null )
 		{
 			base.SetEnv(compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, rasterStatistics: rasterStatistics, resamplingMethod: resamplingMethod, snapRaster: snapRaster, tileSize: tileSize);
 			return this;

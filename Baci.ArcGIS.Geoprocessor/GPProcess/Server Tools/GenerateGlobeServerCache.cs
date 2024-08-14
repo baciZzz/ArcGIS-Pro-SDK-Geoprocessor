@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ServerName, ObjectName, OutFolder, LodFrom, LodTo, ThreadCount, Layer };
+		public override object[] Parameters => new object[] { ServerName, ObjectName, OutFolder, LodFrom, LodTo, ThreadCount!, Layer };
 
 		/// <summary>
 		/// <para>Host</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object ThreadCount { get; set; }
+		public object? ThreadCount { get; set; }
 
 		/// <summary>
 		/// <para>Input Layers</para>

@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, OutputFeatureClass, PointPlacement, Distance, Percentage, IncludeEndPoints };
+		public override object[] Parameters => new object[] { InputFeatures, OutputFeatureClass, PointPlacement, Distance!, Percentage!, IncludeEndPoints! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object Distance { get; set; }
+		public object? Distance { get; set; }
 
 		/// <summary>
 		/// <para>Percentage</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object Percentage { get; set; }
+		public object? Percentage { get; set; }
 
 		/// <summary>
 		/// <para>Include End Points</para>
@@ -131,12 +131,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeEndPoints { get; set; }
+		public object? IncludeEndPoints { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GeneratePointsAlongLines SetEnviroment(object configKeyword = null , object outputMFlag = null , object outputZFlag = null , object workspace = null )
+		public GeneratePointsAlongLines SetEnviroment(object? configKeyword = null , object? outputMFlag = null , object? outputZFlag = null , object? workspace = null )
 		{
 			base.SetEnv(configKeyword: configKeyword, outputMFlag: outputMFlag, outputZFlag: outputZFlag, workspace: workspace);
 			return this;

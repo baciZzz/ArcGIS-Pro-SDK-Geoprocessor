@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Migrate Storage</para>
 	/// <para>Moves the data from a binary, spatial, or spatial attribute column of one data type to a new column of a different data type in geodatabases in Oracle and SQL Server. The configuration keyword you specify when migrating determines the data type used for the new column.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class MigrateStorage : AbstractGPProcess
 	{
 		/// <summary>
@@ -65,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDatasets, ConfigKeyword, OutDatasetss };
+		public override object[] Parameters => new object[] { InDatasets, ConfigKeyword, OutDatasetss! };
 
 		/// <summary>
 		/// <para>Input Datasets</para>
@@ -88,12 +90,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutDatasetss { get; set; }
+		public object? OutDatasetss { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MigrateStorage SetEnviroment(object configKeyword = null , object workspace = null )
+		public MigrateStorage SetEnviroment(object? configKeyword = null , object? workspace = null )
 		{
 			base.SetEnv(configKeyword: configKeyword, workspace: workspace);
 			return this;

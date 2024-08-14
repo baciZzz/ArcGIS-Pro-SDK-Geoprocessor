@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Group, OutFeatureClass, Method, Tolerance, Precision, AngularLimit };
+		public override object[] Parameters => new object[] { InFeatures, Group, OutFeatureClass, Method!, Tolerance!, Precision!, AngularLimit! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "RIGHT_ANGLES";
+		public object? Method { get; set; } = "RIGHT_ANGLES";
 
 		/// <summary>
 		/// <para>Tolerance</para>
@@ -117,16 +117,16 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object Tolerance { get; set; } = "1 Meters";
+		public object? Tolerance { get; set; } = "1 Meters";
 
 		/// <summary>
 		/// <para>Precision</para>
-		/// <para>The precision of the spatial grid used in the regularization process. Valid values range from 0.05 to 0.25.</para>
+		/// <para>The precision of the spatial grid that will be used in the regularization process. Valid values range from 0.05 to 0.25.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object Precision { get; set; } = "0.25";
+		public object? Precision { get; set; } = "0.25";
 
 		/// <summary>
 		/// <para>Angular Deviation Limit</para>
@@ -135,12 +135,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object AngularLimit { get; set; } = "1";
+		public object? AngularLimit { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RegularizeAdjacentBuildingFootprint SetEnviroment(object geographicTransformations = null , object outputCoordinateSystem = null , object workspace = null )
+		public RegularizeAdjacentBuildingFootprint SetEnviroment(object? geographicTransformations = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayerOrView, InField, JoinTable, JoinField, OutputMsg, MatchCount, RowCount };
+		public override object[] Parameters => new object[] { InLayerOrView, InField, JoinTable, JoinField, OutputMsg!, MatchCount!, RowCount! };
 
 		/// <summary>
 		/// <para>Input Layer or Table View</para>
@@ -117,26 +117,26 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object OutputMsg { get; set; }
+		public object? OutputMsg { get; set; }
 
 		/// <summary>
 		/// <para>Match Count</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLong()]
-		public object MatchCount { get; set; } = "0";
+		public object? MatchCount { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Row Count</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLong()]
-		public object RowCount { get; set; } = "0";
+		public object? RowCount { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ValidateJoin SetEnviroment(object workspace = null )
+		public ValidateJoin SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

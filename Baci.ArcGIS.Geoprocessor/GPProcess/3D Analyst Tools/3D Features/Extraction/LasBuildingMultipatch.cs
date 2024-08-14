@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InLasDataset">
 		/// <para>Input LAS Dataset</para>
-		/// <para>The LAS dataset whose points define the building rooftop.</para>
+		/// <para>The LAS dataset containing the points that will define the building rooftop.</para>
 		/// </param>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
@@ -28,7 +28,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </param>
 		/// <param name="Ground">
 		/// <para>Ground Height</para>
-		/// <para>The source of ground height values can be either a numeric field in the building footprint attribute table, or a raster or TIN surface. A field-based ground source will be processed faster than a surface-based ground source.</para>
+		/// <para>The source of ground height values can be either a numeric field in the building footprint attribute table or a raster or TIN surface. A field-based ground source will be processed faster than a surface-based ground source.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Multipatch Feature Class</para>
@@ -75,11 +75,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, InFeatures, Ground, OutFeatureClass, PointSelection, Simplification };
+		public override object[] Parameters => new object[] { InLasDataset, InFeatures, Ground, OutFeatureClass, PointSelection!, Simplification!, SamplingResolution! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
-		/// <para>The LAS dataset whose points define the building rooftop.</para>
+		/// <para>The LAS dataset containing the points that will define the building rooftop.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLasDatasetLayer()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Ground Height</para>
-		/// <para>The source of ground height values can be either a numeric field in the building footprint attribute table, or a raster or TIN surface. A field-based ground source will be processed faster than a surface-based ground source.</para>
+		/// <para>The source of ground height values can be either a numeric field in the building footprint attribute table or a raster or TIN surface. A field-based ground source will be processed faster than a surface-based ground source.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -113,29 +113,39 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>LAS Rooftop Point Selection</para>
-		/// <para>The LAS points that will be used to define the building rooftop.</para>
-		/// <para>Building Classified Points—LAS points assigned with a class code value of 6. This is the default.</para>
-		/// <para>Layer Filtered Points—LAS points that are filtered by the input layer.</para>
-		/// <para>All Points—All LAS points that overlay the building footprint.</para>
+		/// <para>Specifies the LAS points that will be used to define the building rooftop.</para>
+		/// <para>Building Classified Points—LAS points assigned a class code value of 6 will be used. This is the default.</para>
+		/// <para>Layer Filtered Points—LAS points that are filtered by the input layer will be used.</para>
+		/// <para>All Points—All LAS points that overlay the building footprint will be used.</para>
 		/// <para><see cref="PointSelectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object PointSelection { get; set; } = "BUILDING_CLASSIFIED_POINTS";
+		public object? PointSelection { get; set; } = "BUILDING_CLASSIFIED_POINTS";
 
 		/// <summary>
 		/// <para>Simplification Tolerance</para>
-		/// <para>The z-tolerance value that will be used to reduce the number of LAS points factored into modeling the building rooftop. This value defines the maximum threshold of deviation between the output rooftop model and the rooftop surface created from the full resolution of LAS points.</para>
+		/// <para>A z-tolerance value that will be used to simplify the rooftop geometry. This value defines the maximum deviation of the output rooftop model from the TIN surface created using the LAS points.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object Simplification { get; set; }
+		[GPCodedValueDomain()]
+		public object? Simplification { get; set; }
+
+		/// <summary>
+		/// <para>Sampling Resolution</para>
+		/// <para>The binning size used to thin the point cloud prior to constructing the rooftop surface.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPLinearUnit()]
+		[GPCodedValueDomain()]
+		public object? SamplingResolution { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LasBuildingMultipatch SetEnviroment(object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null )
+		public LasBuildingMultipatch SetEnviroment(object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace);
 			return this;
@@ -149,21 +159,21 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum PointSelectionEnum 
 		{
 			/// <summary>
-			/// <para>Building Classified Points—LAS points assigned with a class code value of 6. This is the default.</para>
+			/// <para>Building Classified Points—LAS points assigned a class code value of 6 will be used. This is the default.</para>
 			/// </summary>
 			[GPValue("BUILDING_CLASSIFIED_POINTS")]
 			[Description("Building Classified Points")]
 			Building_Classified_Points,
 
 			/// <summary>
-			/// <para>Layer Filtered Points—LAS points that are filtered by the input layer.</para>
+			/// <para>Layer Filtered Points—LAS points that are filtered by the input layer will be used.</para>
 			/// </summary>
 			[GPValue("LAYER_FILTERED_POINTS")]
 			[Description("Layer Filtered Points")]
 			Layer_Filtered_Points,
 
 			/// <summary>
-			/// <para>All Points—All LAS points that overlay the building footprint.</para>
+			/// <para>All Points—All LAS points that overlay the building footprint will be used.</para>
 			/// </summary>
 			[GPValue("ALL_POINTS")]
 			[Description("All Points")]

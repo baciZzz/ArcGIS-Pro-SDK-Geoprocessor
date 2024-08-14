@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputfeatures, Featureidfield, Demresolution, Includeslopeaspect, Outputsummary };
+		public override object[] Parameters => new object[] { Inputfeatures, Featureidfield!, Demresolution!, Includeslopeaspect!, Outputsummary! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Featureidfield { get; set; }
+		public object? Featureidfield { get; set; }
 
 		/// <summary>
 		/// <para>DEM Resolution</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Demresolution { get; set; }
+		public object? Demresolution { get; set; }
 
 		/// <summary>
 		/// <para>Include Slope and Aspect</para>
@@ -104,14 +104,14 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Includeslopeaspect { get; set; } = "false";
+		public object? Includeslopeaspect { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Summary</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Outputsummary { get; set; }
+		public object? Outputsummary { get; set; }
 
 		#region InnerClass
 

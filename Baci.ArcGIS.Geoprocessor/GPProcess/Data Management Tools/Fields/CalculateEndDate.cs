@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputTable, UniqueIDFields, StartDateField, EndDateField, OutputTable };
+		public override object[] Parameters => new object[] { InputTable, UniqueIDFields!, StartDateField, EndDateField, OutputTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object UniqueIDFields { get; set; }
+		public object? UniqueIDFields { get; set; }
 
 		/// <summary>
 		/// <para>Start Date Field</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
-		public object OutputTable { get; set; } = "Output Table";
+		public object? OutputTable { get; set; } = "Output Table";
 
 	}
 }

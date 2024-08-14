@@ -38,19 +38,19 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </param>
 		/// <param name="OverlayEventProperties">
 		/// <para>Overlay Event Table Properties</para>
-		/// <para>Parameter consisting of the route location fields and the type of events in the overlay event table.</para>
+		/// <para>The route location fields and the type of events in the overlay event table.</para>
 		/// <para>Route Identifier Field—The field containing values that indicate which route each event is along. This field can be numeric or character.</para>
 		/// <para>Event Type—The type of events in the overlay event table (POINT or LINE).</para>
-		/// <para>POINT—Point events occur at a precise location along a route. Only a from-measure field must be specified.</para>
+		/// <para>POINT—Point events occur at a precise location along a route. Only the from-measure field must be specified.</para>
 		/// <para>LINE—Line events define a portion of a route. Both from- and to-measure fields must be specified.</para>
-		/// <para>From-Measure Field—A field containing measure values. This field must be numeric and is required when the event type is POINT or LINE. Note when the Event Type is POINT the label for this parameter becomes &quot;Measure Field&quot;.</para>
-		/// <para>To-Measure Field—A field containing measure values. This field must be numeric and is required when the event type is LINE.</para>
+		/// <para>From-Measure Field—The field containing from-measure values. This field must be numeric and is required when the event type is POINT or LINE. When Event Type is POINT, the label for this parameter becomes Measure Field.</para>
+		/// <para>To-Measure Field—The field containing to-measure values. This field must be numeric and is required when the event type is LINE.</para>
 		/// </param>
 		/// <param name="OverlayType">
 		/// <para>Type of Overlay</para>
-		/// <para>The type of overlay to be performed.</para>
-		/// <para>Intersect—Writes only overlapping events to the output event table. This is the default.</para>
-		/// <para>Union—Writes all events to the output table. Linear events are split at their intersections.</para>
+		/// <para>Specifies the type of overlay that will be performed.</para>
+		/// <para>Intersect—Only overlapping events will be written to the output event table. This is the default.</para>
+		/// <para>Union—All events will be written to the output table. Linear events will be split at their intersections.</para>
 		/// <para><see cref="OverlayTypeEnum"/></para>
 		/// </param>
 		/// <param name="OutTable">
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, InEventProperties, OverlayTable, OverlayEventProperties, OverlayType, OutTable, OutEventProperties, ZeroLengthEvents, InFields, BuildIndex };
+		public override object[] Parameters => new object[] { InTable, InEventProperties, OverlayTable, OverlayEventProperties, OverlayType, OutTable, OutEventProperties, ZeroLengthEvents!, InFields!, BuildIndex! };
 
 		/// <summary>
 		/// <para>Input Event Table</para>
@@ -147,13 +147,13 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Overlay Event Table Properties</para>
-		/// <para>Parameter consisting of the route location fields and the type of events in the overlay event table.</para>
+		/// <para>The route location fields and the type of events in the overlay event table.</para>
 		/// <para>Route Identifier Field—The field containing values that indicate which route each event is along. This field can be numeric or character.</para>
 		/// <para>Event Type—The type of events in the overlay event table (POINT or LINE).</para>
-		/// <para>POINT—Point events occur at a precise location along a route. Only a from-measure field must be specified.</para>
+		/// <para>POINT—Point events occur at a precise location along a route. Only the from-measure field must be specified.</para>
 		/// <para>LINE—Line events define a portion of a route. Both from- and to-measure fields must be specified.</para>
-		/// <para>From-Measure Field—A field containing measure values. This field must be numeric and is required when the event type is POINT or LINE. Note when the Event Type is POINT the label for this parameter becomes &quot;Measure Field&quot;.</para>
-		/// <para>To-Measure Field—A field containing measure values. This field must be numeric and is required when the event type is LINE.</para>
+		/// <para>From-Measure Field—The field containing from-measure values. This field must be numeric and is required when the event type is POINT or LINE. When Event Type is POINT, the label for this parameter becomes Measure Field.</para>
+		/// <para>To-Measure Field—The field containing to-measure values. This field must be numeric and is required when the event type is LINE.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRouteMeasureEventProperties()]
@@ -161,9 +161,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Type of Overlay</para>
-		/// <para>The type of overlay to be performed.</para>
-		/// <para>Intersect—Writes only overlapping events to the output event table. This is the default.</para>
-		/// <para>Union—Writes all events to the output table. Linear events are split at their intersections.</para>
+		/// <para>Specifies the type of overlay that will be performed.</para>
+		/// <para>Intersect—Only overlapping events will be written to the output event table. This is the default.</para>
+		/// <para>Union—All events will be written to the output table. Linear events will be split at their intersections.</para>
 		/// <para><see cref="OverlayTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -195,44 +195,44 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Keep zero length line events</para>
-		/// <para>Specifies whether to keep zero length line events in the output table. This parameter is only valid when the output event type is LINE.</para>
-		/// <para>Checked—Keep zero length line events. This is the default.</para>
-		/// <para>Unchecked—Do not keep zero length line events.</para>
+		/// <para>Specifies whether zero-length line events will be added to the Output Event Table parameter value. This parameter is only valid when the output event type is LINE.</para>
+		/// <para>Checked—Zero-length line events will be added. This is the default.</para>
+		/// <para>Unchecked—Zero-length line events will not be added.</para>
 		/// <para><see cref="ZeroLengthEventsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ZeroLengthEvents { get; set; } = "true";
+		public object? ZeroLengthEvents { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Include all fields from input</para>
-		/// <para>Specifies whether all the fields from the input and overlay event tables will be written to the output event table.</para>
-		/// <para>Checked—Includes all the fields from the input tables in the output table. This is the default.</para>
-		/// <para>Unchecked—Does not include all the fields from the input tables in the output table. Only the ObjectID and the route location fields are kept.</para>
+		/// <para>Specifies whether all the fields from the input and overlay event tables will be included in the Output Event Table parameter value.</para>
+		/// <para>Checked—All the fields from the input tables will be included in the output table. This is the default.</para>
+		/// <para>Unchecked—Not all fields from the input tables will be included in the output table. Only the ObjectID field and the route location fields will be included.</para>
 		/// <para><see cref="InFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object InFields { get; set; } = "true";
+		public object? InFields { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Build index</para>
-		/// <para>Specifies whether an attribute index will be created for the route identifier field that is written to the output event table.</para>
-		/// <para>Checked—Creates an attribute index. This is the default.</para>
-		/// <para>Unchecked—Does not create an attribute index.</para>
+		/// <para>Specifies whether an attribute index will be created for the route identifier field that is written to the Output Event Table parameter value.</para>
+		/// <para>Checked—An attribute index will be created. This is the default.</para>
+		/// <para>Unchecked—An attribute index will not be created.</para>
 		/// <para><see cref="BuildIndexEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object BuildIndex { get; set; } = "true";
+		public object? BuildIndex { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public OverlayRouteEvents SetEnviroment(object configKeyword = null , object scratchWorkspace = null , object workspace = null )
+		public OverlayRouteEvents SetEnviroment(object? configKeyword = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(configKeyword: configKeyword, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -246,14 +246,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum OverlayTypeEnum 
 		{
 			/// <summary>
-			/// <para>Intersect—Writes only overlapping events to the output event table. This is the default.</para>
+			/// <para>Intersect—Only overlapping events will be written to the output event table. This is the default.</para>
 			/// </summary>
 			[GPValue("INTERSECT")]
 			[Description("Intersect")]
 			Intersect,
 
 			/// <summary>
-			/// <para>Union—Writes all events to the output table. Linear events are split at their intersections.</para>
+			/// <para>Union—All events will be written to the output table. Linear events will be split at their intersections.</para>
 			/// </summary>
 			[GPValue("UNION")]
 			[Description("Union")]
@@ -267,14 +267,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum ZeroLengthEventsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Keep zero length line events. This is the default.</para>
+			/// <para>Checked—Zero-length line events will be added. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ZERO")]
 			ZERO,
 
 			/// <summary>
-			/// <para>Unchecked—Do not keep zero length line events.</para>
+			/// <para>Unchecked—Zero-length line events will not be added.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ZERO")]
@@ -288,14 +288,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum InFieldsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Includes all the fields from the input tables in the output table. This is the default.</para>
+			/// <para>Checked—All the fields from the input tables will be included in the output table. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FIELDS")]
 			FIELDS,
 
 			/// <summary>
-			/// <para>Unchecked—Does not include all the fields from the input tables in the output table. Only the ObjectID and the route location fields are kept.</para>
+			/// <para>Unchecked—Not all fields from the input tables will be included in the output table. Only the ObjectID field and the route location fields will be included.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_FIELDS")]
@@ -309,14 +309,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum BuildIndexEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Creates an attribute index. This is the default.</para>
+			/// <para>Checked—An attribute index will be created. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INDEX")]
 			INDEX,
 
 			/// <summary>
-			/// <para>Unchecked—Does not create an attribute index.</para>
+			/// <para>Unchecked—An attribute index will not be created.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_INDEX")]

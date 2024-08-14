@@ -24,7 +24,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </param>
 		/// <param name="InFlightpathFeatures">
 		/// <para>Input Flight Path Features</para>
-		/// <para>The polyline features that define curved approaches to the specified runways.</para>
+		/// <para>The polyline features that define curved approaches to the specified runways, terminating at the runway centerline endpoint.</para>
 		/// </param>
 		/// <param name="TargetOisFeatures">
 		/// <para>Target OIS Features</para>
@@ -43,7 +43,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <param name="RunwayClassification">
 		/// <para>Runway Classification</para>
 		/// <para>The runway classification of the approach surface.</para>
-		/// <para>The option used for the Specification parameter (specification in Python) will determine the available options for the this parameter.</para>
+		/// <para>The Specification parameter value will determine the available options for this parameter.</para>
 		/// </param>
 		public CreateCurvedApproach(object InRunwayFeatures, object InFlightpathFeatures, object TargetOisFeatures, object Specification, object RunwayClassification)
 		{
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRunwayFeatures, InFlightpathFeatures, TargetOisFeatures, Specification, RunwayClassification, OutOisFeatures, CustomJsonFile, ThresholdOffset };
+		public override object[] Parameters => new object[] { InRunwayFeatures, InFlightpathFeatures, TargetOisFeatures, Specification, RunwayClassification, OutOisFeatures!, CustomJsonFile!, ThresholdOffset! };
 
 		/// <summary>
 		/// <para>Input Runway Features</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 
 		/// <summary>
 		/// <para>Input Flight Path Features</para>
-		/// <para>The polyline features that define curved approaches to the specified runways.</para>
+		/// <para>The polyline features that define curved approaches to the specified runways, terminating at the runway centerline endpoint.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Runway Classification</para>
 		/// <para>The runway classification of the approach surface.</para>
-		/// <para>The option used for the Specification parameter (specification in Python) will determine the available options for the this parameter.</para>
+		/// <para>The Specification parameter value will determine the available options for this parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
 		[GPCompositeDomain()]
-		public object OutOisFeatures { get; set; }
+		public object? OutOisFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Custom JSON File</para>
@@ -156,20 +156,20 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object CustomJsonFile { get; set; }
+		public object? CustomJsonFile { get; set; }
 
 		/// <summary>
 		/// <para>Threshold Offset</para>
-		/// <para>The distance offset from the runway end point. The threshold will be applied in the units of the input.</para>
+		/// <para>A positive distance value to offset the generated approach surface outward from the runway end. The offset will be applied in the units of the input.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ThresholdOffset { get; set; } = "0";
+		public object? ThresholdOffset { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateCurvedApproach SetEnviroment(object workspace = null )
+		public CreateCurvedApproach SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

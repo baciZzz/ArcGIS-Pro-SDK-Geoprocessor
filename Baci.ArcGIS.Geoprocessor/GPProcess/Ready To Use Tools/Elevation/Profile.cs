@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputlinefeatures, Profileidfield, Demresolution, Maximumsampledistance, Maximumsampledistanceunits, Outputprofile };
+		public override object[] Parameters => new object[] { Inputlinefeatures, Profileidfield!, Demresolution!, Maximumsampledistance!, Maximumsampledistanceunits!, Outputprofile! };
 
 		/// <summary>
 		/// <para>Input Line Features</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Profileidfield { get; set; }
+		public object? Profileidfield { get; set; }
 
 		/// <summary>
 		/// <para>DEM Resolution</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Demresolution { get; set; }
+		public object? Demresolution { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Sample Distance</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Maximumsampledistance { get; set; }
+		public object? Maximumsampledistance { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Sample Distance Units</para>
@@ -117,14 +117,14 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Maximumsampledistanceunits { get; set; } = "Meters";
+		public object? Maximumsampledistanceunits { get; set; } = "Meters";
 
 		/// <summary>
 		/// <para>Output Profile</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Outputprofile { get; set; }
+		public object? Outputprofile { get; set; }
 
 		#region InnerClass
 

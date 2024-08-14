@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, DomainName, DomainDescription, FieldType, DomainType, SplitPolicy, MergePolicy, OutWorkspace };
+		public override object[] Parameters => new object[] { InWorkspace, DomainName, DomainDescription!, FieldType!, DomainType!, SplitPolicy!, MergePolicy!, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Workspace</para>
@@ -90,23 +90,23 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DomainDescription { get; set; }
+		public object? DomainDescription { get; set; }
 
 		/// <summary>
 		/// <para>Field Type</para>
 		/// <para>Specifies the type of attribute domain that will be created. Attribute domains are rules that describe the accepted values of a field type. Specify a field type that matches the data type of the field to which the attribute domain will be assigned.</para>
-		/// <para>Text—A text type field will be created that contains a string of characters.</para>
-		/// <para>Float (single precision)— A float type field will be created that contains fractional numbers between -3.4E38 and 1.2E38.</para>
-		/// <para>Double (double precision)— A double type field will be created that contains fractional numbers between -2.2E308 and 1.8E308.</para>
-		/// <para>Short (small integer)— A short type field will be created that contains whole numbers between -32,768 and 32,767.</para>
-		/// <para>Long (large integer)— A long type field will be created that contains whole numbers between -2,147,483,648 and 2,147,483,647.</para>
-		/// <para>Date—A date type field will be created that contains a date and/or time.</para>
+		/// <para>Text—The field type will be text. Text fields support a string of characters.</para>
+		/// <para>Float (32-bit floating point)—The field type will be float. Float fields support fractional numbers between -3.4E38 and 1.2E38.</para>
+		/// <para>Double (64-bit floating point)—The field type will be double. Double fields support fractional numbers between -2.2E308 and 1.8E308.</para>
+		/// <para>Short (16-bit integer)—The field type will be short. Short fields support whole numbers between -32,768 and 32,767.</para>
+		/// <para>Long (32-bit integer)—The field type will be long. Long fields support whole numbers between -2,147,483,648 and 2,147,483,647.</para>
+		/// <para>Date—The field type will be date. Date fields support date and time values.</para>
 		/// <para><see cref="FieldTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object FieldType { get; set; } = "SHORT";
+		public object? FieldType { get; set; } = "SHORT";
 
 		/// <summary>
 		/// <para>Domain Type</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DomainType { get; set; } = "CODED";
+		public object? DomainType { get; set; } = "CODED";
 
 		/// <summary>
 		/// <para>Split Policy</para>
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SplitPolicy { get; set; } = "DEFAULT";
+		public object? SplitPolicy { get; set; } = "DEFAULT";
 
 		/// <summary>
 		/// <para>Merge Policy</para>
@@ -144,19 +144,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object MergePolicy { get; set; } = "DEFAULT";
+		public object? MergePolicy { get; set; } = "DEFAULT";
 
 		/// <summary>
 		/// <para>Updated Input Workspace</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutWorkspace { get; set; }
+		public object? OutWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateDomain SetEnviroment(int? autoCommit = null , object workspace = null )
+		public CreateDomain SetEnviroment(int? autoCommit = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;
@@ -170,42 +170,42 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum FieldTypeEnum 
 		{
 			/// <summary>
-			/// <para>Short (small integer)— A short type field will be created that contains whole numbers between -32,768 and 32,767.</para>
+			/// <para>Short (16-bit integer)—The field type will be short. Short fields support whole numbers between -32,768 and 32,767.</para>
 			/// </summary>
 			[GPValue("SHORT")]
-			[Description("Short (small integer)")]
+			[Description("Short (16-bit integer)")]
 			SHORT,
 
 			/// <summary>
-			/// <para>Long (large integer)— A long type field will be created that contains whole numbers between -2,147,483,648 and 2,147,483,647.</para>
+			/// <para>Long (32-bit integer)—The field type will be long. Long fields support whole numbers between -2,147,483,648 and 2,147,483,647.</para>
 			/// </summary>
 			[GPValue("LONG")]
-			[Description("Long (large integer)")]
+			[Description("Long (32-bit integer)")]
 			LONG,
 
 			/// <summary>
-			/// <para>Float (single precision)— A float type field will be created that contains fractional numbers between -3.4E38 and 1.2E38.</para>
+			/// <para>Float (32-bit floating point)—The field type will be float. Float fields support fractional numbers between -3.4E38 and 1.2E38.</para>
 			/// </summary>
 			[GPValue("FLOAT")]
-			[Description("Float (single precision)")]
+			[Description("Float (32-bit floating point)")]
 			FLOAT,
 
 			/// <summary>
-			/// <para>Double (double precision)— A double type field will be created that contains fractional numbers between -2.2E308 and 1.8E308.</para>
+			/// <para>Double (64-bit floating point)—The field type will be double. Double fields support fractional numbers between -2.2E308 and 1.8E308.</para>
 			/// </summary>
 			[GPValue("DOUBLE")]
-			[Description("Double (double precision)")]
+			[Description("Double (64-bit floating point)")]
 			DOUBLE,
 
 			/// <summary>
-			/// <para>Text—A text type field will be created that contains a string of characters.</para>
+			/// <para>Text—The field type will be text. Text fields support a string of characters.</para>
 			/// </summary>
 			[GPValue("TEXT")]
 			[Description("Text")]
 			Text,
 
 			/// <summary>
-			/// <para>Date—A date type field will be created that contains a date and/or time.</para>
+			/// <para>Date—The field type will be date. Date fields support date and time values.</para>
 			/// </summary>
 			[GPValue("DATE")]
 			[Description("Date")]

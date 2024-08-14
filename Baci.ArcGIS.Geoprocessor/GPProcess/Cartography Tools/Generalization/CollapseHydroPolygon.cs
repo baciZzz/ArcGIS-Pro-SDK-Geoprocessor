@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutLineFeatureClass, MergeAdjacentInputPolygons!, ConnectingFeatures!, CollapseWidth!, CollapseWidthTolerance!, MinimumLength!, TaperLengthPercentage!, OutPolyFeatureClass!, InPolyDecodeIdTable!, InLineDecodeIdTable };
+		public override object[] Parameters => new object[] { InFeatures, OutLineFeatureClass, MergeAdjacentInputPolygons!, ConnectingFeatures!, CollapseWidth!, CollapseWidthTolerance!, MinimumLength!, TaperLengthPercentage!, OutPolyFeatureClass!, InPolyDecodeIdTable!, InLineDecodeIdTable! };
 
 		/// <summary>
 		/// <para>Input Hydro Polygon Features</para>

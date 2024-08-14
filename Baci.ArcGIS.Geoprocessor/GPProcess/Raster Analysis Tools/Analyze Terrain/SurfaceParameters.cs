@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputsurfaceraster, Outputrastername, Parametertype!, Localsurfacetype!, Neighborhooddistance!, Useadaptiveneighborhood!, Zunit!, Outputslopemeasurement!, Projectgeodesicazimuths!, Useequatorialaspect!, Outputraster };
+		public override object[] Parameters => new object[] { Inputsurfaceraster, Outputrastername, Parametertype!, Localsurfacetype!, Neighborhooddistance!, Useadaptiveneighborhood!, Zunit!, Outputslopemeasurement!, Projectgeodesicazimuths!, Useequatorialaspect!, Outputraster! };
 
 		/// <summary>
 		/// <para>Input Surface Raster</para>

@@ -68,7 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, EvaluationTypes, Extent, RunAsync, UpdatedWorkspace };
+		public override object[] Parameters => new object[] { InWorkspace, EvaluationTypes, Extent!, RunAsync!, UpdatedWorkspace! };
 
 		/// <summary>
 		/// <para>Input Workspace</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Async</para>
@@ -115,14 +115,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object RunAsync { get; set; } = "true";
+		public object? RunAsync { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Updated Workspace</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object UpdatedWorkspace { get; set; }
+		public object? UpdatedWorkspace { get; set; }
 
 		#region InnerClass
 

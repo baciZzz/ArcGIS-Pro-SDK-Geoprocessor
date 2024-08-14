@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, AngleField, OutFeatures, RotationMethod };
+		public override object[] Parameters => new object[] { InFeatures, AngleField, OutFeatures!, RotationMethod! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatures { get; set; }
+		public object? OutFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Rotation Method</para>
@@ -105,12 +105,12 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object RotationMethod { get; set; } = "GRAPHIC";
+		public object? RotationMethod { get; set; } = "GRAPHIC";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculatePolygonMainAngle SetEnviroment(object cartographicCoordinateSystem = null )
+		public CalculatePolygonMainAngle SetEnviroment(object? cartographicCoordinateSystem = null )
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem);
 			return this;

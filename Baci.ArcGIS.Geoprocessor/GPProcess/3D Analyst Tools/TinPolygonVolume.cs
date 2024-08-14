@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTin, InFeatureClass, InHeightField, ReferencePlane, OutVolumeField, SurfaceAreaField, OutputFeatureClass };
+		public override object[] Parameters => new object[] { InTin, InFeatureClass, InHeightField, ReferencePlane!, OutVolumeField!, SurfaceAreaField!, OutputFeatureClass! };
 
 		/// <summary>
 		/// <para>Input TIN</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ReferencePlane { get; set; } = "BELOW";
+		public object? ReferencePlane { get; set; } = "BELOW";
 
 		/// <summary>
 		/// <para>Volume Field</para>
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object OutVolumeField { get; set; } = "Volume";
+		public object? OutVolumeField { get; set; } = "Volume";
 
 		/// <summary>
 		/// <para>Surface Area Field</para>
@@ -122,19 +122,19 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object SurfaceAreaField { get; set; } = "SArea";
+		public object? SurfaceAreaField { get; set; } = "SArea";
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutputFeatureClass { get; set; }
+		public object? OutputFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TinPolygonVolume SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public TinPolygonVolume SetEnviroment(object? extent = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

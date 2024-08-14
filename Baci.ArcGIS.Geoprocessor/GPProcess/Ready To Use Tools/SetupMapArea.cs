@@ -59,7 +59,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Mapareaitemid, Maplayerstoignore, Tileservices, Featureservices, Packages };
+		public override object[] Parameters => new object[] { Mapareaitemid, Maplayerstoignore!, Tileservices!, Featureservices!, Packages! };
 
 		/// <summary>
 		/// <para>Map Area Item ID</para>
@@ -73,28 +73,28 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Maplayerstoignore { get; set; }
+		public object? Maplayerstoignore { get; set; }
 
 		/// <summary>
 		/// <para>Tile Services</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Tileservices { get; set; }
+		public object? Tileservices { get; set; }
 
 		/// <summary>
 		/// <para>Feature Services</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Featureservices { get; set; }
+		public object? Featureservices { get; set; }
 
 		/// <summary>
 		/// <para>Packages</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object Packages { get; set; }
+		public object? Packages { get; set; }
 
 	}
 }

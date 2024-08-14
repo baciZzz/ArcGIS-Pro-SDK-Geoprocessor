@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetProfile, TargetGroup, CoreTarget, DevelopmentalTarget, ReportFolder, ReportType, SurveyCategories, ReportTitle, ReportFormat, OutputReport };
+		public override object[] Parameters => new object[] { TargetProfile, TargetGroup, CoreTarget, DevelopmentalTarget, ReportFolder, ReportType!, SurveyCategories!, ReportTitle!, ReportFormat!, OutputReport! };
 
 		/// <summary>
 		/// <para>Target Profile</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ReportType { get; set; } = "CUSTOM";
+		public object? ReportType { get; set; } = "CUSTOM";
 
 		/// <summary>
 		/// <para>Survey Categories</para>
@@ -144,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object SurveyCategories { get; set; }
+		public object? SurveyCategories { get; set; }
 
 		/// <summary>
 		/// <para>Report Title</para>
@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Report Options")]
-		public object ReportTitle { get; set; }
+		public object? ReportTitle { get; set; }
 
 		/// <summary>
 		/// <para>Report Output Formats</para>
@@ -162,21 +162,21 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[Category("Report Options")]
-		public object ReportFormat { get; set; }
+		public object? ReportFormat { get; set; }
 
 		/// <summary>
 		/// <para>Output Report</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutputReport { get; set; }
+		public object? OutputReport { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateSurveyReportForTargets SetEnviroment(object workspace = null )
+		public GenerateSurveyReportForTargets SetEnviroment(object? baDataSource = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, workspace: workspace);
 			return this;
 		}
 

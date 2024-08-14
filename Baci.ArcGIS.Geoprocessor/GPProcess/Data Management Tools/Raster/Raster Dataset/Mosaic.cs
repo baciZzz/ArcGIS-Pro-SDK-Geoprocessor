@@ -26,7 +26,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </param>
 		/// <param name="Target">
 		/// <para>Target Raster</para>
-		/// <para>The raster to which the input rasters will be added. This raster dataset must already exist. By default, the target raster is considered the first raster in the list of input raster datasets. You can create an empty raster using the Create Raster Dataset tool.</para>
+		/// <para>The raster to which the input rasters will be added. This must be an existing raster dataset. By default, the target raster is considered the first raster in the list of input raster datasets. You can create an empty raster using the Create Raster Dataset tool.</para>
 		/// </param>
 		public Mosaic(object Inputs, object Target)
 		{
@@ -62,12 +62,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "resamplingMethod" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputs, Target, MosaicType, Colormap, BackgroundValue, NodataValue, OnebitToEightbit, MosaickingTolerance, Output, Matchingmethod };
+		public override object[] Parameters => new object[] { Inputs, Target, MosaicType!, Colormap!, BackgroundValue!, NodataValue!, OnebitToEightbit!, MosaickingTolerance!, Output!, Matchingmethod! };
 
 		/// <summary>
 		/// <para>Input Rasters</para>
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Raster</para>
-		/// <para>The raster to which the input rasters will be added. This raster dataset must already exist. By default, the target raster is considered the first raster in the list of input raster datasets. You can create an empty raster using the Create Raster Dataset tool.</para>
+		/// <para>The raster to which the input rasters will be added. This must be an existing raster dataset. By default, the target raster is considered the first raster in the list of input raster datasets. You can create an empty raster using the Create Raster Dataset tool.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object MosaicType { get; set; } = "LAST";
+		public object? MosaicType { get; set; } = "LAST";
 
 		/// <summary>
 		/// <para>Mosaic Colormap Mode</para>
@@ -116,17 +116,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Colormap { get; set; } = "FIRST";
+		public object? Colormap { get; set; } = "FIRST";
 
 		/// <summary>
 		/// <para>Ignore Background Value</para>
 		/// <para>Use this option to remove the unwanted values created around the raster data. The value specified will be distinguished from other valuable data in the raster dataset. For example, a value of zero along the raster dataset&apos;s borders will be distinguished from zero values in the raster dataset.</para>
 		/// <para>The pixel value specified will be set to NoData in the output raster dataset.</para>
-		/// <para>For file-based rasters and geodatabase rasters, the Ignore Background Value must be set to the same value as NoData for the background value to be ignored. Enterprise geodatabase rasters will work without this extra step.</para>
+		/// <para>For file-based rasters and geodatabase rasters, Ignore Background Value must be set to the same value as NoData for the background value to be ignored. Enterprise geodatabase rasters will work without this extra step.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object BackgroundValue { get; set; }
+		public object? BackgroundValue { get; set; }
 
 		/// <summary>
 		/// <para>NoData Value</para>
@@ -134,19 +134,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object NodataValue { get; set; }
+		public object? NodataValue { get; set; }
 
 		/// <summary>
 		/// <para>Convert 1 bit data to 8 bit</para>
-		/// <para>Choose whether the input 1-bit raster dataset will be converted to an 8-bit raster dataset. In this conversion, the value 1 in the input raster dataset will be changed to 255 in the output raster dataset. This is useful when importing a 1-bit raster dataset to a geodatabase. One-bit raster datasets have 8-bit pyramid layers when stored in a file system, but in a geodatabase, 1-bit raster datasets can only have 1-bit pyramid layers, which makes the display unpleasant. By converting the data to 8 bit in a geodatabase, the pyramid layers are built as 8 bit instead of 1 bit, resulting in a proper raster dataset in the display.</para>
-		/// <para>Unchecked—No conversion will be done. This is the default.</para>
+		/// <para>Specifies whether the input 1-bit raster dataset will be converted to an 8-bit raster dataset. In this conversion, the value 1 in the input raster dataset will be changed to 255 in the output raster dataset. This is useful when importing a 1-bit raster dataset to a geodatabase. One-bit raster datasets have 8-bit pyramid layers when stored in a file system, but in a geodatabase, 1-bit raster datasets can only have 1-bit pyramid layers, which results in a lower-quality display. By converting the data to 8 bit in a geodatabase, the pyramid layers are built as 8 bit instead of 1 bit, resulting in a proper raster dataset in the display.</para>
+		/// <para>Unchecked—No conversion will occur. This is the default.</para>
 		/// <para>Checked—The input raster will be converted.</para>
 		/// <para><see cref="OnebitToEightbitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object OnebitToEightbit { get; set; } = "false";
+		public object? OnebitToEightbit { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Mosaicking Tolerance</para>
@@ -157,19 +157,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MosaickingTolerance { get; set; } = "0";
+		public object? MosaickingTolerance { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Updated Target Raster</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DERasterDataset()]
-		public object Output { get; set; }
+		public object? Output { get; set; }
 
 		/// <summary>
 		/// <para>Color Matching Method</para>
-		/// <para>Specifies the color matching method to be applied to the rasters.</para>
-		/// <para>None—No color matching operation will be used when mosaicking the raster datasets.</para>
+		/// <para>Specifies the color matching method that will be applied to the rasters.</para>
+		/// <para>None—No color matching method will be applied when mosaicking the raster datasets.</para>
 		/// <para>Match statistics—Descriptive statistics from the overlapping areas will be matched; the transformation will then be applied to the entire target dataset.</para>
 		/// <para>Match histogram—The histogram from the reference overlap area will be matched to the source overlap area; the transformation will then be applied to the entire target dataset.</para>
 		/// <para>Linear correlation—Overlapping pixels will be matched and the rest of the source dataset will be interpolated; pixels without a one-to-one relationship will use a weighted average.</para>
@@ -178,7 +178,16 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Matchingmethod { get; set; } = "NONE";
+		public object? Matchingmethod { get; set; } = "NONE";
+
+		/// <summary>
+		/// <para>Only Set The Valid Environment For This Tool</para>
+		/// </summary>
+		public Mosaic SetEnviroment(object? parallelProcessingFactor = null , object? resamplingMethod = null )
+		{
+			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, resamplingMethod: resamplingMethod);
+			return this;
+		}
 
 		#region InnerClass
 
@@ -286,7 +295,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			OneBitTo8Bit,
 
 			/// <summary>
-			/// <para>Unchecked—No conversion will be done. This is the default.</para>
+			/// <para>Unchecked—No conversion will occur. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]
@@ -300,7 +309,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MatchingmethodEnum 
 		{
 			/// <summary>
-			/// <para>None—No color matching operation will be used when mosaicking the raster datasets.</para>
+			/// <para>None—No color matching method will be applied when mosaicking the raster datasets.</para>
 			/// </summary>
 			[GPValue("NONE")]
 			[Description("None")]

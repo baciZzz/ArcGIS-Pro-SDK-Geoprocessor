@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="InParcelFabric">
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The parcel fabric for which to parcels will be built. The parcel fabric can be from a file geodatabase or a feature service.</para>
+		/// <para>The parcel fabric for which to parcels will be built. The parcel fabric can be from a file, enterprise, or mobile geodatabase, or from a a feature service.</para>
 		/// </param>
 		public BuildParcelFabric(object InParcelFabric)
 		{
@@ -61,11 +61,11 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InParcelFabric, Extent, UpdatedParcelFabric, RecordName };
+		public override object[] Parameters => new object[] { InParcelFabric, Extent!, UpdatedParcelFabric!, RecordName! };
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The parcel fabric for which to parcels will be built. The parcel fabric can be from a file geodatabase or a feature service.</para>
+		/// <para>The parcel fabric for which to parcels will be built. The parcel fabric can be from a file, enterprise, or mobile geodatabase, or from a a feature service.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPParcelLayer()]
@@ -83,14 +83,14 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Updated Parcel Fabric</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEParcelDataset()]
-		public object UpdatedParcelFabric { get; set; }
+		public object? UpdatedParcelFabric { get; set; }
 
 		/// <summary>
 		/// <para>Record Name</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object RecordName { get; set; }
+		public object? RecordName { get; set; }
 
 	}
 }

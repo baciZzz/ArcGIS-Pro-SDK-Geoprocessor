@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Create LRS</para>
-	/// <para>Creates a linear referencing system (LRS) and minimum schema items in a specified workspace.</para>
+	/// <para>Creates an ArcGIS Location Referencing linear referencing system (LRS) and minimum schema items in a specified workspace.</para>
 	/// </summary>
 	public class CreateLRS : AbstractGPProcess
 	{
@@ -28,23 +28,23 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </param>
 		/// <param name="CenterlineFeatureClassName">
 		/// <para>Centerline Feature Class Name</para>
-		/// <para>Name of the output centerline feature class.</para>
+		/// <para>The name of the output centerline feature class.</para>
 		/// </param>
 		/// <param name="CalibrationPointFeatureClassName">
 		/// <para>Calibration Point Feature Class Name</para>
-		/// <para>Name of the output calibration point feature class.</para>
+		/// <para>The name of the output calibration point feature class.</para>
 		/// </param>
 		/// <param name="RedlineFeatureClassName">
 		/// <para>Redline Feature Class Name</para>
-		/// <para>Name of the output redline feature class.</para>
+		/// <para>The name of the output redline feature class.</para>
 		/// </param>
 		/// <param name="CenterlineSequenceTableName">
 		/// <para>Centerline Sequence Table Name</para>
-		/// <para>Name of the output centerline sequence table.</para>
+		/// <para>The name of the output centerline sequence table.</para>
 		/// </param>
 		/// <param name="SpatialReference">
 		/// <para>Spatial Reference</para>
-		/// <para>The spatial reference for the output feature classes. When executing from a Python script, you can use the Well Known ID (WKID) for the spatial reference.</para>
+		/// <para>The spatial reference for the output feature classes. When using a Python script, you can use the Well Known ID (WKID) for the spatial reference.</para>
 		/// </param>
 		public CreateLRS(object InWorkspace, object LrsName, object CenterlineFeatureClassName, object CalibrationPointFeatureClassName, object RedlineFeatureClassName, object CenterlineSequenceTableName, object SpatialReference)
 		{
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, LrsName, CenterlineFeatureClassName, CalibrationPointFeatureClassName, RedlineFeatureClassName, CenterlineSequenceTableName, SpatialReference, XyTolerance, ZTolerance, XyResolution, ZResolution, OutWorkspace, OutCenterlineFeatureClass, OutCalibrationPointFeatureClass, OutRedlineFeatureClass, OutCenterlineSequenceTable };
+		public override object[] Parameters => new object[] { InWorkspace, LrsName, CenterlineFeatureClassName, CalibrationPointFeatureClassName, RedlineFeatureClassName, CenterlineSequenceTableName, SpatialReference, XyTolerance!, ZTolerance!, XyResolution!, ZResolution!, OutWorkspace!, OutCenterlineFeatureClass!, OutCalibrationPointFeatureClass!, OutRedlineFeatureClass!, OutCenterlineSequenceTable! };
 
 		/// <summary>
 		/// <para>Input Location</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Centerline Feature Class Name</para>
-		/// <para>Name of the output centerline feature class.</para>
+		/// <para>The name of the output centerline feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Calibration Point Feature Class Name</para>
-		/// <para>Name of the output calibration point feature class.</para>
+		/// <para>The name of the output calibration point feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Redline Feature Class Name</para>
-		/// <para>Name of the output redline feature class.</para>
+		/// <para>The name of the output redline feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Centerline Sequence Table Name</para>
-		/// <para>Name of the output centerline sequence table.</para>
+		/// <para>The name of the output centerline sequence table.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Spatial Reference</para>
-		/// <para>The spatial reference for the output feature classes. When executing from a Python script, you can use the Well Known ID (WKID) for the spatial reference.</para>
+		/// <para>The spatial reference for the output feature classes. When using a Python script, you can use the Well Known ID (WKID) for the spatial reference.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSpatialReference()]
@@ -150,11 +150,11 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>XY Tolerance</para>
-		/// <para>The xy-tolerance of the output feature classes.</para>
+		/// <para>The x,y-tolerance of the output feature classes.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object XyTolerance { get; set; }
+		public object? XyTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Z Tolerance</para>
@@ -162,15 +162,15 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object ZTolerance { get; set; }
+		public object? ZTolerance { get; set; }
 
 		/// <summary>
 		/// <para>XY Resolution</para>
-		/// <para>The xy-resolution of the output feature classes.</para>
+		/// <para>The x,y-resolution of the output feature classes.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object XyResolution { get; set; }
+		public object? XyResolution { get; set; }
 
 		/// <summary>
 		/// <para>Z Resolution</para>
@@ -178,47 +178,47 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object ZResolution { get; set; }
+		public object? ZResolution { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Location</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutWorkspace { get; set; }
+		public object? OutWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Output Centerline Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutCenterlineFeatureClass { get; set; }
+		public object? OutCenterlineFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Output Calibration Point Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutCalibrationPointFeatureClass { get; set; }
+		public object? OutCalibrationPointFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Output Redline Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutRedlineFeatureClass { get; set; }
+		public object? OutRedlineFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Output Centerline Sequence Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETable()]
-		public object OutCenterlineSequenceTable { get; set; }
+		public object? OutCenterlineSequenceTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateLRS SetEnviroment(object workspace = null )
+		public CreateLRS SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

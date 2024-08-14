@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Unsplit Line</para>
-	/// <para>Merges lines that have coincident endpoints and, optionally, common attribute values.</para>
+	/// <para>Aggregates line features that have coincident endpoints and, optionally, common attribute values.</para>
 	/// </summary>
 	public class UnsplitLine : AbstractGPProcess
 	{
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, DissolveField, StatisticsFields };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, DissolveField!, StatisticsFields!, ConcatenationSeparator! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -85,16 +85,16 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public object OutFeatureClass { get; set; }
 
 		/// <summary>
-		/// <para>Dissolve Field(s)</para>
-		/// <para>The field or fields on which to aggregate features.</para>
+		/// <para>Dissolve Fields</para>
+		/// <para>The field or fields on which features will be aggregated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
-		public object DissolveField { get; set; }
+		public object? DissolveField { get; set; }
 
 		/// <summary>
-		/// <para>Statistics Field(s)</para>
+		/// <para>Statistics Fields</para>
 		/// <para>Specifies the numeric field or fields containing the attribute values that will be used to calculate the specified statistic. Multiple statistic and field combinations can be specified. Null values are excluded from all statistical calculations.</para>
 		/// <para>Text attribute fields can be summarized using first and last statistics. Numeric attribute fields can be summarized using any statistic.</para>
 		/// <para>Available statistics types are as follows:</para>
@@ -110,16 +110,25 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Median—The median for all records of the specified field will be calculated.</para>
 		/// <para>Variance—The variance for all records of the specified field will be calculated.</para>
 		/// <para>Unique—The number of unique values of the specified field will be counted.</para>
+		/// <para>Concatenate—The values for the specified field will be concatenated. The values can be separated using the Concatenation Separator parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object StatisticsFields { get; set; }
+		public object? StatisticsFields { get; set; }
+
+		/// <summary>
+		/// <para>Concatenation Separator</para>
+		/// <para>A character or characters that will be used to concatenate values when the Concatenation option is used for the Statistics Fields parameter.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		public object? ConcatenationSeparator { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public UnsplitLine SetEnviroment(object MDomain = null , object MResolution = null , object MTolerance = null , object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , int? autoCommit = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , bool? qualifiedFieldNames = null , object scratchWorkspace = null , object workspace = null )
+		public UnsplitLine SetEnviroment(object? MDomain = null , double? MResolution = null , double? MTolerance = null , object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , int? autoCommit = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , bool? qualifiedFieldNames = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

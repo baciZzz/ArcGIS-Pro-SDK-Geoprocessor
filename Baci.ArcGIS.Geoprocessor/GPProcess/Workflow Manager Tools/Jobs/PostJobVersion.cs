@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputJobid, InputDatabasepath, OutputStatus };
+		public override object[] Parameters => new object[] { InputJobid, InputDatabasepath!, OutputStatus! };
 
 		/// <summary>
 		/// <para>Input Job ID</para>
@@ -77,14 +77,14 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object InputDatabasepath { get; set; }
+		public object? InputDatabasepath { get; set; }
 
 		/// <summary>
 		/// <para>Post Job Version Succeeded</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLong()]
-		public object OutputStatus { get; set; }
+		public object? OutputStatus { get; set; }
 
 	}
 }

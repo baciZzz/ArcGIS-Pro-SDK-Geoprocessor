@@ -24,7 +24,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </param>
 		/// <param name="SdeUserPassword">
 		/// <para>SDE User Password</para>
-		/// <para>The password for the sde database user. If the sde user does not exist in the database, it will be created and will use the password you provide. The password policy of the underlying database will be enforced. If the sde user already exists in the database or database cluster, this password must match the existing password.</para>
+		/// <para>The password for the sde database user. If the sde user does not exist in the database, it will be created and will use the password you provide. The password policy of the underlying database will be enforced. If the sde user does exist in the database or database cluster, this password must match the existing password.</para>
 		/// </param>
 		public CreateSpatialType(object InputDatabase, object SdeUserPassword)
 		{
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabase, SdeUserPassword, TablespaceName, StShapeLibraryPath, OutWorkspace };
+		public override object[] Parameters => new object[] { InputDatabase, SdeUserPassword, TablespaceName!, StShapeLibraryPath!, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>SDE User Password</para>
-		/// <para>The password for the sde database user. If the sde user does not exist in the database, it will be created and will use the password you provide. The password policy of the underlying database will be enforced. If the sde user already exists in the database or database cluster, this password must match the existing password.</para>
+		/// <para>The password for the sde database user. If the sde user does not exist in the database, it will be created and will use the password you provide. The password policy of the underlying database will be enforced. If the sde user does exist in the database or database cluster, this password must match the existing password.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPEncryptedString()]
@@ -86,27 +86,27 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Tablespace Name</para>
-		/// <para>For Oracle, you can provide the name for a tablespace to be set as the default tablespace for the sde user. If the tablespace does not already exist, it will be created in the Oracle default storage location. If a tablespace with the specified name already exists, it will be set as the sde user's default.</para>
+		/// <para>The name of a tablespace that will be set as the default tablespace for the sde user in Oracle. If the tablespace name does not exist, it will be created in the Oracle default storage location. If a tablespace with the specified name does exist, it will be set as the sde user's default.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object TablespaceName { get; set; }
+		public object? TablespaceName { get; set; }
 
 		/// <summary>
 		/// <para>ST_Geometry Shape Library Path</para>
-		/// <para>For Oracle, provide the location on the Oracle server where you placed the st_shape library.</para>
+		/// <para>The location on the Oracle server where the st_shape library resides.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object StShapeLibraryPath { get; set; }
+		public object? StShapeLibraryPath { get; set; }
 
 		/// <summary>
 		/// <para>Output Workspace</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutWorkspace { get; set; }
+		public object? OutWorkspace { get; set; }
 
 	}
 }

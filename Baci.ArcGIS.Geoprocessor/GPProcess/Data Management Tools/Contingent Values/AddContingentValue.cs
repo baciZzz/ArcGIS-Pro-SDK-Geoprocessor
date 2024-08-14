@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetTable, FieldGroupName, Values, Subtype, RetireValue, OutTable };
+		public override object[] Parameters => new object[] { TargetTable, FieldGroupName, Values, Subtype!, RetireValue!, OutTable! };
 
 		/// <summary>
 		/// <para>Target Table</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Subtype { get; set; }
+		public object? Subtype { get; set; }
 
 		/// <summary>
 		/// <para>Retire Value</para>
@@ -130,19 +130,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object RetireValue { get; set; } = "false";
+		public object? RetireValue { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddContingentValue SetEnviroment(object workspace = null )
+		public AddContingentValue SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

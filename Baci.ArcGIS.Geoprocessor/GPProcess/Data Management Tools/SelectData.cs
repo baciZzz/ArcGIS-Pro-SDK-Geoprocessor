@@ -61,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataelement, OutDataelement, OutDataelementDerived };
+		public override object[] Parameters => new object[] { InDataelement, OutDataelement!, OutDataelementDerived! };
 
 		/// <summary>
 		/// <para>Input Data Element</para>
@@ -77,14 +77,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object OutDataelement { get; set; }
+		public object? OutDataelement { get; set; }
 
 		/// <summary>
 		/// <para>Child  Data Element</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutDataelementDerived { get; set; }
+		public object? OutDataelementDerived { get; set; }
 
 	}
 }

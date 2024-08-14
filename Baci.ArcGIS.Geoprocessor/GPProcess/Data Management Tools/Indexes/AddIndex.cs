@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Fields, IndexName, Unique, Ascending, OutTable };
+		public override object[] Parameters => new object[] { InTable, Fields, IndexName!, Unique!, Ascending!, OutTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object IndexName { get; set; }
+		public object? IndexName { get; set; }
 
 		/// <summary>
 		/// <para>Unique</para>
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Unique { get; set; } = "false";
+		public object? Unique { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Ascending</para>
@@ -116,19 +116,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Ascending { get; set; } = "false";
+		public object? Ascending { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Input Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddIndex SetEnviroment(object workspace = null )
+		public AddIndex SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

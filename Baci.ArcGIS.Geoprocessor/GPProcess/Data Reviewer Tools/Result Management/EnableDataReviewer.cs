@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Workspace, SpatialReference, RegisterAsVersioned, ConfigKeyword, OutReviewerWorkspace };
+		public override object[] Parameters => new object[] { Workspace, SpatialReference!, RegisterAsVersioned!, ConfigKeyword!, OutReviewerWorkspace! };
 
 		/// <summary>
 		/// <para>Workspace</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
-		public object SpatialReference { get; set; }
+		public object? SpatialReference { get; set; }
 
 		/// <summary>
 		/// <para>Register as Versioned</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object RegisterAsVersioned { get; set; }
+		public object? RegisterAsVersioned { get; set; }
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
@@ -97,19 +97,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ConfigKeyword { get; set; }
+		public object? ConfigKeyword { get; set; }
 
 		/// <summary>
 		/// <para>Output Reviewer Workspace</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutReviewerWorkspace { get; set; }
+		public object? OutReviewerWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EnableDataReviewer SetEnviroment(object configKeyword = null , object workspace = null )
+		public EnableDataReviewer SetEnviroment(object? configKeyword = null , object? workspace = null )
 		{
 			base.SetEnv(configKeyword: configKeyword, workspace: workspace);
 			return this;

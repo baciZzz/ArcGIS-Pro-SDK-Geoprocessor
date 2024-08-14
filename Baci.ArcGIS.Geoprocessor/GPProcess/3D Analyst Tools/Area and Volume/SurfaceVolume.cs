@@ -55,12 +55,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurface, OutTextFile, ReferencePlane, BaseZ, ZFactor, PyramidLevelResolution };
+		public override object[] Parameters => new object[] { InSurface, OutTextFile!, ReferencePlane!, BaseZ!, ZFactor!, PyramidLevelResolution! };
 
 		/// <summary>
 		/// <para>Input Surface</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
-		public object OutTextFile { get; set; }
+		public object? OutTextFile { get; set; }
 
 		/// <summary>
 		/// <para>Reference Plane</para>
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ReferencePlane { get; set; } = "ABOVE";
+		public object? ReferencePlane { get; set; } = "ABOVE";
 
 		/// <summary>
 		/// <para>Plane Height</para>
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object BaseZ { get; set; }
+		public object? BaseZ { get; set; }
 
 		/// <summary>
 		/// <para>Z Factor</para>
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ZFactor { get; set; } = "1";
+		public object? ZFactor { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Pyramid Level Resolution</para>
@@ -112,14 +112,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object PyramidLevelResolution { get; set; } = "0";
+		public object? PyramidLevelResolution { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SurfaceVolume SetEnviroment(object extent = null , object workspace = null )
+		public SurfaceVolume SetEnviroment(object? workspace = null )
 		{
-			base.SetEnv(extent: extent, workspace: workspace);
+			base.SetEnv(workspace: workspace);
 			return this;
 		}
 

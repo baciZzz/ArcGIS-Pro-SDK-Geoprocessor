@@ -20,8 +20,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputRasterDatasets">
 		/// <para>Input Raster Datasets</para>
-		/// <para>The raster datasets for which you want to build raster pyramids.</para>
-		/// <para>Each input should have more than 1024 rows and 1024 columns.</para>
+		/// <para>The raster datasets for which raster pyramids will be built.</para>
+		/// <para>Each input should have more than 1,024 rows and 1,024 columns.</para>
 		/// </param>
 		public BatchBuildPyramids(object InputRasterDatasets)
 		{
@@ -61,12 +61,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputRasterDatasets, PyramidLevels, SkipFirstLevel, PyramidResamplingTechnique, PyramidCompressionType, CompressionQuality, SkipExisting, BatchBuildPyramidsSucceeded };
+		public override object[] Parameters => new object[] { InputRasterDatasets, PyramidLevels!, SkipFirstLevel!, PyramidResamplingTechnique!, PyramidCompressionType!, CompressionQuality!, SkipExisting!, BatchBuildPyramidsSucceeded! };
 
 		/// <summary>
 		/// <para>Input Raster Datasets</para>
-		/// <para>The raster datasets for which you want to build raster pyramids.</para>
-		/// <para>Each input should have more than 1024 rows and 1024 columns.</para>
+		/// <para>The raster datasets for which raster pyramids will be built.</para>
+		/// <para>Each input should have more than 1,024 rows and 1,024 columns.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -74,82 +74,82 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Pyramid levels</para>
-		/// <para>Choose the number of reduced-resolution dataset layers that will be built. The default value is -1, which will build full pyramids. A value of 0 will result in no pyramid levels.</para>
+		/// <para>The number of reduced-resolution dataset layers that will be built. The default value is -1, which will build full pyramids. A value of 0 will result in no pyramid levels.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object PyramidLevels { get; set; } = "-1";
+		public object? PyramidLevels { get; set; } = "-1";
 
 		/// <summary>
 		/// <para>Skip first level</para>
-		/// <para>Choose whether to skip the first pyramid level. Skipping the first level will take up slightly less disk space, but it will slow down performance at these scales.</para>
-		/// <para>Unchecked—The first pyramid level will be built. This is the default.</para>
-		/// <para>Checked—The first pyramid level will not be built.</para>
+		/// <para>Specifies whether the first pyramid level will be skipped. Skipping the first level will take up slightly less disk space, but it will slow down performance at these scales.</para>
+		/// <para>Unchecked—The first pyramid level will not be skipped; it will be built. This is the default.</para>
+		/// <para>Checked—The first pyramid level will be skipped; it will not be built.</para>
 		/// <para><see cref="SkipFirstLevelEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SkipFirstLevel { get; set; } = "false";
+		public object? SkipFirstLevel { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Pyramid resampling technique</para>
-		/// <para>The resampling technique used to build your pyramids.</para>
-		/// <para>Nearest neighbor—The nearest neighbor resampling method uses the value of the closest cell to assign a value to the output cell when resampling. This is the default.</para>
-		/// <para>Bilinear—The bilinear interpolation resampling method determines the new value of a cell based on a weighted distance average of the four nearest input cell centers.</para>
-		/// <para>Cubic—The Cubic convolution resampling method determines the new value of a cell based on fitting a smooth curve through the 16 nearest input cell centers.</para>
+		/// <para>Specifies the resampling technique that will be used to build the pyramids.</para>
+		/// <para>Nearest neighbor—The new value of a cell will be based on the closest cell when resampling. This is the default.</para>
+		/// <para>Bilinear—The new value of a cell will be based on a weighted distance average of the four nearest input cell centers.</para>
+		/// <para>Cubic—The new value of a cell will be determined by fitting a smooth curve through the 16 nearest input cell centers.</para>
 		/// <para><see cref="PyramidResamplingTechniqueEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object PyramidResamplingTechnique { get; set; } = "NEAREST";
+		public object? PyramidResamplingTechnique { get; set; } = "NEAREST";
 
 		/// <summary>
 		/// <para>Pyramid compression type</para>
-		/// <para>The compression type to use when building the raster pyramids.</para>
-		/// <para>Default—If the source data is compressed using a wavelet compression, it will build pyramids with the JPEG compression type; otherwise, LZ77 will be used. This is the default compression method.</para>
+		/// <para>Specifies the compression type that will be used when building the pyramids.</para>
+		/// <para>Default—If the source data is compressed using a wavelet compression, pyramids will be built with the JPEG compression type; otherwise, LZ77 will be used. This is the default.</para>
 		/// <para>LZ77 Compression—The LZ77 compression algorithm will be used to build the pyramids. LZ77 can be used for any data type.</para>
-		/// <para>JPEG—The JPEG compression algorithm to build pyramids. Only data that adheres to the JPEG compression specification can use this compression type. If JPEG is chosen, you can then set the compression quality.</para>
+		/// <para>JPEG—The JPEG compression algorithm will be used to build the pyramids. Only data that adheres to the JPEG compression specification can use this compression type. If JPEG is chosen, you can then set the compression quality.</para>
 		/// <para>None—No compression will be used when building pyramids.</para>
 		/// <para><see cref="PyramidCompressionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object PyramidCompressionType { get; set; } = "DEFAULT";
+		public object? PyramidCompressionType { get; set; } = "DEFAULT";
 
 		/// <summary>
 		/// <para>Compression quality</para>
-		/// <para>The compression quality to use when pyramids are built with the JPEG compression method. The value must be between 0 and 100. The values closer to 100 will produce a higher-quality image, but the compression ratio will be lower.</para>
+		/// <para>The compression quality that will be used when pyramids are built with the JPEG compression method. The value must be between 0 and 100. The values closer to 100 will produce a higher-quality image, but the compression ratio will be lower.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object CompressionQuality { get; set; } = "75";
+		public object? CompressionQuality { get; set; } = "75";
 
 		/// <summary>
 		/// <para>Skip Existing</para>
-		/// <para>Specify whether to build pyramids only where they are missing or regenerate them even if they exist.</para>
-		/// <para>Unchecked—Pyramids will be built even if they already exist. Therefore, existing pyramids will be overwritten. This is the default.</para>
-		/// <para>Checked—Pyramids will only be built if they do not exist.</para>
+		/// <para>Specifies whether pyramids will be built only if they do not exist or built even if they exist.</para>
+		/// <para>Unchecked—Pyramids will be built even if they already exist; existing pyramids will be overwritten. This is the default.</para>
+		/// <para>Checked—Pyramids will only be built if they do not exist; existing pyramids will be skipped.</para>
 		/// <para><see cref="SkipExistingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SkipExisting { get; set; }
+		public object? SkipExisting { get; set; }
 
 		/// <summary>
 		/// <para>Batch Build Pyramids Succeeded</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
-		public object BatchBuildPyramidsSucceeded { get; set; } = "true";
+		public object? BatchBuildPyramidsSucceeded { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BatchBuildPyramids SetEnviroment(object pyramid = null , object scratchWorkspace = null , object workspace = null )
+		public BatchBuildPyramids SetEnviroment(object? pyramid = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(pyramid: pyramid, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -163,14 +163,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SkipFirstLevelEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The first pyramid level will not be built.</para>
+			/// <para>Checked—The first pyramid level will be skipped; it will not be built.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SKIP_FIRST")]
 			SKIP_FIRST,
 
 			/// <summary>
-			/// <para>Unchecked—The first pyramid level will be built. This is the default.</para>
+			/// <para>Unchecked—The first pyramid level will not be skipped; it will be built. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]
@@ -184,21 +184,21 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum PyramidResamplingTechniqueEnum 
 		{
 			/// <summary>
-			/// <para>Nearest neighbor—The nearest neighbor resampling method uses the value of the closest cell to assign a value to the output cell when resampling. This is the default.</para>
+			/// <para>Nearest neighbor—The new value of a cell will be based on the closest cell when resampling. This is the default.</para>
 			/// </summary>
 			[GPValue("NEAREST")]
 			[Description("Nearest neighbor")]
 			Nearest_neighbor,
 
 			/// <summary>
-			/// <para>Bilinear—The bilinear interpolation resampling method determines the new value of a cell based on a weighted distance average of the four nearest input cell centers.</para>
+			/// <para>Bilinear—The new value of a cell will be based on a weighted distance average of the four nearest input cell centers.</para>
 			/// </summary>
 			[GPValue("BILINEAR")]
 			[Description("Bilinear")]
 			Bilinear,
 
 			/// <summary>
-			/// <para>Cubic—The Cubic convolution resampling method determines the new value of a cell based on fitting a smooth curve through the 16 nearest input cell centers.</para>
+			/// <para>Cubic—The new value of a cell will be determined by fitting a smooth curve through the 16 nearest input cell centers.</para>
 			/// </summary>
 			[GPValue("CUBIC")]
 			[Description("Cubic")]
@@ -212,14 +212,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum PyramidCompressionTypeEnum 
 		{
 			/// <summary>
-			/// <para>Default—If the source data is compressed using a wavelet compression, it will build pyramids with the JPEG compression type; otherwise, LZ77 will be used. This is the default compression method.</para>
+			/// <para>Default—If the source data is compressed using a wavelet compression, pyramids will be built with the JPEG compression type; otherwise, LZ77 will be used. This is the default.</para>
 			/// </summary>
 			[GPValue("DEFAULT")]
 			[Description("Default")]
 			Default,
 
 			/// <summary>
-			/// <para>JPEG—The JPEG compression algorithm to build pyramids. Only data that adheres to the JPEG compression specification can use this compression type. If JPEG is chosen, you can then set the compression quality.</para>
+			/// <para>JPEG—The JPEG compression algorithm will be used to build the pyramids. Only data that adheres to the JPEG compression specification can use this compression type. If JPEG is chosen, you can then set the compression quality.</para>
 			/// </summary>
 			[GPValue("JPEG")]
 			[Description("JPEG")]
@@ -247,14 +247,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SkipExistingEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Pyramids will only be built if they do not exist.</para>
+			/// <para>Checked—Pyramids will only be built if they do not exist; existing pyramids will be skipped.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SKIP_EXISTING")]
 			SKIP_EXISTING,
 
 			/// <summary>
-			/// <para>Unchecked—Pyramids will be built even if they already exist. Therefore, existing pyramids will be overwritten. This is the default.</para>
+			/// <para>Unchecked—Pyramids will be built even if they already exist; existing pyramids will be overwritten. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("OVERWRITE")]

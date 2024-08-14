@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDiagrams, TargetOwner, SourceOwner, DiagramNames, OutDiagrams };
+		public override object[] Parameters => new object[] { InDiagrams, TargetOwner, SourceOwner!, DiagramNames!, OutDiagrams! };
 
 		/// <summary>
 		/// <para>Input Network or Network Diagram Layer</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object SourceOwner { get; set; }
+		public object? SourceOwner { get; set; }
 
 		/// <summary>
 		/// <para>Diagram Names</para>
@@ -98,14 +98,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object DiagramNames { get; set; }
+		public object? DiagramNames { get; set; }
 
 		/// <summary>
 		/// <para>Output Network or Network Diagram Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutDiagrams { get; set; }
+		public object? OutDiagrams { get; set; }
 
 	}
 }

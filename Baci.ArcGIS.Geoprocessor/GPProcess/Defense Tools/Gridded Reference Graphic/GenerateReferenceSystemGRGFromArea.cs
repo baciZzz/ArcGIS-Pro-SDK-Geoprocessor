@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputFeatureClass, GridReferenceSystem, GridSquareSize, LargeGridHandling };
+		public override object[] Parameters => new object[] { InFeatures, OutputFeatureClass, GridReferenceSystem, GridSquareSize, LargeGridHandling! };
 
 		/// <summary>
 		/// <para>Input Feature</para>
@@ -142,12 +142,12 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LargeGridHandling { get; set; } = "NO_LARGE_GRIDS";
+		public object? LargeGridHandling { get; set; } = "NO_LARGE_GRIDS";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateReferenceSystemGRGFromArea SetEnviroment(object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateReferenceSystemGRGFromArea SetEnviroment(object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

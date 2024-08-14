@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InVrpLayer, NumberOfRoutes, RouteNamePrefix, StartDepotName, EndDepotName, EarliestStartTime, LatestStartTime, MaxOrderCount, Capacities, RouteConstraints, Costs, AdditionalRouteTime, AppendToExistingRoutes, OutVrpLayer };
+		public override object[] Parameters => new object[] { InVrpLayer, NumberOfRoutes, RouteNamePrefix, StartDepotName!, EndDepotName!, EarliestStartTime!, LatestStartTime!, MaxOrderCount!, Capacities!, RouteConstraints!, Costs!, AdditionalRouteTime!, AppendToExistingRoutes!, OutVrpLayer! };
 
 		/// <summary>
 		/// <para>Input Vehicle Routing Problem Layer</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object StartDepotName { get; set; }
+		public object? StartDepotName { get; set; }
 
 		/// <summary>
 		/// <para>End Depot Name</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object EndDepotName { get; set; }
+		public object? EndDepotName { get; set; }
 
 		/// <summary>
 		/// <para>Earliest Start Time</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object EarliestStartTime { get; set; } = "8:00:00 AM";
+		public object? EarliestStartTime { get; set; } = "8:00:00 AM";
 
 		/// <summary>
 		/// <para>Latest Start Time</para>
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object LatestStartTime { get; set; } = "10:00:00 AM";
+		public object? LatestStartTime { get; set; } = "10:00:00 AM";
 
 		/// <summary>
 		/// <para>Max Order Count</para>
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MaxOrderCount { get; set; } = "30";
+		public object? MaxOrderCount { get; set; } = "30";
 
 		/// <summary>
 		/// <para>Capacities</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object Capacities { get; set; }
+		public object? Capacities { get; set; }
 
 		/// <summary>
 		/// <para>Route Constraints</para>
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object RouteConstraints { get; set; }
+		public object? RouteConstraints { get; set; }
 
 		/// <summary>
 		/// <para>Costs</para>
@@ -167,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object Costs { get; set; }
+		public object? Costs { get; set; }
 
 		/// <summary>
 		/// <para>Additional Route Time</para>
@@ -178,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object AdditionalRouteTime { get; set; }
+		public object? AdditionalRouteTime { get; set; }
 
 		/// <summary>
 		/// <para>Append To Existing Routes</para>
@@ -190,14 +190,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AppendToExistingRoutes { get; set; } = "true";
+		public object? AppendToExistingRoutes { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output Vehicle Routing Problem Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPNALayer()]
-		public object OutVrpLayer { get; set; }
+		public object? OutVrpLayer { get; set; }
 
 		#region InnerClass
 

@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { FeatureDataset, OutName, SourceFeatureClassNames, ElevationModel, OutNetworkDataset };
+		public override object[] Parameters => new object[] { FeatureDataset, OutName, SourceFeatureClassNames, ElevationModel, OutNetworkDataset! };
 
 		/// <summary>
 		/// <para>Target Feature Dataset</para>
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DENetworkDataset()]
-		public object OutNetworkDataset { get; set; }
+		public object? OutNetworkDataset { get; set; }
 
 		#region InnerClass
 

@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Generate Aviation Cartographic Features</para>
-	/// <para>Creates cartographic copies of features based on the area of interest they fall into.</para>
+	/// <para>Creates cartographic copies of features based on the area of interest (AOI) they fall into.</para>
 	/// </summary>
 	public class GenerateAviationCartographicFeatures : AbstractGPProcess
 	{
@@ -25,7 +25,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </param>
 		/// <param name="AoiFeatures">
 		/// <para>Area of Interest Features</para>
-		/// <para>A layer of area of interest (AOI) polygon features, that is used to spatially filter source features.</para>
+		/// <para>A layer of AOI polygon features that will be used to spatially filter source features.</para>
 		/// </param>
 		public GenerateAviationCartographicFeatures(object SourceTargetCartoFeatures, object AoiFeatures)
 		{
@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { SourceTargetCartoFeatures, AoiFeatures, ExtractionQueryTable, InclusionExclusionTable, CartoFeatureClasses };
+		public override object[] Parameters => new object[] { SourceTargetCartoFeatures, AoiFeatures, ExtractionQueryTable!, InclusionExclusionTable!, CartoFeatureClasses! };
 
 		/// <summary>
 		/// <para>Source and Target Cartographic Features</para>
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 
 		/// <summary>
 		/// <para>Area of Interest Features</para>
-		/// <para>A layer of area of interest (AOI) polygon features, that is used to spatially filter source features.</para>
+		/// <para>A layer of AOI polygon features that will be used to spatially filter source features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -88,12 +88,12 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 
 		/// <summary>
 		/// <para>Extraction Query Table</para>
-		/// <para>A table of where clauses to further filter source features based on an attribute query.</para>
+		/// <para>A table of where clauses that will be used to further filter source features based on an attribute query.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
 		[GPTablesDomain()]
-		public object ExtractionQueryTable { get; set; }
+		public object? ExtractionQueryTable { get; set; }
 
 		/// <summary>
 		/// <para>Cartographic Exceptions Table</para>
@@ -102,14 +102,14 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
 		[GPTablesDomain()]
-		public object InclusionExclusionTable { get; set; }
+		public object? InclusionExclusionTable { get; set; }
 
 		/// <summary>
 		/// <para>Updated Cartographic Feature Classes</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object CartoFeatureClasses { get; set; }
+		public object? CartoFeatureClasses { get; set; }
 
 	}
 }

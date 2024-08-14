@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InReport, OutPdfFile, Expression, Resolution, ImageQuality, EmbedFont, CompressVectorGraphics, ImageCompression, PasswordProtect, PdfPassword, PageRangeType, CustomPageRange, InitialPageNumber, FinalPageNumber };
+		public override object[] Parameters => new object[] { InReport, OutPdfFile, Expression!, Resolution!, ImageQuality!, EmbedFont!, CompressVectorGraphics!, ImageCompression!, PasswordProtect!, PdfPassword!, PageRangeType!, CustomPageRange!, InitialPageNumber!, FinalPageNumber! };
 
 		/// <summary>
 		/// <para>Input Report</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
 		[Category("Data Definition")]
-		public object Expression { get; set; }
+		public object? Expression { get; set; }
 
 		/// <summary>
 		/// <para>Resolution (DPI)</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Export Options")]
-		public object Resolution { get; set; } = "96";
+		public object? Resolution { get; set; } = "96";
 
 		/// <summary>
 		/// <para>Image Quality</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Export Options")]
-		public object ImageQuality { get; set; } = "BEST";
+		public object? ImageQuality { get; set; } = "BEST";
 
 		/// <summary>
 		/// <para>Embed Fonts</para>
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Export Options")]
-		public object EmbedFont { get; set; } = "true";
+		public object? EmbedFont { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Compress Vector Graphics</para>
@@ -144,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Export Options")]
-		public object CompressVectorGraphics { get; set; } = "true";
+		public object? CompressVectorGraphics { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Image Compression</para>
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Export Options")]
-		public object ImageCompression { get; set; } = "ADAPTIVE";
+		public object? ImageCompression { get; set; } = "ADAPTIVE";
 
 		/// <summary>
 		/// <para>Password Protect</para>
@@ -174,7 +174,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Export Options")]
-		public object PasswordProtect { get; set; } = "false";
+		public object? PasswordProtect { get; set; } = "false";
 
 		/// <summary>
 		/// <para>PDF Password</para>
@@ -183,7 +183,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPEncryptedString()]
 		[Category("Export Options")]
-		public object PdfPassword { get; set; }
+		public object? PdfPassword { get; set; }
 
 		/// <summary>
 		/// <para>Page Range Type</para>
@@ -199,7 +199,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Page Range Options")]
-		public object PageRangeType { get; set; } = "ALL";
+		public object? PageRangeType { get; set; } = "ALL";
 
 		/// <summary>
 		/// <para>Custom Page Range</para>
@@ -208,7 +208,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Page Range Options")]
-		public object CustomPageRange { get; set; }
+		public object? CustomPageRange { get; set; }
 
 		/// <summary>
 		/// <para>Initial Page Number</para>
@@ -218,7 +218,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Page Range Options")]
-		public object InitialPageNumber { get; set; }
+		public object? InitialPageNumber { get; set; }
 
 		/// <summary>
 		/// <para>Final Page Number</para>
@@ -228,7 +228,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Page Range Options")]
-		public object FinalPageNumber { get; set; }
+		public object? FinalPageNumber { get; set; }
 
 		#region InnerClass
 

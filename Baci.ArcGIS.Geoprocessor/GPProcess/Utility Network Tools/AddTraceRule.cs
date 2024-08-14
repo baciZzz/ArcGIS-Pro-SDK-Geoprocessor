@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, TraceType, DomainNetwork, Tier, TargetTier, IncludeStructures, IncludeBarriers, ConditionBarriers, FunctionBarriers, TraversabilityScope, FilterBarriers, FilterFunctionBarriers, FilterScope, FilterBitsetNetworkAttributeName, FilterNearest, NearestCount, NearestCostNetworkAttribute, NearestCategories, NearestAssets, Propagators, Description, OutUtilityNetwork, OutTemplateName, AllowIndeterminateFlow, PathDirection, PathNetworkWeightName };
+		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, TraceType, DomainNetwork!, Tier!, TargetTier!, IncludeStructures!, IncludeBarriers!, ConditionBarriers!, FunctionBarriers!, TraversabilityScope!, FilterBarriers!, FilterFunctionBarriers!, FilterScope!, FilterBitsetNetworkAttributeName!, FilterNearest!, NearestCount!, NearestCostNetworkAttribute!, NearestCategories!, NearestAssets!, Propagators!, Description!, OutUtilityNetwork!, OutTemplateName!, AllowIndeterminateFlow!, PathDirection!, PathNetworkWeightName! };
 
 		/// <summary>
 		/// <para>Input Network</para>
@@ -110,21 +110,21 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DomainNetwork { get; set; }
+		public object? DomainNetwork { get; set; }
 
 		/// <summary>
 		/// <para>Tier</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Tier { get; set; }
+		public object? Tier { get; set; }
 
 		/// <summary>
 		/// <para>Target Tier</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object TargetTier { get; set; }
+		public object? TargetTier { get; set; }
 
 		/// <summary>
 		/// <para>Include Structures</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeStructures { get; set; } = "false";
+		public object? IncludeStructures { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Include Barrier Features</para>
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeBarriers { get; set; } = "true";
+		public object? IncludeBarriers { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Condition Barriers</para>
@@ -151,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Traversability")]
-		public object ConditionBarriers { get; set; }
+		public object? ConditionBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Function Barriers</para>
@@ -160,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Traversability")]
-		public object FunctionBarriers { get; set; }
+		public object? FunctionBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Apply Traversability To</para>
@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Traversability")]
-		public object TraversabilityScope { get; set; } = "BOTH_JUNCTIONS_AND_EDGES";
+		public object? TraversabilityScope { get; set; } = "BOTH_JUNCTIONS_AND_EDGES";
 
 		/// <summary>
 		/// <para>Filter Barriers</para>
@@ -179,7 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Filters")]
-		public object FilterBarriers { get; set; }
+		public object? FilterBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Filter Function Barriers</para>
@@ -188,7 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Filters")]
-		public object FilterFunctionBarriers { get; set; }
+		public object? FilterFunctionBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Apply Filter To</para>
@@ -198,7 +198,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Filters")]
-		public object FilterScope { get; set; } = "BOTH_JUNCTIONS_AND_EDGES";
+		public object? FilterScope { get; set; } = "BOTH_JUNCTIONS_AND_EDGES";
 
 		/// <summary>
 		/// <para>Filter by bitset network attribute</para>
@@ -206,7 +206,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Filters")]
-		public object FilterBitsetNetworkAttributeName { get; set; }
+		public object? FilterBitsetNetworkAttributeName { get; set; }
 
 		/// <summary>
 		/// <para>Filter by nearest</para>
@@ -216,7 +216,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Filters")]
-		public object FilterNearest { get; set; } = "false";
+		public object? FilterNearest { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Count</para>
@@ -224,7 +224,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Filters")]
-		public object NearestCount { get; set; }
+		public object? NearestCount { get; set; }
 
 		/// <summary>
 		/// <para>Cost Network Attribute</para>
@@ -232,7 +232,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Filters")]
-		public object NearestCostNetworkAttribute { get; set; }
+		public object? NearestCostNetworkAttribute { get; set; }
 
 		/// <summary>
 		/// <para>Nearest Categories</para>
@@ -240,7 +240,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[Category("Filters")]
-		public object NearestCategories { get; set; }
+		public object? NearestCategories { get; set; }
 
 		/// <summary>
 		/// <para>Nearest Asset Groups/Types</para>
@@ -248,7 +248,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[Category("Filters")]
-		public object NearestAssets { get; set; }
+		public object? NearestAssets { get; set; }
 
 		/// <summary>
 		/// <para>Propagators</para>
@@ -257,28 +257,28 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Propagators")]
-		public object Propagators { get; set; }
+		public object? Propagators { get; set; }
 
 		/// <summary>
 		/// <para>Description</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Description { get; set; }
+		public object? Description { get; set; }
 
 		/// <summary>
 		/// <para>Output Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		/// <summary>
 		/// <para>Output Diagram Template</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutTemplateName { get; set; }
+		public object? OutTemplateName { get; set; }
 
 		/// <summary>
 		/// <para>Allow Indeterminate Flow</para>
@@ -287,7 +287,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AllowIndeterminateFlow { get; set; } = "false";
+		public object? AllowIndeterminateFlow { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Path Direction</para>
@@ -297,7 +297,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object PathDirection { get; set; } = "NO_DIRECTION";
+		public object? PathDirection { get; set; } = "NO_DIRECTION";
 
 		/// <summary>
 		/// <para>Shortest Path Network Attribute Name</para>
@@ -305,7 +305,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Advanced Options")]
-		public object PathNetworkWeightName { get; set; }
+		public object? PathNetworkWeightName { get; set; }
 
 		#region InnerClass
 

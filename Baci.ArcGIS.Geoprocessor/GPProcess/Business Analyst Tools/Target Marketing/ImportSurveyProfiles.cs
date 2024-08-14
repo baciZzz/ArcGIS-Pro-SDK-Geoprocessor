@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Profiles, OutFolder, OutProfiles };
+		public override object[] Parameters => new object[] { Profiles, OutFolder, OutProfiles! };
 
 		/// <summary>
 		/// <para>Profiles</para>
@@ -89,14 +89,14 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutProfiles { get; set; }
+		public object? OutProfiles { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportSurveyProfiles SetEnviroment(object workspace = null )
+		public ImportSurveyProfiles SetEnviroment(object? baDataSource = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, workspace: workspace);
 			return this;
 		}
 

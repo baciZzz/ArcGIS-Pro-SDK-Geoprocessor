@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLineFeatures, DistancesType!, DistanceTolerance!, DirectionType!, MinimumDirectionDifference!, MinimumDirectionLateralOffset!, CombinedScaleFactor!, DirectionOffset!, UpdatedLineFeatures };
+		public override object[] Parameters => new object[] { InLineFeatures, DistancesType!, DistanceTolerance!, DirectionType!, MinimumDirectionDifference!, MinimumDirectionLateralOffset!, CombinedScaleFactor!, DirectionOffset!, UpdatedLineFeatures! };
 
 		/// <summary>
 		/// <para>Input Line Features</para>

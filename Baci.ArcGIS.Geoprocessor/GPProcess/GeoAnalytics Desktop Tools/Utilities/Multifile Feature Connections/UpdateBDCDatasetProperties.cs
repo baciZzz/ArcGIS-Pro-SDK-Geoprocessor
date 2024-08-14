@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { BdcDataset, Expression!, FieldProperties!, GeometryType!, SpatialReference!, GeometryFormatType!, GeometryField!, XField!, YField!, ZField!, TimeType!, TimeZone!, StartTimeFormat!, EndTimeFormat!, FileExtension!, FieldDelimiter!, RecordTerminator!, QuoteCharacter!, HasHeaderRow!, Encoding!, UpdatedBdc };
+		public override object[] Parameters => new object[] { BdcDataset, Expression!, FieldProperties!, GeometryType!, SpatialReference!, GeometryFormatType!, GeometryField!, XField!, YField!, ZField!, TimeType!, TimeZone!, StartTimeFormat!, EndTimeFormat!, FileExtension!, FieldDelimiter!, RecordTerminator!, QuoteCharacter!, HasHeaderRow!, Encoding!, UpdatedBdc! };
 
 		/// <summary>
 		/// <para>Multifile Feature Connection Dataset</para>

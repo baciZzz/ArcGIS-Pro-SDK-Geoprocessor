@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, InFields, OutLocation, OutTables, GroupByField!, OutStatistics!, OutNumeric!, OutText!, OutDate!, OutAll };
+		public override object[] Parameters => new object[] { InTable, InFields, OutLocation, OutTables, GroupByField!, OutStatistics!, OutNumeric!, OutText!, OutDate!, OutAll! };
 
 		/// <summary>
 		/// <para>Input Table</para>

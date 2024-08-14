@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>The input dataset from which the new building feature layers will be made. The building layer keeps the structure and the symbology grouped together.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
-		[DEFeatureDataset()]
+		[GPComposite()]
 		public object InFeatureDataset { get; set; }
 
 		/// <summary>
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeBuildingLayer SetEnviroment(object workspace = null )
+		public MakeBuildingLayer SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

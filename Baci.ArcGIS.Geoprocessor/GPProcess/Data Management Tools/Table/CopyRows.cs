@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Copy Rows</para>
-	/// <para>Copies the rows of a table, table view, feature class, feature layer, or raster with attribute table to a new geodatabase, .csv, .txt, or .dbf table.</para>
+	/// <para>Copies the rows of a table  to a different table.</para>
 	/// </summary>
 	public class CopyRows : AbstractGPProcess
 	{
@@ -61,12 +61,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "extent", "maintainAttachments", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "configKeyword", "extent", "maintainAttachments", "preserveGlobalIds", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRows, OutTable, ConfigKeyword };
+		public override object[] Parameters => new object[] { InRows, OutTable, ConfigKeyword! };
 
 		/// <summary>
 		/// <para>Input Rows</para>
@@ -88,19 +88,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
-		/// <para>Specifies the default storage parameters for an enterprise geodatabase.</para>
+		/// <para>The default storage parameters for an enterprise geodatabase.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ConfigKeyword { get; set; }
+		public object? ConfigKeyword { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CopyRows SetEnviroment(object configKeyword = null , object extent = null , object scratchWorkspace = null , object workspace = null )
+		public CopyRows SetEnviroment(object? configKeyword = null , object? extent = null , bool? maintainAttachments = null , bool? preserveGlobalIds = null , object? scratchWorkspace = null , object? workspace = null )
 		{
-			base.SetEnv(configKeyword: configKeyword, extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
+			base.SetEnv(configKeyword: configKeyword, extent: extent, maintainAttachments: maintainAttachments, preserveGlobalIds: preserveGlobalIds, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
 		}
 

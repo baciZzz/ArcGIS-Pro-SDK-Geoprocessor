@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, TextField, InModelDefinitionFile, ResultField!, ModelArguments!, BatchSize!, MinimumSequenceLength!, MaximumSequenceLength!, UpdatedTable };
+		public override object[] Parameters => new object[] { InTable, TextField, InModelDefinitionFile, ResultField!, ModelArguments!, BatchSize!, MinimumSequenceLength!, MaximumSequenceLength!, UpdatedTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>

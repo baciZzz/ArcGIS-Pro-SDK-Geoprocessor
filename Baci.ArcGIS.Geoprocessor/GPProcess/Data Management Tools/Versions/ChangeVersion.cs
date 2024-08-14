@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, VersionType, VersionName, Date, OutFeatureLayer, IncludeParticipating };
+		public override object[] Parameters => new object[] { InFeatures, VersionType, VersionName!, Date!, OutFeatureLayer!, IncludeParticipating! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object VersionName { get; set; }
+		public object? VersionName { get; set; }
 
 		/// <summary>
 		/// <para>Date and Time</para>
@@ -108,14 +108,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object Date { get; set; }
+		public object? Date { get; set; }
 
 		/// <summary>
 		/// <para>Output Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatureLayer { get; set; }
+		public object? OutFeatureLayer { get; set; }
 
 		/// <summary>
 		/// <para>Include participating classes of controller dataset</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeParticipating { get; set; } = "true";
+		public object? IncludeParticipating { get; set; } = "true";
 
 		#region InnerClass
 

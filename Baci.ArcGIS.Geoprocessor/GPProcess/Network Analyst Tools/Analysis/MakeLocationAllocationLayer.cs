@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDataset, OutNetworkAnalysisLayer, ImpedanceAttribute, LocAllocFromTo, LocAllocProblemType, NumberFacilitiesToFind, ImpedanceCutoff, ImpedanceTransformation, ImpedanceParameter, TargetMarketShare, AccumulateAttributeName, UturnPolicy, RestrictionAttributeName, Hierarchy, OutputPathShape, DefaultCapacity, TimeOfDay, OutputLayer };
+		public override object[] Parameters => new object[] { InNetworkDataset, OutNetworkAnalysisLayer, ImpedanceAttribute, LocAllocFromTo!, LocAllocProblemType!, NumberFacilitiesToFind!, ImpedanceCutoff!, ImpedanceTransformation!, ImpedanceParameter!, TargetMarketShare!, AccumulateAttributeName!, UturnPolicy!, RestrictionAttributeName!, Hierarchy!, OutputPathShape!, DefaultCapacity!, TimeOfDay!, OutputLayer! };
 
 		/// <summary>
 		/// <para>Input Analysis Network</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LocAllocFromTo { get; set; } = "FACILITY_TO_DEMAND";
+		public object? LocAllocFromTo { get; set; } = "FACILITY_TO_DEMAND";
 
 		/// <summary>
 		/// <para>Location-Allocation Problem Type</para>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LocAllocProblemType { get; set; } = "MINIMIZE_IMPEDANCE";
+		public object? LocAllocProblemType { get; set; } = "MINIMIZE_IMPEDANCE";
 
 		/// <summary>
 		/// <para>Number of Facilities to Find</para>
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object NumberFacilitiesToFind { get; set; } = "1";
+		public object? NumberFacilitiesToFind { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Impedance Cutoff</para>
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ImpedanceCutoff { get; set; }
+		public object? ImpedanceCutoff { get; set; }
 
 		/// <summary>
 		/// <para>Impedance Transformation</para>
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ImpedanceTransformation { get; set; } = "LINEAR";
+		public object? ImpedanceTransformation { get; set; } = "LINEAR";
 
 		/// <summary>
 		/// <para>Impedance Parameter</para>
@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ImpedanceParameter { get; set; } = "1";
+		public object? ImpedanceParameter { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Target Market Share</para>
@@ -178,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object TargetMarketShare { get; set; } = "10";
+		public object? TargetMarketShare { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Accumulators</para>
@@ -189,7 +189,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Accumulators")]
-		public object AccumulateAttributeName { get; set; }
+		public object? AccumulateAttributeName { get; set; }
 
 		/// <summary>
 		/// <para>U-Turn Policy</para>
@@ -205,7 +205,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Restrictions")]
-		public object UturnPolicy { get; set; } = "ALLOW_UTURNS";
+		public object? UturnPolicy { get; set; } = "ALLOW_UTURNS";
 
 		/// <summary>
 		/// <para>Restrictions</para>
@@ -215,7 +215,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Restrictions")]
-		public object RestrictionAttributeName { get; set; }
+		public object? RestrictionAttributeName { get; set; }
 
 		/// <summary>
 		/// <para>Use Hierarchy in Analysis</para>
@@ -228,7 +228,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Hierarchy")]
-		public object Hierarchy { get; set; }
+		public object? Hierarchy { get; set; }
 
 		/// <summary>
 		/// <para>Output Path Shape</para>
@@ -240,7 +240,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Output Options")]
-		public object OutputPathShape { get; set; } = "STRAIGHT_LINES";
+		public object? OutputPathShape { get; set; } = "STRAIGHT_LINES";
 
 		/// <summary>
 		/// <para>Default Capacity</para>
@@ -249,7 +249,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object DefaultCapacity { get; set; } = "1";
+		public object? DefaultCapacity { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Start Time</para>
@@ -267,19 +267,19 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object TimeOfDay { get; set; }
+		public object? TimeOfDay { get; set; }
 
 		/// <summary>
 		/// <para>Network Analyst Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPNALayer()]
-		public object OutputLayer { get; set; }
+		public object? OutputLayer { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeLocationAllocationLayer SetEnviroment(object workspace = null )
+		public MakeLocationAllocationLayer SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

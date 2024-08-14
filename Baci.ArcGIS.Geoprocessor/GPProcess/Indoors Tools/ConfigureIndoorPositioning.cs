@@ -13,6 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 	/// <para>Configure Indoor Positioning</para>
 	/// <para>Writes indoor positioning system configuration information to an ArcGIS Indoors geodatabase. The values are used by ArcGIS Indoors for iOS and ArcGIS Indoors for Android.</para>
 	/// </summary>
+	[Obsolete()]
 	public class ConfigureIndoorPositioning : AbstractGPProcess
 	{
 		/// <summary>
@@ -75,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeodatabase, EncryptionKey, ApiKey, BuildingId, UpdatedGdb };
+		public override object[] Parameters => new object[] { InGeodatabase, EncryptionKey, ApiKey, BuildingId, UpdatedGdb! };
 
 		/// <summary>
 		/// <para>Input Geodatabase</para>
@@ -115,12 +116,12 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object UpdatedGdb { get; set; }
+		public object? UpdatedGdb { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConfigureIndoorPositioning SetEnviroment(object workspace = null )
+		public ConfigureIndoorPositioning SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

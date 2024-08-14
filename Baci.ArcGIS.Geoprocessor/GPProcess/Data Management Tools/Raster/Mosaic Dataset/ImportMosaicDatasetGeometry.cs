@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, TargetFeatureclassType, TargetJoinField, InputFeatureclass, InputJoinField, OutMosaicDataset };
+		public override object[] Parameters => new object[] { InMosaicDataset, TargetFeatureclassType, TargetJoinField, InputFeatureclass, InputJoinField, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMosaicLayer()]
-		public object OutMosaicDataset { get; set; }
+		public object? OutMosaicDataset { get; set; }
 
 		#region InnerClass
 

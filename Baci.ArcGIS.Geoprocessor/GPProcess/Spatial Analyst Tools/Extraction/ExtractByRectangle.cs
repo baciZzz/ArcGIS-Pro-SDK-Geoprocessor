@@ -25,7 +25,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <param name="Rectangle">
 		/// <para>Extent</para>
 		/// <para>A rectangle that defines the area to be extracted.</para>
-		/// <para>If the Extent parameter is set to As Specified Below, use the parameters identified with the left and down arrows define the lower-left coordinate of the area to be extracted, and those with the right and up arrows to define the upper-right coordinate.</para>
+		/// <para>If the Extent parameter is set to As Specified Below, use the parameters identified with the left and down arrows to define the lower left coordinate of the area to be extracted, and those with the right and up arrows to define the upper right coordinate.</para>
 		/// <para>If the Extent parameter is set to Browse, you can select a dataset whose bounding box will define the extent.</para>
 		/// <para>The coordinates are specified in the same map units as the input raster.</para>
 		/// </param>
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, Rectangle, OutRaster, ExtractionArea };
+		public override object[] Parameters => new object[] { InRaster, Rectangle, OutRaster, ExtractionArea! };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Extent</para>
 		/// <para>A rectangle that defines the area to be extracted.</para>
-		/// <para>If the Extent parameter is set to As Specified Below, use the parameters identified with the left and down arrows define the lower-left coordinate of the area to be extracted, and those with the right and up arrows to define the upper-right coordinate.</para>
+		/// <para>If the Extent parameter is set to As Specified Below, use the parameters identified with the left and down arrows to define the lower left coordinate of the area to be extracted, and those with the right and up arrows to define the upper right coordinate.</para>
 		/// <para>If the Extent parameter is set to Browse, you can select a dataset whose bounding box will define the extent.</para>
 		/// <para>The coordinates are specified in the same map units as the input raster.</para>
 		/// </summary>
@@ -105,22 +105,22 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Extraction area</para>
-		/// <para>Identifies whether to extract cells inside or outside the input rectangle.</para>
-		/// <para>Inside— A keyword specifying that the cells inside the input rectangle should be selected and written to the output raster. All cells outside the rectangle will receive NoData values on the output raster.</para>
-		/// <para>Outside—A keyword specifying that the cells outside the input rectangle should be selected and written to the output raster. All cells inside the rectangle will receive NoData values on the output raster.</para>
+		/// <para>Specifies whether cells inside or outside the input rectangle will be selected and written to the output raster.</para>
+		/// <para>Inside—Cells inside the input rectangle will be selected and written to the output raster. All cells outside the rectangle will receive NoData values on the output raster.</para>
+		/// <para>Outside—Cells outside the input rectangle will be selected and written to the output raster. All cells inside the rectangle will receive NoData values on the output raster.</para>
 		/// <para><see cref="ExtractionAreaEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ExtractionArea { get; set; } = "INSIDE";
+		public object? ExtractionArea { get; set; } = "INSIDE";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExtractByRectangle SetEnviroment(int? autoCommit = null , object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public ExtractByRectangle SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 
@@ -132,14 +132,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ExtractionAreaEnum 
 		{
 			/// <summary>
-			/// <para>Inside— A keyword specifying that the cells inside the input rectangle should be selected and written to the output raster. All cells outside the rectangle will receive NoData values on the output raster.</para>
+			/// <para>Inside—Cells inside the input rectangle will be selected and written to the output raster. All cells outside the rectangle will receive NoData values on the output raster.</para>
 			/// </summary>
 			[GPValue("INSIDE")]
 			[Description("Inside")]
 			Inside,
 
 			/// <summary>
-			/// <para>Outside—A keyword specifying that the cells outside the input rectangle should be selected and written to the output raster. All cells inside the rectangle will receive NoData values on the output raster.</para>
+			/// <para>Outside—Cells outside the input rectangle will be selected and written to the output raster. All cells inside the rectangle will receive NoData values on the output raster.</para>
 			/// </summary>
 			[GPValue("OUTSIDE")]
 			[Description("Outside")]

@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTopoFeatures, OutSurfaceRaster, CellSize, Extent, Margin, MinimumZValue, MaximumZValue, Enforce, DataType, MaximumIterations, RoughnessPenalty, DiscreteErrorFactor, VerticalStandardError, Tolerance1, Tolerance2, OutStreamFeatures, OutSinkFeatures, OutDiagnosticFile, OutParameterFile, ProfilePenalty, OutResidualFeature, OutStreamCliffErrorFeature, OutContourErrorFeature };
+		public override object[] Parameters => new object[] { InTopoFeatures, OutSurfaceRaster, CellSize!, Extent!, Margin!, MinimumZValue!, MaximumZValue!, Enforce!, DataType!, MaximumIterations!, RoughnessPenalty!, DiscreteErrorFactor!, VerticalStandardError!, Tolerance1!, Tolerance2!, OutStreamFeatures!, OutSinkFeatures!, OutDiagnosticFile!, OutParameterFile!, ProfilePenalty!, OutResidualFeature!, OutStreamCliffErrorFeature!, OutContourErrorFeature! };
 
 		/// <summary>
 		/// <para>Input feature data</para>
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
 		[GPSAGeoDataDomain()]
-		public object CellSize { get; set; }
+		public object? CellSize { get; set; }
 
 		/// <summary>
 		/// <para>Output extent</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Margin in cells</para>
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object Margin { get; set; } = "20";
+		public object? Margin { get; set; } = "20";
 
 		/// <summary>
 		/// <para>Smallest z value to be used in interpolation</para>
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MinimumZValue { get; set; }
+		public object? MinimumZValue { get; set; }
 
 		/// <summary>
 		/// <para>Largest z value to be used in interpolation</para>
@@ -165,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MaximumZValue { get; set; }
+		public object? MaximumZValue { get; set; }
 
 		/// <summary>
 		/// <para>Drainage enforcement</para>
@@ -179,7 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Enforce { get; set; } = "ENFORCE";
+		public object? Enforce { get; set; } = "ENFORCE";
 
 		/// <summary>
 		/// <para>Primary type of input data</para>
@@ -192,7 +192,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DataType { get; set; } = "CONTOUR";
+		public object? DataType { get; set; } = "CONTOUR";
 
 		/// <summary>
 		/// <para>Maximum number of iterations</para>
@@ -203,7 +203,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object MaximumIterations { get; set; } = "20";
+		public object? MaximumIterations { get; set; } = "20";
 
 		/// <summary>
 		/// <para>Roughness penalty</para>
@@ -213,7 +213,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object RoughnessPenalty { get; set; }
+		public object? RoughnessPenalty { get; set; }
 
 		/// <summary>
 		/// <para>Discretisation error factor</para>
@@ -223,7 +223,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object DiscreteErrorFactor { get; set; } = "1";
+		public object? DiscreteErrorFactor { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Vertical standard error</para>
@@ -234,7 +234,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object VerticalStandardError { get; set; } = "0";
+		public object? VerticalStandardError { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Tolerance 1</para>
@@ -245,7 +245,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object Tolerance1 { get; set; }
+		public object? Tolerance1 { get; set; }
 
 		/// <summary>
 		/// <para>Tolerance 2</para>
@@ -255,7 +255,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object Tolerance2 { get; set; }
+		public object? Tolerance2 { get; set; }
 
 		/// <summary>
 		/// <para>Output stream polyline features</para>
@@ -275,7 +275,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[Category("Optional outputs")]
-		public object OutStreamFeatures { get; set; }
+		public object? OutStreamFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Output remaining sink point features</para>
@@ -285,7 +285,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[Category("Optional outputs")]
-		public object OutSinkFeatures { get; set; }
+		public object? OutSinkFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Output diagnostic file</para>
@@ -295,7 +295,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[DEFile()]
 		[GPFileDomain()]
 		[Category("Optional outputs")]
-		public object OutDiagnosticFile { get; set; }
+		public object? OutDiagnosticFile { get; set; }
 
 		/// <summary>
 		/// <para>Output parameter file</para>
@@ -305,7 +305,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[DEFile()]
 		[GPFileDomain()]
 		[Category("Optional outputs")]
-		public object OutParameterFile { get; set; }
+		public object? OutParameterFile { get; set; }
 
 		/// <summary>
 		/// <para>Profile curvature roughness penalty</para>
@@ -315,7 +315,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object ProfilePenalty { get; set; }
+		public object? ProfilePenalty { get; set; }
 
 		/// <summary>
 		/// <para>Output residual point features</para>
@@ -325,7 +325,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[Category("Optional outputs")]
-		public object OutResidualFeature { get; set; }
+		public object? OutResidualFeature { get; set; }
 
 		/// <summary>
 		/// <para>Output stream and cliff error point features</para>
@@ -349,7 +349,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[Category("Optional outputs")]
-		public object OutStreamCliffErrorFeature { get; set; }
+		public object? OutStreamCliffErrorFeature { get; set; }
 
 		/// <summary>
 		/// <para>Output contour error point features</para>
@@ -359,14 +359,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[Category("Optional outputs")]
-		public object OutContourErrorFeature { get; set; }
+		public object? OutContourErrorFeature { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TopoToRaster SetEnviroment(object MDomain = null , object MResolution = null , object MTolerance = null , object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , int? autoCommit = null , object cellSize = null , object configKeyword = null , object extent = null , object geographicTransformations = null , bool? maintainSpatialIndex = null , object mask = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , bool? transferDomains = null , object workspace = null )
+		public TopoToRaster SetEnviroment(object? MDomain = null , double? MResolution = null , double? MTolerance = null , object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , bool? maintainSpatialIndex = null , object? mask = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , bool? transferDomains = null , object? workspace = null )
 		{
-			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, cellSize: cellSize, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, maintainSpatialIndex: maintainSpatialIndex, mask: mask, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, transferDomains: transferDomains, workspace: workspace);
+			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, maintainSpatialIndex: maintainSpatialIndex, mask: mask, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, transferDomains: transferDomains, workspace: workspace);
 			return this;
 		}
 

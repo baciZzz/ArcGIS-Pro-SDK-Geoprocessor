@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeostatLayers, OutCvTable, OutGeostatLayer!, ComparisonMethod!, Criterion!, CriteriaHierarchy!, WeightedCriteria!, ExclusionCriteria };
+		public override object[] Parameters => new object[] { InGeostatLayers, OutCvTable, OutGeostatLayer!, ComparisonMethod!, Criterion!, CriteriaHierarchy!, WeightedCriteria!, ExclusionCriteria! };
 
 		/// <summary>
 		/// <para>Input geostatistical layers</para>

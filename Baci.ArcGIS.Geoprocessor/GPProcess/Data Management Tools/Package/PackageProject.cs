@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Package Project</para>
-	/// <para>Consolidates and packages a project (.aprx file) of referenced maps and data to a  packaged project file (.ppkx).</para>
+	/// <para>Consolidates and packages a project file (.aprx) of referenced maps and data to a  packaged project file (.ppkx).</para>
 	/// </summary>
 	public class PackageProject : AbstractGPProcess
 	{
@@ -60,12 +60,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InProject, OutputFile, SharingInternal, PackageAsTemplate, Extent, ApplyExtentToArcsde, AdditionalFiles, Summary, Tags, Version, IncludeToolboxes, IncludeHistoryItems, ReadOnly, SelectRelatedRows };
+		public override object[] Parameters => new object[] { InProject, OutputFile, SharingInternal!, PackageAsTemplate!, Extent!, ApplyExtentToArcsde!, AdditionalFiles!, Summary!, Tags!, Version!, IncludeToolboxes!, IncludeHistoryItems!, ReadOnly!, SelectRelatedRows!, PreserveSqlite! };
 
 		/// <summary>
 		/// <para>Input Project</para>
@@ -95,19 +95,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SharingInternal { get; set; } = "false";
+		public object? SharingInternal { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Package as template</para>
-		/// <para>Specifies whether to create a project template or a project package. Project templates can include maps, layouts, connections to databases and servers, and so on. A project template makes it easy to standardize a series of maps for different projects and to ensure the correct layers are immediately available for everyone to use in their maps.</para>
-		/// <para>Unchecked—Creates a project package. This is the default.</para>
-		/// <para>Checked—Creates a project template.</para>
+		/// <para>Specifies whether a project template or a project package will be created. Project templates can include maps, layouts, connections to databases and servers, and so on. A project template can be used to standardize a series of maps for different projects and to ensure that the correct layers are immediately available for everyone to use in their maps.</para>
+		/// <para>Unchecked—A project package will be created. This is the default.</para>
+		/// <para>Checked—A project template will be created.</para>
 		/// <para><see cref="PackageAsTemplateEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object PackageAsTemplate { get; set; } = "false";
+		public object? PackageAsTemplate { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Extent</para>
@@ -121,27 +121,27 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Apply Extent only to enterprise geodatabase layers</para>
-		/// <para>Specifies whether the specified extent will be applied to all layers or only to enterprise geodatabase layers.</para>
-		/// <para>Unchecked—Extent will be applied to all layers. This is the default.</para>
-		/// <para>Checked—Extent will be applied to enterprise geodatabase layers only.</para>
+		/// <para>Specifies whether the specified extent will be applied to all layers or to enterprise geodatabase layers only.</para>
+		/// <para>Unchecked—The extent will be applied to all layers. This is the default.</para>
+		/// <para>Checked—The extent will be applied to enterprise geodatabase layers only.</para>
 		/// <para><see cref="ApplyExtentToArcsdeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ApplyExtentToArcsde { get; set; } = "false";
+		public object? ApplyExtentToArcsde { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Additional Files</para>
-		/// <para>Adds additional files to a package. Additional files, such as .doc, .txt, .pdf, and so on, are used to provide more information about the contents and purpose of the package.</para>
+		/// <para>Adds files to a package. Additional files, such as .doc, .txt, .pdf, and so on, are used to provide more information about the contents and purpose of the package.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object AdditionalFiles { get; set; }
+		public object? AdditionalFiles { get; set; }
 
 		/// <summary>
 		/// <para>Summary</para>
@@ -149,70 +149,72 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Summary { get; set; }
+		public object? Summary { get; set; }
 
 		/// <summary>
 		/// <para>Tags</para>
-		/// <para>Adds tag information to the properties of the package. Multiple tags can be added or separated by a comma or semicolon.</para>
+		/// <para>Adds tag information to the properties of the package. Multiple tags can be added, separated by a comma or semicolon.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Tags { get; set; }
+		public object? Tags { get; set; }
 
 		/// <summary>
 		/// <para>Package version</para>
-		/// <para>Specifies the version of the geodatabases that will be created in the resulting package. Specifying a version allows packages to be shared with previous versions of ArcGIS and supports backward compatibility.A package saved to a previous version may lose properties available only in the newer version.</para>
+		/// <para>Specifies the version of the geodatabases that will be created in the resulting package. Specifying a version allows packages to be shared with earlier versions of ArcGIS and supports backward compatibility.A package saved to an earlier version may lose properties that are only available in the later version.</para>
 		/// <para>All versions— The package will contain geodatabases and maps compatible with all versions (ArcGIS Pro 2.1 and later).</para>
 		/// <para>Current version— The package will contain geodatabases and maps compatible with the version of the current release.</para>
-		/// <para>2.1—The package will contain geodatabases and maps compatible with version 2.1.</para>
 		/// <para>2.2— The package will contain geodatabases and maps compatible with version 2.2.</para>
 		/// <para>2.3—The package will contain geodatabases and maps compatible with version 2.3.</para>
 		/// <para>2.4—The package will contain geodatabases and maps compatible with version 2.4.</para>
 		/// <para>2.5—The package will contain geodatabases and maps compatible with version 2.5.</para>
 		/// <para>2.6—The package will contain geodatabases and maps compatible with version 2.6.</para>
-		/// <para><see cref="VersionEnum"/></para>
+		/// <para>2.7—The package will contain geodatabases and maps compatible with version 2.7.</para>
+		/// <para>2.8—The package will contain geodatabases and maps compatible with version 2.8.</para>
+		/// <para>2.9—The package will contain geodatabases and maps compatible with version 2.9.</para>
+		/// <para>3.0—The package will contain geodatabases and maps compatible with version 3.0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object Version { get; set; } = "ALL";
+		public object? Version { get; set; } = "ALL";
 
 		/// <summary>
 		/// <para>Include Toolboxes</para>
-		/// <para>Specifies whether project toolboxes, and the data referenced by the tools in the project toolboxes, will be consolidated and included in the output package. All projects require a default toolbox, and the default toolbox will be included regardless of this setting. A toolbox inside a connected folder is not considered a project toolbox and is not impacted by this setting.</para>
+		/// <para>Specifies whether project toolboxes, and the data referenced by the tools in the project toolboxes, will be consolidated and included in the output package. All projects require a default toolbox, and the default toolbox will be included regardless of this setting. A toolbox in a connected folder is not considered a project toolbox and is not impacted by this setting.</para>
 		/// <para>Checked—Project toolboxes will be included in the output package. This is the default.</para>
-		/// <para>Unchecked—Project toolboxes will be excluded from the output package.</para>
+		/// <para>Unchecked—Project toolboxes will not be included in the output package.</para>
 		/// <para><see cref="IncludeToolboxesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeToolboxes { get; set; } = "true";
+		public object? IncludeToolboxes { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Include History Items</para>
-		/// <para>Specifies whether geoprocessing history items will be consolidated and included in the output package. Included history items will consolidate the data required to re-execute said history item.</para>
+		/// <para>Specifies whether geoprocessing history items will be consolidated and included in the output package. Included history items will consolidate the data required to reprocess the history item.</para>
 		/// <para>History items will be included—History items will be included in the output package. This is the default.</para>
-		/// <para>History items will be excluded—History items will be excluded from the output package.</para>
+		/// <para>History items will not be included—History items will not be included in the output package.</para>
 		/// <para>Only valid history items will be included—Only valid history items will be included in the output package. History items are invalid if any of the original input layers or tools cannot be found.</para>
 		/// <para><see cref="IncludeHistoryItemsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object IncludeHistoryItems { get; set; } = "HISTORY_ITEMS";
+		public object? IncludeHistoryItems { get; set; } = "HISTORY_ITEMS";
 
 		/// <summary>
 		/// <para>Read Only Package</para>
-		/// <para>Specifies whether the project will be read only. Read only projects cannot be modified or saved.</para>
-		/// <para>Checked—Project will be read only.</para>
-		/// <para>Unchecked—Project is writable. This is the default.</para>
+		/// <para>Specifies whether the project will be read-only. Read-only projects cannot be modified or saved.</para>
+		/// <para>Checked—The project will be read-only.</para>
+		/// <para>Unchecked—The project will be writable. This is the default.</para>
 		/// <para><see cref="ReadOnlyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ReadOnly { get; set; } = "false";
+		public object? ReadOnly { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Keep only the rows which are related to features within the extent</para>
@@ -224,14 +226,26 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SelectRelatedRows { get; set; } = "false";
+		public object? SelectRelatedRows { get; set; } = "false";
+
+		/// <summary>
+		/// <para>Preserve Mobile Geodatabase</para>
+		/// <para>Specifies whether input mobile geodatabase data will be preserved in the output or written to file geodatabase format. This parameter overrides the Convert data to file geodatabase parameter when the input data is mobile geodatabase. If the input data is a mobile geodatabase network dataset, the output will always be mobile geodatabase.</para>
+		/// <para>Unchecked—Mobile geodatabase data will be converted to file geodatabase format. This is the default.</para>
+		/// <para>Checked—Mobile geodatabase data will be preserved as mobile geodatabase in the project package.</para>
+		/// <para><see cref="PreserveSqliteEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		public object? PreserveSqlite { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PackageProject SetEnviroment(object workspace = null )
+		public PackageProject SetEnviroment(object? parallelProcessingFactor = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;
 		}
 
@@ -264,14 +278,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum PackageAsTemplateEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Creates a project template.</para>
+			/// <para>Checked—A project template will be created.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PROJECT_TEMPLATE")]
 			PROJECT_TEMPLATE,
 
 			/// <summary>
-			/// <para>Unchecked—Creates a project package. This is the default.</para>
+			/// <para>Unchecked—A project package will be created. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("PROJECT_PACKAGE")]
@@ -285,88 +299,18 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ApplyExtentToArcsdeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Extent will be applied to enterprise geodatabase layers only.</para>
+			/// <para>Checked—The extent will be applied to enterprise geodatabase layers only.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ENTERPRISE_ONLY")]
 			ENTERPRISE_ONLY,
 
 			/// <summary>
-			/// <para>Unchecked—Extent will be applied to all layers. This is the default.</para>
+			/// <para>Unchecked—The extent will be applied to all layers. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ALL")]
 			ALL,
-
-		}
-
-		/// <summary>
-		/// <para>Package version</para>
-		/// </summary>
-		public enum VersionEnum 
-		{
-			/// <summary>
-			/// <para>All versions— The package will contain geodatabases and maps compatible with all versions (ArcGIS Pro 2.1 and later).</para>
-			/// </summary>
-			[GPValue("ALL")]
-			[Description("All versions")]
-			All_versions,
-
-			/// <summary>
-			/// <para>Current version— The package will contain geodatabases and maps compatible with the version of the current release.</para>
-			/// </summary>
-			[GPValue("CURRENT")]
-			[Description("Current version")]
-			Current_version,
-
-			/// <summary>
-			/// <para>2.1—The package will contain geodatabases and maps compatible with version 2.1.</para>
-			/// </summary>
-			[GPValue("2.1")]
-			[Description("2.1")]
-			_21,
-
-			/// <summary>
-			/// <para>2.2— The package will contain geodatabases and maps compatible with version 2.2.</para>
-			/// </summary>
-			[GPValue("2.2")]
-			[Description("2.2")]
-			_22,
-
-			/// <summary>
-			/// <para>2.3—The package will contain geodatabases and maps compatible with version 2.3.</para>
-			/// </summary>
-			[GPValue("2.3")]
-			[Description("2.3")]
-			_23,
-
-			/// <summary>
-			/// <para>2.4—The package will contain geodatabases and maps compatible with version 2.4.</para>
-			/// </summary>
-			[GPValue("2.4")]
-			[Description("2.4")]
-			_24,
-
-			/// <summary>
-			/// <para>2.5—The package will contain geodatabases and maps compatible with version 2.5.</para>
-			/// </summary>
-			[GPValue("2.5")]
-			[Description("2.5")]
-			_25,
-
-			/// <summary>
-			/// <para>2.6—The package will contain geodatabases and maps compatible with version 2.6.</para>
-			/// </summary>
-			[GPValue("2.6")]
-			[Description("2.6")]
-			_26,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("2.7")]
-			[Description("2.7")]
-			_27,
 
 		}
 
@@ -383,7 +327,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			TOOLBOXES,
 
 			/// <summary>
-			/// <para>Unchecked—Project toolboxes will be excluded from the output package.</para>
+			/// <para>Unchecked—Project toolboxes will not be included in the output package.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_TOOLBOXES")]
@@ -404,11 +348,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			History_items_will_be_included,
 
 			/// <summary>
-			/// <para>History items will be excluded—History items will be excluded from the output package.</para>
+			/// <para>History items will not be included—History items will not be included in the output package.</para>
 			/// </summary>
 			[GPValue("NO_HISTORY_ITEMS")]
-			[Description("History items will be excluded")]
-			History_items_will_be_excluded,
+			[Description("History items will not be included")]
+			History_items_will_not_be_included,
 
 			/// <summary>
 			/// <para>Only valid history items will be included—Only valid history items will be included in the output package. History items are invalid if any of the original input layers or tools cannot be found.</para>
@@ -425,14 +369,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ReadOnlyEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Project will be read only.</para>
+			/// <para>Checked—The project will be read-only.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("READ_ONLY")]
 			READ_ONLY,
 
 			/// <summary>
-			/// <para>Unchecked—Project is writable. This is the default.</para>
+			/// <para>Unchecked—The project will be writable. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("READ_WRITE")]
@@ -458,6 +402,27 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			[GPValue("false")]
 			[Description("KEEP_ALL_RELATED_ROWS")]
 			KEEP_ALL_RELATED_ROWS,
+
+		}
+
+		/// <summary>
+		/// <para>Preserve Mobile Geodatabase</para>
+		/// </summary>
+		public enum PreserveSqliteEnum 
+		{
+			/// <summary>
+			/// <para>Checked—Mobile geodatabase data will be preserved as mobile geodatabase in the project package.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("PRESERVE_SQLITE")]
+			PRESERVE_SQLITE,
+
+			/// <summary>
+			/// <para>Unchecked—Mobile geodatabase data will be converted to file geodatabase format. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("CONVERT_SQLITE")]
+			CONVERT_SQLITE,
 
 		}
 

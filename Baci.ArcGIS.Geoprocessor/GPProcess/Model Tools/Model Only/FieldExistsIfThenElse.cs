@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, FieldTestType, Field, True, False };
+		public override object[] Parameters => new object[] { InTable, FieldTestType, Field, True!, False! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -112,14 +112,14 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
-		public object True { get; set; } = "false";
+		public object? True { get; set; } = "false";
 
 		/// <summary>
 		/// <para>False</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
-		public object False { get; set; } = "false";
+		public object? False { get; set; } = "false";
 
 		#region InnerClass
 

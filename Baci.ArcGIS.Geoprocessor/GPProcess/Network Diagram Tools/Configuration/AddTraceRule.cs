@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Trace Rule</para>
-	/// <para>Adds a diagram rule to automatically execute a trace on a utility network or trace network  during the building of diagrams based on an existing template. The resulting traced network features and network objects are used to build the diagram content.</para>
+	/// <para>Adds a diagram rule to automatically execute a trace on a utility network or trace network during the building of diagrams based on an existing template. The resulting traced network features and network objects are used to build the diagram content.</para>
 	/// </summary>
 	public class AddTraceRule : AbstractGPProcess
 	{
@@ -20,11 +20,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template to modify.</para>
+		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template to modify.</para>
+		/// <para>The name of the diagram template that will be modified.</para>
 		/// </param>
 		/// <param name="IsActive">
 		/// <para>Active</para>
@@ -36,11 +36,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <param name="TraceType">
 		/// <para>Trace Type</para>
 		/// <para>Specifies the type of trace the rule will perform to build the diagram content.</para>
-		/// <para>Connected— A connected trace is executed from the utility network or trace network elements currently represented in the diagram when the rule starts and spans outward along connected elements. This is the default.</para>
-		/// <para>Subnetwork— A subnetwork trace is executed from the utility network elements currently represented in the diagram when the rule starts and spans outward along connected elements to find sources or sinks from which it spans outward along the related subnetwork.</para>
-		/// <para>Upstream—An upstream trace is executed from the utility network or trace network elements currently represented in the diagram when the rule starts to discover elements upstream.</para>
-		/// <para>Downstream—A downstream trace is executed from the utility network or trace network elements currently represented in the diagram when the rule starts to discover elements downstream.</para>
-		/// <para>Shortest path— A shortest path trace is executed from the trace network features currently specified as starting points in the diagram when the rule starts to discover features along the shortest path between those starting points. The cost of traversing the path is determined based on the network attribute set for the Shortest Path Network Attribute Name parameter value regardless of flow direction.</para>
+		/// <para>Connected— A connected trace will be executed from the utility network or trace network elements currently represented in the diagram when the rule starts and spans outward along connected elements. This is the default.</para>
+		/// <para>Subnetwork— A subnetwork trace will be executed from the utility network elements currently represented in the diagram when the rule starts and spans outward along connected elements to find sources or sinks from which it spans outward along the related subnetwork.</para>
+		/// <para>Upstream—An upstream trace will be executed from the utility network or trace network elements currently represented in the diagram when the rule starts to discover elements upstream.</para>
+		/// <para>Downstream—A downstream trace will be executed from the utility network or trace network elements currently represented in the diagram when the rule starts to discover elements downstream.</para>
+		/// <para>Shortest path— A shortest path trace will be executed from the utility network or trace network features currently specified as starting points in the diagram when the rule starts to discover features along the shortest path between those starting points. The cost of traversing the path is determined based on the network attribute set for the Shortest Path Network Attribute Name parameter value regardless of flow direction.</para>
 		/// </param>
 		public AddTraceRule(object InUtilityNetwork, object TemplateName, object IsActive, object TraceType)
 		{
@@ -83,11 +83,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, TraceType, DomainNetwork, Tier, TargetTier, IncludeStructures, IncludeBarriers, ConditionBarriers, FunctionBarriers, TraversabilityScope, FilterBarriers, FilterFunctionBarriers, FilterScope, FilterBitsetNetworkAttributeName, FilterNearest, NearestCount, NearestCostNetworkAttribute, NearestCategories, NearestAssets, Propagators, Description, OutUtilityNetwork, OutTemplateName, AllowIndeterminateFlow, PathDirection, PathNetworkWeightName };
+		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, TraceType, DomainNetwork!, Tier!, TargetTier!, IncludeStructures!, IncludeBarriers!, ConditionBarriers!, FunctionBarriers!, TraversabilityScope!, FilterBarriers!, FilterFunctionBarriers!, FilterScope!, FilterBitsetNetworkAttributeName!, FilterNearest!, NearestCount!, NearestCostNetworkAttribute!, NearestCategories!, NearestAssets!, Propagators!, Description!, OutUtilityNetwork!, OutTemplateName!, AllowIndeterminateFlow!, PathDirection!, PathNetworkWeightName! };
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template to modify.</para>
+		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template to modify.</para>
+		/// <para>The name of the diagram template that will be modified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -116,11 +116,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Trace Type</para>
 		/// <para>Specifies the type of trace the rule will perform to build the diagram content.</para>
-		/// <para>Connected— A connected trace is executed from the utility network or trace network elements currently represented in the diagram when the rule starts and spans outward along connected elements. This is the default.</para>
-		/// <para>Subnetwork— A subnetwork trace is executed from the utility network elements currently represented in the diagram when the rule starts and spans outward along connected elements to find sources or sinks from which it spans outward along the related subnetwork.</para>
-		/// <para>Upstream—An upstream trace is executed from the utility network or trace network elements currently represented in the diagram when the rule starts to discover elements upstream.</para>
-		/// <para>Downstream—A downstream trace is executed from the utility network or trace network elements currently represented in the diagram when the rule starts to discover elements downstream.</para>
-		/// <para>Shortest path— A shortest path trace is executed from the trace network features currently specified as starting points in the diagram when the rule starts to discover features along the shortest path between those starting points. The cost of traversing the path is determined based on the network attribute set for the Shortest Path Network Attribute Name parameter value regardless of flow direction.</para>
+		/// <para>Connected— A connected trace will be executed from the utility network or trace network elements currently represented in the diagram when the rule starts and spans outward along connected elements. This is the default.</para>
+		/// <para>Subnetwork— A subnetwork trace will be executed from the utility network elements currently represented in the diagram when the rule starts and spans outward along connected elements to find sources or sinks from which it spans outward along the related subnetwork.</para>
+		/// <para>Upstream—An upstream trace will be executed from the utility network or trace network elements currently represented in the diagram when the rule starts to discover elements upstream.</para>
+		/// <para>Downstream—A downstream trace will be executed from the utility network or trace network elements currently represented in the diagram when the rule starts to discover elements downstream.</para>
+		/// <para>Shortest path— A shortest path trace will be executed from the utility network or trace network features currently specified as starting points in the diagram when the rule starts to discover features along the shortest path between those starting points. The cost of traversing the path is determined based on the network attribute set for the Shortest Path Network Attribute Name parameter value regardless of flow direction.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -128,27 +128,27 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Domain Network</para>
-		/// <para>The name of the domain network where the trace is run for a utility network. This parameter is required when running the subnetwork, upstream, and downstream trace types.</para>
+		/// <para>The name of the domain network where the trace will be run for a utility network. This parameter is required when running the subnetwork, upstream, and downstream trace types.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DomainNetwork { get; set; }
+		public object? DomainNetwork { get; set; }
 
 		/// <summary>
 		/// <para>Tier</para>
-		/// <para>The name of the tier where the trace starts for a utility network. This parameter is optional when running the connected trace type; it is required when running the subnetwork, upstream, and downstream trace types.</para>
+		/// <para>The name of the tier where the trace will start for a utility network. This parameter is optional when running the connected trace type; it is required when running the subnetwork, upstream, and downstream trace types.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Tier { get; set; }
+		public object? Tier { get; set; }
 
 		/// <summary>
 		/// <para>Target Tier</para>
-		/// <para>The name of the target tier to which the input tier flows for a utility network. If this parameter is missing for upstream and downstream traces, those traces will stop when they reach the boundary of the starting subnetwork. This parameter can be used to allow these traces to continue either farther up or farther down the hierarchy.</para>
+		/// <para>The name of the target tier to which the input tier will flow for a utility network. If this parameter is missing for upstream and downstream traces, those traces will stop when they reach the boundary of the starting subnetwork. This parameter can be used to allow these traces to continue either farther up or farther down the hierarchy.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object TargetTier { get; set; }
+		public object? TargetTier { get; set; }
 
 		/// <summary>
 		/// <para>Include Structures</para>
@@ -160,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeStructures { get; set; } = "false";
+		public object? IncludeStructures { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Include Barriers Features</para>
@@ -173,7 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Traversability")]
-		public object IncludeBarriers { get; set; } = "true";
+		public object? IncludeBarriers { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Condition Barriers</para>
@@ -203,7 +203,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Traversability")]
-		public object ConditionBarriers { get; set; }
+		public object? ConditionBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Function Barriers</para>
@@ -240,7 +240,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Traversability")]
-		public object FunctionBarriers { get; set; }
+		public object? FunctionBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Apply Traversability To</para>
@@ -254,17 +254,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Traversability")]
-		public object TraversabilityScope { get; set; } = "BOTH_JUNCTIONS_AND_EDGES";
+		public object? TraversabilityScope { get; set; } = "BOTH_JUNCTIONS_AND_EDGES";
 
 		/// <summary>
 		/// <para>Filter Barriers</para>
 		/// <para>Specifies when the trace will stop for a specific category or network attribute. For example, stop a trace at features that have a life cycle status attribute that is equal to a certain value. This parameter is used to set a terminator based on a value of a network attribute that is defined in the system. If using more than one attribute, you can use the Combine Using option to define an And or an Or condition.</para>
 		/// <para>Filter barrier components are as follows:</para>
-		/// <para>Name—Choose to filter by category or any network attribute defined in the system.</para>
+		/// <para>Name—Filter by category or any network attribute defined in the system.</para>
 		/// <para>Operator—Choose from a number of different operators.</para>
 		/// <para>Type—Choose a specific value or network attribute from the value that is specified in the Name parameter.</para>
 		/// <para>Value—Provide a specific value for the input attribute type that would cause termination based on the operator value.</para>
-		/// <para>Combine Using—Set this value if you have multiple attributes to add. You can choose to combine them using an And or an Or condition.</para>
+		/// <para>Combine Using—Set this value if you have multiple attributes to add. You can combine them using an And or an Or condition.</para>
 		/// <para>The filter barriers Operator value options are as follows:</para>
 		/// <para>Is equal to—The attribute is equal to the value.</para>
 		/// <para>Does not equal—The attribute is not equal to the value.</para>
@@ -284,26 +284,26 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Filters")]
-		public object FilterBarriers { get; set; }
+		public object? FilterBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Filter Function Barriers</para>
 		/// <para>Filters the results of the trace for a specific category.</para>
 		/// <para>Filter function barriers components are as follows:</para>
 		/// <para>Function—Choose from a number of different calculation functions.</para>
-		/// <para>Attribute—Choose to filter by any network attribute defined in the system.</para>
+		/// <para>Attribute—Filter by any network attribute defined in the system.</para>
 		/// <para>Operator—Choose from a number of different operators.</para>
 		/// <para>Value—Provide a specific value for the input attribute type that, if discovered, will cause the termination.</para>
-		/// <para>Use Local Values—Calculates values in each direction as opposed to an overall global value. For example, a function barrier that is calculating the sum of Shape length where the trace terminates if the value is greater than or equal to 4. In the global case, after you have traversed two edges with a value of 2, you will have already reached a shape length sum of 4, so the trace stops. If local values are used, the local values along each path change, or the trace continues.</para>
-		/// <para>Checked—Use local values.</para>
-		/// <para>Unchecked—Use global values. This is the default.</para>
+		/// <para>Use Local Values—Calculate values in each direction as opposed to an overall global value. For example, a function barrier is calculating the sum of Shape length in which the trace terminates if the value is greater than or equal to 4. In the global case, after you traverse two edges with a value of 2, you will have reached a shape length sum of 4, so the trace stops. If local values are used, the local values along each path change, or the trace continues.</para>
+		/// <para>Checked—Local values will be used.</para>
+		/// <para>Unchecked—Global values will be used. This is the default.</para>
 		/// <para>The filter function barriers Function value options are as follows:</para>
-		/// <para>Minimum—The minimum of the input values</para>
-		/// <para>Maximum—The maximum of the input values</para>
-		/// <para>Add—The sum of the values</para>
-		/// <para>Average—The average of the input values</para>
-		/// <para>Count—The number of features.</para>
-		/// <para>Subtract—The difference between the values. Subnetwork controllers and loops trace types do not support the subtract function.</para>
+		/// <para>Minimum—The minimum of the input values will be used.</para>
+		/// <para>Maximum—The maximum of the input values will be used.</para>
+		/// <para>Add—The sum of the values will be used.</para>
+		/// <para>Average—The average of the input values will be used.</para>
+		/// <para>Count—The number of features will be used.</para>
+		/// <para>Subtract—The difference between the values will be used. Subnetwork controllers and loops trace types do not support the subtract function.</para>
 		/// <para>For example, there is a starting point feature with a value of 20. The next feature has a value of 30. If you are using the Minimum function, the result is 20. Maximum is 30, Add is 50, Average is 25, Count is 2, and Subtract is -10.</para>
 		/// <para>The filter function barriers Operator value options are as follows:</para>
 		/// <para>Is equal to—The attribute is equal to the value.</para>
@@ -312,16 +312,16 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <para>Is greater than or equal to—The attribute is greater than or equal to the value.</para>
 		/// <para>Is less than—The attribute is less than the value.</para>
 		/// <para>Is less than or equal to—The attribute is less than or equal to the value.</para>
-		/// <para>Includes the values—A bitwise AND operation where all bits in the value are present in the attribute (bitwise AND == value).</para>
-		/// <para>Does not include the values—A bitwise AND operation where not all of the bits in the value are present in the attribute (bitwise AND != value).</para>
-		/// <para>Includes any—A bitwise AND operation where at least one bit in the value is present in the attribute (bitwise AND == True).</para>
-		/// <para>Does not include any—A bitwise AND operation where none of the bits in the value are present in the attribute (bitwise AND == False).</para>
+		/// <para>Includes the values—A bitwise AND operation in which all bits in the value are present in the attribute (bitwise AND == value).</para>
+		/// <para>Does not include the values—A bitwise AND operation in which not all of the bits in the value are present in the attribute (bitwise AND != value).</para>
+		/// <para>Includes any—A bitwise AND operation in which at least one bit in the value is present in the attribute (bitwise AND == True).</para>
+		/// <para>Does not include any—A bitwise AND operation in which none of the bits in the value are present in the attribute (bitwise AND == False).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Filters")]
-		public object FilterFunctionBarriers { get; set; }
+		public object? FilterFunctionBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Apply Filter To</para>
@@ -335,7 +335,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Filters")]
-		public object FilterScope { get; set; } = "BOTH_JUNCTIONS_AND_EDGES";
+		public object? FilterScope { get; set; } = "BOTH_JUNCTIONS_AND_EDGES";
 
 		/// <summary>
 		/// <para>Filter by bitset network attribute</para>
@@ -344,7 +344,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Filters")]
-		public object FilterBitsetNetworkAttributeName { get; set; }
+		public object? FilterBitsetNetworkAttributeName { get; set; }
 
 		/// <summary>
 		/// <para>Filter by nearest</para>
@@ -357,7 +357,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Filters")]
-		public object FilterNearest { get; set; } = "false";
+		public object? FilterNearest { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Count</para>
@@ -366,7 +366,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Filters")]
-		public object NearestCount { get; set; }
+		public object? NearestCount { get; set; }
 
 		/// <summary>
 		/// <para>Cost Network Attribute</para>
@@ -375,7 +375,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Filters")]
-		public object NearestCostNetworkAttribute { get; set; }
+		public object? NearestCostNetworkAttribute { get; set; }
 
 		/// <summary>
 		/// <para>Nearest Categories</para>
@@ -384,7 +384,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[Category("Filters")]
-		public object NearestCategories { get; set; }
+		public object? NearestCategories { get; set; }
 
 		/// <summary>
 		/// <para>Nearest Asset Groups/Types</para>
@@ -393,7 +393,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[Category("Filters")]
-		public object NearestAssets { get; set; }
+		public object? NearestAssets { get; set; }
 
 		/// <summary>
 		/// <para>Propagators</para>
@@ -405,9 +405,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <para>Operator—Choose from a number of operators.</para>
 		/// <para>Value—Provide a specific value for the input attribute type that would cause termination based on the operator value.</para>
 		/// <para>The propagators function value options are as follows:</para>
-		/// <para>PROPAGATED_BITWISE_AND—Compare the values from one feature to the next.</para>
-		/// <para>PROPAGATED_MIN—Get the minimum value.</para>
-		/// <para>PROPAGATED_MAX—Get the maximum value.</para>
+		/// <para>PROPAGATED_BITWISE_AND—Values will be compared from one feature to the next.</para>
+		/// <para>PROPAGATED_MIN—The minimum value will be propagated.</para>
+		/// <para>PROPAGATED_MAX—The maximum value will be propagated.</para>
 		/// <para>The propagators operator value options are as follows:</para>
 		/// <para>IS_EQUAL_TO—The attribute is equal to the value.</para>
 		/// <para>DOES_NOT_EQUAL—The attribute is not equal to the value.</para>
@@ -415,17 +415,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <para>IS_GREATER_THAN_OR_EQUAL_TO—The attribute is greater than or equal to the value.</para>
 		/// <para>IS_LESS_THAN—The attribute is less than the value.</para>
 		/// <para>IS_LESS_THAN_OR_EQUAL_TO—The attribute is less than or equal to the value.</para>
-		/// <para>INCLUDES_THE_VALUES—A bitwise AND operation where all bits in the value are present in the attribute (bitwise AND == value).</para>
-		/// <para>DOES_NOT_INCLUDE_THE_VALUES—A bitwise AND operation where not all of the bits in the value are present in the attribute (bitwise AND != value).</para>
-		/// <para>INCLUDES_ANY—A bitwise AND operation where at least one bit in the value is present in the attribute (bitwise AND == True).</para>
-		/// <para>DOES_NOT_INCLUDE_ANY—A bitwise AND operation where none of the bits in the value are present in the attribute (bitwise AND == False).</para>
+		/// <para>INCLUDES_THE_VALUES—A bitwise AND operation in which all bits in the value are present in the attribute (bitwise AND == value).</para>
+		/// <para>DOES_NOT_INCLUDE_THE_VALUES—A bitwise AND operation in which not all of the bits in the value are present in the attribute (bitwise AND != value).</para>
+		/// <para>INCLUDES_ANY—A bitwise AND operation in which at least one bit in the value is present in the attribute (bitwise AND == True).</para>
+		/// <para>DOES_NOT_INCLUDE_ANY—A bitwise AND operation in which none of the bits in the value are present in the attribute (bitwise AND == False).</para>
 		/// <para>This parameter is only available via Python.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Propagators")]
-		public object Propagators { get; set; }
+		public object? Propagators { get; set; }
 
 		/// <summary>
 		/// <para>Description</para>
@@ -433,56 +433,56 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Description { get; set; }
+		public object? Description { get; set; }
 
 		/// <summary>
 		/// <para>Output Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		/// <summary>
 		/// <para>Output Diagram Template</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutTemplateName { get; set; }
+		public object? OutTemplateName { get; set; }
 
 		/// <summary>
 		/// <para>Allow Indeterminate Flow</para>
 		/// <para>Specifies whether trace network features that have indeterminate or uninitialized flow will be traced. This parameter is only honored when running an upstream or downstream trace on a trace network.</para>
-		/// <para>Checked—Include trace network features that have indeterminate or uninitialized flow direction in the trace.</para>
-		/// <para>Unchecked—Do not include trace network features that have indeterminate or uninitialized flow direction. This is the default.</para>
+		/// <para>Checked—Trace network features that have indeterminate or uninitialized flow direction in the trace will be included.</para>
+		/// <para>Unchecked—Trace network features that have indeterminate or uninitialized flow direction will not be included. This is the default.</para>
 		/// <para><see cref="AllowIndeterminateFlowEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AllowIndeterminateFlow { get; set; } = "false";
+		public object? AllowIndeterminateFlow { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Path Direction</para>
-		/// <para>Specifies the direction of the path for a trace network. The cost of traversing the path is determined based on the value set for the Path Network Attribute Name. This parameter is only honored when running a Path trace type.</para>
-		/// <para>NO_DIRECTION—Find the path between the two starting points regardless of the direction of flow. This is the default.</para>
-		/// <para>PATH_UPSTREAM—Find the downstream path between the two starting points.</para>
-		/// <para>PATH_DOWNSTREAM—Find the upstream path between the two starting points.</para>
+		/// <para>Specifies the direction of the path for a trace network. The cost of traversing the path is determined by the Shortest Path Network Attribute Name parameter value. This parameter is only honored when running a Shortest path trace type.</para>
+		/// <para>NO_DIRECTION—The path will be between the two starting points regardless of the direction of flow. This is the default.</para>
+		/// <para>PATH_UPSTREAM—The direction of the path will be downstream between the two starting points.</para>
+		/// <para>PATH_DOWNSTREAM—The direction of the path will be upstream between the two starting points.</para>
 		/// <para><see cref="PathDirectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object PathDirection { get; set; } = "NO_DIRECTION";
+		public object? PathDirection { get; set; } = "NO_DIRECTION";
 
 		/// <summary>
 		/// <para>Shortest Path Network Attribute Name</para>
-		/// <para>The network attribute used to calculate the path for a trace network. When running a shortest path trace type, the shortest path is calculated using a numeric network attribute such as shape length. Cost and distance based paths can both be achieved. This parameter is required when running a shortest path trace.</para>
+		/// <para>The network attribute that will be used to calculate the path for a utility network or trace network. When running a shortest path trace type, the shortest path is calculated using a numeric network attribute such as shape length. Cost-and distance-based paths can both be achieved. This parameter is required when running a shortest path trace.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Advanced Options")]
-		public object PathNetworkWeightName { get; set; }
+		public object? PathNetworkWeightName { get; set; }
 
 		#region InnerClass
 
@@ -632,14 +632,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum AllowIndeterminateFlowEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Include trace network features that have indeterminate or uninitialized flow direction in the trace.</para>
+			/// <para>Checked—Trace network features that have indeterminate or uninitialized flow direction in the trace will be included.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("TRACE_INDETERMINATE_FLOW")]
 			TRACE_INDETERMINATE_FLOW,
 
 			/// <summary>
-			/// <para>Unchecked—Do not include trace network features that have indeterminate or uninitialized flow direction. This is the default.</para>
+			/// <para>Unchecked—Trace network features that have indeterminate or uninitialized flow direction will not be included. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("IGNORE_INDETERMINATE_FLOW")]
@@ -653,21 +653,21 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum PathDirectionEnum 
 		{
 			/// <summary>
-			/// <para>NO_DIRECTION—Find the path between the two starting points regardless of the direction of flow. This is the default.</para>
+			/// <para>NO_DIRECTION—The path will be between the two starting points regardless of the direction of flow. This is the default.</para>
 			/// </summary>
 			[GPValue("NO_DIRECTION")]
 			[Description("NO_DIRECTION")]
 			NO_DIRECTION,
 
 			/// <summary>
-			/// <para>PATH_UPSTREAM—Find the downstream path between the two starting points.</para>
+			/// <para>PATH_UPSTREAM—The direction of the path will be downstream between the two starting points.</para>
 			/// </summary>
 			[GPValue("PATH_UPSTREAM")]
 			[Description("PATH_UPSTREAM")]
 			PATH_UPSTREAM,
 
 			/// <summary>
-			/// <para>PATH_DOWNSTREAM—Find the upstream path between the two starting points.</para>
+			/// <para>PATH_DOWNSTREAM—The direction of the path will be upstream between the two starting points.</para>
 			/// </summary>
 			[GPValue("PATH_DOWNSTREAM")]
 			[Description("PATH_DOWNSTREAM")]

@@ -60,14 +60,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, GeneratedBefore };
+		public override object[] Parameters => new object[] { InMosaicDataset, GeneratedBefore!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
 		/// <para>The input mosaic dataset with the pixel cache to be deleted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
-		[DEMosaicDataset()]
+		[GPMosaicLayer()]
 		public object InMosaicDataset { get; set; }
 
 		/// <summary>
@@ -76,7 +76,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object GeneratedBefore { get; set; }
+		public object? GeneratedBefore { get; set; }
+
+		/// <summary>
+		/// <para>Mosaic Dataset</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.derived)]
+		[GPMosaicLayer()]
+		public object? OutMosaicDataset { get; set; }
 
 	}
 }

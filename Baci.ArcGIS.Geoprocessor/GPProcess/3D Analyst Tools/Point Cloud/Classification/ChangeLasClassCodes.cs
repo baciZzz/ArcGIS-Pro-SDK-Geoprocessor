@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, ClassCodes, ComputeStats, DerivedLasDataset, Extent, Boundary, ProcessEntireFiles, UpdatePyramid };
+		public override object[] Parameters => new object[] { InLasDataset, ClassCodes, ComputeStats!, DerivedLasDataset!, Extent!, Boundary!, ProcessEntireFiles!, UpdatePyramid! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -96,14 +96,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ComputeStats { get; set; } = "true";
+		public object? ComputeStats { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output LAS Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLasDatasetLayer()]
-		public object DerivedLasDataset { get; set; }
+		public object? DerivedLasDataset { get; set; }
 
 		/// <summary>
 		/// <para>Processing Extent</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
 		[Category("Processing Extent")]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Processing Boundary</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
 		[Category("Processing Extent")]
-		public object Boundary { get; set; }
+		public object? Boundary { get; set; }
 
 		/// <summary>
 		/// <para>Process entire LAS files that intersect extent</para>
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Processing Extent")]
-		public object ProcessEntireFiles { get; set; } = "false";
+		public object? ProcessEntireFiles { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Update pyramid</para>
@@ -153,12 +153,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UpdatePyramid { get; set; } = "true";
+		public object? UpdatePyramid { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ChangeLasClassCodes SetEnviroment(object extent = null , object workspace = null )
+		public ChangeLasClassCodes SetEnviroment(object? extent = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

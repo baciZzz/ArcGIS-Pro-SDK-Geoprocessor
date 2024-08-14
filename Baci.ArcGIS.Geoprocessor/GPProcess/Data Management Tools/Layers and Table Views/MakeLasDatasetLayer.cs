@@ -24,7 +24,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </param>
 		/// <param name="OutLayer">
 		/// <para>Output Layer</para>
-		/// <para>The name of the resulting LAS dataset layer. Any backslash or forward slash can be used to denote a group layer.</para>
+		/// <para>The name of the resulting LAS dataset layer. A backslash or forward slash can be used to denote a group layer.</para>
 		/// </param>
 		public MakeLasDatasetLayer(object InLasDataset, object OutLayer)
 		{
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, OutLayer, ClassCode, ReturnValues, NoFlag, Synthetic, Keypoint, Withheld, SurfaceConstraints, Overlap };
+		public override object[] Parameters => new object[] { InLasDataset, OutLayer, ClassCode!, ReturnValues!, NoFlag!, Synthetic!, Keypoint!, Withheld!, SurfaceConstraints!, Overlap! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Layer</para>
-		/// <para>The name of the resulting LAS dataset layer. Any backslash or forward slash can be used to denote a group layer.</para>
+		/// <para>The name of the resulting LAS dataset layer. A backslash or forward slash can be used to denote a group layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLasDatasetLayer()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Class Codes</para>
-		/// <para>Allows the filtering of LAS points by classification codes. The range of valid values will depend on the class codes supported by the version of LAS files referenced by the LAS dataset. All class codes will be selected by default.</para>
+		/// <para>Specifies the classification codes that will be used to filter LAS points. All class codes will be selected by default.</para>
 		/// <para>0—Never processed by a classification method</para>
 		/// <para>1—Processed by a classification method but could not be determined</para>
 		/// <para>2—Bare earth measurements</para>
@@ -105,89 +105,89 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>16—A mechanical assembly that joins an electrical circuit</para>
 		/// <para>17—The surface of a bridge</para>
 		/// <para>18—Erroneous or undesirable data that is far from the ground</para>
-		/// <para>19 - 63—Reserved class codes for ASPRS designation.</para>
-		/// <para>64 - 255—User-definable class codes.</para>
+		/// <para>19 - 63—Reserved class codes for ASPRS designation</para>
+		/// <para>64 - 255—User-definable class codes</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object ClassCode { get; set; }
+		public object? ClassCode { get; set; }
 
 		/// <summary>
 		/// <para>Return Values</para>
-		/// <para>The return values to be used for filtering LAS points. When no value is specified, all returns are used.</para>
-		/// <para>Last Return—Last return</para>
-		/// <para>First of Many Returns—First of many</para>
-		/// <para>Last of Many Returns—Last of many</para>
-		/// <para>Single Return—Single return</para>
-		/// <para>1st Return—1st Return</para>
-		/// <para>2nd Return—2nd Return</para>
-		/// <para>3rd Return—3rd Return</para>
-		/// <para>4th Return—4th Return</para>
-		/// <para>5th Return—5th Return</para>
-		/// <para>6th Return—6th Return</para>
-		/// <para>7th Return—7th Return</para>
-		/// <para>8th Return—8th Return</para>
-		/// <para>9th Return—9th Return</para>
-		/// <para>10th Return—10th Return</para>
-		/// <para>11th Return—11th Return</para>
-		/// <para>12th Return—12th Return</para>
-		/// <para>13th Return—13th Return</para>
-		/// <para>14th Return—14th Return</para>
-		/// <para>15th Return—15th Return</para>
+		/// <para>Specifies the ordinal pulse return values that will be used to filter LAS points. All returns will be used when no value is specified. Return information is only available for LAS point clouds collected from a lidar scanner. The return number reflects the order of discrete points obtained from the lidar pulse, whereby the first return is closest to the scanner and the last return is farthest from the scanner.</para>
+		/// <para>LAST—The last point from all lidar pulses will be used.</para>
+		/// <para>FIRST_OF_MANY—The first point from each lidar pulse with multiple returns will be used.</para>
+		/// <para>LAST_OF_MANY—The last point from each lidar pulse with multiple returns will be used.</para>
+		/// <para>SINGLE—All points from lidar pulses with only one return will be used.</para>
+		/// <para>1st Return—All points with a return value of 1 will be used.</para>
+		/// <para>2nd Return—All points with a return value of 2 will be used.</para>
+		/// <para>3rd Return—All points with a return value of 3 will be used.</para>
+		/// <para>4th Return—All points with a return value of 4 will be used.</para>
+		/// <para>5th Return—All points with a return value of 5 will be used.</para>
+		/// <para>6th Return—All points with a return value of 6 will be used.</para>
+		/// <para>7th Return—All points with a return value of 7 will be used.</para>
+		/// <para>8th Return—All points with a return value of 8 will be used.</para>
+		/// <para>9th Return—All points with a return value of 9 will be used.</para>
+		/// <para>10th Return—All points with a return value of 10 will be used.</para>
+		/// <para>11th Return—All points with a return value of 11 will be used.</para>
+		/// <para>12th Return—All points with a return value of 12 will be used.</para>
+		/// <para>13th Return—All points with a return value of 13 will be used.</para>
+		/// <para>14th Return—All points with a return value of 14 will be used.</para>
+		/// <para>15th Return—All points with a return value of 15 will be used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object ReturnValues { get; set; }
+		public object? ReturnValues { get; set; }
 
 		/// <summary>
 		/// <para>Unflagged Points</para>
-		/// <para>Specifies whether data points that do not have any classification flags assigned should be enabled for display and analysis.</para>
-		/// <para>Checked—Unflagged points will be displayed. This is the default.</para>
-		/// <para>Unchecked—Unflagged points will not be displayed.</para>
+		/// <para>Specifies whether data points that do not have classification flags assigned will be included.</para>
+		/// <para>Checked—Unflagged points will be included. This is the default.</para>
+		/// <para>Unchecked—Unflagged points will be excluded.</para>
 		/// <para><see cref="NoFlagEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object NoFlag { get; set; } = "true";
+		public object? NoFlag { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Synthetic Points</para>
-		/// <para>Specifies whether data points flagged as synthetic, or points that originated from a data source other than lidar, should be enabled for display and analysis..</para>
-		/// <para>Checked—Synthetic points will be displayed. This is the default.</para>
-		/// <para>Unchecked—Synthetic points will not be displayed.</para>
+		/// <para>Specifies whether data points flagged as synthetic will be included. Synthetic points refer to LAS points that originated from a data source other than a lidar scanner.</para>
+		/// <para>Checked—Synthetic points will be included. This is the default.</para>
+		/// <para>Unchecked—Synthetic points will be excluded.</para>
 		/// <para><see cref="SyntheticEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Synthetic { get; set; } = "true";
+		public object? Synthetic { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Model Key-Point</para>
-		/// <para>Specifies whether data points flagged as model key points, or significant measurements that should not be thinned away, should be enabled for display and analysis.</para>
-		/// <para>Checked—Model key points will be displayed. This is the default.</para>
-		/// <para>Unchecked—Model key points will not be displayed.</para>
+		/// <para>Specifies whether data points flagged as model key points will be included. Model key points refer to LAS points that are significant for modeling the object they are associated with.</para>
+		/// <para>Checked—Model key points will be included. This is the default.</para>
+		/// <para>Unchecked—Model key points will be excluded.</para>
 		/// <para><see cref="KeypointEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Keypoint { get; set; } = "true";
+		public object? Keypoint { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Withheld Points</para>
-		/// <para>Specifies whether data points flagged as withheld, which typically represent unwanted noise measurements, should be enabled for display and analysis.</para>
-		/// <para>Unchecked—Withheld points will not be displayed. This is the default.</para>
-		/// <para>Checked—Withheld points will be displayed.</para>
+		/// <para>Specifies whether data points flagged as withheld will be included. Withheld points represent erroneous or undesired measurements captured in the LAS points.</para>
+		/// <para>Checked—Withheld points will be included.</para>
+		/// <para>Unchecked—Withheld points will be excluded. This is the default.</para>
 		/// <para><see cref="WithheldEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Withheld { get; set; } = "false";
+		public object? Withheld { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Surface Constraints</para>
@@ -195,24 +195,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object SurfaceConstraints { get; set; }
+		public object? SurfaceConstraints { get; set; }
 
 		/// <summary>
 		/// <para>Overlap Points</para>
-		/// <para>Specifies whether data points flagged as overlap should be enabled for display and analysis.</para>
-		/// <para>Checked—Overlap points will be displayed. This is the default.</para>
-		/// <para>Unchecked—Overlap points will not be displayed.</para>
+		/// <para>Specifies whether data points flagged as overlap will be included. Overlap points refer to points collected in overlapping scans that typically have a larger scan angle. Filtering overlap points can help ensure a regular distribution of LAS points is achieved across the extent of the data.</para>
+		/// <para>Checked—Overlap points will be included. This is the default.</para>
+		/// <para>Unchecked—Overlap points will be excluded.</para>
 		/// <para><see cref="OverlapEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Overlap { get; set; } = "true";
+		public object? Overlap { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeLasDatasetLayer SetEnviroment(object workspace = null )
+		public MakeLasDatasetLayer SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -226,14 +226,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum NoFlagEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Unflagged points will be displayed. This is the default.</para>
+			/// <para>Checked—Unflagged points will be included. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_UNFLAGGED")]
 			INCLUDE_UNFLAGGED,
 
 			/// <summary>
-			/// <para>Unchecked—Unflagged points will not be displayed.</para>
+			/// <para>Unchecked—Unflagged points will be excluded.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXCLUDE_UNFLAGGED")]
@@ -247,14 +247,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SyntheticEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Synthetic points will be displayed. This is the default.</para>
+			/// <para>Checked—Synthetic points will be included. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_SYNTHETIC")]
 			INCLUDE_SYNTHETIC,
 
 			/// <summary>
-			/// <para>Unchecked—Synthetic points will not be displayed.</para>
+			/// <para>Unchecked—Synthetic points will be excluded.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXCLUDE_SYNTHETIC")]
@@ -268,14 +268,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum KeypointEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Model key points will be displayed. This is the default.</para>
+			/// <para>Checked—Model key points will be included. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_KEYPOINT")]
 			INCLUDE_KEYPOINT,
 
 			/// <summary>
-			/// <para>Unchecked—Model key points will not be displayed.</para>
+			/// <para>Unchecked—Model key points will be excluded.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXCLUDE_KEYPOINT")]
@@ -289,14 +289,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum WithheldEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Withheld points will be displayed.</para>
+			/// <para>Checked—Withheld points will be included.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_WITHHELD")]
 			INCLUDE_WITHHELD,
 
 			/// <summary>
-			/// <para>Unchecked—Withheld points will not be displayed. This is the default.</para>
+			/// <para>Unchecked—Withheld points will be excluded. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXCLUDE_WITHHELD")]
@@ -310,14 +310,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum OverlapEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Overlap points will be displayed. This is the default.</para>
+			/// <para>Checked—Overlap points will be included. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_OVERLAP")]
 			INCLUDE_OVERLAP,
 
 			/// <summary>
-			/// <para>Unchecked—Overlap points will not be displayed.</para>
+			/// <para>Unchecked—Overlap points will be excluded.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXCLUDE_OVERLAP")]

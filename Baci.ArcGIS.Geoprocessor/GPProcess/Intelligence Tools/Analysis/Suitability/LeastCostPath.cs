@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCostSurface, InStartPoint, InEndPoint, OutPathFeatureClass, HandleZeros, OutStartPoint, OutEndPoint };
+		public override object[] Parameters => new object[] { InCostSurface, InStartPoint, InEndPoint, OutPathFeatureClass, HandleZeros!, OutStartPoint!, OutEndPoint! };
 
 		/// <summary>
 		/// <para>Input Cost Surface</para>
@@ -121,21 +121,21 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object HandleZeros { get; set; } = "SMALL_POSITIVE";
+		public object? HandleZeros { get; set; } = "SMALL_POSITIVE";
 
 		/// <summary>
 		/// <para>Output Start Point</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutStartPoint { get; set; }
+		public object? OutStartPoint { get; set; }
 
 		/// <summary>
 		/// <para>Output End Point</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutEndPoint { get; set; }
+		public object? OutEndPoint { get; set; }
 
 		#region InnerClass
 

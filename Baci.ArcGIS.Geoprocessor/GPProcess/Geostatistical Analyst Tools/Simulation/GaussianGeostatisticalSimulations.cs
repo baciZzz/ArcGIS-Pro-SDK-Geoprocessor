@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeostatLayer, NumberOfRealizations, OutputWorkspace, OutputSimulationPrefix, InConditioningFeatures, ConditioningField, CellSize, InBoundingDataset, SaveSimulatedRasters, Quantile, Threshold, InStatsPolygons, RasterStatType, ConditioningMeasurementErrorField, OutWorkspace, OutPolygonStat, OutRasterSimulation, OutRasterStat, OutConvergenceValue };
+		public override object[] Parameters => new object[] { InGeostatLayer, NumberOfRealizations, OutputWorkspace, OutputSimulationPrefix, InConditioningFeatures!, ConditioningField!, CellSize!, InBoundingDataset!, SaveSimulatedRasters!, Quantile!, Threshold!, InStatsPolygons!, RasterStatType!, ConditioningMeasurementErrorField!, OutWorkspace!, OutPolygonStat!, OutRasterSimulation!, OutRasterStat!, OutConvergenceValue! };
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object InConditioningFeatures { get; set; }
+		public object? InConditioningFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Conditioning field</para>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ConditioningField { get; set; }
+		public object? ConditioningField { get; set; }
 
 		/// <summary>
 		/// <para>Output cell size</para>
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
 		[GPSAGeoDataDomain()]
-		public object CellSize { get; set; }
+		public object? CellSize { get; set; }
 
 		/// <summary>
 		/// <para>Input bounding features</para>
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object InBoundingDataset { get; set; }
+		public object? InBoundingDataset { get; set; }
 
 		/// <summary>
 		/// <para>Save simulated rasters</para>
@@ -158,7 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SaveSimulatedRasters { get; set; } = "false";
+		public object? SaveSimulatedRasters { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Quantile</para>
@@ -167,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object Quantile { get; set; }
+		public object? Quantile { get; set; }
 
 		/// <summary>
 		/// <para>Threshold</para>
@@ -175,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Threshold { get; set; }
+		public object? Threshold { get; set; }
 
 		/// <summary>
 		/// <para>Input statistical polygons</para>
@@ -185,7 +185,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object InStatsPolygons { get; set; }
+		public object? InStatsPolygons { get; set; }
 
 		/// <summary>
 		/// <para>Raster statistics type</para>
@@ -204,7 +204,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object RasterStatType { get; set; }
+		public object? RasterStatType { get; set; }
 
 		/// <summary>
 		/// <para>Conditioning measurement error field</para>
@@ -215,47 +215,47 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ConditioningMeasurementErrorField { get; set; }
+		public object? ConditioningMeasurementErrorField { get; set; }
 
 		/// <summary>
 		/// <para>Output workspace</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutWorkspace { get; set; }
+		public object? OutWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Output statistical polygons</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutPolygonStat { get; set; }
+		public object? OutPolygonStat { get; set; }
 
 		/// <summary>
 		/// <para>Output simulation rasters</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutRasterSimulation { get; set; }
+		public object? OutRasterSimulation { get; set; }
 
 		/// <summary>
 		/// <para>Output statistical rasters</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutRasterStat { get; set; }
+		public object? OutRasterStat { get; set; }
 
 		/// <summary>
 		/// <para>Convergence</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object OutConvergenceValue { get; set; } = "0";
+		public object? OutConvergenceValue { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GaussianGeostatisticalSimulations SetEnviroment(object cellSize = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object randomGenerator = null , object scratchWorkspace = null , object snapRaster = null , object workspace = null )
+		public GaussianGeostatisticalSimulations SetEnviroment(object? cellSize = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? randomGenerator = null , object? scratchWorkspace = null , object? snapRaster = null , object? workspace = null )
 		{
 			base.SetEnv(cellSize: cellSize, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, randomGenerator: randomGenerator, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, workspace: workspace);
 			return this;

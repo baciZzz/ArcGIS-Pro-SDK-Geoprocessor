@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, InObserverFeatures, OutRaster, OutAglRaster, AnalysisType, VerticalError, OutObserverRegionRelationshipTable, RefractivityCoefficient, SurfaceOffset, ObserverElevation, ObserverOffset, InnerRadius, InnerRadiusIs3D, OuterRadius, OuterRadiusIs3D, HorizontalStartAngle, HorizontalEndAngle, VerticalUpperAngle, VerticalLowerAngle, AnalysisMethod };
+		public override object[] Parameters => new object[] { InRaster, InObserverFeatures, OutRaster, OutAglRaster!, AnalysisType!, VerticalError!, OutObserverRegionRelationshipTable!, RefractivityCoefficient!, SurfaceOffset!, ObserverElevation!, ObserverOffset!, InnerRadius!, InnerRadiusIs3D!, OuterRadius!, OuterRadiusIs3D!, HorizontalStartAngle!, HorizontalEndAngle!, VerticalUpperAngle!, VerticalLowerAngle!, AnalysisMethod! };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
 		[Category("Viewshed parameters")]
-		public object OutAglRaster { get; set; }
+		public object? OutAglRaster { get; set; }
 
 		/// <summary>
 		/// <para>Analysis type</para>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Viewshed parameters")]
-		public object AnalysisType { get; set; } = "FREQUENCY";
+		public object? AnalysisType { get; set; } = "FREQUENCY";
 
 		/// <summary>
 		/// <para>Vertical error</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Viewshed parameters")]
-		public object VerticalError { get; set; } = "0 Meters";
+		public object? VerticalError { get; set; } = "0 Meters";
 
 		/// <summary>
 		/// <para>Output observer-region relationship table</para>
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
 		[Category("Viewshed parameters")]
-		public object OutObserverRegionRelationshipTable { get; set; }
+		public object? OutObserverRegionRelationshipTable { get; set; }
 
 		/// <summary>
 		/// <para>Refractivity coefficient</para>
@@ -157,20 +157,21 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPDouble()]
 		[GPNumericDomain()]
 		[Category("Viewshed parameters")]
-		public object RefractivityCoefficient { get; set; } = "0.13";
+		public object? RefractivityCoefficient { get; set; } = "0.13";
 
 		/// <summary>
 		/// <para>Surface offset</para>
 		/// <para>A vertical distance to be added to the z-value of each cell as it is considered for visibility. It must be a positive integer or floating-point value.</para>
 		/// <para>You can select a field in the input observers dataset, or you can specify a numerical value.</para>
-		/// <para>If this parameter is set to a value, that value will be applied to all the observers. To specify different values for each observer, set this parameter to a field in the input observer features dataset.</para>
+		/// <para>For example, if the object to be observed is a vehicle, the height of the vehicle should be specified here.</para>
+		/// <para>If this parameter is set to a value, that value will be used by all the observers. To specify different values for each observer, set this parameter to a field in the input observer features dataset.</para>
 		/// <para>The default value is 0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
 		[Category("Observer parameters")]
-		public object SurfaceOffset { get; set; } = "0 Meters";
+		public object? SurfaceOffset { get; set; } = "0 Meters";
 
 		/// <summary>
 		/// <para>Observer elevation</para>
@@ -182,12 +183,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPComposite()]
 		[GPCompositeDomain()]
 		[Category("Observer parameters")]
-		public object ObserverElevation { get; set; }
+		public object? ObserverElevation { get; set; }
 
 		/// <summary>
 		/// <para>Observer offset</para>
 		/// <para>A vertical distance to be added to the observer elevation. It must be a positive integer or floating-point value.</para>
 		/// <para>You can select a field in the input observers dataset, or you can specify a numerical value.</para>
+		/// <para>For example, if an observer is looking from a tower, the height of that tower should be specified here.</para>
 		/// <para>If this parameter is set to a value, that value will be applied to all the observers. To specify different values for each observer, set this parameter to a field in the input observer features dataset.</para>
 		/// <para>The default value is 1 meter.</para>
 		/// </summary>
@@ -195,7 +197,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPComposite()]
 		[GPCompositeDomain()]
 		[Category("Observer parameters")]
-		public object ObserverOffset { get; set; } = "1 Meters";
+		public object? ObserverOffset { get; set; } = "1 Meters";
 
 		/// <summary>
 		/// <para>Inner radius</para>
@@ -208,7 +210,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPComposite()]
 		[GPCompositeDomain()]
 		[Category("Observer parameters")]
-		public object InnerRadius { get; set; }
+		public object? InnerRadius { get; set; }
 
 		/// <summary>
 		/// <para>Inner radius is 3D distance</para>
@@ -221,7 +223,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Observer parameters")]
-		public object InnerRadiusIs3D { get; set; } = "false";
+		public object? InnerRadiusIs3D { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Outer radius</para>
@@ -233,7 +235,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPComposite()]
 		[GPCompositeDomain()]
 		[Category("Observer parameters")]
-		public object OuterRadius { get; set; }
+		public object? OuterRadius { get; set; }
 
 		/// <summary>
 		/// <para>Outer radius is 3D distance</para>
@@ -246,7 +248,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Observer parameters")]
-		public object OuterRadiusIs3D { get; set; } = "false";
+		public object? OuterRadiusIs3D { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Horizontal start angle</para>
@@ -258,7 +260,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPComposite()]
 		[GPCompositeDomain()]
 		[Category("Observer parameters")]
-		public object HorizontalStartAngle { get; set; } = "0";
+		public object? HorizontalStartAngle { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Horizontal end angle</para>
@@ -270,7 +272,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPComposite()]
 		[GPCompositeDomain()]
 		[Category("Observer parameters")]
-		public object HorizontalEndAngle { get; set; } = "360";
+		public object? HorizontalEndAngle { get; set; } = "360";
 
 		/// <summary>
 		/// <para>Vertical upper angle</para>
@@ -284,7 +286,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPComposite()]
 		[GPCompositeDomain()]
 		[Category("Observer parameters")]
-		public object VerticalUpperAngle { get; set; } = "90";
+		public object? VerticalUpperAngle { get; set; } = "90";
 
 		/// <summary>
 		/// <para>Vertical lower angle</para>
@@ -298,7 +300,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPComposite()]
 		[GPCompositeDomain()]
 		[Category("Observer parameters")]
-		public object VerticalLowerAngle { get; set; } = "-90";
+		public object? VerticalLowerAngle { get; set; } = "-90";
 
 		/// <summary>
 		/// <para>Analysis method</para>
@@ -311,14 +313,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Viewshed parameters")]
-		public object AnalysisMethod { get; set; } = "ALL_SIGHTLINES";
+		public object? AnalysisMethod { get; set; } = "ALL_SIGHTLINES";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Viewshed2 SetEnviroment(int? autoCommit = null , object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public Viewshed2 SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 

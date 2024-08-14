@@ -69,7 +69,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved, ReshapeType, IsPathPreserved, OffsetBetweenSegmentAbsolute, BreakpointAbsolute, ShiftBetweenEdgeAbsolute, AngleThreshold, OutUtilityNetwork, OutTemplateName, CircularArcRadius, CircularArcPosition };
+		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved!, ReshapeType!, IsPathPreserved!, OffsetBetweenSegmentAbsolute!, BreakpointAbsolute!, ShiftBetweenEdgeAbsolute!, AngleThreshold!, OutUtilityNetwork!, OutTemplateName!, CircularArcRadius!, CircularArcPosition! };
 
 		/// <summary>
 		/// <para>Input Network</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AreContainersPreserved { get; set; } = "false";
+		public object? AreContainersPreserved { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Reshape Operation</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ReshapeType { get; set; } = "SQUARE_EDGES";
+		public object? ReshapeType { get; set; } = "SQUARE_EDGES";
 
 		/// <summary>
 		/// <para>Preserve path</para>
@@ -119,56 +119,56 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IsPathPreserved { get; set; } = "true";
+		public object? IsPathPreserved { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Offset Between Edges</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object OffsetBetweenSegmentAbsolute { get; set; } = "5 Unknown";
+		public object? OffsetBetweenSegmentAbsolute { get; set; } = "5 Unknown";
 
 		/// <summary>
 		/// <para>Break Point Position</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object BreakpointAbsolute { get; set; } = "8.66 Unknown";
+		public object? BreakpointAbsolute { get; set; } = "8.66 Unknown";
 
 		/// <summary>
 		/// <para>Offset Between Edges</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object ShiftBetweenEdgeAbsolute { get; set; } = "0.5 Unknown";
+		public object? ShiftBetweenEdgeAbsolute { get; set; } = "0.5 Unknown";
 
 		/// <summary>
 		/// <para>Angle Threshold</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object AngleThreshold { get; set; } = "0";
+		public object? AngleThreshold { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Output Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		/// <summary>
 		/// <para>Output Diagram Template</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutTemplateName { get; set; }
+		public object? OutTemplateName { get; set; }
 
 		/// <summary>
 		/// <para>Circular Arc Radius</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object CircularArcRadius { get; set; } = "5 Unknown";
+		public object? CircularArcRadius { get; set; } = "5 Unknown";
 
 		/// <summary>
 		/// <para>Circular Arc Position</para>
@@ -177,7 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object CircularArcPosition { get; set; } = "RIGHT_OF_VERTICAL_SEGMENT";
+		public object? CircularArcPosition { get; set; } = "RIGHT_OF_VERTICAL_SEGMENT";
 
 		#region InnerClass
 

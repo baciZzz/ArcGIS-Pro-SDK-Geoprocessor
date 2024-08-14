@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTraceNetwork, TraceType, StartingPoints, Barriers, PathDirection, ShortestPathNetworkAttributeName, IncludeBarriers, ValidateConsistency, IgnoreBarriersAtStartingPoints, AllowIndeterminateFlow, ConditionBarriers, FunctionBarriers, TraversabilityScope, Functions, OutputConditions, ResultTypes, SelectionType, ClearAllPreviousTraceResults, TraceName, AggregatedPoints, AggregatedLines, UpdatedTraceNetwork, OutNetworkLayer, UseTraceConfig, TraceConfigName };
+		public override object[] Parameters => new object[] { InTraceNetwork, TraceType!, StartingPoints!, Barriers!, PathDirection!, ShortestPathNetworkAttributeName!, IncludeBarriers!, ValidateConsistency!, IgnoreBarriersAtStartingPoints!, AllowIndeterminateFlow!, ConditionBarriers!, FunctionBarriers!, TraversabilityScope!, Functions!, OutputConditions!, ResultTypes!, SelectionType!, ClearAllPreviousTraceResults!, TraceName!, AggregatedPoints!, AggregatedLines!, UpdatedTraceNetwork!, OutNetworkLayer!, UseTraceConfig!, TraceConfigName!, OutJsonFile! };
 
 		/// <summary>
 		/// <para>Input Trace Network</para>
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TraceType { get; set; } = "CONNECTED";
+		public object? TraceType { get; set; } = "CONNECTED";
 
 		/// <summary>
 		/// <para>Starting Points</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object StartingPoints { get; set; } = "TN_Temp_Starting_Points";
+		public object? StartingPoints { get; set; } = "TN_Temp_Starting_Points";
 
 		/// <summary>
 		/// <para>Barriers</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object Barriers { get; set; } = "TN_Temp_Barriers";
+		public object? Barriers { get; set; } = "TN_Temp_Barriers";
 
 		/// <summary>
 		/// <para>Path Direction</para>
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object PathDirection { get; set; } = "NO_DIRECTION";
+		public object? PathDirection { get; set; } = "NO_DIRECTION";
 
 		/// <summary>
 		/// <para>Shortest Path Network Attribute Name</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ShortestPathNetworkAttributeName { get; set; }
+		public object? ShortestPathNetworkAttributeName { get; set; }
 
 		/// <summary>
 		/// <para>Include Barrier Features</para>
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeBarriers { get; set; } = "true";
+		public object? IncludeBarriers { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Validate Consistency</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ValidateConsistency { get; set; } = "true";
+		public object? ValidateConsistency { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Ignore Barriers At Starting Points</para>
@@ -155,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IgnoreBarriersAtStartingPoints { get; set; } = "false";
+		public object? IgnoreBarriersAtStartingPoints { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Allow Indeterminate Flow</para>
@@ -167,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AllowIndeterminateFlow { get; set; } = "false";
+		public object? AllowIndeterminateFlow { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Condition Barriers</para>
@@ -196,7 +196,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Advanced Options")]
-		public object ConditionBarriers { get; set; }
+		public object? ConditionBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Function Barriers</para>
@@ -230,7 +230,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Advanced Options")]
-		public object FunctionBarriers { get; set; }
+		public object? FunctionBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Apply Traversability To</para>
@@ -244,7 +244,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object TraversabilityScope { get; set; } = "BOTH_JUNCTIONS_AND_EDGES";
+		public object? TraversabilityScope { get; set; } = "BOTH_JUNCTIONS_AND_EDGES";
 
 		/// <summary>
 		/// <para>Functions</para>
@@ -279,7 +279,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Advanced Options")]
-		public object Functions { get; set; }
+		public object? Functions { get; set; }
 
 		/// <summary>
 		/// <para>Output Conditions</para>
@@ -305,7 +305,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Advanced Options")]
-		public object OutputConditions { get; set; }
+		public object? OutputConditions { get; set; }
 
 		/// <summary>
 		/// <para>Result Types</para>
@@ -313,13 +313,15 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <para>Selection— The trace results will be returned as a selection set on the appropriate network features. This is the default.</para>
 		/// <para>Aggregated Geometry— The trace results will be aggregated by geometry type and stored in feature classes displayed in layers in the active map.</para>
 		/// <para>Network Layers—The trace results will be added to feature layers as a selection set in a group layer.</para>
+		/// <para>Connectivity—The trace results will be returned as a connectivity graph in a specified output .json file. This option enables the Output JSON parameter.</para>
+		/// <para>Elements—The trace results will be returned as feature-based information in a specified output .json file. This option enables the Output JSON parameter.</para>
 		/// <para><see cref="ResultTypesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object ResultTypes { get; set; }
+		public object? ResultTypes { get; set; }
 
 		/// <summary>
 		/// <para>Selection Type</para>
@@ -335,7 +337,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object SelectionType { get; set; } = "NEW_SELECTION";
+		public object? SelectionType { get; set; } = "NEW_SELECTION";
 
 		/// <summary>
 		/// <para>Clear All Previous Trace Results</para>
@@ -348,7 +350,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object ClearAllPreviousTraceResults { get; set; } = "true";
+		public object? ClearAllPreviousTraceResults { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Trace Name</para>
@@ -357,7 +359,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Advanced Options")]
-		public object TraceName { get; set; }
+		public object? TraceName { get; set; }
 
 		/// <summary>
 		/// <para>Aggregated Points</para>
@@ -368,7 +370,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
 		[Category("Advanced Options")]
-		public object AggregatedPoints { get; set; } = "Trace_Results_Aggregated_Points";
+		public object? AggregatedPoints { get; set; } = "Trace_Results_Aggregated_Points";
 
 		/// <summary>
 		/// <para>Aggregated Lines</para>
@@ -379,14 +381,14 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
 		[Category("Advanced Options")]
-		public object AggregatedLines { get; set; } = "Trace_Results_Aggregated_Lines";
+		public object? AggregatedLines { get; set; } = "Trace_Results_Aggregated_Lines";
 
 		/// <summary>
 		/// <para>Updated Trace Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETraceNetwork()]
-		public object UpdatedTraceNetwork { get; set; }
+		public object? UpdatedTraceNetwork { get; set; }
 
 		/// <summary>
 		/// <para>Output Group Layer Name</para>
@@ -396,7 +398,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGroupLayer()]
 		[Category("Advanced Options")]
-		public object OutNetworkLayer { get; set; }
+		public object? OutNetworkLayer { get; set; }
 
 		/// <summary>
 		/// <para>Use Trace Configuration</para>
@@ -409,7 +411,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UseTraceConfig { get; set; } = "false";
+		public object? UseTraceConfig { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Trace Configuration Name</para>
@@ -418,7 +420,17 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object TraceConfigName { get; set; }
+		public object? TraceConfigName { get; set; }
+
+		/// <summary>
+		/// <para>Output JSON</para>
+		/// <para>The name and location of the .json file that will be generated.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[DEFile()]
+		[GPFileDomain()]
+		[Category("Advanced Options")]
+		public object? OutJsonFile { get; set; }
 
 		#region InnerClass
 
@@ -622,6 +634,20 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 			[GPValue("NETWORK_LAYERS")]
 			[Description("Network Layers")]
 			Network_Layers,
+
+			/// <summary>
+			/// <para>Connectivity—The trace results will be returned as a connectivity graph in a specified output .json file. This option enables the Output JSON parameter.</para>
+			/// </summary>
+			[GPValue("CONNECTIVITY")]
+			[Description("Connectivity")]
+			Connectivity,
+
+			/// <summary>
+			/// <para>Elements—The trace results will be returned as feature-based information in a specified output .json file. This option enables the Output JSON parameter.</para>
+			/// </summary>
+			[GPValue("ELEMENTS")]
+			[Description("Elements")]
+			Elements,
 
 		}
 

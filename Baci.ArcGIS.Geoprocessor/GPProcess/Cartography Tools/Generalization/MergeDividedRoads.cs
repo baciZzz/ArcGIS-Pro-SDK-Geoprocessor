@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, MergeField, MergeDistance, OutFeatures, OutDisplacementFeatures, CharacterField, OutTable };
+		public override object[] Parameters => new object[] { InFeatures, MergeField, MergeDistance, OutFeatures, OutDisplacementFeatures!, CharacterField!, OutTable! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
-		public object OutDisplacementFeatures { get; set; }
+		public object? OutDisplacementFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Road Character Field</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object CharacterField { get; set; }
+		public object? CharacterField { get; set; }
 
 		/// <summary>
 		/// <para>Output Table</para>
@@ -141,12 +141,12 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MergeDividedRoads SetEnviroment(object cartographicCoordinateSystem = null , object cartographicPartitions = null , object referenceScale = null , object workspace = null )
+		public MergeDividedRoads SetEnviroment(object? cartographicCoordinateSystem = null , object? cartographicPartitions = null , double? referenceScale = null , object? workspace = null )
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem, cartographicPartitions: cartographicPartitions, referenceScale: referenceScale, workspace: workspace);
 			return this;

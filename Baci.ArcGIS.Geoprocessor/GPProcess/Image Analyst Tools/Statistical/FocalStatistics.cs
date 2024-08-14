@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, Neighborhood, StatisticsType, IgnoreNodata, PercentileValue };
+		public override object[] Parameters => new object[] { InRaster, OutRaster, Neighborhood!, StatisticsType!, IgnoreNodata!, PercentileValue! };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSANeighborhood()]
 		[GPSANeighborhoodDomain()]
-		public object Neighborhood { get; set; } = "Rectangle 3 3 CELL";
+		public object? Neighborhood { get; set; } = "Rectangle 3 3 CELL";
 
 		/// <summary>
 		/// <para>Statistics type</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <para>Mean—The mean (average value) of the cells in the neighborhood will be calculated.</para>
 		/// <para>Majority—The majority (value that occurs most often) of the cells in the neighborhood will be identified.</para>
 		/// <para>Maximum—The maximum (largest value) of the cells in the neighborhood will be identified.</para>
-		/// <para>Median—The median of the cells in the neighborhood will be calculated.</para>
+		/// <para>Median—The median of the cells in the neighborhood will be calculated. Median is equivalent to the 50th percentile.</para>
 		/// <para>Minimum—The minimum (smallest value) of the cells in the neighborhood will be identified.</para>
 		/// <para>Minority—The minority (value that occurs least often) of the cells in the neighborhood will be identified.</para>
 		/// <para>Percentile—A percentile of the cells in the neighborhood will be calculated. The 90th percentile is calculated by default. You can specify other values (from 0 to 100) using the Percentile value parameter.</para>
@@ -118,42 +118,42 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <para>Sum—The sum of the cells in the neighborhood will be calculated.</para>
 		/// <para>Variety—The variety (the number of unique values) of the cells in the neighborhood will be calculated.</para>
 		/// <para>The default statistic type is Mean.</para>
-		/// <para>If the input raster is integer, all the statistics types are available. If the input raster is floating point, only the Mean, Maximum, Median, Minimum, Percentile, Range, Standard deviation, and Sum statistic types are available.</para>
+		/// <para>If the input raster is integer, all the statistics types will be available. If the input raster is floating point, only the Mean, Maximum, Median, Minimum, Percentile, Range, Standard deviation, and Sum statistic types will be available.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object StatisticsType { get; set; } = "MEAN";
+		public object? StatisticsType { get; set; } = "MEAN";
 
 		/// <summary>
 		/// <para>Ignore NoData in calculations</para>
 		/// <para>Specifies whether NoData values will be ignored by the statistic calculation.</para>
-		/// <para>Checked—If a NoData value exists within a neighborhood, the NoData value will be ignored. Only cells within the neighborhood that have data values will be used in determining the output value. This means that if the processing cell value is NoData, the processing cell may receive a value in the output raster if this parameter is checked, provided at least one cell within the neighborhood has a valid value. This is the default.</para>
-		/// <para>Unchecked—If any cell in a neighborhood has a value of NoData, including the processing cell, the output for the processing cell will be NoData. If this parameter is not checked, the presence of a NoData value implies that there is insufficient information to determine the statistic value for the neighborhood.</para>
+		/// <para>Checked—If a NoData value exists within a neighborhood, the NoData value will be ignored. Only cells within the neighborhood that have data values will be used in determining the output value. If the processing cell itself is NoData, the processing cell may receive a value in the output raster, provided at least one cell within the neighborhood has a valid value. This is the default.</para>
+		/// <para>Unchecked—If any cell in a neighborhood has a value of NoData, including the processing cell, the output for the processing cell will be NoData. The presence of a NoData value implies that there is insufficient information to determine the statistic value for the neighborhood.</para>
 		/// <para><see cref="IgnoreNodataEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IgnoreNodata { get; set; } = "true";
+		public object? IgnoreNodata { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Percentile value</para>
-		/// <para>The percentile to calculate. The default is 90, for the 90th percentile.</para>
-		/// <para>The values can range from 0 to 100. The 0th percentile is essentially equivalent to the Minimum statistic, and the 100th percentile is equivalent to Maximum. A value of 50 will produce essentially the same result as the Median statistic.</para>
-		/// <para>This option is only supported if the Statistics type parameter is set to Percentile. If any other statistics type has been specified, this parameter will be ignored.<bold/></para>
+		/// <para>The percentile value that will be calculated. The default is 90, for the 90th percentile.</para>
+		/// <para>The value can range from 0 to 100. The 0th percentile is essentially equivalent to the minimum statistic, and the 100th percentile is equivalent to the maximum statistic. A value of 50 will produce essentially the same result as the median statistic.</para>
+		/// <para>This option is only supported if the Statistics type parameter is set to Percentile. If any other statistic type is specified, this parameter will be ignored.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object PercentileValue { get; set; } = "90";
+		public object? PercentileValue { get; set; } = "90";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FocalStatistics SetEnviroment(int? autoCommit = null , object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public FocalStatistics SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 
@@ -165,14 +165,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum IgnoreNodataEnum 
 		{
 			/// <summary>
-			/// <para>Checked—If a NoData value exists within a neighborhood, the NoData value will be ignored. Only cells within the neighborhood that have data values will be used in determining the output value. This means that if the processing cell value is NoData, the processing cell may receive a value in the output raster if this parameter is checked, provided at least one cell within the neighborhood has a valid value. This is the default.</para>
+			/// <para>Checked—If a NoData value exists within a neighborhood, the NoData value will be ignored. Only cells within the neighborhood that have data values will be used in determining the output value. If the processing cell itself is NoData, the processing cell may receive a value in the output raster, provided at least one cell within the neighborhood has a valid value. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DATA")]
 			DATA,
 
 			/// <summary>
-			/// <para>Unchecked—If any cell in a neighborhood has a value of NoData, including the processing cell, the output for the processing cell will be NoData. If this parameter is not checked, the presence of a NoData value implies that there is insufficient information to determine the statistic value for the neighborhood.</para>
+			/// <para>Unchecked—If any cell in a neighborhood has a value of NoData, including the processing cell, the output for the processing cell will be NoData. The presence of a NoData value implies that there is insufficient information to determine the statistic value for the neighborhood.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NODATA")]

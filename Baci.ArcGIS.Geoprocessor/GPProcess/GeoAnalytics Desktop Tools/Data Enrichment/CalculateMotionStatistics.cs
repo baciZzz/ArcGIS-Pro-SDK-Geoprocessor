@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutFeatureClass, TrackFields, TrackHistoryWindow, MotionStatistics, DistanceMethod, IdleDistTolerance, IdleTimeTolerance, TimeBoundarySplit, TimeBoundaryReference, DistanceUnit, DurationUnit, SpeedUnit, AccelerationUnit, ElevationUnit };
+		public override object[] Parameters => new object[] { InputLayer, OutFeatureClass, TrackFields, TrackHistoryWindow, MotionStatistics!, DistanceMethod!, IdleDistTolerance!, IdleTimeTolerance!, TimeBoundarySplit!, TimeBoundaryReference!, DistanceUnit!, DurationUnit!, SpeedUnit!, AccelerationUnit!, ElevationUnit! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object MotionStatistics { get; set; }
+		public object? MotionStatistics { get; set; }
 
 		/// <summary>
 		/// <para>Distance Method</para>
@@ -138,38 +138,35 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DistanceMethod { get; set; }
+		public object? DistanceMethod { get; set; }
 
 		/// <summary>
 		/// <para>Idle Distance Tolerance</para>
 		/// <para>The maximum distance that two sequential points in a track can be apart and still be considered idle. This parameter is used with the Idle Time Tolerance parameter to determine if an entity is idling. The Idle Distance Tolerance parameter is required if the Idle statistic group is specified in the Motion Statistics parameter or if statistics in all the groups will be calculated.</para>
-		/// <para><see cref="IdleDistToleranceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object IdleDistTolerance { get; set; }
+		[GPUnitDomain()]
+		public object? IdleDistTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Idle Time Tolerance</para>
 		/// <para>The minimum duration that two sequential points in a track must be near each other to be considered idle. This parameter is used with the Idle Distance Tolerance parameter to determine if an entity is idling. The Idle Time Tolerance parameter is required if the Idle statistic group is specified in the Motion Statistics parameter or if statistics in all the groups will be calculated.</para>
-		/// <para><see cref="IdleTimeToleranceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
-		public object IdleTimeTolerance { get; set; }
+		[GPUnitDomain()]
+		public object? IdleTimeTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Time Boundary Split</para>
 		/// <para>A time span to split the input data into for analysis. A time boundary allows you to analyze values within a defined time span. For example, if you use a time boundary of 1 day, starting on January 1, 1980, tracks will be split at the beginning of every day. This parameter is only available with ArcGIS Enterprise 10.7 and later.</para>
-		/// <para><see cref="TimeBoundarySplitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
+		[GPUnitDomain()]
 		[Category("Advanced Options")]
-		public object TimeBoundarySplit { get; set; }
+		public object? TimeBoundarySplit { get; set; }
 
 		/// <summary>
 		/// <para>Time Boundary Reference</para>
@@ -178,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Advanced Options")]
-		public object TimeBoundaryReference { get; set; }
+		public object? TimeBoundaryReference { get; set; }
 
 		/// <summary>
 		/// <para>Distance Unit</para>
@@ -195,7 +192,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object DistanceUnit { get; set; }
+		public object? DistanceUnit { get; set; }
 
 		/// <summary>
 		/// <para>Duration Unit</para>
@@ -214,7 +211,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object DurationUnit { get; set; }
+		public object? DurationUnit { get; set; }
 
 		/// <summary>
 		/// <para>Speed Unit</para>
@@ -230,7 +227,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object SpeedUnit { get; set; }
+		public object? SpeedUnit { get; set; }
 
 		/// <summary>
 		/// <para>Acceleration Unit</para>
@@ -243,7 +240,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object AccelerationUnit { get; set; }
+		public object? AccelerationUnit { get; set; }
 
 		/// <summary>
 		/// <para>Elevation Unit</para>
@@ -260,12 +257,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object ElevationUnit { get; set; }
+		public object? ElevationUnit { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateMotionStatistics SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public CalculateMotionStatistics SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;
@@ -354,181 +351,6 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 			[GPValue("GEODESIC")]
 			[Description("Geodesic")]
 			Geodesic,
-
-		}
-
-		/// <summary>
-		/// <para>Idle Distance Tolerance</para>
-		/// </summary>
-		public enum IdleDistToleranceEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("NauticalMiles")]
-			[Description("NauticalMiles")]
-			NauticalMiles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-		}
-
-		/// <summary>
-		/// <para>Idle Time Tolerance</para>
-		/// </summary>
-		public enum IdleTimeToleranceEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Milliseconds")]
-			[Description("Milliseconds")]
-			Milliseconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Seconds")]
-			[Description("Seconds")]
-			Seconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Days")]
-			[Description("Days")]
-			Days,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Weeks")]
-			[Description("Weeks")]
-			Weeks,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Months")]
-			[Description("Months")]
-			Months,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Years")]
-			[Description("Years")]
-			Years,
-
-		}
-
-		/// <summary>
-		/// <para>Time Boundary Split</para>
-		/// </summary>
-		public enum TimeBoundarySplitEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Milliseconds")]
-			[Description("Milliseconds")]
-			Milliseconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Seconds")]
-			[Description("Seconds")]
-			Seconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Days")]
-			[Description("Days")]
-			Days,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Weeks")]
-			[Description("Weeks")]
-			Weeks,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Months")]
-			[Description("Months")]
-			Months,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Years")]
-			[Description("Years")]
-			Years,
 
 		}
 

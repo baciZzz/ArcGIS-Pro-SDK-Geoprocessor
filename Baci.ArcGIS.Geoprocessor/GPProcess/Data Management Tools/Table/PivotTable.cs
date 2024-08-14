@@ -20,23 +20,23 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The table whose records will be pivoted.</para>
+		/// <para>The table containing the records to be pivoted.</para>
 		/// </param>
 		/// <param name="Fields">
-		/// <para>Input Field(s)</para>
-		/// <para>The fields that define records to be included in the output table.</para>
+		/// <para>Input Fields</para>
+		/// <para>The fields that define records that will be included in the output table.</para>
 		/// </param>
 		/// <param name="PivotField">
 		/// <para>Pivot Field</para>
-		/// <para>The field whose record values are used to generate the field names in the output table.</para>
+		/// <para>The field whose record values will be used to generate the field names in the output table.</para>
 		/// </param>
 		/// <param name="ValueField">
 		/// <para>Value Field</para>
-		/// <para>The field whose values populate the pivoted fields in the output table.</para>
+		/// <para>The field whose values will populate the pivoted fields in the output table.</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
-		/// <para>The table to be created.</para>
+		/// <para>The table that will be created.</para>
 		/// </param>
 		public PivotTable(object InTable, object Fields, object PivotField, object ValueField, object OutTable)
 		{
@@ -84,15 +84,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The table whose records will be pivoted.</para>
+		/// <para>The table containing the records to be pivoted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
 		public object InTable { get; set; }
 
 		/// <summary>
-		/// <para>Input Field(s)</para>
-		/// <para>The fields that define records to be included in the output table.</para>
+		/// <para>Input Fields</para>
+		/// <para>The fields that define records that will be included in the output table.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Pivot Field</para>
-		/// <para>The field whose record values are used to generate the field names in the output table.</para>
+		/// <para>The field whose record values will be used to generate the field names in the output table.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Value Field</para>
-		/// <para>The field whose values populate the pivoted fields in the output table.</para>
+		/// <para>The field whose values will populate the pivoted fields in the output table.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>The table to be created.</para>
+		/// <para>The table that will be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PivotTable SetEnviroment(object configKeyword = null , object scratchWorkspace = null , object workspace = null )
+		public PivotTable SetEnviroment(object? configKeyword = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(configKeyword: configKeyword, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

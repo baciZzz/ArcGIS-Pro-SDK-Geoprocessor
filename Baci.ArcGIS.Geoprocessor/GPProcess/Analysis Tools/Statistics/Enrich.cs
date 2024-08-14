@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Variables, BufferType, Distance, Unit };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Variables!, BufferType!, Distance!, Unit! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Variables { get; set; }
+		public object? Variables { get; set; }
 
 		/// <summary>
 		/// <para>Define areas to enrich</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object BufferType { get; set; }
+		public object? BufferType { get; set; }
 
 		/// <summary>
 		/// <para>Distance or time</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Distance { get; set; } = "1";
+		public object? Distance { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Unit</para>
@@ -122,14 +122,14 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Unit { get; set; }
+		public object? Unit { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Enrich SetEnviroment(object workspace = null )
+		public Enrich SetEnviroment(object? baDataSource = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, workspace: workspace);
 			return this;
 		}
 

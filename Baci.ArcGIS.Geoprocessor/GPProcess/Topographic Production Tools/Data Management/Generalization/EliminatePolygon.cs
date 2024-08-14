@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 	/// <summary>
 	/// <para>Eliminate Polygon</para>
 	/// <para>Eliminates a polygon by merging it with the polygon from the surrounding features that it shares the longest boundary with.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class EliminatePolygon : AbstractGPProcess
 	{
 		/// <summary>
@@ -65,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, SurroundingFeatures, MinArea, UpdatedFeatures };
+		public override object[] Parameters => new object[] { InFeatures, SurroundingFeatures, MinArea!, UpdatedFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -91,14 +93,14 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPArealUnit()]
-		public object MinArea { get; set; }
+		public object? MinArea { get; set; }
 
 		/// <summary>
 		/// <para>Updated Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object UpdatedFeatures { get; set; }
+		public object? UpdatedFeatures { get; set; }
 
 	}
 }

@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSourceGdb, NtmDate, OutLocation, OutVpfFolder };
+		public override object[] Parameters => new object[] { InSourceGdb, NtmDate, OutLocation, OutVpfFolder! };
 
 		/// <summary>
 		/// <para>Source Geodatabase(s)</para>

@@ -32,9 +32,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </param>
 		/// <param name="SupportDisjointSubnetwork">
 		/// <para>Support Disjoint Subnetwork</para>
-		/// <para>Specifies whether the input tier supports disjoint subnetworks. Disjoint subnetworks are two or more subnetworks that belong to the same tier and have the same subnetwork name but are not traversable. This option is only available for tiers in domain networks with a partitioned tier definition. Tiers in a domain network with a hierarchical tier definition always have this tier property checked to support disjoint subnetworks.</para>
-		/// <para>Checked—The input tier supports disjoint subnetworks.</para>
-		/// <para>Unchecked—The input tier does not support disjoint subnetworks. This is the default.</para>
+		/// <para>Specifies whether the input tier will support disjoint subnetworks. Disjoint subnetworks are two or more subnetworks that belong to the same tier and have the same subnetwork name but are not traversable. This parameter is only available for tiers in domain networks with a partitioned tier definition. This parameter is checked for tiers in a domain network with a hierarchical tier definition to support disjoint subnetworks.</para>
+		/// <para>Checked—The input tier will support disjoint subnetworks.</para>
+		/// <para>Unchecked—The input tier will not support disjoint subnetworks. This is the default.</para>
 		/// <para><see cref="SupportDisjointSubnetworkEnum"/></para>
 		/// </param>
 		public SetSubnetworkDefinition(object InUtilityNetwork, object DomainNetwork, object TierName, object SupportDisjointSubnetwork)
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, DomainNetwork, TierName, SupportDisjointSubnetwork, ValidDevices, ValidSubnetworkController, ValidLines, AggregatedLine, DiagramTemplate, Summaries, ConditionBarriers, FunctionBarriers, IncludeBarriers, TraversabilityScope, Propagators, OutUtilityNetwork, UpdateStructureFeatures, UpdateContainerFeatures, EditModeForDefaultVersion, EditModeForNamedVersion, ValidJunctions, ValidJunctionObjects, ValidJunctionObjectSubnetworkController, ValidEdgeObjects, ManageSubnetworkIsdirty, IncludeContainers, IncludeContent, IncludeStructures, ValidateLocatability };
+		public override object[] Parameters => new object[] { InUtilityNetwork, DomainNetwork, TierName, SupportDisjointSubnetwork, ValidDevices!, ValidSubnetworkController!, ValidLines!, AggregatedLine!, DiagramTemplate!, Summaries!, ConditionBarriers!, FunctionBarriers!, IncludeBarriers!, TraversabilityScope!, Propagators!, OutUtilityNetwork!, UpdateStructureFeatures!, UpdateContainerFeatures!, EditModeForDefaultVersion!, EditModeForNamedVersion!, ValidJunctions!, ValidJunctionObjects!, ValidJunctionObjectSubnetworkController!, ValidEdgeObjects!, ManageSubnetworkIsdirty!, IncludeContainers!, IncludeContent!, IncludeStructures!, ValidateLocatability! };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
@@ -106,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Support Disjoint Subnetwork</para>
-		/// <para>Specifies whether the input tier supports disjoint subnetworks. Disjoint subnetworks are two or more subnetworks that belong to the same tier and have the same subnetwork name but are not traversable. This option is only available for tiers in domain networks with a partitioned tier definition. Tiers in a domain network with a hierarchical tier definition always have this tier property checked to support disjoint subnetworks.</para>
-		/// <para>Checked—The input tier supports disjoint subnetworks.</para>
-		/// <para>Unchecked—The input tier does not support disjoint subnetworks. This is the default.</para>
+		/// <para>Specifies whether the input tier will support disjoint subnetworks. Disjoint subnetworks are two or more subnetworks that belong to the same tier and have the same subnetwork name but are not traversable. This parameter is only available for tiers in domain networks with a partitioned tier definition. This parameter is checked for tiers in a domain network with a hierarchical tier definition to support disjoint subnetworks.</para>
+		/// <para>Checked—The input tier will support disjoint subnetworks.</para>
+		/// <para>Unchecked—The input tier will not support disjoint subnetworks. This is the default.</para>
 		/// <para><see cref="SupportDisjointSubnetworkEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Valid Features and Objects")]
-		public object ValidDevices { get; set; }
+		public object? ValidDevices { get; set; }
 
 		/// <summary>
 		/// <para>Valid Device Subnetwork Controllers</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Valid Features and Objects")]
-		public object ValidSubnetworkController { get; set; }
+		public object? ValidSubnetworkController { get; set; }
 
 		/// <summary>
 		/// <para>Valid Lines</para>
@@ -144,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Valid Features and Objects")]
-		public object ValidLines { get; set; }
+		public object? ValidLines { get; set; }
 
 		/// <summary>
 		/// <para>Aggregated Lines For SubnetLine Feature Class</para>
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Valid Features and Objects")]
-		public object AggregatedLine { get; set; }
+		public object? AggregatedLine { get; set; }
 
 		/// <summary>
 		/// <para>Subnetwork Diagram Templates</para>
@@ -163,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object DiagramTemplate { get; set; }
+		public object? DiagramTemplate { get; set; }
 
 		/// <summary>
 		/// <para>Summaries</para>
@@ -175,7 +175,41 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <para>Filter Operator—Choose from a number of operators.</para>
 		/// <para>Filter Type—Choose from a number of filter types.</para>
 		/// <para>Filter Value—Provide a specific value for the input filter attribute.</para>
-		/// <para>Summary Attribute—The field in the SubnetLine feature class that will persist the function result. Depending on the selected function and network attribute type, only the applicable type of user-added subnetwork attributes will be valid for this parameter. If a field to store the summary result does not exist in the SubnetLine feature class, the Add Field tool can be used to create one. A field can only support the result of one summary; therefore, each summary requires its own field in the SubnetLine feature class. See the following matrix of valid field types for the various functions:</para>
+		/// <para>Summary Attribute—The field in the SubnetLine feature class that will persist the function result. Depending on the selected function and network attribute type, only the applicable type of user-added subnetwork attributes will be valid for this parameter. If a field to store the summary result does not exist in the SubnetLine feature class, the Add Field tool can be used to create one. A field can only support the result of one summary; each summary requires its own field in the SubnetLine feature class. See the following matrix of valid field types for the summary attribute field based on the function chosen:Function</para>
+		/// <para>Short</para>
+		/// <para>Long</para>
+		/// <para>Double</para>
+		/// <para>Date</para>
+		/// <para>AVG</para>
+		/// <para>Double</para>
+		/// <para>Double</para>
+		/// <para>Double</para>
+		/// <para>N/A</para>
+		/// <para>MIN</para>
+		/// <para>Short</para>
+		/// <para>Long</para>
+		/// <para>Double</para>
+		/// <para>Date</para>
+		/// <para>MAX</para>
+		/// <para>Short</para>
+		/// <para>Long</para>
+		/// <para>Double</para>
+		/// <para>Date</para>
+		/// <para>SUBTRACT</para>
+		/// <para>Long</para>
+		/// <para>Long</para>
+		/// <para>Double</para>
+		/// <para>N/A</para>
+		/// <para>COUNT</para>
+		/// <para>Long</para>
+		/// <para>Long</para>
+		/// <para>Long</para>
+		/// <para>N/A</para>
+		/// <para>ADD</para>
+		/// <para>Long</para>
+		/// <para>Long</para>
+		/// <para>Double</para>
+		/// <para>N/A</para>
 		/// <para>The summaries Function value options are as follows:</para>
 		/// <para>Minimum—The minimum of the input values.</para>
 		/// <para>Maximum—The maximum of the input values.</para>
@@ -203,7 +237,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Subnetwork Trace Configuration")]
-		public object Summaries { get; set; }
+		public object? Summaries { get; set; }
 
 		/// <summary>
 		/// <para>Condition Barriers</para>
@@ -233,7 +267,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Subnetwork Trace Configuration")]
-		public object ConditionBarriers { get; set; }
+		public object? ConditionBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Function Barriers</para>
@@ -270,7 +304,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Subnetwork Trace Configuration")]
-		public object FunctionBarriers { get; set; }
+		public object? FunctionBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Include Barrier Features</para>
@@ -283,7 +317,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Subnetwork Trace Configuration")]
-		public object IncludeBarriers { get; set; } = "true";
+		public object? IncludeBarriers { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Apply Traversability To</para>
@@ -297,7 +331,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Subnetwork Trace Configuration")]
-		public object TraversabilityScope { get; set; } = "BOTH_JUNCTIONS_AND_EDGES";
+		public object? TraversabilityScope { get; set; } = "BOTH_JUNCTIONS_AND_EDGES";
 
 		/// <summary>
 		/// <para>Propagators</para>
@@ -330,184 +364,184 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Subnetwork Trace Configuration")]
-		public object Propagators { get; set; }
+		public object? Propagators { get; set; }
 
 		/// <summary>
 		/// <para>Updated Utility Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEUtilityNetwork()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		/// <summary>
 		/// <para>Update Structure Network Containers</para>
 		/// <para>Specifies whether the update subnetwork process will update the supported subnetwork name attribute for structure network containers.</para>
 		/// <para>Checked—The structure network containers will be updated. This is the default.</para>
 		/// <para>Unchecked—The structure network containers will not be updated.</para>
-		/// <para>This parameter requires Utility Network Version 4 or later.</para>
+		/// <para>This parameter requires a Utility Network Version value of 4 or later.</para>
 		/// <para><see cref="UpdateStructureFeaturesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Update Subnetwork Policy")]
-		public object UpdateStructureFeatures { get; set; } = "true";
+		public object? UpdateStructureFeatures { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Update Domain Network Containers</para>
 		/// <para>Specifies whether the update subnetwork process will update the supported subnetwork name for domain network containers.</para>
 		/// <para>Checked—The domain network containers will be updated. This is the default.</para>
 		/// <para>Unchecked—The domain network containers will not be updated.</para>
-		/// <para>This parameter requires Utility Network Version 4 or later.</para>
+		/// <para>This parameter requires a Utility Network Version value of 4 or later.</para>
 		/// <para><see cref="UpdateContainerFeaturesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Update Subnetwork Policy")]
-		public object UpdateContainerFeatures { get; set; } = "true";
+		public object? UpdateContainerFeatures { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Edit Mode For Default Version</para>
-		/// <para>Specifies the edit mode for subnetwork updates on the default version and with file geodatabases.</para>
-		/// <para>Without eventing—Eventing will not be used for subnetwork updates on the default version and in a file geodatabase. This edit mode updates the subnetwork name and propagated values in place. This is the default.</para>
-		/// <para>With eventing—Eventing will be used for subnetwork updates on the default version and in a file geodatabase. This edit mode executes geodatabase behavior (for example, attribute rules, editor tracking, and so on) when the subnetwork is updated and updates the subnetwork name and propagated values for all applicable features and objects.</para>
-		/// <para>This parameter requires Utility Network Version 4 or later.</para>
+		/// <para>Specifies the edit mode that will be used for subnetwork updates on the default version and with file and mobile geodatabases.</para>
+		/// <para>Without eventing—Eventing will not be used for subnetwork updates on the default version or in a file or mobile geodatabase. This edit mode updates the subnetwork name and propagated values in place. This is the default.</para>
+		/// <para>With eventing—Eventing will be used for subnetwork updates on the default version and in a file or mobile geodatabase. This edit mode executes geodatabase behavior (for example, attribute rules, editor tracking, and so on) when the subnetwork is updated and updates the subnetwork name and propagated values for all applicable features and objects.</para>
+		/// <para>This parameter requires a Utility Network Version value of 4 or later.</para>
 		/// <para><see cref="EditModeForDefaultVersionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Update Subnetwork Policy")]
-		public object EditModeForDefaultVersion { get; set; } = "WITHOUT_EVENTING";
+		public object? EditModeForDefaultVersion { get; set; } = "WITHOUT_EVENTING";
 
 		/// <summary>
 		/// <para>Edit Mode For Named Version</para>
-		/// <para>Specifies the edit mode for subnetwork updates on a named version.</para>
+		/// <para>Specifies the edit mode that will be used for subnetwork updates on a named version.</para>
 		/// <para>Without eventing—Eventing will not be used for subnetwork updates on named versions. This edit mode updates the subnetwork name and propagated values in place for features and objects edited in the version. This is the default.</para>
 		/// <para>With eventing—Eventing will be used for subnetwork updates on named versions. This edit mode executes geodatabase behavior (for example, attribute rules, editor tracking, and so on) when the subnetwork is updated and updates the subnetwork name and propagated values for all applicable features and objects.</para>
-		/// <para>This parameter requires Utility Network Version 4 or later and is only applicable to enterprise geodatabases.</para>
+		/// <para>This parameter requires a Utility Network Version value of 4 or later and is only applicable to enterprise geodatabases.</para>
 		/// <para><see cref="EditModeForNamedVersionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Update Subnetwork Policy")]
-		public object EditModeForNamedVersion { get; set; } = "WITHOUT_EVENTING";
+		public object? EditModeForNamedVersion { get; set; } = "WITHOUT_EVENTING";
 
 		/// <summary>
 		/// <para>Valid Junctions</para>
 		/// <para>The asset group/asset type pairs identified as valid junctions for the subnetwork.</para>
-		/// <para>This parameter requires Utility Network Version 4 or later.</para>
+		/// <para>This parameter requires a Utility Network Version value of 4 or later.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Valid Features and Objects")]
-		public object ValidJunctions { get; set; }
+		public object? ValidJunctions { get; set; }
 
 		/// <summary>
 		/// <para>Valid Junction Objects</para>
 		/// <para>The asset group/asset type pairs identified as valid junction objects for the subnetwork.</para>
-		/// <para>This parameter requires Utility Network Version 4 or later.</para>
+		/// <para>This parameter requires a Utility Network Version value of 4 or later.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Valid Features and Objects")]
-		public object ValidJunctionObjects { get; set; }
+		public object? ValidJunctionObjects { get; set; }
 
 		/// <summary>
 		/// <para>Valid Junction Object Subnetwork Controllers</para>
 		/// <para>The asset group/asset type pairs identified as valid junction object subnetwork controllers for the subnetwork.</para>
-		/// <para>This parameter requires Utility Network Version 4 or later.</para>
+		/// <para>This parameter requires a Utility Network Version value of 4 or later.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Valid Features and Objects")]
-		public object ValidJunctionObjectSubnetworkController { get; set; }
+		public object? ValidJunctionObjectSubnetworkController { get; set; }
 
 		/// <summary>
 		/// <para>Valid Edge Objects</para>
 		/// <para>The asset group/asset type pairs identified as valid edge objects for the subnetwork.</para>
-		/// <para>This parameter requires Utility Network Version 4 or later.</para>
+		/// <para>This parameter requires a Utility Network Version value of 4 or later.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Valid Features and Objects")]
-		public object ValidEdgeObjects { get; set; }
+		public object? ValidEdgeObjects { get; set; }
 
 		/// <summary>
 		/// <para>Manage IsDirty</para>
 		/// <para>Specifies whether the Is dirty attribute in the subnetworks table will be managed by the update subnetwork operation.</para>
 		/// <para>Checked—The Is dirty attribute will be managed by the update subnetwork operation. This is the default.</para>
 		/// <para>Unchecked—The Is dirty attribute will not be managed by the update subnetwork operation.</para>
-		/// <para>This parameter requires Utility Network Version 5 or later.</para>
+		/// <para>This parameter requires a Utility Network Version value of 5 or later.</para>
 		/// <para><see cref="ManageSubnetworkIsdirtyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Update Subnetwork Policy")]
-		public object ManageSubnetworkIsdirty { get; set; } = "true";
+		public object? ManageSubnetworkIsdirty { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Include Containers</para>
 		/// <para>Specifies whether the container features and objects will be included in the trace results.</para>
 		/// <para>Checked—Container features and objects will be included in the trace results.</para>
 		/// <para>Unchecked—Container features and objects will not be included in the trace results. This is the default.</para>
-		/// <para>This parameter requires Utility Network Version 5 or later.</para>
+		/// <para>This parameter requires a Utility Network Version value of 5 or later.</para>
 		/// <para><see cref="IncludeContainersEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Subnetwork Trace Configuration")]
-		public object IncludeContainers { get; set; } = "true";
+		public object? IncludeContainers { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Include Content</para>
 		/// <para>Specifies whether the trace will return content of containers in the results.</para>
 		/// <para>Checked—Content of container features and objects will be included in the trace results.</para>
 		/// <para>Unchecked—Content of container features and objects will not be included in the trace results. This is the default.</para>
-		/// <para>This parameter requires Utility Network Version 5 or later.</para>
+		/// <para>This parameter requires a Utility Network Version value of 5 or later.</para>
 		/// <para><see cref="IncludeContentEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Subnetwork Trace Configuration")]
-		public object IncludeContent { get; set; } = "true";
+		public object? IncludeContent { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Include Structures</para>
 		/// <para>Specifies whether structure features and objects will be included in the trace results.</para>
 		/// <para>Checked—Structure features and objects will be included in the trace results.</para>
 		/// <para>Unchecked—Structure features and objects will not be included in the trace results. This is the default.</para>
-		/// <para>This parameter requires Utility Network Version 5 or later.</para>
+		/// <para>This parameter requires a Utility Network Version value of 5 or later.</para>
 		/// <para><see cref="IncludeStructuresEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Subnetwork Trace Configuration")]
-		public object IncludeStructures { get; set; } = "true";
+		public object? IncludeStructures { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Validate Locatability</para>
 		/// <para>Specifies whether an error will be returned during a trace or update subnetwork operation if nonspatial junction or edge objects are encountered without the necessary containment, attachment, or connectivity association in their association hierarchy of the traversed objects. This parameter ensures that nonspatial objects returned by a trace or update subnetwork operation can be located through an association with features or other locatable objects.</para>
 		/// <para>Checked—An error will be returned if nonspatial junction or edge objects are encountered without the necessary containment, attachment, or connectivity association in their association hierarchy of the traversed objects.</para>
 		/// <para>Unchecked—The trace will not check for unlocatable objects and will return results regardless of whether unlocatable objects are present in the association hierarchy of the traversed objects. This is the default.</para>
-		/// <para>This parameter requires Utility Network Version 5 or later.</para>
+		/// <para>This parameter requires a Utility Network Version value of 5 or later.</para>
 		/// <para><see cref="ValidateLocatabilityEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Subnetwork Trace Configuration")]
-		public object ValidateLocatability { get; set; } = "false";
+		public object? ValidateLocatability { get; set; } = "false";
 
 		#region InnerClass
 
@@ -517,14 +551,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum SupportDisjointSubnetworkEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The input tier supports disjoint subnetworks.</para>
+			/// <para>Checked—The input tier will support disjoint subnetworks.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SUPPORT_DISJOINT")]
 			SUPPORT_DISJOINT,
 
 			/// <summary>
-			/// <para>Unchecked—The input tier does not support disjoint subnetworks. This is the default.</para>
+			/// <para>Unchecked—The input tier will not support disjoint subnetworks. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DISJOINT")]
@@ -629,14 +663,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum EditModeForDefaultVersionEnum 
 		{
 			/// <summary>
-			/// <para>Without eventing—Eventing will not be used for subnetwork updates on the default version and in a file geodatabase. This edit mode updates the subnetwork name and propagated values in place. This is the default.</para>
+			/// <para>Without eventing—Eventing will not be used for subnetwork updates on the default version or in a file or mobile geodatabase. This edit mode updates the subnetwork name and propagated values in place. This is the default.</para>
 			/// </summary>
 			[GPValue("WITHOUT_EVENTING")]
 			[Description("Without eventing")]
 			Without_eventing,
 
 			/// <summary>
-			/// <para>With eventing—Eventing will be used for subnetwork updates on the default version and in a file geodatabase. This edit mode executes geodatabase behavior (for example, attribute rules, editor tracking, and so on) when the subnetwork is updated and updates the subnetwork name and propagated values for all applicable features and objects.</para>
+			/// <para>With eventing—Eventing will be used for subnetwork updates on the default version and in a file or mobile geodatabase. This edit mode executes geodatabase behavior (for example, attribute rules, editor tracking, and so on) when the subnetwork is updated and updates the subnetwork name and propagated values for all applicable features and objects.</para>
 			/// </summary>
 			[GPValue("WITH_EVENTING")]
 			[Description("With eventing")]

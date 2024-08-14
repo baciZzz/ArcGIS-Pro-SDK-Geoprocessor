@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, RuleFile, InFeatureDataset, UpdatedMap };
+		public override object[] Parameters => new object[] { InMap, RuleFile, InFeatureDataset, UpdatedMap! };
 
 		/// <summary>
 		/// <para>Input Map</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMap()]
-		public object UpdatedMap { get; set; }
+		public object? UpdatedMap { get; set; }
 
 	}
 }

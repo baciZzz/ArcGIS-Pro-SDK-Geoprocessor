@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, InJoinField, InMatchTable, InMatchJoinField, InMatchPathField, InWorkingFolder, OutDataset };
+		public override object[] Parameters => new object[] { InDataset, InJoinField, InMatchTable, InMatchJoinField, InMatchPathField, InWorkingFolder!, OutDataset! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -134,19 +134,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
-		public object InWorkingFolder { get; set; }
+		public object? InWorkingFolder { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
-		public object OutDataset { get; set; }
+		public object? OutDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddAttachments SetEnviroment(object workspace = null )
+		public AddAttachments SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTin, OutFeatureClass, ClassBreaksTable, AspectField };
+		public override object[] Parameters => new object[] { InTin, OutFeatureClass, ClassBreaksTable!, AspectField! };
 
 		/// <summary>
 		/// <para>Input TIN</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object ClassBreaksTable { get; set; }
+		public object? ClassBreaksTable { get; set; }
 
 		/// <summary>
 		/// <para>Aspect Field</para>
@@ -98,12 +98,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object AspectField { get; set; } = "AspectCode";
+		public object? AspectField { get; set; } = "AspectCode";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TinAspect SetEnviroment(object XYDomain = null , object XYResolution = null , object XYTolerance = null , object extent = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public TinAspect SetEnviroment(object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? extent = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, extent: extent, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

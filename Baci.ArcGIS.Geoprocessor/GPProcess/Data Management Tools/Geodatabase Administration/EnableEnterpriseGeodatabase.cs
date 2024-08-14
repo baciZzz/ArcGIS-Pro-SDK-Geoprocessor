@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Enable Enterprise Geodatabase</para>
-	/// <para>Creates geodatabase system tables, stored procedures, functions, and types in an existing database, thereby enabling geodatabase functionality in the database.</para>
+	/// <para>Creates geodatabase system tables, stored procedures, functions, and types in an existing database, which enable geodatabase functionality in the database.</para>
 	/// </summary>
 	public class EnableEnterpriseGeodatabase : AbstractGPProcess
 	{
@@ -20,11 +20,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputDatabase">
 		/// <para>Input Database Connection</para>
-		/// <para>The path and connection file name for the database in which you want to enable geodatabase functionality. You must connect as a user that qualifies as a geodatabase administrator.</para>
+		/// <para>The path and connection file name for the database in which geodatabase functionality will be enabled. You must connect as a user that qualifies as a geodatabase administrator.</para>
 		/// </param>
 		/// <param name="AuthorizationFile">
 		/// <para>Authorization File</para>
-		/// <para>The path and file name of the keycodes file that was created when ArcGIS Server was authorized. This file is in the \\Program Files\ESRI\License&lt;release#&gt;\sysgen folder on Windows or the /arcgis/server/framework/runtime/.wine/drive_c/Program Files/ESRI/License&lt;release#&gt;/sysgen directory on Linux. If you have not already done so, authorize ArcGIS Server to create this file.</para>
+		/// <para>The path and file name of the keycodes file that was created when ArcGIS Server was authorized. This file is in the \\Program Files\ESRI\License&lt;release#&gt;\sysgen folder on Windows or the /arcgis/server/framework/runtime/.wine/drive_c/Program Files/ESRI/License&lt;release#&gt;/sysgen directory on Linux. If you have not done so, authorize ArcGIS Server to create this file.</para>
 		/// <para>Copy the keycodes file from the ArcGIS Server machine to a location accessible to the tool.</para>
 		/// </param>
 		public EnableEnterpriseGeodatabase(object InputDatabase, object AuthorizationFile)
@@ -66,11 +66,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabase, AuthorizationFile, OutWorkspace };
+		public override object[] Parameters => new object[] { InputDatabase, AuthorizationFile, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
-		/// <para>The path and connection file name for the database in which you want to enable geodatabase functionality. You must connect as a user that qualifies as a geodatabase administrator.</para>
+		/// <para>The path and connection file name for the database in which geodatabase functionality will be enabled. You must connect as a user that qualifies as a geodatabase administrator.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Authorization File</para>
-		/// <para>The path and file name of the keycodes file that was created when ArcGIS Server was authorized. This file is in the \\Program Files\ESRI\License&lt;release#&gt;\sysgen folder on Windows or the /arcgis/server/framework/runtime/.wine/drive_c/Program Files/ESRI/License&lt;release#&gt;/sysgen directory on Linux. If you have not already done so, authorize ArcGIS Server to create this file.</para>
+		/// <para>The path and file name of the keycodes file that was created when ArcGIS Server was authorized. This file is in the \\Program Files\ESRI\License&lt;release#&gt;\sysgen folder on Windows or the /arcgis/server/framework/runtime/.wine/drive_c/Program Files/ESRI/License&lt;release#&gt;/sysgen directory on Linux. If you have not done so, authorize ArcGIS Server to create this file.</para>
 		/// <para>Copy the keycodes file from the ArcGIS Server machine to a location accessible to the tool.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -91,12 +91,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutWorkspace { get; set; }
+		public object? OutWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EnableEnterpriseGeodatabase SetEnviroment(object workspace = null )
+		public EnableEnterpriseGeodatabase SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

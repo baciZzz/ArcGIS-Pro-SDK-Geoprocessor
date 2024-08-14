@@ -29,5 +29,6 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Enums
         GPUnitDomain,
         GPWorkspaceDomain,
         xmlserialize,
+        GPGraphicsLayer,
     }
 }

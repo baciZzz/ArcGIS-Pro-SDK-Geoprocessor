@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputpoints, Pointidfield, Snapdistance, Snapdistanceunits, Datasourceresolution, Generalize, Returnsnappedpoints, Watershedarea, Snappedpoints };
+		public override object[] Parameters => new object[] { Inputpoints, Pointidfield!, Snapdistance!, Snapdistanceunits!, Datasourceresolution!, Generalize!, Returnsnappedpoints!, Watershedarea!, Snappedpoints! };
 
 		/// <summary>
 		/// <para>Input Points</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Pointidfield { get; set; }
+		public object? Pointidfield { get; set; }
 
 		/// <summary>
 		/// <para>Snap Distance</para>
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Snapdistance { get; set; }
+		public object? Snapdistance { get; set; }
 
 		/// <summary>
 		/// <para>Snap Distance Units</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Snapdistanceunits { get; set; } = "Meters";
+		public object? Snapdistanceunits { get; set; } = "Meters";
 
 		/// <summary>
 		/// <para>Data Source Resolution</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Datasourceresolution { get; set; } = " ";
+		public object? Datasourceresolution { get; set; } = " ";
 
 		/// <summary>
 		/// <para>Generalize</para>
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
-		public object Generalize { get; set; } = "false";
+		public object? Generalize { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Return Snapped Points</para>
@@ -137,21 +137,21 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
-		public object Returnsnappedpoints { get; set; } = "true";
+		public object? Returnsnappedpoints { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output Watershed</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Watershedarea { get; set; }
+		public object? Watershedarea { get; set; }
 
 		/// <summary>
 		/// <para>Output Snapped Points</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Snappedpoints { get; set; }
+		public object? Snappedpoints { get; set; }
 
 		#region InnerClass
 

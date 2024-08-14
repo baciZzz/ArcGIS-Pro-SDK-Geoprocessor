@@ -20,11 +20,11 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>Input table to get the value from.</para>
+		/// <para>The input table to get the value from.</para>
 		/// </param>
 		/// <param name="Field">
 		/// <para>Field</para>
-		/// <para>Input field to get the value from. The value of the first record will be output.</para>
+		/// <para>The input field to get the value from. The value of the first record will be output.</para>
 		/// </param>
 		public GetFieldValue(object InTable, object Field)
 		{
@@ -65,11 +65,11 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Field, DataType, NullValue, Value };
+		public override object[] Parameters => new object[] { InTable, Field, DataType!, NullValue!, Value! };
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>Input table to get the value from.</para>
+		/// <para>The input table to get the value from.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Field</para>
-		/// <para>Input field to get the value from. The value of the first record will be output.</para>
+		/// <para>The input field to get the value from. The value of the first record will be output.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DataType { get; set; } = "String";
+		public object? DataType { get; set; } = "String";
 
 		/// <summary>
 		/// <para>Null Value</para>
@@ -98,14 +98,14 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object NullValue { get; set; }
+		public object? NullValue { get; set; }
 
 		/// <summary>
 		/// <para>Value</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPType()]
-		public object Value { get; set; }
+		public object? Value { get; set; }
 
 	}
 }

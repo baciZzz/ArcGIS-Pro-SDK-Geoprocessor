@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatures, FeatureCount, PartitionMethod };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatures, FeatureCount, PartitionMethod! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -108,12 +108,12 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object PartitionMethod { get; set; } = "FEATURES";
+		public object? PartitionMethod { get; set; } = "FEATURES";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateCartographicPartitions SetEnviroment(object outputCoordinateSystem = null )
+		public CreateCartographicPartitions SetEnviroment(object? outputCoordinateSystem = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem);
 			return this;

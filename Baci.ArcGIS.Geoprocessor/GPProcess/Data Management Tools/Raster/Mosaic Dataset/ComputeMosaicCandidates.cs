@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, MaximumOverlap, MaximumAreaLoss, OutMosaicDataset };
+		public override object[] Parameters => new object[] { InMosaicDataset, MaximumOverlap!, MaximumAreaLoss!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Input mosaic dataset</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MaximumOverlap { get; set; } = "0.6";
+		public object? MaximumOverlap { get; set; } = "0.6";
 
 		/// <summary>
 		/// <para>Maximum Area Loss Allowed</para>
@@ -86,19 +86,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MaximumAreaLoss { get; set; } = "0.05";
+		public object? MaximumAreaLoss { get; set; } = "0.05";
 
 		/// <summary>
 		/// <para>Derived Mosaic Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutMosaicDataset { get; set; }
+		public object? OutMosaicDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ComputeMosaicCandidates SetEnviroment(object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public ComputeMosaicCandidates SetEnviroment(object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

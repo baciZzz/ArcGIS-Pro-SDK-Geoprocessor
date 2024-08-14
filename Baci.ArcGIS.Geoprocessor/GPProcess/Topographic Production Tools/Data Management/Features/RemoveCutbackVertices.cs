@@ -11,8 +11,10 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Remove Cutback Vertices</para>
-	/// <para>Removes unwanted cutbacks for polyline and polygon feature classes or layers.</para>
+	/// <para>Removes unwanted cutbacks from polyline and polygon features.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class RemoveCutbackVertices : AbstractGPProcess
 	{
 		/// <summary>
@@ -20,11 +22,11 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The polyline or polygon feature class from which the tool will remove cutback vertices. This feature class (or layer) will be modified.</para>
+		/// <para>The polyline or polygon feature class from which cutback vertices will be removed. This feature class (or layer) will be modified.</para>
 		/// </param>
 		/// <param name="MinimumAngle">
 		/// <para>Minimum Angle</para>
-		/// <para>The minimum angle threshold value (in degrees). The angle value should be within the range of 0–180. If the angle formed by a vertex and its two neighboring points is below the specified minimum angle, the vertex is a candidate for cutback removal.</para>
+		/// <para>The minimum angle threshold value in degrees. The angle value should be within the range of 0–180. If the angle formed by a vertex and its two neighboring points is smaller than the specified minimum angle, the vertex is a candidate for cutback removal.</para>
 		/// </param>
 		public RemoveCutbackVertices(object InFeatures, object MinimumAngle)
 		{
@@ -65,11 +67,11 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, MinimumAngle, RemovalMethod, SkipCoincidentVertices, UpdatedFeatures };
+		public override object[] Parameters => new object[] { InFeatures, MinimumAngle, RemovalMethod!, SkipCoincidentVertices!, UpdatedFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The polyline or polygon feature class from which the tool will remove cutback vertices. This feature class (or layer) will be modified.</para>
+		/// <para>The polyline or polygon feature class from which cutback vertices will be removed. This feature class (or layer) will be modified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -78,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 
 		/// <summary>
 		/// <para>Minimum Angle</para>
-		/// <para>The minimum angle threshold value (in degrees). The angle value should be within the range of 0–180. If the angle formed by a vertex and its two neighboring points is below the specified minimum angle, the vertex is a candidate for cutback removal.</para>
+		/// <para>The minimum angle threshold value in degrees. The angle value should be within the range of 0–180. If the angle formed by a vertex and its two neighboring points is smaller than the specified minimum angle, the vertex is a candidate for cutback removal.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -86,34 +88,34 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 
 		/// <summary>
 		/// <para>Removal Method</para>
-		/// <para>Indicates whether cutbacks should be removed one at a time or all at once.</para>
-		/// <para>Sequential—Cutbacks will be checked sequentially for a feature. After a cutback is removed, the change in geometry is taken into consideration when determining cutbacks in the remaining vertices of a feature. This is the default.</para>
-		/// <para>All—Cutbacks will be checked for all vertices at once.</para>
+		/// <para>Specifies whether cutbacks will be removed sequentially (individually) or all at once.</para>
+		/// <para>Sequential—Cutbacks will be removed sequentially for a feature. After a cutback is removed, the change in geometry is considered when determining cutbacks to the remaining vertices of a feature. This is the default.</para>
+		/// <para>All—Cutbacks will be removed for all vertices at once.</para>
 		/// <para><see cref="RemovalMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object RemovalMethod { get; set; } = "SEQUENTIAL";
+		public object? RemovalMethod { get; set; } = "SEQUENTIAL";
 
 		/// <summary>
 		/// <para>Skip vertices coincident between multiple features</para>
-		/// <para>Indicates whether to remove cutback vertices when the vertex is snapped to another feature within the same feature class.</para>
-		/// <para>Checked—Vertices that have angles less than the specified Minimum Angle will not be removed from the feature geometry if they are snapped to other features.</para>
-		/// <para>Unchecked—Cutback points will be deleted without considering whether they are snapped to other features. This is the default.</para>
+		/// <para>Specifies whether cutback vertices will be removed when the vertex is snapped to another feature in the same feature class.</para>
+		/// <para>Checked—Cutback vertices with angles less than the specified Minimum Angle value will not be removed from the feature geometry if they are snapped to other features.</para>
+		/// <para>Unchecked—Cutback vertices will be removed without considering whether they are snapped to other features. This is the default.</para>
 		/// <para><see cref="SkipCoincidentVerticesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SkipCoincidentVertices { get; set; } = "false";
+		public object? SkipCoincidentVertices { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Input Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object UpdatedFeatures { get; set; }
+		public object? UpdatedFeatures { get; set; }
 
 		#region InnerClass
 
@@ -123,14 +125,14 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		public enum RemovalMethodEnum 
 		{
 			/// <summary>
-			/// <para>Sequential—Cutbacks will be checked sequentially for a feature. After a cutback is removed, the change in geometry is taken into consideration when determining cutbacks in the remaining vertices of a feature. This is the default.</para>
+			/// <para>Sequential—Cutbacks will be removed sequentially for a feature. After a cutback is removed, the change in geometry is considered when determining cutbacks to the remaining vertices of a feature. This is the default.</para>
 			/// </summary>
 			[GPValue("SEQUENTIAL")]
 			[Description("Sequential")]
 			Sequential,
 
 			/// <summary>
-			/// <para>All—Cutbacks will be checked for all vertices at once.</para>
+			/// <para>All—Cutbacks will be removed for all vertices at once.</para>
 			/// </summary>
 			[GPValue("ALL")]
 			[Description("All")]
@@ -144,14 +146,14 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		public enum SkipCoincidentVerticesEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Cutback points will be deleted without considering whether they are snapped to other features. This is the default.</para>
+			/// <para>Unchecked—Cutback vertices will be removed without considering whether they are snapped to other features. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("SKIP_COINCIDENT")]
 			SKIP_COINCIDENT,
 
 			/// <summary>
-			/// <para>Checked—Vertices that have angles less than the specified Minimum Angle will not be removed from the feature geometry if they are snapped to other features.</para>
+			/// <para>Checked—Cutback vertices with angles less than the specified Minimum Angle value will not be removed from the feature geometry if they are snapped to other features.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REMOVE_COINCIDENT")]

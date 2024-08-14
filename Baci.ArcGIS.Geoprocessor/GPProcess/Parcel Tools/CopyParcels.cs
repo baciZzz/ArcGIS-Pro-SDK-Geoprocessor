@@ -20,11 +20,11 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="InParcelFabric">
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The input parcels that will be copied to a new parcel fabric. The input parcel fabric can be from a file geodatabase, an enterprise geodatabase connection, or a feature service.</para>
+		/// <para>The input parcels that will be copied to a new parcel fabric. The input parcel fabric can be from a file, enterprise, or mobile geodatabase, or from a feature service.</para>
 		/// </param>
 		/// <param name="TargetDatabase">
 		/// <para>Target Database</para>
-		/// <para>The geodatabase in which the new parcel fabric will be created. The geodatabase can be a file or an enterprise geodatabase.</para>
+		/// <para>The geodatabase in which the new parcel fabric will be created. The geodatabase can be a file, enterprise, or mobile geodatabase.</para>
 		/// </param>
 		public CopyParcels(object InParcelFabric, object TargetDatabase)
 		{
@@ -65,11 +65,11 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InParcelFabric, TargetDatabase, OutDatasetName, OutFabricName, OutDataset, OutParcelFabric };
+		public override object[] Parameters => new object[] { InParcelFabric, TargetDatabase, OutDatasetName!, OutFabricName!, OutDataset!, OutParcelFabric! };
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The input parcels that will be copied to a new parcel fabric. The input parcel fabric can be from a file geodatabase, an enterprise geodatabase connection, or a feature service.</para>
+		/// <para>The input parcels that will be copied to a new parcel fabric. The input parcel fabric can be from a file, enterprise, or mobile geodatabase, or from a feature service.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPParcelLayer()]
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Target Database</para>
-		/// <para>The geodatabase in which the new parcel fabric will be created. The geodatabase can be a file or an enterprise geodatabase.</para>
+		/// <para>The geodatabase in which the new parcel fabric will be created. The geodatabase can be a file, enterprise, or mobile geodatabase.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object OutDatasetName { get; set; }
+		public object? OutDatasetName { get; set; }
 
 		/// <summary>
 		/// <para>Parcel Fabric Name</para>
@@ -97,21 +97,21 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object OutFabricName { get; set; }
+		public object? OutFabricName { get; set; }
 
 		/// <summary>
 		/// <para>Output Feature Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureDataset()]
-		public object OutDataset { get; set; }
+		public object? OutDataset { get; set; }
 
 		/// <summary>
 		/// <para>Output Parcel Fabric</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEParcelDataset()]
-		public object OutParcelFabric { get; set; }
+		public object? OutParcelFabric { get; set; }
 
 	}
 }

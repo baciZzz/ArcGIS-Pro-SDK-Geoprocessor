@@ -74,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputType, InFeaturesOfInterest, OutputFeatures, FieldOfInterest, TimeFieldOfInterest, CategoryOfInterest, InputFeatureForComparison, FieldForComparison, TimeFieldForComparison, CategoryForComparison, NeighborhoodType, NumberOfNeighbors, DistanceBand, WeightsMatrixFile, TemporalRelationshipType, TimeStepInterval, NumberOfPermutations, LocalWeightingScheme, OutputTable };
+		public override object[] Parameters => new object[] { InputType, InFeaturesOfInterest, OutputFeatures, FieldOfInterest!, TimeFieldOfInterest!, CategoryOfInterest!, InputFeatureForComparison!, FieldForComparison!, TimeFieldForComparison!, CategoryForComparison!, NeighborhoodType!, NumberOfNeighbors!, DistanceBand!, WeightsMatrixFile!, TemporalRelationshipType!, TimeStepInterval!, NumberOfPermutations!, LocalWeightingScheme!, OutputTable! };
 
 		/// <summary>
 		/// <para>Input Type</para>
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object FieldOfInterest { get; set; }
+		public object? FieldOfInterest { get; set; }
 
 		/// <summary>
 		/// <para>Time Field of Interest</para>
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object TimeFieldOfInterest { get; set; }
+		public object? TimeFieldOfInterest { get; set; }
 
 		/// <summary>
 		/// <para>Category of Interest</para>
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object CategoryOfInterest { get; set; }
+		public object? CategoryOfInterest { get; set; }
 
 		/// <summary>
 		/// <para>Input Neighboring Features</para>
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object InputFeatureForComparison { get; set; }
+		public object? InputFeatureForComparison { get; set; }
 
 		/// <summary>
 		/// <para>Field Containing Neighboring Category</para>
@@ -148,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object FieldForComparison { get; set; }
+		public object? FieldForComparison { get; set; }
 
 		/// <summary>
 		/// <para>Time Field of Neighboring Features</para>
@@ -157,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object TimeFieldForComparison { get; set; }
+		public object? TimeFieldForComparison { get; set; }
 
 		/// <summary>
 		/// <para>Neighboring Category</para>
@@ -165,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object CategoryForComparison { get; set; }
+		public object? CategoryForComparison { get; set; }
 
 		/// <summary>
 		/// <para>Neighborhood Type</para>
@@ -178,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object NeighborhoodType { get; set; } = "K_NEAREST_NEIGHBORS";
+		public object? NeighborhoodType { get; set; } = "K_NEAREST_NEIGHBORS";
 
 		/// <summary>
 		/// <para>Number of Neighbors</para>
@@ -187,17 +187,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object NumberOfNeighbors { get; set; } = "8";
+		public object? NumberOfNeighbors { get; set; } = "8";
 
 		/// <summary>
 		/// <para>Distance Band</para>
 		/// <para>The neighborhood size is a constant or fixed distance for each feature. All features within this distance will be used to test for local relationships between categories. If no value is provided, the distance used will be the average distance at which each feature has at least eight neighbors.</para>
-		/// <para><see cref="DistanceBandEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object DistanceBand { get; set; }
+		[GPUnitDomain()]
+		public object? DistanceBand { get; set; }
 
 		/// <summary>
 		/// <para>Weight Matrix File</para>
@@ -206,7 +205,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object WeightsMatrixFile { get; set; }
+		public object? WeightsMatrixFile { get; set; }
 
 		/// <summary>
 		/// <para>Temporal Relationship Type</para>
@@ -219,17 +218,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TemporalRelationshipType { get; set; } = "BEFORE";
+		public object? TemporalRelationshipType { get; set; } = "BEFORE";
 
 		/// <summary>
 		/// <para>Time Step Interval</para>
 		/// <para>An integer and unit of measurement representing the number of time units composing the time window.</para>
-		/// <para><see cref="TimeStepIntervalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
-		public object TimeStepInterval { get; set; }
+		[GPUnitDomain()]
+		public object? TimeStepInterval { get; set; }
 
 		/// <summary>
 		/// <para>Number of Permutations</para>
@@ -244,7 +242,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPCodedValueDomain()]
-		public object NumberOfPermutations { get; set; } = "99";
+		public object? NumberOfPermutations { get; set; } = "99";
 
 		/// <summary>
 		/// <para>Local Weighting Scheme</para>
@@ -258,7 +256,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Additional Options")]
-		public object LocalWeightingScheme { get; set; } = "GAUSSIAN";
+		public object? LocalWeightingScheme { get; set; } = "GAUSSIAN";
 
 		/// <summary>
 		/// <para>Output Table for Global Relationships</para>
@@ -268,12 +266,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
 		[Category("Additional Options")]
-		public object OutputTable { get; set; }
+		public object? OutputTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ColocationAnalysis SetEnviroment(object outputCoordinateSystem = null , object parallelProcessingFactor = null , object randomGenerator = null )
+		public ColocationAnalysis SetEnviroment(object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? randomGenerator = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, randomGenerator: randomGenerator);
 			return this;
@@ -338,41 +336,6 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Distance Band</para>
-		/// </summary>
-		public enum DistanceBandEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-		}
-
-		/// <summary>
 		/// <para>Temporal Relationship Type</para>
 		/// </summary>
 		public enum TemporalRelationshipTypeEnum 
@@ -397,62 +360,6 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 			[GPValue("SPAN")]
 			[Description("Span")]
 			Span,
-
-		}
-
-		/// <summary>
-		/// <para>Time Step Interval</para>
-		/// </summary>
-		public enum TimeStepIntervalEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Seconds")]
-			[Description("Seconds")]
-			Seconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Days")]
-			[Description("Days")]
-			Days,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Weeks")]
-			[Description("Weeks")]
-			Weeks,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Months")]
-			[Description("Months")]
-			Months,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Years")]
-			[Description("Years")]
-			Years,
 
 		}
 

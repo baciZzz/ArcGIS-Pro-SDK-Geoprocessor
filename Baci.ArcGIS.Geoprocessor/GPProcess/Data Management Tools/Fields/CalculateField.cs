@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Field, Expression, ExpressionType, CodeBlock, OutTable, FieldType, EnforceDomains };
+		public override object[] Parameters => new object[] { InTable, Field, Expression, ExpressionType!, CodeBlock!, OutTable!, FieldType!, EnforceDomains! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -111,14 +111,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>To learn more about Python expressions, see Calculate Field Python examples.</para>
 		/// <para>To learn more about Arcade expressions, see the ArcGIS Arcade guide.</para>
 		/// <para>To learn more about SQL expressions, see Calculate field values.</para>
-		/// <para>SQL expressions support faster calculations for feature services and enterprise geodatabases. Instead of performing calculations one feature or row at a time, a single request is set to the server or database, resulting in significantly faster calculations.</para>
+		/// <para>SQL expressions support faster calculations for feature services and enterprise geodatabases. Instead of performing calculations one feature or row at a time, a single request is sent to the server or database, resulting in significantly faster calculations.</para>
 		/// <para>Only feature services and enterprise geodatabases support SQL expressions. For other formats, use Python or Arcade expressions.</para>
 		/// <para><see cref="ExpressionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ExpressionType { get; set; } = "PYTHON3";
+		public object? ExpressionType { get; set; } = "PYTHON3";
 
 		/// <summary>
 		/// <para>Code Block</para>
@@ -126,34 +126,34 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object CodeBlock { get; set; }
+		public object? CodeBlock { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		/// <summary>
 		/// <para>Field Type</para>
 		/// <para>Specifies the field type of the new field. This parameter is only used when the field name does not exist in the input table.</para>
 		/// <para>If the field is of type text, the new field will have a length of 512. For shapefiles and dBASE files, the field will have a length of 254. The length of the new field can be adjusted using the Alter Field tool.</para>
-		/// <para>Text—Any string of characters can be used.</para>
-		/// <para>Float (single precision)— Fractional numbers between -3.4E38 and 1.2E38 can be used.</para>
-		/// <para>Double (double precision)— Fractional numbers between -2.2E308 and 1.8E308 can be used.</para>
-		/// <para>Short (small integer)— Whole numbers between -32,768 and 32,767 can be used.</para>
-		/// <para>Long (large integer)— Whole numbers between -2,147,483,648 and 2,147,483,647 can be used.</para>
-		/// <para>Date—Date and time will be used.</para>
-		/// <para>Blob (binary data)—A long sequence of binary numbers will be used.</para>
-		/// <para>Raster imagery—Raster images will be used. All ArcGIS software-supported raster dataset formats can be stored; however, it is recommended that you use only small images.</para>
-		/// <para>GUID (globally unique identifier)—A globally unique identifier will be used.</para>
+		/// <para>Text—The field type will be text. Text fields support a string of characters.</para>
+		/// <para>Float (32-bit floating point)—The field type will be float. Float fields support fractional numbers between -3.4E38 and 1.2E38.</para>
+		/// <para>Double (64-bit floating point)—The field type will be double. Double fields support fractional numbers between -2.2E308 and 1.8E308.</para>
+		/// <para>Short (16-bit integer)—The field type will be short. Short fields support whole numbers between -32,768 and 32,767.</para>
+		/// <para>Long (32-bit integer)—The field type will be long. Long fields support whole numbers between -2,147,483,648 and 2,147,483,647.</para>
+		/// <para>Date—The field type will be date. Date fields support date and time values.</para>
+		/// <para>Blob (binary data)—The field type will be BLOB. BLOB fields support data stored as a long sequence of binary numbers. You need a custom loader or viewer or a third-party application to load items into a BLOB field or view the contents of a BLOB field.</para>
+		/// <para>Raster imagery—The field type will be raster. Raster fields can store raster data in or alongside the geodatabase. All ArcGIS software-supported raster dataset formats can be stored, but it is recommended that only small images be used.</para>
+		/// <para>GUID (globally unique identifier)—The field type will be GUID. GUID fields store registry-style strings consisting of 36 characters enclosed in curly brackets.</para>
 		/// <para><see cref="FieldTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object FieldType { get; set; } = "TEXT";
+		public object? FieldType { get; set; } = "TEXT";
 
 		/// <summary>
 		/// <para>Enforce Domains</para>
@@ -165,12 +165,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object EnforceDomains { get; set; } = "false";
+		public object? EnforceDomains { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateField SetEnviroment(object extent = null , bool? transferDomains = null , object workspace = null )
+		public CalculateField SetEnviroment(object? extent = null , bool? transferDomains = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, transferDomains: transferDomains, workspace: workspace);
 			return this;
@@ -212,63 +212,63 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum FieldTypeEnum 
 		{
 			/// <summary>
-			/// <para>Text—Any string of characters can be used.</para>
+			/// <para>Text—The field type will be text. Text fields support a string of characters.</para>
 			/// </summary>
 			[GPValue("TEXT")]
 			[Description("Text")]
 			Text,
 
 			/// <summary>
-			/// <para>Float (single precision)— Fractional numbers between -3.4E38 and 1.2E38 can be used.</para>
+			/// <para>Float (32-bit floating point)—The field type will be float. Float fields support fractional numbers between -3.4E38 and 1.2E38.</para>
 			/// </summary>
 			[GPValue("FLOAT")]
-			[Description("Float (single precision)")]
+			[Description("Float (32-bit floating point)")]
 			FLOAT,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Double (64-bit floating point)—The field type will be double. Double fields support fractional numbers between -2.2E308 and 1.8E308.</para>
 			/// </summary>
 			[GPValue("DOUBLE")]
-			[Description("Double  (double precision)")]
+			[Description("Double (64-bit floating point)")]
 			DOUBLE,
 
 			/// <summary>
-			/// <para>Short (small integer)— Whole numbers between -32,768 and 32,767 can be used.</para>
+			/// <para>Short (16-bit integer)—The field type will be short. Short fields support whole numbers between -32,768 and 32,767.</para>
 			/// </summary>
 			[GPValue("SHORT")]
-			[Description("Short (small integer)")]
+			[Description("Short (16-bit integer)")]
 			SHORT,
 
 			/// <summary>
-			/// <para>Long (large integer)— Whole numbers between -2,147,483,648 and 2,147,483,647 can be used.</para>
+			/// <para>Long (32-bit integer)—The field type will be long. Long fields support whole numbers between -2,147,483,648 and 2,147,483,647.</para>
 			/// </summary>
 			[GPValue("LONG")]
-			[Description("Long (large integer)")]
+			[Description("Long (32-bit integer)")]
 			LONG,
 
 			/// <summary>
-			/// <para>Date—Date and time will be used.</para>
+			/// <para>Date—The field type will be date. Date fields support date and time values.</para>
 			/// </summary>
 			[GPValue("DATE")]
 			[Description("Date")]
 			Date,
 
 			/// <summary>
-			/// <para>Blob (binary data)—A long sequence of binary numbers will be used.</para>
+			/// <para>Blob (binary data)—The field type will be BLOB. BLOB fields support data stored as a long sequence of binary numbers. You need a custom loader or viewer or a third-party application to load items into a BLOB field or view the contents of a BLOB field.</para>
 			/// </summary>
 			[GPValue("BLOB")]
 			[Description("Blob (binary data)")]
 			BLOB,
 
 			/// <summary>
-			/// <para>Raster imagery—Raster images will be used. All ArcGIS software-supported raster dataset formats can be stored; however, it is recommended that you use only small images.</para>
+			/// <para>Raster imagery—The field type will be raster. Raster fields can store raster data in or alongside the geodatabase. All ArcGIS software-supported raster dataset formats can be stored, but it is recommended that only small images be used.</para>
 			/// </summary>
 			[GPValue("RASTER")]
 			[Description("Raster imagery")]
 			Raster_imagery,
 
 			/// <summary>
-			/// <para>GUID (globally unique identifier)—A globally unique identifier will be used.</para>
+			/// <para>GUID (globally unique identifier)—The field type will be GUID. GUID fields store registry-style strings consisting of 36 characters enclosed in curly brackets.</para>
 			/// </summary>
 			[GPValue("GUID")]
 			[Description("GUID (globally unique identifier)")]

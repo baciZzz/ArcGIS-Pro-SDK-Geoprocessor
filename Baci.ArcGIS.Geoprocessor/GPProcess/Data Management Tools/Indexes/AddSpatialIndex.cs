@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, SpatialGrid1, SpatialGrid2, SpatialGrid3, OutFeatureClass };
+		public override object[] Parameters => new object[] { InFeatures, SpatialGrid1!, SpatialGrid2!, SpatialGrid3!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object SpatialGrid1 { get; set; } = "0";
+		public object? SpatialGrid1 { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Spatial Grid 2</para>
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object SpatialGrid2 { get; set; } = "0";
+		public object? SpatialGrid2 { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Spatial Grid 3</para>
@@ -94,19 +94,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object SpatialGrid3 { get; set; } = "0";
+		public object? SpatialGrid3 { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Updated Input Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddSpatialIndex SetEnviroment(object workspace = null )
+		public AddSpatialIndex SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

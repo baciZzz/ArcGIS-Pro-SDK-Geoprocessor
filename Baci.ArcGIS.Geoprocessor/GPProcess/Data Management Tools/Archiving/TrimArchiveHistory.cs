@@ -24,8 +24,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </param>
 		/// <param name="TrimMode">
 		/// <para>Trim Mode</para>
-		/// <para>Specifies the trim mode to be used to trim the archive history.</para>
-		/// <para>At ArcGIS Pro 2.6, only the delete trim mode is available.</para>
+		/// <para>Specifies the trim mode that will be used to trim the archive history.</para>
+		/// <para>At the current version of ArcGIS Pro, only the delete trim mode is available.</para>
 		/// <para>Delete—The archive records will be deleted.</para>
 		/// <para><see cref="TrimModeEnum"/></para>
 		/// </param>
@@ -68,7 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, TrimMode, TrimBeforeDate, OutTable };
+		public override object[] Parameters => new object[] { InTable, TrimMode, TrimBeforeDate!, OutTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -80,8 +80,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Trim Mode</para>
-		/// <para>Specifies the trim mode to be used to trim the archive history.</para>
-		/// <para>At ArcGIS Pro 2.6, only the delete trim mode is available.</para>
+		/// <para>Specifies the trim mode that will be used to trim the archive history.</para>
+		/// <para>At the current version of ArcGIS Pro, only the delete trim mode is available.</para>
 		/// <para>Delete—The archive records will be deleted.</para>
 		/// <para><see cref="TrimModeEnum"/></para>
 		/// </summary>
@@ -96,14 +96,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object TrimBeforeDate { get; set; }
+		public object? TrimBeforeDate { get; set; }
 
 		/// <summary>
 		/// <para>Output Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETable()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		#region InnerClass
 

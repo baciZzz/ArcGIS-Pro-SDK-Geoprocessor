@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ContourFeatures, ElevationField, AreaOfInterest, OutFeatureClass, ExclusionFeatures!, Product!, BandInterval!, BandValues };
+		public override object[] Parameters => new object[] { ContourFeatures, ElevationField, AreaOfInterest, OutFeatureClass, ExclusionFeatures!, Product!, BandInterval!, BandValues! };
 
 		/// <summary>
 		/// <para>Contour Features</para>

@@ -42,6 +42,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <param name="Expression">
 		/// <para>Expression</para>
 		/// <para>Calculates values in the field. Expressions are written in Arcade and can include [+ - * / ] operators and multiple fields. Calculated values are applied in the units of the spatial reference of the input unless you are using a geographic coordinate system, in which case they will be in meters.</para>
+		/// <para>If the layer is added to the map, the Fields and Helpers filters can be used to build an expression.</para>
 		/// </param>
 		public CalculateField(object InputLayer, object OutputName, object FieldName, object FieldType, object Expression)
 		{
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutputName, FieldName, FieldType, Expression, TrackAware, TrackFields, DataStore, OutputTable, TimeBoundarySplit, TimeBoundaryReference };
+		public override object[] Parameters => new object[] { InputLayer, OutputName, FieldName, FieldType, Expression, TrackAware!, TrackFields!, DataStore!, OutputTable!, TimeBoundarySplit!, TimeBoundaryReference! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -129,6 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Expression</para>
 		/// <para>Calculates values in the field. Expressions are written in Arcade and can include [+ - * / ] operators and multiple fields. Calculated values are applied in the units of the spatial reference of the input unless you are using a geographic coordinate system, in which case they will be in meters.</para>
+		/// <para>If the layer is added to the map, the Fields and Helpers filters can be used to build an expression.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPCalculatorExpression()]
@@ -144,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object TrackAware { get; set; }
+		public object? TrackAware { get; set; }
 
 		/// <summary>
 		/// <para>Track Fields</para>
@@ -153,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
-		public object TrackFields { get; set; }
+		public object? TrackFields { get; set; }
 
 		/// <summary>
 		/// <para>Data Store</para>
@@ -166,24 +168,23 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Data Store")]
-		public object DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
+		public object? DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
 
 		/// <summary>
 		/// <para>Output Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object OutputTable { get; set; }
+		public object? OutputTable { get; set; }
 
 		/// <summary>
 		/// <para>Time Boundary Split</para>
 		/// <para>A time span to split the input data into for analysis. A time boundary allows you to analyze values within a defined time span. For example, if you use a time boundary of 1 day, starting on January 1, 1980, tracks will be split at the beginning of every day. This parameter is only available with ArcGIS Enterprise 10.7 and later.</para>
-		/// <para><see cref="TimeBoundarySplitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
-		public object TimeBoundarySplit { get; set; }
+		[GPUnitDomain()]
+		public object? TimeBoundarySplit { get; set; }
 
 		/// <summary>
 		/// <para>Time Boundary Reference</para>
@@ -191,12 +192,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object TimeBoundaryReference { get; set; }
+		public object? TimeBoundaryReference { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateField SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public CalculateField SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;
@@ -278,69 +279,6 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 			[GPValue("RELATIONAL_DATA_STORE")]
 			[Description("Relational data store")]
 			Relational_data_store,
-
-		}
-
-		/// <summary>
-		/// <para>Time Boundary Split</para>
-		/// </summary>
-		public enum TimeBoundarySplitEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Milliseconds")]
-			[Description("Milliseconds")]
-			Milliseconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Seconds")]
-			[Description("Seconds")]
-			Seconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Days")]
-			[Description("Days")]
-			Days,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Weeks")]
-			[Description("Weeks")]
-			Weeks,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Months")]
-			[Description("Months")]
-			Months,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Years")]
-			[Description("Years")]
-			Years,
 
 		}
 

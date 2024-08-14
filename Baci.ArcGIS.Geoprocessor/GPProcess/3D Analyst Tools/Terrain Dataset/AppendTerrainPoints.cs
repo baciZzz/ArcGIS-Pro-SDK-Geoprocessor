@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerrain, TerrainFeatureClass, InPointFeatures, PolygonFeaturesOrExtent, DerivedOutTerrain };
+		public override object[] Parameters => new object[] { InTerrain, TerrainFeatureClass, InPointFeatures, PolygonFeaturesOrExtent!, DerivedOutTerrain! };
 
 		/// <summary>
 		/// <para>Input Terrain</para>
@@ -107,19 +107,19 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object PolygonFeaturesOrExtent { get; set; }
+		public object? PolygonFeaturesOrExtent { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Terrain</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTerrainLayer()]
-		public object DerivedOutTerrain { get; set; }
+		public object? DerivedOutTerrain { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AppendTerrainPoints SetEnviroment(int? autoCommit = null , object extent = null , object scratchWorkspace = null , object workspace = null )
+		public AppendTerrainPoints SetEnviroment(int? autoCommit = null , object? extent = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, SimplificationTolerance, MinimumArea, ConflictOption, InBarriers, OutPointFeatureClass, CollapsedPointOption };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, SimplificationTolerance, MinimumArea!, ConflictOption!, InBarriers!, OutPointFeatureClass!, CollapsedPointOption! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPArealUnit()]
-		public object MinimumArea { get; set; } = "0 Unknown";
+		public object? MinimumArea { get; set; } = "0 Unknown";
 
 		/// <summary>
 		/// <para>Check for spatial conflicts</para>
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ConflictOption { get; set; } = "false";
+		public object? ConflictOption { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Input barrier layers</para>
@@ -123,14 +123,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object InBarriers { get; set; }
+		public object? InBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Polygons Collapsed To Zero Area</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutPointFeatureClass { get; set; } = "output_feature_class_Pnt";
+		public object? OutPointFeatureClass { get; set; } = "output_feature_class_Pnt";
 
 		/// <summary>
 		/// <para>Keep collapsed points</para>
@@ -142,12 +142,12 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CollapsedPointOption { get; set; } = "false";
+		public object? CollapsedPointOption { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SimplifyBuilding SetEnviroment(object MDomain = null , object XYDomain = null , object XYTolerance = null , object cartographicPartitions = null , object extent = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , object scratchWorkspace = null , object workspace = null )
+		public SimplifyBuilding SetEnviroment(object? MDomain = null , object? XYDomain = null , object? XYTolerance = null , object? cartographicPartitions = null , object? extent = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(MDomain: MDomain, XYDomain: XYDomain, XYTolerance: XYTolerance, cartographicPartitions: cartographicPartitions, extent: extent, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 	/// <summary>
 	/// <para>Calculate Bridge Offsets</para>
 	/// <para>Calculates the offsets necessary to properly display bridges at a given location.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class CalculateBridgeOffsets : AbstractGPProcess
 	{
 		/// <summary>
@@ -70,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InBridgeFeatures, InOverpassingFeatures, ReferenceScale, SearchDistance, Expand, Offset, MinLength, BridgeSubtype, OverpassingSubtype, UpdatedBridgeFeatures };
+		public override object[] Parameters => new object[] { InBridgeFeatures, InOverpassingFeatures, ReferenceScale, SearchDistance!, Expand!, Offset!, MinLength!, BridgeSubtype!, OverpassingSubtype!, UpdatedBridgeFeatures! };
 
 		/// <summary>
 		/// <para>Input Bridge Features</para>
@@ -104,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object SearchDistance { get; set; } = "0 Meters";
+		public object? SearchDistance { get; set; } = "0 Meters";
 
 		/// <summary>
 		/// <para>Expand to Markers</para>
@@ -116,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Expand { get; set; } = "false";
+		public object? Expand { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Additional Offset</para>
@@ -124,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object Offset { get; set; } = "0 Points";
+		public object? Offset { get; set; } = "0 Points";
 
 		/// <summary>
 		/// <para>Minimum Length</para>
@@ -133,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object MinLength { get; set; } = "1.5 Millimeters";
+		public object? MinLength { get; set; } = "1.5 Millimeters";
 
 		/// <summary>
 		/// <para>Bridge Features Subtype</para>
@@ -142,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Subtypes (optional)")]
-		public object BridgeSubtype { get; set; }
+		public object? BridgeSubtype { get; set; }
 
 		/// <summary>
 		/// <para>Overpassing Features Subtype</para>
@@ -151,14 +153,14 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Subtypes (optional)")]
-		public object OverpassingSubtype { get; set; }
+		public object? OverpassingSubtype { get; set; }
 
 		/// <summary>
 		/// <para>Updated Bridge Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLayer()]
-		public object UpdatedBridgeFeatures { get; set; }
+		public object? UpdatedBridgeFeatures { get; set; }
 
 		#region InnerClass
 

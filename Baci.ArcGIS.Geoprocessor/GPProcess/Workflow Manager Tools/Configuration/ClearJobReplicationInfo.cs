@@ -61,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputRepositoryURL, InputDatabasepath, OutputStatus };
+		public override object[] Parameters => new object[] { InputRepositoryURL, InputDatabasepath!, OutputStatus! };
 
 		/// <summary>
 		/// <para>Repository URL</para>
@@ -79,14 +79,14 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object InputDatabasepath { get; set; }
+		public object? InputDatabasepath { get; set; }
 
 		/// <summary>
 		/// <para>Clear Replication Status</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLong()]
-		public object OutputStatus { get; set; }
+		public object? OutputStatus { get; set; }
 
 	}
 }

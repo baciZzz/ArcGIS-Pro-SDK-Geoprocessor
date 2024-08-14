@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, ConnectingFeatures };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, ConnectingFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
-		public object ConnectingFeatures { get; set; }
+		public object? ConnectingFeatures { get; set; }
 
 	}
 }

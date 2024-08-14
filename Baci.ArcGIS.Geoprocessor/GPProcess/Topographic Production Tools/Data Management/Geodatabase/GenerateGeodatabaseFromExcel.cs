@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InExcelFile, OutGeodatabase, UpdatedGeodatabase };
+		public override object[] Parameters => new object[] { InExcelFile, OutGeodatabase, UpdatedGeodatabase! };
 
 		/// <summary>
 		/// <para>Input Excel File</para>

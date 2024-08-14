@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { RasterFunction, OutTable, RasterFunctionArguments };
+		public override object[] Parameters => new object[] { RasterFunction, OutTable, RasterFunctionArguments! };
 
 		/// <summary>
 		/// <para>Input Raster Function</para>
@@ -90,14 +90,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object RasterFunctionArguments { get; set; }
+		public object? RasterFunctionArguments { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateTableFromRasterFunction SetEnviroment(object cellSize = null , object extent = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateTableFromRasterFunction SetEnviroment(object? cellSize = null , object? extent = null , object? parallelProcessingFactor = null , object? processorType = null , object? scratchWorkspace = null , object? workspace = null )
 		{
-			base.SetEnv(cellSize: cellSize, extent: extent, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
+			base.SetEnv(cellSize: cellSize, extent: extent, parallelProcessingFactor: parallelProcessingFactor, processorType: processorType, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
 		}
 

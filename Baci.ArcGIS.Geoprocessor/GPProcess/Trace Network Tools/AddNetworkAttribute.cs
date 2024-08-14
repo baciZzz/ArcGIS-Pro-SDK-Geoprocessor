@@ -29,10 +29,10 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <param name="AttributeType">
 		/// <para>Attribute Type</para>
 		/// <para>Specifies the data type of the network attribute.</para>
-		/// <para>Short (small integer)—The field is short integer type.</para>
-		/// <para>Long (large integer)—The field is long integer type.</para>
-		/// <para>Double (double precision)—The field is double precision type.</para>
-		/// <para>Date—The field is date type.</para>
+		/// <para>Short (16-bit integer)—The field type will be short.</para>
+		/// <para>Long (32-bit integer)—The field type will be long.</para>
+		/// <para>Double (64-bit floating point)—The field type will be double.</para>
+		/// <para>Date—The field type will be date.</para>
 		/// <para><see cref="AttributeTypeEnum"/></para>
 		/// </param>
 		public AddNetworkAttribute(object InTraceNetwork, object AttributeName, object AttributeType)
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTraceNetwork, AttributeName, AttributeType, IsNullable, OutTraceNetwork };
+		public override object[] Parameters => new object[] { InTraceNetwork, AttributeName, AttributeType, IsNullable!, OutTraceNetwork! };
 
 		/// <summary>
 		/// <para>Input Trace Network</para>
@@ -96,10 +96,10 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <summary>
 		/// <para>Attribute Type</para>
 		/// <para>Specifies the data type of the network attribute.</para>
-		/// <para>Short (small integer)—The field is short integer type.</para>
-		/// <para>Long (large integer)—The field is long integer type.</para>
-		/// <para>Double (double precision)—The field is double precision type.</para>
-		/// <para>Date—The field is date type.</para>
+		/// <para>Short (16-bit integer)—The field type will be short.</para>
+		/// <para>Long (32-bit integer)—The field type will be long.</para>
+		/// <para>Double (64-bit floating point)—The field type will be double.</para>
+		/// <para>Date—The field type will be date.</para>
 		/// <para><see cref="AttributeTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -110,21 +110,21 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <summary>
 		/// <para>Nullable</para>
 		/// <para>Specifies whether the network attribute will support null values.</para>
-		/// <para>Checked—The network attribute will allow support values.</para>
-		/// <para>Unchecked—The network attribute will not allow support values. This is the default.</para>
+		/// <para>Checked—The network attribute will support null values.</para>
+		/// <para>Unchecked—The network attribute will not support null values. This is the default.</para>
 		/// <para><see cref="IsNullableEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IsNullable { get; set; } = "false";
+		public object? IsNullable { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Trace Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETraceNetwork()]
-		public object OutTraceNetwork { get; set; }
+		public object? OutTraceNetwork { get; set; }
 
 		#region InnerClass
 
@@ -134,28 +134,28 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		public enum AttributeTypeEnum 
 		{
 			/// <summary>
-			/// <para>Short (small integer)—The field is short integer type.</para>
+			/// <para>Short (16-bit integer)—The field type will be short.</para>
 			/// </summary>
 			[GPValue("SHORT")]
-			[Description("Short (small integer)")]
+			[Description("Short (16-bit integer)")]
 			SHORT,
 
 			/// <summary>
-			/// <para>Long (large integer)—The field is long integer type.</para>
+			/// <para>Long (32-bit integer)—The field type will be long.</para>
 			/// </summary>
 			[GPValue("LONG")]
-			[Description("Long (large integer)")]
+			[Description("Long (32-bit integer)")]
 			LONG,
 
 			/// <summary>
-			/// <para>Double (double precision)—The field is double precision type.</para>
+			/// <para>Double (64-bit floating point)—The field type will be double.</para>
 			/// </summary>
 			[GPValue("DOUBLE")]
-			[Description("Double (double precision)")]
+			[Description("Double (64-bit floating point)")]
 			DOUBLE,
 
 			/// <summary>
-			/// <para>Date—The field is date type.</para>
+			/// <para>Date—The field type will be date.</para>
 			/// </summary>
 			[GPValue("DATE")]
 			[Description("Date")]
@@ -169,14 +169,14 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		public enum IsNullableEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The network attribute will allow support values.</para>
+			/// <para>Checked—The network attribute will support null values.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("NULLABLE")]
 			NULLABLE,
 
 			/// <summary>
-			/// <para>Unchecked—The network attribute will not allow support values. This is the default.</para>
+			/// <para>Unchecked—The network attribute will not support null values. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_NULLABLE")]

@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTin, InContours, ContourDepthField, DepthDirection, TargetWorkspace, MinDepth, MaxDepth, InExtentPolygon!, UpdatedDepthAreas };
+		public override object[] Parameters => new object[] { InTin, InContours, ContourDepthField, DepthDirection, TargetWorkspace, MinDepth, MaxDepth, InExtentPolygon!, UpdatedDepthAreas! };
 
 		/// <summary>
 		/// <para>Input TIN</para>

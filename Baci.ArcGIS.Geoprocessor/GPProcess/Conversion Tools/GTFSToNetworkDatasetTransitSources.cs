@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGtfsFolders, TargetFeatureDataset, UpdatedTargetFeatureDataset!, OutputStops!, OutputLineVariantElements!, OutputCalendars!, OutputCalendarExceptions!, OutputLines!, OutputLineVariants!, OutputRuns!, OutputScheduleElements!, OutputSchedules!, Interpolate!, Append };
+		public override object[] Parameters => new object[] { InGtfsFolders, TargetFeatureDataset, UpdatedTargetFeatureDataset!, OutputStops!, OutputLineVariantElements!, OutputCalendars!, OutputCalendarExceptions!, OutputLines!, OutputLineVariants!, OutputRuns!, OutputScheduleElements!, OutputSchedules!, Interpolate!, Append! };
 
 		/// <summary>
 		/// <para>Input GTFS Folders</para>

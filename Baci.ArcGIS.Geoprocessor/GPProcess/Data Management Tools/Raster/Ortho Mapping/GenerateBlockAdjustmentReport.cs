@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputMosaicDataset, InputSolutionTable, InputSolutionPoint, OutputReport, InputControlPointForAdjustment, ReportFormat };
+		public override object[] Parameters => new object[] { InputMosaicDataset, InputSolutionTable, InputSolutionPoint, OutputReport, InputControlPointForAdjustment!, ReportFormat! };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
-		public object InputControlPointForAdjustment { get; set; }
+		public object? InputControlPointForAdjustment { get; set; }
 
 		/// <summary>
 		/// <para>Report Format</para>
@@ -128,12 +128,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ReportFormat { get; set; } = "HTML";
+		public object? ReportFormat { get; set; } = "HTML";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateBlockAdjustmentReport SetEnviroment(object workspace = null )
+		public GenerateBlockAdjustmentReport SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Add Rule To Topology</para>
 	/// <para>Adds a new rule to a topology.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class AddRuleToTopology : AbstractGPProcess
 	{
 		/// <summary>
@@ -101,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTopology, RuleType, InFeatureclass, Subtype, InFeatureclass2, Subtype2, OutTopology };
+		public override object[] Parameters => new object[] { InTopology, RuleType, InFeatureclass, Subtype!, InFeatureclass2!, Subtype2!, OutTopology! };
 
 		/// <summary>
 		/// <para>Input Topology</para>
@@ -165,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Subtype { get; set; }
+		public object? Subtype { get; set; }
 
 		/// <summary>
 		/// <para>Input Feature class</para>
@@ -173,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
-		public object InFeatureclass2 { get; set; }
+		public object? InFeatureclass2 { get; set; }
 
 		/// <summary>
 		/// <para>Input Subtype</para>
@@ -181,19 +183,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Subtype2 { get; set; }
+		public object? Subtype2 { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Topology</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTopologyLayer()]
-		public object OutTopology { get; set; }
+		public object? OutTopology { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddRuleToTopology SetEnviroment(object workspace = null )
+		public AddRuleToTopology SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

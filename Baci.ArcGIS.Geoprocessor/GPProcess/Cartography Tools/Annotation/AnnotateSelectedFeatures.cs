@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, InLayer, AnnoLayers, GenerateUnplaced, OutAnnoLayers };
+		public override object[] Parameters => new object[] { InMap, InLayer, AnnoLayers, GenerateUnplaced!, OutAnnoLayers! };
 
 		/// <summary>
 		/// <para>Input Map</para>
@@ -108,14 +108,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object GenerateUnplaced { get; set; } = "false";
+		public object? GenerateUnplaced { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Annotation Layers</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutAnnoLayers { get; set; }
+		public object? OutAnnoLayers { get; set; }
 
 		#region InnerClass
 

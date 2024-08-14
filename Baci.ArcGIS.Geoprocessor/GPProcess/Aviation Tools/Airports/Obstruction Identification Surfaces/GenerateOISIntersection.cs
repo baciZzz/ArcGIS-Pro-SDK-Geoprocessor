@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Generate OIS Intersection</para>
-	/// <para>Creates the most restrictive (lowest) surfaces within the extent of all collective surfaces. Obstruction identification surfaces (OIS) determine which objects are vertical obstructions. An object is considered a vertical obstruction if it penetrates the OIS surface. Surfaces are used to support planning and design activities.</para>
+	/// <para>Creates the most restrictive (lowest) surfaces within the extent of all collective surfaces. Obstruction identification surfaces (OIS) determine  objects that are vertical obstructions. An object is considered a vertical obstruction if it penetrates the OIS surface. Surfaces are used to support planning and design activities.</para>
 	/// </summary>
 	public class GenerateOISIntersection : AbstractGPProcess
 	{
@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		/// <param name="InOisFeatures">
 		/// <para>Input OIS Features</para>
-		/// <para>The input OIS features. The feature class must be multipatch.</para>
+		/// <para>The input OIS features. The feature class must be a multipatch.</para>
 		/// </param>
 		/// <param name="OutOisFeatures">
 		/// <para>Output OIS Features</para>
@@ -65,11 +65,11 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InOisFeatures, OutOisFeatures, MultipartFeature };
+		public override object[] Parameters => new object[] { InOisFeatures, OutOisFeatures, MultipartFeature! };
 
 		/// <summary>
 		/// <para>Input OIS Features</para>
-		/// <para>The input OIS features. The feature class must be multipatch.</para>
+		/// <para>The input OIS features. The feature class must be a multipatch.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object MultipartFeature { get; set; } = "true";
+		public object? MultipartFeature { get; set; } = "true";
 
 		#region InnerClass
 

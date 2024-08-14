@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetFeatures, JoinFeatures, OutFeatureClass, JoinOperation, JoinType, FieldMapping, MatchOption, SearchRadius, DistanceFieldName };
+		public override object[] Parameters => new object[] { TargetFeatures, JoinFeatures, OutFeatureClass, JoinOperation!, JoinType!, FieldMapping!, MatchOption!, SearchRadius!, DistanceFieldName! };
 
 		/// <summary>
 		/// <para>Target Features</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Join Operation</para>
-		/// <para>Specifies how joins between the target features and join features will be handled in the output feature class if multiple join features are found that have the same spatial relationship with a single target feature.</para>
+		/// <para>The operation that will join the target features and join features in the output feature class if multiple join features are found that have the same spatial relationship with a single target feature.</para>
 		/// <para>Join one to one—If multiple join features are found that have the same spatial relationship with a single target feature, the attributes from the multiple join features will be aggregated using a field map merge rule. For example, if a point target feature is found within two separate polygon join features, the attributes from the two polygons will be aggregated before being transferred to the output point feature class. If one polygon has an attribute value of 3 and the other has a value of 7, and a Sum merge rule is specified, the aggregated value in the output feature class will be 10. This is the default.</para>
 		/// <para>Join one to many—If multiple join features are found that have the same spatial relationship with a single target feature, the output feature class will contain multiple copies (records) of the target feature. For example, if a single point target feature is found within two separate polygon join features, the output feature class will contain two copies of the target feature: one record with the attributes of one polygon and another record with the attributes of the other polygon.</para>
 		/// <para><see cref="JoinOperationEnum"/></para>
@@ -108,11 +108,11 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object JoinOperation { get; set; } = "JOIN_ONE_TO_ONE";
+		public object? JoinOperation { get; set; } = "JOIN_ONE_TO_ONE";
 
 		/// <summary>
 		/// <para>Keep All Target Features</para>
-		/// <para>Specifies whether all target features will be maintained in the output feature class (known as outer join) or only those that have the specified spatial relationship with the join features (inner join).</para>
+		/// <para>Specifies whether all target features will be maintained in the output feature class (known as an outer join) or only those that have the specified spatial relationship with the join features (an inner join).</para>
 		/// <para>Checked—All target features will be maintained in the output (outer join). This is the default.</para>
 		/// <para>Unchecked—Only those target features that have the specified spatial relationship with the join features will be maintained in the output feature class (inner join). For example, if a point feature class is specified for the target features, and a polygon feature class is specified for the join features, with a Match Option value of Within, the output feature class will only contain those target features that are within a polygon join feature. Any target features not within a join feature will be excluded from the output.</para>
 		/// <para><see cref="JoinTypeEnum"/></para>
@@ -120,11 +120,11 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object JoinType { get; set; } = "true";
+		public object? JoinType { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Field Map</para>
-		/// <para>Controls which attribute fields will be in the output. By default, all fields from the inputs will be included.</para>
+		/// <para>The attribute fields that will be in the output with the corresponding field properties and source fields. By default, all fields from the inputs will be included.</para>
 		/// <para>Fields can be added, deleted, renamed, and reordered, and you can change their properties.</para>
 		/// <para>Merge rules allow you to specify how values from two or more input fields are merged or combined into a single output value. There are several merge rules you can use to determine how the output field will be populated with values.</para>
 		/// <para>First—Use the input fields&apos; first value.</para>
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFieldMapping()]
 		[Category("Fields")]
-		public object FieldMapping { get; set; }
+		public object? FieldMapping { get; set; }
 
 		/// <summary>
 		/// <para>Match Option</para>
@@ -165,32 +165,33 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <para>Have their center in—The features in the join features will be matched if a target feature&apos;s center falls within them. The center of the feature is calculated as follows: for polygon and multipoint the geometry&apos;s centroid is used, and for line input the geometry&apos;s midpoint is used. Specify a distance in the Search Radius parameter.</para>
 		/// <para>Closest—The feature in the join features that is closest to a target feature is matched. See the usage tip for more information. Specify a distance in the Search Radius parameter.</para>
 		/// <para>Closest geodesic—Same as Closest except that geodesic distance is used rather than planar distance. Choose this if your data covers a large geographic extent or the coordinate system of the inputs is unsuitable for distance calculations</para>
+		/// <para>Largest overlap—The feature in the join features will be matched with the target feature with the largest overlap.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object MatchOption { get; set; } = "INTERSECT";
+		public object? MatchOption { get; set; } = "INTERSECT";
 
 		/// <summary>
 		/// <para>Search Radius</para>
-		/// <para>Join features within this distance of a target feature will be considered for the spatial join. A search radius is only valid when the spatial relationship is specified (the Match Option parameter is set to Intersect, Within a distance, Within a distance geodesic, Have their center in, Closest, or Closest geodesic). For example, using a search radius of 100 meters with the spatial relationship Within a distance will join feature within 100 meters of a target feature. For the three Within a distance relationships, if no value is specified for Search Radius, a distance of 0 is used.</para>
+		/// <para>Join features within this distance of a target feature will be considered for the spatial join. A search radius is only valid when the spatial relationship is specified (the Match Option parameter is set to Intersect, Within a distance, Within a distance geodesic, Have their center in, Closest, or Closest geodesic). For example, using a search radius of 100 meters with the Within a distance spatial relationship will join feature within 100 meters of a target feature. For the three Within a distance relationships, if no value is specified for Search Radius, a distance of 0 is used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object SearchRadius { get; set; }
+		public object? SearchRadius { get; set; }
 
 		/// <summary>
 		/// <para>Distance Field Name</para>
-		/// <para>The name of a field, which will be added to the output feature class, that contains the distance between the target feature and the closest join feature. This parameter is only valid when the spatial relationship is specified (Match Option is set to Closest or Closest geodesic). The value of this field is -1 if no feature is matched within a search radius. If no field name is specified, the field will not be added to the output feature class.</para>
+		/// <para>The name of the field that contains the distance between the target feature and the closest join feature. This field will be added to the output feature class. This parameter is only valid when the spatial relationship is specified (Match Option is set to Closest or Closest geodesic). The value of this field is -1 if no feature is matched within a search radius. If no field name is specified, the field will not be added to the output feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DistanceFieldName { get; set; }
+		public object? DistanceFieldName { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SpatialJoin SetEnviroment(object MDomain = null , object MResolution = null , object MTolerance = null , object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , object configKeyword = null , object extent = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null )
+		public SpatialJoin SetEnviroment(object? MDomain = null , double? MResolution = null , double? MTolerance = null , object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , object? configKeyword = null , object? extent = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null )
 		{
 			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, configKeyword: configKeyword, extent: extent, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue);
 			return this;

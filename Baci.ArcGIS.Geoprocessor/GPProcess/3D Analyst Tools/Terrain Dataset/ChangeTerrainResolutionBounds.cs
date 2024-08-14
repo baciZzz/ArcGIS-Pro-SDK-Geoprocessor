@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerrain, FeatureClass, LowerPyramidResolution, UpperPyramidResolution, Overview, DerivedOutTerrain };
+		public override object[] Parameters => new object[] { InTerrain, FeatureClass, LowerPyramidResolution!, UpperPyramidResolution!, Overview!, DerivedOutTerrain! };
 
 		/// <summary>
 		/// <para>Input Terrain</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object LowerPyramidResolution { get; set; }
+		public object? LowerPyramidResolution { get; set; }
 
 		/// <summary>
 		/// <para>Upper Pyramid Resolution</para>
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object UpperPyramidResolution { get; set; }
+		public object? UpperPyramidResolution { get; set; }
 
 		/// <summary>
 		/// <para>Contributes to Overview</para>
@@ -109,19 +109,19 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Overview { get; set; } = "true";
+		public object? Overview { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Updated Input Terrain</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTerrainLayer()]
-		public object DerivedOutTerrain { get; set; }
+		public object? DerivedOutTerrain { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ChangeTerrainResolutionBounds SetEnviroment(int? autoCommit = null , object scratchWorkspace = null , object workspace = null )
+		public ChangeTerrainResolutionBounds SetEnviroment(int? autoCommit = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

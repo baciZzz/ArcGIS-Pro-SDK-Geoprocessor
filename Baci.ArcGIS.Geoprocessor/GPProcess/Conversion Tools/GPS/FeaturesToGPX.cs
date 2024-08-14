@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutGpxFile, NameField, DescriptionField, ZField, DateField };
+		public override object[] Parameters => new object[] { InFeatures, OutGpxFile, NameField!, DescriptionField!, ZField!, DateField! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object NameField { get; set; }
+		public object? NameField { get; set; }
 
 		/// <summary>
 		/// <para>Description Field</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object DescriptionField { get; set; }
+		public object? DescriptionField { get; set; }
 
 		/// <summary>
 		/// <para>Z Field</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ZField { get; set; }
+		public object? ZField { get; set; }
 
 		/// <summary>
 		/// <para>Date Field</para>
@@ -119,12 +119,12 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object DateField { get; set; }
+		public object? DateField { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FeaturesToGPX SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public FeaturesToGPX SetEnviroment(object? extent = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

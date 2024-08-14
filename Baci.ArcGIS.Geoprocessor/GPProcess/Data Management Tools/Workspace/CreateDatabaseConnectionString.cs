@@ -74,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { DatabasePlatform, Instance, AccountAuthentication, Username, Password, Database, ObjectName, DataType, FeatureDataset, Schema, VersionType, Version, Date, OutConnectionString };
+		public override object[] Parameters => new object[] { DatabasePlatform, Instance, AccountAuthentication!, Username!, Password!, Database!, ObjectName!, DataType!, FeatureDataset!, Schema!, VersionType!, Version!, Date!, OutConnectionString! };
 
 		/// <summary>
 		/// <para>Database Platform</para>
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AccountAuthentication { get; set; } = "true";
+		public object? AccountAuthentication { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Username</para>
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Username { get; set; }
+		public object? Username { get; set; }
 
 		/// <summary>
 		/// <para>Password</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPEncryptedString()]
-		public object Password { get; set; }
+		public object? Password { get; set; }
 
 		/// <summary>
 		/// <para>Database</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Database { get; set; }
+		public object? Database { get; set; }
 
 		/// <summary>
 		/// <para>Dataset Object Name</para>
@@ -144,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ObjectName { get; set; }
+		public object? ObjectName { get; set; }
 
 		/// <summary>
 		/// <para>Data type</para>
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DataType { get; set; }
+		public object? DataType { get; set; }
 
 		/// <summary>
 		/// <para>Target Feature Dataset</para>
@@ -160,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object FeatureDataset { get; set; }
+		public object? FeatureDataset { get; set; }
 
 		/// <summary>
 		/// <para>Schema (Oracle user schema geodatabases only)</para>
@@ -169,7 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Geodatabase Connection Properties")]
-		public object Schema { get; set; }
+		public object? Schema { get; set; }
 
 		/// <summary>
 		/// <para>Version Type</para>
@@ -185,7 +185,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Geodatabase Connection Properties")]
-		public object VersionType { get; set; } = "TRANSACTIONAL";
+		public object? VersionType { get; set; } = "TRANSACTIONAL";
 
 		/// <summary>
 		/// <para>The following version will be used</para>
@@ -195,7 +195,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Geodatabase Connection Properties")]
-		public object Version { get; set; }
+		public object? Version { get; set; }
 
 		/// <summary>
 		/// <para>Date and Time</para>
@@ -212,19 +212,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Geodatabase Connection Properties")]
-		public object Date { get; set; }
+		public object? Date { get; set; }
 
 		/// <summary>
 		/// <para>CIMDATA Connection String</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutConnectionString { get; set; }
+		public object? OutConnectionString { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateDatabaseConnectionString SetEnviroment(object workspace = null )
+		public CreateDatabaseConnectionString SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

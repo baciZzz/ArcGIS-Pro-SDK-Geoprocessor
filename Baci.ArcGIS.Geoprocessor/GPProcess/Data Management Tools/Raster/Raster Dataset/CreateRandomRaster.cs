@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutPath, OutName, Distribution, RasterExtent, Cellsize, OutRasterDataset, BuildRat };
+		public override object[] Parameters => new object[] { OutPath, OutName, Distribution!, RasterExtent!, Cellsize!, OutRasterDataset!, BuildRat! };
 
 		/// <summary>
 		/// <para>Output Location</para>
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Distribution { get; set; } = "UNIFORM 0.0 1.0";
+		public object? Distribution { get; set; } = "UNIFORM 0.0 1.0";
 
 		/// <summary>
 		/// <para>Output extent</para>
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object RasterExtent { get; set; }
+		public object? RasterExtent { get; set; }
 
 		/// <summary>
 		/// <para>Cellsize</para>
@@ -132,14 +132,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Cellsize { get; set; }
+		public object? Cellsize { get; set; }
 
 		/// <summary>
 		/// <para>Output raster dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DERasterDataset()]
-		public object OutRasterDataset { get; set; }
+		public object? OutRasterDataset { get; set; }
 
 		/// <summary>
 		/// <para>Build raster attribute table</para>
@@ -152,12 +152,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object BuildRat { get; set; } = "false";
+		public object? BuildRat { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateRandomRaster SetEnviroment(object extent = null , object outputCoordinateSystem = null , object pyramid = null )
+		public CreateRandomRaster SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? pyramid = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, pyramid: pyramid);
 			return this;

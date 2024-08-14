@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Feature to NetCDF</para>
-	/// <para>Converts a point feature class to a netCDF file.</para>
+	/// <para>Converts point features to a netCDF file.</para>
 	/// </summary>
 	public class FeatureToNetCDF : AbstractGPProcess
 	{
@@ -20,12 +20,12 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input point feature class.</para>
+		/// <para>The input point features.</para>
 		/// </param>
 		/// <param name="FieldsToVariables">
 		/// <para>Fields to Variables</para>
 		/// <para>The field or fields used to create variables in the netCDF file.</para>
-		/// <para>Four special fields—Shape.X, Shape.Y, Shape.Z, and Shape.M—can be used for exporting x-coordinates or longitude, y-coordinates or latitude, Z values, and M values of input features, respectively.</para>
+		/// <para>Four special fields—Shape.X, Shape.Y, Shape.Z, and Shape.M—can be used for exporting x-coordinates or longitude, y-coordinates or latitude, z-values, and m-values of input features, respectively.</para>
 		/// <para>Field—A field in the input feature attribute table.</para>
 		/// <para>Variable—The netCDF variable name</para>
 		/// <para>Units—The units of the data represented by the field</para>
@@ -74,11 +74,11 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, FieldsToVariables, OutNetcdfFile, FieldsToDimensions };
+		public override object[] Parameters => new object[] { InFeatures, FieldsToVariables, OutNetcdfFile, FieldsToDimensions! };
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input point feature class.</para>
+		/// <para>The input point features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Fields to Variables</para>
 		/// <para>The field or fields used to create variables in the netCDF file.</para>
-		/// <para>Four special fields—Shape.X, Shape.Y, Shape.Z, and Shape.M—can be used for exporting x-coordinates or longitude, y-coordinates or latitude, Z values, and M values of input features, respectively.</para>
+		/// <para>Four special fields—Shape.X, Shape.Y, Shape.Z, and Shape.M—can be used for exporting x-coordinates or longitude, y-coordinates or latitude, z-values, and m-values of input features, respectively.</para>
 		/// <para>Field—A field in the input feature attribute table.</para>
 		/// <para>Variable—The netCDF variable name</para>
 		/// <para>Units—The units of the data represented by the field</para>
@@ -115,12 +115,12 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object FieldsToDimensions { get; set; }
+		public object? FieldsToDimensions { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FeatureToNetCDF SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public FeatureToNetCDF SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

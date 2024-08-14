@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputlayer, Mergelayer, Outputname, Mergingattributes, Output };
+		public override object[] Parameters => new object[] { Inputlayer, Mergelayer, Outputname, Mergingattributes!, Output! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -108,19 +108,19 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object Mergingattributes { get; set; }
+		public object? Mergingattributes { get; set; }
 
 		/// <summary>
 		/// <para>Output</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Output { get; set; }
+		public object? Output { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MergeLayers SetEnviroment(object extent = null )
+		public MergeLayers SetEnviroment(object? extent = null )
 		{
 			base.SetEnv(extent: extent);
 			return this;

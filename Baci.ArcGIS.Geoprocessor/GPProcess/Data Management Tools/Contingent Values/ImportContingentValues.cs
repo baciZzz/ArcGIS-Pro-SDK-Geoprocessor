@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetTable, FieldGroupFile, ContingentValueFile, ImportType, UpdatedTable };
+		public override object[] Parameters => new object[] { TargetTable, FieldGroupFile, ContingentValueFile, ImportType!, UpdatedTable! };
 
 		/// <summary>
 		/// <para>Target Table</para>
@@ -108,19 +108,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ImportType { get; set; } = "false";
+		public object? ImportType { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object UpdatedTable { get; set; }
+		public object? UpdatedTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportContingentValues SetEnviroment(object workspace = null )
+		public ImportContingentValues SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

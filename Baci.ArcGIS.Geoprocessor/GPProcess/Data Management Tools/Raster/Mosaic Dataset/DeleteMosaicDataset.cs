@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, DeleteOverviewImages, DeleteItemCache, OutResults };
+		public override object[] Parameters => new object[] { InMosaicDataset, DeleteOverviewImages!, DeleteItemCache!, OutResults! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DeleteOverviewImages { get; set; } = "true";
+		public object? DeleteOverviewImages { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Delete Item Cache</para>
@@ -92,14 +92,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DeleteItemCache { get; set; } = "true";
+		public object? DeleteItemCache { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Delete Succeeded</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
-		public object OutResults { get; set; } = "false";
+		public object? OutResults { get; set; } = "false";
 
 		#region InnerClass
 

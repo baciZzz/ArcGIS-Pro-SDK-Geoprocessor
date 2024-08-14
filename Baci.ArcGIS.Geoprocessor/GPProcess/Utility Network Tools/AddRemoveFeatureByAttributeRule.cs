@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, NetworkSource, WhereClause, Description, OutUtilityNetwork, OutTemplateName };
+		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, NetworkSource, WhereClause!, Description!, OutUtilityNetwork!, OutTemplateName!, UnconnectedJunctions!, OneConnectedJunction! };
 
 		/// <summary>
 		/// <para>Input Network</para>
@@ -110,28 +110,48 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Description</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Description { get; set; }
+		public object? Description { get; set; }
 
 		/// <summary>
 		/// <para>Output Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		/// <summary>
 		/// <para>Output Diagram Template</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutTemplateName { get; set; }
+		public object? OutTemplateName { get; set; }
+
+		/// <summary>
+		/// <para>Junctions must be unconnected</para>
+		/// <para><see cref="UnconnectedJunctionsEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		[Category("Connectivity constraints")]
+		public object? UnconnectedJunctions { get; set; } = "false";
+
+		/// <summary>
+		/// <para>Junctions must be connected to a single junction</para>
+		/// <para><see cref="OneConnectedJunctionEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		[Category("Connectivity constraints")]
+		public object? OneConnectedJunction { get; set; } = "false";
 
 		#region InnerClass
 
@@ -153,6 +173,48 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 			[GPValue("false")]
 			[Description("INACTIVE")]
 			INACTIVE,
+
+		}
+
+		/// <summary>
+		/// <para>Junctions must be unconnected</para>
+		/// </summary>
+		public enum UnconnectedJunctionsEnum 
+		{
+			/// <summary>
+			/// <para></para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("MUST_BE_UNCONNECTED")]
+			MUST_BE_UNCONNECTED,
+
+			/// <summary>
+			/// <para></para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("NO_CONSTRAINT")]
+			NO_CONSTRAINT,
+
+		}
+
+		/// <summary>
+		/// <para>Junctions must be connected to a single junction</para>
+		/// </summary>
+		public enum OneConnectedJunctionEnum 
+		{
+			/// <summary>
+			/// <para></para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("MUST_BE_CONNECTED_TO_SINGLE_JUNCTION")]
+			MUST_BE_CONNECTED_TO_SINGLE_JUNCTION,
+
+			/// <summary>
+			/// <para></para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("NO_CONSTRAINT")]
+			NO_CONSTRAINT,
 
 		}
 

@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPackage, OutputFolder, CachePackage, StorageFormatType, CreateReadyToServeFormat, TargetCloudConnection };
+		public override object[] Parameters => new object[] { InPackage, OutputFolder!, CachePackage!, StorageFormatType!, CreateReadyToServeFormat!, TargetCloudConnection! };
 
 		/// <summary>
 		/// <para>Input Package</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
-		public object OutputFolder { get; set; }
+		public object? OutputFolder { get; set; }
 
 		/// <summary>
 		/// <para>Cache Package</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CachePackage { get; set; } = "true";
+		public object? CachePackage { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Storage Format Type</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object StorageFormatType { get; set; } = "COMPACT";
+		public object? StorageFormatType { get; set; } = "COMPACT";
 
 		/// <summary>
 		/// <para>Create Ready To Serve Cache Dataset</para>
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CreateReadyToServeFormat { get; set; } = "false";
+		public object? CreateReadyToServeFormat { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Target Cloud Connection</para>
@@ -123,12 +123,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
-		public object TargetCloudConnection { get; set; }
+		public object? TargetCloudConnection { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExtractPackage SetEnviroment(object workspace = null )
+		public ExtractPackage SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLineOrPolygonFeatures, InFeatures, OutRepresentations };
+		public override object[] Parameters => new object[] { InLineOrPolygonFeatures, InFeatures!, OutRepresentations! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -79,19 +79,19 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
-		public object InFeatures { get; set; }
+		public object? InFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutRepresentations { get; set; }
+		public object? OutRepresentations { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetControlPointAtIntersect SetEnviroment(object cartographicPartitions = null )
+		public SetControlPointAtIntersect SetEnviroment(object? cartographicPartitions = null )
 		{
 			base.SetEnv(cartographicPartitions: cartographicPartitions);
 			return this;

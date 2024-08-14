@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, LevelName, DefaultTerritoryName, OutTerritorySolution, PrimaryFeatureClass };
+		public override object[] Parameters => new object[] { InTerritorySolution, LevelName, DefaultTerritoryName!, OutTerritorySolution!, PrimaryFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>
@@ -89,14 +89,14 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DefaultTerritoryName { get; set; }
+		public object? DefaultTerritoryName { get; set; }
 
 		/// <summary>
 		/// <para>Updated Territory Solution</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPGroupLayer()]
-		public object OutTerritorySolution { get; set; }
+		public object? OutTerritorySolution { get; set; }
 
 		/// <summary>
 		/// <para>Primary Feature Class</para>
@@ -110,12 +110,12 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object PrimaryFeatureClass { get; set; }
+		public object? PrimaryFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddTerritoryLevel SetEnviroment(object workspace = null )
+		public AddTerritoryLevel SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

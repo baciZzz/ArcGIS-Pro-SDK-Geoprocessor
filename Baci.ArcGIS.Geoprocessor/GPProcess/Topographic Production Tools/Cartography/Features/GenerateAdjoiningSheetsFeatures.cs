@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureDataset, AreaOfInterest, LandFeatures, Scale, ClipAoiToSheets, ModifiedFeatureDataset };
+		public override object[] Parameters => new object[] { InFeatureDataset, AreaOfInterest, LandFeatures!, Scale!, ClipAoiToSheets!, ModifiedFeatureDataset! };
 
 		/// <summary>
 		/// <para>Input Feature Dataset</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object LandFeatures { get; set; }
+		public object? LandFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Scale</para>
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Scale { get; set; } = "1:50000";
+		public object? Scale { get; set; } = "1:50000";
 
 		/// <summary>
 		/// <para>Clip AOI to Sheets</para>
@@ -116,14 +116,14 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ClipAoiToSheets { get; set; } = "true";
+		public object? ClipAoiToSheets { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Modified Feature Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureDataset()]
-		public object ModifiedFeatureDataset { get; set; }
+		public object? ModifiedFeatureDataset { get; set; }
 
 		#region InnerClass
 

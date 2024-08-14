@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutTable, XOrLonField, InCoordinateFormat, YOrLatField, CoordinateSystem };
+		public override object[] Parameters => new object[] { InTable, OutTable, XOrLonField, InCoordinateFormat, YOrLatField!, CoordinateSystem! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
-		public object YOrLatField { get; set; }
+		public object? YOrLatField { get; set; }
 
 		/// <summary>
 		/// <para>Output Coordinate System</para>
@@ -149,12 +149,12 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
-		public object CoordinateSystem { get; set; }
+		public object? CoordinateSystem { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateCoordinateNotations SetEnviroment(object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateCoordinateNotations SetEnviroment(object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

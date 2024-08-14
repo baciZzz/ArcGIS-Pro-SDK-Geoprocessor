@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InField, StandardOffset, OutFeatures };
+		public override object[] Parameters => new object[] { InFeatures, InField, StandardOffset!, OutFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -91,19 +91,19 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object StandardOffset { get; set; } = "0.25";
+		public object? StandardOffset { get; set; } = "0.25";
 
 		/// <summary>
 		/// <para>Output Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatures { get; set; }
+		public object? OutFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateCentralMeridianAndParallels SetEnviroment(object workspace = null )
+		public CalculateCentralMeridianAndParallels SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

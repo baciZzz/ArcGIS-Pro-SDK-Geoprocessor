@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, InReferenceImages, OutControlPoints, Similarity, OutImageFeaturePoints, Density, Distribution, AreaOfInterest, LocationAccuracy };
+		public override object[] Parameters => new object[] { InMosaicDataset, InReferenceImages, OutControlPoints, Similarity!, OutImageFeaturePoints!, Density!, Distribution!, AreaOfInterest!, LocationAccuracy! };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Similarity { get; set; } = "HIGH";
+		public object? Similarity { get; set; } = "HIGH";
 
 		/// <summary>
 		/// <para>Output Image Features</para>
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object OutImageFeaturePoints { get; set; }
+		public object? OutImageFeaturePoints { get; set; }
 
 		/// <summary>
 		/// <para>Point Density</para>
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Density { get; set; } = "MEDIUM";
+		public object? Density { get; set; } = "MEDIUM";
 
 		/// <summary>
 		/// <para>Point Distribution</para>
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Distribution { get; set; } = "RANDOM";
+		public object? Distribution { get; set; } = "RANDOM";
 
 		/// <summary>
 		/// <para>Area of Interest</para>
@@ -149,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
-		public object AreaOfInterest { get; set; }
+		public object? AreaOfInterest { get; set; }
 
 		/// <summary>
 		/// <para>Image Location Accuracy</para>
@@ -162,12 +162,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LocationAccuracy { get; set; } = "MEDIUM";
+		public object? LocationAccuracy { get; set; } = "MEDIUM";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ComputeControlPoints SetEnviroment(object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public ComputeControlPoints SetEnviroment(object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

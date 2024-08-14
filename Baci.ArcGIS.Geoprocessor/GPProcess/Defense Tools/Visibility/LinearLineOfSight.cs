@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InObserverFeatures, InTargetFeatures, InSurface, OutLosFeatureClass, OutSightLineFeatureClass, OutObserverFeatureClass, OutTargetFeatureClass, InObstructionFeatures, ObserverHeightAboveSurface, TargetHeightAboveSurface, AddProfileAttachment };
+		public override object[] Parameters => new object[] { InObserverFeatures, InTargetFeatures, InSurface, OutLosFeatureClass, OutSightLineFeatureClass, OutObserverFeatureClass, OutTargetFeatureClass, InObstructionFeatures!, ObserverHeightAboveSurface!, TargetHeightAboveSurface!, AddProfileAttachment! };
 
 		/// <summary>
 		/// <para>Observers</para>
@@ -115,7 +115,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <para>The input elevation raster surface.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
-		[GPRasterLayer()]
+		[GPComposite()]
+		[GPCompositeDomain()]
 		public object InSurface { get; set; }
 
 		/// <summary>
@@ -157,7 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[Category("Visibility Options")]
-		public object InObstructionFeatures { get; set; }
+		public object? InObstructionFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Observer Height Above Surface (meters)</para>
@@ -166,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Visibility Options")]
-		public object ObserverHeightAboveSurface { get; set; } = "2";
+		public object? ObserverHeightAboveSurface { get; set; } = "2";
 
 		/// <summary>
 		/// <para>Target Height Above Surface (meters)</para>
@@ -175,12 +176,12 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Visibility Options")]
-		public object TargetHeightAboveSurface { get; set; } = "0";
+		public object? TargetHeightAboveSurface { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Add Profile Graph Attachment To Sight Line</para>
 		/// <para>Specifies whether the tool will add an attachment to the feature with the profile (cross section terrain graph) between observer and target.</para>
-		/// <para>No profile graph—A profile graph will not be added. This is the default.</para>
+		/// <para>No profile graph—No profile graph will be added. This is the default.</para>
 		/// <para>Adds a profile graph—A profile graph will be added.</para>
 		/// <para><see cref="AddProfileAttachmentEnum"/></para>
 		/// </summary>
@@ -188,12 +189,12 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Visibility Options")]
-		public object AddProfileAttachment { get; set; } = "false";
+		public object? AddProfileAttachment { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LinearLineOfSight SetEnviroment(object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public LinearLineOfSight SetEnviroment(object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

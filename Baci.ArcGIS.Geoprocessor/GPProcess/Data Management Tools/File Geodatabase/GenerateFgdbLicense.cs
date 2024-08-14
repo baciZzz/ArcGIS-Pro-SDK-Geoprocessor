@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLicDefFile, OutLicFile, AllowExport, ExpDate };
+		public override object[] Parameters => new object[] { InLicDefFile, OutLicFile, AllowExport!, ExpDate! };
 
 		/// <summary>
 		/// <para>Input License Definition File</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object AllowExport { get; set; } = "DENY_EXPORT";
+		public object? AllowExport { get; set; } = "DENY_EXPORT";
 
 		/// <summary>
 		/// <para>Expiration Date</para>
@@ -103,12 +103,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object ExpDate { get; set; }
+		public object? ExpDate { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateFgdbLicense SetEnviroment(object workspace = null )
+		public GenerateFgdbLicense SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

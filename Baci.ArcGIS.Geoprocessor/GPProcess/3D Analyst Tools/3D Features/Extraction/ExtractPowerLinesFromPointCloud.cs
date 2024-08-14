@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointCloud, ClassCodes, Out3DLines, PointTolerance, SeparationDistance, MaxSamplingGap, LineTolerance, WindCorrection, MinWindSpan, MaxWindDeviation, EndPointSearchRadius, MinLength };
+		public override object[] Parameters => new object[] { InPointCloud, ClassCodes, Out3DLines, PointTolerance!, SeparationDistance!, MaxSamplingGap!, LineTolerance!, WindCorrection!, MinWindSpan!, MaxWindDeviation!, EndPointSearchRadius!, MinLength!, EliminateWind! };
 
 		/// <summary>
 		/// <para>Input Point Cloud</para>
@@ -106,17 +106,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[GPCodedValueDomain()]
-		public object PointTolerance { get; set; } = "80 Centimeters";
+		public object? PointTolerance { get; set; } = "80 Centimeters";
 
 		/// <summary>
 		/// <para>Wire Separation Distance</para>
-		/// <para>The distance points must be to determine if they belong to different power lines. The default is 1 meter.</para>
+		/// <para>The distance apart points must be to determine if they belong to different power lines. The default is 1 meter.</para>
 		/// <para><see cref="SeparationDistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[GPCodedValueDomain()]
-		public object SeparationDistance { get; set; } = "1 Meters";
+		public object? SeparationDistance { get; set; } = "1 Meters";
 
 		/// <summary>
 		/// <para>Maximum Wire Sampling Gap</para>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[GPCodedValueDomain()]
-		public object MaxSamplingGap { get; set; } = "5 Meters";
+		public object? MaxSamplingGap { get; set; } = "5 Meters";
 
 		/// <summary>
 		/// <para>Output Line Tolerance</para>
@@ -136,20 +136,20 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[GPCodedValueDomain()]
-		public object LineTolerance { get; set; } = "1 Centimeters";
+		public object? LineTolerance { get; set; } = "1 Centimeters";
 
 		/// <summary>
 		/// <para>Adjust for wind distortion</para>
-		/// <para>Specifies whether wind correction will be used to improve how points fit a given power line. Wind correction will only be applied in one direction and only for power lines with spans that are longer than the distance specified in the Minimum Span for Wind Correction parameter.</para>
-		/// <para>Checked—Wind correction will be used to improve the catenary curve&apos;s fitting of points belonging to the same power line. This is the default.</para>
-		/// <para>Unchecked—Wind correction will not be used, resulting in the creation of power lines that may not fit the points captured in the point cloud survey.</para>
+		/// <para>Specifies whether the output power lines will be adjusted for the influence of wind. When wind correction is applied, it can be used to either improve the fitting of wind modified points or model the resting state of the power lines when no wind is acting on them. The type of wind correction is specified using the Eliminate wind parameter.</para>
+		/// <para>Checked—The power lines will be adjusted for the influence of the wind. This is the default.</para>
+		/// <para>Unchecked—The power lines will attempt to fit the points without making any additional adjustments for the wind.</para>
 		/// <para><see cref="WindCorrectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Wind Correction")]
-		public object WindCorrection { get; set; } = "true";
+		public object? WindCorrection { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Minimum Span for Wind Correction</para>
@@ -160,17 +160,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPLinearUnit()]
 		[GPCodedValueDomain()]
 		[Category("Wind Correction")]
-		public object MinWindSpan { get; set; } = "60 Meters";
+		public object? MinWindSpan { get; set; } = "60 Meters";
 
 		/// <summary>
 		/// <para>Maximum Deviation Angle</para>
-		/// <para>The maximum angle that the wind is expected to deviate a given power line. The default is 10°.</para>
+		/// <para>The maximum angle that the wind is expected to deviate a given power line. The default is 10 degrees.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
 		[Category("Wind Correction")]
-		public object MaxWindDeviation { get; set; } = "10";
+		public object? MaxWindDeviation { get; set; } = "10";
 
 		/// <summary>
 		/// <para>End Point Search Radius</para>
@@ -181,7 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPLinearUnit()]
 		[GPCodedValueDomain()]
 		[Category("End Point Adjustment")]
-		public object EndPointSearchRadius { get; set; } = "10 Meters";
+		public object? EndPointSearchRadius { get; set; } = "10 Meters";
 
 		/// <summary>
 		/// <para>Minimum Wire Length</para>
@@ -192,12 +192,25 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPLinearUnit()]
 		[GPCodedValueDomain()]
 		[Category("End Point Adjustment")]
-		public object MinLength { get; set; } = "5 Meters";
+		public object? MinLength { get; set; } = "5 Meters";
+
+		/// <summary>
+		/// <para>Eliminate wind</para>
+		/// <para>Specifies how wind correction will be applied to the output power lines. Wind correction will only be applied for catenary curves that span a distance longer than the value specified in the Minimum Span for Wind Correction parameter.</para>
+		/// <para>Checked—The power lines will be adjusted to simulate the elimination of the impact of wind.</para>
+		/// <para>Unchecked—The power lines will be adjusted to achieve a better fit for the impact of wind. This is the default.</para>
+		/// <para><see cref="EliminateWindEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		[Category("Wind Correction")]
+		public object? EliminateWind { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExtractPowerLinesFromPointCloud SetEnviroment(object XYResolution = null , object XYTolerance = null , object ZResolution = null , object ZTolerance = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public ExtractPowerLinesFromPointCloud SetEnviroment(object? XYResolution = null , object? XYTolerance = null , object? ZResolution = null , object? ZTolerance = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(XYResolution: XYResolution, XYTolerance: XYTolerance, ZResolution: ZResolution, ZTolerance: ZTolerance, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -407,14 +420,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum WindCorrectionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Wind correction will be used to improve the catenary curve&apos;s fitting of points belonging to the same power line. This is the default.</para>
+			/// <para>Checked—The power lines will be adjusted for the influence of the wind. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("WIND")]
 			WIND,
 
 			/// <summary>
-			/// <para>Unchecked—Wind correction will not be used, resulting in the creation of power lines that may not fit the points captured in the point cloud survey.</para>
+			/// <para>Unchecked—The power lines will attempt to fit the points without making any additional adjustments for the wind.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_WIND")]
@@ -566,6 +579,27 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 			[GPValue("Inches")]
 			[Description("Inches")]
 			Inches,
+
+		}
+
+		/// <summary>
+		/// <para>Eliminate wind</para>
+		/// </summary>
+		public enum EliminateWindEnum 
+		{
+			/// <summary>
+			/// <para>Checked—The power lines will be adjusted to simulate the elimination of the impact of wind.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("ELIMINATE_WIND")]
+			ELIMINATE_WIND,
+
+			/// <summary>
+			/// <para>Unchecked—The power lines will be adjusted to achieve a better fit for the impact of wind. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("KEEP_WIND")]
+			KEEP_WIND,
 
 		}
 

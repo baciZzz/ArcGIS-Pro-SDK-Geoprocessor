@@ -27,7 +27,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <para>The input polyline features representing architectural details that can serve as barriers to travel within a facility. In the Indoors model, this will be the Details layer</para>
 		/// </param>
 		/// <param name="TargetPathways">
-		/// <para>Target Pathways</para>
+		/// <para>Target PrelimPathways</para>
 		/// <para>The feature class or feature layer to which generated pathway polylines will be written. In the Indoors model, this will be the PrelimPathways layer.</para>
 		/// </param>
 		public GenerateIndoorPathways(object InLevelFeatures, object InDetailFeatures, object TargetPathways)
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLevelFeatures, InDetailFeatures, TargetPathways, LatticeRotation, LatticeDensity, RestrictedUnitFeatures, RestrictedUnitExp, DetailExp, UpdatedPathways };
+		public override object[] Parameters => new object[] { InLevelFeatures, InDetailFeatures, TargetPathways, LatticeRotation!, LatticeDensity!, RestrictedUnitFeatures!, RestrictedUnitExp!, DetailExp!, UpdatedPathways! };
 
 		/// <summary>
 		/// <para>Input Level Features</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		public object InDetailFeatures { get; set; }
 
 		/// <summary>
-		/// <para>Target Pathways</para>
+		/// <para>Target PrelimPathways</para>
 		/// <para>The feature class or feature layer to which generated pathway polylines will be written. In the Indoors model, this will be the PrelimPathways layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object LatticeRotation { get; set; }
+		public object? LatticeRotation { get; set; }
 
 		/// <summary>
 		/// <para>Lattice Density</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object LatticeDensity { get; set; } = "0.6";
+		public object? LatticeDensity { get; set; } = "0.6";
 
 		/// <summary>
 		/// <para>Restricted Unit Features</para>
@@ -126,30 +126,30 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object RestrictedUnitFeatures { get; set; }
+		public object? RestrictedUnitFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Restricted Unit Expression</para>
-		/// <para>An SQL expression used to select Restricted Unit Features values in which the tool will not generate pathways.</para>
+		/// <para>An SQL expression used to select the Restricted Unit Features parameter values in which the tool will not generate pathways.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object RestrictedUnitExp { get; set; }
+		public object? RestrictedUnitExp { get; set; }
 
 		/// <summary>
 		/// <para>Detail Expression</para>
-		/// <para>An SQL expression used to select Input Detail Features values across which the tool will not generate pathways.</para>
+		/// <para>An SQL expression used to select the Input Detail Features parameter values across which the tool will not generate pathways.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object DetailExp { get; set; }
+		public object? DetailExp { get; set; }
 
 		/// <summary>
 		/// <para>Updated Pathways</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object UpdatedPathways { get; set; }
+		public object? UpdatedPathways { get; set; }
 
 	}
 }

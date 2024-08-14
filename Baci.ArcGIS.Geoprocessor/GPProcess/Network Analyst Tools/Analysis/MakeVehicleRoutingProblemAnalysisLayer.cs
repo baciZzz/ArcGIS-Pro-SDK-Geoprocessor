@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { NetworkDataSource, LayerName, TravelMode, TimeUnits, DistanceUnits, DefaultDate, TimeZoneForTimeFields, LineShape, TimeWindowFactor, ExcessTransitFactor, GenerateDirectionsOnSolve, SpatialClustering, OutNetworkAnalysisLayer };
+		public override object[] Parameters => new object[] { NetworkDataSource, LayerName!, TravelMode!, TimeUnits!, DistanceUnits!, DefaultDate!, TimeZoneForTimeFields!, LineShape!, TimeWindowFactor!, ExcessTransitFactor!, GenerateDirectionsOnSolve!, SpatialClustering!, OutNetworkAnalysisLayer!, IgnoreInvalidLocations! };
 
 		/// <summary>
 		/// <para>Network Data Source</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object LayerName { get; set; }
+		public object? LayerName { get; set; }
 
 		/// <summary>
 		/// <para>Travel Mode</para>
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TravelMode { get; set; }
+		public object? TravelMode { get; set; }
 
 		/// <summary>
 		/// <para>Time Field Units</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TimeUnits { get; set; } = "Minutes";
+		public object? TimeUnits { get; set; } = "Minutes";
 
 		/// <summary>
 		/// <para>Distance Field Units</para>
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DistanceUnits { get; set; } = "Miles";
+		public object? DistanceUnits { get; set; } = "Miles";
 
 		/// <summary>
 		/// <para>Default Date</para>
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Date and Time")]
-		public object DefaultDate { get; set; }
+		public object? DefaultDate { get; set; }
 
 		/// <summary>
 		/// <para>Time Zone for Time Fields</para>
@@ -143,22 +143,22 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Date and Time")]
-		public object TimeZoneForTimeFields { get; set; } = "LOCAL_TIME_AT_LOCATIONS";
+		public object? TimeZoneForTimeFields { get; set; } = "LOCAL_TIME_AT_LOCATIONS";
 
 		/// <summary>
 		/// <para>Output Route Shape</para>
-		/// <para>Specifies the shape type for the route features that are output by the analysis.</para>
+		/// <para>Specifies the shape type that will be used for the route features that are output by the analysis.</para>
 		/// <para>Along network—The output routes will have the exact shape of the underlying network sources. The output includes route measurements for linear referencing. The measurements increase from the first stop and record the cumulative impedance to reach a given position.</para>
 		/// <para>No lines—No shape will be generated for the output routes.</para>
 		/// <para>Straight lines—The output route shape will be a single straight line between the stops.This option is not available if the selected network data source is a service.</para>
-		/// <para>No matter which output shape type is chosen, the best route is always determined by the network impedance, never Euclidean distance. This means that only the route shapes are different, not the underlying traversal of the network.</para>
+		/// <para>Regardless of the output shape type specified, the best route is always determined by the network impedance, never Euclidean distance. This means that only the route shapes are different, not the underlying traversal of the network.</para>
 		/// <para><see cref="LineShapeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Output Geometry")]
-		public object LineShape { get; set; } = "ALONG_NETWORK";
+		public object? LineShape { get; set; } = "ALONG_NETWORK";
 
 		/// <summary>
 		/// <para>Time Window Violation Importance</para>
@@ -172,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced")]
-		public object TimeWindowFactor { get; set; } = "Medium";
+		public object? TimeWindowFactor { get; set; } = "Medium";
 
 		/// <summary>
 		/// <para>Excess Transit Time Importance</para>
@@ -186,7 +186,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced")]
-		public object ExcessTransitFactor { get; set; } = "Medium";
+		public object? ExcessTransitFactor { get; set; } = "Medium";
 
 		/// <summary>
 		/// <para>Generate Directions on Solve</para>
@@ -199,7 +199,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Directions")]
-		public object GenerateDirectionsOnSolve { get; set; } = "true";
+		public object? GenerateDirectionsOnSolve { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Spatial Clustering</para>
@@ -212,19 +212,32 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced")]
-		public object SpatialClustering { get; set; } = "true";
+		public object? SpatialClustering { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Network Analyst Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPNALayer()]
-		public object OutNetworkAnalysisLayer { get; set; }
+		public object? OutNetworkAnalysisLayer { get; set; }
+
+		/// <summary>
+		/// <para>Ignore Invalid Locations at Solve Time</para>
+		/// <para>Specifies whether invalid input locations will be ignored.</para>
+		/// <para>Checked—Invalid input locations will be ignored so that the analysis will succeed using only valid locations.</para>
+		/// <para>Unchecked—Invalid locations will not be ignored and will cause the analysis to fail. This is the default.</para>
+		/// <para><see cref="IgnoreInvalidLocationsEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		[Category("Locations")]
+		public object? IgnoreInvalidLocations { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeVehicleRoutingProblemAnalysisLayer SetEnviroment(object workspace = null )
+		public MakeVehicleRoutingProblemAnalysisLayer SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -488,6 +501,27 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 			[GPValue("false")]
 			[Description("NO_CLUSTER")]
 			NO_CLUSTER,
+
+		}
+
+		/// <summary>
+		/// <para>Ignore Invalid Locations at Solve Time</para>
+		/// </summary>
+		public enum IgnoreInvalidLocationsEnum 
+		{
+			/// <summary>
+			/// <para>Checked—Invalid input locations will be ignored so that the analysis will succeed using only valid locations.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("SKIP")]
+			SKIP,
+
+			/// <summary>
+			/// <para>Unchecked—Invalid locations will not be ignored and will cause the analysis to fail. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("HALT")]
+			HALT,
 
 		}
 

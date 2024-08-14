@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Detect Change Using Change Analysis Raster</para>
-	/// <para>Generates a raster containing pixel change information using the output change analysis raster from the Analyze Changes Using CCDC tool or the Analyze Changes Using LandTrendr  tool.</para>
+	/// <para>Generates a raster containing pixel change information using the output change analysis raster from the Analyze Changes Using CCDC tool or the Analyze Changes Using LandTrendr tool.</para>
 	/// </summary>
 	public class DetectChangeUsingChangeAnalysisRaster : AbstractGPProcess
 	{
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InChangeAnalysisRaster, OutRaster, ChangeType, MaxNumberChanges, SegmentDate, ChangeDirection, FilterByYear, MinYear, MaxYear, FilterByDuration, MinDuration, MaxDuration, FilterByMagnitude, MinMagnitude, MaxMagnitude, FilterByStartValue, MinStartValue, MaxStartValue, FilterByEndValue, MinEndValue, MaxEndValue };
+		public override object[] Parameters => new object[] { InChangeAnalysisRaster, OutRaster, ChangeType, MaxNumberChanges!, SegmentDate!, ChangeDirection!, FilterByYear!, MinYear!, MaxYear!, FilterByDuration!, MinDuration!, MaxDuration!, FilterByMagnitude!, MinMagnitude!, MaxMagnitude!, FilterByStartValue!, MinStartValue!, MaxStartValue!, FilterByEndValue!, MinEndValue!, MaxEndValue! };
 
 		/// <summary>
 		/// <para>Input Change Analysis Raster</para>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object MaxNumberChanges { get; set; } = "1";
+		public object? MaxNumberChanges { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Segment Date</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SegmentDate { get; set; } = "BEGINNING_OF_SEGMENT";
+		public object? SegmentDate { get; set; } = "BEGINNING_OF_SEGMENT";
 
 		/// <summary>
 		/// <para>Change Direction</para>
@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ChangeDirection { get; set; } = "ALL";
+		public object? ChangeDirection { get; set; } = "ALL";
 
 		/// <summary>
 		/// <para>Filter by Year</para>
@@ -163,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Filter By Attributes")]
-		public object FilterByYear { get; set; } = "false";
+		public object? FilterByYear { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Minimum Value</para>
@@ -173,7 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[GPLong()]
 		[GPNumericDomain()]
 		[Category("Filter By Attributes")]
-		public object MinYear { get; set; }
+		public object? MinYear { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Value</para>
@@ -184,7 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[GPLong()]
 		[GPNumericDomain()]
 		[Category("Filter By Attributes")]
-		public object MaxYear { get; set; }
+		public object? MaxYear { get; set; }
 
 		/// <summary>
 		/// <para>Filter by Duration</para>
@@ -198,7 +198,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Filter By Attributes")]
-		public object FilterByDuration { get; set; } = "false";
+		public object? FilterByDuration { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Minimum  Duration (in years)</para>
@@ -209,7 +209,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[GPDouble()]
 		[GPNumericDomain()]
 		[Category("Filter By Attributes")]
-		public object MinDuration { get; set; }
+		public object? MinDuration { get; set; }
 
 		/// <summary>
 		/// <para>Maximum  Duration (in years)</para>
@@ -220,7 +220,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[GPDouble()]
 		[GPNumericDomain()]
 		[Category("Filter By Attributes")]
-		public object MaxDuration { get; set; }
+		public object? MaxDuration { get; set; }
 
 		/// <summary>
 		/// <para>Filter by Magnitude</para>
@@ -236,7 +236,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Filter By Attributes")]
-		public object FilterByMagnitude { get; set; } = "false";
+		public object? FilterByMagnitude { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Minimum  Magnitude</para>
@@ -247,7 +247,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[GPDouble()]
 		[GPNumericDomain()]
 		[Category("Filter By Attributes")]
-		public object MinMagnitude { get; set; }
+		public object? MinMagnitude { get; set; }
 
 		/// <summary>
 		/// <para>Maximum  Magnitude</para>
@@ -258,7 +258,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[GPDouble()]
 		[GPNumericDomain()]
 		[Category("Filter By Attributes")]
-		public object MaxMagnitude { get; set; }
+		public object? MaxMagnitude { get; set; }
 
 		/// <summary>
 		/// <para>Filter by Start Value</para>
@@ -272,7 +272,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Filter By Attributes")]
-		public object FilterByStartValue { get; set; } = "false";
+		public object? FilterByStartValue { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Minimum  Start Value</para>
@@ -283,7 +283,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[GPDouble()]
 		[GPNumericDomain()]
 		[Category("Filter By Attributes")]
-		public object MinStartValue { get; set; }
+		public object? MinStartValue { get; set; }
 
 		/// <summary>
 		/// <para>Maximum  Start Value</para>
@@ -294,7 +294,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[GPDouble()]
 		[GPNumericDomain()]
 		[Category("Filter By Attributes")]
-		public object MaxStartValue { get; set; }
+		public object? MaxStartValue { get; set; }
 
 		/// <summary>
 		/// <para>Filter by End Value</para>
@@ -308,7 +308,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Filter By Attributes")]
-		public object FilterByEndValue { get; set; } = "false";
+		public object? FilterByEndValue { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Minimum  End Value</para>
@@ -319,7 +319,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[GPDouble()]
 		[GPNumericDomain()]
 		[Category("Filter By Attributes")]
-		public object MinEndValue { get; set; }
+		public object? MinEndValue { get; set; }
 
 		/// <summary>
 		/// <para>Maximum  End Value</para>
@@ -330,12 +330,12 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[GPDouble()]
 		[GPNumericDomain()]
 		[Category("Filter By Attributes")]
-		public object MaxEndValue { get; set; }
+		public object? MaxEndValue { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DetectChangeUsingChangeAnalysisRaster SetEnviroment(object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object nodata = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object rasterStatistics = null , object resamplingMethod = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public DetectChangeUsingChangeAnalysisRaster SetEnviroment(object? cellSize = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? nodata = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? rasterStatistics = null , object? resamplingMethod = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
 			base.SetEnv(cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, nodata: nodata, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, rasterStatistics: rasterStatistics, resamplingMethod: resamplingMethod, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;

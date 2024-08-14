@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, InControlPoints, OutCoverageTable, OutOverlapTable, InMaskDataset, MinimumArea, MaximumLevel };
+		public override object[] Parameters => new object[] { InMosaicDataset, InControlPoints, OutCoverageTable, OutOverlapTable!, InMaskDataset!, MinimumArea!, MaximumLevel! };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object OutOverlapTable { get; set; }
+		public object? OutOverlapTable { get; set; }
 
 		/// <summary>
 		/// <para>Input Mask</para>
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
-		public object InMaskDataset { get; set; }
+		public object? InMaskDataset { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Overlap Area</para>
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MinimumArea { get; set; } = "0.2";
+		public object? MinimumArea { get; set; } = "0.2";
 
 		/// <summary>
 		/// <para>Maximum Overlap Level</para>
@@ -133,12 +133,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MaximumLevel { get; set; } = "2";
+		public object? MaximumLevel { get; set; } = "2";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AnalyzeControlPoints SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public AnalyzeControlPoints SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

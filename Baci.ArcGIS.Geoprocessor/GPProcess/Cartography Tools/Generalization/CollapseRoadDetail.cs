@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, CollapseDistance, OutputFeatureClass, LockingField };
+		public override object[] Parameters => new object[] { InFeatures, CollapseDistance, OutputFeatureClass, LockingField! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -105,12 +105,12 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object LockingField { get; set; }
+		public object? LockingField { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CollapseRoadDetail SetEnviroment(object cartographicPartitions = null , object referenceScale = null )
+		public CollapseRoadDetail SetEnviroment(object? cartographicPartitions = null , double? referenceScale = null )
 		{
 			base.SetEnv(cartographicPartitions: cartographicPartitions, referenceScale: referenceScale);
 			return this;

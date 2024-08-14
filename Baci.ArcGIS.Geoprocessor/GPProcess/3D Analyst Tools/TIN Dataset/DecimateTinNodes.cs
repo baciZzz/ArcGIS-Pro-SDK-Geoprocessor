@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTin, OutTin, Method, CopyBreaklines, ZToleranceValue, MaxNodeValue };
+		public override object[] Parameters => new object[] { InTin, OutTin, Method, CopyBreaklines!, ZToleranceValue!, MaxNodeValue! };
 
 		/// <summary>
 		/// <para>Input TIN</para>
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CopyBreaklines { get; set; } = "false";
+		public object? CopyBreaklines { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Z Tolerance</para>
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ZToleranceValue { get; set; }
+		public object? ZToleranceValue { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Number of Nodes</para>
@@ -129,12 +129,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MaxNodeValue { get; set; }
+		public object? MaxNodeValue { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DecimateTinNodes SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object tinSaveVersion = null , object workspace = null )
+		public DecimateTinNodes SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? tinSaveVersion = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, tinSaveVersion: tinSaveVersion, workspace: workspace);
 			return this;

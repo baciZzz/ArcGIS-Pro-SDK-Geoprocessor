@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, SideTables, RasterTypeNames, EditorTracking, OutMosaicDataset };
+		public override object[] Parameters => new object[] { InMosaicDataset, SideTables!, RasterTypeNames!, EditorTracking!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -74,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Operations</para>
-		/// <para>Specifies the operations that will be permissible for this mosaic dataset.</para>
+		/// <para>Specifies the operations that will be permissible for the mosaic dataset.</para>
 		/// <para>Analysis—A nonowner will be allowed to run the Analyze Mosaic Dataset tool on the mosaic dataset.</para>
 		/// <para>Boundary—A nonowner will be allowed to create or edit the boundary of the mosaic dataset. This is required if a nonowner will add raster datasets outside of the existing boundary.</para>
 		/// <para>Cache—A nonowner will be allowed to create a cache for the mosaic dataset.</para>
@@ -90,12 +90,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object SideTables { get; set; }
+		public object? SideTables { get; set; }
 
 		/// <summary>
 		/// <para>Raster Types</para>
-		/// <para>Specifies the raster types that nonowners can add to this mosaic dataset.</para>
-		/// <para>To select a custom raster type, enter the location of the custom raster type file.</para>
+		/// <para>Specifies the raster types that nonowners can add to the mosaic dataset.</para>
+		/// <para>To select a custom raster type, provide the location of the custom raster type file.</para>
 		/// <para>Airborne Digital Sensors— Leica ADS raster type</para>
 		/// <para>Altum—Altum raster type</para>
 		/// <para>ASTER—ASTER raster type</para>
@@ -125,10 +125,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Landsat TM—Landsat 4-5 TM raster type</para>
 		/// <para>Landsat ETM+—Landsat 7 ETM+ raster type</para>
 		/// <para>Landsat 8—Landsat 8 raster type</para>
+		/// <para>Landsat 9—Landsat 9 raster type</para>
+		/// <para>Maxar—Maxar</para>
 		/// <para>NCDRD—NCDRD raster type</para>
 		/// <para>NITF—NITF raster type</para>
 		/// <para>NetCDF—NetCDF raster type</para>
 		/// <para>PlanetScope—PlanetScope raster type</para>
+		/// <para>Pleiades Neo—Pleiades Neo raster type</para>
 		/// <para>Pleiades-1—Pleiades-1 raster type</para>
 		/// <para>QuickBird—Quickbird raster type</para>
 		/// <para>RADARSAT-2—RADARSAT-2 raster type</para>
@@ -143,6 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Spot 5—SPOT 5 raster type</para>
 		/// <para>Spot 6—SPOT 6 raster type</para>
 		/// <para>Spot 7—SPOT 7 raster type</para>
+		/// <para>SuperView-1—SuperView-1 raster type</para>
 		/// <para>TeLEOS-1—TelEOS-1 raster type</para>
 		/// <para>TH-01—TH-01 raster type</para>
 		/// <para>UAV/UAS—UAV/UAS raster type</para>
@@ -158,28 +162,28 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object RasterTypeNames { get; set; }
+		public object? RasterTypeNames { get; set; }
 
 		/// <summary>
 		/// <para>Enable Editor Tracking</para>
 		/// <para>Specifies whether enable editor tracking will be activated.</para>
 		/// <para>Editor tracking can help you maintain accountability and enforce quality-control standards.</para>
 		/// <para>Unchecked—Editor tracking will not be activated. This is the default.</para>
-		/// <para>Checked—Editor tracking will be activated for your mosaic dataset.</para>
-		/// <para>If the View keyword is used in the Operations parameter, editor tracking will automatically be activated.</para>
+		/// <para>Checked—Editor tracking will be activated.</para>
+		/// <para>If the View option is used for the Operations parameter, editor tracking will automatically be activated.</para>
 		/// <para><see cref="EditorTrackingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object EditorTracking { get; set; } = "false";
+		public object? EditorTracking { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Mosaic Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMosaicLayer()]
-		public object OutMosaicDataset { get; set; }
+		public object? OutMosaicDataset { get; set; }
 
 		#region InnerClass
 
@@ -189,7 +193,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum EditorTrackingEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Editor tracking will be activated for your mosaic dataset.</para>
+			/// <para>Checked—Editor tracking will be activated.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EDITOR_TRACKING")]

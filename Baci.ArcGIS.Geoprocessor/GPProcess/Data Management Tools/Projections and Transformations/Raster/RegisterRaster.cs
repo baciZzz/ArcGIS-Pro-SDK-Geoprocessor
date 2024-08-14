@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, RegisterMode, ReferenceRaster, InputLinkFile, TransformationType, OutputCptLinkFile, MaximumRmsValue, OutRaster };
+		public override object[] Parameters => new object[] { InRaster, RegisterMode, ReferenceRaster!, InputLinkFile!, TransformationType!, OutputCptLinkFile!, MaximumRmsValue!, OutRaster! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object ReferenceRaster { get; set; }
+		public object? ReferenceRaster { get; set; }
 
 		/// <summary>
 		/// <para>Input Link File</para>
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object InputLinkFile { get; set; }
+		public object? InputLinkFile { get; set; }
 
 		/// <summary>
 		/// <para>Transformation Type</para>
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TransformationType { get; set; } = "POLYORDER1";
+		public object? TransformationType { get; set; } = "POLYORDER1";
 
 		/// <summary>
 		/// <para>Output Link File</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETextFile()]
-		public object OutputCptLinkFile { get; set; }
+		public object? OutputCptLinkFile { get; set; }
 
 		/// <summary>
 		/// <para>Maximum RMS</para>
@@ -151,19 +151,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MaximumRmsValue { get; set; }
+		public object? MaximumRmsValue { get; set; }
 
 		/// <summary>
 		/// <para>Registered Raster</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DERasterDataset()]
-		public object OutRaster { get; set; }
+		public object? OutRaster { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RegisterRaster SetEnviroment(object parallelProcessingFactor = null )
+		public RegisterRaster SetEnviroment(object? parallelProcessingFactor = null )
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

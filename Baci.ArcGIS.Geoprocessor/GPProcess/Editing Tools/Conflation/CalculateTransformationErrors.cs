@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLinkFeatures, OutLinkTable, Method, OutRmse };
+		public override object[] Parameters => new object[] { InLinkFeatures, OutLinkTable, Method!, OutRmse! };
 
 		/// <summary>
 		/// <para>Input Link Features</para>
@@ -107,19 +107,19 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "AFFINE";
+		public object? Method { get; set; } = "AFFINE";
 
 		/// <summary>
 		/// <para>RMSE</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object OutRmse { get; set; } = "0";
+		public object? OutRmse { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateTransformationErrors SetEnviroment(object extent = null , object workspace = null )
+		public CalculateTransformationErrors SetEnviroment(object? extent = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

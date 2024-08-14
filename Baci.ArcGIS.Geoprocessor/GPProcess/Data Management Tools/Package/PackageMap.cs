@@ -20,11 +20,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMap">
 		/// <para>Input  Map</para>
-		/// <para>The map (.mapx) to be packaged. When running this tool in ArcGIS Pro, the input can be a map, scene, or basemap.</para>
+		/// <para>The map to be packaged. When running this tool in ArcGIS Pro, the input can be a map, scene, or basemap.</para>
 		/// </param>
 		/// <param name="OutputFile">
 		/// <para>Output File</para>
-		/// <para>The output map package (.mpkx).</para>
+		/// <para>The output map package (.mpkx file).</para>
 		/// </param>
 		public PackageMap(object InMap, object OutputFile)
 		{
@@ -60,16 +60,16 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "extent", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, OutputFile, ConvertData, ConvertArcsdeData, Extent, ApplyExtentToArcsde, Arcgisruntime, ReferenceAllData, Version, AdditionalFiles, Summary, Tags, SelectRelatedRows };
+		public override object[] Parameters => new object[] { InMap, OutputFile, ConvertData!, ConvertArcsdeData!, Extent!, ApplyExtentToArcsde!, Arcgisruntime!, ReferenceAllData!, Version!, AdditionalFiles!, Summary!, Tags!, SelectRelatedRows!, PreserveSqlite! };
 
 		/// <summary>
 		/// <para>Input  Map</para>
-		/// <para>The map (.mapx) to be packaged. When running this tool in ArcGIS Pro, the input can be a map, scene, or basemap.</para>
+		/// <para>The map to be packaged. When running this tool in ArcGIS Pro, the input can be a map, scene, or basemap.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output File</para>
-		/// <para>The output map package (.mpkx).</para>
+		/// <para>The output map package (.mpkx file).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ConvertData { get; set; } = "false";
+		public object? ConvertData { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Include Enterprise Geodatabase data instead of referencing the data</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ConvertArcsdeData { get; set; } = "true";
+		public object? ConvertArcsdeData { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Extent</para>
@@ -120,11 +120,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Apply Extent only to enterprise geodatabase layers</para>
-		/// <para>Specifies whether the specified extent will be applied to all layers or only to enterprise geodatabase layers.</para>
+		/// <para>Specifies whether the specified extent will be applied to all layers or to enterprise geodatabase layers only.</para>
 		/// <para>Unchecked—The extent will be applied to all layers. This is the default.</para>
 		/// <para>Checked—The extent will be applied to enterprise geodatabase layers only.</para>
 		/// <para><see cref="ApplyExtentToArcsdeEnum"/></para>
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ApplyExtentToArcsde { get; set; } = "false";
+		public object? ApplyExtentToArcsde { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Support ArcGIS Runtime</para>
@@ -145,41 +145,42 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Arcgisruntime { get; set; } = "false";
+		public object? Arcgisruntime { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Reference all data for Runtime</para>
-		/// <para>Checking this option will create a package that references the data needed rather than copying the data. This is valuable when trying to package large datasets that are available from a central location within an organization.</para>
-		/// <para>Checked—Creates a package that references the data needed rather than copying the data.</para>
-		/// <para>Unchecked— Creates a package that contains all needed data. This is the default.</para>
+		/// <para>Specifies whether a package that references the necessary data will be created rather than copying the data. This is helpful when trying to package large datasets that are available from a central location in an organization.</para>
+		/// <para>Checked—A package that references the necessary data will be created rather than copying the data.</para>
+		/// <para>Unchecked—A package that contains the necessary data will be created. This is the default.</para>
 		/// <para><see cref="ReferenceAllDataEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ReferenceAllData { get; set; } = "false";
+		public object? ReferenceAllData { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Package version</para>
-		/// <para>Specifies the version of the geodatabases that will be created in the resulting package. Specifying a version allows packages to be shared with previous versions of ArcGIS and supports backward compatibility.A package saved to a previous version may lose properties available only in the newer version.</para>
+		/// <para>Specifies the version of the geodatabases that will be created in the resulting package. Specifying a version allows packages to be shared with earlier versions of ArcGIS and supports backward compatibility.A package saved to an earlier version may lose properties that are only available in the later version.</para>
 		/// <para>All versions—The package will contain geodatabases and a map compatible with all versions (ArcGIS Pro 1.2 and later).</para>
-		/// <para>Current version— The package will contain geodatabases and a map compatible with the version of the current release.</para>
-		/// <para>2.x—The package will contain geodatabases and a map compatible with version 2.0 and later.</para>
-		/// <para>1.2—The package will contain geodatabases and a map compatible with version 1.2 and later.</para>
+		/// <para>Current version— The package will contain geodatabases and a map compatible with the version of the current ArcGIS Pro release.</para>
+		/// <para>1.2—The package will contain geodatabases and a map compatible with ArcGIS Proversion 1.2 and later.</para>
+		/// <para>2.x—The package will contain geodatabases and a map compatible with ArcGIS Pro version 2.0 and later.</para>
+		/// <para>3.x—The package will contain geodatabases and a map compatible with ArcGIS Pro version 3.0 and later.</para>
 		/// <para><see cref="VersionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object Version { get; set; } = "ALL";
+		public object? Version { get; set; } = "ALL";
 
 		/// <summary>
 		/// <para>Additional Files</para>
-		/// <para>Adds additional files to a package. Additional files, such as .doc, .txt, .pdf, and so on, are used to provide more information about the contents and purpose of the package.</para>
+		/// <para>Adds files to a package. Additional files, such as .doc, .txt, .pdf, and so on, are used to provide more information about the contents and purpose of the package.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object AdditionalFiles { get; set; }
+		public object? AdditionalFiles { get; set; }
 
 		/// <summary>
 		/// <para>Summary</para>
@@ -187,7 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Summary { get; set; }
+		public object? Summary { get; set; }
 
 		/// <summary>
 		/// <para>Tags</para>
@@ -195,7 +196,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Tags { get; set; }
+		public object? Tags { get; set; }
 
 		/// <summary>
 		/// <para>Keep only the rows which are related to features within the extent</para>
@@ -207,14 +208,26 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SelectRelatedRows { get; set; } = "false";
+		public object? SelectRelatedRows { get; set; } = "false";
+
+		/// <summary>
+		/// <para>Preserve Mobile Geodatabase</para>
+		/// <para>Specifies whether input mobile geodatabase data will be preserved in the output or written to file geodatabase format. This parameter overrides the Convert data to file geodatabase parameter when the input data is mobile geodatabase. If the input data is a mobile geodatabase network dataset, the output will always be mobile geodatabase.</para>
+		/// <para>Unchecked—Mobile geodatabase data will be converted to file geodatabase format. This is the default.</para>
+		/// <para>Checked—Mobile geodatabase data will be preserved as mobile geodatabase in the project package.</para>
+		/// <para><see cref="PreserveSqliteEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		public object? PreserveSqlite { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PackageMap SetEnviroment(object extent = null , object workspace = null )
+		public PackageMap SetEnviroment(object? extent = null , object? parallelProcessingFactor = null , object? workspace = null )
 		{
-			base.SetEnv(extent: extent, workspace: workspace);
+			base.SetEnv(extent: extent, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;
 		}
 
@@ -310,14 +323,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ReferenceAllDataEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Creates a package that references the data needed rather than copying the data.</para>
+			/// <para>Checked—A package that references the necessary data will be created rather than copying the data.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REFERENCED")]
 			REFERENCED,
 
 			/// <summary>
-			/// <para>Unchecked— Creates a package that contains all needed data. This is the default.</para>
+			/// <para>Unchecked—A package that contains the necessary data will be created. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_REFERENCED")]
@@ -338,25 +351,32 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			All_versions,
 
 			/// <summary>
-			/// <para>Current version— The package will contain geodatabases and a map compatible with the version of the current release.</para>
+			/// <para>Current version— The package will contain geodatabases and a map compatible with the version of the current ArcGIS Pro release.</para>
 			/// </summary>
 			[GPValue("CURRENT")]
 			[Description("Current version")]
 			Current_version,
 
 			/// <summary>
-			/// <para>1.2—The package will contain geodatabases and a map compatible with version 1.2 and later.</para>
+			/// <para>1.2—The package will contain geodatabases and a map compatible with ArcGIS Proversion 1.2 and later.</para>
 			/// </summary>
 			[GPValue("1.2")]
 			[Description("1.2")]
 			_12,
 
 			/// <summary>
-			/// <para>2.x—The package will contain geodatabases and a map compatible with version 2.0 and later.</para>
+			/// <para>2.x—The package will contain geodatabases and a map compatible with ArcGIS Pro version 2.0 and later.</para>
 			/// </summary>
 			[GPValue("2.x")]
 			[Description("2.x")]
 			_2x,
+
+			/// <summary>
+			/// <para>3.x—The package will contain geodatabases and a map compatible with ArcGIS Pro version 3.0 and later.</para>
+			/// </summary>
+			[GPValue("3.x")]
+			[Description("3.x")]
+			_3x,
 
 		}
 
@@ -378,6 +398,27 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			[GPValue("false")]
 			[Description("KEEP_ALL_RELATED_ROWS")]
 			KEEP_ALL_RELATED_ROWS,
+
+		}
+
+		/// <summary>
+		/// <para>Preserve Mobile Geodatabase</para>
+		/// </summary>
+		public enum PreserveSqliteEnum 
+		{
+			/// <summary>
+			/// <para>Checked—Mobile geodatabase data will be preserved as mobile geodatabase in the project package.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("PRESERVE_SQLITE")]
+			PRESERVE_SQLITE,
+
+			/// <summary>
+			/// <para>Unchecked—Mobile geodatabase data will be converted to file geodatabase format. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("CONVERT_SQLITE")]
+			CONVERT_SQLITE,
 
 		}
 

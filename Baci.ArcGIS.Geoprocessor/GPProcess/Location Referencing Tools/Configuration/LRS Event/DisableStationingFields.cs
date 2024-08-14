@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, OutFeatureClass };
+		public override object[] Parameters => new object[] { InFeatureClass, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Event Feature Class</para>

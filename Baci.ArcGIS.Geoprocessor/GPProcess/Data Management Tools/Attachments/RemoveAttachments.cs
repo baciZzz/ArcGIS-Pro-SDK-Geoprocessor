@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Attachments</para>
-	/// <para>Removes attachments from geodatabase feature class or table records. Since attachments are not actually stored in the input dataset, no changes will be made to that feature class or table, but rather to the related geodatabase table that stores the attachments and maintains linkage with the input dataset. A match table is used to identify which input records (or attribute groups of records) will have attachments removed.</para>
+	/// <para>Removes attachments from geodatabase feature class or table records.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,19 +22,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>Geodatabase table or feature class from which to remove attachments. Attachments are not removed directly from this table, but rather from the related attachment table that stores the attachments. The Input Dataset must be in a version 10 or later geodatabase, and the table must have attachments enabled.</para>
+		/// <para>A geodatabase table or feature class from which attachments will be removed. Attachments are not removed directly from this table; they are removed from the related attachment table that stores the attachments. The dataset must have attachments enabled.</para>
 		/// </param>
 		/// <param name="InJoinField">
 		/// <para>Input Join Field</para>
-		/// <para>Field from the Input Dataset that has values which match the values in the Match Join Field. Records that have join field values that match between the Input Dataset and the Match Table will have attachments removed. This field can be an Object ID field or any other identifying attribute.</para>
+		/// <para>A field from the Input Dataset parameter value that contains values that match the values in the Match Join Field parameter value. Records that have join field values that match the Input Dataset parameter value and the Match Table parameter value will have attachments removed. This field can be an Object ID field or any other identifying attribute.</para>
 		/// </param>
 		/// <param name="InMatchTable">
 		/// <para>Match Table</para>
-		/// <para>Table that identifies which input records will have attachments removed.</para>
+		/// <para>A table that identifies which input records will have attachments removed.</para>
 		/// </param>
 		/// <param name="InMatchJoinField">
 		/// <para>Match Join Field</para>
-		/// <para>Field from the match table that indicates which records in the Input Dataset will have specified attachments removed. This field can have values that match Input Dataset Object IDs or some other identifying attribute.</para>
+		/// <para>A field from the match table that indicates which records in the Input Dataset parameter value will have specified attachments removed. This field can have values that match the Input Dataset Object ID field or some other identifying attribute.</para>
 		/// </param>
 		public RemoveAttachments(object InDataset, object InJoinField, object InMatchTable, object InMatchJoinField)
 		{
@@ -77,11 +77,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, InJoinField, InMatchTable, InMatchJoinField, InMatchNameField, OutDataset };
+		public override object[] Parameters => new object[] { InDataset, InJoinField, InMatchTable, InMatchJoinField, InMatchNameField!, OutDataset! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>Geodatabase table or feature class from which to remove attachments. Attachments are not removed directly from this table, but rather from the related attachment table that stores the attachments. The Input Dataset must be in a version 10 or later geodatabase, and the table must have attachments enabled.</para>
+		/// <para>A geodatabase table or feature class from which attachments will be removed. Attachments are not removed directly from this table; they are removed from the related attachment table that stores the attachments. The dataset must have attachments enabled.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Join Field</para>
-		/// <para>Field from the Input Dataset that has values which match the values in the Match Join Field. Records that have join field values that match between the Input Dataset and the Match Table will have attachments removed. This field can be an Object ID field or any other identifying attribute.</para>
+		/// <para>A field from the Input Dataset parameter value that contains values that match the values in the Match Join Field parameter value. Records that have join field values that match the Input Dataset parameter value and the Match Table parameter value will have attachments removed. This field can be an Object ID field or any other identifying attribute.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Match Table</para>
-		/// <para>Table that identifies which input records will have attachments removed.</para>
+		/// <para>A table that identifies which input records will have attachments removed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Match Join Field</para>
-		/// <para>Field from the match table that indicates which records in the Input Dataset will have specified attachments removed. This field can have values that match Input Dataset Object IDs or some other identifying attribute.</para>
+		/// <para>A field from the match table that indicates which records in the Input Dataset parameter value will have specified attachments removed. This field can have values that match the Input Dataset Object ID field or some other identifying attribute.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -115,24 +115,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Match Name Field</para>
-		/// <para>Field from the match table that has the names of attachments to remove from Input Dataset records. If no name field is specified, all attachments will be removed from each record specified in the Match Join Field. If a name field is specified, but a record has a null or empty value in the name field, all attachments will be removed from that record. This field's values should be the short names of the attachment to remove, not the full paths to the files used to make the original attachments.</para>
+		/// <para>A field from the match table that has the names of the attachments that will be removed from the Input Dataset parameter value's records. If no name field is specified, all attachments will be removed from each record specified in the Match Join Field parameter value. If a name field is specified but a record has a null or empty value in the name field, all attachments will be removed from that record. This field's values should be the short names of the attachments to remove, not the full paths to the files used to make the original attachments.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object InMatchNameField { get; set; }
+		public object? InMatchNameField { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
-		public object OutDataset { get; set; }
+		public object? OutDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveAttachments SetEnviroment(object workspace = null )
+		public RemoveAttachments SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 	/// <summary>
 	/// <para>Feature Class To Feature Class</para>
 	/// <para>Converts a feature class or feature layer to a feature class.</para>
+	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.ConversionTools.ExportFeatures"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
+	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.ConversionTools.ExportFeatures))]
 	public class FeatureClassToFeatureClass : AbstractGPProcess
 	{
 		/// <summary>
@@ -70,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutPath, OutName, WhereClause, FieldMapping, ConfigKeyword, OutFeatureClass };
+		public override object[] Parameters => new object[] { InFeatures, OutPath, OutName, WhereClause!, FieldMapping!, ConfigKeyword!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -102,11 +104,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Field Map</para>
-		/// <para>Controls which attribute fields will be in the output. By default, all fields from the inputs will be included.</para>
+		/// <para>The attribute fields that will be in the output with the corresponding field properties and source fields. By default, all fields from the inputs will be included.</para>
 		/// <para>Fields can be added, deleted, renamed, and reordered, and you can change their properties.</para>
 		/// <para>Merge rules allow you to specify how values from two or more input fields are merged or combined into a single output value. There are several merge rules you can use to determine how the output field will be populated with values.</para>
 		/// <para>First—Use the input fields&apos; first value.</para>
@@ -124,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFieldMapping()]
 		[Category("Fields")]
-		public object FieldMapping { get; set; }
+		public object? FieldMapping { get; set; }
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
@@ -134,21 +136,21 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Geodatabase Settings")]
-		public object ConfigKeyword { get; set; }
+		public object? ConfigKeyword { get; set; }
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FeatureClassToFeatureClass SetEnviroment(object MDomain = null , object MResolution = null , object MTolerance = null , object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , int? autoCommit = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , bool? qualifiedFieldNames = null , bool? transferDomains = null , object workspace = null )
+		public FeatureClassToFeatureClass SetEnviroment(object? MDomain = null , double? MResolution = null , double? MTolerance = null , object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , int? autoCommit = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , bool? maintainAttachments = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , bool? preserveGlobalIds = null , bool? qualifiedFieldNames = null , bool? transferDomains = null , object? workspace = null )
 		{
-			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, qualifiedFieldNames: qualifiedFieldNames, transferDomains: transferDomains, workspace: workspace);
+			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, maintainAttachments: maintainAttachments, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, preserveGlobalIds: preserveGlobalIds, qualifiedFieldNames: qualifiedFieldNames, transferDomains: transferDomains, workspace: workspace);
 			return this;
 		}
 

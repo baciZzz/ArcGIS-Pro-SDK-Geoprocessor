@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputregionrasterorfeatures, Outputoptimallinesname, Inputbarrierrasterorfeatures, Inputcostraster, Outputneighborconnectionsname, Distancemethod, Connectionswithinregions, Outputoptimallinesfeatures, Outputneighborconnectionfeatures };
+		public override object[] Parameters => new object[] { Inputregionrasterorfeatures, Outputoptimallinesname, Inputbarrierrasterorfeatures!, Inputcostraster!, Outputneighborconnectionsname!, Distancemethod!, Connectionswithinregions!, Outputoptimallinesfeatures!, Outputneighborconnectionfeatures! };
 
 		/// <summary>
 		/// <para>Input Region Raster or Features</para>
@@ -107,13 +107,13 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Input Barrier Raster or Features</para>
 		/// <para>The dataset that defines the barriers.</para>
-		/// <para>The barriers can be defined by an integer or a floating-point image service, or by a feature service.</para>
+		/// <para>The barriers can be defined by an integer or a floating-point image service, or by a feature service. For a feature service, the input type can be point, line or polygon.</para>
 		/// <para>For an image service barrier, the barrier must have a valid value, including zero, and the areas that are not barriers must be NoData.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object Inputbarrierrasterorfeatures { get; set; }
+		public object? Inputbarrierrasterorfeatures { get; set; }
 
 		/// <summary>
 		/// <para>Input Cost Raster</para>
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object Inputcostraster { get; set; }
+		public object? Inputcostraster { get; set; }
 
 		/// <summary>
 		/// <para>Output Neighboring Connections Name</para>
@@ -139,19 +139,19 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Outputneighborconnectionsname { get; set; }
+		public object? Outputneighborconnectionsname { get; set; }
 
 		/// <summary>
 		/// <para>Distance Method</para>
-		/// <para>Specifies whether to calculate the distance using a planar (flat earth) or a geodesic (ellipsoid) method.</para>
+		/// <para>Specifies whether the distance will be calculated using a planar (flat earth) or a geodesic (ellipsoid) method.</para>
 		/// <para>Planar—The distance calculation will be performed on a projected flat plane using a 2D Cartesian coordinate system. This is the default.</para>
-		/// <para>Geodesic—The distance calculation will be performed on the ellipsoid. Therefore, regardless of input or output projection, the results do not change.</para>
+		/// <para>Geodesic—The distance calculation will be performed on the ellipsoid. Regardless of input or output projection, the results will not change.</para>
 		/// <para><see cref="DistancemethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Distancemethod { get; set; } = "PLANAR";
+		public object? Distancemethod { get; set; } = "PLANAR";
 
 		/// <summary>
 		/// <para>Connections Within Regions</para>
@@ -163,26 +163,26 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Connectionswithinregions { get; set; } = "GENERATE_CONNECTIONS";
+		public object? Connectionswithinregions { get; set; } = "GENERATE_CONNECTIONS";
 
 		/// <summary>
 		/// <para>Output optimal connectivity lines</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object Outputoptimallinesfeatures { get; set; }
+		public object? Outputoptimallinesfeatures { get; set; }
 
 		/// <summary>
 		/// <para>Output Neighboring Connections</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object Outputneighborconnectionfeatures { get; set; }
+		public object? Outputneighborconnectionfeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public OptimalRegionConnections SetEnviroment(object cellSize = null , object extent = null , object mask = null , object outputCoordinateSystem = null , object snapRaster = null )
+		public OptimalRegionConnections SetEnviroment(object? cellSize = null , object? extent = null , object? mask = null , object? outputCoordinateSystem = null , object? snapRaster = null )
 		{
 			base.SetEnv(cellSize: cellSize, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, snapRaster: snapRaster);
 			return this;
@@ -203,7 +203,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 			Planar,
 
 			/// <summary>
-			/// <para>Geodesic—The distance calculation will be performed on the ellipsoid. Therefore, regardless of input or output projection, the results do not change.</para>
+			/// <para>Geodesic—The distance calculation will be performed on the ellipsoid. Regardless of input or output projection, the results will not change.</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
 			[Description("Geodesic")]

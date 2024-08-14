@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, InputField, GenerateReport, ConceptualizationOfSpatialRelationships, DistanceMethod, Standardization, DistanceBandOrThresholdDistance, WeightsMatrixFile, ObservedGeneralG, Zscore, Pvalue, ReportFile, NumberOfNeighbors };
+		public override object[] Parameters => new object[] { InputFeatureClass, InputField, GenerateReport!, ConceptualizationOfSpatialRelationships, DistanceMethod, Standardization, DistanceBandOrThresholdDistance!, WeightsMatrixFile!, ObservedGeneralG!, Zscore!, Pvalue!, ReportFile!, NumberOfNeighbors! };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object GenerateReport { get; set; }
+		public object? GenerateReport { get; set; }
 
 		/// <summary>
 		/// <para>Conceptualization of Spatial Relationships</para>
@@ -177,7 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object DistanceBandOrThresholdDistance { get; set; }
+		public object? DistanceBandOrThresholdDistance { get; set; }
 
 		/// <summary>
 		/// <para>Weights Matrix File</para>
@@ -186,35 +186,35 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object WeightsMatrixFile { get; set; }
+		public object? WeightsMatrixFile { get; set; }
 
 		/// <summary>
 		/// <para>Observed General G</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object ObservedGeneralG { get; set; }
+		public object? ObservedGeneralG { get; set; }
 
 		/// <summary>
 		/// <para>ZScore</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object Zscore { get; set; }
+		public object? Zscore { get; set; }
 
 		/// <summary>
 		/// <para>PValue</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object Pvalue { get; set; }
+		public object? Pvalue { get; set; }
 
 		/// <summary>
 		/// <para>Report File</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
-		public object ReportFile { get; set; }
+		public object? ReportFile { get; set; }
 
 		/// <summary>
 		/// <para>Number of Neighbors</para>
@@ -223,12 +223,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object NumberOfNeighbors { get; set; }
+		public object? NumberOfNeighbors { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public HighLowClustering SetEnviroment(object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public HighLowClustering SetEnviroment(object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

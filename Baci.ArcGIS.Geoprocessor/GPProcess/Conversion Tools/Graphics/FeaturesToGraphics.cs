@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayer, OutLayer, ExcludeFeatures!, UpdatedLayer };
+		public override object[] Parameters => new object[] { InLayer, OutLayer, ExcludeFeatures!, UpdatedLayer! };
 
 		/// <summary>
 		/// <para>Input Features</para>

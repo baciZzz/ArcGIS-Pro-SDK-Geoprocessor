@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InS57File, OutDirectory, InUpdateCells, RegionalRules, InIgnoreList, OutLogFile };
+		public override object[] Parameters => new object[] { InS57File, OutDirectory, InUpdateCells!, RegionalRules!, InIgnoreList!, OutLogFile! };
 
 		/// <summary>
 		/// <para>Input S-57 File</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFileDomain()]
-		public object InUpdateCells { get; set; }
+		public object? InUpdateCells { get; set; }
 
 		/// <summary>
 		/// <para>Regional Rules</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object RegionalRules { get; set; }
+		public object? RegionalRules { get; set; }
 
 		/// <summary>
 		/// <para>Ignore List</para>
@@ -114,19 +114,19 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object InIgnoreList { get; set; }
+		public object? InIgnoreList { get; set; }
 
 		/// <summary>
 		/// <para>Output S-58 Log File</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
-		public object OutLogFile { get; set; }
+		public object? OutLogFile { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ValidateS57File SetEnviroment(object workspace = null )
+		public ValidateS57File SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

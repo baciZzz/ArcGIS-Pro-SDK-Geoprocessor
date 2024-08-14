@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause, UpdateBoundary, MarkOverviewsItems, DeleteOverviewImages, DeleteItemCache, RemoveItems, UpdateCellsizeRanges, OutMosaicDataset };
+		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause!, UpdateBoundary!, MarkOverviewsItems!, DeleteOverviewImages!, DeleteItemCache!, RemoveItems!, UpdateCellsizeRanges!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Update Boundary</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object UpdateBoundary { get; set; } = "true";
+		public object? UpdateBoundary { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Mark Affected Overviews</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object MarkOverviewsItems { get; set; } = "true";
+		public object? MarkOverviewsItems { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Delete Overview Images</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DeleteOverviewImages { get; set; } = "true";
+		public object? DeleteOverviewImages { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Delete Item Cache</para>
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DeleteItemCache { get; set; } = "true";
+		public object? DeleteItemCache { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Remove Mosaic Dataset Items</para>
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object RemoveItems { get; set; } = "true";
+		public object? RemoveItems { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Update Cell Size Ranges</para>
@@ -155,19 +155,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object UpdateCellsizeRanges { get; set; } = "true";
+		public object? UpdateCellsizeRanges { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Updated Mosaic Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMosaicLayer()]
-		public object OutMosaicDataset { get; set; }
+		public object? OutMosaicDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveRastersFromMosaicDataset SetEnviroment(object extent = null )
+		public RemoveRastersFromMosaicDataset SetEnviroment(object? extent = null )
 		{
 			base.SetEnv(extent: extent);
 			return this;

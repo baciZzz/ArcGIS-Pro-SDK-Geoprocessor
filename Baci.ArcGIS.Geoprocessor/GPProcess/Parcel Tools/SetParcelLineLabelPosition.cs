@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InParcelFeatures, UpdatedParcelFeatures };
+		public override object[] Parameters => new object[] { InParcelFeatures, UpdatedParcelFeatures! };
 
 		/// <summary>
 		/// <para>Input Parcel Features</para>

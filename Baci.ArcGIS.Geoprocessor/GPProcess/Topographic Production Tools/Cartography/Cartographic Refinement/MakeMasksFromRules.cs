@@ -24,7 +24,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </param>
 		/// <param name="RuleFile">
 		/// <para>Rule File</para>
-		/// <para>The XML file containing rules that define how features should be masked based on colors and symbol parts.</para>
+		/// <para>The .xml file containing rules that define how features should be masked based on colors and symbol parts.</para>
 		/// </param>
 		/// <param name="OutFeatureDataset">
 		/// <para>Output Feature Dataset</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments => new string[] { "extent" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 
 		/// <summary>
 		/// <para>Rule File</para>
-		/// <para>The XML file containing rules that define how features should be masked based on colors and symbol parts.</para>
+		/// <para>The .xml file containing rules that define how features should be masked based on colors and symbol parts.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -96,6 +96,15 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureDataset()]
 		public object OutFeatureDataset { get; set; }
+
+		/// <summary>
+		/// <para>Only Set The Valid Environment For This Tool</para>
+		/// </summary>
+		public MakeMasksFromRules SetEnviroment(object? extent = null )
+		{
+			base.SetEnv(extent: extent);
+			return this;
+		}
 
 	}
 }

@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLines, MaxZDiff, JoinAttributes, OutPointFc, OutLineFc, OutIntersectionCount };
+		public override object[] Parameters => new object[] { InLines, MaxZDiff!, JoinAttributes!, OutPointFc!, OutLineFc!, OutIntersectionCount! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -77,11 +77,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object MaxZDiff { get; set; }
+		public object? MaxZDiff { get; set; }
 
 		/// <summary>
 		/// <para>Attributes To Join</para>
-		/// <para>Specifies which attributes from the input features will be transferred to the output feature class.</para>
+		/// <para>Specifies the attributes from the input features that will be transferred to the output feature class.</para>
 		/// <para>All attributes—All the attributes from the input features will be transferred to the output feature class. This is the default.</para>
 		/// <para>All attributes except feature IDs—All the attributes except the FID from the input features will be transferred to the output feature class.</para>
 		/// <para>Only feature IDs—Only the FID field from the input features will be transferred to the output feature class.</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object JoinAttributes { get; set; } = "ALL";
+		public object? JoinAttributes { get; set; } = "ALL";
 
 		/// <summary>
 		/// <para>Output Point Feature Class</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object OutPointFc { get; set; }
+		public object? OutPointFc { get; set; }
 
 		/// <summary>
 		/// <para>Output Line Feature Class</para>
@@ -106,19 +106,19 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object OutLineFc { get; set; }
+		public object? OutLineFc { get; set; }
 
 		/// <summary>
 		/// <para>Output Intersection Count</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLong()]
-		public object OutIntersectionCount { get; set; } = "0";
+		public object? OutIntersectionCount { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Intersect3DLines SetEnviroment(object XYResolution = null , object XYTolerance = null , object ZResolution = null , object ZTolerance = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public Intersect3DLines SetEnviroment(object? XYResolution = null , object? XYTolerance = null , object? ZResolution = null , object? ZTolerance = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(XYResolution: XYResolution, XYTolerance: XYTolerance, ZResolution: ZResolution, ZTolerance: ZTolerance, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

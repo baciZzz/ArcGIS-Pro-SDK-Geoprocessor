@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRivers, InFlowDirection, OutFeatureClass, MaxSampleDistance!, SimplificationTolerance };
+		public override object[] Parameters => new object[] { InRivers, InFlowDirection, OutFeatureClass, MaxSampleDistance!, SimplificationTolerance! };
 
 		/// <summary>
 		/// <para>Input River Polygons</para>

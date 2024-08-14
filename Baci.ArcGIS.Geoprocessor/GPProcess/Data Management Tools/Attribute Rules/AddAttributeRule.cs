@@ -30,10 +30,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </param>
 		/// <param name="Type">
 		/// <para>Type</para>
-		/// <para>Specifies the type of attribute rule to add.</para>
-		/// <para>Calculation—Automatically populate attribute values for features when another attribute is set on a feature. These rules are applied based on the triggering events specified. Long running calculations can be set to run in batch mode and will be evaluated at a user-defined time.When adding multiple calculation rules, the order in which the rules are added is important if there are circular dependencies. For example, Rule A calculates Field1 is equal to the value of $feature.Field2 + $feature.Field3, and Rule B calculates Field4 is equal to $feature.Field1 + $feature.Field5; the results of the calculation may be different depending on the order in which the rules are added.</para>
-		/// <para>Constraint—Specify permissible attribute configurations on a feature. When the constraint rule is violated, an error is generated and the feature is not stored. For example, if the value of Field A must be less than the sum of Field B and Field C, an error will be generated when that constraint is violated.</para>
-		/// <para>Validation—Check for existing features with a batch validation process. Rules are evaluated at a user-defined time. When a rule is violated, an error feature is created. The type of rule can only be used for data that has been set up for branch versioning.</para>
+		/// <para>Specifies the type of attribute rule that will be added.</para>
+		/// <para>Calculation—Attribute values will be automatically populated for features when another attribute is set on a feature. These rules are applied based on the triggering events specified. Long running calculations can be set to run in batch mode and will be evaluated at a user-defined time.When adding multiple calculation rules, the order in which the rules are added is important if there are circular dependencies. For example, Rule A calculates Field1 is equal to the value of $feature.Field2 + $feature.Field3, and Rule B calculates Field4 is equal to $feature.Field1 + $feature.Field5; the results of the calculation may be different depending on the order in which the rules are added.</para>
+		/// <para>Constraint—Permissible attribute configurations will be specified on a feature. When the constraint rule is violated, an error is generated and the feature is not stored. For example, if the value of Field A must be less than the sum of Field B and Field C, an error will be generated when that constraint is violated.</para>
+		/// <para>Validation—Existing features will be identified with a batch validation process. Rules are evaluated at a user-defined time. When a rule is violated, an error feature is created.</para>
 		/// <para><see cref="TypeEnum"/></para>
 		/// </param>
 		/// <param name="ScriptExpression">
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Name, Type, ScriptExpression, IsEditable, TriggeringEvents, ErrorNumber, ErrorMessage, Description, Subtype, Field, ExcludeFromClientEvaluation, OutTable, Batch, Severity, Tags };
+		public override object[] Parameters => new object[] { InTable, Name, Type, ScriptExpression, IsEditable!, TriggeringEvents!, ErrorNumber!, ErrorMessage!, Description!, Subtype!, Field!, ExcludeFromClientEvaluation!, OutTable!, Batch!, Severity!, Tags! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -101,10 +101,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Type</para>
-		/// <para>Specifies the type of attribute rule to add.</para>
-		/// <para>Calculation—Automatically populate attribute values for features when another attribute is set on a feature. These rules are applied based on the triggering events specified. Long running calculations can be set to run in batch mode and will be evaluated at a user-defined time.When adding multiple calculation rules, the order in which the rules are added is important if there are circular dependencies. For example, Rule A calculates Field1 is equal to the value of $feature.Field2 + $feature.Field3, and Rule B calculates Field4 is equal to $feature.Field1 + $feature.Field5; the results of the calculation may be different depending on the order in which the rules are added.</para>
-		/// <para>Constraint—Specify permissible attribute configurations on a feature. When the constraint rule is violated, an error is generated and the feature is not stored. For example, if the value of Field A must be less than the sum of Field B and Field C, an error will be generated when that constraint is violated.</para>
-		/// <para>Validation—Check for existing features with a batch validation process. Rules are evaluated at a user-defined time. When a rule is violated, an error feature is created. The type of rule can only be used for data that has been set up for branch versioning.</para>
+		/// <para>Specifies the type of attribute rule that will be added.</para>
+		/// <para>Calculation—Attribute values will be automatically populated for features when another attribute is set on a feature. These rules are applied based on the triggering events specified. Long running calculations can be set to run in batch mode and will be evaluated at a user-defined time.When adding multiple calculation rules, the order in which the rules are added is important if there are circular dependencies. For example, Rule A calculates Field1 is equal to the value of $feature.Field2 + $feature.Field3, and Rule B calculates Field4 is equal to $feature.Field1 + $feature.Field5; the results of the calculation may be different depending on the order in which the rules are added.</para>
+		/// <para>Constraint—Permissible attribute configurations will be specified on a feature. When the constraint rule is violated, an error is generated and the feature is not stored. For example, if the value of Field A must be less than the sum of Field B and Field C, an error will be generated when that constraint is violated.</para>
+		/// <para>Validation—Existing features will be identified with a batch validation process. Rules are evaluated at a user-defined time. When a rule is violated, an error feature is created.</para>
 		/// <para><see cref="TypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -123,18 +123,18 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Is Editable</para>
 		/// <para>Specifies whether the attribute value can be edited. Attribute rules can be configured to either block or allow editors to edit the attribute values of the field being calculated. This parameter is only applicable for the calculation attribute rule type.</para>
-		/// <para>Checked—Editors will be able to edit the attribute value. This is the default.</para>
-		/// <para>Unchecked—Editors will not be able to edit the attribute value.</para>
+		/// <para>Checked—The attribute value can be edited. This is the default.</para>
+		/// <para>Unchecked—The attribute value cannot be edited.</para>
 		/// <para><see cref="IsEditableEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IsEditable { get; set; } = "true";
+		public object? IsEditable { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Triggering Events</para>
-		/// <para>Specifies the editing events that will trigger the attribute rule to take effect. This parameter is valid for calculation and constraint rule types only. At least one triggering event must be provided for calculation rules in which the Batch parameter is unchecked (batch = &quot;NOT_BATCH&quot; in Python). Triggering events are not applicable for calculation rules that have the Batch parameter checked (batch = &quot;BATCH&quot; in Python).</para>
+		/// <para>Specifies the editing events that will trigger the attribute rule to take effect. This parameter is valid for calculation and constraint rule types only. At least one triggering event must be provided for calculation rules in which the Batch parameter is unchecked. Triggering events are not applicable for calculation rules that have the Batch parameter checked.</para>
 		/// <para>Insert—The rule will be applied when a new feature is added.</para>
 		/// <para>Update—The rule will be applied when a feature is updated.</para>
 		/// <para>Delete—The rule will be applied when a feature is deleted.</para>
@@ -143,25 +143,25 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object TriggeringEvents { get; set; }
+		public object? TriggeringEvents { get; set; }
 
 		/// <summary>
 		/// <para>Error Number</para>
-		/// <para>An error number that will be returned when this rule is violated. This value is not required to be unique, so you may have the same custom error number returned for multiple rules.</para>
-		/// <para>This parameter is required for the constraint and validation rules. It is optional for calculation rules.</para>
+		/// <para>An error number that will be returned when this rule is violated. This value is not required to be unique, so the same custom error number may be returned for multiple rules.</para>
+		/// <para>This parameter is required for the constraint and validation rule types. It is optional for the calculation rule type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ErrorNumber { get; set; }
+		public object? ErrorNumber { get; set; }
 
 		/// <summary>
 		/// <para>Error Message</para>
 		/// <para>An error message that will be returned when this rule is violated. It is recommended that you use a descriptive message to help the editor understand the violation when it occurs. The message is limited to 2000 characters.</para>
-		/// <para>This parameter is required for the constraint and validation rules. It is optional for calculation rules.</para>
+		/// <para>This parameter is required for the constraint and validation rule types. It is optional for the calculation rule type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ErrorMessage { get; set; }
+		public object? ErrorMessage { get; set; }
 
 		/// <summary>
 		/// <para>Description</para>
@@ -169,7 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Description { get; set; }
+		public object? Description { get; set; }
 
 		/// <summary>
 		/// <para>Subtype</para>
@@ -177,7 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Subtype { get; set; }
+		public object? Subtype { get; set; }
 
 		/// <summary>
 		/// <para>Field</para>
@@ -185,41 +185,42 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Field { get; set; }
+		public object? Field { get; set; }
 
 		/// <summary>
 		/// <para>Exclude from application evaluation</para>
-		/// <para>Specifies whether the rule will be excluded from evaluation before edits are applied. Because not all clients may have the capability to run all of the available rules, you can choose to flag a rule for simple clients only. For example, some rules may refer to data that has not been made available to all clients (reasons can include the data is offline, size, or security), or some rules may depend on the user or context (that is, a lightweight field update in ArcGIS Collector may not execute a rule that requires additional user input or knowledge; however, a client such as ArcGIS Pro may support it). This parameter is not applicable for validation rules or calculation rules if the Batch parameter is checked.</para>
+		/// <para>Specifies whether the application will evaluate the rule locally before applying the edits to the workspace.</para>
+		/// <para>Not all clients have the capability to run all of the available rules so authors can exclude certain rules from client evaluation. For example, some rules may refer to data that has not been made available to all clients (reasons can include the data is offline, size, or security), or some rules may depend on the user or context (that is, a lightweight field update in a data collection app may not run a rule that requires additional user input or knowledge; however, a client such as ArcGIS Pro may support it).</para>
+		/// <para>This parameter is not applicable for validation rule or calculation rule types if the Batch parameter is checked.</para>
 		/// <para>Checked—The rule will be excluded from client evaluation.</para>
-		/// <para>Unchecked—The rule will be executed for all clients. This is the default.</para>
+		/// <para>Unchecked—The rule will not be excluded from client evaluation. This is the default.</para>
 		/// <para>Prior to ArcGIS Pro 2.4, this parameter was labeled Server only.</para>
 		/// <para><see cref="ExcludeFromClientEvaluationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ExcludeFromClientEvaluation { get; set; } = "false";
+		public object? ExcludeFromClientEvaluation { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Attribute Rule Added</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		/// <summary>
 		/// <para>Batch</para>
-		/// <para>Specifies whether the rule evaluation will be executed in batch mode.</para>
-		/// <para>Checked—The rule evaluation will be executed in batch mode at a later time by executing validate.</para>
-		/// <para>Unchecked—The rule evaluation will not be executed in batch mode. Triggering events will be used to determine when the rule is evaluated for insert, update, or delete edit operations. This is the default.</para>
+		/// <para>Specifies whether the rule evaluation will be run in batch mode.</para>
+		/// <para>Checked—The rule evaluation will be run in batch mode at a later time by running validate.</para>
+		/// <para>Unchecked—The rule evaluation will not be run in batch mode. Triggering events will be used to determine when the rule is evaluated for insert, update, or delete edit operations. This is the default.</para>
 		/// <para>Calculation rules can be either checked or unchecked. Validation rules are always checked for this parameter, and constraint rules are always unchecked.</para>
-		/// <para>Batch rules are only supported for data with branch versioning enabled.</para>
 		/// <para><see cref="BatchEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Batch { get; set; } = "false";
+		public object? Batch { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Severity</para>
@@ -229,20 +230,20 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object Severity { get; set; }
+		public object? Severity { get; set; }
 
 		/// <summary>
 		/// <para>Tags</para>
-		/// <para>A set of tags that identify the rule (searchable and indexable) as a way to map to a functional requirement in a data model.</para>
+		/// <para>A set of tags that identify the rule (for searching and indexing) as a way to map to a functional requirement in a data model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Tags { get; set; }
+		public object? Tags { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddAttributeRule SetEnviroment(object workspace = null )
+		public AddAttributeRule SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -256,21 +257,21 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum TypeEnum 
 		{
 			/// <summary>
-			/// <para>Calculation—Automatically populate attribute values for features when another attribute is set on a feature. These rules are applied based on the triggering events specified. Long running calculations can be set to run in batch mode and will be evaluated at a user-defined time.When adding multiple calculation rules, the order in which the rules are added is important if there are circular dependencies. For example, Rule A calculates Field1 is equal to the value of $feature.Field2 + $feature.Field3, and Rule B calculates Field4 is equal to $feature.Field1 + $feature.Field5; the results of the calculation may be different depending on the order in which the rules are added.</para>
+			/// <para>Calculation—Attribute values will be automatically populated for features when another attribute is set on a feature. These rules are applied based on the triggering events specified. Long running calculations can be set to run in batch mode and will be evaluated at a user-defined time.When adding multiple calculation rules, the order in which the rules are added is important if there are circular dependencies. For example, Rule A calculates Field1 is equal to the value of $feature.Field2 + $feature.Field3, and Rule B calculates Field4 is equal to $feature.Field1 + $feature.Field5; the results of the calculation may be different depending on the order in which the rules are added.</para>
 			/// </summary>
 			[GPValue("CALCULATION")]
 			[Description("Calculation")]
 			Calculation,
 
 			/// <summary>
-			/// <para>Constraint—Specify permissible attribute configurations on a feature. When the constraint rule is violated, an error is generated and the feature is not stored. For example, if the value of Field A must be less than the sum of Field B and Field C, an error will be generated when that constraint is violated.</para>
+			/// <para>Constraint—Permissible attribute configurations will be specified on a feature. When the constraint rule is violated, an error is generated and the feature is not stored. For example, if the value of Field A must be less than the sum of Field B and Field C, an error will be generated when that constraint is violated.</para>
 			/// </summary>
 			[GPValue("CONSTRAINT")]
 			[Description("Constraint")]
 			Constraint,
 
 			/// <summary>
-			/// <para>Validation—Check for existing features with a batch validation process. Rules are evaluated at a user-defined time. When a rule is violated, an error feature is created. The type of rule can only be used for data that has been set up for branch versioning.</para>
+			/// <para>Validation—Existing features will be identified with a batch validation process. Rules are evaluated at a user-defined time. When a rule is violated, an error feature is created.</para>
 			/// </summary>
 			[GPValue("VALIDATION")]
 			[Description("Validation")]
@@ -284,14 +285,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum IsEditableEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Editors will be able to edit the attribute value. This is the default.</para>
+			/// <para>Checked—The attribute value can be edited. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EDITABLE")]
 			EDITABLE,
 
 			/// <summary>
-			/// <para>Unchecked—Editors will not be able to edit the attribute value.</para>
+			/// <para>Unchecked—The attribute value cannot be edited.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONEDITABLE")]
@@ -340,7 +341,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			EXCLUDE,
 
 			/// <summary>
-			/// <para>Unchecked—The rule will be executed for all clients. This is the default.</para>
+			/// <para>Unchecked—The rule will not be excluded from client evaluation. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INCLUDE")]
@@ -354,14 +355,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum BatchEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The rule evaluation will be executed in batch mode at a later time by executing validate.</para>
+			/// <para>Checked—The rule evaluation will be run in batch mode at a later time by running validate.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("BATCH")]
 			BATCH,
 
 			/// <summary>
-			/// <para>Unchecked—The rule evaluation will not be executed in batch mode. Triggering events will be used to determine when the rule is evaluated for insert, update, or delete edit operations. This is the default.</para>
+			/// <para>Unchecked—The rule evaluation will not be run in batch mode. Triggering events will be used to determine when the rule is evaluated for insert, update, or delete edit operations. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_BATCH")]

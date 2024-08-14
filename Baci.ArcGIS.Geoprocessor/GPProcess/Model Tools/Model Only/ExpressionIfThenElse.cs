@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Expression, CodeBlock!, True!, False };
+		public override object[] Parameters => new object[] { Expression, CodeBlock!, True!, False! };
 
 		/// <summary>
 		/// <para>Expression</para>

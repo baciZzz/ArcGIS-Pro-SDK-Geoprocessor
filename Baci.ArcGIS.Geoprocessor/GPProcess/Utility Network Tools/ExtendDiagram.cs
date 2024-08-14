@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, IgnoreTraversability, OutNetworkDiagramLayer, ExtensionType };
+		public override object[] Parameters => new object[] { InNetworkDiagramLayer, IgnoreTraversability!, OutNetworkDiagramLayer!, ExtensionType! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
@@ -76,14 +76,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IgnoreTraversability { get; set; } = "true";
+		public object? IgnoreTraversability { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output Network Diagram</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDiagramLayer()]
-		public object OutNetworkDiagramLayer { get; set; }
+		public object? OutNetworkDiagramLayer { get; set; }
 
 		/// <summary>
 		/// <para>Extension Type</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ExtensionType { get; set; } = "BY_CONNECTIVITY";
+		public object? ExtensionType { get; set; } = "BY_CONNECTIVITY";
 
 		#region InnerClass
 

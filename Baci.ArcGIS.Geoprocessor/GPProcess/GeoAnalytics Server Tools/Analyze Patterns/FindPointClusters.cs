@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputPoints, OutputName, MinimumPoints, SearchDistance, DataStore, Output, ClusteringMethod, UseTime, SearchDuration };
+		public override object[] Parameters => new object[] { InputPoints, OutputName, MinimumPoints, SearchDistance!, DataStore!, Output!, ClusteringMethod!, UseTime!, SearchDuration! };
 
 		/// <summary>
 		/// <para>Input Point Layer</para>
@@ -105,12 +105,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <para>Search Distance</para>
 		/// <para>The maximum distance to be considered.</para>
 		/// <para>The Minimum Features per Cluster specified must be found within this distance for cluster membership. Individual clusters will be separated by at least this distance. If a feature is located farther than this distance from the next closest feature in the cluster, it will not be included in the cluster.</para>
-		/// <para><see cref="SearchDistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object SearchDistance { get; set; }
+		[GPUnitDomain()]
+		public object? SearchDistance { get; set; }
 
 		/// <summary>
 		/// <para>Data Store</para>
@@ -123,14 +122,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Data Store")]
-		public object DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
+		public object? DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
 
 		/// <summary>
 		/// <para>Output Feature Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Output { get; set; }
+		public object? Output { get; set; }
 
 		/// <summary>
 		/// <para>Clustering Method</para>
@@ -142,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ClusteringMethod { get; set; } = "DBSCAN";
+		public object? ClusteringMethod { get; set; } = "DBSCAN";
 
 		/// <summary>
 		/// <para>Use Time to Find Clusters</para>
@@ -154,77 +153,27 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UseTime { get; set; } = "false";
+		public object? UseTime { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Search Duration</para>
 		/// <para>When searching for cluster members, the specified minimum number of points must be found within this time duration to form a cluster.</para>
-		/// <para><see cref="SearchDurationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
-		public object SearchDuration { get; set; }
+		[GPUnitDomain()]
+		public object? SearchDuration { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FindPointClusters SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public FindPointClusters SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;
 		}
 
 		#region InnerClass
-
-		/// <summary>
-		/// <para>Search Distance</para>
-		/// </summary>
-		public enum SearchDistanceEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("NauticalMiles")]
-			[Description("NauticalMiles")]
-			NauticalMiles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-		}
 
 		/// <summary>
 		/// <para>Data Store</para>
@@ -286,69 +235,6 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 			[GPValue("false")]
 			[Description("NO_TIME")]
 			NO_TIME,
-
-		}
-
-		/// <summary>
-		/// <para>Search Duration</para>
-		/// </summary>
-		public enum SearchDurationEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Milliseconds")]
-			[Description("Milliseconds")]
-			Milliseconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Seconds")]
-			[Description("Seconds")]
-			Seconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Days")]
-			[Description("Days")]
-			Days,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Weeks")]
-			[Description("Weeks")]
-			Weeks,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Months")]
-			[Description("Months")]
-			Months,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Years")]
-			[Description("Years")]
-			Years,
 
 		}
 

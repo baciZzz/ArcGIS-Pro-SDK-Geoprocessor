@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Reconcile Versions</para>
 	/// <para>Reconciles a version or multiple versions with a target version.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class ReconcileVersions : AbstractGPProcess
 	{
 		/// <summary>
@@ -27,8 +29,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Reconcile Mode</para>
 		/// <para>Specifies the versions that will be reconciled when the tool is executed.</para>
 		/// <para>If the input is a branch workspace, the only valid option for this parameter is to reconcile all versions.</para>
-		/// <para>Reconcile all versions—Reconciles edit versions with the target version. This is the default.</para>
-		/// <para>Reconcile blocking versions only—Reconciles versions that are blocking the target version from compressing. This option uses the recommended reconcile order.</para>
+		/// <para>Reconcile all versions—Edit versions will be reconciled with the target version. This is the default.</para>
+		/// <para>Reconcile blocking versions only—Versions that are blocking the target version from compressing will be reconciled. This option uses the recommended reconcile order.</para>
 		/// <para><see cref="ReconcileModeEnum"/></para>
 		/// </param>
 		public ReconcileVersions(object InputDatabase, object ReconcileMode)
@@ -70,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabase, ReconcileMode, TargetVersion, EditVersions, AcquireLocks, AbortIfConflicts, ConflictDefinition, ConflictResolution, WithPost, WithDelete, OutLog, OutWorkspace, ProceedIfConflictsNotReviewed, ReconcileCheckoutVersions };
+		public override object[] Parameters => new object[] { InputDatabase, ReconcileMode, TargetVersion!, EditVersions!, AcquireLocks!, AbortIfConflicts!, ConflictDefinition!, ConflictResolution!, WithPost!, WithDelete!, OutLog!, OutWorkspace!, ProceedIfConflictsNotReviewed!, ReconcileCheckoutVersions! };
 
 		/// <summary>
 		/// <para>Input Workspace</para>
@@ -86,8 +88,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Reconcile Mode</para>
 		/// <para>Specifies the versions that will be reconciled when the tool is executed.</para>
 		/// <para>If the input is a branch workspace, the only valid option for this parameter is to reconcile all versions.</para>
-		/// <para>Reconcile all versions—Reconciles edit versions with the target version. This is the default.</para>
-		/// <para>Reconcile blocking versions only—Reconciles versions that are blocking the target version from compressing. This option uses the recommended reconcile order.</para>
+		/// <para>Reconcile all versions—Edit versions will be reconciled with the target version. This is the default.</para>
+		/// <para>Reconcile blocking versions only—Versions that are blocking the target version from compressing will be reconciled. This option uses the recommended reconcile order.</para>
 		/// <para><see cref="ReconcileModeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -103,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object TargetVersion { get; set; }
+		public object? TargetVersion { get; set; }
 
 		/// <summary>
 		/// <para>Edit Versions</para>
@@ -112,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object EditVersions { get; set; }
+		public object? EditVersions { get; set; }
 
 		/// <summary>
 		/// <para>Acquire Locks</para>
@@ -125,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AcquireLocks { get; set; } = "true";
+		public object? AcquireLocks { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Abort if Conflicts Detected</para>
@@ -137,23 +139,23 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AbortIfConflicts { get; set; } = "false";
+		public object? AbortIfConflicts { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Conflict Definition</para>
-		/// <para>Specifies whether the conditions required for a conflict to occur are defined by object (row) or by attribute (column).</para>
-		/// <para>Conflicts defined by object (by row)—Any changes to the same row or feature in the parent and child versions will conflict during reconcile. This is the default.</para>
-		/// <para>Conflicts defined by attribute (by column)—Only changes to the same attribute (column) of the same row or feature in the parent and child versions will be flagged as a conflict during reconcile. Changes to different attributes will not be considered a conflict during reconcile.</para>
+		/// <para>Specifies whether the conditions required for a conflict to occur will be defined by object (row) or by attribute (column).</para>
+		/// <para>Conflicts defined by object (by row)—Conflicts will be defined by object. Any changes to the same row or feature in the parent and child versions will conflict during reconcile. This is the default.</para>
+		/// <para>Conflicts defined by attribute (by column)—Conflicts will be defined by attribute. Only changes to the same attribute (column) of the same row or feature in the parent and child versions will be flagged as a conflict during reconcile. Changes to different attributes will not be considered a conflict during reconcile.</para>
 		/// <para><see cref="ConflictDefinitionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ConflictDefinition { get; set; } = "BY_OBJECT";
+		public object? ConflictDefinition { get; set; } = "BY_OBJECT";
 
 		/// <summary>
 		/// <para>Conflict Resolution</para>
-		/// <para>Specifies the resolution if a conflict is detected.</para>
+		/// <para>Specifies the resolution that will be used if a conflict is detected.</para>
 		/// <para>If the input is a branch workspace, the default is to favor the edit version.</para>
 		/// <para>Resolve conflicts in favor of the target version—All conflicts will be resolved in favor of the target version. This is the default for traditional versioning.</para>
 		/// <para>Resolve conflicts in favor of the edit version—All conflicts will be resolved in favor of the edit version. This is the default for branch versioning.</para>
@@ -162,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ConflictResolution { get; set; } = "FAVOR_TARGET_VERSION";
+		public object? ConflictResolution { get; set; } = "FAVOR_TARGET_VERSION";
 
 		/// <summary>
 		/// <para>Post Versions After Reconcile</para>
@@ -174,7 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object WithPost { get; set; } = "false";
+		public object? WithPost { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Delete Versions After Post</para>
@@ -186,7 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object WithDelete { get; set; } = "false";
+		public object? WithDelete { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Reconcile Versions Log</para>
@@ -194,30 +196,30 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
-		public object OutLog { get; set; }
+		public object? OutLog { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Workspace</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutWorkspace { get; set; }
+		public object? OutWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Proceed if unreviewed conflicts are detected</para>
-		/// <para>Specifies whether the reconcile will proceed if there are unreviewed conflicts that exist before starting the reconcile process. If you choose to proceed, outstanding conflicts from previous sessions will be lost upon tool execution. This parameter is only applicable to branch versioning.</para>
-		/// <para>Checked—The reconcile process will proceed if outstanding conflicts have not been reviewed. This is the default.</para>
-		/// <para>Unchecked—The reconcile process will not proceed if outstanding conflicts that have not been reviewed are detected.</para>
+		/// <para>Specifies whether the reconcile will proceed if existing unreviewed conflicts are detected before the reconcile process starts. If you proceed, existing conflicts from previous sessions will be lost upon tool execution. This parameter is only applicable to branch versioning.</para>
+		/// <para>Checked—The reconcile process will proceed if existing unreviewed conflicts are detected. This is the default.</para>
+		/// <para>Unchecked—The reconcile process will not proceed if existing unreviewed conflicts are detected.</para>
 		/// <para><see cref="ProceedIfConflictsNotReviewedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ProceedIfConflictsNotReviewed { get; set; } = "true";
+		public object? ProceedIfConflictsNotReviewed { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Reconcile checkout replica versions</para>
-		/// <para>Specifies whether the reconcile will include checkout replica versions. If you are creating a checkout replica as part of a geodatabase replication workflow, an associated version is created in the geodatabase. This option allows you to include or remove these types of versions from the list of versions to be reconciled. This parameter is not applicable for branch versioning.</para>
+		/// <para>Specifies whether the reconcile process will include checkout replica versions. If you are creating a checkout replica as part of a geodatabase replication workflow, an associated version is created in the geodatabase. This option allows you to include or remove these types of versions from the list of versions to be reconciled. This parameter is not applicable for branch versioning.</para>
 		/// <para>Checked—The reconcile process will include checkout replica versions. This is the default.</para>
 		/// <para>Unchecked—The reconcile process will not include checkout replica versions.</para>
 		/// <para><see cref="ReconcileCheckoutVersionsEnum"/></para>
@@ -225,12 +227,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ReconcileCheckoutVersions { get; set; } = "true";
+		public object? ReconcileCheckoutVersions { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ReconcileVersions SetEnviroment(object workspace = null )
+		public ReconcileVersions SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -244,14 +246,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ReconcileModeEnum 
 		{
 			/// <summary>
-			/// <para>Reconcile all versions—Reconciles edit versions with the target version. This is the default.</para>
+			/// <para>Reconcile all versions—Edit versions will be reconciled with the target version. This is the default.</para>
 			/// </summary>
 			[GPValue("ALL_VERSIONS")]
 			[Description("Reconcile all versions")]
 			Reconcile_all_versions,
 
 			/// <summary>
-			/// <para>Reconcile blocking versions only—Reconciles versions that are blocking the target version from compressing. This option uses the recommended reconcile order.</para>
+			/// <para>Reconcile blocking versions only—Versions that are blocking the target version from compressing will be reconciled. This option uses the recommended reconcile order.</para>
 			/// </summary>
 			[GPValue("BLOCKING_VERSIONS")]
 			[Description("Reconcile blocking versions only")]
@@ -307,14 +309,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ConflictDefinitionEnum 
 		{
 			/// <summary>
-			/// <para>Conflicts defined by object (by row)—Any changes to the same row or feature in the parent and child versions will conflict during reconcile. This is the default.</para>
+			/// <para>Conflicts defined by object (by row)—Conflicts will be defined by object. Any changes to the same row or feature in the parent and child versions will conflict during reconcile. This is the default.</para>
 			/// </summary>
 			[GPValue("BY_OBJECT")]
 			[Description("Conflicts defined by object (by row)")]
 			BY_OBJECT,
 
 			/// <summary>
-			/// <para>Conflicts defined by attribute (by column)—Only changes to the same attribute (column) of the same row or feature in the parent and child versions will be flagged as a conflict during reconcile. Changes to different attributes will not be considered a conflict during reconcile.</para>
+			/// <para>Conflicts defined by attribute (by column)—Conflicts will be defined by attribute. Only changes to the same attribute (column) of the same row or feature in the parent and child versions will be flagged as a conflict during reconcile. Changes to different attributes will not be considered a conflict during reconcile.</para>
 			/// </summary>
 			[GPValue("BY_ATTRIBUTE")]
 			[Description("Conflicts defined by attribute (by column)")]
@@ -391,14 +393,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ProceedIfConflictsNotReviewedEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The reconcile process will proceed if outstanding conflicts have not been reviewed. This is the default.</para>
+			/// <para>Checked—The reconcile process will proceed if existing unreviewed conflicts are detected. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PROCEED")]
 			PROCEED,
 
 			/// <summary>
-			/// <para>Unchecked—The reconcile process will not proceed if outstanding conflicts that have not been reviewed are detected.</para>
+			/// <para>Unchecked—The reconcile process will not proceed if existing unreviewed conflicts are detected.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_PROCEED")]

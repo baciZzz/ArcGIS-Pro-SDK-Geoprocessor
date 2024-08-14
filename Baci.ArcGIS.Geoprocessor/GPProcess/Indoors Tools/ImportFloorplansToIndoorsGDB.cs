@@ -11,16 +11,28 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Import Floorplans To Indoors Geodatabase</para>
-	/// <para>Imports floor plans from CAD files into an indoor dataset that conforms to the ArcGIS Indoors Information Model. The output of this tool can be used to create floor-aware scenes for use in floor-aware apps, as well as to generate an indoor network for routing.</para>
+	/// <para>Imports floor plans from CAD files into an Indoors workspace that conforms to the ArcGIS Indoors Information Model. The output of this tool can be used to create floor-aware maps and scenes for use in floor-aware apps, as well as to generate an indoor network for routing.</para>
 	/// </summary>
 	public class ImportFloorplansToIndoorsGDB : AbstractGPProcess
 	{
 		/// <summary>
 		/// <para>Constructor that takes all required parameters for geoprocessor execution.</para>
 		/// </summary>
-		/// <param name="InGeodatabase">
-		/// <para>Input Geodatabase</para>
-		/// <para>The geodatabase (file or enterprise) into which the floor plan data will be loaded.</para>
+		/// <param name="TargetUnitFeatures">
+		/// <para>Target Unit Features</para>
+		/// <para>The target Units feature layer, feature class, or feature service that conforms to the ArcGIS Indoors Information Model and resides in the same workspace as the target Facilities, Levels, and Details features.</para>
+		/// </param>
+		/// <param name="TargetDetailFeatures">
+		/// <para>Target Detail Features</para>
+		/// <para>The target Details feature layer, feature class, or feature service that conforms to the ArcGIS Indoors Information Model and resides in the same workspace as the target Facilities, Levels, and Units features.</para>
+		/// </param>
+		/// <param name="TargetLevelFeatures">
+		/// <para>Target Level Features</para>
+		/// <para>The target Levels feature layer, feature class, or feature service that conforms to the ArcGIS Indoors Information Model and resides in the same workspace as the target Facilities, Units, and Details features.</para>
+		/// </param>
+		/// <param name="TargetFacilityFeatures">
+		/// <para>Target Facility Features</para>
+		/// <para>The target Facilities feature layer, feature class, or feature service that conforms to the ArcGIS Indoors Information Model and resides in the same workspace as the target Levels, Units, and Details features.</para>
 		/// </param>
 		/// <param name="InExcelTemplate">
 		/// <para>Input Excel Template File</para>
@@ -34,9 +46,12 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <para>Underscore—The ID will include key values separated by underscores.</para>
 		/// <para><see cref="UniqueidDelimiterEnum"/></para>
 		/// </param>
-		public ImportFloorplansToIndoorsGDB(object InGeodatabase, object InExcelTemplate, object UniqueidDelimiter)
+		public ImportFloorplansToIndoorsGDB(object TargetUnitFeatures, object TargetDetailFeatures, object TargetLevelFeatures, object TargetFacilityFeatures, object InExcelTemplate, object UniqueidDelimiter)
 		{
-			this.InGeodatabase = InGeodatabase;
+			this.TargetUnitFeatures = TargetUnitFeatures;
+			this.TargetDetailFeatures = TargetDetailFeatures;
+			this.TargetLevelFeatures = TargetLevelFeatures;
+			this.TargetFacilityFeatures = TargetFacilityFeatures;
 			this.InExcelTemplate = InExcelTemplate;
 			this.UniqueidDelimiter = UniqueidDelimiter;
 		}
@@ -74,16 +89,43 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeodatabase, InExcelTemplate, UniqueidDelimiter, SliverThreshold, DoorCloseBuffer, UpdatedGdb, AreaUnitOfMeasure };
+		public override object[] Parameters => new object[] { TargetUnitFeatures, TargetDetailFeatures, TargetLevelFeatures, TargetFacilityFeatures, InExcelTemplate, UniqueidDelimiter, SliverThreshold!, DoorCloseBuffer!, AreaUnitOfMeasure!, MeasurementMode!, TargetSectionFeatures!, TargetZoneFeatures!, UpdatedUnits! };
 
 		/// <summary>
-		/// <para>Input Geodatabase</para>
-		/// <para>The geodatabase (file or enterprise) into which the floor plan data will be loaded.</para>
+		/// <para>Target Unit Features</para>
+		/// <para>The target Units feature layer, feature class, or feature service that conforms to the ArcGIS Indoors Information Model and resides in the same workspace as the target Facilities, Levels, and Details features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
-		[DEWorkspace()]
-		[GPWorkspaceDomain()]
-		public object InGeodatabase { get; set; }
+		[GPFeatureLayer()]
+		[GPFeatureClassDomain()]
+		public object TargetUnitFeatures { get; set; }
+
+		/// <summary>
+		/// <para>Target Detail Features</para>
+		/// <para>The target Details feature layer, feature class, or feature service that conforms to the ArcGIS Indoors Information Model and resides in the same workspace as the target Facilities, Levels, and Units features.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.must)]
+		[GPFeatureLayer()]
+		[GPFeatureClassDomain()]
+		public object TargetDetailFeatures { get; set; }
+
+		/// <summary>
+		/// <para>Target Level Features</para>
+		/// <para>The target Levels feature layer, feature class, or feature service that conforms to the ArcGIS Indoors Information Model and resides in the same workspace as the target Facilities, Units, and Details features.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.must)]
+		[GPFeatureLayer()]
+		[GPFeatureClassDomain()]
+		public object TargetLevelFeatures { get; set; }
+
+		/// <summary>
+		/// <para>Target Facility Features</para>
+		/// <para>The target Facilities feature layer, feature class, or feature service that conforms to the ArcGIS Indoors Information Model and resides in the same workspace as the target Levels, Units, and Details features.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.must)]
+		[GPFeatureLayer()]
+		[GPFeatureClassDomain()]
+		public object TargetFacilityFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Input Excel Template File</para>
@@ -114,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPCodedValueDomain()]
-		public object SliverThreshold { get; set; } = "2";
+		public object? SliverThreshold { get; set; } = "2";
 
 		/// <summary>
 		/// <para>Door Close Buffer</para>
@@ -123,14 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPCodedValueDomain()]
-		public object DoorCloseBuffer { get; set; } = "0";
-
-		/// <summary>
-		/// <para>Updated Geodatabase</para>
-		/// </summary>
-		[ParamType(ParamTypeEnum.derived)]
-		[DEWorkspace()]
-		public object UpdatedGdb { get; set; }
+		public object? DoorCloseBuffer { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Area Unit of Measure</para>
@@ -142,12 +177,49 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object AreaUnitOfMeasure { get; set; } = "SQUARE_FEET";
+		public object? AreaUnitOfMeasure { get; set; } = "SQUARE_FEET";
+
+		/// <summary>
+		/// <para>Measurement Mode</para>
+		/// <para>Specifies the measurement mode that will be used to calculate the area fields when importing floor plans.</para>
+		/// <para>Geodesic—Area will be calculated using geodesic distance. Geodesic distance is calculated in a 3D spherical space as the distance across the curved surface of the world. This is default.</para>
+		/// <para>Planar—Area will be calculated using planar distance. Planar distance is straight-line Euclidean distance calculated in a 2D Cartesian coordinate system.</para>
+		/// <para><see cref="MeasurementModeEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		[GPCodedValueDomain()]
+		public object? MeasurementMode { get; set; } = "GEODESIC";
+
+		/// <summary>
+		/// <para>Target Section Features</para>
+		/// <para>The target Sections feature layer, feature class, or feature service that conforms to the ArcGIS Indoors Information Model and resides in the same workspace as the target Facility, Level, Unit, and Detail features.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPFeatureLayer()]
+		[GPFeatureClassDomain()]
+		public object? TargetSectionFeatures { get; set; }
+
+		/// <summary>
+		/// <para>Target Zone Features</para>
+		/// <para>The target Zones feature layer, feature class, or feature service that conforms to the ArcGIS Indoors Information Model and resides in the same workspace as the target Facility, Level, Unit, and Detail features.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPFeatureLayer()]
+		[GPFeatureClassDomain()]
+		public object? TargetZoneFeatures { get; set; }
+
+		/// <summary>
+		/// <para>Updated Units</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.derived)]
+		[GPFeatureLayer()]
+		public object? UpdatedUnits { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportFloorplansToIndoorsGDB SetEnviroment(object workspace = null )
+		public ImportFloorplansToIndoorsGDB SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -201,6 +273,27 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 			[GPValue("SQUARE_METERS")]
 			[Description("Square Meters")]
 			Square_Meters,
+
+		}
+
+		/// <summary>
+		/// <para>Measurement Mode</para>
+		/// </summary>
+		public enum MeasurementModeEnum 
+		{
+			/// <summary>
+			/// <para>Geodesic—Area will be calculated using geodesic distance. Geodesic distance is calculated in a 3D spherical space as the distance across the curved surface of the world. This is default.</para>
+			/// </summary>
+			[GPValue("GEODESIC")]
+			[Description("Geodesic")]
+			Geodesic,
+
+			/// <summary>
+			/// <para>Planar—Area will be calculated using planar distance. Planar distance is straight-line Euclidean distance calculated in a 2D Cartesian coordinate system.</para>
+			/// </summary>
+			[GPValue("PLANAR")]
+			[Description("Planar")]
+			Planar,
 
 		}
 

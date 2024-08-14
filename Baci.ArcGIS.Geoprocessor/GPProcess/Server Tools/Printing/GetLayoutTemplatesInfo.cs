@@ -57,7 +57,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { LayoutTemplatesFolder, OutputJSON };
+		public override object[] Parameters => new object[] { LayoutTemplatesFolder!, OutputJSON! };
 
 		/// <summary>
 		/// <para>Layout Templates Folder</para>
@@ -65,14 +65,14 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
-		public object LayoutTemplatesFolder { get; set; }
+		public object? LayoutTemplatesFolder { get; set; }
 
 		/// <summary>
 		/// <para>JSON String</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutputJSON { get; set; }
+		public object? OutputJSON { get; set; }
 
 	}
 }

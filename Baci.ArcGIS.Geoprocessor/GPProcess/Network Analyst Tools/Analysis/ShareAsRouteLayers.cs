@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkAnalysisLayer, Summary, Tags, RouteNamePrefix, PortalFolderName, ShareWith, Groups, RouteLayerItems };
+		public override object[] Parameters => new object[] { InNetworkAnalysisLayer, Summary!, Tags!, RouteNamePrefix!, PortalFolderName!, ShareWith!, Groups!, RouteLayerItems! };
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer or  Route Data</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Summary { get; set; }
+		public object? Summary { get; set; }
 
 		/// <summary>
 		/// <para>Tags</para>
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Tags { get; set; }
+		public object? Tags { get; set; }
 
 		/// <summary>
 		/// <para>Route Name Prefix</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object RouteNamePrefix { get; set; }
+		public object? RouteNamePrefix { get; set; }
 
 		/// <summary>
 		/// <para>Portal Folder Name</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object PortalFolderName { get; set; }
+		public object? PortalFolderName { get; set; }
 
 		/// <summary>
 		/// <para>Share with</para>
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ShareWith { get; set; } = "MYCONTENT";
+		public object? ShareWith { get; set; } = "MYCONTENT";
 
 		/// <summary>
 		/// <para>Groups</para>
@@ -122,19 +122,19 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Groups { get; set; }
+		public object? Groups { get; set; }
 
 		/// <summary>
 		/// <para>Route Layer Items</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object RouteLayerItems { get; set; }
+		public object? RouteLayerItems { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ShareAsRouteLayers SetEnviroment(object outputCoordinateSystem = null )
+		public ShareAsRouteLayers SetEnviroment(object? outputCoordinateSystem = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem);
 			return this;

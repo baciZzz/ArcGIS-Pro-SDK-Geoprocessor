@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InObserverPoints, InTargetFeatures, OutLineFeatureClass, ObserverHeightField, TargetHeightField, JoinField, SampleDistance, OutputTheDirection, SamplingMethod };
+		public override object[] Parameters => new object[] { InObserverPoints, InTargetFeatures, OutLineFeatureClass, ObserverHeightField!, TargetHeightField!, JoinField!, SampleDistance!, OutputTheDirection!, SamplingMethod! };
 
 		/// <summary>
 		/// <para>Observer Points</para>
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ObserverHeightField { get; set; } = "<None>";
+		public object? ObserverHeightField { get; set; } = "<None>";
 
 		/// <summary>
 		/// <para>Target Height Field</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TargetHeightField { get; set; } = "<None>";
+		public object? TargetHeightField { get; set; } = "<None>";
 
 		/// <summary>
 		/// <para>Join Field</para>
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object JoinField { get; set; } = "<None>";
+		public object? JoinField { get; set; } = "<None>";
 
 		/// <summary>
 		/// <para>Sampling Distance</para>
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object SampleDistance { get; set; } = "1";
+		public object? SampleDistance { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Output The Direction</para>
@@ -166,7 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object OutputTheDirection { get; set; } = "false";
+		public object? OutputTheDirection { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Sampling Method</para>
@@ -178,12 +178,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SamplingMethod { get; set; } = "2D_DISTANCE";
+		public object? SamplingMethod { get; set; } = "2D_DISTANCE";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConstructSightLines SetEnviroment(object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , int? autoCommit = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object workspace = null )
+		public ConstructSightLines SetEnviroment(object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , int? autoCommit = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

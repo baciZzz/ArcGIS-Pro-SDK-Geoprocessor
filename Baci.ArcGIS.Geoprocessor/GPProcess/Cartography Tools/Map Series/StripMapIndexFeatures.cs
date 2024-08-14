@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, UsePageUnit, Scale, LengthAlongLine, LengthPerpendicularToLine, PageOrientation, OverlapPercentage, StartingPageNumber, DirectionType };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, UsePageUnit!, Scale!, LengthAlongLine!, LengthPerpendicularToLine!, PageOrientation!, OverlapPercentage!, StartingPageNumber!, DirectionType! };
 
 		/// <summary>
 		/// <para>Input Line Features</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UsePageUnit { get; set; } = "false";
+		public object? UsePageUnit { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Map Scale</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object Scale { get; set; }
+		public object? Scale { get; set; }
 
 		/// <summary>
 		/// <para>Length Along the Line</para>
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object LengthAlongLine { get; set; } = "2 DecimalDegrees";
+		public object? LengthAlongLine { get; set; } = "2 DecimalDegrees";
 
 		/// <summary>
 		/// <para>Length Perpendicular to the Line</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object LengthPerpendicularToLine { get; set; } = "1 DecimalDegrees";
+		public object? LengthPerpendicularToLine { get; set; } = "1 DecimalDegrees";
 
 		/// <summary>
 		/// <para>Page Orientation</para>
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object PageOrientation { get; set; } = "HORIZONTAL";
+		public object? PageOrientation { get; set; } = "HORIZONTAL";
 
 		/// <summary>
 		/// <para>Percentage of Overlap</para>
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object OverlapPercentage { get; set; } = "10";
+		public object? OverlapPercentage { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Starting Page Number</para>
@@ -149,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object StartingPageNumber { get; set; } = "1";
+		public object? StartingPageNumber { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Strip Map Direction</para>
@@ -163,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DirectionType { get; set; } = "WE_NS";
+		public object? DirectionType { get; set; } = "WE_NS";
 
 		#region InnerClass
 

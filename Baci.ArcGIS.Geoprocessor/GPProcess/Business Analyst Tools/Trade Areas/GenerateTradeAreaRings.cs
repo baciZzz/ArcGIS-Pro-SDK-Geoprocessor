@@ -60,12 +60,12 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Radii, Units, IdField, RemoveOverlap, DissolveOption, InputMethod, Expression };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Radii!, Units!, IdField!, RemoveOverlap!, DissolveOption!, InputMethod!, Expression! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPNumericDomain()]
-		public object Radii { get; set; }
+		public object? Radii { get; set; }
 
 		/// <summary>
 		/// <para>Distance Units</para>
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Units { get; set; }
+		public object? Units { get; set; }
 
 		/// <summary>
 		/// <para>ID Field</para>
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object IdField { get; set; }
+		public object? IdField { get; set; }
 
 		/// <summary>
 		/// <para>Remove Overlap</para>
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object RemoveOverlap { get; set; } = "false";
+		public object? RemoveOverlap { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Dissolve Option</para>
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DissolveOption { get; set; } = "OVERLAP";
+		public object? DissolveOption { get; set; } = "OVERLAP";
 
 		/// <summary>
 		/// <para>Input Method</para>
@@ -144,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object InputMethod { get; set; } = "VALUES";
+		public object? InputMethod { get; set; } = "VALUES";
 
 		/// <summary>
 		/// <para>Distance Expression</para>
@@ -152,14 +152,14 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object Expression { get; set; }
+		public object? Expression { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateTradeAreaRings SetEnviroment(object workspace = null )
+		public GenerateTradeAreaRings SetEnviroment(object? geographicTransformations = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(geographicTransformations: geographicTransformations, workspace: workspace);
 			return this;
 		}
 

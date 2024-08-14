@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointCloud, CellSize, OutRaster, CellAssignment!, VoidFill!, ZFactor };
+		public override object[] Parameters => new object[] { InPointCloud, CellSize, OutRaster, CellAssignment!, VoidFill!, ZFactor! };
 
 		/// <summary>
 		/// <para>Input Point Cloud</para>

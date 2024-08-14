@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRouteFeatures, DeleteAssociatedCalibrationPoints, DeleteAssociatedEvents, DeleteAssociatedCenterlines, UpdatedRouteFeatures, OutDetailsFile, OutDerivedRouteFeatures };
+		public override object[] Parameters => new object[] { InRouteFeatures, DeleteAssociatedCalibrationPoints!, DeleteAssociatedEvents!, DeleteAssociatedCenterlines!, UpdatedRouteFeatures!, OutDetailsFile!, OutDerivedRouteFeatures! };
 
 		/// <summary>
 		/// <para>Input Route Features</para>
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DeleteAssociatedCalibrationPoints { get; set; } = "false";
+		public object? DeleteAssociatedCalibrationPoints { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Delete associated events</para>
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DeleteAssociatedEvents { get; set; } = "false";
+		public object? DeleteAssociatedEvents { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Delete associated centerlines</para>
@@ -105,33 +105,33 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DeleteAssociatedCenterlines { get; set; } = "false";
+		public object? DeleteAssociatedCenterlines { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Route Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object UpdatedRouteFeatures { get; set; }
+		public object? UpdatedRouteFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Output Results File</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETextFile()]
-		public object OutDetailsFile { get; set; }
+		public object? OutDetailsFile { get; set; }
 
 		/// <summary>
 		/// <para>Output Derived Route Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutDerivedRouteFeatures { get; set; }
+		public object? OutDerivedRouteFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DeleteRoutes SetEnviroment(object workspace = null )
+		public DeleteRoutes SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -145,18 +145,18 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum DeleteAssociatedCalibrationPointsEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Calibration points associated with the routes will not be deleted. This is the default.</para>
-			/// </summary>
-			[GPValue("false")]
-			[Description("NO_DELETE_CALIBRATION_POINTS")]
-			NO_DELETE_CALIBRATION_POINTS,
-
-			/// <summary>
 			/// <para>Checked—Calibration points associated with the routes will be deleted.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DELETE_CALIBRATION_POINTS")]
 			DELETE_CALIBRATION_POINTS,
+
+			/// <summary>
+			/// <para>Unchecked—Calibration points associated with the routes will not be deleted. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("NO_DELETE_CALIBRATION_POINTS")]
+			NO_DELETE_CALIBRATION_POINTS,
 
 		}
 
@@ -166,18 +166,18 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum DeleteAssociatedEventsEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Events associated with the routes will not be deleted. This is the default.</para>
-			/// </summary>
-			[GPValue("false")]
-			[Description("NO_DELETE_EVENTS")]
-			NO_DELETE_EVENTS,
-
-			/// <summary>
 			/// <para>Checked—Events associated with the routes will be deleted.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DELETE_EVENTS")]
 			DELETE_EVENTS,
+
+			/// <summary>
+			/// <para>Unchecked—Events associated with the routes will not be deleted. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("NO_DELETE_EVENTS")]
+			NO_DELETE_EVENTS,
 
 		}
 
@@ -187,18 +187,18 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum DeleteAssociatedCenterlinesEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Centerlines will not be deleted. This is the default.</para>
-			/// </summary>
-			[GPValue("false")]
-			[Description("NO_DELETE_CENTERLINES")]
-			NO_DELETE_CENTERLINES,
-
-			/// <summary>
 			/// <para>Checked—Centerlines exclusively associated with the selected routes will be deleted. If centerlines are shared between networks, those common centerlines will not be deleted.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DELETE_CENTERLINES")]
 			DELETE_CENTERLINES,
+
+			/// <summary>
+			/// <para>Unchecked—Centerlines will not be deleted. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("NO_DELETE_CENTERLINES")]
+			NO_DELETE_CENTERLINES,
 
 		}
 

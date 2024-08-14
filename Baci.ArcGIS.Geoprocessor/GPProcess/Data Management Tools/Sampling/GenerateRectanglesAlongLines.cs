@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, LengthAlongLine, LengthPerpendicularToLine, SpatialSortMethod };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, LengthAlongLine!, LengthPerpendicularToLine!, SpatialSortMethod! };
 
 		/// <summary>
 		/// <para>Input Line Features</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object LengthAlongLine { get; set; } = "2 DecimalDegrees";
+		public object? LengthAlongLine { get; set; } = "2 DecimalDegrees";
 
 		/// <summary>
 		/// <para>Length Perpendicular to the Line</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object LengthPerpendicularToLine { get; set; } = "1 DecimalDegrees";
+		public object? LengthPerpendicularToLine { get; set; } = "1 DecimalDegrees";
 
 		/// <summary>
 		/// <para>Spatial Sort Method</para>
@@ -112,12 +112,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SpatialSortMethod { get; set; } = "UL";
+		public object? SpatialSortMethod { get; set; } = "UL";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateRectanglesAlongLines SetEnviroment(object workspace = null )
+		public GenerateRectanglesAlongLines SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

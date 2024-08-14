@@ -11,9 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add 3D Formats To Multipatch</para>
-	/// <para>Converts a multipatch to a 3D object feature</para>
-	/// <para>layer by linking the feature class with one or more 3D model</para>
-	/// <para>formats.</para>
+	/// <para>Converts a multipatch to a 3D object feature layer by linking the feature class with one or more 3D model formats.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -64,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, MultipatchMaterials, Formats, UpdatedFeatures };
+		public override object[] Parameters => new object[] { InFeatures, MultipatchMaterials!, Formats!, UpdatedFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -85,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object MultipatchMaterials { get; set; } = "true";
+		public object? MultipatchMaterials { get; set; } = "true";
 
 		/// <summary>
 		/// <para>3D Formats to Add</para>
@@ -95,22 +93,23 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Khronos Group glTF json (.gltf)—The JSON Graphics Library Transmission format will be added.</para>
 		/// <para>Khronos Group glTF binary (.glb)—The binary Graphics Library Transmission format will be added.</para>
 		/// <para>Wavefront (.obj)—The Wavefront format will be added.</para>
+		/// <para>Autodesk Drawing (.dwg)—The DWG format will be added.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Formats { get; set; }
+		public object? Formats { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
-		public object UpdatedFeatures { get; set; }
+		public object? UpdatedFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Add3DFormats SetEnviroment(object workspace = null )
+		public Add3DFormats SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -24,7 +24,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </param>
 		/// <param name="LrsName">
 		/// <para>LRS Name</para>
-		/// <para>The LRS to which the new LRS Network will be registered. The LRS must reside in the same geodatabase as the Input Location.</para>
+		/// <para>The LRS to which the new LRS Network will be registered. The LRS must reside in the same geodatabase as the Input Location parameter value.</para>
 		/// </param>
 		/// <param name="NetworkName">
 		/// <para>LRS Network Name</para>
@@ -32,7 +32,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </param>
 		/// <param name="RouteIdField">
 		/// <para>Route ID Field</para>
-		/// <para>The field in the output feature class that will be mapped as the LRS Network route ID. The field type is derived from the RouteId field of the centerline sequence table and must be either string or GUID.</para>
+		/// <para>The field in the output feature class that will be mapped as the LRS Network route ID. The field type is derived from the RouteId field of the centerline sequence table and must be either string or GUID type.</para>
 		/// </param>
 		/// <param name="RouteNameField">
 		/// <para>Route Name Field</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPath, LrsName, NetworkName, RouteIdField, RouteNameField, FromDateField, ToDateField, DeriveFromLineNetwork, LineNetworkName, IncludeFieldsToSupportLines, LineIdField, LineNameField, LineOrderField, MeasureUnit, OutFeatureClass };
+		public override object[] Parameters => new object[] { InPath, LrsName, NetworkName, RouteIdField, RouteNameField, FromDateField, ToDateField, DeriveFromLineNetwork!, LineNetworkName!, IncludeFieldsToSupportLines!, LineIdField!, LineNameField!, LineOrderField!, MeasureUnit!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Location</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>LRS Name</para>
-		/// <para>The LRS to which the new LRS Network will be registered. The LRS must reside in the same geodatabase as the Input Location.</para>
+		/// <para>The LRS to which the new LRS Network will be registered. The LRS must reside in the same geodatabase as the Input Location parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Route ID Field</para>
-		/// <para>The field in the output feature class that will be mapped as the LRS Network route ID. The field type is derived from the RouteId field of the centerline sequence table and must be either string or GUID.</para>
+		/// <para>The field in the output feature class that will be mapped as the LRS Network route ID. The field type is derived from the RouteId field of the centerline sequence table and must be either string or GUID type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -152,35 +152,35 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Derive From Line Network</para>
 		/// <para>Specifies whether the network will be configured as an LRS derived network.</para>
-		/// <para>Checked—The output will be an LRS derived network and a feature class to support the LRS derived network. The Line Network Name parameter must also be provided.</para>
+		/// <para>Checked—The output will be an LRS derived network and a feature class to support the LRS derived network. The Line Network Name parameter value must also be provided.</para>
 		/// <para>Unchecked—The output will not be an LRS derived network. This is the default.</para>
 		/// <para><see cref="DeriveFromLineNetworkEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DeriveFromLineNetwork { get; set; } = "false";
+		public object? DeriveFromLineNetwork { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Line Network Name</para>
-		/// <para>The name of the LRS line network to which the output LRS derived network will be registered. The input LRS line network must reside in the same geodatabase workspace as the Line Network Name. This parameter is only used if the Derive From Line Network parameter is checked.</para>
+		/// <para>The name of the LRS line network to which the output LRS derived network will be registered. The input LRS line network must reside in the same geodatabase workspace as the Line Network Name value. This parameter is only used if the Derive From Line Network parameter is checked.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LineNetworkName { get; set; }
+		public object? LineNetworkName { get; set; }
 
 		/// <summary>
 		/// <para>Include Fields to Support Lines</para>
 		/// <para>Specifies whether fields that support lines will be added.</para>
-		/// <para>Checked—The output will be an LRS line network, and the output feature class will include fields that support lines. The Line ID Field, Line Name Field, and Line Order Field parameters must also be provided.</para>
+		/// <para>Checked—The output will be an LRS line network, and the output feature class will include fields that support lines. The Line ID Field, Line Name Field, and Line Order Field parameter values must also be provided.</para>
 		/// <para>Unchecked—The output will not be an LRS line network. This is the default.</para>
 		/// <para><see cref="IncludeFieldsToSupportLinesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeFieldsToSupportLines { get; set; } = "false";
+		public object? IncludeFieldsToSupportLines { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Line ID Field</para>
@@ -188,7 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object LineIdField { get; set; } = "LineId";
+		public object? LineIdField { get; set; } = "LineId";
 
 		/// <summary>
 		/// <para>Line Name Field</para>
@@ -196,7 +196,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object LineNameField { get; set; } = "LineName";
+		public object? LineNameField { get; set; } = "LineName";
 
 		/// <summary>
 		/// <para>Line Order Field</para>
@@ -204,39 +204,39 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object LineOrderField { get; set; } = "LineOrder";
+		public object? LineOrderField { get; set; } = "LineOrder";
 
 		/// <summary>
 		/// <para>Measure Unit</para>
 		/// <para>Specifies the unit of measure (m-unit) the LRS Network will use.</para>
-		/// <para>Miles—This is the default.</para>
-		/// <para>Inches</para>
-		/// <para>Feet</para>
-		/// <para>Yards</para>
-		/// <para>Nautical Miles</para>
-		/// <para>Millimeters</para>
-		/// <para>Centimeters</para>
-		/// <para>Meters</para>
-		/// <para>Kilometers</para>
-		/// <para>Decimeters</para>
-		/// <para><see cref="MeasureUnitEnum"/></para>
+		/// <para>Miles (US Survey)—The unit of measure will be miles. This is the default.</para>
+		/// <para>Inches (US Survey)—The unit of measure will be inches.</para>
+		/// <para>Feet (US Survey)—The unit of measure will be feet.</para>
+		/// <para>Yards (US Survey)—The unit of measure will be yards.</para>
+		/// <para>Nautical miles (US Survey)—The unit of measure will be nautical miles.</para>
+		/// <para>Feet (International)—The unit of measure will be international feet.</para>
+		/// <para>Millimeters—The unit of measure will be millimeters.</para>
+		/// <para>Centimeters—The unit of measure will be centimeters</para>
+		/// <para>Meters—The unit of measure will be meters.</para>
+		/// <para>Kilometers—The unit of measure will be kilometers.</para>
+		/// <para>Decimeters—The unit of measure will be decimeters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object MeasureUnit { get; set; } = "MILES";
+		public object? MeasureUnit { get; set; } = "MILES";
 
 		/// <summary>
 		/// <para>Output Network Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateLRSNetwork SetEnviroment(object workspace = null )
+		public CreateLRSNetwork SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -250,18 +250,18 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum DeriveFromLineNetworkEnum 
 		{
 			/// <summary>
+			/// <para>Checked—The output will be an LRS derived network and a feature class to support the LRS derived network. The Line Network Name parameter value must also be provided.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("DERIVE")]
+			DERIVE,
+
+			/// <summary>
 			/// <para>Unchecked—The output will not be an LRS derived network. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_DERIVE")]
 			DO_NOT_DERIVE,
-
-			/// <summary>
-			/// <para>Checked—The output will be an LRS derived network and a feature class to support the LRS derived network. The Line Network Name parameter must also be provided.</para>
-			/// </summary>
-			[GPValue("true")]
-			[Description("DERIVE")]
-			DERIVE,
 
 		}
 
@@ -271,95 +271,18 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum IncludeFieldsToSupportLinesEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—The output will not be an LRS line network. This is the default.</para>
-			/// </summary>
-			[GPValue("false")]
-			[Description("DO_NOT_INCLUDE")]
-			DO_NOT_INCLUDE,
-
-			/// <summary>
-			/// <para>Checked—The output will be an LRS line network, and the output feature class will include fields that support lines. The Line ID Field, Line Name Field, and Line Order Field parameters must also be provided.</para>
+			/// <para>Checked—The output will be an LRS line network, and the output feature class will include fields that support lines. The Line ID Field, Line Name Field, and Line Order Field parameter values must also be provided.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE")]
 			INCLUDE,
 
-		}
-
-		/// <summary>
-		/// <para>Measure Unit</para>
-		/// </summary>
-		public enum MeasureUnitEnum 
-		{
 			/// <summary>
-			/// <para>Inches</para>
+			/// <para>Unchecked—The output will not be an LRS line network. This is the default.</para>
 			/// </summary>
-			[GPValue("INCHES")]
-			[Description("Inches")]
-			Inches,
-
-			/// <summary>
-			/// <para>Feet</para>
-			/// </summary>
-			[GPValue("FEET")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para>Yards</para>
-			/// </summary>
-			[GPValue("YARDS")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para>Miles—This is the default.</para>
-			/// </summary>
-			[GPValue("MILES")]
-			[Description("Miles")]
-			Miles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("NAUTICAL_MILES")]
-			[Description("Nautical miles")]
-			Nautical_miles,
-
-			/// <summary>
-			/// <para>Millimeters</para>
-			/// </summary>
-			[GPValue("MILLIMETERS")]
-			[Description("Millimeters")]
-			Millimeters,
-
-			/// <summary>
-			/// <para>Centimeters</para>
-			/// </summary>
-			[GPValue("CENTIMETERS")]
-			[Description("Centimeters")]
-			Centimeters,
-
-			/// <summary>
-			/// <para>Meters</para>
-			/// </summary>
-			[GPValue("METERS")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para>Kilometers</para>
-			/// </summary>
-			[GPValue("KILOMETERS")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para>Decimeters</para>
-			/// </summary>
-			[GPValue("DECIMETERS")]
-			[Description("Decimeters")]
-			Decimeters,
+			[GPValue("false")]
+			[Description("DO_NOT_INCLUDE")]
+			DO_NOT_INCLUDE,
 
 		}
 

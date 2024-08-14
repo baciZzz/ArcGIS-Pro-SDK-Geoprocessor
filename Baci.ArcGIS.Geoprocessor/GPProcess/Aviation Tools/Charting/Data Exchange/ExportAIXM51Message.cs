@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAviationWorkspace, OutMessageFile, ExportType, LastModifiedTime!, InFilterLayers!, FromTime!, ToTime!, ValidateOutput!, OutValidationLog };
+		public override object[] Parameters => new object[] { InAviationWorkspace, OutMessageFile, ExportType, LastModifiedTime!, InFilterLayers!, FromTime!, ToTime!, ValidateOutput!, OutValidationLog! };
 
 		/// <summary>
 		/// <para>Input Aviation Workspace</para>

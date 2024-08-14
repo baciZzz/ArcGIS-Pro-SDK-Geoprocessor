@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, JunctionPlacementType, IsUnitAbsolute, MaximumShiftAbsolute, MaximumShiftProportional, MinimumShiftAbsolute, MinimumShiftProportional, IterationsNumber, IsPathPreserved, AreLeavesMoved, AreLeavesExpanded, ExpandShiftAbsolute, ExpandShiftProportional, OutNetworkDiagramLayer, RunAsync };
+		public override object[] Parameters => new object[] { InNetworkDiagramLayer, JunctionPlacementType!, IsUnitAbsolute!, MaximumShiftAbsolute!, MaximumShiftProportional!, MinimumShiftAbsolute!, MinimumShiftProportional!, IterationsNumber!, IsPathPreserved!, AreLeavesMoved!, AreLeavesExpanded!, ExpandShiftAbsolute!, ExpandShiftProportional!, OutNetworkDiagramLayer!, RunAsync! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object JunctionPlacementType { get; set; } = "EQUAL_DISTANCE";
+		public object? JunctionPlacementType { get; set; } = "EQUAL_DISTANCE";
 
 		/// <summary>
 		/// <para>Spacing values interpreted as absolute units in the diagram coordinate system</para>
@@ -85,42 +85,42 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IsUnitAbsolute { get; set; } = "false";
+		public object? IsUnitAbsolute { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Maximum Shift</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object MaximumShiftAbsolute { get; set; } = "2 Unknown";
+		public object? MaximumShiftAbsolute { get; set; } = "2 Unknown";
 
 		/// <summary>
 		/// <para>Maximum Shift</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MaximumShiftProportional { get; set; } = "2";
+		public object? MaximumShiftProportional { get; set; } = "2";
 
 		/// <summary>
 		/// <para>Minimum Shift</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object MinimumShiftAbsolute { get; set; } = "2 Unknown";
+		public object? MinimumShiftAbsolute { get; set; } = "2 Unknown";
 
 		/// <summary>
 		/// <para>Minimum Shift</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MinimumShiftProportional { get; set; } = "2";
+		public object? MinimumShiftProportional { get; set; } = "2";
 
 		/// <summary>
 		/// <para>Number of Iterations</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object IterationsNumber { get; set; } = "5";
+		public object? IterationsNumber { get; set; } = "5";
 
 		/// <summary>
 		/// <para>Preserve path</para>
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IsPathPreserved { get; set; } = "true";
+		public object? IsPathPreserved { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Move leaves</para>
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AreLeavesMoved { get; set; } = "false";
+		public object? AreLeavesMoved { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Expand leaves</para>
@@ -147,28 +147,28 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AreLeavesExpanded { get; set; } = "false";
+		public object? AreLeavesExpanded { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Maximum Expand Shift</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object ExpandShiftAbsolute { get; set; } = "2 Unknown";
+		public object? ExpandShiftAbsolute { get; set; } = "2 Unknown";
 
 		/// <summary>
 		/// <para>Maximum Expand Shift</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ExpandShiftProportional { get; set; } = "2";
+		public object? ExpandShiftProportional { get; set; } = "2";
 
 		/// <summary>
 		/// <para>Output Network Diagram</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDiagramLayer()]
-		public object OutNetworkDiagramLayer { get; set; }
+		public object? OutNetworkDiagramLayer { get; set; }
 
 		/// <summary>
 		/// <para>Run in asynchronous mode on the server</para>
@@ -178,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object RunAsync { get; set; } = "false";
+		public object? RunAsync { get; set; } = "false";
 
 		#region InnerClass
 

@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 	/// <summary>
 	/// <para>Ordinary Least Squares (OLS)</para>
 	/// <para>Performs global Ordinary Least Squares (OLS) linear regression to generate predictions or to model a dependent variable in terms of its relationships to a set of explanatory variables.</para>
+	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools.GeneralizedLinearRegression"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
+	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools.GeneralizedLinearRegression))]
 	public class OrdinaryLeastSquares : AbstractGPProcess
 	{
 		/// <summary>
@@ -80,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, UniqueIDField, OutputFeatureClass, DependentVariable, ExplanatoryVariables, CoefficientOutputTable, DiagnosticOutputTable, OutputReportFile };
+		public override object[] Parameters => new object[] { InputFeatureClass, UniqueIDField, OutputFeatureClass, DependentVariable, ExplanatoryVariables, CoefficientOutputTable!, DiagnosticOutputTable!, OutputReportFile! };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
@@ -132,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
 		[Category("Additional Options")]
-		public object CoefficientOutputTable { get; set; }
+		public object? CoefficientOutputTable { get; set; }
 
 		/// <summary>
 		/// <para>Diagnostic Output Table</para>
@@ -141,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
 		[Category("Additional Options")]
-		public object DiagnosticOutputTable { get; set; }
+		public object? DiagnosticOutputTable { get; set; }
 
 		/// <summary>
 		/// <para>Output Report File</para>
@@ -150,12 +152,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object OutputReportFile { get; set; }
+		public object? OutputReportFile { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public OrdinaryLeastSquares SetEnviroment(object MResolution = null , object MTolerance = null , object XYResolution = null , object XYTolerance = null , object ZResolution = null , object ZTolerance = null , object geographicTransformations = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , bool? qualifiedFieldNames = null , object scratchWorkspace = null , object workspace = null )
+		public OrdinaryLeastSquares SetEnviroment(double? MResolution = null , double? MTolerance = null , object? XYResolution = null , object? XYTolerance = null , object? ZResolution = null , object? ZTolerance = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , bool? qualifiedFieldNames = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(MResolution: MResolution, MTolerance: MTolerance, XYResolution: XYResolution, XYTolerance: XYTolerance, ZResolution: ZResolution, ZTolerance: ZTolerance, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

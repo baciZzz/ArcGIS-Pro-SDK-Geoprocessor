@@ -61,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Expression, CodeBlock, DataType, Value };
+		public override object[] Parameters => new object[] { Expression, CodeBlock!, DataType!, Value! };
 
 		/// <summary>
 		/// <para>Expression</para>
@@ -73,17 +73,16 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Code Block</para>
-		/// <para>A Python code block. Code in the code block can be referenced in the Expression parameter.</para>
+		/// <para>A Python code block. The code in the code block must be referenced in the Expression parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object CodeBlock { get; set; }
+		public object? CodeBlock { get; set; }
 
 		/// <summary>
 		/// <para>Data type</para>
-		/// <para>Specifies the data type of the output returned from the Python expression. This parameter should be used in ModelBuilder to help chain Calculate Value with other tools.</para>
+		/// <para>Specifies the data type of the return value of the Python expression. This parameter helps chain Calculate Value with other tools.</para>
 		/// <para>Address Locator—Address Locator</para>
-		/// <para>Address Locator Style—Address Locator Style</para>
 		/// <para>Analysis Cell Size—Analysis Cell Size</para>
 		/// <para>Annotation Layer—Annotation Layer</para>
 		/// <para>Any Value—Any Value</para>
@@ -92,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>BIM File Workspace—BIM File Workspace</para>
 		/// <para>Boolean—Boolean</para>
 		/// <para>Building Discipline Layer—Building Discipline Layer</para>
-		/// <para>Building Discipline Scene Layer—Building Discipline Scene Layer</para>
+		/// <para>Building Scene Discipline Layer—Building Scene Discipline Layer</para>
 		/// <para>Building Layer—Building Layer</para>
 		/// <para>Building Scene Layer—Building Scene Layer</para>
 		/// <para>CAD Drawing Dataset—CAD Drawing Dataset</para>
@@ -133,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>File—File</para>
 		/// <para>Folder—Folder</para>
 		/// <para>Formulated Raster—Formulated Raster</para>
-		/// <para>Fuzzy function—Fuzzy function</para>
+		/// <para>Fuzzy Function—Fuzzy Function</para>
 		/// <para>GeoDataServer—GeoDataServer</para>
 		/// <para>Geodataset—Geodataset</para>
 		/// <para>Geometric Network—Geometric Network</para>
@@ -144,6 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>GPServer—GPServer</para>
 		/// <para>Graph—Graph</para>
 		/// <para>Graph Data Table—Graph Data Table</para>
+		/// <para>Graphics Layer—Graphics Layer</para>
 		/// <para>Group Layer—Group Layer</para>
 		/// <para>Horizontal Factor—Horizontal Factor</para>
 		/// <para>Image Service—Image Service</para>
@@ -212,7 +212,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Terrain Layer—Terrain Layer</para>
 		/// <para>Text File—Text File</para>
 		/// <para>Tile Size—Tile Size</para>
-		/// <para>Time configuration—Time configuration</para>
+		/// <para>Time Configuration—Time Configuration</para>
 		/// <para>Time Unit—Time Unit</para>
 		/// <para>TIN—TIN</para>
 		/// <para>TIN Layer—TIN Layer</para>
@@ -223,7 +223,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Topology Layer—Topology Layer</para>
 		/// <para>Trace Network—Trace Network</para>
 		/// <para>Trace Network Layer—Trace Network Layer</para>
-		/// <para>Transformation function—Transformation function</para>
+		/// <para>Transformation Function—Transformation Function</para>
 		/// <para>Utility Network—Utility Network</para>
 		/// <para>Utility Network Layer—Utility Network Layer</para>
 		/// <para>Variant—Variant</para>
@@ -244,14 +244,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DataType { get; set; } = "Variant";
+		public object? DataType { get; set; } = "GPVariant";
 
 		/// <summary>
 		/// <para>Value</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPType()]
-		public object Value { get; set; }
+		public object? Value { get; set; }
 
 	}
 }

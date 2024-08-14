@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasterBands, InSignatureFile, OutClassifiedRaster, RejectFraction, APrioriProbabilities, InAPrioriFile, OutConfidenceRaster };
+		public override object[] Parameters => new object[] { InRasterBands, InSignatureFile, OutClassifiedRaster, RejectFraction!, APrioriProbabilities!, InAPrioriFile!, OutConfidenceRaster! };
 
 		/// <summary>
 		/// <para>Input raster bands</para>
@@ -109,25 +109,25 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <para>Select a reject fraction, which determines whether a cell will be classified based on its likelihood of being correctly assigned to one of the classes. Cells whose likelihood of being correctly assigned to any of the classes is lower than the reject fraction will be given a value of NoData in the output classified raster.</para>
 		/// <para>The default value is 0.0, which means that every cell will be classified.</para>
 		/// <para>Valid entries are:</para>
-		/// <para>0.0</para>
-		/// <para>0.005</para>
-		/// <para>0.01</para>
-		/// <para>0.025</para>
-		/// <para>0.05</para>
-		/// <para>0.1</para>
-		/// <para>0.25</para>
-		/// <para>0.5</para>
-		/// <para>0.75</para>
-		/// <para>0.9</para>
-		/// <para>0.95</para>
-		/// <para>0.975</para>
-		/// <para>0.99</para>
-		/// <para>0.995</para>
+		/// <para>0.0— The rejection fraction is 0.0</para>
+		/// <para>0.005— The rejection fraction is 0.005</para>
+		/// <para>0.01— The rejection fraction is 0.01</para>
+		/// <para>0.025— The rejection fraction is 0.025</para>
+		/// <para>0.05— The rejection fraction is 0.05</para>
+		/// <para>0.1— The rejection fraction is 0.1</para>
+		/// <para>0.25— The rejection fraction is 0.25</para>
+		/// <para>0.5— The rejection fraction is 0.5</para>
+		/// <para>0.75— The rejection fraction is 0.75</para>
+		/// <para>0.9— The rejection fraction is 0.9</para>
+		/// <para>0.95— The rejection fraction is 0.95</para>
+		/// <para>0.975— The rejection fraction is 0.975</para>
+		/// <para>0.99— The rejection fraction is 0.99</para>
+		/// <para>0.995— The rejection fraction is 0.995</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object RejectFraction { get; set; } = "0.0";
+		public object? RejectFraction { get; set; } = "0.0";
 
 		/// <summary>
 		/// <para>A priori probability weighting</para>
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object APrioriProbabilities { get; set; } = "EQUAL";
+		public object? APrioriProbabilities { get; set; } = "EQUAL";
 
 		/// <summary>
 		/// <para>Input a priori probability file</para>
@@ -151,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object InAPrioriFile { get; set; }
+		public object? InAPrioriFile { get; set; }
 
 		/// <summary>
 		/// <para>Output confidence raster</para>
@@ -160,14 +160,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
-		public object OutConfidenceRaster { get; set; }
+		public object? OutConfidenceRaster { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MLClassify SetEnviroment(int? autoCommit = null , object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public MLClassify SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 

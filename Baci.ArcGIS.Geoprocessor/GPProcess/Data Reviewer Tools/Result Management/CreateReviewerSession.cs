@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ReviewerWorkspace, SessionName, SessionTemplate, Session, DuplicateChecking, StoreGeometry, Username, Version };
+		public override object[] Parameters => new object[] { ReviewerWorkspace, SessionName, SessionTemplate!, Session!, DuplicateChecking!, StoreGeometry!, Username!, Version! };
 
 		/// <summary>
 		/// <para>Reviewer Workspace</para>
@@ -91,14 +91,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SessionTemplate { get; set; }
+		public object? SessionTemplate { get; set; }
 
 		/// <summary>
 		/// <para>Reviewer Session</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object Session { get; set; }
+		public object? Session { get; set; }
 
 		/// <summary>
 		/// <para>Check For Duplicates</para>
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DuplicateChecking { get; set; } = "NONE";
+		public object? DuplicateChecking { get; set; } = "NONE";
 
 		/// <summary>
 		/// <para>Do Not Store Geometry</para>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object StoreGeometry { get; set; } = "false";
+		public object? StoreGeometry { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Session User Name</para>
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Username { get; set; } = "bldgis";
+		public object? Username { get; set; } = "bldgis";
 
 		/// <summary>
 		/// <para>Session Version</para>
@@ -139,12 +139,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Version { get; set; }
+		public object? Version { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateReviewerSession SetEnviroment(object workspace = null )
+		public CreateReviewerSession SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

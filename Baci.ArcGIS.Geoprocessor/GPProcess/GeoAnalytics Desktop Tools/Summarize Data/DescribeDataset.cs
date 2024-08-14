@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, Output, SampleFeatures, SampleLayer, ExtentLayer };
+		public override object[] Parameters => new object[] { InputLayer, Output, SampleFeatures!, SampleLayer!, ExtentLayer! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object SampleFeatures { get; set; }
+		public object? SampleFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Sample Layer</para>
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object SampleLayer { get; set; }
+		public object? SampleLayer { get; set; }
 
 		/// <summary>
 		/// <para>Extent Layer</para>
@@ -105,12 +105,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object ExtentLayer { get; set; }
+		public object? ExtentLayer { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DescribeDataset SetEnviroment(object extent = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object workspace = null )
+		public DescribeDataset SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;

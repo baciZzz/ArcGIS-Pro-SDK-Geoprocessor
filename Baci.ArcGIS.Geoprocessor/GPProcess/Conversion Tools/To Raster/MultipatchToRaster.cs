@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMultipatchFeatures, OutRaster, CellSize };
+		public override object[] Parameters => new object[] { InMultipatchFeatures, OutRaster, CellSize!, CellAssignmentMethod! };
 
 		/// <summary>
 		/// <para>Input multipatch features</para>
@@ -96,16 +96,52 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
 		[GPSAGeoDataDomain()]
-		public object CellSize { get; set; }
+		public object? CellSize { get; set; }
+
+		/// <summary>
+		/// <para>Cell assignment method</para>
+		/// <para>Specifies whether the maximum or minimum z-value will be used for a cell when more than one z-value is detected at the cell center location when a vertical line is extended from the cell center location to intersect the input multipatch feature.</para>
+		/// <para>Maximum height—The maximum z-value will be assigned to the cell. This is the default.</para>
+		/// <para>Minimum height—The minimum z-value will be assigned to the cell.</para>
+		/// <para><see cref="CellAssignmentMethodEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		[GPCodedValueDomain()]
+		public object? CellAssignmentMethod { get; set; } = "MAXIMUM_HEIGHT";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MultipatchToRaster SetEnviroment(int? autoCommit = null , object cellSize = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object nodata = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object resamplingMethod = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public MultipatchToRaster SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? nodata = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? resamplingMethod = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, nodata: nodata, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, resamplingMethod: resamplingMethod, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, nodata: nodata, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, resamplingMethod: resamplingMethod, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 
+		#region InnerClass
+
+		/// <summary>
+		/// <para>Cell assignment method</para>
+		/// </summary>
+		public enum CellAssignmentMethodEnum 
+		{
+			/// <summary>
+			/// <para>Maximum height—The maximum z-value will be assigned to the cell. This is the default.</para>
+			/// </summary>
+			[GPValue("MAXIMUM_HEIGHT")]
+			[Description("Maximum height")]
+			Maximum_height,
+
+			/// <summary>
+			/// <para>Minimum height—The minimum z-value will be assigned to the cell.</para>
+			/// </summary>
+			[GPValue("MINIMUM_HEIGHT")]
+			[Description("Minimum height")]
+			Minimum_height,
+
+		}
+
+#endregion
 	}
 }

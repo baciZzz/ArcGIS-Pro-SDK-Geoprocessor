@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, ParentVersion, VersionName, AccessPermission, OutWorkspace };
+		public override object[] Parameters => new object[] { InWorkspace, ParentVersion, VersionName, AccessPermission!, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Workspace</para>
@@ -111,19 +111,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object AccessPermission { get; set; } = "PRIVATE";
+		public object? AccessPermission { get; set; } = "PRIVATE";
 
 		/// <summary>
 		/// <para>Updated Input Workspace</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutWorkspace { get; set; }
+		public object? OutWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateVersion SetEnviroment(object workspace = null )
+		public CreateVersion SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

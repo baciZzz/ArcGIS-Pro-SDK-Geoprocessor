@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGaModelSource, ModelParamXpath, OutParamValue };
+		public override object[] Parameters => new object[] { InGaModelSource, ModelParamXpath, OutParamValue! };
 
 		/// <summary>
 		/// <para>Input geostatistical model source</para>
@@ -89,12 +89,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutParamValue { get; set; } = " ";
+		public object? OutParamValue { get; set; } = " ";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GAGetModelParameter SetEnviroment(object workspace = null )
+		public GAGetModelParameter SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

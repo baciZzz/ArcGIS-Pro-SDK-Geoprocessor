@@ -69,7 +69,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDataset, OutWorkspaceLocation, OutNetworkDataset };
+		public override object[] Parameters => new object[] { InNetworkDataset, OutWorkspaceLocation, OutNetworkDataset! };
 
 		/// <summary>
 		/// <para>Input Network Dataset</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <para>The input network dataset must be built before it can be used in this tool.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
-		[GPNetworkDatasetLayer()]
+		[GPComposite()]
 		public object InNetworkDataset { get; set; }
 
 		/// <summary>
@@ -89,7 +89,6 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
-		[GPWorkspaceDomain()]
 		public object OutWorkspaceLocation { get; set; }
 
 		/// <summary>
@@ -97,12 +96,12 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DENetworkDataset()]
-		public object OutNetworkDataset { get; set; }
+		public object? OutNetworkDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DissolveNetwork SetEnviroment(object workspace = null )
+		public DissolveNetwork SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, GridIndex1, GridIndex2, GridIndex3 };
+		public override object[] Parameters => new object[] { InFeatures, GridIndex1!, GridIndex2!, GridIndex3! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -74,21 +74,21 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object GridIndex1 { get; set; } = "0";
+		public object? GridIndex1 { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Spatial Grid Index2</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object GridIndex2 { get; set; } = "0";
+		public object? GridIndex2 { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Spatial Grid Index3</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object GridIndex3 { get; set; } = "0";
+		public object? GridIndex3 { get; set; } = "0";
 
 	}
 }

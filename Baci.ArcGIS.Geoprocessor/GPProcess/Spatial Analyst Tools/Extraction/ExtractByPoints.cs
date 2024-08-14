@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 	/// <summary>
 	/// <para>Extract by Points</para>
 	/// <para>Extracts the cells of a raster based on a set of coordinate points.</para>
+	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.SpatialAnalystTools.ExtractByMask"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
+	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.SpatialAnalystTools.ExtractByMask))]
 	public class ExtractByPoints : AbstractGPProcess
 	{
 		/// <summary>
@@ -71,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, Points, OutRaster, ExtractionArea };
+		public override object[] Parameters => new object[] { InRaster, Points, OutRaster, ExtractionArea! };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -102,21 +104,21 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Extraction area</para>
 		/// <para>Identifies whether to extract cells based on the specified point locations (inside) or outside the point locations (outside) .</para>
-		/// <para>Inside—A keyword specifying that the cell in which the selected point falls will be written to the output raster. All cells outside the box will receive NoData on the output raster.</para>
-		/// <para>Outside—A keyword specifying that the cells outside the input points should be selected and written to the output raster.</para>
+		/// <para>Inside—The cell in which the selected point falls will be written to the output raster. All cells outside the box will receive NoData on the output raster.</para>
+		/// <para>Outside—The cells outside the input points should be selected and written to the output raster.</para>
 		/// <para><see cref="ExtractionAreaEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ExtractionArea { get; set; } = "INSIDE";
+		public object? ExtractionArea { get; set; } = "INSIDE";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExtractByPoints SetEnviroment(int? autoCommit = null , object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public ExtractByPoints SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 
@@ -128,14 +130,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ExtractionAreaEnum 
 		{
 			/// <summary>
-			/// <para>Inside—A keyword specifying that the cell in which the selected point falls will be written to the output raster. All cells outside the box will receive NoData on the output raster.</para>
+			/// <para>Inside—The cell in which the selected point falls will be written to the output raster. All cells outside the box will receive NoData on the output raster.</para>
 			/// </summary>
 			[GPValue("INSIDE")]
 			[Description("Inside")]
 			Inside,
 
 			/// <summary>
-			/// <para>Outside—A keyword specifying that the cells outside the input points should be selected and written to the output raster.</para>
+			/// <para>Outside—The cells outside the input points should be selected and written to the output raster.</para>
 			/// </summary>
 			[GPValue("OUTSIDE")]
 			[Description("Outside")]

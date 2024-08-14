@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, DepthField, DepthDirection, DepthBias, RadiusUnit, StartThinningRadius, EndThinningRadius, StartDepth, EndDepth };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, DepthField, DepthDirection, DepthBias, RadiusUnit, StartThinningRadius, EndThinningRadius!, StartDepth!, EndDepth! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -196,7 +196,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object EndThinningRadius { get; set; }
+		public object? EndThinningRadius { get; set; }
 
 		/// <summary>
 		/// <para>Start Depth</para>
@@ -204,7 +204,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object StartDepth { get; set; }
+		public object? StartDepth { get; set; }
 
 		/// <summary>
 		/// <para>End Depth</para>
@@ -212,7 +212,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object EndDepth { get; set; }
+		public object? EndDepth { get; set; }
 
 		#region InnerClass
 

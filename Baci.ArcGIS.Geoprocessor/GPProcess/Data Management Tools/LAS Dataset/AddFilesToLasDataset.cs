@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, InFiles, FolderRecursion, InSurfaceConstraints, DerivedLasDataset };
+		public override object[] Parameters => new object[] { InLasDataset, InFiles!, FolderRecursion!, InSurfaceConstraints!, DerivedLasDataset! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCompositeDomain()]
-		public object InFiles { get; set; }
+		public object? InFiles { get; set; }
 
 		/// <summary>
 		/// <para>Include subfolders</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object FolderRecursion { get; set; } = "false";
+		public object? FolderRecursion { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Surface Constraints</para>
@@ -110,19 +110,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object InSurfaceConstraints { get; set; }
+		public object? InSurfaceConstraints { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input LAS Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLasDatasetLayer()]
-		public object DerivedLasDataset { get; set; }
+		public object? DerivedLasDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddFilesToLasDataset SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public AddFilesToLasDataset SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

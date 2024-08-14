@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAirspaceFeatures, AirspaceAssociationTable, UpdatedAirspaceFeatures, AirspacePartFeatures };
+		public override object[] Parameters => new object[] { InAirspaceFeatures, AirspaceAssociationTable, UpdatedAirspaceFeatures!, AirspacePartFeatures! };
 
 		/// <summary>
 		/// <para>Input Airspace Features</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
 		[GPCompositeDomain()]
-		public object UpdatedAirspaceFeatures { get; set; }
+		public object? UpdatedAirspaceFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Airspace Parts</para>
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object AirspacePartFeatures { get; set; }
+		public object? AirspacePartFeatures { get; set; }
 
 	}
 }

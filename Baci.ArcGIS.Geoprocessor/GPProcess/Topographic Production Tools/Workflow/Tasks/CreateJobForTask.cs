@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { JobId, DatabasePath, ChildJobId };
+		public override object[] Parameters => new object[] { JobId, DatabasePath!, ChildJobId! };
 
 		/// <summary>
 		/// <para>Job ID</para>
@@ -77,14 +77,14 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object DatabasePath { get; set; }
+		public object? DatabasePath { get; set; }
 
 		/// <summary>
 		/// <para>Child Job ID</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLong()]
-		public object ChildJobId { get; set; } = "-1";
+		public object? ChildJobId { get; set; } = "-1";
 
 	}
 }

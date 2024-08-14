@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InBuildings, IdentifierField, EdgeFeatures, GroupingDistance, MinimumDetailSize, OutFeatureClass, MinimumBuildingCount };
+		public override object[] Parameters => new object[] { InBuildings, IdentifierField!, EdgeFeatures!, GroupingDistance, MinimumDetailSize, OutFeatureClass, MinimumBuildingCount! };
 
 		/// <summary>
 		/// <para>Input Building Layers</para>
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object IdentifierField { get; set; }
+		public object? IdentifierField { get; set; }
 
 		/// <summary>
 		/// <para>Edge Features</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
-		public object EdgeFeatures { get; set; }
+		public object? EdgeFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Grouping Distance</para>
@@ -138,12 +138,12 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MinimumBuildingCount { get; set; }
+		public object? MinimumBuildingCount { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DelineateBuiltUpAreas SetEnviroment(object cartographicPartitions = null , object referenceScale = null )
+		public DelineateBuiltUpAreas SetEnviroment(object? cartographicPartitions = null , double? referenceScale = null )
 		{
 			base.SetEnv(cartographicPartitions: cartographicPartitions, referenceScale: referenceScale);
 			return this;

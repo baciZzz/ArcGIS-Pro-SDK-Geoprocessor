@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRouteFeatures, TargetCartoRouteFeatures, AoiFeatures, PreferenceTable, Preference, UpdatedCartoRouteFeatures };
+		public override object[] Parameters => new object[] { InRouteFeatures, TargetCartoRouteFeatures, AoiFeatures, PreferenceTable, Preference, UpdatedCartoRouteFeatures! };
 
 		/// <summary>
 		/// <para>Input Route Features</para>
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
 		[GPCompositeDomain()]
-		public object UpdatedCartoRouteFeatures { get; set; }
+		public object? UpdatedCartoRouteFeatures { get; set; }
 
 	}
 }

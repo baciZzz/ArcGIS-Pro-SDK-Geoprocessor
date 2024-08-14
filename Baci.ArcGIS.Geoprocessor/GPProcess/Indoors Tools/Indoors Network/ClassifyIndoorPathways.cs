@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		/// <param name="InUnitFeatures">
 		/// <para>Input Unit Features</para>
-		/// <para>The input polygon features representing spaces in a building for which the Target Pathways parameter values will be classified. In the ArcGIS Indoors Information Model, this is the Units layer.</para>
+		/// <para>The input polygon features representing spaces in a building for which the Target Pathways parameter values will be classified. In the ArcGIS Indoors Information Model, this is the Units layer. Select features in the units layer before running the tool.</para>
 		/// </param>
 		/// <param name="TargetPathways">
 		/// <para>Target Pathways</para>
@@ -65,11 +65,11 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUnitFeatures, TargetPathways, UpdatedPathways };
+		public override object[] Parameters => new object[] { InUnitFeatures, TargetPathways, UpdatedPathways! };
 
 		/// <summary>
 		/// <para>Input Unit Features</para>
-		/// <para>The input polygon features representing spaces in a building for which the Target Pathways parameter values will be classified. In the ArcGIS Indoors Information Model, this is the Units layer.</para>
+		/// <para>The input polygon features representing spaces in a building for which the Target Pathways parameter values will be classified. In the ArcGIS Indoors Information Model, this is the Units layer. Select features in the units layer before running the tool.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object UpdatedPathways { get; set; }
+		public object? UpdatedPathways { get; set; }
 
 	}
 }

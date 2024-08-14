@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, OutData, DataType, AssociatedData };
+		public override object[] Parameters => new object[] { InData, OutData, DataType!, AssociatedData! };
 
 		/// <summary>
 		/// <para>Input Data</para>
@@ -90,27 +90,27 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DataType { get; set; }
+		public object? DataType { get; set; }
 
 		/// <summary>
 		/// <para>Associated Data</para>
 		/// <para>When the input has associated data, this parameter can be used to control the associated output data&apos;s name and config keyword.</para>
 		/// <para>From Name—Data associated with the input data, which will also be copied.</para>
 		/// <para>Data Type—The type of the data on disk to be copied. The only time you need to provide a value is when a geodatabase contains a feature dataset and a feature class with the same name. In this case, you need to select the data type, FeatureDataset or FeatureClass, of the item you want to copy.</para>
-		/// <para>To Name—The name of the copied data in the Output Data.</para>
+		/// <para>To Name—The name of the copied data in the Output Data parameter value.</para>
 		/// <para>Config Keyword—The geodatabase storage parameters (configuration).</para>
-		/// <para>The From Name and To Name column names will be identical if the To Name is not already used in Output Data. If a name already exists in the Output Data, a unique To Name will be created by appending an underscore plus a number, _1.</para>
+		/// <para>The From Name and To Name column names will be identical if the To Name value is not already used in Output Data. If a name already exists in the Output Data value, a unique To Name value will be created by appending an underscore plus a number (for example, rivers_1).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object AssociatedData { get; set; }
+		public object? AssociatedData { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Copy SetEnviroment(object configKeyword = null , object scratchWorkspace = null , object workspace = null )
+		public Copy SetEnviroment(object? configKeyword = null , bool? maintainAttachments = null , object? scratchWorkspace = null , object? workspace = null )
 		{
-			base.SetEnv(configKeyword: configKeyword, scratchWorkspace: scratchWorkspace, workspace: workspace);
+			base.SetEnv(configKeyword: configKeyword, maintainAttachments: maintainAttachments, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
 		}
 

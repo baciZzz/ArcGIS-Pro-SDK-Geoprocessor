@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { SourceFeatures, TargetFeatures, OutFeatureClass, SearchDistance, MatchFields, OutMatchTable, OutPointFeatureClass };
+		public override object[] Parameters => new object[] { SourceFeatures, TargetFeatures, OutFeatureClass, SearchDistance, MatchFields!, OutMatchTable!, OutPointFeatureClass! };
 
 		/// <summary>
 		/// <para>Source Features</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPFieldDomain()]
-		public object MatchFields { get; set; }
+		public object? MatchFields { get; set; }
 
 		/// <summary>
 		/// <para>Output Match Table</para>
@@ -126,19 +126,19 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object OutMatchTable { get; set; }
+		public object? OutMatchTable { get; set; }
 
 		/// <summary>
 		/// <para>Identity Links</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutPointFeatureClass { get; set; } = "output_feature_class_Pnt";
+		public object? OutPointFeatureClass { get; set; } = "output_feature_class_Pnt";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateRubbersheetLinks SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateRubbersheetLinks SetEnviroment(object? extent = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

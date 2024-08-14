@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, EventIdField, RouteIdField, FromDateField, ToDateField, LocErrorField, MeasureField, ToMeasureField, EventSpansRoutes, ToRouteIdField, StoreRouteName, RouteNameField, ToRouteNameField, OutFeatureClass };
+		public override object[] Parameters => new object[] { InFeatureClass, EventIdField!, RouteIdField!, FromDateField!, ToDateField!, LocErrorField!, MeasureField!, ToMeasureField!, EventSpansRoutes!, ToRouteIdField!, StoreRouteName!, RouteNameField!, ToRouteNameField!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>LRS Event Feature Class</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object EventIdField { get; set; }
+		public object? EventIdField { get; set; }
 
 		/// <summary>
 		/// <para>Route ID Field</para>
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object RouteIdField { get; set; }
+		public object? RouteIdField { get; set; }
 
 		/// <summary>
 		/// <para>From Date Field</para>
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object FromDateField { get; set; }
+		public object? FromDateField { get; set; }
 
 		/// <summary>
 		/// <para>To Date Field</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ToDateField { get; set; }
+		public object? ToDateField { get; set; }
 
 		/// <summary>
 		/// <para>Location Error Field</para>
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object LocErrorField { get; set; }
+		public object? LocErrorField { get; set; }
 
 		/// <summary>
 		/// <para>Measure Field</para>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object MeasureField { get; set; }
+		public object? MeasureField { get; set; }
 
 		/// <summary>
 		/// <para>To Measure Field</para>
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ToMeasureField { get; set; }
+		public object? ToMeasureField { get; set; }
 
 		/// <summary>
 		/// <para>Event Spans Routes</para>
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object EventSpansRoutes { get; set; } = "AS_IS";
+		public object? EventSpansRoutes { get; set; } = "AS_IS";
 
 		/// <summary>
 		/// <para>To Route ID Field</para>
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ToRouteIdField { get; set; }
+		public object? ToRouteIdField { get; set; }
 
 		/// <summary>
 		/// <para>Store Route Name</para>
@@ -167,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object StoreRouteName { get; set; } = "AS_IS";
+		public object? StoreRouteName { get; set; } = "AS_IS";
 
 		/// <summary>
 		/// <para>Route Name Field</para>
@@ -176,7 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object RouteNameField { get; set; }
+		public object? RouteNameField { get; set; }
 
 		/// <summary>
 		/// <para>To Route Name Field</para>
@@ -185,14 +185,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ToRouteNameField { get; set; }
+		public object? ToRouteNameField { get; set; }
 
 		/// <summary>
 		/// <para>Updated LRS Event Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		#region InnerClass
 

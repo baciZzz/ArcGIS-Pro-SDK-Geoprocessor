@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Create Indoor Dataset</para>
-	/// <para>Creates an indoor dataset containing the necessary feature classes to maintain floor plan data using a streamlined schema that conforms to the ArcGIS Indoors Information Model. The indoor dataset can be used for visualizing, analyzing, and editing indoor data.</para>
+	/// <para>Creates an indoor dataset containing the necessary feature classes to maintain floor plan data using a streamlined schema that conforms to the ArcGIS Indoors Information Model.</para>
 	/// </summary>
 	public class CreateIndoorDataset : AbstractGPProcess
 	{
@@ -28,7 +28,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </param>
 		/// <param name="SpatialReference">
 		/// <para>Coordinate System</para>
-		/// <para>The spatial reference of the output indoor dataset.</para>
+		/// <para>The horizontal and vertical coordinate system of the output indoor dataset.</para>
 		/// </param>
 		public CreateIndoorDataset(object TargetGdb, object IndoorDatasetName, object SpatialReference)
 		{
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetGdb, IndoorDatasetName, SpatialReference, OutputDataset };
+		public override object[] Parameters => new object[] { TargetGdb, IndoorDatasetName, SpatialReference, OutputDataset!, CreateAttributeRules! };
 
 		/// <summary>
 		/// <para>Target Geodatabase</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Coordinate System</para>
-		/// <para>The spatial reference of the output indoor dataset.</para>
+		/// <para>The horizontal and vertical coordinate system of the output indoor dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSpatialReference()]
@@ -102,16 +102,52 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureDataset()]
-		public object OutputDataset { get; set; }
+		public object? OutputDataset { get; set; }
+
+		/// <summary>
+		/// <para>Create Attribute Rules</para>
+		/// <para>Specifies whether attribute rules and the associated fields and error datasets will be created in the Indoors database. These attribute rules include validation checks to use in quality control workflows for floor plan data. The target geodatabase must be a file geodatabase or an enterprise geodatabase configured for branch versioning.</para>
+		/// <para>Checked—Attribute rules will be created. This is the default.</para>
+		/// <para>Unchecked—Attribute rules will not be created.</para>
+		/// <para><see cref="CreateAttributeRulesEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		public object? CreateAttributeRules { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateIndoorDataset SetEnviroment(object configKeyword = null , object workspace = null )
+		public CreateIndoorDataset SetEnviroment(object? configKeyword = null , object? workspace = null )
 		{
 			base.SetEnv(configKeyword: configKeyword, workspace: workspace);
 			return this;
 		}
 
+		#region InnerClass
+
+		/// <summary>
+		/// <para>Create Attribute Rules</para>
+		/// </summary>
+		public enum CreateAttributeRulesEnum 
+		{
+			/// <summary>
+			/// <para>Checked—Attribute rules will be created. This is the default.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("CREATE_RULES")]
+			CREATE_RULES,
+
+			/// <summary>
+			/// <para>Unchecked—Attribute rules will not be created.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("NO_CREATE_RULES")]
+			NO_CREATE_RULES,
+
+		}
+
+#endregion
 	}
 }

@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Create Indoors Database</para>
-	/// <para>Adds the necessary datasets, feature classes, tables, and configurations to a geodatabase to host ArcGIS Indoors data.</para>
+	/// <para>Creates an Indoors geodatabase that conforms to the ArcGIS Indoors Information Model and contains the feature classes, fields, and tables required for maintaining indoor data for floor plan mapping, routing, space planning, and workspace reservations.</para>
 	/// </summary>
 	public class CreateIndoorsDatabase : AbstractGPProcess
 	{
@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetGdb, UpdatedGdb, CreateNetwork };
+		public override object[] Parameters => new object[] { TargetGdb, UpdatedGdb!, CreateNetwork!, SpatialReference!, CreateAttributeRules! };
 
 		/// <summary>
 		/// <para>Target Geodatabase</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object UpdatedGdb { get; set; }
+		public object? UpdatedGdb { get; set; }
 
 		/// <summary>
 		/// <para>Create Indoors Network</para>
@@ -88,12 +88,32 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CreateNetwork { get; set; } = "true";
+		public object? CreateNetwork { get; set; } = "true";
+
+		/// <summary>
+		/// <para>Coordinate System</para>
+		/// <para>The spatial reference of the output Indoors database. If no spatial reference is set, the output Indoors database will use WGS84 Web Mercator (auxiliary sphere) as the horizontal coordinate system and WGS84 as the vertical coordinate system.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPSpatialReference()]
+		public object? SpatialReference { get; set; }
+
+		/// <summary>
+		/// <para>Create Attribute Rules</para>
+		/// <para>Specifies whether attribute rules and the associated fields and error datasets will be created in the Indoors database. These attribute rules include validation checks to use in quality control workflows for floor plan data. The target geodatabase must be a file geodatabase or an enterprise geodatabase configured for branch versioning.</para>
+		/// <para>Checked—Attribute rules will be created. This is the default.</para>
+		/// <para>Unchecked—Attribute rules will not be created.</para>
+		/// <para><see cref="CreateAttributeRulesEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		public object? CreateAttributeRules { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateIndoorsDatabase SetEnviroment(object workspace = null )
+		public CreateIndoorsDatabase SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -119,6 +139,27 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 			[GPValue("false")]
 			[Description("NO_CREATE_NETWORK")]
 			NO_CREATE_NETWORK,
+
+		}
+
+		/// <summary>
+		/// <para>Create Attribute Rules</para>
+		/// </summary>
+		public enum CreateAttributeRulesEnum 
+		{
+			/// <summary>
+			/// <para>Checked—Attribute rules will be created. This is the default.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("CREATE_RULES")]
+			CREATE_RULES,
+
+			/// <summary>
+			/// <para>Unchecked—Attribute rules will not be created.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("NO_CREATE_RULES")]
+			NO_CREATE_RULES,
 
 		}
 

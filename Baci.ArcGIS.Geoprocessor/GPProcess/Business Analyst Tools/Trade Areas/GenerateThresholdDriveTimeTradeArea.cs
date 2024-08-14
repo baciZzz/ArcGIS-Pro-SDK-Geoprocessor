@@ -70,12 +70,12 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "baNetworkSource", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "baDataSource", "baNetworkSource", "geographicTransformations", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, ThresholdVariable, ThresholdValues, DistanceType, Units, IdField, TravelDirection, TimeOfDay, TimeZone, SearchTolerance, PolygonDetail, IterationsLimit, MinimumStep, TargetPercentDiff, InputMethod, Expression };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, ThresholdVariable, ThresholdValues!, DistanceType, Units!, IdField!, TravelDirection!, TimeOfDay!, TimeZone!, SearchTolerance!, PolygonDetail!, IterationsLimit!, MinimumStep!, TargetPercentDiff!, InputMethod!, Expression! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPNumericDomain()]
-		public object ThresholdValues { get; set; }
+		public object? ThresholdValues { get; set; }
 
 		/// <summary>
 		/// <para>Distance Type</para>
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Units { get; set; }
+		public object? Units { get; set; }
 
 		/// <summary>
 		/// <para>ID Field</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object IdField { get; set; }
+		public object? IdField { get; set; }
 
 		/// <summary>
 		/// <para>Travel Direction</para>
@@ -149,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Network Parameters")]
-		public object TravelDirection { get; set; } = "TOWARD_STORES";
+		public object? TravelDirection { get; set; } = "TOWARD_STORES";
 
 		/// <summary>
 		/// <para>Time of Day</para>
@@ -158,7 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Network Parameters")]
-		public object TimeOfDay { get; set; }
+		public object? TimeOfDay { get; set; }
 
 		/// <summary>
 		/// <para>Time Zone</para>
@@ -171,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Network Parameters")]
-		public object TimeZone { get; set; } = "TIME_ZONE_AT_LOCATION";
+		public object? TimeZone { get; set; } = "TIME_ZONE_AT_LOCATION";
 
 		/// <summary>
 		/// <para>Search Tolerance</para>
@@ -181,7 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Network Parameters")]
-		public object SearchTolerance { get; set; }
+		public object? SearchTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Polygon Detail</para>
@@ -195,7 +195,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Network Parameters")]
-		public object PolygonDetail { get; set; } = "STANDARD";
+		public object? PolygonDetail { get; set; } = "STANDARD";
 
 		/// <summary>
 		/// <para>Iterations Limit</para>
@@ -204,7 +204,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object IterationsLimit { get; set; }
+		public object? IterationsLimit { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Step</para>
@@ -214,7 +214,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[GPDouble()]
 		[GPNumericDomain()]
 		[Category("Advanced Parameters")]
-		public object MinimumStep { get; set; }
+		public object? MinimumStep { get; set; }
 
 		/// <summary>
 		/// <para>Threshold Percent Difference</para>
@@ -224,7 +224,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[GPDouble()]
 		[GPNumericDomain()]
 		[Category("Advanced Parameters")]
-		public object TargetPercentDiff { get; set; } = "5";
+		public object? TargetPercentDiff { get; set; } = "5";
 
 		/// <summary>
 		/// <para>Input Method</para>
@@ -236,7 +236,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object InputMethod { get; set; } = "VALUES";
+		public object? InputMethod { get; set; } = "VALUES";
 
 		/// <summary>
 		/// <para>Expression</para>
@@ -244,14 +244,14 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object Expression { get; set; }
+		public object? Expression { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateThresholdDriveTimeTradeArea SetEnviroment(object workspace = null )
+		public GenerateThresholdDriveTimeTradeArea SetEnviroment(object? baDataSource = null , object? baNetworkSource = null , object? geographicTransformations = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, baNetworkSource: baNetworkSource, geographicTransformations: geographicTransformations, workspace: workspace);
 			return this;
 		}
 

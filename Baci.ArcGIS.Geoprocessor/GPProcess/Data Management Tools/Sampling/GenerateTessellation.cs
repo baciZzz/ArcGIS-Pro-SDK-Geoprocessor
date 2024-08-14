@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutputFeatureClass, Extent, ShapeType, Size, SpatialReference };
+		public override object[] Parameters => new object[] { OutputFeatureClass, Extent, ShapeType!, Size!, SpatialReference! };
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
@@ -97,18 +97,18 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Shape Type</para>
-		/// <para>The type of shape to tessellate.</para>
-		/// <para>Hexagon—A regular six-sided polygon with equal side lengths. Each hexagon&apos;s top and bottom sides are parallel with the x-axis of the coordinate system (the top and bottom are flat).</para>
-		/// <para>Transverse hexagon—A regular six-sided polygon with equal side lengths. Each hexagon&apos;s right and left sides are parallel with the y-axis of the dataset&apos;s coordinate system (the top and bottom are pointed).</para>
-		/// <para>Square—A regular four-sided polygon with equal side lengths. Each polygon&apos;s top and bottom sides are parallel with the x-axis of the coordinate system, and the right and left sides are parallel with the y-axis of the coordinate system.</para>
-		/// <para>Diamond—A regular four-sided polygon with equal side lengths. Each polygon&apos;s sides are rotated 45 degrees away from the x- and y-axis of the coordinate system.</para>
-		/// <para>Triangle—A regular three-sided equilateral polygon.</para>
+		/// <para>Specifies the shape that will be generated.</para>
+		/// <para>Hexagon—Hexagon-shaped features will be generated. The top and bottom side of each hexagon will be parallel with the x-axis of the coordinate system (the top and bottom are flat).</para>
+		/// <para>Transverse hexagon—Transverse hexagon-shaped features will be generated. The right and left side of each hexagon will be parallel with the y-axis of the dataset&apos;s coordinate system (the top and bottom are pointed).</para>
+		/// <para>Square—Square-shaped features will be generated. The top and bottom side of each square will be parallel with the x-axis of the coordinate system, and the right and left sides will be parallel with the y-axis of the coordinate system.</para>
+		/// <para>Diamond—Diamond-shaped features will be generated. The sides of each polygon will be rotated 45 degrees away from the x- and y-axis of the coordinate system.</para>
+		/// <para>Triangle—Triangular-shaped features will be generated. Each triangle will be a regular three-sided equilateral polygon.</para>
 		/// <para><see cref="ShapeTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ShapeType { get; set; } = "HEXAGON";
+		public object? ShapeType { get; set; } = "HEXAGON";
 
 		/// <summary>
 		/// <para>Size</para>
@@ -116,20 +116,20 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPArealUnit()]
-		public object Size { get; set; }
+		public object? Size { get; set; }
 
 		/// <summary>
 		/// <para>Spatial Reference</para>
-		/// <para>The spatial reference to which the output dataset will be projected. If a spatial reference is not provided, the output will be projected to the spatial reference of the input extent. If neither has a spatial reference, the output is projected in GCS_WGS_1984.</para>
+		/// <para>The spatial reference to which the output dataset will be projected. If a spatial reference is not provided, the output will be projected to the spatial reference of the input extent. If neither has a spatial reference, the output will be projected in GCS_WGS_1984.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
-		public object SpatialReference { get; set; }
+		public object? SpatialReference { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateTessellation SetEnviroment(object XYDomain = null , object XYResolution = null , object XYTolerance = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateTessellation SetEnviroment(object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -143,35 +143,35 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ShapeTypeEnum 
 		{
 			/// <summary>
-			/// <para>Square—A regular four-sided polygon with equal side lengths. Each polygon&apos;s top and bottom sides are parallel with the x-axis of the coordinate system, and the right and left sides are parallel with the y-axis of the coordinate system.</para>
+			/// <para>Square—Square-shaped features will be generated. The top and bottom side of each square will be parallel with the x-axis of the coordinate system, and the right and left sides will be parallel with the y-axis of the coordinate system.</para>
 			/// </summary>
 			[GPValue("SQUARE")]
 			[Description("Square")]
 			Square,
 
 			/// <summary>
-			/// <para>Triangle—A regular three-sided equilateral polygon.</para>
+			/// <para>Triangle—Triangular-shaped features will be generated. Each triangle will be a regular three-sided equilateral polygon.</para>
 			/// </summary>
 			[GPValue("TRIANGLE")]
 			[Description("Triangle")]
 			Triangle,
 
 			/// <summary>
-			/// <para>Hexagon—A regular six-sided polygon with equal side lengths. Each hexagon&apos;s top and bottom sides are parallel with the x-axis of the coordinate system (the top and bottom are flat).</para>
+			/// <para>Hexagon—Hexagon-shaped features will be generated. The top and bottom side of each hexagon will be parallel with the x-axis of the coordinate system (the top and bottom are flat).</para>
 			/// </summary>
 			[GPValue("HEXAGON")]
 			[Description("Hexagon")]
 			Hexagon,
 
 			/// <summary>
-			/// <para>Diamond—A regular four-sided polygon with equal side lengths. Each polygon&apos;s sides are rotated 45 degrees away from the x- and y-axis of the coordinate system.</para>
+			/// <para>Diamond—Diamond-shaped features will be generated. The sides of each polygon will be rotated 45 degrees away from the x- and y-axis of the coordinate system.</para>
 			/// </summary>
 			[GPValue("DIAMOND")]
 			[Description("Diamond")]
 			Diamond,
 
 			/// <summary>
-			/// <para>Transverse hexagon—A regular six-sided polygon with equal side lengths. Each hexagon&apos;s right and left sides are parallel with the y-axis of the dataset&apos;s coordinate system (the top and bottom are pointed).</para>
+			/// <para>Transverse hexagon—Transverse hexagon-shaped features will be generated. The right and left side of each hexagon will be parallel with the y-axis of the dataset&apos;s coordinate system (the top and bottom are pointed).</para>
 			/// </summary>
 			[GPValue("TRANSVERSE_HEXAGON")]
 			[Description("Transverse hexagon")]

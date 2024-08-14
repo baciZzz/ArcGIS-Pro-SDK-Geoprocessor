@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDatasets, TargetGdb, ReuseSchema, FilterFeature, FilterType, CheckoutReplica, ReplicaName, UpdatedTargetGdb, ExpandFeatureClassesAndTables, GetRelatedData, ExcludedRelClasses, WhereClause };
+		public override object[] Parameters => new object[] { InDatasets, TargetGdb, ReuseSchema!, FilterFeature!, FilterType!, CheckoutReplica!, ReplicaName!, UpdatedTargetGdb!, ExpandFeatureClassesAndTables!, GetRelatedData!, ExcludedRelClasses!, WhereClause! };
 
 		/// <summary>
 		/// <para>Input Datasets</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ReuseSchema { get; set; } = "false";
+		public object? ReuseSchema { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Filter Feature Layer</para>
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLayer()]
 		[GPLayerDomain()]
-		public object FilterFeature { get; set; }
+		public object? FilterFeature { get; set; }
 
 		/// <summary>
 		/// <para>Filter Spatial Relation</para>
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object FilterType { get; set; }
+		public object? FilterType { get; set; }
 
 		/// <summary>
 		/// <para>Checkout replica</para>
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CheckoutReplica { get; set; } = "false";
+		public object? CheckoutReplica { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Replica Name</para>
@@ -147,14 +147,14 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ReplicaName { get; set; }
+		public object? ReplicaName { get; set; }
 
 		/// <summary>
 		/// <para>Updated Target Geodatabase</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object UpdatedTargetGdb { get; set; }
+		public object? UpdatedTargetGdb { get; set; }
 
 		/// <summary>
 		/// <para>Expand Feature Classes and Tables</para>
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ExpandFeatureClassesAndTables { get; set; } = "DO_NOT_ADD";
+		public object? ExpandFeatureClassesAndTables { get; set; } = "DO_NOT_ADD";
 
 		/// <summary>
 		/// <para>Replicate Related Data</para>
@@ -180,7 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object GetRelatedData { get; set; } = "false";
+		public object? GetRelatedData { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Excluded Relationship Classes</para>
@@ -188,7 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object ExcludedRelClasses { get; set; }
+		public object? ExcludedRelClasses { get; set; }
 
 		/// <summary>
 		/// <para>Expression</para>
@@ -196,7 +196,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		#region InnerClass
 

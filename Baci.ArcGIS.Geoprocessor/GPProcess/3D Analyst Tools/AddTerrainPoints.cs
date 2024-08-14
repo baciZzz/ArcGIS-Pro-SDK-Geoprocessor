@@ -68,7 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerrain, TerrainFeatureClass, InFeatureClass, Method, DerivedOutTerrain };
+		public override object[] Parameters => new object[] { InTerrain, TerrainFeatureClass, InFeatureClass, Method!, DerivedOutTerrain! };
 
 		/// <summary>
 		/// <para>Input Terrain</para>
@@ -99,14 +99,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "APPEND";
+		public object? Method { get; set; } = "APPEND";
 
 		/// <summary>
 		/// <para>Output Terrain</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTerrainLayer()]
-		public object DerivedOutTerrain { get; set; }
+		public object? DerivedOutTerrain { get; set; }
 
 		#region InnerClass
 

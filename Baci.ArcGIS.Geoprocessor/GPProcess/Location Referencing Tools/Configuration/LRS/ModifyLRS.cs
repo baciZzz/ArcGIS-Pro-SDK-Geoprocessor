@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, CurrentLrsName, NewLrsName, CenterlineFeatureClass, CenterlineCenterlineIdField, CenterlineSequenceTable, CenterlineSequenceCenterlineIdField, CenterlineSequenceRouteIdField, CenterlineSequenceFromDateField, CenterlineSequenceToDateField, CenterlineSequenceNetworkIdField, CalibrationPointFeatureClass, CalibrationPointMeasureField, CalibrationPointFromDateField, CalibrationPointToDateField, CalibrationPointRouteIdField, CalibrationPointNetworkIdField, RedlineFeatureClass, RedlineFromMeasureField, RedlineToMeasureField, RedlineRouteIdField, RedlineRouteNameField, RedlineEffectiveDateField, RedlineActivityTypeField, RedlineNetworkIdField, OutWorkspace, ConflictPrevention };
+		public override object[] Parameters => new object[] { InWorkspace, CurrentLrsName, NewLrsName!, CenterlineFeatureClass!, CenterlineCenterlineIdField!, CenterlineSequenceTable!, CenterlineSequenceCenterlineIdField!, CenterlineSequenceRouteIdField!, CenterlineSequenceFromDateField!, CenterlineSequenceToDateField!, CenterlineSequenceNetworkIdField!, CalibrationPointFeatureClass!, CalibrationPointMeasureField!, CalibrationPointFromDateField!, CalibrationPointToDateField!, CalibrationPointRouteIdField!, CalibrationPointNetworkIdField!, RedlineFeatureClass!, RedlineFromMeasureField!, RedlineToMeasureField!, RedlineRouteIdField!, RedlineRouteNameField!, RedlineEffectiveDateField!, RedlineActivityTypeField!, RedlineNetworkIdField!, OutWorkspace!, ConflictPrevention!, MoveToFeatureDataset! };
 
 		/// <summary>
 		/// <para>Input Workspace</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object NewLrsName { get; set; }
+		public object? NewLrsName { get; set; }
 
 		/// <summary>
 		/// <para>Centerline - Feature Class</para>
@@ -100,17 +100,17 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
 		[Category("Centerline")]
-		public object CenterlineFeatureClass { get; set; }
+		public object? CenterlineFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Centerline - Centerline ID Field</para>
-		/// <para>The name of the centerline ID field from the existing centerline feature class that was chosen.</para>
+		/// <para>The name of the centerline ID field from the Centerline - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Centerline")]
-		public object CenterlineCenterlineIdField { get; set; }
+		public object? CenterlineCenterlineIdField { get; set; }
 
 		/// <summary>
 		/// <para>Centerline Sequence - Table</para>
@@ -119,57 +119,57 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
 		[Category("Centerline Sequence")]
-		public object CenterlineSequenceTable { get; set; }
+		public object? CenterlineSequenceTable { get; set; }
 
 		/// <summary>
 		/// <para>Centerline Sequence - Centerline ID Field</para>
-		/// <para>The name of the centerline ID field from the existing centerline sequence table that was chosen.</para>
+		/// <para>The name of the centerline ID field from the Centerline Sequence - Table parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Centerline Sequence")]
-		public object CenterlineSequenceCenterlineIdField { get; set; }
+		public object? CenterlineSequenceCenterlineIdField { get; set; }
 
 		/// <summary>
 		/// <para>Centerline Sequence - Route ID Field</para>
-		/// <para>The name of the route ID field from the existing centerline sequence table that was chosen.</para>
+		/// <para>The name of the route ID field from the Centerline Sequence - Table parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Centerline Sequence")]
-		public object CenterlineSequenceRouteIdField { get; set; }
+		public object? CenterlineSequenceRouteIdField { get; set; }
 
 		/// <summary>
 		/// <para>Centerline Sequence - From Date Field</para>
-		/// <para>The name of the from date field from the existing centerline sequence table that was chosen.</para>
+		/// <para>The name of the from date field from the Centerline Sequence - Table parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Centerline Sequence")]
-		public object CenterlineSequenceFromDateField { get; set; }
+		public object? CenterlineSequenceFromDateField { get; set; }
 
 		/// <summary>
 		/// <para>Centerline Sequence - To Date Field</para>
-		/// <para>The name of the to date field from the existing centerline sequence table that was chosen.</para>
+		/// <para>The name of the to date field from the Centerline Sequence - Table parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Centerline Sequence")]
-		public object CenterlineSequenceToDateField { get; set; }
+		public object? CenterlineSequenceToDateField { get; set; }
 
 		/// <summary>
 		/// <para>Centerline Sequence - Network ID Field</para>
-		/// <para>The name of the network ID field from the existing centerline sequence table that was chosen.</para>
+		/// <para>The name of the network ID field from the Centerline Sequence - Table parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Centerline Sequence")]
-		public object CenterlineSequenceNetworkIdField { get; set; }
+		public object? CenterlineSequenceNetworkIdField { get; set; }
 
 		/// <summary>
 		/// <para>Calibration Point - Feature Class</para>
@@ -179,57 +179,57 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
 		[Category("Calibration Point")]
-		public object CalibrationPointFeatureClass { get; set; }
+		public object? CalibrationPointFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Calibration Point - Measure Field</para>
-		/// <para>The name of the measure field from the existing calibration point feature class that was chosen.</para>
+		/// <para>The name of the measure field from the Calibration Point - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Calibration Point")]
-		public object CalibrationPointMeasureField { get; set; }
+		public object? CalibrationPointMeasureField { get; set; }
 
 		/// <summary>
 		/// <para>Calibration Point - From Date Field</para>
-		/// <para>The name of the from date field from the existing calibration point feature class that was chosen.</para>
+		/// <para>The name of the from date field from the Calibration Point - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Calibration Point")]
-		public object CalibrationPointFromDateField { get; set; }
+		public object? CalibrationPointFromDateField { get; set; }
 
 		/// <summary>
 		/// <para>Calibration Point - To Date Field</para>
-		/// <para>The name of the to date field from the existing calibration point feature class that was chosen.</para>
+		/// <para>The name of the to date field from the Calibration Point - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Calibration Point")]
-		public object CalibrationPointToDateField { get; set; }
+		public object? CalibrationPointToDateField { get; set; }
 
 		/// <summary>
 		/// <para>Calibration Point - Route ID Field</para>
-		/// <para>The name of the route ID field from the existing calibration point feature class that was chosen.</para>
+		/// <para>The name of the route ID field from the Calibration Point - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Calibration Point")]
-		public object CalibrationPointRouteIdField { get; set; }
+		public object? CalibrationPointRouteIdField { get; set; }
 
 		/// <summary>
 		/// <para>Calibration Point - Network ID Field</para>
-		/// <para>The name of the network ID field from the existing calibration point feature class that was chosen.</para>
+		/// <para>The name of the network ID field from the Calibration Point - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Calibration Point")]
-		public object CalibrationPointNetworkIdField { get; set; }
+		public object? CalibrationPointNetworkIdField { get; set; }
 
 		/// <summary>
 		/// <para>Redline - Feature Class</para>
@@ -239,84 +239,84 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
 		[Category("Redline")]
-		public object RedlineFeatureClass { get; set; }
+		public object? RedlineFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Redline - From Measure Field</para>
-		/// <para>The name of the from measure field from the existing redline feature class that was chosen.</para>
+		/// <para>The name of the from measure field from the Redline - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Redline")]
-		public object RedlineFromMeasureField { get; set; }
+		public object? RedlineFromMeasureField { get; set; }
 
 		/// <summary>
 		/// <para>Redline - To  Measure Field</para>
-		/// <para>The name of the to measure field from the existing redline feature class that was chosen.</para>
+		/// <para>The name of the to measure field from the Redline - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Redline")]
-		public object RedlineToMeasureField { get; set; }
+		public object? RedlineToMeasureField { get; set; }
 
 		/// <summary>
 		/// <para>Redline - Route ID Field</para>
-		/// <para>The name of the route ID field from the existing redline feature class that was chosen.</para>
+		/// <para>The name of the route ID field from the Redline - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Redline")]
-		public object RedlineRouteIdField { get; set; }
+		public object? RedlineRouteIdField { get; set; }
 
 		/// <summary>
 		/// <para>Redline - Route Name Field</para>
-		/// <para>The name of the route name field from the existing redline feature class that was chosen.</para>
+		/// <para>The name of the route name field from the Redline - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Redline")]
-		public object RedlineRouteNameField { get; set; }
+		public object? RedlineRouteNameField { get; set; }
 
 		/// <summary>
 		/// <para>Redline - Effective Date Field</para>
-		/// <para>The name of the effective date field from the existing redline feature class that was chosen.</para>
+		/// <para>The name of the effective date field from the Redline - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Redline")]
-		public object RedlineEffectiveDateField { get; set; }
+		public object? RedlineEffectiveDateField { get; set; }
 
 		/// <summary>
 		/// <para>Redline - Activity Type Field</para>
-		/// <para>The name of the activity type field from the existing redline feature class that was chosen.</para>
+		/// <para>The name of the activity type field from the Redline - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Redline")]
-		public object RedlineActivityTypeField { get; set; }
+		public object? RedlineActivityTypeField { get; set; }
 
 		/// <summary>
 		/// <para>Redline - Network ID Field</para>
-		/// <para>The name of the network ID field from the existing redline feature class that was chosen.</para>
+		/// <para>The name of the network ID field from the Redline - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Redline")]
-		public object RedlineNetworkIdField { get; set; }
+		public object? RedlineNetworkIdField { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Workspace</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutWorkspace { get; set; }
+		public object? OutWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Conflict Prevention</para>
@@ -329,12 +329,24 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ConflictPrevention { get; set; } = "AS_IS";
+		public object? ConflictPrevention { get; set; } = "AS_IS";
+
+		/// <summary>
+		/// <para>Move required feature classes to feature dataset</para>
+		/// <para>Specifies whether feature classes will be moved to the required LRS feature dataset.</para>
+		/// <para>Checked—Feature classes will be moved to the required LRS feature dataset.</para>
+		/// <para>Unchecked—Feature classes will not be moved to the required LRS feature dataset. This is the default.</para>
+		/// <para><see cref="MoveToFeatureDatasetEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		public object? MoveToFeatureDataset { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ModifyLRS SetEnviroment(object workspace = null )
+		public ModifyLRS SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -367,6 +379,27 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 			[GPValue("DISABLE")]
 			[Description("Disable")]
 			Disable,
+
+		}
+
+		/// <summary>
+		/// <para>Move required feature classes to feature dataset</para>
+		/// </summary>
+		public enum MoveToFeatureDatasetEnum 
+		{
+			/// <summary>
+			/// <para>Checked—Feature classes will be moved to the required LRS feature dataset.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("MOVE")]
+			MOVE,
+
+			/// <summary>
+			/// <para>Unchecked—Feature classes will not be moved to the required LRS feature dataset. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("DO_NOT_MOVE")]
+			DO_NOT_MOVE,
 
 		}
 

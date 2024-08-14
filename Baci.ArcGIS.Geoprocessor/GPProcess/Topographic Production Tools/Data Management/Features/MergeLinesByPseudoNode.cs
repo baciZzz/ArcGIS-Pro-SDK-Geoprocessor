@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, MergeFields!, AggregateOperations!, MergeFeatureRule!, UpdatedFeatures };
+		public override object[] Parameters => new object[] { InputFeatures, MergeFields!, AggregateOperations!, MergeFeatureRule!, UpdatedFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>

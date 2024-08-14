@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Stage Service</para>
-	/// <para>Stages a service definition. A staged service definition file (.sd) contains all the necessary information to share a web layer, web tool, or service.</para>
+	/// <para>Stages a service definition. A staged service definition file (.sd) contains all the necessary information to share a web layer, locator, web tool, or service.</para>
 	/// </summary>
 	public class StageService : AbstractGPProcess
 	{
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InServiceDefinitionDraft, OutServiceDefinition, StagingVersion };
+		public override object[] Parameters => new object[] { InServiceDefinitionDraft, OutServiceDefinition, StagingVersion! };
 
 		/// <summary>
 		/// <para>Service Definition Draft</para>
@@ -89,16 +89,26 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <para>Staging Version</para>
 		/// <para>The version of the published service definition.</para>
 		/// <para>When sharing a feature, a tile, or an imagery layer to ArcGIS Enterprise, use 5 for the value. When sharing a map image layer or web tool to ArcGIS Enterprise, and any layer type to ArcGIS Online, use 102. This is the default.</para>
+		/// <para>When sharing a web tool or geoprocessing service to a 10.9.1 or earlier server using the CreateGPSDDraft ArcPy function, use the value corresponding to the version number from the following list:</para>
+		/// <para>10.9.1—209</para>
+		/// <para>10.9—208</para>
+		/// <para>10.8.1—206</para>
+		/// <para>10.8—205</para>
+		/// <para>10.7.1—204</para>
+		/// <para>10.7—203</para>
+		/// <para>10.6.1—202</para>
+		/// <para>10.6—201</para>
+		/// <para>10.5.1—200</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object StagingVersion { get; set; }
+		public object? StagingVersion { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public StageService SetEnviroment(object workspace = null )
+		public StageService SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

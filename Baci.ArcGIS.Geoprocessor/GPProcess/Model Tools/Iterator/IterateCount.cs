@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { From, To, Increment, Value };
+		public override object[] Parameters => new object[] { From, To, Increment, Value! };
 
 		/// <summary>
 		/// <para>From Value</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPVariant()]
-		public object Value { get; set; }
+		public object? Value { get; set; }
 
 	}
 }

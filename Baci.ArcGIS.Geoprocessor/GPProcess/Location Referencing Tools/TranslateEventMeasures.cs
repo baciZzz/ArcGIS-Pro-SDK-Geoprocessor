@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSourceEvent, InTargetRouteFeatures, OutTargetEvent, InConcurrentRouteMatching };
+		public override object[] Parameters => new object[] { InSourceEvent, InTargetRouteFeatures, OutTargetEvent, InConcurrentRouteMatching! };
 
 		/// <summary>
 		/// <para>Source Event Layer</para>
@@ -109,12 +109,12 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object InConcurrentRouteMatching { get; set; } = "ANY";
+		public object? InConcurrentRouteMatching { get; set; } = "ANY";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TranslateEventMeasures SetEnviroment(object workspace = null )
+		public TranslateEventMeasures SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

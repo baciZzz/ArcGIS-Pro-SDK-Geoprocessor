@@ -26,7 +26,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </param>
 		/// <param name="FeatureClass">
 		/// <para>Input Feature Class</para>
-		/// <para>One or more input features that will be used to define class code values for the lidar files referenced by the LAS dataset. The classification flag options default to No change but can be assigned by choosing Set or removed by choosing Clear. Each feature has the following options:</para>
+		/// <para>One or more input features that will be used to define class code values for the lidar files referenced by the LAS dataset. The classification flag option default is No change but you can assign the flag using Set or remove it using Clear. Each feature has the following options:</para>
 		/// <para>Features—The features used for reclassifying LAS points.</para>
 		/// <para>Buffer Distance—The distance that input features are buffered by prior to determining the LAS points that intersect the buffered area.</para>
 		/// <para>New Class—The class code to be assigned.</para>
@@ -74,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, FeatureClass, ComputeStats, DerivedLasDataset, UpdatePyramid };
+		public override object[] Parameters => new object[] { InLasDataset, FeatureClass, ComputeStats!, DerivedLasDataset!, UpdatePyramid! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>One or more input features that will be used to define class code values for the lidar files referenced by the LAS dataset. The classification flag options default to No change but can be assigned by choosing Set or removed by choosing Clear. Each feature has the following options:</para>
+		/// <para>One or more input features that will be used to define class code values for the lidar files referenced by the LAS dataset. The classification flag option default is No change but you can assign the flag using Set or remove it using Clear. Each feature has the following options:</para>
 		/// <para>Features—The features used for reclassifying LAS points.</para>
 		/// <para>Buffer Distance—The distance that input features are buffered by prior to determining the LAS points that intersect the buffered area.</para>
 		/// <para>New Class—The class code to be assigned.</para>
@@ -110,14 +110,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ComputeStats { get; set; } = "true";
+		public object? ComputeStats { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Updated Input LAS Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLasDatasetLayer()]
-		public object DerivedLasDataset { get; set; }
+		public object? DerivedLasDataset { get; set; }
 
 		/// <summary>
 		/// <para>Update pyramid</para>
@@ -129,12 +129,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UpdatePyramid { get; set; } = "true";
+		public object? UpdatePyramid { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetLasClassCodesUsingFeatures SetEnviroment(object extent = null , object geographicTransformations = null , object workspace = null )
+		public SetLasClassCodesUsingFeatures SetEnviroment(object? extent = null , object? geographicTransformations = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, workspace: workspace);
 			return this;

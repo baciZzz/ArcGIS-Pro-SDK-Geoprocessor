@@ -11,8 +11,9 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Validate Parcel Fabric</para>
-	/// <para>Validates a parcel fabric against a predefined set of geodatabase topology rules, and any additional topology rules you have added for your organization.</para>
+	/// <para>Validates a parcel fabric using a predefined set of geodatabase topology rules and any other topology rules you have added for your organization.</para>
 	/// </summary>
+	[Obsolete()]
 	public class ValidateParcelFabric : AbstractGPProcess
 	{
 		/// <summary>
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="InParcelFabric">
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The parcel fabric to be validated. The parcel fabric can be from a file geodatabase or a feature service.</para>
+		/// <para>The parcel fabric to be validated. The parcel fabric can be from a file or mobile geodatabase or from a feature service.</para>
 		/// </param>
 		public ValidateParcelFabric(object InParcelFabric)
 		{
@@ -60,11 +61,11 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InParcelFabric, Extent, UpdatedParcelFabric };
+		public override object[] Parameters => new object[] { InParcelFabric, Extent!, UpdatedParcelFabric! };
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The parcel fabric to be validated. The parcel fabric can be from a file geodatabase or a feature service.</para>
+		/// <para>The parcel fabric to be validated. The parcel fabric can be from a file or mobile geodatabase or from a feature service.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPParcelLayer()]
@@ -82,14 +83,14 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Updated Parcel Fabric</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEParcelDataset()]
-		public object UpdatedParcelFabric { get; set; }
+		public object? UpdatedParcelFabric { get; set; }
 
 	}
 }

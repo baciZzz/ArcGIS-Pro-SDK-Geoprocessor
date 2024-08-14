@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Orders, Depots, Routes, Breaks, TimeUnits, DistanceUnits, AnalysisRegion, DefaultDate, UturnPolicy, TimeWindowFactor, SpatiallyClusterRoutes, RouteZones, RouteRenewals, OrderPairs, ExcessTransitFactor, PointBarriers, LineBarriers, PolygonBarriers, UseHierarchyInAnalysis, Restrictions, AttributeParameterValues, PopulateRouteLines, RouteLineSimplificationTolerance, PopulateDirections, DirectionsLanguage, DirectionsStyleName, TravelMode, Impedance, TimeZoneUsageForTimeFields, SaveOutputLayer, Overrides, SaveRouteData, TimeImpedance, DistanceImpedance, PopulateStopShapes, OutputFormat, IgnoreInvalidOrderLocations, OutUnassignedStops, OutStops, OutRoutes, OutDirections, SolveSucceeded, OutNetworkAnalysisLayer, OutRouteData, OutResultFile, OutputNetworkAnalysisLayerPackage };
+		public override object[] Parameters => new object[] { Orders, Depots, Routes, Breaks!, TimeUnits!, DistanceUnits!, AnalysisRegion!, DefaultDate!, UturnPolicy!, TimeWindowFactor!, SpatiallyClusterRoutes!, RouteZones!, RouteRenewals!, OrderPairs!, ExcessTransitFactor!, PointBarriers!, LineBarriers!, PolygonBarriers!, UseHierarchyInAnalysis!, Restrictions!, AttributeParameterValues!, PopulateRouteLines!, RouteLineSimplificationTolerance!, PopulateDirections!, DirectionsLanguage!, DirectionsStyleName!, TravelMode!, Impedance!, TimeZoneUsageForTimeFields!, SaveOutputLayer!, Overrides!, SaveRouteData!, TimeImpedance!, DistanceImpedance!, PopulateStopShapes!, OutputFormat!, IgnoreInvalidOrderLocations!, OutUnassignedStops!, OutStops!, OutRoutes!, OutDirections!, SolveSucceeded!, OutNetworkAnalysisLayer!, OutRouteData!, OutResultFile!, OutputNetworkAnalysisLayerPackage! };
 
 		/// <summary>
 		/// <para>Orders</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRecordSet()]
-		public object Breaks { get; set; }
+		public object? Breaks { get; set; }
 
 		/// <summary>
 		/// <para>Time Units</para>
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TimeUnits { get; set; } = "Minutes";
+		public object? TimeUnits { get; set; } = "Minutes";
 
 		/// <summary>
 		/// <para>Distance Units</para>
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DistanceUnits { get; set; } = "Miles";
+		public object? DistanceUnits { get; set; } = "Miles";
 
 		/// <summary>
 		/// <para>Analysis Region</para>
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Analysis")]
-		public object AnalysisRegion { get; set; }
+		public object? AnalysisRegion { get; set; }
 
 		/// <summary>
 		/// <para>Default Date</para>
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Advanced Analysis")]
-		public object DefaultDate { get; set; }
+		public object? DefaultDate { get; set; }
 
 		/// <summary>
 		/// <para>UTurn at Junctions</para>
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Custom Travel Mode")]
-		public object UturnPolicy { get; set; } = "ALLOW_DEAD_ENDS_AND_INTERSECTIONS_ONLY";
+		public object? UturnPolicy { get; set; } = "ALLOW_DEAD_ENDS_AND_INTERSECTIONS_ONLY";
 
 		/// <summary>
 		/// <para>Time Window Factor</para>
@@ -151,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Analysis")]
-		public object TimeWindowFactor { get; set; } = "Medium";
+		public object? TimeWindowFactor { get; set; } = "Medium";
 
 		/// <summary>
 		/// <para>Spatially Cluster Routes</para>
@@ -159,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[Category("Advanced Analysis")]
-		public object SpatiallyClusterRoutes { get; set; } = "true";
+		public object? SpatiallyClusterRoutes { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Route Zones</para>
@@ -167,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
 		[Category("Advanced Analysis")]
-		public object RouteZones { get; set; }
+		public object? RouteZones { get; set; }
 
 		/// <summary>
 		/// <para>Route Renewals</para>
@@ -175,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRecordSet()]
 		[Category("Advanced Analysis")]
-		public object RouteRenewals { get; set; }
+		public object? RouteRenewals { get; set; }
 
 		/// <summary>
 		/// <para>Order Pairs</para>
@@ -183,7 +183,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRecordSet()]
 		[Category("Advanced Analysis")]
-		public object OrderPairs { get; set; }
+		public object? OrderPairs { get; set; }
 
 		/// <summary>
 		/// <para>Excess Transit Factor</para>
@@ -193,7 +193,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Analysis")]
-		public object ExcessTransitFactor { get; set; } = "Medium";
+		public object? ExcessTransitFactor { get; set; } = "Medium";
 
 		/// <summary>
 		/// <para>Point Barriers</para>
@@ -201,7 +201,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
 		[Category("Barriers")]
-		public object PointBarriers { get; set; }
+		public object? PointBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Line Barriers</para>
@@ -209,7 +209,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
 		[Category("Barriers")]
-		public object LineBarriers { get; set; }
+		public object? LineBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Polygon Barriers</para>
@@ -217,7 +217,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
 		[Category("Barriers")]
-		public object PolygonBarriers { get; set; }
+		public object? PolygonBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Use Hierarchy</para>
@@ -225,7 +225,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[Category("Custom Travel Mode")]
-		public object UseHierarchyInAnalysis { get; set; } = "true";
+		public object? UseHierarchyInAnalysis { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Restrictions</para>
@@ -234,7 +234,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Custom Travel Mode")]
-		public object Restrictions { get; set; } = "'Avoid Carpool Roads';'Avoid Express Lanes';'Avoid Gates';'Avoid Private Roads';'Avoid Unpaved Roads';'Driving an Automobile';'Roads Under Construction Prohibited';'Through Traffic Prohibited'";
+		public object? Restrictions { get; set; } = "'Avoid Carpool Roads';'Avoid Express Lanes';'Avoid Gates';'Avoid Private Roads';'Avoid Unpaved Roads';'Driving an Automobile';'Roads Under Construction Prohibited';'Through Traffic Prohibited'";
 
 		/// <summary>
 		/// <para>Attribute Parameter Values</para>
@@ -242,7 +242,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRecordSet()]
 		[Category("Custom Travel Mode")]
-		public object AttributeParameterValues { get; set; }
+		public object? AttributeParameterValues { get; set; }
 
 		/// <summary>
 		/// <para>Populate Route Lines</para>
@@ -250,7 +250,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[Category("Output")]
-		public object PopulateRouteLines { get; set; } = "true";
+		public object? PopulateRouteLines { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Route Line Simplification Tolerance</para>
@@ -258,7 +258,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Custom Travel Mode")]
-		public object RouteLineSimplificationTolerance { get; set; } = "10 Meters";
+		public object? RouteLineSimplificationTolerance { get; set; } = "10 Meters";
 
 		/// <summary>
 		/// <para>Populate Directions</para>
@@ -266,7 +266,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[Category("Output")]
-		public object PopulateDirections { get; set; } = "false";
+		public object? PopulateDirections { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Directions Language</para>
@@ -274,7 +274,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Output")]
-		public object DirectionsLanguage { get; set; } = "en";
+		public object? DirectionsLanguage { get; set; } = "en";
 
 		/// <summary>
 		/// <para>Directions Style Name</para>
@@ -284,14 +284,14 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Output")]
-		public object DirectionsStyleName { get; set; } = "NA Desktop";
+		public object? DirectionsStyleName { get; set; } = "NA Desktop";
 
 		/// <summary>
 		/// <para>Travel Mode</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object TravelMode { get; set; } = "Custom";
+		public object? TravelMode { get; set; } = "Custom";
 
 		/// <summary>
 		/// <para>Impedance</para>
@@ -301,7 +301,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Custom Travel Mode")]
-		public object Impedance { get; set; } = "Drive Time";
+		public object? Impedance { get; set; } = "Drive Time";
 
 		/// <summary>
 		/// <para>Time Zone Usage for Time Fields</para>
@@ -311,7 +311,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Analysis")]
-		public object TimeZoneUsageForTimeFields { get; set; } = "GEO_LOCAL";
+		public object? TimeZoneUsageForTimeFields { get; set; } = "GEO_LOCAL";
 
 		/// <summary>
 		/// <para>Save Output Network Analysis Layer</para>
@@ -319,7 +319,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[Category("Output")]
-		public object SaveOutputLayer { get; set; } = "false";
+		public object? SaveOutputLayer { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Overrides</para>
@@ -327,7 +327,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Advanced Analysis")]
-		public object Overrides { get; set; }
+		public object? Overrides { get; set; }
 
 		/// <summary>
 		/// <para>Save Route Data</para>
@@ -335,7 +335,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[Category("Output")]
-		public object SaveRouteData { get; set; } = "false";
+		public object? SaveRouteData { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Time Impedance</para>
@@ -345,7 +345,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Custom Travel Mode")]
-		public object TimeImpedance { get; set; } = "TravelTime";
+		public object? TimeImpedance { get; set; } = "TravelTime";
 
 		/// <summary>
 		/// <para>Distance Impedance</para>
@@ -355,7 +355,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Custom Travel Mode")]
-		public object DistanceImpedance { get; set; } = "Kilometers";
+		public object? DistanceImpedance { get; set; } = "Kilometers";
 
 		/// <summary>
 		/// <para>Populate Stop Shapes</para>
@@ -363,7 +363,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[Category("Output")]
-		public object PopulateStopShapes { get; set; } = "false";
+		public object? PopulateStopShapes { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Format</para>
@@ -373,7 +373,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Output")]
-		public object OutputFormat { get; set; } = "Feature Set";
+		public object? OutputFormat { get; set; } = "Feature Set";
 
 		/// <summary>
 		/// <para>Ignore Invalid Order Locations</para>
@@ -381,70 +381,70 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[Category("Network Locations")]
-		public object IgnoreInvalidOrderLocations { get; set; } = "false";
+		public object? IgnoreInvalidOrderLocations { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Unassigned Stops</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object OutUnassignedStops { get; set; }
+		public object? OutUnassignedStops { get; set; }
 
 		/// <summary>
 		/// <para>Output Stops</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object OutStops { get; set; }
+		public object? OutStops { get; set; }
 
 		/// <summary>
 		/// <para>Output Routes</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object OutRoutes { get; set; }
+		public object? OutRoutes { get; set; }
 
 		/// <summary>
 		/// <para>Output Directions</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object OutDirections { get; set; }
+		public object? OutDirections { get; set; }
 
 		/// <summary>
 		/// <para>Solve Succeeded</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
-		public object SolveSucceeded { get; set; }
+		public object? SolveSucceeded { get; set; }
 
 		/// <summary>
 		/// <para>Output Network Analysis Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
-		public object OutNetworkAnalysisLayer { get; set; } = "scratchfile";
+		public object? OutNetworkAnalysisLayer { get; set; } = "scratchfile";
 
 		/// <summary>
 		/// <para>Output Route Data</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
-		public object OutRouteData { get; set; } = "scratchfile";
+		public object? OutRouteData { get; set; } = "scratchfile";
 
 		/// <summary>
 		/// <para>Output Result File</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
-		public object OutResultFile { get; set; } = "scratchfile";
+		public object? OutResultFile { get; set; } = "scratchfile";
 
 		/// <summary>
 		/// <para>Output Network Analysis Layer Package</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
-		public object OutputNetworkAnalysisLayerPackage { get; set; } = "scratchfile";
+		public object? OutputNetworkAnalysisLayerPackage { get; set; } = "scratchfile";
 
 		#region InnerClass
 

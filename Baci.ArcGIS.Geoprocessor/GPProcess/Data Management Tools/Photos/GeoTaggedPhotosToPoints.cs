@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFolder, OutputFeatureClass, InvalidPhotosTable, IncludeNonGeotaggedPhotos, AddPhotosAsAttachments };
+		public override object[] Parameters => new object[] { InputFolder, OutputFeatureClass, InvalidPhotosTable!, IncludeNonGeotaggedPhotos!, AddPhotosAsAttachments! };
 
 		/// <summary>
 		/// <para>Input Folder</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object InvalidPhotosTable { get; set; }
+		public object? InvalidPhotosTable { get; set; }
 
 		/// <summary>
 		/// <para>Include Non-GeoTagged Photos</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeNonGeotaggedPhotos { get; set; } = "true";
+		public object? IncludeNonGeotaggedPhotos { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Add Photos As Attachments</para>
@@ -115,12 +115,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AddPhotosAsAttachments { get; set; } = "true";
+		public object? AddPhotosAsAttachments { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GeoTaggedPhotosToPoints SetEnviroment(object outputZFlag = null , object scratchWorkspace = null , object workspace = null )
+		public GeoTaggedPhotosToPoints SetEnviroment(object? outputZFlag = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(outputZFlag: outputZFlag, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

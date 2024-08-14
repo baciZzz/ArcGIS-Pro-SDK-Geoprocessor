@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, StartDateAndTime, OutFeatureClass, AdjustedForDst, TimeZone, EndDateAndTime, IterationInterval, IterationUnit };
+		public override object[] Parameters => new object[] { InFeatures, StartDateAndTime, OutFeatureClass, AdjustedForDst!, TimeZone!, EndDateAndTime!, IterationInterval!, IterationUnit! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AdjustedForDst { get; set; } = "true";
+		public object? AdjustedForDst { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Time Zone</para>
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TimeZone { get; set; } = "Pacific_Standard_Time";
+		public object? TimeZone { get; set; } = "Pacific_Standard_Time";
 
 		/// <summary>
 		/// <para>End Date and Time</para>
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object EndDateAndTime { get; set; }
+		public object? EndDateAndTime { get; set; }
 
 		/// <summary>
 		/// <para>Iteration Interval</para>
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object IterationInterval { get; set; } = "0";
+		public object? IterationInterval { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Iteration Unit</para>
@@ -145,12 +145,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object IterationUnit { get; set; } = "DAYS";
+		public object? IterationUnit { get; set; } = "DAYS";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SunShadowVolume SetEnviroment(object XYDomain = null , object ZDomain = null , int? autoCommit = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object workspace = null )
+		public SunShadowVolume SetEnviroment(object? XYDomain = null , object? ZDomain = null , int? autoCommit = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, ZDomain: ZDomain, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

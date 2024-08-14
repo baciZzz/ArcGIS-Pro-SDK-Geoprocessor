@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Semivariogram Sensitivity</para>
-	/// <para>This tool performs a sensitivity analysis on the predicted values and associated standard errors by changing the model's semivariogram parameters (the nugget, partial sill, and major/minor ranges) within a percentage of the original values. The tool takes a geostatistical model source in order to populate these initial values of the nugget, partial sill, and major/minor ranges. The tool's output is a table indicating which parameter values were used and what the resulting predicted and standard error values were. If there are large fluctuations in the output with small changes in the model's parameter values, then you cannot have much confidence in the output. On the other hand, if changes in the output are small, then you can be confident in the model's predictions and make decisions based on its output.</para>
+	/// <para>This tool performs a sensitivity analysis on the predicted values and associated standard errors by changing the model's semivariogram parameters (the nugget, partial sill, and major/minor ranges) within a percentage of the original values.</para>
 	/// </summary>
 	public class GASemivariogramSensitivity : AbstractGPProcess
 	{
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGaModelSource, InDatasets, InLocations, NuggetSpanPercents, NuggetCalcTimes, PartialsillSpanPercents, PartialsillCalcTimes, RangeSpanPercents, RangeCalcTimes, MinrangeSpanPercents, MinrangeCalcTimes, OutTable };
+		public override object[] Parameters => new object[] { InGaModelSource, InDatasets, InLocations, NuggetSpanPercents!, NuggetCalcTimes!, PartialsillSpanPercents!, PartialsillCalcTimes!, RangeSpanPercents!, RangeCalcTimes!, MinrangeSpanPercents!, MinrangeCalcTimes!, OutTable };
 
 		/// <summary>
 		/// <para>Input geostatistical model source</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object NuggetSpanPercents { get; set; } = "10";
+		public object? NuggetSpanPercents { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Number of calculations for Nugget</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object NuggetCalcTimes { get; set; } = "3";
+		public object? NuggetCalcTimes { get; set; } = "3";
 
 		/// <summary>
 		/// <para>Partial Sill span (% of model value)</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object PartialsillSpanPercents { get; set; } = "0";
+		public object? PartialsillSpanPercents { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Number of calculations for Partial Sill</para>
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object PartialsillCalcTimes { get; set; } = "0";
+		public object? PartialsillCalcTimes { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Major Range span (% of model value)</para>
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object RangeSpanPercents { get; set; } = "0";
+		public object? RangeSpanPercents { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Number of calculations for Major Range</para>
@@ -155,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object RangeCalcTimes { get; set; } = "0";
+		public object? RangeCalcTimes { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Minor Range span (% of model value)</para>
@@ -164,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object MinrangeSpanPercents { get; set; } = "0";
+		public object? MinrangeSpanPercents { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Number of calculations for Minor Range</para>
@@ -174,7 +174,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object MinrangeCalcTimes { get; set; } = "0";
+		public object? MinrangeCalcTimes { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Output table</para>
@@ -187,7 +187,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GASemivariogramSensitivity SetEnviroment(object coincidentPoints = null , object randomGenerator = null , object scratchWorkspace = null , object workspace = null )
+		public GASemivariogramSensitivity SetEnviroment(object? coincidentPoints = null , object? randomGenerator = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(coincidentPoints: coincidentPoints, randomGenerator: randomGenerator, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

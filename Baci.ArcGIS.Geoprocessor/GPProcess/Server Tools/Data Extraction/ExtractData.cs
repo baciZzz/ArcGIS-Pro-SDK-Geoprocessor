@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		/// <param name="LayersToClip">
 		/// <para>Layers to Clip</para>
-		/// <para>The layers to be clipped. Layers must be feature or raster layers in the map's table of contents. Layer files do not work for this parameter.</para>
+		/// <para>The layers to be clipped. Layers must be feature or raster; layer files are not supported.</para>
 		/// </param>
 		/// <param name="AreaOfInterest">
 		/// <para>Area of Interest</para>
@@ -28,22 +28,23 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </param>
 		/// <param name="FeatureFormat">
 		/// <para>Feature Format</para>
-		/// <para>The format in which the output features will be delivered. The string provided should be formatted as follows:</para>
+		/// <para>Specifies the format of the output features. The format should be specified as follows:</para>
 		/// <para>Name or format - Short Name - extension (if any)</para>
-		/// <para>The hyphen between the components is required, as well as the spaces around the hyphen.</para>
+		/// <para>The hyphens are required and there must be one space before and after the hyphen.</para>
 		/// <para>For example:</para>
 		/// <para>File Geodatabase - GDB - .gdb</para>
 		/// <para>Shapefile - SHP - .shp</para>
 		/// <para>Autodesk AutoCAD - DXF_R2007 - .dxf</para>
 		/// <para>Autodesk AutoCAD - DWG_R2007 - .dwg</para>
 		/// <para>Bentley Microstation Design (V8) - DGN_V8 - .dgn</para>
-		/// <para>Internally, this tool uses the Export to CAD tool to convert data to the .dgn, .dwg, and .dxf CAD formats. The list of short names supported includes DGN_V8, DWG_R14, DWG_R2000, DWG_R2004, DWG_R2005, DWG_R2007, DWG_R2010, DXF_R14, DXF_R2000, DXF_R2004, DXF_R2005, DXF_R2007, and DXF_R2010.</para>
+		/// <para>The list of short names supported includes DGN_V8, DWG_R14, DWG_R2000, DWG_R2004, DWG_R2005, DWG_R2007, DWG_R2010, DXF_R14, DXF_R2000, DXF_R2004, DXF_R2005, DXF_R2007, and DXF_R2010.</para>
 		/// </param>
 		/// <param name="RasterFormat">
 		/// <para>Raster Format</para>
-		/// <para>The format in which the output raster datasets will be delivered. The string provided should be formatted as follows:</para>
+		/// <para>Specifies the format of the output raster datasets. The format should be specified as follows:</para>
 		/// <para>Name of format - Short Name - extension (if any)</para>
-		/// <para>Any of the following strings will work:</para>
+		/// <para>The hyphens are required and there must be one space before and after the hyphen.</para>
+		/// <para>For example:</para>
 		/// <para>Esri GRID - GRID</para>
 		/// <para>File Geodatabase - GDB - .gdb</para>
 		/// <para>ERDAS IMAGINE - IMG - .img</para>
@@ -117,11 +118,11 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { LayersToClip, AreaOfInterest, FeatureFormat, RasterFormat, SpatialReference, CustomSpatialReferenceFolder, OutputZipFile };
+		public override object[] Parameters => new object[] { LayersToClip, AreaOfInterest, FeatureFormat, RasterFormat, SpatialReference, CustomSpatialReferenceFolder!, OutputZipFile };
 
 		/// <summary>
 		/// <para>Layers to Clip</para>
-		/// <para>The layers to be clipped. Layers must be feature or raster layers in the map's table of contents. Layer files do not work for this parameter.</para>
+		/// <para>The layers to be clipped. Layers must be feature or raster; layer files are not supported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -138,16 +139,16 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Feature Format</para>
-		/// <para>The format in which the output features will be delivered. The string provided should be formatted as follows:</para>
+		/// <para>Specifies the format of the output features. The format should be specified as follows:</para>
 		/// <para>Name or format - Short Name - extension (if any)</para>
-		/// <para>The hyphen between the components is required, as well as the spaces around the hyphen.</para>
+		/// <para>The hyphens are required and there must be one space before and after the hyphen.</para>
 		/// <para>For example:</para>
 		/// <para>File Geodatabase - GDB - .gdb</para>
 		/// <para>Shapefile - SHP - .shp</para>
 		/// <para>Autodesk AutoCAD - DXF_R2007 - .dxf</para>
 		/// <para>Autodesk AutoCAD - DWG_R2007 - .dwg</para>
 		/// <para>Bentley Microstation Design (V8) - DGN_V8 - .dgn</para>
-		/// <para>Internally, this tool uses the Export to CAD tool to convert data to the .dgn, .dwg, and .dxf CAD formats. The list of short names supported includes DGN_V8, DWG_R14, DWG_R2000, DWG_R2004, DWG_R2005, DWG_R2007, DWG_R2010, DXF_R14, DXF_R2000, DXF_R2004, DXF_R2005, DXF_R2007, and DXF_R2010.</para>
+		/// <para>The list of short names supported includes DGN_V8, DWG_R14, DWG_R2000, DWG_R2004, DWG_R2005, DWG_R2007, DWG_R2010, DXF_R14, DXF_R2000, DXF_R2004, DXF_R2005, DXF_R2007, and DXF_R2010.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -155,9 +156,10 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Raster Format</para>
-		/// <para>The format in which the output raster datasets will be delivered. The string provided should be formatted as follows:</para>
+		/// <para>Specifies the format of the output raster datasets. The format should be specified as follows:</para>
 		/// <para>Name of format - Short Name - extension (if any)</para>
-		/// <para>Any of the following strings will work:</para>
+		/// <para>The hyphens are required and there must be one space before and after the hyphen.</para>
+		/// <para>For example:</para>
 		/// <para>Esri GRID - GRID</para>
 		/// <para>File Geodatabase - GDB - .gdb</para>
 		/// <para>ERDAS IMAGINE - IMG - .img</para>
@@ -198,7 +200,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
-		public object CustomSpatialReferenceFolder { get; set; }
+		public object? CustomSpatialReferenceFolder { get; set; }
 
 		/// <summary>
 		/// <para>Output Zip File</para>

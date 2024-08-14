@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetFeatures, JoinFeatures, OutFeatureClass!, JoinOperation!, JoinType!, FieldMapping!, MatchOption!, SearchRadius!, DistanceFieldName };
+		public override object[] Parameters => new object[] { TargetFeatures, JoinFeatures, OutFeatureClass!, JoinOperation!, JoinType!, FieldMapping!, MatchOption!, SearchRadius!, DistanceFieldName! };
 
 		/// <summary>
 		/// <para>Target Features</para>

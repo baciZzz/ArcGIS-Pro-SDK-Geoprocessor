@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Add Rule To Relationship Class</para>
 	/// <para>Adds a rule to a relationship class.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class AddRuleToRelationshipClass : AbstractGPProcess
 	{
 		/// <summary>
@@ -60,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRelClass, OriginSubtype, OriginMinimum, OriginMaximum, DestinationSubtype, DestinationMinimum, DestinationMaximum, OutRelClass };
+		public override object[] Parameters => new object[] { InRelClass, OriginSubtype!, OriginMinimum!, OriginMaximum!, DestinationSubtype!, DestinationMinimum!, DestinationMaximum!, OutRelClass! };
 
 		/// <summary>
 		/// <para>Input Relationship Class</para>
@@ -76,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object OriginSubtype { get; set; }
+		public object? OriginSubtype { get; set; }
 
 		/// <summary>
 		/// <para>Origin Minimum</para>
@@ -84,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object OriginMinimum { get; set; }
+		public object? OriginMinimum { get; set; }
 
 		/// <summary>
 		/// <para>Origin Maximum</para>
@@ -92,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object OriginMaximum { get; set; }
+		public object? OriginMaximum { get; set; }
 
 		/// <summary>
 		/// <para>Destination Subtype</para>
@@ -100,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DestinationSubtype { get; set; }
+		public object? DestinationSubtype { get; set; }
 
 		/// <summary>
 		/// <para>Destination Minimum</para>
@@ -108,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object DestinationMinimum { get; set; }
+		public object? DestinationMinimum { get; set; }
 
 		/// <summary>
 		/// <para>Destination Maximum</para>
@@ -116,14 +118,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object DestinationMaximum { get; set; }
+		public object? DestinationMaximum { get; set; }
 
 		/// <summary>
 		/// <para>Updated Relationship Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DERelationshipClass()]
-		public object OutRelClass { get; set; }
+		public object? OutRelClass { get; set; }
 
 	}
 }

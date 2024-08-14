@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayer, OverlapType, SelectFeatures, SearchDistance, SelectionType, OutLayerOrView, InvertSpatialRelationship, OutLayersOrViews, Count };
+		public override object[] Parameters => new object[] { InLayer, OverlapType!, SelectFeatures!, SearchDistance!, SelectionType!, OutLayerOrView!, InvertSpatialRelationship!, OutLayersOrViews!, Count! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Within a distance geodesic—The features in the input layer will be selected if they are within a specified distance of a selecting feature. Distance between features will be calculated using a geodesic formula that takes into account the curvature of the spheroid and correctly handles data near and across the dateline and poles. Use the Search Distance parameter to specify the distance.</para>
 		/// <para>Contains—The features in the input layer will be selected if they contain a selecting feature.</para>
 		/// <para>Completely contains—The features in the input layer will be selected if they completely contain a selecting feature.</para>
-		/// <para>Contains Clementini—This spatial relationship yields the same results as Completely contains with the exception that if the selecting feature is entirely on the boundary of the input feature (no part is properly inside or outside), the feature will not be selected. Clementini defines the boundary polygon as the line separating inside and outside, the boundary of a line is defined as its end points, and the boundary of a point is always empty.</para>
+		/// <para>Contains Clementini—This spatial relationship yields the same results as Contains with the exception that if the selecting feature is entirely on the boundary of the input feature (no part is properly inside or outside), the feature will not be selected. Clementini defines the boundary polygon as the line separating inside and outside, the boundary of a line is defined as its end points, and the boundary of a point is always empty.</para>
 		/// <para>Within—The features in the input layer will be selected if they are within a selecting feature.</para>
 		/// <para>Completely within—The features in the input layer will be selected if they are completely within or contained by a selecting feature.</para>
 		/// <para>Within Clementini—The result will be identical to Within with the exception that if the entirety of the feature in the input layer is on the boundary of the feature in the selecting layer, the feature will not be selected. Clementini defines the boundary polygon as the line separating inside and outside, the boundary of a line is defined as its end points, and the boundary of a point is always empty.</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object OverlapType { get; set; } = "INTERSECT";
+		public object? OverlapType { get; set; } = "INTERSECT";
 
 		/// <summary>
 		/// <para>Selecting Features</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
-		public object SelectFeatures { get; set; }
+		public object? SelectFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Search Distance</para>
@@ -111,10 +111,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object SearchDistance { get; set; }
+		public object? SearchDistance { get; set; }
 
 		/// <summary>
-		/// <para>Selection type</para>
+		/// <para>Selection Type</para>
 		/// <para>Specifies how the selection will be applied to the input and how it will be combined with an existing selection. This tool does not include an option to clear an existing selection; use the Clear the current selection option on the Select Layer By Attribute tool to do that.</para>
 		/// <para>New selection—The resulting selection will replace any existing selection. This is the default.</para>
 		/// <para>Add to the current selection—The resulting selection will be added to an existing selection. If no selection exists, this is the same as the New selection option.</para>
@@ -126,17 +126,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SelectionType { get; set; } = "NEW_SELECTION";
+		public object? SelectionType { get; set; } = "NEW_SELECTION";
 
 		/// <summary>
 		/// <para>Layer With Selection</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutLayerOrView { get; set; }
+		public object? OutLayerOrView { get; set; }
 
 		/// <summary>
-		/// <para>Invert spatial relationship</para>
+		/// <para>Invert Spatial Relationship</para>
 		/// <para>Specifies whether the spatial relationship evaluation result or the opposite result will be used. For example, this parameter can be used to get a list of features that do not intersect or are not within a given distance of features in another dataset.</para>
 		/// <para>Unchecked—The query result will be used. This is the default.</para>
 		/// <para>Checked—The opposite of the query result will be used. If the Selection Type parameter is used, the reversal of the selection occurs before it is combined with existing selections.</para>
@@ -145,26 +145,26 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object InvertSpatialRelationship { get; set; } = "false";
+		public object? InvertSpatialRelationship { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Layer Names</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutLayersOrViews { get; set; }
+		public object? OutLayersOrViews { get; set; }
 
 		/// <summary>
 		/// <para>Count</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object Count { get; set; }
+		public object? Count { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SelectLayerByLocation SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public SelectLayerByLocation SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;
@@ -173,7 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		#region InnerClass
 
 		/// <summary>
-		/// <para>Selection type</para>
+		/// <para>Selection Type</para>
 		/// </summary>
 		public enum SelectionTypeEnum 
 		{
@@ -215,7 +215,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Invert spatial relationship</para>
+		/// <para>Invert Spatial Relationship</para>
 		/// </summary>
 		public enum InvertSpatialRelationshipEnum 
 		{

@@ -24,7 +24,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </param>
 		/// <param name="OutputFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The line feature class which will be created from the input points.</para>
+		/// <para>The line feature class that will be created from the input points.</para>
 		/// </param>
 		public PointsToLine(object InputFeatures, object OutputFeatureClass)
 		{
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, OutputFeatureClass, LineField, SortField, CloseLine };
+		public override object[] Parameters => new object[] { InputFeatures, OutputFeatureClass, LineField!, SortField!, CloseLine! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The line feature class which will be created from the input points.</para>
+		/// <para>The line feature class that will be created from the input points.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -86,38 +86,38 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Line Field</para>
-		/// <para>Each feature in the output will be based on unique values in the Line Field.</para>
+		/// <para>The field that will be used to identify unique attribute values. Point features with a unique attribute value will be combined to form an output line feature.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object LineField { get; set; }
+		public object? LineField { get; set; }
 
 		/// <summary>
 		/// <para>Sort Field</para>
-		/// <para>By default, points used to create each output line feature will be used in the order they are found. If a different order is desired, specify a Sort Field.</para>
+		/// <para>The field that will be used to sort the order of the points. By default, points used to create each output line feature will be used in the order they are found.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object SortField { get; set; }
+		public object? SortField { get; set; }
 
 		/// <summary>
 		/// <para>Close Line</para>
-		/// <para>Specifies whether output line features should be closed.</para>
-		/// <para>Checked—An extra vertex will be added to ensure that every output line feature&apos;s end point will match up with its start point. Then polygons can be generated from the line feature class using the Feature To Polygon tool.</para>
+		/// <para>Specifies whether output line features will be closed.</para>
+		/// <para>Checked—An extra vertex will be added to ensure that every output line feature&apos;s end point will match its start point.</para>
 		/// <para>Unchecked—No extra vertices will be added to close an output line feature. This is the default.</para>
 		/// <para><see cref="CloseLineEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CloseLine { get; set; } = "false";
+		public object? CloseLine { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PointsToLine SetEnviroment(object MDomain = null , object MResolution = null , object MTolerance = null , object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , int? autoCommit = null , object configKeyword = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , bool? qualifiedFieldNames = null , object scratchWorkspace = null , object workspace = null )
+		public PointsToLine SetEnviroment(object? MDomain = null , double? MResolution = null , double? MTolerance = null , object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , int? autoCommit = null , object? configKeyword = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , bool? qualifiedFieldNames = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CloseLineEnum 
 		{
 			/// <summary>
-			/// <para>Checked—An extra vertex will be added to ensure that every output line feature&apos;s end point will match up with its start point. Then polygons can be generated from the line feature class using the Feature To Polygon tool.</para>
+			/// <para>Checked—An extra vertex will be added to ensure that every output line feature&apos;s end point will match its start point.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CLOSE")]

@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRoutes, RouteIdField, InTable, InEventProperties, OutLayer, OffsetField, AddErrorField, AddAngleField, AngleType, ComplementAngle, OffsetDirection, PointEventType };
+		public override object[] Parameters => new object[] { InRoutes, RouteIdField, InTable, InEventProperties, OutLayer, OffsetField!, AddErrorField!, AddAngleField!, AngleType!, ComplementAngle!, OffsetDirection!, PointEventType! };
 
 		/// <summary>
 		/// <para>Input Route Features</para>
@@ -144,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object OffsetField { get; set; }
+		public object? OffsetField { get; set; }
 
 		/// <summary>
 		/// <para>Generate a field for locating errors</para>
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AddErrorField { get; set; } = "false";
+		public object? AddErrorField { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Generate an angle field</para>
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AddAngleField { get; set; } = "false";
+		public object? AddAngleField { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Calculated Angle Type</para>
@@ -180,7 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object AngleType { get; set; } = "NORMAL";
+		public object? AngleType { get; set; } = "NORMAL";
 
 		/// <summary>
 		/// <para>Write the complement of the angle to the angle field</para>
@@ -192,7 +192,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ComplementAngle { get; set; } = "false";
+		public object? ComplementAngle { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Events with a positive offset will be placed to the right of the routes</para>
@@ -204,7 +204,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object OffsetDirection { get; set; } = "false";
+		public object? OffsetDirection { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Point events will be generated as multipoint features</para>
@@ -216,12 +216,12 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object PointEventType { get; set; } = "false";
+		public object? PointEventType { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeRouteEventLayer SetEnviroment(object configKeyword = null , object scratchWorkspace = null , object workspace = null )
+		public MakeRouteEventLayer SetEnviroment(object? configKeyword = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(configKeyword: configKeyword, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

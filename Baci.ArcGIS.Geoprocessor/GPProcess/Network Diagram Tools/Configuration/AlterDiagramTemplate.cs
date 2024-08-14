@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, OutName, IsDefaultTemplate, AreRulesAndLayoutsRemoved, AreVerticesKept, ContainerMargin, OutUtilityNetwork, OutTemplateName, IsDiagramStorageEnabled, IsDiagramExtensionEnabled, Description, AreLayerDefinitionsRemoved };
+		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, OutName!, IsDefaultTemplate!, AreRulesAndLayoutsRemoved!, AreVerticesKept!, ContainerMargin!, OutUtilityNetwork!, OutTemplateName!, IsDiagramStorageEnabled!, IsDiagramExtensionEnabled!, Description!, AreLayerDefinitionsRemoved! };
 
 		/// <summary>
 		/// <para>Input Network</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object OutName { get; set; }
+		public object? OutName { get; set; }
 
 		/// <summary>
 		/// <para>Default template</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IsDefaultTemplate { get; set; } = "false";
+		public object? IsDefaultTemplate { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Remove the diagram template rule and layout definitions</para>
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AreRulesAndLayoutsRemoved { get; set; } = "false";
+		public object? AreRulesAndLayoutsRemoved { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Keep initial vertices on edges</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Template General Definitions")]
-		public object AreVerticesKept { get; set; } = "false";
+		public object? AreVerticesKept { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Container Margin</para>
@@ -137,21 +137,21 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Template General Definitions")]
-		public object ContainerMargin { get; set; } = "0 Unknown";
+		public object? ContainerMargin { get; set; } = "0 Unknown";
 
 		/// <summary>
 		/// <para>Output Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		/// <summary>
 		/// <para>Output Diagram Template</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutTemplateName { get; set; }
+		public object? OutTemplateName { get; set; }
 
 		/// <summary>
 		/// <para>Enable diagram storage</para>
@@ -164,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Template General Definitions")]
-		public object IsDiagramStorageEnabled { get; set; } = "true";
+		public object? IsDiagramStorageEnabled { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Enable to extend diagram</para>
@@ -177,7 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Template General Definitions")]
-		public object IsDiagramExtensionEnabled { get; set; } = "false";
+		public object? IsDiagramExtensionEnabled { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Description</para>
@@ -185,7 +185,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Description { get; set; }
+		public object? Description { get; set; }
 
 		/// <summary>
 		/// <para>Reset the diagram template layer definition to default</para>
@@ -197,7 +197,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AreLayerDefinitionsRemoved { get; set; } = "false";
+		public object? AreLayerDefinitionsRemoved { get; set; } = "false";
 
 		#region InnerClass
 

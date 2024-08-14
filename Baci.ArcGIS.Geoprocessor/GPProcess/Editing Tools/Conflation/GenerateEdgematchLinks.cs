@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { SourceFeatures, AdjacentFeatures, OutFeatureClass, SearchDistance, MatchFields };
+		public override object[] Parameters => new object[] { SourceFeatures, AdjacentFeatures, OutFeatureClass, SearchDistance, MatchFields! };
 
 		/// <summary>
 		/// <para>Source Features</para>
@@ -118,12 +118,12 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPFieldDomain()]
-		public object MatchFields { get; set; }
+		public object? MatchFields { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateEdgematchLinks SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateEdgematchLinks SetEnviroment(object? extent = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

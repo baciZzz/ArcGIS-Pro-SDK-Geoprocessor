@@ -13,6 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 	/// <para>Generate Range Rings From Lookup Table</para>
 	/// <para>Creates a set of concentric circles from a center based on values stored in a lookup table.</para>
 	/// </summary>
+	[Obsolete()]
 	public class GenerateRangeRingsFromTable : AbstractGPProcess
 	{
 		/// <summary>
@@ -83,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InTable, OutFeatureClassRings, LookupName, RangeRingsType, OutFeatureClassRadials, NumberOfRadials, DistanceUnits, LookupNameField, MinRangeField, MaxRangeField, NumberOfRingsField, RingIntervalField };
+		public override object[] Parameters => new object[] { InFeatures, InTable, OutFeatureClassRings, LookupName, RangeRingsType, OutFeatureClassRadials!, NumberOfRadials!, DistanceUnits!, LookupNameField!, MinRangeField!, MaxRangeField!, NumberOfRingsField!, RingIntervalField! };
 
 		/// <summary>
 		/// <para>Input Features (Center Points)</para>
@@ -136,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object OutFeatureClassRadials { get; set; }
+		public object? OutFeatureClassRadials { get; set; }
 
 		/// <summary>
 		/// <para>Number of Radials</para>
@@ -144,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object NumberOfRadials { get; set; }
+		public object? NumberOfRadials { get; set; }
 
 		/// <summary>
 		/// <para>Distance Units</para>
@@ -160,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DistanceUnits { get; set; } = "METERS";
+		public object? DistanceUnits { get; set; } = "METERS";
 
 		/// <summary>
 		/// <para>Input Table Selected Name Field</para>
@@ -170,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Input Table Options")]
-		public object LookupNameField { get; set; } = "Name";
+		public object? LookupNameField { get; set; } = "Name";
 
 		/// <summary>
 		/// <para>Input Table Minimum Range</para>
@@ -180,7 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Input Table Options")]
-		public object MinRangeField { get; set; } = "Min";
+		public object? MinRangeField { get; set; } = "Min";
 
 		/// <summary>
 		/// <para>Input Table Maximum Range</para>
@@ -190,7 +191,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Input Table Options")]
-		public object MaxRangeField { get; set; } = "Max";
+		public object? MaxRangeField { get; set; } = "Max";
 
 		/// <summary>
 		/// <para>Number of Rings Field</para>
@@ -200,7 +201,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Input Table Options")]
-		public object NumberOfRingsField { get; set; } = "Rings";
+		public object? NumberOfRingsField { get; set; } = "Rings";
 
 		/// <summary>
 		/// <para>Ring Interval Field</para>
@@ -210,12 +211,12 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Input Table Options")]
-		public object RingIntervalField { get; set; } = "Intervals";
+		public object? RingIntervalField { get; set; } = "Intervals";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateRangeRingsFromTable SetEnviroment(object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateRangeRingsFromTable SetEnviroment(object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

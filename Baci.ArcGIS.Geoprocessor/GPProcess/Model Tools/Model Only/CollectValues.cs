@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Collect Values</para>
-	/// <para>Collects output values from an iterator or converts a list of values into a single input. The output of Collect Values can be used as input to the Merge, Append, Mosaic, and Cell Statistics tools.</para>
+	/// <para>Collects output values from an iterator or converts a list of values into a single input with multiple values.</para>
 	/// </summary>
 	public class CollectValues : AbstractGPProcess
 	{
@@ -55,7 +55,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InValue, OutValue };
+		public override object[] Parameters => new object[] { InValue!, OutValue!, OutTable! };
 
 		/// <summary>
 		/// <para>Input Value</para>
@@ -63,14 +63,22 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object InValue { get; set; }
+		public object? InValue { get; set; }
 
 		/// <summary>
 		/// <para>Output Values</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutValue { get; set; }
+		public object? OutValue { get; set; }
+
+		/// <summary>
+		/// <para>Output Table</para>
+		/// <para>The output table with the collected values.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[DETable()]
+		public object? OutTable { get; set; }
 
 	}
 }

@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabase, OutLayerName, Query, OidFields, ShapeType, Srid, SpatialReference, OutLayer, SpatialProperties, MValues, ZValues, Extent };
+		public override object[] Parameters => new object[] { InputDatabase, OutLayerName, Query, OidFields!, ShapeType!, Srid!, SpatialReference!, OutLayer!, SpatialProperties!, MValues!, ZValues!, Extent! };
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object OidFields { get; set; }
+		public object? OidFields { get; set; }
 
 		/// <summary>
 		/// <para>Shape Type</para>
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ShapeType { get; set; }
+		public object? ShapeType { get; set; }
 
 		/// <summary>
 		/// <para>SRID</para>
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Srid { get; set; }
+		public object? Srid { get; set; }
 
 		/// <summary>
 		/// <para>Coordinate System</para>
@@ -147,14 +147,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
-		public object SpatialReference { get; set; }
+		public object? SpatialReference { get; set; }
 
 		/// <summary>
 		/// <para>Output Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
-		public object OutLayer { get; set; }
+		public object? OutLayer { get; set; }
 
 		/// <summary>
 		/// <para>Define the spatial properties of the layer</para>
@@ -167,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SpatialProperties { get; set; } = "true";
+		public object? SpatialProperties { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Coordinates include M values</para>
@@ -179,7 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object MValues { get; set; } = "false";
+		public object? MValues { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Coordinates include Z values</para>
@@ -191,7 +191,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ZValues { get; set; } = "false";
+		public object? ZValues { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Extent</para>
@@ -203,12 +203,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object Extent { get; set; } = "0 0 0 0";
+		public object? Extent { get; set; } = "0 0 0 0";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeQueryLayer SetEnviroment(object outputCoordinateSystem = null , object workspace = null )
+		public MakeQueryLayer SetEnviroment(object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

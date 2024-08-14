@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMultidimensionalRaster, UpdatedMultidimensionalRaster, DeleteTranspose };
+		public override object[] Parameters => new object[] { InMultidimensionalRaster, UpdatedMultidimensionalRaster!, DeleteTranspose! };
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DERasterDataset()]
-		public object UpdatedMultidimensionalRaster { get; set; }
+		public object? UpdatedMultidimensionalRaster { get; set; }
 
 		/// <summary>
 		/// <para>Delete Transpose</para>
@@ -87,12 +87,12 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DeleteTranspose { get; set; } = "false";
+		public object? DeleteTranspose { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BuildMultidimensionalTranspose SetEnviroment(object parallelProcessingFactor = null )
+		public BuildMultidimensionalTranspose SetEnviroment(object? parallelProcessingFactor = null )
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

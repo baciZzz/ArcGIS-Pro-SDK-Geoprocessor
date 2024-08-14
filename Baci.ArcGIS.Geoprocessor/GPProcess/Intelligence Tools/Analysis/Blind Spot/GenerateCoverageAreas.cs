@@ -28,7 +28,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </param>
 		/// <param name="BufferType">
 		/// <para>Buffer Type</para>
-		/// <para>The distance around the input features that will be buffered. Distances can be provided as either a value representing a linear distance or a field from the input features that defines the individual ranges and units to buffer each feature.</para>
+		/// <para>The distance around the input features that will be buffered. Distances can be provided as either a linear distance or a field from the Input Features parameter value that defines the individual ranges and units to buffer each feature.</para>
 		/// </param>
 		public GenerateCoverageAreas(object InFeatures, object OutFeatureClass, object BufferType)
 		{
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, BufferType, RangeUnit, StartTimeField, EndTimeField };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, BufferType, RangeUnit!, StartTimeField!, EndTimeField! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Buffer Type</para>
-		/// <para>The distance around the input features that will be buffered. Distances can be provided as either a value representing a linear distance or a field from the input features that defines the individual ranges and units to buffer each feature.</para>
+		/// <para>The distance around the input features that will be buffered. Distances can be provided as either a linear distance or a field from the Input Features parameter value that defines the individual ranges and units to buffer each feature.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Range Unit</para>
-		/// <para>Specifies a linear unit when the chosen Buffer Type parameter value does not contain the unit of distance.</para>
+		/// <para>Specifies the linear unit that will be used when the chosen Buffer Type parameter value does not contain the unit of distance.</para>
 		/// <para>Meters—The distance unit will be meters.</para>
 		/// <para>Kilometers—The distance unit will be kilometers.</para>
 		/// <para>Feet—The distance unit will be feet.</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object RangeUnit { get; set; }
+		public object? RangeUnit { get; set; }
 
 		/// <summary>
 		/// <para>Start Time Field</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object StartTimeField { get; set; }
+		public object? StartTimeField { get; set; }
 
 		/// <summary>
 		/// <para>End Time Field</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object EndTimeField { get; set; }
+		public object? EndTimeField { get; set; }
 
 		#region InnerClass
 

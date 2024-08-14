@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTopology, OutPath, OutBasename, OutFeatureClassPoints, OutFeatureClassLines, OutFeatureClassPolygons };
+		public override object[] Parameters => new object[] { InTopology, OutPath, OutBasename, OutFeatureClassPoints!, OutFeatureClassLines!, OutFeatureClassPolygons! };
 
 		/// <summary>
 		/// <para>Input Topology</para>
@@ -102,21 +102,21 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutFeatureClassPoints { get; set; }
+		public object? OutFeatureClassPoints { get; set; }
 
 		/// <summary>
 		/// <para>Output line features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutFeatureClassLines { get; set; }
+		public object? OutFeatureClassLines { get; set; }
 
 		/// <summary>
 		/// <para>Output polygon features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutFeatureClassPolygons { get; set; }
+		public object? OutFeatureClassPolygons { get; set; }
 
 	}
 }

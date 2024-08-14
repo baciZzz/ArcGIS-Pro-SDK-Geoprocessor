@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { RootFolder, TargetGeodatabase, OutputGeodatabase };
+		public override object[] Parameters => new object[] { RootFolder, TargetGeodatabase, OutputGeodatabase! };
 
 		/// <summary>
 		/// <para>Root Folder</para>
@@ -88,12 +88,12 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutputGeodatabase { get; set; }
+		public object? OutputGeodatabase { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public UnzipCellAndImport SetEnviroment(object workspace = null )
+		public UnzipCellAndImport SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

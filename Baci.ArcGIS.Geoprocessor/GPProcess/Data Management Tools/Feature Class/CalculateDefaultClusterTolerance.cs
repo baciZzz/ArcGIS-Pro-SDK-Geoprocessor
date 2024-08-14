@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ClusterTolerance };
+		public override object[] Parameters => new object[] { InFeatures, ClusterTolerance! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -74,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object ClusterTolerance { get; set; } = "0";
+		public object? ClusterTolerance { get; set; } = "0";
 
 	}
 }

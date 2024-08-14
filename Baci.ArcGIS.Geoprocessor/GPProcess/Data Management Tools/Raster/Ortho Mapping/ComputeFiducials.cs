@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, OutFiducialTable, WhereClause, FiducialTemplates, FilmCoordinateSystem };
+		public override object[] Parameters => new object[] { InMosaicDataset, OutFiducialTable, WhereClause!, FiducialTemplates!, FilmCoordinateSystem! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Fiducial Templates</para>
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object FiducialTemplates { get; set; }
+		public object? FiducialTemplates { get; set; }
 
 		/// <summary>
 		/// <para>Film Coordinate System</para>
@@ -112,12 +112,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object FilmCoordinateSystem { get; set; } = "NO_CHANGE";
+		public object? FilmCoordinateSystem { get; set; } = "NO_CHANGE";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ComputeFiducials SetEnviroment(object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public ComputeFiducials SetEnviroment(object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

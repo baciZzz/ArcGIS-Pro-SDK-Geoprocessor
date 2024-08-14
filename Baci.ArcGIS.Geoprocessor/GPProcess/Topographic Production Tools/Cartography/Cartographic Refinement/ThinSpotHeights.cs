@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 	/// <summary>
 	/// <para>Thin Spot Heights</para>
 	/// <para>Generalizes spot heights for a given area of interest in accordance with product specifications.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class ThinSpotHeights : AbstractGPProcess
 	{
 		/// <summary>
@@ -75,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, AreaOfInterest, ElevationField, InvisibilityField, HighLowSpots, SearchDistance, MaxSpots, InputContours, ContourCodeField, DepressionCodeValue, UpdatedFeatures };
+		public override object[] Parameters => new object[] { InFeatures, AreaOfInterest, ElevationField, InvisibilityField, HighLowSpots!, SearchDistance!, MaxSpots!, InputContours!, ContourCodeField!, DepressionCodeValue!, UpdatedFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -120,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object HighLowSpots { get; set; }
+		public object? HighLowSpots { get; set; }
 
 		/// <summary>
 		/// <para>Search Distance</para>
@@ -128,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object SearchDistance { get; set; } = "1300 Meters";
+		public object? SearchDistance { get; set; } = "1300 Meters";
 
 		/// <summary>
 		/// <para>Maximum Number  Of Spots</para>
@@ -136,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MaxSpots { get; set; }
+		public object? MaxSpots { get; set; }
 
 		/// <summary>
 		/// <para>Input Contours</para>
@@ -145,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPLayerDomain()]
-		public object InputContours { get; set; }
+		public object? InputContours { get; set; }
 
 		/// <summary>
 		/// <para>Contour Code Field</para>
@@ -154,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ContourCodeField { get; set; }
+		public object? ContourCodeField { get; set; }
 
 		/// <summary>
 		/// <para>Depression Code  Value</para>
@@ -162,14 +164,14 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object DepressionCodeValue { get; set; }
+		public object? DepressionCodeValue { get; set; }
 
 		/// <summary>
 		/// <para>Updated Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object UpdatedFeatures { get; set; }
+		public object? UpdatedFeatures { get; set; }
 
 	}
 }

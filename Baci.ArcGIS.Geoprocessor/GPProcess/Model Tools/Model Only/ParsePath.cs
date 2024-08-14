@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataElement, ParseType, Value };
+		public override object[] Parameters => new object[] { InDataElement, ParseType!, Value! };
 
 		/// <summary>
 		/// <para>Input Values</para>
@@ -83,14 +83,14 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ParseType { get; set; } = "FILE";
+		public object? ParseType { get; set; } = "FILE";
 
 		/// <summary>
 		/// <para>Value</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object Value { get; set; }
+		public object? Value { get; set; }
 
 		#region InnerClass
 

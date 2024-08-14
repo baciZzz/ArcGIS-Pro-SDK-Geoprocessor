@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, SearchLayer, OutputName, AnalysisFields, MostOrLeastSimilar, MatchMethod, NumberOfResults, AppendFields, Output, DataStore };
+		public override object[] Parameters => new object[] { InputLayer, SearchLayer, OutputName, AnalysisFields, MostOrLeastSimilar!, MatchMethod!, NumberOfResults!, AppendFields!, Output!, DataStore! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object MostOrLeastSimilar { get; set; } = "MOST_SIMILAR";
+		public object? MostOrLeastSimilar { get; set; } = "MOST_SIMILAR";
 
 		/// <summary>
 		/// <para>Match Method</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object MatchMethod { get; set; } = "ATTRIBUTE_VALUES";
+		public object? MatchMethod { get; set; } = "ATTRIBUTE_VALUES";
 
 		/// <summary>
 		/// <para>Number Of Results</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object NumberOfResults { get; set; } = "10";
+		public object? NumberOfResults { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Append Fields</para>
@@ -152,14 +152,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
-		public object AppendFields { get; set; }
+		public object? AppendFields { get; set; }
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object Output { get; set; }
+		public object? Output { get; set; }
 
 		/// <summary>
 		/// <para>Data Store</para>
@@ -172,12 +172,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Data Store")]
-		public object DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
+		public object? DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FindSimilarLocations SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public FindSimilarLocations SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

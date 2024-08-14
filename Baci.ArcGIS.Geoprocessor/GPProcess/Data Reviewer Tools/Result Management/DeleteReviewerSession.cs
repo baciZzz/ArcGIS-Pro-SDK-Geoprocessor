@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ReviewerWorkspace, Session, Result };
+		public override object[] Parameters => new object[] { ReviewerWorkspace, Session, Result! };
 
 		/// <summary>
 		/// <para>Reviewer Workspace</para>
@@ -92,12 +92,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Result { get; set; } = "false";
+		public object? Result { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DeleteReviewerSession SetEnviroment(object workspace = null )
+		public DeleteReviewerSession SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

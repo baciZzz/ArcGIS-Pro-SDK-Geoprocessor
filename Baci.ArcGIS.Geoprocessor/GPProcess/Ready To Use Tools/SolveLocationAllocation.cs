@@ -151,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Facilities, DemandPoints, MeasurementUnits, AnalysisRegion!, ProblemType!, NumberOfFacilitiesToFind!, DefaultMeasurementCutoff!, DefaultCapacity!, TargetMarketShare!, MeasurementTransformationModel!, MeasurementTransformationFactor!, TravelDirection!, TimeOfDay!, TimeZoneForTimeOfDay!, UturnAtJunctions!, PointBarriers!, LineBarriers!, PolygonBarriers!, UseHierarchy!, Restrictions!, AttributeParameterValues!, AllocationLineShape!, TravelMode!, Impedance!, SaveOutputNetworkAnalysisLayer!, Overrides!, TimeImpedance!, DistanceImpedance!, OutputFormat!, IgnoreInvalidLocations!, SolveSucceeded!, OutputAllocationLines!, OutputFacilities!, OutputDemandPoints!, OutputNetworkAnalysisLayer!, OutputResultFile!, OutputNetworkAnalysisLayerPackage };
+		public override object[] Parameters => new object[] { Facilities, DemandPoints, MeasurementUnits, AnalysisRegion!, ProblemType!, NumberOfFacilitiesToFind!, DefaultMeasurementCutoff!, DefaultCapacity!, TargetMarketShare!, MeasurementTransformationModel!, MeasurementTransformationFactor!, TravelDirection!, TimeOfDay!, TimeZoneForTimeOfDay!, UturnAtJunctions!, PointBarriers!, LineBarriers!, PolygonBarriers!, UseHierarchy!, Restrictions!, AttributeParameterValues!, AllocationLineShape!, TravelMode!, Impedance!, SaveOutputNetworkAnalysisLayer!, Overrides!, TimeImpedance!, DistanceImpedance!, OutputFormat!, IgnoreInvalidLocations!, SolveSucceeded!, OutputAllocationLines!, OutputFacilities!, OutputDemandPoints!, OutputNetworkAnalysisLayer!, OutputResultFile!, OutputNetworkAnalysisLayerPackage! };
 
 		/// <summary>
 		/// <para>Facilities</para>

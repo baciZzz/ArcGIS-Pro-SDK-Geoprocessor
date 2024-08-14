@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeostatLayer, InLocations, ZField, OutFeatureClass, AppendAllFields, ElevationField, ElevationUnits };
+		public override object[] Parameters => new object[] { InGeostatLayer, InLocations, ZField!, OutFeatureClass, AppendAllFields!, ElevationField!, ElevationUnits! };
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ZField { get; set; }
+		public object? ZField { get; set; }
 
 		/// <summary>
 		/// <para>Output statistics at point locations</para>
@@ -166,7 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AppendAllFields { get; set; } = "true";
+		public object? AppendAllFields { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Elevation field</para>
@@ -175,32 +175,36 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ElevationField { get; set; }
+		public object? ElevationField { get; set; }
 
 		/// <summary>
 		/// <para>Elevation field units</para>
 		/// <para>The units of the elevation field. This parameter only applies to 3D geostatistical models. If Shape.Z is provided as the elevation field, the units will automatically match the Z-units of the vertical coordinate system.</para>
-		/// <para>Inch—Elevations are in inches.</para>
-		/// <para>Foot—Elevations are in feet.</para>
-		/// <para>Yard—Elevations are in yards.</para>
-		/// <para>US mile—Elevations are in U.S. miles.</para>
-		/// <para>Nautical mile—Elevations are in nautical miles.</para>
-		/// <para>Millimeter—Elevations are in millimeters.</para>
-		/// <para>Centimeter—Elevations are in centimeters.</para>
-		/// <para>Decimeter—Elevations are in decimeters.</para>
-		/// <para>Meter—Elevations are in meters.</para>
-		/// <para>Kilometer—Elevations are in kilometers.</para>
-		/// <para><see cref="ElevationUnitsEnum"/></para>
+		/// <para>US Survey Inches—Elevations are in U.S. survey inches.</para>
+		/// <para>US Survey Feet—Elevations are in U.S. survey feet.</para>
+		/// <para>US Survey Yards—Elevations are in U.S. survey yards.</para>
+		/// <para>US Survey Miles—Elevations are in U.S. survey miles.</para>
+		/// <para>US Survey Nautical Miles—Elevations are in U.S. survey nautical miles.</para>
+		/// <para>Millimeters—Elevations are in millimeters.</para>
+		/// <para>Centimeters—Elevations are in centimeters.</para>
+		/// <para>Decimeters—Elevations are in decimeters.</para>
+		/// <para>Meters—Elevations are in meters.</para>
+		/// <para>Kilometers—Elevations are in kilometers.</para>
+		/// <para>International Inches—Elevations are in international inches.</para>
+		/// <para>International Feet—Elevations are in international feet.</para>
+		/// <para>International Yards—Elevations are in international yards.</para>
+		/// <para>Statute Miles—Elevations are in statute miles.</para>
+		/// <para>International Nautical Miles—Elevations are in international nautical miles.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ElevationUnits { get; set; } = "METER";
+		public object? ElevationUnits { get; set; } = "METER";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GALayerToPoints SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public GALayerToPoints SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -226,83 +230,6 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 			[GPValue("false")]
 			[Description("FID_ONLY")]
 			FID_ONLY,
-
-		}
-
-		/// <summary>
-		/// <para>Elevation field units</para>
-		/// </summary>
-		public enum ElevationUnitsEnum 
-		{
-			/// <summary>
-			/// <para>Inch—Elevations are in inches.</para>
-			/// </summary>
-			[GPValue("INCH")]
-			[Description("Inch")]
-			Inch,
-
-			/// <summary>
-			/// <para>Foot—Elevations are in feet.</para>
-			/// </summary>
-			[GPValue("FOOT")]
-			[Description("Foot")]
-			Foot,
-
-			/// <summary>
-			/// <para>Yard—Elevations are in yards.</para>
-			/// </summary>
-			[GPValue("YARD")]
-			[Description("Yard")]
-			Yard,
-
-			/// <summary>
-			/// <para>US mile—Elevations are in U.S. miles.</para>
-			/// </summary>
-			[GPValue("MILE_US")]
-			[Description("US mile")]
-			US_mile,
-
-			/// <summary>
-			/// <para>Nautical mile—Elevations are in nautical miles.</para>
-			/// </summary>
-			[GPValue("NAUTICAL_MILE")]
-			[Description("Nautical mile")]
-			Nautical_mile,
-
-			/// <summary>
-			/// <para>Millimeter—Elevations are in millimeters.</para>
-			/// </summary>
-			[GPValue("MILLIMETER")]
-			[Description("Millimeter")]
-			Millimeter,
-
-			/// <summary>
-			/// <para>Centimeter—Elevations are in centimeters.</para>
-			/// </summary>
-			[GPValue("CENTIMETER")]
-			[Description("Centimeter")]
-			Centimeter,
-
-			/// <summary>
-			/// <para>Decimeter—Elevations are in decimeters.</para>
-			/// </summary>
-			[GPValue("DECIMETER")]
-			[Description("Decimeter")]
-			Decimeter,
-
-			/// <summary>
-			/// <para>Meter—Elevations are in meters.</para>
-			/// </summary>
-			[GPValue("METER")]
-			[Description("Meter")]
-			Meter,
-
-			/// <summary>
-			/// <para>Kilometer—Elevations are in kilometers.</para>
-			/// </summary>
-			[GPValue("KILOMETER")]
-			[Description("Kilometer")]
-			Kilometer,
 
 		}
 

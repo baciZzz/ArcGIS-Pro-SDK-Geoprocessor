@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, DomainNetworkName, TierDefinition, SubnetworkControllerType, DomainNetworkAliasName, OutUtilityNetwork };
+		public override object[] Parameters => new object[] { InUtilityNetwork, DomainNetworkName, TierDefinition, SubnetworkControllerType, DomainNetworkAliasName!, OutUtilityNetwork! };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
@@ -129,14 +129,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DomainNetworkAliasName { get; set; }
+		public object? DomainNetworkAliasName { get; set; }
 
 		/// <summary>
 		/// <para>Updated Utility Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEUtilityNetwork()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		#region InnerClass
 

@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InLasDataset">
 		/// <para>Input Point Cloud</para>
-		/// <para>The LAS dataset or point cloud scene layer to process.</para>
+		/// <para>The LAS dataset or point cloud scene layer package (.slpk file) to process.</para>
 		/// </param>
 		/// <param name="TargetFolder">
 		/// <para>Target Folder</para>
@@ -65,11 +65,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, TargetFolder, Extent, Boundary, ProcessEntireFiles, NameSuffix, RemoveVlr, RearrangePoints, ComputeStats, OutLasDataset, OutFolder, Compression };
+		public override object[] Parameters => new object[] { InLasDataset, TargetFolder, Extent!, Boundary!, ProcessEntireFiles!, NameSuffix!, RemoveVlr!, RearrangePoints!, ComputeStats!, OutLasDataset!, OutFolder!, Compression! };
 
 		/// <summary>
 		/// <para>Input Point Cloud</para>
-		/// <para>The LAS dataset or point cloud scene layer to process.</para>
+		/// <para>The LAS dataset or point cloud scene layer package (.slpk file) to process.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
 		[Category("Processing Extent")]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Extraction Boundary</para>
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
 		[Category("Processing Extent")]
-		public object Boundary { get; set; }
+		public object? Boundary { get; set; }
 
 		/// <summary>
 		/// <para>Process entire LAS files that intersect extent</para>
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Processing Extent")]
-		public object ProcessEntireFiles { get; set; } = "false";
+		public object? ProcessEntireFiles { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output File Name Suffix</para>
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("LAS File Options")]
-		public object NameSuffix { get; set; }
+		public object? NameSuffix { get; set; }
 
 		/// <summary>
 		/// <para>Remove Variable Length Records</para>
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("LAS File Options")]
-		public object RemoveVlr { get; set; } = "false";
+		public object? RemoveVlr { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Rearrange points</para>
@@ -155,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("LAS File Options")]
-		public object RearrangePoints { get; set; } = "true";
+		public object? RearrangePoints { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Compute Statistics</para>
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("LAS File Options")]
-		public object ComputeStats { get; set; } = "true";
+		public object? ComputeStats { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output LAS Dataset</para>
@@ -176,19 +176,19 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DELasDataset()]
-		public object OutLasDataset { get; set; }
+		public object? OutLasDataset { get; set; }
 
 		/// <summary>
 		/// <para>Output Folder</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFolder()]
-		public object OutFolder { get; set; }
+		public object? OutFolder { get; set; }
 
 		/// <summary>
 		/// <para>Compression</para>
 		/// <para>Specifies whether the output .las file will be in a compressed format or the standard LAS format.</para>
-		/// <para>Same As Input—The compression will be the same as the input. This option is only available when the input is a LAS dataset It is the default in that case.</para>
+		/// <para>Same As Input—The compression will be the same as the input. This option is only available when the input is a LAS dataset, and it is the default in that case.</para>
 		/// <para>No Compression—The output will be in the standard LAS format (*.las). This is the default when the input is a point cloud scene layer.</para>
 		/// <para>zLAS Compression—Output .las files will be compressed in the zLAS format.</para>
 		/// <para><see cref="CompressionEnum"/></para>
@@ -197,12 +197,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("LAS File Options")]
-		public object Compression { get; set; } = "SAME_AS_INPUT";
+		public object? Compression { get; set; } = "SAME_AS_INPUT";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExtractLas SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object workspace = null )
+		public ExtractLas SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;
@@ -300,7 +300,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum CompressionEnum 
 		{
 			/// <summary>
-			/// <para>Same As Input—The compression will be the same as the input. This option is only available when the input is a LAS dataset It is the default in that case.</para>
+			/// <para>Same As Input—The compression will be the same as the input. This option is only available when the input is a LAS dataset, and it is the default in that case.</para>
 			/// </summary>
 			[GPValue("SAME_AS_INPUT")]
 			[Description("Same As Input")]

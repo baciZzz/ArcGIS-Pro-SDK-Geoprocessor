@@ -64,7 +64,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurface, InFeatureClass, OutLengthField, SampleDistance, ZFactor, Method, PyramidLevelResolution, OutputFeatureClass };
+		public override object[] Parameters => new object[] { InSurface, InFeatureClass, OutLengthField!, SampleDistance!, ZFactor!, Method!, PyramidLevelResolution!, OutputFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Surface</para>
@@ -86,42 +86,42 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object OutLengthField { get; set; } = "SLength";
+		public object? OutLengthField { get; set; } = "SLength";
 
 		/// <summary>
 		/// <para>Sampling Distance</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object SampleDistance { get; set; }
+		public object? SampleDistance { get; set; }
 
 		/// <summary>
 		/// <para>Z Factor</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ZFactor { get; set; } = "1";
+		public object? ZFactor { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Method</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Method { get; set; } = "LINEAR";
+		public object? Method { get; set; } = "LINEAR";
 
 		/// <summary>
 		/// <para>Pyramid Level Resolution</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object PyramidLevelResolution { get; set; } = "0";
+		public object? PyramidLevelResolution { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutputFeatureClass { get; set; }
+		public object? OutputFeatureClass { get; set; }
 
 	}
 }

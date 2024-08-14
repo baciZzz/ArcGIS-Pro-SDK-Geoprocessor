@@ -68,12 +68,12 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
+		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputelevationsurface, Inputobserverfeatures, Outputname, Optimizefor, Maximumviewingdistancetype, Maximumviewingdistance, Maximumviewingdistancefield, Minimumviewingdistancetype, Minimumviewingdistance, Minimumviewingdistancefield, Viewingdistanceis3d, Observerselevationtype, Observerselevation, Observerselevationfield, Observersheighttype, Observersheight, Observersheightfield, Targetheighttype, Targetheight, Targetheightfield, Abovegroundleveloutputname, Outputraster, Outputabovegroundlevelraster };
+		public override object[] Parameters => new object[] { Inputelevationsurface, Inputobserverfeatures, Outputname, Optimizefor!, Maximumviewingdistancetype!, Maximumviewingdistance!, Maximumviewingdistancefield!, Minimumviewingdistancetype!, Minimumviewingdistance!, Minimumviewingdistancefield!, Viewingdistanceis3d!, Observerselevationtype!, Observerselevation!, Observerselevationfield!, Observersheighttype!, Observersheight!, Observersheightfield!, Targetheighttype!, Targetheight!, Targetheightfield!, Abovegroundleveloutputname!, Outputraster!, Outputabovegroundlevelraster! };
 
 		/// <summary>
 		/// <para>Input Elevation Surface</para>
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Optimizefor { get; set; } = "SPEED";
+		public object? Optimizefor { get; set; } = "SPEED";
 
 		/// <summary>
 		/// <para>Maximum Viewing Distance Type</para>
@@ -127,19 +127,18 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Maximumviewingdistancetype { get; set; } = "DISTANCE";
+		public object? Maximumviewingdistancetype { get; set; } = "DISTANCE";
 
 		/// <summary>
 		/// <para>Maximum Viewing Distance</para>
 		/// <para>This is a cutoff distance, where the computation of visible areas stops. Beyond this distance, it is unknown whether the observer points and the other objects can see each other.</para>
 		/// <para>The units can be Kilometers, Meters, Miles, Yards, or Feet.</para>
 		/// <para>The default is miles.</para>
-		/// <para><see cref="MaximumviewingdistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object Maximumviewingdistance { get; set; } = "9 Miles";
+		[GPUnitDomain()]
+		public object? Maximumviewingdistance { get; set; } = "9 Miles";
 
 		/// <summary>
 		/// <para>Maximum Viewing Distance Field</para>
@@ -149,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object Maximumviewingdistancefield { get; set; }
+		public object? Maximumviewingdistancefield { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Viewing Distance Type</para>
@@ -162,19 +161,18 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Minimumviewingdistancetype { get; set; } = "DISTANCE";
+		public object? Minimumviewingdistancetype { get; set; } = "DISTANCE";
 
 		/// <summary>
 		/// <para>Minimum Viewing Distance</para>
 		/// <para>This is a distance where the computation of visible areas begins. Cells on the surface closer than this distance are not visible in the output but can still block visibility of the cells between the minimum and maximum viewing distance.</para>
 		/// <para>The units can be Kilometers, Meters, Miles, Yards, or Feet.</para>
 		/// <para>The default units are Meters.</para>
-		/// <para><see cref="MinimumviewingdistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object Minimumviewingdistance { get; set; }
+		[GPUnitDomain()]
+		public object? Minimumviewingdistance { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Viewing Distance Field</para>
@@ -184,7 +182,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object Minimumviewingdistancefield { get; set; }
+		public object? Minimumviewingdistancefield { get; set; }
 
 		/// <summary>
 		/// <para>Viewing Distance is 3D</para>
@@ -196,7 +194,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Viewingdistanceis3d { get; set; } = "false";
+		public object? Viewingdistanceis3d { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Observers Elevation Type</para>
@@ -209,7 +207,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Observerselevationtype { get; set; } = "ELEVATION";
+		public object? Observerselevationtype { get; set; } = "ELEVATION";
 
 		/// <summary>
 		/// <para>Observers Elevation</para>
@@ -217,12 +215,11 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <para>If this parameter is not specified, the observer elevation will be obtained from the surface raster using bilinear interpolation. If this parameter is set to a value, that value will be applied to all the observers. To specify different values for each observer, set this parameter to a field in the input observer features.</para>
 		/// <para>The units can be Kilometers, Meters, Miles, Yards, or Feet.</para>
 		/// <para>The default units are Meters.</para>
-		/// <para><see cref="ObserverselevationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object Observerselevation { get; set; }
+		[GPUnitDomain()]
+		public object? Observerselevation { get; set; }
 
 		/// <summary>
 		/// <para>Observers Elevation Field</para>
@@ -232,7 +229,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object Observerselevationfield { get; set; }
+		public object? Observerselevationfield { get; set; }
 
 		/// <summary>
 		/// <para>Observers Height Type</para>
@@ -245,19 +242,18 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Observersheighttype { get; set; } = "HEIGHT";
+		public object? Observersheighttype { get; set; } = "HEIGHT";
 
 		/// <summary>
 		/// <para>Observers Height</para>
 		/// <para>This is the height used for your observer locations.</para>
 		/// <para>The units can be Kilometers, Meters, Miles, Yards, or Feet.</para>
 		/// <para>The default units are Meters.</para>
-		/// <para><see cref="ObserversheightEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object Observersheight { get; set; } = "6 Feet";
+		[GPUnitDomain()]
+		public object? Observersheight { get; set; } = "6 Feet";
 
 		/// <summary>
 		/// <para>Observers Height Field</para>
@@ -266,7 +262,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object Observersheightfield { get; set; }
+		public object? Observersheightfield { get; set; }
 
 		/// <summary>
 		/// <para>Target Height Type</para>
@@ -279,19 +275,18 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Targetheighttype { get; set; } = "HEIGHT";
+		public object? Targetheighttype { get; set; } = "HEIGHT";
 
 		/// <summary>
 		/// <para>Target Height</para>
 		/// <para>This is the height of structures or people on the ground used to establish visibility. The result viewshed are those areas where an observer point can see these other objects. The converse is also true; the other objects can see an observer point.</para>
 		/// <para>The units can be Kilometers, Meters, Miles, Yards, or Feet.</para>
 		/// <para>The default units are Meters.</para>
-		/// <para><see cref="TargetheightEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object Targetheight { get; set; }
+		[GPUnitDomain()]
+		public object? Targetheight { get; set; }
 
 		/// <summary>
 		/// <para>Target Height Field</para>
@@ -300,7 +295,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object Targetheightfield { get; set; }
+		public object? Targetheightfield { get; set; }
 
 		/// <summary>
 		/// <para>Above Ground Level Output Name</para>
@@ -308,28 +303,28 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Abovegroundleveloutputname { get; set; }
+		public object? Abovegroundleveloutputname { get; set; }
 
 		/// <summary>
 		/// <para>Output Raster</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRasterLayer()]
-		public object Outputraster { get; set; }
+		public object? Outputraster { get; set; }
 
 		/// <summary>
 		/// <para>Output Above Ground Level Raster</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRasterLayer()]
-		public object Outputabovegroundlevelraster { get; set; }
+		public object? Outputabovegroundlevelraster { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateViewshed SetEnviroment(object cellSize = null , object extent = null , object mask = null , object outputCoordinateSystem = null , object snapRaster = null )
+		public CreateViewshed SetEnviroment(object? cellSize = null , object? extent = null , object? mask = null , object? outputCoordinateSystem = null , object? pyramid = null , object? snapRaster = null )
 		{
-			base.SetEnv(cellSize: cellSize, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, snapRaster: snapRaster);
+			base.SetEnv(cellSize: cellSize, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, pyramid: pyramid, snapRaster: snapRaster);
 			return this;
 		}
 
@@ -378,48 +373,6 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Maximum Viewing Distance</para>
-		/// </summary>
-		public enum MaximumviewingdistanceEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-		}
-
-		/// <summary>
 		/// <para>Minimum Viewing Distance Type</para>
 		/// </summary>
 		public enum MinimumviewingdistancetypeEnum 
@@ -437,48 +390,6 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 			[GPValue("FIELD")]
 			[Description("Field")]
 			Field,
-
-		}
-
-		/// <summary>
-		/// <para>Minimum Viewing Distance</para>
-		/// </summary>
-		public enum MinimumviewingdistanceEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
 
 		}
 
@@ -525,48 +436,6 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Observers Elevation</para>
-		/// </summary>
-		public enum ObserverselevationEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-		}
-
-		/// <summary>
 		/// <para>Observers Height Type</para>
 		/// </summary>
 		public enum ObserversheighttypeEnum 
@@ -588,48 +457,6 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Observers Height</para>
-		/// </summary>
-		public enum ObserversheightEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-		}
-
-		/// <summary>
 		/// <para>Target Height Type</para>
 		/// </summary>
 		public enum TargetheighttypeEnum 
@@ -647,48 +474,6 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 			[GPValue("FIELD")]
 			[Description("Field")]
 			Field,
-
-		}
-
-		/// <summary>
-		/// <para>Target Height</para>
-		/// </summary>
-		public enum TargetheightEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
 
 		}
 

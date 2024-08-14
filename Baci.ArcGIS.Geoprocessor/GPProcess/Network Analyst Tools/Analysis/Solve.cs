@@ -61,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkAnalysisLayer, IgnoreInvalids, TerminateOnSolveError, SimplificationTolerance, OutputLayer, SolveSucceeded, Overrides };
+		public override object[] Parameters => new object[] { InNetworkAnalysisLayer, IgnoreInvalids!, TerminateOnSolveError!, SimplificationTolerance!, OutputLayer!, SolveSucceeded!, Overrides! };
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer</para>
@@ -73,27 +73,28 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Ignore Invalid Locations</para>
-		/// <para>Specifies whether invalid input locations will be ignored.</para>
-		/// <para>Checked—The solver will skip over network locations that are unlocated and solve the analysis layer from valid network locations only. It will also continue solving if locations are on nontraversable elements or have other errors. This is useful if you know your network locations are not all correct, but you want to solve with the network locations that are valid. This is the default.</para>
-		/// <para>Unchecked—Do not solve if there are invalid locations. You can then correct these and rerun the analysis.</para>
+		/// <para>Specifies whether invalid input locations will be ignored. Typically, locations are invalid if they cannot be located on the network. When invalid locations are ignored, the solver will skip them and attempt to perform the analysis using the remaining locations.</para>
+		/// <para>Checked—Invalid input locations will be ignored and only valid locations will be used.</para>
+		/// <para>Unchecked—All input locations will be used. Any invalid locations will cause the solve to fail.</para>
+		/// <para>The default value will match the Ignore Invalid Locations at Solve Time setting on the designated Input Network Analysis Layer value.</para>
 		/// <para><see cref="IgnoreInvalidsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IgnoreInvalids { get; set; } = "true";
+		public object? IgnoreInvalids { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Terminate on Solve Error</para>
-		/// <para>Specifies whether tool execution should terminate if an error is encountered during the solve.</para>
-		/// <para>Checked—The tool will fail to execute when the solver encounters an error. This is the default.</para>
-		/// <para>Unchecked—The tool will not fail and continue execution even when the solver encounters an error. All of the error messages returned by the solver will be converted to warning messages. You should use this option when background processing is enabled in your application.</para>
+		/// <para>Specifies whether the tool will stop running and terminate if an error is encountered during the solve.</para>
+		/// <para>Checked—The tool will stop running and terminate when the solver encounters an error. This is the default.</para>
+		/// <para>Unchecked—The tool will not fail and will continue to run when the solver encounters an error. All error messages returned by the solver will be converted to warning messages. Use this option when background processing is enabled in the application.</para>
 		/// <para><see cref="TerminateOnSolveErrorEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object TerminateOnSolveError { get; set; } = "true";
+		public object? TerminateOnSolveError { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Simplification Tolerance</para>
@@ -103,37 +104,34 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object SimplificationTolerance { get; set; }
+		public object? SimplificationTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Network Analyst Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPNALayer()]
-		public object OutputLayer { get; set; }
+		public object? OutputLayer { get; set; }
 
 		/// <summary>
 		/// <para>Solve Succeeded</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
-		public object SolveSucceeded { get; set; } = "false";
+		public object? SolveSucceeded { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Overrides</para>
-		/// <para>Specify additional settings that can influence the behavior of the solver when finding solutions for the network analysis problems.</para>
-		/// <para>The value for this parameter needs to be specified in JavaScript Object Notation (JSON). For example, a valid value is of the following form {&quot;overrideSetting1&quot; : &quot;value1&quot;, &quot;overrideSetting2&quot; : &quot;value2&quot;}. The override setting name is always enclosed in double quotation marks. The values can be either a number, Boolean, or a string.</para>
-		/// <para>The default value for this parameter is no value, which indicates not to override any solver settings.</para>
-		/// <para>Overrides are advanced settings that should be used only after careful analysis of the results obtained before and after applying the settings. A list of supported override settings for each solver and their acceptable values can be obtained by contacting Esri Technical Support.</para>
+		/// <para>This parameter is for internal use only.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Overrides { get; set; }
+		public object? Overrides { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Solve SetEnviroment(object workspace = null )
+		public Solve SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -147,14 +145,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum IgnoreInvalidsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The solver will skip over network locations that are unlocated and solve the analysis layer from valid network locations only. It will also continue solving if locations are on nontraversable elements or have other errors. This is useful if you know your network locations are not all correct, but you want to solve with the network locations that are valid. This is the default.</para>
+			/// <para>Checked—Invalid input locations will be ignored and only valid locations will be used.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SKIP")]
 			SKIP,
 
 			/// <summary>
-			/// <para>Unchecked—Do not solve if there are invalid locations. You can then correct these and rerun the analysis.</para>
+			/// <para>Unchecked—All input locations will be used. Any invalid locations will cause the solve to fail.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("HALT")]
@@ -168,14 +166,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum TerminateOnSolveErrorEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The tool will fail to execute when the solver encounters an error. This is the default.</para>
+			/// <para>Checked—The tool will stop running and terminate when the solver encounters an error. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("TERMINATE")]
 			TERMINATE,
 
 			/// <summary>
-			/// <para>Unchecked—The tool will not fail and continue execution even when the solver encounters an error. All of the error messages returned by the solver will be converted to warning messages. You should use this option when background processing is enabled in your application.</para>
+			/// <para>Unchecked—The tool will not fail and will continue to run when the solver encounters an error. All error messages returned by the solver will be converted to warning messages. Use this option when background processing is enabled in the application.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("CONTINUE")]

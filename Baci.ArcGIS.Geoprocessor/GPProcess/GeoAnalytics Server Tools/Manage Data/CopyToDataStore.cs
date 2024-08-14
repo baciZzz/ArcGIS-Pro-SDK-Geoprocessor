@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <param name="InputLayer">
 		/// <para>Input Layer</para>
 		/// <para>The feature to be copied.</para>
-		/// <para>When running GeoAnalytics Server tools, the analysis is completed on the GeoAnalytics Server. For optimal performance, make data available to the GeoAnalytics Server through feature layers hosted on your ArcGIS Enterprise portal or through big data file shares. Data that is not local to your GeoAnalytics Server will be moved to your GeoAnalytics Server before analysis begins. This means that it will take longer to run a tool, and in some cases, moving the data from ArcGIS Pro to your GeoAnalytics Server may fail. The threshold for failure depends on your network speeds, as well as the size and complexity of the data. Therefore, it is recommended that you always share your data or create a big data file share.</para>
+		/// <para>When running GeoAnalytics Server tools, the analysis is completed on the GeoAnalytics Server. For optimal performance, make data available to the GeoAnalytics Server through feature layers hosted on your ArcGIS Enterprise portal or through big data file shares. Data that is not local to your GeoAnalytics Server will be moved to your GeoAnalytics Server before analysis begins. This means that it will take longer to run a tool, and in some cases, moving the data from ArcGIS Pro to your GeoAnalytics Server may fail. The threshold for failure depends on your network speeds, as well as the size and complexity of the data. It is recommended that you always share your data or create a big data file share.</para>
 		/// </param>
 		/// <param name="OutputName">
 		/// <para>Output Name</para>
@@ -66,12 +66,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutputName, DataStore, Output };
+		public override object[] Parameters => new object[] { InputLayer, OutputName, DataStore!, Output! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
 		/// <para>The feature to be copied.</para>
-		/// <para>When running GeoAnalytics Server tools, the analysis is completed on the GeoAnalytics Server. For optimal performance, make data available to the GeoAnalytics Server through feature layers hosted on your ArcGIS Enterprise portal or through big data file shares. Data that is not local to your GeoAnalytics Server will be moved to your GeoAnalytics Server before analysis begins. This means that it will take longer to run a tool, and in some cases, moving the data from ArcGIS Pro to your GeoAnalytics Server may fail. The threshold for failure depends on your network speeds, as well as the size and complexity of the data. Therefore, it is recommended that you always share your data or create a big data file share.</para>
+		/// <para>When running GeoAnalytics Server tools, the analysis is completed on the GeoAnalytics Server. For optimal performance, make data available to the GeoAnalytics Server through feature layers hosted on your ArcGIS Enterprise portal or through big data file shares. Data that is not local to your GeoAnalytics Server will be moved to your GeoAnalytics Server before analysis begins. This means that it will take longer to run a tool, and in some cases, moving the data from ArcGIS Pro to your GeoAnalytics Server may fail. The threshold for failure depends on your network speeds, as well as the size and complexity of the data. It is recommended that you always share your data or create a big data file share.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRecordSet()]
@@ -96,19 +96,19 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
+		public object? DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object Output { get; set; }
+		public object? Output { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CopyToDataStore SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public CopyToDataStore SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

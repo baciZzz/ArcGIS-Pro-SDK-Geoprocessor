@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFolder, InputDatabasepath, InputRepositoryName, InputExportSince, InputExportUntil, OutputStatus };
+		public override object[] Parameters => new object[] { InputFolder, InputDatabasepath!, InputRepositoryName!, InputExportSince!, InputExportUntil!, OutputStatus! };
 
 		/// <summary>
 		/// <para>Folder To Export To</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object InputDatabasepath { get; set; }
+		public object? InputDatabasepath { get; set; }
 
 		/// <summary>
 		/// <para>Repository Name</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object InputRepositoryName { get; set; }
+		public object? InputRepositoryName { get; set; }
 
 		/// <summary>
 		/// <para>Export Since</para>
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object InputExportSince { get; set; }
+		public object? InputExportSince { get; set; }
 
 		/// <summary>
 		/// <para>Export Until</para>
@@ -101,14 +101,14 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object InputExportUntil { get; set; }
+		public object? InputExportUntil { get; set; }
 
 		/// <summary>
 		/// <para>Status</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLong()]
-		public object OutputStatus { get; set; }
+		public object? OutputStatus { get; set; }
 
 	}
 }

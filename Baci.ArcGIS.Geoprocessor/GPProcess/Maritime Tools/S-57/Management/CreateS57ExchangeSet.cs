@@ -68,7 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDirectories, OutDirectory, LayoutFormat, UpdatesOnly, DerivedOutDirectory };
+		public override object[] Parameters => new object[] { InDirectories, OutDirectory, LayoutFormat!, UpdatesOnly!, DerivedOutDirectory! };
 
 		/// <summary>
 		/// <para>Input Directories</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LayoutFormat { get; set; } = "VERSION_LAYOUT";
+		public object? LayoutFormat { get; set; } = "VERSION_LAYOUT";
 
 		/// <summary>
 		/// <para>Updates Only</para>
@@ -112,19 +112,19 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UpdatesOnly { get; set; }
+		public object? UpdatesOnly { get; set; }
 
 		/// <summary>
 		/// <para>S-57 Exchange Set Directory</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFolder()]
-		public object DerivedOutDirectory { get; set; }
+		public object? DerivedOutDirectory { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateS57ExchangeSet SetEnviroment(object workspace = null )
+		public CreateS57ExchangeSet SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

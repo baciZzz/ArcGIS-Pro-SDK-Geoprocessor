@@ -11,7 +11,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 {
 	/// <summary>
 	/// <para>Reverse Geocode</para>
-	/// <para>Creates addresses from point locations in a feature class. The reverse geocoding process searches for the nearest address or intersection for the point location based on the specified search distance. When using the ArcGIS World Geocoding Service, this operation may consume credits.</para>
+	/// <para>Creates addresses from point locations in a feature class. The reverse geocoding process searches for the</para>
+	/// <para>nearest address, place, or intersection for the point location</para>
+	/// <para>based on optimized distance values for locators created with the</para>
+	/// <para>Create Locator tool.</para>
 	/// </summary>
 	public class ReverseGeocode : AbstractGPProcess
 	{
@@ -29,6 +32,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
 		/// <para>The output feature class.</para>
+		/// <para>Saving the output to shapefile format is not supported due to shapefile limitations.</para>
 		/// </param>
 		/// <param name="SearchDistance">
 		/// <para>Search Distance</para>
@@ -76,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InAddressLocator, OutFeatureClass, AddressType, SearchDistance, FeatureType, LocationType };
+		public override object[] Parameters => new object[] { InFeatures, InAddressLocator, OutFeatureClass, AddressType!, SearchDistance, FeatureType!, LocationType! };
 
 		/// <summary>
 		/// <para>Input Feature Class or layer</para>
@@ -98,9 +102,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Output Feature Class</para>
 		/// <para>The output feature class.</para>
+		/// <para>Saving the output to shapefile format is not supported due to shapefile limitations.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
+		[GPBrowseFiltersDomain()]
 		public object OutFeatureClass { get; set; }
 
 		/// <summary>
@@ -114,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object AddressType { get; set; } = "ADDRESS";
+		public object? AddressType { get; set; } = "ADDRESS";
 
 		/// <summary>
 		/// <para>Search Distance</para>
@@ -127,14 +133,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Feature Type</para>
-		/// <para>Specifies the possible match types that will be returned. A single value or multiple values can be selected. If a single value is selected, the search tolerance for the input feature type is 500 meters. If multiple values are included, the default search distances specified in the feature type hierarchy table will be applied.</para>
+		/// <para>Specifies the possible match types that will be returned. A single value or multiple values can be selected. If a single value is selected, the search tolerance for the input feature type is 500 meters. If multiple values are included, the default search distances specified in the feature type hierarchy table will be applied. See feature types for details about the Feature Type parameter for reverse geocoding.</para>
 		/// <para>This parameter is not supported for all locators.</para>
-		/// <para>Subaddress—The match will be limited to a street address based on points that represent house and building subaddress locations.</para>
+		/// <para>Subaddress—The match will be limited to a street address based on points that represent house and building subaddress locations. This option requires a locator created in ArcGIS Pro 2.8 or later and ArcGIS Enterprise 10.9 or later if published as a service.</para>
 		/// <para>Point Address—The match will be limited to a street address based on points that represent house and building locations.</para>
 		/// <para>Parcel—The match will be limited to a plot of land that is considered real property and can include one or more homes or other structures. This match type typically has an address and a parcel identification number assigned to it.</para>
 		/// <para>Street Address—The match will be limited to a street address that differs from Point Address because the house number is interpolated from a range of numbers. Street Address matches include the house number range for the matching street segment rather than the interpolated house number value.</para>
 		/// <para>Street Intersection— The match will be limited to a street address consisting of a street intersection along with city and optional state and postal code information. This is derived from Street Address reference data, for example, Redlands Blvd &amp; New York St, Redlands, CA, 92373.</para>
-		/// <para>Street Name—The match will be limited to a street address similar to Street Address but without house numbers along with administrative divisions and optional postal code, for example, W Olive Ave, Redlands, CA, 92373 .</para>
+		/// <para>Street Name—The match will be limited to a street address similar to Street Address but without house numbers along with administrative divisions and optional postal code, for example, W Olive Ave, Redlands, CA, 92373.</para>
 		/// <para>Locality—The match will be limited to a place-name representing a populated place.</para>
 		/// <para>Postal—The match will be limited to a postal code. Reference data is postal code points, for example, 90210 USA.</para>
 		/// <para>Point of Interest—The match will be limited to a point of interest. Reference data consists of administrative division place-names, businesses, landmarks, and geographic features, for example, Starbucks.</para>
@@ -144,25 +150,25 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object FeatureType { get; set; }
+		public object? FeatureType { get; set; }
 
 		/// <summary>
 		/// <para>Preferred Location Type</para>
 		/// <para>Specifies the preferred output geometry for Point Address matches. The options for this parameter are a side of street location, which can be used for routing, or the location that represents the rooftop or parcel centroid for the address. If the preferred location does not exist in the data, the default location will be returned instead. For geocode results with Addr_type=PointAddress, the x,y attribute values describe the coordinates of the address along the street, while the DisplayX and DisplayY values describe the rooftop or building centroid coordinates.</para>
 		/// <para>This parameter is not supported for all locators.</para>
-		/// <para>Address location—Geometry for geocode results that represent an address location such as rooftop, building centroid, or front door is returned will be returned.</para>
+		/// <para>Address location—Geometry for geocode results that represent an address location such as rooftop, building centroid, or front door will be returned.</para>
 		/// <para>Routing location—Geometry for geocode results that represent a location close to the side of the street, which can be used for vehicle routing, will be returned. This is the default.</para>
 		/// <para><see cref="LocationTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LocationType { get; set; } = "ROUTING_LOCATION";
+		public object? LocationType { get; set; } = "ROUTING_LOCATION";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ReverseGeocode SetEnviroment(object outputCoordinateSystem = null )
+		public ReverseGeocode SetEnviroment(object? outputCoordinateSystem = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem);
 			return this;
@@ -218,7 +224,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 			Street_Intersection,
 
 			/// <summary>
-			/// <para>Street Name—The match will be limited to a street address similar to Street Address but without house numbers along with administrative divisions and optional postal code, for example, W Olive Ave, Redlands, CA, 92373 .</para>
+			/// <para>Street Name—The match will be limited to a street address similar to Street Address but without house numbers along with administrative divisions and optional postal code, for example, W Olive Ave, Redlands, CA, 92373.</para>
 			/// </summary>
 			[GPValue("STREET_NAME")]
 			[Description("Street Name")]
@@ -260,7 +266,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 			Parcel,
 
 			/// <summary>
-			/// <para>Subaddress—The match will be limited to a street address based on points that represent house and building subaddress locations.</para>
+			/// <para>Subaddress—The match will be limited to a street address based on points that represent house and building subaddress locations. This option requires a locator created in ArcGIS Pro 2.8 or later and ArcGIS Enterprise 10.9 or later if published as a service.</para>
 			/// </summary>
 			[GPValue("SUBADDRESS")]
 			[Description("Subaddress")]
@@ -281,7 +287,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 			Routing_location,
 
 			/// <summary>
-			/// <para>Address location—Geometry for geocode results that represent an address location such as rooftop, building centroid, or front door is returned will be returned.</para>
+			/// <para>Address location—Geometry for geocode results that represent an address location such as rooftop, building centroid, or front door will be returned.</para>
 			/// </summary>
 			[GPValue("ADDRESS_LOCATION")]
 			[Description("Address location")]

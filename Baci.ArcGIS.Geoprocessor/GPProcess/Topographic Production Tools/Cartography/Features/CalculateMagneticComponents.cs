@@ -11,8 +11,10 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Calculate Magnetic Components</para>
-	/// <para>Computes the magnetic field at point locations for given date and altitude.</para>
+	/// <para>Calculates the magnetic field at point locations for given date and altitude.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class CalculateMagneticComponents : AbstractGPProcess
 	{
 		/// <summary>
@@ -32,18 +34,18 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </param>
 		/// <param name="MagneticComponent">
 		/// <para>Magnetic Component</para>
-		/// <para>The magnetic component to calculate and the field to which the values will be written.</para>
+		/// <para>The magnetic component that will be calculated and the field to which the values will be written.</para>
 		/// <para>Component—The magnetic component to calculate.</para>
 		/// <para>Declination—The angle between magnetic north and true north. This value varies by location on the globe.</para>
 		/// <para>Annual Drift—The annual rate of change in magnetic declination. This value varies by location on the globe.</para>
 		/// <para>Inclination—The angle between a compass needle and the plane of the horizon. Inclination is also known as magnetic dip or the dip of the compass needle. This value varies by latitude.</para>
-		/// <para>Horizonatl—This value is calculated using north and east components. Horizontal is also known as Horizontal intensity, or H. This value varies by location on the globe.</para>
+		/// <para>Horizontal—This value is calculated using north and east components. Horizontal is also known as Horizontal intensity, or H. This value varies by location on the globe.</para>
 		/// <para>East component—The easterly intensity of the geomagnetic field. East component is also known as Y. This value varies by location on the globe.</para>
 		/// <para>North component—The northerly intensity of the geomagnetic field. North component is also known as X. This value varies by location on the globe.</para>
 		/// <para>Vertical intensity—The vertical intensity of the geomagnetic field. Vertical intensity is also known as Z. This value varies by location on the globe.</para>
 		/// <para>Total intensity—This value is calculated using horizontal and vertical components. Total intensity is also known as F. This value varies by location on the globe.</para>
-		/// <para>Grid variation—The angle between magnetic north and grid north. You must use the Lambert conformal conic projected coordinate system in the ArcMap data frame, in the geoprocessing environment, or in the input point data.</para>
-		/// <para>Field—The field to which calculated results are written.</para>
+		/// <para>Grid variation—The angle between magnetic north and grid north. You must use the Lambert conformal conic projected coordinate system in the map frame, in the geoprocessing environment, or in the input point data.</para>
+		/// <para>Field—The field to which calculated results will be written.</para>
 		/// </param>
 		public CalculateMagneticComponents(object InFeatures, object Altitude, object Date, object MagneticComponent)
 		{
@@ -86,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Altitude, Date, MagneticComponent, UpdatedFeatures };
+		public override object[] Parameters => new object[] { InFeatures, Altitude, Date, MagneticComponent, UpdatedFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -115,18 +117,18 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 
 		/// <summary>
 		/// <para>Magnetic Component</para>
-		/// <para>The magnetic component to calculate and the field to which the values will be written.</para>
+		/// <para>The magnetic component that will be calculated and the field to which the values will be written.</para>
 		/// <para>Component—The magnetic component to calculate.</para>
 		/// <para>Declination—The angle between magnetic north and true north. This value varies by location on the globe.</para>
 		/// <para>Annual Drift—The annual rate of change in magnetic declination. This value varies by location on the globe.</para>
 		/// <para>Inclination—The angle between a compass needle and the plane of the horizon. Inclination is also known as magnetic dip or the dip of the compass needle. This value varies by latitude.</para>
-		/// <para>Horizonatl—This value is calculated using north and east components. Horizontal is also known as Horizontal intensity, or H. This value varies by location on the globe.</para>
+		/// <para>Horizontal—This value is calculated using north and east components. Horizontal is also known as Horizontal intensity, or H. This value varies by location on the globe.</para>
 		/// <para>East component—The easterly intensity of the geomagnetic field. East component is also known as Y. This value varies by location on the globe.</para>
 		/// <para>North component—The northerly intensity of the geomagnetic field. North component is also known as X. This value varies by location on the globe.</para>
 		/// <para>Vertical intensity—The vertical intensity of the geomagnetic field. Vertical intensity is also known as Z. This value varies by location on the globe.</para>
 		/// <para>Total intensity—This value is calculated using horizontal and vertical components. Total intensity is also known as F. This value varies by location on the globe.</para>
-		/// <para>Grid variation—The angle between magnetic north and grid north. You must use the Lambert conformal conic projected coordinate system in the ArcMap data frame, in the geoprocessing environment, or in the input point data.</para>
-		/// <para>Field—The field to which calculated results are written.</para>
+		/// <para>Grid variation—The angle between magnetic north and grid north. You must use the Lambert conformal conic projected coordinate system in the map frame, in the geoprocessing environment, or in the input point data.</para>
+		/// <para>Field—The field to which calculated results will be written.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -138,12 +140,12 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object UpdatedFeatures { get; set; }
+		public object? UpdatedFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateMagneticComponents SetEnviroment(object workspace = null )
+		public CalculateMagneticComponents SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

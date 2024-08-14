@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGridXml, AreaOfInterest, TargetFeatureDataset, OutLayerName, GridName, ConfigureLayout, Layout, MapFrame, ReferenceScale, Rotation, MaskSize, XyTolerance, PrimaryCoordinateSystem, AncillaryCoordinateSystem1, AncillaryCoordinateSystem2, AncillaryCoordinateSystem3, AncillaryCoordinateSystem4 };
+		public override object[] Parameters => new object[] { InGridXml, AreaOfInterest, TargetFeatureDataset, OutLayerName, GridName!, ConfigureLayout!, Layout!, MapFrame!, ReferenceScale!, Rotation!, MaskSize!, XyTolerance!, PrimaryCoordinateSystem!, AncillaryCoordinateSystem1!, AncillaryCoordinateSystem2!, AncillaryCoordinateSystem3!, AncillaryCoordinateSystem4! };
 
 		/// <summary>
 		/// <para>Grid Template (XML file)</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object GridName { get; set; }
+		public object? GridName { get; set; }
 
 		/// <summary>
 		/// <para>Configure map frame and layout using grid settings</para>
@@ -148,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ConfigureLayout { get; set; } = "false";
+		public object? ConfigureLayout { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Layout</para>
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLayout()]
-		public object Layout { get; set; }
+		public object? Layout { get; set; }
 
 		/// <summary>
 		/// <para>Map Frame</para>
@@ -165,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object MapFrame { get; set; }
+		public object? MapFrame { get; set; }
 
 		/// <summary>
 		/// <para>Reference Scale</para>
@@ -179,7 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[GPDouble()]
 		[GPNumericDomain()]
 		[Category("Advanced Settings (optional)")]
-		public object ReferenceScale { get; set; }
+		public object? ReferenceScale { get; set; }
 
 		/// <summary>
 		/// <para>Rotation</para>
@@ -190,7 +190,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Advanced Settings (optional)")]
-		public object Rotation { get; set; }
+		public object? Rotation { get; set; }
 
 		/// <summary>
 		/// <para>Mask Size</para>
@@ -199,7 +199,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Advanced Settings (optional)")]
-		public object MaskSize { get; set; }
+		public object? MaskSize { get; set; }
 
 		/// <summary>
 		/// <para>XY Tolerance</para>
@@ -208,7 +208,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Advanced Settings (optional)")]
-		public object XyTolerance { get; set; }
+		public object? XyTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Primary Coordinate System</para>
@@ -221,7 +221,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
 		[Category("Advanced Settings (optional)")]
-		public object PrimaryCoordinateSystem { get; set; }
+		public object? PrimaryCoordinateSystem { get; set; }
 
 		/// <summary>
 		/// <para>Ancillary Coordinate System 1</para>
@@ -230,7 +230,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
 		[Category("Advanced Settings (optional)")]
-		public object AncillaryCoordinateSystem1 { get; set; }
+		public object? AncillaryCoordinateSystem1 { get; set; }
 
 		/// <summary>
 		/// <para>Ancillary Coordinate System 2</para>
@@ -239,7 +239,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
 		[Category("Advanced Settings (optional)")]
-		public object AncillaryCoordinateSystem2 { get; set; }
+		public object? AncillaryCoordinateSystem2 { get; set; }
 
 		/// <summary>
 		/// <para>Ancillary Coordinate System 3</para>
@@ -248,7 +248,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
 		[Category("Advanced Settings (optional)")]
-		public object AncillaryCoordinateSystem3 { get; set; }
+		public object? AncillaryCoordinateSystem3 { get; set; }
 
 		/// <summary>
 		/// <para>Ancillary Coordinate System 4</para>
@@ -257,12 +257,12 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
 		[Category("Advanced Settings (optional)")]
-		public object AncillaryCoordinateSystem4 { get; set; }
+		public object? AncillaryCoordinateSystem4 { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeGridsAndGraticulesLayer SetEnviroment(object cartographicCoordinateSystem = null , object configKeyword = null , object outputMFlag = null , object outputZFlag = null , object referenceScale = null )
+		public MakeGridsAndGraticulesLayer SetEnviroment(object? cartographicCoordinateSystem = null , object? configKeyword = null , object? outputMFlag = null , object? outputZFlag = null , double? referenceScale = null )
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem, configKeyword: configKeyword, outputMFlag: outputMFlag, outputZFlag: outputZFlag, referenceScale: referenceScale);
 			return this;

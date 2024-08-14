@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Remove Rule From Relationship Class</para>
 	/// <para>Removes a rule from a relationship class.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class RemoveRuleFromRelationshipClass : AbstractGPProcess
 	{
 		/// <summary>
@@ -60,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRelClass, OriginSubtype, DestinationSubtype, RemoveAll, OutRelClass };
+		public override object[] Parameters => new object[] { InRelClass, OriginSubtype!, DestinationSubtype!, RemoveAll!, OutRelClass! };
 
 		/// <summary>
 		/// <para>Input Relationship Class</para>
@@ -76,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object OriginSubtype { get; set; }
+		public object? OriginSubtype { get; set; }
 
 		/// <summary>
 		/// <para>Destination Subtype</para>
@@ -84,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DestinationSubtype { get; set; }
+		public object? DestinationSubtype { get; set; }
 
 		/// <summary>
 		/// <para>Remove All</para>
@@ -94,14 +96,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
-		public object RemoveAll { get; set; }
+		public object? RemoveAll { get; set; }
 
 		/// <summary>
 		/// <para>Updated Relationship Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DERelationshipClass()]
-		public object OutRelClass { get; set; }
+		public object? OutRelClass { get; set; }
 
 	}
 }

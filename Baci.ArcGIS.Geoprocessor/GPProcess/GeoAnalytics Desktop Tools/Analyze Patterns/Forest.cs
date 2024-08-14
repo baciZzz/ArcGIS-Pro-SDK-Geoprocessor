@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { PredictionType, InFeatures, OutputTrainedFeatures, VariablePredict, TreatVariableAsCategorical, ExplanatoryVariables, FeaturesToPredict, VariableOfImportance, OutputPredicted, ExplanatoryVariableMatching, NumberOfTrees, MinimumLeafSize, MaximumTreeDepth, SampleSize, RandomVariables, PercentageForValidation };
+		public override object[] Parameters => new object[] { PredictionType, InFeatures, OutputTrainedFeatures, VariablePredict, TreatVariableAsCategorical!, ExplanatoryVariables!, FeaturesToPredict!, VariableOfImportance!, OutputPredicted!, ExplanatoryVariableMatching!, NumberOfTrees!, MinimumLeafSize!, MaximumTreeDepth!, SampleSize!, RandomVariables!, PercentageForValidation! };
 
 		/// <summary>
 		/// <para>Prediction Type</para>
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object TreatVariableAsCategorical { get; set; }
+		public object? TreatVariableAsCategorical { get; set; }
 
 		/// <summary>
 		/// <para>Explanatory Variables</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object ExplanatoryVariables { get; set; }
+		public object? ExplanatoryVariables { get; set; }
 
 		/// <summary>
 		/// <para>Input Prediction Features</para>
@@ -144,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
-		public object FeaturesToPredict { get; set; }
+		public object? FeaturesToPredict { get; set; }
 
 		/// <summary>
 		/// <para>Variable of Importance Table</para>
@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
 		[Category("Additional Outputs")]
-		public object VariableOfImportance { get; set; }
+		public object? VariableOfImportance { get; set; }
 
 		/// <summary>
 		/// <para>Output Predicted Features</para>
@@ -162,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[Category("Additional Outputs")]
-		public object OutputPredicted { get; set; }
+		public object? OutputPredicted { get; set; }
 
 		/// <summary>
 		/// <para>Match Explanatory Variables</para>
@@ -171,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object ExplanatoryVariableMatching { get; set; }
+		public object? ExplanatoryVariableMatching { get; set; }
 
 		/// <summary>
 		/// <para>Number of Trees</para>
@@ -180,7 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Advanced Forest Options")]
-		public object NumberOfTrees { get; set; } = "100";
+		public object? NumberOfTrees { get; set; } = "100";
 
 		/// <summary>
 		/// <para>Minimum Leaf Size</para>
@@ -189,7 +189,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Advanced Forest Options")]
-		public object MinimumLeafSize { get; set; }
+		public object? MinimumLeafSize { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Tree Depth</para>
@@ -198,7 +198,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Advanced Forest Options")]
-		public object MaximumTreeDepth { get; set; }
+		public object? MaximumTreeDepth { get; set; }
 
 		/// <summary>
 		/// <para>Data Available per Tree (%)</para>
@@ -209,7 +209,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Advanced Forest Options")]
-		public object SampleSize { get; set; } = "100";
+		public object? SampleSize { get; set; } = "100";
 
 		/// <summary>
 		/// <para>Number of Randomly Sampled Variables</para>
@@ -219,7 +219,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Advanced Forest Options")]
-		public object RandomVariables { get; set; }
+		public object? RandomVariables { get; set; }
 
 		/// <summary>
 		/// <para>Training Data Excluded for Validation (%)</para>
@@ -229,12 +229,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Validation Options")]
-		public object PercentageForValidation { get; set; } = "10";
+		public object? PercentageForValidation { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Forest SetEnviroment(object extent = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object workspace = null )
+		public Forest SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;

@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMultidimensionalRaster, Dimension, OutMultidimensionalRaster, AggregationMethod, Variables, AggregationDef, IntervalKeyword, IntervalValue, IntervalUnit, IntervalRanges, AggregationFunction, IgnoreNodata, Dimensionless, PercentileValue, PercentileInterpolationType };
+		public override object[] Parameters => new object[] { InMultidimensionalRaster, Dimension, OutMultidimensionalRaster, AggregationMethod!, Variables!, AggregationDef!, IntervalKeyword!, IntervalValue!, IntervalUnit!, IntervalRanges!, AggregationFunction!, IgnoreNodata!, Dimensionless!, PercentileValue!, PercentileInterpolationType! };
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object AggregationMethod { get; set; } = "MEAN";
+		public object? AggregationMethod { get; set; } = "MEAN";
 
 		/// <summary>
 		/// <para>Variables [Dimension Info] (Description)</para>
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Variables { get; set; }
+		public object? Variables { get; set; }
 
 		/// <summary>
 		/// <para>Aggregation Definition</para>
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object AggregationDef { get; set; } = "ALL";
+		public object? AggregationDef { get; set; } = "ALL";
 
 		/// <summary>
 		/// <para>Keyword Interval</para>
@@ -162,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object IntervalKeyword { get; set; }
+		public object? IntervalKeyword { get; set; }
 
 		/// <summary>
 		/// <para>Value Interval</para>
@@ -171,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object IntervalValue { get; set; }
+		public object? IntervalValue { get; set; }
 
 		/// <summary>
 		/// <para>Unit</para>
@@ -187,7 +187,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object IntervalUnit { get; set; }
+		public object? IntervalUnit { get; set; }
 
 		/// <summary>
 		/// <para>Range</para>
@@ -196,7 +196,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object IntervalRanges { get; set; }
+		public object? IntervalRanges { get; set; }
 
 		/// <summary>
 		/// <para>Aggregation Function</para>
@@ -206,7 +206,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object AggregationFunction { get; set; }
+		public object? AggregationFunction { get; set; }
 
 		/// <summary>
 		/// <para>Ignore NoData</para>
@@ -218,7 +218,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IgnoreNodata { get; set; } = "true";
+		public object? IgnoreNodata { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Dimensionless</para>
@@ -230,17 +230,17 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Dimensionless { get; set; } = "false";
+		public object? Dimensionless { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Percentile value</para>
 		/// <para>The percentile to calculate. The default is 90, indicating the 90th percentile.</para>
 		/// <para>The values can range from 0 to 100. The 0th percentile is essentially equivalent to the minimum statistic, and the 100th percentile is equivalent to maximum. A value of 50 will produce essentially the same result as the median statistic.</para>
-		/// <para>This option is only available if the Statistics type parameter is set to Percentile.</para>
+		/// <para>This parameter is only available if the Statistics type parameter is set to Percentile.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object PercentileValue { get; set; } = "90";
+		public object? PercentileValue { get; set; } = "90";
 
 		/// <summary>
 		/// <para>Percentile interpolation type</para>
@@ -252,12 +252,12 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object PercentileInterpolationType { get; set; } = "NEAREST";
+		public object? PercentileInterpolationType { get; set; } = "NEAREST";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AggregateMultidimensionalRaster SetEnviroment(object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object nodata = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object pyramid = null , object rasterStatistics = null , object resamplingMethod = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public AggregateMultidimensionalRaster SetEnviroment(object? cellSize = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? nodata = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? pyramid = null , object? rasterStatistics = null , object? resamplingMethod = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
 			base.SetEnv(cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, nodata: nodata, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, rasterStatistics: rasterStatistics, resamplingMethod: resamplingMethod, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;

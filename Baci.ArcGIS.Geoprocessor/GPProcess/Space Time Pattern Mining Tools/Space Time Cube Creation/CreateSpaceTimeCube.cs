@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputCube, TimeField, TemplateCube, TimeStepInterval, TimeStepAlignment, ReferenceTime, DistanceInterval, SummaryFields, AggregationShapeType, DefinedPolygonLocations, LocationId };
+		public override object[] Parameters => new object[] { InFeatures, OutputCube, TimeField, TemplateCube!, TimeStepInterval!, TimeStepAlignment!, ReferenceTime!, DistanceInterval!, SummaryFields!, AggregationShapeType!, DefinedPolygonLocations!, LocationId! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -107,17 +107,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object TemplateCube { get; set; }
+		public object? TemplateCube { get; set; }
 
 		/// <summary>
 		/// <para>Time Step Interval</para>
 		/// <para>The number of seconds, minutes, hours, days, weeks, or years that will represent a single time step. All points within the same Time Step Interval and Distance Interval will be aggregated. (When a Template Cube is provided, this parameter is ignored, and the Time Step Interval value is obtained from the template cube.)</para>
-		/// <para><see cref="TimeStepIntervalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
-		public object TimeStepInterval { get; set; }
+		[GPUnitDomain()]
+		public object? TimeStepInterval { get; set; }
 
 		/// <summary>
 		/// <para>Time Step Alignment</para>
@@ -130,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TimeStepAlignment { get; set; } = "END_TIME";
+		public object? TimeStepAlignment { get; set; } = "END_TIME";
 
 		/// <summary>
 		/// <para>Reference Time</para>
@@ -138,17 +137,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
-		public object ReferenceTime { get; set; }
+		public object? ReferenceTime { get; set; }
 
 		/// <summary>
 		/// <para>Distance Interval</para>
 		/// <para>The size of the bins used to aggregate the Input Features. All points that fall within the same Distance Interval and Time Step Interval will be aggregated. When aggregating into a hexagon grid, this distance is used as the height to construct the hexagon polygons. (When a Template Cube is provided, this parameter is disabled and the distance interval value will be based on the Template Cube.)</para>
-		/// <para><see cref="DistanceIntervalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object DistanceInterval { get; set; }
+		[GPUnitDomain()]
+		public object? DistanceInterval { get; set; }
 
 		/// <summary>
 		/// <para>Summary Fields</para>
@@ -170,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object SummaryFields { get; set; }
+		public object? SummaryFields { get; set; }
 
 		/// <summary>
 		/// <para>Aggregation Shape Type</para>
@@ -183,7 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object AggregationShapeType { get; set; } = "FISHNET_GRID";
+		public object? AggregationShapeType { get; set; } = "FISHNET_GRID";
 
 		/// <summary>
 		/// <para>Defined Polygon Locations</para>
@@ -192,7 +190,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object DefinedPolygonLocations { get; set; }
+		public object? DefinedPolygonLocations { get; set; }
 
 		/// <summary>
 		/// <para>Location ID</para>
@@ -201,74 +199,18 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object LocationId { get; set; }
+		public object? LocationId { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateSpaceTimeCube SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public CreateSpaceTimeCube SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
 		}
 
 		#region InnerClass
-
-		/// <summary>
-		/// <para>Time Step Interval</para>
-		/// </summary>
-		public enum TimeStepIntervalEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Seconds")]
-			[Description("Seconds")]
-			Seconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Days")]
-			[Description("Days")]
-			Days,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Weeks")]
-			[Description("Weeks")]
-			Weeks,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Months")]
-			[Description("Months")]
-			Months,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Years")]
-			[Description("Years")]
-			Years,
-
-		}
 
 		/// <summary>
 		/// <para>Time Step Alignment</para>
@@ -295,41 +237,6 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 			[GPValue("REFERENCE_TIME")]
 			[Description("Reference time")]
 			Reference_time,
-
-		}
-
-		/// <summary>
-		/// <para>Distance Interval</para>
-		/// </summary>
-		public enum DistanceIntervalEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
 
 		}
 

@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, OutKmzFile, MapOutputScale, IsComposite, IsVectorToRaster, ExtentToExport, ImageSize, DpiOfClient, IgnoreZvalue };
+		public override object[] Parameters => new object[] { InMap, OutKmzFile, MapOutputScale!, IsComposite!, IsVectorToRaster!, ExtentToExport!, ImageSize!, DpiOfClient!, IgnoreZvalue!, Layout! };
 
 		/// <summary>
 		/// <para>Input Map</para>
@@ -86,42 +86,42 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Map Output Scale</para>
-		/// <para>The scale at which to export each layer in the map.</para>
+		/// <para>The scale at which each layer in the map will be exported.</para>
 		/// <para>This parameter is important with any scale dependency, such as layer visibility or scale-dependent rendering. If the layer is not visible at the output scale, it is not included in the output KML. Any value, such as 1, can be used if there are no scale dependencies.</para>
 		/// <para>For raster layers, a value of 0 can be used to create one untiled output image. If a value greater than or equal to 1 is used, it determines the output resolution of the raster. This parameter has no effect on layers that are not raster layers.</para>
 		/// <para>Only numeric characters are accepted; for example, enter 20000 as the scale, not 1:20000. In languages that use commas as the decimal point, 20,000 is also acceptable.</para>
-		/// <para>If you&apos;re exporting a layer that is to be displayed as 3D vectors and the Return single composite image parameter is checked, you can set this parameter to any value as long as your features do not have any scale-dependent rendering.</para>
+		/// <para>If you&apos;re exporting a layer that is to be displayed as 3D vectors and the Return single composite image parameter is checked, you can set this parameter to any value as long as the features do not have any scale-dependent rendering.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MapOutputScale { get; set; } = "0";
+		public object? MapOutputScale { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Return single composite image</para>
-		/// <para>Specifies whether the output KML contains a single composite image or separate layers.</para>
-		/// <para>Checked—The output KML contains a single image that composites all the features in the map into a single raster image. The raster is draped over the terrain as a KML GroundOverlay. This option reduces the size of the output KML file. When you choose this option, individual features and layers in the KML are not selectable.</para>
-		/// <para>Unchecked—The output KML contains separate, individual layers. This is the default. Whether the layers are returned as rasters or as a combination of vectors and rasters is determined by the Convert Vector to Raster parameter.</para>
+		/// <para>Specifies whether the output KML will contain a single composite image or separate layers.</para>
+		/// <para>Checked—The output KML will contain a single image that composites all the features in the map into a single raster image. The raster is draped over the terrain as a KML GroundOverlay. This option reduces the size of the output KML. Individual features and layers in the KML are not selectable.</para>
+		/// <para>Unchecked—The output KML will contain separate, individual layers. This is the default. Whether the layers are returned as rasters or as a combination of vectors and rasters is determined by the Convert Vector to Raster parameter.</para>
 		/// <para><see cref="IsCompositeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Data Content Properties")]
-		public object IsComposite { get; set; } = "false";
+		public object? IsComposite { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Convert Vector to Raster</para>
-		/// <para>Specifies whether each vector layer in the map is converted to a separate raster image or preserved as vector layers.</para>
+		/// <para>Specifies whether each vector layer in the map will be converted to a separate raster image or preserved as vector layers.</para>
 		/// <para>This parameter is inactive if the Return single composite image parameter is checked.</para>
-		/// <para>Checked—Vector layers are converted to a separate raster image in the KML output. Normal raster layers are also added to the KML output. Each output KML raster layer is selectable, and its transparency can be adjusted in certain KML clients.</para>
-		/// <para>Unchecked—Vector layers are preserved as KML vectors. This is the default.</para>
+		/// <para>Checked—Vector layers will be converted to a separate raster image in the KML output. Normal raster layers are also added to the KML output. Each output KML raster layer is selectable, and its transparency can be adjusted in certain KML clients.</para>
+		/// <para>Unchecked—Vector layers will be preserved as KML vectors. This is the default.</para>
 		/// <para><see cref="IsVectorToRasterEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Data Content Properties")]
-		public object IsVectorToRaster { get; set; } = "false";
+		public object? IsVectorToRaster { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Extent to Export</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
 		[Category("Extent Properties")]
-		public object ExtentToExport { get; set; }
+		public object? ExtentToExport { get; set; }
 
 		/// <summary>
 		/// <para>Size of returned image (pixels)</para>
@@ -143,28 +143,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Output Image Properties")]
-		public object ImageSize { get; set; } = "1024";
+		public object? ImageSize { get; set; } = "1024";
 
 		/// <summary>
 		/// <para>DPI of output image</para>
-		/// <para>The device resolution for any rasters in the output KML document. Typical screen resolution is 96 dpi. If the data in your map supports a high resolution and your KML requires it, consider increasing the value. Use this parameter with the Size of returned image (pixels) parameter to control output image resolution. The default value is 96.</para>
+		/// <para>The device resolution for any rasters in the output KML document. Typical screen resolution is 96 dpi. If the data in the map supports a high resolution and the KML requires it, consider increasing the value. Use this parameter with the Size of returned image (pixels) parameter to control output image resolution. The default value is 96.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Output Image Properties")]
-		public object DpiOfClient { get; set; } = "96";
+		public object? DpiOfClient { get; set; } = "96";
 
 		/// <summary>
 		/// <para>Clamped features to ground</para>
-		/// <para>Specifies whether features are clamped to the ground.</para>
-		/// <para>Checked—The z-values of the input features are overridden and KML is created with the features clamped to the ground. The features are draped over the terrain. This option is used for features that do not have z-values. This is the default.</para>
-		/// <para>Unchecked—The z-values of the input features are used when creating KML. The features are drawn inside KML clients relative to sea level.</para>
+		/// <para>Specifies whether features will be clamped to the ground.</para>
+		/// <para>Checked—The z-values of the input features will be ignored and the KML output will be created with the features clamped to the ground. The features will be draped over the terrain. Use this option when features that do not have z-values. This is the default.</para>
+		/// <para>Unchecked—The z-values of the input features will be used when creating the KML output. The features will be drawn in KML clients relative to sea level.</para>
 		/// <para><see cref="IgnoreZvalueEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IgnoreZvalue { get; set; } = "true";
+		public object? IgnoreZvalue { get; set; } = "true";
+
+		/// <summary>
+		/// <para>Legend Layout Source</para>
+		/// <para>The name of a layout that contains legend elements that will be included in the KML output as screen overlays.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		[Category("Legend Screen Overlay")]
+		public object? Layout { get; set; }
 
 		#region InnerClass
 
@@ -174,14 +183,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum IsCompositeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The output KML contains a single image that composites all the features in the map into a single raster image. The raster is draped over the terrain as a KML GroundOverlay. This option reduces the size of the output KML file. When you choose this option, individual features and layers in the KML are not selectable.</para>
+			/// <para>Checked—The output KML will contain a single image that composites all the features in the map into a single raster image. The raster is draped over the terrain as a KML GroundOverlay. This option reduces the size of the output KML. Individual features and layers in the KML are not selectable.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("COMPOSITE")]
 			COMPOSITE,
 
 			/// <summary>
-			/// <para>Unchecked—The output KML contains separate, individual layers. This is the default. Whether the layers are returned as rasters or as a combination of vectors and rasters is determined by the Convert Vector to Raster parameter.</para>
+			/// <para>Unchecked—The output KML will contain separate, individual layers. This is the default. Whether the layers are returned as rasters or as a combination of vectors and rasters is determined by the Convert Vector to Raster parameter.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_COMPOSITE")]
@@ -195,14 +204,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum IsVectorToRasterEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Vector layers are converted to a separate raster image in the KML output. Normal raster layers are also added to the KML output. Each output KML raster layer is selectable, and its transparency can be adjusted in certain KML clients.</para>
+			/// <para>Checked—Vector layers will be converted to a separate raster image in the KML output. Normal raster layers are also added to the KML output. Each output KML raster layer is selectable, and its transparency can be adjusted in certain KML clients.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("VECTOR_TO_IMAGE")]
 			VECTOR_TO_IMAGE,
 
 			/// <summary>
-			/// <para>Unchecked—Vector layers are preserved as KML vectors. This is the default.</para>
+			/// <para>Unchecked—Vector layers will be preserved as KML vectors. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("VECTOR_TO_VECTOR")]
@@ -216,14 +225,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum IgnoreZvalueEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The z-values of the input features are overridden and KML is created with the features clamped to the ground. The features are draped over the terrain. This option is used for features that do not have z-values. This is the default.</para>
+			/// <para>Checked—The z-values of the input features will be ignored and the KML output will be created with the features clamped to the ground. The features will be draped over the terrain. Use this option when features that do not have z-values. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CLAMPED_TO_GROUND")]
 			CLAMPED_TO_GROUND,
 
 			/// <summary>
-			/// <para>Unchecked—The z-values of the input features are used when creating KML. The features are drawn inside KML clients relative to sea level.</para>
+			/// <para>Unchecked—The z-values of the input features will be used when creating the KML output. The features will be drawn in KML clients relative to sea level.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ABSOLUTE")]

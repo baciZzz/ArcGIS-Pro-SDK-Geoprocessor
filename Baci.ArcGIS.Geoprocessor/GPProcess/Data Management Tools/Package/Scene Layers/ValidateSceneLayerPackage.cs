@@ -11,24 +11,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Validate Scene Layer</para>
-	/// <para>Evaluates a scene layer package file (*.slpk) to determine its conformity to I3S specification.</para>
+	/// <para>Evaluates a scene layer package (*.slpk or *.i3sREST) in a cloud store to determine its conformity to I3S specifications.</para>
 	/// </summary>
 	public class ValidateSceneLayerPackage : AbstractGPProcess
 	{
 		/// <summary>
 		/// <para>Constructor that takes all required parameters for geoprocessor execution.</para>
 		/// </summary>
-		/// <param name="InSlpk">
-		/// <para>Input Scene Layer</para>
-		/// <para>The scene layer package file that will be evaluated.</para>
-		/// </param>
 		/// <param name="OutReport">
 		/// <para>Output Log File</para>
 		/// <para>The output log file that will summarize the results of the evaluation.</para>
 		/// </param>
-		public ValidateSceneLayerPackage(object InSlpk, object OutReport)
+		public ValidateSceneLayerPackage(object OutReport)
 		{
-			this.InSlpk = InSlpk;
 			this.OutReport = OutReport;
 		}
 
@@ -65,16 +60,16 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSlpk, OutReport };
+		public override object[] Parameters => new object[] { InSlpk!, OutReport, InFolder! };
 
 		/// <summary>
 		/// <para>Input Scene Layer</para>
-		/// <para>The scene layer package file that will be evaluated.</para>
+		/// <para>The scene layer package (*.slpk) that will be evaluated.</para>
 		/// </summary>
-		[ParamType(ParamTypeEnum.must)]
+		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object InSlpk { get; set; }
+		public object? InSlpk { get; set; }
 
 		/// <summary>
 		/// <para>Output Log File</para>
@@ -86,9 +81,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public object OutReport { get; set; }
 
 		/// <summary>
+		/// <para>Input Folder</para>
+		/// <para>The scene layer content (*.i3sREST) in a cloud store that will be evaluated.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[DEFolder()]
+		public object? InFolder { get; set; }
+
+		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ValidateSceneLayerPackage SetEnviroment(object workspace = null )
+		public ValidateSceneLayerPackage SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

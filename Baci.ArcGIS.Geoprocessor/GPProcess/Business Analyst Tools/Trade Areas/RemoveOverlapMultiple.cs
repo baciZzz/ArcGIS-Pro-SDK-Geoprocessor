@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Method, JoinAttributes };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Method!, JoinAttributes! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "CENTER_LINE";
+		public object? Method { get; set; } = "CENTER_LINE";
 
 		/// <summary>
 		/// <para>Attributes To Join</para>
@@ -108,12 +108,12 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object JoinAttributes { get; set; } = "ALL";
+		public object? JoinAttributes { get; set; } = "ALL";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveOverlapMultiple SetEnviroment(object workspace = null )
+		public RemoveOverlapMultiple SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

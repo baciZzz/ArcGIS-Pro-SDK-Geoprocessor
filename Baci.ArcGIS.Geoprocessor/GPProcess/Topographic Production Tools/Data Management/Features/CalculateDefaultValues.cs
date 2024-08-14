@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 	/// <summary>
 	/// <para>Calculate Default Values</para>
 	/// <para>Replaces null values in a feature class or table with the default values from the geodatabase feature class.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class CalculateDefaultValues : AbstractGPProcess
 	{
 		/// <summary>
@@ -60,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDatasets, OutDataset };
+		public override object[] Parameters => new object[] { InDatasets, OutDataset! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -75,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutDataset { get; set; }
+		public object? OutDataset { get; set; }
 
 	}
 }

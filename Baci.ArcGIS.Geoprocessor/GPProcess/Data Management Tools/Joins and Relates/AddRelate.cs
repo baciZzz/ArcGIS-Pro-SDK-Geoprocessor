@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayerOrView, InField, RelateTable, RelateField, RelateName, Cardinality, OutLayerOrView };
+		public override object[] Parameters => new object[] { InLayerOrView, InField, RelateTable, RelateField, RelateName, Cardinality!, OutLayerOrView! };
 
 		/// <summary>
 		/// <para>Layer Name or Table View</para>
@@ -135,19 +135,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Cardinality { get; set; } = "ONE_TO_MANY";
+		public object? Cardinality { get; set; } = "ONE_TO_MANY";
 
 		/// <summary>
 		/// <para>Updated Input Layer or Table View</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutLayerOrView { get; set; }
+		public object? OutLayerOrView { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddRelate SetEnviroment(object workspace = null )
+		public AddRelate SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

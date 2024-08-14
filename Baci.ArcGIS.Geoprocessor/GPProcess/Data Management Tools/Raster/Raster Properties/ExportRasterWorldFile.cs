@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasterDataset, OutRasterDataset };
+		public override object[] Parameters => new object[] { InRasterDataset, OutRasterDataset! };
 
 		/// <summary>
 		/// <para>Input Raster Dataset</para>
@@ -75,12 +75,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DERasterDataset()]
-		public object OutRasterDataset { get; set; }
+		public object? OutRasterDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportRasterWorldFile SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public ExportRasterWorldFile SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

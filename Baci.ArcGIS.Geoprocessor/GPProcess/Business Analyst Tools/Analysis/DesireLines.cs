@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Desire Lines</para>
-	/// <para>Generates a series of lines from each customer to an associated store location. These lines are often called spider diagrams.</para>
+	/// <para>Generates a series of lines from each customer to an associated store location. These lines are often called spider diagrams. The tool can also generate an optional Wind Rose report from the output.</para>
 	/// </summary>
 	public class DesireLines : AbstractGPProcess
 	{
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InStoresLayer, InCustomersLayer, OutFeatureClass, StoreIdField, LinkField, DistanceType, Units, Cutoff, TravelDirection, TimeOfDay, TimeZone };
+		public override object[] Parameters => new object[] { InStoresLayer, InCustomersLayer, OutFeatureClass, StoreIdField, LinkField, DistanceType!, Units!, Cutoff!, TravelDirection!, TimeOfDay!, TimeZone!, CreateReport!, ReportTitle!, ReportFolder!, ReportFormat!, OutputReport! };
 
 		/// <summary>
 		/// <para>Store Layer</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DistanceType { get; set; }
+		public object? DistanceType { get; set; }
 
 		/// <summary>
 		/// <para>Measure Units</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Units { get; set; }
+		public object? Units { get; set; }
 
 		/// <summary>
 		/// <para>Cutoff</para>
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object Cutoff { get; set; }
+		public object? Cutoff { get; set; }
 
 		/// <summary>
 		/// <para>Travel Direction</para>
@@ -165,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Network Parameters")]
-		public object TravelDirection { get; set; } = "TOWARD_STORES";
+		public object? TravelDirection { get; set; }
 
 		/// <summary>
 		/// <para>Time of Day</para>
@@ -174,12 +174,12 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Network Parameters")]
-		public object TimeOfDay { get; set; }
+		public object? TimeOfDay { get; set; }
 
 		/// <summary>
 		/// <para>Time Zone</para>
 		/// <para>Specifies the time zone that will be used for the Time of Day parameter.</para>
-		/// <para>UTC—Coordinated universal time (UTC) will be used. Choose this option if you want to choose the best location for a specific time, such as now, but aren&apos;t certain in which time zone the stores or demand points will be located.</para>
+		/// <para>UTC—Coordinated universal time (UTC) will be used. Choose this option if you want to choose the best location for a specific time, such as now, but aren&apos;t certain in which time zone the stores or demand points are located.</para>
 		/// <para>Local time at locations—The time zone in which the stores or demand points are located will be used. If Travel Direction is Away from Stores, this is the time zone of the stores. If Travel Direction is Toward Stores, this is the time zone of the demand points. This is the default.</para>
 		/// <para><see cref="TimeZoneEnum"/></para>
 		/// </summary>
@@ -187,14 +187,60 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Network Parameters")]
-		public object TimeZone { get; set; } = "TIME_ZONE_AT_LOCATION";
+		public object? TimeZone { get; set; } = "TIME_ZONE_AT_LOCATION";
+
+		/// <summary>
+		/// <para>Create Report</para>
+		/// <para>Specifies whether a Wind Rose report will be created.</para>
+		/// <para>Checked—A report will be created.</para>
+		/// <para>Unchecked—A report will not be created. This is the default.</para>
+		/// <para><see cref="CreateReportEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		public object? CreateReport { get; set; } = "false";
+
+		/// <summary>
+		/// <para>Report Title</para>
+		/// <para>The title of the Wind Rose report.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		[Category("Report Options")]
+		public object? ReportTitle { get; set; }
+
+		/// <summary>
+		/// <para>Output Report Folder</para>
+		/// <para>The output directory that will contain the Wind Rose report.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[DEFolder()]
+		[Category("Report Options")]
+		public object? ReportFolder { get; set; }
+
+		/// <summary>
+		/// <para>Report Format</para>
+		/// <para>One or more output report formats. The default value is PDF. Additional available formats are XLSX, HTML, CSV, and PAGX.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPMultiValue()]
+		[Category("Report Options")]
+		public object? ReportFormat { get; set; }
+
+		/// <summary>
+		/// <para>Output Report</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.derived)]
+		[GPMultiValue()]
+		public object? OutputReport { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DesireLines SetEnviroment(object workspace = null )
+		public DesireLines SetEnviroment(object? baDataSource = null , object? baNetworkSource = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, baNetworkSource: baNetworkSource, workspace: workspace);
 			return this;
 		}
 
@@ -227,7 +273,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		public enum TimeZoneEnum 
 		{
 			/// <summary>
-			/// <para>UTC—Coordinated universal time (UTC) will be used. Choose this option if you want to choose the best location for a specific time, such as now, but aren&apos;t certain in which time zone the stores or demand points will be located.</para>
+			/// <para>UTC—Coordinated universal time (UTC) will be used. Choose this option if you want to choose the best location for a specific time, such as now, but aren&apos;t certain in which time zone the stores or demand points are located.</para>
 			/// </summary>
 			[GPValue("UTC")]
 			[Description("UTC")]
@@ -239,6 +285,27 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 			[GPValue("TIME_ZONE_AT_LOCATION")]
 			[Description("Local time at locations")]
 			Local_time_at_locations,
+
+		}
+
+		/// <summary>
+		/// <para>Create Report</para>
+		/// </summary>
+		public enum CreateReportEnum 
+		{
+			/// <summary>
+			/// <para>Checked—A report will be created.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("CREATE_REPORT")]
+			CREATE_REPORT,
+
+			/// <summary>
+			/// <para>Unchecked—A report will not be created. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("DO_NOT_CREATE_REPORT")]
+			DO_NOT_CREATE_REPORT,
 
 		}
 

@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Sumwithinlayer, Summarylayer, Outputname, Sumshape, Shapeunits, Summaryfields, Groupbyfield, Minoritymajority, Percentshape, Outputlayer, Groupbysummarylayer };
+		public override object[] Parameters => new object[] { Sumwithinlayer, Summarylayer, Outputname, Sumshape!, Shapeunits!, Summaryfields!, Groupbyfield!, Minoritymajority!, Percentshape!, Outputlayer!, Groupbysummarylayer! };
 
 		/// <summary>
 		/// <para>Input Polygons</para>
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Sumshape { get; set; } = "true";
+		public object? Sumshape { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Shape Unit</para>
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Shapeunits { get; set; }
+		public object? Shapeunits { get; set; }
 
 		/// <summary>
 		/// <para>Summary Fields</para>
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object Summaryfields { get; set; }
+		public object? Summaryfields { get; set; }
 
 		/// <summary>
 		/// <para>Group By Field</para>
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object Groupbyfield { get; set; }
+		public object? Groupbyfield { get; set; }
 
 		/// <summary>
 		/// <para>Add minority and majority attributes</para>
@@ -166,7 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Minoritymajority { get; set; } = "false";
+		public object? Minoritymajority { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Add group percentages</para>
@@ -178,26 +178,26 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Percentshape { get; set; } = "false";
+		public object? Percentshape { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Feature Service</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Outputlayer { get; set; }
+		public object? Outputlayer { get; set; }
 
 		/// <summary>
 		/// <para>Output Group Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object Groupbysummarylayer { get; set; }
+		public object? Groupbysummarylayer { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SummarizeWithin SetEnviroment(object extent = null )
+		public SummarizeWithin SetEnviroment(object? extent = null )
 		{
 			base.SetEnv(extent: extent);
 			return this;

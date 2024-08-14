@@ -74,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeostatLayer, ContourType, OutFeatureClass, ContourQuality, ClassificationType, ClassesCount, ClassesBreaks, OutElevation };
+		public override object[] Parameters => new object[] { InGeostatLayer, ContourType, OutFeatureClass, ContourQuality!, ClassificationType!, ClassesCount!, ClassesBreaks!, OutElevation! };
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ContourQuality { get; set; } = "DRAFT";
+		public object? ContourQuality { get; set; } = "DRAFT";
 
 		/// <summary>
 		/// <para>Classification type</para>
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Classification")]
-		public object ClassificationType { get; set; } = "GEOMETRIC_INTERVAL";
+		public object? ClassificationType { get; set; } = "GEOMETRIC_INTERVAL";
 
 		/// <summary>
 		/// <para>Number of classes</para>
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Classification")]
-		public object ClassesCount { get; set; } = "10";
+		public object? ClassesCount { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Class breaks</para>
@@ -153,22 +153,21 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[Category("Classification")]
-		public object ClassesBreaks { get; set; }
+		public object? ClassesBreaks { get; set; }
 
 		/// <summary>
 		/// <para>Output elevation</para>
 		/// <para>For 3D interpolation models, you can export contours at any elevation. Use this parameter to specify the elevation that you want to export. If left empty, the elevation will be inherited from the input layer. The units will default to the same units of the input layer.</para>
-		/// <para><see cref="OutElevationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[GPCodedValueDomain()]
-		public object OutElevation { get; set; }
+		public object? OutElevation { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GALayerToContour SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public GALayerToContour SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -257,83 +256,6 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 			[GPValue("MANUAL")]
 			[Description("Manual")]
 			Manual,
-
-		}
-
-		/// <summary>
-		/// <para>Output elevation</para>
-		/// </summary>
-		public enum OutElevationEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Inches")]
-			[Description("Inches")]
-			Inches,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("NauticalMiles")]
-			[Description("NauticalMiles")]
-			NauticalMiles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Millimeters")]
-			[Description("Millimeters")]
-			Millimeters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Centimeters")]
-			[Description("Centimeters")]
-			Centimeters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Decimeters")]
-			[Description("Decimeters")]
-			Decimeters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
 
 		}
 

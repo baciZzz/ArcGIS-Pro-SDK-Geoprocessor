@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetMefFeatures, InTerrain, ObstructionFeatures, MefField, MaxVoField, MaxTerrainField, Specification, TerrainElevField!, VoAllowance!, VoAccuracy!, TerrainAccuracy!, UpdatedMefFeatures };
+		public override object[] Parameters => new object[] { TargetMefFeatures, InTerrain, ObstructionFeatures, MefField, MaxVoField, MaxTerrainField, Specification, TerrainElevField!, VoAllowance!, VoAccuracy!, TerrainAccuracy!, UpdatedMefFeatures! };
 
 		/// <summary>
 		/// <para>Target Max Elevation Figures Features</para>

@@ -27,13 +27,7 @@ namespace ProAppModuleTest
         /// <summary>
         /// Retrieve the singleton instance to this module here
         /// </summary>
-        public static Module1 Current
-        {
-            get
-            {
-                return _this ?? (_this = (Module1)FrameworkApplication.FindModule("ProAppModuleTest_Module"));
-            }
-        }
+        public static Module1 Current => _this ??= (Module1)FrameworkApplication.FindModule("ProAppModuleTest_Module");
 
         #region Overrides
         /// <summary>

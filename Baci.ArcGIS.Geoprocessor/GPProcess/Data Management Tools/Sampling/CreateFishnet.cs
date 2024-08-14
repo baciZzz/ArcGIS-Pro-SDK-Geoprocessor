@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutFeatureClass, OriginCoord, YAxisCoord, CellWidth, CellHeight, NumberRows, NumberColumns, CornerCoord, Labels, Template, GeometryType, OutLabel };
+		public override object[] Parameters => new object[] { OutFeatureClass, OriginCoord, YAxisCoord, CellWidth, CellHeight, NumberRows, NumberColumns, CornerCoord!, Labels!, Template!, GeometryType!, OutLabel! };
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
@@ -155,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPPoint()]
-		public object CornerCoord { get; set; }
+		public object? CornerCoord { get; set; }
 
 		/// <summary>
 		/// <para>Create Label Points</para>
@@ -167,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Labels { get; set; } = "true";
+		public object? Labels { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Template Extent</para>
@@ -179,7 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object Template { get; set; }
+		public object? Template { get; set; }
 
 		/// <summary>
 		/// <para>Geometry Type</para>
@@ -191,19 +191,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object GeometryType { get; set; } = "POLYLINE";
+		public object? GeometryType { get; set; } = "POLYLINE";
 
 		/// <summary>
 		/// <para>Output Label Feature Class (Optional)</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutLabel { get; set; }
+		public object? OutLabel { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateFishnet SetEnviroment(object MDomain = null , object XYDomain = null , object ZDomain = null , object configKeyword = null , object extent = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null )
+		public CreateFishnet SetEnviroment(object? MDomain = null , object? XYDomain = null , object? ZDomain = null , object? configKeyword = null , object? extent = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null )
 		{
 			base.SetEnv(MDomain: MDomain, XYDomain: XYDomain, ZDomain: ZDomain, configKeyword: configKeyword, extent: extent, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue);
 			return this;

@@ -68,7 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, MaximumWidth, MinimumWidth };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, MaximumWidth, MinimumWidth! };
 
 		/// <summary>
 		/// <para>Input Features</para>

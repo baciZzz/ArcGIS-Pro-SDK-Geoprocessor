@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, TargetWorkspace, CompilationScale, UpdatedWorkspace };
+		public override object[] Parameters => new object[] { InFeatures, TargetWorkspace, CompilationScale!, UpdatedWorkspace! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -91,14 +91,14 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object CompilationScale { get; set; }
+		public object? CompilationScale { get; set; }
 
 		/// <summary>
 		/// <para>Updated Workspace</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object UpdatedWorkspace { get; set; }
+		public object? UpdatedWorkspace { get; set; }
 
 	}
 }

@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Tabulate Intersection</para>
-	/// <para>Computes the intersection between two feature classes and cross tabulates the area, length, or count of the  intersecting features.</para>
+	/// <para>Computes the intersection between two feature classes and cross tabulates the area, length, or count of the intersecting features.</para>
 	/// </summary>
 	public class TabulateIntersection : AbstractGPProcess
 	{
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InZoneFeatures, ZoneFields, InClassFeatures, OutTable, ClassFields, SumFields, XyTolerance, OutUnits };
+		public override object[] Parameters => new object[] { InZoneFeatures, ZoneFields, InClassFeatures, OutTable, ClassFields!, SumFields!, XyTolerance!, OutUnits! };
 
 		/// <summary>
 		/// <para>Input Zone Features</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
-		public object ClassFields { get; set; }
+		public object? ClassFields { get; set; }
 
 		/// <summary>
 		/// <para>Sum Fields</para>
@@ -128,16 +128,16 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
-		public object SumFields { get; set; }
+		public object? SumFields { get; set; }
 
 		/// <summary>
 		/// <para>XY Tolerance</para>
 		/// <para>The distance that determines the range in which features or their vertices are considered equal. By default, this is the XY Tolerance of the Input Zone Features parameter.</para>
-		/// <para>Changing this parameter&apos;s value may cause failure or unexpected results. It is recommended that this parameter not be modified. It has been removed from view in the tool dialog. By default, the input feature class&apos;s spatial reference x,y tolerance property is used.</para>
+		/// <para>Changing this parameter&apos;s value may cause failure or unexpected results. It is recommended that you do not modify this parameter. It has been removed from view on the tool dialog box. By default, the input feature class&apos;s spatial reference x,y tolerance property is used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object XyTolerance { get; set; }
+		public object? XyTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Output Units</para>
@@ -171,12 +171,12 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object OutUnits { get; set; } = "UNKNOWN";
+		public object? OutUnits { get; set; } = "UNKNOWN";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TabulateIntersection SetEnviroment(object XYDomain = null , object XYResolution = null , object XYTolerance = null , int? autoCommit = null , object configKeyword = null , object extent = null , object outputCoordinateSystem = null , bool? qualifiedFieldNames = null , object scratchWorkspace = null )
+		public TabulateIntersection SetEnviroment(object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , int? autoCommit = null , object? configKeyword = null , object? extent = null , object? outputCoordinateSystem = null , bool? qualifiedFieldNames = null , object? scratchWorkspace = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, outputCoordinateSystem: outputCoordinateSystem, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace);
 			return this;

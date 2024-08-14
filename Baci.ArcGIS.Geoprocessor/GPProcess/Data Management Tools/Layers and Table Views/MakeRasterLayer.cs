@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRasterlayer, WhereClause, Envelope, BandIndex };
+		public override object[] Parameters => new object[] { InRaster, OutRasterlayer, WhereClause!, Envelope!, BandIndex! };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -88,11 +88,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Where clause</para>
-		/// <para>Using SQL, you can define a query or use the Query Builder to build a query.</para>
+		/// <para>Define a query using SQL or use the Query Builder to build a query.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Envelope</para>
@@ -104,20 +104,20 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object Envelope { get; set; }
+		public object? Envelope { get; set; }
 
 		/// <summary>
 		/// <para>Bands</para>
-		/// <para>Choose which bands to export for the layer. If no bands are specified, all the bands will be used in the output.</para>
+		/// <para>The bands that will be exported for the layer. If no bands are specified, all the bands will be used in the output.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object BandIndex { get; set; }
+		public object? BandIndex { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeRasterLayer SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public MakeRasterLayer SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

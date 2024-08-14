@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InSurfaceRaster">
 		/// <para>Input raster</para>
-		/// <para>Input elevation surface raster.</para>
+		/// <para>The input elevation surface raster.</para>
 		/// </param>
 		/// <param name="OutViewshedRaster">
 		/// <para>Output viewshed raster</para>
@@ -66,11 +66,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurfaceRaster, OutViewshedRaster, InPointsFeatureOrTable, SkySize, HeightOffset, CalculationDirections, Latitude, TimeConfiguration, DayInterval, HourInterval, OutSunmapRaster, ZenithDivisions, AzimuthDivisions, OutSkymapRaster };
+		public override object[] Parameters => new object[] { InSurfaceRaster, OutViewshedRaster, InPointsFeatureOrTable!, SkySize!, HeightOffset!, CalculationDirections!, Latitude!, TimeConfiguration!, DayInterval!, HourInterval!, OutSunmapRaster!, ZenithDivisions!, AzimuthDivisions!, OutSkymapRaster! };
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>Input elevation surface raster.</para>
+		/// <para>The input elevation surface raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -92,85 +92,86 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
-		public object InPointsFeatureOrTable { get; set; }
+		[GPSAGeoDataDomain()]
+		public object? InPointsFeatureOrTable { get; set; }
 
 		/// <summary>
 		/// <para>Sky size / Resolution</para>
 		/// <para>The resolution or sky size for the viewshed, sky map, and sun map rasters. The units are cells.</para>
-		/// <para>The default creates a raster of 200 by 200 cells.</para>
+		/// <para>The default is a raster of 200 by 200 cells.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object SkySize { get; set; } = "200";
+		public object? SkySize { get; set; } = "200";
 
 		/// <summary>
 		/// <para>Height offset</para>
-		/// <para>The height (in meters) above the DEM surface for which calculations are to be performed.</para>
+		/// <para>The height (in meters) above the DEM surface for which calculations will be performed.</para>
 		/// <para>The height offset will be applied to all input locations.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object HeightOffset { get; set; } = "0";
+		public object? HeightOffset { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Calculation directions</para>
-		/// <para>The number of azimuth directions used when calculating the viewshed.</para>
+		/// <para>The number of azimuth directions that will be used when calculating the viewshed.</para>
 		/// <para>Valid values must be multiples of 8 (8, 16, 24, 32, and so on). The default value is 32 directions, which is adequate for complex topography.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object CalculationDirections { get; set; } = "32";
+		public object? CalculationDirections { get; set; } = "32";
 
 		/// <summary>
 		/// <para>Latitude</para>
-		/// <para>The latitude for the site area. The units are decimal degrees, with positive values for the northern hemisphere and negative for the southern.</para>
-		/// <para>For input surface rasters containing a spatial reference, the mean latitude is automatically calculated; otherwise, latitude will default to 45 degrees.</para>
+		/// <para>The latitude for the site area. The units are decimal degrees with positive values for the northern hemisphere and negative values for the southern hemisphere.</para>
+		/// <para>For input surface rasters containing a spatial reference, the mean latitude is automatically calculated; otherwise, the latitude default is 45 degrees.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
 		[Category("Optional sunmap output")]
-		public object Latitude { get; set; }
+		public object? Latitude { get; set; }
 
 		/// <summary>
 		/// <para>Time configuration</para>
-		/// <para>Specifies the time period to use for the calculations.</para>
-		/// <para>Special days—Calculates solar insolation for the solstice days (summer and winter) and the equinox days (where the insolation for both spring and fall equinox are the same).</para>
-		/// <para>Within day—Performs calculations for a specified time period within one single day.Select the Julian Day and enter the start and end times. When the start time and the end time are the same, instantaneous insolation will be calculated. When the start time is before sunrise and the end time is after sunset, insolation will be calculated for the whole day.</para>
-		/// <para>To facilitate entering the correct day, use the calendar button to open the Calendar dialog box.</para>
-		/// <para>Multiple days—Performs calculations for a specific multiple-day period within a year.Specify the start year, start day, and end day. When the end day is smaller than the start day, the end day is considered to be in the following year. The default time configuration starts on day 5 and ends on day 160 of the current Julian year.</para>
-		/// <para>To facilitate entering the correct days, use the calendar button to open the Calendar dialog box.</para>
-		/// <para>Whole year—Performs calculations for an entire year using monthly intervals for calculations.If the Create outputs for each interval option is checked, output files will be created for each month; otherwise, a single output will be created for the whole year.</para>
+		/// <para>Specifies the time period that will be used for the calculations.</para>
+		/// <para>Special days—Solar insolation will be calculated for the solstice days (summer and winter) and the equinox days (when the insolation for both spring and fall equinox are the same).</para>
+		/// <para>Within day—Calculations will be performed for a specified time period within a single day.Select the Julian day and enter the start and end times. When the start time and the end time are the same, instantaneous insolation will be calculated. When the start time is before sunrise and the end time is after sunset, insolation will be calculated for the whole day.</para>
+		/// <para>To enter the correct day, use the calendar button to open the Calendar dialog box.</para>
+		/// <para>Multiple days—Calculations will be performed for a specific multiple-day period within a year.Specify the start year, start day, and end day. When the end day is smaller than the start day, the end day is considered to be in the following year. The default time configuration starts on day 5 and ends on day 160 of the current Julian year.</para>
+		/// <para>To enter the correct days, use the calendar button to open the Calendar dialog box.</para>
+		/// <para>Whole year—Calculations will be performed for an entire year using monthly intervals for calculations.If the Create outputs for each interval option is checked, output files will be created for each month; otherwise, a single output will be created for the whole year.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSATimeConfiguration()]
 		[Category("Optional sunmap output")]
-		public object TimeConfiguration { get; set; } = "MultiDays 2021 5 160";
+		public object? TimeConfiguration { get; set; } = "MultiDays 2022 5 160";
 
 		/// <summary>
 		/// <para>Day interval</para>
-		/// <para>The time interval through the year (units: days) used for calculation of sky sectors for the sun map.</para>
+		/// <para>The time interval through the year (units: days) that will be used to calculate sky sectors for the sun map.</para>
 		/// <para>The default value is 14 (biweekly).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
 		[Category("Optional sunmap output")]
-		public object DayInterval { get; set; } = "14";
+		public object? DayInterval { get; set; } = "14";
 
 		/// <summary>
 		/// <para>Hour interval</para>
-		/// <para>Time interval through the day (units: hours) used for calculation of sky sectors for sun maps.</para>
+		/// <para>The time interval through the day (units: hours) that will be used to calculate sky sectors for the sun map.</para>
 		/// <para>The default value is 0.5.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
 		[Category("Optional sunmap output")]
-		public object HourInterval { get; set; } = "0.5";
+		public object? HourInterval { get; set; } = "0.5";
 
 		/// <summary>
 		/// <para>Output sunmap raster</para>
@@ -180,29 +181,29 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
 		[Category("Optional sunmap output")]
-		public object OutSunmapRaster { get; set; }
+		public object? OutSunmapRaster { get; set; }
 
 		/// <summary>
 		/// <para>Zenith divisions</para>
-		/// <para>The number of divisions used to create sky sectors in the sky map.</para>
+		/// <para>The number of zenith divisions that will be used to create sky sectors in the sky map.</para>
 		/// <para>The default is eight divisions (relative to zenith). Values must be greater than zero and less than half the sky size value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
 		[Category("Optional skymap output")]
-		public object ZenithDivisions { get; set; } = "8";
+		public object? ZenithDivisions { get; set; } = "8";
 
 		/// <summary>
 		/// <para>Azimuth divisions</para>
-		/// <para>The number of divisions used to create sky sectors in the sky map.</para>
+		/// <para>The number of azimuth divisions that will be used to create sky sectors in the sky map.</para>
 		/// <para>The default is eight divisions (relative to north). Valid values must be multiples of 8. Values must be greater than zero and less than 160.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
 		[Category("Optional skymap output")]
-		public object AzimuthDivisions { get; set; } = "8";
+		public object? AzimuthDivisions { get; set; } = "8";
 
 		/// <summary>
 		/// <para>Output skymap raster</para>
@@ -212,14 +213,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
 		[Category("Optional skymap output")]
-		public object OutSkymapRaster { get; set; }
+		public object? OutSkymapRaster { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SolarRadiationGraphics SetEnviroment(int? autoCommit = null , object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public SolarRadiationGraphics SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? compression = null , object? configKeyword = null , object? extent = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, compression: compression, configKeyword: configKeyword, extent: extent, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 

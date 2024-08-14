@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InObserverPointFeatures, OutFeatureClass, InSurface, VirtualSurfaceRadius, VirtualSurfaceElevation, InFeatures, FeatureLod, FromAzimuthValueOrField, ToAzimuthValueOrField, AzimuthIncrementValueOrField, MaxHorizonRadius, SegmentSkyline, ScaleToPercent, ScaleAccordingTo, ScaleMethod, UseCurvature, UseRefraction, RefractionFactor, PyramidLevelResolution, CreateSilhouettes };
+		public override object[] Parameters => new object[] { InObserverPointFeatures, OutFeatureClass, InSurface!, VirtualSurfaceRadius!, VirtualSurfaceElevation!, InFeatures!, FeatureLod!, FromAzimuthValueOrField!, ToAzimuthValueOrField!, AzimuthIncrementValueOrField!, MaxHorizonRadius!, SegmentSkyline!, ScaleToPercent!, ScaleAccordingTo!, ScaleMethod!, UseCurvature!, UseRefraction!, RefractionFactor!, PyramidLevelResolution!, CreateSilhouettes! };
 
 		/// <summary>
 		/// <para>Input Observer Point Features</para>
@@ -86,126 +86,95 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Surface</para>
-		/// <para>The topographic surface that will be used to define the horizon. If no surface is provided, then a virtual surface will be employed using the Virtual Surface Radius and Virtual Surface Elevation parameters.</para>
+		/// <para>The topographic surface that will be used to define the horizon. If no surface is provided, a virtual surface will be used, defined by the Virtual Surface Radius and Virtual Surface Elevation parameter values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object InSurface { get; set; }
+		public object? InSurface { get; set; }
 
 		/// <summary>
 		/// <para>Virtual Surface Radius</para>
-		/// <para>The radius of the virtual surface that will be used to define the horizon when a topographic surface is not provided. The default is 1,000 meters.</para>
-		/// <para>The following units are supported:</para>
-		/// <para>Unknown—Unknown</para>
-		/// <para>Inches—Inches</para>
-		/// <para>Feet—Feet</para>
-		/// <para>Yards—Yards</para>
-		/// <para>Miles—Miles</para>
-		/// <para>Millimeters—Millimeters</para>
-		/// <para>Centimeters—Centimeters</para>
-		/// <para>Decimeters—Decimeters</para>
-		/// <para>Meters—Meters</para>
-		/// <para>Kilometers—Kilometers</para>
+		/// <para>The radius of the virtual surface that will be used to define the horizon when no input surface is provided. The default is 1,000 meters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object VirtualSurfaceRadius { get; set; } = "1000 Meters";
+		public object? VirtualSurfaceRadius { get; set; } = "1000 Meters";
 
 		/// <summary>
 		/// <para>Virtual Surface Elevation</para>
-		/// <para>The elevation of the virtual surface for defining the horizon in lieu of an actual surface. It is ignored if an actual surface is provided. The default is 0.</para>
-		/// <para>The following units are supported:</para>
-		/// <para>Unknown—Unknown</para>
-		/// <para>Inches—Inches</para>
-		/// <para>Feet—Feet</para>
-		/// <para>Yards—Yards</para>
-		/// <para>Miles—Miles</para>
-		/// <para>Millimeters—Millimeters</para>
-		/// <para>Centimeters—Centimeters</para>
-		/// <para>Decimeters—Decimeters</para>
-		/// <para>Meters—Meters</para>
-		/// <para>Kilometers—Kilometers</para>
+		/// <para>The elevation of the virtual surface that will be used to define the horizon in lieu of an actual surface. This parameter is ignored if an actual surface is provided. The default is 0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object VirtualSurfaceElevation { get; set; } = "0 Meters";
+		public object? VirtualSurfaceElevation { get; set; } = "0 Meters";
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The features used in determining the skyline. If no features are specified, then the skyline will consist solely of the horizon line as defined by the topographic or virtual surface.</para>
+		/// <para>The features used to determine the skyline. If no features are specified, the skyline will consist solely of the horizon line as defined by the topographic or virtual surface.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
-		public object InFeatures { get; set; }
+		public object? InFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Feature Level of Detail</para>
-		/// <para>The level of detail at which each feature should be examined in the skyline analysis.</para>
-		/// <para>Full Detail—Every edge within the feature is considered in the skyline analysis (only edges of triangles and exterior rings are considered). This time intensive operation is the most precise, and is also the default option.</para>
-		/// <para>Convex Footprint—The skyline analysis will use the upper perimeter of the convex hull of each feature&apos;s footprint extruded to the elevation of the highest vertex within the feature.</para>
-		/// <para>Envelope— The skyline analysis will use the perimeter of the 3-dimensional feature envelope. This is the fastest technique.</para>
+		/// <para>Specifies the level of detail at which each feature will be examined.</para>
+		/// <para>Full Detail—Every edge in the feature will be considered in the skyline analysis (only edges of triangles and exterior rings are considered). This time-intensive operation is the most precise. This is the default.</para>
+		/// <para>Convex Footprint—The skyline analysis will use the upper perimeter of the convex hull of each feature&apos;s footprint extruded to the elevation of the highest vertex in the feature.</para>
+		/// <para>Envelope— The skyline analysis will use the perimeter of the three-dimensional feature envelope. This is the fastest technique.</para>
 		/// <para><see cref="FeatureLodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object FeatureLod { get; set; } = "FULL_DETAIL";
+		public object? FeatureLod { get; set; } = "FULL_DETAIL";
 
 		/// <summary>
 		/// <para>From Azimuth</para>
-		/// <para>The azimuth, in degrees, from which the skyline analysis should be started. The analysis starts from the observer point and goes to the right, from the From Azimuth until the To Azimuth is reached. Must be greater than minus 360 and less than 360. The default is 0.</para>
+		/// <para>The azimuth, in degrees, from which the skyline analysis will start.</para>
+		/// <para>The analysis starts from the observer point and goes to the right, from the From Azimuth parameter value until the To Azimuth parameter value is reached. The value must be greater than -360 and less than 360. The default is 0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
 		[Category("Azimuths")]
-		public object FromAzimuthValueOrField { get; set; } = "0";
+		public object? FromAzimuthValueOrField { get; set; } = "0";
 
 		/// <summary>
 		/// <para>To Azimuth</para>
-		/// <para>The direction, in degrees, at which the skyline analysis should be completed. The analysis starts from the observer point and goes to the right, from the From Azimuth until the To Azimuth is reached. Must be no more than 360 greater than the From Azimuth. The default is 360.</para>
+		/// <para>The direction, in degrees, at which the skyline analysis will complete.</para>
+		/// <para>The analysis starts from the observer point and goes to the right, from the From Azimuth parameter value until the To Azimuth parameter value is reached. The value must be no more than 360 degrees greater than the From Azimuth parameter value. The default is 360.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
 		[Category("Azimuths")]
-		public object ToAzimuthValueOrField { get; set; } = "360";
+		public object? ToAzimuthValueOrField { get; set; } = "360";
 
 		/// <summary>
 		/// <para>Azimuth Increment</para>
-		/// <para>The angular interval, in degrees, at which the horizon should be evaluated while conducting the skyline analysis between the From Azimuth and the To Azimuth. Must be no greater than the To Azimuth minus the From Azimuth. The default is 1.</para>
+		/// <para>The angular interval, in degrees, at which the horizon will be evaluated while conducting the skyline analysis between the From Azimuth parameter value and the To Azimuth parameter value. The value must be no greater than the To Azimuth parameter value minus the From Azimuth parameter value. The default is 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
 		[Category("Azimuths")]
-		public object AzimuthIncrementValueOrField { get; set; } = "1";
+		public object? AzimuthIncrementValueOrField { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Maximum Horizon Radius</para>
-		/// <para>The maximum distance for which a horizon should be sought from the observer location. A value of zero indicates that there should be no limit imposed. The default is 0.</para>
-		/// <para>The following units are supported:</para>
-		/// <para>Unknown—Unknown</para>
-		/// <para>Inches—Inches</para>
-		/// <para>Feet—Feet</para>
-		/// <para>Yards—Yards</para>
-		/// <para>Miles—Miles</para>
-		/// <para>Millimeters—Millimeters</para>
-		/// <para>Centimeters—Centimeters</para>
-		/// <para>Decimeters—Decimeters</para>
-		/// <para>Meters—Meters</para>
-		/// <para>Kilometers—Kilometers</para>
+		/// <para>The maximum distance from the observer location that a horizon will be sought. A value of zero indicates that no limit will be imposed. The default is 0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Skyline Options")]
-		public object MaxHorizonRadius { get; set; } = "0 Meters";
+		public object? MaxHorizonRadius { get; set; } = "0 Meters";
 
 		/// <summary>
 		/// <para>Segment Skyline</para>
-		/// <para>Determines whether the resulting skyline will have one feature for each observer point, or if each observer&apos;s skyline will be segmented by the unique elements that contribute to the skyline.</para>
-		/// <para>If silhouettes are being generated, then this parameter will indicate whether divergent rays should be used; for sun shadows, this should generally be no or unchecked.</para>
+		/// <para>Specifies whether the resulting skyline will have one feature for each observer point or each observer&apos;s skyline will be segmented by the unique elements that contribute to the skyline. This parameter is only available if one or more multipatch features are specified for the Input Features parameter.</para>
+		/// <para>If silhouettes are being generated, this parameter will indicate whether divergent rays will be used. For sun shadows, uncheck the parameter.</para>
 		/// <para>Unchecked—Each skyline feature will represent one observer. This is the default.</para>
 		/// <para>Checked—Each observer&apos;s skyline will be segmented by the unique elements that contribute to the skyline.</para>
 		/// <para><see cref="SegmentSkylineEnum"/></para>
@@ -214,33 +183,33 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Skyline Options")]
-		public object SegmentSkyline { get; set; } = "false";
+		public object? SegmentSkyline { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Scale To Percent</para>
-		/// <para>Indicates to what percent of the original vertical angle (angle above the horizon, or angle of elevation) or elevation each skyline vertex should be placed. If either 0 or 100 is entered, then no scaling will occur. The default is 100.</para>
+		/// <para>The percent of the original vertical angle (angle above the horizon, or angle of elevation) or elevation each skyline vertex will be placed. If a value of 0 or 100 is used, scaling will not occur. The default is 100.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Scaling Options")]
-		public object ScaleToPercent { get; set; } = "100";
+		public object? ScaleToPercent { get; set; } = "100";
 
 		/// <summary>
 		/// <para>Scale According To</para>
-		/// <para>The values according to which the scaling should be determined.</para>
-		/// <para>Vertical Angle From Observer—Scaling is done by considering the vertical angle of each vertex relative to the observer point. This is the default.</para>
-		/// <para>Elevation—Scaling is done by considering the elevation of each vertex relative to the observer point.</para>
+		/// <para>Specifies how scaling will be performed.</para>
+		/// <para>Vertical Angle From Observer—Scaling will be performed based on the vertical angle of each vertex relative to the observer point. This is the default.</para>
+		/// <para>Elevation—Scaling will be performed based on the elevation of each vertex relative to the observer point.</para>
 		/// <para><see cref="ScaleAccordingToEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Scaling Options")]
-		public object ScaleAccordingTo { get; set; } = "VERTICAL_ANGLE";
+		public object? ScaleAccordingTo { get; set; } = "VERTICAL_ANGLE";
 
 		/// <summary>
 		/// <para>Scale Method</para>
-		/// <para>The vertex to be used to calculate against.</para>
+		/// <para>Specifies the vertex that will be used for scale calculation.</para>
 		/// <para>Skyline Maximum—Vertices will be scaled relative to the vertical angle (or the elevation) of the vertex with the highest vertical angle (or elevation). This is the default.</para>
 		/// <para>Each Vertex—Vertices will be scaled relative to the original vertical angle (or elevation) of each vertex.</para>
 		/// <para><see cref="ScaleMethodEnum"/></para>
@@ -249,55 +218,55 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Scaling Options")]
-		public object ScaleMethod { get; set; } = "SKYLINE_MAXIMUM";
+		public object? ScaleMethod { get; set; } = "SKYLINE_MAXIMUM";
 
 		/// <summary>
 		/// <para>Use Curvature</para>
-		/// <para>Indicates whether the earth&apos;s curvature should be taken into consideration when generating the ridgeline from a functional surface.</para>
-		/// <para>Unchecked—The earth&apos;s curvature will not be taken into consideration. This is the default.</para>
-		/// <para>Checked—The earth&apos;s curvature will be taken into consideration.</para>
+		/// <para>Specifies whether the curvature of the earth will be used when generating the ridgeline. This parameter is only available when a raster surface is specified for the Input Surface parameter.</para>
+		/// <para>Unchecked—The curvature of the earth will not be used. This is the default.</para>
+		/// <para>Checked—The curvature of the earth will be used.</para>
 		/// <para><see cref="UseCurvatureEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Surface Options")]
-		public object UseCurvature { get; set; } = "false";
+		public object? UseCurvature { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Use Refraction</para>
-		/// <para>Indicates whether atmospheric refraction will be applied when generating the ridgeline from a functional surface.</para>
-		/// <para>Unchecked—Atmospheric refraction will not be taken into consideration. This is the default.</para>
-		/// <para>Checked—Atmospheric refraction will be taken into consideration.</para>
+		/// <para>Specifies whether atmospheric refraction will be applied when generating the ridgeline from an input surface. This option is only available when a raster surface is specified for the Input Surface parameter.</para>
+		/// <para>Unchecked—Atmospheric refraction will not be applied. This is the default.</para>
+		/// <para>Checked—Atmospheric refraction will be applied.</para>
 		/// <para><see cref="UseRefractionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Surface Options")]
-		public object UseRefraction { get; set; } = "false";
+		public object? UseRefraction { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Refraction Factor</para>
-		/// <para>The refraction coefficient to be used if atmospheric refraction is being considered. The default is 0.13.</para>
+		/// <para>The refraction coefficient that will be used if atmospheric refraction is applied. The default is 0.13.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Surface Options")]
-		public object RefractionFactor { get; set; } = "0.13";
+		public object? RefractionFactor { get; set; } = "0.13";
 
 		/// <summary>
 		/// <para>Pyramid Level Resolution</para>
-		/// <para>The z-tolerance or window-size resolution of the terrain pyramid level that will be used by this tool. The default is 0, or full resolution.</para>
+		/// <para>The z-tolerance or window-size resolution of the terrain pyramid level that will be used. The default is 0, or full resolution.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Surface Options")]
-		public object PyramidLevelResolution { get; set; } = "0";
+		public object? PyramidLevelResolution { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Create Silhouettes</para>
-		/// <para>Specifies whether output features will represent skylines or silhouettes.</para>
+		/// <para>Specifies whether output features will represent skylines defining the barrier between the input data and the open sky or silhouettes representing the facade of observable input features. This option is only available if one or more multipatch features are specified for the Input Features parameter.</para>
 		/// <para>Unchecked—The output will be created as polyline features that represent the skyline. This is the default.</para>
 		/// <para>Checked—The output will be created as multipatch features that represent silhouettes.</para>
 		/// <para><see cref="CreateSilhouettesEnum"/></para>
@@ -306,12 +275,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Skyline Options")]
-		public object CreateSilhouettes { get; set; } = "false";
+		public object? CreateSilhouettes { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Skyline SetEnviroment(object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , int? autoCommit = null , object configKeyword = null , object geographicTransformations = null , object outputCoordinateSystem = null , object terrainMemoryUsage = null , object workspace = null )
+		public Skyline SetEnviroment(object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , int? autoCommit = null , object? configKeyword = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , bool? terrainMemoryUsage = null , object? workspace = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, autoCommit: autoCommit, configKeyword: configKeyword, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, terrainMemoryUsage: terrainMemoryUsage, workspace: workspace);
 			return this;
@@ -325,21 +294,21 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum FeatureLodEnum 
 		{
 			/// <summary>
-			/// <para>Full Detail—Every edge within the feature is considered in the skyline analysis (only edges of triangles and exterior rings are considered). This time intensive operation is the most precise, and is also the default option.</para>
+			/// <para>Full Detail—Every edge in the feature will be considered in the skyline analysis (only edges of triangles and exterior rings are considered). This time-intensive operation is the most precise. This is the default.</para>
 			/// </summary>
 			[GPValue("FULL_DETAIL")]
 			[Description("Full Detail")]
 			Full_Detail,
 
 			/// <summary>
-			/// <para>Convex Footprint—The skyline analysis will use the upper perimeter of the convex hull of each feature&apos;s footprint extruded to the elevation of the highest vertex within the feature.</para>
+			/// <para>Convex Footprint—The skyline analysis will use the upper perimeter of the convex hull of each feature&apos;s footprint extruded to the elevation of the highest vertex in the feature.</para>
 			/// </summary>
 			[GPValue("CONVEX_FOOTPRINT")]
 			[Description("Convex Footprint")]
 			Convex_Footprint,
 
 			/// <summary>
-			/// <para>Envelope— The skyline analysis will use the perimeter of the 3-dimensional feature envelope. This is the fastest technique.</para>
+			/// <para>Envelope— The skyline analysis will use the perimeter of the three-dimensional feature envelope. This is the fastest technique.</para>
 			/// </summary>
 			[GPValue("ENVELOPE")]
 			[Description("Envelope")]
@@ -374,14 +343,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ScaleAccordingToEnum 
 		{
 			/// <summary>
-			/// <para>Vertical Angle From Observer—Scaling is done by considering the vertical angle of each vertex relative to the observer point. This is the default.</para>
+			/// <para>Vertical Angle From Observer—Scaling will be performed based on the vertical angle of each vertex relative to the observer point. This is the default.</para>
 			/// </summary>
 			[GPValue("VERTICAL_ANGLE")]
 			[Description("Vertical Angle From Observer")]
 			Vertical_Angle_From_Observer,
 
 			/// <summary>
-			/// <para>Elevation—Scaling is done by considering the elevation of each vertex relative to the observer point.</para>
+			/// <para>Elevation—Scaling will be performed based on the elevation of each vertex relative to the observer point.</para>
 			/// </summary>
 			[GPValue("ELEVATION")]
 			[Description("Elevation")]
@@ -416,14 +385,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum UseCurvatureEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The earth&apos;s curvature will be taken into consideration.</para>
+			/// <para>Checked—The curvature of the earth will be used.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CURVATURE")]
 			CURVATURE,
 
 			/// <summary>
-			/// <para>Unchecked—The earth&apos;s curvature will not be taken into consideration. This is the default.</para>
+			/// <para>Unchecked—The curvature of the earth will not be used. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CURVATURE")]
@@ -437,14 +406,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum UseRefractionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Atmospheric refraction will be taken into consideration.</para>
+			/// <para>Checked—Atmospheric refraction will be applied.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REFRACTION")]
 			REFRACTION,
 
 			/// <summary>
-			/// <para>Unchecked—Atmospheric refraction will not be taken into consideration. This is the default.</para>
+			/// <para>Unchecked—Atmospheric refraction will not be applied. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_REFRACTION")]

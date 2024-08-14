@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>GPX To Features</para>
-	/// <para>Converts the point information inside a GPX file to features.</para>
+	/// <para>Converts the point data in a .gpx file to features.</para>
 	/// </summary>
 	public class GPXtoFeatures : AbstractGPProcess
 	{
@@ -20,16 +20,24 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InputGPXFile">
 		/// <para>Input GPX File</para>
-		/// <para>The GPX file to convert.</para>
+		/// <para>The input .gpx file to be converted.</para>
 		/// </param>
 		/// <param name="OutputFeatureClass">
 		/// <para>Output Feature class</para>
-		/// <para>The feature class to create.</para>
+		/// <para>The output point feature class.</para>
 		/// </param>
-		public GPXtoFeatures(object InputGPXFile, object OutputFeatureClass)
+		/// <param name="OutputType">
+		/// <para>Output Type</para>
+		/// <para>Specifies the geometry type of the output feature class.</para>
+		/// <para>Points—An output point feature class will be created. All GPX points will be included in the output. This is the default.</para>
+		/// <para>Tracks as polylines—An output polyline feature class will be created. Only GPX track points will be included in the output.</para>
+		/// <para><see cref="OutputTypeEnum"/></para>
+		/// </param>
+		public GPXtoFeatures(object InputGPXFile, object OutputFeatureClass, object OutputType)
 		{
 			this.InputGPXFile = InputGPXFile;
 			this.OutputFeatureClass = OutputFeatureClass;
+			this.OutputType = OutputType;
 		}
 
 		/// <summary>
@@ -65,11 +73,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputGPXFile, OutputFeatureClass };
+		public override object[] Parameters => new object[] { InputGPXFile, OutputFeatureClass, OutputType };
 
 		/// <summary>
 		/// <para>Input GPX File</para>
-		/// <para>The GPX file to convert.</para>
+		/// <para>The input .gpx file to be converted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -78,20 +86,56 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Feature class</para>
-		/// <para>The feature class to create.</para>
+		/// <para>The output point feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
 		public object OutputFeatureClass { get; set; }
 
 		/// <summary>
+		/// <para>Output Type</para>
+		/// <para>Specifies the geometry type of the output feature class.</para>
+		/// <para>Points—An output point feature class will be created. All GPX points will be included in the output. This is the default.</para>
+		/// <para>Tracks as polylines—An output polyline feature class will be created. Only GPX track points will be included in the output.</para>
+		/// <para><see cref="OutputTypeEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.must)]
+		[GPString()]
+		[GPCodedValueDomain()]
+		public object OutputType { get; set; } = "POINTS";
+
+		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GPXtoFeatures SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public GPXtoFeatures SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
 		}
 
+		#region InnerClass
+
+		/// <summary>
+		/// <para>Output Type</para>
+		/// </summary>
+		public enum OutputTypeEnum 
+		{
+			/// <summary>
+			/// <para>Points—An output point feature class will be created. All GPX points will be included in the output. This is the default.</para>
+			/// </summary>
+			[GPValue("POINTS")]
+			[Description("Points")]
+			Points,
+
+			/// <summary>
+			/// <para>Tracks as polylines—An output polyline feature class will be created. Only GPX track points will be included in the output.</para>
+			/// </summary>
+			[GPValue("TRACKS_AS_LINES")]
+			[Description("Tracks as polylines")]
+			Tracks_as_polylines,
+
+		}
+
+#endregion
 	}
 }

@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Target, RunwayDirection, Length, Divergence, Slope, DistanceFromThreshold, StartHeight, DerivedOutfeatureclass, AirportControlPointFeatureClass };
+		public override object[] Parameters => new object[] { InFeatures, Target, RunwayDirection!, Length!, Divergence!, Slope!, DistanceFromThreshold!, StartHeight!, DerivedOutfeatureclass!, AirportControlPointFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Runway Features</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object RunwayDirection { get; set; } = "HIGH_RUNWAY_END_DESIGNATOR";
+		public object? RunwayDirection { get; set; } = "HIGH_RUNWAY_END_DESIGNATOR";
 
 		/// <summary>
 		/// <para>Length</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Length { get; set; } = "4";
+		public object? Length { get; set; } = "4";
 
 		/// <summary>
 		/// <para>Divergence</para>
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Divergence { get; set; } = "10";
+		public object? Divergence { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Slope</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Slope { get; set; } = "3";
+		public object? Slope { get; set; } = "3";
 
 		/// <summary>
 		/// <para>Distance From Threshold</para>
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object DistanceFromThreshold { get; set; } = "700";
+		public object? DistanceFromThreshold { get; set; } = "700";
 
 		/// <summary>
 		/// <para>Start Height</para>
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object StartHeight { get; set; } = "35";
+		public object? StartHeight { get; set; } = "35";
 
 		/// <summary>
 		/// <para>Output OIS Features</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
 		[GPCompositeDomain()]
-		public object DerivedOutfeatureclass { get; set; }
+		public object? DerivedOutfeatureclass { get; set; }
 
 		/// <summary>
 		/// <para>Input Airport Control Point Feature</para>
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object AirportControlPointFeatureClass { get; set; }
+		public object? AirportControlPointFeatureClass { get; set; }
 
 		#region InnerClass
 

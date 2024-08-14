@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { GeographyLevel, SegmentationBase, OutFeatureClass, TargetGroup, BoundaryLayer };
+		public override object[] Parameters => new object[] { GeographyLevel, SegmentationBase, OutFeatureClass, TargetGroup, BoundaryLayer! };
 
 		/// <summary>
 		/// <para>Geography Level</para>
@@ -117,14 +117,14 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object BoundaryLayer { get; set; }
+		public object? BoundaryLayer { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateTargetGroupLayer SetEnviroment(object extent = null , object workspace = null )
+		public GenerateTargetGroupLayer SetEnviroment(object? baDataSource = null , object? extent = null , object? workspace = null )
 		{
-			base.SetEnv(extent: extent, workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, extent: extent, workspace: workspace);
 			return this;
 		}
 

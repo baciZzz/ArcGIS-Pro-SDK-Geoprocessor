@@ -68,7 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputService, SourceCacheType, SourceCacheDataset, SourceTilePackage, UploadDataToServer, Scales, NumOfCachingServiceInstances, AreaOfInterest, ImportExtent, Overwrite, OutJobUrl };
+		public override object[] Parameters => new object[] { InputService, SourceCacheType, SourceCacheDataset!, SourceTilePackage!, UploadDataToServer!, Scales!, NumOfCachingServiceInstances!, AreaOfInterest!, ImportExtent!, Overwrite!, OutJobUrl! };
 
 		/// <summary>
 		/// <para>Input Service</para>
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
-		public object SourceCacheDataset { get; set; }
+		public object? SourceCacheDataset { get; set; }
 
 		/// <summary>
 		/// <para>Source Tile Package</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object SourceTilePackage { get; set; }
+		public object? SourceTilePackage { get; set; }
 
 		/// <summary>
 		/// <para>Upload data to server</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UploadDataToServer { get; set; } = "false";
+		public object? UploadDataToServer { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Scales</para>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Scales { get; set; }
+		public object? Scales { get; set; }
 
 		/// <summary>
 		/// <para>Number of caching service instances</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object NumOfCachingServiceInstances { get; set; }
+		public object? NumOfCachingServiceInstances { get; set; }
 
 		/// <summary>
 		/// <para>Area Of Interest</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
-		public object AreaOfInterest { get; set; }
+		public object? AreaOfInterest { get; set; }
 
 		/// <summary>
 		/// <para>Import Extent</para>
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
 		[Category("Area of interest (Envelope)")]
-		public object ImportExtent { get; set; }
+		public object? ImportExtent { get; set; }
 
 		/// <summary>
 		/// <para>Overwrite Tiles</para>
@@ -168,14 +168,14 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Overwrite { get; set; } = "false";
+		public object? Overwrite { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Map Service URL</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutJobUrl { get; set; }
+		public object? OutJobUrl { get; set; }
 
 		#region InnerClass
 

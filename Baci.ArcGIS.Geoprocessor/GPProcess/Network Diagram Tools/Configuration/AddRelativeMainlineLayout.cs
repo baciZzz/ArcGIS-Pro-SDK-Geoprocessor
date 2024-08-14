@@ -20,16 +20,16 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template to modify.</para>
+		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template to modify.</para>
+		/// <para>The name of the diagram template that will be modified.</para>
 		/// </param>
 		/// <param name="IsActive">
 		/// <para>Active</para>
-		/// <para>Specifies whether the layout algorithm will automatically execute when generating diagrams based on the specified template.</para>
-		/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+		/// <para>Specifies whether the layout algorithm will automatically run when generating diagrams based on the specified template.</para>
+		/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter value. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
 		/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </param>
@@ -78,11 +78,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, LineAttribute, MainlineDirection, OffsetBetweenBranches, BreakpointAngle, TypeAttribute, MainlineValues, BranchValues, ExcludedValues, IsCompressing, CompressionRatio, MinimalDistance, AlignmentAttribute, InitialDistances, LengthAttribute, OutUtilityNetwork, OutTemplateName };
+		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, LineAttribute, MainlineDirection!, OffsetBetweenBranches!, BreakpointAngle!, TypeAttribute!, MainlineValues!, BranchValues!, ExcludedValues!, IsCompressing!, CompressionRatio!, MinimalDistance!, AlignmentAttribute!, InitialDistances!, LengthAttribute!, OutUtilityNetwork!, OutTemplateName! };
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template to modify.</para>
+		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template to modify.</para>
+		/// <para>The name of the diagram template that will be modified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -98,8 +98,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Active</para>
-		/// <para>Specifies whether the layout algorithm will automatically execute when generating diagrams based on the specified template.</para>
-		/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+		/// <para>Specifies whether the layout algorithm will automatically run when generating diagrams based on the specified template.</para>
+		/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter value. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
 		/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </summary>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object MainlineDirection { get; set; } = "FROM_LEFT_TO_RIGHT";
+		public object? MainlineDirection { get; set; } = "FROM_LEFT_TO_RIGHT";
 
 		/// <summary>
 		/// <para>Offset Between Branches</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object OffsetBetweenBranches { get; set; } = "2 Unknown";
+		public object? OffsetBetweenBranches { get; set; } = "2 Unknown";
 
 		/// <summary>
 		/// <para>Break Point Angle (in degrees)</para>
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object BreakpointAngle { get; set; } = "45";
+		public object? BreakpointAngle { get; set; } = "45";
 
 		/// <summary>
 		/// <para>Type Attribute</para>
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Line Classification")]
-		public object TypeAttribute { get; set; }
+		public object? TypeAttribute { get; set; }
 
 		/// <summary>
 		/// <para>Mainline Values</para>
@@ -162,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Line Classification")]
-		public object MainlineValues { get; set; }
+		public object? MainlineValues { get; set; }
 
 		/// <summary>
 		/// <para>Branch Values</para>
@@ -172,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Line Classification")]
-		public object BranchValues { get; set; }
+		public object? BranchValues { get; set; }
 
 		/// <summary>
 		/// <para>Excluded Values</para>
@@ -182,7 +182,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Line Classification")]
-		public object ExcludedValues { get; set; }
+		public object? ExcludedValues { get; set; }
 
 		/// <summary>
 		/// <para>Compression along the direction</para>
@@ -195,7 +195,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Line Compression")]
-		public object IsCompressing { get; set; } = "false";
+		public object? IsCompressing { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Ratio (%)</para>
@@ -204,7 +204,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Line Compression")]
-		public object CompressionRatio { get; set; } = "0";
+		public object? CompressionRatio { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Minimal Distance</para>
@@ -213,7 +213,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[Category("Line Compression")]
-		public object MinimalDistance { get; set; } = "0 Unknown";
+		public object? MinimalDistance { get; set; } = "0 Unknown";
 
 		/// <summary>
 		/// <para>Alignment Attribute</para>
@@ -222,7 +222,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Advanced Options")]
-		public object AlignmentAttribute { get; set; }
+		public object? AlignmentAttribute { get; set; }
 
 		/// <summary>
 		/// <para>Initial Distances</para>
@@ -235,7 +235,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object InitialDistances { get; set; } = "FROM_CURRENT_EDGE_GEOMETRY";
+		public object? InitialDistances { get; set; } = "FROM_CURRENT_EDGE_GEOMETRY";
 
 		/// <summary>
 		/// <para>Length Attribute</para>
@@ -244,21 +244,21 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Advanced Options")]
-		public object LengthAttribute { get; set; }
+		public object? LengthAttribute { get; set; }
 
 		/// <summary>
 		/// <para>Output Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		/// <summary>
 		/// <para>Output Diagram Template</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutTemplateName { get; set; }
+		public object? OutTemplateName { get; set; }
 
 		#region InnerClass
 
@@ -268,7 +268,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsActiveEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+			/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter value. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ACTIVE")]

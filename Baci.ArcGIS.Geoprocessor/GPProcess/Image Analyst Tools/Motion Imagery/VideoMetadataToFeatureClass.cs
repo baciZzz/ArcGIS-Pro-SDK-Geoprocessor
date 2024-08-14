@@ -55,12 +55,12 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments => new string[] { "outputZFlag" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InVideo, CsvFile, Flightpath, FlightpathType, Imagepath, ImagepathType, Footprint, StartTime, StopTime, MinDistance, MinTime };
+		public override object[] Parameters => new object[] { InVideo, CsvFile!, Flightpath!, FlightpathType!, Imagepath!, ImagepathType!, Footprint!, StartTime!, StopTime!, MinDistance!, MinTime! };
 
 		/// <summary>
 		/// <para>Input Video</para>
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object CsvFile { get; set; }
+		public object? CsvFile { get; set; }
 
 		/// <summary>
 		/// <para>Output Flight Path Feature Class</para>
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
-		public object Flightpath { get; set; }
+		public object? Flightpath { get; set; }
 
 		/// <summary>
 		/// <para>Flight Path Feature Class Type</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object FlightpathType { get; set; } = "POLYLINE";
+		public object? FlightpathType { get; set; } = "POLYLINE";
 
 		/// <summary>
 		/// <para>Output Image Path Feature Class</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
-		public object Imagepath { get; set; }
+		public object? Imagepath { get; set; }
 
 		/// <summary>
 		/// <para>Image Path Feature Class Type</para>
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ImagepathType { get; set; } = "POLYLINE";
+		public object? ImagepathType { get; set; } = "POLYLINE";
 
 		/// <summary>
 		/// <para>Output Image Footprint Feature Class</para>
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
-		public object Footprint { get; set; }
+		public object? Footprint { get; set; }
 
 		/// <summary>
 		/// <para>Metadata Capture Start Time</para>
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object StartTime { get; set; }
+		public object? StartTime { get; set; }
 
 		/// <summary>
 		/// <para>Metadata Capture Stop Time</para>
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object StopTime { get; set; }
+		public object? StopTime { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Distance Between Features</para>
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object MinDistance { get; set; }
+		public object? MinDistance { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Time Between Features</para>
@@ -162,7 +162,16 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		public object MinTime { get; set; }
+		public object? MinTime { get; set; }
+
+		/// <summary>
+		/// <para>Only Set The Valid Environment For This Tool</para>
+		/// </summary>
+		public VideoMetadataToFeatureClass SetEnviroment(object? outputZFlag = null )
+		{
+			base.SetEnv(outputZFlag: outputZFlag);
+			return this;
+		}
 
 		#region InnerClass
 

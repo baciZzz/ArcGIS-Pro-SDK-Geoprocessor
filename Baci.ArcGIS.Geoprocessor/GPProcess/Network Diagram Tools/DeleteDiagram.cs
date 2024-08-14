@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDiagrams, TemplateNames, DiagramNames, OutDiagrams };
+		public override object[] Parameters => new object[] { InDiagrams, TemplateNames!, DiagramNames!, OutDiagrams! };
 
 		/// <summary>
 		/// <para>Input Network or Network Diagram Layer</para>
@@ -72,11 +72,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Template Names</para>
-		/// <para>The names of the templates for which the related diagrams are to be processed.</para>
+		/// <para>The names of the templates for which the related diagrams will be processed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object TemplateNames { get; set; }
+		public object? TemplateNames { get; set; }
 
 		/// <summary>
 		/// <para>Diagram Names</para>
@@ -84,14 +84,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object DiagramNames { get; set; }
+		public object? DiagramNames { get; set; }
 
 		/// <summary>
 		/// <para>Output Diagrams</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutDiagrams { get; set; }
+		public object? OutDiagrams { get; set; }
 
 	}
 }

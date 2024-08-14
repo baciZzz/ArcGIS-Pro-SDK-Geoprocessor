@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Fields, Method, Power, Shift, UpdatedTable };
+		public override object[] Parameters => new object[] { InTable, Fields, Method!, Power!, Shift!, UpdatedTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "BOX-COX";
+		public object? Method { get; set; } = "BOX-COX";
 
 		/// <summary>
 		/// <para>Power</para>
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object Power { get; set; }
+		public object? Power { get; set; }
 
 		/// <summary>
 		/// <para>Shift</para>
@@ -123,19 +123,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Shift { get; set; }
+		public object? Shift { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object UpdatedTable { get; set; }
+		public object? UpdatedTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TransformField SetEnviroment(object extent = null )
+		public TransformField SetEnviroment(object? extent = null )
 		{
 			base.SetEnv(extent: extent);
 			return this;

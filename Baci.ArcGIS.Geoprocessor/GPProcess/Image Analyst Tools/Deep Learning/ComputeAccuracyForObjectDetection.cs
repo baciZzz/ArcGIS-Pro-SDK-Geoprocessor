@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { DetectedFeatures, GroundTruthFeatures, OutAccuracyTable, OutAccuracyReport, DetectedClassValueField, GroundTruthClassValueField, MinIou, MaskFeatures };
+		public override object[] Parameters => new object[] { DetectedFeatures, GroundTruthFeatures, OutAccuracyTable, OutAccuracyReport!, DetectedClassValueField!, GroundTruthClassValueField!, MinIou!, MaskFeatures! };
 
 		/// <summary>
 		/// <para>Detected Features</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPCompositeDomain()]
-		public object OutAccuracyReport { get; set; }
+		public object? OutAccuracyReport { get; set; }
 
 		/// <summary>
 		/// <para>Detected Class Value Field</para>
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object DetectedClassValueField { get; set; }
+		public object? DetectedClassValueField { get; set; }
 
 		/// <summary>
 		/// <para>Ground Truth Class Value Field</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object GroundTruthClassValueField { get; set; }
+		public object? GroundTruthClassValueField { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Intersection Over Union (IoU)</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MinIou { get; set; } = "0.5";
+		public object? MinIou { get; set; } = "0.5";
 
 		/// <summary>
 		/// <para>Mask Features</para>
@@ -141,12 +141,12 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object MaskFeatures { get; set; }
+		public object? MaskFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ComputeAccuracyForObjectDetection SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public ComputeAccuracyForObjectDetection SetEnviroment(object? extent = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

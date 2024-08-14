@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLocator, OutputFolder, CopyArcsdeLocator };
+		public override object[] Parameters => new object[] { InLocator, OutputFolder, CopyArcsdeLocator! };
 
 		/// <summary>
 		/// <para>Input Locator</para>
@@ -93,12 +93,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CopyArcsdeLocator { get; set; } = "true";
+		public object? CopyArcsdeLocator { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConsolidateLocator SetEnviroment(object workspace = null )
+		public ConsolidateLocator SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

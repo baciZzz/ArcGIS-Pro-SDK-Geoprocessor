@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTraceNetwork, TraceConfigName, TraceType, Description, Tags, PathDirection, ShortestPathNetworkAttributeName, IncludeBarriers, ValidateConsistency, IgnoreBarriersAtStartingPoints, AllowIndeterminateFlow, ConditionBarriers, FunctionBarriers, TraversabilityScope, Functions, OutputConditions, ResultTypes, UpdatedTraceNetwork };
+		public override object[] Parameters => new object[] { InTraceNetwork, TraceConfigName, TraceType, Description!, Tags!, PathDirection!, ShortestPathNetworkAttributeName!, IncludeBarriers!, ValidateConsistency!, IgnoreBarriersAtStartingPoints!, AllowIndeterminateFlow!, ConditionBarriers!, FunctionBarriers!, TraversabilityScope!, Functions!, OutputConditions!, ResultTypes!, UpdatedTraceNetwork! };
 
 		/// <summary>
 		/// <para>Input Trace Network</para>
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Description { get; set; }
+		public object? Description { get; set; }
 
 		/// <summary>
 		/// <para>Tags</para>
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Tags { get; set; }
+		public object? Tags { get; set; }
 
 		/// <summary>
 		/// <para>Path Direction</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object PathDirection { get; set; } = "NO_DIRECTION";
+		public object? PathDirection { get; set; } = "NO_DIRECTION";
 
 		/// <summary>
 		/// <para>Shortest Path Network Attribute Name</para>
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ShortestPathNetworkAttributeName { get; set; }
+		public object? ShortestPathNetworkAttributeName { get; set; }
 
 		/// <summary>
 		/// <para>Include Barrier Features</para>
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeBarriers { get; set; } = "true";
+		public object? IncludeBarriers { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Validate Consistency</para>
@@ -166,7 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ValidateConsistency { get; set; } = "true";
+		public object? ValidateConsistency { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Ignore Barriers At Starting Points</para>
@@ -178,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IgnoreBarriersAtStartingPoints { get; set; } = "false";
+		public object? IgnoreBarriersAtStartingPoints { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Allow Indeterminate Flow</para>
@@ -190,7 +190,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AllowIndeterminateFlow { get; set; } = "false";
+		public object? AllowIndeterminateFlow { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Condition Barriers</para>
@@ -219,7 +219,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Advanced Options")]
-		public object ConditionBarriers { get; set; }
+		public object? ConditionBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Function Barriers</para>
@@ -253,7 +253,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Advanced Options")]
-		public object FunctionBarriers { get; set; }
+		public object? FunctionBarriers { get; set; }
 
 		/// <summary>
 		/// <para>Apply Traversability To</para>
@@ -267,7 +267,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object TraversabilityScope { get; set; } = "BOTH_JUNCTIONS_AND_EDGES";
+		public object? TraversabilityScope { get; set; } = "BOTH_JUNCTIONS_AND_EDGES";
 
 		/// <summary>
 		/// <para>Functions</para>
@@ -302,7 +302,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Advanced Options")]
-		public object Functions { get; set; }
+		public object? Functions { get; set; }
 
 		/// <summary>
 		/// <para>Output Conditions</para>
@@ -328,7 +328,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Advanced Options")]
-		public object OutputConditions { get; set; }
+		public object? OutputConditions { get; set; }
 
 		/// <summary>
 		/// <para>Result Types</para>
@@ -341,14 +341,14 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object ResultTypes { get; set; }
+		public object? ResultTypes { get; set; }
 
 		/// <summary>
 		/// <para>Updated Trace Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETraceNetwork()]
-		public object UpdatedTraceNetwork { get; set; }
+		public object? UpdatedTraceNetwork { get; set; }
 
 		#region InnerClass
 

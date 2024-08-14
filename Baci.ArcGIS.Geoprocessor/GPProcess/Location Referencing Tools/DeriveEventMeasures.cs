@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRouteFeatures, UpdateAllEvents, EventLayers, OutEvents, OutDetailsFile };
+		public override object[] Parameters => new object[] { InRouteFeatures, UpdateAllEvents!, EventLayers!, OutEvents!, OutDetailsFile! };
 
 		/// <summary>
 		/// <para>Input Route Features</para>
@@ -73,15 +73,15 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Update all event feature classes registered in the selected network</para>
-		/// <para>Determines whether all event feature classes in the network will be updated.</para>
-		/// <para>Checked—Updates all events in the network selected in Input Route Features. This is the default.</para>
-		/// <para>Unchecked—Does not update all events in the network selected in Input Route Features. Allows the user to select individual event layers in the event layers parameter below.</para>
+		/// <para>Specifies whether all event feature classes in the network will be updated.</para>
+		/// <para>Checked—All event feature classes in the network selected in the Input Route Features parameter value will be updated. This is the default.</para>
+		/// <para>Unchecked—All event feature classes in the network selected in the Input Route Features parameter value will be not be updated. Individual event layers can be selected using the Event Layers parameter.</para>
 		/// <para><see cref="UpdateAllEventsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UpdateAllEvents { get; set; } = "true";
+		public object? UpdateAllEvents { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Event Layers</para>
@@ -89,26 +89,26 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object EventLayers { get; set; }
+		public object? EventLayers { get; set; }
 
 		/// <summary>
 		/// <para>Output Events</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutEvents { get; set; }
+		public object? OutEvents { get; set; }
 
 		/// <summary>
 		/// <para>Output Details File</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETextFile()]
-		public object OutDetailsFile { get; set; }
+		public object? OutDetailsFile { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DeriveEventMeasures SetEnviroment(object workspace = null )
+		public DeriveEventMeasures SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -122,14 +122,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum UpdateAllEventsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Updates all events in the network selected in Input Route Features. This is the default.</para>
+			/// <para>Checked—All event feature classes in the network selected in the Input Route Features parameter value will be updated. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE_ALL")]
 			UPDATE_ALL,
 
 			/// <summary>
-			/// <para>Unchecked—Does not update all events in the network selected in Input Route Features. Allows the user to select individual event layers in the event layers parameter below.</para>
+			/// <para>Unchecked—All event feature classes in the network selected in the Input Route Features parameter value will be not be updated. Individual event layers can be selected using the Event Layers parameter.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("UPDATE_SOME")]

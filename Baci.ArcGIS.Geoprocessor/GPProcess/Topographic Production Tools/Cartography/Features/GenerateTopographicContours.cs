@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasters, AreaOfInterest, ContourFeatures, ElevationField, ContourSubtype, Scale, ResampleRaster, ContourInterval, BaseContour, ZFactor, ZeroContour, CodeField, IndexInterval, IndexCode, IntermediateCode, DepressionCode, DepressionIntermediateCode, RasterSmoothTolerance, MinimumLength, ContourSmoothTolerance, UpdatedContourFeatures };
+		public override object[] Parameters => new object[] { InRasters, AreaOfInterest, ContourFeatures, ElevationField, ContourSubtype!, Scale!, ResampleRaster!, ContourInterval!, BaseContour!, ZFactor!, ZeroContour!, CodeField!, IndexInterval!, IndexCode!, IntermediateCode!, DepressionCode!, DepressionIntermediateCode!, RasterSmoothTolerance!, MinimumLength!, ContourSmoothTolerance!, UpdatedContourFeatures! };
 
 		/// <summary>
 		/// <para>Input Rasters</para>
@@ -118,11 +118,11 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ContourSubtype { get; set; }
+		public object? ContourSubtype { get; set; }
 
 		/// <summary>
 		/// <para>Map Scale</para>
-		/// <para>Specifies the scale that will be used to optimize contours (the scale of the cartographic product that will be printed). Choosing the scale will set the defaults of other parameters to values that are appropriate for the output scale. The default value is the 1:50,000 cartographic product scale.</para>
+		/// <para>Specifies the scale that will be used to optimize contours (the scale of the cartographic product that will be printed). Choosing the scale will set the defaults of other parameters to values that are appropriate for the output scale. The default is the 1:50,000 cartographic product scale.</para>
 		/// <para>1:5,000—The 1:5,000 cartographic product scale will be used.</para>
 		/// <para>1:10,000—The 1:10,000 cartographic product scale will be used.</para>
 		/// <para>1:12,500—The 1:12,500 cartographic product scale will be used.</para>
@@ -137,19 +137,19 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Scale { get; set; }
+		public object? Scale { get; set; }
 
 		/// <summary>
 		/// <para>Resample Raster</para>
 		/// <para>Specifies whether the input raster will be resampled before creating contours.</para>
-		/// <para>Checked—The input raster will be resampled before creating contours. This is the default.</para>
-		/// <para>Unchecked—The input raster will not be resampled when creating contours.</para>
+		/// <para>Checked—The input raster will be resampled before creating contours.</para>
+		/// <para>Unchecked—The input raster will not be resampled when creating contours. This is the default.</para>
 		/// <para><see cref="ResampleRasterEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ResampleRaster { get; set; } = "true";
+		public object? ResampleRaster { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Contour Interval</para>
@@ -158,27 +158,27 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Elevation Values")]
-		public object ContourInterval { get; set; }
+		public object? ContourInterval { get; set; }
 
 		/// <summary>
 		/// <para>Base Contour</para>
-		/// <para>Contours are generated above and below this value to cover the entire value range of the input raster. The default is 0.</para>
+		/// <para>Contours will be generated above and below this value to cover the entire value range of the input raster. The default is 0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Elevation Values")]
-		public object BaseContour { get; set; } = "0";
+		public object? BaseContour { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Z Factor</para>
-		/// <para>The unit conversion factor used when generating contours. The default value is 1.</para>
+		/// <para>The unit conversion factor that will be used when generating contours. The default is 1.</para>
 		/// <para>The contour lines are generated based on the z-values in the input raster, which are often measured in units of meters or feet. With the default value of 1, the contours will be in the same units as the z-values of the input raster. To create contours in a unit other than that of the z-values, set an appropriate value for the z-factor. It is not necessary that the ground x,y and surface z-units be consistent for this tool.</para>
-		/// <para>For example, if the elevation values in your input raster are in feet, but you want the contours to be generated in meters, set the z-factor to 0.3048 (1 foot = 0.3048 meters).</para>
+		/// <para>For example, if the elevation values in the input raster are in feet, but you want the contours to be generated in meters, set the z-factor to 0.3048 (1 foot = 0.3048 meters).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Elevation Values")]
-		public object ZFactor { get; set; }
+		public object? ZFactor { get; set; }
 
 		/// <summary>
 		/// <para>Include Zero Contour</para>
@@ -191,7 +191,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Elevation Values")]
-		public object ZeroContour { get; set; } = "false";
+		public object? ZeroContour { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Contour Code Field</para>
@@ -201,7 +201,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[Field()]
 		[GPFieldDomain()]
 		[Category("Contour Codes")]
-		public object CodeField { get; set; }
+		public object? CodeField { get; set; }
 
 		/// <summary>
 		/// <para>Contour Index Interval</para>
@@ -210,81 +210,79 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Contour Codes")]
-		public object IndexInterval { get; set; }
+		public object? IndexInterval { get; set; }
 
 		/// <summary>
 		/// <para>Index Code</para>
-		/// <para>The code value to be stored in the Contour Code Field (code_field in Python) when an index contour is identified. The default code will be 1 if the HQC field exists in the input contour feature class.</para>
+		/// <para>The code value to be stored in the Contour Code Field (code_field in Python) parameter value when an index contour is identified. The default code will be 1 if the HQC field exists in the input contour feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Contour Codes")]
-		public object IndexCode { get; set; }
+		public object? IndexCode { get; set; }
 
 		/// <summary>
 		/// <para>Intermediate Code</para>
-		/// <para>The code value to be stored in the Contour Code Field (code_field in Python) when an intermediate contour is identified. The default code will be 2 if the HQC field exists in the input contour feature class.</para>
+		/// <para>The code value to be stored in the Contour Code Field (code_field in Python) parameter value when an intermediate contour is identified. The default code will be 2 if the HQC field exists in the input contour feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Contour Codes")]
-		public object IntermediateCode { get; set; }
+		public object? IntermediateCode { get; set; }
 
 		/// <summary>
 		/// <para>Depression Code</para>
-		/// <para>The code value to be stored in the Contour Code Field (code_field in Python) when a depression contour is identified. The default code will be 5 if the HQC field exists in the input contour feature class.</para>
+		/// <para>The code value to be stored in the Contour Code Field (code_field in Python) parameter value when a depression contour is identified. The default code will be 5 if the HQC field exists in the input contour feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Contour Codes")]
-		public object DepressionCode { get; set; }
+		public object? DepressionCode { get; set; }
 
 		/// <summary>
 		/// <para>Depression Intermediate Code</para>
-		/// <para>The code value to be stored in the Contour Code Field (code_field in Python) when a depression intermediate contour is identified. The default code will be 61 if the HQC field exists in the input contour feature class.</para>
+		/// <para>The code value to be stored in the Contour Code Field (code_field in Python) parameter value when a depression intermediate contour is identified. The default code will be 61 if the HQC field exists in the input contour feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Contour Codes")]
-		public object DepressionIntermediateCode { get; set; }
+		public object? DepressionIntermediateCode { get; set; }
 
 		/// <summary>
 		/// <para>Raster Smooth Tolerance</para>
-		/// <para>The amount of smoothing to apply to the input raster before creating the contour lines.</para>
+		/// <para>The amount of smoothing that will be applied to the input raster before creating the contour lines.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Contour Refinement")]
-		public object RasterSmoothTolerance { get; set; }
+		public object? RasterSmoothTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Contour Minimum Length</para>
-		/// <para>The minimum length for an individual contour line. The default value is set by the scale value. If the value is set to 0 or left blank, no contours will be removed from the output contours based on their short length.</para>
-		/// <para><see cref="MinimumLengthEnum"/></para>
+		/// <para>The minimum length for an individual contour line. The default is set by the scale value. If the value is set to 0 or left blank, no contours will be deleted from the output contours based on their short length.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
+		[GPUnitDomain()]
 		[Category("Contour Refinement")]
-		public object MinimumLength { get; set; }
+		public object? MinimumLength { get; set; }
 
 		/// <summary>
 		/// <para>Contour Smooth Tolerance</para>
-		/// <para>The amount of smoothing to apply to the contour lines. The larger the value, the more generalized the contours. The default value is set by the scale value. If this parameter is set to 0 or left blank, no smoothing will be applied to the output contours.</para>
-		/// <para><see cref="ContourSmoothToleranceEnum"/></para>
+		/// <para>The amount of smoothing that will be applied to the contour lines. The larger the value, the more generalized the contours. The default is set by the scale value. If this parameter is set to 0 or left blank, no smoothing will be applied to the output contours.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
+		[GPUnitDomain()]
 		[Category("Contour Refinement")]
-		public object ContourSmoothTolerance { get; set; }
+		public object? ContourSmoothTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Updated Contour Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object UpdatedContourFeatures { get; set; }
+		public object? UpdatedContourFeatures { get; set; }
 
 		#region InnerClass
 
@@ -371,14 +369,14 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		public enum ResampleRasterEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The input raster will be resampled before creating contours. This is the default.</para>
+			/// <para>Checked—The input raster will be resampled before creating contours.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RESAMPLE_RASTER")]
 			RESAMPLE_RASTER,
 
 			/// <summary>
-			/// <para>Unchecked—The input raster will not be resampled when creating contours.</para>
+			/// <para>Unchecked—The input raster will not be resampled when creating contours. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_RESAMPLE_RASTER")]
@@ -404,132 +402,6 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 			[GPValue("false")]
 			[Description("NO_ZERO_CONTOUR")]
 			NO_ZERO_CONTOUR,
-
-		}
-
-		/// <summary>
-		/// <para>Contour Minimum Length</para>
-		/// </summary>
-		public enum MinimumLengthEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("NauticalMiles")]
-			[Description("NauticalMiles")]
-			NauticalMiles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("DecimalDegrees")]
-			[Description("DecimalDegrees")]
-			DecimalDegrees,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Decimeters")]
-			[Description("Decimeters")]
-			Decimeters,
-
-		}
-
-		/// <summary>
-		/// <para>Contour Smooth Tolerance</para>
-		/// </summary>
-		public enum ContourSmoothToleranceEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("NauticalMiles")]
-			[Description("NauticalMiles")]
-			NauticalMiles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("DecimalDegrees")]
-			[Description("DecimalDegrees")]
-			DecimalDegrees,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Decimeters")]
-			[Description("Decimeters")]
-			Decimeters,
 
 		}
 

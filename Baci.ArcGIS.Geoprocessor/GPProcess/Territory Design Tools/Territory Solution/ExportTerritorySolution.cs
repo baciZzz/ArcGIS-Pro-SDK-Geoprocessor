@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, OutFeatureClass, OutputGeometryType };
+		public override object[] Parameters => new object[] { InTerritorySolution, OutFeatureClass, OutputGeometryType! };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>
@@ -93,12 +93,12 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object OutputGeometryType { get; set; }
+		public object? OutputGeometryType { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportTerritorySolution SetEnviroment(object workspace = null )
+		public ExportTerritorySolution SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

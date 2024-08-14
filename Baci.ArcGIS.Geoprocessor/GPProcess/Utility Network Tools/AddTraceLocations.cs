@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, OutFeatureClass, LoadSelectedFeatures, ClearTraceLocations, TraceLocations, FilterBarrier };
+		public override object[] Parameters => new object[] { InUtilityNetwork, OutFeatureClass, LoadSelectedFeatures!, ClearTraceLocations!, TraceLocations!, FilterBarrier! };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
@@ -95,11 +95,11 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object LoadSelectedFeatures { get; set; } = "false";
+		public object? LoadSelectedFeatures { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Clear Trace Locations</para>
-		/// <para>Specifies whether trace locations will be cleared from the output feature class.</para>
+		/// <para>Specifies whether existing trace locations will be cleared from the output feature class.</para>
 		/// <para>Checked—Existing trace locations will be cleared.</para>
 		/// <para>Unchecked—Existing trace locations will not be cleared; they will be kept. This is the default.</para>
 		/// <para><see cref="ClearTraceLocationsEnum"/></para>
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ClearTraceLocations { get; set; } = "false";
+		public object? ClearTraceLocations { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Trace Locations</para>
@@ -121,25 +121,25 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object TraceLocations { get; set; }
+		public object? TraceLocations { get; set; }
 
 		/// <summary>
 		/// <para>Filter Barrier</para>
-		/// <para>Specifies the behavior of the barriers for the trace locations.</para>
-		/// <para>Checked—The barrier behaves like a filter barrier. This is useful for subnetwork-based traces where the barrier allows the subnetwork to be evaluated first and then is applied on a second traversal of the network features, essentially acting like a filter barrier.</para>
-		/// <para>Unchecked—The barrier behaves like a traversability barrier. Traversability barriers define the extent of subnetworks and will be evaluated on the first pass. This is the default.</para>
-		/// <para>This parameter requires ArcGIS Enterprise 10.9 or later.</para>
+		/// <para>Specifies whether the barriers for the trace locations will behave as filter barriers.</para>
+		/// <para>Checked—The barriers will behave as filter barriers. This is useful for subnetwork-based traces in which the barrier allows the subnetwork to be evaluated first and is then applied on a second traversal of the network features.</para>
+		/// <para>Unchecked—The barriers will not behave as filter barriers; they will behave as traversability barriers, which define the extent of subnetworks, and will be evaluated on the first pass. This is the default.</para>
+		/// <para>This parameter requires ArcGIS Enterprise10.8.1or later.</para>
 		/// <para><see cref="FilterBarrierEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object FilterBarrier { get; set; } = "false";
+		public object? FilterBarrier { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddTraceLocations SetEnviroment(object outputZFlag = null , object workspace = null )
+		public AddTraceLocations SetEnviroment(object? outputZFlag = null , object? workspace = null )
 		{
 			base.SetEnv(outputZFlag: outputZFlag, workspace: workspace);
 			return this;
@@ -195,14 +195,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum FilterBarrierEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The barrier behaves like a filter barrier. This is useful for subnetwork-based traces where the barrier allows the subnetwork to be evaluated first and then is applied on a second traversal of the network features, essentially acting like a filter barrier.</para>
+			/// <para>Checked—The barriers will behave as filter barriers. This is useful for subnetwork-based traces in which the barrier allows the subnetwork to be evaluated first and is then applied on a second traversal of the network features.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FILTER_BARRIER")]
 			FILTER_BARRIER,
 
 			/// <summary>
-			/// <para>Unchecked—The barrier behaves like a traversability barrier. Traversability barriers define the extent of subnetworks and will be evaluated on the first pass. This is the default.</para>
+			/// <para>Unchecked—The barriers will not behave as filter barriers; they will behave as traversability barriers, which define the extent of subnetworks, and will be evaluated on the first pass. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("TRAVERSABILITY_BARRIER")]

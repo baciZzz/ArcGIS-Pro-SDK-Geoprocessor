@@ -66,12 +66,12 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
+		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputpointfeatures, Interpolatefield, Outputname, Optimizefor, Transformdata, Sizeoflocalmodels, Numberofneighbors, Outputcellsize, Outputpredictionerror, Outputraster, Outputerrorraster };
+		public override object[] Parameters => new object[] { Inputpointfeatures, Interpolatefield, Outputname, Optimizefor!, Transformdata!, Sizeoflocalmodels!, Numberofneighbors!, Outputcellsize!, Outputpredictionerror!, Outputraster!, Outputerrorraster! };
 
 		/// <summary>
 		/// <para>Input Point Features</para>
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Optimizefor { get; set; } = "BALANCE";
+		public object? Optimizefor { get; set; } = "BALANCE";
 
 		/// <summary>
 		/// <para>Transform Data to Normal Distribution</para>
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Additional Options")]
-		public object Transformdata { get; set; } = "false";
+		public object? Transformdata { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Size of Local Models</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Additional Options")]
-		public object Sizeoflocalmodels { get; set; }
+		public object? Sizeoflocalmodels { get; set; }
 
 		/// <summary>
 		/// <para>Number of Neighbors</para>
@@ -144,19 +144,18 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[GPLong()]
 		[GPRangeDomain()]
 		[Category("Additional Options")]
-		public object Numberofneighbors { get; set; }
+		public object? Numberofneighbors { get; set; }
 
 		/// <summary>
 		/// <para>Output Cell Size</para>
 		/// <para>Set the cell size and units of the output raster. If a prediction error raster is created, it will also use this cell size.</para>
 		/// <para>The units can be Kilometers, Meters, Miles, or Feet.</para>
 		/// <para>The default units are Meters.</para>
-		/// <para><see cref="OutputcellsizeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object Outputcellsize { get; set; }
+		[GPUnitDomain()]
+		public object? Outputcellsize { get; set; }
 
 		/// <summary>
 		/// <para>Output Prediction Error</para>
@@ -170,28 +169,28 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Outputpredictionerror { get; set; } = "false";
+		public object? Outputpredictionerror { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Raster</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRasterLayer()]
-		public object Outputraster { get; set; }
+		public object? Outputraster { get; set; }
 
 		/// <summary>
 		/// <para>Output Error Raster</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRasterLayer()]
-		public object Outputerrorraster { get; set; }
+		public object? Outputerrorraster { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public InterpolatePoints SetEnviroment(object cellSize = null , object extent = null , object mask = null , object outputCoordinateSystem = null , object snapRaster = null )
+		public InterpolatePoints SetEnviroment(object? cellSize = null , object? extent = null , object? mask = null , object? outputCoordinateSystem = null , object? pyramid = null , object? snapRaster = null )
 		{
-			base.SetEnv(cellSize: cellSize, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, snapRaster: snapRaster);
+			base.SetEnv(cellSize: cellSize, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, pyramid: pyramid, snapRaster: snapRaster);
 			return this;
 		}
 
@@ -243,41 +242,6 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 			[GPValue("false")]
 			[Description("NO_TRANSFORM")]
 			NO_TRANSFORM,
-
-		}
-
-		/// <summary>
-		/// <para>Output Cell Size</para>
-		/// </summary>
-		public enum OutputcellsizeEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
 
 		}
 

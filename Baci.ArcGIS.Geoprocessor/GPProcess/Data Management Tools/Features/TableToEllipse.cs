@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Table To Ellipse</para>
-	/// <para>Creates a feature class containing geodetic ellipse features constructed based on the values in an x-coordinate field, y-coordinate field, major-axis field, minor-axis field, and azimuth field of a table.</para>
+	/// <para>Creates a feature class containing geodetic or planar ellipses from the values in an x-coordinate field, y-coordinate field, major axis and minor axis fields, and azimuth field of a table.</para>
 	/// </summary>
 	public class TableToEllipse : AbstractGPProcess
 	{
@@ -24,7 +24,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </param>
 		/// <param name="OutFeatureclass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class containing geodetic ellipses as densified polylines.</para>
+		/// <para>The output feature class containing geodetic or planar ellipse.</para>
 		/// </param>
 		/// <param name="XField">
 		/// <para>X Field</para>
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutFeatureclass, XField, YField, MajorField, MinorField, DistanceUnits, AzimuthField, AzimuthUnits, IdField, SpatialReference, Attributes };
+		public override object[] Parameters => new object[] { InTable, OutFeatureclass, XField, YField, MajorField, MinorField, DistanceUnits, AzimuthField!, AzimuthUnits!, IdField!, SpatialReference!, Attributes!, GeometryType!, Method! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class containing geodetic ellipses as densified polylines.</para>
+		/// <para>The output feature class containing geodetic or planar ellipse.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -174,7 +174,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object AzimuthField { get; set; }
+		public object? AzimuthField { get; set; }
 
 		/// <summary>
 		/// <para>Azimuth Units</para>
@@ -184,7 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object AzimuthUnits { get; set; } = "DEGREES";
+		public object? AzimuthUnits { get; set; } = "DEGREES";
 
 		/// <summary>
 		/// <para>ID</para>
@@ -193,7 +193,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object IdField { get; set; }
+		public object? IdField { get; set; }
 
 		/// <summary>
 		/// <para>Spatial Reference</para>
@@ -201,24 +201,52 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
-		public object SpatialReference { get; set; } = "{B286C06B-0879-11D2-AACA-00C04FA33C20};IsHighPrecision";
+		public object? SpatialReference { get; set; } = "{B286C06B-0879-11D2-AACA-00C04FA33C20};-450359962737.049 -450359962737.049 10000;-100000 10000;-100000 10000;0.001;0.001;0.001;IsHighPrecision";
 
 		/// <summary>
 		/// <para>Preserve attributes</para>
-		/// <para>Specifies whether the remaining input fields will be written to the output feature class.</para>
-		/// <para>Unchecked—The remaining input fields will not be written to the output feature class. This is the default.</para>
-		/// <para>Checked—The remaining input fields will be included in the output feature class. A new field, ORIG_FID, will also be added to the output feature class to store the input feature ID values.</para>
+		/// <para>Specifies whether the remaining input fields will be added to the output feature class.</para>
+		/// <para>Unchecked—The remaining input fields will not be added to the output feature class. This is the default.</para>
+		/// <para>Checked—The remaining input fields will be added to the output feature class. A new field, ORIG_FID, will also be added to the output feature class to store the input feature ID values.</para>
 		/// <para><see cref="AttributesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Attributes { get; set; } = "false";
+		public object? Attributes { get; set; } = "false";
+
+		/// <summary>
+		/// <para>Geometry Type</para>
+		/// <para>Specifies the geometry type for the output feature class.</para>
+		/// <para>LINE—An output polyline feature class will be created. This is the default.</para>
+		/// <para>POLYGON—An output polygon feature class will be created.</para>
+		/// <para>LINE—Line</para>
+		/// <para>POLYGON—Polygon</para>
+		/// <para><see cref="GeometryTypeEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		[GPCodedValueDomain()]
+		public object? GeometryType { get; set; } = "LINE";
+
+		/// <summary>
+		/// <para>Method</para>
+		/// <para>Specifies whether the ellipse will be generated based on geodesic or planar measurements.</para>
+		/// <para>GEODESIC—A geodesic ellipse will be generated. The ellipse will accurately represent the shape on the surface of the earth. This is the default.</para>
+		/// <para>PLANAR—A planar ellipse will be generated on the projected plane. It usually does not accurately represent the shape on the surface of the earth as a geodesic ellipse does. This option is not available for geographic coordinate systems.</para>
+		/// <para>GEODESIC—Geodesic</para>
+		/// <para>PLANAR—Planar</para>
+		/// <para><see cref="MethodEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		[GPCodedValueDomain()]
+		public object? Method { get; set; } = "GEODESIC";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TableToEllipse SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public TableToEllipse SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -316,18 +344,60 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AttributesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The remaining input fields will be included in the output feature class. A new field, ORIG_FID, will also be added to the output feature class to store the input feature ID values.</para>
+			/// <para>Checked—The remaining input fields will be added to the output feature class. A new field, ORIG_FID, will also be added to the output feature class to store the input feature ID values.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ATTRIBUTES")]
 			ATTRIBUTES,
 
 			/// <summary>
-			/// <para>Unchecked—The remaining input fields will not be written to the output feature class. This is the default.</para>
+			/// <para>Unchecked—The remaining input fields will not be added to the output feature class. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ATTRIBUTES")]
 			NO_ATTRIBUTES,
+
+		}
+
+		/// <summary>
+		/// <para>Geometry Type</para>
+		/// </summary>
+		public enum GeometryTypeEnum 
+		{
+			/// <summary>
+			/// <para>LINE—An output polyline feature class will be created. This is the default.</para>
+			/// </summary>
+			[GPValue("LINE")]
+			[Description("LINE")]
+			LINE,
+
+			/// <summary>
+			/// <para>POLYGON—An output polygon feature class will be created.</para>
+			/// </summary>
+			[GPValue("POLYGON")]
+			[Description("POLYGON")]
+			POLYGON,
+
+		}
+
+		/// <summary>
+		/// <para>Method</para>
+		/// </summary>
+		public enum MethodEnum 
+		{
+			/// <summary>
+			/// <para>GEODESIC—A geodesic ellipse will be generated. The ellipse will accurately represent the shape on the surface of the earth. This is the default.</para>
+			/// </summary>
+			[GPValue("GEODESIC")]
+			[Description("GEODESIC")]
+			GEODESIC,
+
+			/// <summary>
+			/// <para>PLANAR—A planar ellipse will be generated on the projected plane. It usually does not accurately represent the shape on the surface of the earth as a geodesic ellipse does. This option is not available for geographic coordinate systems.</para>
+			/// </summary>
+			[GPValue("PLANAR")]
+			[Description("PLANAR")]
+			PLANAR,
 
 		}
 

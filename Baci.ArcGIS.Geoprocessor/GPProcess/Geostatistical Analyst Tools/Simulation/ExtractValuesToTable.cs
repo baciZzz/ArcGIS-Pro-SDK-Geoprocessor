@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InRasters, OutTable, OutRasterNamesTable, AddWarningField };
+		public override object[] Parameters => new object[] { InFeatures, InRasters, OutTable, OutRasterNamesTable!, AddWarningField! };
 
 		/// <summary>
 		/// <para>Input features</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object OutRasterNamesTable { get; set; }
+		public object? OutRasterNamesTable { get; set; }
 
 		/// <summary>
 		/// <para>Add warnings to output table</para>
@@ -115,12 +115,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AddWarningField { get; set; } = "true";
+		public object? AddWarningField { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExtractValuesToTable SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public ExtractValuesToTable SetEnviroment(object? extent = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

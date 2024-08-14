@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayerOrView, SelectionType, WhereClause, OutLayerOrView, InvertWhereClause, Count };
+		public override object[] Parameters => new object[] { InLayerOrView, SelectionType!, WhereClause!, OutLayerOrView!, InvertWhereClause!, Count! };
 
 		/// <summary>
 		/// <para>Input Rows</para>
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public object InLayerOrView { get; set; }
 
 		/// <summary>
-		/// <para>Selection type</para>
+		/// <para>Selection Type</para>
 		/// <para>Specifies how the selection will be applied and what to do if a selection already exists.</para>
 		/// <para>New selection—The resulting selection replaces the current selection. This is the default.</para>
 		/// <para>Add to the current selection—The resulting selection is added to the current selection if one exists. If no selection exists, this is the same as the new selection option.</para>
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object SelectionType { get; set; } = "NEW_SELECTION";
+		public object? SelectionType { get; set; } = "NEW_SELECTION";
 
 		/// <summary>
 		/// <para>Expression</para>
@@ -92,14 +92,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Updated Layer Or Table View</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutLayerOrView { get; set; }
+		public object? OutLayerOrView { get; set; }
 
 		/// <summary>
 		/// <para>Invert Where Clause</para>
@@ -111,19 +111,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object InvertWhereClause { get; set; }
+		public object? InvertWhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Count</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLong()]
-		public object Count { get; set; }
+		public object? Count { get; set; }
 
 		#region InnerClass
 
 		/// <summary>
-		/// <para>Selection type</para>
+		/// <para>Selection Type</para>
 		/// </summary>
 		public enum SelectionTypeEnum 
 		{

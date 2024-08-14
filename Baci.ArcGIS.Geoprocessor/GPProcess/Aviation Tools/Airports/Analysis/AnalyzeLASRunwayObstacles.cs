@@ -24,7 +24,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// </param>
 		/// <param name="InLasObstacles">
 		/// <para>Input LAS Obstacles</para>
-		/// <para>The input LAS dataset that contains 3D data points covering the area around an airport. The points represent a 3D view of natural and man-made objects that could pose a hazard to flight.</para>
+		/// <para>The input LAS dataset that contains 3D data points covering the area around an airport. The points represent a 3D view of natural and human-made objects that may pose a hazard to flight.</para>
 		/// </param>
 		public AnalyzeLASRunwayObstacles(object InOisFeatures, object InLasObstacles)
 		{
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InOisFeatures, InLasObstacles, OutObstacleFeatureClass, TargetFolder, OutLasObstacles, VerticalClearance, VerticalClearanceUnit };
+		public override object[] Parameters => new object[] { InOisFeatures, InLasObstacles, OutObstacleFeatureClass!, TargetFolder!, OutLasObstacles!, VerticalClearance!, VerticalClearanceUnit! };
 
 		/// <summary>
 		/// <para>Input OIS Features</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 
 		/// <summary>
 		/// <para>Input LAS Obstacles</para>
-		/// <para>The input LAS dataset that contains 3D data points covering the area around an airport. The points represent a 3D view of natural and man-made objects that could pose a hazard to flight.</para>
+		/// <para>The input LAS dataset that contains 3D data points covering the area around an airport. The points represent a 3D view of natural and human-made objects that may pose a hazard to flight.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLasDatasetLayer()]
@@ -91,58 +91,58 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPCompositeDomain()]
-		public object OutObstacleFeatureClass { get; set; }
+		public object? OutObstacleFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Target Folder</para>
-		/// <para>The folder to which LAS files will be written. Each output file will have the same LAS file version and point record format as the input file. This folder is required output only if no output feature class is requested.</para>
+		/// <para>The folder to which .las files will be written. Each output file will have the same .las file version and point record format as the input file. This folder is required output only if no output feature class is requested.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
-		public object TargetFolder { get; set; }
+		public object? TargetFolder { get; set; }
 
 		/// <summary>
 		/// <para>Output LAS Obstacles</para>
-		/// <para>The output LAS dataset referencing the newly created LAS files. This LAS Dataset is created only when the output folder is specified to generate the LAS output.</para>
+		/// <para>The output LAS dataset referencing the newly created .las files. This LAS dataset is created only when the output folder is specified to generate the LAS output.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLasDatasetLayer()]
-		public object OutLasObstacles { get; set; }
+		public object? OutLasObstacles { get; set; }
 
 		/// <summary>
 		/// <para>Vertical Clearance</para>
-		/// <para>If a LAS point height is above the OIS surface, that point will be captured. The height of an OIS surface above a given LAS point is temporarily lowered by the specified vertical clearance value. This serves to decrease the distance between the height of the LAS point and the corresponding OIS surface, resulting in the likeliness that more points will be captured. Thus, you can be sure that a more liberal collection of ground features, represented by the LAS points penetrating through the OIS surface, will be captured.</para>
+		/// <para>If a LAS point height is above the OIS surface, that point will be captured. The height of an OIS surface above a given LAS point is temporarily lowered by the specified vertical clearance value. This decreases the distance between the height of the LAS point and the corresponding OIS surface, resulting in the likeliness that more points will be captured. Consequently, a larger collection of ground features, represented by the LAS points penetrating through the OIS surface, will be captured.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object VerticalClearance { get; set; } = "0";
+		public object? VerticalClearance { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Vertical Clearance Unit</para>
-		/// <para>The linear unit of the vertical clearance.</para>
-		/// <para>Kilometers—The linear unit is kilometers.</para>
-		/// <para>Meters—The linear unit is meters.</para>
-		/// <para>Decimeters—The linear unit is decimeters.</para>
-		/// <para>Centimeters—The linear unit is centimeters.</para>
-		/// <para>Millimeters—The linear unit is millimeters.</para>
-		/// <para>Nautical miles—The linear unit is nautical miles.</para>
-		/// <para>Miles—The linear unit is miles.</para>
-		/// <para>Yards—The linear unit is yards.</para>
-		/// <para>Feet—The linear unit is feet.</para>
-		/// <para>Inches—The linear unit is inches.</para>
-		/// <para>Decimal degrees—The linear unit is decimal degrees.</para>
-		/// <para>Points—The linear unit is points.</para>
-		/// <para>Unknown—The linear unit is unknown.</para>
+		/// <para>The linear unit that will be used for the vertical clearance.</para>
+		/// <para>Kilometers—The linear unit will be kilometers.</para>
+		/// <para>Meters—The linear unit will be meters.</para>
+		/// <para>Decimeters—The linear unit will be decimeters.</para>
+		/// <para>Centimeters—The linear unit will be centimeters.</para>
+		/// <para>Millimeters—The linear unit will be millimeters.</para>
+		/// <para>Nautical miles—The linear unit will be nautical miles.</para>
+		/// <para>Miles—The linear unit will be miles.</para>
+		/// <para>Yards—The linear unit will be yards.</para>
+		/// <para>Feet—The linear unit will be feet.</para>
+		/// <para>Inches—The linear unit will be inches.</para>
+		/// <para>Decimal degrees—The linear unit will be decimal degrees.</para>
+		/// <para>Points—The linear unit will be points.</para>
+		/// <para>Unknown—The linear unit will be unknown.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object VerticalClearanceUnit { get; set; } = "METERS";
+		public object? VerticalClearanceUnit { get; set; } = "METERS";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AnalyzeLASRunwayObstacles SetEnviroment(object workspace = null )
+		public AnalyzeLASRunwayObstacles SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

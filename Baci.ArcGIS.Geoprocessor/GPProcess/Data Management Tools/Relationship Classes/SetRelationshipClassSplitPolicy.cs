@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Set Relationship Class Split Policy</para>
 	/// <para>Defines the split policy for related features.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class SetRelationshipClassSplitPolicy : AbstractGPProcess
 	{
 		/// <summary>
@@ -69,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRelClass, SplitPolicy, OutRelClass };
+		public override object[] Parameters => new object[] { InRelClass, SplitPolicy, OutRelClass! };
 
 		/// <summary>
 		/// <para>Input Relationship Class</para>
@@ -97,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DERelationshipClass()]
-		public object OutRelClass { get; set; }
+		public object? OutRelClass { get; set; }
 
 		#region InnerClass
 

@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, RouteIdField, RouteNameField, FromDateField, ToDateField, DeriveFromLineNetwork, LineNetworkName, IncludeFieldsToSupportLines, LineIdField, LineNameField, LineOrderField, OutFeatureClass, RouteIdConfiguration, IndividualRouteIdFields };
+		public override object[] Parameters => new object[] { InFeatureClass, RouteIdField!, RouteNameField!, FromDateField!, ToDateField!, DeriveFromLineNetwork!, LineNetworkName!, IncludeFieldsToSupportLines!, LineIdField!, LineNameField!, LineOrderField!, OutFeatureClass!, RouteIdConfiguration!, IndividualRouteIdFields! };
 
 		/// <summary>
 		/// <para>LRS Network Feature Class</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object RouteIdField { get; set; }
+		public object? RouteIdField { get; set; }
 
 		/// <summary>
 		/// <para>Route Name Field</para>
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object RouteNameField { get; set; }
+		public object? RouteNameField { get; set; }
 
 		/// <summary>
 		/// <para>From Date Field</para>
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object FromDateField { get; set; }
+		public object? FromDateField { get; set; }
 
 		/// <summary>
 		/// <para>To Date Field</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ToDateField { get; set; }
+		public object? ToDateField { get; set; }
 
 		/// <summary>
 		/// <para>Derive From Line Network</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DeriveFromLineNetwork { get; set; } = "AS_IS";
+		public object? DeriveFromLineNetwork { get; set; } = "AS_IS";
 
 		/// <summary>
 		/// <para>Line Network Name</para>
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LineNetworkName { get; set; }
+		public object? LineNetworkName { get; set; }
 
 		/// <summary>
 		/// <para>Include Fields to Support Lines</para>
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object IncludeFieldsToSupportLines { get; set; } = "AS_IS";
+		public object? IncludeFieldsToSupportLines { get; set; } = "AS_IS";
 
 		/// <summary>
 		/// <para>Line ID Field</para>
@@ -149,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object LineIdField { get; set; }
+		public object? LineIdField { get; set; }
 
 		/// <summary>
 		/// <para>Line Name Field</para>
@@ -158,7 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object LineNameField { get; set; }
+		public object? LineNameField { get; set; }
 
 		/// <summary>
 		/// <para>Line Order Field</para>
@@ -167,14 +167,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object LineOrderField { get; set; }
+		public object? LineOrderField { get; set; }
 
 		/// <summary>
 		/// <para>Output Network Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Route ID Field Configuration</para>
@@ -188,7 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object RouteIdConfiguration { get; set; } = "AS_IS";
+		public object? RouteIdConfiguration { get; set; } = "AS_IS";
 
 		/// <summary>
 		/// <para>Field(s)</para>
@@ -197,12 +197,12 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
-		public object IndividualRouteIdFields { get; set; }
+		public object? IndividualRouteIdFields { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ModifyLRSNetwork SetEnviroment(object workspace = null )
+		public ModifyLRSNetwork SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, InPanchromaticImage, BandIndexes, OutString };
+		public override object[] Parameters => new object[] { InRaster, InPanchromaticImage, BandIndexes!, OutString! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -90,14 +90,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object BandIndexes { get; set; }
+		public object? BandIndexes { get; set; }
 
 		/// <summary>
 		/// <para>Pan-sharpened Weights</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutString { get; set; }
+		public object? OutString { get; set; }
 
 	}
 }

@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, UniqueIDField, OutputSpatialWeightsMatrixFile, InputNetworkDataSource, TravelMode, ImpedanceDistanceCutoff, ImpedanceTemporalCutoff, ImpedanceCostCutoff, MaximumNumberOfNeighbors, TimeOfDay, TimeZone, Barriers, SearchTolerance, ConceptualizationOfSpatialRelationships, Exponent, RowStandardization };
+		public override object[] Parameters => new object[] { InputFeatureClass, UniqueIDField, OutputSpatialWeightsMatrixFile, InputNetworkDataSource, TravelMode, ImpedanceDistanceCutoff!, ImpedanceTemporalCutoff!, ImpedanceCostCutoff!, MaximumNumberOfNeighbors!, TimeOfDay!, TimeZone!, Barriers!, SearchTolerance!, ConceptualizationOfSpatialRelationships!, Exponent!, RowStandardization! };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
@@ -129,24 +129,22 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Impedance Distance Cutoff</para>
 		/// <para>The maximum impedance distance allowed for neighbors of a feature. Any feature whose distance is farther than this value will not be used as a neighbor. By default, no distance cutoff is used.</para>
-		/// <para><see cref="ImpedanceDistanceCutoffEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
+		[GPUnitDomain()]
 		[Category("Network Analysis Options")]
-		public object ImpedanceDistanceCutoff { get; set; }
+		public object? ImpedanceDistanceCutoff { get; set; }
 
 		/// <summary>
 		/// <para>Impedance Temporal Cutoff</para>
 		/// <para>The maximum impedance travel time allowed for neighbors of a feature. Any feature whose travel time is longer than this value will not be used as a neighbor. By default, no temporal cutoff is used.</para>
-		/// <para><see cref="ImpedanceTemporalCutoffEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		[GPCodedValueDomain()]
+		[GPUnitDomain()]
 		[Category("Network Analysis Options")]
-		public object ImpedanceTemporalCutoff { get; set; }
+		public object? ImpedanceTemporalCutoff { get; set; }
 
 		/// <summary>
 		/// <para>Impedance Cost Cutoff</para>
@@ -155,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Network Analysis Options")]
-		public object ImpedanceCostCutoff { get; set; }
+		public object? ImpedanceCostCutoff { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Number of Neighbors</para>
@@ -164,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Network Analysis Options")]
-		public object MaximumNumberOfNeighbors { get; set; }
+		public object? MaximumNumberOfNeighbors { get; set; }
 
 		/// <summary>
 		/// <para>Time of Day</para>
@@ -183,7 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Network Analysis Options")]
-		public object TimeOfDay { get; set; }
+		public object? TimeOfDay { get; set; }
 
 		/// <summary>
 		/// <para>Time Zone</para>
@@ -196,7 +194,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Network Analysis Options")]
-		public object TimeZone { get; set; } = "LOCAL_TIME_AT_LOCATIONS";
+		public object? TimeZone { get; set; } = "LOCAL_TIME_AT_LOCATIONS";
 
 		/// <summary>
 		/// <para>Barriers</para>
@@ -206,7 +204,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
 		[Category("Network Analysis Options")]
-		public object Barriers { get; set; }
+		public object? Barriers { get; set; }
 
 		/// <summary>
 		/// <para>Search Tolerance</para>
@@ -214,8 +212,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
+		[GPUnitDomain()]
 		[Category("Network Analysis Options")]
-		public object SearchTolerance { get; set; } = "5000 Meters";
+		public object? SearchTolerance { get; set; } = "5000 Meters";
 
 		/// <summary>
 		/// <para>Conceptualization of Spatial Relationships</para>
@@ -228,7 +227,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Weights Options")]
-		public object ConceptualizationOfSpatialRelationships { get; set; } = "FIXED";
+		public object? ConceptualizationOfSpatialRelationships { get; set; } = "FIXED";
 
 		/// <summary>
 		/// <para>Exponent</para>
@@ -238,7 +237,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPDouble()]
 		[GPRangeDomain()]
 		[Category("Weights Options")]
-		public object Exponent { get; set; } = "1";
+		public object? Exponent { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Row Standardization</para>
@@ -251,88 +250,18 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Weights Options")]
-		public object RowStandardization { get; set; } = "true";
+		public object? RowStandardization { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateNetworkSWM SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateNetworkSWM SetEnviroment(object? extent = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
 		}
 
 		#region InnerClass
-
-		/// <summary>
-		/// <para>Impedance Distance Cutoff</para>
-		/// </summary>
-		public enum ImpedanceDistanceCutoffEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-		}
-
-		/// <summary>
-		/// <para>Impedance Temporal Cutoff</para>
-		/// </summary>
-		public enum ImpedanceTemporalCutoffEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Seconds")]
-			[Description("Seconds")]
-			Seconds,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Minutes")]
-			[Description("Minutes")]
-			Minutes,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Hours")]
-			[Description("Hours")]
-			Hours,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Days")]
-			[Description("Days")]
-			Days,
-
-		}
 
 		/// <summary>
 		/// <para>Time Zone</para>

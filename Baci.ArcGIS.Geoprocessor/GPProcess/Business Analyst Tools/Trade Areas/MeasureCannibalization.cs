@@ -70,12 +70,12 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "baDataSource", "geographicTransformations", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, AreaIdField, AreaDescriptionField, OutFeatureClass, StoreIdField, CreateReport, ReportTitle, ReportFolder, ReportFormat, OutputReport, Variables };
+		public override object[] Parameters => new object[] { InFeatures, AreaIdField, AreaDescriptionField, OutFeatureClass, StoreIdField!, CreateReport!, ReportTitle!, ReportFolder!, ReportFormat!, OutputReport!, Variables! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object StoreIdField { get; set; }
+		public object? StoreIdField { get; set; }
 
 		/// <summary>
 		/// <para>Create Report</para>
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CreateReport { get; set; } = "false";
+		public object? CreateReport { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Report Title</para>
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Report Options")]
-		public object ReportTitle { get; set; } = "Measure Cannibalization";
+		public object? ReportTitle { get; set; } = "Measure Cannibalization";
 
 		/// <summary>
 		/// <para>Output Report Folder</para>
@@ -149,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
 		[Category("Report Options")]
-		public object ReportFolder { get; set; }
+		public object? ReportFolder { get; set; }
 
 		/// <summary>
 		/// <para>Report Output Formats</para>
@@ -158,14 +158,14 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[Category("Report Options")]
-		public object ReportFormat { get; set; }
+		public object? ReportFormat { get; set; }
 
 		/// <summary>
 		/// <para>Output Report</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutputReport { get; set; }
+		public object? OutputReport { get; set; }
 
 		/// <summary>
 		/// <para>Variables</para>
@@ -174,14 +174,14 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[Category("Additional Metrics")]
-		public object Variables { get; set; }
+		public object? Variables { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MeasureCannibalization SetEnviroment(object workspace = null )
+		public MeasureCannibalization SetEnviroment(object? baDataSource = null , object? geographicTransformations = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, geographicTransformations: geographicTransformations, workspace: workspace);
 			return this;
 		}
 

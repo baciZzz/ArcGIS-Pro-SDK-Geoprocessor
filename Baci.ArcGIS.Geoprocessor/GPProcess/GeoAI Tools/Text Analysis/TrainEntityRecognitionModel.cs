@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFolder, OutModel, PretrainedModelFile!, AddressEntity!, MaxEpochs!, ModelBackbone!, BatchSize!, ModelArguments!, LearningRate!, ValidationPercentage!, StopTraining!, MakeTrainable };
+		public override object[] Parameters => new object[] { InFolder, OutModel, PretrainedModelFile!, AddressEntity!, MaxEpochs!, ModelBackbone!, BatchSize!, ModelArguments!, LearningRate!, ValidationPercentage!, StopTraining!, MakeTrainable! };
 
 		/// <summary>
 		/// <para>Input Folder</para>

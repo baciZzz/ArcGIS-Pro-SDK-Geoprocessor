@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, AreContainersPreserved, IsUnitAbsolute, InitialRadiusAbsolute, InitialRadiusProportional, DisjoinedGraphAbsolute, DisjoinedGraphProportional, RadiusFactor, OutNetworkDiagramLayer, RunAsync };
+		public override object[] Parameters => new object[] { InNetworkDiagramLayer, AreContainersPreserved!, IsUnitAbsolute!, InitialRadiusAbsolute!, InitialRadiusProportional!, DisjoinedGraphAbsolute!, DisjoinedGraphProportional!, RadiusFactor!, OutNetworkDiagramLayer!, RunAsync! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AreContainersPreserved { get; set; } = "false";
+		public object? AreContainersPreserved { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Spacing values interpreted as absolute units in the diagram coordinate system</para>
@@ -85,49 +85,49 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IsUnitAbsolute { get; set; } = "false";
+		public object? IsUnitAbsolute { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Initial Radius</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object InitialRadiusAbsolute { get; set; } = "5 Unknown";
+		public object? InitialRadiusAbsolute { get; set; } = "5 Unknown";
 
 		/// <summary>
 		/// <para>Initial Radius</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object InitialRadiusProportional { get; set; } = "5";
+		public object? InitialRadiusProportional { get; set; } = "5";
 
 		/// <summary>
 		/// <para>Between Disjoined Graphs</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object DisjoinedGraphAbsolute { get; set; } = "10 Unknown";
+		public object? DisjoinedGraphAbsolute { get; set; } = "10 Unknown";
 
 		/// <summary>
 		/// <para>Between Disjoined Graphs</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object DisjoinedGraphProportional { get; set; } = "10";
+		public object? DisjoinedGraphProportional { get; set; } = "10";
 
 		/// <summary>
 		/// <para>Radius Factor</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object RadiusFactor { get; set; } = "1";
+		public object? RadiusFactor { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Output Network Diagram</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDiagramLayer()]
-		public object OutNetworkDiagramLayer { get; set; }
+		public object? OutNetworkDiagramLayer { get; set; }
 
 		/// <summary>
 		/// <para>Run in asynchronous mode on the server</para>
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object RunAsync { get; set; } = "false";
+		public object? RunAsync { get; set; } = "false";
 
 		#region InnerClass
 

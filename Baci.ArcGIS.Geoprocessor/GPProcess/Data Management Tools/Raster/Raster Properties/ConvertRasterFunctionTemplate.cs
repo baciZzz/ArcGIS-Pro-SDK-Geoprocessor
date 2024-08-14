@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasterFunctionTemplate, OutRasterFunctionTemplateFile, Format };
+		public override object[] Parameters => new object[] { InRasterFunctionTemplate, OutRasterFunctionTemplateFile, Format! };
 
 		/// <summary>
 		/// <para>Input Raster Function Template</para>
@@ -96,12 +96,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Format { get; set; } = "JSON";
+		public object? Format { get; set; } = "JSON";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConvertRasterFunctionTemplate SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public ConvertRasterFunctionTemplate SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

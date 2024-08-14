@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFileGdb, OutputLocation, OutName, OutFileGdb };
+		public override object[] Parameters => new object[] { InputFileGdb, OutputLocation, OutName, OutFileGdb! };
 
 		/// <summary>
 		/// <para>Input File Geodatabase</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutFileGdb { get; set; }
+		public object? OutFileGdb { get; set; }
 
 	}
 }

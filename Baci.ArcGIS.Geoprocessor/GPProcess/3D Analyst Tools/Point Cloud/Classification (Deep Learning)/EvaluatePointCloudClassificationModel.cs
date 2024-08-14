@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTrainedModel, InPointCloud, TargetFolder, BaseName, Boundary!, ClassRemap!, OutConfusionMatrices!, OutModelStatistics!, OutClassCodeStatistics!, ReferenceHeight!, ExcludedClassCodes };
+		public override object[] Parameters => new object[] { InTrainedModel, InPointCloud, TargetFolder, BaseName, Boundary!, ClassRemap!, OutConfusionMatrices!, OutModelStatistics!, OutClassCodeStatistics!, ReferenceHeight!, ExcludedClassCodes! };
 
 		/// <summary>
 		/// <para>Input Model Definition</para>

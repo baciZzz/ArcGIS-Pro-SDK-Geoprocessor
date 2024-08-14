@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureCatalogue, InConfigFile, InputS57, OutLocation, OutS101 };
+		public override object[] Parameters => new object[] { InFeatureCatalogue, InConfigFile, InputS57, OutLocation, OutS101! };
 
 		/// <summary>
 		/// <para>S-100 Feature Catalogue</para>
@@ -117,14 +117,14 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutS101 { get; set; }
+		public object? OutS101 { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConvertS57ToS101 SetEnviroment()
+		public ConvertS57ToS101 SetEnviroment(object? S100FeatureCatalogueFile = null )
 		{
-			base.SetEnv();
+			base.SetEnv(S100FeatureCatalogueFile: S100FeatureCatalogueFile);
 			return this;
 		}
 

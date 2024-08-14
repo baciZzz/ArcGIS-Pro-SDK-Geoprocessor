@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { UpdateFeatures, BaseFeatures, OutFeatureClass, SearchDistance, MatchFields, OutMatchTable, ChangeTolerance, CompareFields, CompareLineDirection };
+		public override object[] Parameters => new object[] { UpdateFeatures, BaseFeatures, OutFeatureClass, SearchDistance, MatchFields!, OutMatchTable!, ChangeTolerance!, CompareFields!, CompareLineDirection! };
 
 		/// <summary>
 		/// <para>Update Features</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPFieldDomain()]
-		public object MatchFields { get; set; }
+		public object? MatchFields { get; set; }
 
 		/// <summary>
 		/// <para>Output Match Table</para>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object OutMatchTable { get; set; }
+		public object? OutMatchTable { get; set; }
 
 		/// <summary>
 		/// <para>Change Tolerance</para>
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object ChangeTolerance { get; set; } = "0 Unknown";
+		public object? ChangeTolerance { get; set; } = "0 Unknown";
 
 		/// <summary>
 		/// <para>Compare Fields</para>
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPFieldDomain()]
-		public object CompareFields { get; set; }
+		public object? CompareFields { get; set; }
 
 		/// <summary>
 		/// <para>Compare line direction</para>
@@ -155,12 +155,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CompareLineDirection { get; set; } = "false";
+		public object? CompareLineDirection { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DetectFeatureChanges SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public DetectFeatureChanges SetEnviroment(object? extent = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

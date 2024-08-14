@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurface, InFeatureClass, OutFeatureClass, MaxStripSize, ZFactor, AreaField, SurfaceAreaField, PyramidLevelResolution };
+		public override object[] Parameters => new object[] { InSurface, InFeatureClass, OutFeatureClass, MaxStripSize!, ZFactor!, AreaField!, SurfaceAreaField!, PyramidLevelResolution! };
 
 		/// <summary>
 		/// <para>Input Surface</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MaxStripSize { get; set; } = "1024";
+		public object? MaxStripSize { get; set; } = "1024";
 
 		/// <summary>
 		/// <para>Z Factor</para>
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ZFactor { get; set; } = "1";
+		public object? ZFactor { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Area Field</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object AreaField { get; set; } = "Area";
+		public object? AreaField { get; set; } = "Area";
 
 		/// <summary>
 		/// <para>Surface Area Field</para>
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object SurfaceAreaField { get; set; } = "SArea";
+		public object? SurfaceAreaField { get; set; } = "SArea";
 
 		/// <summary>
 		/// <para>Pyramid Level Resolution</para>
@@ -135,12 +135,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object PyramidLevelResolution { get; set; } = "0";
+		public object? PyramidLevelResolution { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public InterpolatePolyToPatch SetEnviroment(object XYDomain = null , object XYResolution = null , object ZDomain = null , object ZResolution = null , int? autoCommit = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object workspace = null )
+		public InterpolatePolyToPatch SetEnviroment(object? XYDomain = null , object? XYResolution = null , object? ZDomain = null , object? ZResolution = null , int? autoCommit = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, XYResolution: XYResolution, ZDomain: ZDomain, ZResolution: ZResolution, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

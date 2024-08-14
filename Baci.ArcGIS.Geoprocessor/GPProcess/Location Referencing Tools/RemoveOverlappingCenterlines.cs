@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCenterlineFeatures, UpdatedCenterlineFeatures, OutDetailsFile };
+		public override object[] Parameters => new object[] { InCenterlineFeatures, UpdatedCenterlineFeatures!, OutDetailsFile! };
 
 		/// <summary>
 		/// <para>Input Centerline Features</para>
@@ -76,19 +76,19 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object UpdatedCenterlineFeatures { get; set; }
+		public object? UpdatedCenterlineFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Output Details File</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETextFile()]
-		public object OutDetailsFile { get; set; }
+		public object? OutDetailsFile { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveOverlappingCenterlines SetEnviroment(object parallelProcessingFactor = null , object workspace = null )
+		public RemoveOverlappingCenterlines SetEnviroment(object? parallelProcessingFactor = null , object? workspace = null )
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;

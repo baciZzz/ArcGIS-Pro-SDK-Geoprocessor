@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, CodeField, DescriptionField, InWorkspace, DomainName, DomainDescription, UpdateOption, OutWorkspace };
+		public override object[] Parameters => new object[] { InTable, CodeField, DescriptionField, InWorkspace, DomainName, DomainDescription!, UpdateOption!, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -131,31 +131,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DomainDescription { get; set; }
+		public object? DomainDescription { get; set; }
 
 		/// <summary>
 		/// <para>Update Option</para>
 		/// <para>If the domain already exists, specifies how the domain will be updated.</para>
-		/// <para>Append the values—Appends to the domain values from the database table.</para>
+		/// <para>Append the values—Appends to the domain values from the database table. This is the default.</para>
 		/// <para>Replace the values—Replaces the values in the domain with values from the database table.</para>
 		/// <para><see cref="UpdateOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object UpdateOption { get; set; } = "APPEND";
+		public object? UpdateOption { get; set; } = "APPEND";
 
 		/// <summary>
 		/// <para>Updated Input Workspace</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutWorkspace { get; set; }
+		public object? OutWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TableToDomain SetEnviroment(int? autoCommit = null , object workspace = null )
+		public TableToDomain SetEnviroment(int? autoCommit = null , object? workspace = null )
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;
@@ -169,7 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum UpdateOptionEnum 
 		{
 			/// <summary>
-			/// <para>Append the values—Appends to the domain values from the database table.</para>
+			/// <para>Append the values—Appends to the domain values from the database table. This is the default.</para>
 			/// </summary>
 			[GPValue("APPEND")]
 			[Description("Append the values")]

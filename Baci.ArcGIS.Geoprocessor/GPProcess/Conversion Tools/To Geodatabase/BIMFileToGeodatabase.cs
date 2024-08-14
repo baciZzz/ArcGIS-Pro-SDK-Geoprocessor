@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InBimFileWorkspace, OutGdbPath, OutDatasetName, SpatialReference, Identifier, OutFeatureDataset, OutFeatureclassDataset };
+		public override object[] Parameters => new object[] { InBimFileWorkspace, OutGdbPath, OutDatasetName, SpatialReference!, Identifier!, OutFeatureDataset!, OutFeatureclassDataset! };
 
 		/// <summary>
 		/// <para>Input BIM File Workspace</para>
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
-		public object SpatialReference { get; set; }
+		public object? SpatialReference { get; set; }
 
 		/// <summary>
 		/// <para>Identifier</para>
@@ -112,26 +112,26 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Identifier { get; set; }
+		public object? Identifier { get; set; }
 
 		/// <summary>
 		/// <para>Output Feature Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureDataset()]
-		public object OutFeatureDataset { get; set; }
+		public object? OutFeatureDataset { get; set; }
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutFeatureclassDataset { get; set; }
+		public object? OutFeatureclassDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BIMFileToGeodatabase SetEnviroment(object XYDomain = null , object XYResolution = null , object XYTolerance = null , object ZResolution = null , object ZTolerance = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null )
+		public BIMFileToGeodatabase SetEnviroment(object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? ZResolution = null , object? ZTolerance = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null )
 		{
 			base.SetEnv(XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, ZResolution: ZResolution, ZTolerance: ZTolerance, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem);
 			return this;

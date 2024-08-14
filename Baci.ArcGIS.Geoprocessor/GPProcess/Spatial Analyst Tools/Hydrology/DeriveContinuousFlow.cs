@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurfaceRaster, OutAccumulationRaster, InDepressionsData!, InWeightRaster!, OutFlowDirectionRaster!, FlowDirectionType!, ForceFlow };
+		public override object[] Parameters => new object[] { InSurfaceRaster, OutAccumulationRaster, InDepressionsData!, InWeightRaster!, OutFlowDirectionRaster!, FlowDirectionType!, ForceFlow! };
 
 		/// <summary>
 		/// <para>Input surface raster</para>

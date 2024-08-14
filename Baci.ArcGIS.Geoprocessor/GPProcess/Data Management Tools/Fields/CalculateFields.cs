@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, ExpressionType, Fields, CodeBlock, OutTable, EnforceDomains };
+		public override object[] Parameters => new object[] { InTable, ExpressionType, Fields, CodeBlock!, OutTable!, EnforceDomains! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -122,14 +122,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object CodeBlock { get; set; }
+		public object? CodeBlock { get; set; }
 
 		/// <summary>
 		/// <para>Output Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		/// <summary>
 		/// <para>Enforce Domains</para>
@@ -141,12 +141,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object EnforceDomains { get; set; } = "false";
+		public object? EnforceDomains { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateFields SetEnviroment(object workspace = null )
+		public CalculateFields SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

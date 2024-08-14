@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputJobid, InputDatabasepath, InputSdefilelocation, OutputJobdataworkspace };
+		public override object[] Parameters => new object[] { InputJobid, InputDatabasepath!, InputSdefilelocation!, OutputJobdataworkspace! };
 
 		/// <summary>
 		/// <para>Input Job ID</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object InputDatabasepath { get; set; }
+		public object? InputDatabasepath { get; set; }
 
 		/// <summary>
 		/// <para>Save a copy of the Job Data Workspace in</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
-		public object InputSdefilelocation { get; set; }
+		public object? InputSdefilelocation { get; set; }
 
 		/// <summary>
 		/// <para>Output Job Data Workspace</para>
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
-		public object OutputJobdataworkspace { get; set; }
+		public object? OutputJobdataworkspace { get; set; }
 
 	}
 }

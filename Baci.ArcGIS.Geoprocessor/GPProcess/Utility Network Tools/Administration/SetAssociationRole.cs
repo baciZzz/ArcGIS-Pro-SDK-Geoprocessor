@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, DomainNetwork, Featureclass, Assetgroup, Assettype, AssociationRoleType, AssociationDeletionSemantics, ViewScale, SplitContent, OutUtilityNetwork };
+		public override object[] Parameters => new object[] { InUtilityNetwork, DomainNetwork, Featureclass, Assetgroup, Assettype, AssociationRoleType, AssociationDeletionSemantics, ViewScale!, SplitContent!, OutUtilityNetwork! };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
@@ -172,26 +172,26 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ViewScale { get; set; }
+		public object? ViewScale { get; set; }
 
 		/// <summary>
 		/// <para>Split Content</para>
 		/// <para>Specifies whether the associated content of a container will be split if the container feature is split. This parameter is only available if the association role is container and is only applicable for line features.</para>
-		/// <para>Checked—he container&apos;s content will be split if the container feature is split. If a parallel content line feature is found, the content is also split and each section will be contained by the closest container feature. If the content line is not parallel, the content will be contained by the container feature that is closest to it.</para>
+		/// <para>Checked—The container&apos;s content will be split if the container feature is split. If a parallel content line feature is found, the content is also split and each section will be contained by the closest container feature. If the content line is not parallel, the content will be contained by the container feature that is closest to it.</para>
 		/// <para>Unchecked—The container&apos;s content will not be split if the container feature is split. If a parallel content line feature is found, the content will be contained by both sections of the container feature. If the content line is not parallel, the content will be contained by the container feature that is closest to it. This is the default.</para>
 		/// <para><see cref="SplitContentEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SplitContent { get; set; } = "false";
+		public object? SplitContent { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Utility Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEUtilityNetwork()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		#region InnerClass
 
@@ -257,7 +257,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum SplitContentEnum 
 		{
 			/// <summary>
-			/// <para>Checked—he container&apos;s content will be split if the container feature is split. If a parallel content line feature is found, the content is also split and each section will be contained by the closest container feature. If the content line is not parallel, the content will be contained by the container feature that is closest to it.</para>
+			/// <para>Checked—The container&apos;s content will be split if the container feature is split. If a parallel content line feature is found, the content is also split and each section will be contained by the closest container feature. If the content line is not parallel, the content will be contained by the container feature that is closest to it.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SPLIT")]

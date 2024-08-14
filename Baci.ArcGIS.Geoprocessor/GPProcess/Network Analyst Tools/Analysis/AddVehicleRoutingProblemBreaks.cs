@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InVrpLayer, TargetRoute, BreakType, TimeWindowProperties, TravelTimeProperties, WorkTimeProperties, AppendToExistingBreaks, OutVrpLayer };
+		public override object[] Parameters => new object[] { InVrpLayer, TargetRoute!, BreakType!, TimeWindowProperties!, TravelTimeProperties!, WorkTimeProperties!, AppendToExistingBreaks!, OutVrpLayer! };
 
 		/// <summary>
 		/// <para>Input Vehicle Routing Problem Layer</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object TargetRoute { get; set; }
+		public object? TargetRoute { get; set; }
 
 		/// <summary>
 		/// <para>Break Type</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object BreakType { get; set; } = "TIME_WINDOW_BREAK";
+		public object? BreakType { get; set; } = "TIME_WINDOW_BREAK";
 
 		/// <summary>
 		/// <para>Break Properties</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object TimeWindowProperties { get; set; }
+		public object? TimeWindowProperties { get; set; }
 
 		/// <summary>
 		/// <para>Break Properties</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object TravelTimeProperties { get; set; }
+		public object? TravelTimeProperties { get; set; }
 
 		/// <summary>
 		/// <para>Break Properties</para>
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object WorkTimeProperties { get; set; }
+		public object? WorkTimeProperties { get; set; }
 
 		/// <summary>
 		/// <para>Append To Existing Breaks</para>
@@ -143,14 +143,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AppendToExistingBreaks { get; set; } = "true";
+		public object? AppendToExistingBreaks { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output Vehicle Routing Problem Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPNALayer()]
-		public object OutVrpLayer { get; set; }
+		public object? OutVrpLayer { get; set; }
 
 		#region InnerClass
 

@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutFolderPath, OutName, OutVersion, OutFileGdb };
+		public override object[] Parameters => new object[] { OutFolderPath, OutName, OutVersion!, OutFileGdb! };
 
 		/// <summary>
 		/// <para>File Geodatabase Location</para>
@@ -95,19 +95,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object OutVersion { get; set; } = "CURRENT";
+		public object? OutVersion { get; set; } = "CURRENT";
 
 		/// <summary>
 		/// <para>Output File Geodatabase</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutFileGdb { get; set; }
+		public object? OutFileGdb { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateFileGDB SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public CreateFileGDB SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -64,7 +64,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ExpressionString, OutRaster, InData };
+		public override object[] Parameters => new object[] { ExpressionString, OutRaster, InData! };
 
 		/// <summary>
 		/// <para>expression_string</para>
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPSAGeoDataDomain()]
-		public object InData { get; set; }
+		public object? InData { get; set; }
 
 	}
 }

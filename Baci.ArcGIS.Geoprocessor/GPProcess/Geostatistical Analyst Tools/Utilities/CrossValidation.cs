@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeostatLayer, OutPointFeatureClass, Count, MeanError, RootMeanSquare, AverageStandard, MeanStandardized, RootMeanSquareStandardized, PercentIn90Interval, PercentIn95Interval, AverageCrps };
+		public override object[] Parameters => new object[] { InGeostatLayer, OutPointFeatureClass!, Count!, MeanError!, RootMeanSquare!, AverageStandard!, MeanStandardized!, RootMeanSquareStandardized!, PercentIn90Interval!, PercentIn95Interval!, AverageCrps! };
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>
@@ -76,75 +76,75 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
-		public object OutPointFeatureClass { get; set; }
+		public object? OutPointFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Count</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLong()]
-		public object Count { get; set; } = "0";
+		public object? Count { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Mean error</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object MeanError { get; set; } = "NaN";
+		public object? MeanError { get; set; } = "NaN";
 
 		/// <summary>
 		/// <para>Root mean square</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object RootMeanSquare { get; set; } = "NaN";
+		public object? RootMeanSquare { get; set; } = "NaN";
 
 		/// <summary>
 		/// <para>Average standard</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object AverageStandard { get; set; } = "NaN";
+		public object? AverageStandard { get; set; } = "NaN";
 
 		/// <summary>
 		/// <para>Mean standardized</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object MeanStandardized { get; set; } = "NaN";
+		public object? MeanStandardized { get; set; } = "NaN";
 
 		/// <summary>
 		/// <para>Root mean square standardized</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object RootMeanSquareStandardized { get; set; } = "NaN";
+		public object? RootMeanSquareStandardized { get; set; } = "NaN";
 
 		/// <summary>
 		/// <para>Percent in 90% Interval</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object PercentIn90Interval { get; set; } = "NaN";
+		public object? PercentIn90Interval { get; set; } = "NaN";
 
 		/// <summary>
 		/// <para>Percent in 95% Interval</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object PercentIn95Interval { get; set; } = "NaN";
+		public object? PercentIn95Interval { get; set; } = "NaN";
 
 		/// <summary>
 		/// <para>Average CRPS</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object AverageCrps { get; set; } = "NaN";
+		public object? AverageCrps { get; set; } = "NaN";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CrossValidation SetEnviroment(object geographicTransformations = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object workspace = null )
+		public CrossValidation SetEnviroment(object? geographicTransformations = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? workspace = null )
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;

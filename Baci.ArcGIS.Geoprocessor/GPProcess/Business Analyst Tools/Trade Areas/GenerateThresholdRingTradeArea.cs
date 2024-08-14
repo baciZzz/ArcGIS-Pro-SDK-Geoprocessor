@@ -24,7 +24,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class.</para>
+		/// <para>The output feature class containing the threshold rings.</para>
 		/// </param>
 		/// <param name="ThresholdVariable">
 		/// <para>Threshold Variable</para>
@@ -65,12 +65,12 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "baDataSource", "geographicTransformations", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, ThresholdVariable, ThresholdValues, Units, IdField, InputMethod, Expression };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, ThresholdVariable, ThresholdValues!, Units!, IdField!, InputMethod!, Expression!, MinimumStep!, TargetPercentDiff! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class.</para>
+		/// <para>The output feature class containing the threshold rings.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -100,12 +100,12 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 
 		/// <summary>
 		/// <para>Threshold Values</para>
-		/// <para>The size of the output rings. The rings will expand until they contain the threshold value of the selected variable.</para>
+		/// <para>The threshold variable value that will determine the size of the output rings. The rings will expand until they contain the threshold value of the selected variable.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPNumericDomain()]
-		public object ThresholdValues { get; set; }
+		public object? ThresholdValues { get; set; }
 
 		/// <summary>
 		/// <para>Distance Units</para>
@@ -113,43 +113,63 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Units { get; set; }
+		public object? Units { get; set; }
 
 		/// <summary>
 		/// <para>ID Field</para>
-		/// <para>An ID that uniquely identifies each input point and is included in the output as an attribute.</para>
+		/// <para>The ID that uniquely identifies each input point and is included in the output as an attribute.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object IdField { get; set; }
+		public object? IdField { get; set; }
 
 		/// <summary>
 		/// <para>Input Method</para>
-		/// <para>Specifies the type of value that is to be used for each drive time.</para>
-		/// <para>Values—Uses a constant value (all trade areas will be the same size). This is the default.</para>
-		/// <para>Expression—The values from a field or an expression (trade areas can be a different size).</para>
+		/// <para>Specifies the type of value that will be used for each drive time.</para>
+		/// <para>Values—A constant value will be used (all trade areas will be the same size). This is the default.</para>
+		/// <para>Expression—The values from a field or an expression will be used (trade areas can be a different size).</para>
 		/// <para><see cref="InputMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object InputMethod { get; set; } = "VALUES";
+		public object? InputMethod { get; set; } = "VALUES";
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>A fields-based expression to calculate the radii.</para>
+		/// <para>A fields-based expression that will be used to calculate the radii.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object Expression { get; set; }
+		public object? Expression { get; set; }
+
+		/// <summary>
+		/// <para>Minimum Step</para>
+		/// <para>The minimum distance between one threshold area candidate and the next as the model approaches the threshold value to prevent infinite iterations.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPDouble()]
+		[GPNumericDomain()]
+		[Category("Advanced Parameters")]
+		public object? MinimumStep { get; set; }
+
+		/// <summary>
+		/// <para>Threshold Percent Difference</para>
+		/// <para>The maximum percentage difference between the target value and threshold value that will be used when determining the threshold drive time, for example, 5 percent. The default value is 5.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPDouble()]
+		[GPNumericDomain()]
+		[Category("Advanced Parameters")]
+		public object? TargetPercentDiff { get; set; } = "5";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateThresholdRingTradeArea SetEnviroment(object workspace = null )
+		public GenerateThresholdRingTradeArea SetEnviroment(object? baDataSource = null , object? geographicTransformations = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, geographicTransformations: geographicTransformations, workspace: workspace);
 			return this;
 		}
 
@@ -161,14 +181,14 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		public enum InputMethodEnum 
 		{
 			/// <summary>
-			/// <para>Values—Uses a constant value (all trade areas will be the same size). This is the default.</para>
+			/// <para>Values—A constant value will be used (all trade areas will be the same size). This is the default.</para>
 			/// </summary>
 			[GPValue("VALUES")]
 			[Description("Values")]
 			Values,
 
 			/// <summary>
-			/// <para>Expression—The values from a field or an expression (trade areas can be a different size).</para>
+			/// <para>Expression—The values from a field or an expression will be used (trade areas can be a different size).</para>
 			/// </summary>
 			[GPValue("EXPRESSION")]
 			[Description("Expression")]

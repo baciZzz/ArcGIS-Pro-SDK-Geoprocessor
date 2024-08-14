@@ -20,25 +20,16 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InVideo">
 		/// <para>Input Video File</para>
-		/// <para>The input video file in any of the supported video file types, including PS, TS, MPG, MPEG, MP2, MPG2, MPEG2, MP4, MPG4, MPEG4, H264, VOB, and M2TS.</para>
+		/// <para>The input video file in any of the supported video file formats, including PS, TS, MPG, MPEG, MP2, MPG2, MPEG2, MP4, MPG4, MPEG4, H264, VOB, and M2TS.</para>
 		/// </param>
 		/// <param name="OutFolder">
 		/// <para>Output Folder</para>
 		/// <para>The file directory where the output images and metadata will be saved.</para>
 		/// </param>
-		/// <param name="ImageType">
-		/// <para>Image Type</para>
-		/// <para>The output image format.</para>
-		/// <para>JPEG—JPEG image format.</para>
-		/// <para>TIFF—TIFF image format. This is the default.</para>
-		/// <para>NITF—NITF image format.</para>
-		/// <para><see cref="ImageTypeEnum"/></para>
-		/// </param>
-		public ExtractVideoFramesToImages(object InVideo, object OutFolder, object ImageType)
+		public ExtractVideoFramesToImages(object InVideo, object OutFolder)
 		{
 			this.InVideo = InVideo;
 			this.OutFolder = OutFolder;
-			this.ImageType = ImageType;
 		}
 
 		/// <summary>
@@ -74,11 +65,11 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InVideo, OutFolder, ImageType, ImageOverlap, RequireFreshMetadata, MinTime };
+		public override object[] Parameters => new object[] { InVideo, OutFolder, ImageType!, ImageOverlap!, RequireFreshMetadata!, MinTime! };
 
 		/// <summary>
 		/// <para>Input Video File</para>
-		/// <para>The input video file in any of the supported video file types, including PS, TS, MPG, MPEG, MP2, MPG2, MPEG2, MP4, MPG4, MPEG4, H264, VOB, and M2TS.</para>
+		/// <para>The input video file in any of the supported video file formats, including PS, TS, MPG, MPEG, MP2, MPG2, MPEG2, MP4, MPG4, MPEG4, H264, VOB, and M2TS.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -95,24 +86,24 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Image Type</para>
-		/// <para>The output image format.</para>
-		/// <para>JPEG—JPEG image format.</para>
-		/// <para>TIFF—TIFF image format. This is the default.</para>
-		/// <para>NITF—NITF image format.</para>
+		/// <para>Specifies the output image format.</para>
+		/// <para>JPEG—The output will be in JPEG image format.</para>
+		/// <para>TIFF—The output will be in TIFF image format. This is the default.</para>
+		/// <para>NITF—The output will be in NITF image format.</para>
 		/// <para><see cref="ImageTypeEnum"/></para>
 		/// </summary>
-		[ParamType(ParamTypeEnum.must)]
+		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ImageType { get; set; } = "TIFF";
+		public object? ImageType { get; set; } = "TIFF";
 
 		/// <summary>
 		/// <para>Maximum Overlap Percentage</para>
-		/// <para>The maximum overlap percentage between two images. If the overlap between a candidate image and the last image written to disk is greater than this value, the candidate image will be ignored. The default percentage is 100%, which writes all images to disk.</para>
+		/// <para>The maximum overlap percentage between two images. If the overlap between a candidate image and the last image written to disk is greater than this value, the candidate image will be ignored. The default percentage is 100 percent, which writes all images to disk.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object ImageOverlap { get; set; } = "100";
+		public object? ImageOverlap { get; set; } = "100";
 
 		/// <summary>
 		/// <para>Require Fresh Metadata</para>
@@ -124,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object RequireFreshMetadata { get; set; } = "false";
+		public object? RequireFreshMetadata { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Time Between Features</para>
@@ -132,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		public object MinTime { get; set; }
+		public object? MinTime { get; set; }
 
 		#region InnerClass
 
@@ -142,21 +133,21 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum ImageTypeEnum 
 		{
 			/// <summary>
-			/// <para>JPEG—JPEG image format.</para>
+			/// <para>JPEG—The output will be in JPEG image format.</para>
 			/// </summary>
 			[GPValue("JPEG")]
 			[Description("JPEG")]
 			JPEG,
 
 			/// <summary>
-			/// <para>TIFF—TIFF image format. This is the default.</para>
+			/// <para>TIFF—The output will be in TIFF image format. This is the default.</para>
 			/// </summary>
 			[GPValue("TIFF")]
 			[Description("TIFF")]
 			TIFF,
 
 			/// <summary>
-			/// <para>NITF—NITF image format.</para>
+			/// <para>NITF—The output will be in NITF image format.</para>
 			/// </summary>
 			[GPValue("NITF")]
 			[Description("NITF")]

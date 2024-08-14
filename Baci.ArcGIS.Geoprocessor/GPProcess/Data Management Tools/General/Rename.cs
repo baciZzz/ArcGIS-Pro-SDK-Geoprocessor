@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Rename</para>
-	/// <para>Changes the name of a dataset.  This includes a wide variety of data types, among them feature dataset, raster, table, and shapefile.</para>
+	/// <para>Changes the name of a dataset.  This includes a variety of data types, including feature dataset, raster, table, and shapefile.</para>
 	/// </summary>
 	public class Rename : AbstractGPProcess
 	{
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>The input data to be renamed.</para>
 		/// </param>
 		/// <param name="OutData">
-		/// <para>Output data element</para>
+		/// <para>Output Data Element</para>
 		/// <para>The name for the output data.</para>
 		/// </param>
 		public Rename(object InData, object OutData)
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, OutData, DataType };
+		public override object[] Parameters => new object[] { InData, OutData, DataType! };
 
 		/// <summary>
 		/// <para>Input Data Element</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public object InData { get; set; }
 
 		/// <summary>
-		/// <para>Output data element</para>
+		/// <para>Output Data Element</para>
 		/// <para>The name for the output data.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -84,17 +84,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public object OutData { get; set; }
 
 		/// <summary>
-		/// <para>Data type</para>
+		/// <para>Data Type</para>
 		/// <para>The type of data to be renamed. The only time you need to provide a value is when a geodatabase contains a feature dataset and a feature class with the same name. In this case, you need to select the data type (feature dataset or feature class) of the item you want to rename.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DataType { get; set; }
+		public object? DataType { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Rename SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public Rename SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

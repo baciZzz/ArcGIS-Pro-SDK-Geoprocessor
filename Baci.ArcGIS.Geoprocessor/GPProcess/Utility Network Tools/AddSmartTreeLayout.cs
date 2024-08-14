@@ -69,7 +69,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved, TreeDirection, IsUnitAbsolute, SubtreeAbsolute, SubtreeProportional, PerpendicularAbsolute, PerpendicularProportional, AlongAbsolute, AlongProportional, DisjoinedGraphAbsolute, DisjoinedGraphProportional, AreEdgesOrthogonal, BreakpointPosition, OutUtilityNetwork, OutTemplateName, EdgeDisplayType, OffsetAbsolute, OffsetProportional };
+		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved!, TreeDirection!, IsUnitAbsolute!, SubtreeAbsolute!, SubtreeProportional!, PerpendicularAbsolute!, PerpendicularProportional!, AlongAbsolute!, AlongProportional!, DisjoinedGraphAbsolute!, DisjoinedGraphProportional!, AreEdgesOrthogonal!, BreakpointPosition!, OutUtilityNetwork!, OutTemplateName!, EdgeDisplayType!, OffsetAbsolute!, OffsetProportional! };
 
 		/// <summary>
 		/// <para>Input Network</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AreContainersPreserved { get; set; } = "false";
+		public object? AreContainersPreserved { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Tree Direction</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TreeDirection { get; set; } = "FROM_LEFT_TO_RIGHT";
+		public object? TreeDirection { get; set; } = "FROM_LEFT_TO_RIGHT";
 
 		/// <summary>
 		/// <para>Spacing values interpreted as absolute units in the diagram coordinate system</para>
@@ -119,63 +119,63 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IsUnitAbsolute { get; set; } = "false";
+		public object? IsUnitAbsolute { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Between Subtrees</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object SubtreeAbsolute { get; set; } = "2 Unknown";
+		public object? SubtreeAbsolute { get; set; } = "2 Unknown";
 
 		/// <summary>
 		/// <para>Between Subtrees</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object SubtreeProportional { get; set; } = "2";
+		public object? SubtreeProportional { get; set; } = "2";
 
 		/// <summary>
 		/// <para>Between Junctions Perpendicular to the Direction</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object PerpendicularAbsolute { get; set; } = "2 Unknown";
+		public object? PerpendicularAbsolute { get; set; } = "2 Unknown";
 
 		/// <summary>
 		/// <para>Between Junctions Perpendicular to the Direction</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object PerpendicularProportional { get; set; } = "2";
+		public object? PerpendicularProportional { get; set; } = "2";
 
 		/// <summary>
 		/// <para>Between Junctions Along the Direction</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object AlongAbsolute { get; set; } = "2 Unknown";
+		public object? AlongAbsolute { get; set; } = "2 Unknown";
 
 		/// <summary>
 		/// <para>Between Junctions Along the Direction</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object AlongProportional { get; set; } = "2";
+		public object? AlongProportional { get; set; } = "2";
 
 		/// <summary>
 		/// <para>Between Disjoined Graphs</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object DisjoinedGraphAbsolute { get; set; } = "4 Unknown";
+		public object? DisjoinedGraphAbsolute { get; set; } = "4 Unknown";
 
 		/// <summary>
 		/// <para>Between Disjoined Graphs</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object DisjoinedGraphProportional { get; set; } = "4";
+		public object? DisjoinedGraphProportional { get; set; } = "4";
 
 		/// <summary>
 		/// <para>Orthogonally display edges</para>
@@ -184,28 +184,28 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AreEdgesOrthogonal { get; set; } = "false";
+		public object? AreEdgesOrthogonal { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Break Point Relative Position (%)</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object BreakpointPosition { get; set; } = "30";
+		public object? BreakpointPosition { get; set; } = "30";
 
 		/// <summary>
 		/// <para>Output Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		/// <summary>
 		/// <para>Output Diagram Template</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutTemplateName { get; set; }
+		public object? OutTemplateName { get; set; }
 
 		/// <summary>
 		/// <para>Edge Display Type</para>
@@ -214,21 +214,21 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object EdgeDisplayType { get; set; } = "REGULAR_EDGES";
+		public object? EdgeDisplayType { get; set; } = "REGULAR_EDGES";
 
 		/// <summary>
 		/// <para>Offset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object OffsetAbsolute { get; set; } = "0 Unknown";
+		public object? OffsetAbsolute { get; set; } = "0 Unknown";
 
 		/// <summary>
 		/// <para>Offset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object OffsetProportional { get; set; } = "0";
+		public object? OffsetProportional { get; set; } = "0";
 
 		#region InnerClass
 

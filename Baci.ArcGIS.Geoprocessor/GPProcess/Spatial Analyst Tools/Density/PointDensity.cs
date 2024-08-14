@@ -28,11 +28,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <para>Values in the population field can be integer or floating point.</para>
 		/// <para>The options and default behaviors for the field are listed below.</para>
 		/// <para>Use None if no item or special value will be used and each feature will be counted once.</para>
-		/// <para>You can use the Shape field if input features contain Z.</para>
+		/// <para>You can use the Shape field if input features contain Z-values.</para>
 		/// <para>Otherwise, the default field is POPULATION. The following conditions may also apply:</para>
 		/// <para>If there is no POPULATION field, but there is a POPULATIONxxxx field, it will be used by default. The xxxx can be any valid characters, for example, POPULATION6, POPULATION1974, and POPULATIONROADTYPE.</para>
-		/// <para>If there is no POPULATION field or POPULATIONxxxx field, but there is a POP field, it will be used by default.</para>
-		/// <para>If there is no POPULATION field, POPULATIONxxxx field, or POP field, but there is a POPxxxx field, it will be used by default.</para>
+		/// <para>If there is no POPULATION field or POPULATIONxxxx field but there is a POP field, POP field will be used by default.</para>
+		/// <para>If there is no POPULATION field, POPULATIONxxxx field, or POP field, but there is a POPxxxx field, POPxxxx field will be used by default.</para>
 		/// <para>If there is no POPULATION field, POPULATIONxxxx field, POP field, or POPxxxx field, NONE will be used by default.</para>
 		/// </param>
 		/// <param name="OutRaster">
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, PopulationField, OutRaster, CellSize, Neighborhood, AreaUnitScaleFactor };
+		public override object[] Parameters => new object[] { InPointFeatures, PopulationField, OutRaster, CellSize!, Neighborhood!, AreaUnitScaleFactor! };
 
 		/// <summary>
 		/// <para>Input point features</para>
@@ -97,11 +97,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <para>Values in the population field can be integer or floating point.</para>
 		/// <para>The options and default behaviors for the field are listed below.</para>
 		/// <para>Use None if no item or special value will be used and each feature will be counted once.</para>
-		/// <para>You can use the Shape field if input features contain Z.</para>
+		/// <para>You can use the Shape field if input features contain Z-values.</para>
 		/// <para>Otherwise, the default field is POPULATION. The following conditions may also apply:</para>
 		/// <para>If there is no POPULATION field, but there is a POPULATIONxxxx field, it will be used by default. The xxxx can be any valid characters, for example, POPULATION6, POPULATION1974, and POPULATIONROADTYPE.</para>
-		/// <para>If there is no POPULATION field or POPULATIONxxxx field, but there is a POP field, it will be used by default.</para>
-		/// <para>If there is no POPULATION field, POPULATIONxxxx field, or POP field, but there is a POPxxxx field, it will be used by default.</para>
+		/// <para>If there is no POPULATION field or POPULATIONxxxx field but there is a POP field, POP field will be used by default.</para>
+		/// <para>If there is no POPULATION field, POPULATIONxxxx field, or POP field, but there is a POPxxxx field, POPxxxx field will be used by default.</para>
 		/// <para>If there is no POPULATION field, POPULATIONxxxx field, POP field, or POPxxxx field, NONE will be used by default.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
 		[GPSAGeoDataDomain()]
-		public object CellSize { get; set; }
+		public object? CellSize { get; set; }
 
 		/// <summary>
 		/// <para>Neighborhood</para>
@@ -140,12 +140,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSANeighborhood()]
 		[GPSANeighborhoodDomain()]
-		public object Neighborhood { get; set; } = "Circle 0 MAP";
+		public object? Neighborhood { get; set; } = "Circle 0 MAP";
 
 		/// <summary>
 		/// <para>Area units</para>
 		/// <para>The area units of the output density values.</para>
-		/// <para>A default unit is selected based on the linear unit of the output spatial reference. You can change this to the appropriate unit if you want to convert the density output. Values for line density convert the units of both length and area.</para>
+		/// <para>A default unit is selected based on the linear unit of the output spatial reference. You can change this to the appropriate unit to convert the density output. Values for line density convert the units of both length and area.</para>
 		/// <para>If no output spatial reference is specified, the output spatial reference will be the same as the input feature class. The default output density units are determined by the linear units of the output spatial reference as follows. If the output linear units are meters, the output area density units will be set to Square kilometers, outputting square kilometers for point features or kilometers per square kilometers for polyline features. If the output linear units are feet, the output area density units will be set to Square miles.</para>
 		/// <para>If the output units is anything other than feet or meters, the output area density units will be set to Square map units. That is, the output density units will be the square of the linear units of the output spatial reference. For example, if the output linear units are centimeters, the output area density units will be Square map units, which will result in square centimeters. If the output linear units are kilometers, the output area density units will be Square map units, which will result in square kilometers.</para>
 		/// <para>The available options and their corresponding output density units are the following:</para>
@@ -164,14 +164,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object AreaUnitScaleFactor { get; set; } = "SQUARE_MAP_UNITS";
+		public object? AreaUnitScaleFactor { get; set; } = "SQUARE_MAP_UNITS";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PointDensity SetEnviroment(int? autoCommit = null , object cellSize = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public PointDensity SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 

@@ -21,9 +21,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <param name="DatabasePlatform">
 		/// <para>Database Platform</para>
 		/// <para>Specifies the type of database management system to which a connection will be made to create a geodatabase.</para>
-		/// <para>Oracle—Connect to an Oracle instance.</para>
-		/// <para>PostgreSQL—Connect to a PostgreSQL database cluster.</para>
-		/// <para>SQL Server— Connect to a Microsoft SQL Server instance.</para>
+		/// <para>Oracle—Connection to an Oracle instance will be made.</para>
+		/// <para>PostgreSQL—Connection to a PostgreSQL database cluster will be made.</para>
+		/// <para>SQL Server— Connection to a Microsoft SQL Server instance will be made.</para>
 		/// <para><see cref="DatabasePlatformEnum"/></para>
 		/// </param>
 		/// <param name="InstanceName">
@@ -35,7 +35,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </param>
 		/// <param name="AuthorizationFile">
 		/// <para>Authorization File</para>
-		/// <para>The path and file name of the keycodes file that was created when ArcGIS Server was authorized. This file is in the \\Program Files\ESRI\License&lt;release#&gt;\sysgen folder on Windows or the /arcgis/server/framework/runtime/.wine/drive_c/Program Files/ESRI/License&lt;release#&gt;/sysgen directory on Linux. If you have not already done so, authorize ArcGIS Server to create this file.</para>
+		/// <para>The path and file name of the keycodes file that was created when ArcGIS Server was authorized. This file is in the \\Program Files\ESRI\License&lt;release#&gt;\sysgen folder on Windows or the /arcgis/server/framework/runtime/.wine/drive_c/Program Files/ESRI/License&lt;release#&gt;/sysgen directory on Linux. If you have not done so, authorize ArcGIS Server to create this file.</para>
 		/// <para>You will likely need to copy the keycodes file from the ArcGIS Server machine to a location accessible to the tool.</para>
 		/// </param>
 		public CreateEnterpriseGeodatabase(object DatabasePlatform, object InstanceName, object AuthorizationFile)
@@ -78,14 +78,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { DatabasePlatform, InstanceName, DatabaseName, AccountAuthentication, DatabaseAdmin, DatabaseAdminPassword, SdeSchema, GdbAdminName, GdbAdminPassword, TablespaceName, AuthorizationFile, OutResult };
+		public override object[] Parameters => new object[] { DatabasePlatform, InstanceName, DatabaseName!, AccountAuthentication!, DatabaseAdmin!, DatabaseAdminPassword!, SdeSchema!, GdbAdminName!, GdbAdminPassword!, TablespaceName!, AuthorizationFile, OutResult!, SpatialType! };
 
 		/// <summary>
 		/// <para>Database Platform</para>
 		/// <para>Specifies the type of database management system to which a connection will be made to create a geodatabase.</para>
-		/// <para>Oracle—Connect to an Oracle instance.</para>
-		/// <para>PostgreSQL—Connect to a PostgreSQL database cluster.</para>
-		/// <para>SQL Server— Connect to a Microsoft SQL Server instance.</para>
+		/// <para>Oracle—Connection to an Oracle instance will be made.</para>
+		/// <para>PostgreSQL—Connection to a PostgreSQL database cluster will be made.</para>
+		/// <para>SQL Server— Connection to a Microsoft SQL Server instance will be made.</para>
 		/// <para><see cref="DatabasePlatformEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -108,24 +108,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Database</para>
 		/// <para>The name of the database.</para>
 		/// <para>This parameter is valid for PostgreSQL and SQL Server. You can provide either the name of an existing, preconfigured database or a name for a database that the tool will create.</para>
-		/// <para>If the tool creates the database in SQL Server, the file sizes will either be the same as defined for the SQL Server model database or 500 MB for the MDF file and 125 MB for the LDF file, whichever is greater. Both the MDF and LDF files are created in the default SQL Server location on the database server. Do not name the database sde.</para>
-		/// <para>If the tool creates the database in PostgreSQL, it uses the template1 database as the template for your database. If you need a different template—for example, you require a template that is enabled for a PostGIS—you must create the database before running this tool and provide the name of the existing database. Always use lowercase characters for the database name. If you use uppercase letters, the tool will convert them to lowercase.</para>
+		/// <para>If the tool creates the database in SQL Server, the file sizes will either be the same as defined for the SQL Server model database or 500 MB for the .mdf file and 125 MB for the .ldf file, whichever is greater. Both the .mdf and .ldf files are created in the default SQL Server location on the database server. Do not name the database sde.</para>
+		/// <para>If the tool creates the database in PostgreSQL, it uses the template1 database as the template for your database. If you need a different template—for example, you require a template that is enabled for PostGIS—you must create the database before running this tool and provide the name of the existing database. Always use lowercase characters for the database name. If you use uppercase letters, the tool will convert them to lowercase.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DatabaseName { get; set; }
+		public object? DatabaseName { get; set; }
 
 		/// <summary>
 		/// <para>Operating System Authentication</para>
 		/// <para>Specifies the type of authentication that will be used for the database connection.</para>
-		/// <para>Checked—Operating system authentication will be used. The login information that you provide for the computer where you run the tool is the login that will be used to authenticate the database connection. If your database management system is not configured to allow operating system authentication, authentication will fail.</para>
-		/// <para>Unchecked—Database authentication will be used. You must provide a valid database user name and password for authentication in the database. This is the default. If your database management system is not configured to allow database authentication, authentication will fail.</para>
+		/// <para>Checked—Operating system authentication will be used. The login information that you provide for the computer where you run the tool is the login that will be used to authenticate the database connection. If the database management system is not configured to allow operating system authentication, authentication will fail.</para>
+		/// <para>Unchecked—Database authentication will be used. You must provide a valid database user name and password for authentication in the database. This is the default. If the database management system is not configured to allow database authentication, authentication will fail.</para>
 		/// <para><see cref="AccountAuthenticationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AccountAuthentication { get; set; } = "false";
+		public object? AccountAuthentication { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Database Administrator</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object DatabaseAdmin { get; set; } = "sa";
+		public object? DatabaseAdmin { get; set; } = "sa";
 
 		/// <summary>
 		/// <para>Database Administrator Password</para>
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPEncryptedString()]
-		public object DatabaseAdminPassword { get; set; }
+		public object? DatabaseAdminPassword { get; set; }
 
 		/// <summary>
 		/// <para>Sde Owned Schema</para>
@@ -153,33 +153,33 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SdeSchema { get; set; } = "true";
+		public object? SdeSchema { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Geodatabase Administrator</para>
 		/// <para>The name of the geodatabase administrator user.</para>
 		/// <para>If you are using PostgreSQL, this value must be sde. If the sde login role does not exist, this tool will create it and grant it superuser status in the database cluster. If the sde login role exists, this tool will grant it superuser status if it does not already have it. The tool also creates an sde schema in the database and grants usage on the schema to public.</para>
 		/// <para>If you are using Oracle, the value is sde. If the sde user does not exist in the Oracle database, the tool will create it and grant it the privileges required to create and upgrade a geodatabase and disconnect users from the database. If you run this tool in an Oracle 12c or later release database, the tool also grants privileges to allow data imports using Oracle Data Pump. If the sde user exists, the tool will grant these same privileges to the existing user.</para>
-		/// <para>Beginning with ArcGIS 10.7 and ArcGIS Pro 2.3, you cannot create user-schema geodatabases in Oracle.</para>
+		/// <para>Creating or upgrading user-schema geodatabases in Oracle is no longer supported.</para>
 		/// <para>If you are using SQL Server and specified an sde-schema geodatabase, this value must be sde. The tool will create an sde login, database user, and schema and grant it privileges to create a geodatabase and remove connections from the SQL Server instance. If you specified a dbo schema, do not provide a value for this parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object GdbAdminName { get; set; } = "sde";
+		public object? GdbAdminName { get; set; } = "sde";
 
 		/// <summary>
 		/// <para>Geodatabase Administrator Password</para>
-		/// <para>The password for the geodatabase administrator user. If the geodatabase administrator user exists in the database management system, the password you provide must match the existing password. If the geodatabase administrator user does not exist, provide a valid database password for the new user. The password must meet the password policy enforced by your database.</para>
+		/// <para>The password for the geodatabase administrator user. If the geodatabase administrator user exists in the database management system, the password you provide must match the existing password. If the geodatabase administrator user does not exist, provide a valid database password for the new user. The password must meet the password policy enforced by the database.</para>
 		/// <para>The password is an encrypted string.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPEncryptedString()]
-		public object GdbAdminPassword { get; set; }
+		public object? GdbAdminPassword { get; set; }
 
 		/// <summary>
 		/// <para>Tablespace Name</para>
 		/// <para>The name of the tablespace.</para>
-		/// <para>This parameter is only valid for Oracle and PostgreSQL DBMS types. For Oracle, do one of the following:</para>
+		/// <para>This parameter is only valid for Oracle and PostgreSQL database management system types. For Oracle, do one of the following:</para>
 		/// <para>Provide the name of an existing tablespace. This tablespace will be used as the default tablespace for the geodatabase administrator user.</para>
 		/// <para>Provide a valid name for a new tablespace. The tool will create a 400 MB tablespace in the Oracle default storage location and set it as the geodatabase administrator&apos;s default tablespace.</para>
 		/// <para>Leave the tablespace blank. The tool will create a 400 MB tablespace named SDE_TBS in the Oracle default storage location. The SDE_TBS tablespace will be set as the geodatabase administrator&apos;s default tablespace.</para>
@@ -187,11 +187,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object TablespaceName { get; set; }
+		public object? TablespaceName { get; set; }
 
 		/// <summary>
 		/// <para>Authorization File</para>
-		/// <para>The path and file name of the keycodes file that was created when ArcGIS Server was authorized. This file is in the \\Program Files\ESRI\License&lt;release#&gt;\sysgen folder on Windows or the /arcgis/server/framework/runtime/.wine/drive_c/Program Files/ESRI/License&lt;release#&gt;/sysgen directory on Linux. If you have not already done so, authorize ArcGIS Server to create this file.</para>
+		/// <para>The path and file name of the keycodes file that was created when ArcGIS Server was authorized. This file is in the \\Program Files\ESRI\License&lt;release#&gt;\sysgen folder on Windows or the /arcgis/server/framework/runtime/.wine/drive_c/Program Files/ESRI/License&lt;release#&gt;/sysgen directory on Linux. If you have not done so, authorize ArcGIS Server to create this file.</para>
 		/// <para>You will likely need to copy the keycodes file from the ArcGIS Server machine to a location accessible to the tool.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -203,7 +203,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
-		public object OutResult { get; set; } = "false";
+		public object? OutResult { get; set; } = "false";
+
+		/// <summary>
+		/// <para>Spatial Type</para>
+		/// <para>Specifies the spatial type that will be used. This is only applicable for PostgreSQL databases.</para>
+		/// <para>ST_Geometry—The ST_Geometry spatial type will be used. This is the default.</para>
+		/// <para>POSTGIS—The PostGIS spatial type will be used.</para>
+		/// <para><see cref="SpatialTypeEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		[GPCodedValueDomain()]
+		public object? SpatialType { get; set; }
 
 		#region InnerClass
 
@@ -213,21 +225,21 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DatabasePlatformEnum 
 		{
 			/// <summary>
-			/// <para>SQL Server— Connect to a Microsoft SQL Server instance.</para>
+			/// <para>SQL Server— Connection to a Microsoft SQL Server instance will be made.</para>
 			/// </summary>
 			[GPValue("SQL_Server")]
 			[Description("SQL Server")]
 			SQL_Server,
 
 			/// <summary>
-			/// <para>PostgreSQL—Connect to a PostgreSQL database cluster.</para>
+			/// <para>PostgreSQL—Connection to a PostgreSQL database cluster will be made.</para>
 			/// </summary>
 			[GPValue("PostgreSQL")]
 			[Description("PostgreSQL")]
 			PostgreSQL,
 
 			/// <summary>
-			/// <para>Oracle—Connect to an Oracle instance.</para>
+			/// <para>Oracle—Connection to an Oracle instance will be made.</para>
 			/// </summary>
 			[GPValue("Oracle")]
 			[Description("Oracle")]
@@ -241,14 +253,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AccountAuthenticationEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Operating system authentication will be used. The login information that you provide for the computer where you run the tool is the login that will be used to authenticate the database connection. If your database management system is not configured to allow operating system authentication, authentication will fail.</para>
+			/// <para>Checked—Operating system authentication will be used. The login information that you provide for the computer where you run the tool is the login that will be used to authenticate the database connection. If the database management system is not configured to allow operating system authentication, authentication will fail.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("OPERATING_SYSTEM_AUTH")]
 			OPERATING_SYSTEM_AUTH,
 
 			/// <summary>
-			/// <para>Unchecked—Database authentication will be used. You must provide a valid database user name and password for authentication in the database. This is the default. If your database management system is not configured to allow database authentication, authentication will fail.</para>
+			/// <para>Unchecked—Database authentication will be used. You must provide a valid database user name and password for authentication in the database. This is the default. If the database management system is not configured to allow database authentication, authentication will fail.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DATABASE_AUTH")]
@@ -274,6 +286,27 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			[GPValue("false")]
 			[Description("DBO_SCHEMA")]
 			DBO_SCHEMA,
+
+		}
+
+		/// <summary>
+		/// <para>Spatial Type</para>
+		/// </summary>
+		public enum SpatialTypeEnum 
+		{
+			/// <summary>
+			/// <para>ST_Geometry—The ST_Geometry spatial type will be used. This is the default.</para>
+			/// </summary>
+			[GPValue("ST_GEOMETRY")]
+			[Description("ST_Geometry")]
+			ST_Geometry,
+
+			/// <summary>
+			/// <para>POSTGIS—The PostGIS spatial type will be used.</para>
+			/// </summary>
+			[GPValue("POSTGIS")]
+			[Description("POSTGIS")]
+			POSTGIS,
 
 		}
 

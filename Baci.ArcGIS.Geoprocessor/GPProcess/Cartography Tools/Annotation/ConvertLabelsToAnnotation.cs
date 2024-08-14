@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputMap, ConversionScale, OutputGeodatabase, AnnoSuffix, Extent, GenerateUnplaced, RequireSymbolId, FeatureLinked, AutoCreate, UpdateOnShapeChange, OutputGroupLayer, UpdatedGeodatabase, WhichLayers, SingleLayer, MultipleFeatureClasses, MergeLabelClasses };
+		public override object[] Parameters => new object[] { InputMap, ConversionScale, OutputGeodatabase, AnnoSuffix!, Extent!, GenerateUnplaced!, RequireSymbolId!, FeatureLinked!, AutoCreate!, UpdateOnShapeChange!, OutputGroupLayer!, UpdatedGeodatabase!, WhichLayers!, SingleLayer!, MultipleFeatureClasses!, MergeLabelClasses! };
 
 		/// <summary>
 		/// <para>Input Map</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object AnnoSuffix { get; set; } = "Anno";
+		public object? AnnoSuffix { get; set; } = "Anno";
 
 		/// <summary>
 		/// <para>Extent</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Convert unplaced labels to unplaced annotation</para>
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object GenerateUnplaced { get; set; } = "false";
+		public object? GenerateUnplaced { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Require symbols to be selected from the symbol table</para>
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object RequireSymbolId { get; set; } = "false";
+		public object? RequireSymbolId { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Create feature-linked annotation</para>
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object FeatureLinked { get; set; } = "false";
+		public object? FeatureLinked { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Create annotation when new features are added</para>
@@ -166,7 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AutoCreate { get; set; } = "true";
+		public object? AutoCreate { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Update annotation when feature's shape is modified</para>
@@ -178,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UpdateOnShapeChange { get; set; } = "true";
+		public object? UpdateOnShapeChange { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output Layer</para>
@@ -186,14 +186,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGroupLayer()]
-		public object OutputGroupLayer { get; set; } = "GroupAnno";
+		public object? OutputGroupLayer { get; set; } = "GroupAnno";
 
 		/// <summary>
 		/// <para>Updated Geodatabase</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object UpdatedGeodatabase { get; set; }
+		public object? UpdatedGeodatabase { get; set; }
 
 		/// <summary>
 		/// <para>Convert</para>
@@ -205,7 +205,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object WhichLayers { get; set; } = "ALL_LAYERS";
+		public object? WhichLayers { get; set; } = "ALL_LAYERS";
 
 		/// <summary>
 		/// <para>Feature Layer</para>
@@ -214,7 +214,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object SingleLayer { get; set; }
+		public object? SingleLayer { get; set; }
 
 		/// <summary>
 		/// <para>Convert labels from all layers to a single output feature class</para>
@@ -226,7 +226,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object MultipleFeatureClasses { get; set; } = "false";
+		public object? MultipleFeatureClasses { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Merge similar label classes</para>
@@ -238,14 +238,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object MergeLabelClasses { get; set; } = "false";
+		public object? MergeLabelClasses { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConvertLabelsToAnnotation SetEnviroment(object configKeyword = null )
+		public ConvertLabelsToAnnotation SetEnviroment(int? annotationTextStringFieldLength = null , object? configKeyword = null )
 		{
-			base.SetEnv(configKeyword: configKeyword);
+			base.SetEnv(annotationTextStringFieldLength: annotationTextStringFieldLength, configKeyword: configKeyword);
 			return this;
 		}
 

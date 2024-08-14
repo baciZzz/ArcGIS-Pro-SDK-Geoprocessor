@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Repair Nautical Data</para>
-	/// <para>Repairs selected data processes on a database with the Nautical schema. Processes include repairing noncollocated structure-equipment features, deleting orphaned FREL and COLLECTIONS records, and resolving blank or duplicate  LNAM attribute values.</para>
+	/// <para>Repairs selected data processes on a database with the Nautical schema. Processes include repairing noncollocated structure-equipment features, deleting detached FREL and COLLECTIONS records, and resolving blank or duplicate  LNAM attribute values.</para>
 	/// </summary>
 	public class RepairNauticalData : AbstractGPProcess
 	{
@@ -26,7 +26,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <para>Repair Operations</para>
 		/// <para>Specifies the repair process to be executed.</para>
 		/// <para>Fix LNAM—Records with a blank LNAM attribute will be resolved by populating the records with a valid LNAM value, and duplicate LNAM attribute conflicts will be resolved with a new LNAM value provided to one of the records.</para>
-		/// <para>Remove Orphan Relationships—Orphaned structure or equipment and collections records will be removed from the PLTS_FREL and PLTS_COLLECTIONS tables.</para>
+		/// <para>Remove Orphan Relationships—Detached structure or equipment and collections records will be removed from the PLTS_FREL and PLTS_COLLECTIONS tables.</para>
 		/// <para>Move Equipment Features—Point equipment features that are not coincident with point structure features will be identified and moved to the location of the structure.</para>
 		/// <para><see cref="RepairOperationsEnum"/></para>
 		/// </param>
@@ -69,7 +69,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, RepairOperations, UpdatedWorkspace };
+		public override object[] Parameters => new object[] { InWorkspace, RepairOperations, UpdatedWorkspace! };
 
 		/// <summary>
 		/// <para>Input Workspace</para>
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <para>Repair Operations</para>
 		/// <para>Specifies the repair process to be executed.</para>
 		/// <para>Fix LNAM—Records with a blank LNAM attribute will be resolved by populating the records with a valid LNAM value, and duplicate LNAM attribute conflicts will be resolved with a new LNAM value provided to one of the records.</para>
-		/// <para>Remove Orphan Relationships—Orphaned structure or equipment and collections records will be removed from the PLTS_FREL and PLTS_COLLECTIONS tables.</para>
+		/// <para>Remove Orphan Relationships—Detached structure or equipment and collections records will be removed from the PLTS_FREL and PLTS_COLLECTIONS tables.</para>
 		/// <para>Move Equipment Features—Point equipment features that are not coincident with point structure features will be identified and moved to the location of the structure.</para>
 		/// <para><see cref="RepairOperationsEnum"/></para>
 		/// </summary>
@@ -98,12 +98,12 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object UpdatedWorkspace { get; set; }
+		public object? UpdatedWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RepairNauticalData SetEnviroment(object workspace = null )
+		public RepairNauticalData SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 			Fix_LNAM,
 
 			/// <summary>
-			/// <para>Remove Orphan Relationships—Orphaned structure or equipment and collections records will be removed from the PLTS_FREL and PLTS_COLLECTIONS tables.</para>
+			/// <para>Remove Orphan Relationships—Detached structure or equipment and collections records will be removed from the PLTS_FREL and PLTS_COLLECTIONS tables.</para>
 			/// </summary>
 			[GPValue("REMOVE_ORPHAN_RELATIONSHIPS")]
 			[Description("Remove Orphan Relationships")]

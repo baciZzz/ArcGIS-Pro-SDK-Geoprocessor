@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeatures, NeighborhoodType, NeighborhoodSelectionMethod, MinimumNumberOfNeighbors!, MaximumNumberOfNeighbors!, DistanceUnit!, MinimumSearchDistance!, MaximumSearchDistance!, NumberOfNeighborsIncrement!, SearchDistanceIncrement!, NumberOfIncrements!, NumberOfNeighbors!, DistanceBand!, NumberOfNeighborsGolden!, NumberOfNeighborsManual!, NumberOfNeighborsDefined!, DistanceGolden!, DistanceManual!, DistanceDefined!, PredictionLocations!, ExplanatoryVariablesToMatch!, OutputPredictedFeatures!, RobustPrediction!, LocalWeightingScheme!, OutputTable!, CoefficientRasterWorkspace!, Scale!, CoefficientRasterLayers!, OutputLayerGroup };
+		public override object[] Parameters => new object[] { InFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeatures, NeighborhoodType, NeighborhoodSelectionMethod, MinimumNumberOfNeighbors!, MaximumNumberOfNeighbors!, DistanceUnit!, MinimumSearchDistance!, MaximumSearchDistance!, NumberOfNeighborsIncrement!, SearchDistanceIncrement!, NumberOfIncrements!, NumberOfNeighbors!, DistanceBand!, NumberOfNeighborsGolden!, NumberOfNeighborsManual!, NumberOfNeighborsDefined!, DistanceGolden!, DistanceManual!, DistanceDefined!, PredictionLocations!, ExplanatoryVariablesToMatch!, OutputPredictedFeatures!, RobustPrediction!, LocalWeightingScheme!, OutputTable!, CoefficientRasterWorkspace!, Scale!, CoefficientRasterLayers!, OutputLayerGroup! };
 
 		/// <summary>
 		/// <para>Input Features</para>

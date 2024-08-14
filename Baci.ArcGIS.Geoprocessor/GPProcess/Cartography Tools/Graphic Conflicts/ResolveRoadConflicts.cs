@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayers, HierarchyField, OutDisplacementFeatures, OutLayers };
+		public override object[] Parameters => new object[] { InLayers, HierarchyField, OutDisplacementFeatures!, OutLayers! };
 
 		/// <summary>
 		/// <para>Input Road Layers</para>
@@ -93,19 +93,19 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
-		public object OutDisplacementFeatures { get; set; }
+		public object? OutDisplacementFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Output Layers</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutLayers { get; set; }
+		public object? OutLayers { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ResolveRoadConflicts SetEnviroment(object cartographicCoordinateSystem = null , object cartographicPartitions = null , object referenceScale = null )
+		public ResolveRoadConflicts SetEnviroment(object? cartographicCoordinateSystem = null , object? cartographicPartitions = null , double? referenceScale = null )
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem, cartographicPartitions: cartographicPartitions, referenceScale: referenceScale);
 			return this;

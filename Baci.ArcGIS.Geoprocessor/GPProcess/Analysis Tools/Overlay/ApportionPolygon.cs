@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ApportionFields, TargetFeatures, OutFeatures, Method, EstimationFeatures, WeightField, MaintainGeometries };
+		public override object[] Parameters => new object[] { InFeatures, ApportionFields, TargetFeatures, OutFeatures, Method, EstimationFeatures!, WeightField!, MaintainGeometries! };
 
 		/// <summary>
 		/// <para>Input Polygons</para>
@@ -143,16 +143,17 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object EstimationFeatures { get; set; }
+		public object? EstimationFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Weight Field</para>
-		/// <para>A numeric field from the target polygons layer that will be used to adjust which target polygons receive larger apportioned values from the input polygons' fields to apportion. Targets with higher weight are apportioned a higher ratio of the field values.</para>
+		/// <para>A numeric field from the target polygon layer that will be used to adjust which target polygons receive larger apportioned values from the input polygons&apos; fields to apportion. Targets with higher weight are apportioned a higher ratio of the field values.</para>
+		/// <para>If estimation features are specified, the weight field will be a numeric field from the estimation features that will adjust the values apportioned to the target polygons intersecting the estimation features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object WeightField { get; set; }
+		public object? WeightField { get; set; }
 
 		/// <summary>
 		/// <para>Maintain target geometry</para>
@@ -164,12 +165,12 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object MaintainGeometries { get; set; } = "true";
+		public object? MaintainGeometries { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ApportionPolygon SetEnviroment(object extent = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public ApportionPolygon SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

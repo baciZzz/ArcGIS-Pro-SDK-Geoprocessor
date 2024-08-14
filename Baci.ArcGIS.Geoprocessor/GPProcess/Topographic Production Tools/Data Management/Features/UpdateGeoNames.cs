@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 	/// <summary>
 	/// <para>Update GeoNames</para>
 	/// <para>Updates the name field on input features based on the information from GeoNames_FeaturesP and GEONAMES_TABLE.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class UpdateGeoNames : AbstractGPProcess
 	{
 		/// <summary>
@@ -85,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InGeonamesFeatures, InGeonamesTable, NamedFeatureIdField, NameIdField, NameField, OutFeatures };
+		public override object[] Parameters => new object[] { InFeatures, InGeonamesFeatures, InGeonamesTable, NamedFeatureIdField, NameIdField, NameField, OutFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -142,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutFeatures { get; set; }
+		public object? OutFeatures { get; set; }
 
 	}
 }

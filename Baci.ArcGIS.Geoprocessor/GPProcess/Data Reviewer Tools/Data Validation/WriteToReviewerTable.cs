@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InReviewerWorkspace, InSession, InFeatures, InField, InOriginTableName, InReviewStatus, InSubtype, InNotes, InSeverity, REVTABLEMAINView, InCheckTitle };
+		public override object[] Parameters => new object[] { InReviewerWorkspace, InSession, InFeatures, InField, InOriginTableName, InReviewStatus, InSubtype!, InNotes!, InSeverity!, REVTABLEMAINView!, InCheckTitle! };
 
 		/// <summary>
 		/// <para>Reviewer Workspace</para>
@@ -157,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object InSubtype { get; set; }
+		public object? InSubtype { get; set; }
 
 		/// <summary>
 		/// <para>Notes</para>
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object InNotes { get; set; }
+		public object? InNotes { get; set; }
 
 		/// <summary>
 		/// <para>Severity</para>
@@ -179,14 +179,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object InSeverity { get; set; } = "5";
+		public object? InSeverity { get; set; } = "5";
 
 		/// <summary>
 		/// <para>REVTABLEMAIN</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
-		public object REVTABLEMAINView { get; set; }
+		public object? REVTABLEMAINView { get; set; }
 
 		/// <summary>
 		/// <para>Check Title</para>
@@ -197,7 +197,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object InCheckTitle { get; set; } = "Write GP Results to Reviewer Table";
+		public object? InCheckTitle { get; set; } = "Write GP Results to Reviewer Table";
 
 	}
 }

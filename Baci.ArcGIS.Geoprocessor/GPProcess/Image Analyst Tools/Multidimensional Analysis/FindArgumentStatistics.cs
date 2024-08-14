@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Find Argument Statistics</para>
-	/// <para>Extracts the dimension value  or band index at which a given statistic is attained for each pixel in a multidimensional or multiband raster.</para>
+	/// <para>Extracts the dimension value or band index at which a given statistic is attained for each pixel in a multidimensional or multiband raster.</para>
 	/// </summary>
 	public class FindArgumentStatistics : AbstractGPProcess
 	{
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, Dimension, DimensionDef, IntervalKeyword, Variables, StatisticsType, Min, Max, MultipleOccurrence, IgnoreNodata };
+		public override object[] Parameters => new object[] { InRaster, OutRaster, Dimension!, DimensionDef!, IntervalKeyword!, Variables!, StatisticsType!, Min!, Max!, MultipleOccurrence!, IgnoreNodata!, Value!, Comparison!, Occurrence! };
 
 		/// <summary>
 		/// <para>Input Multidimensional or Multiband Raster</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Dimension { get; set; }
+		public object? Dimension { get; set; }
 
 		/// <summary>
 		/// <para>Dimension Definition</para>
@@ -103,20 +103,20 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DimensionDef { get; set; } = "ALL";
+		public object? DimensionDef { get; set; } = "ALL";
 
 		/// <summary>
 		/// <para>Keyword Interval</para>
 		/// <para>The unit of time for which the statistic will be extracted.</para>
-		/// <para>For example, you have five years of daily sea surface temperature data and you want to know the year in which the maximum temperature was observed. Set Statisitcs Type to Argument of the maximum, set Dimension Definition to Interval Keyword, and set Keyword Interval to Yearly.</para>
-		/// <para>Alternatively, if you want to know the month in which the maximum temperature was consistently observed, set Statistics Type to Argument of the maximum, setDimension Definition to Interval Keyword, and set Keyword Interval to Recurring Monthly. This will generate a raster in which each pixel contains the month in which the statistic was reached across the five-year record (08/18/2018, 08/25/2016, 08/07/2013, for example).</para>
+		/// <para>For example, you have five years of daily sea surface temperature data and you want to know the year in which the maximum temperature was observed. Set Statistics Type to Argument of the maximum, set Dimension Definition to Interval Keyword, and set Keyword Interval to Yearly.</para>
+		/// <para>Alternatively, if you want to know the month in which the maximum temperature was consistently observed, set Statistics Type to Argument of the maximum, set Dimension Definition to Interval Keyword, and set Keyword Interval to Recurring Monthly. This will generate a raster in which each pixel contains the month in which the statistic was reached across the five-year record (for example, 08/18/2018, 08/25/2016, 08/07/2013).</para>
 		/// <para>This parameter is required when the Dimension parameter is set to StdTime and the Dimension Definition parameter is set to Interval Keyword.</para>
 		/// <para><see cref="IntervalKeywordEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object IntervalKeyword { get; set; }
+		public object? IntervalKeyword { get; set; }
 
 		/// <summary>
 		/// <para>Variables [Dimension Info] (Description)</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Variables { get; set; }
+		public object? Variables { get; set; }
 
 		/// <summary>
 		/// <para>Statistics Type</para>
@@ -134,12 +134,13 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <para>Argument of the maximum—The dimension value at which the maximum variable value is reached will be extracted.</para>
 		/// <para>Argument of the median—The dimension value at which the median variable value is reached will be extracted.</para>
 		/// <para>Duration—The longest dimension duration value between the minimum and maximum variable values will be extracted.</para>
+		/// <para>Argument of the value—The dimension value at which the specified variable value is reached will be extracted.</para>
 		/// <para><see cref="StatisticsTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object StatisticsType { get; set; } = "ARGUMENT_MIN";
+		public object? StatisticsType { get; set; } = "ARGUMENT_MIN";
 
 		/// <summary>
 		/// <para>Minimum Value</para>
@@ -148,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Min { get; set; }
+		public object? Min { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Value</para>
@@ -157,15 +158,15 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Max { get; set; }
+		public object? Max { get; set; }
 
 		/// <summary>
 		/// <para>Multiple Occurrence Value</para>
-		/// <para>The pixel value to use to indicate that a given argument statistic was reached more than once in the input raster dataset. If not specified, the pixel value will be the value of the dimension the first time the argument statistic is reached.</para>
+		/// <para>The pixel value to use to indicate that a given argument statistic was reached more than once in the input raster dataset. If not specified, the pixel value will be the value of the dimension as specified by the Occurrence parameter, either the first or last occurrence.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MultipleOccurrence { get; set; }
+		public object? MultipleOccurrence { get; set; }
 
 		/// <summary>
 		/// <para>Ignore NoData</para>
@@ -177,12 +178,48 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IgnoreNodata { get; set; } = "true";
+		public object? IgnoreNodata { get; set; } = "true";
+
+		/// <summary>
+		/// <para>Argument Value</para>
+		/// <para>The value at which a comparison will be made to extract the dimension value.</para>
+		/// <para>This parameter is required when the Statistics Type parameter is set to Argument of the value.</para>
+		/// <para>The value at which a comparison will be made to extract the dimension value.</para>
+		/// <para>This parameter is required when the statistics_type parameter is set to ARGUMENT_VALUE.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPDouble()]
+		public object? Value { get; set; }
+
+		/// <summary>
+		/// <para>Comparison</para>
+		/// <para>Specifies the comparison type that will be used to extract the dimension value.</para>
+		/// <para>Equal to—The extracted dimension is equal to the specified value. This is the default.</para>
+		/// <para>Greater than—The extracted dimension is greater than the specified value.</para>
+		/// <para>Smaller than—The extracted dimension is smaller than the specified value.</para>
+		/// <para><see cref="ComparisonEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		[GPCodedValueDomain()]
+		public object? Comparison { get; set; } = "EQUAL_TO";
+
+		/// <summary>
+		/// <para>Occurrence</para>
+		/// <para>Specifies whether the value of the dimension will be returned the first time or last time the argument statistic is reached.</para>
+		/// <para>First occurrence—The value of the dimension will be returned the first time the argument statistic is reached. This is the default.</para>
+		/// <para>Last occurrence—The value of the dimension will be returned the last time the argument statistic is reached.</para>
+		/// <para><see cref="OccurrenceEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		[GPCodedValueDomain()]
+		public object? Occurrence { get; set; } = "FIRST_OCCURRENCE";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FindArgumentStatistics SetEnviroment(object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object nodata = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object pyramid = null , object rasterStatistics = null , object resamplingMethod = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public FindArgumentStatistics SetEnviroment(object? cellSize = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? nodata = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? pyramid = null , object? rasterStatistics = null , object? resamplingMethod = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
 			base.SetEnv(cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, nodata: nodata, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, rasterStatistics: rasterStatistics, resamplingMethod: resamplingMethod, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
@@ -321,6 +358,13 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 			[Description("Duration")]
 			Duration,
 
+			/// <summary>
+			/// <para>Argument of the value—The dimension value at which the specified variable value is reached will be extracted.</para>
+			/// </summary>
+			[GPValue("ARGUMENT_VALUE")]
+			[Description("Argument of the value")]
+			Argument_of_the_value,
+
 		}
 
 		/// <summary>
@@ -341,6 +385,55 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 			[GPValue("false")]
 			[Description("NODATA")]
 			NODATA,
+
+		}
+
+		/// <summary>
+		/// <para>Comparison</para>
+		/// </summary>
+		public enum ComparisonEnum 
+		{
+			/// <summary>
+			/// <para>Equal to—The extracted dimension is equal to the specified value. This is the default.</para>
+			/// </summary>
+			[GPValue("EQUAL_TO")]
+			[Description("Equal to")]
+			Equal_to,
+
+			/// <summary>
+			/// <para>Greater than—The extracted dimension is greater than the specified value.</para>
+			/// </summary>
+			[GPValue("GREATER_THAN")]
+			[Description("Greater than")]
+			Greater_than,
+
+			/// <summary>
+			/// <para>Smaller than—The extracted dimension is smaller than the specified value.</para>
+			/// </summary>
+			[GPValue("SMALLER_THAN")]
+			[Description("Smaller than")]
+			Smaller_than,
+
+		}
+
+		/// <summary>
+		/// <para>Occurrence</para>
+		/// </summary>
+		public enum OccurrenceEnum 
+		{
+			/// <summary>
+			/// <para>First occurrence—The value of the dimension will be returned the first time the argument statistic is reached. This is the default.</para>
+			/// </summary>
+			[GPValue("FIRST_OCCURRENCE")]
+			[Description("First occurrence")]
+			First_occurrence,
+
+			/// <summary>
+			/// <para>Last occurrence—The value of the dimension will be returned the last time the argument statistic is reached.</para>
+			/// </summary>
+			[GPValue("LAST_OCCURRENCE")]
+			[Description("Last occurrence")]
+			Last_occurrence,
 
 		}
 

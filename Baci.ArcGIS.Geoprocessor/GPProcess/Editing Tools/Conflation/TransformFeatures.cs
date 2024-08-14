@@ -68,7 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InLinkFeatures, Method, OutLinkTable, OutRmse, OutFeatureClass };
+		public override object[] Parameters => new object[] { InFeatures, InLinkFeatures, Method!, OutLinkTable!, OutRmse!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "AFFINE";
+		public object? Method { get; set; } = "AFFINE";
 
 		/// <summary>
 		/// <para>Output Link Table</para>
@@ -107,26 +107,26 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object OutLinkTable { get; set; }
+		public object? OutLinkTable { get; set; }
 
 		/// <summary>
 		/// <para>RMSE</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object OutRmse { get; set; } = "0";
+		public object? OutRmse { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Updated Input Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TransformFeatures SetEnviroment(object extent = null , object workspace = null )
+		public TransformFeatures SetEnviroment(object? extent = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

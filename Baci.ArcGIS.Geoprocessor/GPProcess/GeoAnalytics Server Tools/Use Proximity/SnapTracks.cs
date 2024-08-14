@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputPoints, InputLines, OutputName, TrackFields, SearchDistance, ConnectivityFieldMatching, LineFieldsToInclude!, DistanceMethod!, DirectionValueMatching!, OutputMode!, DataStore!, Output };
+		public override object[] Parameters => new object[] { InputPoints, InputLines, OutputName, TrackFields, SearchDistance, ConnectivityFieldMatching, LineFieldsToInclude!, DistanceMethod!, DirectionValueMatching!, OutputMode!, DataStore!, Output! };
 
 		/// <summary>
 		/// <para>Input Point Layer</para>

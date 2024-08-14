@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Remove Feature By Attribute Rule</para>
-	/// <para>Adds a diagram rule to automatically remove diagram features during diagram building based on an existing template. The features to remove are queried by attributes from a given network source class or object table.</para>
+	/// <para>Adds a diagram rule to automatically remove diagram features during diagram building based on an existing template. The features to be removed are queried by attributes from a given network source class or object table. You can also constrain the removal of features based on connectivity.</para>
 	/// </summary>
 	public class AddRemoveFeatureByAttributeRule : AbstractGPProcess
 	{
@@ -20,11 +20,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template to modify.</para>
+		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template to modify.</para>
+		/// <para>The name of the diagram template that will be modified.</para>
 		/// </param>
 		/// <param name="IsActive">
 		/// <para>Active</para>
@@ -78,11 +78,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, NetworkSource, WhereClause, Description, OutUtilityNetwork, OutTemplateName };
+		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, NetworkSource, WhereClause!, Description!, OutUtilityNetwork!, OutTemplateName!, UnconnectedJunctions!, OneConnectedJunction! };
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template to modify.</para>
+		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template to modify.</para>
+		/// <para>The name of the diagram template that will be modified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Description</para>
@@ -130,21 +130,49 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Description { get; set; }
+		public object? Description { get; set; }
 
 		/// <summary>
 		/// <para>Output Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		/// <summary>
 		/// <para>Output Diagram Template</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutTemplateName { get; set; }
+		public object? OutTemplateName { get; set; }
+
+		/// <summary>
+		/// <para>Junctions must be unconnected</para>
+		/// <para>Specifies whether diagram junctions and diagram containers must be unconnected to be removed.</para>
+		/// <para>Checked—Diagram junctions and diagram containers must be unconnected to be removed.</para>
+		/// <para>Unchecked—Diagram junctions and diagram containers do not need to be unconnected to be removed. This is the default.</para>
+		/// <para>This parameter is only active when the Network Source to Remove parameter value corresponds to junctions or containers in the network diagrams.</para>
+		/// <para><see cref="UnconnectedJunctionsEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		[Category("Connectivity constraints")]
+		public object? UnconnectedJunctions { get; set; } = "false";
+
+		/// <summary>
+		/// <para>Junctions must be connected to a single junction</para>
+		/// <para>Specifies whether diagram junctions and diagram containers must be connected to a single diagram junction or diagram container to be removed.</para>
+		/// <para>Checked—Diagram junctions and diagram containers must be connected to a single diagram junction or diagram container to be removed.</para>
+		/// <para>Unchecked—Diagram junctions and diagram containers do not need to be connected to a single diagram junction or diagram container to be removed. This is the default.</para>
+		/// <para>This parameter is only active when the Network Source to Remove parameter value corresponds to junctions or containers in the network diagrams.</para>
+		/// <para><see cref="OneConnectedJunctionEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		[Category("Connectivity constraints")]
+		public object? OneConnectedJunction { get; set; } = "false";
 
 		#region InnerClass
 
@@ -166,6 +194,48 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 			[GPValue("false")]
 			[Description("INACTIVE")]
 			INACTIVE,
+
+		}
+
+		/// <summary>
+		/// <para>Junctions must be unconnected</para>
+		/// </summary>
+		public enum UnconnectedJunctionsEnum 
+		{
+			/// <summary>
+			/// <para>Checked—Diagram junctions and diagram containers must be unconnected to be removed.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("MUST_BE_UNCONNECTED")]
+			MUST_BE_UNCONNECTED,
+
+			/// <summary>
+			/// <para>Unchecked—Diagram junctions and diagram containers do not need to be unconnected to be removed. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("NO_CONSTRAINT")]
+			NO_CONSTRAINT,
+
+		}
+
+		/// <summary>
+		/// <para>Junctions must be connected to a single junction</para>
+		/// </summary>
+		public enum OneConnectedJunctionEnum 
+		{
+			/// <summary>
+			/// <para>Checked—Diagram junctions and diagram containers must be connected to a single diagram junction or diagram container to be removed.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("MUST_BE_CONNECTED_TO_SINGLE_JUNCTION")]
+			MUST_BE_CONNECTED_TO_SINGLE_JUNCTION,
+
+			/// <summary>
+			/// <para>Unchecked—Diagram junctions and diagram containers do not need to be connected to a single diagram junction or diagram container to be removed. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("NO_CONSTRAINT")]
+			NO_CONSTRAINT,
 
 		}
 

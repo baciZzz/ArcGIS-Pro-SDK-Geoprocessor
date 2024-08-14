@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DependentVariable, ExplanatoryVariable, OutputFeatures, NumberOfNeighbors, NumberOfPermutations, EnableLocalScatterplotPopups, LevelOfConfidence, ApplyFalseDiscoveryRateFdrCorrection, ScalingFactor };
+		public override object[] Parameters => new object[] { InFeatures, DependentVariable, ExplanatoryVariable, OutputFeatures, NumberOfNeighbors!, NumberOfPermutations!, EnableLocalScatterplotPopups!, LevelOfConfidence!, ApplyFalseDiscoveryRateFdrCorrection!, ScalingFactor! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPRangeDomain()]
-		public object NumberOfNeighbors { get; set; } = "30";
+		public object? NumberOfNeighbors { get; set; } = "30";
 
 		/// <summary>
 		/// <para>Number of Permutations</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPCodedValueDomain()]
-		public object NumberOfPermutations { get; set; } = "199";
+		public object? NumberOfPermutations { get; set; } = "199";
 
 		/// <summary>
 		/// <para>Enable Local Scatterplot Pop-ups</para>
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object EnableLocalScatterplotPopups { get; set; } = "true";
+		public object? EnableLocalScatterplotPopups { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Level of Confidence</para>
@@ -158,7 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LevelOfConfidence { get; set; } = "90%";
+		public object? LevelOfConfidence { get; set; } = "90%";
 
 		/// <summary>
 		/// <para>Apply False Discovery Rate (FDR) Correction</para>
@@ -171,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object ApplyFalseDiscoveryRateFdrCorrection { get; set; } = "true";
+		public object? ApplyFalseDiscoveryRateFdrCorrection { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Scaling Factor (Alpha)</para>
@@ -181,12 +181,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[GPDouble()]
 		[GPRangeDomain()]
 		[Category("Advanced Options")]
-		public object ScalingFactor { get; set; } = "0.5";
+		public object? ScalingFactor { get; set; } = "0.5";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LocalBivariateRelationships SetEnviroment(object outputCoordinateSystem = null , object parallelProcessingFactor = null , object randomGenerator = null )
+		public LocalBivariateRelationships SetEnviroment(object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? randomGenerator = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, randomGenerator: randomGenerator);
 			return this;

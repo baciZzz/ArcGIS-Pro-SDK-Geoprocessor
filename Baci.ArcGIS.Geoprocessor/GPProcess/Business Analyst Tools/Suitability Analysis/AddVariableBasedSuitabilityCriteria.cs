@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAnalysisLayer, Variables, OutAnalysisLayer, OutCriteriaName };
+		public override object[] Parameters => new object[] { InAnalysisLayer, Variables, OutAnalysisLayer!, OutCriteriaName! };
 
 		/// <summary>
 		/// <para>Input Suitability Analysis Layer</para>
@@ -89,21 +89,21 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutAnalysisLayer { get; set; }
+		public object? OutAnalysisLayer { get; set; }
 
 		/// <summary>
 		/// <para>Output Criteria Name</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutCriteriaName { get; set; }
+		public object? OutCriteriaName { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddVariableBasedSuitabilityCriteria SetEnviroment(object workspace = null )
+		public AddVariableBasedSuitabilityCriteria SetEnviroment(object? baDataSource = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, workspace: workspace);
 			return this;
 		}
 

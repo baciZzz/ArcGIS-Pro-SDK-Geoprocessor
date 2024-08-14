@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, UpdatedDataset };
+		public override object[] Parameters => new object[] { InDataset, UpdatedDataset! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object UpdatedDataset { get; set; }
+		public object? UpdatedDataset { get; set; }
 
 	}
 }

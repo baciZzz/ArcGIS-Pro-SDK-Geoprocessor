@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, NearFeatures, SearchRadius, Location, Angle, OutFeatureClass, Method, FieldNames };
+		public override object[] Parameters => new object[] { InFeatures, NearFeatures, SearchRadius!, Location!, Angle!, OutFeatureClass!, Method!, FieldNames! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object SearchRadius { get; set; }
+		public object? SearchRadius { get; set; }
 
 		/// <summary>
 		/// <para>Location</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Location { get; set; } = "false";
+		public object? Location { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Angle</para>
@@ -117,14 +117,14 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Angle { get; set; } = "false";
+		public object? Angle { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Input Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Method</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "PLANAR";
+		public object? Method { get; set; } = "PLANAR";
 
 		/// <summary>
 		/// <para>Field Names</para>
@@ -147,12 +147,12 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object FieldNames { get; set; }
+		public object? FieldNames { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Near SetEnviroment(object extent = null , object workspace = null )
+		public Near SetEnviroment(object? extent = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

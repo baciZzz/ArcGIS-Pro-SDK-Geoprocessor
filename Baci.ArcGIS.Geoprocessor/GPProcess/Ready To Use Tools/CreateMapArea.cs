@@ -59,7 +59,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Mapitemid, Bookmark, Extent, Areatype, Area, Outputname, Mapareaitemid };
+		public override object[] Parameters => new object[] { Mapitemid, Bookmark!, Extent!, Areatype!, Area!, Outputname!, Mapareaitemid! };
 
 		/// <summary>
 		/// <para>Map Item ID</para>
@@ -73,14 +73,14 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Bookmark { get; set; }
+		public object? Bookmark { get; set; }
 
 		/// <summary>
 		/// <para>Extent</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Area Type</para>
@@ -89,28 +89,28 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Areatype { get; set; } = "BOOKMARK";
+		public object? Areatype { get; set; } = "BOOKMARK";
 
 		/// <summary>
 		/// <para>Area</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Area { get; set; }
+		public object? Area { get; set; }
 
 		/// <summary>
 		/// <para>Output Name</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Outputname { get; set; }
+		public object? Outputname { get; set; }
 
 		/// <summary>
 		/// <para>Map Area Item ID</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object Mapareaitemid { get; set; }
+		public object? Mapareaitemid { get; set; }
 
 		#region InnerClass
 

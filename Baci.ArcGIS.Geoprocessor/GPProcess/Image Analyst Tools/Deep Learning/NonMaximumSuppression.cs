@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureclass, ConfidenceScoreField, OutFeatureclass, ClassValueField, MaxOverlapRatio };
+		public override object[] Parameters => new object[] { InFeatureclass, ConfidenceScoreField, OutFeatureclass, ClassValueField!, MaxOverlapRatio! };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object ClassValueField { get; set; }
+		public object? ClassValueField { get; set; }
 
 		/// <summary>
 		/// <para>Max Overlap Ratio</para>
@@ -112,12 +112,12 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object MaxOverlapRatio { get; set; } = "0";
+		public object? MaxOverlapRatio { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public NonMaximumSuppression SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public NonMaximumSuppression SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

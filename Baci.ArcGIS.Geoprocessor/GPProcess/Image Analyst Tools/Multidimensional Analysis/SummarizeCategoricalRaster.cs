@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutTable, Dimension, Aoi, AoiIdField };
+		public override object[] Parameters => new object[] { InRaster, OutTable, Dimension!, Aoi!, AoiIdField! };
 
 		/// <summary>
 		/// <para>Input Categorical Raster</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Dimension { get; set; }
+		public object? Dimension { get; set; }
 
 		/// <summary>
 		/// <para>Area Of Interest</para>
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
-		public object Aoi { get; set; }
+		public object? Aoi { get; set; }
 
 		/// <summary>
 		/// <para>Area Of Interest ID Field</para>
@@ -106,12 +106,12 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object AoiIdField { get; set; }
+		public object? AoiIdField { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SummarizeCategoricalRaster SetEnviroment(object extent = null )
+		public SummarizeCategoricalRaster SetEnviroment(object? extent = null )
 		{
 			base.SetEnv(extent: extent);
 			return this;

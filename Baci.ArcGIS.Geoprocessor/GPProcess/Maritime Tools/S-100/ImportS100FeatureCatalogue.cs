@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureCatalogue, TargetWorkspace, AdminConnection, OutputWorkspace };
+		public override object[] Parameters => new object[] { InFeatureCatalogue, TargetWorkspace, AdminConnection!, OutputWorkspace! };
 
 		/// <summary>
 		/// <para>S-100 Feature Catalogue</para>
@@ -92,21 +92,21 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object AdminConnection { get; set; }
+		public object? AdminConnection { get; set; }
 
 		/// <summary>
 		/// <para>Output Workspace</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
-		public object OutputWorkspace { get; set; }
+		public object? OutputWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportS100FeatureCatalogue SetEnviroment(object workspace = null )
+		public ImportS100FeatureCatalogue SetEnviroment(object? S100FeatureCatalogueFile = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(S100FeatureCatalogueFile: S100FeatureCatalogueFile, workspace: workspace);
 			return this;
 		}
 

@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeostatLayer, PointCoord, OutZValue };
+		public override object[] Parameters => new object[] { InGeostatLayer, PointCoord, OutZValue! };
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>
@@ -88,12 +88,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object OutZValue { get; set; } = "0";
+		public object? OutZValue { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GACalculateZValue SetEnviroment(object workspace = null )
+		public GACalculateZValue SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

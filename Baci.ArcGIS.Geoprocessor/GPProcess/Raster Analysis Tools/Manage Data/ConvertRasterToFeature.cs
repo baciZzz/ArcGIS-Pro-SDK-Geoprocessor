@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputraster, Field, Outputtype, Simplifylinesorpolygons, Outputname, Outputfeatures, Createmultipartfeatures, Maxverticesperfeature };
+		public override object[] Parameters => new object[] { Inputraster, Field!, Outputtype!, Simplifylinesorpolygons!, Outputname, Outputfeatures!, Createmultipartfeatures!, Maxverticesperfeature! };
 
 		/// <summary>
 		/// <para>Input Raster Layer</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Field { get; set; } = "Value";
+		public object? Field { get; set; } = "Value";
 
 		/// <summary>
 		/// <para>Output Type</para>
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Outputtype { get; set; } = "POINT";
+		public object? Outputtype { get; set; } = "POINT";
 
 		/// <summary>
 		/// <para>Simplify Lines or Polygons</para>
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Simplifylinesorpolygons { get; set; } = "true";
+		public object? Simplifylinesorpolygons { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Output Name</para>
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object Outputfeatures { get; set; }
+		public object? Outputfeatures { get; set; }
 
 		/// <summary>
 		/// <para>Create Multipart Features</para>
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Createmultipartfeatures { get; set; } = "false";
+		public object? Createmultipartfeatures { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Maximum Vertices Per Polygon Feature</para>
@@ -148,12 +148,12 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object Maxverticesperfeature { get; set; }
+		public object? Maxverticesperfeature { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConvertRasterToFeature SetEnviroment(object extent = null , object outputCoordinateSystem = null , object snapRaster = null )
+		public ConvertRasterToFeature SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? snapRaster = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, snapRaster: snapRaster);
 			return this;

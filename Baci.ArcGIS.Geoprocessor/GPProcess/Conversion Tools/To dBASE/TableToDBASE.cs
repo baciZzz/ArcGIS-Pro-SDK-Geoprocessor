@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InputTable">
 		/// <para>Input Tables</para>
-		/// <para>The list of tables to be converted to dBASE.</para>
+		/// <para>The list of tables to be converted to dBASE tables.</para>
 		/// </param>
 		/// <param name="OutputFolder">
 		/// <para>Output Folder</para>
@@ -65,11 +65,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputTable, OutputFolder, DerivedFolder };
+		public override object[] Parameters => new object[] { InputTable, OutputFolder, DerivedFolder! };
 
 		/// <summary>
 		/// <para>Input Tables</para>
-		/// <para>The list of tables to be converted to dBASE.</para>
+		/// <para>The list of tables to be converted to dBASE tables.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -88,12 +88,12 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFolder()]
-		public object DerivedFolder { get; set; } = "tmp";
+		public object? DerivedFolder { get; set; } = "tmp";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TableToDBASE SetEnviroment(object configKeyword = null , object extent = null , bool? qualifiedFieldNames = null , object scratchWorkspace = null , object workspace = null )
+		public TableToDBASE SetEnviroment(object? configKeyword = null , object? extent = null , bool? qualifiedFieldNames = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(configKeyword: configKeyword, extent: extent, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

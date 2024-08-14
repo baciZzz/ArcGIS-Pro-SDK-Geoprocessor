@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputraster, Inputmodel, Outputname, Modelarguments, Outraster, Processingmode };
+		public override object[] Parameters => new object[] { Inputraster, Inputmodel, Outputname, Modelarguments!, Outraster!, Processingmode! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -105,14 +105,14 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object Modelarguments { get; set; }
+		public object? Modelarguments { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Raster</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRasterLayer()]
-		public object Outraster { get; set; }
+		public object? Outraster { get; set; }
 
 		/// <summary>
 		/// <para>Processing Mode</para>
@@ -124,14 +124,14 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Processingmode { get; set; } = "PROCESS_AS_MOSAICKED_IMAGE";
+		public object? Processingmode { get; set; } = "PROCESS_AS_MOSAICKED_IMAGE";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ClassifyPixelsUsingDeepLearning SetEnviroment(object cellSize = null , object extent = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object snapRaster = null )
+		public ClassifyPixelsUsingDeepLearning SetEnviroment(object? cellSize = null , object? extent = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? processorType = null , object? snapRaster = null )
 		{
-			base.SetEnv(cellSize: cellSize, extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, snapRaster: snapRaster);
+			base.SetEnv(cellSize: cellSize, extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, processorType: processorType, snapRaster: snapRaster);
 			return this;
 		}
 

@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, TrackIdField, AreaOfInterest, TimeRelationship!, SelectionTime!, UpdatedFeatureclass };
+		public override object[] Parameters => new object[] { InFeatures, TrackIdField, AreaOfInterest, TimeRelationship!, SelectionTime!, UpdatedFeatureclass! };
 
 		/// <summary>
 		/// <para>Input Features</para>

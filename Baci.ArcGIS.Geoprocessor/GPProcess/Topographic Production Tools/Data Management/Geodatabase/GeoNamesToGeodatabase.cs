@@ -12,7 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 	/// <summary>
 	/// <para>GeoNames To Geodatabase</para>
 	/// <para>Loads GeoNames data into a feature class and table. The feature class is composed of point features, and the table contains fields with information concerning the naming conventions used for the features. The feature class contains the Unique Feature Identifier (UFI) and Unique Name Identifier (UNI), which match the same fields in the GeoNames table.</para>
+	/// <para>Input Will Be Modified</para>
 	/// </summary>
+	[InputWillBeModified()]
 	public class GeoNamesToGeodatabase : AbstractGPProcess
 	{
 		/// <summary>
@@ -78,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSource, InFeatureClass, InAllowDuplicates, InTable, OutFeatureclass, OutTable };
+		public override object[] Parameters => new object[] { InSource, InFeatureClass, InAllowDuplicates, InTable, OutFeatureclass!, OutTable! };
 
 		/// <summary>
 		/// <para>GeoNames Source File</para>
@@ -122,14 +124,14 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutFeatureclass { get; set; }
+		public object? OutFeatureclass { get; set; }
 
 		/// <summary>
 		/// <para>Out table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETable()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		#region InnerClass
 

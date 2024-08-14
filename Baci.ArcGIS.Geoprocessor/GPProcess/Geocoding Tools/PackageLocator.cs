@@ -64,7 +64,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLocator, OutputFile, CopyArcsdeLocator, AdditionalFiles, Summary, Tags };
+		public override object[] Parameters => new object[] { InLocator, OutputFile, CopyArcsdeLocator!, AdditionalFiles!, Summary!, Tags! };
 
 		/// <summary>
 		/// <para>Input Locator</para>
@@ -88,28 +88,28 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object CopyArcsdeLocator { get; set; } = "true";
+		public object? CopyArcsdeLocator { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Additional Files</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object AdditionalFiles { get; set; }
+		public object? AdditionalFiles { get; set; }
 
 		/// <summary>
 		/// <para>Summary</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Summary { get; set; }
+		public object? Summary { get; set; }
 
 		/// <summary>
 		/// <para>Tags</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Tags { get; set; }
+		public object? Tags { get; set; }
 
 		#region InnerClass
 

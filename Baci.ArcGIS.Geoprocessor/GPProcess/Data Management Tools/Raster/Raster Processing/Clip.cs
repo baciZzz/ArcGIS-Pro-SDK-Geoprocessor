@@ -24,14 +24,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </param>
 		/// <param name="Rectangle">
 		/// <para>Rectangle</para>
-		/// <para>The four coordinates that define the extent of the bounding box used to clip the raster.</para>
-		/// <para>If the clip extent specified is not aligned with the input raster dataset, the clip tool verifies that the proper alignment is used. This may cause the output to have a slightly different extent than specified in the tool.</para>
-		/// <para>Use the Clear button to reset the rectangle extent to the extent of the input raster dataset.</para>
+		/// <para>The four coordinates that define the extent of the bounding box that will be used to clip the raster.</para>
+		/// <para>If the Output Extent parameter is set, it will automatically populate the x-min, y-min, x-max, and y-max values. Use the Reset button to reset the rectangle extent to the extent of the input raster dataset.</para>
+		/// <para>If the value specified is not aligned with the input raster dataset, the tool verifies that the proper alignment is used. This may cause the output to have a slightly different extent than specified.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output Raster Dataset</para>
-		/// <para>The name, location, and format of the dataset being created. Make sure that it can support the necessary bit depth.</para>
-		/// <para>When storing the raster dataset in a file format, you need to specify the file extension:</para>
+		/// <para>The name, location, and format of the dataset being created. Ensure that it can support the necessary bit depth.</para>
+		/// <para>When storing the raster dataset in a file format, specify the file extension as follows:</para>
 		/// <para>.bil—Esri BIL</para>
 		/// <para>.bip—Esri BIP</para>
 		/// <para>.bmp—BMP</para>
@@ -47,7 +47,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>.crf—CRF</para>
 		/// <para>No extension for Esri Grid</para>
 		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset.</para>
-		/// <para>When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a Compression Type and Compression Quality in the geoprocessing Environments.</para>
+		/// <para>When storing a raster dataset to a JPEG format file, a JPEG 2000 format file, a TIFF format file, or a geodatabase, you can specify Compression Type and Compression Quality values in the geoprocessing environments.</para>
 		/// </param>
 		public Clip(object InRaster, object Rectangle, object OutRaster)
 		{
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, Rectangle, OutRaster, InTemplateDataset, NodataValue, ClippingGeometry, MaintainClippingExtent };
+		public override object[] Parameters => new object[] { InRaster, Rectangle, OutRaster, InTemplateDataset!, NodataValue!, ClippingGeometry!, MaintainClippingExtent! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -101,9 +101,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Rectangle</para>
-		/// <para>The four coordinates that define the extent of the bounding box used to clip the raster.</para>
-		/// <para>If the clip extent specified is not aligned with the input raster dataset, the clip tool verifies that the proper alignment is used. This may cause the output to have a slightly different extent than specified in the tool.</para>
-		/// <para>Use the Clear button to reset the rectangle extent to the extent of the input raster dataset.</para>
+		/// <para>The four coordinates that define the extent of the bounding box that will be used to clip the raster.</para>
+		/// <para>If the Output Extent parameter is set, it will automatically populate the x-min, y-min, x-max, and y-max values. Use the Reset button to reset the rectangle extent to the extent of the input raster dataset.</para>
+		/// <para>If the value specified is not aligned with the input raster dataset, the tool verifies that the proper alignment is used. This may cause the output to have a slightly different extent than specified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -111,8 +111,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Raster Dataset</para>
-		/// <para>The name, location, and format of the dataset being created. Make sure that it can support the necessary bit depth.</para>
-		/// <para>When storing the raster dataset in a file format, you need to specify the file extension:</para>
+		/// <para>The name, location, and format of the dataset being created. Ensure that it can support the necessary bit depth.</para>
+		/// <para>When storing the raster dataset in a file format, specify the file extension as follows:</para>
 		/// <para>.bil—Esri BIL</para>
 		/// <para>.bip—Esri BIP</para>
 		/// <para>.bmp—BMP</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>.crf—CRF</para>
 		/// <para>No extension for Esri Grid</para>
 		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset.</para>
-		/// <para>When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a Compression Type and Compression Quality in the geoprocessing Environments.</para>
+		/// <para>When storing a raster dataset to a JPEG format file, a JPEG 2000 format file, a TIFF format file, or a geodatabase, you can specify Compression Type and Compression Quality values in the geoprocessing environments.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -136,12 +136,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Extent</para>
-		/// <para>A raster dataset or feature class to use as the extent. The clip output includes any pixels that intersect the minimum bounding rectangle.</para>
-		/// <para>If a feature class is used as the output extent and you want to clip the raster based on the polygon features, check the Use Input Features for Clipping Geometry parameter. When this parameter is checked, the pixel depth of the output may be promoted. Therefore, make sure that the output format can support the proper pixel depth.</para>
+		/// <para>A raster dataset or feature class that will be used as the extent. The clip output includes pixels that intersect the minimum bounding rectangle.</para>
+		/// <para>If a feature class is used as the output extent and you want to clip the raster based on the polygon features, check the Use Input Features for Clipping Geometry parameter. When this parameter is checked, the pixel depth of the output may be promoted. Ensure that the output format can support the proper pixel depth.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object InTemplateDataset { get; set; }
+		public object? InTemplateDataset { get; set; }
 
 		/// <summary>
 		/// <para>NoData Value</para>
@@ -149,23 +149,23 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object NodataValue { get; set; }
+		public object? NodataValue { get; set; }
 
 		/// <summary>
 		/// <para>Use Input Features for Clipping Geometry</para>
 		/// <para>Specifies whether the data will be clipped to the minimum bounding rectangle or to the geometry of the feature class.</para>
-		/// <para>Unchecked—The minimum bounding rectangle is used to clip the data.</para>
-		/// <para>Checked—The geometry of the selected feature class is used to clip the data. The pixel depth of the output may be increased; therefore, make sure that the output format can support the proper pixel depth.</para>
+		/// <para>Unchecked—The minimum bounding rectangle will be used to clip the data.</para>
+		/// <para>Checked—The geometry of the specified feature class will be used to clip the data. The pixel depth of the output may be increased; ensure that the output format can support the proper pixel depth.</para>
 		/// <para><see cref="ClippingGeometryEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ClippingGeometry { get; set; } = "false";
+		public object? ClippingGeometry { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Maintain Clipping Extent</para>
-		/// <para>Specifies the extent to use in the clipping output.</para>
+		/// <para>Specifies the extent that will be used in the clipping output.</para>
 		/// <para>Checked—The number of columns and rows will be adjusted and the pixels will be resampled to exactly match the clipping extent specified.</para>
 		/// <para>Unchecked—The cell alignment of the input raster will be maintained and the output extent will be adjusted accordingly.</para>
 		/// <para><see cref="MaintainClippingExtentEnum"/></para>
@@ -173,12 +173,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object MaintainClippingExtent { get; set; } = "false";
+		public object? MaintainClippingExtent { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Clip SetEnviroment(object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object nodata = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object pyramid = null , object rasterStatistics = null , object resamplingMethod = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public Clip SetEnviroment(object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? nodata = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? pyramid = null , object? rasterStatistics = null , object? resamplingMethod = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
 			base.SetEnv(compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, nodata: nodata, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, rasterStatistics: rasterStatistics, resamplingMethod: resamplingMethod, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
@@ -192,14 +192,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ClippingGeometryEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The geometry of the selected feature class is used to clip the data. The pixel depth of the output may be increased; therefore, make sure that the output format can support the proper pixel depth.</para>
+			/// <para>Checked—The geometry of the specified feature class will be used to clip the data. The pixel depth of the output may be increased; ensure that the output format can support the proper pixel depth.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ClippingGeometry")]
 			ClippingGeometry,
 
 			/// <summary>
-			/// <para>Unchecked—The minimum bounding rectangle is used to clip the data.</para>
+			/// <para>Unchecked—The minimum bounding rectangle will be used to clip the data.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]

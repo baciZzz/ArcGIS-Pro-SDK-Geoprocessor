@@ -62,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, MultipatchMaterials, Formats, UpdatedFeatures };
+		public override object[] Parameters => new object[] { InFeatures, MultipatchMaterials!, Formats!, UpdatedFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object MultipatchMaterials { get; set; } = "true";
+		public object? MultipatchMaterials { get; set; } = "true";
 
 		/// <summary>
 		/// <para>3D Formats to Remove</para>
@@ -93,22 +93,23 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Khronos Group glTF json (.gltf)—The JSON Graphics Library Transmission format will be removed.</para>
 		/// <para>Khronos Group glTF binary (.glb)—The binary Graphics Library Transmission format will be removed.</para>
 		/// <para>Wavefront (.obj)—The Wavefront format will be removed.</para>
+		/// <para>Autodesk Drawing (.dwg)—The Autodesk drawing format will be removed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Formats { get; set; }
+		public object? Formats { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
-		public object UpdatedFeatures { get; set; }
+		public object? UpdatedFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Remove3DFormats SetEnviroment(object workspace = null )
+		public Remove3DFormats SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

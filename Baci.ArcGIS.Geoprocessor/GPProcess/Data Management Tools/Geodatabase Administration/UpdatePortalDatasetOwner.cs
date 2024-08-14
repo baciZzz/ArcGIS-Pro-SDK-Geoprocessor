@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, TargetOwner, UpdatedDataset };
+		public override object[] Parameters => new object[] { InDataset, TargetOwner, UpdatedDataset! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -88,12 +88,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPUtilityNetworkLayer()]
-		public object UpdatedDataset { get; set; }
+		public object? UpdatedDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public UpdatePortalDatasetOwner SetEnviroment(object workspace = null )
+		public UpdatePortalDatasetOwner SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

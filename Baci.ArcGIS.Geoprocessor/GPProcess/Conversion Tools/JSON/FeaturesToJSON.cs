@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Features To JSON</para>
-	/// <para>Converts features to  JSON or GeoJSON format. The fields, geometry, and spatial reference of  features will be converted to their corresponding  JSON representation and written to a file with a .json or  .geojson extension.</para>
+	/// <para>Converts features to Esri JSON or GeoJSON format. The fields, geometry, and spatial reference of features will be converted to their corresponding JSON representation and written to a file with a .json or .geojson extension.</para>
 	/// </summary>
 	public class FeaturesToJSON : AbstractGPProcess
 	{
@@ -20,11 +20,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The features to convert to JSON.</para>
+		/// <para>The features to convert to JSON format.</para>
 		/// </param>
 		/// <param name="OutJsonFile">
 		/// <para>Output JSON</para>
-		/// <para>The output JSON or GeoJSON file.</para>
+		/// <para>The output .json or .geojson file.</para>
 		/// </param>
 		public FeaturesToJSON(object InFeatures, object OutJsonFile)
 		{
@@ -65,11 +65,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutJsonFile, FormatJson, IncludeZValues, IncludeMValues, Geojson, Outputtowgs84, UseFieldAlias };
+		public override object[] Parameters => new object[] { InFeatures, OutJsonFile, FormatJson!, IncludeZValues!, IncludeMValues!, Geojson!, Outputtowgs84!, UseFieldAlias! };
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The features to convert to JSON.</para>
+		/// <para>The features to convert to JSON format.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output JSON</para>
-		/// <para>The output JSON or GeoJSON file.</para>
+		/// <para>The output .json or .geojson file.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -95,11 +95,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object FormatJson { get; set; } = "false";
+		public object? FormatJson { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Include Z Values</para>
-		/// <para>Specifies whether to include z-values of the features to the JSON.</para>
+		/// <para>Specifies whether the z-values of the features will be included in the JSON.</para>
 		/// <para>Unchecked—The z-values will not be included in geometries, and the hasZ property of the JSON will not be included. This is the default.</para>
 		/// <para>Checked—The z-values will be included in geometries, and the hasZ property of the JSON will be set to true.</para>
 		/// <para><see cref="IncludeZValuesEnum"/></para>
@@ -107,11 +107,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeZValues { get; set; } = "false";
+		public object? IncludeZValues { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Include M Values</para>
-		/// <para>Specifies whether to include m-values of the features to the JSON.</para>
+		/// <para>Specifies whether the m-values of the features will be included in the JSON.</para>
 		/// <para>Unchecked—The m-values will not be included in geometries, and the hasM property of the JSON will not be included. This is the default.</para>
 		/// <para>Checked—The m-values will be included in geometries, and the hasM property of the JSON will be set to true.</para>
 		/// <para><see cref="IncludeMValuesEnum"/></para>
@@ -119,19 +119,19 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncludeMValues { get; set; } = "false";
+		public object? IncludeMValues { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output to GeoJSON</para>
-		/// <para>Specifies whether the output will be created as GeoJSON.</para>
-		/// <para>Unchecked—The output will be created as Esri JSON (.json). This is the default.</para>
-		/// <para>Checked—The output will be created in the GeoJSON format (.geojson).</para>
+		/// <para>Specifies whether the output will be created in GeoJSON format.</para>
+		/// <para>Unchecked—The output will be created in Esri JSON format (.json file). This is the default.</para>
+		/// <para>Checked—The output will be created in GeoJSON format (.geojson file).</para>
 		/// <para><see cref="GeojsonEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Geojson { get; set; } = "false";
+		public object? Geojson { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Project to WGS_1984</para>
@@ -143,24 +143,24 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Outputtowgs84 { get; set; } = "false";
+		public object? Outputtowgs84 { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Use field aliases</para>
 		/// <para>Specifies whether the output file will use field aliases for feature attributes.</para>
-		/// <para>Unchecked—Output feature attributes will use field names. This is the default.</para>
+		/// <para>Unchecked—Output feature attributes will not use field aliases; they will use field names. This is the default.</para>
 		/// <para>Checked—Output feature attributes will use field aliases.</para>
 		/// <para><see cref="UseFieldAliasEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UseFieldAlias { get; set; } = "false";
+		public object? UseFieldAlias { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FeaturesToJSON SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public FeaturesToJSON SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -237,14 +237,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum GeojsonEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The output will be created in the GeoJSON format (.geojson).</para>
+			/// <para>Checked—The output will be created in GeoJSON format (.geojson file).</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("GEOJSON")]
 			GEOJSON,
 
 			/// <summary>
-			/// <para>Unchecked—The output will be created as Esri JSON (.json). This is the default.</para>
+			/// <para>Unchecked—The output will be created in Esri JSON format (.json file). This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_GEOJSON")]
@@ -286,7 +286,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 			USE_FIELD_ALIAS,
 
 			/// <summary>
-			/// <para>Unchecked—Output feature attributes will use field names. This is the default.</para>
+			/// <para>Unchecked—Output feature attributes will not use field aliases; they will use field names. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("USE_FIELD_NAME")]

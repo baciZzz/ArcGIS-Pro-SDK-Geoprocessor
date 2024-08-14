@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, IdField, OutFeatureclass, Curvature, NumberOfPoints, RegionsOfInterest, RoiIdField };
+		public override object[] Parameters => new object[] { InFeatures, IdField, OutFeatureclass, Curvature!, NumberOfPoints!, RegionsOfInterest!, RoiIdField!, IncludeTurnIds!, ExcludeNonTurnEvents!, TurnEventsRepresentation! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -100,20 +100,20 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Curvature</para>
-		/// <para>The minimum value that is necessary for an event to be classified as a turn event. After the curvature is calculated, any calculated curvature greater than this value will cause the turn_event field to be populated with the relevant turn event, while values less than this will cause the turn_event field to be classified as Traveling.</para>
-		/// <para>Turns are calculated using the Curvature and Number Of Points parameters. Each point is evaluated based on the bearing from the previous point in the track to the current point and from the current point to the next point in the track. If the value exceeds the value specified in the Curvature parameter, it is considered a turn. Otherwise, it is considered to be traveling. For tracks representing large objects, it is recommended that you increase the Number Of Points value to account for the longer amount of time to conduct a turn.</para>
+		/// <para>The minimum value that is necessary for an event to be classified as a turn event. After the curvature is calculated, any calculated curvature greater than this value will cause the turn_event field to be populated with the relevant turn event, while values less than this will cause the turn_event field to be classified as traveling.</para>
+		/// <para>Turns are calculated using the Curvature and Number Of Points parameters. Each point is evaluated based on the bearing from the previous point in the track to the current point and from the current point to the next point in the track. If the value exceeds the value specified for the Curvature parameter, it is considered a turn. Otherwise, it is considered to be traveling. For tracks representing large objects, it is recommended that you increase the Number Of Points value to account for the longer amount of time to conduct a turn.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Curvature { get; set; } = "15";
+		public object? Curvature { get; set; } = "15";
 
 		/// <summary>
 		/// <para>Number Of Points</para>
-		/// <para>The number of points that will be evaluated before and after a given point when calculating the bearing difference. When using data with a high sampling rate (subsecond), you may need to increase the Number Of Points parameter value to account for the decreased movement that is possible in that brief time period. A value of 1 is suitable for automobiles and pedestrians assuming a one-second sampling on the input data. Larger values are necessary for aircraft and ships, and a default value of 5 should be used.</para>
+		/// <para>The number of points that will be evaluated before and after a given point when calculating the bearing difference. When using data with a high sampling rate (subsecond), you may need to increase the Number Of Points parameter value to account for the decreased movement that is possible in that brief time period. A value of 1 is suitable for automobiles and pedestrians assuming a one-second sampling on the input data. Larger values are necessary for aircraft and ships; use a value of 5 for these.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object NumberOfPoints { get; set; } = "1";
+		public object? NumberOfPoints { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Regions Of Interest</para>
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object RegionsOfInterest { get; set; }
+		public object? RegionsOfInterest { get; set; }
 
 		/// <summary>
 		/// <para>Regions Of Interest ID Field</para>
@@ -131,16 +131,118 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object RoiIdField { get; set; }
+		public object? RoiIdField { get; set; }
+
+		/// <summary>
+		/// <para>Create Turn Event Identifiers</para>
+		/// <para>Specifies whether turn event identifiers will be created for the output feature class.</para>
+		/// <para>Checked—Unique turn event identifiers will be created.</para>
+		/// <para>Unchecked—Unique turn event identifiers will not be created. This is the default.</para>
+		/// <para><see cref="IncludeTurnIdsEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		public object? IncludeTurnIds { get; set; } = "false";
+
+		/// <summary>
+		/// <para>Exclude Non-Turn Events</para>
+		/// <para>Specifies whether features with a turn_event field value of Traveling will be excluded.</para>
+		/// <para>Checked—Features with a turn_event field value of Traveling will be excluded.</para>
+		/// <para>Unchecked—Features with a turn_event field value of Traveling will not be excluded; all features will be returned. This is the default.</para>
+		/// <para><see cref="ExcludeNonTurnEventsEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		[GPCodedValueDomain()]
+		public object? ExcludeNonTurnEvents { get; set; } = "false";
+
+		/// <summary>
+		/// <para>Turn Events Feature Representation</para>
+		/// <para>Specifies how the output turn events will be represented.</para>
+		/// <para>All features—All points associated with the turn event will be returned. This is the default.</para>
+		/// <para>Turn midpoint—The mean center of the turn event will be returned.</para>
+		/// <para><see cref="TurnEventsRepresentationEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		[GPCodedValueDomain()]
+		public object? TurnEventsRepresentation { get; set; } = "ALL_FEATURES";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ClassifyMovementEvents SetEnviroment(object extent = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object workspace = null )
+		public ClassifyMovementEvents SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;
 		}
 
+		#region InnerClass
+
+		/// <summary>
+		/// <para>Create Turn Event Identifiers</para>
+		/// </summary>
+		public enum IncludeTurnIdsEnum 
+		{
+			/// <summary>
+			/// <para>Checked—Unique turn event identifiers will be created.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("INCLUDE_TURN_IDS")]
+			INCLUDE_TURN_IDS,
+
+			/// <summary>
+			/// <para>Unchecked—Unique turn event identifiers will not be created. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("NO_TURN_IDS")]
+			NO_TURN_IDS,
+
+		}
+
+		/// <summary>
+		/// <para>Exclude Non-Turn Events</para>
+		/// </summary>
+		public enum ExcludeNonTurnEventsEnum 
+		{
+			/// <summary>
+			/// <para>Checked—Features with a turn_event field value of Traveling will be excluded.</para>
+			/// </summary>
+			[GPValue("true")]
+			[Description("ONLY_TURN_EVENTS")]
+			ONLY_TURN_EVENTS,
+
+			/// <summary>
+			/// <para>Unchecked—Features with a turn_event field value of Traveling will not be excluded; all features will be returned. This is the default.</para>
+			/// </summary>
+			[GPValue("false")]
+			[Description("ALL_FEATURES")]
+			ALL_FEATURES,
+
+		}
+
+		/// <summary>
+		/// <para>Turn Events Feature Representation</para>
+		/// </summary>
+		public enum TurnEventsRepresentationEnum 
+		{
+			/// <summary>
+			/// <para>All features—All points associated with the turn event will be returned. This is the default.</para>
+			/// </summary>
+			[GPValue("ALL_FEATURES")]
+			[Description("All features")]
+			All_features,
+
+			/// <summary>
+			/// <para>Turn midpoint—The mean center of the turn event will be returned.</para>
+			/// </summary>
+			[GPValue("TURN_MIDPOINT")]
+			[Description("Turn midpoint")]
+			Turn_midpoint,
+
+		}
+
+#endregion
 	}
 }

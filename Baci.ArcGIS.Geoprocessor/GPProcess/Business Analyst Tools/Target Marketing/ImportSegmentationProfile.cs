@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, SegmentationBase, OutProfile, SegmentIdField, CountField, TotalVolumeField };
+		public override object[] Parameters => new object[] { InTable, SegmentationBase, OutProfile, SegmentIdField, CountField, TotalVolumeField! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -132,14 +132,14 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object TotalVolumeField { get; set; }
+		public object? TotalVolumeField { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportSegmentationProfile SetEnviroment(object workspace = null )
+		public ImportSegmentationProfile SetEnviroment(object? baDataSource = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, workspace: workspace);
 			return this;
 		}
 

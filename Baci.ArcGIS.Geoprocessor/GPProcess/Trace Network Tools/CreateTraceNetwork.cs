@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureDataset, InTraceNetworkName, InputJunctions, InputEdges, OutTraceNetwork };
+		public override object[] Parameters => new object[] { InFeatureDataset, InTraceNetworkName, InputJunctions!, InputEdges!, OutTraceNetwork! };
 
 		/// <summary>
 		/// <para>Input Feature Dataset</para>
@@ -86,16 +86,16 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 
 		/// <summary>
 		/// <para>Input Junctions</para>
-		/// <para>The names of the point feature classes in the feature dataset to include in the trace network.</para>
+		/// <para>The names of the point feature classes in the feature dataset that will be included in the trace network.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object InputJunctions { get; set; }
+		public object? InputJunctions { get; set; }
 
 		/// <summary>
 		/// <para>Input Edges</para>
-		/// <para>The line feature classes and associated connectivity policy to include in the trace network.</para>
-		/// <para>Class Name—The name of the line feature class in the feature dataset to include in the trace network.</para>
+		/// <para>The line feature classes and associated connectivity policy that will be included in the trace network.</para>
+		/// <para>Class Name—The name of the line feature class in the feature dataset that will be included in the trace network.</para>
 		/// <para>Connectivity Policy—The associated connectivity policy of the specified feature class.</para>
 		/// <para>Simple edge—Resources will flow from one end of the edge and out the other end.</para>
 		/// <para>Complex edge—Resources will be siphoned off along the length of the edge.</para>
@@ -103,14 +103,14 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object InputEdges { get; set; }
+		public object? InputEdges { get; set; }
 
 		/// <summary>
 		/// <para>Output Trace Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETraceNetwork()]
-		public object OutTraceNetwork { get; set; }
+		public object? OutTraceNetwork { get; set; }
 
 	}
 }

@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeatures, InputFeaturesToPredict, ExplanatoryVariablesToMatch, DependentVariableMapping, OutputPredictedFeatures, CoefficientTable };
+		public override object[] Parameters => new object[] { InputFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeatures, InputFeaturesToPredict!, ExplanatoryVariablesToMatch!, DependentVariableMapping!, OutputPredictedFeatures!, CoefficientTable! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
 		[Category("Prediction Options")]
-		public object InputFeaturesToPredict { get; set; }
+		public object? InputFeaturesToPredict { get; set; }
 
 		/// <summary>
 		/// <para>Match Explanatory Variables</para>
@@ -151,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[GPValueTable()]
 		[GPCompositeDomain()]
 		[Category("Prediction Options")]
-		public object ExplanatoryVariablesToMatch { get; set; }
+		public object? ExplanatoryVariablesToMatch { get; set; }
 
 		/// <summary>
 		/// <para>Map Dependent Variables</para>
@@ -159,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object DependentVariableMapping { get; set; }
+		public object? DependentVariableMapping { get; set; }
 
 		/// <summary>
 		/// <para>Output Predicted Features</para>
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[Category("Prediction Options")]
-		public object OutputPredictedFeatures { get; set; }
+		public object? OutputPredictedFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Table of Coefficients Features</para>
@@ -176,12 +176,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object CoefficientTable { get; set; }
+		public object? CoefficientTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GeneralizedLinearRegression SetEnviroment(object extent = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object workspace = null )
+		public GeneralizedLinearRegression SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;

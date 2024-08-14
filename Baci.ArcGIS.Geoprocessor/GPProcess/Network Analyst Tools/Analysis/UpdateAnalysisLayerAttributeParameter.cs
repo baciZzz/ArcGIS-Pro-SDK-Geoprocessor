@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkAnalysisLayer, ParameterizedAttribute, AttributeParameterName, AttributeParameterValue, OutputLayer };
+		public override object[] Parameters => new object[] { InNetworkAnalysisLayer, ParameterizedAttribute, AttributeParameterName, AttributeParameterValue!, OutputLayer! };
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer</para>
@@ -115,19 +115,19 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object AttributeParameterValue { get; set; }
+		public object? AttributeParameterValue { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Network Analysis Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPNALayer()]
-		public object OutputLayer { get; set; }
+		public object? OutputLayer { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public UpdateAnalysisLayerAttributeParameter SetEnviroment(object workspace = null )
+		public UpdateAnalysisLayerAttributeParameter SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

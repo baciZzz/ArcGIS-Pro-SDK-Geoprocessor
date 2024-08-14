@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, AggregationDistance, OutTable };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, AggregationDistance, OutTable! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -102,12 +102,12 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETable()]
-		public object OutTable { get; set; } = "output_table";
+		public object? OutTable { get; set; } = "output_table";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AggregatePoints SetEnviroment(object XYResolution = null , object extent = null , object outputZFlag = null , object outputZValue = null )
+		public AggregatePoints SetEnviroment(object? XYResolution = null , object? extent = null , object? outputZFlag = null , double? outputZValue = null )
 		{
 			base.SetEnv(XYResolution: XYResolution, extent: extent, outputZFlag: outputZFlag, outputZValue: outputZValue);
 			return this;

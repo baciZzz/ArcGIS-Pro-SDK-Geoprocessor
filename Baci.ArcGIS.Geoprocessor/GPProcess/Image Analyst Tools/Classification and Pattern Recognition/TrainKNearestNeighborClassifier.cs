@@ -74,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, InTrainingFeatures, OutClassifierDefinition, InAdditionalRaster!, Knn!, MaxSamplesPerClass!, UsedAttributes!, DimensionValueField };
+		public override object[] Parameters => new object[] { InRaster, InTrainingFeatures, OutClassifierDefinition, InAdditionalRaster!, Knn!, MaxSamplesPerClass!, UsedAttributes!, DimensionValueField! };
 
 		/// <summary>
 		/// <para>Input Raster</para>

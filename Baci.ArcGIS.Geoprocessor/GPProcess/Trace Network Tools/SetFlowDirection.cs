@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputTraceNetwork, InEdges, FlowDirection, UpdatedTraceNetwork };
+		public override object[] Parameters => new object[] { InputTraceNetwork, InEdges, FlowDirection, UpdatedTraceNetwork! };
 
 		/// <summary>
 		/// <para>Input Trace Network</para>
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETraceNetwork()]
-		public object UpdatedTraceNetwork { get; set; }
+		public object? UpdatedTraceNetwork { get; set; }
 
 		#region InnerClass
 

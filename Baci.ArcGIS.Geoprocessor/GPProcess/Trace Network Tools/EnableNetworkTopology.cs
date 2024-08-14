@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTraceNetwork, MaxNumberOfErrors, OnlyGenerateErrors, OutTraceNetwork };
+		public override object[] Parameters => new object[] { InTraceNetwork, MaxNumberOfErrors!, OnlyGenerateErrors!, OutTraceNetwork! };
 
 		/// <summary>
 		/// <para>Input Trace Network</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[Category("Advanced Options")]
-		public object MaxNumberOfErrors { get; set; } = "10000";
+		public object? MaxNumberOfErrors { get; set; } = "10000";
 
 		/// <summary>
 		/// <para>Only generate errors</para>
@@ -91,14 +91,14 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object OnlyGenerateErrors { get; set; } = "false";
+		public object? OnlyGenerateErrors { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Updated Trace Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DETraceNetwork()]
-		public object OutTraceNetwork { get; set; }
+		public object? OutTraceNetwork { get; set; }
 
 		#region InnerClass
 

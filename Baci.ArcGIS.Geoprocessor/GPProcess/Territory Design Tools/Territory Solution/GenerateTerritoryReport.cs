@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, Level, ReportType, ReportFolder, ReportTitle, ReportFormat, ComparisonTerritorySolution, ComparisonLevel, OutputReport };
+		public override object[] Parameters => new object[] { InTerritorySolution, Level, ReportType!, ReportFolder!, ReportTitle!, ReportFormat!, ComparisonTerritorySolution!, ComparisonLevel!, OutputReport! };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ReportType { get; set; }
+		public object? ReportType { get; set; }
 
 		/// <summary>
 		/// <para>Output Report Folder</para>
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
-		public object ReportFolder { get; set; }
+		public object? ReportFolder { get; set; }
 
 		/// <summary>
 		/// <para>Report Title</para>
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object ReportTitle { get; set; }
+		public object? ReportTitle { get; set; }
 
 		/// <summary>
 		/// <para>Report Output Formats</para>
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object ReportFormat { get; set; }
+		public object? ReportFormat { get; set; }
 
 		/// <summary>
 		/// <para>Comparison Territory Solution</para>
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object ComparisonTerritorySolution { get; set; }
+		public object? ComparisonTerritorySolution { get; set; }
 
 		/// <summary>
 		/// <para>Comparison Level</para>
@@ -139,19 +139,19 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ComparisonLevel { get; set; }
+		public object? ComparisonLevel { get; set; }
 
 		/// <summary>
 		/// <para>Output Report</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
-		public object OutputReport { get; set; }
+		public object? OutputReport { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateTerritoryReport SetEnviroment(object workspace = null )
+		public GenerateTerritoryReport SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

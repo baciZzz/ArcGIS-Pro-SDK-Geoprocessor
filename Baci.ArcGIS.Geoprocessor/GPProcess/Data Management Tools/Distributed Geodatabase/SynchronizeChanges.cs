@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Geodatabase1, InReplica, Geodatabase2, InDirection, ConflictPolicy, ConflictDefinition, Reconcile, OutGeodatabase1, OutGeodatabase2 };
+		public override object[] Parameters => new object[] { Geodatabase1, InReplica, Geodatabase2, InDirection, ConflictPolicy, ConflictDefinition, Reconcile, OutGeodatabase1!, OutGeodatabase2! };
 
 		/// <summary>
 		/// <para>Geodatabase 1</para>
@@ -112,6 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
+		[GPCompositeDomain()]
 		public object Geodatabase1 { get; set; }
 
 		/// <summary>
@@ -128,6 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
+		[GPCompositeDomain()]
 		public object Geodatabase2 { get; set; }
 
 		/// <summary>
@@ -185,19 +187,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutGeodatabase1 { get; set; }
+		public object? OutGeodatabase1 { get; set; }
 
 		/// <summary>
 		/// <para>Output Geodatabase 2</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutGeodatabase2 { get; set; }
+		public object? OutGeodatabase2 { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SynchronizeChanges SetEnviroment(object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public SynchronizeChanges SetEnviroment(object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -291,8 +293,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			/// <para>Checked—Reconcile with the parent version.</para>
 			/// </summary>
 			[GPValue("true")]
-			[Description("RECONCILE ")]
-			RECONCILE_,
+			[Description("RECONCILE")]
+			RECONCILE,
 
 			/// <summary>
 			/// <para>Unchecked—Do not reconcile with the parent version. This is the default.</para>

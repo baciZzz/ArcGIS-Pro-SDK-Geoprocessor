@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, FieldsToVariables, OutNetcdfFile, FieldsToDimensions };
+		public override object[] Parameters => new object[] { InTable, FieldsToVariables, OutNetcdfFile, FieldsToDimensions! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -112,12 +112,12 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object FieldsToDimensions { get; set; }
+		public object? FieldsToDimensions { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TableToNetCDF SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public TableToNetCDF SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause, AppendToExisting, SimplificationMethod, OutMosaicDataset };
+		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause!, AppendToExisting!, SimplificationMethod!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Append To Existing Boundary</para>
@@ -89,34 +89,34 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object AppendToExisting { get; set; } = "false";
+		public object? AppendToExisting { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Simplification Method</para>
-		/// <para>The simplification method reduces the number of vertices, since a dense boundary can affect performance.</para>
-		/// <para>Choose which simplification method to use to simplify the boundary.</para>
+		/// <para>Specifies the simplification method that will be used to reduce the number of vertices, since a dense boundary can affect performance.</para>
+		/// <para>Choose the simplification method to use to simplify the boundary.</para>
 		/// <para>None—No simplification method will be implemented. This is the default.</para>
-		/// <para>Convex hull—The minimum bounding geometry of the mosaic dataset will be used to simplify the boundary. If there are any footprints that are disconnected, a minimum bounding geometry for each continuous group of footprints will be used to simplify the boundary.</para>
-		/// <para>Envelope—The envelope of the mosaic dataset will provide a simplified boundary. If there are any footprints that are disconnected, an envelope for each continuous group of footprints will be used to simplify the boundary.</para>
+		/// <para>Convex hull—The minimum bounding geometry of the mosaic dataset will be used to simplify the boundary. If there are disconnected footprints, a minimum bounding geometry for each continuous group of footprints will be used to simplify the boundary.</para>
+		/// <para>Envelope—The envelope of the mosaic dataset will provide a simplified boundary. If there are disconnected footprints, an envelope for each continuous group of footprints will be used to simplify the boundary.</para>
 		/// <para><see cref="SimplificationMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Advanced Options")]
-		public object SimplificationMethod { get; set; } = "NONE";
+		public object? SimplificationMethod { get; set; } = "NONE";
 
 		/// <summary>
 		/// <para>Updated Input Mosaic Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutMosaicDataset { get; set; }
+		public object? OutMosaicDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BuildBoundary SetEnviroment(object parallelProcessingFactor = null )
+		public BuildBoundary SetEnviroment(object? parallelProcessingFactor = null )
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;
@@ -158,14 +158,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			None,
 
 			/// <summary>
-			/// <para>Convex hull—The minimum bounding geometry of the mosaic dataset will be used to simplify the boundary. If there are any footprints that are disconnected, a minimum bounding geometry for each continuous group of footprints will be used to simplify the boundary.</para>
+			/// <para>Convex hull—The minimum bounding geometry of the mosaic dataset will be used to simplify the boundary. If there are disconnected footprints, a minimum bounding geometry for each continuous group of footprints will be used to simplify the boundary.</para>
 			/// </summary>
 			[GPValue("CONVEX_HULL")]
 			[Description("Convex hull")]
 			Convex_hull,
 
 			/// <summary>
-			/// <para>Envelope—The envelope of the mosaic dataset will provide a simplified boundary. If there are any footprints that are disconnected, an envelope for each continuous group of footprints will be used to simplify the boundary.</para>
+			/// <para>Envelope—The envelope of the mosaic dataset will provide a simplified boundary. If there are disconnected footprints, an envelope for each continuous group of footprints will be used to simplify the boundary.</para>
 			/// </summary>
 			[GPValue("ENVELOPE")]
 			[Description("Envelope")]

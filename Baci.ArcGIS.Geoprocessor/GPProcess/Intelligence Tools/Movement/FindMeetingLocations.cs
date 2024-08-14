@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutAreaFeatures, OutPointFeatures, UniqueNameField, SearchDistance, MinimumLoiterTime };
+		public override object[] Parameters => new object[] { InFeatures, OutAreaFeatures, OutPointFeatures, UniqueNameField, SearchDistance!, MinimumLoiterTime!, TemporalRelationship!, MinMeetingDuration!, MaxMeetingDuration! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object SearchDistance { get; set; } = "100 Meters";
+		public object? SearchDistance { get; set; } = "100 Meters";
 
 		/// <summary>
 		/// <para>Minimum Loiter Time</para>
@@ -125,16 +125,71 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
-		public object MinimumLoiterTime { get; set; } = "10 Minutes";
+		[GPUnitDomain()]
+		public object? MinimumLoiterTime { get; set; } = "10 Minutes";
+
+		/// <summary>
+		/// <para>Temporal Relationship</para>
+		/// <para>Specifies the time criteria that will be used to match features.</para>
+		/// <para>Overlaps—When a target time interval starts and ends before the start and end of the join time interval, the target time will overlap the join time.</para>
+		/// <para>Intersects—When any part of a target time occurs at the same time as the join time, the target time will intersect the join time. This is the default.</para>
+		/// <para><see cref="TemporalRelationshipEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		[GPCodedValueDomain()]
+		public object? TemporalRelationship { get; set; } = "INTERSECTS";
+
+		/// <summary>
+		/// <para>Minimum Meeting Duration</para>
+		/// <para>The minimum meeting duration that will be used for the meeting to be included in the output.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPTimeUnit()]
+		[GPUnitDomain()]
+		public object? MinMeetingDuration { get; set; }
+
+		/// <summary>
+		/// <para>Maximum Meeting Duration</para>
+		/// <para>The maximum meeting duration that will be used for the meeting to be included in the output.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPTimeUnit()]
+		[GPUnitDomain()]
+		public object? MaxMeetingDuration { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FindMeetingLocations SetEnviroment(object extent = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object workspace = null )
+		public FindMeetingLocations SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;
 		}
 
+		#region InnerClass
+
+		/// <summary>
+		/// <para>Temporal Relationship</para>
+		/// </summary>
+		public enum TemporalRelationshipEnum 
+		{
+			/// <summary>
+			/// <para>Overlaps—When a target time interval starts and ends before the start and end of the join time interval, the target time will overlap the join time.</para>
+			/// </summary>
+			[GPValue("OVERLAPS")]
+			[Description("Overlaps")]
+			Overlaps,
+
+			/// <summary>
+			/// <para>Intersects—When any part of a target time occurs at the same time as the join time, the target time will intersect the join time. This is the default.</para>
+			/// </summary>
+			[GPValue("INTERSECTS")]
+			[Description("Intersects")]
+			Intersects,
+
+		}
+
+#endregion
 	}
 }

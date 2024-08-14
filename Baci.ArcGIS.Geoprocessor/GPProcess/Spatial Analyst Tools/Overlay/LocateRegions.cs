@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, TotalArea, AreaUnits, NumberOfRegions, RegionShape, RegionOrientation, ShapeTradeoff, EvaluationMethod, MinimumArea, MaximumArea, MinimumDistance, MaximumDistance, DistanceUnits, InExistingRegions, NumberOfNeighbors, NoIslands, RegionSeeds, RegionResolution, SelectionMethod };
+		public override object[] Parameters => new object[] { InRaster, OutRaster, TotalArea!, AreaUnits!, NumberOfRegions!, RegionShape!, RegionOrientation!, ShapeTradeoff!, EvaluationMethod!, MinimumArea!, MaximumArea!, MinimumDistance!, MaximumDistance!, DistanceUnits!, InExistingRegions!, NumberOfNeighbors!, NoIslands!, RegionSeeds!, RegionResolution!, SelectionMethod! };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object TotalArea { get; set; }
+		public object? TotalArea { get; set; }
 
 		/// <summary>
 		/// <para>Area units</para>
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object AreaUnits { get; set; } = "SQUARE_MAP_UNITS";
+		public object? AreaUnits { get; set; } = "SQUARE_MAP_UNITS";
 
 		/// <summary>
 		/// <para>Number of regions</para>
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
-		public object NumberOfRegions { get; set; } = "1";
+		public object? NumberOfRegions { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Region shape</para>
@@ -165,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object RegionShape { get; set; } = "CIRCLE";
+		public object? RegionShape { get; set; } = "CIRCLE";
 
 		/// <summary>
 		/// <para>Region orientation</para>
@@ -177,7 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object RegionOrientation { get; set; } = "0";
+		public object? RegionOrientation { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Shape/Utility tradeoff (%)</para>
@@ -188,7 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object ShapeTradeoff { get; set; } = "50";
+		public object? ShapeTradeoff { get; set; } = "50";
 
 		/// <summary>
 		/// <para>Evaluation method</para>
@@ -207,7 +207,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object EvaluationMethod { get; set; } = "HIGHEST_AVERAGE_VALUE";
+		public object? EvaluationMethod { get; set; } = "HIGHEST_AVERAGE_VALUE";
 
 		/// <summary>
 		/// <para>Region minimum area</para>
@@ -217,7 +217,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object MinimumArea { get; set; }
+		public object? MinimumArea { get; set; }
 
 		/// <summary>
 		/// <para>Region maximum area</para>
@@ -227,7 +227,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object MaximumArea { get; set; }
+		public object? MaximumArea { get; set; }
 
 		/// <summary>
 		/// <para>Minimum distance between regions</para>
@@ -238,7 +238,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object MinimumDistance { get; set; }
+		public object? MinimumDistance { get; set; }
 
 		/// <summary>
 		/// <para>Maximum distance between regions</para>
@@ -250,7 +250,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object MaximumDistance { get; set; }
+		public object? MaximumDistance { get; set; }
 
 		/// <summary>
 		/// <para>Distance units</para>
@@ -268,7 +268,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DistanceUnits { get; set; } = "MAP_UNITS";
+		public object? DistanceUnits { get; set; } = "MAP_UNITS";
 
 		/// <summary>
 		/// <para>Input raster or feature of existing regions</para>
@@ -279,7 +279,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
 		[GPSAGeoDataDomain()]
-		public object InExistingRegions { get; set; }
+		public object? InExistingRegions { get; set; }
 
 		/// <summary>
 		/// <para>Number of neighbors to use in growth</para>
@@ -293,7 +293,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Region growth and search parameters")]
-		public object NumberOfNeighbors { get; set; } = "EIGHT";
+		public object? NumberOfNeighbors { get; set; } = "EIGHT";
 
 		/// <summary>
 		/// <para>Islands not allowed in regions</para>
@@ -306,7 +306,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Region growth and search parameters")]
-		public object NoIslands { get; set; } = "true";
+		public object? NoIslands { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Number of seeds to grow from</para>
@@ -323,7 +323,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Region growth and search parameters")]
-		public object RegionSeeds { get; set; } = "AUTO";
+		public object? RegionSeeds { get; set; } = "AUTO";
 
 		/// <summary>
 		/// <para>Resolution of the growth</para>
@@ -343,7 +343,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Region growth and search parameters")]
-		public object RegionResolution { get; set; } = "AUTO";
+		public object? RegionResolution { get; set; } = "AUTO";
 
 		/// <summary>
 		/// <para>Region selection method</para>
@@ -358,14 +358,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Region growth and search parameters")]
-		public object SelectionMethod { get; set; } = "AUTO";
+		public object? SelectionMethod { get; set; } = "AUTO";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LocateRegions SetEnviroment(int? autoCommit = null , object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object rasterStatistics = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public LocateRegions SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? rasterStatistics = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, rasterStatistics: rasterStatistics, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, rasterStatistics: rasterStatistics, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 

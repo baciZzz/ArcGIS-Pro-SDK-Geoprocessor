@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { GeographyLevel, OutFeatureClass, InputType, InIdsTable, GeographyKeyField, IdsList, SummarizeDuplicates, GroupField, DissolveOutput };
+		public override object[] Parameters => new object[] { GeographyLevel, OutFeatureClass, InputType!, InIdsTable!, GeographyKeyField!, IdsList!, SummarizeDuplicates!, GroupField!, DissolveOutput! };
 
 		/// <summary>
 		/// <para>Geography Level</para>
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object InputType { get; set; } = "LIST";
+		public object? InputType { get; set; } = "LIST";
 
 		/// <summary>
 		/// <para>Geography IDs Table</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
-		public object InIdsTable { get; set; }
+		public object? InIdsTable { get; set; }
 
 		/// <summary>
 		/// <para>Geography Key Field</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object GeographyKeyField { get; set; }
+		public object? GeographyKeyField { get; set; }
 
 		/// <summary>
 		/// <para>Geography IDs List</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object IdsList { get; set; }
+		public object? IdsList { get; set; }
 
 		/// <summary>
 		/// <para>Summarize Duplicate IDs</para>
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SummarizeDuplicates { get; set; } = "false";
+		public object? SummarizeDuplicates { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Group Field</para>
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object GroupField { get; set; }
+		public object? GroupField { get; set; }
 
 		/// <summary>
 		/// <para>Dissolve Output Features</para>
@@ -152,14 +152,14 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object DissolveOutput { get; set; } = "false";
+		public object? DissolveOutput { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public StandardGeographyTA SetEnviroment(object workspace = null )
+		public StandardGeographyTA SetEnviroment(object? baDataSource = null , object? workspace = null )
 		{
-			base.SetEnv(workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, workspace: workspace);
 			return this;
 		}
 

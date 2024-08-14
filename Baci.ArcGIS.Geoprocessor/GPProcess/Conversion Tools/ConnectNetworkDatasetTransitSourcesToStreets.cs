@@ -74,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetFeatureDataset, InStreetsFeatures, SearchDistance, Expression!, UpdatedTargetFeatureDataset!, UpdatedInStreetsFeatures!, UpdatedInStops!, OutputStopsOnStreets!, OutputStopConnectors };
+		public override object[] Parameters => new object[] { TargetFeatureDataset, InStreetsFeatures, SearchDistance, Expression!, UpdatedTargetFeatureDataset!, UpdatedInStreetsFeatures!, UpdatedInStops!, OutputStopsOnStreets!, OutputStopConnectors! };
 
 		/// <summary>
 		/// <para>Target Feature Dataset</para>

@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Check Geometry</para>
-	/// <para>Generates a report of the geometry problems in a feature class.</para>
+	/// <para>Generates a report of geometry problems in a feature class.</para>
 	/// </summary>
 	public class CheckGeometry : AbstractGPProcess
 	{
@@ -20,7 +20,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>One or more feature classes or feature layers to check for geometry problems.</para>
+		/// <para>The feature class or layer to be processed.</para>
+		/// <para>A Desktop Basic license only allows shapefiles and feature classes stored in a file geodatabase, GeoPackage, or SpatiaLite database as valid input feature formats. A Desktop Standard or Desktop Advanced license also allows feature classes stored in an enterprise database or enterprise geodatabase to be used as valid input feature formats.</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
@@ -60,16 +61,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "configKeyword", "extent", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutTable, ValidationMethod };
+		public override object[] Parameters => new object[] { InFeatures, OutTable, ValidationMethod! };
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>One or more feature classes or feature layers to check for geometry problems.</para>
+		/// <para>The feature class or layer to be processed.</para>
+		/// <para>A Desktop Basic license only allows shapefiles and feature classes stored in a file geodatabase, GeoPackage, or SpatiaLite database as valid input feature formats. A Desktop Standard or Desktop Advanced license also allows feature classes stored in an enterprise database or enterprise geodatabase to be used as valid input feature formats.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -86,21 +88,21 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Validation Method</para>
 		/// <para>Specifies the geometry validation method that will be used to identify geometry problems.</para>
-		/// <para>Esri—Esri geometry validation method will be used. This is the default.</para>
-		/// <para>OGC— Open Geospatial Consortium (OGC) geometry validation method will be used.</para>
+		/// <para>Esri—The Esri geometry validation method will be used. This is the default.</para>
+		/// <para>OGC—The OGC geometry validation method will be used.</para>
 		/// <para><see cref="ValidationMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ValidationMethod { get; set; } = "ESRI";
+		public object? ValidationMethod { get; set; } = "ESRI";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CheckGeometry SetEnviroment(object configKeyword = null , object extent = null , object scratchWorkspace = null , object workspace = null )
+		public CheckGeometry SetEnviroment(object? configKeyword = null , object? extent = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? workspace = null )
 		{
-			base.SetEnv(configKeyword: configKeyword, extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
+			base.SetEnv(configKeyword: configKeyword, extent: extent, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
 		}
 
@@ -112,14 +114,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ValidationMethodEnum 
 		{
 			/// <summary>
-			/// <para>Esri—Esri geometry validation method will be used. This is the default.</para>
+			/// <para>Esri—The Esri geometry validation method will be used. This is the default.</para>
 			/// </summary>
 			[GPValue("ESRI")]
 			[Description("Esri")]
 			Esri,
 
 			/// <summary>
-			/// <para>OGC— Open Geospatial Consortium (OGC) geometry validation method will be used.</para>
+			/// <para>OGC—The OGC geometry validation method will be used.</para>
 			/// </summary>
 			[GPValue("OGC")]
 			[Description("OGC")]

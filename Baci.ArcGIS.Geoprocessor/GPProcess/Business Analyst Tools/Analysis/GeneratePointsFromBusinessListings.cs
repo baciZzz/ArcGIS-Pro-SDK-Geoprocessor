@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutFeatureClass, InSearchFeatures, SearchTerms, ExactMatch, MatchNameOnly, Filters, MaxCount, BusinessDataset };
+		public override object[] Parameters => new object[] { OutFeatureClass, InSearchFeatures!, SearchTerms!, ExactMatch!, MatchNameOnly!, Filters!, MaxCount!, BusinessDataset! };
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
-		public object InSearchFeatures { get; set; }
+		public object? InSearchFeatures { get; set; }
 
 		/// <summary>
 		/// <para>Search Terms</para>
@@ -85,31 +85,31 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object SearchTerms { get; set; }
+		public object? SearchTerms { get; set; }
 
 		/// <summary>
 		/// <para>Include Only Exact Matches</para>
-		/// <para>Specifies whether only the text entered in the Search Terms parameter will be returned from the search.</para>
-		/// <para>Checked—Only exact matches to the text entered in the Search Terms parameter will be returned.</para>
-		/// <para>Unchecked—Partial matches to the text entered in the Search Terms parameter as well as exact matches will be returned. This is the default.</para>
+		/// <para>Specifies whether only the text provided for the Search Terms parameter will be returned from the search.</para>
+		/// <para>Checked—Only exact matches to the text provided for the Search Terms parameter will be returned.</para>
+		/// <para>Unchecked—Partial matches to the text provided for the Search Terms parameter as well as exact matches will be returned. This is the default.</para>
 		/// <para><see cref="ExactMatchEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ExactMatch { get; set; } = "false";
+		public object? ExactMatch { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Match Business or Facility Name Only</para>
 		/// <para>Specifies whether the search will be limited to the business name only.</para>
-		/// <para>Checked—Only exact matches to the business name entered in the Search Terms parameter will be returned.</para>
-		/// <para>Unchecked—Partial matches to the business name entered in the Search Terms parameter as well as exact matches will be returned. This is the default.</para>
+		/// <para>Checked—Only exact matches to the business name provided for the Search Terms parameter will be returned.</para>
+		/// <para>Unchecked—Partial matches to the business name provided for the Search Terms parameter as well as exact matches will be returned. This is the default.</para>
 		/// <para><see cref="MatchNameOnlyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object MatchNameOnly { get; set; } = "false";
+		public object? MatchNameOnly { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Filters</para>
@@ -121,15 +121,16 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object Filters { get; set; }
+		public object? Filters { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Number of Points to Return</para>
 		/// <para>The limit for the number of returned features. The default value is 1000000.</para>
+		/// <para>There is a 5000 record limit when using online data.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MaxCount { get; set; } = "1000000";
+		public object? MaxCount { get; set; } = "1000000";
 
 		/// <summary>
 		/// <para>Business Dataset</para>
@@ -137,14 +138,14 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object BusinessDataset { get; set; }
+		public object? BusinessDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GeneratePointsFromBusinessListings SetEnviroment(object extent = null , object workspace = null )
+		public GeneratePointsFromBusinessListings SetEnviroment(object? baDataSource = null , object? extent = null , object? workspace = null )
 		{
-			base.SetEnv(extent: extent, workspace: workspace);
+			base.SetEnv(baDataSource: baDataSource, extent: extent, workspace: workspace);
 			return this;
 		}
 
@@ -156,14 +157,14 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		public enum ExactMatchEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Only exact matches to the text entered in the Search Terms parameter will be returned.</para>
+			/// <para>Checked—Only exact matches to the text provided for the Search Terms parameter will be returned.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EXACT_MATCH")]
 			EXACT_MATCH,
 
 			/// <summary>
-			/// <para>Unchecked—Partial matches to the text entered in the Search Terms parameter as well as exact matches will be returned. This is the default.</para>
+			/// <para>Unchecked—Partial matches to the text provided for the Search Terms parameter as well as exact matches will be returned. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("PARTIAL_MATCH")]
@@ -177,14 +178,14 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		public enum MatchNameOnlyEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Only exact matches to the business name entered in the Search Terms parameter will be returned.</para>
+			/// <para>Checked—Only exact matches to the business name provided for the Search Terms parameter will be returned.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MATCH_NAME_ONLY")]
 			MATCH_NAME_ONLY,
 
 			/// <summary>
-			/// <para>Unchecked—Partial matches to the business name entered in the Search Terms parameter as well as exact matches will be returned. This is the default.</para>
+			/// <para>Unchecked—Partial matches to the business name provided for the Search Terms parameter as well as exact matches will be returned. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("MATCH_ALL_FIELDS")]

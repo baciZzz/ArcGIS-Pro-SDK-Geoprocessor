@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="InParcelFeatures">
 		/// <para>Parcel Features</para>
-		/// <para>The input parcel features that will be used to create parcel records. The input parcel features can be from a parcel fabric in a file geodatabase or an enterprise geodatabase.</para>
+		/// <para>The input parcel features that will be used to create parcel records. The input parcel features can be from a parcel fabric in a file, enterprise, or mobile geodatabase.</para>
 		/// </param>
 		public CreateParcelRecords(object InParcelFeatures)
 		{
@@ -60,11 +60,11 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InParcelFeatures, RecordField, OutRecordFeatureClass, UpdatedParcelFabric, RecordExpression, RecordNameMethod };
+		public override object[] Parameters => new object[] { InParcelFeatures, RecordField!, OutRecordFeatureClass!, UpdatedParcelFabric!, RecordExpression!, RecordNameMethod! };
 
 		/// <summary>
 		/// <para>Parcel Features</para>
-		/// <para>The input parcel features that will be used to create parcel records. The input parcel features can be from a parcel fabric in a file geodatabase or an enterprise geodatabase.</para>
+		/// <para>The input parcel features that will be used to create parcel records. The input parcel features can be from a parcel fabric in a file, enterprise, or mobile geodatabase.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -78,21 +78,21 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object RecordField { get; set; }
+		public object? RecordField { get; set; }
 
 		/// <summary>
 		/// <para>Output Records Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutRecordFeatureClass { get; set; }
+		public object? OutRecordFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Updated Parcel Fabric</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEParcelDataset()]
-		public object UpdatedParcelFabric { get; set; }
+		public object? UpdatedParcelFabric { get; set; }
 
 		/// <summary>
 		/// <para>Record Expression</para>
@@ -100,11 +100,11 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCalculatorExpression()]
-		public object RecordExpression { get; set; }
+		public object? RecordExpression { get; set; }
 
 		/// <summary>
 		/// <para>Record Name Method</para>
-		/// <para>Specifies the method to use to create parcel records.</para>
+		/// <para>Specifies the method that will be used to create parcel records.</para>
 		/// <para>Field—Parcel records will be created using record names from a text field on the input parcel features. This is the default.</para>
 		/// <para>Expression—Parcel records will be created using an Arcade expression.</para>
 		/// <para><see cref="RecordNameMethodEnum"/></para>
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object RecordNameMethod { get; set; } = "FIELD";
+		public object? RecordNameMethod { get; set; } = "FIELD";
 
 		#region InnerClass
 

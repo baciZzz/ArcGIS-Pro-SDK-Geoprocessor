@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Skyline Graph</para>
-	/// <para>Calculates sky visibility and generates an optional table and polar graph.</para>
+	/// <para>Calculates the sky visibility ratio and generates an optional table and a polar graph.</para>
 	/// </summary>
 	public class SkylineGraph : AbstractGPProcess
 	{
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InObserverPointFeatures, InLineFeatures, BaseVisibilityAngle, AdditionalFields, OutAnglesTable, OutGraph, OutVisibilityRatio };
+		public override object[] Parameters => new object[] { InObserverPointFeatures, InLineFeatures, BaseVisibilityAngle!, AdditionalFields!, OutAnglesTable!, OutGraph!, OutVisibilityRatio!, OutImageFile! };
 
 		/// <summary>
 		/// <para>Input Observer Point Features</para>
@@ -87,31 +87,31 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Base  Visibility Angle</para>
-		/// <para>The baseline vertical angle that is used for calculating the percentage of visible sky. 0 is the horizon, 90 is straight up; -90 is straight down. The default is 0.</para>
+		/// <para>The baseline vertical angle that will be used to calculate the percentage of visible sky. Zero is the horizon, 90 is straight up; -90 is straight down. The default is 0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object BaseVisibilityAngle { get; set; } = "0";
+		public object? BaseVisibilityAngle { get; set; } = "0";
 
 		/// <summary>
 		/// <para>Additional Fields</para>
-		/// <para>Indicates whether additional fields will be added to the angles table.</para>
-		/// <para>Unchecked—Additional fields will not be added. This is the default.</para>
-		/// <para>Checked—Additional fields will be added.</para>
+		/// <para>Specifies whether additional fields will be included in the angles table.</para>
+		/// <para>Unchecked—Additional fields will not be included. This is the default.</para>
+		/// <para>Checked—Additional fields will be included.</para>
 		/// <para><see cref="AdditionalFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AdditionalFields { get; set; } = "false";
+		public object? AdditionalFields { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Angles Table</para>
-		/// <para>The table to be created for outputting the angles.</para>
+		/// <para>The table to be created for outputting the horizontal and vertical angles from the observer point to each of the vertices on the skyline.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object OutAnglesTable { get; set; }
+		public object? OutAnglesTable { get; set; }
 
 		/// <summary>
 		/// <para>Output Graph Name</para>
@@ -119,19 +119,28 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGraph()]
-		public object OutGraph { get; set; }
+		public object? OutGraph { get; set; }
 
 		/// <summary>
 		/// <para>Visibility Ratio</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPDouble()]
-		public object OutVisibilityRatio { get; set; } = "0";
+		public object? OutVisibilityRatio { get; set; } = "0";
+
+		/// <summary>
+		/// <para>Output Graph Image</para>
+		/// <para>The image of the polar chart depicting the radial view of the visible skyline. The image can be created in PNG, JPG, JPEG or SVG format.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[DEFile()]
+		[GPFileDomain()]
+		public object? OutImageFile { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SkylineGraph SetEnviroment(object extent = null , object geographicTransformations = null , object workspace = null )
+		public SkylineGraph SetEnviroment(object? extent = null , object? geographicTransformations = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, workspace: workspace);
 			return this;
@@ -145,14 +154,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum AdditionalFieldsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Additional fields will be added.</para>
+			/// <para>Checked—Additional fields will be included.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADDITIONAL_FIELDS")]
 			ADDITIONAL_FIELDS,
 
 			/// <summary>
-			/// <para>Unchecked—Additional fields will not be added. This is the default.</para>
+			/// <para>Unchecked—Additional fields will not be included. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ADDITIONAL_FIELDS")]

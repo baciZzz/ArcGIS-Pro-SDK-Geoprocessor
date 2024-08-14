@@ -25,8 +25,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>The table containing the fields to be deleted. The existing input table will be modified.</para>
 		/// </param>
 		/// <param name="DropField">
-		/// <para>Drop Field</para>
-		/// <para>The fields to be dropped from the input table. Only nonrequired fields may be deleted.</para>
+		/// <para>Field(s)</para>
+		/// <para>The fields to be deleted or kept from the input table, as specified by the Method parameter. Only nonrequired fields can be deleted.</para>
 		/// </param>
 		public DeleteField(object InTable, object DropField)
 		{
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, DropField, OutTable };
+		public override object[] Parameters => new object[] { InTable, DropField, OutTable!, Method! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -79,8 +79,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public object InTable { get; set; }
 
 		/// <summary>
-		/// <para>Drop Field</para>
-		/// <para>The fields to be dropped from the input table. Only nonrequired fields may be deleted.</para>
+		/// <para>Field(s)</para>
+		/// <para>The fields to be deleted or kept from the input table, as specified by the Method parameter. Only nonrequired fields can be deleted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -92,16 +92,52 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
+
+		/// <summary>
+		/// <para>Method</para>
+		/// <para>Specifies whether the fields specified by the Field(s) parameter will be deleted or kept.</para>
+		/// <para>Delete Fields—The fields specified by the Field(s) parameter will be deleted. This is the default.</para>
+		/// <para>Keep Fields—The fields specified by the Field(s) parameter will be kept; all other fields will be deleted.</para>
+		/// <para><see cref="MethodEnum"/></para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPString()]
+		[GPCodedValueDomain()]
+		public object? Method { get; set; } = "DELETE_FIELDS";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DeleteField SetEnviroment(object workspace = null )
+		public DeleteField SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
 		}
 
+		#region InnerClass
+
+		/// <summary>
+		/// <para>Method</para>
+		/// </summary>
+		public enum MethodEnum 
+		{
+			/// <summary>
+			/// <para>Delete Fields—The fields specified by the Field(s) parameter will be deleted. This is the default.</para>
+			/// </summary>
+			[GPValue("DELETE_FIELDS")]
+			[Description("Delete Fields")]
+			Delete_Fields,
+
+			/// <summary>
+			/// <para>Keep Fields—The fields specified by the Field(s) parameter will be kept; all other fields will be deleted.</para>
+			/// </summary>
+			[GPValue("KEEP_FIELDS")]
+			[Description("Keep Fields")]
+			Keep_Fields,
+
+		}
+
+#endregion
 	}
 }

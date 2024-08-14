@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, GeometryType, GroupOption, GroupField, MbgFieldsOption };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, GeometryType!, GroupOption!, GroupField!, MbgFieldsOption! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -91,13 +91,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Rectangle by width—The rectangle of the smallest width enclosing an input feature.</para>
 		/// <para>Convex hull—The smallest convex polygon enclosing an input feature.</para>
 		/// <para>Circle—The smallest circle enclosing an input feature envelope.</para>
-		/// <para>Envelope—The of an input feature.</para>
+		/// <para>Envelope—The envelope of an input feature.</para>
 		/// <para><see cref="GeometryTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object GeometryType { get; set; } = "RECTANGLE_BY_AREA";
+		public object? GeometryType { get; set; } = "RECTANGLE_BY_AREA";
 
 		/// <summary>
 		/// <para>Group Option</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object GroupOption { get; set; } = "NONE";
+		public object? GroupOption { get; set; } = "NONE";
 
 		/// <summary>
 		/// <para>Group Field(s)</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
-		public object GroupField { get; set; }
+		public object? GroupField { get; set; }
 
 		/// <summary>
 		/// <para>Add geometry characteristics as attributes to output</para>
@@ -131,12 +131,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object MbgFieldsOption { get; set; } = "false";
+		public object? MbgFieldsOption { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MinimumBoundingGeometry SetEnviroment(object MDomain = null , object MResolution = null , object MTolerance = null , object XYResolution = null , object XYTolerance = null , object ZDomain = null , object ZResolution = null , object ZTolerance = null , object extent = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null , object scratchWorkspace = null , object workspace = null )
+		public MinimumBoundingGeometry SetEnviroment(object? MDomain = null , double? MResolution = null , double? MTolerance = null , object? XYResolution = null , object? XYTolerance = null , object? ZDomain = null , object? ZResolution = null , object? ZTolerance = null , object? extent = null , object? outputCoordinateSystem = null , object? outputMFlag = null , object? outputZFlag = null , double? outputZValue = null , object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(MDomain: MDomain, MResolution: MResolution, MTolerance: MTolerance, XYResolution: XYResolution, XYTolerance: XYTolerance, ZDomain: ZDomain, ZResolution: ZResolution, ZTolerance: ZTolerance, extent: extent, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -178,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			Circle,
 
 			/// <summary>
-			/// <para>Envelope—The of an input feature.</para>
+			/// <para>Envelope—The envelope of an input feature.</para>
 			/// </summary>
 			[GPValue("ENVELOPE")]
 			[Description("Envelope")]

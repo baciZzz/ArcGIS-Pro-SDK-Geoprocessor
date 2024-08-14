@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSasDataset, OutTable, UseCasConnection, Hostname, Port, Username, Password };
+		public override object[] Parameters => new object[] { InSasDataset, OutTable, UseCasConnection!, Hostname!, Port!, Username!, Password!, CustomCfgFile! };
 
 		/// <summary>
 		/// <para>Input SAS Dataset (libref.tablename)</para>
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UseCasConnection { get; set; } = "false";
+		public object? UseCasConnection { get; set; } = "false";
 
 		/// <summary>
 		/// <para>CAS Hostname URL</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Hostname { get; set; }
+		public object? Hostname { get; set; }
 
 		/// <summary>
 		/// <para>Port</para>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object Port { get; set; }
+		public object? Port { get; set; }
 
 		/// <summary>
 		/// <para>CAS Username</para>
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Username { get; set; }
+		public object? Username { get; set; }
 
 		/// <summary>
 		/// <para>Password</para>
@@ -125,7 +125,15 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPStringHidden()]
-		public object Password { get; set; }
+		public object? Password { get; set; }
+
+		/// <summary>
+		/// <para>Custom Session Configuration File</para>
+		/// <para>The file specifying custom configurations for the SAS session. The file is only required for customized local or remote SAS deployments.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[DEFile()]
+		public object? CustomCfgFile { get; set; }
 
 		#region InnerClass
 

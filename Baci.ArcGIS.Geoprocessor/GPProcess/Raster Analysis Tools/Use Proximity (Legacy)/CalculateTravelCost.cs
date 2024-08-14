@@ -63,12 +63,12 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
+		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputsourcerasterorfeatures, Outputdistancename, Inputcostraster, Inputsurfaceraster, Maximumdistance, Inputhorizontalraster, Horizontalfactor, Inputverticalraster, Verticalfactor, Sourcecostmultiplier, Sourcestartcost, Sourceresistancerate, Sourcecapacity, Sourcetraveldirection, Outputbacklinkname, Outputallocationname, Allocationfield, Outputdistanceraster, Outputbacklinkraster, Outputallocationraster };
+		public override object[] Parameters => new object[] { Inputsourcerasterorfeatures, Outputdistancename, Inputcostraster!, Inputsurfaceraster!, Maximumdistance!, Inputhorizontalraster!, Horizontalfactor!, Inputverticalraster!, Verticalfactor!, Sourcecostmultiplier!, Sourcestartcost!, Sourceresistancerate!, Sourcecapacity!, Sourcetraveldirection!, Outputbacklinkname!, Outputallocationname!, Allocationfield!, Outputdistanceraster!, Outputbacklinkraster!, Outputallocationraster! };
 
 		/// <summary>
 		/// <para>Input Source Raster or Features</para>
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object Inputcostraster { get; set; }
+		public object? Inputcostraster { get; set; }
 
 		/// <summary>
 		/// <para>Input Surface Raster</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object Inputsurfaceraster { get; set; }
+		public object? Inputsurfaceraster { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Distance</para>
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Maximumdistance { get; set; }
+		public object? Maximumdistance { get; set; }
 
 		/// <summary>
 		/// <para>Input Horizontal Raster</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object Inputhorizontalraster { get; set; }
+		public object? Inputhorizontalraster { get; set; }
 
 		/// <summary>
 		/// <para>Horizontal Factor</para>
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAHorizontalFactor()]
-		public object Horizontalfactor { get; set; } = "BINARY 1 45";
+		public object? Horizontalfactor { get; set; } = "BINARY 1 45";
 
 		/// <summary>
 		/// <para>Input Vertical Raster</para>
@@ -155,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object Inputverticalraster { get; set; }
+		public object? Inputverticalraster { get; set; }
 
 		/// <summary>
 		/// <para>Vertical Factor</para>
@@ -181,7 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAVerticalFactor()]
-		public object Verticalfactor { get; set; } = "BINARY 1 -30 30";
+		public object? Verticalfactor { get; set; } = "BINARY 1 -30 30";
 
 		/// <summary>
 		/// <para>Cost Multiplier</para>
@@ -192,7 +192,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Source Characteristics")]
-		public object Sourcecostmultiplier { get; set; }
+		public object? Sourcecostmultiplier { get; set; }
 
 		/// <summary>
 		/// <para>Start Cost</para>
@@ -203,7 +203,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Source Characteristics")]
-		public object Sourcestartcost { get; set; }
+		public object? Sourcestartcost { get; set; }
 
 		/// <summary>
 		/// <para>Resistance Rate</para>
@@ -214,7 +214,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Source Characteristics")]
-		public object Sourceresistancerate { get; set; }
+		public object? Sourceresistancerate { get; set; }
 
 		/// <summary>
 		/// <para>Capacity</para>
@@ -225,7 +225,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Source Characteristics")]
-		public object Sourcecapacity { get; set; }
+		public object? Sourcecapacity { get; set; }
 
 		/// <summary>
 		/// <para>Travel Direction</para>
@@ -239,7 +239,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Source Characteristics")]
-		public object Sourcetraveldirection { get; set; }
+		public object? Sourcetraveldirection { get; set; }
 
 		/// <summary>
 		/// <para>Output Backlink Name</para>
@@ -248,7 +248,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Outputbacklinkname { get; set; }
+		public object? Outputbacklinkname { get; set; }
 
 		/// <summary>
 		/// <para>Output Allocation Name</para>
@@ -258,7 +258,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Outputallocationname { get; set; }
+		public object? Outputallocationname { get; set; }
 
 		/// <summary>
 		/// <para>Allocation Field</para>
@@ -266,35 +266,35 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Allocationfield { get; set; }
+		public object? Allocationfield { get; set; }
 
 		/// <summary>
 		/// <para>Output Distance Raster</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRasterLayer()]
-		public object Outputdistanceraster { get; set; }
+		public object? Outputdistanceraster { get; set; }
 
 		/// <summary>
 		/// <para>Output Backlink Raster</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRasterLayer()]
-		public object Outputbacklinkraster { get; set; }
+		public object? Outputbacklinkraster { get; set; }
 
 		/// <summary>
 		/// <para>Output Allocation Raster</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRasterLayer()]
-		public object Outputallocationraster { get; set; }
+		public object? Outputallocationraster { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateTravelCost SetEnviroment(object cellSize = null , object extent = null , object mask = null , object outputCoordinateSystem = null , object snapRaster = null )
+		public CalculateTravelCost SetEnviroment(object? cellSize = null , object? extent = null , object? mask = null , object? outputCoordinateSystem = null , object? pyramid = null , object? snapRaster = null )
 		{
-			base.SetEnv(cellSize: cellSize, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, snapRaster: snapRaster);
+			base.SetEnv(cellSize: cellSize, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, pyramid: pyramid, snapRaster: snapRaster);
 			return this;
 		}
 

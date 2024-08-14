@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { JobId, PropertiesTableName, PropertyField, Value, IncrementValue, DatabasePath, UpdatedJobId };
+		public override object[] Parameters => new object[] { JobId, PropertiesTableName, PropertyField, Value, IncrementValue!, DatabasePath!, UpdatedJobId! };
 
 		/// <summary>
 		/// <para>Job ID</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IncrementValue { get; set; }
+		public object? IncrementValue { get; set; }
 
 		/// <summary>
 		/// <para>Input Database Path</para>
@@ -128,14 +128,14 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object DatabasePath { get; set; }
+		public object? DatabasePath { get; set; }
 
 		/// <summary>
 		/// <para>Updated Job ID</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPLong()]
-		public object UpdatedJobId { get; set; } = "-1";
+		public object? UpdatedJobId { get; set; } = "-1";
 
 		#region InnerClass
 

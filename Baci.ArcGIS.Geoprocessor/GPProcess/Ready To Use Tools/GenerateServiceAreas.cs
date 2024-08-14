@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Facilities, BreakValues, BreakUnits, AnalysisRegion!, TravelDirection!, TimeOfDay!, UseHierarchy!, UturnAtJunctions!, PolygonsForMultipleFacilities!, PolygonOverlapType!, DetailedPolygons!, PolygonTrimDistance!, PolygonSimplificationTolerance!, PointBarriers!, LineBarriers!, PolygonBarriers!, Restrictions!, AttributeParameterValues!, TimeZoneForTimeOfDay!, TravelMode!, Impedance!, SaveOutputNetworkAnalysisLayer!, Overrides!, TimeImpedance!, DistanceImpedance!, PolygonDetail!, OutputType!, OutputFormat!, IgnoreInvalidLocations!, ServiceAreas!, SolveSucceeded!, OutputNetworkAnalysisLayer!, OutputFacilities!, OutputServiceAreaLines!, OutputResultFile!, OutputNetworkAnalysisLayerPackage };
+		public override object[] Parameters => new object[] { Facilities, BreakValues, BreakUnits, AnalysisRegion!, TravelDirection!, TimeOfDay!, UseHierarchy!, UturnAtJunctions!, PolygonsForMultipleFacilities!, PolygonOverlapType!, DetailedPolygons!, PolygonTrimDistance!, PolygonSimplificationTolerance!, PointBarriers!, LineBarriers!, PolygonBarriers!, Restrictions!, AttributeParameterValues!, TimeZoneForTimeOfDay!, TravelMode!, Impedance!, SaveOutputNetworkAnalysisLayer!, Overrides!, TimeImpedance!, DistanceImpedance!, PolygonDetail!, OutputType!, OutputFormat!, IgnoreInvalidLocations!, ServiceAreas!, SolveSucceeded!, OutputNetworkAnalysisLayer!, OutputFacilities!, OutputServiceAreaLines!, OutputResultFile!, OutputNetworkAnalysisLayerPackage! };
 
 		/// <summary>
 		/// <para>Facilities</para>

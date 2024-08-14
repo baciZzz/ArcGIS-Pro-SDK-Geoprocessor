@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, BalancingMethod, ColorSurfaceType, TargetRaster, ExcludeRaster, StretchType, Gamma, BlockField, OutMosaicDataset };
+		public override object[] Parameters => new object[] { InMosaicDataset, BalancingMethod!, ColorSurfaceType!, TargetRaster!, ExcludeRaster!, StretchType!, Gamma!, BlockField!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object BalancingMethod { get; set; } = "DODGING";
+		public object? BalancingMethod { get; set; } = "DODGING";
 
 		/// <summary>
 		/// <para>Color Surface Type</para>
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ColorSurfaceType { get; set; } = "COLOR_GRID";
+		public object? ColorSurfaceType { get; set; } = "COLOR_GRID";
 
 		/// <summary>
 		/// <para>Target Raster</para>
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object TargetRaster { get; set; }
+		public object? TargetRaster { get; set; }
 
 		/// <summary>
 		/// <para>Exclude Area Raster</para>
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRasterLayer()]
 		[Category("Pre-processing Options")]
-		public object ExcludeRaster { get; set; }
+		public object? ExcludeRaster { get; set; }
 
 		/// <summary>
 		/// <para>Stretch Type</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Pre-processing Options")]
-		public object StretchType { get; set; } = "NONE";
+		public object? StretchType { get; set; } = "NONE";
 
 		/// <summary>
 		/// <para>Gamma</para>
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[Category("Pre-processing Options")]
-		public object Gamma { get; set; } = "1";
+		public object? Gamma { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Block Field</para>
@@ -145,19 +145,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object BlockField { get; set; }
+		public object? BlockField { get; set; }
 
 		/// <summary>
 		/// <para>Updated Mosaic Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMosaicLayer()]
-		public object OutMosaicDataset { get; set; }
+		public object? OutMosaicDataset { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ColorBalanceMosaicDataset SetEnviroment(object parallelProcessingFactor = null )
+		public ColorBalanceMosaicDataset SetEnviroment(object? parallelProcessingFactor = null )
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

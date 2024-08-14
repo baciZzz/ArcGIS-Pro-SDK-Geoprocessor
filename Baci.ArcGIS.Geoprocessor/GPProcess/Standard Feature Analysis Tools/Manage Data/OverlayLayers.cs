@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputlayer, Overlaylayer, Outputname, Overlaytype, Outputtype, Snaptoinput, Tolerance, Output };
+		public override object[] Parameters => new object[] { Inputlayer, Overlaylayer, Outputname, Overlaytype!, Outputtype!, Snaptoinput!, Tolerance!, Output! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Overlaytype { get; set; } = "INTERSECT";
+		public object? Overlaytype { get; set; } = "INTERSECT";
 
 		/// <summary>
 		/// <para>Output Type</para>
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Outputtype { get; set; } = "INPUT";
+		public object? Outputtype { get; set; } = "INPUT";
 
 		/// <summary>
 		/// <para>Snap To Input</para>
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Snaptoinput { get; set; } = "false";
+		public object? Snaptoinput { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Tolerance</para>
@@ -140,19 +140,19 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object Tolerance { get; set; }
+		public object? Tolerance { get; set; }
 
 		/// <summary>
 		/// <para>Output</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Output { get; set; }
+		public object? Output { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public OverlayLayers SetEnviroment(object extent = null )
+		public OverlayLayers SetEnviroment(object? extent = null )
 		{
 			base.SetEnv(extent: extent);
 			return this;

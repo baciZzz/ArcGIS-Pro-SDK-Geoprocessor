@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause, FiducialTable, FilmCoordinateSystem, UpdateFootprints, OutMosaicDataset };
+		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause!, FiducialTable!, FilmCoordinateSystem!, UpdateFootprints!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
-		public object WhereClause { get; set; }
+		public object? WhereClause { get; set; }
 
 		/// <summary>
 		/// <para>Fiducial Table</para>
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
-		public object FiducialTable { get; set; }
+		public object? FiducialTable { get; set; }
 
 		/// <summary>
 		/// <para>Film Coordinate System</para>
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object FilmCoordinateSystem { get; set; } = "NO_CHANGE";
+		public object? FilmCoordinateSystem { get; set; } = "NO_CHANGE";
 
 		/// <summary>
 		/// <para>Update Footprints</para>
@@ -111,14 +111,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object UpdateFootprints { get; set; } = "false";
+		public object? UpdateFootprints { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Mosaic Dataset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutMosaicDataset { get; set; }
+		public object? OutMosaicDataset { get; set; }
 
 		#region InnerClass
 

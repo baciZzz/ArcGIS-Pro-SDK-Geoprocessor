@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, AppendLayer, AppendMethod, AppendFields, AppendExpressions, AppendResult };
+		public override object[] Parameters => new object[] { InputLayer, AppendLayer, AppendMethod, AppendFields!, AppendExpressions!, AppendResult! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object AppendFields { get; set; }
+		public object? AppendFields { get; set; }
 
 		/// <summary>
 		/// <para>Append Expressions</para>
@@ -121,19 +121,19 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object AppendExpressions { get; set; }
+		public object? AppendExpressions { get; set; }
 
 		/// <summary>
 		/// <para>Append Result</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object AppendResult { get; set; }
+		public object? AppendResult { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AppendData SetEnviroment(object extent = null , object workspace = null )
+		public AppendData SetEnviroment(object? extent = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

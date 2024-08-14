@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCube, AnalysisVariable, OutputFeatures, OutputCube, NumberOfTimeStepsToForecast, SeasonLength, NumberForValidation, OutlierOption, LevelOfConfidence, MaximumNumberOfOutliers };
+		public override object[] Parameters => new object[] { InCube, AnalysisVariable, OutputFeatures, OutputCube!, NumberOfTimeStepsToForecast!, SeasonLength!, NumberForValidation!, OutlierOption!, LevelOfConfidence!, MaximumNumberOfOutliers! };
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
-		public object OutputCube { get; set; }
+		public object? OutputCube { get; set; }
 
 		/// <summary>
 		/// <para>Number of Time Steps to Forecast</para>
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object NumberOfTimeStepsToForecast { get; set; } = "1";
+		public object? NumberOfTimeStepsToForecast { get; set; } = "1";
 
 		/// <summary>
 		/// <para>Season Length</para>
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object SeasonLength { get; set; }
+		public object? SeasonLength { get; set; }
 
 		/// <summary>
 		/// <para>Number of Time Steps to Exclude for Validation</para>
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object NumberForValidation { get; set; }
+		public object? NumberForValidation { get; set; }
 
 		/// <summary>
 		/// <para>Outlier Option</para>
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object OutlierOption { get; set; } = "NONE";
+		public object? OutlierOption { get; set; } = "NONE";
 
 		/// <summary>
 		/// <para>Level of Confidence</para>
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object LevelOfConfidence { get; set; } = "90%";
+		public object? LevelOfConfidence { get; set; } = "90%";
 
 		/// <summary>
 		/// <para>Maximum Number of Outliers</para>
@@ -162,12 +162,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object MaximumNumberOfOutliers { get; set; }
+		public object? MaximumNumberOfOutliers { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExponentialSmoothingForecast SetEnviroment(object outputCoordinateSystem = null )
+		public ExponentialSmoothingForecast SetEnviroment(object? outputCoordinateSystem = null )
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem);
 			return this;

@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { SummarizedLayer, OutputName, PolygonOrBin, BinType, BinSize, SummaryPolygons, SumShape, ShapeUnits, StandardSummaryFields, WeightedSummaryFields, Output, DataStore, GroupByField, AddMinorityMajority, AddPercentages, GroupBySummary };
+		public override object[] Parameters => new object[] { SummarizedLayer, OutputName, PolygonOrBin!, BinType!, BinSize!, SummaryPolygons!, SumShape!, ShapeUnits!, StandardSummaryFields!, WeightedSummaryFields!, Output!, DataStore!, GroupByField!, AddMinorityMajority!, AddPercentages!, GroupBySummary! };
 
 		/// <summary>
 		/// <para>Summarized  Layer</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object PolygonOrBin { get; set; } = "POLYGON";
+		public object? PolygonOrBin { get; set; } = "POLYGON";
 
 		/// <summary>
 		/// <para>Bin Type</para>
@@ -106,17 +106,16 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object BinType { get; set; } = "SQUARE";
+		public object? BinType { get; set; } = "SQUARE";
 
 		/// <summary>
 		/// <para>Bin Size</para>
 		/// <para>The distance interval that represents the bin size and units by which the input features will be summarized.</para>
-		/// <para><see cref="BinSizeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		[GPCodedValueDomain()]
-		public object BinSize { get; set; }
+		[GPUnitDomain()]
+		public object? BinSize { get; set; }
 
 		/// <summary>
 		/// <para>Summary Polygons</para>
@@ -125,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
-		public object SummaryPolygons { get; set; }
+		public object? SummaryPolygons { get; set; }
 
 		/// <summary>
 		/// <para>Add shape summary attributes</para>
@@ -137,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SumShape { get; set; } = "true";
+		public object? SumShape { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Shape Units</para>
@@ -158,38 +157,41 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ShapeUnits { get; set; }
+		public object? ShapeUnits { get; set; }
 
 		/// <summary>
 		/// <para>Standard Summary Fields</para>
 		/// <para>The statistics that will be calculated on specified fields.</para>
+		/// <para>Specifies whether a field represents a count or a rate.</para>
+		/// <para>Count—For line and polygon layers, the summarized field values will be proportioned by the percentage of the summarized features that intersect the summary polygons prior to calculating statistics. Values will not be proportioned for point layers.</para>
+		/// <para>Rate—The summarized field values will never be proportioned. The raw field values will be used to calculate statistics.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object StandardSummaryFields { get; set; }
+		public object? StandardSummaryFields { get; set; }
 
 		/// <summary>
 		/// <para>Weighted Summary Fields</para>
 		/// <para>Specifies the weighted statistics that will be calculated on specified fields.</para>
-		/// <para>Count—The count of each field will be calculated, multiplied by the proportion of the summarized layer within the polygons.</para>
-		/// <para>Sum—The sum of weighted values in each field will be calculated, in which the weight applied is the proportion of the summarized layer within the polygons.</para>
-		/// <para>Mean—The mean of weighted values in each field will be calculated, in which the weight applied is the proportion of the summarized layer within the polygons.</para>
-		/// <para>Minimum—The minimum of weighted values in each field will be calculated, in which the weight applied is the proportion of the summarized layer within the polygons.</para>
-		/// <para>Maximum—The maximum of weighted values in each field will be calculated, in which the weight applied is the proportion of the summarized layer within the polygons.</para>
-		/// <para>Range—The difference between Minimum and Maximum will be calculated.</para>
+		/// <para>Mean—The weighted mean of each field will be calculated in which the weight applied is the proportion of the summarized layer within the polygons.</para>
+		/// <para>Standard deviation—The weighted standard deviation of each field will be calculated in which the weight applied is the proportion of the summarized layer within the polygons.</para>
+		/// <para>Variance—The weighted variance of each field will be calculated in which the weight applied is the proportion of the summarized layer within the polygons.</para>
+		/// <para>Specifies whether a field represents a count or a rate.</para>
+		/// <para>Count—The summarized field values will be proportioned by the percentage of the summarized features that intersect the summary polygons prior to calculating statistics.</para>
+		/// <para>Rate—The summarized field values will never be proportioned. The raw field values will be used to calculate statistics.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object WeightedSummaryFields { get; set; }
+		public object? WeightedSummaryFields { get; set; }
 
 		/// <summary>
 		/// <para>Output Feature Layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Output { get; set; }
+		public object? Output { get; set; }
 
 		/// <summary>
 		/// <para>Data Store</para>
@@ -202,7 +204,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Data Store")]
-		public object DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
+		public object? DataStore { get; set; } = "SPATIOTEMPORAL_DATA_STORE";
 
 		/// <summary>
 		/// <para>Group By Field</para>
@@ -211,7 +213,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object GroupByField { get; set; }
+		public object? GroupByField { get; set; }
 
 		/// <summary>
 		/// <para>Add Minority and Majority Attributes</para>
@@ -223,7 +225,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AddMinorityMajority { get; set; }
+		public object? AddMinorityMajority { get; set; }
 
 		/// <summary>
 		/// <para>Add Group Percentages</para>
@@ -235,19 +237,19 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AddPercentages { get; set; }
+		public object? AddPercentages { get; set; }
 
 		/// <summary>
 		/// <para>Group By Summary</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPRecordSet()]
-		public object GroupBySummary { get; set; }
+		public object? GroupBySummary { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SummarizeWithin SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public SummarizeWithin SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;
@@ -294,55 +296,6 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 			[GPValue("HEXAGON")]
 			[Description("Hexagon")]
 			Hexagon,
-
-		}
-
-		/// <summary>
-		/// <para>Bin Size</para>
-		/// </summary>
-		public enum BinSizeEnum 
-		{
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Feet")]
-			[Description("Feet")]
-			Feet,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Yards")]
-			[Description("Yards")]
-			Yards,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Miles")]
-			[Description("Miles")]
-			Miles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("NauticalMiles")]
-			[Description("NauticalMiles")]
-			NauticalMiles,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Meters")]
-			[Description("Meters")]
-			Meters,
-
-			/// <summary>
-			/// <para></para>
-			/// </summary>
-			[GPValue("Kilometers")]
-			[Description("Kilometers")]
-			Kilometers,
 
 		}
 

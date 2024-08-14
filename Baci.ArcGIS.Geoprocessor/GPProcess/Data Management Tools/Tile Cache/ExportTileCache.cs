@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCacheSource, InTargetCacheFolder, InTargetCacheName, ExportCacheType, StorageFormatType, Scales, AreaOfInterest, OutCache };
+		public override object[] Parameters => new object[] { InCacheSource, InTargetCacheFolder, InTargetCacheName, ExportCacheType!, StorageFormatType!, Scales!, AreaOfInterest!, OutCache! };
 
 		/// <summary>
 		/// <para>Input Tile Cache</para>
@@ -107,20 +107,20 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ExportCacheType { get; set; } = "TILE_CACHE";
+		public object? ExportCacheType { get; set; } = "TILE_CACHE";
 
 		/// <summary>
 		/// <para>Storage Format</para>
 		/// <para>Determines the storage format of tiles.</para>
 		/// <para>Compact—Group tiles into large files called bundles. This storage format is more efficient in terms of storage and mobility.</para>
-		/// <para>Compact v2— Tiles are grouped in bundle files only. This format provides better performance on network shares and cloudstore directories. If the Export cache type parameter is set to Tile package (tpkx) then the extension of the tile package is (.tpkx), which is supported by newer versions of the ArcGIS Platform such as ArcGIS Online, ArcGIS Enterprise 10.9 and ArcGIS Runtime 100.5.This is the default.</para>
+		/// <para>Compact v2— Tiles are grouped in bundle files only. This format provides better performance on network shares and cloudstore directories. If the Export cache type parameter is set to Tile package (tpkx) then the extension of the tile package is (.tpkx), which is supported by newer versions of the ArcGIS Platform such as ArcGIS Online, ArcGIS Enterprise 11 and ArcGIS Runtime 100.5.This is the default.</para>
 		/// <para>Exploded—Each tile is stored as an individual file. Note that this format cannot be used with tile packages.</para>
 		/// <para><see cref="StorageFormatTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object StorageFormatType { get; set; } = "COMPACT_V2";
+		public object? StorageFormatType { get; set; } = "COMPACT_V2";
 
 		/// <summary>
 		/// <para>Scales [Pixel Size] (Estimated Disk Space)</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Scales { get; set; }
+		public object? Scales { get; set; }
 
 		/// <summary>
 		/// <para>Area of Interest</para>
@@ -138,19 +138,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
-		public object AreaOfInterest { get; set; }
+		public object? AreaOfInterest { get; set; }
 
 		/// <summary>
 		/// <para>Output Tile Cache</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutCache { get; set; }
+		public object? OutCache { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportTileCache SetEnviroment(object parallelProcessingFactor = null )
+		public ExportTileCache SetEnviroment(object? parallelProcessingFactor = null )
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;
@@ -206,7 +206,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			Exploded,
 
 			/// <summary>
-			/// <para>Compact v2— Tiles are grouped in bundle files only. This format provides better performance on network shares and cloudstore directories. If the Export cache type parameter is set to Tile package (tpkx) then the extension of the tile package is (.tpkx), which is supported by newer versions of the ArcGIS Platform such as ArcGIS Online, ArcGIS Enterprise 10.9 and ArcGIS Runtime 100.5.This is the default.</para>
+			/// <para>Compact v2— Tiles are grouped in bundle files only. This format provides better performance on network shares and cloudstore directories. If the Export cache type parameter is set to Tile package (tpkx) then the extension of the tile package is (.tpkx), which is supported by newer versions of the ArcGIS Platform such as ArcGIS Online, ArcGIS Enterprise 11 and ArcGIS Runtime 100.5.This is the default.</para>
 			/// </summary>
 			[GPValue("COMPACT_V2")]
 			[Description("Compact v2")]

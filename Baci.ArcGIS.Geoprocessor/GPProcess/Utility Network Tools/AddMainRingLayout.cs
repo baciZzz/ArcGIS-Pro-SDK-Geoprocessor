@@ -69,7 +69,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved, RingType, IsUnitAbsolute, RingWidthAbsolute, RingWidthProportional, RingHeightAbsolute, RingHeightProportional, TreeType, PerpendicularAbsolute, PerpendicularProportional, AlongAbsolute, AlongProportional, BreakpointPosition, EdgeDisplayType, OutUtilityNetwork, OutTemplateName, OffsetAbsolute, OffsetProportional };
+		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved!, RingType!, IsUnitAbsolute!, RingWidthAbsolute!, RingWidthProportional!, RingHeightAbsolute!, RingHeightProportional!, TreeType!, PerpendicularAbsolute!, PerpendicularProportional!, AlongAbsolute!, AlongProportional!, BreakpointPosition!, EdgeDisplayType!, OutUtilityNetwork!, OutTemplateName!, OffsetAbsolute!, OffsetProportional! };
 
 		/// <summary>
 		/// <para>Input Network</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AreContainersPreserved { get; set; } = "false";
+		public object? AreContainersPreserved { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Ring Type</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object RingType { get; set; } = "ELLIPSE";
+		public object? RingType { get; set; } = "ELLIPSE";
 
 		/// <summary>
 		/// <para>Spacing values interpreted as absolute units in the diagram coordinate system</para>
@@ -119,35 +119,35 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object IsUnitAbsolute { get; set; } = "false";
+		public object? IsUnitAbsolute { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Ring Width</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object RingWidthAbsolute { get; set; } = "50 Unknown";
+		public object? RingWidthAbsolute { get; set; } = "50 Unknown";
 
 		/// <summary>
 		/// <para>Ring Width</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object RingWidthProportional { get; set; } = "50";
+		public object? RingWidthProportional { get; set; } = "50";
 
 		/// <summary>
 		/// <para>Ring Height</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object RingHeightAbsolute { get; set; } = "20 Unknown";
+		public object? RingHeightAbsolute { get; set; } = "20 Unknown";
 
 		/// <summary>
 		/// <para>Ring Height</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object RingHeightProportional { get; set; } = "20";
+		public object? RingHeightProportional { get; set; } = "20";
 
 		/// <summary>
 		/// <para>Hierarchical Tree Type</para>
@@ -156,42 +156,42 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object TreeType { get; set; } = "SMART_TREE";
+		public object? TreeType { get; set; } = "SMART_TREE";
 
 		/// <summary>
 		/// <para>Between Junctions Perpendicular to the Direction</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object PerpendicularAbsolute { get; set; } = "2 Unknown";
+		public object? PerpendicularAbsolute { get; set; } = "2 Unknown";
 
 		/// <summary>
 		/// <para>Between Junctions Perpendicular to the Direction</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object PerpendicularProportional { get; set; } = "2";
+		public object? PerpendicularProportional { get; set; } = "2";
 
 		/// <summary>
 		/// <para>Between Junctions Along the Direction</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object AlongAbsolute { get; set; } = "2 Unknown";
+		public object? AlongAbsolute { get; set; } = "2 Unknown";
 
 		/// <summary>
 		/// <para>Between Junctions Along the Direction</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object AlongProportional { get; set; } = "2";
+		public object? AlongProportional { get; set; } = "2";
 
 		/// <summary>
 		/// <para>Break Point Relative Position (%)</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object BreakpointPosition { get; set; } = "30";
+		public object? BreakpointPosition { get; set; } = "30";
 
 		/// <summary>
 		/// <para>Edge Display Type</para>
@@ -200,35 +200,35 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object EdgeDisplayType { get; set; } = "REGULAR_EDGES";
+		public object? EdgeDisplayType { get; set; } = "REGULAR_EDGES";
 
 		/// <summary>
 		/// <para>Output Network</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutUtilityNetwork { get; set; }
+		public object? OutUtilityNetwork { get; set; }
 
 		/// <summary>
 		/// <para>Output Diagram Template</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPString()]
-		public object OutTemplateName { get; set; }
+		public object? OutTemplateName { get; set; }
 
 		/// <summary>
 		/// <para>Offset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
-		public object OffsetAbsolute { get; set; } = "0 Unknown";
+		public object? OffsetAbsolute { get; set; } = "0 Unknown";
 
 		/// <summary>
 		/// <para>Offset</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		public object OffsetProportional { get; set; } = "0";
+		public object? OffsetProportional { get; set; } = "0";
 
 		#region InnerClass
 

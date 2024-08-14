@@ -22,7 +22,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The layer or table that contains the field with the date values that need to be extracted.</para>
+		/// <para>The layer or table that contains the field with the date values that will be extracted.</para>
 		/// </param>
 		/// <param name="DateField">
 		/// <para>Date Field</para>
@@ -67,11 +67,11 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, DateField, DateAttributes, OutTable };
+		public override object[] Parameters => new object[] { InTable, DateField, DateAttributes!, OutTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The layer or table that contains the field with the date values that need to be extracted.</para>
+		/// <para>The layer or table that contains the field with the date values that will be extracted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -88,32 +88,33 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Date Attributes</para>
-		/// <para>Specifies the date and time properties and fields that will be added to the input table.</para>
-		/// <para>Output Time Format—The date or time property to be added to the Output Field Name.</para>
+		/// <para>The date and time properties and fields that will be added to the input table.</para>
+		/// <para>Output Time Format—The date or time property that will be added to Output Field Name.</para>
 		/// <para>Output Field Name—The name of the field that will be added to the input table.</para>
-		/// <para>Output Time Format options are as follows:</para>
+		/// <para>The Output Time Format options are as follows:</para>
 		/// <para>Hour—The hour value between 0 and 23.</para>
 		/// <para>Day Full Name—The full name of the day of the week, for example, Wednesday.</para>
+		/// <para>Day Numeric Value—The day of the week value between 1 and 7.</para>
 		/// <para>Month—The month value between 1 and 12.</para>
 		/// <para>Day of the Month—The day of the month value between 1 and 31.</para>
-		/// <para>Year——The year value in yyyy format, for example, 1983.</para>
+		/// <para>Year—The year value in yyyy format, for example, 1983.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPCompositeDomain()]
-		public object DateAttributes { get; set; }
+		public object? DateAttributes { get; set; }
 
 		/// <summary>
 		/// <para>Updated Input Table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
-		public object OutTable { get; set; }
+		public object? OutTable { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddDateAttributes SetEnviroment(object extent = null , object workspace = null )
+		public AddDateAttributes SetEnviroment(object? extent = null , object? workspace = null )
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

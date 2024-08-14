@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMasterControlPoints, InInputControlPoints, InZField, InTagField, InDem, OutMasterControlPoints, InXyAccuracy, InZAccuracy, Geoid, AreaOfInterest, AppendOption };
+		public override object[] Parameters => new object[] { InMasterControlPoints, InInputControlPoints, InZField!, InTagField!, InDem!, OutMasterControlPoints!, InXyAccuracy!, InZAccuracy!, Geoid!, AreaOfInterest!, AppendOption! };
 
 		/// <summary>
 		/// <para>Target Control Points</para>
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object InZField { get; set; }
+		public object? InZField { get; set; }
 
 		/// <summary>
 		/// <para>Tag Field Name</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object InTagField { get; set; }
+		public object? InTagField { get; set; }
 
 		/// <summary>
 		/// <para>Input DEM</para>
@@ -111,14 +111,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object InDem { get; set; }
+		public object? InDem { get; set; }
 
 		/// <summary>
 		/// <para>Updated Control Points</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPComposite()]
-		public object OutMasterControlPoints { get; set; }
+		public object? OutMasterControlPoints { get; set; }
 
 		/// <summary>
 		/// <para>XY Accuracy</para>
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object InXyAccuracy { get; set; }
+		public object? InXyAccuracy { get; set; }
 
 		/// <summary>
 		/// <para>Z Accuracy</para>
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPRangeDomain()]
-		public object InZAccuracy { get; set; }
+		public object? InZAccuracy { get; set; }
 
 		/// <summary>
 		/// <para>Geoid</para>
@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object Geoid { get; set; } = "false";
+		public object? Geoid { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Area of Interest</para>
@@ -158,7 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
-		public object AreaOfInterest { get; set; }
+		public object? AreaOfInterest { get; set; }
 
 		/// <summary>
 		/// <para>Append Option</para>
@@ -171,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object AppendOption { get; set; } = "ALL";
+		public object? AppendOption { get; set; } = "ALL";
 
 		#region InnerClass
 

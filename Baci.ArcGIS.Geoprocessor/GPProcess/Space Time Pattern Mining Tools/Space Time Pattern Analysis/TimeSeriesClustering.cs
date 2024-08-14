@@ -20,7 +20,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		/// <param name="InCube">
 		/// <para>Input Space Time Cube</para>
-		/// <para>The netCDF cube to be analyzed. This file must have an .nc extension and must have been created using the Create Space Time Cube By Aggregating Points, Create Space Time Cube From Defined Features, or Create Space Time Cube From Multidimensional Raster Layer tool.</para>
+		/// <para>The space-time cube containing the variable to be analyzed. Space-time cubes have a .nc file extension and are created using various tools in the Space Time Pattern Mining toolbox.</para>
 		/// </param>
 		/// <param name="AnalysisVariable">
 		/// <para>Analysis Variable</para>
@@ -79,11 +79,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCube, AnalysisVariable, OutputFeatures, CharacteristicOfInterest, ClusterCount, OutputTableForCharts, ShapeCharacteristicToIgnore, EnableTimeSeriesPopups };
+		public override object[] Parameters => new object[] { InCube, AnalysisVariable, OutputFeatures, CharacteristicOfInterest, ClusterCount!, OutputTableForCharts!, ShapeCharacteristicToIgnore!, EnableTimeSeriesPopups! };
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>
-		/// <para>The netCDF cube to be analyzed. This file must have an .nc extension and must have been created using the Create Space Time Cube By Aggregating Points, Create Space Time Cube From Defined Features, or Create Space Time Cube From Multidimensional Raster Layer tool.</para>
+		/// <para>The space-time cube containing the variable to be analyzed. Space-time cubes have a .nc file extension and are created using various tools in the Space Time Pattern Mining toolbox.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		public object ClusterCount { get; set; }
+		public object? ClusterCount { get; set; }
 
 		/// <summary>
 		/// <para>Output Table for Charts</para>
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
-		public object OutputTableForCharts { get; set; }
+		public object? OutputTableForCharts { get; set; }
 
 		/// <summary>
 		/// <para>Time Series Characteristics to Ignore</para>
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object ShapeCharacteristicToIgnore { get; set; }
+		public object? ShapeCharacteristicToIgnore { get; set; }
 
 		/// <summary>
 		/// <para>Enable Time Series Pop-ups</para>
@@ -158,12 +158,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object EnableTimeSeriesPopups { get; set; } = "false";
+		public object? EnableTimeSeriesPopups { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TimeSeriesClustering SetEnviroment(object parallelProcessingFactor = null , object randomGenerator = null )
+		public TimeSeriesClustering SetEnviroment(object? parallelProcessingFactor = null , object? randomGenerator = null )
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, randomGenerator: randomGenerator);
 			return this;

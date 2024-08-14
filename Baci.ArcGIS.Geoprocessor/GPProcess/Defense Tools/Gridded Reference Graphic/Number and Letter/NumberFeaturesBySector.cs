@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, SectorPolygons, FieldToNumber, NewFieldType!, SpatialSortMethod!, IncrementBy!, CenterPoint!, AddDistanceAndBearing!, OutFeatureClass };
+		public override object[] Parameters => new object[] { InFeatures, SectorPolygons, FieldToNumber, NewFieldType!, SpatialSortMethod!, IncrementBy!, CenterPoint!, AddDistanceAndBearing!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>

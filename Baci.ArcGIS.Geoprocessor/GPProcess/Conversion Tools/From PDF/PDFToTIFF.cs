@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPdfFile, OutTiffFile, PdfPassword!, PdfPageNumber!, PdfMap!, ClipOption!, Resolution!, ColorMode!, TiffCompression!, GeotiffTags };
+		public override object[] Parameters => new object[] { InPdfFile, OutTiffFile, PdfPassword!, PdfPageNumber!, PdfMap!, ClipOption!, Resolution!, ColorMode!, TiffCompression!, GeotiffTags! };
 
 		/// <summary>
 		/// <para>Input PDF File</para>

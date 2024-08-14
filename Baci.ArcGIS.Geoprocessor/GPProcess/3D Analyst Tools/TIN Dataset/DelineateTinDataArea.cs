@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTin, MaxEdgeLength, Method, DerivedOutTin };
+		public override object[] Parameters => new object[] { InTin, MaxEdgeLength, Method!, DerivedOutTin! };
 
 		/// <summary>
 		/// <para>Input TIN</para>
@@ -93,19 +93,19 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Method { get; set; } = "PERIMETER_ONLY";
+		public object? Method { get; set; } = "PERIMETER_ONLY";
 
 		/// <summary>
 		/// <para>Updated TIN</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTinLayer()]
-		public object DerivedOutTin { get; set; }
+		public object? DerivedOutTin { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DelineateTinDataArea SetEnviroment(object workspace = null )
+		public DelineateTinDataArea SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

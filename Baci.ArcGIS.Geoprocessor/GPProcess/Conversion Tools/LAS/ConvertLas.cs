@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Convert LAS</para>
-	/// <para>Converts LAS format files between different compression methods, file versions,  and  point record formats.</para>
+	/// <para>Converts .las, .zlas, and .laz files between different LAS compression methods, file versions, and point record formats.</para>
 	/// </summary>
 	public class ConvertLas : AbstractGPProcess
 	{
@@ -20,11 +20,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InLas">
 		/// <para>Input LAS</para>
-		/// <para>The LAS data that will be converted. A folder can be specified to process all of the .las files contained therein.</para>
+		/// <para>The .las, .zlas, or .laz files that will be converted. Multiple files can be processed by specifying the folder containing the files or a LAS dataset.</para>
 		/// </param>
 		/// <param name="TargetFolder">
 		/// <para>Target Folder</para>
-		/// <para>The existing folder to which the output .las files will be written.</para>
+		/// <para>The existing folder to which the output files will be written.</para>
 		/// </param>
 		public ConvertLas(object InLas, object TargetFolder)
 		{
@@ -65,11 +65,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLas, TargetFolder, FileVersion, PointFormat, Compression, LasOptions, OutLasDataset, DefineCoordinateSystem, InCoordinateSystem };
+		public override object[] Parameters => new object[] { InLas, TargetFolder, FileVersion!, PointFormat!, Compression!, LasOptions!, OutLasDataset!, DefineCoordinateSystem!, InCoordinateSystem! };
 
 		/// <summary>
 		/// <para>Input LAS</para>
-		/// <para>The LAS data that will be converted. A folder can be specified to process all of the .las files contained therein.</para>
+		/// <para>The .las, .zlas, or .laz files that will be converted. Multiple files can be processed by specifying the folder containing the files or a LAS dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Target Folder</para>
-		/// <para>The existing folder to which the output .las files will be written.</para>
+		/// <para>The existing folder to which the output files will be written.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -86,9 +86,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>File Version</para>
-		/// <para>The LAS format file version of the output files.</para>
+		/// <para>Specifies the file version that will be used for the output files.</para>
 		/// <para>Same As Input—The output file version will be the same as the input. This is the default.</para>
-		/// <para>1.0—The base version for the LAS format that supported 256 class codes.</para>
+		/// <para>1.0—The base version for the LAS format that supported 256 class codes will be used.</para>
 		/// <para>1.1—The output file version will be 1.1. Class codes were reduced to 32, but support for classification flags was added.</para>
 		/// <para>1.2—The output file version will be 1.2. Support for red-green-blue (RGB) color channels and GPS time was added.</para>
 		/// <para>1.3—The output file version will be 1.3. Storage of lidar waveform data for point record formats that are not supported in the ArcGIS platform was added.</para>
@@ -98,41 +98,41 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object FileVersion { get; set; } = "SAME_AS_INPUT";
+		public object? FileVersion { get; set; } = "SAME_AS_INPUT";
 
 		/// <summary>
 		/// <para>Point Format</para>
-		/// <para>Specifies the point record format of the output .las files. The available options will vary based on the output LAS format file version.</para>
-		/// <para>0—The base type for storing discrete LAS points that supports attributes such as lidar intensity, return values, scan angle, scan direction, and edge of flight line.</para>
-		/// <para>1—GPS time is added to the attributes supported in point format 0.</para>
-		/// <para>2—RGB values are added to the attributes supported in point format 0.</para>
-		/// <para>3—RGB values and GPS time are added to the attributes supported in point format 0.</para>
-		/// <para>6—The preferred base type for storing discrete LAS points in LAS file version 1.4.</para>
-		/// <para>7—RGB values are added to the attributes supported in point format 6.</para>
-		/// <para>8—RGB and near-infrared values are added to the attributes supported in point format 6.</para>
+		/// <para>Specifies the point record format that will be used for the output files. The available options will vary based on the output LAS format file version.</para>
+		/// <para>0—The base type for storing discrete LAS points that supports attributes such as lidar intensity, return values, scan angle, scan direction, and edge of flight line will be used.</para>
+		/// <para>1—GPS time is added to the attributes supported in point format 0, which will be used.</para>
+		/// <para>2—RGB values are added to the attributes supported in point format 0, which will be used.</para>
+		/// <para>3—RGB values and GPS time are added to the attributes supported in point format 0, which will be used.</para>
+		/// <para>6—The preferred base type for storing discrete LAS points in LAS file version 1.4 will be used.</para>
+		/// <para>7—RGB values are added to the attributes supported in point format 6, which will be used.</para>
+		/// <para>8—RGB and near-infrared values are added to the attributes supported in point format 6, which will be used.</para>
 		/// <para><see cref="PointFormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object PointFormat { get; set; }
+		public object? PointFormat { get; set; }
 
 		/// <summary>
 		/// <para>Compression</para>
-		/// <para>Specifies whether the output .las file will be in a compressed format or the standard LAS format.</para>
-		/// <para>No Compression—The output will be in the standard LAS format (*.las). This is the default.</para>
-		/// <para>zLAS Compression—Output .las files will be compressed in the zLAS format (*.zlas).</para>
-		/// <para>LAZ Compression—Output .las files will be compressed in the LAZ format (*.laz).</para>
+		/// <para>Specifies whether the output files will be stored in a compressed or uncompressed format.</para>
+		/// <para>No Compression—Output files will be in the uncompressed LAS format (*.las). This format supports edits to classification codes and flags. This is the default.</para>
+		/// <para>zLAS Compression—Output files will be compressed in the zLAS format (*.zlas).</para>
+		/// <para>LAZ Compression—Output files will be compressed in the LAZ format (*.laz).</para>
 		/// <para><see cref="CompressionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Compression { get; set; } = "NO_COMPRESSION";
+		public object? Compression { get; set; } = "NO_COMPRESSION";
 
 		/// <summary>
 		/// <para>LAS Options</para>
-		/// <para>Specifies modifications that will be made to reduce the size of the output .las files and improve their usability and performance in display and analysis operations.</para>
+		/// <para>Specifies modifications that will be made to the output files that will reduce their size and improve their performance in display and analysis.</para>
 		/// <para>Rearrange Points—Points will be rearranged to improve display and analysis performance. Statistics will be automatically computed during this process. This is the default.</para>
 		/// <para>Remove Variable Length Records—Variable-length records that are added after the header as well as the points records of each file will be removed.</para>
 		/// <para>Remove Extra Bytes—Extra bytes that may be present with each point from the input file will be removed.</para>
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object LasOptions { get; set; } = "REARRANGE_POINTS";
+		public object? LasOptions { get; set; } = "REARRANGE_POINTS";
 
 		/// <summary>
 		/// <para>Output LAS Dataset</para>
@@ -149,33 +149,33 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DELasDataset()]
-		public object OutLasDataset { get; set; }
+		public object? OutLasDataset { get; set; }
 
 		/// <summary>
 		/// <para>Define Input Coordinate System</para>
-		/// <para>Specifies whether the spatial reference of input .las files will be defined by the Define Input Coordinate System parameter.</para>
-		/// <para>No LAS Files—The spatial reference of input .las files will not be defined as an input argument. This is the default.</para>
-		/// <para>All LAS Files—The spatial reference of input .las files will be defined as an input argument.</para>
-		/// <para>LAS Files with No Spatial Reference—The spatial reference of input .las files that have no projection information in the header will be defined.</para>
+		/// <para>Specifies how the coordinate system of each input file will be defined.</para>
+		/// <para>No LAS Files—The coordinate system of each input file will be defined by the information in its header. Any file that lacks spatial reference information will be treated as having an unknown coordinate system. This is the default.</para>
+		/// <para>All LAS Files—The coordinate system of each input file will be defined by the Input Coordinate System parameter.</para>
+		/// <para>LAS Files with No Spatial Reference—The coordinate system of any input file that does not have spatial reference information in its header will be defined by the Input Coordinate System parameter.</para>
 		/// <para><see cref="DefineCoordinateSystemEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DefineCoordinateSystem { get; set; } = "NO_FILES";
+		public object? DefineCoordinateSystem { get; set; } = "NO_FILES";
 
 		/// <summary>
 		/// <para>Input Coordinate System</para>
-		/// <para>The coordinate system that will be used to define the spatial reference of the input .las files. This parameter is only active if the Define Input Coordinate System parameter is set to All LAS Files or LAS Files with No Spatial Reference.</para>
+		/// <para>The coordinate system that will be used to define the spatial reference of some or all input files based on the selection made in the Define Input Coordinate System parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
-		public object InCoordinateSystem { get; set; }
+		public object? InCoordinateSystem { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConvertLas SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public ConvertLas SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
@@ -196,7 +196,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 			Same_As_Input,
 
 			/// <summary>
-			/// <para>1.0—The base version for the LAS format that supported 256 class codes.</para>
+			/// <para>1.0—The base version for the LAS format that supported 256 class codes will be used.</para>
 			/// </summary>
 			[GPValue("1.0")]
 			[Description("1.0")]
@@ -238,49 +238,49 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum PointFormatEnum 
 		{
 			/// <summary>
-			/// <para>0—The base type for storing discrete LAS points that supports attributes such as lidar intensity, return values, scan angle, scan direction, and edge of flight line.</para>
+			/// <para>0—The base type for storing discrete LAS points that supports attributes such as lidar intensity, return values, scan angle, scan direction, and edge of flight line will be used.</para>
 			/// </summary>
 			[GPValue("0")]
 			[Description("0")]
 			_0,
 
 			/// <summary>
-			/// <para>1—GPS time is added to the attributes supported in point format 0.</para>
+			/// <para>1—GPS time is added to the attributes supported in point format 0, which will be used.</para>
 			/// </summary>
 			[GPValue("1")]
 			[Description("1")]
 			_1,
 
 			/// <summary>
-			/// <para>2—RGB values are added to the attributes supported in point format 0.</para>
+			/// <para>2—RGB values are added to the attributes supported in point format 0, which will be used.</para>
 			/// </summary>
 			[GPValue("2")]
 			[Description("2")]
 			_2,
 
 			/// <summary>
-			/// <para>3—RGB values and GPS time are added to the attributes supported in point format 0.</para>
+			/// <para>3—RGB values and GPS time are added to the attributes supported in point format 0, which will be used.</para>
 			/// </summary>
 			[GPValue("3")]
 			[Description("3")]
 			_3,
 
 			/// <summary>
-			/// <para>6—The preferred base type for storing discrete LAS points in LAS file version 1.4.</para>
+			/// <para>6—The preferred base type for storing discrete LAS points in LAS file version 1.4 will be used.</para>
 			/// </summary>
 			[GPValue("6")]
 			[Description("6")]
 			_6,
 
 			/// <summary>
-			/// <para>7—RGB values are added to the attributes supported in point format 6.</para>
+			/// <para>7—RGB values are added to the attributes supported in point format 6, which will be used.</para>
 			/// </summary>
 			[GPValue("7")]
 			[Description("7")]
 			_7,
 
 			/// <summary>
-			/// <para>8—RGB and near-infrared values are added to the attributes supported in point format 6.</para>
+			/// <para>8—RGB and near-infrared values are added to the attributes supported in point format 6, which will be used.</para>
 			/// </summary>
 			[GPValue("8")]
 			[Description("8")]
@@ -294,21 +294,21 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum CompressionEnum 
 		{
 			/// <summary>
-			/// <para>No Compression—The output will be in the standard LAS format (*.las). This is the default.</para>
+			/// <para>No Compression—Output files will be in the uncompressed LAS format (*.las). This format supports edits to classification codes and flags. This is the default.</para>
 			/// </summary>
 			[GPValue("NO_COMPRESSION")]
 			[Description("No Compression")]
 			No_Compression,
 
 			/// <summary>
-			/// <para>zLAS Compression—Output .las files will be compressed in the zLAS format (*.zlas).</para>
+			/// <para>zLAS Compression—Output files will be compressed in the zLAS format (*.zlas).</para>
 			/// </summary>
 			[GPValue("ZLAS")]
 			[Description("zLAS Compression")]
 			zLAS_Compression,
 
 			/// <summary>
-			/// <para>LAZ Compression—Output .las files will be compressed in the LAZ format (*.laz).</para>
+			/// <para>LAZ Compression—Output files will be compressed in the LAZ format (*.laz).</para>
 			/// </summary>
 			[GPValue("LAZ")]
 			[Description("LAZ Compression")]
@@ -350,21 +350,21 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum DefineCoordinateSystemEnum 
 		{
 			/// <summary>
-			/// <para>No LAS Files—The spatial reference of input .las files will not be defined as an input argument. This is the default.</para>
+			/// <para>No LAS Files—The coordinate system of each input file will be defined by the information in its header. Any file that lacks spatial reference information will be treated as having an unknown coordinate system. This is the default.</para>
 			/// </summary>
 			[GPValue("NO_FILES")]
 			[Description("No LAS Files")]
 			No_LAS_Files,
 
 			/// <summary>
-			/// <para>All LAS Files—The spatial reference of input .las files will be defined as an input argument.</para>
+			/// <para>All LAS Files—The coordinate system of each input file will be defined by the Input Coordinate System parameter.</para>
 			/// </summary>
 			[GPValue("ALL_FILES")]
 			[Description("All LAS Files")]
 			All_LAS_Files,
 
 			/// <summary>
-			/// <para>LAS Files with No Spatial Reference—The spatial reference of input .las files that have no projection information in the header will be defined.</para>
+			/// <para>LAS Files with No Spatial Reference—The coordinate system of any input file that does not have spatial reference information in its header will be defined by the Input Coordinate System parameter.</para>
 			/// </summary>
 			[GPValue("FILES_MISSING_PROJECTION")]
 			[Description("LAS Files with No Spatial Reference")]

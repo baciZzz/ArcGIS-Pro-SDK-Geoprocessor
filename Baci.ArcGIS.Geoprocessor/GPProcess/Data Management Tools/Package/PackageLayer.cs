@@ -60,12 +60,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments => new string[] { "extent", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayer, OutputFile, ConvertData, ConvertArcsdeData, Extent, ApplyExtentToArcsde, SchemaOnly, Version, AdditionalFiles, Summary, Tags, SelectRelatedRows };
+		public override object[] Parameters => new object[] { InLayer, OutputFile, ConvertData!, ConvertArcsdeData!, Extent!, ApplyExtentToArcsde!, SchemaOnly!, Version!, AdditionalFiles!, Summary!, Tags!, SelectRelatedRows! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ConvertData { get; set; } = "false";
+		public object? ConvertData { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Include Enterprise Geodatabase data instead of referencing the data</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ConvertArcsdeData { get; set; } = "true";
+		public object? ConvertArcsdeData { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Extent</para>
@@ -120,11 +120,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
-		public object Extent { get; set; }
+		public object? Extent { get; set; }
 
 		/// <summary>
 		/// <para>Apply Extent only to enterprise geodatabase layers</para>
-		/// <para>Specifies whether the specified extent will be applied to all layers or only to enterprise geodatabase layers.</para>
+		/// <para>Specifies whether the specified extent will be applied to all layers or to enterprise geodatabase layers only.</para>
 		/// <para>Unchecked—The extent will be applied to all layers. This is the default.</para>
 		/// <para>Checked—The extent will be applied to enterprise geodatabase layers only.</para>
 		/// <para><see cref="ApplyExtentToArcsdeEnum"/></para>
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object ApplyExtentToArcsde { get; set; } = "false";
+		public object? ApplyExtentToArcsde { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Schema only</para>
@@ -144,29 +144,30 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SchemaOnly { get; set; } = "false";
+		public object? SchemaOnly { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Package version</para>
-		/// <para>Specifies the version of the geodatabases that will be created in the resulting package. Specifying a version allows packages to be shared with previous versions of ArcGIS and supports backward compatibility.A package saved to a previous version may lose properties available only in the newer version.</para>
+		/// <para>Specifies the version of the geodatabases that will be created in the resulting package. Specifying a version allows packages to be shared with earlier versions of ArcGIS and supports backward compatibility.A package saved to an earlier version may lose properties that are only available in the later version.</para>
 		/// <para>All versions— The package will contain a geodatabase and layer file compatible with all versions (ArcGIS Pro 1.2 and later).</para>
-		/// <para>Current version— The package will contain a geodatabase and layer file compatible with the version of the current release.</para>
-		/// <para>2.x—The package will contain a geodatabase and layer file compatible with version 2.0 and later.</para>
-		/// <para>1.2—The package will contain a geodatabase and layer file compatible with version 1.2 and later.</para>
+		/// <para>Current version— The package will contain a geodatabase and layer file compatible with the version of the current ArcGIS Pro release.</para>
+		/// <para>1.2—The package will contain a geodatabase and layer file compatible with ArcGIS Pro version 1.2 and later.</para>
+		/// <para>2.x—The package will contain a geodatabase and layer file compatible with ArcGIS Pro version 2.0 and later.</para>
+		/// <para>3.x—The package will contain a geodatabase and layer file compatible with ArcGIS Pro version 3.0 and later.</para>
 		/// <para><see cref="VersionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPCodedValueDomain()]
-		public object Version { get; set; } = "ALL";
+		public object? Version { get; set; } = "ALL";
 
 		/// <summary>
 		/// <para>Additional Files</para>
-		/// <para>Adds additional files to a package. Additional files, such as .doc, .txt, .pdf, and so on, are used to provide more information about the contents and purpose of the package.</para>
+		/// <para>Adds files to a package. Additional files, such as .doc, .txt, .pdf, and so on, are used to provide more information about the contents and purpose of the package.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object AdditionalFiles { get; set; }
+		public object? AdditionalFiles { get; set; }
 
 		/// <summary>
 		/// <para>Summary</para>
@@ -174,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Summary { get; set; }
+		public object? Summary { get; set; }
 
 		/// <summary>
 		/// <para>Tags</para>
@@ -182,7 +183,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Tags { get; set; }
+		public object? Tags { get; set; }
 
 		/// <summary>
 		/// <para>Keep only the rows which are related to features within the extent</para>
@@ -194,14 +195,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object SelectRelatedRows { get; set; } = "false";
+		public object? SelectRelatedRows { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PackageLayer SetEnviroment(object extent = null , object workspace = null )
+		public PackageLayer SetEnviroment(object? extent = null , object? parallelProcessingFactor = null , object? workspace = null )
 		{
-			base.SetEnv(extent: extent, workspace: workspace);
+			base.SetEnv(extent: extent, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;
 		}
 
@@ -304,25 +305,32 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			All_versions,
 
 			/// <summary>
-			/// <para>Current version— The package will contain a geodatabase and layer file compatible with the version of the current release.</para>
+			/// <para>Current version— The package will contain a geodatabase and layer file compatible with the version of the current ArcGIS Pro release.</para>
 			/// </summary>
 			[GPValue("CURRENT")]
 			[Description("Current version")]
 			Current_version,
 
 			/// <summary>
-			/// <para>1.2—The package will contain a geodatabase and layer file compatible with version 1.2 and later.</para>
+			/// <para>1.2—The package will contain a geodatabase and layer file compatible with ArcGIS Pro version 1.2 and later.</para>
 			/// </summary>
 			[GPValue("1.2")]
 			[Description("1.2")]
 			_12,
 
 			/// <summary>
-			/// <para>2.x—The package will contain a geodatabase and layer file compatible with version 2.0 and later.</para>
+			/// <para>2.x—The package will contain a geodatabase and layer file compatible with ArcGIS Pro version 2.0 and later.</para>
 			/// </summary>
 			[GPValue("2.x")]
 			[Description("2.x")]
 			_2x,
+
+			/// <summary>
+			/// <para>3.x—The package will contain a geodatabase and layer file compatible with ArcGIS Pro version 3.0 and later.</para>
+			/// </summary>
+			[GPValue("3.x")]
+			[Description("3.x")]
+			_3x,
 
 		}
 

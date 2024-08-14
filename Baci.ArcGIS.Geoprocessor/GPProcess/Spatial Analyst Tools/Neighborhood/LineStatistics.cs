@@ -20,12 +20,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InPolylineFeatures">
 		/// <para>Input polyline features</para>
-		/// <para>The input polyline features for which to calculate the statistics in a neighbourhood around each output cell.</para>
+		/// <para>The input lines to use in the neighborhood operation.</para>
+		/// <para>For each output cell, a statistic will be calculated for all of the portions of the input polyline features that fall within a circular neighborhood around that cell.</para>
+		/// <para>The size the circular neighbourhood is defined by the search radius.</para>
 		/// </param>
 		/// <param name="Field">
 		/// <para>Field</para>
-		/// <para>The field that the specified statistic will be calculated for. It can be any numeric field of the input features.</para>
-		/// <para>When the statistics type is set to Length, the Field parameter can be set to None.</para>
+		/// <para>The field for which the specified statistic will be calculated. It can be any numeric field of the input line features.</para>
+		/// <para>When Statistics type is set to Length, the Field parameter can be set to NONE.</para>
 		/// <para>It can be the Shape field if the input features contain z-values.</para>
 		/// </param>
 		/// <param name="OutRaster">
@@ -72,11 +74,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPolylineFeatures, Field, OutRaster, CellSize, SearchRadius, StatisticsType };
+		public override object[] Parameters => new object[] { InPolylineFeatures, Field, OutRaster, CellSize!, SearchRadius!, StatisticsType! };
 
 		/// <summary>
 		/// <para>Input polyline features</para>
-		/// <para>The input polyline features for which to calculate the statistics in a neighbourhood around each output cell.</para>
+		/// <para>The input lines to use in the neighborhood operation.</para>
+		/// <para>For each output cell, a statistic will be calculated for all of the portions of the input polyline features that fall within a circular neighborhood around that cell.</para>
+		/// <para>The size the circular neighbourhood is defined by the search radius.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -85,8 +89,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Field</para>
-		/// <para>The field that the specified statistic will be calculated for. It can be any numeric field of the input features.</para>
-		/// <para>When the statistics type is set to Length, the Field parameter can be set to None.</para>
+		/// <para>The field for which the specified statistic will be calculated. It can be any numeric field of the input line features.</para>
+		/// <para>When Statistics type is set to Length, the Field parameter can be set to NONE.</para>
 		/// <para>It can be the Shape field if the input features contain z-values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -110,46 +114,47 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
 		[GPSAGeoDataDomain()]
-		public object CellSize { get; set; }
+		public object? CellSize { get; set; }
 
 		/// <summary>
 		/// <para>Search radius</para>
-		/// <para>Search radius to calculate the desired statistic within, in map units.</para>
+		/// <para>The search radius that will be used to calculate the statistic within, in map units.</para>
 		/// <para>The default radius is five times the output cell size.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object SearchRadius { get; set; }
+		public object? SearchRadius { get; set; }
 
 		/// <summary>
 		/// <para>Statistics type</para>
 		/// <para>Specifies the statistic type to be calculated.</para>
 		/// <para>Statistics are calculated on the value of the specified field for all lines within the neighborhood.</para>
-		/// <para>Mean—Calculates the average field value in each neighborhood, weighted by the length.The form of the calculation is:Only the part of the length that falls within the neighborhood is used.</para>
+		/// <para>Mean—The average field value in each neighborhood, weighted by the length, will be calculated.The form of the calculation is:Only the part of the line that falls within the neighborhood is used.</para>
 		/// <para>Mean = (sum of (length * field_value)) / (sum_of_length)</para>
-		/// <para>Majority—Determines the value having the greatest length of line in the neighborhood.</para>
-		/// <para>Maximum—Determines the largest value in the neighborhood.</para>
-		/// <para>Median—Determines the median value, weighted by the length.Conceptually, all line segments in the neighborhood are sorted by value and placed end-to-end in a straight line. The value of the segment at the midpoint of the straight line is the median.</para>
-		/// <para>Minimum—Calculates smallest value in each neighborhood.</para>
-		/// <para>Minority—The value having the least length of line in the neighborhood.</para>
-		/// <para>Range—The range of values (maximum–minimum).</para>
-		/// <para>Variety—The number of unique values.</para>
-		/// <para>Length—The total line length in the neighborhood. If the value of the field is other than 1, the lengths are multiplied by the item value before adding them together. This option can be used when the field parameter is set to None.</para>
-		/// <para>When the specified field is integer, the available statistic choices are Mean, Majority, Maximum, Median, Minimum, Minority, Range, and Variety. When the field is floating point, the only allowed statistics are Mean, Maximum, Minimum, and Range.</para>
+		/// <para>Majority—The value having the greatest length of line in the neighborhood will be identified.</para>
+		/// <para>Maximum—The largest value in the neighborhood will be identified.</para>
+		/// <para>Median—The median value, weighted by the length, will be calculated.Conceptually, all line segments in the neighborhood are sorted by value and placed end to end in a straight line. The value of the segment at the midpoint of the straight line is the median.</para>
+		/// <para>Minimum—The smallest value in each neighborhood will be identified.</para>
+		/// <para>Minority—The value having the least length of line in the neighborhood will be identified.</para>
+		/// <para>Range—The range of values (maximum–minimum) will be calculated.</para>
+		/// <para>Variety—The number of unique values will be calculated.</para>
+		/// <para>Length—The total line length in the neighborhood will be calculated. If the value of the field is not 1, the lengths are multiplied by the item value before adding them together. This option can be used when the field parameter is set to None.</para>
+		/// <para>The default statistic type is Mean.</para>
+		/// <para>The available choices for the statistic type are determined by the numeric type of the specified field. If the field is integer, the available statistic choices will be majority, maximum, mean, median, minimum, minority, range, variety, and length. If the field is floating point, only the mean, maximum, minimum, range, and length statistics will be available.</para>
 		/// <para><see cref="StatisticsTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object StatisticsType { get; set; } = "MEAN";
+		public object? StatisticsType { get; set; } = "MEAN";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LineStatistics SetEnviroment(int? autoCommit = null , object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public LineStatistics SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 
@@ -161,63 +166,63 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum StatisticsTypeEnum 
 		{
 			/// <summary>
-			/// <para>Mean—Calculates the average field value in each neighborhood, weighted by the length.The form of the calculation is:Only the part of the length that falls within the neighborhood is used.</para>
+			/// <para>Mean—The average field value in each neighborhood, weighted by the length, will be calculated.The form of the calculation is:Only the part of the line that falls within the neighborhood is used.</para>
 			/// </summary>
 			[GPValue("MEAN")]
 			[Description("Mean")]
 			Mean,
 
 			/// <summary>
-			/// <para>Majority—Determines the value having the greatest length of line in the neighborhood.</para>
+			/// <para>Majority—The value having the greatest length of line in the neighborhood will be identified.</para>
 			/// </summary>
 			[GPValue("MAJORITY")]
 			[Description("Majority")]
 			Majority,
 
 			/// <summary>
-			/// <para>Maximum—Determines the largest value in the neighborhood.</para>
+			/// <para>Maximum—The largest value in the neighborhood will be identified.</para>
 			/// </summary>
 			[GPValue("MAXIMUM")]
 			[Description("Maximum")]
 			Maximum,
 
 			/// <summary>
-			/// <para>Median—Determines the median value, weighted by the length.Conceptually, all line segments in the neighborhood are sorted by value and placed end-to-end in a straight line. The value of the segment at the midpoint of the straight line is the median.</para>
+			/// <para>Median—The median value, weighted by the length, will be calculated.Conceptually, all line segments in the neighborhood are sorted by value and placed end to end in a straight line. The value of the segment at the midpoint of the straight line is the median.</para>
 			/// </summary>
 			[GPValue("MEDIAN")]
 			[Description("Median")]
 			Median,
 
 			/// <summary>
-			/// <para>Minimum—Calculates smallest value in each neighborhood.</para>
+			/// <para>Minimum—The smallest value in each neighborhood will be identified.</para>
 			/// </summary>
 			[GPValue("MINIMUM")]
 			[Description("Minimum")]
 			Minimum,
 
 			/// <summary>
-			/// <para>Minority—The value having the least length of line in the neighborhood.</para>
+			/// <para>Minority—The value having the least length of line in the neighborhood will be identified.</para>
 			/// </summary>
 			[GPValue("MINORITY")]
 			[Description("Minority")]
 			Minority,
 
 			/// <summary>
-			/// <para>Range—The range of values (maximum–minimum).</para>
+			/// <para>Range—The range of values (maximum–minimum) will be calculated.</para>
 			/// </summary>
 			[GPValue("RANGE")]
 			[Description("Range")]
 			Range,
 
 			/// <summary>
-			/// <para>Variety—The number of unique values.</para>
+			/// <para>Variety—The number of unique values will be calculated.</para>
 			/// </summary>
 			[GPValue("VARIETY")]
 			[Description("Variety")]
 			Variety,
 
 			/// <summary>
-			/// <para>Length—The total line length in the neighborhood. If the value of the field is other than 1, the lengths are multiplied by the item value before adding them together. This option can be used when the field parameter is set to None.</para>
+			/// <para>Length—The total line length in the neighborhood will be calculated. If the value of the field is not 1, the lengths are multiplied by the item value before adding them together. This option can be used when the field parameter is set to None.</para>
 			/// </summary>
 			[GPValue("LENGTH")]
 			[Description("Length")]

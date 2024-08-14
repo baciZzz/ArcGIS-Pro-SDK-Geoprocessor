@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputpoints, Pointidfield, Datasourceresolution, Generalize, Outputtraceline };
+		public override object[] Parameters => new object[] { Inputpoints, Pointidfield!, Datasourceresolution!, Generalize!, Outputtraceline! };
 
 		/// <summary>
 		/// <para>Input Points</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
-		public object Pointidfield { get; set; }
+		public object? Pointidfield { get; set; }
 
 		/// <summary>
 		/// <para>Data Source Resolution</para>
@@ -92,24 +92,24 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Datasourceresolution { get; set; } = " ";
+		public object? Datasourceresolution { get; set; } = " ";
 
 		/// <summary>
 		/// <para>Generalize</para>
-		/// <para>Specifies whether the output watersheds will be smoothed into simpler shapes or conform to the cell edges of the original DEM.</para>
-		/// <para>Unchecked—The edges of the polygons will conform to the cell edges of the original DEM. This is the default.</para>
-		/// <para>Checked—The polygon boundaries will be smoothed into simpler shapes.</para>
+		/// <para>Specifies whether the output downstream trace lines will be smoothed into simpler lines or conform to the cell centers of the original DEM.</para>
+		/// <para>Unchecked—The lines will not be smoothed. Each trace line of output downstream trace have more vertices since they conform to the original DEM cell centers. This is the default.</para>
+		/// <para>Checked—The lines will be smoothed into simpler lines.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
-		public object Generalize { get; set; } = "false";
+		public object? Generalize { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Trace Line</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureRecordSetLayer()]
-		public object Outputtraceline { get; set; }
+		public object? Outputtraceline { get; set; }
 
 		#region InnerClass
 

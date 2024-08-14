@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Recalculate Feature Class Extent</para>
-	/// <para>Recalculates the XY, Z, and M extent properties of a feature class based on the features in the feature class.</para>
+	/// <para>Recalculates the xy, z, and m extent properties of a feature class based on the features in the feature class.</para>
 	/// </summary>
 	public class RecalculateFeatureClassExtent : AbstractGPProcess
 	{
@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatures };
+		public override object[] Parameters => new object[] { InFeatures, OutFeatures!, StoreExtent! };
 
 		/// <summary>
 		/// <para>Feature Class</para>
@@ -75,12 +75,23 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutFeatures { get; set; }
+		public object? OutFeatures { get; set; }
+
+		/// <summary>
+		/// <para>Store Extent</para>
+		/// <para>Specifies whether the extent will be stored for feature classes that are not registered. This parameter is only active when the input feature class is an unregistered spatial table.</para>
+		/// <para>If the input feature class is updated frequently, you may choose not to store the recalculated extent value. If you choose to store the extent, the extent will not be recalculated each time the feature class is added to a map.</para>
+		/// <para>Checked—The extent will be stored for the input feature class.</para>
+		/// <para>Unchecked—The extent will not be stored for the input feature class. This is the default.</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.optional)]
+		[GPBoolean()]
+		public object? StoreExtent { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RecalculateFeatureClassExtent SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public RecalculateFeatureClassExtent SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

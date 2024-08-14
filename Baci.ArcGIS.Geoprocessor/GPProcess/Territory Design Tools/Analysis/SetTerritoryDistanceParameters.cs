@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, Level, DistanceType, Units, MaxRadius, BufferDistance, MinDistance, OutTerritorySolution, NetworkDatasource, BuildIndex, TravelDirection, TimeOfDay, TimeZone, SearchTolerance };
+		public override object[] Parameters => new object[] { InTerritorySolution, Level, DistanceType!, Units!, MaxRadius!, BufferDistance!, MinDistance!, OutTerritorySolution!, NetworkDatasource!, BuildIndex!, TravelDirection!, TimeOfDay!, TimeZone!, SearchTolerance! };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>
@@ -86,15 +86,15 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 
 		/// <summary>
 		/// <para>Distance Type</para>
-		/// <para>Specifies how distance is calculated based on the method of travel.</para>
-		/// <para>Straight line—Straight-line, or Euclidean distance, is used as the distance measure. This is the default.</para>
+		/// <para>Specifies how distance will be calculated based on the method of travel.</para>
+		/// <para>Straight line—Straight-line, or Euclidean distance, will be used as the distance measure. This is the default.</para>
 		/// <para>Additional distance types (travel modes—for example, Driving Time, Driving Distance) will be dependent on the available network dataset.</para>
 		/// <para><see cref="DistanceTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DistanceType { get; set; }
+		public object? DistanceType { get; set; }
 
 		/// <summary>
 		/// <para>Measure Units</para>
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object Units { get; set; }
+		public object? Units { get; set; }
 
 		/// <summary>
 		/// <para>Maximum Territory Radius</para>
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
-		public object MaxRadius { get; set; }
+		public object? MaxRadius { get; set; }
 
 		/// <summary>
 		/// <para>Territory Buffer Distance</para>
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[GPDouble()]
 		[GPNumericDomain()]
 		[Category("Additional Distance Settings")]
-		public object BufferDistance { get; set; }
+		public object? BufferDistance { get; set; }
 
 		/// <summary>
 		/// <para>Minimum Distance Between Centers</para>
@@ -132,23 +132,23 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[GPDouble()]
 		[GPNumericDomain()]
 		[Category("Additional Distance Settings")]
-		public object MinDistance { get; set; }
+		public object? MinDistance { get; set; }
 
 		/// <summary>
 		/// <para>Updated Territory Solution</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPGroupLayer()]
-		public object OutTerritorySolution { get; set; }
+		public object? OutTerritorySolution { get; set; }
 
 		/// <summary>
 		/// <para>Network Data Source</para>
-		/// <para>The network dataset on which the network distance calculation will be performed.</para>
+		/// <para>The network dataset on which the network distance calculation will be performed. The parameter requires a locally installed dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[Category("Network Parameters")]
-		public object NetworkDatasource { get; set; }
+		public object? NetworkDatasource { get; set; }
 
 		/// <summary>
 		/// <para>Build Network Index</para>
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Network Parameters")]
-		public object BuildIndex { get; set; } = "true";
+		public object? BuildIndex { get; set; } = "true";
 
 		/// <summary>
 		/// <para>Travel Direction</para>
@@ -174,16 +174,16 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Network Parameters")]
-		public object TravelDirection { get; set; }
+		public object? TravelDirection { get; set; }
 
 		/// <summary>
 		/// <para>Time of Day</para>
-		/// <para>Specifies the time and date when calculating distance.</para>
+		/// <para>The time and date that will be used when calculating distance.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
 		[Category("Network Parameters")]
-		public object TimeOfDay { get; set; }
+		public object? TimeOfDay { get; set; }
 
 		/// <summary>
 		/// <para>Time Zone</para>
@@ -196,7 +196,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Network Parameters")]
-		public object TimeZone { get; set; }
+		public object? TimeZone { get; set; }
 
 		/// <summary>
 		/// <para>Search Tolerance</para>
@@ -207,12 +207,12 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[GPLinearUnit()]
 		[GPNumericDomain()]
 		[Category("Network Parameters")]
-		public object SearchTolerance { get; set; }
+		public object? SearchTolerance { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetTerritoryDistanceParameters SetEnviroment(object workspace = null )
+		public SetTerritoryDistanceParameters SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;
@@ -226,7 +226,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		public enum DistanceTypeEnum 
 		{
 			/// <summary>
-			/// <para>Straight line—Straight-line, or Euclidean distance, is used as the distance measure. This is the default.</para>
+			/// <para>Straight line—Straight-line, or Euclidean distance, will be used as the distance measure. This is the default.</para>
 			/// </summary>
 			[GPValue("STRAIGHT_LINE")]
 			[Description("Straight line")]

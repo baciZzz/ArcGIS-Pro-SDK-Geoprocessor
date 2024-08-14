@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutTable, FieldDefinitionTable, ScriptFile!, OutputFieldName!, SourceFieldName!, OutputFieldType!, OutputFieldDecimalsOrLength!, OutputFieldAlias!, OutputFieldScript };
+		public override object[] Parameters => new object[] { InTable, OutTable, FieldDefinitionTable, ScriptFile!, OutputFieldName!, SourceFieldName!, OutputFieldType!, OutputFieldDecimalsOrLength!, OutputFieldAlias!, OutputFieldScript! };
 
 		/// <summary>
 		/// <para>Input Table</para>

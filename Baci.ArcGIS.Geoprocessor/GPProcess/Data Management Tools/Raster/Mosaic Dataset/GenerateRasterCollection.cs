@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutRasterCollection, CollectionBuilder, CollectionBuilderArguments, RasterFunction, RasterFunctionArguments, CollectionProperties, GenerateRasters, OutWorkspace, Format, OutBaseName };
+		public override object[] Parameters => new object[] { OutRasterCollection, CollectionBuilder, CollectionBuilderArguments, RasterFunction!, RasterFunctionArguments!, CollectionProperties!, GenerateRasters!, OutWorkspace!, Format!, OutBaseName! };
 
 		/// <summary>
 		/// <para>Output Raster Collection</para>
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[GPCompositeDomain()]
-		public object RasterFunction { get; set; }
+		public object? RasterFunction { get; set; }
 
 		/// <summary>
 		/// <para>Raster Function Arguments</para>
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object RasterFunctionArguments { get; set; }
+		public object? RasterFunctionArguments { get; set; }
 
 		/// <summary>
 		/// <para>Raster Collection Properties</para>
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[Category("Output Collection Options")]
-		public object CollectionProperties { get; set; }
+		public object? CollectionProperties { get; set; }
 
 		/// <summary>
 		/// <para>Generate Rasters</para>
@@ -165,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPBoolean()]
 		[GPCodedValueDomain()]
 		[Category("Output Collection Options")]
-		public object GenerateRasters { get; set; } = "false";
+		public object? GenerateRasters { get; set; } = "false";
 
 		/// <summary>
 		/// <para>Output Raster Workspace</para>
@@ -175,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
 		[Category("Output Collection Options")]
-		public object OutWorkspace { get; set; }
+		public object? OutWorkspace { get; set; }
 
 		/// <summary>
 		/// <para>Format</para>
@@ -190,7 +190,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[GPString()]
 		[GPCodedValueDomain()]
 		[Category("Output Collection Options")]
-		public object Format { get; set; } = "CRF";
+		public object? Format { get; set; } = "CRF";
 
 		/// <summary>
 		/// <para>Output Base Name</para>
@@ -200,12 +200,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[Category("Output Collection Options")]
-		public object OutBaseName { get; set; }
+		public object? OutBaseName { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateRasterCollection SetEnviroment(object parallelProcessingFactor = null , object pyramid = null , object rasterStatistics = null )
+		public GenerateRasterCollection SetEnviroment(object? parallelProcessingFactor = null , object? pyramid = null , object? rasterStatistics = null )
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, rasterStatistics: rasterStatistics);
 			return this;

@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Erase Point</para>
-	/// <para>Deletes points from the input that are either inside or outside the Remove Features, depending on the Operation Type.</para>
+	/// <para>Deletes points from the input that are either inside or outside the remove features, depending on the operation type.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -26,7 +26,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </param>
 		/// <param name="RemoveFeatures">
 		/// <para>Remove Features</para>
-		/// <para>Input features inside or outside the Remove Features will be deleted, depending on the Operation Type parameter.</para>
+		/// <para>The polygon features that will be used to determine which features from the Input Features value will be deleted.</para>
 		/// </param>
 		public ErasePoint(object InFeatures, object RemoveFeatures)
 		{
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, RemoveFeatures, OperationType, OutFeatureClass };
+		public override object[] Parameters => new object[] { InFeatures, RemoveFeatures, OperationType!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Remove Features</para>
-		/// <para>Input features inside or outside the Remove Features will be deleted, depending on the Operation Type parameter.</para>
+		/// <para>The polygon features that will be used to determine which features from the Input Features value will be deleted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Operation Type</para>
-		/// <para>Determines if points inside or outside the remove features will be deleted.</para>
+		/// <para>Specifies whether points inside or outside the remove features will be deleted.</para>
 		/// <para>Inside—Input point features inside or on the boundary of the remove features will be deleted.</para>
 		/// <para>Outside—Input point features outside the remove features will be deleted.</para>
 		/// <para><see cref="OperationTypeEnum"/></para>
@@ -97,19 +97,19 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object OperationType { get; set; } = "INSIDE";
+		public object? OperationType { get; set; } = "INSIDE";
 
 		/// <summary>
 		/// <para>Updated Input Features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
-		public object OutFeatureClass { get; set; }
+		public object? OutFeatureClass { get; set; }
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ErasePoint SetEnviroment(object workspace = null )
+		public ErasePoint SetEnviroment(object? workspace = null )
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

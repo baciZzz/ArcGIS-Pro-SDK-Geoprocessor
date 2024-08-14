@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Distance Allocation</para>
-	/// <para>Calculates distance allocation for each cell to the provided sources based on straight-line distance, cost distance, true surface distance, as well as vertical and horizontal cost factors.</para>
+	/// <para>Calculates distance allocation for each cell to the provided sources based on straight-line distance, cost distance, and true surface distance, as well as vertical and horizontal cost factors.</para>
 	/// </summary>
 	public class DistanceAllocation : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <param name="InSourceData">
 		/// <para>Input raster or feature source data</para>
 		/// <para>The input source locations.</para>
-		/// <para>This is a raster or feature dataset that identifies the cells or locations from or to which the least accumulated cost distance for every output cell location is calculated.</para>
+		/// <para>This is a raster or feature (point, line, or polygon) identifying the cells or locations that will be used to calculate the least accumulated cost distance for each output cell location.</para>
 		/// <para>For rasters, the input type can be integer or floating point.</para>
 		/// </param>
 		/// <param name="OutDistanceAllocationRaster">
@@ -67,12 +67,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSourceData, OutDistanceAllocationRaster, InBarrierData, InSurfaceRaster, InCostRaster, InVerticalRaster, VerticalFactor, InHorizontalRaster, HorizontalFactor, OutDistanceAccumulationRaster, OutBackDirectionRaster, OutSourceDirectionRaster, OutSourceLocationRaster, SourceField, SourceInitialAccumulation, SourceMaximumAccumulation, SourceCostMultiplier, SourceDirection, DistanceMethod };
+		public override object[] Parameters => new object[] { InSourceData, OutDistanceAllocationRaster, InBarrierData!, InSurfaceRaster!, InCostRaster!, InVerticalRaster!, VerticalFactor!, InHorizontalRaster!, HorizontalFactor!, OutDistanceAccumulationRaster!, OutBackDirectionRaster!, OutSourceDirectionRaster!, OutSourceLocationRaster!, SourceField!, SourceInitialAccumulation!, SourceMaximumAccumulation!, SourceCostMultiplier!, SourceDirection!, DistanceMethod! };
 
 		/// <summary>
 		/// <para>Input raster or feature source data</para>
 		/// <para>The input source locations.</para>
-		/// <para>This is a raster or feature dataset that identifies the cells or locations from or to which the least accumulated cost distance for every output cell location is calculated.</para>
+		/// <para>This is a raster or feature (point, line, or polygon) identifying the cells or locations that will be used to calculate the least accumulated cost distance for each output cell location.</para>
 		/// <para>For rasters, the input type can be integer or floating point.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -91,13 +91,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Input barrier raster or feature data</para>
 		/// <para>The dataset that defines the barriers.</para>
-		/// <para>The barriers can be defined by an integer or a floating-point raster, or by a feature layer.</para>
+		/// <para>The barriers can be defined by an integer or a floating-point raster, or by a point, line, or polygon feature.</para>
 		/// <para>For a raster barrier, the barrier must have a valid value, including zero, and the areas that are not barriers must be NoData.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
 		[GPSAGeoDataDomain()]
-		public object InBarrierData { get; set; }
+		public object? InBarrierData { get; set; }
 
 		/// <summary>
 		/// <para>Input surface raster</para>
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
 		[GPSAGeoDataDomain()]
-		public object InSurfaceRaster { get; set; }
+		public object? InSurfaceRaster { get; set; }
 
 		/// <summary>
 		/// <para>Input cost raster</para>
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
 		[GPSAGeoDataDomain()]
-		public object InCostRaster { get; set; }
+		public object? InCostRaster { get; set; }
 
 		/// <summary>
 		/// <para>Input vertical raster</para>
@@ -129,12 +129,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPSAGeoData()]
 		[GPSAGeoDataDomain()]
 		[Category("Costs relative to vertical movement (optional)")]
-		public object InVerticalRaster { get; set; }
+		public object? InVerticalRaster { get; set; }
 
 		/// <summary>
 		/// <para>Vertical factor</para>
 		/// <para>Specifies the relationship between the vertical cost factor and the vertical relative moving angle (VRMA).</para>
-		/// <para>There are several factors with modifiers from which to select that identify a defined vertical factor graph. Additionally, a table can be used to create a custom graph. The graphs are used to identify the vertical factor used in calculating the total cost for moving into a neighboring cell.</para>
+		/// <para>There are several factors with modifiers that identify a defined vertical factor graph. Additionally, a table can be used to create a custom graph. The graphs are used to identify the vertical factor used in calculating the total cost for moving into a neighboring cell.</para>
 		/// <para>In the descriptions below, two acronyms are used: VF stands for vertical factor, which defines the vertical difficulty encountered in moving from one cell to the next; and VRMA stands for vertical relative moving angle, which identifies the slope angle between the FROM or processing cell and the TO cell.</para>
 		/// <para>The Vertical factor options are as follows:</para>
 		/// <para>Binary—If the VRMA is greater than the low-cut angle and less than the high-cut angle, the VF is set to the value associated with the zero factor; otherwise, it is infinity.</para>
@@ -144,9 +144,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <para>Symmetric Inverse Linear—The VF is an inverse linear function of the VRMA in either the negative or positive side of the VRMA, respectively, and the two linear functions are symmetrical with respect to the VF (y) axis.</para>
 		/// <para>Cos—The VF is the cosine-based function of the VRMA.</para>
 		/// <para>Sec—The VF is the secant-based function of the VRMA.</para>
-		/// <para>Cos-Sec—The VF is the cosine-based function of the VRMA when the VRMA is negative and is the secant-based function of the VRMA when the VRMA is nonnegative.</para>
-		/// <para>Sec-Cos—The VF is the secant-based function of the VRMA when the VRMA is negative and is the cosine-based function of the VRMA when the VRMA is nonnegative.</para>
-		/// <para>Table—A table file will be used to define the vertical-factor graph used to determine the VFs.</para>
+		/// <para>Cos-Sec—The VF is the cosine-based function of the VRMA when the VRMA is negative and is the secant-based function of the VRMA when the VRMA is not negative.</para>
+		/// <para>Sec-Cos—The VF is the secant-based function of the VRMA when the VRMA is negative and is the cosine-based function of the VRMA when the VRMA is not negative.</para>
+		/// <para>Table—A table file will be used to define the vertical-factor graph that is used to determine the VFs.</para>
 		/// <para>Modifiers to the vertical keywords are the following:</para>
 		/// <para>Zero factor—The vertical factor used when the VRMA is zero. This factor positions the y-intercept of the specified function. By definition, the zero factor is not applicable to any of the trigonometric vertical functions (COS, SEC, COS-SEC, or SEC-COS). The y-intercept is defined by these functions.</para>
 		/// <para>Low Cut angle—The VRMA angle below which the VF will be set to infinity.</para>
@@ -157,23 +157,23 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAVerticalFactor()]
 		[Category("Costs relative to vertical movement (optional)")]
-		public object VerticalFactor { get; set; } = "BINARY 1 -30 30";
+		public object? VerticalFactor { get; set; } = "BINARY 1 -30 30";
 
 		/// <summary>
 		/// <para>Input horizontal raster</para>
 		/// <para>A raster defining the horizontal direction at each cell.</para>
-		/// <para>The values on the raster must be integers ranging from 0 to 360, with 0 degrees being north, or toward the top of the screen, and increasing clockwise. Flat areas should be given a value of -1. The values at each location will be used in conjunction with the Horizontal factor to determine the horizontal cost incurred when moving from a cell to its neighbors.</para>
+		/// <para>The values on the raster must be integers ranging from 0 to 360, with 0 degrees being north, or toward the top of the screen, and increasing clockwise. Flat areas should be given a value of -1. The values at each location will be used in conjunction with the Horizontal factor parameter to determine the horizontal cost incurred when moving from a cell to its neighbors.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
 		[GPSAGeoDataDomain()]
 		[Category("Costs relative to horizontal movement (optional)")]
-		public object InHorizontalRaster { get; set; }
+		public object? InHorizontalRaster { get; set; }
 
 		/// <summary>
 		/// <para>Horizontal factor</para>
 		/// <para>Specifies the relationship between the horizontal cost factor and the horizontal relative moving angle (HRMA).</para>
-		/// <para>There are several factors with modifiers from which to select that identify a defined horizontal factor graph. Additionally, a table can be used to create a custom graph. The graphs are used to identify the horizontal factor used in calculating the total cost for moving into a neighboring cell.</para>
+		/// <para>There are several factors with modifiers that identify a defined horizontal factor graph. Additionally, a table can be used to create a custom graph. The graphs are used to identify the horizontal factor used in calculating the total cost of moving into a neighboring cell.</para>
 		/// <para>In the descriptions below, two acronyms are used: HF stands for horizontal factor, which defines the horizontal difficulty encountered when moving from one cell to the next; and HRMA stands for horizontal relative moving angle, which identifies the angle between the horizontal direction from a cell and the moving direction.</para>
 		/// <para>The Horizontal factor options are as follows:</para>
 		/// <para>Binary—If the HRMA is less than the cut angle, the HF is set to the value associated with the zero factor; otherwise, it is infinity.</para>
@@ -185,13 +185,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <para>Zero factor—The horizontal factor to be used when the HRMA is zero. This factor positions the y-intercept for any of the horizontal factor functions.</para>
 		/// <para>Cut angle—The HRMA angle beyond which the HF will be set to infinity.</para>
 		/// <para>Slope—The slope of the straight line used with the Linear and Inverse Linear horizontal factor keywords. The slope is specified as a fraction of rise over run (for example, 45 percent slope is 1/45, which is input as 0.02222).</para>
-		/// <para>Side value—The HF when the HRMA is greater than or equal to 45 degrees and less than 90 degrees when the Forward horizontal factor keyword is specified.</para>
+		/// <para>Side value—The HF when the HRMA is greater than or equal to 45 degrees and less than 90 degrees when the Forward horizontal-factor keyword is specified.</para>
 		/// <para>Table name—The name of the table defining the HF.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAHorizontalFactor()]
 		[Category("Costs relative to horizontal movement (optional)")]
-		public object HorizontalFactor { get; set; } = "BINARY 1 45";
+		public object? HorizontalFactor { get; set; } = "BINARY 1 45";
 
 		/// <summary>
 		/// <para>Out distance accumulation raster</para>
@@ -200,7 +200,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
-		public object OutDistanceAccumulationRaster { get; set; }
+		public object? OutDistanceAccumulationRaster { get; set; }
 
 		/// <summary>
 		/// <para>Out back direction raster</para>
@@ -210,7 +210,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
-		public object OutBackDirectionRaster { get; set; }
+		public object? OutBackDirectionRaster { get; set; }
 
 		/// <summary>
 		/// <para>Out source direction raster</para>
@@ -221,7 +221,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
 		[Category("Additional output rasters (optional)")]
-		public object OutSourceDirectionRaster { get; set; }
+		public object? OutSourceDirectionRaster { get; set; }
 
 		/// <summary>
 		/// <para>Out source location raster</para>
@@ -230,7 +230,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
 		[Category("Additional output rasters (optional)")]
-		public object OutSourceLocationRaster { get; set; }
+		public object? OutSourceLocationRaster { get; set; }
 
 		/// <summary>
 		/// <para>Source field</para>
@@ -239,11 +239,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
-		public object SourceField { get; set; }
+		public object? SourceField { get; set; }
 
 		/// <summary>
 		/// <para>Initial accumulation</para>
-		/// <para>The initial accumulative cost to begin the cost calculation.</para>
+		/// <para>The initial accumulative cost that will be used to begin the cost calculation.</para>
 		/// <para>Allows for the specification of the fixed cost associated with a source. Instead of starting at a cost of zero, the cost algorithm will begin with the value set by Initial accumulation.</para>
 		/// <para>The values must be zero or greater. The default is 0.</para>
 		/// </summary>
@@ -251,7 +251,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPComposite()]
 		[GPCompositeDomain()]
 		[Category("Characteristics of the sources (optional)")]
-		public object SourceInitialAccumulation { get; set; }
+		public object? SourceInitialAccumulation { get; set; }
 
 		/// <summary>
 		/// <para>Maximum accumulation</para>
@@ -263,11 +263,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPComposite()]
 		[GPCompositeDomain()]
 		[Category("Characteristics of the sources (optional)")]
-		public object SourceMaximumAccumulation { get; set; }
+		public object? SourceMaximumAccumulation { get; set; }
 
 		/// <summary>
 		/// <para>Multiplier to apply to costs</para>
-		/// <para>The multiplier to apply to the cost values.</para>
+		/// <para>The multiplier that will be applied to the cost values.</para>
 		/// <para>This allows for control of the mode of travel or the magnitude at a source. The greater the multiplier, the greater the cost to move through each cell.</para>
 		/// <para>The values must be greater than zero. The default is 1.</para>
 		/// </summary>
@@ -275,7 +275,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPComposite()]
 		[GPCompositeDomain()]
 		[Category("Characteristics of the sources (optional)")]
-		public object SourceCostMultiplier { get; set; }
+		public object? SourceCostMultiplier { get; set; }
 
 		/// <summary>
 		/// <para>Travel direction</para>
@@ -289,26 +289,26 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[GPComposite()]
 		[GPCompositeDomain()]
 		[Category("Characteristics of the sources (optional)")]
-		public object SourceDirection { get; set; }
+		public object? SourceDirection { get; set; }
 
 		/// <summary>
 		/// <para>Distance Method</para>
-		/// <para>Specifies whether to calculate the distance using a planar (flat earth) or a geodesic (ellipsoid) method.</para>
+		/// <para>Specifies whether the distance will be calculated using a planar (flat earth) or a geodesic (ellipsoid) method.</para>
 		/// <para>Planar—The distance calculation will be performed on a projected flat plane using a 2D Cartesian coordinate system. This is the default.</para>
-		/// <para>Geodesic—The distance calculation will be performed on the ellipsoid. Therefore, regardless of input or output projection, the results do not change.</para>
+		/// <para>Geodesic—The distance calculation will be performed on the ellipsoid. Regardless of input or output projection, the results will not change.</para>
 		/// <para><see cref="DistanceMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object DistanceMethod { get; set; } = "PLANAR";
+		public object? DistanceMethod { get; set; } = "PLANAR";
 
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DistanceAllocation SetEnviroment(int? autoCommit = null , object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public DistanceAllocation SetEnviroment(int? autoCommit = null , object? cellSize = null , object? cellSizeProjectionMethod = null , object? compression = null , object? configKeyword = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? snapRaster = null , object? tileSize = null , object? workspace = null )
 		{
-			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
+			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, compression: compression, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;
 		}
 
@@ -327,7 +327,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 			Planar,
 
 			/// <summary>
-			/// <para>Geodesic—The distance calculation will be performed on the ellipsoid. Therefore, regardless of input or output projection, the results do not change.</para>
+			/// <para>Geodesic—The distance calculation will be performed on the ellipsoid. Regardless of input or output projection, the results will not change.</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
 			[Description("Geodesic")]

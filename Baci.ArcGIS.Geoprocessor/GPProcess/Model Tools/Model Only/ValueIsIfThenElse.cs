@@ -55,7 +55,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputValue, ValueTest, ComparisonType, Values, RangeValues, ComparisonValue, True, False };
+		public override object[] Parameters => new object[] { InputValue!, ValueTest!, ComparisonType!, Values!, RangeValues!, ComparisonValue!, True!, False! };
 
 		/// <summary>
 		/// <para>Input Value</para>
@@ -63,7 +63,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPType()]
-		public object InputValue { get; set; }
+		public object? InputValue { get; set; }
 
 		/// <summary>
 		/// <para>Value Test</para>
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ValueTest { get; set; } = "IS_EQUAL_TO_ANY";
+		public object? ValueTest { get; set; } = "IS_EQUAL_TO_ANY";
 
 		/// <summary>
 		/// <para>Comparison Type</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
 		[GPCodedValueDomain()]
-		public object ComparisonType { get; set; } = "STRING_CASE_INSENSITIVE";
+		public object? ComparisonType { get; set; } = "STRING_CASE_INSENSITIVE";
 
 		/// <summary>
 		/// <para>Values</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		public object Values { get; set; }
+		public object? Values { get; set; }
 
 		/// <summary>
 		/// <para>Range Values</para>
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
-		public object RangeValues { get; set; }
+		public object? RangeValues { get; set; }
 
 		/// <summary>
 		/// <para>Comparison Value</para>
@@ -124,21 +124,21 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPType()]
-		public object ComparisonValue { get; set; }
+		public object? ComparisonValue { get; set; }
 
 		/// <summary>
 		/// <para>True</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
-		public object True { get; set; } = "false";
+		public object? True { get; set; } = "false";
 
 		/// <summary>
 		/// <para>False</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[GPBoolean()]
-		public object False { get; set; } = "false";
+		public object? False { get; set; } = "false";
 
 		#region InnerClass
 
@@ -155,11 +155,11 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 			Is_equal_to_at_least_one_value,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Does not match at least one value—Determine whether the input value is not equal to any one of the comparison values.</para>
 			/// </summary>
 			[GPValue("IS_NOT_EQUAL_TO_ANY")]
-			[Description("Does  not match at least one value")]
-			Does__not_match_at_least_one_value,
+			[Description("Does not match at least one value")]
+			Does_not_match_at_least_one_value,
 
 			/// <summary>
 			/// <para>Does not match every value—Determine whether the input value is not equal to every comparison value.</para>

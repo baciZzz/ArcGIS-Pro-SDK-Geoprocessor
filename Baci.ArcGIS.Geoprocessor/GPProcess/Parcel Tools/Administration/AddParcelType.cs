@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="InParcelFabric">
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The parcel fabric to which the parcel type will be added. The parcel fabric can be from a file geodatabase or an enterprise geodatabase.</para>
+		/// <para>The parcel fabric to which the parcel type will be added. The parcel fabric can be from a file, enterprise, or mobile geodatabase.</para>
 		/// </param>
 		/// <param name="Name">
 		/// <para>Name</para>
@@ -66,11 +66,11 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InParcelFabric, Name, UpdatedParcelFabric, OutPolygonFc, OutLineFc, AdministrativePolygon };
+		public override object[] Parameters => new object[] { InParcelFabric, Name, UpdatedParcelFabric!, OutPolygonFc!, OutLineFc!, AdministrativePolygon! };
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The parcel fabric to which the parcel type will be added. The parcel fabric can be from a file geodatabase or an enterprise geodatabase.</para>
+		/// <para>The parcel fabric to which the parcel type will be added. The parcel fabric can be from a file, enterprise, or mobile geodatabase.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPParcelLayer()]
@@ -89,21 +89,21 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEParcelDataset()]
-		public object UpdatedParcelFabric { get; set; }
+		public object? UpdatedParcelFabric { get; set; }
 
 		/// <summary>
 		/// <para>Output Polygon Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutPolygonFc { get; set; }
+		public object? OutPolygonFc { get; set; }
 
 		/// <summary>
 		/// <para>Output Line Feature Class</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
-		public object OutLineFc { get; set; }
+		public object? OutLineFc { get; set; }
 
 		/// <summary>
 		/// <para>Use for administrative boundaries</para>
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
 		[GPCodedValueDomain()]
-		public object AdministrativePolygon { get; set; } = "false";
+		public object? AdministrativePolygon { get; set; } = "false";
 
 		#region InnerClass
 
