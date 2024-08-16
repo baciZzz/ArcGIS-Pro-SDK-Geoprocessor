@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>定义栅格像元的两侧。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPCellSizeXYAttribute : DataTypeAttribute
+	public class GPCellSizeXYAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>用于存储空间数据集（包括空间域）的坐标系。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPSpatialReferenceAttribute : DataTypeAttribute
+	public class GPSpatialReferenceAttribute : BaseDataTypeAttribute
 	{
 
 	}

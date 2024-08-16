@@ -88,6 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline", "Polygon", "Point", "Multipoint", "MultiPatch")]
 		public object InFeatureClass { get; set; }
 
 		/// <summary>

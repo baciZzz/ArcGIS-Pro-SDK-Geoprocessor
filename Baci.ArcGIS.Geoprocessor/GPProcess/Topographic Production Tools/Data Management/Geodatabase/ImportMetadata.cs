@@ -74,6 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFileDomain()]
+		[FileTypes("xml")]
 		public object Files { get; set; }
 
 		/// <summary>
@@ -83,6 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InCellFeatures { get; set; }
 
 		/// <summary>

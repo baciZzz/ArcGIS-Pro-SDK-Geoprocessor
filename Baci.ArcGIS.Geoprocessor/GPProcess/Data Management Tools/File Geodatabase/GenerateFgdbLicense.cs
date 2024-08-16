@@ -74,6 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("licdef")]
 		public object InLicDefFile { get; set; }
 
 		/// <summary>
@@ -83,6 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("sdlic")]
 		public object OutLicFile { get; set; }
 
 		/// <summary>

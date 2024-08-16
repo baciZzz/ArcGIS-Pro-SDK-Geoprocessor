@@ -95,6 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("JSON")]
 		public object OutJsonFile { get; set; }
 
 	}

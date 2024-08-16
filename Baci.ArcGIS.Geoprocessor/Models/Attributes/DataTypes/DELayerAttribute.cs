@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>图层文件存储图层定义，包括符号系统和渲染属性。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DELayerAttribute : DataTypeAttribute
+	public class DELayerAttribute : BaseDataTypeAttribute
 	{
 
 	}

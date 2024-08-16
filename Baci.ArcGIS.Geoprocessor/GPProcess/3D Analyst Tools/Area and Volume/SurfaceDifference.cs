@@ -128,6 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 9.9999999999999995e-08)]
 		[Category("Raster Options")]
 		public object RasterCellSize { get; set; } = "10";
 
@@ -197,6 +198,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		[Category("Processing Extent")]
 		public object Boundary { get; set; }
 

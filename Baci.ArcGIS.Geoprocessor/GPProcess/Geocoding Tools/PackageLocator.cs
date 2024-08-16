@@ -79,6 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("gcpk")]
 		public object OutputFile { get; set; }
 
 		/// <summary>

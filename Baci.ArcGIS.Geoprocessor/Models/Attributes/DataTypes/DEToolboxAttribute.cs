@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>地理处理工具箱。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEToolboxAttribute : DataTypeAttribute
+	public class DEToolboxAttribute : BaseDataTypeAttribute
 	{
 
 	}

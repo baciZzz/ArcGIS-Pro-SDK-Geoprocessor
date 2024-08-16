@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>INFO 数据库中的表。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEArcInfoTableAttribute : DataTypeAttribute
+	public class DEArcInfoTableAttribute : BaseDataTypeAttribute
 	{
 
 	}

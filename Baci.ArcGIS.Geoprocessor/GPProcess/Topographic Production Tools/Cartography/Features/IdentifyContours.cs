@@ -84,6 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InContourFeatures { get; set; }
 
 		/// <summary>
@@ -101,6 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double", "Long", "Short")]
 		public object ContourHeightField { get; set; }
 
 		/// <summary>
@@ -110,6 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Long", "Short", "Text")]
 		public object ContourCodeField { get; set; }
 
 		/// <summary>

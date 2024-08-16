@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>对 TIN 的引用，包括拓扑关系、符号系统和渲染属性。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPTinLayerAttribute : DataTypeAttribute
+	public class GPTinLayerAttribute : BaseDataTypeAttribute
 	{
 
 	}

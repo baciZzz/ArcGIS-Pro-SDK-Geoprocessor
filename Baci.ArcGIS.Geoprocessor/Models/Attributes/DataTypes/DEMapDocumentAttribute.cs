@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>包含一个地图、它的布局以及它的关联图层、表格、图表和报表的文件。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEMapDocumentAttribute : DataTypeAttribute
+	public class DEMapDocumentAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -80,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureDataset()]
 		[GPDatasetDomain()]
+		[DataSetType("FeatureDataset")]
 		public object InFeatureDataset { get; set; }
 
 		/// <summary>
@@ -98,6 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object ServiceTerritoryFeatureClass { get; set; }
 
 		/// <summary>

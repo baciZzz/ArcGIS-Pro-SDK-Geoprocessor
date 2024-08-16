@@ -74,6 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("MultiPatch")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -103,6 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("OID", "Text", "Short", "Long")]
 		public object FieldName { get; set; }
 
 		#region InnerClass

@@ -77,6 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("sgtargetgroup")]
 		public object TargetGroup { get; set; }
 
 		/// <summary>

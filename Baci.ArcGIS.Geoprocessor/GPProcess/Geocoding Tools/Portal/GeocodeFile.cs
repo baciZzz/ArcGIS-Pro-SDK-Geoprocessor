@@ -104,6 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPRecordSet()]
 		[GPBrowseFiltersDomain()]
+		[Filters("esri_browseDialogFilters_tables_geocode_file")]
 		public object InTable { get; set; }
 
 		/// <summary>
@@ -148,6 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("File System")]
 		public object OutputLocation { get; set; }
 
 		/// <summary>

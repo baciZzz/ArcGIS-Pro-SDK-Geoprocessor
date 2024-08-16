@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>ArcCatalog 中可见的数据集。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DETypeAttribute : DataTypeAttribute
+	public class DETypeAttribute : BaseDataTypeAttribute
 	{
 
 	}

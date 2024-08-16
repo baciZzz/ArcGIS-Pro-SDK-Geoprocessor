@@ -74,6 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureDataset()]
 		[GPDatasetDomain()]
+		[DataSetType("FeatureDataset")]
 		public object InFeatureDataset { get; set; }
 
 		/// <summary>

@@ -105,6 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("tpk", "tpkx")]
 		public object SourceTilePackage { get; set; }
 
 		/// <summary>

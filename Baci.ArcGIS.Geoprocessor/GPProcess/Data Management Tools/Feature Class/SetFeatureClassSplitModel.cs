@@ -69,6 +69,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Polyline")]
+		[FeatureType("Simple")]
 		public object InFeatureClass { get; set; }
 
 		/// <summary>

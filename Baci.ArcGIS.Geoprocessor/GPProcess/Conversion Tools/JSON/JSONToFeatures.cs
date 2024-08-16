@@ -76,6 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("json", "geojson")]
 		public object InJsonFile { get; set; }
 
 		/// <summary>

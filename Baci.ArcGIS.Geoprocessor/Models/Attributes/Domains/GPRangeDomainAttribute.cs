@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.Domains
         /// <summary>
         /// Min
         /// </summary>
-        public string Min  { get; set; }
+        public double Min  { get; set; }
 
         /// <summary>
         /// Max
         /// </summary>
-        public string Max  { get; set; }
+        public double Max  { get; set; }
 
 	}
 }

@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFieldInfo()]
-		[xmlserialize()]
+		[xmlserialize(Xml = "<GPFieldInfoDomain xsi:type='typens:GPFieldInfoDomain' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/2.8.0'><GPCodedValueDomain xsi:type='typens:GPCodedValueDomain'><GPDomainPropertiesArray xsi:type='typens:ArrayOfGPCodedValueDomainProperty'><GPCodedValueDomainProperty xsi:type='typens:GPCodedValueDomainProperty'><Name>&lt;None&gt;</Name><Value xsi:type='typens:Field'><Name>&lt;None&gt;</Name><Type>esriFieldTypeInteger</Type><IsNullable>true</IsNullable><Length>0</Length><Precision>0</Precision><Scale>0</Scale></Value></GPCodedValueDomainProperty></GPDomainPropertiesArray></GPCodedValueDomain></GPFieldInfoDomain>")]
 		public object SearchFields { get; set; } = "*Name <None> VISIBLE NONE";
 
 		/// <summary>
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFieldInfo()]
-		[xmlserialize()]
+		[xmlserialize(Xml = "<GPFieldInfoDomain xsi:type='typens:GPFieldInfoDomain' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/2.8.0'><GPCodedValueDomain xsi:type='typens:GPCodedValueDomain'><GPDomainPropertiesArray xsi:type='typens:ArrayOfGPCodedValueDomainProperty'><GPCodedValueDomainProperty xsi:type='typens:GPCodedValueDomainProperty'><Name>&lt;None&gt;</Name><Value xsi:type='typens:Field'><Name>&lt;None&gt;</Name><Type>esriFieldTypeInteger</Type><IsNullable>true</IsNullable><Length>0</Length><Precision>0</Precision><Scale>0</Scale></Value></GPCodedValueDomainProperty></GPDomainPropertiesArray></GPCodedValueDomain></GPFieldInfoDomain>")]
 		[Category("Optional parameters")]
 		public object LocatorFields { get; set; } = "Rank <None> VISIBLE NONE;'Min X' <None> VISIBLE NONE;'Max X' <None> VISIBLE NONE;'Min Y' <None> VISIBLE NONE;'Max Y' <None> VISIBLE NONE";
 

@@ -84,6 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("OID", "Short", "Long")]
 		public object InObjectIdField { get; set; }
 
 		/// <summary>
@@ -93,6 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Geometry")]
 		public object InShapeField { get; set; }
 
 		/// <summary>

@@ -97,6 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPLayerDomain()]
+		[GeometryType("Polygon", "Point")]
 		public object InBuildings { get; set; }
 
 		/// <summary>

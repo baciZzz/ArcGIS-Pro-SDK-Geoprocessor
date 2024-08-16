@@ -79,6 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("MultiPatch")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -157,6 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object MaxShadowLength { get; set; }
 
 		/// <summary>

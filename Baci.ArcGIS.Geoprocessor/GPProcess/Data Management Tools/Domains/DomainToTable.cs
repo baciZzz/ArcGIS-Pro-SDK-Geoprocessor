@@ -89,6 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("File System", "Local Database", "Remote Database")]
 		public object InWorkspace { get; set; }
 
 		/// <summary>

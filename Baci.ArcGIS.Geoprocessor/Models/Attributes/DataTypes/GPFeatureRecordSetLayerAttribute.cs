@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>工具运行时绘制要素的交互式要素。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPFeatureRecordSetLayerAttribute : DataTypeAttribute
+	public class GPFeatureRecordSetLayerAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -97,6 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPLayerDomain()]
+		[GeometryType("Polygon")]
 		public object AoiLayer { get; set; }
 
 		/// <summary>

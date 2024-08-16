@@ -99,6 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		[Category("Centerline")]
 		public object CenterlineFeatureClass { get; set; }
 
@@ -109,6 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("GUID", "Text")]
 		[Category("Centerline")]
 		public object CenterlineCenterlineIdField { get; set; }
 
@@ -128,6 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("GUID", "Text")]
 		[Category("Centerline Sequence")]
 		public object CenterlineSequenceCenterlineIdField { get; set; }
 
@@ -138,6 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "GUID")]
 		[Category("Centerline Sequence")]
 		public object CenterlineSequenceRouteIdField { get; set; }
 
@@ -148,6 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		[Category("Centerline Sequence")]
 		public object CenterlineSequenceFromDateField { get; set; }
 
@@ -158,6 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		[Category("Centerline Sequence")]
 		public object CenterlineSequenceToDateField { get; set; }
 
@@ -168,6 +174,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short")]
 		[Category("Centerline Sequence")]
 		public object CenterlineSequenceNetworkIdField { get; set; }
 
@@ -178,6 +185,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		[Category("Calibration Point")]
 		public object CalibrationPointFeatureClass { get; set; }
 
@@ -188,6 +196,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double")]
 		[Category("Calibration Point")]
 		public object CalibrationPointMeasureField { get; set; }
 
@@ -198,6 +207,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		[Category("Calibration Point")]
 		public object CalibrationPointFromDateField { get; set; }
 
@@ -208,6 +218,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		[Category("Calibration Point")]
 		public object CalibrationPointToDateField { get; set; }
 
@@ -218,6 +229,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "GUID")]
 		[Category("Calibration Point")]
 		public object CalibrationPointRouteIdField { get; set; }
 
@@ -228,6 +240,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short")]
 		[Category("Calibration Point")]
 		public object CalibrationPointNetworkIdField { get; set; }
 
@@ -238,6 +251,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		[Category("Redline")]
 		public object RedlineFeatureClass { get; set; }
 
@@ -248,6 +262,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double")]
 		[Category("Redline")]
 		public object RedlineFromMeasureField { get; set; }
 
@@ -258,6 +273,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double")]
 		[Category("Redline")]
 		public object RedlineToMeasureField { get; set; }
 
@@ -268,6 +284,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "GUID")]
 		[Category("Redline")]
 		public object RedlineRouteIdField { get; set; }
 
@@ -278,6 +295,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		[Category("Redline")]
 		public object RedlineRouteNameField { get; set; }
 
@@ -288,6 +306,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		[Category("Redline")]
 		public object RedlineEffectiveDateField { get; set; }
 
@@ -298,6 +317,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short")]
 		[Category("Redline")]
 		public object RedlineActivityTypeField { get; set; }
 
@@ -308,6 +328,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short")]
 		[Category("Redline")]
 		public object RedlineNetworkIdField { get; set; }
 

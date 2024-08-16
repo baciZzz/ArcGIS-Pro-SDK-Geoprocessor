@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>一系列相连的 x,y 坐标对，其中，第一个坐标对和最后一个坐标对相同。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPPolygonAttribute : DataTypeAttribute
+	public class GPPolygonAttribute : BaseDataTypeAttribute
 	{
 
 	}

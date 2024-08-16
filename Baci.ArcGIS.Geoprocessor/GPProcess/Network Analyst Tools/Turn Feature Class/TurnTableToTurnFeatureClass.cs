@@ -87,6 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Line", "Polyline")]
 		public object ReferenceLineFeatures { get; set; }
 
 		/// <summary>

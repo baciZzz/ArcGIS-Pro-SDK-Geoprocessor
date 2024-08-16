@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>指定是否构建栅格统计。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPSAGDBEnvStatisticsAttribute : DataTypeAttribute
+	public class GPSAGDBEnvStatisticsAttribute : BaseDataTypeAttribute
 	{
 
 	}

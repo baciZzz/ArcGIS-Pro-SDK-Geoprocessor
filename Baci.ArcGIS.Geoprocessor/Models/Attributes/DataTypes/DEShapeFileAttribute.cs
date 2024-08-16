@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>shapefile 格式的空间数据。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEShapeFileAttribute : DataTypeAttribute
+	public class DEShapeFileAttribute : BaseDataTypeAttribute
 	{
 
 	}

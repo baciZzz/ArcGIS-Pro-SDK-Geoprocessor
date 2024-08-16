@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>用于创建新地址定位器的模板。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPAddressLocatorStyleAttribute : DataTypeAttribute
+	public class GPAddressLocatorStyleAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>Internet 切片图层</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPInternetTiledLayerAttribute : DataTypeAttribute
+	public class GPInternetTiledLayerAttribute : BaseDataTypeAttribute
 	{
 
 	}

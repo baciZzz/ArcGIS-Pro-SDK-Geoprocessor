@@ -69,6 +69,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("sdcx")]
 		public object SdcxFile { get; set; }
 
 		/// <summary>
@@ -77,6 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("sdcx")]
 		public object UpdatedSdcxFile { get; set; }
 
 		/// <summary>

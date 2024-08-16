@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>以 ASCII 格式存储的数据。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DETextFileAttribute : DataTypeAttribute
+	public class DETextFileAttribute : BaseDataTypeAttribute
 	{
 
 	}

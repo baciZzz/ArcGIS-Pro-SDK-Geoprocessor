@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>定义并强制空间数据的完整性规则的拓扑。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DETopologyAttribute : DataTypeAttribute
+	public class DETopologyAttribute : BaseDataTypeAttribute
 	{
 
 	}

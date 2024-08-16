@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 2.2250738585072014e-308, Max = 100)]
 		public object SizeOfTrainingDataset { get; set; } = "50";
 
 		/// <summary>

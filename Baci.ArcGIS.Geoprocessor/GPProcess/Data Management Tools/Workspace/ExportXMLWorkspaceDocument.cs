@@ -82,6 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xml", "zip", "z")]
 		public object OutFile { get; set; }
 
 		/// <summary>

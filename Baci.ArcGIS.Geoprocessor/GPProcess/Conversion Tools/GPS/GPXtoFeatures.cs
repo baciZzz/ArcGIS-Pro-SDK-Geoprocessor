@@ -74,6 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("gpx")]
 		public object InputGPXFile { get; set; }
 
 		/// <summary>

@@ -78,6 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("FLT")]
 		public object InFloatFile { get; set; }
 
 		/// <summary>

@@ -97,6 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object SourcePoints { get; set; }
 
 		/// <summary>
@@ -164,6 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "GlobalID", "GUID")]
 		public object MatchField { get; set; }
 
 		/// <summary>

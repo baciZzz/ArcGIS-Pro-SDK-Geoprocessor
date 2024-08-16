@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>宗地图层</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPParcelLayerAttribute : DataTypeAttribute
+	public class GPParcelLayerAttribute : BaseDataTypeAttribute
 	{
 
 	}

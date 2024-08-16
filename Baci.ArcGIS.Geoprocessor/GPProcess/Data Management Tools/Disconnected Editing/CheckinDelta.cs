@@ -72,6 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("mdb", "xml")]
 		public object InDeltaDatabase { get; set; }
 
 		/// <summary>
@@ -80,6 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Remote Database")]
 		public object DestWorkspace { get; set; }
 
 		/// <summary>

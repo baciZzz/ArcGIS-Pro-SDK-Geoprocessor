@@ -76,6 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEGeometricNetwork()]
 		[GPDatasetDomain()]
+		[DataSetType("GeometricNetwork")]
 		public object InGeometricNetwork { get; set; }
 
 		/// <summary>

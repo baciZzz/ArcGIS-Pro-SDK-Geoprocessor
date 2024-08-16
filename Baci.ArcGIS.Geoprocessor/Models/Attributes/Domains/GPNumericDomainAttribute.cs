@@ -25,56 +25,15 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.Domains
         /// </summary>
         public bool AllowEmpty { get; set; } = false;
 
-
-        private LowCondtion low = null;
-
         /// <summary>
-        /// Low Condtion
+        /// Low Condition
         /// </summary>
-        public LowCondtion Low { get { return low; } set { low = value; } }
-
-        public bool Inclusive
-        {
-            set
-            {
-                if (low == null) low = new LowCondtion();
-                low.Inclusive = value;
-            }
-        }
-
-        public string MixVlaue
-        {
-            set
-            {
-                if (low == null) low = new LowCondtion();
-                low.Value = value;
-            }
-        }
-
-        private HighCondition high = null;
+        private LowCondtion Low { get; set; }
 
         /// <summary>
         /// High Condition
         /// </summary>
-        public HighCondition High { get { return high; } set { high = value; } }
-
-
-        public bool Allow
-        {
-            set
-            {
-                if (high == null) high = new HighCondition();
-                high.Allow = value;
-            }
-        }
-        public string MaxVlaue
-        {
-            set
-            {
-                if (high == null) high = new HighCondition();
-                high.Value = value;
-            }
-        }
+        public HighCondition High { get; set; }
 
 
     }

@@ -84,6 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
 		[GPBrowseFiltersDomain()]
+		[Filters("esri_browseDialogFilters_tables_all")]
 		public object OutTable { get; set; }
 
 		/// <summary>

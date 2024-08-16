@@ -79,6 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Annotation")]
 		public object InputFeatures { get; set; }
 
 		/// <summary>

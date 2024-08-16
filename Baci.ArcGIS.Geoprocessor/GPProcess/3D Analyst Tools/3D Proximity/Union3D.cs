@@ -91,6 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("OID", "Short", "Long", "Text")]
 		public object GroupField { get; set; }
 
 		/// <summary>

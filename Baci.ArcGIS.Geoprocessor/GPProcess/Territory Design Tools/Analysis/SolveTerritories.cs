@@ -111,6 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object NumberTerritories { get; set; }
 
 		/// <summary>
@@ -127,6 +128,8 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 1)]
+		[High(Allow = true, Value = 200)]
 		[Category("Advanced Options")]
 		public object Quality { get; set; }
 

@@ -84,6 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xml")]
 		public object InFeatureCatalogue { get; set; }
 
 		/// <summary>
@@ -93,6 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xml")]
 		public object InConfigFile { get; set; } = "C:\\ArcGIS\\Resources\\Maritime\\S57to101Configuration.xml";
 
 		/// <summary>

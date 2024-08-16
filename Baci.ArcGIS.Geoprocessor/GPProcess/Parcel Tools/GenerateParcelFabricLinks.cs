@@ -93,6 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Line")]
 		public object OutLinksFeatureClass { get; set; }
 
 		/// <summary>
@@ -102,6 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object OutAnchorPointsFeatureClass { get; set; }
 
 		/// <summary>

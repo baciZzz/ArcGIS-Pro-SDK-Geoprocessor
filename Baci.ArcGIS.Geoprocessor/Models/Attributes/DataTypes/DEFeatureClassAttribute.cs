@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>具有相同形状类型的空间数据集合: 点、多点、线和面。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEFeatureClassAttribute : DataTypeAttribute
+	public class DEFeatureClassAttribute : BaseDataTypeAttribute
 	{
 
 	}

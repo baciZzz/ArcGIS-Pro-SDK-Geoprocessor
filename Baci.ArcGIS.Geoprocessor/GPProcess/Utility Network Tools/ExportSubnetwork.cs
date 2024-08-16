@@ -141,6 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("json")]
 		public object OutJsonFile { get; set; }
 
 		/// <summary>

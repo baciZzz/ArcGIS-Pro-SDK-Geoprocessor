@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>LAS 数据集存储对磁盘上一个或多个 LAS 文件以及其他表面要素的引用。 LAS 文件是一个二进制文件，存储机载激光雷达数据。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DELasDatasetAttribute : DataTypeAttribute
+	public class DELasDatasetAttribute : BaseDataTypeAttribute
 	{
 
 	}

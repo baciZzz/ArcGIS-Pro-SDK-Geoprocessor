@@ -82,6 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("kmz")]
 		public object OutKmzFile { get; set; }
 
 		/// <summary>

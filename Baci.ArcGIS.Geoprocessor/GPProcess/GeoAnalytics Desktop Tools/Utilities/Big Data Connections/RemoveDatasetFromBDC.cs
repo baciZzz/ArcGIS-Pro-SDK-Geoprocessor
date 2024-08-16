@@ -76,6 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
 		[GPFileDomain()]
+		[FileTypes("bdc")]
 		public object UpdatedBdc { get; set; }
 
 	}

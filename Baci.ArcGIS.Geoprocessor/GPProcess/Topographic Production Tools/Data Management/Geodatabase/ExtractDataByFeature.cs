@@ -114,6 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLayer()]
 		[GPLayerDomain()]
+		[GeometryType("Polygon")]
 		public object FilterFeature { get; set; }
 
 		/// <summary>

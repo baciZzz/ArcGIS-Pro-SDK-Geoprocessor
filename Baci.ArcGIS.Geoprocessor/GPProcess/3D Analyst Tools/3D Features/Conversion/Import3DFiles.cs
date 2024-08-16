@@ -139,6 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InFeatureclass { get; set; }
 
 		/// <summary>
@@ -148,6 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("OID", "Short", "Long", "Text", "Float", "Double", "Date")]
 		public object SymbolField { get; set; }
 
 		/// <summary>

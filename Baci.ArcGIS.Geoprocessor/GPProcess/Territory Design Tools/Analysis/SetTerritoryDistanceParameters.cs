@@ -206,6 +206,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		[Category("Network Parameters")]
 		public object SearchTolerance { get; set; }
 

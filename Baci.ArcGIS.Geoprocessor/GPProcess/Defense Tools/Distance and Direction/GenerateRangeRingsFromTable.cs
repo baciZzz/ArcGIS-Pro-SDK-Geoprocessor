@@ -92,6 +92,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -169,6 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		[Category("Input Table Options")]
 		public object LookupNameField { get; set; } = "Name";
 
@@ -179,6 +182,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Long", "Short", "Double", "Float")]
 		[Category("Input Table Options")]
 		public object MinRangeField { get; set; } = "Min";
 
@@ -189,6 +193,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Long", "Short", "Double", "Float")]
 		[Category("Input Table Options")]
 		public object MaxRangeField { get; set; } = "Max";
 
@@ -199,6 +204,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Long", "Short")]
 		[Category("Input Table Options")]
 		public object NumberOfRingsField { get; set; } = "Rings";
 
@@ -209,6 +215,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Long", "Short", "Double", "Float")]
 		[Category("Input Table Options")]
 		public object RingIntervalField { get; set; } = "Intervals";
 

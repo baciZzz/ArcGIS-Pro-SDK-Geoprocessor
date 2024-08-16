@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>定义和操纵关系数据库中的数据的语法。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPSQLExpressionAttribute : DataTypeAttribute
+	public class GPSQLExpressionAttribute : BaseDataTypeAttribute
 	{
 
 	}

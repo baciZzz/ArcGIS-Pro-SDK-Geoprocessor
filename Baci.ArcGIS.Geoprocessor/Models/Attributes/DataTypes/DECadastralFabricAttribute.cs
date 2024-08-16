@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>ArcMap 的宗地结构是存储、维护和编辑相连宗地或宗地网络的连续表面的数据集。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DECadastralFabricAttribute : DataTypeAttribute
+	public class DECadastralFabricAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -93,6 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xml")]
 		public object InGridXml { get; set; }
 
 		/// <summary>
@@ -178,6 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = false, Value = 1)]
 		[Category("Advanced Settings (optional)")]
 		public object ReferenceScale { get; set; }
 

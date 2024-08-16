@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
-		[xmlserialize()]
+		[xmlserialize(Xml = "<GPVirtualTableDomain xsi:type='typens:GPVirtualTableDomain' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/2.8.0'></GPVirtualTableDomain>")]
 		public object InTable { get; set; }
 
 		/// <summary>
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		[GPFieldDomain()]
+		[GPFieldDomain(GUID = "{74F6B060-5EB6-4851-8FFD-8B188A845F37}")]
 		public object InKeyField { get; set; }
 
 		/// <summary>

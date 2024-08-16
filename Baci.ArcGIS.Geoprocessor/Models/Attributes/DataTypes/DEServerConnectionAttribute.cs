@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>服务器连接。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEServerConnectionAttribute : DataTypeAttribute
+	public class DEServerConnectionAttribute : BaseDataTypeAttribute
 	{
 
 	}

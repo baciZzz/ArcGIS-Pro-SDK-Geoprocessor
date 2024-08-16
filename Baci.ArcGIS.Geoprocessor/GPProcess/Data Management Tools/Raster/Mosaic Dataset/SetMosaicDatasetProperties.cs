@@ -555,6 +555,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFileDomain()]
+		[FileTypes("rft.xml", "rft.json", "rft", "xml", "json")]
 		[Category("Image Properties")]
 		public object ProcessingTemplates { get; set; }
 

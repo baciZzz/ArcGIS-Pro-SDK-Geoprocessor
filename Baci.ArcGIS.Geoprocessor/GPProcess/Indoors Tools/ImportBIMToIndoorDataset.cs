@@ -79,6 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InBimFloorplanLayer { get; set; }
 
 		/// <summary>

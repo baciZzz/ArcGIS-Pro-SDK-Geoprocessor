@@ -82,6 +82,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object OutFeatureClass { get; set; }
 
 		/// <summary>
@@ -96,6 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("lxttmpl")]
 		public object InTemplate { get; set; }
 
 		/// <summary>
@@ -322,6 +325,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("lxtgaz")]
 		[Category("Custom Locations")]
 		public object InCustomLocations { get; set; }
 
@@ -344,7 +348,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 2147483647)]
 		[Category("Feature Options")]
 		public object MaxFeaturesExtracted { get; set; }
 
@@ -354,7 +358,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 2147483647)]
 		[Category("Feature Options")]
 		public object IgnoreFirstFeatures { get; set; }
 
@@ -429,7 +433,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 2147483647)]
 		[Category("Date Options")]
 		public object MaxDatesExtracted { get; set; }
 
@@ -439,7 +443,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 2147483647)]
 		[Category("Date Options")]
 		public object IgnoreFirstDates { get; set; }
 
@@ -468,6 +472,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("lxtca")]
 		[Category("Custom Attributes")]
 		public object InCustomAttributes { get; set; }
 
@@ -495,7 +500,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 2147483647)]
 		[Category("Feature Options")]
 		public object PreTextLength { get; set; } = "254";
 
@@ -505,7 +510,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 2147483647)]
 		[Category("Feature Options")]
 		public object PostTextLength { get; set; } = "254";
 

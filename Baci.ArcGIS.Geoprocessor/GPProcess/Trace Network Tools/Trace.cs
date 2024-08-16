@@ -367,6 +367,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Multipoint")]
 		[Category("Advanced Options")]
 		public object AggregatedPoints { get; set; } = "Trace_Results_Aggregated_Points";
 
@@ -378,6 +379,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		[Category("Advanced Options")]
 		public object AggregatedLines { get; set; } = "Trace_Results_Aggregated_Lines";
 

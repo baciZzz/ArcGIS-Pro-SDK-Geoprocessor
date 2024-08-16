@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>栅格数据集中的图层。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DERasterBandAttribute : DataTypeAttribute
+	public class DERasterBandAttribute : BaseDataTypeAttribute
 	{
 
 	}

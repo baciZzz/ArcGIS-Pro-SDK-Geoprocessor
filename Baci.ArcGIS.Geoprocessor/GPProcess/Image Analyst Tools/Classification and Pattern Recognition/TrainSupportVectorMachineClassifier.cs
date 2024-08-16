@@ -148,6 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Double", "Date")]
 		public object DimensionValueField { get; set; }
 
 		/// <summary>

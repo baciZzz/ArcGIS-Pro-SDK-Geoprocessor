@@ -110,6 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("File System", "Local Database", "Remote Database")]
 		[Category("Cache Properties")]
 		public object ItemCacheFolder { get; set; }
 
@@ -133,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 100)]
 		[Category("Cache Properties")]
 		public object CompressionQuality { get; set; } = "80";
 
@@ -143,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 10, Max = 2147483647)]
 		[Category("Cache Properties")]
 		public object MaxAllowedRows { get; set; } = "200000";
 
@@ -153,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 10, Max = 2147483647)]
 		[Category("Cache Properties")]
 		public object MaxAllowedColumns { get; set; } = "200000";
 
@@ -176,7 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 1.7976931348623157e+308)]
 		[Category("Resampling")]
 		public object RequestSize { get; set; } = "1";
 

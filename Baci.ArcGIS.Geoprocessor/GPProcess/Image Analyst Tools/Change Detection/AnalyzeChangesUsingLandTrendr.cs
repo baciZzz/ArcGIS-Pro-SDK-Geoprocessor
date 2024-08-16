@@ -111,6 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 1)]
 		public object MaxNumSegments { get; set; } = "5";
 
 		/// <summary>
@@ -120,6 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 1)]
 		public object VertexCountOvershoot { get; set; } = "2";
 
 		/// <summary>
@@ -169,6 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 2)]
 		[Category("Advanced Fitting Options")]
 		public object MinNumObservations { get; set; } = "6";
 

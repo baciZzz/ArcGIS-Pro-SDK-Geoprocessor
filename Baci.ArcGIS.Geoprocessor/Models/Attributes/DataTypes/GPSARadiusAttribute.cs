@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>指定用于插值的周围点。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPSARadiusAttribute : DataTypeAttribute
+	public class GPSARadiusAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>追踪网络</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DETraceNetworkAttribute : DataTypeAttribute
+	public class DETraceNetworkAttribute : BaseDataTypeAttribute
 	{
 
 	}

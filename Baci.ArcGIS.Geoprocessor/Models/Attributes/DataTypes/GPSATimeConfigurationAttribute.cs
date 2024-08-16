@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>指定用于计算特定位置太阳辐射的时间段。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPSATimeConfigurationAttribute : DataTypeAttribute
+	public class GPSATimeConfigurationAttribute : BaseDataTypeAttribute
 	{
 
 	}

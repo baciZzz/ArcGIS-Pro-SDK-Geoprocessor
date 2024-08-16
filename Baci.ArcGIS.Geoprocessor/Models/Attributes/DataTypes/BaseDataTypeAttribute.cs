@@ -9,7 +9,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
     /// <summary>
     /// ArcGIS Pro IGPProcess Param DataType
     /// </summary>
-    public abstract class DataTypeAttribute : Attribute
+    public abstract class BaseDataTypeAttribute : Attribute
     {
 
     }

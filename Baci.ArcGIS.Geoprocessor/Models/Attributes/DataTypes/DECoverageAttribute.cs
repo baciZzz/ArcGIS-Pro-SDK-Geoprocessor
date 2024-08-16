@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>Coverage 数据集，用于存储地理要素，如点、弧线和面以及相关要素属性表的专有数据模型。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DECoverageAttribute : DataTypeAttribute
+	public class DECoverageAttribute : BaseDataTypeAttribute
 	{
 
 	}

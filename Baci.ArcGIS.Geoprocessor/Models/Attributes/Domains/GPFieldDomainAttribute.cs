@@ -22,85 +22,29 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.Domains
         /// <summary>
         /// Field Type
         /// </summary>
-        public FieldTypeEnum FieldType { get; set; }= FieldTypeEnum.Text;
+        public List<string> FieldType { get; set; } = new List<string>();
 
         /// <summary>
         /// Exclude Fields like shape_area,shape_length or Predicted,StdError,Error,Stdd_Error,NormValue,Source_ID,Included
         /// </summary>
         [JsonProperty("Exclude.Field")]
-        public List<string> ExcludeField { get; set; }= new List<string>();
+        public List<string> ExcludeField { get; set; } = new List<string>();
 
         /// <summary>
         /// Key Fields (EMPTY or NONE or Shape.Z) Auto Add to the Combox or TextBox
         /// </summary>
         [JsonProperty("Key.Field")]
-        public List<string> KeyField { get; set; }=new List<string>();
+        public List<string> KeyField { get; set; } = new List<string>();
 
         /// <summary>
         /// GUID {xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}
         /// </summary>
-        public string Guid { get; set; } = string.Empty;
+        public string GUID { get; set; } = string.Empty;
 
         /// <summary>
         /// Use Raster Fields
         /// </summary>
-        public bool UseRasterFields { get; set; } = false;  
+        public bool UseRasterFields { get; set; } = false;
 
-    }
-
-    public enum FieldTypeEnum
-    {
-        //
-        // ժҪ:
-        //     Short integer.
-        Short,
-        //
-        // ժҪ:
-        //     Long integer.
-        Long,
-        //
-        // ժҪ:
-        //     Single-precision floating-point number.
-        Float,
-        //
-        // ժҪ:
-        //     Double-precision floating-point number.
-        Double,
-        //
-        // ժҪ:
-        //     Character string.
-        Text,
-        //
-        // ժҪ:
-        //     Date.
-        Date,
-        //
-        // ժҪ:
-        //     Long Integer representing an object identifier.
-        OID,
-        //
-        // ժҪ:
-        //     Geometry.
-        Geometry,
-        //
-        // ժҪ:
-        //     Binary Large Object.
-        Blob,
-        //
-        // ժҪ:
-        //     Raster.
-        Raster,
-        //
-        // ժҪ:
-        //     Globally Unique Identifier.
-        GUID,
-        //
-        // ժҪ:
-        //     Esri Global ID.
-        GlobalID,
-        //
-        // ժҪ:
-        //     XML Document.
-        XML
     }
 }

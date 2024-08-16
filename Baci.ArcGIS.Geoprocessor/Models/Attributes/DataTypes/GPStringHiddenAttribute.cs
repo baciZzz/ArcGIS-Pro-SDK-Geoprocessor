@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>以 * 字符进行掩膜的字符串。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPStringHiddenAttribute : DataTypeAttribute
+	public class GPStringHiddenAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>栅格数据是通过指定栅格类型的方式添加到镶嵌数据集中的。 栅格类型可与栅格格式一起识别元数据，例如地理配准、采集日期和传感器类型。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPRasterBuilderAttribute : DataTypeAttribute
+	public class GPRasterBuilderAttribute : BaseDataTypeAttribute
 	{
 
 	}

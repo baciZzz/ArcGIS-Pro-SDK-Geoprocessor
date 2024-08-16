@@ -96,6 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline", "Polygon", "Point", "MultiPatch")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

@@ -77,6 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polyline", "Polygon")]
 		public object InPointFeatures { get; set; }
 
 		/// <summary>
@@ -135,6 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long")]
 		[Category("Network Location Fields")]
 		public object SourceIDField { get; set; }
 
@@ -145,6 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long")]
 		[Category("Network Location Fields")]
 		public object SourceOIDField { get; set; }
 
@@ -155,6 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double")]
 		[Category("Network Location Fields")]
 		public object PositionField { get; set; }
 
@@ -165,6 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long")]
 		[Category("Network Location Fields")]
 		public object SideField { get; set; }
 
@@ -175,6 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double")]
 		[Category("Network Location Fields")]
 		public object SnapXField { get; set; }
 
@@ -185,6 +191,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double")]
 		[Category("Network Location Fields")]
 		public object SnapYField { get; set; }
 
@@ -196,6 +203,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double")]
 		[Category("Network Location Fields")]
 		public object DistanceField { get; set; }
 
@@ -206,6 +214,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double")]
 		[Category("Network Location Fields")]
 		public object SnapZField { get; set; }
 
@@ -216,6 +225,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Blob")]
 		[Category("Network Location Fields")]
 		public object LocationField { get; set; }
 
@@ -249,6 +259,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polyline", "Polygon")]
 		public object OutPointFeatureClass { get; set; }
 
 		/// <summary>

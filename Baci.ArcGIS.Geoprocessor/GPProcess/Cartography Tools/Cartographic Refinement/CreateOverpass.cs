@@ -94,6 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPLayer()]
 		[GPLayerDomain()]
+		[GeometryType("Polyline")]
 		public object InAboveFeatures { get; set; }
 
 		/// <summary>
@@ -103,6 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPLayer()]
 		[GPLayerDomain()]
+		[GeometryType("Polyline")]
 		public object InBelowFeatures { get; set; }
 
 		/// <summary>
@@ -112,6 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object MarginAlong { get; set; }
 
 		/// <summary>
@@ -121,6 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object MarginAcross { get; set; }
 
 		/// <summary>
@@ -177,6 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object WingTickLength { get; set; }
 
 		/// <summary>

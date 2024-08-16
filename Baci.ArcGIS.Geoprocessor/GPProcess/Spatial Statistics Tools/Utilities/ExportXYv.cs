@@ -105,6 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "OID", "GlobalID")]
 		public object ValueField { get; set; }
 
 		/// <summary>
@@ -128,6 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("txt", "tab", "tsv", "csv")]
 		public object OutputASCIIFile { get; set; }
 
 		/// <summary>

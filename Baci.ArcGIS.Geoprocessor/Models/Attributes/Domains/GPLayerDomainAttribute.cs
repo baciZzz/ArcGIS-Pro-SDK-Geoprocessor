@@ -22,7 +22,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.Domains
         /// <summary>
         /// Geometry Type
         /// </summary>
-        public List<GeometryType> GeometryType { get; set; } = new List<GeometryType>();
+        public List<string> GeometryType { get; set; } = new List<string>();
 
     }
 }

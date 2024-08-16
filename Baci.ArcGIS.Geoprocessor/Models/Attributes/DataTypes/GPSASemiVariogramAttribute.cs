@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>指定用于量化自相关的两个地点的距离和方向。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPSASemiVariogramAttribute : DataTypeAttribute
+	public class GPSASemiVariogramAttribute : BaseDataTypeAttribute
 	{
 
 	}

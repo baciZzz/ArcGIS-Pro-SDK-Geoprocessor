@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>包含数据的表，可以通过对每一个栅格值使用同一测量尺度并根据其重要性对其进行加权来合并多个栅格。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPSAWeightedOverlayTableAttribute : DataTypeAttribute
+	public class GPSAWeightedOverlayTableAttribute : BaseDataTypeAttribute
 	{
 
 	}

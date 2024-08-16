@@ -80,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InRouteFeatures { get; set; }
 
 		/// <summary>
@@ -97,6 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
 		[GPDatasetDomain()]
+		[DataSetType("Table", "FeatureClass")]
 		public object OutputDataset { get; set; }
 
 		/// <summary>
@@ -118,6 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "OID", "GlobalID", "GUID")]
 		public object NetworkFields { get; set; }
 
 		/// <summary>

@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>引用磁盘上 ArcMap 宗地结构的图层。 此图层作为图层组，将一组相关图层组织到单个图层下。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPCadastralFabricLayerAttribute : DataTypeAttribute
+	public class GPCadastralFabricLayerAttribute : BaseDataTypeAttribute
 	{
 
 	}

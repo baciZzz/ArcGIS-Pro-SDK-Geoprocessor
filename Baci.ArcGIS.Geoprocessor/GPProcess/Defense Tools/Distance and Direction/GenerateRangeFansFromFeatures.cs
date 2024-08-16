@@ -94,6 +94,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -111,6 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Long", "Short", "Double", "Float")]
 		public object InnerRadiusField { get; set; }
 
 		/// <summary>
@@ -120,6 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Long", "Short", "Double", "Float")]
 		public object OuterRadiusField { get; set; }
 
 		/// <summary>
@@ -129,6 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Long", "Short", "Double", "Float")]
 		public object StartAngleField { get; set; }
 
 		/// <summary>
@@ -138,6 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Long", "Short", "Double", "Float")]
 		public object EndAngleField { get; set; }
 
 		/// <summary>

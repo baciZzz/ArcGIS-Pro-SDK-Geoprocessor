@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
-		[GPTablesDomain()]
+		[GPTablesDomain(HideJoinedLayers = true, ShowOnlyStandaloneTables = false)]
 		public object InTable { get; set; }
 
 		/// <summary>

@@ -74,6 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint", "Polyline", "Polygon", "MultiPatch")]
 		public object InFeatureLayer { get; set; }
 
 		/// <summary>
@@ -91,6 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("OID", "Short", "Long", "Text")]
 		public object GroupField { get; set; }
 
 		/// <summary>

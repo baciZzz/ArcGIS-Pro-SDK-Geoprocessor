@@ -82,6 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("json")]
 		public object ConfigFile { get; set; }
 
 		/// <summary>

@@ -88,6 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPRecordSet()]
 		[GPBrowseFiltersDomain()]
+		[Filters("esri_browseDialogFilters_glft_tables")]
 		public object InTable { get; set; }
 
 		/// <summary>

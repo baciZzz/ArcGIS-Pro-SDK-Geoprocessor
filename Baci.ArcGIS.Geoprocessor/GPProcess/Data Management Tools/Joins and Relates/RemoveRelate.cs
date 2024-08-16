@@ -68,7 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
-		[GPLayersAndTablesDomain()]
+		[GPLayersAndTablesDomain(MustHaveRelates = true)]
 		public object InLayerOrView { get; set; }
 
 		/// <summary>

@@ -88,6 +88,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
+		[ExcludeField("SHAPE_Length", "SHAPE_Area")]
+		[KeyField("Shape.Z")]
 		public object ZValue { get; set; }
 
 		/// <summary>
@@ -132,6 +135,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date")]
+		[ExcludeField("SHAPE_Length", "SHAPE_Area")]
 		public object GroupField { get; set; }
 
 		/// <summary>

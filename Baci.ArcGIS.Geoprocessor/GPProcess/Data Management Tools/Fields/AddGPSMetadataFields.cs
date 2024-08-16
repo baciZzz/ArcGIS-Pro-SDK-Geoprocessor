@@ -71,6 +71,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint")]
+		[FeatureType("Simple")]
 		public object InPointFeatures { get; set; }
 
 		/// <summary>

@@ -37,12 +37,12 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.Domains
         /// <summary>
         /// Field Type
         /// </summary>
-        public List<FieldTypeEnum> FieldType { get; set; } = new List<FieldTypeEnum>();
+        public List<string> FieldType { get; set; } = new List<string>();
 
         /// <summary>
         /// Geometry Type
         /// </summary>
-        public List<GeometryType> GeometryType { get; set; } = new List<GeometryType>();
+        public List<string> GeometryType { get; set; } = new List<string>();
 
         /// <summary>
         /// Guid

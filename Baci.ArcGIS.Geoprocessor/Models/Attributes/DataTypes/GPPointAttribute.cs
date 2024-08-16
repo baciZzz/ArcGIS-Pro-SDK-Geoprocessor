@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>x,y 坐标对。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPPointAttribute : DataTypeAttribute
+	public class GPPointAttribute : BaseDataTypeAttribute
 	{
 
 	}

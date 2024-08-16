@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>公共设施网络</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEUtilityNetworkAttribute : DataTypeAttribute
+	public class DEUtilityNetworkAttribute : BaseDataTypeAttribute
 	{
 
 	}

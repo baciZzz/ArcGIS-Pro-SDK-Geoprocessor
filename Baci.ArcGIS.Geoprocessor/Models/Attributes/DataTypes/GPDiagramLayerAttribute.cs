@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>逻辑示意图图层</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPDiagramLayerAttribute : DataTypeAttribute
+	public class GPDiagramLayerAttribute : BaseDataTypeAttribute
 	{
 
 	}

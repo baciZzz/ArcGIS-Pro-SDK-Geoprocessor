@@ -105,6 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xlsx", "xlsm")]
 		public object RuleFile { get; set; }
 
 		/// <summary>

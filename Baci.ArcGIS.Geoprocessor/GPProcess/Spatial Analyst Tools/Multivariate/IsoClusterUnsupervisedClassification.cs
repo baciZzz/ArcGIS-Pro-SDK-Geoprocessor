@@ -124,6 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("gsg")]
 		public object OutputSignatureFile { get; set; }
 
 		/// <summary>

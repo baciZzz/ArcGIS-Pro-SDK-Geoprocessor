@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 255)]
 		public object ClassCodes { get; set; }
 
 		/// <summary>
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0.10000000000000001, Max = 89.999999000000003)]
 		[Category("Wind Correction")]
 		public object MaxWindDeviation { get; set; } = "10";
 

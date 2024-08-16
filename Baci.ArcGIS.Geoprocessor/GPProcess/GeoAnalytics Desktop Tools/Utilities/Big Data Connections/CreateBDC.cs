@@ -139,6 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("bdc")]
 		public object OutputBdc { get; set; }
 
 		#region InnerClass

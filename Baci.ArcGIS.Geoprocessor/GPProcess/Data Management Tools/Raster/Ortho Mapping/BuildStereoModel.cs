@@ -119,6 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Date", "OID", "Text")]
 		public object GroupBy { get; set; }
 
 		/// <summary>

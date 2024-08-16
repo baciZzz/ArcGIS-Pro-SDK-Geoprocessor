@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>交互表；工具运行时输入表值。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPRecordSetAttribute : DataTypeAttribute
+	public class GPRecordSetAttribute : BaseDataTypeAttribute
 	{
 
 	}

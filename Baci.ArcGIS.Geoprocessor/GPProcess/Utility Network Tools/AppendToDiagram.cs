@@ -79,6 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMap()]
 		[GPMapDomain()]
+		[MapType("0", "4")]
 		public object Map { get; set; }
 
 		/// <summary>

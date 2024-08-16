@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>栅格计算器表达式。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPRasterCalculatorExpressionAttribute : DataTypeAttribute
+	public class GPRasterCalculatorExpressionAttribute : BaseDataTypeAttribute
 	{
 
 	}

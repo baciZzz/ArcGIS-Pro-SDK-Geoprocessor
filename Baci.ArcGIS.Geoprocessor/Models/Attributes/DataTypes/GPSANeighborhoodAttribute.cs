@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>用于计算统计数据的各像元周围区域的形状。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPSANeighborhoodAttribute : DataTypeAttribute
+	public class GPSANeighborhoodAttribute : BaseDataTypeAttribute
 	{
 
 	}

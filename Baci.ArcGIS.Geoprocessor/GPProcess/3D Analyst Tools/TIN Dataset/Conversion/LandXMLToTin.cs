@@ -79,6 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("XML")]
 		public object InLandxmlPath { get; set; }
 
 		/// <summary>

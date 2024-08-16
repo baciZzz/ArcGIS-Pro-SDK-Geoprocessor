@@ -69,6 +69,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("bdc")]
 		public object BdcFile { get; set; }
 
 		/// <summary>
@@ -101,6 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("bdc")]
 		public object UpdatedBdc { get; set; }
 
 		#region InnerClass

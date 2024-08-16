@@ -76,6 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("DEM", "TXT", "ASC")]
 		public object InDemFile { get; set; }
 
 		/// <summary>

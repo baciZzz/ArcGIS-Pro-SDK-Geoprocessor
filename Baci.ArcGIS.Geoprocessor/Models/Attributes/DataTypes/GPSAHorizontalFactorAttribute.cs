@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>水平成本系数和水平相对移动角度之间的关系。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPSAHorizontalFactorAttribute : DataTypeAttribute
+	public class GPSAHorizontalFactorAttribute : BaseDataTypeAttribute
 	{
 
 	}

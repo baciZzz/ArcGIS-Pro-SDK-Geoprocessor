@@ -23,6 +23,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x64</PlatformTarget>
+    <DocumentationFile>bin\Debug\Baci.ArcGIS.Geoprocessor.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -206,6 +207,7 @@
     <Compile Include="GPProcess\Analysis Tools\Overlay\CountOverlappingFeatures.cs" />
     <Compile Include="GPProcess\Analysis Tools\Overlay\Erase.cs" />
     <Compile Include="GPProcess\Analysis Tools\Overlay\Identity.cs" />
+    <Compile Include="GPProcess\Analysis Tools\Overlay\Intersect - 复制.cs" />
     <Compile Include="GPProcess\Analysis Tools\Overlay\Intersect.cs" />
     <Compile Include="GPProcess\Analysis Tools\Overlay\RemoveOverlapMultiple.cs" />
     <Compile Include="GPProcess\Analysis Tools\Overlay\SpatialJoin.cs" />
@@ -1863,7 +1865,7 @@
     <Compile Include="IGPProcessExtension.cs" />
     <Compile Include="Models\AbstractGPProcess.cs" />
     <Compile Include="Models\Attributes\DataTypes\analysis_cell_sizeAttribute.cs" />
-    <Compile Include="Models\Attributes\DataTypes\DataTypeAttribute.cs" />
+    <Compile Include="Models\Attributes\DataTypes\BaseDataTypeAttribute.cs" />
     <Compile Include="Models\Attributes\DataTypes\DEAddressLocatorAttribute.cs" />
     <Compile Include="Models\Attributes\DataTypes\DEArcInfoTableAttribute.cs" />
     <Compile Include="Models\Attributes\DataTypes\DEBimFileWorkspaceAttribute.cs" />
@@ -2050,6 +2052,22 @@
     <Compile Include="Models\Attributes\Domains\GPSARemapDomainAttribute.cs" />
     <Compile Include="Models\Attributes\Domains\GPTablesDomainAttribute.cs" />
     <Compile Include="Models\Attributes\Domains\GPWorkspaceDomainAttribute.cs" />
+    <Compile Include="Models\Attributes\Domains\Inner\DataSetTypeAttribute.cs" />
+    <Compile Include="Models\Attributes\Domains\Inner\DataTypeAttribute.cs" />
+    <Compile Include="Models\Attributes\Domains\Inner\ExcludeFieldAttribute.cs" />
+    <Compile Include="Models\Attributes\Domains\Inner\FeatureTypeAttribute.cs" />
+    <Compile Include="Models\Attributes\Domains\Inner\FieldTypeAttribute.cs" />
+    <Compile Include="Models\Attributes\Domains\Inner\FileTypesAttribute.cs" />
+    <Compile Include="Models\Attributes\Domains\Inner\FiltersAttribute.cs" />
+    <Compile Include="Models\Attributes\Domains\Inner\GeometryTypeAttribute.cs" />
+    <Compile Include="Models\Attributes\Domains\Inner\HighAttribute.cs" />
+    <Compile Include="Models\Attributes\Domains\Inner\KeyFieldAttribute.cs" />
+    <Compile Include="Models\Attributes\Domains\Inner\LowAttribute.cs" />
+    <Compile Include="Models\Attributes\Domains\Inner\MapTypeAttribute.cs" />
+    <Compile Include="Models\Attributes\Domains\Inner\NeighbourTypeAttribute.cs" />
+    <Compile Include="Models\Attributes\Domains\Inner\PortalTypeAttribute.cs" />
+    <Compile Include="Models\Attributes\Domains\Inner\RemapTypeAttribute.cs" />
+    <Compile Include="Models\Attributes\Domains\Inner\WorkspaceTypeAttribute.cs" />
     <Compile Include="Models\Attributes\Domains\xmlserializeAttribute.cs" />
     <Compile Include="Models\Attributes\EnhancedFOPAttribute.cs" />
     <Compile Include="Models\Attributes\GPValueAttribute.cs" />

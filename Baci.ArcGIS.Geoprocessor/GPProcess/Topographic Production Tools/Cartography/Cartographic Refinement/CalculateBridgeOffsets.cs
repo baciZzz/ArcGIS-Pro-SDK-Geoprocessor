@@ -79,6 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPLayer()]
 		[GPLayerDomain()]
+		[GeometryType("Point", "Polyline")]
 		public object InBridgeFeatures { get; set; }
 
 		/// <summary>
@@ -88,6 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPLayer()]
 		[GPLayerDomain()]
+		[GeometryType("Polyline")]
 		public object InOverpassingFeatures { get; set; }
 
 		/// <summary>

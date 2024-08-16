@@ -86,6 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
 		[GPBrowseFiltersDomain()]
+		[Filters("esri_browseDialogFilters_gt_tables")]
 		public object InTable { get; set; }
 
 		/// <summary>

@@ -636,6 +636,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Multipoint")]
 		[Category("Output")]
 		public object AggregatedPoints { get; set; } = "Trace_Results_Aggregated_Points";
 
@@ -647,6 +648,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		[Category("Output")]
 		public object AggregatedLines { get; set; } = "Trace_Results_Aggregated_Lines";
 
@@ -658,6 +660,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		[Category("Output")]
 		public object AggregatedPolygons { get; set; } = "Trace_Results_Aggregated_Polygons";
 

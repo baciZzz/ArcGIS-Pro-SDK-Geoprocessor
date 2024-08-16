@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>所有浮点数都存储为双精度 64 位值。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPDoubleAttribute : DataTypeAttribute
+	public class GPDoubleAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>用于地理编码的数据集，存储地址属性、关联的索引以及用于定义将地点的非空间描述转换为空间数据这一过程的规则。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEAddressLocatorAttribute : DataTypeAttribute
+	public class DEAddressLocatorAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>一种将地理空间分割为连续的不重叠三角形的矢量数据结构。 每个三角形的折点都是具有 x、y 和 z 值的采样数据点。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DETinAttribute : DataTypeAttribute
+	public class DETinAttribute : BaseDataTypeAttribute
 	{
 
 	}

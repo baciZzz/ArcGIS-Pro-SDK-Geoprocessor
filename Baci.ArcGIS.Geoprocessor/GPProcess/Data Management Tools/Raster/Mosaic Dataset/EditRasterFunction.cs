@@ -102,6 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("rft.xml", "rft.json", "rft", "xml", "json")]
 		public object FunctionChainDefinition { get; set; }
 
 		/// <summary>

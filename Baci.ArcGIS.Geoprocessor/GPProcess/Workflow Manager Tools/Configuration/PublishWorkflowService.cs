@@ -118,6 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("jtc")]
 		public object InputDatabasePath { get; set; }
 
 		/// <summary>
@@ -143,6 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("sddraft")]
 		public object OutputWorkflowServiceDraftPath { get; set; }
 
 		/// <summary>
@@ -151,6 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("sddraft")]
 		public object OutputMapServiceDraftPath { get; set; }
 
 	}

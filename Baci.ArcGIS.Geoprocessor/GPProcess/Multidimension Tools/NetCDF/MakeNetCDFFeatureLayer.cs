@@ -89,6 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("nc", "nc4")]
 		public object InNetcdfFile { get; set; }
 
 		/// <summary>

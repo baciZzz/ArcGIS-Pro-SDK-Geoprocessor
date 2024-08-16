@@ -87,6 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPBrowseFiltersDomain()]
+		[Filters("esri_browseDialogFilters_folders", "esri_browseDialogFilters_sqlite")]
 		public object TargetGeopackage { get; set; }
 
 		/// <summary>
@@ -120,6 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xml")]
 		public object TilingSchemeFile { get; set; }
 
 		/// <summary>

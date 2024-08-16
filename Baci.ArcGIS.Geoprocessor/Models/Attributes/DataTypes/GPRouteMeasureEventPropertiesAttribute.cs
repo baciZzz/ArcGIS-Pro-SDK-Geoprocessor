@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>在表中指定一个字段来描述由线性参考路径系统测量的事件。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPRouteMeasureEventPropertiesAttribute : DataTypeAttribute
+	public class GPRouteMeasureEventPropertiesAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>存储空间数据的坐标系统信息的文件。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEPrjFileAttribute : DataTypeAttribute
+	public class DEPrjFileAttribute : BaseDataTypeAttribute
 	{
 
 	}

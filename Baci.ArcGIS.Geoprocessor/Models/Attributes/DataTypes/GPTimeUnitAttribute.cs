@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>时间单位</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPTimeUnitAttribute : DataTypeAttribute
+	public class GPTimeUnitAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -175,6 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xsl")]
 		public object Stylesheet { get; set; }
 
 		/// <summary>

@@ -69,6 +69,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("lpk", "mpk", "gpk", "lpkx", "mpkx", "mmpk", "mspk", "gpkx", "gcpk", "ppkx", "aptx", "tpk", "tpkx", "vtpk", "slpk")]
 		public object InPackage { get; set; }
 
 		/// <summary>

@@ -84,6 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Text", "Long", "Date")]
 		public object Field { get; set; }
 
 		/// <summary>

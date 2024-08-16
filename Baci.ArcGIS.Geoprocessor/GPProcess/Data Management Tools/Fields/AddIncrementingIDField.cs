@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
-		[GPTablesDomain()]
+		[GPTablesDomain(HideJoinedLayers = true, ShowOnlyStandaloneTables = false)]
 		public object InTable { get; set; }
 
 		/// <summary>

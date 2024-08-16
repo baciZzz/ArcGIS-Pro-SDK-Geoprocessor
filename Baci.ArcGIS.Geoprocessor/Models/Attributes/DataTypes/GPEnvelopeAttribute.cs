@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>定义数据源所在的最小外接矩形的坐标对。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPEnvelopeAttribute : DataTypeAttribute
+	public class GPEnvelopeAttribute : BaseDataTypeAttribute
 	{
 
 	}

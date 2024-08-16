@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.Domains
         /// <summary>
         /// Data Set Type
         /// </summary>
-        public List<DataSetTypeEnum> DataSetType { get; set; } = new List<DataSetTypeEnum>();
+        public List<string> DataSetType { get; set; } = new List<string>();
 
     }
 }

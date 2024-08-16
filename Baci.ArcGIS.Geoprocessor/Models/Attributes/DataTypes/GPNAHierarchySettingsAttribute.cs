@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>使用两个整数将网络数据集的等级值分成三组的等级属性。 第一个整数设置第一组的结束值；第二个数值设置第三组的起始值。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPNAHierarchySettingsAttribute : DataTypeAttribute
+	public class GPNAHierarchySettingsAttribute : BaseDataTypeAttribute
 	{
 
 	}

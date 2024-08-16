@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>INFO 表中的项目。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPArcInfoItemAttribute : DataTypeAttribute
+	public class GPArcInfoItemAttribute : BaseDataTypeAttribute
 	{
 
 	}

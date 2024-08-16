@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>与多种要素类型和符号系统混合的矢量数据源。 此数据集不适用于基于要素类的查询或分析。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DECadDrawingDatasetAttribute : DataTypeAttribute
+	public class DECadDrawingDatasetAttribute : BaseDataTypeAttribute
 	{
 
 	}

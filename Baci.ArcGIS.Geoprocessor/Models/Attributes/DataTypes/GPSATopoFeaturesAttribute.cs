@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>输入到插值中的要素。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPSATopoFeaturesAttribute : DataTypeAttribute
+	public class GPSATopoFeaturesAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>磁盘上的文件。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEFileAttribute : DataTypeAttribute
+	public class DEFileAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>定义栅格像元值重分类方法的表。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPSARemapAttribute : DataTypeAttribute
+	public class GPSARemapAttribute : BaseDataTypeAttribute
 	{
 
 	}

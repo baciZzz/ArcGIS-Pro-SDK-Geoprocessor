@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>布尔值。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPBooleanAttribute : DataTypeAttribute
+	public class GPBooleanAttribute : BaseDataTypeAttribute
 	{
 
 	}

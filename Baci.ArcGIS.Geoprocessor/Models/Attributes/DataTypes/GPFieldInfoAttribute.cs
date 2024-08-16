@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>FieldMap 中字段的详细信息。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPFieldInfoAttribute : DataTypeAttribute
+	public class GPFieldInfoAttribute : BaseDataTypeAttribute
 	{
 
 	}

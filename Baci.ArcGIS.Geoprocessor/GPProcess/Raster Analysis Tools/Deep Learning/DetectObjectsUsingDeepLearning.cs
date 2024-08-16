@@ -88,6 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("", "dlpk_remote")]
 		public object Inputmodel { get; set; }
 
 		/// <summary>

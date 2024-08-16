@@ -22,42 +22,8 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.Domains
         /// <summary>
         /// Map Type
         /// </summary>
-        public List<MapType> MapType { get; set; }=new List<MapType>();
+        public List<string> MapType { get; set; }=new List<string>();
 
     }
-}
-namespace ArcGIS.Core.CIM
-{
-    /// <summary>
-    /// Types of maps.
-    /// </summary>
-    public enum MapType
-    {
-        //
-        // ժҪ:
-        //     A 2D map.
-        Map,
-        //
-        // ժҪ:
-        //     A scene.
-        Scene,
-        //
-        // ժҪ:
-        //     A basemap.
-        Basemap,
-        //
-        // ժҪ:
-        //     A network diagram.
-        NetworkDiagram,
-        //
-        // ժҪ:
-        //     A containment map.
-        ContainmentMap,
-        //
-        // ժҪ:
-        //     A link chart.
-        LinkChart
-    }
-
 }
 

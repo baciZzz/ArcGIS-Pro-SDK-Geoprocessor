@@ -90,6 +90,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Polyline", "Point", "Multipoint")]
+		[FeatureType("Simple")]
 		public object ConstrainingFeatureClass { get; set; }
 
 		/// <summary>
@@ -138,6 +140,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
+		[High(Allow = true, Value = 100000)]
 		public object MultipointSize { get; set; } = "10";
 
 		/// <summary>

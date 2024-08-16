@@ -82,6 +82,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
+		[PortalType("DataStoreCatalogLayer")]
 		public object PointLayer { get; set; }
 
 		/// <summary>
@@ -111,6 +114,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
+		[PortalType("DataStoreCatalogLayer")]
 		public object PolygonLayer { get; set; }
 
 		/// <summary>

@@ -79,6 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -141,6 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[KeyField("EMPTY")]
 		[Category("Report Header Options")]
 		public object StoreIdField { get; set; }
 
@@ -151,6 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[KeyField("EMPTY")]
 		[Category("Report Header Options")]
 		public object StoreNameField { get; set; }
 
@@ -161,6 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[KeyField("EMPTY")]
 		[Category("Report Header Options")]
 		public object StoreAddressField { get; set; }
 
@@ -171,6 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[KeyField("EMPTY")]
 		[Category("Report Header Options")]
 		public object StoreLatitudeField { get; set; }
 
@@ -181,6 +186,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[KeyField("EMPTY")]
 		[Category("Report Header Options")]
 		public object StoreLongitudeField { get; set; }
 
@@ -191,6 +197,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[KeyField("EMPTY")]
 		[Category("Report Header Options")]
 		public object RingIdField { get; set; }
 
@@ -201,6 +208,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[KeyField("EMPTY")]
 		[Category("Report Header Options")]
 		public object AreaDescriptionField { get; set; }
 

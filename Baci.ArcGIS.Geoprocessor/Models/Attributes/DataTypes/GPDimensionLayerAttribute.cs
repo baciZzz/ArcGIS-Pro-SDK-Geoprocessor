@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para></para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPDimensionLayerAttribute : DataTypeAttribute
+	public class GPDimensionLayerAttribute : BaseDataTypeAttribute
 	{
 
 	}

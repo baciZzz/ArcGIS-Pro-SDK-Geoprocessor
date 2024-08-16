@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>由一系列相连的唯一 x,y 坐标对定义的直的或弯曲的形状。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPLineAttribute : DataTypeAttribute
+	public class GPLineAttribute : BaseDataTypeAttribute
 	{
 
 	}

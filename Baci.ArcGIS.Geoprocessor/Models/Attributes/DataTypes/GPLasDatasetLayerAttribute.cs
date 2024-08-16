@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>引用磁盘上的 LAS 数据集的图层。 此图层可将过滤器应用于 LAS 数据集引用的雷达文件和表面约束。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPLasDatasetLayerAttribute : DataTypeAttribute
+	public class GPLasDatasetLayerAttribute : BaseDataTypeAttribute
 	{
 
 	}

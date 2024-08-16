@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>网络数据源</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPNetworkDataSourceAttribute : DataTypeAttribute
+	public class GPNetworkDataSourceAttribute : BaseDataTypeAttribute
 	{
 
 	}

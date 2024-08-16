@@ -22,12 +22,12 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.Domains
         /// <summary>
         /// Geometry Type
         /// </summary>
-        public List<GeometryType> GeometryType { get; set; } = new List<GeometryType>();
+        public List<string> GeometryType { get; set; } = new List<string>();
 
         /// <summary>
         /// Feature Type
         /// </summary>
-        public List<FeatureType> FeatureType { get; set; } = new List<FeatureType>();
+        public List<string> FeatureType { get; set; } = new List<string>();
 
         /// <summary>
         /// Has Z
@@ -42,7 +42,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.Domains
         /// <summary>
         /// Portal Type
         /// </summary>
-        public List<PortalType> Portaltype { get; set; } = new List<PortalType>();
+        public List<string> Portaltype { get; set; } = new List<string>();
 
     }
 

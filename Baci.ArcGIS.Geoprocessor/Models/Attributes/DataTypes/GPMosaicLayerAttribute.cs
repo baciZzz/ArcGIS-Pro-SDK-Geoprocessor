@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>引用镶嵌数据集的图层。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPMosaicLayerAttribute : DataTypeAttribute
+	public class GPMosaicLayerAttribute : BaseDataTypeAttribute
 	{
 
 	}
