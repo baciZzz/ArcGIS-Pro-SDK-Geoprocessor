@@ -22,20 +22,20 @@ namespace Baci.ArcGIS
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="tooName"></param>
+        /// <param name="toolName"></param>
         /// <param name="parameters"></param>
         /// <param name="environments"></param>
         /// <param name="cancellationTokenSource"></param>
         /// <param name="gPToolExecuteEventHandler"></param>
         /// <param name="gPExecuteToolFlags"></param>
         /// <returns></returns>
-        public static async Task<IGPResult> ExcuteAsync(string tooName, IReadOnlyList<string> parameters,
+        public static async Task<IGPResult> ExcuteAsync(string toolName, IReadOnlyList<string> parameters,
             IEnumerable<KeyValuePair<string, string>> environments = null,
             CancellationTokenSource cancellationTokenSource = null,
             GPToolExecuteEventHandler gPToolExecuteEventHandler = null,
             GPExecuteToolFlags gPExecuteToolFlags = GPExecuteToolFlags.Default)
         {
-            IGPResult GPResult = await ExcuteAsync(tooName, parameters, cancellationTokenSource, environments, gPToolExecuteEventHandler, gPExecuteToolFlags);
+            IGPResult GPResult = await ExcuteAsync(toolName, parameters, cancellationTokenSource, environments, gPToolExecuteEventHandler, gPExecuteToolFlags);
             
             return GPResult;
 
