@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Aggregate Points</para>
 		/// </summary>
-		public override string DisplayName => "Aggregate Points";
+		public override string DisplayName() => "Aggregate Points";
 
 		/// <summary>
 		/// <para>Tool Name : AggregatePoints</para>
 		/// </summary>
-		public override string ToolName => "AggregatePoints";
+		public override string ToolName() => "AggregatePoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.AggregatePoints</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.AggregatePoints";
+		public override string ExcuteName() => "geoanalytics.AggregatePoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { PointLayer, OutputName, PolygonOrBin, PolygonLayer, BinType, BinSize, TimeStepInterval, TimeStepRepeat, TimeStepReference, SummaryFields, Output, DataStore };
+		public override object[] Parameters() => new object[] { PointLayer, OutputName, PolygonOrBin, PolygonLayer, BinType, BinSize, TimeStepInterval, TimeStepRepeat, TimeStepReference, SummaryFields, Output, DataStore };
 
 		/// <summary>
 		/// <para>Point Layer</para>

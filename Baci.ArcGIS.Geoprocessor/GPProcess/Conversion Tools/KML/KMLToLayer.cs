@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : KML To Layer</para>
 		/// </summary>
-		public override string DisplayName => "KML To Layer";
+		public override string DisplayName() => "KML To Layer";
 
 		/// <summary>
 		/// <para>Tool Name : KMLToLayer</para>
 		/// </summary>
-		public override string ToolName => "KMLToLayer";
+		public override string ToolName() => "KMLToLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.KMLToLayer</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.KMLToLayer";
+		public override string ExcuteName() => "conversion.KMLToLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InKmlFile, OutputFolder, OutputData, IncludeGroundoverlay, OutputLayer, OutGeodatabase };
+		public override object[] Parameters() => new object[] { InKmlFile, OutputFolder, OutputData, IncludeGroundoverlay, OutputLayer, OutGeodatabase };
 
 		/// <summary>
 		/// <para>Input KML File</para>

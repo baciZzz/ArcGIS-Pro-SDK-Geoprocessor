@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Trend Raster</para>
 		/// </summary>
-		public override string DisplayName => "Generate Trend Raster";
+		public override string DisplayName() => "Generate Trend Raster";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateTrendRaster</para>
 		/// </summary>
-		public override string ToolName => "GenerateTrendRaster";
+		public override string ToolName() => "GenerateTrendRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.GenerateTrendRaster</para>
 		/// </summary>
-		public override string ExcuteName => "ia.GenerateTrendRaster";
+		public override string ExcuteName() => "ia.GenerateTrendRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMultidimensionalRaster, OutMultidimensionalRaster, Dimension, Variables, LineType, Frequency, IgnoreNodata, CycleLength, CycleUnit, Rmse, R2, SlopePValue, SeasonalPeriod };
+		public override object[] Parameters() => new object[] { InMultidimensionalRaster, OutMultidimensionalRaster, Dimension, Variables, LineType, Frequency, IgnoreNodata, CycleLength, CycleUnit, Rmse, R2, SlopePValue, SeasonalPeriod };
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>

@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Segmentation Profile</para>
 		/// </summary>
-		public override string DisplayName => "Export Segmentation Profile";
+		public override string DisplayName() => "Export Segmentation Profile";
 
 		/// <summary>
 		/// <para>Tool Name : ExportSegmentationProfile</para>
 		/// </summary>
-		public override string ToolName => "ExportSegmentationProfile";
+		public override string ToolName() => "ExportSegmentationProfile";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.ExportSegmentationProfile</para>
 		/// </summary>
-		public override string ExcuteName => "ba.ExportSegmentationProfile";
+		public override string ExcuteName() => "ba.ExportSegmentationProfile";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InProfile, OutTableName };
+		public override object[] Parameters() => new object[] { InProfile, OutTableName };
 
 		/// <summary>
 		/// <para>Input Profile</para>

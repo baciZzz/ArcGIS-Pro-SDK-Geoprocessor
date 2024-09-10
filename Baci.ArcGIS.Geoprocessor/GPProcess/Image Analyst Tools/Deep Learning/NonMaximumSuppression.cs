@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Non Maximum Suppression</para>
 		/// </summary>
-		public override string DisplayName => "Non Maximum Suppression";
+		public override string DisplayName() => "Non Maximum Suppression";
 
 		/// <summary>
 		/// <para>Tool Name : NonMaximumSuppression</para>
 		/// </summary>
-		public override string ToolName => "NonMaximumSuppression";
+		public override string ToolName() => "NonMaximumSuppression";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.NonMaximumSuppression</para>
 		/// </summary>
-		public override string ExcuteName => "ia.NonMaximumSuppression";
+		public override string ExcuteName() => "ia.NonMaximumSuppression";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureclass, ConfidenceScoreField, OutFeatureclass, ClassValueField, MaxOverlapRatio };
+		public override object[] Parameters() => new object[] { InFeatureclass, ConfidenceScoreField, OutFeatureclass, ClassValueField, MaxOverlapRatio };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>

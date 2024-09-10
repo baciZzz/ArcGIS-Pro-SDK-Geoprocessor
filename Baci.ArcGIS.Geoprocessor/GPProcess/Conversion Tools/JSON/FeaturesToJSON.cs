@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Features To JSON</para>
 		/// </summary>
-		public override string DisplayName => "Features To JSON";
+		public override string DisplayName() => "Features To JSON";
 
 		/// <summary>
 		/// <para>Tool Name : FeaturesToJSON</para>
 		/// </summary>
-		public override string ToolName => "FeaturesToJSON";
+		public override string ToolName() => "FeaturesToJSON";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.FeaturesToJSON</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.FeaturesToJSON";
+		public override string ExcuteName() => "conversion.FeaturesToJSON";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutJsonFile, FormatJson, IncludeZValues, IncludeMValues, Geojson, Outputtowgs84, UseFieldAlias };
+		public override object[] Parameters() => new object[] { InFeatures, OutJsonFile, FormatJson, IncludeZValues, IncludeMValues, Geojson, Outputtowgs84, UseFieldAlias };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Territory Level</para>
 		/// </summary>
-		public override string DisplayName => "Add Territory Level";
+		public override string DisplayName() => "Add Territory Level";
 
 		/// <summary>
 		/// <para>Tool Name : AddTerritoryLevel</para>
 		/// </summary>
-		public override string ToolName => "AddTerritoryLevel";
+		public override string ToolName() => "AddTerritoryLevel";
 
 		/// <summary>
 		/// <para>Tool Excute Name : td.AddTerritoryLevel</para>
 		/// </summary>
-		public override string ExcuteName => "td.AddTerritoryLevel";
+		public override string ExcuteName() => "td.AddTerritoryLevel";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Territory Design Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Territory Design Tools";
+		public override string ToolboxDisplayName() => "Territory Design Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : td</para>
 		/// </summary>
-		public override string ToolboxAlise => "td";
+		public override string ToolboxAlise() => "td";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, LevelName, DefaultTerritoryName, OutTerritorySolution, PrimaryFeatureClass };
+		public override object[] Parameters() => new object[] { InTerritorySolution, LevelName, DefaultTerritoryName, OutTerritorySolution, PrimaryFeatureClass };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>

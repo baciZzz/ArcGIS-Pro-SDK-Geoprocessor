@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Display Name : Set Territory Attribute Constraints</para>
 		/// </summary>
-		public override string DisplayName => "Set Territory Attribute Constraints";
+		public override string DisplayName() => "Set Territory Attribute Constraints";
 
 		/// <summary>
 		/// <para>Tool Name : SetTerritoryAttributeConstraints</para>
 		/// </summary>
-		public override string ToolName => "SetTerritoryAttributeConstraints";
+		public override string ToolName() => "SetTerritoryAttributeConstraints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : td.SetTerritoryAttributeConstraints</para>
 		/// </summary>
-		public override string ExcuteName => "td.SetTerritoryAttributeConstraints";
+		public override string ExcuteName() => "td.SetTerritoryAttributeConstraints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Territory Design Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Territory Design Tools";
+		public override string ToolboxDisplayName() => "Territory Design Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : td</para>
 		/// </summary>
-		public override string ToolboxAlise => "td";
+		public override string ToolboxAlise() => "td";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, Level, Constraints, OutTerritorySolution };
+		public override object[] Parameters() => new object[] { InTerritorySolution, Level, Constraints, OutTerritorySolution };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>

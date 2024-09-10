@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Import Segmentation Profile</para>
 		/// </summary>
-		public override string DisplayName => "Import Segmentation Profile";
+		public override string DisplayName() => "Import Segmentation Profile";
 
 		/// <summary>
 		/// <para>Tool Name : ImportSegmentationProfile</para>
 		/// </summary>
-		public override string ToolName => "ImportSegmentationProfile";
+		public override string ToolName() => "ImportSegmentationProfile";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.ImportSegmentationProfile</para>
 		/// </summary>
-		public override string ExcuteName => "ba.ImportSegmentationProfile";
+		public override string ExcuteName() => "ba.ImportSegmentationProfile";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, SegmentationBase, OutProfile, SegmentIdField, CountField, TotalVolumeField };
+		public override object[] Parameters() => new object[] { InTable, SegmentationBase, OutProfile, SegmentIdField, CountField, TotalVolumeField };
 
 		/// <summary>
 		/// <para>Input Table</para>

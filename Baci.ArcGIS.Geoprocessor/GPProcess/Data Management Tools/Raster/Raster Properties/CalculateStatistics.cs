@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Statistics</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Statistics";
+		public override string DisplayName() => "Calculate Statistics";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateStatistics</para>
 		/// </summary>
-		public override string ToolName => "CalculateStatistics";
+		public override string ToolName() => "CalculateStatistics";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CalculateStatistics</para>
 		/// </summary>
-		public override string ExcuteName => "management.CalculateStatistics";
+		public override string ExcuteName() => "management.CalculateStatistics";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "rasterStatistics", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "rasterStatistics", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasterDataset, XSkipFactor, YSkipFactor, IgnoreValues, SkipExisting, AreaOfInterest, OutRaster };
+		public override object[] Parameters() => new object[] { InRasterDataset, XSkipFactor, YSkipFactor, IgnoreValues, SkipExisting, AreaOfInterest, OutRaster };
 
 		/// <summary>
 		/// <para>Input Raster Dataset</para>

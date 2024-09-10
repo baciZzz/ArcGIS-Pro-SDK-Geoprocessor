@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Blind Spot Areas</para>
 		/// </summary>
-		public override string DisplayName => "Generate Blind Spot Areas";
+		public override string DisplayName() => "Generate Blind Spot Areas";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateBlindSpotAreas</para>
 		/// </summary>
-		public override string ToolName => "GenerateBlindSpotAreas";
+		public override string ToolName() => "GenerateBlindSpotAreas";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.GenerateBlindSpotAreas</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.GenerateBlindSpotAreas";
+		public override string ExcuteName() => "intelligence.GenerateBlindSpotAreas";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, ClipFeatures, StartTimeField, EndTimeField };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, ClipFeatures, StartTimeField, EndTimeField };
 
 		/// <summary>
 		/// <para>Input Features</para>

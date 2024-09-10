@@ -41,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Classify Raster</para>
 		/// </summary>
-		public override string DisplayName => "Classify Raster";
+		public override string DisplayName() => "Classify Raster";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyRaster</para>
 		/// </summary>
-		public override string ToolName => "ClassifyRaster";
+		public override string ToolName() => "ClassifyRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.ClassifyRaster</para>
 		/// </summary>
-		public override string ExcuteName => "sa.ClassifyRaster";
+		public override string ExcuteName() => "sa.ClassifyRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, InClassifierDefinition, OutRasterDataset, InAdditionalRaster };
+		public override object[] Parameters() => new object[] { InRaster, InClassifierDefinition, OutRasterDataset, InAdditionalRaster };
 
 		/// <summary>
 		/// <para>Input Raster</para>

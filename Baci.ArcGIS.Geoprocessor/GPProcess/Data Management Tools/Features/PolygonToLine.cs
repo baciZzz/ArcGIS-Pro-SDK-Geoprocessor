@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Polygon To Line</para>
 		/// </summary>
-		public override string DisplayName => "Polygon To Line";
+		public override string DisplayName() => "Polygon To Line";
 
 		/// <summary>
 		/// <para>Tool Name : PolygonToLine</para>
 		/// </summary>
-		public override string ToolName => "PolygonToLine";
+		public override string ToolName() => "PolygonToLine";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.PolygonToLine</para>
 		/// </summary>
-		public override string ExcuteName => "management.PolygonToLine";
+		public override string ExcuteName() => "management.PolygonToLine";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, NeighborOption };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, NeighborOption };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Optimized Outlier Analysis</para>
 		/// </summary>
-		public override string DisplayName => "Optimized Outlier Analysis";
+		public override string DisplayName() => "Optimized Outlier Analysis";
 
 		/// <summary>
 		/// <para>Tool Name : OptimizedOutlierAnalysis</para>
 		/// </summary>
-		public override string ToolName => "OptimizedOutlierAnalysis";
+		public override string ToolName() => "OptimizedOutlierAnalysis";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.OptimizedOutlierAnalysis</para>
 		/// </summary>
-		public override string ExcuteName => "stats.OptimizedOutlierAnalysis";
+		public override string ExcuteName() => "stats.OptimizedOutlierAnalysis";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "randomGenerator", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "randomGenerator", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, OutputFeatures, AnalysisField, IncidentDataAggregationMethod, BoundingPolygonsDefiningWhereIncidentsArePossible, PolygonsForAggregatingIncidentsIntoCounts, PerformanceAdjustment, CellSize, DistanceBand };
+		public override object[] Parameters() => new object[] { InputFeatures, OutputFeatures, AnalysisField, IncidentDataAggregationMethod, BoundingPolygonsDefiningWhereIncidentsArePossible, PolygonsForAggregatingIncidentsIntoCounts, PerformanceAdjustment, CellSize, DistanceBand };
 
 		/// <summary>
 		/// <para>Input Features</para>

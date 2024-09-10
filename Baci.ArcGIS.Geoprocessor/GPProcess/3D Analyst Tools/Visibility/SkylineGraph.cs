@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Skyline Graph</para>
 		/// </summary>
-		public override string DisplayName => "Skyline Graph";
+		public override string DisplayName() => "Skyline Graph";
 
 		/// <summary>
 		/// <para>Tool Name : SkylineGraph</para>
 		/// </summary>
-		public override string ToolName => "SkylineGraph";
+		public override string ToolName() => "SkylineGraph";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.SkylineGraph</para>
 		/// </summary>
-		public override string ExcuteName => "3d.SkylineGraph";
+		public override string ExcuteName() => "3d.SkylineGraph";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InObserverPointFeatures, InLineFeatures, BaseVisibilityAngle, AdditionalFields, OutAnglesTable, OutGraph, OutVisibilityRatio };
+		public override object[] Parameters() => new object[] { InObserverPointFeatures, InLineFeatures, BaseVisibilityAngle, AdditionalFields, OutAnglesTable, OutGraph, OutVisibilityRatio };
 
 		/// <summary>
 		/// <para>Input Observer Point Features</para>

@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Register with Geodatabase</para>
 		/// </summary>
-		public override string DisplayName => "Register with Geodatabase";
+		public override string DisplayName() => "Register with Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : RegisterWithGeodatabase</para>
 		/// </summary>
-		public override string ToolName => "RegisterWithGeodatabase";
+		public override string ToolName() => "RegisterWithGeodatabase";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.RegisterWithGeodatabase</para>
 		/// </summary>
-		public override string ExcuteName => "management.RegisterWithGeodatabase";
+		public override string ExcuteName() => "management.RegisterWithGeodatabase";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, RegDataset, InObjectIdField, InShapeField, InGeometryType, InSpatialReference, InExtent };
+		public override object[] Parameters() => new object[] { InDataset, RegDataset, InObjectIdField, InShapeField, InGeometryType, InSpatialReference, InExtent };
 
 		/// <summary>
 		/// <para>Input Datasets</para>

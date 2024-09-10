@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Select</para>
 		/// </summary>
-		public override string DisplayName => "Select";
+		public override string DisplayName() => "Select";
 
 		/// <summary>
 		/// <para>Tool Name : Select</para>
 		/// </summary>
-		public override string ToolName => "Select";
+		public override string ToolName() => "Select";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.Select</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.Select";
+		public override string ExcuteName() => "analysis.Select";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "configKeyword", "extent", "outputCoordinateSystem", "outputMFlag", "outputZValue" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "configKeyword", "extent", "outputCoordinateSystem", "outputMFlag", "outputZValue" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, WhereClause };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, WhereClause };
 
 		/// <summary>
 		/// <para>Input Features</para>

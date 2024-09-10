@@ -42,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create ArcSDE Connection File</para>
 		/// </summary>
-		public override string DisplayName => "Create ArcSDE Connection File";
+		public override string DisplayName() => "Create ArcSDE Connection File";
 
 		/// <summary>
 		/// <para>Tool Name : CreateArcSDEConnectionFile</para>
 		/// </summary>
-		public override string ToolName => "CreateArcSDEConnectionFile";
+		public override string ToolName() => "CreateArcSDEConnectionFile";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateArcSDEConnectionFile</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateArcSDEConnectionFile";
+		public override string ExcuteName() => "management.CreateArcSDEConnectionFile";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutFolderPath, OutName, Server, Service, Database, AccountAuthentication, Username, Password, SaveUsernamePassword, Version, SaveVersionInfo, ConnectionFileName };
+		public override object[] Parameters() => new object[] { OutFolderPath, OutName, Server, Service, Database, AccountAuthentication, Username, Password, SaveUsernamePassword, Version, SaveVersionInfo, ConnectionFileName };
 
 		/// <summary>
 		/// <para>ArcSDE Connection File Location</para>

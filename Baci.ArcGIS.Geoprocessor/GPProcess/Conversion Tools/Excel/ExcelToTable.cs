@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Excel To Table</para>
 		/// </summary>
-		public override string DisplayName => "Excel To Table";
+		public override string DisplayName() => "Excel To Table";
 
 		/// <summary>
 		/// <para>Tool Name : ExcelToTable</para>
 		/// </summary>
-		public override string ToolName => "ExcelToTable";
+		public override string ToolName() => "ExcelToTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.ExcelToTable</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.ExcelToTable";
+		public override string ExcuteName() => "conversion.ExcelToTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputExcelFile, OutputTable, Sheet, FieldNamesRow, CellRange };
+		public override object[] Parameters() => new object[] { InputExcelFile, OutputTable, Sheet, FieldNamesRow, CellRange };
 
 		/// <summary>
 		/// <para>Input Excel File</para>

@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Analyze Changes Using LandTrendr</para>
 		/// </summary>
-		public override string DisplayName => "Analyze Changes Using LandTrendr";
+		public override string DisplayName() => "Analyze Changes Using LandTrendr";
 
 		/// <summary>
 		/// <para>Tool Name : AnalyzeChangesUsingLandTrendr</para>
 		/// </summary>
-		public override string ToolName => "AnalyzeChangesUsingLandTrendr";
+		public override string ToolName() => "AnalyzeChangesUsingLandTrendr";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.AnalyzeChangesUsingLandTrendr</para>
 		/// </summary>
-		public override string ExcuteName => "ia.AnalyzeChangesUsingLandTrendr";
+		public override string ExcuteName() => "ia.AnalyzeChangesUsingLandTrendr";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMultidimensionalRaster, OutMultidimensionalRaster, ProcessingBand, SnappingDate, MaxNumSegments, VertexCountOvershoot, SpikeThreshold, RecoveryThreshold, PreventOneYearRecovery, RecoveryTrend, MinNumObservations, BestModelProportion, PvalueThreshold, OutputOtherBands };
+		public override object[] Parameters() => new object[] { InMultidimensionalRaster, OutMultidimensionalRaster, ProcessingBand, SnappingDate, MaxNumSegments, VertexCountOvershoot, SpikeThreshold, RecoveryThreshold, PreventOneYearRecovery, RecoveryTrend, MinNumObservations, BestModelProportion, PvalueThreshold, OutputOtherBands };
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>

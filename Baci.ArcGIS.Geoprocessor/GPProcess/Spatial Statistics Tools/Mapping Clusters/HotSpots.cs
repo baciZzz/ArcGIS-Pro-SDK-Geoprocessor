@@ -72,37 +72,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Hot Spot Analysis (Getis-Ord Gi*)</para>
 		/// </summary>
-		public override string DisplayName => "Hot Spot Analysis (Getis-Ord Gi*)";
+		public override string DisplayName() => "Hot Spot Analysis (Getis-Ord Gi*)";
 
 		/// <summary>
 		/// <para>Tool Name : HotSpots</para>
 		/// </summary>
-		public override string ToolName => "HotSpots";
+		public override string ToolName() => "HotSpots";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.HotSpots</para>
 		/// </summary>
-		public override string ExcuteName => "stats.HotSpots";
+		public override string ExcuteName() => "stats.HotSpots";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, InputField, OutputFeatureClass, ConceptualizationOfSpatialRelationships, DistanceMethod, Standardization, DistanceBandOrThresholdDistance, SelfPotentialField, WeightsMatrixFile, ApplyFalseDiscoveryRateFDRCorrection, ResultsField, ProbabilityField, SourceID, NumberOfNeighbors };
+		public override object[] Parameters() => new object[] { InputFeatureClass, InputField, OutputFeatureClass, ConceptualizationOfSpatialRelationships, DistanceMethod, Standardization, DistanceBandOrThresholdDistance, SelfPotentialField, WeightsMatrixFile, ApplyFalseDiscoveryRateFDRCorrection, ResultsField, ProbabilityField, SourceID, NumberOfNeighbors };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>

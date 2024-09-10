@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Territory Solution</para>
 		/// </summary>
-		public override string DisplayName => "Create Territory Solution";
+		public override string DisplayName() => "Create Territory Solution";
 
 		/// <summary>
 		/// <para>Tool Name : CreateTerritorySolution</para>
 		/// </summary>
-		public override string ToolName => "CreateTerritorySolution";
+		public override string ToolName() => "CreateTerritorySolution";
 
 		/// <summary>
 		/// <para>Tool Excute Name : td.CreateTerritorySolution</para>
 		/// </summary>
-		public override string ExcuteName => "td.CreateTerritorySolution";
+		public override string ExcuteName() => "td.CreateTerritorySolution";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Territory Design Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Territory Design Tools";
+		public override string ToolboxDisplayName() => "Territory Design Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : td</para>
 		/// </summary>
-		public override string ToolboxAlise => "td";
+		public override string ToolboxAlise() => "td";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, SolutionName, IdField, NameField, TerritoryLevelName, DefaultTerritoryName, OutTerritorySolution, InBoundaryMask };
+		public override object[] Parameters() => new object[] { InFeatures, SolutionName, IdField, NameField, TerritoryLevelName, DefaultTerritoryName, OutTerritorySolution, InBoundaryMask };
 
 		/// <summary>
 		/// <para>Input Features</para>

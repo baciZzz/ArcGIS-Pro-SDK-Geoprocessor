@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Display Name : Import Territory Solution</para>
 		/// </summary>
-		public override string DisplayName => "Import Territory Solution";
+		public override string DisplayName() => "Import Territory Solution";
 
 		/// <summary>
 		/// <para>Tool Name : ImportTerritorySolution</para>
 		/// </summary>
-		public override string ToolName => "ImportTerritorySolution";
+		public override string ToolName() => "ImportTerritorySolution";
 
 		/// <summary>
 		/// <para>Tool Excute Name : td.ImportTerritorySolution</para>
 		/// </summary>
-		public override string ExcuteName => "td.ImportTerritorySolution";
+		public override string ExcuteName() => "td.ImportTerritorySolution";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Territory Design Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Territory Design Tools";
+		public override string ToolboxDisplayName() => "Territory Design Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : td</para>
 		/// </summary>
-		public override string ToolboxAlise => "td";
+		public override string ToolboxAlise() => "td";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, SolutionName, LevelSettings, OutTerritorySolution };
+		public override object[] Parameters() => new object[] { InData, SolutionName, LevelSettings, OutTerritorySolution };
 
 		/// <summary>
 		/// <para>Input Data</para>

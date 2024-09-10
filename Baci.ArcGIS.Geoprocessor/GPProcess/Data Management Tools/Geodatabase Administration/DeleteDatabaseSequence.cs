@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Delete Database Sequence</para>
 		/// </summary>
-		public override string DisplayName => "Delete Database Sequence";
+		public override string DisplayName() => "Delete Database Sequence";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteDatabaseSequence</para>
 		/// </summary>
-		public override string ToolName => "DeleteDatabaseSequence";
+		public override string ToolName() => "DeleteDatabaseSequence";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DeleteDatabaseSequence</para>
 		/// </summary>
-		public override string ExcuteName => "management.DeleteDatabaseSequence";
+		public override string ExcuteName() => "management.DeleteDatabaseSequence";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, SeqName, OutWorkspace };
+		public override object[] Parameters() => new object[] { InWorkspace, SeqName, OutWorkspace };
 
 		/// <summary>
 		/// <para>Input Workspace</para>

@@ -51,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Geodatabase To S-57</para>
 		/// </summary>
-		public override string DisplayName => "Export Geodatabase To S-57";
+		public override string DisplayName() => "Export Geodatabase To S-57";
 
 		/// <summary>
 		/// <para>Tool Name : ExportGeodatabaseToS57</para>
 		/// </summary>
-		public override string ToolName => "ExportGeodatabaseToS57";
+		public override string ToolName() => "ExportGeodatabaseToS57";
 
 		/// <summary>
 		/// <para>Tool Excute Name : maritime.ExportGeodatabaseToS57</para>
 		/// </summary>
-		public override string ExcuteName => "maritime.ExportGeodatabaseToS57";
+		public override string ExcuteName() => "maritime.ExportGeodatabaseToS57";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Maritime Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Maritime Tools";
+		public override string ToolboxDisplayName() => "Maritime Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : maritime</para>
 		/// </summary>
-		public override string ToolboxAlise => "maritime";
+		public override string ToolboxAlise() => "maritime";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSourceGdb, Product, ExportType, OutLocation, InProductConfig, ClipDataOption, SampleExport, OutFile, InScaminFile };
+		public override object[] Parameters() => new object[] { InSourceGdb, Product, ExportType, OutLocation, InProductConfig, ClipDataOption, SampleExport, OutFile, InScaminFile };
 
 		/// <summary>
 		/// <para>Source Geodatabase</para>

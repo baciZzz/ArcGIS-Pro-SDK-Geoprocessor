@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Display Name : Convert S-57 to S-101 Cell</para>
 		/// </summary>
-		public override string DisplayName => "Convert S-57 to S-101 Cell";
+		public override string DisplayName() => "Convert S-57 to S-101 Cell";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertS57ToS101</para>
 		/// </summary>
-		public override string ToolName => "ConvertS57ToS101";
+		public override string ToolName() => "ConvertS57ToS101";
 
 		/// <summary>
 		/// <para>Tool Excute Name : maritime.ConvertS57ToS101</para>
 		/// </summary>
-		public override string ExcuteName => "maritime.ConvertS57ToS101";
+		public override string ExcuteName() => "maritime.ConvertS57ToS101";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Maritime Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Maritime Tools";
+		public override string ToolboxDisplayName() => "Maritime Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : maritime</para>
 		/// </summary>
-		public override string ToolboxAlise => "maritime";
+		public override string ToolboxAlise() => "maritime";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "S100FeatureCatalogueFile" };
+		public override string[] ValidEnvironments() => new string[] { "S100FeatureCatalogueFile" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureCatalogue, InConfigFile, InputS57, OutLocation, OutS101 };
+		public override object[] Parameters() => new object[] { InFeatureCatalogue, InConfigFile, InputS57, OutLocation, OutS101 };
 
 		/// <summary>
 		/// <para>S-100 Feature Catalogue</para>

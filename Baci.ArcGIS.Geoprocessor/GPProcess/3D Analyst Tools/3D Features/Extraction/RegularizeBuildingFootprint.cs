@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Regularize Building Footprint</para>
 		/// </summary>
-		public override string DisplayName => "Regularize Building Footprint";
+		public override string DisplayName() => "Regularize Building Footprint";
 
 		/// <summary>
 		/// <para>Tool Name : RegularizeBuildingFootprint</para>
 		/// </summary>
-		public override string ToolName => "RegularizeBuildingFootprint";
+		public override string ToolName() => "RegularizeBuildingFootprint";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.RegularizeBuildingFootprint</para>
 		/// </summary>
-		public override string ExcuteName => "3d.RegularizeBuildingFootprint";
+		public override string ExcuteName() => "3d.RegularizeBuildingFootprint";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "gpuID", "outputCoordinateSystem", "parallelProcessingFactor", "processorType", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "gpuID", "outputCoordinateSystem", "parallelProcessingFactor", "processorType", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Method, Tolerance, Densification, Precision, DiagonalPenalty, MinRadius, MaxRadius };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, Method, Tolerance, Densification, Precision, DiagonalPenalty, MinRadius, MaxRadius };
 
 		/// <summary>
 		/// <para>Input Features</para>

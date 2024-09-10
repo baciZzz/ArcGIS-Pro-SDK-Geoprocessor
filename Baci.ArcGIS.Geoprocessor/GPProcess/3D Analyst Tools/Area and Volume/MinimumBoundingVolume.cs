@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Minimum Bounding Volume</para>
 		/// </summary>
-		public override string DisplayName => "Minimum Bounding Volume";
+		public override string DisplayName() => "Minimum Bounding Volume";
 
 		/// <summary>
 		/// <para>Tool Name : MinimumBoundingVolume</para>
 		/// </summary>
-		public override string ToolName => "MinimumBoundingVolume";
+		public override string ToolName() => "MinimumBoundingVolume";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.MinimumBoundingVolume</para>
 		/// </summary>
-		public override string ExcuteName => "3d.MinimumBoundingVolume";
+		public override string ExcuteName() => "3d.MinimumBoundingVolume";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ZValue, OutFeatureClass, GeometryType, Group, GroupField, MbvFields };
+		public override object[] Parameters() => new object[] { InFeatures, ZValue, OutFeatureClass, GeometryType, Group, GroupField, MbvFields };
 
 		/// <summary>
 		/// <para>Input Features</para>

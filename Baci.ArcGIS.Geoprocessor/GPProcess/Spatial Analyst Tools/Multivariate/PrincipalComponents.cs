@@ -38,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Principal Components</para>
 		/// </summary>
-		public override string DisplayName => "Principal Components";
+		public override string DisplayName() => "Principal Components";
 
 		/// <summary>
 		/// <para>Tool Name : PrincipalComponents</para>
 		/// </summary>
-		public override string ToolName => "PrincipalComponents";
+		public override string ToolName() => "PrincipalComponents";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.PrincipalComponents</para>
 		/// </summary>
-		public override string ExcuteName => "sa.PrincipalComponents";
+		public override string ExcuteName() => "sa.PrincipalComponents";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasterBands, OutMultibandRaster, NumberComponents, OutDataFile };
+		public override object[] Parameters() => new object[] { InRasterBands, OutMultibandRaster, NumberComponents, OutDataFile };
 
 		/// <summary>
 		/// <para>Input raster bands</para>

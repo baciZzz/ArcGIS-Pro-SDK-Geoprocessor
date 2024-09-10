@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Fill</para>
 		/// </summary>
-		public override string DisplayName => "Fill";
+		public override string DisplayName() => "Fill";
 
 		/// <summary>
 		/// <para>Tool Name : Fill</para>
 		/// </summary>
-		public override string ToolName => "Fill";
+		public override string ToolName() => "Fill";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.Fill</para>
 		/// </summary>
-		public override string ExcuteName => "ra.Fill";
+		public override string ExcuteName() => "ra.Fill";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputsurfaceraster, Outputname, Zlimit, Outputraster };
+		public override object[] Parameters() => new object[] { Inputsurfaceraster, Outputname, Zlimit, Outputraster };
 
 		/// <summary>
 		/// <para>Input Surface Raster</para>

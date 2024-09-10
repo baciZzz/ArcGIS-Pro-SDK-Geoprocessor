@@ -34,37 +34,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Point To Point</para>
 		/// </summary>
-		public override string DisplayName => "Point To Point";
+		public override string DisplayName() => "Point To Point";
 
 		/// <summary>
 		/// <para>Tool Name : PointToPoint</para>
 		/// </summary>
-		public override string ToolName => "PointToPoint";
+		public override string ToolName() => "PointToPoint";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.PointToPoint</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.PointToPoint";
+		public override string ExcuteName() => "intelligence.PointToPoint";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputPointFeatures, InputSearchDistance, InputSearchExpression, OutputIdList };
+		public override object[] Parameters() => new object[] { InputPointFeatures, InputSearchDistance, InputSearchExpression, OutputIdList };
 
 		/// <summary>
 		/// <para>Input Points</para>

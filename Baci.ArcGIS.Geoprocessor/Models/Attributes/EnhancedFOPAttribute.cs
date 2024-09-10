@@ -11,7 +11,15 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes
     /// </summary>
     public class EnhancedFOPAttribute : Attribute
     {
+        /// <summary>
+        /// Type Which provides enhanced functionality or performance'
+        /// </summary>
         public Type Type { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
         public EnhancedFOPAttribute(Type type)
         {
             Type = type;

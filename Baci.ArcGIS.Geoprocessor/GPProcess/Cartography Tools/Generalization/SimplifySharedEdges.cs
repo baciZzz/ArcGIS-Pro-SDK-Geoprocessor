@@ -51,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Simplify Shared Edges</para>
 		/// </summary>
-		public override string DisplayName => "Simplify Shared Edges";
+		public override string DisplayName() => "Simplify Shared Edges";
 
 		/// <summary>
 		/// <para>Tool Name : SimplifySharedEdges</para>
 		/// </summary>
-		public override string ToolName => "SimplifySharedEdges";
+		public override string ToolName() => "SimplifySharedEdges";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.SimplifySharedEdges</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.SimplifySharedEdges";
+		public override string ExcuteName() => "cartography.SimplifySharedEdges";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cartographicPartitions" };
+		public override string[] ValidEnvironments() => new string[] { "cartographicPartitions" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Algorithm, Tolerance, SharedEdgeFeatures, MinimumArea, InBarriers, OutFeatureClass, OutSharedEdgeFeatureClass };
+		public override object[] Parameters() => new object[] { InFeatures, Algorithm, Tolerance, SharedEdgeFeatures, MinimumArea, InBarriers, OutFeatureClass, OutSharedEdgeFeatureClass };
 
 		/// <summary>
 		/// <para>Input Features</para>

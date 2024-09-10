@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Duplicate Dataset From Big Data Connection</para>
 		/// </summary>
-		public override string DisplayName => "Duplicate Dataset From Big Data Connection";
+		public override string DisplayName() => "Duplicate Dataset From Big Data Connection";
 
 		/// <summary>
 		/// <para>Tool Name : DuplicateDatasetFromBDC</para>
 		/// </summary>
-		public override string ToolName => "DuplicateDatasetFromBDC";
+		public override string ToolName() => "DuplicateDatasetFromBDC";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.DuplicateDatasetFromBDC</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.DuplicateDatasetFromBDC";
+		public override string ExcuteName() => "gapro.DuplicateDatasetFromBDC";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { BdcDataset, DuplicateName, UpdatedBdc };
+		public override object[] Parameters() => new object[] { BdcDataset, DuplicateName, UpdatedBdc };
 
 		/// <summary>
 		/// <para>Big Data Connection Dataset</para>

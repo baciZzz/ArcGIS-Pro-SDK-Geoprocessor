@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Upgrade Scene Layer</para>
 		/// </summary>
-		public override string DisplayName => "Upgrade Scene Layer";
+		public override string DisplayName() => "Upgrade Scene Layer";
 
 		/// <summary>
 		/// <para>Tool Name : UpgradeSceneLayer</para>
 		/// </summary>
-		public override string ToolName => "UpgradeSceneLayer";
+		public override string ToolName() => "UpgradeSceneLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.UpgradeSceneLayer</para>
 		/// </summary>
-		public override string ExcuteName => "management.UpgradeSceneLayer";
+		public override string ExcuteName() => "management.UpgradeSceneLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutFolderPath, OutName, OutLog, TextureOptimization };
+		public override object[] Parameters() => new object[] { InDataset, OutFolderPath, OutName, OutLog, TextureOptimization };
 
 		/// <summary>
 		/// <para>Input Dataset</para>

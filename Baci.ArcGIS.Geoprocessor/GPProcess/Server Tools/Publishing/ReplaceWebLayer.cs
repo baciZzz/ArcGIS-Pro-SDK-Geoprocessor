@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Replace Web Layer</para>
 		/// </summary>
-		public override string DisplayName => "Replace Web Layer";
+		public override string DisplayName() => "Replace Web Layer";
 
 		/// <summary>
 		/// <para>Tool Name : ReplaceWebLayer</para>
 		/// </summary>
-		public override string ToolName => "ReplaceWebLayer";
+		public override string ToolName() => "ReplaceWebLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : server.ReplaceWebLayer</para>
 		/// </summary>
-		public override string ExcuteName => "server.ReplaceWebLayer";
+		public override string ExcuteName() => "server.ReplaceWebLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Server Tools";
+		public override string ToolboxDisplayName() => "Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : server</para>
 		/// </summary>
-		public override string ToolboxAlise => "server";
+		public override string ToolboxAlise() => "server";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetLayer, ArchiveLayerName, UpdateLayer, ReplaceItemInfo, UpdatedTargetLayer, CreateNewItem };
+		public override object[] Parameters() => new object[] { TargetLayer, ArchiveLayerName, UpdateLayer, ReplaceItemInfo, UpdatedTargetLayer, CreateNewItem };
 
 		/// <summary>
 		/// <para>Target Layer</para>

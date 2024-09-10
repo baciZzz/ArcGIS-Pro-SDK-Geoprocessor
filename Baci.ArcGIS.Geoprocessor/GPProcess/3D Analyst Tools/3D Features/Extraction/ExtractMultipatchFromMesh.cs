@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Extract Multipatch From Mesh</para>
 		/// </summary>
-		public override string DisplayName => "Extract Multipatch From Mesh";
+		public override string DisplayName() => "Extract Multipatch From Mesh";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractMultipatchFromMesh</para>
 		/// </summary>
-		public override string ToolName => "ExtractMultipatchFromMesh";
+		public override string ToolName() => "ExtractMultipatchFromMesh";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.ExtractMultipatchFromMesh</para>
 		/// </summary>
-		public override string ExcuteName => "3d.ExtractMultipatchFromMesh";
+		public override string ExcuteName() => "3d.ExtractMultipatchFromMesh";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { SourceMesh, FootprintFeatures, OutFeatureClass };
+		public override object[] Parameters() => new object[] { SourceMesh, FootprintFeatures, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Source Integrated Mesh</para>

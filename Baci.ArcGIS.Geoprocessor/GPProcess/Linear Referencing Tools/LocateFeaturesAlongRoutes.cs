@@ -63,37 +63,37 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Locate Features Along Routes</para>
 		/// </summary>
-		public override string DisplayName => "Locate Features Along Routes";
+		public override string DisplayName() => "Locate Features Along Routes";
 
 		/// <summary>
 		/// <para>Tool Name : LocateFeaturesAlongRoutes</para>
 		/// </summary>
-		public override string ToolName => "LocateFeaturesAlongRoutes";
+		public override string ToolName() => "LocateFeaturesAlongRoutes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : lr.LocateFeaturesAlongRoutes</para>
 		/// </summary>
-		public override string ExcuteName => "lr.LocateFeaturesAlongRoutes";
+		public override string ExcuteName() => "lr.LocateFeaturesAlongRoutes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Linear Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Linear Referencing Tools";
+		public override string ToolboxDisplayName() => "Linear Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : lr</para>
 		/// </summary>
-		public override string ToolboxAlise => "lr";
+		public override string ToolboxAlise() => "lr";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InRoutes, RouteIdField, RadiusOrTolerance, OutTable, OutEventProperties, RouteLocations, DistanceField, ZeroLengthEvents, InFields, MDirectionOffsetting };
+		public override object[] Parameters() => new object[] { InFeatures, InRoutes, RouteIdField, RadiusOrTolerance, OutTable, OutEventProperties, RouteLocations, DistanceField, ZeroLengthEvents, InFields, MDirectionOffsetting };
 
 		/// <summary>
 		/// <para>Input Features</para>

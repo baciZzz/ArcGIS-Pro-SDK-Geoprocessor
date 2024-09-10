@@ -65,37 +65,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Huff Model Calibration</para>
 		/// </summary>
-		public override string DisplayName => "Huff Model Calibration";
+		public override string DisplayName() => "Huff Model Calibration";
 
 		/// <summary>
 		/// <para>Tool Name : HuffModelCalibration</para>
 		/// </summary>
-		public override string ToolName => "HuffModelCalibration";
+		public override string ToolName() => "HuffModelCalibration";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.HuffModelCalibration</para>
 		/// </summary>
-		public override string ExcuteName => "ba.HuffModelCalibration";
+		public override string ExcuteName() => "ba.HuffModelCalibration";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "baNetworkSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "baNetworkSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFacilityFeatures, FacilityIdField, InCustomerFeatures, LinkField, InSalesPotentialFeatures, SalesPotentialIdField, OutCalibration, AttractivenessVariables, CustomerWeightField, DistanceType, DistanceUnits, TravelDirection, TimeOfDay, TimeZone };
+		public override object[] Parameters() => new object[] { InFacilityFeatures, FacilityIdField, InCustomerFeatures, LinkField, InSalesPotentialFeatures, SalesPotentialIdField, OutCalibration, AttractivenessVariables, CustomerWeightField, DistanceType, DistanceUnits, TravelDirection, TimeOfDay, TimeZone };
 
 		/// <summary>
 		/// <para>Input Facility Features</para>

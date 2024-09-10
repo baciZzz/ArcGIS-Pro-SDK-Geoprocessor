@@ -63,37 +63,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Density</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Density";
+		public override string DisplayName() => "Calculate Density";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateDensity</para>
 		/// </summary>
-		public override string ToolName => "CalculateDensity";
+		public override string ToolName() => "CalculateDensity";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.CalculateDensity</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.CalculateDensity";
+		public override string ExcuteName() => "geoanalytics.CalculateDensity";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutputName, BinType, BinSize, Weight, NeighborhoodSize, Fields, AreaUnitScaleFactor, TimeStepInterval, TimeStepRepeat, TimeStepReference, Output, DataStore };
+		public override object[] Parameters() => new object[] { InputLayer, OutputName, BinType, BinSize, Weight, NeighborhoodSize, Fields, AreaUnitScaleFactor, TimeStepInterval, TimeStepRepeat, TimeStepReference, Output, DataStore };
 
 		/// <summary>
 		/// <para>Input layer</para>

@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Color Balance Mosaic Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Color Balance Mosaic Dataset";
+		public override string DisplayName() => "Color Balance Mosaic Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : ColorBalanceMosaicDataset</para>
 		/// </summary>
-		public override string ToolName => "ColorBalanceMosaicDataset";
+		public override string ToolName() => "ColorBalanceMosaicDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ColorBalanceMosaicDataset</para>
 		/// </summary>
-		public override string ExcuteName => "management.ColorBalanceMosaicDataset";
+		public override string ExcuteName() => "management.ColorBalanceMosaicDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, BalancingMethod, ColorSurfaceType, TargetRaster, ExcludeRaster, StretchType, Gamma, BlockField, OutMosaicDataset };
+		public override object[] Parameters() => new object[] { InMosaicDataset, BalancingMethod, ColorSurfaceType, TargetRaster, ExcludeRaster, StretchType, Gamma, BlockField, OutMosaicDataset };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

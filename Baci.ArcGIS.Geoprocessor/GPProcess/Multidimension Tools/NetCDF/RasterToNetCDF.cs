@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Display Name : Raster to NetCDF</para>
 		/// </summary>
-		public override string DisplayName => "Raster to NetCDF";
+		public override string DisplayName() => "Raster to NetCDF";
 
 		/// <summary>
 		/// <para>Tool Name : RasterToNetCDF</para>
 		/// </summary>
-		public override string ToolName => "RasterToNetCDF";
+		public override string ToolName() => "RasterToNetCDF";
 
 		/// <summary>
 		/// <para>Tool Excute Name : md.RasterToNetCDF</para>
 		/// </summary>
-		public override string ExcuteName => "md.RasterToNetCDF";
+		public override string ExcuteName() => "md.RasterToNetCDF";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Multidimension Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Multidimension Tools";
+		public override string ToolboxDisplayName() => "Multidimension Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : md</para>
 		/// </summary>
-		public override string ToolboxAlise => "md";
+		public override string ToolboxAlise() => "md";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutNetcdfFile, Variable, VariableUnits, XDimension, YDimension, BandDimension, FieldsToDimensions, CompressionLevel };
+		public override object[] Parameters() => new object[] { InRaster, OutNetcdfFile, Variable, VariableUnits, XDimension, YDimension, BandDimension, FieldsToDimensions, CompressionLevel };
 
 		/// <summary>
 		/// <para>Input Raster</para>

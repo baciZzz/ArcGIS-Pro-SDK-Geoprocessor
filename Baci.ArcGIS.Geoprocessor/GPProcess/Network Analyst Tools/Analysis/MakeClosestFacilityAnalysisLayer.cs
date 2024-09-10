@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Closest Facility Analysis Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make Closest Facility Analysis Layer";
+		public override string DisplayName() => "Make Closest Facility Analysis Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeClosestFacilityAnalysisLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeClosestFacilityAnalysisLayer";
+		public override string ToolName() => "MakeClosestFacilityAnalysisLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.MakeClosestFacilityAnalysisLayer</para>
 		/// </summary>
-		public override string ExcuteName => "na.MakeClosestFacilityAnalysisLayer";
+		public override string ExcuteName() => "na.MakeClosestFacilityAnalysisLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { NetworkDataSource, LayerName, TravelMode, TravelDirection, Cutoff, NumberOfFacilitiesToFind, TimeOfDay, TimeZone, TimeOfDayUsage, LineShape, AccumulateAttributes, GenerateDirectionsOnSolve, OutNetworkAnalysisLayer };
+		public override object[] Parameters() => new object[] { NetworkDataSource, LayerName, TravelMode, TravelDirection, Cutoff, NumberOfFacilitiesToFind, TimeOfDay, TimeZone, TimeOfDayUsage, LineShape, AccumulateAttributes, GenerateDirectionsOnSolve, OutNetworkAnalysisLayer };
 
 		/// <summary>
 		/// <para>Network Data Source</para>

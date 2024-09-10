@@ -56,37 +56,37 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Range Fans</para>
 		/// </summary>
-		public override string DisplayName => "Generate Range Fans";
+		public override string DisplayName() => "Generate Range Fans";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateRangeFans</para>
 		/// </summary>
-		public override string ToolName => "GenerateRangeFans";
+		public override string ToolName() => "GenerateRangeFans";
 
 		/// <summary>
 		/// <para>Tool Excute Name : defense.GenerateRangeFans</para>
 		/// </summary>
-		public override string ExcuteName => "defense.GenerateRangeFans";
+		public override string ExcuteName() => "defense.GenerateRangeFans";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Defense Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Defense Tools";
+		public override string ToolboxDisplayName() => "Defense Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : defense</para>
 		/// </summary>
-		public override string ToolboxAlise => "defense";
+		public override string ToolboxAlise() => "defense";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutRangeFanFeatureClass, InnerRadius, OuterRadius, HorizontalStartAngle, HorizontalEndAngle, DistanceUnits, AngleUnits };
+		public override object[] Parameters() => new object[] { InFeatures, OutRangeFanFeatureClass, InnerRadius, OuterRadius, HorizontalStartAngle, HorizontalEndAngle, DistanceUnits, AngleUnits };
 
 		/// <summary>
 		/// <para>Input Points</para>

@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Value</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Value";
+		public override string DisplayName() => "Calculate Value";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateValue</para>
 		/// </summary>
-		public override string ToolName => "CalculateValue";
+		public override string ToolName() => "CalculateValue";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.CalculateValue</para>
 		/// </summary>
-		public override string ExcuteName => "mb.CalculateValue";
+		public override string ExcuteName() => "mb.CalculateValue";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Expression, CodeBlock, DataType, Value };
+		public override object[] Parameters() => new object[] { Expression, CodeBlock, DataType, Value };
 
 		/// <summary>
 		/// <para>Expression</para>

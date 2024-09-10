@@ -51,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Domain Network</para>
 		/// </summary>
-		public override string DisplayName => "Add Domain Network";
+		public override string DisplayName() => "Add Domain Network";
 
 		/// <summary>
 		/// <para>Tool Name : AddDomainNetwork</para>
 		/// </summary>
-		public override string ToolName => "AddDomainNetwork";
+		public override string ToolName() => "AddDomainNetwork";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.AddDomainNetwork</para>
 		/// </summary>
-		public override string ExcuteName => "un.AddDomainNetwork";
+		public override string ExcuteName() => "un.AddDomainNetwork";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, DomainNetworkName, TierDefinition, SubnetworkControllerType, DomainNetworkAliasName, OutUtilityNetwork };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, DomainNetworkName, TierDefinition, SubnetworkControllerType, DomainNetworkAliasName, OutUtilityNetwork };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>

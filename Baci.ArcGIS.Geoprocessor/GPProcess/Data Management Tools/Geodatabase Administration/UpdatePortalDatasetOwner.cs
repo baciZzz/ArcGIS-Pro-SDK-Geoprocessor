@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Update Portal Dataset Owner</para>
 		/// </summary>
-		public override string DisplayName => "Update Portal Dataset Owner";
+		public override string DisplayName() => "Update Portal Dataset Owner";
 
 		/// <summary>
 		/// <para>Tool Name : UpdatePortalDatasetOwner</para>
 		/// </summary>
-		public override string ToolName => "UpdatePortalDatasetOwner";
+		public override string ToolName() => "UpdatePortalDatasetOwner";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.UpdatePortalDatasetOwner</para>
 		/// </summary>
-		public override string ExcuteName => "management.UpdatePortalDatasetOwner";
+		public override string ExcuteName() => "management.UpdatePortalDatasetOwner";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, TargetOwner, UpdatedDataset };
+		public override object[] Parameters() => new object[] { InDataset, TargetOwner, UpdatedDataset };
 
 		/// <summary>
 		/// <para>Input Dataset</para>

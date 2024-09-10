@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Area Solar Radiation</para>
 		/// </summary>
-		public override string DisplayName => "Area Solar Radiation";
+		public override string DisplayName() => "Area Solar Radiation";
 
 		/// <summary>
 		/// <para>Tool Name : AreaSolarRadiation</para>
 		/// </summary>
-		public override string ToolName => "AreaSolarRadiation";
+		public override string ToolName() => "AreaSolarRadiation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.AreaSolarRadiation</para>
 		/// </summary>
-		public override string ExcuteName => "sa.AreaSolarRadiation";
+		public override string ExcuteName() => "sa.AreaSolarRadiation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurfaceRaster, OutGlobalRadiationRaster, Latitude, SkySize, TimeConfiguration, DayInterval, HourInterval, EachInterval, ZFactor, SlopeAspectInputType, CalculationDirections, ZenithDivisions, AzimuthDivisions, DiffuseModelType, DiffuseProportion, Transmittivity, OutDirectRadiationRaster, OutDiffuseRadiationRaster, OutDirectDurationRaster };
+		public override object[] Parameters() => new object[] { InSurfaceRaster, OutGlobalRadiationRaster, Latitude, SkySize, TimeConfiguration, DayInterval, HourInterval, EachInterval, ZFactor, SlopeAspectInputType, CalculationDirections, ZenithDivisions, AzimuthDivisions, DiffuseModelType, DiffuseProportion, Transmittivity, OutDirectRadiationRaster, OutDiffuseRadiationRaster, OutDirectDurationRaster };
 
 		/// <summary>
 		/// <para>Input raster</para>

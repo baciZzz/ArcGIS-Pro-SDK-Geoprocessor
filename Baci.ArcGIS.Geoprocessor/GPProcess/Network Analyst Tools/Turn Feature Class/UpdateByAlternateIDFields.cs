@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Update by Alternate ID Fields</para>
 		/// </summary>
-		public override string DisplayName => "Update by Alternate ID Fields";
+		public override string DisplayName() => "Update by Alternate ID Fields";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateByAlternateIDFields</para>
 		/// </summary>
-		public override string ToolName => "UpdateByAlternateIDFields";
+		public override string ToolName() => "UpdateByAlternateIDFields";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.UpdateByAlternateIDFields</para>
 		/// </summary>
-		public override string ExcuteName => "na.UpdateByAlternateIDFields";
+		public override string ExcuteName() => "na.UpdateByAlternateIDFields";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDataset, AlternateIDFieldName, OutNetworkDataset };
+		public override object[] Parameters() => new object[] { InNetworkDataset, AlternateIDFieldName, OutNetworkDataset };
 
 		/// <summary>
 		/// <para>Input Network Dataset</para>

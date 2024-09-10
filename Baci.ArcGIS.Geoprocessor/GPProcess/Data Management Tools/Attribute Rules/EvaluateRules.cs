@@ -38,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Evaluate Rules</para>
 		/// </summary>
-		public override string DisplayName => "Evaluate Rules";
+		public override string DisplayName() => "Evaluate Rules";
 
 		/// <summary>
 		/// <para>Tool Name : EvaluateRules</para>
 		/// </summary>
-		public override string ToolName => "EvaluateRules";
+		public override string ToolName() => "EvaluateRules";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.EvaluateRules</para>
 		/// </summary>
-		public override string ExcuteName => "management.EvaluateRules";
+		public override string ExcuteName() => "management.EvaluateRules";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, EvaluationTypes, Extent, RunAsync, UpdatedWorkspace };
+		public override object[] Parameters() => new object[] { InWorkspace, EvaluationTypes, Extent, RunAsync, UpdatedWorkspace };
 
 		/// <summary>
 		/// <para>Input Workspace</para>

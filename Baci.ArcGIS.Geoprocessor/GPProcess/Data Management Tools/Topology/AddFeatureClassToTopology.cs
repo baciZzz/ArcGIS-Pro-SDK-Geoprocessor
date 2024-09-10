@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Feature Class To Topology</para>
 		/// </summary>
-		public override string DisplayName => "Add Feature Class To Topology";
+		public override string DisplayName() => "Add Feature Class To Topology";
 
 		/// <summary>
 		/// <para>Tool Name : AddFeatureClassToTopology</para>
 		/// </summary>
-		public override string ToolName => "AddFeatureClassToTopology";
+		public override string ToolName() => "AddFeatureClassToTopology";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AddFeatureClassToTopology</para>
 		/// </summary>
-		public override string ExcuteName => "management.AddFeatureClassToTopology";
+		public override string ExcuteName() => "management.AddFeatureClassToTopology";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTopology, InFeatureclass, XyRank, ZRank, OutTopology };
+		public override object[] Parameters() => new object[] { InTopology, InFeatureclass, XyRank, ZRank, OutTopology };
 
 		/// <summary>
 		/// <para>Input Topology</para>

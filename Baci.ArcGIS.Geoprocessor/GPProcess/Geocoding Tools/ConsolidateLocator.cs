@@ -34,37 +34,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Display Name : Consolidate Locator</para>
 		/// </summary>
-		public override string DisplayName => "Consolidate Locator";
+		public override string DisplayName() => "Consolidate Locator";
 
 		/// <summary>
 		/// <para>Tool Name : ConsolidateLocator</para>
 		/// </summary>
-		public override string ToolName => "ConsolidateLocator";
+		public override string ToolName() => "ConsolidateLocator";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geocoding.ConsolidateLocator</para>
 		/// </summary>
-		public override string ExcuteName => "geocoding.ConsolidateLocator";
+		public override string ExcuteName() => "geocoding.ConsolidateLocator";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geocoding Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geocoding Tools";
+		public override string ToolboxDisplayName() => "Geocoding Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geocoding</para>
 		/// </summary>
-		public override string ToolboxAlise => "geocoding";
+		public override string ToolboxAlise() => "geocoding";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLocator, OutputFolder, CopyArcsdeLocator };
+		public override object[] Parameters() => new object[] { InLocator, OutputFolder, CopyArcsdeLocator };
 
 		/// <summary>
 		/// <para>Input Locator</para>

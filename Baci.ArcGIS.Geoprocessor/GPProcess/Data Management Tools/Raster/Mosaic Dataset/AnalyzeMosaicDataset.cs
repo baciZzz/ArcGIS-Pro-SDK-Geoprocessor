@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Analyze Mosaic Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Analyze Mosaic Dataset";
+		public override string DisplayName() => "Analyze Mosaic Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : AnalyzeMosaicDataset</para>
 		/// </summary>
-		public override string ToolName => "AnalyzeMosaicDataset";
+		public override string ToolName() => "AnalyzeMosaicDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AnalyzeMosaicDataset</para>
 		/// </summary>
-		public override string ExcuteName => "management.AnalyzeMosaicDataset";
+		public override string ExcuteName() => "management.AnalyzeMosaicDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause, CheckerKeywords, OutMosaicDataset };
+		public override object[] Parameters() => new object[] { InMosaicDataset, WhereClause, CheckerKeywords, OutMosaicDataset };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

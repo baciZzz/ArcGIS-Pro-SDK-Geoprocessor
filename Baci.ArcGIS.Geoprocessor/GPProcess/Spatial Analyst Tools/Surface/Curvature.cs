@@ -38,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Curvature</para>
 		/// </summary>
-		public override string DisplayName => "Curvature";
+		public override string DisplayName() => "Curvature";
 
 		/// <summary>
 		/// <para>Tool Name : Curvature</para>
 		/// </summary>
-		public override string ToolName => "Curvature";
+		public override string ToolName() => "Curvature";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Curvature</para>
 		/// </summary>
-		public override string ExcuteName => "sa.Curvature";
+		public override string ExcuteName() => "sa.Curvature";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutCurvatureRaster, ZFactor, OutProfileCurveRaster, OutPlanCurveRaster };
+		public override object[] Parameters() => new object[] { InRaster, OutCurvatureRaster, ZFactor, OutProfileCurveRaster, OutPlanCurveRaster };
 
 		/// <summary>
 		/// <para>Input raster</para>

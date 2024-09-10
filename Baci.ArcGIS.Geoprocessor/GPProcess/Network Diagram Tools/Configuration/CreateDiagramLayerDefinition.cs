@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Diagram Layer Definition</para>
 		/// </summary>
-		public override string DisplayName => "Create Diagram Layer Definition";
+		public override string DisplayName() => "Create Diagram Layer Definition";
 
 		/// <summary>
 		/// <para>Tool Name : CreateDiagramLayerDefinition</para>
 		/// </summary>
-		public override string ToolName => "CreateDiagramLayerDefinition";
+		public override string ToolName() => "CreateDiagramLayerDefinition";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.CreateDiagramLayerDefinition</para>
 		/// </summary>
-		public override string ExcuteName => "nd.CreateDiagramLayerDefinition";
+		public override string ExcuteName() => "nd.CreateDiagramLayerDefinition";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, SystemJunctions, ConnectivityAssociations, StructuralAttachments, ReductionEdges, PointSublayers, PolygonSublayers, OutUtilityNetwork, OutTemplateName, JunctionObjectPointSublayers, EdgeObjectPolylineSublayers, OverwriteAllLayers };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, SystemJunctions, ConnectivityAssociations, StructuralAttachments, ReductionEdges, PointSublayers, PolygonSublayers, OutUtilityNetwork, OutTemplateName, JunctionObjectPointSublayers, EdgeObjectPolylineSublayers, OverwriteAllLayers };
 
 		/// <summary>
 		/// <para>Input Network</para>

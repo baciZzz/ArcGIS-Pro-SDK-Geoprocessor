@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Display Name : Number Features</para>
 		/// </summary>
-		public override string DisplayName => "Number Features";
+		public override string DisplayName() => "Number Features";
 
 		/// <summary>
 		/// <para>Tool Name : NumberFeatures</para>
 		/// </summary>
-		public override string ToolName => "NumberFeatures";
+		public override string ToolName() => "NumberFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : defense.NumberFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "defense.NumberFeatures";
+		public override string ExcuteName() => "defense.NumberFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Defense Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Defense Tools";
+		public override string ToolboxDisplayName() => "Defense Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : defense</para>
 		/// </summary>
-		public override string ToolboxAlise => "defense";
+		public override string ToolboxAlise() => "defense";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, FieldToNumber, InArea, SpatialSortMethod, NewFieldType, OutFeatureClass };
+		public override object[] Parameters() => new object[] { InFeatures, FieldToNumber, InArea, SpatialSortMethod, NewFieldType, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Input Features</para>

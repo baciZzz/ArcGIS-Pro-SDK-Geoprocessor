@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Classify Objects Using Deep Learning</para>
 		/// </summary>
-		public override string DisplayName => "Classify Objects Using Deep Learning";
+		public override string DisplayName() => "Classify Objects Using Deep Learning";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyObjectsUsingDeepLearning</para>
 		/// </summary>
-		public override string ToolName => "ClassifyObjectsUsingDeepLearning";
+		public override string ToolName() => "ClassifyObjectsUsingDeepLearning";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.ClassifyObjectsUsingDeepLearning</para>
 		/// </summary>
-		public override string ExcuteName => "ra.ClassifyObjectsUsingDeepLearning";
+		public override string ExcuteName() => "ra.ClassifyObjectsUsingDeepLearning";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "parallelProcessingFactor", "processorType" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "parallelProcessingFactor", "processorType" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputraster, Inputmodel, Outputname, Inputfeatures, Modelarguments, Classlabelfield, Processingmode, Outobjects };
+		public override object[] Parameters() => new object[] { Inputraster, Inputmodel, Outputname, Inputfeatures, Modelarguments, Classlabelfield, Processingmode, Outobjects };
 
 		/// <summary>
 		/// <para>Input Raster</para>

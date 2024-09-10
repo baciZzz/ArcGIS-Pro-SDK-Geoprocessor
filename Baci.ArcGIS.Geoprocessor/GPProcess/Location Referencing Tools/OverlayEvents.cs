@@ -41,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Overlay Events</para>
 		/// </summary>
-		public override string DisplayName => "Overlay Events";
+		public override string DisplayName() => "Overlay Events";
 
 		/// <summary>
 		/// <para>Tool Name : OverlayEvents</para>
 		/// </summary>
-		public override string ToolName => "OverlayEvents";
+		public override string ToolName() => "OverlayEvents";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.OverlayEvents</para>
 		/// </summary>
-		public override string ExcuteName => "locref.OverlayEvents";
+		public override string ExcuteName() => "locref.OverlayEvents";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRouteFeatures, EventLayers, OutputDataset, IncludeGeometry, NetworkFields };
+		public override object[] Parameters() => new object[] { InRouteFeatures, EventLayers, OutputDataset, IncludeGeometry, NetworkFields };
 
 		/// <summary>
 		/// <para>Input Route Features</para>

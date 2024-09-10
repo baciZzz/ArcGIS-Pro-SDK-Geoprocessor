@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Extract Values to Points</para>
 		/// </summary>
-		public override string DisplayName => "Extract Values to Points";
+		public override string DisplayName() => "Extract Values to Points";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractValuesToPoints</para>
 		/// </summary>
-		public override string ToolName => "ExtractValuesToPoints";
+		public override string ToolName() => "ExtractValuesToPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.ExtractValuesToPoints</para>
 		/// </summary>
-		public override string ExcuteName => "sa.ExtractValuesToPoints";
+		public override string ExcuteName() => "sa.ExtractValuesToPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "mask", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "transferDomains", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "mask", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "transferDomains", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, InRaster, OutPointFeatures, InterpolateValues, AddAttributes };
+		public override object[] Parameters() => new object[] { InPointFeatures, InRaster, OutPointFeatures, InterpolateValues, AddAttributes };
 
 		/// <summary>
 		/// <para>Input point features</para>

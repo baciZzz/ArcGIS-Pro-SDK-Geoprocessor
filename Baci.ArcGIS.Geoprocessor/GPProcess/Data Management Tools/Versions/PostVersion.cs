@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Post Version</para>
 		/// </summary>
-		public override string DisplayName => "Post Version";
+		public override string DisplayName() => "Post Version";
 
 		/// <summary>
 		/// <para>Tool Name : PostVersion</para>
 		/// </summary>
-		public override string ToolName => "PostVersion";
+		public override string ToolName() => "PostVersion";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.PostVersion</para>
 		/// </summary>
-		public override string ExcuteName => "management.PostVersion";
+		public override string ExcuteName() => "management.PostVersion";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, VersionName, OutWorkspace };
+		public override object[] Parameters() => new object[] { InWorkspace, VersionName, OutWorkspace };
 
 		/// <summary>
 		/// <para>Input Workspace</para>

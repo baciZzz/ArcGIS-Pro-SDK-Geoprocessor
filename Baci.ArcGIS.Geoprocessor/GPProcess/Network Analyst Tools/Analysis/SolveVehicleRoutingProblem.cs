@@ -217,37 +217,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Solve Vehicle Routing Problem</para>
 		/// </summary>
-		public override string DisplayName => "Solve Vehicle Routing Problem";
+		public override string DisplayName() => "Solve Vehicle Routing Problem";
 
 		/// <summary>
 		/// <para>Tool Name : SolveVehicleRoutingProblem</para>
 		/// </summary>
-		public override string ToolName => "SolveVehicleRoutingProblem";
+		public override string ToolName() => "SolveVehicleRoutingProblem";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.SolveVehicleRoutingProblem</para>
 		/// </summary>
-		public override string ExcuteName => "na.SolveVehicleRoutingProblem";
+		public override string ExcuteName() => "na.SolveVehicleRoutingProblem";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Orders, Depots, Routes, Breaks, TimeUnits, DistanceUnits, NetworkDataset, OutputWorkspaceLocation, OutputUnassignedStopsName, OutputStopsName, OutputRoutesName, OutputDirectionsName, DefaultDate, UturnPolicy, TimeWindowFactor, SpatiallyClusterRoutes, RouteZones, RouteRenewals, OrderPairs, ExcessTransitFactor, PointBarriers, LineBarriers, PolygonBarriers, TimeAttribute, DistanceAttribute, UseHierarchyInAnalysis, Restrictions, AttributeParameterValues, MaximumSnapTolerance, ExcludeRestrictedPortionsOfTheNetwork, FeatureLocatorWhereClause, PopulateRouteLines, RouteLineSimplificationTolerance, PopulateDirections, DirectionsLanguage, DirectionsStyleName, SaveOutputLayer, ServiceCapabilities, IgnoreInvalidOrderLocations, TravelMode, SolveSucceeded, OutUnassignedStops, OutStops, OutRoutes, OutDirections, OutNetworkAnalysisLayer, IgnoreNetworkLocationFields, TimeZoneUsageForTimeFields, Overrides, SaveRouteData, OutRouteData };
+		public override object[] Parameters() => new object[] { Orders, Depots, Routes, Breaks, TimeUnits, DistanceUnits, NetworkDataset, OutputWorkspaceLocation, OutputUnassignedStopsName, OutputStopsName, OutputRoutesName, OutputDirectionsName, DefaultDate, UturnPolicy, TimeWindowFactor, SpatiallyClusterRoutes, RouteZones, RouteRenewals, OrderPairs, ExcessTransitFactor, PointBarriers, LineBarriers, PolygonBarriers, TimeAttribute, DistanceAttribute, UseHierarchyInAnalysis, Restrictions, AttributeParameterValues, MaximumSnapTolerance, ExcludeRestrictedPortionsOfTheNetwork, FeatureLocatorWhereClause, PopulateRouteLines, RouteLineSimplificationTolerance, PopulateDirections, DirectionsLanguage, DirectionsStyleName, SaveOutputLayer, ServiceCapabilities, IgnoreInvalidOrderLocations, TravelMode, SolveSucceeded, OutUnassignedStops, OutStops, OutRoutes, OutDirections, OutNetworkAnalysisLayer, IgnoreNetworkLocationFields, TimeZoneUsageForTimeFields, Overrides, SaveRouteData, OutRouteData };
 
 		/// <summary>
 		/// <para>Orders</para>
@@ -395,7 +395,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <para>Breaks</para>
 		/// <para>The rest periods, or breaks, for the routes in a given vehicle routing problem. A break is associated with exactly one route, and it can be taken after completing an order, while en route to an order, or prior to servicing an order. It has a start time and a duration, for which the driver may or may not be paid. There are three options for establishing when a break begins: using a time window, a maximum travel time, or a maximum work time.</para>
 		/// <para>The breaks record set has associated attributes. The fields in the attribute table are listed and described below.</para>
-		/// <para><para/>ObjectID:</para>
+		/// <para>&lt;para/&gt;ObjectID:</para>
 		/// <para>The system-managed ID field.</para>
 		/// <para>RouteName:</para>
 		/// <para>The name of the route that the break applies to. Although a break is assigned to exactly one route, many breaks can be assigned to the same route.</para>
@@ -676,8 +676,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <para>The name of the barrier.</para>
 		/// <para>BarrierType:</para>
 		/// <para>Specifies whether the barrier restricts travel completely or adds cost when traveling through it. There are two options:</para>
-		/// <para>(0)—Prohibits traversing through the barrier. This is the default value.<bold>Restriction</bold></para>
-		/// <para>(2)—Traversing through the barrier increases the network cost by the amount specified in the Additional_Time and Additional_Distance fields.<bold>Added Cost</bold></para>
+		/// <para>(0)—Prohibits traversing through the barrier. This is the default value.&lt;bold&gt;Restriction&lt;/bold&gt;</para>
+		/// <para>(2)—Traversing through the barrier increases the network cost by the amount specified in the Additional_Time and Additional_Distance fields.&lt;bold&gt;Added Cost&lt;/bold&gt;</para>
 		/// <para>Additional_Time:</para>
 		/// <para>If BarrierType is set to added cost, the value of the Additional_Time field indicates how much time is added to a route when the route passes through the barrier.</para>
 		/// <para>The unit for this field value is specified by the Time Field Units property of the analysis layer.</para>
@@ -716,8 +716,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <para>The name of the barrier.</para>
 		/// <para>BarrierType:</para>
 		/// <para>Specifies whether the barrier restricts travel completely or scales the cost of traveling through it. There are two options:</para>
-		/// <para>(0)—Prohibits traversing through any part of the barrier. This is the default value.<bold>Restriction</bold></para>
-		/// <para>(1)—Scales the impedance of underlying edges by multiplying them by the value of the Attr_[Impedance] property. If edges are partially covered by the barrier, the impedance is apportioned and multiplied.<bold>Scaled Cost</bold></para>
+		/// <para>(0)—Prohibits traversing through any part of the barrier. This is the default value.&lt;bold&gt;Restriction&lt;/bold&gt;</para>
+		/// <para>(1)—Scales the impedance of underlying edges by multiplying them by the value of the Attr_[Impedance] property. If edges are partially covered by the barrier, the impedance is apportioned and multiplied.&lt;bold&gt;Scaled Cost&lt;/bold&gt;</para>
 		/// <para>Scaled_Time:</para>
 		/// <para>The time-based impedance values of the edges underlying the barrier are multiplied by the value set in this field. This field is only relevant when the barrier is a scaled cost barrier.</para>
 		/// <para>Scaled_Distance:</para>
@@ -925,7 +925,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <para>Specifies whether invalid orders will be ignored when solving the vehicle routing problem.</para>
 		/// <para>Checked—The solve operation will ignore any invalid orders and return a solution, given it didn&apos;t encounter any other errors. If you need to generate routes and deliver them to drivers immediately, you may be able to ignore invalid orders, solve, and distribute the routes to your drivers. Next, resolve any invalid orders from the last solve and include them in the VRP analysis for the next workday or work shift.</para>
 		/// <para>Unchecked—The solve operation will fail when any invalid orders are encountered. An invalid order is an order that the VRP solver can&apos;t reach. An order may be unreachable for a variety of reasons, including if it&apos;s located on a prohibited network element, it isn&apos;t located on the network at all, or it&apos;s located on a disconnected portion of the network.</para>
-		/// <para><para/></para>
+		/// <para>&lt;para/&gt;</para>
 		/// <para><see cref="IgnoreInvalidOrderLocationsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]

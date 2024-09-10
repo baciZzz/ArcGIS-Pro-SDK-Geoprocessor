@@ -74,37 +74,37 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Extract Data and Email Task</para>
 		/// </summary>
-		public override string DisplayName => "Extract Data and Email Task";
+		public override string DisplayName() => "Extract Data and Email Task";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractDataAndEmailTask</para>
 		/// </summary>
-		public override string ToolName => "ExtractDataAndEmailTask";
+		public override string ToolName() => "ExtractDataAndEmailTask";
 
 		/// <summary>
 		/// <para>Tool Excute Name : server.ExtractDataAndEmailTask</para>
 		/// </summary>
-		public override string ExcuteName => "server.ExtractDataAndEmailTask";
+		public override string ExcuteName() => "server.ExtractDataAndEmailTask";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Server Tools";
+		public override string ToolboxDisplayName() => "Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : server</para>
 		/// </summary>
-		public override string ToolboxAlise => "server";
+		public override string ToolboxAlise() => "server";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { LayersToClip, AreaOfInterest, FeatureFormat, RasterFormat, To, Sent };
+		public override object[] Parameters() => new object[] { LayersToClip, AreaOfInterest, FeatureFormat, RasterFormat, To, Sent };
 
 		/// <summary>
 		/// <para>Layers to Clip</para>

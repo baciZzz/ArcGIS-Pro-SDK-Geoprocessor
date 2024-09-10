@@ -32,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Display Name : Rematch Addresses</para>
 		/// </summary>
-		public override string DisplayName => "Rematch Addresses";
+		public override string DisplayName() => "Rematch Addresses";
 
 		/// <summary>
 		/// <para>Tool Name : RematchAddresses</para>
 		/// </summary>
-		public override string ToolName => "RematchAddresses";
+		public override string ToolName() => "RematchAddresses";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geocoding.RematchAddresses</para>
 		/// </summary>
-		public override string ExcuteName => "geocoding.RematchAddresses";
+		public override string ExcuteName() => "geocoding.RematchAddresses";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geocoding Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geocoding Tools";
+		public override string ToolboxDisplayName() => "Geocoding Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geocoding</para>
 		/// </summary>
-		public override string ToolboxAlise => "geocoding";
+		public override string ToolboxAlise() => "geocoding";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeocodedFeatureClass, InWhereClause, OutGeocodedFeatureClass };
+		public override object[] Parameters() => new object[] { InGeocodedFeatureClass, InWhereClause, OutGeocodedFeatureClass };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>

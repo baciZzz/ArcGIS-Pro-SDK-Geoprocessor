@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Preview Dataset From Big Data Connection</para>
 		/// </summary>
-		public override string DisplayName => "Preview Dataset From Big Data Connection";
+		public override string DisplayName() => "Preview Dataset From Big Data Connection";
 
 		/// <summary>
 		/// <para>Tool Name : PreviewDatasetFromBDC</para>
 		/// </summary>
-		public override string ToolName => "PreviewDatasetFromBDC";
+		public override string ToolName() => "PreviewDatasetFromBDC";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.PreviewDatasetFromBDC</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.PreviewDatasetFromBDC";
+		public override string ExcuteName() => "gapro.PreviewDatasetFromBDC";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { BdcDataset, OutPreviewFile };
+		public override object[] Parameters() => new object[] { BdcDataset, OutPreviewFile };
 
 		/// <summary>
 		/// <para>Big Data Connection Dataset</para>

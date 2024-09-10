@@ -32,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Adjust 3D Z</para>
 		/// </summary>
-		public override string DisplayName => "Adjust 3D Z";
+		public override string DisplayName() => "Adjust 3D Z";
 
 		/// <summary>
 		/// <para>Tool Name : Adjust3DZ</para>
 		/// </summary>
-		public override string ToolName => "Adjust3DZ";
+		public override string ToolName() => "Adjust3DZ";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Adjust3DZ</para>
 		/// </summary>
-		public override string ExcuteName => "management.Adjust3DZ";
+		public override string ExcuteName() => "management.Adjust3DZ";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ReverseSign, AdjustValue, FromUnits, ToUnits, OutFeatureClass };
+		public override object[] Parameters() => new object[] { InFeatures, ReverseSign, AdjustValue, FromUnits, ToUnits, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Input Features</para>

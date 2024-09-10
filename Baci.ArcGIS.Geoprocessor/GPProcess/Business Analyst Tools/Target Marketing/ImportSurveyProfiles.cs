@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Import Survey Profiles</para>
 		/// </summary>
-		public override string DisplayName => "Import Survey Profiles";
+		public override string DisplayName() => "Import Survey Profiles";
 
 		/// <summary>
 		/// <para>Tool Name : ImportSurveyProfiles</para>
 		/// </summary>
-		public override string ToolName => "ImportSurveyProfiles";
+		public override string ToolName() => "ImportSurveyProfiles";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.ImportSurveyProfiles</para>
 		/// </summary>
-		public override string ExcuteName => "ba.ImportSurveyProfiles";
+		public override string ExcuteName() => "ba.ImportSurveyProfiles";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Profiles, OutFolder, OutProfiles };
+		public override object[] Parameters() => new object[] { Profiles, OutFolder, OutProfiles };
 
 		/// <summary>
 		/// <para>Profiles</para>

@@ -37,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Remove Terrain Pyramid Level</para>
 		/// </summary>
-		public override string DisplayName => "Remove Terrain Pyramid Level";
+		public override string DisplayName() => "Remove Terrain Pyramid Level";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveTerrainPyramidLevel</para>
 		/// </summary>
-		public override string ToolName => "RemoveTerrainPyramidLevel";
+		public override string ToolName() => "RemoveTerrainPyramidLevel";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.RemoveTerrainPyramidLevel</para>
 		/// </summary>
-		public override string ExcuteName => "3d.RemoveTerrainPyramidLevel";
+		public override string ExcuteName() => "3d.RemoveTerrainPyramidLevel";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerrain, PyramidLevelResolution, DerivedOutTerrain };
+		public override object[] Parameters() => new object[] { InTerrain, PyramidLevelResolution, DerivedOutTerrain };
 
 		/// <summary>
 		/// <para>Input Terrain</para>

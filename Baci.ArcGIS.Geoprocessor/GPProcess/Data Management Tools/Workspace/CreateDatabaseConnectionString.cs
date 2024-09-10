@@ -44,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Database Connection String</para>
 		/// </summary>
-		public override string DisplayName => "Create Database Connection String";
+		public override string DisplayName() => "Create Database Connection String";
 
 		/// <summary>
 		/// <para>Tool Name : CreateDatabaseConnectionString</para>
 		/// </summary>
-		public override string ToolName => "CreateDatabaseConnectionString";
+		public override string ToolName() => "CreateDatabaseConnectionString";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateDatabaseConnectionString</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateDatabaseConnectionString";
+		public override string ExcuteName() => "management.CreateDatabaseConnectionString";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { DatabasePlatform, Instance, AccountAuthentication, Username, Password, Database, ObjectName, DataType, FeatureDataset, Schema, VersionType, Version, Date, OutConnectionString };
+		public override object[] Parameters() => new object[] { DatabasePlatform, Instance, AccountAuthentication, Username, Password, Database, ObjectName, DataType, FeatureDataset, Schema, VersionType, Version, Date, OutConnectionString };
 
 		/// <summary>
 		/// <para>Database Platform</para>

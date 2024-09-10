@@ -51,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Cost Path</para>
 		/// </summary>
-		public override string DisplayName => "Cost Path";
+		public override string DisplayName() => "Cost Path";
 
 		/// <summary>
 		/// <para>Tool Name : CostPath</para>
 		/// </summary>
-		public override string ToolName => "CostPath";
+		public override string ToolName() => "CostPath";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.CostPath</para>
 		/// </summary>
-		public override string ExcuteName => "sa.CostPath";
+		public override string ExcuteName() => "sa.CostPath";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "compression", "configKeyword", "scratchWorkspace", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "compression", "configKeyword", "scratchWorkspace", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDestinationData, InCostDistanceRaster, InCostBacklinkRaster, OutRaster, PathType, DestinationField, ForceFlowDirectionConvention };
+		public override object[] Parameters() => new object[] { InDestinationData, InCostDistanceRaster, InCostBacklinkRaster, OutRaster, PathType, DestinationField, ForceFlowDirectionConvention };
 
 		/// <summary>
 		/// <para>Input raster or feature destination data</para>

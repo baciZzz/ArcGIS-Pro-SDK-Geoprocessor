@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Dimension Reduction</para>
 		/// </summary>
-		public override string DisplayName => "Dimension Reduction";
+		public override string DisplayName() => "Dimension Reduction";
 
 		/// <summary>
 		/// <para>Tool Name : DimensionReduction</para>
 		/// </summary>
-		public override string ToolName => "DimensionReduction";
+		public override string ToolName() => "DimensionReduction";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.DimensionReduction</para>
 		/// </summary>
-		public override string ExcuteName => "stats.DimensionReduction";
+		public override string ExcuteName() => "stats.DimensionReduction";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "randomGenerator" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "randomGenerator" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutputData, Fields, Method, Scale, CategoricalField, MinVariance, MinComponents, AppendFields, OutputEigenvaluesTable, OutputEigenvectorsTable, NumberOfPermutations, AppendToInput, UpdatedTable };
+		public override object[] Parameters() => new object[] { InTable, OutputData, Fields, Method, Scale, CategoricalField, MinVariance, MinComponents, AppendFields, OutputEigenvaluesTable, OutputEigenvectorsTable, NumberOfPermutations, AppendToInput, UpdatedTable };
 
 		/// <summary>
 		/// <para>Input Table or Features</para>

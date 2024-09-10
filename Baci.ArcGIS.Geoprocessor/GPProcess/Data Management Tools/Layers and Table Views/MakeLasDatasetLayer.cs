@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Make LAS Dataset Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make LAS Dataset Layer";
+		public override string DisplayName() => "Make LAS Dataset Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeLasDatasetLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeLasDatasetLayer";
+		public override string ToolName() => "MakeLasDatasetLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MakeLasDatasetLayer</para>
 		/// </summary>
-		public override string ExcuteName => "management.MakeLasDatasetLayer";
+		public override string ExcuteName() => "management.MakeLasDatasetLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, OutLayer, ClassCode, ReturnValues, NoFlag, Synthetic, Keypoint, Withheld, SurfaceConstraints, Overlap };
+		public override object[] Parameters() => new object[] { InLasDataset, OutLayer, ClassCode, ReturnValues, NoFlag, Synthetic, Keypoint, Withheld, SurfaceConstraints, Overlap };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>

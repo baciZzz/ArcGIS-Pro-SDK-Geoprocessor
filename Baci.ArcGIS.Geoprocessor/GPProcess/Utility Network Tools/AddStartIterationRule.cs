@@ -39,37 +39,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Start Iteration Rule</para>
 		/// </summary>
-		public override string DisplayName => "Add Start Iteration Rule";
+		public override string DisplayName() => "Add Start Iteration Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AddStartIterationRule</para>
 		/// </summary>
-		public override string ToolName => "AddStartIterationRule";
+		public override string ToolName() => "AddStartIterationRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.AddStartIterationRule</para>
 		/// </summary>
-		public override string ExcuteName => "un.AddStartIterationRule";
+		public override string ExcuteName() => "un.AddStartIterationRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, Description, OutUtilityNetwork, OutTemplateName };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, Description, OutUtilityNetwork, OutTemplateName };
 
 		/// <summary>
 		/// <para>Input Network</para>

@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Multi-Distance Spatial Cluster Analysis (Ripley's K Function)</para>
 		/// </summary>
-		public override string DisplayName => "Multi-Distance Spatial Cluster Analysis (Ripley's K Function)";
+		public override string DisplayName() => "Multi-Distance Spatial Cluster Analysis (Ripley's K Function)";
 
 		/// <summary>
 		/// <para>Tool Name : MultiDistanceSpatialClustering</para>
 		/// </summary>
-		public override string ToolName => "MultiDistanceSpatialClustering";
+		public override string ToolName() => "MultiDistanceSpatialClustering";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.MultiDistanceSpatialClustering</para>
 		/// </summary>
-		public override string ExcuteName => "stats.MultiDistanceSpatialClustering";
+		public override string ExcuteName() => "stats.MultiDistanceSpatialClustering";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "randomGenerator", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "randomGenerator", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, OutputTable, NumberOfDistanceBands, ComputeConfidenceEnvelope, DisplayResultsGraphically, WeightField, BeginningDistance, DistanceIncrement, BoundaryCorrectionMethod, StudyAreaMethod, StudyAreaFeatureClass, ResultImage };
+		public override object[] Parameters() => new object[] { InputFeatureClass, OutputTable, NumberOfDistanceBands, ComputeConfidenceEnvelope, DisplayResultsGraphically, WeightField, BeginningDistance, DistanceIncrement, BoundaryCorrectionMethod, StudyAreaMethod, StudyAreaFeatureClass, ResultImage };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>

@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Analyze LAS Runway Obstacles</para>
 		/// </summary>
-		public override string DisplayName => "Analyze LAS Runway Obstacles";
+		public override string DisplayName() => "Analyze LAS Runway Obstacles";
 
 		/// <summary>
 		/// <para>Tool Name : AnalyzeLASRunwayObstacles</para>
 		/// </summary>
-		public override string ToolName => "AnalyzeLASRunwayObstacles";
+		public override string ToolName() => "AnalyzeLASRunwayObstacles";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.AnalyzeLASRunwayObstacles</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.AnalyzeLASRunwayObstacles";
+		public override string ExcuteName() => "aviation.AnalyzeLASRunwayObstacles";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InOisFeatures, InLasObstacles, OutObstacleFeatureClass, TargetFolder, OutLasObstacles, VerticalClearance, VerticalClearanceUnit };
+		public override object[] Parameters() => new object[] { InOisFeatures, InLasObstacles, OutObstacleFeatureClass, TargetFolder, OutLasObstacles, VerticalClearance, VerticalClearanceUnit };
 
 		/// <summary>
 		/// <para>Input OIS Features</para>

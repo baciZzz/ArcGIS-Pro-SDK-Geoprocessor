@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Display Name : Upgrade Workflow Database</para>
 		/// </summary>
-		public override string DisplayName => "Upgrade Workflow Database";
+		public override string DisplayName() => "Upgrade Workflow Database";
 
 		/// <summary>
 		/// <para>Tool Name : UpgradeWorkflowDatabase</para>
 		/// </summary>
-		public override string ToolName => "UpgradeWorkflowDatabase";
+		public override string ToolName() => "UpgradeWorkflowDatabase";
 
 		/// <summary>
 		/// <para>Tool Excute Name : wmx.UpgradeWorkflowDatabase</para>
 		/// </summary>
-		public override string ExcuteName => "wmx.UpgradeWorkflowDatabase";
+		public override string ExcuteName() => "wmx.UpgradeWorkflowDatabase";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Workflow Manager Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Workflow Manager Tools";
+		public override string ToolboxDisplayName() => "Workflow Manager Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : wmx</para>
 		/// </summary>
-		public override string ToolboxAlise => "wmx";
+		public override string ToolboxAlise() => "wmx";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabaseConnection, UserStore, OutputDatabasepath };
+		public override object[] Parameters() => new object[] { InputDatabaseConnection, UserStore, OutputDatabasepath };
 
 		/// <summary>
 		/// <para>Input Database Connection</para>

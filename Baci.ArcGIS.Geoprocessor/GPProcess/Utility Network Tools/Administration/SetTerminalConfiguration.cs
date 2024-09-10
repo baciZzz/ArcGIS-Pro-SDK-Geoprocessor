@@ -55,37 +55,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Set Terminal Configuration</para>
 		/// </summary>
-		public override string DisplayName => "Set Terminal Configuration";
+		public override string DisplayName() => "Set Terminal Configuration";
 
 		/// <summary>
 		/// <para>Tool Name : SetTerminalConfiguration</para>
 		/// </summary>
-		public override string ToolName => "SetTerminalConfiguration";
+		public override string ToolName() => "SetTerminalConfiguration";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.SetTerminalConfiguration</para>
 		/// </summary>
-		public override string ExcuteName => "un.SetTerminalConfiguration";
+		public override string ExcuteName() => "un.SetTerminalConfiguration";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, DomainNetwork, DeviceFeatureclass, Assetgroup, Assettype, TerminalConfiguration, OutUtilityNetwork };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, DomainNetwork, DeviceFeatureclass, Assetgroup, Assettype, TerminalConfiguration, OutUtilityNetwork };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>

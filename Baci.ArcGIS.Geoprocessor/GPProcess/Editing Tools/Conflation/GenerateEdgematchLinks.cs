@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Edgematch Links</para>
 		/// </summary>
-		public override string DisplayName => "Generate Edgematch Links";
+		public override string DisplayName() => "Generate Edgematch Links";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateEdgematchLinks</para>
 		/// </summary>
-		public override string ToolName => "GenerateEdgematchLinks";
+		public override string ToolName() => "GenerateEdgematchLinks";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.GenerateEdgematchLinks</para>
 		/// </summary>
-		public override string ExcuteName => "edit.GenerateEdgematchLinks";
+		public override string ExcuteName() => "edit.GenerateEdgematchLinks";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Editing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Editing Tools";
+		public override string ToolboxDisplayName() => "Editing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : edit</para>
 		/// </summary>
-		public override string ToolboxAlise => "edit";
+		public override string ToolboxAlise() => "edit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { SourceFeatures, AdjacentFeatures, OutFeatureClass, SearchDistance, MatchFields };
+		public override object[] Parameters() => new object[] { SourceFeatures, AdjacentFeatures, OutFeatureClass, SearchDistance, MatchFields };
 
 		/// <summary>
 		/// <para>Source Features</para>

@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Derived Airspace Geometry</para>
 		/// </summary>
-		public override string DisplayName => "Generate Derived Airspace Geometry";
+		public override string DisplayName() => "Generate Derived Airspace Geometry";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateDerivedAirspaceGeometry</para>
 		/// </summary>
-		public override string ToolName => "GenerateDerivedAirspaceGeometry";
+		public override string ToolName() => "GenerateDerivedAirspaceGeometry";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.GenerateDerivedAirspaceGeometry</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.GenerateDerivedAirspaceGeometry";
+		public override string ExcuteName() => "aviation.GenerateDerivedAirspaceGeometry";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAirspaceFeatures, AirspaceAssociationTable, UpdatedAirspaceFeatures, AirspacePartFeatures };
+		public override object[] Parameters() => new object[] { InAirspaceFeatures, AirspaceAssociationTable, UpdatedAirspaceFeatures, AirspacePartFeatures };
 
 		/// <summary>
 		/// <para>Input Airspace Features</para>

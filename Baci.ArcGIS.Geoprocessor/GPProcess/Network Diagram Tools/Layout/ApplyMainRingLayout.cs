@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Apply Main Ring Layout</para>
 		/// </summary>
-		public override string DisplayName => "Apply Main Ring Layout";
+		public override string DisplayName() => "Apply Main Ring Layout";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyMainRingLayout</para>
 		/// </summary>
-		public override string ToolName => "ApplyMainRingLayout";
+		public override string ToolName() => "ApplyMainRingLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.ApplyMainRingLayout</para>
 		/// </summary>
-		public override string ExcuteName => "nd.ApplyMainRingLayout";
+		public override string ExcuteName() => "nd.ApplyMainRingLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, AreContainersPreserved, RingType, IsUnitAbsolute, RingWidthAbsolute, RingWidthProportional, RingHeightAbsolute, RingHeightProportional, TreeType, PerpendicularAbsolute, PerpendicularProportional, AlongAbsolute, AlongProportional, BreakpointPosition, EdgeDisplayType, OutNetworkDiagramLayer, RunAsync, OffsetAbsolute, OffsetProportional };
+		public override object[] Parameters() => new object[] { InNetworkDiagramLayer, AreContainersPreserved, RingType, IsUnitAbsolute, RingWidthAbsolute, RingWidthProportional, RingHeightAbsolute, RingHeightProportional, TreeType, PerpendicularAbsolute, PerpendicularProportional, AlongAbsolute, AlongProportional, BreakpointPosition, EdgeDisplayType, OutNetworkDiagramLayer, RunAsync, OffsetAbsolute, OffsetProportional };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>

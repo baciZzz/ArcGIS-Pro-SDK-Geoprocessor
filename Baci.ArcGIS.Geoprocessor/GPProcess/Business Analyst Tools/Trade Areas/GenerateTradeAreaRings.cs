@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Trade Area Rings</para>
 		/// </summary>
-		public override string DisplayName => "Generate Trade Area Rings";
+		public override string DisplayName() => "Generate Trade Area Rings";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateTradeAreaRings</para>
 		/// </summary>
-		public override string ToolName => "GenerateTradeAreaRings";
+		public override string ToolName() => "GenerateTradeAreaRings";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.GenerateTradeAreaRings</para>
 		/// </summary>
-		public override string ExcuteName => "ba.GenerateTradeAreaRings";
+		public override string ExcuteName() => "ba.GenerateTradeAreaRings";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Radii, Units, IdField, RemoveOverlap, DissolveOption, InputMethod, Expression };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, Radii, Units, IdField, RemoveOverlap, DissolveOption, InputMethod, Expression };
 
 		/// <summary>
 		/// <para>Input Features</para>

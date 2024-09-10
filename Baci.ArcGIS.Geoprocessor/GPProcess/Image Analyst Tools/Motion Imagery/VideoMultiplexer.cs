@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Video Multiplexer</para>
 		/// </summary>
-		public override string DisplayName => "Video Multiplexer";
+		public override string DisplayName() => "Video Multiplexer";
 
 		/// <summary>
 		/// <para>Tool Name : VideoMultiplexer</para>
 		/// </summary>
-		public override string ToolName => "VideoMultiplexer";
+		public override string ToolName() => "VideoMultiplexer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.VideoMultiplexer</para>
 		/// </summary>
-		public override string ExcuteName => "ia.VideoMultiplexer";
+		public override string ExcuteName() => "ia.VideoMultiplexer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InVideoFile, MetadataFile, OutVideoFile, MetadataMappingFile, TimeshiftFile, ElevationLayer };
+		public override object[] Parameters() => new object[] { InVideoFile, MetadataFile, OutVideoFile, MetadataMappingFile, TimeshiftFile, ElevationLayer };
 
 		/// <summary>
 		/// <para>Input Video File</para>
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <para>If there is a mismatch between the timing of the video and metadata, specify the time shift in the FMV_Multiplexer_TimeShift_Template.csv template, obtained from C:\Program Files\ArcGIS\Pro\Resources\FullMotionVideo. The time shift observations file is a CSV file containing two columns (elapsed time and time shift) and one or more data rows. A row for column names is optional.</para>
 		/// <para>For example, if the video image has a 5-second lag for the entire time, the time shift observation file would have one line: 0:00, -5. The entire video is shifted 5 seconds.</para>
 		/// <para>If there is a 5-second lag at the 0:18 mark of the video, and a 9-second lag at the 2:21 mark of the video, the time shift observation file would have the following two lines:</para>
-		/// <para><code>0:18, -5 2:21, -9</code>In this case, the video is shifted differently at the beginning of the video and at the end of the video.</para>
+		/// <para>&lt;code&gt;0:18, -5 2:21, -9&lt;/code&gt;In this case, the video is shifted differently at the beginning of the video and at the end of the video.</para>
 		/// <para>You can define any number of time shift intervals in the time shift observation file.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]

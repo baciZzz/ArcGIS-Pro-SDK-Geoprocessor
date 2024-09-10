@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Merge Mosaic Dataset Items</para>
 		/// </summary>
-		public override string DisplayName => "Merge Mosaic Dataset Items";
+		public override string DisplayName() => "Merge Mosaic Dataset Items";
 
 		/// <summary>
 		/// <para>Tool Name : MergeMosaicDatasetItems</para>
 		/// </summary>
-		public override string ToolName => "MergeMosaicDatasetItems";
+		public override string ToolName() => "MergeMosaicDatasetItems";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MergeMosaicDatasetItems</para>
 		/// </summary>
-		public override string ExcuteName => "management.MergeMosaicDatasetItems";
+		public override string ExcuteName() => "management.MergeMosaicDatasetItems";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause, BlockField, MaxRowsPerMergedItems, OutMosaicDataset };
+		public override object[] Parameters() => new object[] { InMosaicDataset, WhereClause, BlockField, MaxRowsPerMergedItems, OutMosaicDataset };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

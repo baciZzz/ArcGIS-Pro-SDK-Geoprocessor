@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Delete Colormap</para>
 		/// </summary>
-		public override string DisplayName => "Delete Colormap";
+		public override string DisplayName() => "Delete Colormap";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteColormap</para>
 		/// </summary>
-		public override string ToolName => "DeleteColormap";
+		public override string ToolName() => "DeleteColormap";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DeleteColormap</para>
 		/// </summary>
-		public override string ExcuteName => "management.DeleteColormap";
+		public override string ExcuteName() => "management.DeleteColormap";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster };
 
 		/// <summary>
 		/// <para>Input Raster</para>

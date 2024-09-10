@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Set Starting Point By Attribute Rule</para>
 		/// </summary>
-		public override string DisplayName => "Add Set Starting Point By Attribute Rule";
+		public override string DisplayName() => "Add Set Starting Point By Attribute Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AddSetStartingPointByAttributeRule</para>
 		/// </summary>
-		public override string ToolName => "AddSetStartingPointByAttributeRule";
+		public override string ToolName() => "AddSetStartingPointByAttributeRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.AddSetStartingPointByAttributeRule</para>
 		/// </summary>
-		public override string ExcuteName => "un.AddSetStartingPointByAttributeRule";
+		public override string ExcuteName() => "un.AddSetStartingPointByAttributeRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, NetworkSource, WhereClause, JunctionTerminals, Description, OutUtilityNetwork, OutTemplateName };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, NetworkSource, WhereClause, JunctionTerminals, Description, OutUtilityNetwork, OutTemplateName };
 
 		/// <summary>
 		/// <para>Input Network</para>

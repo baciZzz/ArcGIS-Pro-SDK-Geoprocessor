@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Job Data</para>
 		/// </summary>
-		public override string DisplayName => "Export Job Data";
+		public override string DisplayName() => "Export Job Data";
 
 		/// <summary>
 		/// <para>Tool Name : ExportJobData</para>
 		/// </summary>
-		public override string ToolName => "ExportJobData";
+		public override string ToolName() => "ExportJobData";
 
 		/// <summary>
 		/// <para>Tool Excute Name : wmx.ExportJobData</para>
 		/// </summary>
-		public override string ExcuteName => "wmx.ExportJobData";
+		public override string ExcuteName() => "wmx.ExportJobData";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Workflow Manager Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Workflow Manager Tools";
+		public override string ToolboxDisplayName() => "Workflow Manager Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : wmx</para>
 		/// </summary>
-		public override string ToolboxAlise => "wmx";
+		public override string ToolboxAlise() => "wmx";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFolder, InputDatabasepath, InputRepositoryName, InputExportSince, InputExportUntil, OutputStatus };
+		public override object[] Parameters() => new object[] { InputFolder, InputDatabasepath, InputRepositoryName, InputExportSince, InputExportUntil, OutputStatus };
 
 		/// <summary>
 		/// <para>Folder To Export To</para>

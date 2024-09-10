@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Survey Report For Targets</para>
 		/// </summary>
-		public override string DisplayName => "Generate Survey Report For Targets";
+		public override string DisplayName() => "Generate Survey Report For Targets";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateSurveyReportForTargets</para>
 		/// </summary>
-		public override string ToolName => "GenerateSurveyReportForTargets";
+		public override string ToolName() => "GenerateSurveyReportForTargets";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.GenerateSurveyReportForTargets</para>
 		/// </summary>
-		public override string ExcuteName => "ba.GenerateSurveyReportForTargets";
+		public override string ExcuteName() => "ba.GenerateSurveyReportForTargets";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetProfile, TargetGroup, CoreTarget, DevelopmentalTarget, ReportFolder, ReportType, SurveyCategories, ReportTitle, ReportFormat, OutputReport };
+		public override object[] Parameters() => new object[] { TargetProfile, TargetGroup, CoreTarget, DevelopmentalTarget, ReportFolder, ReportType, SurveyCategories, ReportTitle, ReportFormat, OutputReport };
 
 		/// <summary>
 		/// <para>Target Profile</para>

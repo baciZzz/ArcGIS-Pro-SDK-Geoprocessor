@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Video Metadata To Feature Class</para>
 		/// </summary>
-		public override string DisplayName => "Video Metadata To Feature Class";
+		public override string DisplayName() => "Video Metadata To Feature Class";
 
 		/// <summary>
 		/// <para>Tool Name : VideoMetadataToFeatureClass</para>
 		/// </summary>
-		public override string ToolName => "VideoMetadataToFeatureClass";
+		public override string ToolName() => "VideoMetadataToFeatureClass";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.VideoMetadataToFeatureClass</para>
 		/// </summary>
-		public override string ExcuteName => "ia.VideoMetadataToFeatureClass";
+		public override string ExcuteName() => "ia.VideoMetadataToFeatureClass";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InVideo, CsvFile, Flightpath, FlightpathType, Imagepath, ImagepathType, Footprint, StartTime, StopTime, MinDistance, MinTime };
+		public override object[] Parameters() => new object[] { InVideo, CsvFile, Flightpath, FlightpathType, Imagepath, ImagepathType, Footprint, StartTime, StopTime, MinDistance, MinTime };
 
 		/// <summary>
 		/// <para>Input Video</para>

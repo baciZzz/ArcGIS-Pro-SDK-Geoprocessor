@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Convert Labels To Graphics</para>
 		/// </summary>
-		public override string DisplayName => "Convert Labels To Graphics";
+		public override string DisplayName() => "Convert Labels To Graphics";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertLabelsToGraphics</para>
 		/// </summary>
-		public override string ToolName => "ConvertLabelsToGraphics";
+		public override string ToolName() => "ConvertLabelsToGraphics";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.ConvertLabelsToGraphics</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.ConvertLabelsToGraphics";
+		public override string ExcuteName() => "cartography.ConvertLabelsToGraphics";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputMap, ConversionScale, WhichLayers, SingleLayer, GraphicsSuffix, Extent, MultipleGraphicsLayers, GenerateUnplaced, OutputGroupLayer };
+		public override object[] Parameters() => new object[] { InputMap, ConversionScale, WhichLayers, SingleLayer, GraphicsSuffix, Extent, MultipleGraphicsLayers, GenerateUnplaced, OutputGroupLayer };
 
 		/// <summary>
 		/// <para>Input Map</para>

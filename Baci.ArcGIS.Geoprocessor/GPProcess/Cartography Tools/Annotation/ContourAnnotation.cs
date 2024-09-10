@@ -59,37 +59,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Contour Annotation</para>
 		/// </summary>
-		public override string DisplayName => "Contour Annotation";
+		public override string DisplayName() => "Contour Annotation";
 
 		/// <summary>
 		/// <para>Tool Name : ContourAnnotation</para>
 		/// </summary>
-		public override string ToolName => "ContourAnnotation";
+		public override string ToolName() => "ContourAnnotation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.ContourAnnotation</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.ContourAnnotation";
+		public override string ExcuteName() => "cartography.ContourAnnotation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "annotationTextStringFieldLength", "outputCoordinateSystem", "referenceScale" };
+		public override string[] ValidEnvironments() => new string[] { "annotationTextStringFieldLength", "outputCoordinateSystem", "referenceScale" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutGeodatabase, ContourLabelField, ReferenceScaleValue, OutLayer, ContourColor, ContourTypeField, ContourAlignment, EnableLaddering, OutGeodatabase2 };
+		public override object[] Parameters() => new object[] { InFeatures, OutGeodatabase, ContourLabelField, ReferenceScaleValue, OutLayer, ContourColor, ContourTypeField, ContourAlignment, EnableLaddering, OutGeodatabase2 };
 
 		/// <summary>
 		/// <para>Input Features</para>

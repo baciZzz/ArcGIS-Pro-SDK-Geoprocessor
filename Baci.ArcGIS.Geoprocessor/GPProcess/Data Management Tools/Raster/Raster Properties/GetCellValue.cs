@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Get Cell Value</para>
 		/// </summary>
-		public override string DisplayName => "Get Cell Value";
+		public override string DisplayName() => "Get Cell Value";
 
 		/// <summary>
 		/// <para>Tool Name : GetCellValue</para>
 		/// </summary>
-		public override string ToolName => "GetCellValue";
+		public override string ToolName() => "GetCellValue";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.GetCellValue</para>
 		/// </summary>
-		public override string ExcuteName => "management.GetCellValue";
+		public override string ExcuteName() => "management.GetCellValue";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, LocationPoint, BandIndex, OutString };
+		public override object[] Parameters() => new object[] { InRaster, LocationPoint, BandIndex, OutString };
 
 		/// <summary>
 		/// <para>Input Raster</para>

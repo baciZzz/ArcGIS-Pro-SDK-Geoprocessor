@@ -59,37 +59,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// <summary>
 		/// <para>Tool Display Name : Write To Reviewer Table</para>
 		/// </summary>
-		public override string DisplayName => "Write To Reviewer Table";
+		public override string DisplayName() => "Write To Reviewer Table";
 
 		/// <summary>
 		/// <para>Tool Name : WriteToReviewerTable</para>
 		/// </summary>
-		public override string ToolName => "WriteToReviewerTable";
+		public override string ToolName() => "WriteToReviewerTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : Reviewer.WriteToReviewerTable</para>
 		/// </summary>
-		public override string ExcuteName => "Reviewer.WriteToReviewerTable";
+		public override string ExcuteName() => "Reviewer.WriteToReviewerTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Reviewer Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Reviewer Tools";
+		public override string ToolboxDisplayName() => "Data Reviewer Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : Reviewer</para>
 		/// </summary>
-		public override string ToolboxAlise => "Reviewer";
+		public override string ToolboxAlise() => "Reviewer";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InReviewerWorkspace, InSession, InFeatures, InField, InOriginTableName, InReviewStatus, InSubtype, InNotes, InSeverity, REVTABLEMAINView, InCheckTitle };
+		public override object[] Parameters() => new object[] { InReviewerWorkspace, InSession, InFeatures, InField, InOriginTableName, InReviewStatus, InSubtype, InNotes, InSeverity, REVTABLEMAINView, InCheckTitle };
 
 		/// <summary>
 		/// <para>Reviewer Workspace</para>

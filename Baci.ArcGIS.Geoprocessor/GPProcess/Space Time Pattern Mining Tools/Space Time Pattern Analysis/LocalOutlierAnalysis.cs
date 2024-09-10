@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Display Name : Local Outlier Analysis</para>
 		/// </summary>
-		public override string DisplayName => "Local Outlier Analysis";
+		public override string DisplayName() => "Local Outlier Analysis";
 
 		/// <summary>
 		/// <para>Tool Name : LocalOutlierAnalysis</para>
 		/// </summary>
-		public override string ToolName => "LocalOutlierAnalysis";
+		public override string ToolName() => "LocalOutlierAnalysis";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stpm.LocalOutlierAnalysis</para>
 		/// </summary>
-		public override string ExcuteName => "stpm.LocalOutlierAnalysis";
+		public override string ExcuteName() => "stpm.LocalOutlierAnalysis";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Space Time Pattern Mining Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Space Time Pattern Mining Tools";
+		public override string ToolboxDisplayName() => "Space Time Pattern Mining Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stpm</para>
 		/// </summary>
-		public override string ToolboxAlise => "stpm";
+		public override string ToolboxAlise() => "stpm";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCube, AnalysisVariable, OutputFeatures, NeighborhoodDistance, NeighborhoodTimeStep, NumberOfPermutations, PolygonMask, ConceptualizationOfSpatialRelationships, NumberOfNeighbors, DefineGlobalWindow };
+		public override object[] Parameters() => new object[] { InCube, AnalysisVariable, OutputFeatures, NeighborhoodDistance, NeighborhoodTimeStep, NumberOfPermutations, PolygonMask, ConceptualizationOfSpatialRelationships, NumberOfNeighbors, DefineGlobalWindow };
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>

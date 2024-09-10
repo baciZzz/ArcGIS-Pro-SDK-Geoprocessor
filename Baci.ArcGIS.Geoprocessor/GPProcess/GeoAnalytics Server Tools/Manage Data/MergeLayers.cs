@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Merge Layers</para>
 		/// </summary>
-		public override string DisplayName => "Merge Layers";
+		public override string DisplayName() => "Merge Layers";
 
 		/// <summary>
 		/// <para>Tool Name : MergeLayers</para>
 		/// </summary>
-		public override string ToolName => "MergeLayers";
+		public override string ToolName() => "MergeLayers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.MergeLayers</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.MergeLayers";
+		public override string ExcuteName() => "geoanalytics.MergeLayers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, MergeLayer, OutputName, MergingAttributes, Output, DataStore };
+		public override object[] Parameters() => new object[] { InputLayer, MergeLayer, OutputName, MergingAttributes, Output, DataStore };
 
 		/// <summary>
 		/// <para>Input Layer</para>

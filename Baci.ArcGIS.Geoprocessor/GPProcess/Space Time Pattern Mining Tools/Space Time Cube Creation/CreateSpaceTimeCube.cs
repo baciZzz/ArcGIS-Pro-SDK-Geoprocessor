@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Space Time Cube By Aggregating Points</para>
 		/// </summary>
-		public override string DisplayName => "Create Space Time Cube By Aggregating Points";
+		public override string DisplayName() => "Create Space Time Cube By Aggregating Points";
 
 		/// <summary>
 		/// <para>Tool Name : CreateSpaceTimeCube</para>
 		/// </summary>
-		public override string ToolName => "CreateSpaceTimeCube";
+		public override string ToolName() => "CreateSpaceTimeCube";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stpm.CreateSpaceTimeCube</para>
 		/// </summary>
-		public override string ExcuteName => "stpm.CreateSpaceTimeCube";
+		public override string ExcuteName() => "stpm.CreateSpaceTimeCube";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Space Time Pattern Mining Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Space Time Pattern Mining Tools";
+		public override string ToolboxDisplayName() => "Space Time Pattern Mining Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stpm</para>
 		/// </summary>
-		public override string ToolboxAlise => "stpm";
+		public override string ToolboxAlise() => "stpm";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputCube, TimeField, TemplateCube, TimeStepInterval, TimeStepAlignment, ReferenceTime, DistanceInterval, SummaryFields, AggregationShapeType, DefinedPolygonLocations, LocationId };
+		public override object[] Parameters() => new object[] { InFeatures, OutputCube, TimeField, TemplateCube, TimeStepInterval, TimeStepAlignment, ReferenceTime, DistanceInterval, SummaryFields, AggregationShapeType, DefinedPolygonLocations, LocationId };
 
 		/// <summary>
 		/// <para>Input Features</para>

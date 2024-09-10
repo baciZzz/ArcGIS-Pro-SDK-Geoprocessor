@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : SAS To Table</para>
 		/// </summary>
-		public override string DisplayName => "SAS To Table";
+		public override string DisplayName() => "SAS To Table";
 
 		/// <summary>
 		/// <para>Tool Name : SASToTable</para>
 		/// </summary>
-		public override string ToolName => "SASToTable";
+		public override string ToolName() => "SASToTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.SASToTable</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.SASToTable";
+		public override string ExcuteName() => "conversion.SASToTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSasDataset, OutTable, UseCasConnection, Hostname, Port, Username, Password };
+		public override object[] Parameters() => new object[] { InSasDataset, OutTable, UseCasConnection, Hostname, Port, Username, Password };
 
 		/// <summary>
 		/// <para>Input SAS Dataset (libref.tablename)</para>

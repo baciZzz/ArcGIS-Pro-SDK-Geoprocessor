@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Rubbersheet Links</para>
 		/// </summary>
-		public override string DisplayName => "Generate Rubbersheet Links";
+		public override string DisplayName() => "Generate Rubbersheet Links";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateRubbersheetLinks</para>
 		/// </summary>
-		public override string ToolName => "GenerateRubbersheetLinks";
+		public override string ToolName() => "GenerateRubbersheetLinks";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.GenerateRubbersheetLinks</para>
 		/// </summary>
-		public override string ExcuteName => "edit.GenerateRubbersheetLinks";
+		public override string ExcuteName() => "edit.GenerateRubbersheetLinks";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Editing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Editing Tools";
+		public override string ToolboxDisplayName() => "Editing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : edit</para>
 		/// </summary>
-		public override string ToolboxAlise => "edit";
+		public override string ToolboxAlise() => "edit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { SourceFeatures, TargetFeatures, OutFeatureClass, SearchDistance, MatchFields, OutMatchTable, OutPointFeatureClass };
+		public override object[] Parameters() => new object[] { SourceFeatures, TargetFeatures, OutFeatureClass, SearchDistance, MatchFields, OutMatchTable, OutPointFeatureClass };
 
 		/// <summary>
 		/// <para>Source Features</para>

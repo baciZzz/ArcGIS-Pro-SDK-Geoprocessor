@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Set Cluster Tolerance</para>
 		/// </summary>
-		public override string DisplayName => "Set Cluster Tolerance";
+		public override string DisplayName() => "Set Cluster Tolerance";
 
 		/// <summary>
 		/// <para>Tool Name : SetClusterTolerance</para>
 		/// </summary>
-		public override string ToolName => "SetClusterTolerance";
+		public override string ToolName() => "SetClusterTolerance";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SetClusterTolerance</para>
 		/// </summary>
-		public override string ExcuteName => "management.SetClusterTolerance";
+		public override string ExcuteName() => "management.SetClusterTolerance";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTopology, ClusterTolerance, OutTopology };
+		public override object[] Parameters() => new object[] { InTopology, ClusterTolerance, OutTopology };
 
 		/// <summary>
 		/// <para>Input Topology</para>

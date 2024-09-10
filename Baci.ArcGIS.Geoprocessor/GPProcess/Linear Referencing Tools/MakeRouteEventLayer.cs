@@ -56,37 +56,37 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Route Event Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make Route Event Layer";
+		public override string DisplayName() => "Make Route Event Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeRouteEventLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeRouteEventLayer";
+		public override string ToolName() => "MakeRouteEventLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : lr.MakeRouteEventLayer</para>
 		/// </summary>
-		public override string ExcuteName => "lr.MakeRouteEventLayer";
+		public override string ExcuteName() => "lr.MakeRouteEventLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Linear Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Linear Referencing Tools";
+		public override string ToolboxDisplayName() => "Linear Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : lr</para>
 		/// </summary>
-		public override string ToolboxAlise => "lr";
+		public override string ToolboxAlise() => "lr";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRoutes, RouteIdField, InTable, InEventProperties, OutLayer, OffsetField, AddErrorField, AddAngleField, AngleType, ComplementAngle, OffsetDirection, PointEventType };
+		public override object[] Parameters() => new object[] { InRoutes, RouteIdField, InTable, InEventProperties, OutLayer, OffsetField, AddErrorField, AddAngleField, AngleType, ComplementAngle, OffsetDirection, PointEventType };
 
 		/// <summary>
 		/// <para>Input Route Features</para>

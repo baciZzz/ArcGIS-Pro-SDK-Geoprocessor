@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Drive Time Trade Areas</para>
 		/// </summary>
-		public override string DisplayName => "Generate Drive Time Trade Areas";
+		public override string DisplayName() => "Generate Drive Time Trade Areas";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateDriveTimeTradeArea</para>
 		/// </summary>
-		public override string ToolName => "GenerateDriveTimeTradeArea";
+		public override string ToolName() => "GenerateDriveTimeTradeArea";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.GenerateDriveTimeTradeArea</para>
 		/// </summary>
-		public override string ExcuteName => "ba.GenerateDriveTimeTradeArea";
+		public override string ExcuteName() => "ba.GenerateDriveTimeTradeArea";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "baNetworkSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "baNetworkSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, DistanceType, Distances, Units, IdField, DissolveOption, RemoveOverlap, TravelDirection, TimeOfDay, TimeZone, SearchTolerance, PolygonDetail, InputMethod, Expression };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, DistanceType, Distances, Units, IdField, DissolveOption, RemoveOverlap, TravelDirection, TimeOfDay, TimeZone, SearchTolerance, PolygonDetail, InputMethod, Expression };
 
 		/// <summary>
 		/// <para>Input Features</para>

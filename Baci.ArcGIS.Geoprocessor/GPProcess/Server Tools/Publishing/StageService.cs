@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Stage Service</para>
 		/// </summary>
-		public override string DisplayName => "Stage Service";
+		public override string DisplayName() => "Stage Service";
 
 		/// <summary>
 		/// <para>Tool Name : StageService</para>
 		/// </summary>
-		public override string ToolName => "StageService";
+		public override string ToolName() => "StageService";
 
 		/// <summary>
 		/// <para>Tool Excute Name : server.StageService</para>
 		/// </summary>
-		public override string ExcuteName => "server.StageService";
+		public override string ExcuteName() => "server.StageService";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Server Tools";
+		public override string ToolboxDisplayName() => "Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : server</para>
 		/// </summary>
-		public override string ToolboxAlise => "server";
+		public override string ToolboxAlise() => "server";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InServiceDefinitionDraft, OutServiceDefinition, StagingVersion };
+		public override object[] Parameters() => new object[] { InServiceDefinitionDraft, OutServiceDefinition, StagingVersion };
 
 		/// <summary>
 		/// <para>Service Definition Draft</para>

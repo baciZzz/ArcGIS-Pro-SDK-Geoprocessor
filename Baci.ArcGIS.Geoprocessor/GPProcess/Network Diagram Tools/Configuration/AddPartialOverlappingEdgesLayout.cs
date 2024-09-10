@@ -53,37 +53,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Partial Overlapping Edges Layout</para>
 		/// </summary>
-		public override string DisplayName => "Add Partial Overlapping Edges Layout";
+		public override string DisplayName() => "Add Partial Overlapping Edges Layout";
 
 		/// <summary>
 		/// <para>Tool Name : AddPartialOverlappingEdgesLayout</para>
 		/// </summary>
-		public override string ToolName => "AddPartialOverlappingEdgesLayout";
+		public override string ToolName() => "AddPartialOverlappingEdgesLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddPartialOverlappingEdgesLayout</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddPartialOverlappingEdgesLayout";
+		public override string ExcuteName() => "nd.AddPartialOverlappingEdgesLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, BufferWidthAbsolute, OffsetAbsolute, OptimizeEdges, OutUtilityNetwork, OutTemplateName };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, BufferWidthAbsolute, OffsetAbsolute, OptimizeEdges, OutUtilityNetwork, OutTemplateName };
 
 		/// <summary>
 		/// <para>Input Network</para>

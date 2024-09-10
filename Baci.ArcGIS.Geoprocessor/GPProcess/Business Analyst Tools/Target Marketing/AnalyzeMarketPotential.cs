@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Analyze Market Potential</para>
 		/// </summary>
-		public override string DisplayName => "Analyze Market Potential";
+		public override string DisplayName() => "Analyze Market Potential";
 
 		/// <summary>
 		/// <para>Tool Name : AnalyzeMarketPotential</para>
 		/// </summary>
-		public override string ToolName => "AnalyzeMarketPotential";
+		public override string ToolName() => "AnalyzeMarketPotential";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.AnalyzeMarketPotential</para>
 		/// </summary>
-		public override string ExcuteName => "ba.AnalyzeMarketPotential";
+		public override string ExcuteName() => "ba.AnalyzeMarketPotential";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetProfile, BaseProfile, GeographyLevel, OutFeatureClass, BoundaryLayer, CreateReport, ReportTitle, ReportFolder, ReportFormat, OutputReport };
+		public override object[] Parameters() => new object[] { TargetProfile, BaseProfile, GeographyLevel, OutFeatureClass, BoundaryLayer, CreateReport, ReportTitle, ReportFolder, ReportFormat, OutputReport };
 
 		/// <summary>
 		/// <para>Target Profile</para>

@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Modify LRS Intersection</para>
 		/// </summary>
-		public override string DisplayName => "Modify LRS Intersection";
+		public override string DisplayName() => "Modify LRS Intersection";
 
 		/// <summary>
 		/// <para>Tool Name : ModifyLRSIntersection</para>
 		/// </summary>
-		public override string ToolName => "ModifyLRSIntersection";
+		public override string ToolName() => "ModifyLRSIntersection";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.ModifyLRSIntersection</para>
 		/// </summary>
-		public override string ExcuteName => "locref.ModifyLRSIntersection";
+		public override string ExcuteName() => "locref.ModifyLRSIntersection";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, IntersectionIdField, IntersectionNameField, RouteIdField, FeatureIdField, FeatureClassNameField, FromDateField, ToDateField, IntersectingLayers, MeasureField, OutFeatureClass };
+		public override object[] Parameters() => new object[] { InFeatureClass, IntersectionIdField, IntersectionNameField, RouteIdField, FeatureIdField, FeatureClassNameField, FromDateField, ToDateField, IntersectingLayers, MeasureField, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Intersection Feature Class</para>

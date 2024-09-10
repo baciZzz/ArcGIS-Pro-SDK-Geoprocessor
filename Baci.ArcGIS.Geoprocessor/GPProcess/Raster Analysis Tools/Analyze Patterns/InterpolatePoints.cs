@@ -41,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Interpolate Points</para>
 		/// </summary>
-		public override string DisplayName => "Interpolate Points";
+		public override string DisplayName() => "Interpolate Points";
 
 		/// <summary>
 		/// <para>Tool Name : InterpolatePoints</para>
 		/// </summary>
-		public override string ToolName => "InterpolatePoints";
+		public override string ToolName() => "InterpolatePoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.InterpolatePoints</para>
 		/// </summary>
-		public override string ExcuteName => "ra.InterpolatePoints";
+		public override string ExcuteName() => "ra.InterpolatePoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputpointfeatures, Interpolatefield, Outputname, Optimizefor, Transformdata, Sizeoflocalmodels, Numberofneighbors, Outputcellsize, Outputpredictionerror, Outputraster, Outputerrorraster };
+		public override object[] Parameters() => new object[] { Inputpointfeatures, Interpolatefield, Outputname, Optimizefor, Transformdata, Sizeoflocalmodels, Numberofneighbors, Outputcellsize, Outputpredictionerror, Outputraster, Outputerrorraster };
 
 		/// <summary>
 		/// <para>Input Point Features</para>

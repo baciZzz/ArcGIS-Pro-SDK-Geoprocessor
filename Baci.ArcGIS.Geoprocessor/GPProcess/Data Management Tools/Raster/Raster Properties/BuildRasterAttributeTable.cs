@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Build Raster Attribute Table</para>
 		/// </summary>
-		public override string DisplayName => "Build Raster Attribute Table";
+		public override string DisplayName() => "Build Raster Attribute Table";
 
 		/// <summary>
 		/// <para>Tool Name : BuildRasterAttributeTable</para>
 		/// </summary>
-		public override string ToolName => "BuildRasterAttributeTable";
+		public override string ToolName() => "BuildRasterAttributeTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.BuildRasterAttributeTable</para>
 		/// </summary>
-		public override string ExcuteName => "management.BuildRasterAttributeTable";
+		public override string ExcuteName() => "management.BuildRasterAttributeTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, Overwrite, OutRaster };
+		public override object[] Parameters() => new object[] { InRaster, Overwrite, OutRaster };
 
 		/// <summary>
 		/// <para>Input Raster</para>

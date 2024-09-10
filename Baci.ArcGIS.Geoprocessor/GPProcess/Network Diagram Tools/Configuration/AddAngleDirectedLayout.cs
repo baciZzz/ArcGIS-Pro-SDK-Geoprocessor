@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Angle Directed Layout</para>
 		/// </summary>
-		public override string DisplayName => "Add Angle Directed Layout";
+		public override string DisplayName() => "Add Angle Directed Layout";
 
 		/// <summary>
 		/// <para>Tool Name : AddAngleDirectedLayout</para>
 		/// </summary>
-		public override string ToolName => "AddAngleDirectedLayout";
+		public override string ToolName() => "AddAngleDirectedLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddAngleDirectedLayout</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddAngleDirectedLayout";
+		public override string ExcuteName() => "nd.AddAngleDirectedLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved, IterationsNumber, NumberOfDirections, OutUtilityNetwork, OutTemplateName };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved, IterationsNumber, NumberOfDirections, OutUtilityNetwork, OutTemplateName };
 
 		/// <summary>
 		/// <para>Input Network</para>

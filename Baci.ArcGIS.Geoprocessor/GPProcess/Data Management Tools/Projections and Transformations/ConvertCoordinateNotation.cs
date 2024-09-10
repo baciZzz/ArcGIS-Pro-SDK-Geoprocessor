@@ -94,37 +94,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Convert Coordinate Notation</para>
 		/// </summary>
-		public override string DisplayName => "Convert Coordinate Notation";
+		public override string DisplayName() => "Convert Coordinate Notation";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertCoordinateNotation</para>
 		/// </summary>
-		public override string ToolName => "ConvertCoordinateNotation";
+		public override string ToolName() => "ConvertCoordinateNotation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ConvertCoordinateNotation</para>
 		/// </summary>
-		public override string ExcuteName => "management.ConvertCoordinateNotation";
+		public override string ExcuteName() => "management.ConvertCoordinateNotation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYTolerance", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYTolerance", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutFeatureclass, XField, YField, InputCoordinateFormat, OutputCoordinateFormat, IdField, SpatialReference, InCoorSystem, ExcludeInvalidRecords };
+		public override object[] Parameters() => new object[] { InTable, OutFeatureclass, XField, YField, InputCoordinateFormat, OutputCoordinateFormat, IdField, SpatialReference, InCoorSystem, ExcludeInvalidRecords };
 
 		/// <summary>
 		/// <para>Input Table</para>

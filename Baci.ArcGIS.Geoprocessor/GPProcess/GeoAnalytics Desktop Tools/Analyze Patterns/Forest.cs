@@ -48,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Forest-based Classification and Regression</para>
 		/// </summary>
-		public override string DisplayName => "Forest-based Classification and Regression";
+		public override string DisplayName() => "Forest-based Classification and Regression";
 
 		/// <summary>
 		/// <para>Tool Name : Forest</para>
 		/// </summary>
-		public override string ToolName => "Forest";
+		public override string ToolName() => "Forest";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.Forest</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.Forest";
+		public override string ExcuteName() => "gapro.Forest";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { PredictionType, InFeatures, OutputTrainedFeatures, VariablePredict, TreatVariableAsCategorical, ExplanatoryVariables, FeaturesToPredict, VariableOfImportance, OutputPredicted, ExplanatoryVariableMatching, NumberOfTrees, MinimumLeafSize, MaximumTreeDepth, SampleSize, RandomVariables, PercentageForValidation };
+		public override object[] Parameters() => new object[] { PredictionType, InFeatures, OutputTrainedFeatures, VariablePredict, TreatVariableAsCategorical, ExplanatoryVariables, FeaturesToPredict, VariableOfImportance, OutputPredicted, ExplanatoryVariableMatching, NumberOfTrees, MinimumLeafSize, MaximumTreeDepth, SampleSize, RandomVariables, PercentageForValidation };
 
 		/// <summary>
 		/// <para>Prediction Type</para>

@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Display Name : Parse S-58 Log File</para>
 		/// </summary>
-		public override string DisplayName => "Parse S-58 Log File";
+		public override string DisplayName() => "Parse S-58 Log File";
 
 		/// <summary>
 		/// <para>Tool Name : ParseS58LogFile</para>
 		/// </summary>
-		public override string ToolName => "ParseS58LogFile";
+		public override string ToolName() => "ParseS58LogFile";
 
 		/// <summary>
 		/// <para>Tool Excute Name : maritime.ParseS58LogFile</para>
 		/// </summary>
-		public override string ExcuteName => "maritime.ParseS58LogFile";
+		public override string ExcuteName() => "maritime.ParseS58LogFile";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Maritime Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Maritime Tools";
+		public override string ToolboxDisplayName() => "Maritime Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : maritime</para>
 		/// </summary>
-		public override string ToolboxAlise => "maritime";
+		public override string ToolboxAlise() => "maritime";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InS58LogFile, InS57File, InProductionDatabaseWorkspace, InReviewerWorkspace, ReviewerSession, InUpdateCells, ParseCount };
+		public override object[] Parameters() => new object[] { InS58LogFile, InS57File, InProductionDatabaseWorkspace, InReviewerWorkspace, ReviewerSession, InUpdateCells, ParseCount };
 
 		/// <summary>
 		/// <para>Input S-58 Log File</para>

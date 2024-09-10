@@ -62,37 +62,37 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Display Name : Coordinate Table To 2-Point Line</para>
 		/// </summary>
-		public override string DisplayName => "Coordinate Table To 2-Point Line";
+		public override string DisplayName() => "Coordinate Table To 2-Point Line";
 
 		/// <summary>
 		/// <para>Tool Name : CoordinateTableTo2PointLine</para>
 		/// </summary>
-		public override string ToolName => "CoordinateTableTo2PointLine";
+		public override string ToolName() => "CoordinateTableTo2PointLine";
 
 		/// <summary>
 		/// <para>Tool Excute Name : defense.CoordinateTableTo2PointLine</para>
 		/// </summary>
-		public override string ExcuteName => "defense.CoordinateTableTo2PointLine";
+		public override string ExcuteName() => "defense.CoordinateTableTo2PointLine";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Defense Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Defense Tools";
+		public override string ToolboxDisplayName() => "Defense Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : defense</para>
 		/// </summary>
-		public override string ToolboxAlise => "defense";
+		public override string ToolboxAlise() => "defense";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutFeatureClass, StartXOrLonField, EndXOrLonField, InCoordinateFormat, StartYOrLatField, EndYOrLatField, LineType, CoordinateSystem };
+		public override object[] Parameters() => new object[] { InTable, OutFeatureClass, StartXOrLonField, EndXOrLonField, InCoordinateFormat, StartYOrLatField, EndYOrLatField, LineType, CoordinateSystem };
 
 		/// <summary>
 		/// <para>Input Table</para>

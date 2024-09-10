@@ -39,37 +39,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Analyze Datasets</para>
 		/// </summary>
-		public override string DisplayName => "Analyze Datasets";
+		public override string DisplayName() => "Analyze Datasets";
 
 		/// <summary>
 		/// <para>Tool Name : AnalyzeDatasets</para>
 		/// </summary>
-		public override string ToolName => "AnalyzeDatasets";
+		public override string ToolName() => "AnalyzeDatasets";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AnalyzeDatasets</para>
 		/// </summary>
-		public override string ExcuteName => "management.AnalyzeDatasets";
+		public override string ExcuteName() => "management.AnalyzeDatasets";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabase, IncludeSystem, InDatasets, AnalyzeBase, AnalyzeDelta, AnalyzeArchive, OutWorkspace };
+		public override object[] Parameters() => new object[] { InputDatabase, IncludeSystem, InDatasets, AnalyzeBase, AnalyzeDelta, AnalyzeArchive, OutWorkspace };
 
 		/// <summary>
 		/// <para>Input Database Connection</para>

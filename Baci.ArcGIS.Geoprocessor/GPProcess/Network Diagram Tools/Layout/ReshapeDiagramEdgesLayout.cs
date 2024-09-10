@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Reshape Diagram Edges Layout</para>
 		/// </summary>
-		public override string DisplayName => "Reshape Diagram Edges Layout";
+		public override string DisplayName() => "Reshape Diagram Edges Layout";
 
 		/// <summary>
 		/// <para>Tool Name : ReshapeDiagramEdgesLayout</para>
 		/// </summary>
-		public override string ToolName => "ReshapeDiagramEdgesLayout";
+		public override string ToolName() => "ReshapeDiagramEdgesLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.ReshapeDiagramEdgesLayout</para>
 		/// </summary>
-		public override string ExcuteName => "nd.ReshapeDiagramEdgesLayout";
+		public override string ExcuteName() => "nd.ReshapeDiagramEdgesLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, AreContainersPreserved, ReshapeType, IsPathPreserved, OffsetBetweenSegmentAbsolute, BreakpointAbsolute, ShiftBetweenEdgeAbsolute, AngleThreshold, OutNetworkDiagramLayer, CircularArcRadius, CircularArcPosition, RunAsync };
+		public override object[] Parameters() => new object[] { InNetworkDiagramLayer, AreContainersPreserved, ReshapeType, IsPathPreserved, OffsetBetweenSegmentAbsolute, BreakpointAbsolute, ShiftBetweenEdgeAbsolute, AngleThreshold, OutNetworkDiagramLayer, CircularArcRadius, CircularArcPosition, RunAsync };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>

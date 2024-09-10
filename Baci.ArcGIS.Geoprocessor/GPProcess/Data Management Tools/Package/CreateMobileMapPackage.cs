@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Mobile Map Package</para>
 		/// </summary>
-		public override string DisplayName => "Create Mobile Map Package";
+		public override string DisplayName() => "Create Mobile Map Package";
 
 		/// <summary>
 		/// <para>Tool Name : CreateMobileMapPackage</para>
 		/// </summary>
-		public override string ToolName => "CreateMobileMapPackage";
+		public override string ToolName() => "CreateMobileMapPackage";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateMobileMapPackage</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateMobileMapPackage";
+		public override string ExcuteName() => "management.CreateMobileMapPackage";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, OutputFile, InLocator, AreaOfInterest, Extent, ClipFeatures, Title, Summary, Description, Tags, Credits, UseLimitations, AnonymousUse, EnableMapExpiration, MapExpirationType, ExpirationDate, ExpirationMessage, SelectRelatedRows, ReferenceOnlineContent };
+		public override object[] Parameters() => new object[] { InMap, OutputFile, InLocator, AreaOfInterest, Extent, ClipFeatures, Title, Summary, Description, Tags, Credits, UseLimitations, AnonymousUse, EnableMapExpiration, MapExpirationType, ExpirationDate, ExpirationMessage, SelectRelatedRows, ReferenceOnlineContent };
 
 		/// <summary>
 		/// <para>Input Map</para>

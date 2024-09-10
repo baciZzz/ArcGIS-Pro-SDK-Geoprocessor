@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Copy Traversed Source Features</para>
 		/// </summary>
-		public override string DisplayName => "Copy Traversed Source Features";
+		public override string DisplayName() => "Copy Traversed Source Features";
 
 		/// <summary>
 		/// <para>Tool Name : CopyTraversedSourceFeatures</para>
 		/// </summary>
-		public override string ToolName => "CopyTraversedSourceFeatures";
+		public override string ToolName() => "CopyTraversedSourceFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.CopyTraversedSourceFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "na.CopyTraversedSourceFeatures";
+		public override string ExcuteName() => "na.CopyTraversedSourceFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputNetworkAnalysisLayer, OutputLocation, EdgeFeatureClassName, JunctionFeatureClassName, TurnTableName, EdgeFeatures, JunctionFeatures, TurnTable, ModifiedInputNetworkAnalysisLayer };
+		public override object[] Parameters() => new object[] { InputNetworkAnalysisLayer, OutputLocation, EdgeFeatureClassName, JunctionFeatureClassName, TurnTableName, EdgeFeatures, JunctionFeatures, TurnTable, ModifiedInputNetworkAnalysisLayer };
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer</para>

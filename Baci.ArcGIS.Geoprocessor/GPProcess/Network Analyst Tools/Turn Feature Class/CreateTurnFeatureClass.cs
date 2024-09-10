@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Turn Feature Class</para>
 		/// </summary>
-		public override string DisplayName => "Create Turn Feature Class";
+		public override string DisplayName() => "Create Turn Feature Class";
 
 		/// <summary>
 		/// <para>Tool Name : CreateTurnFeatureClass</para>
 		/// </summary>
-		public override string ToolName => "CreateTurnFeatureClass";
+		public override string ToolName() => "CreateTurnFeatureClass";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.CreateTurnFeatureClass</para>
 		/// </summary>
-		public override string ExcuteName => "na.CreateTurnFeatureClass";
+		public override string ExcuteName() => "na.CreateTurnFeatureClass";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutLocation, OutFeatureClassName, MaximumEdges, InNetworkDataset, InTemplateFeatureClass, SpatialReference, ConfigKeyword, SpatialGrid1, SpatialGrid2, SpatialGrid3, HasZ, OutTurnFeatures };
+		public override object[] Parameters() => new object[] { OutLocation, OutFeatureClassName, MaximumEdges, InNetworkDataset, InTemplateFeatureClass, SpatialReference, ConfigKeyword, SpatialGrid1, SpatialGrid2, SpatialGrid3, HasZ, OutTurnFeatures };
 
 		/// <summary>
 		/// <para>Output Location</para>

@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Mosaic Dataset Items</para>
 		/// </summary>
-		public override string DisplayName => "Export Mosaic Dataset Items";
+		public override string DisplayName() => "Export Mosaic Dataset Items";
 
 		/// <summary>
 		/// <para>Tool Name : ExportMosaicDatasetItems</para>
 		/// </summary>
-		public override string ToolName => "ExportMosaicDatasetItems";
+		public override string ToolName() => "ExportMosaicDatasetItems";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ExportMosaicDatasetItems</para>
 		/// </summary>
-		public override string ExcuteName => "management.ExportMosaicDatasetItems";
+		public override string ExcuteName() => "management.ExportMosaicDatasetItems";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "compression", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "snapRaster", "tileSize" };
+		public override string[] ValidEnvironments() => new string[] { "compression", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "snapRaster", "tileSize" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, OutFolder, OutBaseName, WhereClause, Format, NodataValue, ClipType, TemplateDataset, CellSize, DerivedOutFolder };
+		public override object[] Parameters() => new object[] { InMosaicDataset, OutFolder, OutBaseName, WhereClause, Format, NodataValue, ClipType, TemplateDataset, CellSize, DerivedOutFolder };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

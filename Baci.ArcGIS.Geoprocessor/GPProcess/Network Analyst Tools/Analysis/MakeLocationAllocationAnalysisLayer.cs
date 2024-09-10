@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Location-Allocation Analysis Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make Location-Allocation Analysis Layer";
+		public override string DisplayName() => "Make Location-Allocation Analysis Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeLocationAllocationAnalysisLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeLocationAllocationAnalysisLayer";
+		public override string ToolName() => "MakeLocationAllocationAnalysisLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.MakeLocationAllocationAnalysisLayer</para>
 		/// </summary>
-		public override string ExcuteName => "na.MakeLocationAllocationAnalysisLayer";
+		public override string ExcuteName() => "na.MakeLocationAllocationAnalysisLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { NetworkDataSource, LayerName, TravelMode, TravelDirection, ProblemType, Cutoff, NumberOfFacilitiesToFind, DecayFunctionType, DecayFunctionParameterValue, TargetMarketShare, Capacity, TimeOfDay, TimeZone, LineShape, AccumulateAttributes, OutNetworkAnalysisLayer };
+		public override object[] Parameters() => new object[] { NetworkDataSource, LayerName, TravelMode, TravelDirection, ProblemType, Cutoff, NumberOfFacilitiesToFind, DecayFunctionType, DecayFunctionParameterValue, TargetMarketShare, Capacity, TimeOfDay, TimeZone, LineShape, AccumulateAttributes, OutNetworkAnalysisLayer };
 
 		/// <summary>
 		/// <para>Network Data Source</para>

@@ -207,7 +207,6 @@
     <Compile Include="GPProcess\Analysis Tools\Overlay\CountOverlappingFeatures.cs" />
     <Compile Include="GPProcess\Analysis Tools\Overlay\Erase.cs" />
     <Compile Include="GPProcess\Analysis Tools\Overlay\Identity.cs" />
-    <Compile Include="GPProcess\Analysis Tools\Overlay\Intersect - 复制.cs" />
     <Compile Include="GPProcess\Analysis Tools\Overlay\Intersect.cs" />
     <Compile Include="GPProcess\Analysis Tools\Overlay\RemoveOverlapMultiple.cs" />
     <Compile Include="GPProcess\Analysis Tools\Overlay\SpatialJoin.cs" />
@@ -2073,7 +2072,6 @@
     <Compile Include="Models\Attributes\GPValueAttribute.cs" />
     <Compile Include="Models\Attributes\InputWillBeModifiedAttribute.cs" />
     <Compile Include="Models\Attributes\ParamType.cs" />
-    <Compile Include="Models\DataType.cs" />
     <Compile Include="Models\Enums\DataSetTypeEnum.cs" />
     <Compile Include="Models\Enums\DataTypeEnum.cs" />
     <Compile Include="Models\Enums\DomainTypeEnum.cs" />
@@ -2081,7 +2079,6 @@
     <Compile Include="Models\Enums\ToolTypeEnum.cs" />
     <Compile Include="Models\Enums\VersionLang.cs" />
     <Compile Include="Models\IGPProcess.cs" />
-    <Compile Include="Models\Param.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

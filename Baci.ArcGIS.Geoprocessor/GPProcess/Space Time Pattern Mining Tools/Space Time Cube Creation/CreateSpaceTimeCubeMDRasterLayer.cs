@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Space Time Cube From Multidimensional Raster Layer</para>
 		/// </summary>
-		public override string DisplayName => "Create Space Time Cube From Multidimensional Raster Layer";
+		public override string DisplayName() => "Create Space Time Cube From Multidimensional Raster Layer";
 
 		/// <summary>
 		/// <para>Tool Name : CreateSpaceTimeCubeMDRasterLayer</para>
 		/// </summary>
-		public override string ToolName => "CreateSpaceTimeCubeMDRasterLayer";
+		public override string ToolName() => "CreateSpaceTimeCubeMDRasterLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stpm.CreateSpaceTimeCubeMDRasterLayer</para>
 		/// </summary>
-		public override string ExcuteName => "stpm.CreateSpaceTimeCubeMDRasterLayer";
+		public override string ExcuteName() => "stpm.CreateSpaceTimeCubeMDRasterLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Space Time Pattern Mining Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Space Time Pattern Mining Tools";
+		public override string ToolboxDisplayName() => "Space Time Pattern Mining Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stpm</para>
 		/// </summary>
-		public override string ToolboxAlise => "stpm";
+		public override string ToolboxAlise() => "stpm";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMdRaster, OutputCube, FillEmptyBins };
+		public override object[] Parameters() => new object[] { InMdRaster, OutputCube, FillEmptyBins };
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster Layer</para>

@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Import MGCP Metadata</para>
 		/// </summary>
-		public override string DisplayName => "Import MGCP Metadata";
+		public override string DisplayName() => "Import MGCP Metadata";
 
 		/// <summary>
 		/// <para>Tool Name : ImportMetadata</para>
 		/// </summary>
-		public override string ToolName => "ImportMetadata";
+		public override string ToolName() => "ImportMetadata";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.ImportMetadata</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.ImportMetadata";
+		public override string ExcuteName() => "topographic.ImportMetadata";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Files, InCellFeatures, OutCells };
+		public override object[] Parameters() => new object[] { Files, InCellFeatures, OutCells };
 
 		/// <summary>
 		/// <para>Metadata Files</para>

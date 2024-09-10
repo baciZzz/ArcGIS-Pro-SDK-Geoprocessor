@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Thin Hydrology Lines</para>
 		/// </summary>
-		public override string DisplayName => "Thin Hydrology Lines";
+		public override string DisplayName() => "Thin Hydrology Lines";
 
 		/// <summary>
 		/// <para>Tool Name : ThinHydrologyLines</para>
 		/// </summary>
-		public override string ToolName => "ThinHydrologyLines";
+		public override string ToolName() => "ThinHydrologyLines";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.ThinHydrologyLines</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.ThinHydrologyLines";
+		public override string ExcuteName() => "topographic.ThinHydrologyLines";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InvisibilityField, MinLength, MinSpacing, HierarchyField, IntersectingFeatures, UnsplitLines, UseAngles, UpdatedFeatures };
+		public override object[] Parameters() => new object[] { InFeatures, InvisibilityField, MinLength, MinSpacing, HierarchyField, IntersectingFeatures, UnsplitLines, UseAngles, UpdatedFeatures };
 
 		/// <summary>
 		/// <para>Input Features</para>

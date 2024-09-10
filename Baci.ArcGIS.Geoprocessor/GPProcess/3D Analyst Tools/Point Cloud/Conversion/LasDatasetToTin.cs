@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : LAS Dataset To TIN</para>
 		/// </summary>
-		public override string DisplayName => "LAS Dataset To TIN";
+		public override string DisplayName() => "LAS Dataset To TIN";
 
 		/// <summary>
 		/// <para>Tool Name : LasDatasetToTin</para>
 		/// </summary>
-		public override string ToolName => "LasDatasetToTin";
+		public override string ToolName() => "LasDatasetToTin";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.LasDatasetToTin</para>
 		/// </summary>
-		public override string ExcuteName => "3d.LasDatasetToTin";
+		public override string ExcuteName() => "3d.LasDatasetToTin";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "tinSaveVersion", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "tinSaveVersion", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, OutTin, ThinningType, ThinningMethod, ThinningValue, MaxNodes, ZFactor, ClipToExtent };
+		public override object[] Parameters() => new object[] { InLasDataset, OutTin, ThinningType, ThinningMethod, ThinningValue, MaxNodes, ZFactor, ClipToExtent };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>

@@ -42,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Pick</para>
 		/// </summary>
-		public override string DisplayName => "Pick";
+		public override string DisplayName() => "Pick";
 
 		/// <summary>
 		/// <para>Tool Name : Pick</para>
 		/// </summary>
-		public override string ToolName => "Pick";
+		public override string ToolName() => "Pick";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.Pick</para>
 		/// </summary>
-		public override string ExcuteName => "ia.Pick";
+		public override string ExcuteName() => "ia.Pick";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPositionRaster, InRastersOrConstants, OutRaster, ProcessAsMultiband };
+		public override object[] Parameters() => new object[] { InPositionRaster, InRastersOrConstants, OutRaster, ProcessAsMultiband };
 
 		/// <summary>
 		/// <para>Input position raster</para>

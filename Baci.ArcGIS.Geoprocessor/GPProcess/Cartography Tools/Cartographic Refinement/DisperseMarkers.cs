@@ -37,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Disperse Markers</para>
 		/// </summary>
-		public override string DisplayName => "Disperse Markers";
+		public override string DisplayName() => "Disperse Markers";
 
 		/// <summary>
 		/// <para>Tool Name : DisperseMarkers</para>
 		/// </summary>
-		public override string ToolName => "DisperseMarkers";
+		public override string ToolName() => "DisperseMarkers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.DisperseMarkers</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.DisperseMarkers";
+		public override string ExcuteName() => "cartography.DisperseMarkers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cartographicCoordinateSystem", "referenceScale" };
+		public override string[] ValidEnvironments() => new string[] { "cartographicCoordinateSystem", "referenceScale" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, MinimumSpacing, DispersalPattern, OutRepresentations };
+		public override object[] Parameters() => new object[] { InPointFeatures, MinimumSpacing, DispersalPattern, OutRepresentations };
 
 		/// <summary>
 		/// <para>Input Point Features</para>

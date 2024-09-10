@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Table To Geodatabase</para>
 		/// </summary>
-		public override string DisplayName => "Table To Geodatabase";
+		public override string DisplayName() => "Table To Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : TableToGeodatabase</para>
 		/// </summary>
-		public override string ToolName => "TableToGeodatabase";
+		public override string ToolName() => "TableToGeodatabase";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.TableToGeodatabase</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.TableToGeodatabase";
+		public override string ExcuteName() => "conversion.TableToGeodatabase";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "extent", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "extent", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputTable, OutputGeodatabase, DerivedGeodatabase };
+		public override object[] Parameters() => new object[] { InputTable, OutputGeodatabase, DerivedGeodatabase };
 
 		/// <summary>
 		/// <para>Input Table</para>

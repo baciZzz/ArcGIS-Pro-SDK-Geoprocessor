@@ -37,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Accuracy Assessment Points</para>
 		/// </summary>
-		public override string DisplayName => "Create Accuracy Assessment Points";
+		public override string DisplayName() => "Create Accuracy Assessment Points";
 
 		/// <summary>
 		/// <para>Tool Name : CreateAccuracyAssessmentPoints</para>
 		/// </summary>
-		public override string ToolName => "CreateAccuracyAssessmentPoints";
+		public override string ToolName() => "CreateAccuracyAssessmentPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.CreateAccuracyAssessmentPoints</para>
 		/// </summary>
-		public override string ExcuteName => "ia.CreateAccuracyAssessmentPoints";
+		public override string ExcuteName() => "ia.CreateAccuracyAssessmentPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InClassData, OutPoints, TargetField, NumRandomPoints, Sampling };
+		public override object[] Parameters() => new object[] { InClassData, OutPoints, TargetField, NumRandomPoints, Sampling };
 
 		/// <summary>
 		/// <para>Input Raster or Feature Class Data</para>

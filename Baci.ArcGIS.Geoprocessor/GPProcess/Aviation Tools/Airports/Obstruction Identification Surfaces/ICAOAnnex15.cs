@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : ICAO Annex 15</para>
 		/// </summary>
-		public override string DisplayName => "ICAO Annex 15";
+		public override string DisplayName() => "ICAO Annex 15";
 
 		/// <summary>
 		/// <para>Tool Name : ICAOAnnex15</para>
 		/// </summary>
-		public override string ToolName => "ICAOAnnex15";
+		public override string ToolName() => "ICAOAnnex15";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.ICAOAnnex15</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.ICAOAnnex15";
+		public override string ExcuteName() => "aviation.ICAOAnnex15";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Target, HighendClearWayLength, LowendClearWayLength, DerivedOutfeatureclass, CustomJsonFile, AirportControlPointFeatureClass };
+		public override object[] Parameters() => new object[] { InFeatures, Target, HighendClearWayLength, LowendClearWayLength, DerivedOutfeatureclass, CustomJsonFile, AirportControlPointFeatureClass };
 
 		/// <summary>
 		/// <para>Input Runway Features</para>

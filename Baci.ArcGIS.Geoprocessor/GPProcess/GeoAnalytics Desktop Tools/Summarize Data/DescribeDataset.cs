@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Describe Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Describe Dataset";
+		public override string DisplayName() => "Describe Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : DescribeDataset</para>
 		/// </summary>
-		public override string ToolName => "DescribeDataset";
+		public override string ToolName() => "DescribeDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.DescribeDataset</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.DescribeDataset";
+		public override string ExcuteName() => "gapro.DescribeDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, Output, SampleFeatures, SampleLayer, ExtentLayer };
+		public override object[] Parameters() => new object[] { InputLayer, Output, SampleFeatures, SampleLayer, ExtentLayer };
 
 		/// <summary>
 		/// <para>Input Layer</para>

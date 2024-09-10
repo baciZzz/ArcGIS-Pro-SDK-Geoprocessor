@@ -25,37 +25,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : If Value Is</para>
 		/// </summary>
-		public override string DisplayName => "If Value Is";
+		public override string DisplayName() => "If Value Is";
 
 		/// <summary>
 		/// <para>Tool Name : ValueIsIfThenElse</para>
 		/// </summary>
-		public override string ToolName => "ValueIsIfThenElse";
+		public override string ToolName() => "ValueIsIfThenElse";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.ValueIsIfThenElse</para>
 		/// </summary>
-		public override string ExcuteName => "mb.ValueIsIfThenElse";
+		public override string ExcuteName() => "mb.ValueIsIfThenElse";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputValue, ValueTest, ComparisonType, Values, RangeValues, ComparisonValue, True, False };
+		public override object[] Parameters() => new object[] { InputValue, ValueTest, ComparisonType, Values, RangeValues, ComparisonValue, True, False };
 
 		/// <summary>
 		/// <para>Input Value</para>

@@ -41,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Compute Control Points</para>
 		/// </summary>
-		public override string DisplayName => "Compute Control Points";
+		public override string DisplayName() => "Compute Control Points";
 
 		/// <summary>
 		/// <para>Tool Name : ComputeControlPoints</para>
 		/// </summary>
-		public override string ToolName => "ComputeControlPoints";
+		public override string ToolName() => "ComputeControlPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ComputeControlPoints</para>
 		/// </summary>
-		public override string ExcuteName => "management.ComputeControlPoints";
+		public override string ExcuteName() => "management.ComputeControlPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, InReferenceImages, OutControlPoints, Similarity, OutImageFeaturePoints, Density, Distribution, AreaOfInterest, LocationAccuracy };
+		public override object[] Parameters() => new object[] { InMosaicDataset, InReferenceImages, OutControlPoints, Similarity, OutImageFeaturePoints, Density, Distribution, AreaOfInterest, LocationAccuracy };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>

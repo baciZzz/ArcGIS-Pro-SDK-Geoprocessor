@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Service Area Analysis Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make Service Area Analysis Layer";
+		public override string DisplayName() => "Make Service Area Analysis Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeServiceAreaAnalysisLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeServiceAreaAnalysisLayer";
+		public override string ToolName() => "MakeServiceAreaAnalysisLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.MakeServiceAreaAnalysisLayer</para>
 		/// </summary>
-		public override string ExcuteName => "na.MakeServiceAreaAnalysisLayer";
+		public override string ExcuteName() => "na.MakeServiceAreaAnalysisLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { NetworkDataSource, LayerName, TravelMode, TravelDirection, Cutoffs, TimeOfDay, TimeZone, OutputType, PolygonDetail, GeometryAtOverlaps, GeometryAtCutoffs, PolygonTrimDistance, ExcludeSourcesFromPolygonGeneration, AccumulateAttributes, OutNetworkAnalysisLayer };
+		public override object[] Parameters() => new object[] { NetworkDataSource, LayerName, TravelMode, TravelDirection, Cutoffs, TimeOfDay, TimeZone, OutputType, PolygonDetail, GeometryAtOverlaps, GeometryAtCutoffs, PolygonTrimDistance, ExcludeSourcesFromPolygonGeneration, AccumulateAttributes, OutNetworkAnalysisLayer };
 
 		/// <summary>
 		/// <para>Network Data Source</para>
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <para>Specifies the time zone for the time of day parameter.</para>
 		/// <para>Local time at locations—The time of day parameter will use the time zone or zones in which the facilities are located. The start or end times of the service areas are staggered by time zone. This is the default.For example, setting time of day to 9:00 a.m. causes service areas to be generated for 9:00 a.m. eastern time for any facilities in the eastern time zone, 9:00 a.m. central time for facilities in the central time zone, 9:00 a.m. mountain time for facilities in the mountain time zone, and so on. If stores in a chain that span the U.S. open at 9:00 a.m. local time, choose this parameter value to find market territories at opening time for all stores in one solve. First, the stores in the eastern time zone open and a polygon is generated. An hour later, stores open in the central time zone, and so on. Nine o&apos;clock is always in local time but staggered in real time.</para>
 		/// <para>UTC—The time of day parameter will use coordinated universal time (UTC). All facilities are reached or departed from simultaneously, regardless of the time zone or zones in which they are located.Setting time of day to 2:00 p.m. causes service areas to be generated for 9:00 a.m. eastern standard time for any facilities in the eastern time zone, 8:00 a.m. central standard time for facilities in the central time zone, 7:00 a.m. mountain standard time for facilities in the mountain time zone, and so on.One of the cases in which the UTC option is useful is to visualize emergency response coverage for a jurisdiction that is split into two time zones. The emergency vehicles are loaded as facilities. Time of day is set to now in UTC. (You need to determine what the current time and date are in terms of UTC to correctly use this option.) Other properties are set and the analysis is solved. Even though a time-zone boundary divides the vehicles, the results show areas that can be reached given current traffic conditions. This same process can be used for other times as well, not just for now.The scenario above assumes standard time. During daylight saving time, the eastern, central, and mountain times will each be one hour ahead (that is, 10:00, 9:00, and 8:00 a.m., respectively).</para>
-		/// <para><bold/></para>
+		/// <para>&lt;bold/&gt;</para>
 		/// <para><see cref="TimeZoneEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]

@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Constant Raster</para>
 		/// </summary>
-		public override string DisplayName => "Create Constant Raster";
+		public override string DisplayName() => "Create Constant Raster";
 
 		/// <summary>
 		/// <para>Tool Name : CreateConstantRaster</para>
 		/// </summary>
-		public override string ToolName => "CreateConstantRaster";
+		public override string ToolName() => "CreateConstantRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.CreateConstantRaster</para>
 		/// </summary>
-		public override string ExcuteName => "sa.CreateConstantRaster";
+		public override string ExcuteName() => "sa.CreateConstantRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutRaster, ConstantValue, DataType, CellSize, Extent };
+		public override object[] Parameters() => new object[] { OutRaster, ConstantValue, DataType, CellSize, Extent };
 
 		/// <summary>
 		/// <para>Output raster</para>

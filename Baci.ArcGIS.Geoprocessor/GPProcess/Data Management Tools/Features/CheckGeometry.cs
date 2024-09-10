@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Check Geometry</para>
 		/// </summary>
-		public override string DisplayName => "Check Geometry";
+		public override string DisplayName() => "Check Geometry";
 
 		/// <summary>
 		/// <para>Tool Name : CheckGeometry</para>
 		/// </summary>
-		public override string ToolName => "CheckGeometry";
+		public override string ToolName() => "CheckGeometry";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CheckGeometry</para>
 		/// </summary>
-		public override string ExcuteName => "management.CheckGeometry";
+		public override string ExcuteName() => "management.CheckGeometry";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutTable, ValidationMethod };
+		public override object[] Parameters() => new object[] { InFeatures, OutTable, ValidationMethod };
 
 		/// <summary>
 		/// <para>Input Features</para>

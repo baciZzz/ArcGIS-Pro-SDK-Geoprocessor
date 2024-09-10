@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Geostatistical Layer</para>
 		/// </summary>
-		public override string DisplayName => "Create Geostatistical Layer";
+		public override string DisplayName() => "Create Geostatistical Layer";
 
 		/// <summary>
 		/// <para>Tool Name : GACreateGeostatisticalLayer</para>
 		/// </summary>
-		public override string ToolName => "GACreateGeostatisticalLayer";
+		public override string ToolName() => "GACreateGeostatisticalLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.GACreateGeostatisticalLayer</para>
 		/// </summary>
-		public override string ExcuteName => "ga.GACreateGeostatisticalLayer";
+		public override string ExcuteName() => "ga.GACreateGeostatisticalLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "coincidentPoints", "extent", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "coincidentPoints", "extent", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGaModelSource, InDatasets, OutLayer };
+		public override object[] Parameters() => new object[] { InGaModelSource, InDatasets, OutLayer };
 
 		/// <summary>
 		/// <para>Input geostatistical model source</para>

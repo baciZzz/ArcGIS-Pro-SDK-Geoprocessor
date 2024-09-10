@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Block Adjustment Report</para>
 		/// </summary>
-		public override string DisplayName => "Generate Block Adjustment Report";
+		public override string DisplayName() => "Generate Block Adjustment Report";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateBlockAdjustmentReport</para>
 		/// </summary>
-		public override string ToolName => "GenerateBlockAdjustmentReport";
+		public override string ToolName() => "GenerateBlockAdjustmentReport";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.GenerateBlockAdjustmentReport</para>
 		/// </summary>
-		public override string ExcuteName => "management.GenerateBlockAdjustmentReport";
+		public override string ExcuteName() => "management.GenerateBlockAdjustmentReport";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputMosaicDataset, InputSolutionTable, InputSolutionPoint, OutputReport, InputControlPointForAdjustment, ReportFormat };
+		public override object[] Parameters() => new object[] { InputMosaicDataset, InputSolutionTable, InputSolutionPoint, OutputReport, InputControlPointForAdjustment, ReportFormat };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>

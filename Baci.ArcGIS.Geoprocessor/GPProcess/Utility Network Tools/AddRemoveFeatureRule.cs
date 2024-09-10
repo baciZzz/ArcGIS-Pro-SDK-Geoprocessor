@@ -53,37 +53,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Remove Feature Rule</para>
 		/// </summary>
-		public override string DisplayName => "Add Remove Feature Rule";
+		public override string DisplayName() => "Add Remove Feature Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AddRemoveFeatureRule</para>
 		/// </summary>
-		public override string ToolName => "AddRemoveFeatureRule";
+		public override string ToolName() => "AddRemoveFeatureRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.AddRemoveFeatureRule</para>
 		/// </summary>
-		public override string ExcuteName => "un.AddRemoveFeatureRule";
+		public override string ExcuteName() => "un.AddRemoveFeatureRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, SourceType, InverseSourceSelection, NetworkSource, Description, OutUtilityNetwork, OutTemplateName };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, SourceType, InverseSourceSelection, NetworkSource, Description, OutUtilityNetwork, OutTemplateName };
 
 		/// <summary>
 		/// <para>Input Network</para>

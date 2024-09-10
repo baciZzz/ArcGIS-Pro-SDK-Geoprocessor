@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Train Point Cloud Classification Model</para>
 		/// </summary>
-		public override string DisplayName => "Train Point Cloud Classification Model";
+		public override string DisplayName() => "Train Point Cloud Classification Model";
 
 		/// <summary>
 		/// <para>Tool Name : TrainPointCloudClassificationModel</para>
 		/// </summary>
-		public override string ToolName => "TrainPointCloudClassificationModel";
+		public override string ToolName() => "TrainPointCloudClassificationModel";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.TrainPointCloudClassificationModel</para>
 		/// </summary>
-		public override string ExcuteName => "3d.TrainPointCloudClassificationModel";
+		public override string ExcuteName() => "3d.TrainPointCloudClassificationModel";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "gpuID", "processorType" };
+		public override string[] ValidEnvironments() => new string[] { "gpuID", "processorType" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTrainingData, OutModelLocation, OutModelName, PretrainedModel, Attributes, MinPoints, ClassRemap, TargetClasses, BackgroundClass, ClassDescriptions, ModelSelectionCriteria, MaxEpochs, EpochIterations, LearningRate, BatchSize, EarlyStop, OutModel, OutModelStats };
+		public override object[] Parameters() => new object[] { InTrainingData, OutModelLocation, OutModelName, PretrainedModel, Attributes, MinPoints, ClassRemap, TargetClasses, BackgroundClass, ClassDescriptions, ModelSelectionCriteria, MaxEpochs, EpochIterations, LearningRate, BatchSize, EarlyStop, OutModel, OutModelStats };
 
 		/// <summary>
 		/// <para>Input Training Data</para>

@@ -38,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Target Group</para>
 		/// </summary>
-		public override string DisplayName => "Create Target Group";
+		public override string DisplayName() => "Create Target Group";
 
 		/// <summary>
 		/// <para>Tool Name : CreateTargetGroup</para>
 		/// </summary>
-		public override string ToolName => "CreateTargetGroup";
+		public override string ToolName() => "CreateTargetGroup";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.CreateTargetGroup</para>
 		/// </summary>
-		public override string ExcuteName => "ba.CreateTargetGroup";
+		public override string ExcuteName() => "ba.CreateTargetGroup";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetGroup, InputType };
+		public override object[] Parameters() => new object[] { TargetGroup, InputType };
 
 		/// <summary>
 		/// <para>Output Target Group</para>

@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Translate Event Measures</para>
 		/// </summary>
-		public override string DisplayName => "Translate Event Measures";
+		public override string DisplayName() => "Translate Event Measures";
 
 		/// <summary>
 		/// <para>Tool Name : TranslateEventMeasures</para>
 		/// </summary>
-		public override string ToolName => "TranslateEventMeasures";
+		public override string ToolName() => "TranslateEventMeasures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.TranslateEventMeasures</para>
 		/// </summary>
-		public override string ExcuteName => "locref.TranslateEventMeasures";
+		public override string ExcuteName() => "locref.TranslateEventMeasures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSourceEvent, InTargetRouteFeatures, OutTargetEvent, InConcurrentRouteMatching };
+		public override object[] Parameters() => new object[] { InSourceEvent, InTargetRouteFeatures, OutTargetEvent, InConcurrentRouteMatching };
 
 		/// <summary>
 		/// <para>Source Event Layer</para>

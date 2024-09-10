@@ -48,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Optimal Path As Line</para>
 		/// </summary>
-		public override string DisplayName => "Optimal Path As Line";
+		public override string DisplayName() => "Optimal Path As Line";
 
 		/// <summary>
 		/// <para>Tool Name : OptimalPathAsLine</para>
 		/// </summary>
-		public override string ToolName => "OptimalPathAsLine";
+		public override string ToolName() => "OptimalPathAsLine";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.OptimalPathAsLine</para>
 		/// </summary>
-		public override string ExcuteName => "sa.OptimalPathAsLine";
+		public override string ExcuteName() => "sa.OptimalPathAsLine";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "geographicTransformations", "maintainSpatialIndex", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "geographicTransformations", "maintainSpatialIndex", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDestinationData, InDistanceAccumulationRaster, InBackDirectionRaster, OutPolylineFeatures, DestinationField, PathType, CreateNetworkPaths };
+		public override object[] Parameters() => new object[] { InDestinationData, InDistanceAccumulationRaster, InBackDirectionRaster, OutPolylineFeatures, DestinationField, PathType, CreateNetworkPaths };
 
 		/// <summary>
 		/// <para>Input raster or feature destination data</para>

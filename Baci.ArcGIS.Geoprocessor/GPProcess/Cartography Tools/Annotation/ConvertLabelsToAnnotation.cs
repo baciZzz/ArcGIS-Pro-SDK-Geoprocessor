@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Convert Labels To Annotation</para>
 		/// </summary>
-		public override string DisplayName => "Convert Labels To Annotation";
+		public override string DisplayName() => "Convert Labels To Annotation";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertLabelsToAnnotation</para>
 		/// </summary>
-		public override string ToolName => "ConvertLabelsToAnnotation";
+		public override string ToolName() => "ConvertLabelsToAnnotation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.ConvertLabelsToAnnotation</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.ConvertLabelsToAnnotation";
+		public override string ExcuteName() => "cartography.ConvertLabelsToAnnotation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "annotationTextStringFieldLength", "configKeyword" };
+		public override string[] ValidEnvironments() => new string[] { "annotationTextStringFieldLength", "configKeyword" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputMap, ConversionScale, OutputGeodatabase, AnnoSuffix, Extent, GenerateUnplaced, RequireSymbolId, FeatureLinked, AutoCreate, UpdateOnShapeChange, OutputGroupLayer, UpdatedGeodatabase, WhichLayers, SingleLayer, MultipleFeatureClasses, MergeLabelClasses };
+		public override object[] Parameters() => new object[] { InputMap, ConversionScale, OutputGeodatabase, AnnoSuffix, Extent, GenerateUnplaced, RequireSymbolId, FeatureLinked, AutoCreate, UpdateOnShapeChange, OutputGroupLayer, UpdatedGeodatabase, WhichLayers, SingleLayer, MultipleFeatureClasses, MergeLabelClasses };
 
 		/// <summary>
 		/// <para>Input Map</para>

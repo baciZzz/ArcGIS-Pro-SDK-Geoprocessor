@@ -44,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Sample</para>
 		/// </summary>
-		public override string DisplayName => "Sample";
+		public override string DisplayName() => "Sample";
 
 		/// <summary>
 		/// <para>Tool Name : Sample</para>
 		/// </summary>
-		public override string ToolName => "Sample";
+		public override string ToolName() => "Sample";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Sample</para>
 		/// </summary>
-		public override string ExcuteName => "sa.Sample";
+		public override string ExcuteName() => "sa.Sample";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasters, InLocationData, OutTable, ResamplingType, UniqueIdField, ProcessAsMultidimensional, AcquisitionDefinition, StatisticsType, PercentileValue, BufferDistance, Layout, GenerateFeatureClass };
+		public override object[] Parameters() => new object[] { InRasters, InLocationData, OutTable, ResamplingType, UniqueIdField, ProcessAsMultidimensional, AcquisitionDefinition, StatisticsType, PercentileValue, BufferDistance, Layout, GenerateFeatureClass };
 
 		/// <summary>
 		/// <para>Input rasters</para>

@@ -51,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Reduce Junction Rule</para>
 		/// </summary>
-		public override string DisplayName => "Add Reduce Junction Rule";
+		public override string DisplayName() => "Add Reduce Junction Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AddReduceJunctionRule</para>
 		/// </summary>
-		public override string ToolName => "AddReduceJunctionRule";
+		public override string ToolName() => "AddReduceJunctionRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddReduceJunctionRule</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddReduceJunctionRule";
+		public override string ExcuteName() => "nd.AddReduceJunctionRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, InverseSourceSelection, JunctionSource, ConnectivityOptions, UnconnectedJunctions, OneConnectedJunction, TwoConnectedJunctions, EdgesAttributes, Description, OutUtilityNetwork, OutTemplateName };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, InverseSourceSelection, JunctionSource, ConnectivityOptions, UnconnectedJunctions, OneConnectedJunction, TwoConnectedJunctions, EdgesAttributes, Description, OutUtilityNetwork, OutTemplateName };
 
 		/// <summary>
 		/// <para>Input Network</para>

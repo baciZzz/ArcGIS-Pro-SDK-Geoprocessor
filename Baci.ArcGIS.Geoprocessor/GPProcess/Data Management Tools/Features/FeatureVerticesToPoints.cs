@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Feature Vertices To Points</para>
 		/// </summary>
-		public override string DisplayName => "Feature Vertices To Points";
+		public override string DisplayName() => "Feature Vertices To Points";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureVerticesToPoints</para>
 		/// </summary>
-		public override string ToolName => "FeatureVerticesToPoints";
+		public override string ToolName() => "FeatureVerticesToPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.FeatureVerticesToPoints</para>
 		/// </summary>
-		public override string ExcuteName => "management.FeatureVerticesToPoints";
+		public override string ExcuteName() => "management.FeatureVerticesToPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, PointLocation };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, PointLocation };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Optimized Hot Spot Analysis</para>
 		/// </summary>
-		public override string DisplayName => "Optimized Hot Spot Analysis";
+		public override string DisplayName() => "Optimized Hot Spot Analysis";
 
 		/// <summary>
 		/// <para>Tool Name : OptimizedHotSpotAnalysis</para>
 		/// </summary>
-		public override string ToolName => "OptimizedHotSpotAnalysis";
+		public override string ToolName() => "OptimizedHotSpotAnalysis";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.OptimizedHotSpotAnalysis</para>
 		/// </summary>
-		public override string ExcuteName => "stats.OptimizedHotSpotAnalysis";
+		public override string ExcuteName() => "stats.OptimizedHotSpotAnalysis";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, OutputFeatures, AnalysisField, IncidentDataAggregationMethod, BoundingPolygonsDefiningWhereIncidentsArePossible, PolygonsForAggregatingIncidentsIntoCounts, DensitySurface, CellSize, DistanceBand };
+		public override object[] Parameters() => new object[] { InputFeatures, OutputFeatures, AnalysisField, IncidentDataAggregationMethod, BoundingPolygonsDefiningWhereIncidentsArePossible, PolygonsForAggregatingIncidentsIntoCounts, DensitySurface, CellSize, DistanceBand };
 
 		/// <summary>
 		/// <para>Input Features</para>

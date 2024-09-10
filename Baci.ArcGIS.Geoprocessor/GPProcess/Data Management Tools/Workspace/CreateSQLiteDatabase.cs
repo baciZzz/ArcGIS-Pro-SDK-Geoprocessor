@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create SQLite Database</para>
 		/// </summary>
-		public override string DisplayName => "Create SQLite Database";
+		public override string DisplayName() => "Create SQLite Database";
 
 		/// <summary>
 		/// <para>Tool Name : CreateSQLiteDatabase</para>
 		/// </summary>
-		public override string ToolName => "CreateSQLiteDatabase";
+		public override string ToolName() => "CreateSQLiteDatabase";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateSQLiteDatabase</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateSQLiteDatabase";
+		public override string ExcuteName() => "management.CreateSQLiteDatabase";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutDatabaseName, SpatialType };
+		public override object[] Parameters() => new object[] { OutDatabaseName, SpatialType };
 
 		/// <summary>
 		/// <para>Output Database Name</para>

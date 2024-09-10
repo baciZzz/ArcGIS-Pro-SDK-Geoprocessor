@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Scene Layer Package</para>
 		/// </summary>
-		public override string DisplayName => "Create Scene Layer Package";
+		public override string DisplayName() => "Create Scene Layer Package";
 
 		/// <summary>
 		/// <para>Tool Name : CreateSceneLayerPackage</para>
 		/// </summary>
-		public override string ToolName => "CreateSceneLayerPackage";
+		public override string ToolName() => "CreateSceneLayerPackage";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateSceneLayerPackage</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateSceneLayerPackage";
+		public override string ExcuteName() => "management.CreateSceneLayerPackage";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayer, OutSlpk, Attributes, SpatialReference, PointSizeM, XyMaxErrorM, ZMaxErrorM, TransformMethod, InCoordinateSystem, SceneLayerVersion };
+		public override object[] Parameters() => new object[] { InLayer, OutSlpk, Attributes, SpatialReference, PointSizeM, XyMaxErrorM, ZMaxErrorM, TransformMethod, InCoordinateSystem, SceneLayerVersion };
 
 		/// <summary>
 		/// <para>Input Layer</para>

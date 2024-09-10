@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Aggregate Multidimensional Raster</para>
 		/// </summary>
-		public override string DisplayName => "Aggregate Multidimensional Raster";
+		public override string DisplayName() => "Aggregate Multidimensional Raster";
 
 		/// <summary>
 		/// <para>Tool Name : AggregateMultidimensionalRaster</para>
 		/// </summary>
-		public override string ToolName => "AggregateMultidimensionalRaster";
+		public override string ToolName() => "AggregateMultidimensionalRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.AggregateMultidimensionalRaster</para>
 		/// </summary>
-		public override string ExcuteName => "sa.AggregateMultidimensionalRaster";
+		public override string ExcuteName() => "sa.AggregateMultidimensionalRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMultidimensionalRaster, Dimension, OutMultidimensionalRaster, AggregationMethod, Variables, AggregationDef, IntervalKeyword, IntervalValue, IntervalUnit, IntervalRanges, AggregationFunction, IgnoreNodata, Dimensionless, PercentileValue, PercentileInterpolationType };
+		public override object[] Parameters() => new object[] { InMultidimensionalRaster, Dimension, OutMultidimensionalRaster, AggregationMethod, Variables, AggregationDef, IntervalKeyword, IntervalValue, IntervalUnit, IntervalRanges, AggregationFunction, IgnoreNodata, Dimensionless, PercentileValue, PercentileInterpolationType };
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>

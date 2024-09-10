@@ -33,7 +33,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <para>Is Less Than—Checks whether the field value of the records matching the SQL expression is equal to the count value.</para>
 		/// <para>Is Greater Than—Checks whether the field value of the records matching the SQL expression is greater than the count value.</para>
 		/// <para>Is Not Equal to—Checks whether the field value of the records matching the SQL expression is not equal to the count value.</para>
-		/// <para><para/></para>
+		/// <para>&lt;para/&gt;</para>
 		/// <para><see cref="SelectionConditionEnum"/></para>
 		/// </param>
 		public SelectionExistsIfThenElse(object InLayerOrView, object SelectionCondition)
@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : If Selection Exists</para>
 		/// </summary>
-		public override string DisplayName => "If Selection Exists";
+		public override string DisplayName() => "If Selection Exists";
 
 		/// <summary>
 		/// <para>Tool Name : SelectionExistsIfThenElse</para>
 		/// </summary>
-		public override string ToolName => "SelectionExistsIfThenElse";
+		public override string ToolName() => "SelectionExistsIfThenElse";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.SelectionExistsIfThenElse</para>
 		/// </summary>
-		public override string ExcuteName => "mb.SelectionExistsIfThenElse";
+		public override string ExcuteName() => "mb.SelectionExistsIfThenElse";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayerOrView, SelectionCondition, Count, CountMin, CountMax, True, False };
+		public override object[] Parameters() => new object[] { InLayerOrView, SelectionCondition, Count, CountMin, CountMax, True, False };
 
 		/// <summary>
 		/// <para>Layer Name or Table View</para>
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <para>Is Less Than—Checks whether the field value of the records matching the SQL expression is equal to the count value.</para>
 		/// <para>Is Greater Than—Checks whether the field value of the records matching the SQL expression is greater than the count value.</para>
 		/// <para>Is Not Equal to—Checks whether the field value of the records matching the SQL expression is not equal to the count value.</para>
-		/// <para><para/></para>
+		/// <para>&lt;para/&gt;</para>
 		/// <para><see cref="SelectionConditionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]

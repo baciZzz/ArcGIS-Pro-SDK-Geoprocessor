@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : GPX To Features</para>
 		/// </summary>
-		public override string DisplayName => "GPX To Features";
+		public override string DisplayName() => "GPX To Features";
 
 		/// <summary>
 		/// <para>Tool Name : GPXtoFeatures</para>
 		/// </summary>
-		public override string ToolName => "GPXtoFeatures";
+		public override string ToolName() => "GPXtoFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.GPXtoFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.GPXtoFeatures";
+		public override string ExcuteName() => "conversion.GPXtoFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputGPXFile, OutputFeatureClass };
+		public override object[] Parameters() => new object[] { InputGPXFile, OutputFeatureClass };
 
 		/// <summary>
 		/// <para>Input GPX File</para>

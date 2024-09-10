@@ -51,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Determine Travel Cost Paths To Destinations</para>
 		/// </summary>
-		public override string DisplayName => "Determine Travel Cost Paths To Destinations";
+		public override string DisplayName() => "Determine Travel Cost Paths To Destinations";
 
 		/// <summary>
 		/// <para>Tool Name : DetermineTravelCostPathsToDestinations</para>
 		/// </summary>
-		public override string ToolName => "DetermineTravelCostPathsToDestinations";
+		public override string ToolName() => "DetermineTravelCostPathsToDestinations";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.DetermineTravelCostPathsToDestinations</para>
 		/// </summary>
-		public override string ExcuteName => "ra.DetermineTravelCostPathsToDestinations";
+		public override string ExcuteName() => "ra.DetermineTravelCostPathsToDestinations";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputdestinationrasterorfeatures, Inputcostdistanceraster, Inputcostbacklinkraster, Outputname, Destinationfield, Pathtype, Outputraster };
+		public override object[] Parameters() => new object[] { Inputdestinationrasterorfeatures, Inputcostdistanceraster, Inputcostbacklinkraster, Outputname, Destinationfield, Pathtype, Outputraster };
 
 		/// <summary>
 		/// <para>Input Destination Raster or Features</para>

@@ -44,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : If Feature Type Is</para>
 		/// </summary>
-		public override string DisplayName => "If Feature Type Is";
+		public override string DisplayName() => "If Feature Type Is";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureTypeIfThenElse</para>
 		/// </summary>
-		public override string ToolName => "FeatureTypeIfThenElse";
+		public override string ToolName() => "FeatureTypeIfThenElse";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.FeatureTypeIfThenElse</para>
 		/// </summary>
-		public override string ExcuteName => "mb.FeatureTypeIfThenElse";
+		public override string ExcuteName() => "mb.FeatureTypeIfThenElse";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, FeatureType, True, False };
+		public override object[] Parameters() => new object[] { InFeatures, FeatureType, True, False };
 
 		/// <summary>
 		/// <para>Input Features</para>

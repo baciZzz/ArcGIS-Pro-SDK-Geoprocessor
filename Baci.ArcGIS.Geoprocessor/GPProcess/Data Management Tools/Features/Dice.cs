@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Dice</para>
 		/// </summary>
-		public override string DisplayName => "Dice";
+		public override string DisplayName() => "Dice";
 
 		/// <summary>
 		/// <para>Tool Name : Dice</para>
 		/// </summary>
-		public override string ToolName => "Dice";
+		public override string ToolName() => "Dice";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Dice</para>
 		/// </summary>
-		public override string ExcuteName => "management.Dice";
+		public override string ExcuteName() => "management.Dice";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "configKeyword", "qualifiedFieldNames" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "configKeyword", "qualifiedFieldNames" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, VertexLimit };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, VertexLimit };
 
 		/// <summary>
 		/// <para>Input Features</para>

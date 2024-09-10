@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Table To SAS</para>
 		/// </summary>
-		public override string DisplayName => "Table To SAS";
+		public override string DisplayName() => "Table To SAS";
 
 		/// <summary>
 		/// <para>Tool Name : TableToSAS</para>
 		/// </summary>
-		public override string ToolName => "TableToSAS";
+		public override string ToolName() => "TableToSAS";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.TableToSAS</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.TableToSAS";
+		public override string ExcuteName() => "conversion.TableToSAS";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutSasDataset, ReplaceSasDataset, UseDomainAndSubtypeDescription, UseCasConnection, Hostname, Port, Username, Password };
+		public override object[] Parameters() => new object[] { InTable, OutSasDataset, ReplaceSasDataset, UseDomainAndSubtypeDescription, UseCasConnection, Hostname, Port, Username, Password };
 
 		/// <summary>
 		/// <para>Input Table</para>

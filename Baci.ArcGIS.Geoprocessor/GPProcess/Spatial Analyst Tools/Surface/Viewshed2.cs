@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Geodesic Viewshed</para>
 		/// </summary>
-		public override string DisplayName => "Geodesic Viewshed";
+		public override string DisplayName() => "Geodesic Viewshed";
 
 		/// <summary>
 		/// <para>Tool Name : Viewshed2</para>
 		/// </summary>
-		public override string ToolName => "Viewshed2";
+		public override string ToolName() => "Viewshed2";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Viewshed2</para>
 		/// </summary>
-		public override string ExcuteName => "sa.Viewshed2";
+		public override string ExcuteName() => "sa.Viewshed2";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, InObserverFeatures, OutRaster, OutAglRaster, AnalysisType, VerticalError, OutObserverRegionRelationshipTable, RefractivityCoefficient, SurfaceOffset, ObserverElevation, ObserverOffset, InnerRadius, InnerRadiusIs3D, OuterRadius, OuterRadiusIs3D, HorizontalStartAngle, HorizontalEndAngle, VerticalUpperAngle, VerticalLowerAngle, AnalysisMethod };
+		public override object[] Parameters() => new object[] { InRaster, InObserverFeatures, OutRaster, OutAglRaster, AnalysisType, VerticalError, OutObserverRegionRelationshipTable, RefractivityCoefficient, SurfaceOffset, ObserverElevation, ObserverOffset, InnerRadius, InnerRadiusIs3D, OuterRadius, OuterRadiusIs3D, HorizontalStartAngle, HorizontalEndAngle, VerticalUpperAngle, VerticalLowerAngle, AnalysisMethod };
 
 		/// <summary>
 		/// <para>Input raster</para>

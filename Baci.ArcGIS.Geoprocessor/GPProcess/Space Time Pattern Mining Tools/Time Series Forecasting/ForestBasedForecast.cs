@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Display Name : Forest-based Forecast</para>
 		/// </summary>
-		public override string DisplayName => "Forest-based Forecast";
+		public override string DisplayName() => "Forest-based Forecast";
 
 		/// <summary>
 		/// <para>Tool Name : ForestBasedForecast</para>
 		/// </summary>
-		public override string ToolName => "ForestBasedForecast";
+		public override string ToolName() => "ForestBasedForecast";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stpm.ForestBasedForecast</para>
 		/// </summary>
-		public override string ExcuteName => "stpm.ForestBasedForecast";
+		public override string ExcuteName() => "stpm.ForestBasedForecast";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Space Time Pattern Mining Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Space Time Pattern Mining Tools";
+		public override string ToolboxDisplayName() => "Space Time Pattern Mining Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stpm</para>
 		/// </summary>
-		public override string ToolboxAlise => "stpm";
+		public override string ToolboxAlise() => "stpm";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCube, AnalysisVariable, OutputFeatures, OutputCube, NumberOfTimeStepsToForecast, TimeWindow, NumberForValidation, NumberOfTrees, MinimumLeafSize, MaximumDepth, SampleSize, ForecastApproach, OutlierOption, LevelOfConfidence, MaximumNumberOfOutliers };
+		public override object[] Parameters() => new object[] { InCube, AnalysisVariable, OutputFeatures, OutputCube, NumberOfTimeStepsToForecast, TimeWindow, NumberForValidation, NumberOfTrees, MinimumLeafSize, MaximumDepth, SampleSize, ForecastApproach, OutlierOption, LevelOfConfidence, MaximumNumberOfOutliers };
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>

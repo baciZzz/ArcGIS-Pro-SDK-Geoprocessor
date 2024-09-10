@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Territory Barriers</para>
 		/// </summary>
-		public override string DisplayName => "Add Territory Barriers";
+		public override string DisplayName() => "Add Territory Barriers";
 
 		/// <summary>
 		/// <para>Tool Name : AddTerritoryBarriers</para>
 		/// </summary>
-		public override string ToolName => "AddTerritoryBarriers";
+		public override string ToolName() => "AddTerritoryBarriers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : td.AddTerritoryBarriers</para>
 		/// </summary>
-		public override string ExcuteName => "td.AddTerritoryBarriers";
+		public override string ExcuteName() => "td.AddTerritoryBarriers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Territory Design Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Territory Design Tools";
+		public override string ToolboxDisplayName() => "Territory Design Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : td</para>
 		/// </summary>
-		public override string ToolboxAlise => "td";
+		public override string ToolboxAlise() => "td";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, Level, InBarrierFeatures, BarrierType, AppendData, OutTerritorySolution };
+		public override object[] Parameters() => new object[] { InTerritorySolution, Level, InBarrierFeatures, BarrierType, AppendData, OutTerritorySolution };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>

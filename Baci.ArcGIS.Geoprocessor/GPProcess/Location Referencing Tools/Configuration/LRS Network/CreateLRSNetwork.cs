@@ -60,37 +60,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Create LRS Network</para>
 		/// </summary>
-		public override string DisplayName => "Create LRS Network";
+		public override string DisplayName() => "Create LRS Network";
 
 		/// <summary>
 		/// <para>Tool Name : CreateLRSNetwork</para>
 		/// </summary>
-		public override string ToolName => "CreateLRSNetwork";
+		public override string ToolName() => "CreateLRSNetwork";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.CreateLRSNetwork</para>
 		/// </summary>
-		public override string ExcuteName => "locref.CreateLRSNetwork";
+		public override string ExcuteName() => "locref.CreateLRSNetwork";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPath, LrsName, NetworkName, RouteIdField, RouteNameField, FromDateField, ToDateField, DeriveFromLineNetwork, LineNetworkName, IncludeFieldsToSupportLines, LineIdField, LineNameField, LineOrderField, MeasureUnit, OutFeatureClass };
+		public override object[] Parameters() => new object[] { InPath, LrsName, NetworkName, RouteIdField, RouteNameField, FromDateField, ToDateField, DeriveFromLineNetwork, LineNetworkName, IncludeFieldsToSupportLines, LineIdField, LineNameField, LineOrderField, MeasureUnit, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Input Location</para>

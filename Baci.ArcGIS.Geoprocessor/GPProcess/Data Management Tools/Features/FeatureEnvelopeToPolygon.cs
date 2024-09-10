@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Feature Envelope To Polygon</para>
 		/// </summary>
-		public override string DisplayName => "Feature Envelope To Polygon";
+		public override string DisplayName() => "Feature Envelope To Polygon";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureEnvelopeToPolygon</para>
 		/// </summary>
-		public override string ToolName => "FeatureEnvelopeToPolygon";
+		public override string ToolName() => "FeatureEnvelopeToPolygon";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.FeatureEnvelopeToPolygon</para>
 		/// </summary>
-		public override string ExcuteName => "management.FeatureEnvelopeToPolygon";
+		public override string ExcuteName() => "management.FeatureEnvelopeToPolygon";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, SingleEnvelope };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, SingleEnvelope };
 
 		/// <summary>
 		/// <para>Input Features</para>

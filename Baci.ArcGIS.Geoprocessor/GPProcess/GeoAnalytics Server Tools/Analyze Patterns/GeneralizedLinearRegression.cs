@@ -55,37 +55,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Generalized Linear Regression</para>
 		/// </summary>
-		public override string DisplayName => "Generalized Linear Regression";
+		public override string DisplayName() => "Generalized Linear Regression";
 
 		/// <summary>
 		/// <para>Tool Name : GeneralizedLinearRegression</para>
 		/// </summary>
-		public override string ToolName => "GeneralizedLinearRegression";
+		public override string ToolName() => "GeneralizedLinearRegression";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.GeneralizedLinearRegression</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.GeneralizedLinearRegression";
+		public override string ExcuteName() => "geoanalytics.GeneralizedLinearRegression";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeaturesName, GenerateCoefficientTable, InputFeaturesToPredict, ExplanatoryVariablesToMatch, DependentVariableMapping, DataStore, Output, OutputPredictedFeatures, CoefficientTable };
+		public override object[] Parameters() => new object[] { InputFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeaturesName, GenerateCoefficientTable, InputFeaturesToPredict, ExplanatoryVariablesToMatch, DependentVariableMapping, DataStore, Output, OutputPredictedFeatures, CoefficientTable };
 
 		/// <summary>
 		/// <para>Input Features</para>

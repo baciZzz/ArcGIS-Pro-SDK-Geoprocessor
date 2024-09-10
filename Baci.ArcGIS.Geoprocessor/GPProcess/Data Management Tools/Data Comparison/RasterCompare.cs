@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Raster Compare</para>
 		/// </summary>
-		public override string DisplayName => "Raster Compare";
+		public override string DisplayName() => "Raster Compare";
 
 		/// <summary>
 		/// <para>Tool Name : RasterCompare</para>
 		/// </summary>
-		public override string ToolName => "RasterCompare";
+		public override string ToolName() => "RasterCompare";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.RasterCompare</para>
 		/// </summary>
-		public override string ExcuteName => "management.RasterCompare";
+		public override string ExcuteName() => "management.RasterCompare";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InBaseRaster, InTestRaster, CompareType, IgnoreOption, ContinueCompare, OutCompareFile, ParameterTolerances, AttributeTolerances, OmitField, CompareStatus };
+		public override object[] Parameters() => new object[] { InBaseRaster, InTestRaster, CompareType, IgnoreOption, ContinueCompare, OutCompareFile, ParameterTolerances, AttributeTolerances, OmitField, CompareStatus };
 
 		/// <summary>
 		/// <para>Input Base Raster</para>

@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Package Project</para>
 		/// </summary>
-		public override string DisplayName => "Package Project";
+		public override string DisplayName() => "Package Project";
 
 		/// <summary>
 		/// <para>Tool Name : PackageProject</para>
 		/// </summary>
-		public override string ToolName => "PackageProject";
+		public override string ToolName() => "PackageProject";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.PackageProject</para>
 		/// </summary>
-		public override string ExcuteName => "management.PackageProject";
+		public override string ExcuteName() => "management.PackageProject";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InProject, OutputFile, SharingInternal, PackageAsTemplate, Extent, ApplyExtentToArcsde, AdditionalFiles, Summary, Tags, Version, IncludeToolboxes, IncludeHistoryItems, ReadOnly, SelectRelatedRows };
+		public override object[] Parameters() => new object[] { InProject, OutputFile, SharingInternal, PackageAsTemplate, Extent, ApplyExtentToArcsde, AdditionalFiles, Summary, Tags, Version, IncludeToolboxes, IncludeHistoryItems, ReadOnly, SelectRelatedRows };
 
 		/// <summary>
 		/// <para>Input Project</para>

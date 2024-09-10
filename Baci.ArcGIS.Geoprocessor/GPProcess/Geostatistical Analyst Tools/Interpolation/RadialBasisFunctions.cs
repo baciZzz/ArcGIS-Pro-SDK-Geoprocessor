@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Radial Basis Functions</para>
 		/// </summary>
-		public override string DisplayName => "Radial Basis Functions";
+		public override string DisplayName() => "Radial Basis Functions";
 
 		/// <summary>
 		/// <para>Tool Name : RadialBasisFunctions</para>
 		/// </summary>
-		public override string ToolName => "RadialBasisFunctions";
+		public override string ToolName() => "RadialBasisFunctions";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.RadialBasisFunctions</para>
 		/// </summary>
-		public override string ExcuteName => "ga.RadialBasisFunctions";
+		public override string ExcuteName() => "ga.RadialBasisFunctions";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ZField, OutGaLayer, OutRaster, CellSize, SearchNeighborhood, Radial_Basis_Functions, SmallScaleParameter };
+		public override object[] Parameters() => new object[] { InFeatures, ZField, OutGaLayer, OutRaster, CellSize, SearchNeighborhood, Radial_Basis_Functions, SmallScaleParameter };
 
 		/// <summary>
 		/// <para>Input features</para>

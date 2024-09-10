@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Terrain To Points</para>
 		/// </summary>
-		public override string DisplayName => "Terrain To Points";
+		public override string DisplayName() => "Terrain To Points";
 
 		/// <summary>
 		/// <para>Tool Name : TerrainToPoints</para>
 		/// </summary>
-		public override string ToolName => "TerrainToPoints";
+		public override string ToolName() => "TerrainToPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.TerrainToPoints</para>
 		/// </summary>
-		public override string ExcuteName => "3d.TerrainToPoints";
+		public override string ExcuteName() => "3d.TerrainToPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerrain, OutFeatureClass, PyramidLevelResolution, SourceEmbeddedFeatureClass, OutGeometryType };
+		public override object[] Parameters() => new object[] { InTerrain, OutFeatureClass, PyramidLevelResolution, SourceEmbeddedFeatureClass, OutGeometryType };
 
 		/// <summary>
 		/// <para>Input Terrain</para>

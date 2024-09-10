@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Build Network</para>
 		/// </summary>
-		public override string DisplayName => "Build Network";
+		public override string DisplayName() => "Build Network";
 
 		/// <summary>
 		/// <para>Tool Name : BuildNetwork</para>
 		/// </summary>
-		public override string ToolName => "BuildNetwork";
+		public override string ToolName() => "BuildNetwork";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.BuildNetwork</para>
 		/// </summary>
-		public override string ExcuteName => "na.BuildNetwork";
+		public override string ExcuteName() => "na.BuildNetwork";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDataset, OutNetworkDataset };
+		public override object[] Parameters() => new object[] { InNetworkDataset, OutNetworkDataset };
 
 		/// <summary>
 		/// <para>Input Network Dataset</para>

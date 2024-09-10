@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Display Name : Table to NetCDF</para>
 		/// </summary>
-		public override string DisplayName => "Table to NetCDF";
+		public override string DisplayName() => "Table to NetCDF";
 
 		/// <summary>
 		/// <para>Tool Name : TableToNetCDF</para>
 		/// </summary>
-		public override string ToolName => "TableToNetCDF";
+		public override string ToolName() => "TableToNetCDF";
 
 		/// <summary>
 		/// <para>Tool Excute Name : md.TableToNetCDF</para>
 		/// </summary>
-		public override string ExcuteName => "md.TableToNetCDF";
+		public override string ExcuteName() => "md.TableToNetCDF";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Multidimension Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Multidimension Tools";
+		public override string ToolboxDisplayName() => "Multidimension Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : md</para>
 		/// </summary>
-		public override string ToolboxAlise => "md";
+		public override string ToolboxAlise() => "md";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, FieldsToVariables, OutNetcdfFile, FieldsToDimensions };
+		public override object[] Parameters() => new object[] { InTable, FieldsToVariables, OutNetcdfFile, FieldsToDimensions };
 
 		/// <summary>
 		/// <para>Input Table</para>

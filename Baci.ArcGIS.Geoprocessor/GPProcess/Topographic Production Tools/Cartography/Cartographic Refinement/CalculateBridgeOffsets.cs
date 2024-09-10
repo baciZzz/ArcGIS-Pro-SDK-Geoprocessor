@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Bridge Offsets</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Bridge Offsets";
+		public override string DisplayName() => "Calculate Bridge Offsets";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateBridgeOffsets</para>
 		/// </summary>
-		public override string ToolName => "CalculateBridgeOffsets";
+		public override string ToolName() => "CalculateBridgeOffsets";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.CalculateBridgeOffsets</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.CalculateBridgeOffsets";
+		public override string ExcuteName() => "topographic.CalculateBridgeOffsets";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InBridgeFeatures, InOverpassingFeatures, ReferenceScale, SearchDistance, Expand, Offset, MinLength, BridgeSubtype, OverpassingSubtype, UpdatedBridgeFeatures };
+		public override object[] Parameters() => new object[] { InBridgeFeatures, InOverpassingFeatures, ReferenceScale, SearchDistance, Expand, Offset, MinLength, BridgeSubtype, OverpassingSubtype, UpdatedBridgeFeatures };
 
 		/// <summary>
 		/// <para>Input Bridge Features</para>

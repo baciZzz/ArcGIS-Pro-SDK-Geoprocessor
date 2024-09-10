@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : JSON To Features</para>
 		/// </summary>
-		public override string DisplayName => "JSON To Features";
+		public override string DisplayName() => "JSON To Features";
 
 		/// <summary>
 		/// <para>Tool Name : JSONToFeatures</para>
 		/// </summary>
-		public override string ToolName => "JSONToFeatures";
+		public override string ToolName() => "JSONToFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.JSONToFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.JSONToFeatures";
+		public override string ExcuteName() => "conversion.JSONToFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InJsonFile, OutFeatures, GeometryType };
+		public override object[] Parameters() => new object[] { InJsonFile, OutFeatures, GeometryType };
 
 		/// <summary>
 		/// <para>Input JSON or GeoJSON</para>

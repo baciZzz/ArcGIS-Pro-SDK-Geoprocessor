@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Trend</para>
 		/// </summary>
-		public override string DisplayName => "Trend";
+		public override string DisplayName() => "Trend";
 
 		/// <summary>
 		/// <para>Tool Name : Trend</para>
 		/// </summary>
-		public override string ToolName => "Trend";
+		public override string ToolName() => "Trend";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Trend</para>
 		/// </summary>
-		public override string ExcuteName => "3d.Trend";
+		public override string ExcuteName() => "3d.Trend";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, ZField, OutRaster, CellSize, Order, RegressionType, OutRmsFile };
+		public override object[] Parameters() => new object[] { InPointFeatures, ZField, OutRaster, CellSize, Order, RegressionType, OutRmsFile };
 
 		/// <summary>
 		/// <para>Input point features</para>

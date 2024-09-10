@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Exploratory Regression</para>
 		/// </summary>
-		public override string DisplayName => "Exploratory Regression";
+		public override string DisplayName() => "Exploratory Regression";
 
 		/// <summary>
 		/// <para>Tool Name : ExploratoryRegression</para>
 		/// </summary>
-		public override string ToolName => "ExploratoryRegression";
+		public override string ToolName() => "ExploratoryRegression";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.ExploratoryRegression</para>
 		/// </summary>
-		public override string ExcuteName => "stats.ExploratoryRegression";
+		public override string ExcuteName() => "stats.ExploratoryRegression";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, DependentVariable, CandidateExplanatoryVariables, WeightsMatrixFile, OutputReportFile, OutputResultsTable, MaximumNumberOfExplanatoryVariables, MinimumNumberOfExplanatoryVariables, MinimumAcceptableAdjRSquared, MaximumCoefficientPValueCutoff, MaximumVIFValueCutoff, MinimumAcceptableJarqueBeraPValue, MinimumAcceptableSpatialAutocorrelationPValue };
+		public override object[] Parameters() => new object[] { InputFeatures, DependentVariable, CandidateExplanatoryVariables, WeightsMatrixFile, OutputReportFile, OutputResultsTable, MaximumNumberOfExplanatoryVariables, MinimumNumberOfExplanatoryVariables, MinimumAcceptableAdjRSquared, MaximumCoefficientPValueCutoff, MaximumVIFValueCutoff, MinimumAcceptableJarqueBeraPValue, MinimumAcceptableSpatialAutocorrelationPValue };
 
 		/// <summary>
 		/// <para>Input Features</para>

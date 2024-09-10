@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Aggregation Query Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make Aggregation Query Layer";
+		public override string DisplayName() => "Make Aggregation Query Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeAggregationQueryLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeAggregationQueryLayer";
+		public override string ToolName() => "MakeAggregationQueryLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MakeAggregationQueryLayer</para>
 		/// </summary>
-		public override string ExcuteName => "management.MakeAggregationQueryLayer";
+		public override string ExcuteName() => "management.MakeAggregationQueryLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetFeatureClass, TargetJoinField, RelatedTable, RelatedJoinField, OutLayer, Statistics, ParameterDefinitions, OidFields, ShapeType, Srid, SpatialReference, MValues, ZValues, Extent };
+		public override object[] Parameters() => new object[] { TargetFeatureClass, TargetJoinField, RelatedTable, RelatedJoinField, OutLayer, Statistics, ParameterDefinitions, OidFields, ShapeType, Srid, SpatialReference, MValues, ZValues, Extent };
 
 		/// <summary>
 		/// <para>Target Feature Class</para>

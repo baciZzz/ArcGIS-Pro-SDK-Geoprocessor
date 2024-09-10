@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Apply Symbology From Layer</para>
 		/// </summary>
-		public override string DisplayName => "Apply Symbology From Layer";
+		public override string DisplayName() => "Apply Symbology From Layer";
 
 		/// <summary>
 		/// <para>Tool Name : ApplySymbologyFromLayer</para>
 		/// </summary>
-		public override string ToolName => "ApplySymbologyFromLayer";
+		public override string ToolName() => "ApplySymbologyFromLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ApplySymbologyFromLayer</para>
 		/// </summary>
-		public override string ExcuteName => "management.ApplySymbologyFromLayer";
+		public override string ExcuteName() => "management.ApplySymbologyFromLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayer, InSymbologyLayer, SymbologyFields, OutLayer, UpdateSymbology };
+		public override object[] Parameters() => new object[] { InLayer, InSymbologyLayer, SymbologyFields, OutLayer, UpdateSymbology };
 
 		/// <summary>
 		/// <para>Input Layer</para>

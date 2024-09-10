@@ -54,37 +54,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Warp From File</para>
 		/// </summary>
-		public override string DisplayName => "Warp From File";
+		public override string DisplayName() => "Warp From File";
 
 		/// <summary>
 		/// <para>Tool Name : WarpFromFile</para>
 		/// </summary>
-		public override string ToolName => "WarpFromFile";
+		public override string ToolName() => "WarpFromFile";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.WarpFromFile</para>
 		/// </summary>
-		public override string ExcuteName => "management.WarpFromFile";
+		public override string ExcuteName() => "management.WarpFromFile";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, LinkFile, TransformationType, ResamplingType };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, LinkFile, TransformationType, ResamplingType };
 
 		/// <summary>
 		/// <para>Input Raster</para>

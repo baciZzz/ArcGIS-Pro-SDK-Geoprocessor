@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Structural Attachments Rule</para>
 		/// </summary>
-		public override string DisplayName => "Add Structural Attachments Rule";
+		public override string DisplayName() => "Add Structural Attachments Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AddStructuralAttachmentsRule</para>
 		/// </summary>
-		public override string ToolName => "AddStructuralAttachmentsRule";
+		public override string ToolName() => "AddStructuralAttachmentsRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddStructuralAttachmentsRule</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddStructuralAttachmentsRule";
+		public override string ExcuteName() => "nd.AddStructuralAttachmentsRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, Description, OutUtilityNetwork, OutTemplateName };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, Description, OutUtilityNetwork, OutTemplateName };
 
 		/// <summary>
 		/// <para>Input Network</para>

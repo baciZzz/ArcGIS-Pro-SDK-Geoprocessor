@@ -38,6 +38,9 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.Domains
 
     }
 
+    /// <summary>
+    /// Low Condtion
+    /// </summary>
     public class LowCondtion
     {
         /// <summary>
@@ -52,6 +55,9 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.Domains
         public string Value { get; set; } = "0";
     }
 
+    /// <summary>
+    /// High Condition
+    /// </summary>
     public class HighCondition
     {
         /// <summary>

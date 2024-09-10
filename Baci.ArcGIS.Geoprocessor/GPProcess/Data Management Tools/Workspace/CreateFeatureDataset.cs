@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Feature Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Create Feature Dataset";
+		public override string DisplayName() => "Create Feature Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : CreateFeatureDataset</para>
 		/// </summary>
-		public override string ToolName => "CreateFeatureDataset";
+		public override string ToolName() => "CreateFeatureDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateFeatureDataset</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateFeatureDataset";
+		public override string ExcuteName() => "management.CreateFeatureDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutDatasetPath, OutName, SpatialReference, OutDataset };
+		public override object[] Parameters() => new object[] { OutDatasetPath, OutName, SpatialReference, OutDataset };
 
 		/// <summary>
 		/// <para>Output Geodatabase</para>

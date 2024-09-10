@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Find Overlaps</para>
 		/// </summary>
-		public override string DisplayName => "Find Overlaps";
+		public override string DisplayName() => "Find Overlaps";
 
 		/// <summary>
 		/// <para>Tool Name : FindOverlaps</para>
 		/// </summary>
-		public override string ToolName => "FindOverlaps";
+		public override string ToolName() => "FindOverlaps";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.FindOverlaps</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.FindOverlaps";
+		public override string ExcuteName() => "intelligence.FindOverlaps";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutIntersection, OutCentroid, GroupField };
+		public override object[] Parameters() => new object[] { InFeatures, OutIntersection, OutCentroid, GroupField };
 
 		/// <summary>
 		/// <para>Input Features</para>

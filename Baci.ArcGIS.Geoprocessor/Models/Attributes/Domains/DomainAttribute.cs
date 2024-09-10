@@ -12,6 +12,9 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.Domains
     /// </summary>
     public abstract class DomainAttribute : Attribute
     {
+        /// <summary>
+        /// Domain Type
+        /// </summary>
         public abstract DomainTypeEnum Type { get; set; }
     }
 

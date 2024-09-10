@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Display Name : Radial Line Of Sight And Range</para>
 		/// </summary>
-		public override string DisplayName => "Radial Line Of Sight And Range";
+		public override string DisplayName() => "Radial Line Of Sight And Range";
 
 		/// <summary>
 		/// <para>Tool Name : RadialLineOfSightAndRange</para>
 		/// </summary>
-		public override string ToolName => "RadialLineOfSightAndRange";
+		public override string ToolName() => "RadialLineOfSightAndRange";
 
 		/// <summary>
 		/// <para>Tool Excute Name : defense.RadialLineOfSightAndRange</para>
 		/// </summary>
-		public override string ExcuteName => "defense.RadialLineOfSightAndRange";
+		public override string ExcuteName() => "defense.RadialLineOfSightAndRange";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Defense Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Defense Tools";
+		public override string ToolboxDisplayName() => "Defense Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : defense</para>
 		/// </summary>
-		public override string ToolboxAlise => "defense";
+		public override string ToolboxAlise() => "defense";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InObserverFeatures, InSurface, OutViewshedFeatureClass, OutFovFeatureClass, OutRangeRadiusFeatureClass, ObserverHeightOffset, InnerRadius, OuterRadius, HorizontalStartAngle, HorizontalEndAngle };
+		public override object[] Parameters() => new object[] { InObserverFeatures, InSurface, OutViewshedFeatureClass, OutFovFeatureClass, OutRangeRadiusFeatureClass, ObserverHeightOffset, InnerRadius, OuterRadius, HorizontalStartAngle, HorizontalEndAngle };
 
 		/// <summary>
 		/// <para>Input Observer</para>

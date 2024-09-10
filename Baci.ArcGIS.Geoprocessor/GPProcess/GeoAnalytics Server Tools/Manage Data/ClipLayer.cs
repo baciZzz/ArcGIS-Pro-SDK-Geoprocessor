@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Clip Layer</para>
 		/// </summary>
-		public override string DisplayName => "Clip Layer";
+		public override string DisplayName() => "Clip Layer";
 
 		/// <summary>
 		/// <para>Tool Name : ClipLayer</para>
 		/// </summary>
-		public override string ToolName => "ClipLayer";
+		public override string ToolName() => "ClipLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.ClipLayer</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.ClipLayer";
+		public override string ExcuteName() => "geoanalytics.ClipLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, Clip_Layer, OutputName, Output, DataStore };
+		public override object[] Parameters() => new object[] { InputLayer, Clip_Layer, OutputName, Output, DataStore };
 
 		/// <summary>
 		/// <para>Input Layer</para>

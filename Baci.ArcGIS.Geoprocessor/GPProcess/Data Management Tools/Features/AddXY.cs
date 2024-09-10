@@ -34,37 +34,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Add XY Coordinates</para>
 		/// </summary>
-		public override string DisplayName => "Add XY Coordinates";
+		public override string DisplayName() => "Add XY Coordinates";
 
 		/// <summary>
 		/// <para>Tool Name : AddXY</para>
 		/// </summary>
-		public override string ToolName => "AddXY";
+		public override string ToolName() => "AddXY";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AddXY</para>
 		/// </summary>
-		public override string ExcuteName => "management.AddXY";
+		public override string ExcuteName() => "management.AddXY";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatures };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatures };
 
 		/// <summary>
 		/// <para>Input Features</para>

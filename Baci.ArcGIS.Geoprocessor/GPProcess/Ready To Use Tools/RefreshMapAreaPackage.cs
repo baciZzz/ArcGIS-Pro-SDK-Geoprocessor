@@ -29,37 +29,37 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Tool Display Name : ServerTool 7</para>
 		/// </summary>
-		public override string DisplayName => "ServerTool 7";
+		public override string DisplayName() => "ServerTool 7";
 
 		/// <summary>
 		/// <para>Tool Name : RefreshMapAreaPackage</para>
 		/// </summary>
-		public override string ToolName => "RefreshMapAreaPackage";
+		public override string ToolName() => "RefreshMapAreaPackage";
 
 		/// <summary>
 		/// <para>Tool Excute Name : agolservices.RefreshMapAreaPackage</para>
 		/// </summary>
-		public override string ExcuteName => "agolservices.RefreshMapAreaPackage";
+		public override string ExcuteName() => "agolservices.RefreshMapAreaPackage";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Ready To Use Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Ready To Use Tools";
+		public override string ToolboxDisplayName() => "Ready To Use Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : agolservices</para>
 		/// </summary>
-		public override string ToolboxAlise => "agolservices";
+		public override string ToolboxAlise() => "agolservices";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Packages, Result };
+		public override object[] Parameters() => new object[] { Packages, Result };
 
 		/// <summary>
 		/// <para>List of packages to update</para>

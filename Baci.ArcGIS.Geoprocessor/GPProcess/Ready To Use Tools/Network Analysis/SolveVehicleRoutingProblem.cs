@@ -261,37 +261,37 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Tool Display Name : Solve Vehicle Routing Problem</para>
 		/// </summary>
-		public override string DisplayName => "Solve Vehicle Routing Problem";
+		public override string DisplayName() => "Solve Vehicle Routing Problem";
 
 		/// <summary>
 		/// <para>Tool Name : SolveVehicleRoutingProblem</para>
 		/// </summary>
-		public override string ToolName => "SolveVehicleRoutingProblem";
+		public override string ToolName() => "SolveVehicleRoutingProblem";
 
 		/// <summary>
 		/// <para>Tool Excute Name : agolservices.SolveVehicleRoutingProblem</para>
 		/// </summary>
-		public override string ExcuteName => "agolservices.SolveVehicleRoutingProblem";
+		public override string ExcuteName() => "agolservices.SolveVehicleRoutingProblem";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Ready To Use Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Ready To Use Tools";
+		public override string ToolboxDisplayName() => "Ready To Use Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : agolservices</para>
 		/// </summary>
-		public override string ToolboxAlise => "agolservices";
+		public override string ToolboxAlise() => "agolservices";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Orders, Depots, Routes, Breaks, TimeUnits, DistanceUnits, AnalysisRegion, DefaultDate, UturnPolicy, TimeWindowFactor, SpatiallyClusterRoutes, RouteZones, RouteRenewals, OrderPairs, ExcessTransitFactor, PointBarriers, LineBarriers, PolygonBarriers, UseHierarchyInAnalysis, Restrictions, AttributeParameterValues, PopulateRouteLines, RouteLineSimplificationTolerance, PopulateDirections, DirectionsLanguage, DirectionsStyleName, TravelMode, Impedance, TimeZoneUsageForTimeFields, SaveOutputLayer, Overrides, SaveRouteData, TimeImpedance, DistanceImpedance, PopulateStopShapes, OutputFormat, IgnoreInvalidOrderLocations, OutUnassignedStops, OutStops, OutRoutes, OutDirections, SolveSucceeded, OutNetworkAnalysisLayer, OutRouteData, OutResultFile, OutputNetworkAnalysisLayerPackage };
+		public override object[] Parameters() => new object[] { Orders, Depots, Routes, Breaks, TimeUnits, DistanceUnits, AnalysisRegion, DefaultDate, UturnPolicy, TimeWindowFactor, SpatiallyClusterRoutes, RouteZones, RouteRenewals, OrderPairs, ExcessTransitFactor, PointBarriers, LineBarriers, PolygonBarriers, UseHierarchyInAnalysis, Restrictions, AttributeParameterValues, PopulateRouteLines, RouteLineSimplificationTolerance, PopulateDirections, DirectionsLanguage, DirectionsStyleName, TravelMode, Impedance, TimeZoneUsageForTimeFields, SaveOutputLayer, Overrides, SaveRouteData, TimeImpedance, DistanceImpedance, PopulateStopShapes, OutputFormat, IgnoreInvalidOrderLocations, OutUnassignedStops, OutStops, OutRoutes, OutDirections, SolveSucceeded, OutNetworkAnalysisLayer, OutRouteData, OutResultFile, OutputNetworkAnalysisLayerPackage };
 
 		/// <summary>
 		/// <para>Orders</para>

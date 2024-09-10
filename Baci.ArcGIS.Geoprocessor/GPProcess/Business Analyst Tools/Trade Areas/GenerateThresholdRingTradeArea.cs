@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Threshold Rings</para>
 		/// </summary>
-		public override string DisplayName => "Generate Threshold Rings";
+		public override string DisplayName() => "Generate Threshold Rings";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateThresholdRingTradeArea</para>
 		/// </summary>
-		public override string ToolName => "GenerateThresholdRingTradeArea";
+		public override string ToolName() => "GenerateThresholdRingTradeArea";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.GenerateThresholdRingTradeArea</para>
 		/// </summary>
-		public override string ExcuteName => "ba.GenerateThresholdRingTradeArea";
+		public override string ExcuteName() => "ba.GenerateThresholdRingTradeArea";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, ThresholdVariable, ThresholdValues, Units, IdField, InputMethod, Expression };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, ThresholdVariable, ThresholdValues, Units, IdField, InputMethod, Expression };
 
 		/// <summary>
 		/// <para>Input Features</para>

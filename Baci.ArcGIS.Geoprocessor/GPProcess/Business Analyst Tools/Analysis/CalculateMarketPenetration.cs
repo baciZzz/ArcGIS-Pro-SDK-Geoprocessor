@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Market Penetration</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Market Penetration";
+		public override string DisplayName() => "Calculate Market Penetration";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateMarketPenetration</para>
 		/// </summary>
-		public override string ToolName => "CalculateMarketPenetration";
+		public override string ToolName() => "CalculateMarketPenetration";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.CalculateMarketPenetration</para>
 		/// </summary>
-		public override string ExcuteName => "ba.CalculateMarketPenetration";
+		public override string ExcuteName() => "ba.CalculateMarketPenetration";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, IdField, MarketPenetrationBaseField, InCustomerFeatures, AreaDescriptionField, WeightField, CreateReport, StoreId, LinkField, ReportTitle, ReportFolder, ReportFormat, OutputReport };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, IdField, MarketPenetrationBaseField, InCustomerFeatures, AreaDescriptionField, WeightField, CreateReport, StoreId, LinkField, ReportTitle, ReportFolder, ReportFormat, OutputReport };
 
 		/// <summary>
 		/// <para>Input Features</para>

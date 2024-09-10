@@ -82,37 +82,37 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Transform Route Events</para>
 		/// </summary>
-		public override string DisplayName => "Transform Route Events";
+		public override string DisplayName() => "Transform Route Events";
 
 		/// <summary>
 		/// <para>Tool Name : TransformRouteEvents</para>
 		/// </summary>
-		public override string ToolName => "TransformRouteEvents";
+		public override string ToolName() => "TransformRouteEvents";
 
 		/// <summary>
 		/// <para>Tool Excute Name : lr.TransformRouteEvents</para>
 		/// </summary>
-		public override string ExcuteName => "lr.TransformRouteEvents";
+		public override string ExcuteName() => "lr.TransformRouteEvents";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Linear Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Linear Referencing Tools";
+		public override string ToolboxDisplayName() => "Linear Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : lr</para>
 		/// </summary>
-		public override string ToolboxAlise => "lr";
+		public override string ToolboxAlise() => "lr";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, InEventProperties, InRoutes, RouteIdField, TargetRoutes, TargetRouteIdField, OutTable, OutEventProperties, ClusterTolerance, InFields };
+		public override object[] Parameters() => new object[] { InTable, InEventProperties, InRoutes, RouteIdField, TargetRoutes, TargetRouteIdField, OutTable, OutEventProperties, ClusterTolerance, InFields };
 
 		/// <summary>
 		/// <para>Input Event Table</para>

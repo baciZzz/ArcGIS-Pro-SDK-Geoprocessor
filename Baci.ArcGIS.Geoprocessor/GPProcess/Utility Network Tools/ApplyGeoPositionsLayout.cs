@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Apply Geo Positions Layout</para>
 		/// </summary>
-		public override string DisplayName => "Apply Geo Positions Layout";
+		public override string DisplayName() => "Apply Geo Positions Layout";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyGeoPositionsLayout</para>
 		/// </summary>
-		public override string ToolName => "ApplyGeoPositionsLayout";
+		public override string ToolName() => "ApplyGeoPositionsLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.ApplyGeoPositionsLayout</para>
 		/// </summary>
-		public override string ExcuteName => "un.ApplyGeoPositionsLayout";
+		public override string ExcuteName() => "un.ApplyGeoPositionsLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, RestoreEdgesGeoPositions, OutNetworkDiagramLayer, RunAsync };
+		public override object[] Parameters() => new object[] { InNetworkDiagramLayer, RestoreEdgesGeoPositions, OutNetworkDiagramLayer, RunAsync };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>

@@ -58,37 +58,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Set Edge Connectivity</para>
 		/// </summary>
-		public override string DisplayName => "Set Edge Connectivity";
+		public override string DisplayName() => "Set Edge Connectivity";
 
 		/// <summary>
 		/// <para>Tool Name : SetEdgeConnectivity</para>
 		/// </summary>
-		public override string ToolName => "SetEdgeConnectivity";
+		public override string ToolName() => "SetEdgeConnectivity";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.SetEdgeConnectivity</para>
 		/// </summary>
-		public override string ExcuteName => "un.SetEdgeConnectivity";
+		public override string ExcuteName() => "un.SetEdgeConnectivity";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, DomainNetwork, LineFeatureclass, Assetgroup, Assettype, EdgeConnectivity, OutUtilityNetwork };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, DomainNetwork, LineFeatureclass, Assetgroup, Assettype, EdgeConnectivity, OutUtilityNetwork };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>

@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Analyze Changes Using CCDC</para>
 		/// </summary>
-		public override string DisplayName => "Analyze Changes Using CCDC";
+		public override string DisplayName() => "Analyze Changes Using CCDC";
 
 		/// <summary>
 		/// <para>Tool Name : AnalyzeChangesUsingCCDC</para>
 		/// </summary>
-		public override string ToolName => "AnalyzeChangesUsingCCDC";
+		public override string ToolName() => "AnalyzeChangesUsingCCDC";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.AnalyzeChangesUsingCCDC</para>
 		/// </summary>
-		public override string ExcuteName => "ia.AnalyzeChangesUsingCCDC";
+		public override string ExcuteName() => "ia.AnalyzeChangesUsingCCDC";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMultidimensionalRaster, OutCcdcResult, Bands, TmaskBands, ChiSquaredThreshold, MinAnomalyObservations, UpdateFrequency };
+		public override object[] Parameters() => new object[] { InMultidimensionalRaster, OutCcdcResult, Bands, TmaskBands, ChiSquaredThreshold, MinAnomalyObservations, UpdateFrequency };
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>

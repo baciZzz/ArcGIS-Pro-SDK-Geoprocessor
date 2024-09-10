@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Migrate Storage</para>
 		/// </summary>
-		public override string DisplayName => "Migrate Storage";
+		public override string DisplayName() => "Migrate Storage";
 
 		/// <summary>
 		/// <para>Tool Name : MigrateStorage</para>
 		/// </summary>
-		public override string ToolName => "MigrateStorage";
+		public override string ToolName() => "MigrateStorage";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MigrateStorage</para>
 		/// </summary>
-		public override string ExcuteName => "management.MigrateStorage";
+		public override string ExcuteName() => "management.MigrateStorage";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDatasets, ConfigKeyword, OutDatasetss };
+		public override object[] Parameters() => new object[] { InDatasets, ConfigKeyword, OutDatasetss };
 
 		/// <summary>
 		/// <para>Input Datasets</para>

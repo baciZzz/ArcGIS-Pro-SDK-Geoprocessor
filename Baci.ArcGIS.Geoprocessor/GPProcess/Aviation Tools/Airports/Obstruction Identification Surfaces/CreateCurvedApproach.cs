@@ -57,37 +57,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Curved Approach</para>
 		/// </summary>
-		public override string DisplayName => "Create Curved Approach";
+		public override string DisplayName() => "Create Curved Approach";
 
 		/// <summary>
 		/// <para>Tool Name : CreateCurvedApproach</para>
 		/// </summary>
-		public override string ToolName => "CreateCurvedApproach";
+		public override string ToolName() => "CreateCurvedApproach";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.CreateCurvedApproach</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.CreateCurvedApproach";
+		public override string ExcuteName() => "aviation.CreateCurvedApproach";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRunwayFeatures, InFlightpathFeatures, TargetOisFeatures, Specification, RunwayClassification, OutOisFeatures, CustomJsonFile, ThresholdOffset };
+		public override object[] Parameters() => new object[] { InRunwayFeatures, InFlightpathFeatures, TargetOisFeatures, Specification, RunwayClassification, OutOisFeatures, CustomJsonFile, ThresholdOffset };
 
 		/// <summary>
 		/// <para>Input Runway Features</para>

@@ -38,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Collapse Dual Lines To Centerline</para>
 		/// </summary>
-		public override string DisplayName => "Collapse Dual Lines To Centerline";
+		public override string DisplayName() => "Collapse Dual Lines To Centerline";
 
 		/// <summary>
 		/// <para>Tool Name : CollapseDualLinesToCenterline</para>
 		/// </summary>
-		public override string ToolName => "CollapseDualLinesToCenterline";
+		public override string ToolName() => "CollapseDualLinesToCenterline";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CollapseDualLinesToCenterline</para>
 		/// </summary>
-		public override string ExcuteName => "management.CollapseDualLinesToCenterline";
+		public override string ExcuteName() => "management.CollapseDualLinesToCenterline";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, MaximumWidth, MinimumWidth };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, MaximumWidth, MinimumWidth };
 
 		/// <summary>
 		/// <para>Input Features</para>

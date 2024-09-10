@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Point Scene Layer Package</para>
 		/// </summary>
-		public override string DisplayName => "Create Point Scene Layer Package";
+		public override string DisplayName() => "Create Point Scene Layer Package";
 
 		/// <summary>
 		/// <para>Tool Name : CreatePointSceneLayerPackage</para>
 		/// </summary>
-		public override string ToolName => "CreatePointSceneLayerPackage";
+		public override string ToolName() => "CreatePointSceneLayerPackage";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreatePointSceneLayerPackage</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreatePointSceneLayerPackage";
+		public override string ExcuteName() => "management.CreatePointSceneLayerPackage";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutSlpk, OutCoorSystem, TransformMethod };
+		public override object[] Parameters() => new object[] { InDataset, OutSlpk, OutCoorSystem, TransformMethod };
 
 		/// <summary>
 		/// <para>Input Dataset</para>

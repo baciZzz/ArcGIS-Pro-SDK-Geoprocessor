@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : LAS Point Statistics As Raster</para>
 		/// </summary>
-		public override string DisplayName => "LAS Point Statistics As Raster";
+		public override string DisplayName() => "LAS Point Statistics As Raster";
 
 		/// <summary>
 		/// <para>Tool Name : LasPointStatsAsRaster</para>
 		/// </summary>
-		public override string ToolName => "LasPointStatsAsRaster";
+		public override string ToolName() => "LasPointStatsAsRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.LasPointStatsAsRaster</para>
 		/// </summary>
-		public override string ExcuteName => "management.LasPointStatsAsRaster";
+		public override string ExcuteName() => "management.LasPointStatsAsRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "pyramid", "rasterStatistics", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "pyramid", "rasterStatistics", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, OutRaster, Method, SamplingType, SamplingValue };
+		public override object[] Parameters() => new object[] { InLasDataset, OutRaster, Method, SamplingType, SamplingValue };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>

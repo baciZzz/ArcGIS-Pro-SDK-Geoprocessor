@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Multidimensional Anomaly</para>
 		/// </summary>
-		public override string DisplayName => "Generate Multidimensional Anomaly";
+		public override string DisplayName() => "Generate Multidimensional Anomaly";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateMultidimensionalAnomaly</para>
 		/// </summary>
-		public override string ToolName => "GenerateMultidimensionalAnomaly";
+		public override string ToolName() => "GenerateMultidimensionalAnomaly";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.GenerateMultidimensionalAnomaly</para>
 		/// </summary>
-		public override string ExcuteName => "ia.GenerateMultidimensionalAnomaly";
+		public override string ExcuteName() => "ia.GenerateMultidimensionalAnomaly";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMultidimensionalRaster, OutMultidimensionalRaster, Variables, Method, CalculationInterval, IgnoreNodata, ReferenceMeanRaster };
+		public override object[] Parameters() => new object[] { InMultidimensionalRaster, OutMultidimensionalRaster, Variables, Method, CalculationInterval, IgnoreNodata, ReferenceMeanRaster };
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>

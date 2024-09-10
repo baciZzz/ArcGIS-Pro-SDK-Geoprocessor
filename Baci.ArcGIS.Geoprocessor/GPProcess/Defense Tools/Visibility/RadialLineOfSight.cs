@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Display Name : Radial Line Of Sight</para>
 		/// </summary>
-		public override string DisplayName => "Radial Line Of Sight";
+		public override string DisplayName() => "Radial Line Of Sight";
 
 		/// <summary>
 		/// <para>Tool Name : RadialLineOfSight</para>
 		/// </summary>
-		public override string ToolName => "RadialLineOfSight";
+		public override string ToolName() => "RadialLineOfSight";
 
 		/// <summary>
 		/// <para>Tool Excute Name : defense.RadialLineOfSight</para>
 		/// </summary>
-		public override string ExcuteName => "defense.RadialLineOfSight";
+		public override string ExcuteName() => "defense.RadialLineOfSight";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Defense Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Defense Tools";
+		public override string ToolboxDisplayName() => "Defense Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : defense</para>
 		/// </summary>
-		public override string ToolboxAlise => "defense";
+		public override string ToolboxAlise() => "defense";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InObserverFeatures, InSurface, OutFeatureClass, Radius, ObserverHeightAboveSurface };
+		public override object[] Parameters() => new object[] { InObserverFeatures, InSurface, OutFeatureClass, Radius, ObserverHeightAboveSurface };
 
 		/// <summary>
 		/// <para>Input Observer Features</para>

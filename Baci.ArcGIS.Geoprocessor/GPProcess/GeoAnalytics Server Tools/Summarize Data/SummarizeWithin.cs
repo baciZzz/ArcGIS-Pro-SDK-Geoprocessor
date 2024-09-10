@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Summarize Within</para>
 		/// </summary>
-		public override string DisplayName => "Summarize Within";
+		public override string DisplayName() => "Summarize Within";
 
 		/// <summary>
 		/// <para>Tool Name : SummarizeWithin</para>
 		/// </summary>
-		public override string ToolName => "SummarizeWithin";
+		public override string ToolName() => "SummarizeWithin";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.SummarizeWithin</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.SummarizeWithin";
+		public override string ExcuteName() => "geoanalytics.SummarizeWithin";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { SummarizedLayer, OutputName, PolygonOrBin, BinType, BinSize, SummaryPolygons, SumShape, ShapeUnits, StandardSummaryFields, WeightedSummaryFields, Output, DataStore, GroupByField, AddMinorityMajority, AddPercentages, GroupBySummary };
+		public override object[] Parameters() => new object[] { SummarizedLayer, OutputName, PolygonOrBin, BinType, BinSize, SummaryPolygons, SumShape, ShapeUnits, StandardSummaryFields, WeightedSummaryFields, Output, DataStore, GroupByField, AddMinorityMajority, AddPercentages, GroupBySummary };
 
 		/// <summary>
 		/// <para>Summarized  Layer</para>

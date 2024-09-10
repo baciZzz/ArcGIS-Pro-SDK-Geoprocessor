@@ -41,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Graphic Buffer</para>
 		/// </summary>
-		public override string DisplayName => "Graphic Buffer";
+		public override string DisplayName() => "Graphic Buffer";
 
 		/// <summary>
 		/// <para>Tool Name : GraphicBuffer</para>
 		/// </summary>
-		public override string ToolName => "GraphicBuffer";
+		public override string ToolName() => "GraphicBuffer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.GraphicBuffer</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.GraphicBuffer";
+		public override string ExcuteName() => "analysis.GraphicBuffer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, BufferDistanceOrField, LineCaps, LineJoins, MiterLimit, MaxDeviation };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, BufferDistanceOrField, LineCaps, LineJoins, MiterLimit, MaxDeviation };
 
 		/// <summary>
 		/// <para>Input Features</para>

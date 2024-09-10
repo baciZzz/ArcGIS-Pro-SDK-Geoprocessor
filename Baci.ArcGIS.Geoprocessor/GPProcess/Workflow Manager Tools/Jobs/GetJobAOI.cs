@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Display Name : Get Job AOI</para>
 		/// </summary>
-		public override string DisplayName => "Get Job AOI";
+		public override string DisplayName() => "Get Job AOI";
 
 		/// <summary>
 		/// <para>Tool Name : GetJobAOI</para>
 		/// </summary>
-		public override string ToolName => "GetJobAOI";
+		public override string ToolName() => "GetJobAOI";
 
 		/// <summary>
 		/// <para>Tool Excute Name : wmx.GetJobAOI</para>
 		/// </summary>
-		public override string ExcuteName => "wmx.GetJobAOI";
+		public override string ExcuteName() => "wmx.GetJobAOI";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Workflow Manager Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Workflow Manager Tools";
+		public override string ToolboxDisplayName() => "Workflow Manager Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : wmx</para>
 		/// </summary>
-		public override string ToolboxAlise => "wmx";
+		public override string ToolboxAlise() => "wmx";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputJobid, AoiLayer, InputDatabasepath };
+		public override object[] Parameters() => new object[] { InputJobid, AoiLayer, InputDatabasepath };
 
 		/// <summary>
 		/// <para>Input Job ID</para>

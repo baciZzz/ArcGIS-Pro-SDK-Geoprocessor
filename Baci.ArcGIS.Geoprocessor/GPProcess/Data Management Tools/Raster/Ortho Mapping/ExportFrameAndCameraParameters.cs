@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Frame And Camera Parameters</para>
 		/// </summary>
-		public override string DisplayName => "Export Frame And Camera Parameters";
+		public override string DisplayName() => "Export Frame And Camera Parameters";
 
 		/// <summary>
 		/// <para>Tool Name : ExportFrameAndCameraParameters</para>
 		/// </summary>
-		public override string ToolName => "ExportFrameAndCameraParameters";
+		public override string ToolName() => "ExportFrameAndCameraParameters";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ExportFrameAndCameraParameters</para>
 		/// </summary>
-		public override string ExcuteName => "management.ExportFrameAndCameraParameters";
+		public override string ExcuteName() => "management.ExportFrameAndCameraParameters";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputMosaicDataset, OutputFile, OutputFormat };
+		public override object[] Parameters() => new object[] { InputMosaicDataset, OutputFile, OutputFormat };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>

@@ -48,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Optimal Path As Raster</para>
 		/// </summary>
-		public override string DisplayName => "Optimal Path As Raster";
+		public override string DisplayName() => "Optimal Path As Raster";
 
 		/// <summary>
 		/// <para>Tool Name : OptimalPathAsRaster</para>
 		/// </summary>
-		public override string ToolName => "OptimalPathAsRaster";
+		public override string ToolName() => "OptimalPathAsRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.OptimalPathAsRaster</para>
 		/// </summary>
-		public override string ExcuteName => "sa.OptimalPathAsRaster";
+		public override string ExcuteName() => "sa.OptimalPathAsRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "compression", "configKeyword", "scratchWorkspace", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "compression", "configKeyword", "scratchWorkspace", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDestinationData, InDistanceAccumulationRaster, InBackDirectionRaster, OutPathAccumulationRaster, DestinationField, PathType };
+		public override object[] Parameters() => new object[] { InDestinationData, InDistanceAccumulationRaster, InBackDirectionRaster, OutPathAccumulationRaster, DestinationField, PathType };
 
 		/// <summary>
 		/// <para>Input raster or feature destination data</para>

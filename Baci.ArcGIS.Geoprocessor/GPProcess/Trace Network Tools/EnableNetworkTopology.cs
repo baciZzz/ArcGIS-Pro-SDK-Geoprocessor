@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Enable Network Topology</para>
 		/// </summary>
-		public override string DisplayName => "Enable Network Topology";
+		public override string DisplayName() => "Enable Network Topology";
 
 		/// <summary>
 		/// <para>Tool Name : EnableNetworkTopology</para>
 		/// </summary>
-		public override string ToolName => "EnableNetworkTopology";
+		public override string ToolName() => "EnableNetworkTopology";
 
 		/// <summary>
 		/// <para>Tool Excute Name : tn.EnableNetworkTopology</para>
 		/// </summary>
-		public override string ExcuteName => "tn.EnableNetworkTopology";
+		public override string ExcuteName() => "tn.EnableNetworkTopology";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Trace Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Trace Network Tools";
+		public override string ToolboxDisplayName() => "Trace Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : tn</para>
 		/// </summary>
-		public override string ToolboxAlise => "tn";
+		public override string ToolboxAlise() => "tn";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTraceNetwork, MaxNumberOfErrors, OnlyGenerateErrors, OutTraceNetwork };
+		public override object[] Parameters() => new object[] { InTraceNetwork, MaxNumberOfErrors, OnlyGenerateErrors, OutTraceNetwork };
 
 		/// <summary>
 		/// <para>Input Trace Network</para>

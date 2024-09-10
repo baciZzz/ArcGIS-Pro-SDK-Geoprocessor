@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Configure Utility Network Feature Class</para>
 		/// </summary>
-		public override string DisplayName => "Configure Utility Network Feature Class";
+		public override string DisplayName() => "Configure Utility Network Feature Class";
 
 		/// <summary>
 		/// <para>Tool Name : ConfigureUtilityNetworkFeatureClass</para>
 		/// </summary>
-		public override string ToolName => "ConfigureUtilityNetworkFeatureClass";
+		public override string ToolName() => "ConfigureUtilityNetworkFeatureClass";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.ConfigureUtilityNetworkFeatureClass</para>
 		/// </summary>
-		public override string ExcuteName => "locref.ConfigureUtilityNetworkFeatureClass";
+		public override string ExcuteName() => "locref.ConfigureUtilityNetworkFeatureClass";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, RouteIdField, FromMeasureField, ToMeasureField, OutFeatureClass };
+		public override object[] Parameters() => new object[] { InFeatureClass, RouteIdField, FromMeasureField, ToMeasureField, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Utility Network Feature Layer</para>

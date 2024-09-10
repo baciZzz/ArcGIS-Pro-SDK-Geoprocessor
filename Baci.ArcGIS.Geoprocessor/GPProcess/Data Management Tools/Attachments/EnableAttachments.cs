@@ -32,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Enable Attachments</para>
 		/// </summary>
-		public override string DisplayName => "Enable Attachments";
+		public override string DisplayName() => "Enable Attachments";
 
 		/// <summary>
 		/// <para>Tool Name : EnableAttachments</para>
 		/// </summary>
-		public override string ToolName => "EnableAttachments";
+		public override string ToolName() => "EnableAttachments";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.EnableAttachments</para>
 		/// </summary>
-		public override string ExcuteName => "management.EnableAttachments";
+		public override string ExcuteName() => "management.EnableAttachments";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutDataset };
+		public override object[] Parameters() => new object[] { InDataset, OutDataset };
 
 		/// <summary>
 		/// <para>Input Dataset</para>

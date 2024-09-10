@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Local Bivariate Relationships</para>
 		/// </summary>
-		public override string DisplayName => "Local Bivariate Relationships";
+		public override string DisplayName() => "Local Bivariate Relationships";
 
 		/// <summary>
 		/// <para>Tool Name : LocalBivariateRelationships</para>
 		/// </summary>
-		public override string ToolName => "LocalBivariateRelationships";
+		public override string ToolName() => "LocalBivariateRelationships";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.LocalBivariateRelationships</para>
 		/// </summary>
-		public override string ExcuteName => "stats.LocalBivariateRelationships";
+		public override string ExcuteName() => "stats.LocalBivariateRelationships";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DependentVariable, ExplanatoryVariable, OutputFeatures, NumberOfNeighbors, NumberOfPermutations, EnableLocalScatterplotPopups, LevelOfConfidence, ApplyFalseDiscoveryRateFdrCorrection, ScalingFactor };
+		public override object[] Parameters() => new object[] { InFeatures, DependentVariable, ExplanatoryVariable, OutputFeatures, NumberOfNeighbors, NumberOfPermutations, EnableLocalScatterplotPopups, LevelOfConfidence, ApplyFalseDiscoveryRateFdrCorrection, ScalingFactor };
 
 		/// <summary>
 		/// <para>Input Features</para>

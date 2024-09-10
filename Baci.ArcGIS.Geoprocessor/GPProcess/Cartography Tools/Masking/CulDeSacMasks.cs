@@ -60,37 +60,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Cul-De-Sac Masks</para>
 		/// </summary>
-		public override string DisplayName => "Cul-De-Sac Masks";
+		public override string DisplayName() => "Cul-De-Sac Masks";
 
 		/// <summary>
 		/// <para>Tool Name : CulDeSacMasks</para>
 		/// </summary>
-		public override string ToolName => "CulDeSacMasks";
+		public override string ToolName() => "CulDeSacMasks";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.CulDeSacMasks</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.CulDeSacMasks";
+		public override string ExcuteName() => "cartography.CulDeSacMasks";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cartographicCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "cartographicCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutputFc, ReferenceScale, SpatialReference, Margin, Attributes };
+		public override object[] Parameters() => new object[] { InputLayer, OutputFc, ReferenceScale, SpatialReference, Margin, Attributes };
 
 		/// <summary>
 		/// <para>Input Layer</para>

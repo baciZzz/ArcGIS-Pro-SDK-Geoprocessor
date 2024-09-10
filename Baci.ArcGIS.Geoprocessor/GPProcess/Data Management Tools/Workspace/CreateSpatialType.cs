@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Spatial Type</para>
 		/// </summary>
-		public override string DisplayName => "Create Spatial Type";
+		public override string DisplayName() => "Create Spatial Type";
 
 		/// <summary>
 		/// <para>Tool Name : CreateSpatialType</para>
 		/// </summary>
-		public override string ToolName => "CreateSpatialType";
+		public override string ToolName() => "CreateSpatialType";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateSpatialType</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateSpatialType";
+		public override string ExcuteName() => "management.CreateSpatialType";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabase, SdeUserPassword, TablespaceName, StShapeLibraryPath, OutWorkspace };
+		public override object[] Parameters() => new object[] { InputDatabase, SdeUserPassword, TablespaceName, StShapeLibraryPath, OutWorkspace };
 
 		/// <summary>
 		/// <para>Input Database Connection</para>

@@ -37,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Alter Domain</para>
 		/// </summary>
-		public override string DisplayName => "Alter Domain";
+		public override string DisplayName() => "Alter Domain";
 
 		/// <summary>
 		/// <para>Tool Name : AlterDomain</para>
 		/// </summary>
-		public override string ToolName => "AlterDomain";
+		public override string ToolName() => "AlterDomain";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AlterDomain</para>
 		/// </summary>
-		public override string ExcuteName => "management.AlterDomain";
+		public override string ExcuteName() => "management.AlterDomain";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, DomainName, NewDomainName, NewDomainDescription, SplitPolicy, MergePolicy, OutWorkspace };
+		public override object[] Parameters() => new object[] { InWorkspace, DomainName, NewDomainName, NewDomainDescription, SplitPolicy, MergePolicy, OutWorkspace };
 
 		/// <summary>
 		/// <para>Input Workspace</para>

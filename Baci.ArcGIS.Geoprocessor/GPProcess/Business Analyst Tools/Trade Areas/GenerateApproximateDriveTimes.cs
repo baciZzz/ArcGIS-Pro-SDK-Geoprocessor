@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Approximate Drive Times</para>
 		/// </summary>
-		public override string DisplayName => "Generate Approximate Drive Times";
+		public override string DisplayName() => "Generate Approximate Drive Times";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateApproximateDriveTimes</para>
 		/// </summary>
-		public override string ToolName => "GenerateApproximateDriveTimes";
+		public override string ToolName() => "GenerateApproximateDriveTimes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.GenerateApproximateDriveTimes</para>
 		/// </summary>
-		public override string ExcuteName => "ba.GenerateApproximateDriveTimes";
+		public override string ExcuteName() => "ba.GenerateApproximateDriveTimes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "baNetworkSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "baNetworkSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, DistanceType, Units, InStoresLayer, StoreIdField, LinkField, IterationsLimit, MinimumStep, TargetPercentDiff, TravelDirection, TimeOfDay, TimeZone, SearchTolerance, PolygonDetail };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, DistanceType, Units, InStoresLayer, StoreIdField, LinkField, IterationsLimit, MinimumStep, TargetPercentDiff, TravelDirection, TimeOfDay, TimeZone, SearchTolerance, PolygonDetail };
 
 		/// <summary>
 		/// <para>Input Features</para>

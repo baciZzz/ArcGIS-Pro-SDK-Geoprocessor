@@ -37,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Raster to Float</para>
 		/// </summary>
-		public override string DisplayName => "Raster to Float";
+		public override string DisplayName() => "Raster to Float";
 
 		/// <summary>
 		/// <para>Tool Name : RasterToFloat</para>
 		/// </summary>
-		public override string ToolName => "RasterToFloat";
+		public override string ToolName() => "RasterToFloat";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.RasterToFloat</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.RasterToFloat";
+		public override string ExcuteName() => "conversion.RasterToFloat";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutFloatFile };
+		public override object[] Parameters() => new object[] { InRaster, OutFloatFile };
 
 		/// <summary>
 		/// <para>Input raster</para>

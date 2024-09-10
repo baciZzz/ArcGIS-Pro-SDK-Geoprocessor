@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Update by Geometry</para>
 		/// </summary>
-		public override string DisplayName => "Update by Geometry";
+		public override string DisplayName() => "Update by Geometry";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateByGeometry</para>
 		/// </summary>
-		public override string ToolName => "UpdateByGeometry";
+		public override string ToolName() => "UpdateByGeometry";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.UpdateByGeometry</para>
 		/// </summary>
-		public override string ExcuteName => "na.UpdateByGeometry";
+		public override string ExcuteName() => "na.UpdateByGeometry";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTurnFeatures, OutTurnFeatures };
+		public override object[] Parameters() => new object[] { InTurnFeatures, OutTurnFeatures };
 
 		/// <summary>
 		/// <para>Input Turn Feature Class</para>

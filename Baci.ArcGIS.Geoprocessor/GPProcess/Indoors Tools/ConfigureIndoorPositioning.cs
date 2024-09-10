@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Display Name : Configure Indoor Positioning</para>
 		/// </summary>
-		public override string DisplayName => "Configure Indoor Positioning";
+		public override string DisplayName() => "Configure Indoor Positioning";
 
 		/// <summary>
 		/// <para>Tool Name : ConfigureIndoorPositioning</para>
 		/// </summary>
-		public override string ToolName => "ConfigureIndoorPositioning";
+		public override string ToolName() => "ConfigureIndoorPositioning";
 
 		/// <summary>
 		/// <para>Tool Excute Name : indoors.ConfigureIndoorPositioning</para>
 		/// </summary>
-		public override string ExcuteName => "indoors.ConfigureIndoorPositioning";
+		public override string ExcuteName() => "indoors.ConfigureIndoorPositioning";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Indoors Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Indoors Tools";
+		public override string ToolboxDisplayName() => "Indoors Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : indoors</para>
 		/// </summary>
-		public override string ToolboxAlise => "indoors";
+		public override string ToolboxAlise() => "indoors";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeodatabase, EncryptionKey, ApiKey, BuildingId, UpdatedGdb };
+		public override object[] Parameters() => new object[] { InGeodatabase, EncryptionKey, ApiKey, BuildingId, UpdatedGdb };
 
 		/// <summary>
 		/// <para>Input Geodatabase</para>

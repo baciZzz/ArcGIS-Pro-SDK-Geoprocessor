@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Remove Join</para>
 		/// </summary>
-		public override string DisplayName => "Remove Join";
+		public override string DisplayName() => "Remove Join";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveJoin</para>
 		/// </summary>
-		public override string ToolName => "RemoveJoin";
+		public override string ToolName() => "RemoveJoin";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.RemoveJoin</para>
 		/// </summary>
-		public override string ExcuteName => "management.RemoveJoin";
+		public override string ExcuteName() => "management.RemoveJoin";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayerOrView, JoinName, OutLayerOrView };
+		public override object[] Parameters() => new object[] { InLayerOrView, JoinName, OutLayerOrView };
 
 		/// <summary>
 		/// <para>Layer Name or Table View</para>

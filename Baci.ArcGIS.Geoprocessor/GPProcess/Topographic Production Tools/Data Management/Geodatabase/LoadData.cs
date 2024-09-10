@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Load Data</para>
 		/// </summary>
-		public override string DisplayName => "Load Data";
+		public override string DisplayName() => "Load Data";
 
 		/// <summary>
 		/// <para>Tool Name : LoadData</para>
 		/// </summary>
-		public override string ToolName => "LoadData";
+		public override string ToolName() => "LoadData";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.LoadData</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.LoadData";
+		public override string ExcuteName() => "topographic.LoadData";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCrossReference, InSources, InTarget, InDatasetMapDefs, RowLevelErrors, OutTarget };
+		public override object[] Parameters() => new object[] { InCrossReference, InSources, InTarget, InDatasetMapDefs, RowLevelErrors, OutTarget };
 
 		/// <summary>
 		/// <para>Input Cross-reference Database</para>

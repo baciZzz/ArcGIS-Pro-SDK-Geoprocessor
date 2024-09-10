@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Apply Linear Dispatch Layout</para>
 		/// </summary>
-		public override string DisplayName => "Apply Linear Dispatch Layout";
+		public override string DisplayName() => "Apply Linear Dispatch Layout";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyLinearDispatchLayout</para>
 		/// </summary>
-		public override string ToolName => "ApplyLinearDispatchLayout";
+		public override string ToolName() => "ApplyLinearDispatchLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.ApplyLinearDispatchLayout</para>
 		/// </summary>
-		public override string ExcuteName => "nd.ApplyLinearDispatchLayout";
+		public override string ExcuteName() => "nd.ApplyLinearDispatchLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, JunctionPlacementType, IsUnitAbsolute, MaximumShiftAbsolute, MaximumShiftProportional, MinimumShiftAbsolute, MinimumShiftProportional, IterationsNumber, IsPathPreserved, AreLeavesMoved, AreLeavesExpanded, ExpandShiftAbsolute, ExpandShiftProportional, OutNetworkDiagramLayer, RunAsync };
+		public override object[] Parameters() => new object[] { InNetworkDiagramLayer, JunctionPlacementType, IsUnitAbsolute, MaximumShiftAbsolute, MaximumShiftProportional, MinimumShiftAbsolute, MinimumShiftProportional, IterationsNumber, IsPathPreserved, AreLeavesMoved, AreLeavesExpanded, ExpandShiftAbsolute, ExpandShiftProportional, OutNetworkDiagramLayer, RunAsync };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>

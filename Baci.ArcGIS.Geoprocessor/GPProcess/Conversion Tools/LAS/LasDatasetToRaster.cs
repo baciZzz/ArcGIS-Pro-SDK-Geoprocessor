@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : LAS Dataset To Raster</para>
 		/// </summary>
-		public override string DisplayName => "LAS Dataset To Raster";
+		public override string DisplayName() => "LAS Dataset To Raster";
 
 		/// <summary>
 		/// <para>Tool Name : LasDatasetToRaster</para>
 		/// </summary>
-		public override string ToolName => "LasDatasetToRaster";
+		public override string ToolName() => "LasDatasetToRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.LasDatasetToRaster</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.LasDatasetToRaster";
+		public override string ExcuteName() => "conversion.LasDatasetToRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "pyramid", "rasterStatistics", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "pyramid", "rasterStatistics", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, OutRaster, ValueField, InterpolationType, DataType, SamplingType, SamplingValue, ZFactor };
+		public override object[] Parameters() => new object[] { InLasDataset, OutRaster, ValueField, InterpolationType, DataType, SamplingType, SamplingValue, ZFactor };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -102,22 +102,22 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <para>Interpolation Type</para>
 		/// <para>The interpolation technique that will be used to determine the cell values of the output raster.</para>
 		/// <para>The binning approach provides a Cell Assignment Method for determining each output cell using the points that fall within its extent, along with a Void Fill Method to determine the value of cells that do not contain any LAS points.</para>
-		/// <para><bold>Cell Assignment Methods</bold></para>
+		/// <para>&lt;bold&gt;Cell Assignment Methods&lt;/bold&gt;</para>
 		/// <para>AVERAGE—Assigns the average value of all points in the cell. This is the default.</para>
 		/// <para>MINIMUM—Assigns the minimum value found in the points within the cell.</para>
 		/// <para>MAXIMUM—Assigns the maximum value found in the points within the cell.</para>
 		/// <para>IDW—Uses Inverse Distance Weighted interpolation to determine the cell value.</para>
 		/// <para>NEAREST—Uses Nearest Neighbor assignment to determine the cell value.</para>
-		/// <para><bold>Void Fill Methods</bold></para>
+		/// <para>&lt;bold&gt;Void Fill Methods&lt;/bold&gt;</para>
 		/// <para>NONE—NoData is assigned to the cell.</para>
 		/// <para>SIMPLE—Averages the values from data cells immediately surrounding a NoData cell to eliminate small voids.</para>
 		/// <para>LINEAR—Triangulates across void areas and uses linear interpolation on the triangulated value to determine the cell value. This is the default.</para>
 		/// <para>NATURAL_NEIGHBOR—Uses natural neighbor interpolation to determine the cell value.</para>
 		/// <para>The Triangulation interpolation methods derive cell values using a TIN based approach while also offering the opportunity to speed up processing time by thinning the sampling of LAS data using the Window Size technique.</para>
-		/// <para><bold>Triangulation Methods</bold></para>
+		/// <para>&lt;bold&gt;Triangulation Methods&lt;/bold&gt;</para>
 		/// <para>Linear—Uses linear interpolation to determine cell values.</para>
 		/// <para>Natural Neighbors—Uses natural neighbor interpolation to determine cell value.</para>
-		/// <para><bold>Window Size Selection Methods</bold></para>
+		/// <para>&lt;bold&gt;Window Size Selection Methods&lt;/bold&gt;</para>
 		/// <para>Maximum—The point with the highest value in each window size is maintained. This is the default.</para>
 		/// <para>Minimum—The point with the lowest value in each window size is maintained.</para>
 		/// <para>Closest To Mean—The point whose value is closest to the average of all point values in the window size is maintained.</para>

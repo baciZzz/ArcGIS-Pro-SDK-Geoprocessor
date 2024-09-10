@@ -44,7 +44,7 @@ namespace ProAppModuleTest.Buttons
                     defaultGeodatabasePath,
                     "OutputByFcToFcGPTool")
                     .SetEnviroment(outputCoordinateSystem: 4490)
-                    .Run()).GPResult;
+                    .Run()).GPResult();
 
                 SelectLayerByAttribute tool = await new SelectLayerByAttribute(featureLayer)
                 {
@@ -53,10 +53,9 @@ namespace ProAppModuleTest.Buttons
                     SelectionType = SelectLayerByAttribute.SelectionTypeEnum.New_selection.Value()
                 }.Run();
 
-                result = tool.GPResult;
+                result = tool.GPResult();
                 //Derived Parameter Reflow
                 Console.WriteLine(tool.Count);
-
 
 
             });

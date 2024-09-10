@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Summarize Attributes</para>
 		/// </summary>
-		public override string DisplayName => "Summarize Attributes";
+		public override string DisplayName() => "Summarize Attributes";
 
 		/// <summary>
 		/// <para>Tool Name : SummarizeAttributes</para>
 		/// </summary>
-		public override string ToolName => "SummarizeAttributes";
+		public override string ToolName() => "SummarizeAttributes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.SummarizeAttributes</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.SummarizeAttributes";
+		public override string ExcuteName() => "geoanalytics.SummarizeAttributes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutputName, Fields, SummaryFields, Output, DataStore, TimeStepInterval, TimeStepRepeat, TimeStepReference };
+		public override object[] Parameters() => new object[] { InputLayer, OutputName, Fields, SummaryFields, Output, DataStore, TimeStepInterval, TimeStepRepeat, TimeStepReference };
 
 		/// <summary>
 		/// <para>Input Layer</para>

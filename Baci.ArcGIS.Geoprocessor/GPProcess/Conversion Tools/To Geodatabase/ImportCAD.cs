@@ -34,37 +34,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Import from CAD</para>
 		/// </summary>
-		public override string DisplayName => "Import from CAD";
+		public override string DisplayName() => "Import from CAD";
 
 		/// <summary>
 		/// <para>Tool Name : ImportCAD</para>
 		/// </summary>
-		public override string ToolName => "ImportCAD";
+		public override string ToolName() => "ImportCAD";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.ImportCAD</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.ImportCAD";
+		public override string ExcuteName() => "conversion.ImportCAD";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFiles, OutPersonalGdb, SpatialReference, ExplodeComplex };
+		public override object[] Parameters() => new object[] { InputFiles, OutPersonalGdb, SpatialReference, ExplodeComplex };
 
 		/// <summary>
 		/// <para>Input Files</para>

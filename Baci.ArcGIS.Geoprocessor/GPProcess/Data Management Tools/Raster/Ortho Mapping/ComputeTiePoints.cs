@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Compute Tie Points</para>
 		/// </summary>
-		public override string DisplayName => "Compute Tie Points";
+		public override string DisplayName() => "Compute Tie Points";
 
 		/// <summary>
 		/// <para>Tool Name : ComputeTiePoints</para>
 		/// </summary>
-		public override string ToolName => "ComputeTiePoints";
+		public override string ToolName() => "ComputeTiePoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ComputeTiePoints</para>
 		/// </summary>
-		public override string ExcuteName => "management.ComputeTiePoints";
+		public override string ExcuteName() => "management.ComputeTiePoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, OutControlPoints, Similarity, InMaskDataset, OutImageFeatures, Density, Distribution, LocationAccuracy, Options };
+		public override object[] Parameters() => new object[] { InMosaicDataset, OutControlPoints, Similarity, InMaskDataset, OutImageFeatures, Density, Distribution, LocationAccuracy, Options };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>

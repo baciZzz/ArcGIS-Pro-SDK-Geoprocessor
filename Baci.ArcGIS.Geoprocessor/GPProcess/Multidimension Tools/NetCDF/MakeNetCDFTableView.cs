@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Display Name : Make NetCDF Table View</para>
 		/// </summary>
-		public override string DisplayName => "Make NetCDF Table View";
+		public override string DisplayName() => "Make NetCDF Table View";
 
 		/// <summary>
 		/// <para>Tool Name : MakeNetCDFTableView</para>
 		/// </summary>
-		public override string ToolName => "MakeNetCDFTableView";
+		public override string ToolName() => "MakeNetCDFTableView";
 
 		/// <summary>
 		/// <para>Tool Excute Name : md.MakeNetCDFTableView</para>
 		/// </summary>
-		public override string ExcuteName => "md.MakeNetCDFTableView";
+		public override string ExcuteName() => "md.MakeNetCDFTableView";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Multidimension Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Multidimension Tools";
+		public override string ToolboxDisplayName() => "Multidimension Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : md</para>
 		/// </summary>
-		public override string ToolboxAlise => "md";
+		public override string ToolboxAlise() => "md";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetcdfFile, Variable, OutTableView, RowDimension, DimensionValues, ValueSelectionMethod };
+		public override object[] Parameters() => new object[] { InNetcdfFile, Variable, OutTableView, RowDimension, DimensionValues, ValueSelectionMethod };
 
 		/// <summary>
 		/// <para>Input netCDF File</para>

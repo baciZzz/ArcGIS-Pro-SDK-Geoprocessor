@@ -38,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Tool Display Name : Join Attributes From Polygon</para>
 		/// </summary>
-		public override string DisplayName => "Join Attributes From Polygon";
+		public override string DisplayName() => "Join Attributes From Polygon";
 
 		/// <summary>
 		/// <para>Tool Name : JoinAttributesFromPolygon</para>
 		/// </summary>
-		public override string ToolName => "JoinAttributesFromPolygon";
+		public override string ToolName() => "JoinAttributesFromPolygon";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ca.JoinAttributesFromPolygon</para>
 		/// </summary>
-		public override string ExcuteName => "ca.JoinAttributesFromPolygon";
+		public override string ExcuteName() => "ca.JoinAttributesFromPolygon";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Crime Analysis and Safety Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Crime Analysis and Safety Tools";
+		public override string ToolboxDisplayName() => "Crime Analysis and Safety Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ca</para>
 		/// </summary>
-		public override string ToolboxAlise => "ca";
+		public override string ToolboxAlise() => "ca";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetFeatures, InFeatures, Fields, OutFeatures };
+		public override object[] Parameters() => new object[] { TargetFeatures, InFeatures, Fields, OutFeatures };
 
 		/// <summary>
 		/// <para>Target Point Features</para>

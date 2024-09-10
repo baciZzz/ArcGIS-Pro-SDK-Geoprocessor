@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Territory Solution Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make Territory Solution Layer";
+		public override string DisplayName() => "Make Territory Solution Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeTerritorySolutionLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeTerritorySolutionLayer";
+		public override string ToolName() => "MakeTerritorySolutionLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : td.MakeTerritorySolutionLayer</para>
 		/// </summary>
-		public override string ExcuteName => "td.MakeTerritorySolutionLayer";
+		public override string ExcuteName() => "td.MakeTerritorySolutionLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Territory Design Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Territory Design Tools";
+		public override string ToolboxDisplayName() => "Territory Design Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : td</para>
 		/// </summary>
-		public override string ToolboxAlise => "td";
+		public override string ToolboxAlise() => "td";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritoryDataset, OutTerritorySolution };
+		public override object[] Parameters() => new object[] { InTerritoryDataset, OutTerritorySolution };
 
 		/// <summary>
 		/// <para>Input Territory Solution Dataset</para>

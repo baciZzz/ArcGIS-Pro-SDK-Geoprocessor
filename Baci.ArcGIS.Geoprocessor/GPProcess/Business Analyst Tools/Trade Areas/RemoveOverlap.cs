@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Remove Overlap</para>
 		/// </summary>
-		public override string DisplayName => "Remove Overlap";
+		public override string DisplayName() => "Remove Overlap";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveOverlap</para>
 		/// </summary>
-		public override string ToolName => "RemoveOverlap";
+		public override string ToolName() => "RemoveOverlap";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.RemoveOverlap</para>
 		/// </summary>
-		public override string ExcuteName => "ba.RemoveOverlap";
+		public override string ExcuteName() => "ba.RemoveOverlap";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Method, DefineTradeArea, RingIdField, WeightField, StoreId, InStoresLayer, LinkField };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, Method, DefineTradeArea, RingIdField, WeightField, StoreId, InStoresLayer, LinkField };
 
 		/// <summary>
 		/// <para>Input Features</para>

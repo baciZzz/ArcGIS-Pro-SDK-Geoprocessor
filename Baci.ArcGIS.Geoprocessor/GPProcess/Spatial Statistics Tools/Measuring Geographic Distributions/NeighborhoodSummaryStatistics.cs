@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Neighborhood Summary Statistics</para>
 		/// </summary>
-		public override string DisplayName => "Neighborhood Summary Statistics";
+		public override string DisplayName() => "Neighborhood Summary Statistics";
 
 		/// <summary>
 		/// <para>Tool Name : NeighborhoodSummaryStatistics</para>
 		/// </summary>
-		public override string ToolName => "NeighborhoodSummaryStatistics";
+		public override string ToolName() => "NeighborhoodSummaryStatistics";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.NeighborhoodSummaryStatistics</para>
 		/// </summary>
-		public override string ExcuteName => "stats.NeighborhoodSummaryStatistics";
+		public override string ExcuteName() => "stats.NeighborhoodSummaryStatistics";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputFeatures, AnalysisFields, LocalSummaryStatistic, IncludeFocalFeature, IgnoreNulls, NeighborhoodType, DistanceBand, NumberOfNeighbors, WeightsMatrixFile, LocalWeightingScheme, KernelBandwidth };
+		public override object[] Parameters() => new object[] { InFeatures, OutputFeatures, AnalysisFields, LocalSummaryStatistic, IncludeFocalFeature, IgnoreNulls, NeighborhoodType, DistanceBand, NumberOfNeighbors, WeightsMatrixFile, LocalWeightingScheme, KernelBandwidth };
 
 		/// <summary>
 		/// <para>Input Features</para>

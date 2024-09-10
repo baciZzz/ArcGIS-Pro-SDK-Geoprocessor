@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Masks From Rules</para>
 		/// </summary>
-		public override string DisplayName => "Make Masks From Rules";
+		public override string DisplayName() => "Make Masks From Rules";
 
 		/// <summary>
 		/// <para>Tool Name : MakeMasksFromRules</para>
 		/// </summary>
-		public override string ToolName => "MakeMasksFromRules";
+		public override string ToolName() => "MakeMasksFromRules";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.MakeMasksFromRules</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.MakeMasksFromRules";
+		public override string ExcuteName() => "topographic.MakeMasksFromRules";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, RuleFile, OutFeatureDataset };
+		public override object[] Parameters() => new object[] { InMap, RuleFile, OutFeatureDataset };
 
 		/// <summary>
 		/// <para>Input Map</para>

@@ -49,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Edit Signatures</para>
 		/// </summary>
-		public override string DisplayName => "Edit Signatures";
+		public override string DisplayName() => "Edit Signatures";
 
 		/// <summary>
 		/// <para>Tool Name : EditSignatures</para>
 		/// </summary>
-		public override string ToolName => "EditSignatures";
+		public override string ToolName() => "EditSignatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.EditSignatures</para>
 		/// </summary>
-		public override string ExcuteName => "sa.EditSignatures";
+		public override string ExcuteName() => "sa.EditSignatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "cellSizeProjectionMethod", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "cellSizeProjectionMethod", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasterBands, InSignatureFile, InSignatureRemapFile, OutSignatureFile, SampleInterval };
+		public override object[] Parameters() => new object[] { InRasterBands, InSignatureFile, InSignatureRemapFile, OutSignatureFile, SampleInterval };
 
 		/// <summary>
 		/// <para>Input raster bands</para>

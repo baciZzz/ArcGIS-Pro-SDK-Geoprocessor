@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Incremental Spatial Autocorrelation</para>
 		/// </summary>
-		public override string DisplayName => "Incremental Spatial Autocorrelation";
+		public override string DisplayName() => "Incremental Spatial Autocorrelation";
 
 		/// <summary>
 		/// <para>Tool Name : IncrementalSpatialAutocorrelation</para>
 		/// </summary>
-		public override string ToolName => "IncrementalSpatialAutocorrelation";
+		public override string ToolName() => "IncrementalSpatialAutocorrelation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.IncrementalSpatialAutocorrelation</para>
 		/// </summary>
-		public override string ExcuteName => "stats.IncrementalSpatialAutocorrelation";
+		public override string ExcuteName() => "stats.IncrementalSpatialAutocorrelation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, InputField, NumberOfDistanceBands, BeginningDistance, DistanceIncrement, DistanceMethod, RowStandardization, OutputTable, OutputReportFile, FirstPeak, MaxPeak };
+		public override object[] Parameters() => new object[] { InputFeatures, InputField, NumberOfDistanceBands, BeginningDistance, DistanceIncrement, DistanceMethod, RowStandardization, OutputTable, OutputReportFile, FirstPeak, MaxPeak };
 
 		/// <summary>
 		/// <para>Input Features</para>

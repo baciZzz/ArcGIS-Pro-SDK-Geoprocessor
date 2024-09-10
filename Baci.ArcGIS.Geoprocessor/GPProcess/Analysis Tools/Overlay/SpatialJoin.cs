@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Spatial Join</para>
 		/// </summary>
-		public override string DisplayName => "Spatial Join";
+		public override string DisplayName() => "Spatial Join";
 
 		/// <summary>
 		/// <para>Tool Name : SpatialJoin</para>
 		/// </summary>
-		public override string ToolName => "SpatialJoin";
+		public override string ToolName() => "SpatialJoin";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.SpatialJoin</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.SpatialJoin";
+		public override string ExcuteName() => "analysis.SpatialJoin";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "configKeyword", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "configKeyword", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetFeatures, JoinFeatures, OutFeatureClass, JoinOperation, JoinType, FieldMapping, MatchOption, SearchRadius, DistanceFieldName };
+		public override object[] Parameters() => new object[] { TargetFeatures, JoinFeatures, OutFeatureClass, JoinOperation, JoinType, FieldMapping, MatchOption, SearchRadius, DistanceFieldName };
 
 		/// <summary>
 		/// <para>Target Features</para>

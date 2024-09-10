@@ -46,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Display Name : Reverse Geocode</para>
 		/// </summary>
-		public override string DisplayName => "Reverse Geocode";
+		public override string DisplayName() => "Reverse Geocode";
 
 		/// <summary>
 		/// <para>Tool Name : ReverseGeocode</para>
 		/// </summary>
-		public override string ToolName => "ReverseGeocode";
+		public override string ToolName() => "ReverseGeocode";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geocoding.ReverseGeocode</para>
 		/// </summary>
-		public override string ExcuteName => "geocoding.ReverseGeocode";
+		public override string ExcuteName() => "geocoding.ReverseGeocode";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geocoding Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geocoding Tools";
+		public override string ToolboxDisplayName() => "Geocoding Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geocoding</para>
 		/// </summary>
-		public override string ToolboxAlise => "geocoding";
+		public override string ToolboxAlise() => "geocoding";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InAddressLocator, OutFeatureClass, AddressType, SearchDistance, FeatureType, LocationType };
+		public override object[] Parameters() => new object[] { InFeatures, InAddressLocator, OutFeatureClass, AddressType, SearchDistance, FeatureType, LocationType };
 
 		/// <summary>
 		/// <para>Input Feature Class or layer</para>

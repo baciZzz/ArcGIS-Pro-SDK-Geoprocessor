@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Display Name : Build Multidimensional Transpose</para>
 		/// </summary>
-		public override string DisplayName => "Build Multidimensional Transpose";
+		public override string DisplayName() => "Build Multidimensional Transpose";
 
 		/// <summary>
 		/// <para>Tool Name : BuildMultidimensionalTranspose</para>
 		/// </summary>
-		public override string ToolName => "BuildMultidimensionalTranspose";
+		public override string ToolName() => "BuildMultidimensionalTranspose";
 
 		/// <summary>
 		/// <para>Tool Excute Name : md.BuildMultidimensionalTranspose</para>
 		/// </summary>
-		public override string ExcuteName => "md.BuildMultidimensionalTranspose";
+		public override string ExcuteName() => "md.BuildMultidimensionalTranspose";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Multidimension Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Multidimension Tools";
+		public override string ToolboxDisplayName() => "Multidimension Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : md</para>
 		/// </summary>
-		public override string ToolboxAlise => "md";
+		public override string ToolboxAlise() => "md";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMultidimensionalRaster, UpdatedMultidimensionalRaster, DeleteTranspose };
+		public override object[] Parameters() => new object[] { InMultidimensionalRaster, UpdatedMultidimensionalRaster, DeleteTranspose };
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>

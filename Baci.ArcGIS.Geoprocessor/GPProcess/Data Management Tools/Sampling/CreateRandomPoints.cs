@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Random Points</para>
 		/// </summary>
-		public override string DisplayName => "Create Random Points";
+		public override string DisplayName() => "Create Random Points";
 
 		/// <summary>
 		/// <para>Tool Name : CreateRandomPoints</para>
 		/// </summary>
-		public override string ToolName => "CreateRandomPoints";
+		public override string ToolName() => "CreateRandomPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateRandomPoints</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateRandomPoints";
+		public override string ExcuteName() => "management.CreateRandomPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "randomGenerator", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "randomGenerator", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutPath, OutName, ConstrainingFeatureClass, ConstrainingExtent, NumberOfPointsOrField, MinimumAllowedDistance, CreateMultipointOutput, MultipointSize, OutFeatureClass };
+		public override object[] Parameters() => new object[] { OutPath, OutName, ConstrainingFeatureClass, ConstrainingExtent, NumberOfPointsOrField, MinimumAllowedDistance, CreateMultipointOutput, MultipointSize, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Output Location</para>

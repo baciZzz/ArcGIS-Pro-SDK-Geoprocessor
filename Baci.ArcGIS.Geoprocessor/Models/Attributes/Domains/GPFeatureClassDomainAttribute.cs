@@ -1,4 +1,3 @@
-using ArcGIS.Core.Geometry;
 using Baci.ArcGIS.Geoprocessor.Models.Enums;
 using System;
 using System.Collections.Generic;
@@ -46,93 +45,6 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.Domains
 
     }
 
-
-}
-namespace ArcGIS.Core.Geometry
-{
-    /// <summary>
-    /// Describes the different types of geometry.
-    /// </summary>
-    public enum GeometryType
-    {
-        //
-        // ժҪ:
-        //     Unknown type. There will be no Geometry instance existing with this type.
-        Unknown = 0,
-        //
-        // ժҪ:
-        //     Point geometry. See ArcGIS.Core.Geometry.MapPoint.
-        Point = 513,
-        //
-        // ժҪ:
-        //     Envelope geometry. See ArcGIS.Core.Geometry.Envelope.
-        Envelope = 3077,
-        //
-        // ժҪ:
-        //     Multipoint geometry. See ArcGIS.Core.Geometry.Multipoint.
-        Multipoint = 8710,
-        //
-        // ժҪ:
-        //     Polyline geometry. See ArcGIS.Core.Geometry.Polyline.
-        Polyline = 25607,
-        //
-        // ժҪ:
-        //     Polygon geometry. See ArcGIS.Core.Geometry.Polygon.
-        Polygon = 27656,
-        //
-        // ժҪ:
-        //     MultiPatch 3D surface. See ArcGIS.Core.Geometry.Multipatch.
-        Multipatch = 32777,
-        //
-        // ժҪ:
-        //     Bag of geometries. See ArcGIS.Core.Geometry.GeometryBag.
-        GeometryBag = 3594
-    }
-
-    public enum FeatureType
-    {
-        //
-        // ժҪ:
-        //     Simple Feature.
-        Simple,
-        //
-        // ժҪ:
-        //     Simple Junction Feature.
-        SimpleJunction,
-        //
-        // ժҪ:
-        //     Simple Edge Feature.
-        SimpleEdge,
-        //
-        // ժҪ:
-        //     Complex Junction Feature.
-        ComplexJunction,
-        //
-        // ժҪ:
-        //     Complex Edge Feature.
-        ComplexEdge,
-        //
-        // ժҪ:
-        //     Annotation Feature.
-        Annotation,
-        //
-        // ժҪ:
-        //     Coverage Annotation Feature.
-        CoverageAnnotation,
-        //
-        // ժҪ:
-        //     Dimension Feature.
-        Dimension,
-        //
-        // ժҪ:
-        //     Raster Catalog Item.
-        RasterCatalogItem
-    }
-
-    public enum PortalType {
-
-        DataStoreCatalogLayer
-    }
 
 }
 

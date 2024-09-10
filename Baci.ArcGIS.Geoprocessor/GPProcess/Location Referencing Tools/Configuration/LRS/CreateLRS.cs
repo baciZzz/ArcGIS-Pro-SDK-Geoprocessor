@@ -60,37 +60,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Create LRS</para>
 		/// </summary>
-		public override string DisplayName => "Create LRS";
+		public override string DisplayName() => "Create LRS";
 
 		/// <summary>
 		/// <para>Tool Name : CreateLRS</para>
 		/// </summary>
-		public override string ToolName => "CreateLRS";
+		public override string ToolName() => "CreateLRS";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.CreateLRS</para>
 		/// </summary>
-		public override string ExcuteName => "locref.CreateLRS";
+		public override string ExcuteName() => "locref.CreateLRS";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, LrsName, CenterlineFeatureClassName, CalibrationPointFeatureClassName, RedlineFeatureClassName, CenterlineSequenceTableName, SpatialReference, XyTolerance, ZTolerance, XyResolution, ZResolution, OutWorkspace, OutCenterlineFeatureClass, OutCalibrationPointFeatureClass, OutRedlineFeatureClass, OutCenterlineSequenceTable };
+		public override object[] Parameters() => new object[] { InWorkspace, LrsName, CenterlineFeatureClassName, CalibrationPointFeatureClassName, RedlineFeatureClassName, CenterlineSequenceTableName, SpatialReference, XyTolerance, ZTolerance, XyResolution, ZResolution, OutWorkspace, OutCenterlineFeatureClass, OutCalibrationPointFeatureClass, OutRedlineFeatureClass, OutCenterlineSequenceTable };
 
 		/// <summary>
 		/// <para>Input Location</para>

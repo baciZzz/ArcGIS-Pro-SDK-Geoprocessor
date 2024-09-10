@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Focal Statistics</para>
 		/// </summary>
-		public override string DisplayName => "Focal Statistics";
+		public override string DisplayName() => "Focal Statistics";
 
 		/// <summary>
 		/// <para>Tool Name : FocalStatistics</para>
 		/// </summary>
-		public override string ToolName => "FocalStatistics";
+		public override string ToolName() => "FocalStatistics";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.FocalStatistics</para>
 		/// </summary>
-		public override string ExcuteName => "ia.FocalStatistics";
+		public override string ExcuteName() => "ia.FocalStatistics";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, Neighborhood, StatisticsType, IgnoreNodata, PercentileValue };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, Neighborhood, StatisticsType, IgnoreNodata, PercentileValue };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <para>Percentile value</para>
 		/// <para>The percentile to calculate. The default is 90, for the 90th percentile.</para>
 		/// <para>The values can range from 0 to 100. The 0th percentile is essentially equivalent to the Minimum statistic, and the 100th percentile is equivalent to Maximum. A value of 50 will produce essentially the same result as the Median statistic.</para>
-		/// <para>This option is only supported if the Statistics type parameter is set to Percentile. If any other statistics type has been specified, this parameter will be ignored.<bold/></para>
+		/// <para>This option is only supported if the Statistics type parameter is set to Percentile. If any other statistics type has been specified, this parameter will be ignored.&lt;bold/&gt;</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

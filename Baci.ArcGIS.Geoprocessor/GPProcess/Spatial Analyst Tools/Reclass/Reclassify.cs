@@ -52,37 +52,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Reclassify</para>
 		/// </summary>
-		public override string DisplayName => "Reclassify";
+		public override string DisplayName() => "Reclassify";
 
 		/// <summary>
 		/// <para>Tool Name : Reclassify</para>
 		/// </summary>
-		public override string ToolName => "Reclassify";
+		public override string ToolName() => "Reclassify";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Reclassify</para>
 		/// </summary>
-		public override string ExcuteName => "sa.Reclassify";
+		public override string ExcuteName() => "sa.Reclassify";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, ReclassField, Remap, OutRaster, MissingValues };
+		public override object[] Parameters() => new object[] { InRaster, ReclassField, Remap, OutRaster, MissingValues };
 
 		/// <summary>
 		/// <para>Input raster</para>

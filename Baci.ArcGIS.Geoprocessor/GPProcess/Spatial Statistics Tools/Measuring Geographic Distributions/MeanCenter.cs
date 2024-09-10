@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Mean Center</para>
 		/// </summary>
-		public override string DisplayName => "Mean Center";
+		public override string DisplayName() => "Mean Center";
 
 		/// <summary>
 		/// <para>Tool Name : MeanCenter</para>
 		/// </summary>
-		public override string ToolName => "MeanCenter";
+		public override string ToolName() => "MeanCenter";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.MeanCenter</para>
 		/// </summary>
-		public override string ExcuteName => "stats.MeanCenter";
+		public override string ExcuteName() => "stats.MeanCenter";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, OutputFeatureClass, WeightField, CaseField, DimensionField };
+		public override object[] Parameters() => new object[] { InputFeatureClass, OutputFeatureClass, WeightField, CaseField, DimensionField };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>

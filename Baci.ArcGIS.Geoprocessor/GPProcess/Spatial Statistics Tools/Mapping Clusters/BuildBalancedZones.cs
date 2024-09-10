@@ -44,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Build Balanced Zones</para>
 		/// </summary>
-		public override string DisplayName => "Build Balanced Zones";
+		public override string DisplayName() => "Build Balanced Zones";
 
 		/// <summary>
 		/// <para>Tool Name : BuildBalancedZones</para>
 		/// </summary>
-		public override string ToolName => "BuildBalancedZones";
+		public override string ToolName() => "BuildBalancedZones";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.BuildBalancedZones</para>
 		/// </summary>
-		public override string ExcuteName => "stats.BuildBalancedZones";
+		public override string ExcuteName() => "stats.BuildBalancedZones";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputFeatures, ZoneCreationMethod, NumberOfZones, ZoneBuildingCriteriaTarget, ZoneBuildingCriteria, SpatialConstraints, WeightsMatrixFile, ZoneCharacteristics, AttributeToConsider, DistanceToConsider, CategorialVariable, ProportionMethod, PopulationSize, NumberGenerations, MutationFactor, OutputConvergenceTable };
+		public override object[] Parameters() => new object[] { InFeatures, OutputFeatures, ZoneCreationMethod, NumberOfZones, ZoneBuildingCriteriaTarget, ZoneBuildingCriteria, SpatialConstraints, WeightsMatrixFile, ZoneCharacteristics, AttributeToConsider, DistanceToConsider, CategorialVariable, ProportionMethod, PopulationSize, NumberGenerations, MutationFactor, OutputConvergenceTable };
 
 		/// <summary>
 		/// <para>Input Features</para>

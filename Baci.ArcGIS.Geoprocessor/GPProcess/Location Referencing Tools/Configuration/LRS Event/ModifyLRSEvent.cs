@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Modify LRS Event</para>
 		/// </summary>
-		public override string DisplayName => "Modify LRS Event";
+		public override string DisplayName() => "Modify LRS Event";
 
 		/// <summary>
 		/// <para>Tool Name : ModifyLRSEvent</para>
 		/// </summary>
-		public override string ToolName => "ModifyLRSEvent";
+		public override string ToolName() => "ModifyLRSEvent";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.ModifyLRSEvent</para>
 		/// </summary>
-		public override string ExcuteName => "locref.ModifyLRSEvent";
+		public override string ExcuteName() => "locref.ModifyLRSEvent";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, EventIdField, RouteIdField, FromDateField, ToDateField, LocErrorField, MeasureField, ToMeasureField, EventSpansRoutes, ToRouteIdField, StoreRouteName, RouteNameField, ToRouteNameField, OutFeatureClass };
+		public override object[] Parameters() => new object[] { InFeatureClass, EventIdField, RouteIdField, FromDateField, ToDateField, LocErrorField, MeasureField, ToMeasureField, EventSpansRoutes, ToRouteIdField, StoreRouteName, RouteNameField, ToRouteNameField, OutFeatureClass };
 
 		/// <summary>
 		/// <para>LRS Event Feature Class</para>

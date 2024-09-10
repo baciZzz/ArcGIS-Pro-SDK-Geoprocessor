@@ -34,37 +34,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Alter Diagram Template</para>
 		/// </summary>
-		public override string DisplayName => "Alter Diagram Template";
+		public override string DisplayName() => "Alter Diagram Template";
 
 		/// <summary>
 		/// <para>Tool Name : AlterDiagramTemplate</para>
 		/// </summary>
-		public override string ToolName => "AlterDiagramTemplate";
+		public override string ToolName() => "AlterDiagramTemplate";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.AlterDiagramTemplate</para>
 		/// </summary>
-		public override string ExcuteName => "un.AlterDiagramTemplate";
+		public override string ExcuteName() => "un.AlterDiagramTemplate";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, OutName, IsDefaultTemplate, AreRulesAndLayoutsRemoved, AreVerticesKept, ContainerMargin, OutUtilityNetwork, OutTemplateName, IsDiagramStorageEnabled, IsDiagramExtensionEnabled, Description, AreLayerDefinitionsRemoved };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, OutName, IsDefaultTemplate, AreRulesAndLayoutsRemoved, AreVerticesKept, ContainerMargin, OutUtilityNetwork, OutTemplateName, IsDiagramStorageEnabled, IsDiagramExtensionEnabled, Description, AreLayerDefinitionsRemoved };
 
 		/// <summary>
 		/// <para>Input Network</para>

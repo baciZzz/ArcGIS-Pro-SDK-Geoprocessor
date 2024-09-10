@@ -44,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : If Spatial Relationship Is</para>
 		/// </summary>
-		public override string DisplayName => "If Spatial Relationship Is";
+		public override string DisplayName() => "If Spatial Relationship Is";
 
 		/// <summary>
 		/// <para>Tool Name : SpatialRelationshipIfThenElse</para>
 		/// </summary>
-		public override string ToolName => "SpatialRelationshipIfThenElse";
+		public override string ToolName() => "SpatialRelationshipIfThenElse";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.SpatialRelationshipIfThenElse</para>
 		/// </summary>
-		public override string ExcuteName => "mb.SpatialRelationshipIfThenElse";
+		public override string ExcuteName() => "mb.SpatialRelationshipIfThenElse";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OverlapType, SelectFeatures, SearchDistance, InvertSpatialRelationship, SelectionCondition, Count, CountMin, CountMax, True, False };
+		public override object[] Parameters() => new object[] { InFeatures, OverlapType, SelectFeatures, SearchDistance, InvertSpatialRelationship, SelectionCondition, Count, CountMin, CountMax, True, False };
 
 		/// <summary>
 		/// <para>Input Features</para>

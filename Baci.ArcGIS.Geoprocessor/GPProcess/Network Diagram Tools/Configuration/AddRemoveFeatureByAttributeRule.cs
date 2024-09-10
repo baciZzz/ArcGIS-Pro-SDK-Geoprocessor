@@ -48,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Remove Feature By Attribute Rule</para>
 		/// </summary>
-		public override string DisplayName => "Add Remove Feature By Attribute Rule";
+		public override string DisplayName() => "Add Remove Feature By Attribute Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AddRemoveFeatureByAttributeRule</para>
 		/// </summary>
-		public override string ToolName => "AddRemoveFeatureByAttributeRule";
+		public override string ToolName() => "AddRemoveFeatureByAttributeRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddRemoveFeatureByAttributeRule</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddRemoveFeatureByAttributeRule";
+		public override string ExcuteName() => "nd.AddRemoveFeatureByAttributeRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, NetworkSource, WhereClause, Description, OutUtilityNetwork, OutTemplateName };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, NetworkSource, WhereClause, Description, OutUtilityNetwork, OutTemplateName };
 
 		/// <summary>
 		/// <para>Input Network</para>

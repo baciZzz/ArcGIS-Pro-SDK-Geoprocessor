@@ -48,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Display Name : Find Local Peaks Or Valleys</para>
 		/// </summary>
-		public override string DisplayName => "Find Local Peaks Or Valleys";
+		public override string DisplayName() => "Find Local Peaks Or Valleys";
 
 		/// <summary>
 		/// <para>Tool Name : FindLocalPeaksValleys</para>
 		/// </summary>
-		public override string ToolName => "FindLocalPeaksValleys";
+		public override string ToolName() => "FindLocalPeaksValleys";
 
 		/// <summary>
 		/// <para>Tool Excute Name : defense.FindLocalPeaksValleys</para>
 		/// </summary>
-		public override string ExcuteName => "defense.FindLocalPeaksValleys";
+		public override string ExcuteName() => "defense.FindLocalPeaksValleys";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Defense Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Defense Tools";
+		public override string ToolboxDisplayName() => "Defense Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : defense</para>
 		/// </summary>
-		public override string ToolboxAlise => "defense";
+		public override string ToolboxAlise() => "defense";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurface, OutFeatureClass, PeakValleyOpType, NumPeaksValleys, InFeature };
+		public override object[] Parameters() => new object[] { InSurface, OutFeatureClass, PeakValleyOpType, NumPeaksValleys, InFeature };
 
 		/// <summary>
 		/// <para>Input Surface</para>

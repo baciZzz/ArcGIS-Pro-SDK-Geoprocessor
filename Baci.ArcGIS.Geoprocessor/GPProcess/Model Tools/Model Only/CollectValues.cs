@@ -25,37 +25,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : Collect Values</para>
 		/// </summary>
-		public override string DisplayName => "Collect Values";
+		public override string DisplayName() => "Collect Values";
 
 		/// <summary>
 		/// <para>Tool Name : CollectValues</para>
 		/// </summary>
-		public override string ToolName => "CollectValues";
+		public override string ToolName() => "CollectValues";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.CollectValues</para>
 		/// </summary>
-		public override string ExcuteName => "mb.CollectValues";
+		public override string ExcuteName() => "mb.CollectValues";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InValue, OutValue };
+		public override object[] Parameters() => new object[] { InValue, OutValue };
 
 		/// <summary>
 		/// <para>Input Value</para>

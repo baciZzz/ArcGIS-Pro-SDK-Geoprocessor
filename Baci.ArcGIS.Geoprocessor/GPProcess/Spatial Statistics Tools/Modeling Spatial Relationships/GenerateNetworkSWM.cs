@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Network Spatial Weights</para>
 		/// </summary>
-		public override string DisplayName => "Generate Network Spatial Weights";
+		public override string DisplayName() => "Generate Network Spatial Weights";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateNetworkSWM</para>
 		/// </summary>
-		public override string ToolName => "GenerateNetworkSWM";
+		public override string ToolName() => "GenerateNetworkSWM";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.GenerateNetworkSWM</para>
 		/// </summary>
-		public override string ExcuteName => "stats.GenerateNetworkSWM";
+		public override string ExcuteName() => "stats.GenerateNetworkSWM";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, UniqueIDField, OutputSpatialWeightsMatrixFile, InputNetworkDataSource, TravelMode, ImpedanceDistanceCutoff, ImpedanceTemporalCutoff, ImpedanceCostCutoff, MaximumNumberOfNeighbors, TimeOfDay, TimeZone, Barriers, SearchTolerance, ConceptualizationOfSpatialRelationships, Exponent, RowStandardization };
+		public override object[] Parameters() => new object[] { InputFeatureClass, UniqueIDField, OutputSpatialWeightsMatrixFile, InputNetworkDataSource, TravelMode, ImpedanceDistanceCutoff, ImpedanceTemporalCutoff, ImpedanceCostCutoff, MaximumNumberOfNeighbors, TimeOfDay, TimeZone, Barriers, SearchTolerance, ConceptualizationOfSpatialRelationships, Exponent, RowStandardization };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>

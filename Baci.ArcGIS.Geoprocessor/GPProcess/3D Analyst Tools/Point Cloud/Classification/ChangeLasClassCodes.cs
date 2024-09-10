@@ -37,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Change LAS Class Codes</para>
 		/// </summary>
-		public override string DisplayName => "Change LAS Class Codes";
+		public override string DisplayName() => "Change LAS Class Codes";
 
 		/// <summary>
 		/// <para>Tool Name : ChangeLasClassCodes</para>
 		/// </summary>
-		public override string ToolName => "ChangeLasClassCodes";
+		public override string ToolName() => "ChangeLasClassCodes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.ChangeLasClassCodes</para>
 		/// </summary>
-		public override string ExcuteName => "3d.ChangeLasClassCodes";
+		public override string ExcuteName() => "3d.ChangeLasClassCodes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, ClassCodes, ComputeStats, DerivedLasDataset, Extent, Boundary, ProcessEntireFiles, UpdatePyramid };
+		public override object[] Parameters() => new object[] { InLasDataset, ClassCodes, ComputeStats, DerivedLasDataset, Extent, Boundary, ProcessEntireFiles, UpdatePyramid };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>

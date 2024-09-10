@@ -47,37 +47,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Join Field</para>
 		/// </summary>
-		public override string DisplayName => "Join Field";
+		public override string DisplayName() => "Join Field";
 
 		/// <summary>
 		/// <para>Tool Name : JoinField</para>
 		/// </summary>
-		public override string ToolName => "JoinField";
+		public override string ToolName() => "JoinField";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.JoinField</para>
 		/// </summary>
-		public override string ExcuteName => "management.JoinField";
+		public override string ExcuteName() => "management.JoinField";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, InField, JoinTable, Join_Field, Fields, OutLayerOrView };
+		public override object[] Parameters() => new object[] { InData, InField, JoinTable, Join_Field, Fields, OutLayerOrView };
 
 		/// <summary>
 		/// <para>Input Table</para>

@@ -68,37 +68,37 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Map Server Cache</para>
 		/// </summary>
-		public override string DisplayName => "Generate Map Server Cache";
+		public override string DisplayName() => "Generate Map Server Cache";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateMapServerCache</para>
 		/// </summary>
-		public override string ToolName => "GenerateMapServerCache";
+		public override string ToolName() => "GenerateMapServerCache";
 
 		/// <summary>
 		/// <para>Tool Excute Name : server.GenerateMapServerCache</para>
 		/// </summary>
-		public override string ExcuteName => "server.GenerateMapServerCache";
+		public override string ExcuteName() => "server.GenerateMapServerCache";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Server Tools";
+		public override string ToolboxDisplayName() => "Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : server</para>
 		/// </summary>
-		public override string ToolboxAlise => "server";
+		public override string ToolboxAlise() => "server";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ServerName, ObjectName, DataFrame, OutFolder, TilingSchemeType, ScalesType, NumOfScales, Dpi, TileWidth, TileHeight, MapOrLayers, TilingSchema, TileOrigin, Levels, Layer, ThreadCount, Antialiasing, CacheFormat, TileCompressionQuality, OutServerName, OutObjectName };
+		public override object[] Parameters() => new object[] { ServerName, ObjectName, DataFrame, OutFolder, TilingSchemeType, ScalesType, NumOfScales, Dpi, TileWidth, TileHeight, MapOrLayers, TilingSchema, TileOrigin, Levels, Layer, ThreadCount, Antialiasing, CacheFormat, TileCompressionQuality, OutServerName, OutObjectName };
 
 		/// <summary>
 		/// <para>Host</para>

@@ -39,37 +39,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Forest-based Classification and Regression</para>
 		/// </summary>
-		public override string DisplayName => "Forest-based Classification and Regression";
+		public override string DisplayName() => "Forest-based Classification and Regression";
 
 		/// <summary>
 		/// <para>Tool Name : Forest</para>
 		/// </summary>
-		public override string ToolName => "Forest";
+		public override string ToolName() => "Forest";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.Forest</para>
 		/// </summary>
-		public override string ExcuteName => "stats.Forest";
+		public override string ExcuteName() => "stats.Forest";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { PredictionType, InFeatures, VariablePredict, TreatVariableAsCategorical, ExplanatoryVariables, DistanceFeatures, ExplanatoryRasters, FeaturesToPredict, OutputFeatures, OutputRaster, ExplanatoryVariableMatching, ExplanatoryDistanceMatching, ExplanatoryRastersMatching, OutputTrainedFeatures, OutputImportanceTable, UseRasterValues, NumberOfTrees, MinimumLeafSize, MaximumDepth, SampleSize, RandomVariables, PercentageForTraining, OutputClassificationTable, OutputValidationTable, CompensateSparseCategories, NumberValidationRuns, CalculateUncertainty, OutputUncertaintyRasterLayers };
+		public override object[] Parameters() => new object[] { PredictionType, InFeatures, VariablePredict, TreatVariableAsCategorical, ExplanatoryVariables, DistanceFeatures, ExplanatoryRasters, FeaturesToPredict, OutputFeatures, OutputRaster, ExplanatoryVariableMatching, ExplanatoryDistanceMatching, ExplanatoryRastersMatching, OutputTrainedFeatures, OutputImportanceTable, UseRasterValues, NumberOfTrees, MinimumLeafSize, MaximumDepth, SampleSize, RandomVariables, PercentageForTraining, OutputClassificationTable, OutputValidationTable, CompensateSparseCategories, NumberValidationRuns, CalculateUncertainty, OutputUncertaintyRasterLayers };
 
 		/// <summary>
 		/// <para>Prediction Type</para>

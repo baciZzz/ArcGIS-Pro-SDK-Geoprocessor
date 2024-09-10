@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Clear Pixel Cache</para>
 		/// </summary>
-		public override string DisplayName => "Clear Pixel Cache";
+		public override string DisplayName() => "Clear Pixel Cache";
 
 		/// <summary>
 		/// <para>Tool Name : ClearPixelCache</para>
 		/// </summary>
-		public override string ToolName => "ClearPixelCache";
+		public override string ToolName() => "ClearPixelCache";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ClearPixelCache</para>
 		/// </summary>
-		public override string ExcuteName => "management.ClearPixelCache";
+		public override string ExcuteName() => "management.ClearPixelCache";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, GeneratedBefore };
+		public override object[] Parameters() => new object[] { InMosaicDataset, GeneratedBefore };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

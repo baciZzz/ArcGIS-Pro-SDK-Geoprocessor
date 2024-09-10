@@ -62,37 +62,37 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Dissolve Route Events</para>
 		/// </summary>
-		public override string DisplayName => "Dissolve Route Events";
+		public override string DisplayName() => "Dissolve Route Events";
 
 		/// <summary>
 		/// <para>Tool Name : DissolveRouteEvents</para>
 		/// </summary>
-		public override string ToolName => "DissolveRouteEvents";
+		public override string ToolName() => "DissolveRouteEvents";
 
 		/// <summary>
 		/// <para>Tool Excute Name : lr.DissolveRouteEvents</para>
 		/// </summary>
-		public override string ExcuteName => "lr.DissolveRouteEvents";
+		public override string ExcuteName() => "lr.DissolveRouteEvents";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Linear Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Linear Referencing Tools";
+		public override string ToolboxDisplayName() => "Linear Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : lr</para>
 		/// </summary>
-		public override string ToolboxAlise => "lr";
+		public override string ToolboxAlise() => "lr";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InEvents, InEventProperties, DissolveField, OutTable, OutEventProperties, DissolveType, BuildIndex };
+		public override object[] Parameters() => new object[] { InEvents, InEventProperties, DissolveField, OutTable, OutEventProperties, DissolveType, BuildIndex };
 
 		/// <summary>
 		/// <para>Input Event Table</para>

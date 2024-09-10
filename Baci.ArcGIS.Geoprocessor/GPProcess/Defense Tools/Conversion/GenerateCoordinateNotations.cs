@@ -57,37 +57,37 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Coordinate Notations</para>
 		/// </summary>
-		public override string DisplayName => "Generate Coordinate Notations";
+		public override string DisplayName() => "Generate Coordinate Notations";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateCoordinateNotations</para>
 		/// </summary>
-		public override string ToolName => "GenerateCoordinateNotations";
+		public override string ToolName() => "GenerateCoordinateNotations";
 
 		/// <summary>
 		/// <para>Tool Excute Name : defense.GenerateCoordinateNotations</para>
 		/// </summary>
-		public override string ExcuteName => "defense.GenerateCoordinateNotations";
+		public override string ExcuteName() => "defense.GenerateCoordinateNotations";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Defense Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Defense Tools";
+		public override string ToolboxDisplayName() => "Defense Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : defense</para>
 		/// </summary>
-		public override string ToolboxAlise => "defense";
+		public override string ToolboxAlise() => "defense";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutTable, XOrLonField, InCoordinateFormat, YOrLatField, CoordinateSystem };
+		public override object[] Parameters() => new object[] { InTable, OutTable, XOrLonField, InCoordinateFormat, YOrLatField, CoordinateSystem };
 
 		/// <summary>
 		/// <para>Input Table</para>

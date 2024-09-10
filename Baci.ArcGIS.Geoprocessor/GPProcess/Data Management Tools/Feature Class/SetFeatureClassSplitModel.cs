@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Set Feature Class Split Model</para>
 		/// </summary>
-		public override string DisplayName => "Set Feature Class Split Model";
+		public override string DisplayName() => "Set Feature Class Split Model";
 
 		/// <summary>
 		/// <para>Tool Name : SetFeatureClassSplitModel</para>
 		/// </summary>
-		public override string ToolName => "SetFeatureClassSplitModel";
+		public override string ToolName() => "SetFeatureClassSplitModel";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SetFeatureClassSplitModel</para>
 		/// </summary>
-		public override string ExcuteName => "management.SetFeatureClassSplitModel";
+		public override string ExcuteName() => "management.SetFeatureClassSplitModel";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, SplitModel, OutFeatureClass };
+		public override object[] Parameters() => new object[] { InFeatureClass, SplitModel, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>

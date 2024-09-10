@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Split Mosaic Dataset Items</para>
 		/// </summary>
-		public override string DisplayName => "Split Mosaic Dataset Items";
+		public override string DisplayName() => "Split Mosaic Dataset Items";
 
 		/// <summary>
 		/// <para>Tool Name : SplitMosaicDatasetItems</para>
 		/// </summary>
-		public override string ToolName => "SplitMosaicDatasetItems";
+		public override string ToolName() => "SplitMosaicDatasetItems";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SplitMosaicDatasetItems</para>
 		/// </summary>
-		public override string ExcuteName => "management.SplitMosaicDatasetItems";
+		public override string ExcuteName() => "management.SplitMosaicDatasetItems";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause, OutMosaicDataset };
+		public override object[] Parameters() => new object[] { InMosaicDataset, WhereClause, OutMosaicDataset };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

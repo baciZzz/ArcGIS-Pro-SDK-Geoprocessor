@@ -42,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Time Series Smoothing</para>
 		/// </summary>
-		public override string DisplayName => "Time Series Smoothing";
+		public override string DisplayName() => "Time Series Smoothing";
 
 		/// <summary>
 		/// <para>Tool Name : TimeSeriesSmoothing</para>
 		/// </summary>
-		public override string ToolName => "TimeSeriesSmoothing";
+		public override string ToolName() => "TimeSeriesSmoothing";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.TimeSeriesSmoothing</para>
 		/// </summary>
-		public override string ExcuteName => "stats.TimeSeriesSmoothing";
+		public override string ExcuteName() => "stats.TimeSeriesSmoothing";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, TimeField, AnalysisField, GroupMethod, Method, TimeWindow, AppendToInput, OutputFeatures, IdField, ApplyShorterWindow, EnableTimeSeriesPopups, UpdatedFeatures };
+		public override object[] Parameters() => new object[] { InFeatures, TimeField, AnalysisField, GroupMethod, Method, TimeWindow, AppendToInput, OutputFeatures, IdField, ApplyShorterWindow, EnableTimeSeriesPopups, UpdatedFeatures };
 
 		/// <summary>
 		/// <para>Input Features or Table</para>

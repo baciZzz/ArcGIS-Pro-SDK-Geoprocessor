@@ -41,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Tessellation</para>
 		/// </summary>
-		public override string DisplayName => "Generate Tessellation";
+		public override string DisplayName() => "Generate Tessellation";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateTessellation</para>
 		/// </summary>
-		public override string ToolName => "GenerateTessellation";
+		public override string ToolName() => "GenerateTessellation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.GenerateTessellation</para>
 		/// </summary>
-		public override string ExcuteName => "management.GenerateTessellation";
+		public override string ExcuteName() => "management.GenerateTessellation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutputFeatureClass, Extent, ShapeType, Size, SpatialReference };
+		public override object[] Parameters() => new object[] { OutputFeatureClass, Extent, ShapeType, Size, SpatialReference };
 
 		/// <summary>
 		/// <para>Output Feature Class</para>

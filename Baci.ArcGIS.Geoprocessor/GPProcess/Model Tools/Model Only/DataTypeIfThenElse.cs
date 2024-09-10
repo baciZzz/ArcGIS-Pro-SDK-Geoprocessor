@@ -193,37 +193,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : If Data Type Is</para>
 		/// </summary>
-		public override string DisplayName => "If Data Type Is";
+		public override string DisplayName() => "If Data Type Is";
 
 		/// <summary>
 		/// <para>Tool Name : DataTypeIfThenElse</para>
 		/// </summary>
-		public override string ToolName => "DataTypeIfThenElse";
+		public override string ToolName() => "DataTypeIfThenElse";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.DataTypeIfThenElse</para>
 		/// </summary>
-		public override string ExcuteName => "mb.DataTypeIfThenElse";
+		public override string ExcuteName() => "mb.DataTypeIfThenElse";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, DataType, True, False };
+		public override object[] Parameters() => new object[] { InData, DataType, True, False };
 
 		/// <summary>
 		/// <para>Input Data Element</para>

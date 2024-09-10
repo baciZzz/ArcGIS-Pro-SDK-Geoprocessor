@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Find Nearby Locations</para>
 		/// </summary>
-		public override string DisplayName => "Find Nearby Locations";
+		public override string DisplayName() => "Find Nearby Locations";
 
 		/// <summary>
 		/// <para>Tool Name : FindNearbyLocations</para>
 		/// </summary>
-		public override string ToolName => "FindNearbyLocations";
+		public override string ToolName() => "FindNearbyLocations";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.FindNearbyLocations</para>
 		/// </summary>
-		public override string ExcuteName => "ba.FindNearbyLocations";
+		public override string ExcuteName() => "ba.FindNearbyLocations";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "baNetworkSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "baNetworkSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, IdField, InLocationPoints, OutFeatureClass, DistanceType, Units, DistanceLimit, NumberLimit, PercentLimit, CreateReport, ReportTitle, ReportFolder, ReportFormat, ReportFields, TravelDirection, TimeOfDay, TimeZone, SearchTolerance, OutputReport };
+		public override object[] Parameters() => new object[] { InFeatures, IdField, InLocationPoints, OutFeatureClass, DistanceType, Units, DistanceLimit, NumberLimit, PercentLimit, CreateReport, ReportTitle, ReportFolder, ReportFormat, ReportFields, TravelDirection, TimeOfDay, TimeZone, SearchTolerance, OutputReport };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -46,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Upgrade Geodatabase</para>
 		/// </summary>
-		public override string DisplayName => "Upgrade Geodatabase";
+		public override string DisplayName() => "Upgrade Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : UpgradeGDB</para>
 		/// </summary>
-		public override string ToolName => "UpgradeGDB";
+		public override string ToolName() => "UpgradeGDB";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.UpgradeGDB</para>
 		/// </summary>
-		public override string ExcuteName => "management.UpgradeGDB";
+		public override string ExcuteName() => "management.UpgradeGDB";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputWorkspace, InputPrerequisiteCheck, InputUpgradegdbCheck, OutWorkspace };
+		public override object[] Parameters() => new object[] { InputWorkspace, InputPrerequisiteCheck, InputUpgradegdbCheck, OutWorkspace };
 
 		/// <summary>
 		/// <para>Input Geodatabase</para>

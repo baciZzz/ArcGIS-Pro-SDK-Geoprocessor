@@ -37,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Locations</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Locations";
+		public override string DisplayName() => "Calculate Locations";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateLocations</para>
 		/// </summary>
-		public override string ToolName => "CalculateLocations";
+		public override string ToolName() => "CalculateLocations";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.CalculateLocations</para>
 		/// </summary>
-		public override string ExcuteName => "na.CalculateLocations";
+		public override string ExcuteName() => "na.CalculateLocations";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, InNetworkDataset, SearchTolerance, SearchCriteria, MatchType, SourceIDField, SourceOIDField, PositionField, SideField, SnapXField, SnapYField, DistanceField, SnapZField, LocationField, ExcludeRestrictedElements, SearchQuery, OutPointFeatureClass, TravelMode };
+		public override object[] Parameters() => new object[] { InPointFeatures, InNetworkDataset, SearchTolerance, SearchCriteria, MatchType, SourceIDField, SourceOIDField, PositionField, SideField, SnapXField, SnapYField, DistanceField, SnapZField, LocationField, ExcludeRestrictedElements, SearchQuery, OutPointFeatureClass, TravelMode };
 
 		/// <summary>
 		/// <para>Input Features</para>

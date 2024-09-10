@@ -9,18 +9,31 @@ using System.Threading.Tasks;
 
 namespace System
 {
+    /// <summary>
+    /// IGPProcess Extension
+    /// </summary>
     public static class IGPProcessExtension
     {
+        /// <summary>
+        /// IGPProcess Run
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="gPProcess"></param>
+        /// <param name="cancellationTokenSource"></param>
+        /// <param name="showResultDig"></param>
+        /// <param name="gPToolExecuteEventHandler"></param>
+        /// <param name="gPExecuteToolFlags"></param>
+        /// <returns></returns>
         public static async Task<T> Run<T>(this T gPProcess, CancellationTokenSource cancellationTokenSource = null,
             bool showResultDig = false, GPToolExecuteEventHandler gPToolExecuteEventHandler = null,
             GPExecuteToolFlags gPExecuteToolFlags = GPExecuteToolFlags.None) where T : IGPProcess
         {
-            var parameterInfo = Geoprocessing.MakeValueArray(gPProcess.Parameters);
+            var parameterInfo = Geoprocessing.MakeValueArray(gPProcess.Parameters());
 
-            var result = await Baci.ArcGIS._Geoprocessor.ExcuteAsync(gPProcess.ExcuteName, parameterInfo, gPProcess.Environments,
+            var result = await Baci.ArcGIS._Geoprocessor.ExcuteAsync(gPProcess.ExcuteName(), parameterInfo, gPProcess.Environments(),
                 cancellationTokenSource, gPToolExecuteEventHandler, gPExecuteToolFlags);
 
-            gPProcess.GPResult = result;
+            gPProcess.SetGPResult(result);
 
             DerivedParameterReflow(gPProcess, result);
 

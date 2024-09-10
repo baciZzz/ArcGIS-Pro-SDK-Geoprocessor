@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Display Name : Emerging Hot Spot Analysis</para>
 		/// </summary>
-		public override string DisplayName => "Emerging Hot Spot Analysis";
+		public override string DisplayName() => "Emerging Hot Spot Analysis";
 
 		/// <summary>
 		/// <para>Tool Name : EmergingHotSpotAnalysis</para>
 		/// </summary>
-		public override string ToolName => "EmergingHotSpotAnalysis";
+		public override string ToolName() => "EmergingHotSpotAnalysis";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stpm.EmergingHotSpotAnalysis</para>
 		/// </summary>
-		public override string ExcuteName => "stpm.EmergingHotSpotAnalysis";
+		public override string ExcuteName() => "stpm.EmergingHotSpotAnalysis";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Space Time Pattern Mining Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Space Time Pattern Mining Tools";
+		public override string ToolboxDisplayName() => "Space Time Pattern Mining Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stpm</para>
 		/// </summary>
-		public override string ToolboxAlise => "stpm";
+		public override string ToolboxAlise() => "stpm";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCube, AnalysisVariable, OutputFeatures, NeighborhoodDistance, NeighborhoodTimeStep, PolygonMask, ConceptualizationOfSpatialRelationships, NumberOfNeighbors, DefineGlobalWindow };
+		public override object[] Parameters() => new object[] { InCube, AnalysisVariable, OutputFeatures, NeighborhoodDistance, NeighborhoodTimeStep, PolygonMask, ConceptualizationOfSpatialRelationships, NumberOfNeighbors, DefineGlobalWindow };
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>

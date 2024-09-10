@@ -44,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Mosaic Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Create Mosaic Dataset";
+		public override string DisplayName() => "Create Mosaic Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : CreateMosaicDataset</para>
 		/// </summary>
-		public override string ToolName => "CreateMosaicDataset";
+		public override string ToolName() => "CreateMosaicDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateMosaicDataset</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateMosaicDataset";
+		public override string ExcuteName() => "management.CreateMosaicDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, InMosaicdatasetName, CoordinateSystem, NumBands, PixelType, ProductDefinition, ProductBandDefinitions, OutMosaicDataset };
+		public override object[] Parameters() => new object[] { InWorkspace, InMosaicdatasetName, CoordinateSystem, NumBands, PixelType, ProductDefinition, ProductBandDefinitions, OutMosaicDataset };
 
 		/// <summary>
 		/// <para>Output Location</para>

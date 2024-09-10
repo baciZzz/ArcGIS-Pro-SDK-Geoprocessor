@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : GTFS To Network Dataset Transit Sources</para>
 		/// </summary>
-		public override string DisplayName => "GTFS To Network Dataset Transit Sources";
+		public override string DisplayName() => "GTFS To Network Dataset Transit Sources";
 
 		/// <summary>
 		/// <para>Tool Name : GTFSToNetworkDatasetTransitSources</para>
 		/// </summary>
-		public override string ToolName => "GTFSToNetworkDatasetTransitSources";
+		public override string ToolName() => "GTFSToNetworkDatasetTransitSources";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.GTFSToNetworkDatasetTransitSources</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.GTFSToNetworkDatasetTransitSources";
+		public override string ExcuteName() => "conversion.GTFSToNetworkDatasetTransitSources";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGtfsFolders, TargetFeatureDataset, UpdatedTargetFeatureDataset, OutputStops, OutputLineVariantElements, OutputCalendars, OutputCalendarExceptions, OutputLines, OutputLineVariants, OutputRuns, OutputScheduleElements, OutputSchedules, Interpolate, Append };
+		public override object[] Parameters() => new object[] { InGtfsFolders, TargetFeatureDataset, UpdatedTargetFeatureDataset, OutputStops, OutputLineVariantElements, OutputCalendars, OutputCalendarExceptions, OutputLines, OutputLineVariants, OutputRuns, OutputScheduleElements, OutputSchedules, Interpolate, Append };
 
 		/// <summary>
 		/// <para>Input GTFS Folders</para>

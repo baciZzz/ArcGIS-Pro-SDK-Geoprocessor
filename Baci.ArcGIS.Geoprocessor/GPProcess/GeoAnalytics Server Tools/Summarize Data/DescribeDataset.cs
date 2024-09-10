@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Describe Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Describe Dataset";
+		public override string DisplayName() => "Describe Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : DescribeDataset</para>
 		/// </summary>
-		public override string ToolName => "DescribeDataset";
+		public override string ToolName() => "DescribeDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.DescribeDataset</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.DescribeDataset";
+		public override string ExcuteName() => "geoanalytics.DescribeDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutputName, SampleFeatures, CreateExtentLayer, DataStore, Output, ExtentLayer, SampleLayer, OutputJson };
+		public override object[] Parameters() => new object[] { InputLayer, OutputName, SampleFeatures, CreateExtentLayer, DataStore, Output, ExtentLayer, SampleLayer, OutputJson };
 
 		/// <summary>
 		/// <para>Input Layer</para>

@@ -54,37 +54,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Cost Connectivity</para>
 		/// </summary>
-		public override string DisplayName => "Cost Connectivity";
+		public override string DisplayName() => "Cost Connectivity";
 
 		/// <summary>
 		/// <para>Tool Name : CostConnectivity</para>
 		/// </summary>
-		public override string ToolName => "CostConnectivity";
+		public override string ToolName() => "CostConnectivity";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.CostConnectivity</para>
 		/// </summary>
-		public override string ExcuteName => "sa.CostConnectivity";
+		public override string ExcuteName() => "sa.CostConnectivity";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "mask", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "mask", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRegions, InCostRaster, OutFeatureClass, OutNeighborPaths };
+		public override object[] Parameters() => new object[] { InRegions, InCostRaster, OutFeatureClass, OutNeighborPaths };
 
 		/// <summary>
 		/// <para>Input raster or feature region data</para>

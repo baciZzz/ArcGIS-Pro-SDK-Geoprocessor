@@ -48,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Reduce Junction By Attribute Rule</para>
 		/// </summary>
-		public override string DisplayName => "Add Reduce Junction By Attribute Rule";
+		public override string DisplayName() => "Add Reduce Junction By Attribute Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AddReduceJunctionByAttributeRule</para>
 		/// </summary>
-		public override string ToolName => "AddReduceJunctionByAttributeRule";
+		public override string ToolName() => "AddReduceJunctionByAttributeRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddReduceJunctionByAttributeRule</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddReduceJunctionByAttributeRule";
+		public override string ExcuteName() => "nd.AddReduceJunctionByAttributeRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, JunctionSource, WhereClause, ConnectivityOptions, UnconnectedJunctions, OneConnectedJunction, TwoConnectedJunctions, EdgesAttributes, Description, OutUtilityNetwork, OutTemplateName };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, JunctionSource, WhereClause, ConnectivityOptions, UnconnectedJunctions, OneConnectedJunction, TwoConnectedJunctions, EdgesAttributes, Description, OutUtilityNetwork, OutTemplateName };
 
 		/// <summary>
 		/// <para>Input Network</para>

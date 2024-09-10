@@ -68,37 +68,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Trace Proximity Events</para>
 		/// </summary>
-		public override string DisplayName => "Trace Proximity Events";
+		public override string DisplayName() => "Trace Proximity Events";
 
 		/// <summary>
 		/// <para>Tool Name : TraceProximityEvents</para>
 		/// </summary>
-		public override string ToolName => "TraceProximityEvents";
+		public override string ToolName() => "TraceProximityEvents";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.TraceProximityEvents</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.TraceProximityEvents";
+		public override string ExcuteName() => "gapro.TraceProximityEvents";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPoints, EntityIdField, OutFeatureClass, DistanceMethod, SpatialSearchDistance, TemporalSearchDistance, EntitiesOfInterestInputType, EntitiesInterestIds, EntitiesInterestLayer, OutTracksLayer, MaxTraceDepth, AttributeMatchCriteria };
+		public override object[] Parameters() => new object[] { InPoints, EntityIdField, OutFeatureClass, DistanceMethod, SpatialSearchDistance, TemporalSearchDistance, EntitiesOfInterestInputType, EntitiesInterestIds, EntitiesInterestLayer, OutTracksLayer, MaxTraceDepth, AttributeMatchCriteria };
 
 		/// <summary>
 		/// <para>Input Points</para>

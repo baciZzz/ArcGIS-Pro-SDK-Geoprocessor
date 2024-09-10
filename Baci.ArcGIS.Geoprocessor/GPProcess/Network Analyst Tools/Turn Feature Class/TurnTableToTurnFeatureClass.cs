@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Turn Table To Turn Feature Class</para>
 		/// </summary>
-		public override string DisplayName => "Turn Table To Turn Feature Class";
+		public override string DisplayName() => "Turn Table To Turn Feature Class";
 
 		/// <summary>
 		/// <para>Tool Name : TurnTableToTurnFeatureClass</para>
 		/// </summary>
-		public override string ToolName => "TurnTableToTurnFeatureClass";
+		public override string ToolName() => "TurnTableToTurnFeatureClass";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.TurnTableToTurnFeatureClass</para>
 		/// </summary>
-		public override string ExcuteName => "na.TurnTableToTurnFeatureClass";
+		public override string ExcuteName() => "na.TurnTableToTurnFeatureClass";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTurnTable, ReferenceLineFeatures, OutFeatureClassName, ReferenceNodesTable, MaximumEdges, ConfigKeyword, SpatialGrid1, SpatialGrid2, SpatialGrid3, OutTurnFeatures };
+		public override object[] Parameters() => new object[] { InTurnTable, ReferenceLineFeatures, OutFeatureClassName, ReferenceNodesTable, MaximumEdges, ConfigKeyword, SpatialGrid1, SpatialGrid2, SpatialGrid3, OutTurnFeatures };
 
 		/// <summary>
 		/// <para>Input Turn Table</para>

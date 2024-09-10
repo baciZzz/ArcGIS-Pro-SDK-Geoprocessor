@@ -26,37 +26,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Merge Branch</para>
 		/// </summary>
-		public override string DisplayName => "Merge Branch";
+		public override string DisplayName() => "Merge Branch";
 
 		/// <summary>
 		/// <para>Tool Name : MergeBranch</para>
 		/// </summary>
-		public override string ToolName => "MergeBranch";
+		public override string ToolName() => "MergeBranch";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MergeBranch</para>
 		/// </summary>
-		public override string ExcuteName => "management.MergeBranch";
+		public override string ExcuteName() => "management.MergeBranch";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InValues, OutValue };
+		public override object[] Parameters() => new object[] { InValues, OutValue };
 
 		/// <summary>
 		/// <para>In Values</para>

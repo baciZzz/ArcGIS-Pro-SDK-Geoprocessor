@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Subset Features</para>
 		/// </summary>
-		public override string DisplayName => "Subset Features";
+		public override string DisplayName() => "Subset Features";
 
 		/// <summary>
 		/// <para>Tool Name : SubsetFeatures</para>
 		/// </summary>
-		public override string ToolName => "SubsetFeatures";
+		public override string ToolName() => "SubsetFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.SubsetFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "ga.SubsetFeatures";
+		public override string ExcuteName() => "ga.SubsetFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "randomGenerator", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "randomGenerator", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutTrainingFeatureClass, OutTestFeatureClass, SizeOfTrainingDataset, SubsetSizeUnits };
+		public override object[] Parameters() => new object[] { InFeatures, OutTrainingFeatureClass, OutTestFeatureClass, SizeOfTrainingDataset, SubsetSizeUnits };
 
 		/// <summary>
 		/// <para>Input features</para>

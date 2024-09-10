@@ -31,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Delete Map Server Cache</para>
 		/// </summary>
-		public override string DisplayName => "Delete Map Server Cache";
+		public override string DisplayName() => "Delete Map Server Cache";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteMapServerCache</para>
 		/// </summary>
-		public override string ToolName => "DeleteMapServerCache";
+		public override string ToolName() => "DeleteMapServerCache";
 
 		/// <summary>
 		/// <para>Tool Excute Name : server.DeleteMapServerCache</para>
 		/// </summary>
-		public override string ExcuteName => "server.DeleteMapServerCache";
+		public override string ExcuteName() => "server.DeleteMapServerCache";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Server Tools";
+		public override string ToolboxDisplayName() => "Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : server</para>
 		/// </summary>
-		public override string ToolboxAlise => "server";
+		public override string ToolboxAlise() => "server";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputService, NumOfCachingServiceInstances, OutJobUrl };
+		public override object[] Parameters() => new object[] { InputService, NumOfCachingServiceInstances, OutJobUrl };
 
 		/// <summary>
 		/// <para>Input Service</para>

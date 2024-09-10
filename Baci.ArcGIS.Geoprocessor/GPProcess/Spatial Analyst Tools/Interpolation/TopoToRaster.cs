@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Topo to Raster</para>
 		/// </summary>
-		public override string DisplayName => "Topo to Raster";
+		public override string DisplayName() => "Topo to Raster";
 
 		/// <summary>
 		/// <para>Tool Name : TopoToRaster</para>
 		/// </summary>
-		public override string ToolName => "TopoToRaster";
+		public override string ToolName() => "TopoToRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.TopoToRaster</para>
 		/// </summary>
-		public override string ExcuteName => "sa.TopoToRaster";
+		public override string ExcuteName() => "sa.TopoToRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "mask", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "snapRaster", "tileSize", "transferDomains", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "mask", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "snapRaster", "tileSize", "transferDomains", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTopoFeatures, OutSurfaceRaster, CellSize, Extent, Margin, MinimumZValue, MaximumZValue, Enforce, DataType, MaximumIterations, RoughnessPenalty, DiscreteErrorFactor, VerticalStandardError, Tolerance1, Tolerance2, OutStreamFeatures, OutSinkFeatures, OutDiagnosticFile, OutParameterFile, ProfilePenalty, OutResidualFeature, OutStreamCliffErrorFeature, OutContourErrorFeature };
+		public override object[] Parameters() => new object[] { InTopoFeatures, OutSurfaceRaster, CellSize, Extent, Margin, MinimumZValue, MaximumZValue, Enforce, DataType, MaximumIterations, RoughnessPenalty, DiscreteErrorFactor, VerticalStandardError, Tolerance1, Tolerance2, OutStreamFeatures, OutSinkFeatures, OutDiagnosticFile, OutParameterFile, ProfilePenalty, OutResidualFeature, OutStreamCliffErrorFeature, OutContourErrorFeature };
 
 		/// <summary>
 		/// <para>Input feature data</para>

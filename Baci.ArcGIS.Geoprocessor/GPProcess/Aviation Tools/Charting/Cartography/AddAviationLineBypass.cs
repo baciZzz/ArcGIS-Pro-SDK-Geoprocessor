@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Aviation Line Bypass</para>
 		/// </summary>
-		public override string DisplayName => "Add Aviation Line Bypass";
+		public override string DisplayName() => "Add Aviation Line Bypass";
 
 		/// <summary>
 		/// <para>Tool Name : AddAviationLineBypass</para>
 		/// </summary>
-		public override string ToolName => "AddAviationLineBypass";
+		public override string ToolName() => "AddAviationLineBypass";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.AddAviationLineBypass</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.AddAviationLineBypass";
+		public override string ExcuteName() => "aviation.AddAviationLineBypass";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, TargetLineFeatures, BypassFeatures, Tolerance, RadiusOption, RadiusScale, Radius, MergeOption, UpdatedLineFeatures };
+		public override object[] Parameters() => new object[] { InMap, TargetLineFeatures, BypassFeatures, Tolerance, RadiusOption, RadiusScale, Radius, MergeOption, UpdatedLineFeatures };
 
 		/// <summary>
 		/// <para>Input Map</para>

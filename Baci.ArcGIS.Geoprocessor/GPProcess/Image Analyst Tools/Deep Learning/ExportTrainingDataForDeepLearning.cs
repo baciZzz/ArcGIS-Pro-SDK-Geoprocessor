@@ -37,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Training Data For Deep Learning</para>
 		/// </summary>
-		public override string DisplayName => "Export Training Data For Deep Learning";
+		public override string DisplayName() => "Export Training Data For Deep Learning";
 
 		/// <summary>
 		/// <para>Tool Name : ExportTrainingDataForDeepLearning</para>
 		/// </summary>
-		public override string ToolName => "ExportTrainingDataForDeepLearning";
+		public override string ToolName() => "ExportTrainingDataForDeepLearning";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.ExportTrainingDataForDeepLearning</para>
 		/// </summary>
-		public override string ExcuteName => "ia.ExportTrainingDataForDeepLearning";
+		public override string ExcuteName() => "ia.ExportTrainingDataForDeepLearning";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutFolder, InClassData, ImageChipFormat, TileSizeX, TileSizeY, StrideX, StrideY, OutputNofeatureTiles, MetadataFormat, StartIndex, ClassValueField, BufferRadius, InMaskPolygons, RotationAngle, ReferenceSystem, ProcessingMode, BlackenAroundFeature, CropMode, InRaster2 };
+		public override object[] Parameters() => new object[] { InRaster, OutFolder, InClassData, ImageChipFormat, TileSizeX, TileSizeY, StrideX, StrideY, OutputNofeatureTiles, MetadataFormat, StartIndex, ClassValueField, BufferRadius, InMaskPolygons, RotationAngle, ReferenceSystem, ProcessingMode, BlackenAroundFeature, CropMode, InRaster2 };
 
 		/// <summary>
 		/// <para>Input Raster</para>

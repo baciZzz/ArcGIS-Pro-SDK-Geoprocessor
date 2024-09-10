@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Display Name : Merge Multidimensional Rasters</para>
 		/// </summary>
-		public override string DisplayName => "Merge Multidimensional Rasters";
+		public override string DisplayName() => "Merge Multidimensional Rasters";
 
 		/// <summary>
 		/// <para>Tool Name : MergeMultidimensionalRasters</para>
 		/// </summary>
-		public override string ToolName => "MergeMultidimensionalRasters";
+		public override string ToolName() => "MergeMultidimensionalRasters";
 
 		/// <summary>
 		/// <para>Tool Excute Name : md.MergeMultidimensionalRasters</para>
 		/// </summary>
-		public override string ExcuteName => "md.MergeMultidimensionalRasters";
+		public override string ExcuteName() => "md.MergeMultidimensionalRasters";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Multidimension Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Multidimension Tools";
+		public override string ToolboxDisplayName() => "Multidimension Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : md</para>
 		/// </summary>
-		public override string ToolboxAlise => "md";
+		public override string ToolboxAlise() => "md";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMultidimensionalRasters, OutRaster, ResolveOverlapMethod };
+		public override object[] Parameters() => new object[] { InMultidimensionalRasters, OutRaster, ResolveOverlapMethod };
 
 		/// <summary>
 		/// <para>Input Multidimensional Rasters</para>

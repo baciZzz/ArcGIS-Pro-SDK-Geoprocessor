@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Clip Layer</para>
 		/// </summary>
-		public override string DisplayName => "Clip Layer";
+		public override string DisplayName() => "Clip Layer";
 
 		/// <summary>
 		/// <para>Tool Name : ClipLayer</para>
 		/// </summary>
-		public override string ToolName => "ClipLayer";
+		public override string ToolName() => "ClipLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.ClipLayer</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.ClipLayer";
+		public override string ExcuteName() => "gapro.ClipLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, Clip_Layer, OutFeatureClass };
+		public override object[] Parameters() => new object[] { InputLayer, Clip_Layer, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Input Layer</para>

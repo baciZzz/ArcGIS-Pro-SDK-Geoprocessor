@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Set Subtype Field</para>
 		/// </summary>
-		public override string DisplayName => "Set Subtype Field";
+		public override string DisplayName() => "Set Subtype Field";
 
 		/// <summary>
 		/// <para>Tool Name : SetSubtypeField</para>
 		/// </summary>
-		public override string ToolName => "SetSubtypeField";
+		public override string ToolName() => "SetSubtypeField";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SetSubtypeField</para>
 		/// </summary>
-		public override string ExcuteName => "management.SetSubtypeField";
+		public override string ExcuteName() => "management.SetSubtypeField";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Field, ClearValue, OutTable };
+		public override object[] Parameters() => new object[] { InTable, Field, ClearValue, OutTable };
 
 		/// <summary>
 		/// <para>Input Table</para>

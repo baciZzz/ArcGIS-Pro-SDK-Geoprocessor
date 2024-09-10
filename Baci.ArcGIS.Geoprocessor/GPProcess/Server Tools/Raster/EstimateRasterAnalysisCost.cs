@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Estimate Raster Analysis Cost</para>
 		/// </summary>
-		public override string DisplayName => "Estimate Raster Analysis Cost";
+		public override string DisplayName() => "Estimate Raster Analysis Cost";
 
 		/// <summary>
 		/// <para>Tool Name : EstimateRasterAnalysisCost</para>
 		/// </summary>
-		public override string ToolName => "EstimateRasterAnalysisCost";
+		public override string ToolName() => "EstimateRasterAnalysisCost";
 
 		/// <summary>
 		/// <para>Tool Excute Name : server.EstimateRasterAnalysisCost</para>
 		/// </summary>
-		public override string ExcuteName => "server.EstimateRasterAnalysisCost";
+		public override string ExcuteName() => "server.EstimateRasterAnalysisCost";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Server Tools";
+		public override string ToolboxDisplayName() => "Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : server</para>
 		/// </summary>
-		public override string ToolboxAlise => "server";
+		public override string ToolboxAlise() => "server";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTask, OutCost };
+		public override object[] Parameters() => new object[] { InTask, OutCost };
 
 		/// <summary>
 		/// <para>Input Raster Analysis Task</para>

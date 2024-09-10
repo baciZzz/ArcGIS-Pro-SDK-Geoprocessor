@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Summary Reports</para>
 		/// </summary>
-		public override string DisplayName => "Summary Reports";
+		public override string DisplayName() => "Summary Reports";
 
 		/// <summary>
 		/// <para>Tool Name : SummaryReports</para>
 		/// </summary>
-		public override string ToolName => "SummaryReports";
+		public override string ToolName() => "SummaryReports";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.SummaryReports</para>
 		/// </summary>
-		public override string ExcuteName => "ba.SummaryReports";
+		public override string ExcuteName() => "ba.SummaryReports";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ReportTemplates, ReportsFolder, SummarizationOptions, SingleReport, Formats, StoreIdField, StoreNameField, StoreAddressField, StoreLatitudeField, StoreLongitudeField, RingIdField, AreaDescriptionField, Title, Subtitle, OutputFiles };
+		public override object[] Parameters() => new object[] { InFeatures, ReportTemplates, ReportsFolder, SummarizationOptions, SingleReport, Formats, StoreIdField, StoreNameField, StoreAddressField, StoreLatitudeField, StoreLongitudeField, RingIdField, AreaDescriptionField, Title, Subtitle, OutputFiles };
 
 		/// <summary>
 		/// <para>Boundary Layer</para>

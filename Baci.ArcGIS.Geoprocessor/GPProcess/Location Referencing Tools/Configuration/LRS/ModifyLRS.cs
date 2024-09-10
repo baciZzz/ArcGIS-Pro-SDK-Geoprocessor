@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Modify LRS</para>
 		/// </summary>
-		public override string DisplayName => "Modify LRS";
+		public override string DisplayName() => "Modify LRS";
 
 		/// <summary>
 		/// <para>Tool Name : ModifyLRS</para>
 		/// </summary>
-		public override string ToolName => "ModifyLRS";
+		public override string ToolName() => "ModifyLRS";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.ModifyLRS</para>
 		/// </summary>
-		public override string ExcuteName => "locref.ModifyLRS";
+		public override string ExcuteName() => "locref.ModifyLRS";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, CurrentLrsName, NewLrsName, CenterlineFeatureClass, CenterlineCenterlineIdField, CenterlineSequenceTable, CenterlineSequenceCenterlineIdField, CenterlineSequenceRouteIdField, CenterlineSequenceFromDateField, CenterlineSequenceToDateField, CenterlineSequenceNetworkIdField, CalibrationPointFeatureClass, CalibrationPointMeasureField, CalibrationPointFromDateField, CalibrationPointToDateField, CalibrationPointRouteIdField, CalibrationPointNetworkIdField, RedlineFeatureClass, RedlineFromMeasureField, RedlineToMeasureField, RedlineRouteIdField, RedlineRouteNameField, RedlineEffectiveDateField, RedlineActivityTypeField, RedlineNetworkIdField, OutWorkspace, ConflictPrevention };
+		public override object[] Parameters() => new object[] { InWorkspace, CurrentLrsName, NewLrsName, CenterlineFeatureClass, CenterlineCenterlineIdField, CenterlineSequenceTable, CenterlineSequenceCenterlineIdField, CenterlineSequenceRouteIdField, CenterlineSequenceFromDateField, CenterlineSequenceToDateField, CenterlineSequenceNetworkIdField, CalibrationPointFeatureClass, CalibrationPointMeasureField, CalibrationPointFromDateField, CalibrationPointToDateField, CalibrationPointRouteIdField, CalibrationPointNetworkIdField, RedlineFeatureClass, RedlineFromMeasureField, RedlineToMeasureField, RedlineRouteIdField, RedlineRouteNameField, RedlineEffectiveDateField, RedlineActivityTypeField, RedlineNetworkIdField, OutWorkspace, ConflictPrevention };
 
 		/// <summary>
 		/// <para>Input Workspace</para>

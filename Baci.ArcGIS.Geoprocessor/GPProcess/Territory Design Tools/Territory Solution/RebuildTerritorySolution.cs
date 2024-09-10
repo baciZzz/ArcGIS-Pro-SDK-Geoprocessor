@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Display Name : Rebuild Territory Solution</para>
 		/// </summary>
-		public override string DisplayName => "Rebuild Territory Solution";
+		public override string DisplayName() => "Rebuild Territory Solution";
 
 		/// <summary>
 		/// <para>Tool Name : RebuildTerritorySolution</para>
 		/// </summary>
-		public override string ToolName => "RebuildTerritorySolution";
+		public override string ToolName() => "RebuildTerritorySolution";
 
 		/// <summary>
 		/// <para>Tool Excute Name : td.RebuildTerritorySolution</para>
 		/// </summary>
-		public override string ExcuteName => "td.RebuildTerritorySolution";
+		public override string ExcuteName() => "td.RebuildTerritorySolution";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Territory Design Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Territory Design Tools";
+		public override string ToolboxDisplayName() => "Territory Design Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : td</para>
 		/// </summary>
-		public override string ToolboxAlise => "td";
+		public override string ToolboxAlise() => "td";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, OutTerritorySolution, InBoundaryMask };
+		public override object[] Parameters() => new object[] { InTerritorySolution, OutTerritorySolution, InBoundaryMask };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>

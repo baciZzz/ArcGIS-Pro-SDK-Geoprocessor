@@ -38,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Slope</para>
 		/// </summary>
-		public override string DisplayName => "Slope";
+		public override string DisplayName() => "Slope";
 
 		/// <summary>
 		/// <para>Tool Name : Slope</para>
 		/// </summary>
-		public override string ToolName => "Slope";
+		public override string ToolName() => "Slope";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Slope</para>
 		/// </summary>
-		public override string ExcuteName => "sa.Slope";
+		public override string ExcuteName() => "sa.Slope";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, OutputMeasurement, ZFactor, Method, ZUnit };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, OutputMeasurement, ZFactor, Method, ZUnit };
 
 		/// <summary>
 		/// <para>Input raster</para>

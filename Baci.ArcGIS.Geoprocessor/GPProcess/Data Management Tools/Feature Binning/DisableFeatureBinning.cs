@@ -32,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Disable Feature Binning</para>
 		/// </summary>
-		public override string DisplayName => "Disable Feature Binning";
+		public override string DisplayName() => "Disable Feature Binning";
 
 		/// <summary>
 		/// <para>Tool Name : DisableFeatureBinning</para>
 		/// </summary>
-		public override string ToolName => "DisableFeatureBinning";
+		public override string ToolName() => "DisableFeatureBinning";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DisableFeatureBinning</para>
 		/// </summary>
-		public override string ExcuteName => "management.DisableFeatureBinning";
+		public override string ExcuteName() => "management.DisableFeatureBinning";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatures };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatures };
 
 		/// <summary>
 		/// <para>Input Features</para>

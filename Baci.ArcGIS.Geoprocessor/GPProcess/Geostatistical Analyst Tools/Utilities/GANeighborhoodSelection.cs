@@ -65,37 +65,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Neighborhood Selection</para>
 		/// </summary>
-		public override string DisplayName => "Neighborhood Selection";
+		public override string DisplayName() => "Neighborhood Selection";
 
 		/// <summary>
 		/// <para>Tool Name : GANeighborhoodSelection</para>
 		/// </summary>
-		public override string ToolName => "GANeighborhoodSelection";
+		public override string ToolName() => "GANeighborhoodSelection";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.GANeighborhoodSelection</para>
 		/// </summary>
-		public override string ExcuteName => "ga.GANeighborhoodSelection";
+		public override string ExcuteName() => "ga.GANeighborhoodSelection";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutLayer, PointCoord, NeighborsMax, NeighborsMin, MinorSemiaxis, MajorSemiaxis, Angle, ShapeType };
+		public override object[] Parameters() => new object[] { InDataset, OutLayer, PointCoord, NeighborsMax, NeighborsMin, MinorSemiaxis, MajorSemiaxis, Angle, ShapeType };
 
 		/// <summary>
 		/// <para>Input point features</para>

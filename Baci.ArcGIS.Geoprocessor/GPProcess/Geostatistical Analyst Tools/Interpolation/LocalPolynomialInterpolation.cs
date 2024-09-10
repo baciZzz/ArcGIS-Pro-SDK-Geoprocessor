@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Local Polynomial Interpolation</para>
 		/// </summary>
-		public override string DisplayName => "Local Polynomial Interpolation";
+		public override string DisplayName() => "Local Polynomial Interpolation";
 
 		/// <summary>
 		/// <para>Tool Name : LocalPolynomialInterpolation</para>
 		/// </summary>
-		public override string ToolName => "LocalPolynomialInterpolation";
+		public override string ToolName() => "LocalPolynomialInterpolation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.LocalPolynomialInterpolation</para>
 		/// </summary>
-		public override string ExcuteName => "ga.LocalPolynomialInterpolation";
+		public override string ExcuteName() => "ga.LocalPolynomialInterpolation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ZField, OutGaLayer, OutRaster, CellSize, Power, SearchNeighborhood, KernelFunction, Bandwidth, UseConditionNumber, ConditionNumber, WeightField, OutputType };
+		public override object[] Parameters() => new object[] { InFeatures, ZField, OutGaLayer, OutRaster, CellSize, Power, SearchNeighborhood, KernelFunction, Bandwidth, UseConditionNumber, ConditionNumber, WeightField, OutputType };
 
 		/// <summary>
 		/// <para>Input features</para>

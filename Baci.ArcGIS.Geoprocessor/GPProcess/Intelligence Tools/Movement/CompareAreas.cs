@@ -59,37 +59,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Compare Areas</para>
 		/// </summary>
-		public override string DisplayName => "Compare Areas";
+		public override string DisplayName() => "Compare Areas";
 
 		/// <summary>
 		/// <para>Tool Name : CompareAreas</para>
 		/// </summary>
-		public override string ToolName => "CompareAreas";
+		public override string ToolName() => "CompareAreas";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.CompareAreas</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.CompareAreas";
+		public override string ExcuteName() => "intelligence.CompareAreas";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, InAreaFeatures, OutFeatureclass, PointIdField, AreaIdField, Relationship, TimeDifference };
+		public override object[] Parameters() => new object[] { InPointFeatures, InAreaFeatures, OutFeatureclass, PointIdField, AreaIdField, Relationship, TimeDifference };
 
 		/// <summary>
 		/// <para>Input Point Features</para>

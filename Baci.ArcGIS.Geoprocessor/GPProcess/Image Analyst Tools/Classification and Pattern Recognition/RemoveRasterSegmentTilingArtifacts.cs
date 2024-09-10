@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Remove Raster Segment Tiling Artifacts</para>
 		/// </summary>
-		public override string DisplayName => "Remove Raster Segment Tiling Artifacts";
+		public override string DisplayName() => "Remove Raster Segment Tiling Artifacts";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveRasterSegmentTilingArtifacts</para>
 		/// </summary>
-		public override string ToolName => "RemoveRasterSegmentTilingArtifacts";
+		public override string ToolName() => "RemoveRasterSegmentTilingArtifacts";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.RemoveRasterSegmentTilingArtifacts</para>
 		/// </summary>
-		public override string ExcuteName => "ia.RemoveRasterSegmentTilingArtifacts";
+		public override string ExcuteName() => "ia.RemoveRasterSegmentTilingArtifacts";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSegmentedRaster, OutRasterDataset, Tilesizex, Tilesizey };
+		public override object[] Parameters() => new object[] { InSegmentedRaster, OutRasterDataset, Tilesizex, Tilesizey };
 
 		/// <summary>
 		/// <para>Input Segmented RGB Or Gray Raster</para>

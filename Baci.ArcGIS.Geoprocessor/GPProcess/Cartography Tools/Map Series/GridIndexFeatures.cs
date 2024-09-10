@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Grid Index Features</para>
 		/// </summary>
-		public override string DisplayName => "Grid Index Features";
+		public override string DisplayName() => "Grid Index Features";
 
 		/// <summary>
 		/// <para>Tool Name : GridIndexFeatures</para>
 		/// </summary>
-		public override string ToolName => "GridIndexFeatures";
+		public override string ToolName() => "GridIndexFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.GridIndexFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.GridIndexFeatures";
+		public override string ExcuteName() => "cartography.GridIndexFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutFeatureClass, InFeatures, IntersectFeature, UsePageUnit, Scale, PolygonWidth, PolygonHeight, OriginCoord, NumberRows, NumberColumns, StartingPageNumber, LabelFromOrigin };
+		public override object[] Parameters() => new object[] { OutFeatureClass, InFeatures, IntersectFeature, UsePageUnit, Scale, PolygonWidth, PolygonHeight, OriginCoord, NumberRows, NumberColumns, StartingPageNumber, LabelFromOrigin };
 
 		/// <summary>
 		/// <para>Output Feature Class</para>

@@ -48,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Target Penetration Layer</para>
 		/// </summary>
-		public override string DisplayName => "Generate Target Penetration Layer";
+		public override string DisplayName() => "Generate Target Penetration Layer";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateTargetPenetrationLayer</para>
 		/// </summary>
-		public override string ToolName => "GenerateTargetPenetrationLayer";
+		public override string ToolName() => "GenerateTargetPenetrationLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.GenerateTargetPenetrationLayer</para>
 		/// </summary>
-		public override string ExcuteName => "ba.GenerateTargetPenetrationLayer";
+		public override string ExcuteName() => "ba.GenerateTargetPenetrationLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { GeographyLevel, SegmentationBase, OutFeatureClass, InputType, TargetGroup, Target, Segments, BoundaryLayer };
+		public override object[] Parameters() => new object[] { GeographyLevel, SegmentationBase, OutFeatureClass, InputType, TargetGroup, Target, Segments, BoundaryLayer };
 
 		/// <summary>
 		/// <para>Geography Level</para>

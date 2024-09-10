@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Trace</para>
 		/// </summary>
-		public override string DisplayName => "Trace";
+		public override string DisplayName() => "Trace";
 
 		/// <summary>
 		/// <para>Tool Name : Trace</para>
 		/// </summary>
-		public override string ToolName => "Trace";
+		public override string ToolName() => "Trace";
 
 		/// <summary>
 		/// <para>Tool Excute Name : tn.Trace</para>
 		/// </summary>
-		public override string ExcuteName => "tn.Trace";
+		public override string ExcuteName() => "tn.Trace";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Trace Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Trace Network Tools";
+		public override string ToolboxDisplayName() => "Trace Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : tn</para>
 		/// </summary>
-		public override string ToolboxAlise => "tn";
+		public override string ToolboxAlise() => "tn";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTraceNetwork, TraceType, StartingPoints, Barriers, PathDirection, ShortestPathNetworkAttributeName, IncludeBarriers, ValidateConsistency, IgnoreBarriersAtStartingPoints, AllowIndeterminateFlow, ConditionBarriers, FunctionBarriers, TraversabilityScope, Functions, OutputConditions, ResultTypes, SelectionType, ClearAllPreviousTraceResults, TraceName, AggregatedPoints, AggregatedLines, UpdatedTraceNetwork, OutNetworkLayer, UseTraceConfig, TraceConfigName };
+		public override object[] Parameters() => new object[] { InTraceNetwork, TraceType, StartingPoints, Barriers, PathDirection, ShortestPathNetworkAttributeName, IncludeBarriers, ValidateConsistency, IgnoreBarriersAtStartingPoints, AllowIndeterminateFlow, ConditionBarriers, FunctionBarriers, TraversabilityScope, Functions, OutputConditions, ResultTypes, SelectionType, ClearAllPreviousTraceResults, TraceName, AggregatedPoints, AggregatedLines, UpdatedTraceNetwork, OutNetworkLayer, UseTraceConfig, TraceConfigName };
 
 		/// <summary>
 		/// <para>Input Trace Network</para>

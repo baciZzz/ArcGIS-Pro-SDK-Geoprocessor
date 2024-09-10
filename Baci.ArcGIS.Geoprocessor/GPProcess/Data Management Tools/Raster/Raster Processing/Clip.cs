@@ -59,37 +59,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Clip Raster</para>
 		/// </summary>
-		public override string DisplayName => "Clip Raster";
+		public override string DisplayName() => "Clip Raster";
 
 		/// <summary>
 		/// <para>Tool Name : Clip</para>
 		/// </summary>
-		public override string ToolName => "Clip";
+		public override string ToolName() => "Clip";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Clip</para>
 		/// </summary>
-		public override string ExcuteName => "management.Clip";
+		public override string ExcuteName() => "management.Clip";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, Rectangle, OutRaster, InTemplateDataset, NodataValue, ClippingGeometry, MaintainClippingExtent };
+		public override object[] Parameters() => new object[] { InRaster, Rectangle, OutRaster, InTemplateDataset, NodataValue, ClippingGeometry, MaintainClippingExtent };
 
 		/// <summary>
 		/// <para>Input Raster</para>

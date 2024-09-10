@@ -56,37 +56,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Magnetic Components</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Magnetic Components";
+		public override string DisplayName() => "Calculate Magnetic Components";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateMagneticComponents</para>
 		/// </summary>
-		public override string ToolName => "CalculateMagneticComponents";
+		public override string ToolName() => "CalculateMagneticComponents";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.CalculateMagneticComponents</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.CalculateMagneticComponents";
+		public override string ExcuteName() => "topographic.CalculateMagneticComponents";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Altitude, Date, MagneticComponent, UpdatedFeatures };
+		public override object[] Parameters() => new object[] { InFeatures, Altitude, Date, MagneticComponent, UpdatedFeatures };
 
 		/// <summary>
 		/// <para>Input Features</para>

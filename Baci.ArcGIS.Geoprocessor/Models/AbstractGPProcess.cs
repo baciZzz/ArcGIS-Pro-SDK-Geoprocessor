@@ -7,29 +7,125 @@ using System.Threading.Tasks;
 
 namespace Baci.ArcGIS.Geoprocessor.Models
 {
+    /// <summary>
+    /// AbstractGPProcess
+    /// </summary>
     public abstract class AbstractGPProcess : IGPProcess
     {
+        /// <summary>
+        /// 
+        /// </summary>
         protected Dictionary<string, string> environments = new Dictionary<string, string>();
 
-        public abstract string DisplayName { get; }
+        /// <summary>
+        /// Display Name
+        /// </summary>
+        /// <returns></returns>
+        public abstract string DisplayName();
 
-        public abstract string ToolName { get; }
+        /// <summary>
+        /// Tool Name
+        /// </summary>
+        /// <returns></returns>
+        public abstract string ToolName();
 
-        public abstract string ExcuteName { get; }
+        /// <summary>
+        /// Excute Name
+        /// </summary>
+        /// <returns></returns>
+        public abstract string ExcuteName();
 
-        public abstract string ToolboxDisplayName { get; }
+        /// <summary>
+        /// Toolbox Display Name
+        /// </summary>
+        /// <returns></returns>
+        public abstract string ToolboxDisplayName();
 
-        public abstract string ToolboxAlise { get; }
+        /// <summary>
+        /// Toolbox Alise
+        /// </summary>
+        /// <returns></returns>
+        public abstract string ToolboxAlise();
 
-        public abstract string[] ValidEnvironments { get; }
+        /// <summary>
+        /// Valid Environments
+        /// </summary>
+        /// <returns></returns>
+        public abstract string[] ValidEnvironments();
 
-        public abstract object[] Parameters { get; }
+        /// <summary>
+        /// Parameters
+        /// </summary>
+        /// <returns></returns>
+        public abstract object[] Parameters();
 
-        //public IEnumerable<KeyValuePair<string, string>> Environments { get { return environments; } }
-        public Dictionary<string, string> Environments { get { return environments; } }
+        /// <summary>
+        /// Environments
+        /// </summary>
+        /// <returns></returns>
+        public Dictionary<string, string> Environments() => environments;
 
-        public IGPResult GPResult { get ; set ; }
+        private IGPResult result = null;
 
+        /// <summary>
+        /// GPResult
+        /// </summary>
+        /// <returns></returns>
+        public IGPResult GPResult() => result;
+
+        /// <summary>
+        /// Set GPResult
+        /// </summary>
+        /// <returns></returns>
+        public void SetGPResult(IGPResult gPResult)
+        {
+            result = gPResult;
+        }
+
+
+        /// <summary>
+        /// SetEnv
+        /// </summary>
+        /// <param name="autoCommit"></param>
+        /// <param name="XYResolution"></param>
+        /// <param name="XYDomain"></param>
+        /// <param name="scratchWorkspace"></param>
+        /// <param name="cartographicPartitions"></param>
+        /// <param name="terrainMemoryUsage"></param>
+        /// <param name="MTolerance"></param>
+        /// <param name="compression"></param>
+        /// <param name="coincidentPoints"></param>
+        /// <param name="randomGenerator"></param>
+        /// <param name="outputCoordinateSystem"></param>
+        /// <param name="overwriteoutput"></param>
+        /// <param name="rasterStatistics"></param>
+        /// <param name="ZDomain"></param>
+        /// <param name="transferDomains"></param>
+        /// <param name="resamplingMethod"></param>
+        /// <param name="snapRaster"></param>
+        /// <param name="cartographicCoordinateSystem"></param>
+        /// <param name="configKeyword"></param>
+        /// <param name="outputZFlag"></param>
+        /// <param name="qualifiedFieldNames"></param>
+        /// <param name="tileSize"></param>
+        /// <param name="parallelProcessingFactor"></param>
+        /// <param name="pyramid"></param>
+        /// <param name="referenceScale"></param>
+        /// <param name="extent"></param>
+        /// <param name="XYTolerance"></param>
+        /// <param name="tinSaveVersion"></param>
+        /// <param name="nodata"></param>
+        /// <param name="MDomain"></param>
+        /// <param name="cellSize"></param>
+        /// <param name="outputZValue"></param>
+        /// <param name="outputMFlag"></param>
+        /// <param name="geographicTransformations"></param>
+        /// <param name="ZResolution"></param>
+        /// <param name="mask"></param>
+        /// <param name="maintainSpatialIndex"></param>
+        /// <param name="workspace"></param>
+        /// <param name="MResolution"></param>
+        /// <param name="ZTolerance"></param>
         protected void SetEnv(int? autoCommit = null, object XYResolution = null, object XYDomain = null, object scratchWorkspace = null,
             object cartographicPartitions = null, object terrainMemoryUsage = null, object MTolerance = null, object compression = null,
             object coincidentPoints = null, object randomGenerator = null, object outputCoordinateSystem = null, bool? overwriteoutput = null,
@@ -58,5 +154,6 @@ namespace Baci.ArcGIS.Geoprocessor.Models
                     environments[item.Key] = item.Value;
             }
         }
+
     }
 }

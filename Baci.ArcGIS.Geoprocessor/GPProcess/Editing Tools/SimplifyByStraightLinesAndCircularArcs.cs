@@ -37,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Display Name : Simplify By Straight Lines And Circular Arcs</para>
 		/// </summary>
-		public override string DisplayName => "Simplify By Straight Lines And Circular Arcs";
+		public override string DisplayName() => "Simplify By Straight Lines And Circular Arcs";
 
 		/// <summary>
 		/// <para>Tool Name : SimplifyByStraightLinesAndCircularArcs</para>
 		/// </summary>
-		public override string ToolName => "SimplifyByStraightLinesAndCircularArcs";
+		public override string ToolName() => "SimplifyByStraightLinesAndCircularArcs";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.SimplifyByStraightLinesAndCircularArcs</para>
 		/// </summary>
-		public override string ExcuteName => "edit.SimplifyByStraightLinesAndCircularArcs";
+		public override string ExcuteName() => "edit.SimplifyByStraightLinesAndCircularArcs";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Editing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Editing Tools";
+		public override string ToolboxDisplayName() => "Editing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : edit</para>
 		/// </summary>
-		public override string ToolboxAlise => "edit";
+		public override string ToolboxAlise() => "edit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, MaxOffset, FittingType, CircularArcs, MaxArcAngleStep, MinVertexCount, MinRadius, MaxRadius, MinArcAngle, ClosedEnds, OutFeatureClass, AnchorPoints, OutFeatureLayers };
+		public override object[] Parameters() => new object[] { InFeatures, MaxOffset, FittingType, CircularArcs, MaxArcAngleStep, MinVertexCount, MinRadius, MaxRadius, MinArcAngle, ClosedEnds, OutFeatureClass, AnchorPoints, OutFeatureLayers };
 
 		/// <summary>
 		/// <para>Input Features</para>

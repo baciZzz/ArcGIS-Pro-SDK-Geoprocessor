@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Feature Class To Feature Class</para>
 		/// </summary>
-		public override string DisplayName => "Feature Class To Feature Class";
+		public override string DisplayName() => "Feature Class To Feature Class";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureClassToFeatureClass</para>
 		/// </summary>
-		public override string ToolName => "FeatureClassToFeatureClass";
+		public override string ToolName() => "FeatureClassToFeatureClass";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.FeatureClassToFeatureClass</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.FeatureClassToFeatureClass";
+		public override string ExcuteName() => "conversion.FeatureClassToFeatureClass";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainAttachments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "preserveGlobalIds", "qualifiedFieldNames", "transferDomains", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainAttachments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "preserveGlobalIds", "qualifiedFieldNames", "transferDomains", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutPath, OutName, WhereClause, FieldMapping, ConfigKeyword, OutFeatureClass };
+		public override object[] Parameters() => new object[] { InFeatures, OutPath, OutName, WhereClause, FieldMapping, ConfigKeyword, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Input Features</para>

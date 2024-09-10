@@ -52,37 +52,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Distance From Point</para>
 		/// </summary>
-		public override string DisplayName => "Distance From Point";
+		public override string DisplayName() => "Distance From Point";
 
 		/// <summary>
 		/// <para>Tool Name : DistanceFromPoint</para>
 		/// </summary>
-		public override string ToolName => "DistanceFromPoint";
+		public override string ToolName() => "DistanceFromPoint";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.DistanceFromPoint</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.DistanceFromPoint";
+		public override string ExcuteName() => "intelligence.DistanceFromPoint";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputPointFeatures, InputCoordinateType, InputCoordinateString, InputSearchDistance, InputSearchExpression, OutputIdList };
+		public override object[] Parameters() => new object[] { InputPointFeatures, InputCoordinateType, InputCoordinateString, InputSearchDistance, InputSearchExpression, OutputIdList };
 
 		/// <summary>
 		/// <para>Input Points</para>

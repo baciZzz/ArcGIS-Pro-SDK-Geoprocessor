@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : GA Layer To Rasters</para>
 		/// </summary>
-		public override string DisplayName => "GA Layer To Rasters";
+		public override string DisplayName() => "GA Layer To Rasters";
 
 		/// <summary>
 		/// <para>Tool Name : GALayerToRasters</para>
 		/// </summary>
-		public override string ToolName => "GALayerToRasters";
+		public override string ToolName() => "GALayerToRasters";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.GALayerToRasters</para>
 		/// </summary>
-		public override string ExcuteName => "ga.GALayerToRasters";
+		public override string ExcuteName() => "ga.GALayerToRasters";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeostatLayer, OutRaster, OutputType, QuantileProbabilityValue, CellSize, PointsPerBlockHorz, PointsPerBlockVert, AdditionalRasters, OutAdditionalRasters, OutElevation };
+		public override object[] Parameters() => new object[] { InGeostatLayer, OutRaster, OutputType, QuantileProbabilityValue, CellSize, PointsPerBlockHorz, PointsPerBlockVert, AdditionalRasters, OutAdditionalRasters, OutElevation };
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>

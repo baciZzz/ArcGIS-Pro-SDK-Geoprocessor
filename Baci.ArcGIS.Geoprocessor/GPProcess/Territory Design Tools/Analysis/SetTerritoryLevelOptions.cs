@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Display Name : Set Territory Level Options</para>
 		/// </summary>
-		public override string DisplayName => "Set Territory Level Options";
+		public override string DisplayName() => "Set Territory Level Options";
 
 		/// <summary>
 		/// <para>Tool Name : SetTerritoryLevelOptions</para>
 		/// </summary>
-		public override string ToolName => "SetTerritoryLevelOptions";
+		public override string ToolName() => "SetTerritoryLevelOptions";
 
 		/// <summary>
 		/// <para>Tool Excute Name : td.SetTerritoryLevelOptions</para>
 		/// </summary>
-		public override string ExcuteName => "td.SetTerritoryLevelOptions";
+		public override string ExcuteName() => "td.SetTerritoryLevelOptions";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Territory Design Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Territory Design Tools";
+		public override string ToolboxDisplayName() => "Territory Design Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : td</para>
 		/// </summary>
-		public override string ToolboxAlise => "td";
+		public override string ToolboxAlise() => "td";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, Level, Compactness, FillExtent, OutTerritorySolution, RandomSeed, SpatialRelationship, BufferTolerance };
+		public override object[] Parameters() => new object[] { InTerritorySolution, Level, Compactness, FillExtent, OutTerritorySolution, RandomSeed, SpatialRelationship, BufferTolerance };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <para>An integer used for the seed value. The default is no value and uses a random generator.</para>
 		/// <para>Uses ACM-collected algorithm 599 to produce random territories.</para>
 		/// <para>If the seed value is greater or equal to 0, the same seed value will be used to produce consistent territories.</para>
-		/// <para><para/></para>
+		/// <para>&lt;para/&gt;</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]

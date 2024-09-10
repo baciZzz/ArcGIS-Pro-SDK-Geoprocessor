@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Merge Divided Roads</para>
 		/// </summary>
-		public override string DisplayName => "Merge Divided Roads";
+		public override string DisplayName() => "Merge Divided Roads";
 
 		/// <summary>
 		/// <para>Tool Name : MergeDividedRoads</para>
 		/// </summary>
-		public override string ToolName => "MergeDividedRoads";
+		public override string ToolName() => "MergeDividedRoads";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.MergeDividedRoads</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.MergeDividedRoads";
+		public override string ExcuteName() => "cartography.MergeDividedRoads";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cartographicCoordinateSystem", "cartographicPartitions", "referenceScale", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cartographicCoordinateSystem", "cartographicPartitions", "referenceScale", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, MergeField, MergeDistance, OutFeatures, OutDisplacementFeatures, CharacterField, OutTable };
+		public override object[] Parameters() => new object[] { InFeatures, MergeField, MergeDistance, OutFeatures, OutDisplacementFeatures, CharacterField, OutTable };
 
 		/// <summary>
 		/// <para>Input Features</para>

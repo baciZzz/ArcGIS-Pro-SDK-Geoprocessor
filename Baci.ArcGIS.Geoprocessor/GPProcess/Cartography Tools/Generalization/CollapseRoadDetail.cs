@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Collapse Road Detail</para>
 		/// </summary>
-		public override string DisplayName => "Collapse Road Detail";
+		public override string DisplayName() => "Collapse Road Detail";
 
 		/// <summary>
 		/// <para>Tool Name : CollapseRoadDetail</para>
 		/// </summary>
-		public override string ToolName => "CollapseRoadDetail";
+		public override string ToolName() => "CollapseRoadDetail";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.CollapseRoadDetail</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.CollapseRoadDetail";
+		public override string ExcuteName() => "cartography.CollapseRoadDetail";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cartographicPartitions", "referenceScale" };
+		public override string[] ValidEnvironments() => new string[] { "cartographicPartitions", "referenceScale" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, CollapseDistance, OutputFeatureClass, LockingField };
+		public override object[] Parameters() => new object[] { InFeatures, CollapseDistance, OutputFeatureClass, LockingField };
 
 		/// <summary>
 		/// <para>Input Features</para>

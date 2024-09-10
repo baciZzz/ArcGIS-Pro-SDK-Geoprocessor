@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Cartographic Partitions</para>
 		/// </summary>
-		public override string DisplayName => "Create Cartographic Partitions";
+		public override string DisplayName() => "Create Cartographic Partitions";
 
 		/// <summary>
 		/// <para>Tool Name : CreateCartographicPartitions</para>
 		/// </summary>
-		public override string ToolName => "CreateCartographicPartitions";
+		public override string ToolName() => "CreateCartographicPartitions";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.CreateCartographicPartitions</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.CreateCartographicPartitions";
+		public override string ExcuteName() => "cartography.CreateCartographicPartitions";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatures, FeatureCount, PartitionMethod };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatures, FeatureCount, PartitionMethod };
 
 		/// <summary>
 		/// <para>Input Features</para>

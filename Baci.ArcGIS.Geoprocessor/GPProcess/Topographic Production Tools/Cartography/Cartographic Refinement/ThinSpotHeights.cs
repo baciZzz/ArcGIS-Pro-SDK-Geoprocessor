@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Thin Spot Heights</para>
 		/// </summary>
-		public override string DisplayName => "Thin Spot Heights";
+		public override string DisplayName() => "Thin Spot Heights";
 
 		/// <summary>
 		/// <para>Tool Name : ThinSpotHeights</para>
 		/// </summary>
-		public override string ToolName => "ThinSpotHeights";
+		public override string ToolName() => "ThinSpotHeights";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.ThinSpotHeights</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.ThinSpotHeights";
+		public override string ExcuteName() => "topographic.ThinSpotHeights";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, AreaOfInterest, ElevationField, InvisibilityField, HighLowSpots, SearchDistance, MaxSpots, InputContours, ContourCodeField, DepressionCodeValue, UpdatedFeatures };
+		public override object[] Parameters() => new object[] { InFeatures, AreaOfInterest, ElevationField, InvisibilityField, HighLowSpots, SearchDistance, MaxSpots, InputContours, ContourCodeField, DepressionCodeValue, UpdatedFeatures };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -37,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Polygon Main Angle</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Polygon Main Angle";
+		public override string DisplayName() => "Calculate Polygon Main Angle";
 
 		/// <summary>
 		/// <para>Tool Name : CalculatePolygonMainAngle</para>
 		/// </summary>
-		public override string ToolName => "CalculatePolygonMainAngle";
+		public override string ToolName() => "CalculatePolygonMainAngle";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.CalculatePolygonMainAngle</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.CalculatePolygonMainAngle";
+		public override string ExcuteName() => "cartography.CalculatePolygonMainAngle";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cartographicCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "cartographicCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, AngleField, OutFeatures, RotationMethod };
+		public override object[] Parameters() => new object[] { InFeatures, AngleField, OutFeatures, RotationMethod };
 
 		/// <summary>
 		/// <para>Input Features</para>

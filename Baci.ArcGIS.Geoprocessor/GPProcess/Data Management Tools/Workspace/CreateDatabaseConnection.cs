@@ -43,7 +43,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>The database server or instance to which the connection will be made.</para>
 		/// <para>The value you choose from the Database Platform drop-down list indicates the type of database to which you want to connect. The information you provide for the Instance parameter varies, depending on the connection type you choose.</para>
 		/// <para>See below for information about what to provide for each database platform.</para>
-		/// <para>Dameng—The name of the server where the Dameng database is installed<bold/></para>
+		/// <para>Dameng—The name of the server where the Dameng database is installed&lt;bold/&gt;</para>
 		/// <para>Db2—The name of the cataloged Db2 database</para>
 		/// <para>Oracle—Either the TNS name or the Oracle Easy Connection string to connect to the Oracle database or database service</para>
 		/// <para>PostgreSQL—The name of the server where PostgreSQL is installed or the name of the PostgreSQL database service instance</para>
@@ -62,37 +62,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Database Connection</para>
 		/// </summary>
-		public override string DisplayName => "Create Database Connection";
+		public override string DisplayName() => "Create Database Connection";
 
 		/// <summary>
 		/// <para>Tool Name : CreateDatabaseConnection</para>
 		/// </summary>
-		public override string ToolName => "CreateDatabaseConnection";
+		public override string ToolName() => "CreateDatabaseConnection";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateDatabaseConnection</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateDatabaseConnection";
+		public override string ExcuteName() => "management.CreateDatabaseConnection";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutFolderPath, OutName, DatabasePlatform, Instance, AccountAuthentication, Username, Password, SaveUserPass, Database, Schema, VersionType, Version, Date, OutWorkspace };
+		public override object[] Parameters() => new object[] { OutFolderPath, OutName, DatabasePlatform, Instance, AccountAuthentication, Username, Password, SaveUserPass, Database, Schema, VersionType, Version, Date, OutWorkspace };
 
 		/// <summary>
 		/// <para>Connection File Location</para>
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>The database server or instance to which the connection will be made.</para>
 		/// <para>The value you choose from the Database Platform drop-down list indicates the type of database to which you want to connect. The information you provide for the Instance parameter varies, depending on the connection type you choose.</para>
 		/// <para>See below for information about what to provide for each database platform.</para>
-		/// <para>Dameng—The name of the server where the Dameng database is installed<bold/></para>
+		/// <para>Dameng—The name of the server where the Dameng database is installed&lt;bold/&gt;</para>
 		/// <para>Db2—The name of the cataloged Db2 database</para>
 		/// <para>Oracle—Either the TNS name or the Oracle Easy Connection string to connect to the Oracle database or database service</para>
 		/// <para>PostgreSQL—The name of the server where PostgreSQL is installed or the name of the PostgreSQL database service instance</para>

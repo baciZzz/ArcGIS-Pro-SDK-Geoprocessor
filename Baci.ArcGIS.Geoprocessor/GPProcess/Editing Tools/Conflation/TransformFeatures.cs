@@ -38,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Display Name : Transform Features</para>
 		/// </summary>
-		public override string DisplayName => "Transform Features";
+		public override string DisplayName() => "Transform Features";
 
 		/// <summary>
 		/// <para>Tool Name : TransformFeatures</para>
 		/// </summary>
-		public override string ToolName => "TransformFeatures";
+		public override string ToolName() => "TransformFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.TransformFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "edit.TransformFeatures";
+		public override string ExcuteName() => "edit.TransformFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Editing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Editing Tools";
+		public override string ToolboxDisplayName() => "Editing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : edit</para>
 		/// </summary>
-		public override string ToolboxAlise => "edit";
+		public override string ToolboxAlise() => "edit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InLinkFeatures, Method, OutLinkTable, OutRmse, OutFeatureClass };
+		public override object[] Parameters() => new object[] { InFeatures, InLinkFeatures, Method, OutLinkTable, OutRmse, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Input Features</para>

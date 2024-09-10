@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Import Topology</para>
 		/// </summary>
-		public override string DisplayName => "Import Topology";
+		public override string DisplayName() => "Import Topology";
 
 		/// <summary>
 		/// <para>Tool Name : ImportTopology</para>
 		/// </summary>
-		public override string ToolName => "ImportTopology";
+		public override string ToolName() => "ImportTopology";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.ImportTopology</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.ImportTopology";
+		public override string ExcuteName() => "topographic.ImportTopology";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureDataset, TopologyDefinitionFile, OutTopology };
+		public override object[] Parameters() => new object[] { InFeatureDataset, TopologyDefinitionFile, OutTopology };
 
 		/// <summary>
 		/// <para>Input Feature Dataset</para>

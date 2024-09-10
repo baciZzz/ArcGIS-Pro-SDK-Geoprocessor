@@ -48,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : FAA 13A</para>
 		/// </summary>
-		public override string DisplayName => "FAA 13A";
+		public override string DisplayName() => "FAA 13A";
 
 		/// <summary>
 		/// <para>Tool Name : FAA13A</para>
 		/// </summary>
-		public override string ToolName => "FAA13A";
+		public override string ToolName() => "FAA13A";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.FAA13A</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.FAA13A";
+		public override string ExcuteName() => "aviation.FAA13A";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Target, RunwayType, HighendClearWayLength, LowendClearWayLength, DerivedOutfeatureclass, CustomJsonFile, GenerateClearwaySurface, AirportControlPointFeatureClass };
+		public override object[] Parameters() => new object[] { InFeatures, Target, RunwayType, HighendClearWayLength, LowendClearWayLength, DerivedOutfeatureclass, CustomJsonFile, GenerateClearwaySurface, AirportControlPointFeatureClass };
 
 		/// <summary>
 		/// <para>Input Runway Features</para>

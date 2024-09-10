@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Network Attribute</para>
 		/// </summary>
-		public override string DisplayName => "Add Network Attribute";
+		public override string DisplayName() => "Add Network Attribute";
 
 		/// <summary>
 		/// <para>Tool Name : AddNetworkAttribute</para>
 		/// </summary>
-		public override string ToolName => "AddNetworkAttribute";
+		public override string ToolName() => "AddNetworkAttribute";
 
 		/// <summary>
 		/// <para>Tool Excute Name : tn.AddNetworkAttribute</para>
 		/// </summary>
-		public override string ExcuteName => "tn.AddNetworkAttribute";
+		public override string ExcuteName() => "tn.AddNetworkAttribute";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Trace Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Trace Network Tools";
+		public override string ToolboxDisplayName() => "Trace Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : tn</para>
 		/// </summary>
-		public override string ToolboxAlise => "tn";
+		public override string ToolboxAlise() => "tn";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTraceNetwork, AttributeName, AttributeType, IsNullable, OutTraceNetwork };
+		public override object[] Parameters() => new object[] { InTraceNetwork, AttributeName, AttributeType, IsNullable, OutTraceNetwork };
 
 		/// <summary>
 		/// <para>Input Trace Network</para>

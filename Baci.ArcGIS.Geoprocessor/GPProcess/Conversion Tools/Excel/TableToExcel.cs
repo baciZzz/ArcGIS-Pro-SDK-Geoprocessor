@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Table To Excel</para>
 		/// </summary>
-		public override string DisplayName => "Table To Excel";
+		public override string DisplayName() => "Table To Excel";
 
 		/// <summary>
 		/// <para>Tool Name : TableToExcel</para>
 		/// </summary>
-		public override string ToolName => "TableToExcel";
+		public override string ToolName() => "TableToExcel";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.TableToExcel</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.TableToExcel";
+		public override string ExcuteName() => "conversion.TableToExcel";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "transferDomains", "transferGDBAttributeProperties", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "transferDomains", "transferGDBAttributeProperties", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputTable, OutputExcelFile, UseFieldAliasAsColumnHeader, UseDomainAndSubtypeDescription };
+		public override object[] Parameters() => new object[] { InputTable, OutputExcelFile, UseFieldAliasAsColumnHeader, UseDomainAndSubtypeDescription };
 
 		/// <summary>
 		/// <para>Input Table</para>

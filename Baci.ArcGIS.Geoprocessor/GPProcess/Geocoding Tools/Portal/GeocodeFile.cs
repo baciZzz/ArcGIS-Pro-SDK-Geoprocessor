@@ -65,37 +65,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Display Name : Geocode File</para>
 		/// </summary>
-		public override string DisplayName => "Geocode File";
+		public override string DisplayName() => "Geocode File";
 
 		/// <summary>
 		/// <para>Tool Name : GeocodeFile</para>
 		/// </summary>
-		public override string ToolName => "GeocodeFile";
+		public override string ToolName() => "GeocodeFile";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geocoding.GeocodeFile</para>
 		/// </summary>
-		public override string ExcuteName => "geocoding.GeocodeFile";
+		public override string ExcuteName() => "geocoding.GeocodeFile";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geocoding Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geocoding Tools";
+		public override string ToolboxDisplayName() => "Geocoding Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geocoding</para>
 		/// </summary>
-		public override string ToolboxAlise => "geocoding";
+		public override string ToolboxAlise() => "geocoding";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Locator, AddressFields, OutputType, OutputLocation, OutputName, Country, LocationType, Category, OutFeatureClass, OutTable, OutputFields };
+		public override object[] Parameters() => new object[] { InTable, Locator, AddressFields, OutputType, OutputLocation, OutputName, Country, LocationType, Category, OutFeatureClass, OutTable, OutputFields };
 
 		/// <summary>
 		/// <para>Input Table</para>

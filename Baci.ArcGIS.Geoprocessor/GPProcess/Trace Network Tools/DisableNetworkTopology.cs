@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Disable Network Topology</para>
 		/// </summary>
-		public override string DisplayName => "Disable Network Topology";
+		public override string DisplayName() => "Disable Network Topology";
 
 		/// <summary>
 		/// <para>Tool Name : DisableNetworkTopology</para>
 		/// </summary>
-		public override string ToolName => "DisableNetworkTopology";
+		public override string ToolName() => "DisableNetworkTopology";
 
 		/// <summary>
 		/// <para>Tool Excute Name : tn.DisableNetworkTopology</para>
 		/// </summary>
-		public override string ExcuteName => "tn.DisableNetworkTopology";
+		public override string ExcuteName() => "tn.DisableNetworkTopology";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Trace Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Trace Network Tools";
+		public override string ToolboxDisplayName() => "Trace Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : tn</para>
 		/// </summary>
-		public override string ToolboxAlise => "tn";
+		public override string ToolboxAlise() => "tn";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTraceNetwork, OutTraceNetwork };
+		public override object[] Parameters() => new object[] { InTraceNetwork, OutTraceNetwork };
 
 		/// <summary>
 		/// <para>Input Trace Network</para>

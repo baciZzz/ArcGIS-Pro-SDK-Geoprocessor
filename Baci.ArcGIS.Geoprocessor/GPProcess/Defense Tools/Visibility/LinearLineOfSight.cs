@@ -60,37 +60,37 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Display Name : Linear Line Of Sight</para>
 		/// </summary>
-		public override string DisplayName => "Linear Line Of Sight";
+		public override string DisplayName() => "Linear Line Of Sight";
 
 		/// <summary>
 		/// <para>Tool Name : LinearLineOfSight</para>
 		/// </summary>
-		public override string ToolName => "LinearLineOfSight";
+		public override string ToolName() => "LinearLineOfSight";
 
 		/// <summary>
 		/// <para>Tool Excute Name : defense.LinearLineOfSight</para>
 		/// </summary>
-		public override string ExcuteName => "defense.LinearLineOfSight";
+		public override string ExcuteName() => "defense.LinearLineOfSight";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Defense Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Defense Tools";
+		public override string ToolboxDisplayName() => "Defense Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : defense</para>
 		/// </summary>
-		public override string ToolboxAlise => "defense";
+		public override string ToolboxAlise() => "defense";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InObserverFeatures, InTargetFeatures, InSurface, OutLosFeatureClass, OutSightLineFeatureClass, OutObserverFeatureClass, OutTargetFeatureClass, InObstructionFeatures, ObserverHeightAboveSurface, TargetHeightAboveSurface, AddProfileAttachment };
+		public override object[] Parameters() => new object[] { InObserverFeatures, InTargetFeatures, InSurface, OutLosFeatureClass, OutSightLineFeatureClass, OutObserverFeatureClass, OutTargetFeatureClass, InObstructionFeatures, ObserverHeightAboveSurface, TargetHeightAboveSurface, AddProfileAttachment };
 
 		/// <summary>
 		/// <para>Observers</para>

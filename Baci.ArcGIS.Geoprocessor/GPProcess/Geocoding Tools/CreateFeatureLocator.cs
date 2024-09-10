@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Feature Locator</para>
 		/// </summary>
-		public override string DisplayName => "Create Feature Locator";
+		public override string DisplayName() => "Create Feature Locator";
 
 		/// <summary>
 		/// <para>Tool Name : CreateFeatureLocator</para>
 		/// </summary>
-		public override string ToolName => "CreateFeatureLocator";
+		public override string ToolName() => "CreateFeatureLocator";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geocoding.CreateFeatureLocator</para>
 		/// </summary>
-		public override string ExcuteName => "geocoding.CreateFeatureLocator";
+		public override string ExcuteName() => "geocoding.CreateFeatureLocator";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geocoding Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geocoding Tools";
+		public override string ToolboxDisplayName() => "Geocoding Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geocoding</para>
 		/// </summary>
-		public override string ToolboxAlise => "geocoding";
+		public override string ToolboxAlise() => "geocoding";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, SearchFields, OutputLocator, LocatorFields };
+		public override object[] Parameters() => new object[] { InFeatures, SearchFields, OutputLocator, LocatorFields };
 
 		/// <summary>
 		/// <para>Input Features</para>

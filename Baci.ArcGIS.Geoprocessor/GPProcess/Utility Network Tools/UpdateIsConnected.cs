@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Update Is Connected</para>
 		/// </summary>
-		public override string DisplayName => "Update Is Connected";
+		public override string DisplayName() => "Update Is Connected";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateIsConnected</para>
 		/// </summary>
-		public override string ToolName => "UpdateIsConnected";
+		public override string ToolName() => "UpdateIsConnected";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.UpdateIsConnected</para>
 		/// </summary>
-		public override string ExcuteName => "un.UpdateIsConnected";
+		public override string ExcuteName() => "un.UpdateIsConnected";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, OutUtilityNetwork };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, OutUtilityNetwork };
 
 		/// <summary>
 		/// <para>Utility Network</para>

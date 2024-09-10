@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Colorize LAS</para>
 		/// </summary>
-		public override string DisplayName => "Colorize LAS";
+		public override string DisplayName() => "Colorize LAS";
 
 		/// <summary>
 		/// <para>Tool Name : ColorizeLas</para>
 		/// </summary>
-		public override string ToolName => "ColorizeLas";
+		public override string ToolName() => "ColorizeLas";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.ColorizeLas</para>
 		/// </summary>
-		public override string ExcuteName => "3d.ColorizeLas";
+		public override string ExcuteName() => "3d.ColorizeLas";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, InImage, Bands, TargetFolder, NameSuffix, LasVersion, PointFormat, Compression, RearrangePoints, ComputeStats, OutLasDataset, OutputFolder };
+		public override object[] Parameters() => new object[] { InLasDataset, InImage, Bands, TargetFolder, NameSuffix, LasVersion, PointFormat, Compression, RearrangePoints, ComputeStats, OutLasDataset, OutputFolder };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>

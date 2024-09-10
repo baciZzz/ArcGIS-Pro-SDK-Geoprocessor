@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Process Air Traffic Service Routes</para>
 		/// </summary>
-		public override string DisplayName => "Process Air Traffic Service Routes";
+		public override string DisplayName() => "Process Air Traffic Service Routes";
 
 		/// <summary>
 		/// <para>Tool Name : ProcessAirTrafficServiceRoutes</para>
 		/// </summary>
-		public override string ToolName => "ProcessAirTrafficServiceRoutes";
+		public override string ToolName() => "ProcessAirTrafficServiceRoutes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.ProcessAirTrafficServiceRoutes</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.ProcessAirTrafficServiceRoutes";
+		public override string ExcuteName() => "aviation.ProcessAirTrafficServiceRoutes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRouteFeatures, TargetCartoRouteFeatures, AoiFeatures, PreferenceTable, Preference, UpdatedCartoRouteFeatures };
+		public override object[] Parameters() => new object[] { InRouteFeatures, TargetCartoRouteFeatures, AoiFeatures, PreferenceTable, Preference, UpdatedCartoRouteFeatures };
 
 		/// <summary>
 		/// <para>Input Route Features</para>

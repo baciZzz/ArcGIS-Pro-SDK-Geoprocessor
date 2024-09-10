@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Display Name : Exponential Smoothing Forecast</para>
 		/// </summary>
-		public override string DisplayName => "Exponential Smoothing Forecast";
+		public override string DisplayName() => "Exponential Smoothing Forecast";
 
 		/// <summary>
 		/// <para>Tool Name : ExponentialSmoothingForecast</para>
 		/// </summary>
-		public override string ToolName => "ExponentialSmoothingForecast";
+		public override string ToolName() => "ExponentialSmoothingForecast";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stpm.ExponentialSmoothingForecast</para>
 		/// </summary>
-		public override string ExcuteName => "stpm.ExponentialSmoothingForecast";
+		public override string ExcuteName() => "stpm.ExponentialSmoothingForecast";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Space Time Pattern Mining Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Space Time Pattern Mining Tools";
+		public override string ToolboxDisplayName() => "Space Time Pattern Mining Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stpm</para>
 		/// </summary>
-		public override string ToolboxAlise => "stpm";
+		public override string ToolboxAlise() => "stpm";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCube, AnalysisVariable, OutputFeatures, OutputCube, NumberOfTimeStepsToForecast, SeasonLength, NumberForValidation, OutlierOption, LevelOfConfidence, MaximumNumberOfOutliers };
+		public override object[] Parameters() => new object[] { InCube, AnalysisVariable, OutputFeatures, OutputCube, NumberOfTimeStepsToForecast, SeasonLength, NumberForValidation, OutlierOption, LevelOfConfidence, MaximumNumberOfOutliers };
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>

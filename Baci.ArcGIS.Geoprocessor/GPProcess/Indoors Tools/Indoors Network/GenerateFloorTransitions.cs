@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Floor Transitions</para>
 		/// </summary>
-		public override string DisplayName => "Generate Floor Transitions";
+		public override string DisplayName() => "Generate Floor Transitions";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateFloorTransitions</para>
 		/// </summary>
-		public override string ToolName => "GenerateFloorTransitions";
+		public override string ToolName() => "GenerateFloorTransitions";
 
 		/// <summary>
 		/// <para>Tool Excute Name : indoors.GenerateFloorTransitions</para>
 		/// </summary>
-		public override string ExcuteName => "indoors.GenerateFloorTransitions";
+		public override string ExcuteName() => "indoors.GenerateFloorTransitions";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Indoors Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Indoors Tools";
+		public override string ToolboxDisplayName() => "Indoors Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : indoors</para>
 		/// </summary>
-		public override string ToolboxAlise => "indoors";
+		public override string ToolboxAlise() => "indoors";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { FacilityFeatures, TransitionUnitFeatures, PathwayFeatures, TargetTransitions, ElevatorDelay, DeleteExistingTransitions, StairwayUnitExp, ElevatorUnitExp, UpdatedTransitions };
+		public override object[] Parameters() => new object[] { FacilityFeatures, TransitionUnitFeatures, PathwayFeatures, TargetTransitions, ElevatorDelay, DeleteExistingTransitions, StairwayUnitExp, ElevatorUnitExp, UpdatedTransitions };
 
 		/// <summary>
 		/// <para>Input Facility Features</para>

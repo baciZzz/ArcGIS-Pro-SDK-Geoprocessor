@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Find Cotravelers</para>
 		/// </summary>
-		public override string DisplayName => "Find Cotravelers";
+		public override string DisplayName() => "Find Cotravelers";
 
 		/// <summary>
 		/// <para>Tool Name : FindCotravelers</para>
 		/// </summary>
-		public override string ToolName => "FindCotravelers";
+		public override string ToolName() => "FindCotravelers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.FindCotravelers</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.FindCotravelers";
+		public override string ExcuteName() => "intelligence.FindCotravelers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, OutFeatureclass, IdField, SearchDistance, TimeDifference, InputType, SecondaryFeatures, SecondaryIdField, CreateSummaryTable, OutSummaryTable, IncludeMinCotravelingDuration, MinCotravelingDuration };
+		public override object[] Parameters() => new object[] { InputFeatures, OutFeatureclass, IdField, SearchDistance, TimeDifference, InputType, SecondaryFeatures, SecondaryIdField, CreateSummaryTable, OutSummaryTable, IncludeMinCotravelingDuration, MinCotravelingDuration };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Train Deep Learning Model</para>
 		/// </summary>
-		public override string DisplayName => "Train Deep Learning Model";
+		public override string DisplayName() => "Train Deep Learning Model";
 
 		/// <summary>
 		/// <para>Tool Name : TrainDeepLearningModel</para>
 		/// </summary>
-		public override string ToolName => "TrainDeepLearningModel";
+		public override string ToolName() => "TrainDeepLearningModel";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.TrainDeepLearningModel</para>
 		/// </summary>
-		public override string ExcuteName => "ia.TrainDeepLearningModel";
+		public override string ExcuteName() => "ia.TrainDeepLearningModel";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "gpuID", "parallelProcessingFactor", "processorType", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "gpuID", "parallelProcessingFactor", "processorType", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFolder, OutFolder, MaxEpochs, ModelType, BatchSize, Arguments, LearningRate, BackboneModel, PretrainedModel, ValidationPercentage, StopTraining, OutModelFile, Freeze };
+		public override object[] Parameters() => new object[] { InFolder, OutFolder, MaxEpochs, ModelType, BatchSize, Arguments, LearningRate, BackboneModel, PretrainedModel, ValidationPercentage, StopTraining, OutModelFile, Freeze };
 
 		/// <summary>
 		/// <para>Input Training Data</para>

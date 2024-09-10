@@ -1,4 +1,3 @@
-using ArcGIS.Core.CIM;
 using Baci.ArcGIS.Geoprocessor.Models.Enums;
 using System;
 using System.Collections.Generic;

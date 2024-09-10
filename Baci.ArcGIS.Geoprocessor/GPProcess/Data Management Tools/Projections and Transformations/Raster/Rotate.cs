@@ -55,37 +55,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Rotate</para>
 		/// </summary>
-		public override string DisplayName => "Rotate";
+		public override string DisplayName() => "Rotate";
 
 		/// <summary>
 		/// <para>Tool Name : Rotate</para>
 		/// </summary>
-		public override string ToolName => "Rotate";
+		public override string ToolName() => "Rotate";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Rotate</para>
 		/// </summary>
-		public override string ExcuteName => "management.Rotate";
+		public override string ExcuteName() => "management.Rotate";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, Angle, PivotPoint, ResamplingType, ClippingExtent };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, Angle, PivotPoint, ResamplingType, ClippingExtent };
 
 		/// <summary>
 		/// <para>Input Raster</para>

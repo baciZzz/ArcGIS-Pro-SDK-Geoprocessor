@@ -31,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Tool Display Name : Build Parcel Fabric</para>
 		/// </summary>
-		public override string DisplayName => "Build Parcel Fabric";
+		public override string DisplayName() => "Build Parcel Fabric";
 
 		/// <summary>
 		/// <para>Tool Name : BuildParcelFabric</para>
 		/// </summary>
-		public override string ToolName => "BuildParcelFabric";
+		public override string ToolName() => "BuildParcelFabric";
 
 		/// <summary>
 		/// <para>Tool Excute Name : parcel.BuildParcelFabric</para>
 		/// </summary>
-		public override string ExcuteName => "parcel.BuildParcelFabric";
+		public override string ExcuteName() => "parcel.BuildParcelFabric";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Parcel Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Parcel Tools";
+		public override string ToolboxDisplayName() => "Parcel Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : parcel</para>
 		/// </summary>
-		public override string ToolboxAlise => "parcel";
+		public override string ToolboxAlise() => "parcel";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InParcelFabric, Extent, UpdatedParcelFabric, RecordName };
+		public override object[] Parameters() => new object[] { InParcelFabric, Extent, UpdatedParcelFabric, RecordName };
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>

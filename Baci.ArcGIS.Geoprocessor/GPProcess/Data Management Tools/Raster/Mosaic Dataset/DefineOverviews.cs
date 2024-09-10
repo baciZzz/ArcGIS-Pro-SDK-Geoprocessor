@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Define Overviews</para>
 		/// </summary>
-		public override string DisplayName => "Define Overviews";
+		public override string DisplayName() => "Define Overviews";
 
 		/// <summary>
 		/// <para>Tool Name : DefineOverviews</para>
 		/// </summary>
-		public override string ToolName => "DefineOverviews";
+		public override string ToolName() => "DefineOverviews";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DefineOverviews</para>
 		/// </summary>
-		public override string ExcuteName => "management.DefineOverviews";
+		public override string ExcuteName() => "management.DefineOverviews";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "parallelProcessingFactor", "tileSize" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "parallelProcessingFactor", "tileSize" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, OverviewImageFolder, InTemplateDataset, Extent, PixelSize, NumberOfLevels, TileRows, TileCols, OverviewFactor, ForceOverviewTiles, ResamplingMethod, CompressionMethod, CompressionQuality, OutMosaicDataset };
+		public override object[] Parameters() => new object[] { InMosaicDataset, OverviewImageFolder, InTemplateDataset, Extent, PixelSize, NumberOfLevels, TileRows, TileCols, OverviewFactor, ForceOverviewTiles, ResamplingMethod, CompressionMethod, CompressionQuality, OutMosaicDataset };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

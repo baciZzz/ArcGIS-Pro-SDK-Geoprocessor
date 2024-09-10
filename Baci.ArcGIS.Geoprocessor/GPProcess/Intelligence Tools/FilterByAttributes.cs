@@ -34,37 +34,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Filter By Attributes</para>
 		/// </summary>
-		public override string DisplayName => "Filter By Attributes";
+		public override string DisplayName() => "Filter By Attributes";
 
 		/// <summary>
 		/// <para>Tool Name : FilterByAttributes</para>
 		/// </summary>
-		public override string ToolName => "FilterByAttributes";
+		public override string ToolName() => "FilterByAttributes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.FilterByAttributes</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.FilterByAttributes";
+		public override string ExcuteName() => "intelligence.FilterByAttributes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, InputSearchExpression, OutputIdList };
+		public override object[] Parameters() => new object[] { InputFeatures, InputSearchExpression, OutputIdList };
 
 		/// <summary>
 		/// <para>Input Features</para>

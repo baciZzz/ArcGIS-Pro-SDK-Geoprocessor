@@ -49,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Display Name : Time Series Clustering</para>
 		/// </summary>
-		public override string DisplayName => "Time Series Clustering";
+		public override string DisplayName() => "Time Series Clustering";
 
 		/// <summary>
 		/// <para>Tool Name : TimeSeriesClustering</para>
 		/// </summary>
-		public override string ToolName => "TimeSeriesClustering";
+		public override string ToolName() => "TimeSeriesClustering";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stpm.TimeSeriesClustering</para>
 		/// </summary>
-		public override string ExcuteName => "stpm.TimeSeriesClustering";
+		public override string ExcuteName() => "stpm.TimeSeriesClustering";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Space Time Pattern Mining Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Space Time Pattern Mining Tools";
+		public override string ToolboxDisplayName() => "Space Time Pattern Mining Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stpm</para>
 		/// </summary>
-		public override string ToolboxAlise => "stpm";
+		public override string ToolboxAlise() => "stpm";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "randomGenerator" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor", "randomGenerator" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCube, AnalysisVariable, OutputFeatures, CharacteristicOfInterest, ClusterCount, OutputTableForCharts, ShapeCharacteristicToIgnore, EnableTimeSeriesPopups };
+		public override object[] Parameters() => new object[] { InCube, AnalysisVariable, OutputFeatures, CharacteristicOfInterest, ClusterCount, OutputTableForCharts, ShapeCharacteristicToIgnore, EnableTimeSeriesPopups };
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>

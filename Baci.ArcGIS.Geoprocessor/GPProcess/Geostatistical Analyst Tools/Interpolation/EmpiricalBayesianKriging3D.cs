@@ -46,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Empirical Bayesian Kriging 3D</para>
 		/// </summary>
-		public override string DisplayName => "Empirical Bayesian Kriging 3D";
+		public override string DisplayName() => "Empirical Bayesian Kriging 3D";
 
 		/// <summary>
 		/// <para>Tool Name : EmpiricalBayesianKriging3D</para>
 		/// </summary>
-		public override string ToolName => "EmpiricalBayesianKriging3D";
+		public override string ToolName() => "EmpiricalBayesianKriging3D";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.EmpiricalBayesianKriging3D</para>
 		/// </summary>
-		public override string ExcuteName => "ga.EmpiricalBayesianKriging3D";
+		public override string ExcuteName() => "ga.EmpiricalBayesianKriging3D";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "coincidentPoints", "extent", "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "coincidentPoints", "extent", "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ElevationField, ValueField, OutGaLayer, ElevationUnits, MeasurementErrorField, SemivariogramModelType, TransformationType, SubsetSize, OverlapFactor, NumberSimulations, TrendRemoval, ElevInflationFactor, SearchNeighborhood, OutputElevation, OutputType, QuantileValue, ThresholdType, ProbabilityThreshold };
+		public override object[] Parameters() => new object[] { InFeatures, ElevationField, ValueField, OutGaLayer, ElevationUnits, MeasurementErrorField, SemivariogramModelType, TransformationType, SubsetSize, OverlapFactor, NumberSimulations, TrendRemoval, ElevInflationFactor, SearchNeighborhood, OutputElevation, OutputType, QuantileValue, ThresholdType, ProbabilityThreshold };
 
 		/// <summary>
 		/// <para>Input features</para>

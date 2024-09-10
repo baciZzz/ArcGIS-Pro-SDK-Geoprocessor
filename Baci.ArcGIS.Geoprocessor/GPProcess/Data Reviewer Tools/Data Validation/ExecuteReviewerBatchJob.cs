@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// <summary>
 		/// <para>Tool Display Name : Execute Reviewer Batch Job</para>
 		/// </summary>
-		public override string DisplayName => "Execute Reviewer Batch Job";
+		public override string DisplayName() => "Execute Reviewer Batch Job";
 
 		/// <summary>
 		/// <para>Tool Name : ExecuteReviewerBatchJob</para>
 		/// </summary>
-		public override string ToolName => "ExecuteReviewerBatchJob";
+		public override string ToolName() => "ExecuteReviewerBatchJob";
 
 		/// <summary>
 		/// <para>Tool Excute Name : Reviewer.ExecuteReviewerBatchJob</para>
 		/// </summary>
-		public override string ExcuteName => "Reviewer.ExecuteReviewerBatchJob";
+		public override string ExcuteName() => "Reviewer.ExecuteReviewerBatchJob";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Reviewer Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Reviewer Tools";
+		public override string ToolboxDisplayName() => "Data Reviewer Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : Reviewer</para>
 		/// </summary>
-		public override string ToolboxAlise => "Reviewer";
+		public override string ToolboxAlise() => "Reviewer";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ReviewerWorkspace, Session, BatchJobFile, ProductionWorkspace, AnalysisArea, ChangedFeatures, Tableview, ProductionWorkspaceversion };
+		public override object[] Parameters() => new object[] { ReviewerWorkspace, Session, BatchJobFile, ProductionWorkspace, AnalysisArea, ChangedFeatures, Tableview, ProductionWorkspaceversion };
 
 		/// <summary>
 		/// <para>Reviewer Workspace</para>

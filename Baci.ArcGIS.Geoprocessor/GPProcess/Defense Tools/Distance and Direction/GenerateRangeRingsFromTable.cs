@@ -53,37 +53,37 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Range Rings From Lookup Table</para>
 		/// </summary>
-		public override string DisplayName => "Generate Range Rings From Lookup Table";
+		public override string DisplayName() => "Generate Range Rings From Lookup Table";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateRangeRingsFromTable</para>
 		/// </summary>
-		public override string ToolName => "GenerateRangeRingsFromTable";
+		public override string ToolName() => "GenerateRangeRingsFromTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : defense.GenerateRangeRingsFromTable</para>
 		/// </summary>
-		public override string ExcuteName => "defense.GenerateRangeRingsFromTable";
+		public override string ExcuteName() => "defense.GenerateRangeRingsFromTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Defense Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Defense Tools";
+		public override string ToolboxDisplayName() => "Defense Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : defense</para>
 		/// </summary>
-		public override string ToolboxAlise => "defense";
+		public override string ToolboxAlise() => "defense";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InTable, OutFeatureClassRings, LookupName, RangeRingsType, OutFeatureClassRadials, NumberOfRadials, DistanceUnits, LookupNameField, MinRangeField, MaxRangeField, NumberOfRingsField, RingIntervalField };
+		public override object[] Parameters() => new object[] { InFeatures, InTable, OutFeatureClassRings, LookupName, RangeRingsType, OutFeatureClassRadials, NumberOfRadials, DistanceUnits, LookupNameField, MinRangeField, MaxRangeField, NumberOfRingsField, RingIntervalField };
 
 		/// <summary>
 		/// <para>Input Features (Center Points)</para>

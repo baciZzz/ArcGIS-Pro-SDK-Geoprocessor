@@ -49,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Display Name : Geocode Locations From Table</para>
 		/// </summary>
-		public override string DisplayName => "Geocode Locations From Table";
+		public override string DisplayName() => "Geocode Locations From Table";
 
 		/// <summary>
 		/// <para>Tool Name : GeocodeLocationsFromTable</para>
 		/// </summary>
-		public override string ToolName => "GeocodeLocationsFromTable";
+		public override string ToolName() => "GeocodeLocationsFromTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geocoding.GeocodeLocationsFromTable</para>
 		/// </summary>
-		public override string ExcuteName => "geocoding.GeocodeLocationsFromTable";
+		public override string ExcuteName() => "geocoding.GeocodeLocationsFromTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geocoding Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geocoding Tools";
+		public override string ToolboxDisplayName() => "Geocoding Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geocoding</para>
 		/// </summary>
-		public override string ToolboxAlise => "geocoding";
+		public override string ToolboxAlise() => "geocoding";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, InAddressLocator, AddressFields, OutputName, Country, LocationType, Category, OutputLayer, OutputFields };
+		public override object[] Parameters() => new object[] { InTable, InAddressLocator, AddressFields, OutputName, Country, LocationType, Category, OutputLayer, OutputFields };
 
 		/// <summary>
 		/// <para>Input Table</para>

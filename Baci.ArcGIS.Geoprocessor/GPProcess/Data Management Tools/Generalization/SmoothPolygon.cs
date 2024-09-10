@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Smooth Polygon</para>
 		/// </summary>
-		public override string DisplayName => "Smooth Polygon";
+		public override string DisplayName() => "Smooth Polygon";
 
 		/// <summary>
 		/// <para>Tool Name : SmoothPolygon</para>
 		/// </summary>
-		public override string ToolName => "SmoothPolygon";
+		public override string ToolName() => "SmoothPolygon";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SmoothPolygon</para>
 		/// </summary>
-		public override string ExcuteName => "management.SmoothPolygon";
+		public override string ExcuteName() => "management.SmoothPolygon";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Algorithm, Tolerance, EndpointOption, ErrorOption, InBarriers };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, Algorithm, Tolerance, EndpointOption, ErrorOption, InBarriers };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -48,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Reconstruct Tracks</para>
 		/// </summary>
-		public override string DisplayName => "Reconstruct Tracks";
+		public override string DisplayName() => "Reconstruct Tracks";
 
 		/// <summary>
 		/// <para>Tool Name : ReconstructTracks</para>
 		/// </summary>
-		public override string ToolName => "ReconstructTracks";
+		public override string ToolName() => "ReconstructTracks";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.ReconstructTracks</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.ReconstructTracks";
+		public override string ExcuteName() => "gapro.ReconstructTracks";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutFeatureClass, TrackFields, Method, BufferType, BufferField, BufferExpression, TimeSplit, DistanceSplit, TimeBoundarySplit, TimeBoundaryReference, SummaryFields, SplitExpression, SplitType };
+		public override object[] Parameters() => new object[] { InputLayer, OutFeatureClass, TrackFields, Method, BufferType, BufferField, BufferExpression, TimeSplit, DistanceSplit, TimeBoundarySplit, TimeBoundaryReference, SummaryFields, SplitExpression, SplitType };
 
 		/// <summary>
 		/// <para>Input Layer</para>

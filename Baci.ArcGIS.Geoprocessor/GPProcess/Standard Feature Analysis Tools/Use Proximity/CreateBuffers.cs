@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Buffers</para>
 		/// </summary>
-		public override string DisplayName => "Create Buffers";
+		public override string DisplayName() => "Create Buffers";
 
 		/// <summary>
 		/// <para>Tool Name : CreateBuffers</para>
 		/// </summary>
-		public override string ToolName => "CreateBuffers";
+		public override string ToolName() => "CreateBuffers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sfa.CreateBuffers</para>
 		/// </summary>
-		public override string ExcuteName => "sfa.CreateBuffers";
+		public override string ExcuteName() => "sfa.CreateBuffers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Standard Feature Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Standard Feature Analysis Tools";
+		public override string ToolboxDisplayName() => "Standard Feature Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sfa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sfa";
+		public override string ToolboxAlise() => "sfa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent" };
+		public override string[] ValidEnvironments() => new string[] { "extent" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputlayer, Outputname, Distances, Field, Units, Dissolvetype, Ringtype, Sidetype, Endtype, Output };
+		public override object[] Parameters() => new object[] { Inputlayer, Outputname, Distances, Field, Units, Dissolvetype, Ringtype, Sidetype, Endtype, Output };
 
 		/// <summary>
 		/// <para>Input Layer</para>

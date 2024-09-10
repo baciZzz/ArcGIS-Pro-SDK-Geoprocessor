@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Solar Radiation Graphics</para>
 		/// </summary>
-		public override string DisplayName => "Solar Radiation Graphics";
+		public override string DisplayName() => "Solar Radiation Graphics";
 
 		/// <summary>
 		/// <para>Tool Name : SolarRadiationGraphics</para>
 		/// </summary>
-		public override string ToolName => "SolarRadiationGraphics";
+		public override string ToolName() => "SolarRadiationGraphics";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.SolarRadiationGraphics</para>
 		/// </summary>
-		public override string ExcuteName => "sa.SolarRadiationGraphics";
+		public override string ExcuteName() => "sa.SolarRadiationGraphics";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurfaceRaster, OutViewshedRaster, InPointsFeatureOrTable, SkySize, HeightOffset, CalculationDirections, Latitude, TimeConfiguration, DayInterval, HourInterval, OutSunmapRaster, ZenithDivisions, AzimuthDivisions, OutSkymapRaster };
+		public override object[] Parameters() => new object[] { InSurfaceRaster, OutViewshedRaster, InPointsFeatureOrTable, SkySize, HeightOffset, CalculationDirections, Latitude, TimeConfiguration, DayInterval, HourInterval, OutSunmapRaster, ZenithDivisions, AzimuthDivisions, OutSkymapRaster };
 
 		/// <summary>
 		/// <para>Input raster</para>

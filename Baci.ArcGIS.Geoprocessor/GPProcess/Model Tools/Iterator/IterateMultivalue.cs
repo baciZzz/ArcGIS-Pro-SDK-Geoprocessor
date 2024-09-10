@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : Iterate Multivalue</para>
 		/// </summary>
-		public override string DisplayName => "Iterate Multivalue";
+		public override string DisplayName() => "Iterate Multivalue";
 
 		/// <summary>
 		/// <para>Tool Name : IterateMultivalue</para>
 		/// </summary>
-		public override string ToolName => "IterateMultivalue";
+		public override string ToolName() => "IterateMultivalue";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.IterateMultivalue</para>
 		/// </summary>
-		public override string ExcuteName => "mb.IterateMultivalue";
+		public override string ExcuteName() => "mb.IterateMultivalue";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InValues, Value };
+		public override object[] Parameters() => new object[] { InValues, Value };
 
 		/// <summary>
 		/// <para>Input Values</para>

@@ -41,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Points Solar Radiation</para>
 		/// </summary>
-		public override string DisplayName => "Points Solar Radiation";
+		public override string DisplayName() => "Points Solar Radiation";
 
 		/// <summary>
 		/// <para>Tool Name : PointsSolarRadiation</para>
 		/// </summary>
-		public override string ToolName => "PointsSolarRadiation";
+		public override string ToolName() => "PointsSolarRadiation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.PointsSolarRadiation</para>
 		/// </summary>
-		public override string ExcuteName => "sa.PointsSolarRadiation";
+		public override string ExcuteName() => "sa.PointsSolarRadiation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "maintainSpatialIndex", "mask", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "maintainSpatialIndex", "mask", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurfaceRaster, InPointsFeatureOrTable, OutGlobalRadiationFeatures, HeightOffset, Latitude, SkySize, TimeConfiguration, DayInterval, HourInterval, EachInterval, ZFactor, SlopeAspectInputType, CalculationDirections, ZenithDivisions, AzimuthDivisions, DiffuseModelType, DiffuseProportion, Transmittivity, OutDirectRadiationFeatures, OutDiffuseRadiationFeatures, OutDirectDurationFeatures };
+		public override object[] Parameters() => new object[] { InSurfaceRaster, InPointsFeatureOrTable, OutGlobalRadiationFeatures, HeightOffset, Latitude, SkySize, TimeConfiguration, DayInterval, HourInterval, EachInterval, ZFactor, SlopeAspectInputType, CalculationDirections, ZenithDivisions, AzimuthDivisions, DiffuseModelType, DiffuseProportion, Transmittivity, OutDirectRadiationFeatures, OutDiffuseRadiationFeatures, OutDirectDurationFeatures };
 
 		/// <summary>
 		/// <para>Input raster</para>

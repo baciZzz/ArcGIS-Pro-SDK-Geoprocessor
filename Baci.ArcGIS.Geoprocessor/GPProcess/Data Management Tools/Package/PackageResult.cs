@@ -37,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Package Result</para>
 		/// </summary>
-		public override string DisplayName => "Package Result";
+		public override string DisplayName() => "Package Result";
 
 		/// <summary>
 		/// <para>Tool Name : PackageResult</para>
 		/// </summary>
-		public override string ToolName => "PackageResult";
+		public override string ToolName() => "PackageResult";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.PackageResult</para>
 		/// </summary>
-		public override string ExcuteName => "management.PackageResult";
+		public override string ExcuteName() => "management.PackageResult";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InResult, OutputFile, ConvertData, ConvertArcsdeData, Extent, ApplyExtentToArcsde, SchemaOnly, Arcgisruntime, AdditionalFiles, Summary, Tags, Version, SelectRelatedRows };
+		public override object[] Parameters() => new object[] { InResult, OutputFile, ConvertData, ConvertArcsdeData, Extent, ApplyExtentToArcsde, SchemaOnly, Arcgisruntime, AdditionalFiles, Summary, Tags, Version, SelectRelatedRows };
 
 		/// <summary>
 		/// <para>Result</para>

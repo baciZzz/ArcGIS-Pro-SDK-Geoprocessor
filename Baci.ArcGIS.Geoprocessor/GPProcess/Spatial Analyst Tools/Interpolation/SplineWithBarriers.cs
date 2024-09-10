@@ -42,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Spline with Barriers</para>
 		/// </summary>
-		public override string DisplayName => "Spline with Barriers";
+		public override string DisplayName() => "Spline with Barriers";
 
 		/// <summary>
 		/// <para>Tool Name : SplineWithBarriers</para>
 		/// </summary>
-		public override string ToolName => "SplineWithBarriers";
+		public override string ToolName() => "SplineWithBarriers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.SplineWithBarriers</para>
 		/// </summary>
-		public override string ExcuteName => "sa.SplineWithBarriers";
+		public override string ExcuteName() => "sa.SplineWithBarriers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputPointFeatures, ZValueField, InputBarrierFeatures, OutputCellSize, OutputRaster, SmoothingFactor };
+		public override object[] Parameters() => new object[] { InputPointFeatures, ZValueField, InputBarrierFeatures, OutputCellSize, OutputRaster, SmoothingFactor };
 
 		/// <summary>
 		/// <para>Input point features</para>

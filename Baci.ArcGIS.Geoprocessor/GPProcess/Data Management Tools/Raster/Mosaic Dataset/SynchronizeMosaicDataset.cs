@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Synchronize Mosaic Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Synchronize Mosaic Dataset";
+		public override string DisplayName() => "Synchronize Mosaic Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : SynchronizeMosaicDataset</para>
 		/// </summary>
-		public override string ToolName => "SynchronizeMosaicDataset";
+		public override string ToolName() => "SynchronizeMosaicDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SynchronizeMosaicDataset</para>
 		/// </summary>
-		public override string ExcuteName => "management.SynchronizeMosaicDataset";
+		public override string ExcuteName() => "management.SynchronizeMosaicDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "rasterStatistics" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor", "rasterStatistics" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause, NewItems, SyncOnlyStale, UpdateCellsizeRanges, UpdateBoundary, UpdateOverviews, BuildPyramids, CalculateStatistics, BuildThumbnails, BuildItemCache, RebuildRaster, UpdateFields, FieldsToUpdate, ExistingItems, BrokenItems, SkipExistingItems, RefreshAggregateInfo, EstimateStatistics, OutMosaicDataset };
+		public override object[] Parameters() => new object[] { InMosaicDataset, WhereClause, NewItems, SyncOnlyStale, UpdateCellsizeRanges, UpdateBoundary, UpdateOverviews, BuildPyramids, CalculateStatistics, BuildThumbnails, BuildItemCache, RebuildRaster, UpdateFields, FieldsToUpdate, ExistingItems, BrokenItems, SkipExistingItems, RefreshAggregateInfo, EstimateStatistics, OutMosaicDataset };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

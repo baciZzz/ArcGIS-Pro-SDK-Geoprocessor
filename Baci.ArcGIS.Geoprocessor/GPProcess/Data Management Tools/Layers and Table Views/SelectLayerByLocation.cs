@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Select Layer By Location</para>
 		/// </summary>
-		public override string DisplayName => "Select Layer By Location";
+		public override string DisplayName() => "Select Layer By Location";
 
 		/// <summary>
 		/// <para>Tool Name : SelectLayerByLocation</para>
 		/// </summary>
-		public override string ToolName => "SelectLayerByLocation";
+		public override string ToolName() => "SelectLayerByLocation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SelectLayerByLocation</para>
 		/// </summary>
-		public override string ExcuteName => "management.SelectLayerByLocation";
+		public override string ExcuteName() => "management.SelectLayerByLocation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayer, OverlapType, SelectFeatures, SearchDistance, SelectionType, OutLayerOrView, InvertSpatialRelationship, OutLayersOrViews, Count };
+		public override object[] Parameters() => new object[] { InLayer, OverlapType, SelectFeatures, SearchDistance, SelectionType, OutLayerOrView, InvertSpatialRelationship, OutLayersOrViews, Count };
 
 		/// <summary>
 		/// <para>Input Features</para>

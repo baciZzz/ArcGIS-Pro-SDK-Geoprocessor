@@ -48,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Enterprise Geodatabase</para>
 		/// </summary>
-		public override string DisplayName => "Create Enterprise Geodatabase";
+		public override string DisplayName() => "Create Enterprise Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : CreateEnterpriseGeodatabase</para>
 		/// </summary>
-		public override string ToolName => "CreateEnterpriseGeodatabase";
+		public override string ToolName() => "CreateEnterpriseGeodatabase";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateEnterpriseGeodatabase</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateEnterpriseGeodatabase";
+		public override string ExcuteName() => "management.CreateEnterpriseGeodatabase";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { DatabasePlatform, InstanceName, DatabaseName, AccountAuthentication, DatabaseAdmin, DatabaseAdminPassword, SdeSchema, GdbAdminName, GdbAdminPassword, TablespaceName, AuthorizationFile, OutResult };
+		public override object[] Parameters() => new object[] { DatabasePlatform, InstanceName, DatabaseName, AccountAuthentication, DatabaseAdmin, DatabaseAdminPassword, SdeSchema, GdbAdminName, GdbAdminPassword, TablespaceName, AuthorizationFile, OutResult };
 
 		/// <summary>
 		/// <para>Database Platform</para>

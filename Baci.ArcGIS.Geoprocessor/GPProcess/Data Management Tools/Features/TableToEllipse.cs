@@ -67,37 +67,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Table To Ellipse</para>
 		/// </summary>
-		public override string DisplayName => "Table To Ellipse";
+		public override string DisplayName() => "Table To Ellipse";
 
 		/// <summary>
 		/// <para>Tool Name : TableToEllipse</para>
 		/// </summary>
-		public override string ToolName => "TableToEllipse";
+		public override string ToolName() => "TableToEllipse";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.TableToEllipse</para>
 		/// </summary>
-		public override string ExcuteName => "management.TableToEllipse";
+		public override string ExcuteName() => "management.TableToEllipse";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutFeatureclass, XField, YField, MajorField, MinorField, DistanceUnits, AzimuthField, AzimuthUnits, IdField, SpatialReference, Attributes };
+		public override object[] Parameters() => new object[] { InTable, OutFeatureclass, XField, YField, MajorField, MinorField, DistanceUnits, AzimuthField, AzimuthUnits, IdField, SpatialReference, Attributes };
 
 		/// <summary>
 		/// <para>Input Table</para>

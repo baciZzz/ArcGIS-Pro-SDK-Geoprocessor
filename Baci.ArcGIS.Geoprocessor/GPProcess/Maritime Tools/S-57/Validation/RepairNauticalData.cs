@@ -39,37 +39,37 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Display Name : Repair Nautical Data</para>
 		/// </summary>
-		public override string DisplayName => "Repair Nautical Data";
+		public override string DisplayName() => "Repair Nautical Data";
 
 		/// <summary>
 		/// <para>Tool Name : RepairNauticalData</para>
 		/// </summary>
-		public override string ToolName => "RepairNauticalData";
+		public override string ToolName() => "RepairNauticalData";
 
 		/// <summary>
 		/// <para>Tool Excute Name : maritime.RepairNauticalData</para>
 		/// </summary>
-		public override string ExcuteName => "maritime.RepairNauticalData";
+		public override string ExcuteName() => "maritime.RepairNauticalData";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Maritime Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Maritime Tools";
+		public override string ToolboxDisplayName() => "Maritime Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : maritime</para>
 		/// </summary>
-		public override string ToolboxAlise => "maritime";
+		public override string ToolboxAlise() => "maritime";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, RepairOperations, UpdatedWorkspace };
+		public override object[] Parameters() => new object[] { InWorkspace, RepairOperations, UpdatedWorkspace };
 
 		/// <summary>
 		/// <para>Input Workspace</para>

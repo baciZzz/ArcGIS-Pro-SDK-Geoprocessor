@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Point Cloud Scene Layer Package</para>
 		/// </summary>
-		public override string DisplayName => "Create Point Cloud Scene Layer Package";
+		public override string DisplayName() => "Create Point Cloud Scene Layer Package";
 
 		/// <summary>
 		/// <para>Tool Name : CreatePointCloudSceneLayerPackage</para>
 		/// </summary>
-		public override string ToolName => "CreatePointCloudSceneLayerPackage";
+		public override string ToolName() => "CreatePointCloudSceneLayerPackage";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreatePointCloudSceneLayerPackage</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreatePointCloudSceneLayerPackage";
+		public override string ExcuteName() => "management.CreatePointCloudSceneLayerPackage";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutSlpk, OutCoorSystem, TransformMethod, Attributes, PointSizeM, XyMaxErrorM, ZMaxErrorM, InCoorSystem, SceneLayerVersion };
+		public override object[] Parameters() => new object[] { InDataset, OutSlpk, OutCoorSystem, TransformMethod, Attributes, PointSizeM, XyMaxErrorM, ZMaxErrorM, InCoorSystem, SceneLayerVersion };
 
 		/// <summary>
 		/// <para>Input Dataset</para>

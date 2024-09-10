@@ -49,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Detect Change Using Change Analysis Raster</para>
 		/// </summary>
-		public override string DisplayName => "Detect Change Using Change Analysis Raster";
+		public override string DisplayName() => "Detect Change Using Change Analysis Raster";
 
 		/// <summary>
 		/// <para>Tool Name : DetectChangeUsingChangeAnalysisRaster</para>
 		/// </summary>
-		public override string ToolName => "DetectChangeUsingChangeAnalysisRaster";
+		public override string ToolName() => "DetectChangeUsingChangeAnalysisRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.DetectChangeUsingChangeAnalysisRaster</para>
 		/// </summary>
-		public override string ExcuteName => "ia.DetectChangeUsingChangeAnalysisRaster";
+		public override string ExcuteName() => "ia.DetectChangeUsingChangeAnalysisRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InChangeAnalysisRaster, OutRaster, ChangeType, MaxNumberChanges, SegmentDate, ChangeDirection, FilterByYear, MinYear, MaxYear, FilterByDuration, MinDuration, MaxDuration, FilterByMagnitude, MinMagnitude, MaxMagnitude, FilterByStartValue, MinStartValue, MaxStartValue, FilterByEndValue, MinEndValue, MaxEndValue };
+		public override object[] Parameters() => new object[] { InChangeAnalysisRaster, OutRaster, ChangeType, MaxNumberChanges, SegmentDate, ChangeDirection, FilterByYear, MinYear, MaxYear, FilterByDuration, MinDuration, MaxDuration, FilterByMagnitude, MinMagnitude, MaxMagnitude, FilterByStartValue, MinStartValue, MaxStartValue, FilterByEndValue, MinEndValue, MaxEndValue };
 
 		/// <summary>
 		/// <para>Input Change Analysis Raster</para>

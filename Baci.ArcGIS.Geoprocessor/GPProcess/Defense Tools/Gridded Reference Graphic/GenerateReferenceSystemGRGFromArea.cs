@@ -55,37 +55,37 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Reference System Grid From Area</para>
 		/// </summary>
-		public override string DisplayName => "Generate Reference System Grid From Area";
+		public override string DisplayName() => "Generate Reference System Grid From Area";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateReferenceSystemGRGFromArea</para>
 		/// </summary>
-		public override string ToolName => "GenerateReferenceSystemGRGFromArea";
+		public override string ToolName() => "GenerateReferenceSystemGRGFromArea";
 
 		/// <summary>
 		/// <para>Tool Excute Name : defense.GenerateReferenceSystemGRGFromArea</para>
 		/// </summary>
-		public override string ExcuteName => "defense.GenerateReferenceSystemGRGFromArea";
+		public override string ExcuteName() => "defense.GenerateReferenceSystemGRGFromArea";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Defense Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Defense Tools";
+		public override string ToolboxDisplayName() => "Defense Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : defense</para>
 		/// </summary>
-		public override string ToolboxAlise => "defense";
+		public override string ToolboxAlise() => "defense";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputFeatureClass, GridReferenceSystem, GridSquareSize, LargeGridHandling };
+		public override object[] Parameters() => new object[] { InFeatures, OutputFeatureClass, GridReferenceSystem, GridSquareSize, LargeGridHandling };
 
 		/// <summary>
 		/// <para>Input Feature</para>

@@ -73,37 +73,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Create LRS Event</para>
 		/// </summary>
-		public override string DisplayName => "Create LRS Event";
+		public override string DisplayName() => "Create LRS Event";
 
 		/// <summary>
 		/// <para>Tool Name : CreateLRSEvent</para>
 		/// </summary>
-		public override string ToolName => "CreateLRSEvent";
+		public override string ToolName() => "CreateLRSEvent";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.CreateLRSEvent</para>
 		/// </summary>
-		public override string ExcuteName => "locref.CreateLRSEvent";
+		public override string ExcuteName() => "locref.CreateLRSEvent";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ParentNetwork, EventName, GeometryType, EventIdField, RouteIdField, FromDateField, ToDateField, LocErrorField, MeasureField, ToMeasureField, EventSpansRoutes, ToRouteIdField, StoreRouteName, RouteNameField, ToRouteNameField, OutFeatureClass };
+		public override object[] Parameters() => new object[] { ParentNetwork, EventName, GeometryType, EventIdField, RouteIdField, FromDateField, ToDateField, LocErrorField, MeasureField, ToMeasureField, EventSpansRoutes, ToRouteIdField, StoreRouteName, RouteNameField, ToRouteNameField, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Parent LRS Network</para>

@@ -44,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Train Random Trees Classifier</para>
 		/// </summary>
-		public override string DisplayName => "Train Random Trees Classifier";
+		public override string DisplayName() => "Train Random Trees Classifier";
 
 		/// <summary>
 		/// <para>Tool Name : TrainRandomTreesClassifier</para>
 		/// </summary>
-		public override string ToolName => "TrainRandomTreesClassifier";
+		public override string ToolName() => "TrainRandomTreesClassifier";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.TrainRandomTreesClassifier</para>
 		/// </summary>
-		public override string ExcuteName => "ia.TrainRandomTreesClassifier";
+		public override string ExcuteName() => "ia.TrainRandomTreesClassifier";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, InTrainingFeatures, OutClassifierDefinition, InAdditionalRaster, MaxNumTrees, MaxTreeDepth, MaxSamplesPerClass, UsedAttributes, DimensionValueField };
+		public override object[] Parameters() => new object[] { InRaster, InTrainingFeatures, OutClassifierDefinition, InAdditionalRaster, MaxNumTrees, MaxTreeDepth, MaxSamplesPerClass, UsedAttributes, DimensionValueField };
 
 		/// <summary>
 		/// <para>Input Raster</para>

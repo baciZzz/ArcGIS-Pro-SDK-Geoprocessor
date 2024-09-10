@@ -55,37 +55,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Import Mosaic Dataset Geometry</para>
 		/// </summary>
-		public override string DisplayName => "Import Mosaic Dataset Geometry";
+		public override string DisplayName() => "Import Mosaic Dataset Geometry";
 
 		/// <summary>
 		/// <para>Tool Name : ImportMosaicDatasetGeometry</para>
 		/// </summary>
-		public override string ToolName => "ImportMosaicDatasetGeometry";
+		public override string ToolName() => "ImportMosaicDatasetGeometry";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ImportMosaicDatasetGeometry</para>
 		/// </summary>
-		public override string ExcuteName => "management.ImportMosaicDatasetGeometry";
+		public override string ExcuteName() => "management.ImportMosaicDatasetGeometry";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, TargetFeatureclassType, TargetJoinField, InputFeatureclass, InputJoinField, OutMosaicDataset };
+		public override object[] Parameters() => new object[] { InMosaicDataset, TargetFeatureclassType, TargetJoinField, InputFeatureclass, InputJoinField, OutMosaicDataset };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

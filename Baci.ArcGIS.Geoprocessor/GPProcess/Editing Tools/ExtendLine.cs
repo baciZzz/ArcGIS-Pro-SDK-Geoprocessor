@@ -32,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Display Name : Extend Line</para>
 		/// </summary>
-		public override string DisplayName => "Extend Line";
+		public override string DisplayName() => "Extend Line";
 
 		/// <summary>
 		/// <para>Tool Name : ExtendLine</para>
 		/// </summary>
-		public override string ToolName => "ExtendLine";
+		public override string ToolName() => "ExtendLine";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.ExtendLine</para>
 		/// </summary>
-		public override string ExcuteName => "edit.ExtendLine";
+		public override string ExcuteName() => "edit.ExtendLine";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Editing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Editing Tools";
+		public override string ToolboxDisplayName() => "Editing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : edit</para>
 		/// </summary>
-		public override string ToolboxAlise => "edit";
+		public override string ToolboxAlise() => "edit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Length, ExtendTo, OutFeatureClass };
+		public override object[] Parameters() => new object[] { InFeatures, Length, ExtendTo, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Input Features</para>

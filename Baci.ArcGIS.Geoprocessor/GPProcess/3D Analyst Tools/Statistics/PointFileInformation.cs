@@ -46,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Point File Information</para>
 		/// </summary>
-		public override string DisplayName => "Point File Information";
+		public override string DisplayName() => "Point File Information";
 
 		/// <summary>
 		/// <para>Tool Name : PointFileInformation</para>
 		/// </summary>
-		public override string ToolName => "PointFileInformation";
+		public override string ToolName() => "PointFileInformation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.PointFileInformation</para>
 		/// </summary>
-		public override string ExcuteName => "3d.PointFileInformation";
+		public override string ExcuteName() => "3d.PointFileInformation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Input, OutFeatureClass, InFileType, FileSuffix, InputCoordinateSystem, FolderRecursion, ExtrudeGeometry, DecimalSeparator, SummarizeByClassCode, ImproveLasPointSpacing, MinPointSpacing };
+		public override object[] Parameters() => new object[] { Input, OutFeatureClass, InFileType, FileSuffix, InputCoordinateSystem, FolderRecursion, ExtrudeGeometry, DecimalSeparator, SummarizeByClassCode, ImproveLasPointSpacing, MinPointSpacing };
 
 		/// <summary>
 		/// <para>Point Data</para>

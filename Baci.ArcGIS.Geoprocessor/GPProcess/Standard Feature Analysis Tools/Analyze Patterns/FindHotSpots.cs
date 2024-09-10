@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Find Hot Spots</para>
 		/// </summary>
-		public override string DisplayName => "Find Hot Spots";
+		public override string DisplayName() => "Find Hot Spots";
 
 		/// <summary>
 		/// <para>Tool Name : FindHotSpots</para>
 		/// </summary>
-		public override string ToolName => "FindHotSpots";
+		public override string ToolName() => "FindHotSpots";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sfa.FindHotSpots</para>
 		/// </summary>
-		public override string ExcuteName => "sfa.FindHotSpots";
+		public override string ExcuteName() => "sfa.FindHotSpots";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Standard Feature Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Standard Feature Analysis Tools";
+		public override string ToolboxDisplayName() => "Standard Feature Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sfa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sfa";
+		public override string ToolboxAlise() => "sfa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent" };
+		public override string[] ValidEnvironments() => new string[] { "extent" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Analysislayer, Outputname, Analysisfield, Dividebyfield, Boundingpolygonlayer, Aggregatepolygonlayer, Outputlayer };
+		public override object[] Parameters() => new object[] { Analysislayer, Outputname, Analysisfield, Dividebyfield, Boundingpolygonlayer, Aggregatepolygonlayer, Outputlayer };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Tool Display Name : Profile</para>
 		/// </summary>
-		public override string DisplayName => "Profile";
+		public override string DisplayName() => "Profile";
 
 		/// <summary>
 		/// <para>Tool Name : Profile</para>
 		/// </summary>
-		public override string ToolName => "Profile";
+		public override string ToolName() => "Profile";
 
 		/// <summary>
 		/// <para>Tool Excute Name : agolservices.Profile</para>
 		/// </summary>
-		public override string ExcuteName => "agolservices.Profile";
+		public override string ExcuteName() => "agolservices.Profile";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Ready To Use Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Ready To Use Tools";
+		public override string ToolboxDisplayName() => "Ready To Use Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : agolservices</para>
 		/// </summary>
-		public override string ToolboxAlise => "agolservices";
+		public override string ToolboxAlise() => "agolservices";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputlinefeatures, Profileidfield, Demresolution, Maximumsampledistance, Maximumsampledistanceunits, Outputprofile };
+		public override object[] Parameters() => new object[] { Inputlinefeatures, Profileidfield, Demresolution, Maximumsampledistance, Maximumsampledistanceunits, Outputprofile };
 
 		/// <summary>
 		/// <para>Input Line Features</para>

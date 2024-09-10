@@ -37,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Dendrogram</para>
 		/// </summary>
-		public override string DisplayName => "Dendrogram";
+		public override string DisplayName() => "Dendrogram";
 
 		/// <summary>
 		/// <para>Tool Name : Dendrogram</para>
 		/// </summary>
-		public override string ToolName => "Dendrogram";
+		public override string ToolName() => "Dendrogram";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Dendrogram</para>
 		/// </summary>
-		public override string ExcuteName => "sa.Dendrogram";
+		public override string ExcuteName() => "sa.Dendrogram";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSignatureFile, OutDendrogramFile, DistanceCalculation, LineWidth };
+		public override object[] Parameters() => new object[] { InSignatureFile, OutDendrogramFile, DistanceCalculation, LineWidth };
 
 		/// <summary>
 		/// <para>Input signature file</para>

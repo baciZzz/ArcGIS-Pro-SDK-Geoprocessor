@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Frequency</para>
 		/// </summary>
-		public override string DisplayName => "Frequency";
+		public override string DisplayName() => "Frequency";
 
 		/// <summary>
 		/// <para>Tool Name : Frequency</para>
 		/// </summary>
-		public override string ToolName => "Frequency";
+		public override string ToolName() => "Frequency";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.Frequency</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.Frequency";
+		public override string ExcuteName() => "analysis.Frequency";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutTable, FrequencyFields, SummaryFields };
+		public override object[] Parameters() => new object[] { InTable, OutTable, FrequencyFields, SummaryFields };
 
 		/// <summary>
 		/// <para>Input Table</para>

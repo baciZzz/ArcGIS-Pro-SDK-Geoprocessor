@@ -42,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Euclidean Direction</para>
 		/// </summary>
-		public override string DisplayName => "Euclidean Direction";
+		public override string DisplayName() => "Euclidean Direction";
 
 		/// <summary>
 		/// <para>Tool Name : EucDirection</para>
 		/// </summary>
-		public override string ToolName => "EucDirection";
+		public override string ToolName() => "EucDirection";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.EucDirection</para>
 		/// </summary>
-		public override string ExcuteName => "sa.EucDirection";
+		public override string ExcuteName() => "sa.EucDirection";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSourceData, OutDirectionRaster, MaximumDistance, CellSize, OutDistanceRaster, DistanceMethod, InBarrierData, OutBackDirectionRaster };
+		public override object[] Parameters() => new object[] { InSourceData, OutDirectionRaster, MaximumDistance, CellSize, OutDistanceRaster, DistanceMethod, InBarrierData, OutBackDirectionRaster };
 
 		/// <summary>
 		/// <para>Input raster or feature source data</para>

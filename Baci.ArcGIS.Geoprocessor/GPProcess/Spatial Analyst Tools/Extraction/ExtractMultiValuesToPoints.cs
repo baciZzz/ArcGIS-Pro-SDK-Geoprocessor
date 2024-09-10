@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Extract Multi Values to Points</para>
 		/// </summary>
-		public override string DisplayName => "Extract Multi Values to Points";
+		public override string DisplayName() => "Extract Multi Values to Points";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractMultiValuesToPoints</para>
 		/// </summary>
-		public override string ToolName => "ExtractMultiValuesToPoints";
+		public override string ToolName() => "ExtractMultiValuesToPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.ExtractMultiValuesToPoints</para>
 		/// </summary>
-		public override string ExcuteName => "sa.ExtractMultiValuesToPoints";
+		public override string ExcuteName() => "sa.ExtractMultiValuesToPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "configKeyword", "extent", "mask", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "configKeyword", "extent", "mask", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, InRasters, BilinearInterpolateValues, OutPointFeatures };
+		public override object[] Parameters() => new object[] { InPointFeatures, InRasters, BilinearInterpolateValues, OutPointFeatures };
 
 		/// <summary>
 		/// <para>Input point features</para>

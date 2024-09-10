@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Unregister As Versioned</para>
 		/// </summary>
-		public override string DisplayName => "Unregister As Versioned";
+		public override string DisplayName() => "Unregister As Versioned";
 
 		/// <summary>
 		/// <para>Tool Name : UnregisterAsVersioned</para>
 		/// </summary>
-		public override string ToolName => "UnregisterAsVersioned";
+		public override string ToolName() => "UnregisterAsVersioned";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.UnregisterAsVersioned</para>
 		/// </summary>
-		public override string ExcuteName => "management.UnregisterAsVersioned";
+		public override string ExcuteName() => "management.UnregisterAsVersioned";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, KeepEdit, CompressDefault, OutDataset };
+		public override object[] Parameters() => new object[] { InDataset, KeepEdit, CompressDefault, OutDataset };
 
 		/// <summary>
 		/// <para>Input Dataset</para>

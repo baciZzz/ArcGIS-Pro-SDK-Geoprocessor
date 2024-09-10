@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Replica</para>
 		/// </summary>
-		public override string DisplayName => "Create Replica";
+		public override string DisplayName() => "Create Replica";
 
 		/// <summary>
 		/// <para>Tool Name : CreateReplica</para>
 		/// </summary>
-		public override string ToolName => "CreateReplica";
+		public override string ToolName() => "CreateReplica";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateReplica</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateReplica";
+		public override string ExcuteName() => "management.CreateReplica";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, InType, OutGeodatabase, OutName, AccessType, InitialDataSender, ExpandFeatureClassesAndTables, ReuseSchema, GetRelatedData, GeometryFeatures, Archiving, OutChildGeodatabase, OutputReplicaName, RegisterExistingData };
+		public override object[] Parameters() => new object[] { InData, InType, OutGeodatabase, OutName, AccessType, InitialDataSender, ExpandFeatureClassesAndTables, ReuseSchema, GetRelatedData, GeometryFeatures, Archiving, OutChildGeodatabase, OutputReplicaName, RegisterExistingData };
 
 		/// <summary>
 		/// <para>Replica Datasets</para>

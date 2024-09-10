@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Connection String</para>
 		/// </summary>
-		public override string DisplayName => "Create Connection String";
+		public override string DisplayName() => "Create Connection String";
 
 		/// <summary>
 		/// <para>Tool Name : CreateConnectionString</para>
 		/// </summary>
-		public override string ToolName => "CreateConnectionString";
+		public override string ToolName() => "CreateConnectionString";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateConnectionString</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateConnectionString";
+		public override string ExcuteName() => "management.CreateConnectionString";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, DataType, OutConnectionString };
+		public override object[] Parameters() => new object[] { InData, DataType, OutConnectionString };
 
 		/// <summary>
 		/// <para>Input Data Element</para>

@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Expand</para>
 		/// </summary>
-		public override string DisplayName => "Expand";
+		public override string DisplayName() => "Expand";
 
 		/// <summary>
 		/// <para>Tool Name : Expand</para>
 		/// </summary>
-		public override string ToolName => "Expand";
+		public override string ToolName() => "Expand";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Expand</para>
 		/// </summary>
-		public override string ExcuteName => "sa.Expand";
+		public override string ExcuteName() => "sa.Expand";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, NumberCells, ZoneValues, ExpandMethod };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, NumberCells, ZoneValues, ExpandMethod };
 
 		/// <summary>
 		/// <para>Input raster</para>

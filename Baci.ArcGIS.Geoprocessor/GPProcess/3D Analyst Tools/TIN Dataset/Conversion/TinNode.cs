@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : TIN Node</para>
 		/// </summary>
-		public override string DisplayName => "TIN Node";
+		public override string DisplayName() => "TIN Node";
 
 		/// <summary>
 		/// <para>Tool Name : TinNode</para>
 		/// </summary>
-		public override string ToolName => "TinNode";
+		public override string ToolName() => "TinNode";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.TinNode</para>
 		/// </summary>
-		public override string ExcuteName => "3d.TinNode";
+		public override string ExcuteName() => "3d.TinNode";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTin, OutFeatureClass, SpotField, TagField };
+		public override object[] Parameters() => new object[] { InTin, OutFeatureClass, SpotField, TagField };
 
 		/// <summary>
 		/// <para>Input TIN</para>

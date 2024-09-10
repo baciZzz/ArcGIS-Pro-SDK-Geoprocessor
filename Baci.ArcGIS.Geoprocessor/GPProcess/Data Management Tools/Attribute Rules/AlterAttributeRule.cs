@@ -37,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Alter Attribute Rule</para>
 		/// </summary>
-		public override string DisplayName => "Alter Attribute Rule";
+		public override string DisplayName() => "Alter Attribute Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AlterAttributeRule</para>
 		/// </summary>
-		public override string ToolName => "AlterAttributeRule";
+		public override string ToolName() => "AlterAttributeRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AlterAttributeRule</para>
 		/// </summary>
-		public override string ExcuteName => "management.AlterAttributeRule";
+		public override string ExcuteName() => "management.AlterAttributeRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Name, Description, ErrorNumber, ErrorMessage, Tags, UpdatedTable, TriggeringEvents, ScriptExpression, ExcludeFromClientEvaluation };
+		public override object[] Parameters() => new object[] { InTable, Name, Description, ErrorNumber, ErrorMessage, Tags, UpdatedTable, TriggeringEvents, ScriptExpression, ExcludeFromClientEvaluation };
 
 		/// <summary>
 		/// <para>Input Table</para>

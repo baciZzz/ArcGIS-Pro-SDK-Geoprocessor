@@ -44,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Aggregate</para>
 		/// </summary>
-		public override string DisplayName => "Aggregate";
+		public override string DisplayName() => "Aggregate";
 
 		/// <summary>
 		/// <para>Tool Name : Aggregate</para>
 		/// </summary>
-		public override string ToolName => "Aggregate";
+		public override string ToolName() => "Aggregate";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Aggregate</para>
 		/// </summary>
-		public override string ExcuteName => "sa.Aggregate";
+		public override string ExcuteName() => "sa.Aggregate";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, CellFactor, AggregationType, ExtentHandling, IgnoreNodata };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, CellFactor, AggregationType, ExtentHandling, IgnoreNodata };
 
 		/// <summary>
 		/// <para>Input raster</para>

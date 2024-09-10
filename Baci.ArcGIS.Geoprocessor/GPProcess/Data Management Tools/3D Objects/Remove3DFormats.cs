@@ -32,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Remove 3D Formats From Multipatch</para>
 		/// </summary>
-		public override string DisplayName => "Remove 3D Formats From Multipatch";
+		public override string DisplayName() => "Remove 3D Formats From Multipatch";
 
 		/// <summary>
 		/// <para>Tool Name : Remove3DFormats</para>
 		/// </summary>
-		public override string ToolName => "Remove3DFormats";
+		public override string ToolName() => "Remove3DFormats";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Remove3DFormats</para>
 		/// </summary>
-		public override string ExcuteName => "management.Remove3DFormats";
+		public override string ExcuteName() => "management.Remove3DFormats";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, MultipatchMaterials, Formats, UpdatedFeatures };
+		public override object[] Parameters() => new object[] { InFeatures, MultipatchMaterials, Formats, UpdatedFeatures };
 
 		/// <summary>
 		/// <para>Input Features</para>

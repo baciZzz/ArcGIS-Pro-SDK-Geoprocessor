@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Coded Value To Domain</para>
 		/// </summary>
-		public override string DisplayName => "Add Coded Value To Domain";
+		public override string DisplayName() => "Add Coded Value To Domain";
 
 		/// <summary>
 		/// <para>Tool Name : AddCodedValueToDomain</para>
 		/// </summary>
-		public override string ToolName => "AddCodedValueToDomain";
+		public override string ToolName() => "AddCodedValueToDomain";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AddCodedValueToDomain</para>
 		/// </summary>
-		public override string ExcuteName => "management.AddCodedValueToDomain";
+		public override string ExcuteName() => "management.AddCodedValueToDomain";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, DomainName, Code, CodeDescription, OutWorkspace };
+		public override object[] Parameters() => new object[] { InWorkspace, DomainName, Code, CodeDescription, OutWorkspace };
 
 		/// <summary>
 		/// <para>Input Workspace</para>

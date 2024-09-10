@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Desire Lines</para>
 		/// </summary>
-		public override string DisplayName => "Generate Desire Lines";
+		public override string DisplayName() => "Generate Desire Lines";
 
 		/// <summary>
 		/// <para>Tool Name : DesireLines</para>
 		/// </summary>
-		public override string ToolName => "DesireLines";
+		public override string ToolName() => "DesireLines";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.DesireLines</para>
 		/// </summary>
-		public override string ExcuteName => "ba.DesireLines";
+		public override string ExcuteName() => "ba.DesireLines";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "baNetworkSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "baNetworkSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InStoresLayer, InCustomersLayer, OutFeatureClass, StoreIdField, LinkField, DistanceType, Units, Cutoff, TravelDirection, TimeOfDay, TimeZone };
+		public override object[] Parameters() => new object[] { InStoresLayer, InCustomersLayer, OutFeatureClass, StoreIdField, LinkField, DistanceType, Units, Cutoff, TravelDirection, TimeOfDay, TimeZone };
 
 		/// <summary>
 		/// <para>Store Layer</para>

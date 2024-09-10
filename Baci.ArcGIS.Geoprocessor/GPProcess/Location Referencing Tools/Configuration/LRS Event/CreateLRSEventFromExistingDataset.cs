@@ -65,37 +65,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Create LRS Event From Existing Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Create LRS Event From Existing Dataset";
+		public override string DisplayName() => "Create LRS Event From Existing Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : CreateLRSEventFromExistingDataset</para>
 		/// </summary>
-		public override string ToolName => "CreateLRSEventFromExistingDataset";
+		public override string ToolName() => "CreateLRSEventFromExistingDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.CreateLRSEventFromExistingDataset</para>
 		/// </summary>
-		public override string ExcuteName => "locref.CreateLRSEventFromExistingDataset";
+		public override string ExcuteName() => "locref.CreateLRSEventFromExistingDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ParentNetwork, InFeatureClass, EventIdField, RouteIdField, FromDateField, ToDateField, LocErrorField, MeasureField, ToMeasureField, EventSpansRoutes, ToRouteIdField, StoreRouteName, RouteNameField, ToRouteNameField, OutFeatureClass };
+		public override object[] Parameters() => new object[] { ParentNetwork, InFeatureClass, EventIdField, RouteIdField, FromDateField, ToDateField, LocErrorField, MeasureField, ToMeasureField, EventSpansRoutes, ToRouteIdField, StoreRouteName, RouteNameField, ToRouteNameField, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Parent LRS Network</para>

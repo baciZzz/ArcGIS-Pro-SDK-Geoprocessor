@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create LAS Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Create LAS Dataset";
+		public override string DisplayName() => "Create LAS Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : CreateLasDataset</para>
 		/// </summary>
-		public override string ToolName => "CreateLasDataset";
+		public override string ToolName() => "CreateLasDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateLasDataset</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateLasDataset";
+		public override string ExcuteName() => "management.CreateLasDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Input, OutLasDataset, FolderRecursion, InSurfaceConstraints, SpatialReference, ComputeStats, RelativePaths, CreateLasPrj };
+		public override object[] Parameters() => new object[] { Input, OutLasDataset, FolderRecursion, InSurfaceConstraints, SpatialReference, ComputeStats, RelativePaths, CreateLasPrj };
 
 		/// <summary>
 		/// <para>Input Files</para>

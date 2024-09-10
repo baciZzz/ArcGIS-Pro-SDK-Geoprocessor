@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Eliminate</para>
 		/// </summary>
-		public override string DisplayName => "Eliminate";
+		public override string DisplayName() => "Eliminate";
 
 		/// <summary>
 		/// <para>Tool Name : Eliminate</para>
 		/// </summary>
-		public override string ToolName => "Eliminate";
+		public override string ToolName() => "Eliminate";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Eliminate</para>
 		/// </summary>
-		public override string ExcuteName => "management.Eliminate";
+		public override string ExcuteName() => "management.Eliminate";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Selection, ExWhereClause, ExFeatures };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, Selection, ExWhereClause, ExFeatures };
 
 		/// <summary>
 		/// <para>Input Layer</para>

@@ -42,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Deep Learning Model To Ecd</para>
 		/// </summary>
-		public override string DisplayName => "Deep Learning Model To Ecd";
+		public override string DisplayName() => "Deep Learning Model To Ecd";
 
 		/// <summary>
 		/// <para>Tool Name : DeepLearningModelToEcd</para>
 		/// </summary>
-		public override string ToolName => "DeepLearningModelToEcd";
+		public override string ToolName() => "DeepLearningModelToEcd";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.DeepLearningModelToEcd</para>
 		/// </summary>
-		public override string ExcuteName => "sa.DeepLearningModelToEcd";
+		public override string ExcuteName() => "sa.DeepLearningModelToEcd";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDeepLearningModel, InClassificationInfoJson, OutClassifierDefinition };
+		public override object[] Parameters() => new object[] { InDeepLearningModel, InClassificationInfoJson, OutClassifierDefinition };
 
 		/// <summary>
 		/// <para>Input Deep Learning Model File</para>

@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Force Directed Layout</para>
 		/// </summary>
-		public override string DisplayName => "Add Force Directed Layout";
+		public override string DisplayName() => "Add Force Directed Layout";
 
 		/// <summary>
 		/// <para>Tool Name : AddForceDirectedLayout</para>
 		/// </summary>
-		public override string ToolName => "AddForceDirectedLayout";
+		public override string ToolName() => "AddForceDirectedLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddForceDirectedLayout</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddForceDirectedLayout";
+		public override string ExcuteName() => "nd.AddForceDirectedLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved, IterationsNumber, RepelFactor, DegreeFreedom, OutUtilityNetwork, OutTemplateName, BreakpointPosition, EdgeDisplayType };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved, IterationsNumber, RepelFactor, DegreeFreedom, OutUtilityNetwork, OutTemplateName, BreakpointPosition, EdgeDisplayType };
 
 		/// <summary>
 		/// <para>Input Network</para>

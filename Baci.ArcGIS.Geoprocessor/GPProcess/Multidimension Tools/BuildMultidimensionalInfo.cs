@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Display Name : Build Multidimensional Info</para>
 		/// </summary>
-		public override string DisplayName => "Build Multidimensional Info";
+		public override string DisplayName() => "Build Multidimensional Info";
 
 		/// <summary>
 		/// <para>Tool Name : BuildMultidimensionalInfo</para>
 		/// </summary>
-		public override string ToolName => "BuildMultidimensionalInfo";
+		public override string ToolName() => "BuildMultidimensionalInfo";
 
 		/// <summary>
 		/// <para>Tool Excute Name : md.BuildMultidimensionalInfo</para>
 		/// </summary>
-		public override string ExcuteName => "md.BuildMultidimensionalInfo";
+		public override string ExcuteName() => "md.BuildMultidimensionalInfo";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Multidimension Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Multidimension Tools";
+		public override string ToolboxDisplayName() => "Multidimension Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : md</para>
 		/// </summary>
-		public override string ToolboxAlise => "md";
+		public override string ToolboxAlise() => "md";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, VariableField, DimensionFields, VariableDescUnits, OutMosaicDataset, DeleteMultidimensionalInfo };
+		public override object[] Parameters() => new object[] { InMosaicDataset, VariableField, DimensionFields, VariableDescUnits, OutMosaicDataset, DeleteMultidimensionalInfo };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

@@ -53,37 +53,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Cloud Storage Connection File</para>
 		/// </summary>
-		public override string DisplayName => "Create Cloud Storage Connection File";
+		public override string DisplayName() => "Create Cloud Storage Connection File";
 
 		/// <summary>
 		/// <para>Tool Name : CreateCloudStorageConnectionFile</para>
 		/// </summary>
-		public override string ToolName => "CreateCloudStorageConnectionFile";
+		public override string ToolName() => "CreateCloudStorageConnectionFile";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateCloudStorageConnectionFile</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateCloudStorageConnectionFile";
+		public override string ExcuteName() => "management.CreateCloudStorageConnectionFile";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutFolderPath, OutName, ServiceProvider, BucketName, AccessKeyId, SecretAccessKey, Region, EndPoint, ConfigOptions, OutConnection, Folder };
+		public override object[] Parameters() => new object[] { OutFolderPath, OutName, ServiceProvider, BucketName, AccessKeyId, SecretAccessKey, Region, EndPoint, ConfigOptions, OutConnection, Folder };
 
 		/// <summary>
 		/// <para>Connection File Location</para>

@@ -48,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Forest-based Classification and Regression</para>
 		/// </summary>
-		public override string DisplayName => "Forest-based Classification and Regression";
+		public override string DisplayName() => "Forest-based Classification and Regression";
 
 		/// <summary>
 		/// <para>Tool Name : Forest</para>
 		/// </summary>
-		public override string ToolName => "Forest";
+		public override string ToolName() => "Forest";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.Forest</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.Forest";
+		public override string ExcuteName() => "geoanalytics.Forest";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { PredictionType, InFeatures, OutputTrainedName, VariablePredict, TreatVariableAsCategorical, ExplanatoryVariables, CreateVariableImportanceTable, FeaturesToPredict, ExplanatoryVariableMatching, NumberOfTrees, MinimumLeafSize, MaximumTreeDepth, SampleSize, RandomVariables, PercentageForValidation, DataStore, OutputTrained, VariableOfImportance, OutputPredicted };
+		public override object[] Parameters() => new object[] { PredictionType, InFeatures, OutputTrainedName, VariablePredict, TreatVariableAsCategorical, ExplanatoryVariables, CreateVariableImportanceTable, FeaturesToPredict, ExplanatoryVariableMatching, NumberOfTrees, MinimumLeafSize, MaximumTreeDepth, SampleSize, RandomVariables, PercentageForValidation, DataStore, OutputTrained, VariableOfImportance, OutputPredicted };
 
 		/// <summary>
 		/// <para>Prediction Type</para>

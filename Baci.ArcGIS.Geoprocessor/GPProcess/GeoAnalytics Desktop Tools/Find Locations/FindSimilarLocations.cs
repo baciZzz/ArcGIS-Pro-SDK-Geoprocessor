@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Find Similar Locations</para>
 		/// </summary>
-		public override string DisplayName => "Find Similar Locations";
+		public override string DisplayName() => "Find Similar Locations";
 
 		/// <summary>
 		/// <para>Tool Name : FindSimilarLocations</para>
 		/// </summary>
-		public override string ToolName => "FindSimilarLocations";
+		public override string ToolName() => "FindSimilarLocations";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.FindSimilarLocations</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.FindSimilarLocations";
+		public override string ExcuteName() => "gapro.FindSimilarLocations";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, SearchLayer, Output, AnalysisFields, MostOrLeastSimilar, MatchMethod, NumberOfResults, AppendFields };
+		public override object[] Parameters() => new object[] { InputLayer, SearchLayer, Output, AnalysisFields, MostOrLeastSimilar, MatchMethod, NumberOfResults, AppendFields };
 
 		/// <summary>
 		/// <para>Input Layer</para>

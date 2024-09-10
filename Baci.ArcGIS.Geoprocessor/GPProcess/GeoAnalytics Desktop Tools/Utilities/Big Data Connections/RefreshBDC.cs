@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Refresh Big Data Connection</para>
 		/// </summary>
-		public override string DisplayName => "Refresh Big Data Connection";
+		public override string DisplayName() => "Refresh Big Data Connection";
 
 		/// <summary>
 		/// <para>Tool Name : RefreshBDC</para>
 		/// </summary>
-		public override string ToolName => "RefreshBDC";
+		public override string ToolName() => "RefreshBDC";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.RefreshBDC</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.RefreshBDC";
+		public override string ExcuteName() => "gapro.RefreshBDC";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { BdcFile, VisibleGeometry, VisibleTime, UpdatedBdc };
+		public override object[] Parameters() => new object[] { BdcFile, VisibleGeometry, VisibleTime, UpdatedBdc };
 
 		/// <summary>
 		/// <para>Big Data Connection File</para>

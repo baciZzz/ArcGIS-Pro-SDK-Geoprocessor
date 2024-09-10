@@ -70,37 +70,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Cluster and Outlier Analysis (Anselin Local Moran's I)</para>
 		/// </summary>
-		public override string DisplayName => "Cluster and Outlier Analysis (Anselin Local Moran's I)";
+		public override string DisplayName() => "Cluster and Outlier Analysis (Anselin Local Moran's I)";
 
 		/// <summary>
 		/// <para>Tool Name : ClustersOutliers</para>
 		/// </summary>
-		public override string ToolName => "ClustersOutliers";
+		public override string ToolName() => "ClustersOutliers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.ClustersOutliers</para>
 		/// </summary>
-		public override string ExcuteName => "stats.ClustersOutliers";
+		public override string ExcuteName() => "stats.ClustersOutliers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "randomGenerator", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "randomGenerator", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, InputField, OutputFeatureClass, ConceptualizationOfSpatialRelationships, DistanceMethod, Standardization, DistanceBandOrThresholdDistance, WeightsMatrixFile, ApplyFalseDiscoveryRateFDRCorrection, IndexFieldName, ZscoreFieldName, ProbabilityField, ClusterOutlierType, SourceID, NumberOfPermutations, NumberOfNeighbors };
+		public override object[] Parameters() => new object[] { InputFeatureClass, InputField, OutputFeatureClass, ConceptualizationOfSpatialRelationships, DistanceMethod, Standardization, DistanceBandOrThresholdDistance, WeightsMatrixFile, ApplyFalseDiscoveryRateFDRCorrection, IndexFieldName, ZscoreFieldName, ProbabilityField, ClusterOutlierType, SourceID, NumberOfPermutations, NumberOfNeighbors };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>

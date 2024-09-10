@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Export MGCP Metadata</para>
 		/// </summary>
-		public override string DisplayName => "Export MGCP Metadata";
+		public override string DisplayName() => "Export MGCP Metadata";
 
 		/// <summary>
 		/// <para>Tool Name : ExportMetadata</para>
 		/// </summary>
-		public override string ToolName => "ExportMetadata";
+		public override string ToolName() => "ExportMetadata";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.ExportMetadata</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.ExportMetadata";
+		public override string ExcuteName() => "topographic.ExportMetadata";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCellFeatures, ExportLocation, OutExportLocation };
+		public override object[] Parameters() => new object[] { InCellFeatures, ExportLocation, OutExportLocation };
 
 		/// <summary>
 		/// <para>Cell Features</para>

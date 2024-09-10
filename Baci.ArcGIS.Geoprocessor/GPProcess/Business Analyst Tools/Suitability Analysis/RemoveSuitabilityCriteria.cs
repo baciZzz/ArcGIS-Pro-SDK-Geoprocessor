@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Remove Suitability Criteria</para>
 		/// </summary>
-		public override string DisplayName => "Remove Suitability Criteria";
+		public override string DisplayName() => "Remove Suitability Criteria";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveSuitabilityCriteria</para>
 		/// </summary>
-		public override string ToolName => "RemoveSuitabilityCriteria";
+		public override string ToolName() => "RemoveSuitabilityCriteria";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.RemoveSuitabilityCriteria</para>
 		/// </summary>
-		public override string ExcuteName => "ba.RemoveSuitabilityCriteria";
+		public override string ExcuteName() => "ba.RemoveSuitabilityCriteria";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAnalysisLayer, DropCriteria, UpdatedAnalysisLayer };
+		public override object[] Parameters() => new object[] { InAnalysisLayer, DropCriteria, UpdatedAnalysisLayer };
 
 		/// <summary>
 		/// <para>Input Suitability Analysis Layer</para>

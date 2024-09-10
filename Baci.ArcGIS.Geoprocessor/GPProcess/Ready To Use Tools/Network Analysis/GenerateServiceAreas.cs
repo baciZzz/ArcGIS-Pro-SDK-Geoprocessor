@@ -97,37 +97,37 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Service Areas</para>
 		/// </summary>
-		public override string DisplayName => "Generate Service Areas";
+		public override string DisplayName() => "Generate Service Areas";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateServiceAreas</para>
 		/// </summary>
-		public override string ToolName => "GenerateServiceAreas";
+		public override string ToolName() => "GenerateServiceAreas";
 
 		/// <summary>
 		/// <para>Tool Excute Name : agolservices.GenerateServiceAreas</para>
 		/// </summary>
-		public override string ExcuteName => "agolservices.GenerateServiceAreas";
+		public override string ExcuteName() => "agolservices.GenerateServiceAreas";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Ready To Use Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Ready To Use Tools";
+		public override string ToolboxDisplayName() => "Ready To Use Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : agolservices</para>
 		/// </summary>
-		public override string ToolboxAlise => "agolservices";
+		public override string ToolboxAlise() => "agolservices";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Facilities, BreakValues, BreakUnits, AnalysisRegion, TravelDirection, TimeOfDay, UseHierarchy, UturnAtJunctions, PolygonsForMultipleFacilities, PolygonOverlapType, DetailedPolygons, PolygonTrimDistance, PolygonSimplificationTolerance, PointBarriers, LineBarriers, PolygonBarriers, Restrictions, AttributeParameterValues, TimeZoneForTimeOfDay, TravelMode, Impedance, SaveOutputNetworkAnalysisLayer, Overrides, TimeImpedance, DistanceImpedance, PolygonDetail, OutputType, OutputFormat, IgnoreInvalidLocations, ServiceAreas, SolveSucceeded, OutputNetworkAnalysisLayer, OutputFacilities, OutputServiceAreaLines, OutputResultFile, OutputNetworkAnalysisLayerPackage };
+		public override object[] Parameters() => new object[] { Facilities, BreakValues, BreakUnits, AnalysisRegion, TravelDirection, TimeOfDay, UseHierarchy, UturnAtJunctions, PolygonsForMultipleFacilities, PolygonOverlapType, DetailedPolygons, PolygonTrimDistance, PolygonSimplificationTolerance, PointBarriers, LineBarriers, PolygonBarriers, Restrictions, AttributeParameterValues, TimeZoneForTimeOfDay, TravelMode, Impedance, SaveOutputNetworkAnalysisLayer, Overrides, TimeImpedance, DistanceImpedance, PolygonDetail, OutputType, OutputFormat, IgnoreInvalidLocations, ServiceAreas, SolveSucceeded, OutputNetworkAnalysisLayer, OutputFacilities, OutputServiceAreaLines, OutputResultFile, OutputNetworkAnalysisLayerPackage };
 
 		/// <summary>
 		/// <para>Facilities</para>

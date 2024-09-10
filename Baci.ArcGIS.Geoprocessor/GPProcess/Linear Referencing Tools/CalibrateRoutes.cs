@@ -55,37 +55,37 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Calibrate Routes</para>
 		/// </summary>
-		public override string DisplayName => "Calibrate Routes";
+		public override string DisplayName() => "Calibrate Routes";
 
 		/// <summary>
 		/// <para>Tool Name : CalibrateRoutes</para>
 		/// </summary>
-		public override string ToolName => "CalibrateRoutes";
+		public override string ToolName() => "CalibrateRoutes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : lr.CalibrateRoutes</para>
 		/// </summary>
-		public override string ExcuteName => "lr.CalibrateRoutes";
+		public override string ExcuteName() => "lr.CalibrateRoutes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Linear Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Linear Referencing Tools";
+		public override string ToolboxDisplayName() => "Linear Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : lr</para>
 		/// </summary>
-		public override string ToolboxAlise => "lr";
+		public override string ToolboxAlise() => "lr";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "ZDomain", "configKeyword", "extent", "outputCoordinateSystem", "outputZFlag", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "ZDomain", "configKeyword", "extent", "outputCoordinateSystem", "outputZFlag", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRouteFeatures, RouteIdField, InPointFeatures, PointIdField, MeasureField, OutFeatureClass, CalibrateMethod, SearchRadius, InterpolateBetween, ExtrapolateBefore, ExtrapolateAfter, IgnoreGaps, KeepAllRoutes, BuildIndex };
+		public override object[] Parameters() => new object[] { InRouteFeatures, RouteIdField, InPointFeatures, PointIdField, MeasureField, OutFeatureClass, CalibrateMethod, SearchRadius, InterpolateBetween, ExtrapolateBefore, ExtrapolateAfter, IgnoreGaps, KeepAllRoutes, BuildIndex };
 
 		/// <summary>
 		/// <para>Input Route Features</para>

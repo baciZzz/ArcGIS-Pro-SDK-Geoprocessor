@@ -32,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Upgrade Network</para>
 		/// </summary>
-		public override string DisplayName => "Upgrade Network";
+		public override string DisplayName() => "Upgrade Network";
 
 		/// <summary>
 		/// <para>Tool Name : UpgradeNetwork</para>
 		/// </summary>
-		public override string ToolName => "UpgradeNetwork";
+		public override string ToolName() => "UpgradeNetwork";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.UpgradeNetwork</para>
 		/// </summary>
-		public override string ExcuteName => "na.UpgradeNetwork";
+		public override string ExcuteName() => "na.UpgradeNetwork";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDataset, OutNetworkDataset };
+		public override object[] Parameters() => new object[] { InNetworkDataset, OutNetworkDataset };
 
 		/// <summary>
 		/// <para>Input Network Dataset</para>

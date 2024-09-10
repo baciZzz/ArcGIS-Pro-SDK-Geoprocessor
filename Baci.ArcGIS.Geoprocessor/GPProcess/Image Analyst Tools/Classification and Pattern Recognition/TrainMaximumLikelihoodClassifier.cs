@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Train Maximum Likelihood Classifier</para>
 		/// </summary>
-		public override string DisplayName => "Train Maximum Likelihood Classifier";
+		public override string DisplayName() => "Train Maximum Likelihood Classifier";
 
 		/// <summary>
 		/// <para>Tool Name : TrainMaximumLikelihoodClassifier</para>
 		/// </summary>
-		public override string ToolName => "TrainMaximumLikelihoodClassifier";
+		public override string ToolName() => "TrainMaximumLikelihoodClassifier";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.TrainMaximumLikelihoodClassifier</para>
 		/// </summary>
-		public override string ExcuteName => "ia.TrainMaximumLikelihoodClassifier";
+		public override string ExcuteName() => "ia.TrainMaximumLikelihoodClassifier";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, InTrainingFeatures, OutClassifierDefinition, InAdditionalRaster, UsedAttributes, DimensionValueField };
+		public override object[] Parameters() => new object[] { InRaster, InTrainingFeatures, OutClassifierDefinition, InAdditionalRaster, UsedAttributes, DimensionValueField };
 
 		/// <summary>
 		/// <para>Input Raster</para>

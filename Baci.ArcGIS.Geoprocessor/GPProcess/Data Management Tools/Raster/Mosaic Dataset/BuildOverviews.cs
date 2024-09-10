@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Build Overviews</para>
 		/// </summary>
-		public override string DisplayName => "Build Overviews";
+		public override string DisplayName() => "Build Overviews";
 
 		/// <summary>
 		/// <para>Tool Name : BuildOverviews</para>
 		/// </summary>
-		public override string ToolName => "BuildOverviews";
+		public override string ToolName() => "BuildOverviews";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.BuildOverviews</para>
 		/// </summary>
-		public override string ExcuteName => "management.BuildOverviews";
+		public override string ExcuteName() => "management.BuildOverviews";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause, DefineMissingTiles, GenerateOverviews, GenerateMissingImages, RegenerateStaleImages, OutMosaicDataset };
+		public override object[] Parameters() => new object[] { InMosaicDataset, WhereClause, DefineMissingTiles, GenerateOverviews, GenerateMissingImages, RegenerateStaleImages, OutMosaicDataset };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

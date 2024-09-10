@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Near Table</para>
 		/// </summary>
-		public override string DisplayName => "Generate Near Table";
+		public override string DisplayName() => "Generate Near Table";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateNearTable</para>
 		/// </summary>
-		public override string ToolName => "GenerateNearTable";
+		public override string ToolName() => "GenerateNearTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.GenerateNearTable</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.GenerateNearTable";
+		public override string ExcuteName() => "analysis.GenerateNearTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, NearFeatures, OutTable, SearchRadius, Location, Angle, Closest, ClosestCount, Method };
+		public override object[] Parameters() => new object[] { InFeatures, NearFeatures, OutTable, SearchRadius, Location, Angle, Closest, ClosestCount, Method };
 
 		/// <summary>
 		/// <para>Input Features</para>

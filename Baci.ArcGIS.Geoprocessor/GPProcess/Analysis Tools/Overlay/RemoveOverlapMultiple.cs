@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Remove Overlap (multiple)</para>
 		/// </summary>
-		public override string DisplayName => "Remove Overlap (multiple)";
+		public override string DisplayName() => "Remove Overlap (multiple)";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveOverlapMultiple</para>
 		/// </summary>
-		public override string ToolName => "RemoveOverlapMultiple";
+		public override string ToolName() => "RemoveOverlapMultiple";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.RemoveOverlapMultiple</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.RemoveOverlapMultiple";
+		public override string ExcuteName() => "analysis.RemoveOverlapMultiple";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Method, JoinAttributes };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, Method, JoinAttributes };
 
 		/// <summary>
 		/// <para>Input Features</para>

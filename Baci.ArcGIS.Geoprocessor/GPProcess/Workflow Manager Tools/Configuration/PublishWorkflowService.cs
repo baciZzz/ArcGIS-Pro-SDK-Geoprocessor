@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Display Name : Publish Workflow Service</para>
 		/// </summary>
-		public override string DisplayName => "Publish Workflow Service";
+		public override string DisplayName() => "Publish Workflow Service";
 
 		/// <summary>
 		/// <para>Tool Name : PublishWorkflowService</para>
 		/// </summary>
-		public override string ToolName => "PublishWorkflowService";
+		public override string ToolName() => "PublishWorkflowService";
 
 		/// <summary>
 		/// <para>Tool Excute Name : wmx.PublishWorkflowService</para>
 		/// </summary>
-		public override string ExcuteName => "wmx.PublishWorkflowService";
+		public override string ExcuteName() => "wmx.PublishWorkflowService";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Workflow Manager Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Workflow Manager Tools";
+		public override string ToolboxDisplayName() => "Workflow Manager Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : wmx</para>
 		/// </summary>
-		public override string ToolboxAlise => "wmx";
+		public override string ToolboxAlise() => "wmx";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ServiceName, AoiServiceName, Server, OutServiceDraftLocation, InputDatabasePath, ServerFolder, Description, OutputWorkflowServiceDraftPath, OutputMapServiceDraftPath };
+		public override object[] Parameters() => new object[] { ServiceName, AoiServiceName, Server, OutServiceDraftLocation, InputDatabasePath, ServerFolder, Description, OutputWorkflowServiceDraftPath, OutputMapServiceDraftPath };
 
 		/// <summary>
 		/// <para>Service Name</para>

@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Fence Diagram</para>
 		/// </summary>
-		public override string DisplayName => "Fence Diagram";
+		public override string DisplayName() => "Fence Diagram";
 
 		/// <summary>
 		/// <para>Tool Name : FenceDiagram</para>
 		/// </summary>
-		public override string ToolName => "FenceDiagram";
+		public override string ToolName() => "FenceDiagram";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.FenceDiagram</para>
 		/// </summary>
-		public override string ExcuteName => "3d.FenceDiagram";
+		public override string ExcuteName() => "3d.FenceDiagram";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "ZDomain", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "ZDomain", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLineFeatures, InSurface, OutFeatureClass, Method, FloorHeight, CeilingHeight, SampleDistance };
+		public override object[] Parameters() => new object[] { InLineFeatures, InSurface, OutFeatureClass, Method, FloorHeight, CeilingHeight, SampleDistance };
 
 		/// <summary>
 		/// <para>Input Line Features</para>

@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Feature to Raster</para>
 		/// </summary>
-		public override string DisplayName => "Feature to Raster";
+		public override string DisplayName() => "Feature to Raster";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureToRaster</para>
 		/// </summary>
-		public override string ToolName => "FeatureToRaster";
+		public override string ToolName() => "FeatureToRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.FeatureToRaster</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.FeatureToRaster";
+		public override string ExcuteName() => "conversion.FeatureToRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "pyramid", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "pyramid", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Field, OutRaster, CellSize };
+		public override object[] Parameters() => new object[] { InFeatures, Field, OutRaster, CellSize };
 
 		/// <summary>
 		/// <para>Input features</para>

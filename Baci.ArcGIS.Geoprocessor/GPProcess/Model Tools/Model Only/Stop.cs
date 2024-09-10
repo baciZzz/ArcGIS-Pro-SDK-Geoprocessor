@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : Stop</para>
 		/// </summary>
-		public override string DisplayName => "Stop";
+		public override string DisplayName() => "Stop";
 
 		/// <summary>
 		/// <para>Tool Name : Stop</para>
 		/// </summary>
-		public override string ToolName => "Stop";
+		public override string ToolName() => "Stop";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.Stop</para>
 		/// </summary>
-		public override string ExcuteName => "mb.Stop";
+		public override string ExcuteName() => "mb.Stop";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InValues, Condition, Continue };
+		public override object[] Parameters() => new object[] { InValues, Condition, Continue };
 
 		/// <summary>
 		/// <para>Input Values</para>

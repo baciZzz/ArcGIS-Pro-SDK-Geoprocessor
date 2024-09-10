@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Feature To Line</para>
 		/// </summary>
-		public override string DisplayName => "Feature To Line";
+		public override string DisplayName() => "Feature To Line";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureToLine</para>
 		/// </summary>
-		public override string ToolName => "FeatureToLine";
+		public override string ToolName() => "FeatureToLine";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.FeatureToLine</para>
 		/// </summary>
-		public override string ExcuteName => "management.FeatureToLine";
+		public override string ExcuteName() => "management.FeatureToLine";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, ClusterTolerance, Attributes };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, ClusterTolerance, Attributes };
 
 		/// <summary>
 		/// <para>Input Features</para>

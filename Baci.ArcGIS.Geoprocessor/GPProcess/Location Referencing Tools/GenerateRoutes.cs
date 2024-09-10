@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Routes</para>
 		/// </summary>
-		public override string DisplayName => "Generate Routes";
+		public override string DisplayName() => "Generate Routes";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateRoutes</para>
 		/// </summary>
-		public override string ToolName => "GenerateRoutes";
+		public override string ToolName() => "GenerateRoutes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.GenerateRoutes</para>
 		/// </summary>
-		public override string ExcuteName => "locref.GenerateRoutes";
+		public override string ExcuteName() => "locref.GenerateRoutes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRouteFeatures, RecordCalibrationChanges, OutRouteFeatures, OutDerivedRouteFeatures, OutDetailsFile };
+		public override object[] Parameters() => new object[] { InRouteFeatures, RecordCalibrationChanges, OutRouteFeatures, OutDerivedRouteFeatures, OutDetailsFile };
 
 		/// <summary>
 		/// <para>Input Route Features</para>

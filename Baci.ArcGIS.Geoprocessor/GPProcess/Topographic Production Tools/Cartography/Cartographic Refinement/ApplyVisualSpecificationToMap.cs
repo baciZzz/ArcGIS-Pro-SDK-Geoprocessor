@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Apply Visual Specification To Map</para>
 		/// </summary>
-		public override string DisplayName => "Apply Visual Specification To Map";
+		public override string DisplayName() => "Apply Visual Specification To Map";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyVisualSpecificationToMap</para>
 		/// </summary>
-		public override string ToolName => "ApplyVisualSpecificationToMap";
+		public override string ToolName() => "ApplyVisualSpecificationToMap";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.ApplyVisualSpecificationToMap</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.ApplyVisualSpecificationToMap";
+		public override string ExcuteName() => "topographic.ApplyVisualSpecificationToMap";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, VsWorkspace, Specification, InStyleFile, UpdatedMap };
+		public override object[] Parameters() => new object[] { InMap, VsWorkspace, Specification, InStyleFile, UpdatedMap };
 
 		/// <summary>
 		/// <para>Input Map</para>

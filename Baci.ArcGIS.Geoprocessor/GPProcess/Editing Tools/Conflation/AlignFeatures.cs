@@ -42,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Display Name : Align Features</para>
 		/// </summary>
-		public override string DisplayName => "Align Features";
+		public override string DisplayName() => "Align Features";
 
 		/// <summary>
 		/// <para>Tool Name : AlignFeatures</para>
 		/// </summary>
-		public override string ToolName => "AlignFeatures";
+		public override string ToolName() => "AlignFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.AlignFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "edit.AlignFeatures";
+		public override string ExcuteName() => "edit.AlignFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Editing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Editing Tools";
+		public override string ToolboxDisplayName() => "Editing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : edit</para>
 		/// </summary>
-		public override string ToolboxAlise => "edit";
+		public override string ToolboxAlise() => "edit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, TargetFeatures, SearchDistance, MatchFields, OutFeatureClass };
+		public override object[] Parameters() => new object[] { InFeatures, TargetFeatures, SearchDistance, MatchFields, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Input Features</para>

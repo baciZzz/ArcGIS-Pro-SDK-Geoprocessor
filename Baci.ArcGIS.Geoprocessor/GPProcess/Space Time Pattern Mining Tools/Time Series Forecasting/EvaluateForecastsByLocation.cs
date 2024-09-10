@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Display Name : Evaluate Forecasts By Location</para>
 		/// </summary>
-		public override string DisplayName => "Evaluate Forecasts By Location";
+		public override string DisplayName() => "Evaluate Forecasts By Location";
 
 		/// <summary>
 		/// <para>Tool Name : EvaluateForecastsByLocation</para>
 		/// </summary>
-		public override string ToolName => "EvaluateForecastsByLocation";
+		public override string ToolName() => "EvaluateForecastsByLocation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stpm.EvaluateForecastsByLocation</para>
 		/// </summary>
-		public override string ExcuteName => "stpm.EvaluateForecastsByLocation";
+		public override string ExcuteName() => "stpm.EvaluateForecastsByLocation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Space Time Pattern Mining Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Space Time Pattern Mining Tools";
+		public override string ToolboxDisplayName() => "Space Time Pattern Mining Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stpm</para>
 		/// </summary>
-		public override string ToolboxAlise => "stpm";
+		public override string ToolboxAlise() => "stpm";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCubes, OutputFeatures, OutputCube, EvaluateUsingValidationResults };
+		public override object[] Parameters() => new object[] { InCubes, OutputFeatures, OutputCube, EvaluateUsingValidationResults };
 
 		/// <summary>
 		/// <para>Input Forecast Space Time Cubes</para>

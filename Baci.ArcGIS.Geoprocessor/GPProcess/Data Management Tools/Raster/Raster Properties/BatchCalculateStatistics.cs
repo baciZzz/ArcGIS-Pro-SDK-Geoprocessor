@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Batch Calculate Statistics</para>
 		/// </summary>
-		public override string DisplayName => "Batch Calculate Statistics";
+		public override string DisplayName() => "Batch Calculate Statistics";
 
 		/// <summary>
 		/// <para>Tool Name : BatchCalculateStatistics</para>
 		/// </summary>
-		public override string ToolName => "BatchCalculateStatistics";
+		public override string ToolName() => "BatchCalculateStatistics";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.BatchCalculateStatistics</para>
 		/// </summary>
-		public override string ExcuteName => "management.BatchCalculateStatistics";
+		public override string ExcuteName() => "management.BatchCalculateStatistics";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "rasterStatistics", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "rasterStatistics", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputRasterDatasets, NumberOfColumnsToSkip, NumberOfRowsToSkip, IgnoreValues, SkipExisting, BatchCalculateStatisticsSucceeded };
+		public override object[] Parameters() => new object[] { InputRasterDatasets, NumberOfColumnsToSkip, NumberOfRowsToSkip, IgnoreValues, SkipExisting, BatchCalculateStatisticsSucceeded };
 
 		/// <summary>
 		/// <para>Input Raster Datasets</para>

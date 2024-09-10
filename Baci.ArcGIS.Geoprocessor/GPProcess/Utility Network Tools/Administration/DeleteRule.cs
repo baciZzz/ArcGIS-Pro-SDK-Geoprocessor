@@ -42,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Delete Rule</para>
 		/// </summary>
-		public override string DisplayName => "Delete Rule";
+		public override string DisplayName() => "Delete Rule";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteRule</para>
 		/// </summary>
-		public override string ToolName => "DeleteRule";
+		public override string ToolName() => "DeleteRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.DeleteRule</para>
 		/// </summary>
-		public override string ExcuteName => "un.DeleteRule";
+		public override string ExcuteName() => "un.DeleteRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, RuleType, RuleDesc, OutUtilityNetwork };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, RuleType, RuleDesc, OutUtilityNetwork };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>

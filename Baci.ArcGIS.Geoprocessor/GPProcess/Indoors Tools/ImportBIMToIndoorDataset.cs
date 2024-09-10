@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Display Name : Import BIM To Indoor Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Import BIM To Indoor Dataset";
+		public override string DisplayName() => "Import BIM To Indoor Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : ImportBIMToIndoorDataset</para>
 		/// </summary>
-		public override string ToolName => "ImportBIMToIndoorDataset";
+		public override string ToolName() => "ImportBIMToIndoorDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : indoors.ImportBIMToIndoorDataset</para>
 		/// </summary>
-		public override string ExcuteName => "indoors.ImportBIMToIndoorDataset";
+		public override string ExcuteName() => "indoors.ImportBIMToIndoorDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Indoors Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Indoors Tools";
+		public override string ToolboxDisplayName() => "Indoors Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : indoors</para>
 		/// </summary>
-		public override string ToolboxAlise => "indoors";
+		public override string ToolboxAlise() => "indoors";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InBimFloorplanLayer, TargetIndoorDataset, GroundFloorName, BuildingName, RoomCategoryField, FloorsToImport, AreaUnitOfMeasure, UpdatedIndoorDataset };
+		public override object[] Parameters() => new object[] { InBimFloorplanLayer, TargetIndoorDataset, GroundFloorName, BuildingName, RoomCategoryField, FloorsToImport, AreaUnitOfMeasure, UpdatedIndoorDataset };
 
 		/// <summary>
 		/// <para>Input BIM Floorplan Polygon Layer</para>

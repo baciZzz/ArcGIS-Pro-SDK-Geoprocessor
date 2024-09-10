@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Attribute Rules</para>
 		/// </summary>
-		public override string DisplayName => "Export Attribute Rules";
+		public override string DisplayName() => "Export Attribute Rules";
 
 		/// <summary>
 		/// <para>Tool Name : ExportAttributeRules</para>
 		/// </summary>
-		public override string ToolName => "ExportAttributeRules";
+		public override string ToolName() => "ExportAttributeRules";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ExportAttributeRules</para>
 		/// </summary>
-		public override string ExcuteName => "management.ExportAttributeRules";
+		public override string ExcuteName() => "management.ExportAttributeRules";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutCsvFile };
+		public override object[] Parameters() => new object[] { InTable, OutCsvFile };
 
 		/// <summary>
 		/// <para>Input Table</para>

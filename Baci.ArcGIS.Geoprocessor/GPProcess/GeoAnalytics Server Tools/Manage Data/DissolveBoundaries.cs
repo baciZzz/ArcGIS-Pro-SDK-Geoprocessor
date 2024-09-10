@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Dissolve Boundaries</para>
 		/// </summary>
-		public override string DisplayName => "Dissolve Boundaries";
+		public override string DisplayName() => "Dissolve Boundaries";
 
 		/// <summary>
 		/// <para>Tool Name : DissolveBoundaries</para>
 		/// </summary>
-		public override string ToolName => "DissolveBoundaries";
+		public override string ToolName() => "DissolveBoundaries";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.DissolveBoundaries</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.DissolveBoundaries";
+		public override string ExcuteName() => "geoanalytics.DissolveBoundaries";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutputName, Multipart, DissolveFields, Fields, SummaryFields, Output, DataStore };
+		public override object[] Parameters() => new object[] { InputLayer, OutputName, Multipart, DissolveFields, Fields, SummaryFields, Output, DataStore };
 
 		/// <summary>
 		/// <para>Input Features</para>

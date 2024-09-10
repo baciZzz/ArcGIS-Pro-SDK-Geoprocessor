@@ -48,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Update Subnetwork</para>
 		/// </summary>
-		public override string DisplayName => "Update Subnetwork";
+		public override string DisplayName() => "Update Subnetwork";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateSubnetwork</para>
 		/// </summary>
-		public override string ToolName => "UpdateSubnetwork";
+		public override string ToolName() => "UpdateSubnetwork";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.UpdateSubnetwork</para>
 		/// </summary>
-		public override string ExcuteName => "un.UpdateSubnetwork";
+		public override string ExcuteName() => "un.UpdateSubnetwork";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, DomainNetwork, Tier, AllSubnetworksInTier, SubnetworkName, ContinueOnFailure, ConditionBarriers, FunctionBarriers, IncludeBarriers, TraversabilityScope, Propagators, OutUtilityNetwork };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, DomainNetwork, Tier, AllSubnetworksInTier, SubnetworkName, ContinueOnFailure, ConditionBarriers, FunctionBarriers, IncludeBarriers, TraversabilityScope, Propagators, OutUtilityNetwork };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>

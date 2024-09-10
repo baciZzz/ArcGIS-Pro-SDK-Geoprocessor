@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Update Diagram</para>
 		/// </summary>
-		public override string DisplayName => "Update Diagram";
+		public override string DisplayName() => "Update Diagram";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateDiagram</para>
 		/// </summary>
-		public override string ToolName => "UpdateDiagram";
+		public override string ToolName() => "UpdateDiagram";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.UpdateDiagram</para>
 		/// </summary>
-		public override string ExcuteName => "un.UpdateDiagram";
+		public override string ExcuteName() => "un.UpdateDiagram";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDiagrams, TemplateNames, DiagramNames, UpdateOption, AutolayoutOption, OutDiagrams };
+		public override object[] Parameters() => new object[] { InDiagrams, TemplateNames, DiagramNames, UpdateOption, AutolayoutOption, OutDiagrams };
 
 		/// <summary>
 		/// <para>Input Network or Network Diagram Layer</para>

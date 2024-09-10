@@ -42,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Subtype</para>
 		/// </summary>
-		public override string DisplayName => "Add Subtype";
+		public override string DisplayName() => "Add Subtype";
 
 		/// <summary>
 		/// <para>Tool Name : AddSubtype</para>
 		/// </summary>
-		public override string ToolName => "AddSubtype";
+		public override string ToolName() => "AddSubtype";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AddSubtype</para>
 		/// </summary>
-		public override string ExcuteName => "management.AddSubtype";
+		public override string ExcuteName() => "management.AddSubtype";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, SubtypeCode, SubtypeDescription, OutTable };
+		public override object[] Parameters() => new object[] { InTable, SubtypeCode, SubtypeDescription, OutTable };
 
 		/// <summary>
 		/// <para>Input Table</para>

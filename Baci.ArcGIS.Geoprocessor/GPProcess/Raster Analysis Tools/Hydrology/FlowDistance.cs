@@ -41,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Flow Distance</para>
 		/// </summary>
-		public override string DisplayName => "Flow Distance";
+		public override string DisplayName() => "Flow Distance";
 
 		/// <summary>
 		/// <para>Tool Name : FlowDistance</para>
 		/// </summary>
-		public override string ToolName => "FlowDistance";
+		public override string ToolName() => "FlowDistance";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.FlowDistance</para>
 		/// </summary>
-		public override string ExcuteName => "ra.FlowDistance";
+		public override string ExcuteName() => "ra.FlowDistance";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputstreamraster, Inputsurfaceraster, Outputname, Inputflowdirectionraster, Distancetype, Flowdirectiontype, Outputraster, Statisticstype };
+		public override object[] Parameters() => new object[] { Inputstreamraster, Inputsurfaceraster, Outputname, Inputflowdirectionraster, Distancetype, Flowdirectiontype, Outputraster, Statisticstype };
 
 		/// <summary>
 		/// <para>Input Stream Raster</para>

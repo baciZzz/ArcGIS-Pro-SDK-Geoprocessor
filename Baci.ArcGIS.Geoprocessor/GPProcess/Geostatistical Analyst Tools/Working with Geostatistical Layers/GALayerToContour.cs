@@ -44,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : GA Layer To Contour</para>
 		/// </summary>
-		public override string DisplayName => "GA Layer To Contour";
+		public override string DisplayName() => "GA Layer To Contour";
 
 		/// <summary>
 		/// <para>Tool Name : GALayerToContour</para>
 		/// </summary>
-		public override string ToolName => "GALayerToContour";
+		public override string ToolName() => "GALayerToContour";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.GALayerToContour</para>
 		/// </summary>
-		public override string ExcuteName => "ga.GALayerToContour";
+		public override string ExcuteName() => "ga.GALayerToContour";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeostatLayer, ContourType, OutFeatureClass, ContourQuality, ClassificationType, ClassesCount, ClassesBreaks, OutElevation };
+		public override object[] Parameters() => new object[] { InGeostatLayer, ContourType, OutFeatureClass, ContourQuality, ClassificationType, ClassesCount, ClassesBreaks, OutElevation };
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>

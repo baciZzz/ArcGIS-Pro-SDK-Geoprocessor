@@ -29,37 +29,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : Expression</para>
 		/// </summary>
-		public override string DisplayName => "Expression";
+		public override string DisplayName() => "Expression";
 
 		/// <summary>
 		/// <para>Tool Name : ExpressionIfThenElse</para>
 		/// </summary>
-		public override string ToolName => "ExpressionIfThenElse";
+		public override string ToolName() => "ExpressionIfThenElse";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.ExpressionIfThenElse</para>
 		/// </summary>
-		public override string ExcuteName => "mb.ExpressionIfThenElse";
+		public override string ExcuteName() => "mb.ExpressionIfThenElse";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Expression, CodeBlock, True, False };
+		public override object[] Parameters() => new object[] { Expression, CodeBlock, True, False };
 
 		/// <summary>
 		/// <para>Expression</para>

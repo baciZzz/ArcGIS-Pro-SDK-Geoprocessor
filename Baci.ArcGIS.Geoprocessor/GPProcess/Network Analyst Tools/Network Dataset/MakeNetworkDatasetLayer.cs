@@ -37,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Network Dataset Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make Network Dataset Layer";
+		public override string DisplayName() => "Make Network Dataset Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeNetworkDatasetLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeNetworkDatasetLayer";
+		public override string ToolName() => "MakeNetworkDatasetLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.MakeNetworkDatasetLayer</para>
 		/// </summary>
-		public override string ExcuteName => "na.MakeNetworkDatasetLayer";
+		public override string ExcuteName() => "na.MakeNetworkDatasetLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDataset, OutputLayer, DrawElements };
+		public override object[] Parameters() => new object[] { InNetworkDataset, OutputLayer, DrawElements };
 
 		/// <summary>
 		/// <para>Input Network Dataset</para>

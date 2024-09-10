@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Update Accuracy Assessment Points</para>
 		/// </summary>
-		public override string DisplayName => "Update Accuracy Assessment Points";
+		public override string DisplayName() => "Update Accuracy Assessment Points";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateAccuracyAssessmentPoints</para>
 		/// </summary>
-		public override string ToolName => "UpdateAccuracyAssessmentPoints";
+		public override string ToolName() => "UpdateAccuracyAssessmentPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.UpdateAccuracyAssessmentPoints</para>
 		/// </summary>
-		public override string ExcuteName => "sa.UpdateAccuracyAssessmentPoints";
+		public override string ExcuteName() => "sa.UpdateAccuracyAssessmentPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InClassData, InPoints, OutPoints, TargetField };
+		public override object[] Parameters() => new object[] { InClassData, InPoints, OutPoints, TargetField };
 
 		/// <summary>
 		/// <para>Input Raster or Feature Class Data</para>

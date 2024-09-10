@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Table Compare</para>
 		/// </summary>
-		public override string DisplayName => "Table Compare";
+		public override string DisplayName() => "Table Compare";
 
 		/// <summary>
 		/// <para>Tool Name : TableCompare</para>
 		/// </summary>
-		public override string ToolName => "TableCompare";
+		public override string ToolName() => "TableCompare";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.TableCompare</para>
 		/// </summary>
-		public override string ExcuteName => "management.TableCompare";
+		public override string ExcuteName() => "management.TableCompare";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InBaseTable, InTestTable, SortField, CompareType, IgnoreOptions, AttributeTolerances, OmitField, ContinueCompare, OutCompareFile, CompareStatus };
+		public override object[] Parameters() => new object[] { InBaseTable, InTestTable, SortField, CompareType, IgnoreOptions, AttributeTolerances, OmitField, ContinueCompare, OutCompareFile, CompareStatus };
 
 		/// <summary>
 		/// <para>Input Base Table</para>

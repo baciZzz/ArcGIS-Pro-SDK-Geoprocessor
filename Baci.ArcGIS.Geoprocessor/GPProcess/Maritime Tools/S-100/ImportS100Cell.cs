@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Display Name : Import S-100 Cell</para>
 		/// </summary>
-		public override string DisplayName => "Import S-100 Cell";
+		public override string DisplayName() => "Import S-100 Cell";
 
 		/// <summary>
 		/// <para>Tool Name : ImportS100Cell</para>
 		/// </summary>
-		public override string ToolName => "ImportS100Cell";
+		public override string ToolName() => "ImportS100Cell";
 
 		/// <summary>
 		/// <para>Tool Excute Name : maritime.ImportS100Cell</para>
 		/// </summary>
-		public override string ExcuteName => "maritime.ImportS100Cell";
+		public override string ExcuteName() => "maritime.ImportS100Cell";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Maritime Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Maritime Tools";
+		public override string ToolboxDisplayName() => "Maritime Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : maritime</para>
 		/// </summary>
-		public override string ToolboxAlise => "maritime";
+		public override string ToolboxAlise() => "maritime";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "S100FeatureCatalogueFile", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "S100FeatureCatalogueFile", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureCatalogue, InBaseCell, TargetWorkspace, InUpdateCells, OutputWorkspace };
+		public override object[] Parameters() => new object[] { InFeatureCatalogue, InBaseCell, TargetWorkspace, InUpdateCells, OutputWorkspace };
 
 		/// <summary>
 		/// <para>S-100 Feature Catalogue</para>

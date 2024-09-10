@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Register As Versioned</para>
 		/// </summary>
-		public override string DisplayName => "Register As Versioned";
+		public override string DisplayName() => "Register As Versioned";
 
 		/// <summary>
 		/// <para>Tool Name : RegisterAsVersioned</para>
 		/// </summary>
-		public override string ToolName => "RegisterAsVersioned";
+		public override string ToolName() => "RegisterAsVersioned";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.RegisterAsVersioned</para>
 		/// </summary>
-		public override string ExcuteName => "management.RegisterAsVersioned";
+		public override string ExcuteName() => "management.RegisterAsVersioned";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, EditToBase, OutDataset };
+		public override object[] Parameters() => new object[] { InDataset, EditToBase, OutDataset };
 
 		/// <summary>
 		/// <para>Input Dataset</para>

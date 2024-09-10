@@ -75,37 +75,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Summarize Nearby</para>
 		/// </summary>
-		public override string DisplayName => "Summarize Nearby";
+		public override string DisplayName() => "Summarize Nearby";
 
 		/// <summary>
 		/// <para>Tool Name : SummarizeNearby</para>
 		/// </summary>
-		public override string ToolName => "SummarizeNearby";
+		public override string ToolName() => "SummarizeNearby";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.SummarizeNearby</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.SummarizeNearby";
+		public override string ExcuteName() => "analysis.SummarizeNearby";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InSumFeatures, OutFeatureClass, DistanceType, Distances, DistanceUnits, TimeOfDay, TimeZone, KeepAllPolygons, SumFields, SumShape, ShapeUnit, GroupField, AddMinMaj, AddGroupPercent, OutputGroupedTable };
+		public override object[] Parameters() => new object[] { InFeatures, InSumFeatures, OutFeatureClass, DistanceType, Distances, DistanceUnits, TimeOfDay, TimeZone, KeepAllPolygons, SumFields, SumShape, ShapeUnit, GroupField, AddMinMaj, AddGroupPercent, OutputGroupedTable };
 
 		/// <summary>
 		/// <para>Input Features</para>

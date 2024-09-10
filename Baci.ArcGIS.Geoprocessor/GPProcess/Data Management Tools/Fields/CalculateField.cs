@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Field</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Field";
+		public override string DisplayName() => "Calculate Field";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateField</para>
 		/// </summary>
-		public override string ToolName => "CalculateField";
+		public override string ToolName() => "CalculateField";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CalculateField</para>
 		/// </summary>
-		public override string ExcuteName => "management.CalculateField";
+		public override string ExcuteName() => "management.CalculateField";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "transferDomains", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "transferDomains", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Field, Expression, ExpressionType, CodeBlock, OutTable, FieldType, EnforceDomains };
+		public override object[] Parameters() => new object[] { InTable, Field, Expression, ExpressionType, CodeBlock, OutTable, FieldType, EnforceDomains };
 
 		/// <summary>
 		/// <para>Input Table</para>

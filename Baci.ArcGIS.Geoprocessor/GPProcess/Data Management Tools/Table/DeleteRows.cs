@@ -32,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Delete Rows</para>
 		/// </summary>
-		public override string DisplayName => "Delete Rows";
+		public override string DisplayName() => "Delete Rows";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteRows</para>
 		/// </summary>
-		public override string ToolName => "DeleteRows";
+		public override string ToolName() => "DeleteRows";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DeleteRows</para>
 		/// </summary>
-		public override string ExcuteName => "management.DeleteRows";
+		public override string ExcuteName() => "management.DeleteRows";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRows, OutTable };
+		public override object[] Parameters() => new object[] { InRows, OutTable };
 
 		/// <summary>
 		/// <para>Input Rows</para>

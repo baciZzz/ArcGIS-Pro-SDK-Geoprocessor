@@ -32,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Enable Editor Tracking</para>
 		/// </summary>
-		public override string DisplayName => "Enable Editor Tracking";
+		public override string DisplayName() => "Enable Editor Tracking";
 
 		/// <summary>
 		/// <para>Tool Name : EnableEditorTracking</para>
 		/// </summary>
-		public override string ToolName => "EnableEditorTracking";
+		public override string ToolName() => "EnableEditorTracking";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.EnableEditorTracking</para>
 		/// </summary>
-		public override string ExcuteName => "management.EnableEditorTracking";
+		public override string ExcuteName() => "management.EnableEditorTracking";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, CreatorField, CreationDateField, LastEditorField, LastEditDateField, AddFields, RecordDatesIn, OutDataset };
+		public override object[] Parameters() => new object[] { InDataset, CreatorField, CreationDateField, LastEditorField, LastEditDateField, AddFields, RecordDatesIn, OutDataset };
 
 		/// <summary>
 		/// <para>Input Dataset</para>

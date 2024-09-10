@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : Get Field Value</para>
 		/// </summary>
-		public override string DisplayName => "Get Field Value";
+		public override string DisplayName() => "Get Field Value";
 
 		/// <summary>
 		/// <para>Tool Name : GetFieldValue</para>
 		/// </summary>
-		public override string ToolName => "GetFieldValue";
+		public override string ToolName() => "GetFieldValue";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.GetFieldValue</para>
 		/// </summary>
-		public override string ExcuteName => "mb.GetFieldValue";
+		public override string ExcuteName() => "mb.GetFieldValue";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Field, DataType, NullValue, Value };
+		public override object[] Parameters() => new object[] { InTable, Field, DataType, NullValue, Value };
 
 		/// <summary>
 		/// <para>Input Table</para>

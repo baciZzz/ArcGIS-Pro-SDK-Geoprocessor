@@ -54,37 +54,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Simplify Line</para>
 		/// </summary>
-		public override string DisplayName => "Simplify Line";
+		public override string DisplayName() => "Simplify Line";
 
 		/// <summary>
 		/// <para>Tool Name : SimplifyLine</para>
 		/// </summary>
-		public override string ToolName => "SimplifyLine";
+		public override string ToolName() => "SimplifyLine";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.SimplifyLine</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.SimplifyLine";
+		public override string ExcuteName() => "cartography.SimplifyLine";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "XYDomain", "XYTolerance", "cartographicPartitions", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "XYDomain", "XYTolerance", "cartographicPartitions", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Algorithm, Tolerance, ErrorResolvingOption, CollapsedPointOption, ErrorCheckingOption, OutPointFeatureClass, InBarriers };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, Algorithm, Tolerance, ErrorResolvingOption, CollapsedPointOption, ErrorCheckingOption, OutPointFeatureClass, InBarriers };
 
 		/// <summary>
 		/// <para>Input Features</para>

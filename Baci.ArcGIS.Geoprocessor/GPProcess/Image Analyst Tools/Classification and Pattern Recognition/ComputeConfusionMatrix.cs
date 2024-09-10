@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Compute Confusion Matrix</para>
 		/// </summary>
-		public override string DisplayName => "Compute Confusion Matrix";
+		public override string DisplayName() => "Compute Confusion Matrix";
 
 		/// <summary>
 		/// <para>Tool Name : ComputeConfusionMatrix</para>
 		/// </summary>
-		public override string ToolName => "ComputeConfusionMatrix";
+		public override string ToolName() => "ComputeConfusionMatrix";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.ComputeConfusionMatrix</para>
 		/// </summary>
-		public override string ExcuteName => "ia.ComputeConfusionMatrix";
+		public override string ExcuteName() => "ia.ComputeConfusionMatrix";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAccuracyAssessmentPoints, OutConfusionMatrix };
+		public override object[] Parameters() => new object[] { InAccuracyAssessmentPoints, OutConfusionMatrix };
 
 		/// <summary>
 		/// <para>Input Accuracy Assessment Points</para>

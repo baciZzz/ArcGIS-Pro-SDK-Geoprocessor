@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Indoor Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Create Indoor Dataset";
+		public override string DisplayName() => "Create Indoor Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : CreateIndoorDataset</para>
 		/// </summary>
-		public override string ToolName => "CreateIndoorDataset";
+		public override string ToolName() => "CreateIndoorDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : indoors.CreateIndoorDataset</para>
 		/// </summary>
-		public override string ExcuteName => "indoors.CreateIndoorDataset";
+		public override string ExcuteName() => "indoors.CreateIndoorDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Indoors Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Indoors Tools";
+		public override string ToolboxDisplayName() => "Indoors Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : indoors</para>
 		/// </summary>
-		public override string ToolboxAlise => "indoors";
+		public override string ToolboxAlise() => "indoors";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetGdb, IndoorDatasetName, SpatialReference, OutputDataset };
+		public override object[] Parameters() => new object[] { TargetGdb, IndoorDatasetName, SpatialReference, OutputDataset };
 
 		/// <summary>
 		/// <para>Target Geodatabase</para>

@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Points To Track Segments</para>
 		/// </summary>
-		public override string DisplayName => "Points To Track Segments";
+		public override string DisplayName() => "Points To Track Segments";
 
 		/// <summary>
 		/// <para>Tool Name : PointsToTrackSegments</para>
 		/// </summary>
-		public override string ToolName => "PointsToTrackSegments";
+		public override string ToolName() => "PointsToTrackSegments";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.PointsToTrackSegments</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.PointsToTrackSegments";
+		public override string ExcuteName() => "intelligence.PointsToTrackSegments";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DateField, OutFeatureClass, GroupField, IncludeVelocity, OutPointFeatureClass };
+		public override object[] Parameters() => new object[] { InFeatures, DateField, OutFeatureClass, GroupField, IncludeVelocity, OutPointFeatureClass };
 
 		/// <summary>
 		/// <para>Input Features</para>

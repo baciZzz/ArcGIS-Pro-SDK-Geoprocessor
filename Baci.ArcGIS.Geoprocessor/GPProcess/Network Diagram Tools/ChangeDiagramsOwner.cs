@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Change Diagrams Owner</para>
 		/// </summary>
-		public override string DisplayName => "Change Diagrams Owner";
+		public override string DisplayName() => "Change Diagrams Owner";
 
 		/// <summary>
 		/// <para>Tool Name : ChangeDiagramsOwner</para>
 		/// </summary>
-		public override string ToolName => "ChangeDiagramsOwner";
+		public override string ToolName() => "ChangeDiagramsOwner";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.ChangeDiagramsOwner</para>
 		/// </summary>
-		public override string ExcuteName => "nd.ChangeDiagramsOwner";
+		public override string ExcuteName() => "nd.ChangeDiagramsOwner";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDiagrams, TargetOwner, SourceOwner, DiagramNames, OutDiagrams };
+		public override object[] Parameters() => new object[] { InDiagrams, TargetOwner, SourceOwner, DiagramNames, OutDiagrams };
 
 		/// <summary>
 		/// <para>Input Network or Network Diagram Layer</para>

@@ -41,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Classify Objects Using Deep Learning</para>
 		/// </summary>
-		public override string DisplayName => "Classify Objects Using Deep Learning";
+		public override string DisplayName() => "Classify Objects Using Deep Learning";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyObjectsUsingDeepLearning</para>
 		/// </summary>
-		public override string ToolName => "ClassifyObjectsUsingDeepLearning";
+		public override string ToolName() => "ClassifyObjectsUsingDeepLearning";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.ClassifyObjectsUsingDeepLearning</para>
 		/// </summary>
-		public override string ExcuteName => "ia.ClassifyObjectsUsingDeepLearning";
+		public override string ExcuteName() => "ia.ClassifyObjectsUsingDeepLearning";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "geographicTransformations", "gpuID", "outputCoordinateSystem", "parallelProcessingFactor", "processorType" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "geographicTransformations", "gpuID", "outputCoordinateSystem", "parallelProcessingFactor", "processorType" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutFeatureClass, InModelDefinition, InFeatures, ClassLabelField, ProcessingMode, ModelArguments };
+		public override object[] Parameters() => new object[] { InRaster, OutFeatureClass, InModelDefinition, InFeatures, ClassLabelField, ProcessingMode, ModelArguments };
 
 		/// <summary>
 		/// <para>Input Raster</para>

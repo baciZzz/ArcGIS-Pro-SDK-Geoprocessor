@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 {
+    /// <summary>
+    /// FME Source Dataset Type Attribute
+    /// </summary>
     public class FMESourceDatasetTypeAttribute : BaseDataTypeAttribute
     {
     }

@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Coverage Areas</para>
 		/// </summary>
-		public override string DisplayName => "Generate Coverage Areas";
+		public override string DisplayName() => "Generate Coverage Areas";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateCoverageAreas</para>
 		/// </summary>
-		public override string ToolName => "GenerateCoverageAreas";
+		public override string ToolName() => "GenerateCoverageAreas";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.GenerateCoverageAreas</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.GenerateCoverageAreas";
+		public override string ExcuteName() => "intelligence.GenerateCoverageAreas";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, BufferType, RangeUnit, StartTimeField, EndTimeField };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, BufferType, RangeUnit, StartTimeField, EndTimeField };
 
 		/// <summary>
 		/// <para>Input Features</para>

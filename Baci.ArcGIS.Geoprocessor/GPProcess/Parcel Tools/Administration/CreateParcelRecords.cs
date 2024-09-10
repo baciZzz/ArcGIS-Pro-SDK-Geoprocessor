@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Parcel Records</para>
 		/// </summary>
-		public override string DisplayName => "Create Parcel Records";
+		public override string DisplayName() => "Create Parcel Records";
 
 		/// <summary>
 		/// <para>Tool Name : CreateParcelRecords</para>
 		/// </summary>
-		public override string ToolName => "CreateParcelRecords";
+		public override string ToolName() => "CreateParcelRecords";
 
 		/// <summary>
 		/// <para>Tool Excute Name : parcel.CreateParcelRecords</para>
 		/// </summary>
-		public override string ExcuteName => "parcel.CreateParcelRecords";
+		public override string ExcuteName() => "parcel.CreateParcelRecords";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Parcel Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Parcel Tools";
+		public override string ToolboxDisplayName() => "Parcel Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : parcel</para>
 		/// </summary>
-		public override string ToolboxAlise => "parcel";
+		public override string ToolboxAlise() => "parcel";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InParcelFeatures, RecordField, OutRecordFeatureClass, UpdatedParcelFabric, RecordExpression, RecordNameMethod };
+		public override object[] Parameters() => new object[] { InParcelFeatures, RecordField, OutRecordFeatureClass, UpdatedParcelFabric, RecordExpression, RecordNameMethod };
 
 		/// <summary>
 		/// <para>Parcel Features</para>

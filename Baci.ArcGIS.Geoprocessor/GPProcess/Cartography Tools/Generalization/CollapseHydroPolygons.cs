@@ -42,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Collapse Hydro Polygons</para>
 		/// </summary>
-		public override string DisplayName => "Collapse Hydro Polygons";
+		public override string DisplayName() => "Collapse Hydro Polygons";
 
 		/// <summary>
 		/// <para>Tool Name : CollapseHydroPolygons</para>
 		/// </summary>
-		public override string ToolName => "CollapseHydroPolygons";
+		public override string ToolName() => "CollapseHydroPolygons";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.CollapseHydroPolygons</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.CollapseHydroPolygons";
+		public override string ExcuteName() => "cartography.CollapseHydroPolygons";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPolygons, InLines, CollapseDist, CollapseDistTol, ContextRatio, OutPolygonFeatureClass, OutLineFeatureClass };
+		public override object[] Parameters() => new object[] { InPolygons, InLines, CollapseDist, CollapseDistTol, ContextRatio, OutPolygonFeatureClass, OutLineFeatureClass };
 
 		/// <summary>
 		/// <para>Input Hydro Polygons</para>

@@ -32,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Random Raster</para>
 		/// </summary>
-		public override string DisplayName => "Create Random Raster";
+		public override string DisplayName() => "Create Random Raster";
 
 		/// <summary>
 		/// <para>Tool Name : CreateRandomRaster</para>
 		/// </summary>
-		public override string ToolName => "CreateRandomRaster";
+		public override string ToolName() => "CreateRandomRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.CreateRandomRaster</para>
 		/// </summary>
-		public override string ExcuteName => "sa.CreateRandomRaster";
+		public override string ExcuteName() => "sa.CreateRandomRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutRaster, SeedValue, CellSize, Extent };
+		public override object[] Parameters() => new object[] { OutRaster, SeedValue, CellSize, Extent };
 
 		/// <summary>
 		/// <para>Output raster</para>

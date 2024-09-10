@@ -80,37 +80,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Geometry Attributes</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Geometry Attributes";
+		public override string DisplayName() => "Calculate Geometry Attributes";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateGeometryAttributes</para>
 		/// </summary>
-		public override string ToolName => "CalculateGeometryAttributes";
+		public override string ToolName() => "CalculateGeometryAttributes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CalculateGeometryAttributes</para>
 		/// </summary>
-		public override string ExcuteName => "management.CalculateGeometryAttributes";
+		public override string ExcuteName() => "management.CalculateGeometryAttributes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, GeometryProperty, LengthUnit, AreaUnit, CoordinateSystem, UpdatedFeatures, CoordinateFormat };
+		public override object[] Parameters() => new object[] { InFeatures, GeometryProperty, LengthUnit, AreaUnit, CoordinateSystem, UpdatedFeatures, CoordinateFormat };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -54,37 +54,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Spatial Weights Matrix</para>
 		/// </summary>
-		public override string DisplayName => "Generate Spatial Weights Matrix";
+		public override string DisplayName() => "Generate Spatial Weights Matrix";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateSpatialWeightsMatrix</para>
 		/// </summary>
-		public override string ToolName => "GenerateSpatialWeightsMatrix";
+		public override string ToolName() => "GenerateSpatialWeightsMatrix";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.GenerateSpatialWeightsMatrix</para>
 		/// </summary>
-		public override string ExcuteName => "stats.GenerateSpatialWeightsMatrix";
+		public override string ExcuteName() => "stats.GenerateSpatialWeightsMatrix";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, UniqueIDField, OutputSpatialWeightsMatrixFile, ConceptualizationOfSpatialRelationships, DistanceMethod, Exponent, ThresholdDistance, NumberOfNeighbors, RowStandardization, InputTable, DateTimeField, DateTimeIntervalType, DateTimeIntervalValue, UseZValues };
+		public override object[] Parameters() => new object[] { InputFeatureClass, UniqueIDField, OutputSpatialWeightsMatrixFile, ConceptualizationOfSpatialRelationships, DistanceMethod, Exponent, ThresholdDistance, NumberOfNeighbors, RowStandardization, InputTable, DateTimeField, DateTimeIntervalType, DateTimeIntervalValue, UseZValues };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>

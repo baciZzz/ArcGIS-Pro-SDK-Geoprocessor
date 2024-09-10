@@ -62,37 +62,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Shift</para>
 		/// </summary>
-		public override string DisplayName => "Shift";
+		public override string DisplayName() => "Shift";
 
 		/// <summary>
 		/// <para>Tool Name : Shift</para>
 		/// </summary>
-		public override string ToolName => "Shift";
+		public override string ToolName() => "Shift";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Shift</para>
 		/// </summary>
-		public override string ExcuteName => "management.Shift";
+		public override string ExcuteName() => "management.Shift";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, XValue, YValue, InSnapRaster };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, XValue, YValue, InSnapRaster };
 
 		/// <summary>
 		/// <para>Input Raster</para>

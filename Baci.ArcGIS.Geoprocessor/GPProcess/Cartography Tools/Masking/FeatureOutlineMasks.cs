@@ -78,37 +78,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Feature Outline Masks</para>
 		/// </summary>
-		public override string DisplayName => "Feature Outline Masks";
+		public override string DisplayName() => "Feature Outline Masks";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureOutlineMasks</para>
 		/// </summary>
-		public override string ToolName => "FeatureOutlineMasks";
+		public override string ToolName() => "FeatureOutlineMasks";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.FeatureOutlineMasks</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.FeatureOutlineMasks";
+		public override string ExcuteName() => "cartography.FeatureOutlineMasks";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cartographicCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "cartographicCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutputFc, ReferenceScale, SpatialReference, Margin, Method, MaskForNonPlacedAnno, Attributes };
+		public override object[] Parameters() => new object[] { InputLayer, OutputFc, ReferenceScale, SpatialReference, Margin, Method, MaskForNonPlacedAnno, Attributes };
 
 		/// <summary>
 		/// <para>Input Layer</para>

@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Tool Display Name : Summarize Elevation</para>
 		/// </summary>
-		public override string DisplayName => "Summarize Elevation";
+		public override string DisplayName() => "Summarize Elevation";
 
 		/// <summary>
 		/// <para>Tool Name : SummarizeElevation</para>
 		/// </summary>
-		public override string ToolName => "SummarizeElevation";
+		public override string ToolName() => "SummarizeElevation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : agolservices.SummarizeElevation</para>
 		/// </summary>
-		public override string ExcuteName => "agolservices.SummarizeElevation";
+		public override string ExcuteName() => "agolservices.SummarizeElevation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Ready To Use Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Ready To Use Tools";
+		public override string ToolboxDisplayName() => "Ready To Use Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : agolservices</para>
 		/// </summary>
-		public override string ToolboxAlise => "agolservices";
+		public override string ToolboxAlise() => "agolservices";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputfeatures, Featureidfield, Demresolution, Includeslopeaspect, Outputsummary };
+		public override object[] Parameters() => new object[] { Inputfeatures, Featureidfield, Demresolution, Includeslopeaspect, Outputsummary };
 
 		/// <summary>
 		/// <para>Input Features</para>

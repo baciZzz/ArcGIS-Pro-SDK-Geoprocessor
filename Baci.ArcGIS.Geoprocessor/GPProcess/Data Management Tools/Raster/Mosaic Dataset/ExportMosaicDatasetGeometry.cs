@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Mosaic Dataset Geometry</para>
 		/// </summary>
-		public override string DisplayName => "Export Mosaic Dataset Geometry";
+		public override string DisplayName() => "Export Mosaic Dataset Geometry";
 
 		/// <summary>
 		/// <para>Tool Name : ExportMosaicDatasetGeometry</para>
 		/// </summary>
-		public override string ToolName => "ExportMosaicDatasetGeometry";
+		public override string ToolName() => "ExportMosaicDatasetGeometry";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ExportMosaicDatasetGeometry</para>
 		/// </summary>
-		public override string ExcuteName => "management.ExportMosaicDatasetGeometry";
+		public override string ExcuteName() => "management.ExportMosaicDatasetGeometry";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, OutFeatureClass, WhereClause, GeometryType };
+		public override object[] Parameters() => new object[] { InMosaicDataset, OutFeatureClass, WhereClause, GeometryType };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

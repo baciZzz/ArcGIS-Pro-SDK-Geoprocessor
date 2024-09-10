@@ -46,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Workflow Database</para>
 		/// </summary>
-		public override string DisplayName => "Create Workflow Database";
+		public override string DisplayName() => "Create Workflow Database";
 
 		/// <summary>
 		/// <para>Tool Name : CreateWorkflowDatabase</para>
 		/// </summary>
-		public override string ToolName => "CreateWorkflowDatabase";
+		public override string ToolName() => "CreateWorkflowDatabase";
 
 		/// <summary>
 		/// <para>Tool Excute Name : wmx.CreateWorkflowDatabase</para>
 		/// </summary>
-		public override string ExcuteName => "wmx.CreateWorkflowDatabase";
+		public override string ExcuteName() => "wmx.CreateWorkflowDatabase";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Workflow Manager Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Workflow Manager Tools";
+		public override string ToolboxDisplayName() => "Workflow Manager Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : wmx</para>
 		/// </summary>
-		public override string ToolboxAlise => "wmx";
+		public override string ToolboxAlise() => "wmx";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabaseConnection, AOISpatialReference, ImportConfiguration, InputCustomConfiguration, UserStore, OutputDatabasepath };
+		public override object[] Parameters() => new object[] { InputDatabaseConnection, AOISpatialReference, ImportConfiguration, InputCustomConfiguration, UserStore, OutputDatabasepath };
 
 		/// <summary>
 		/// <para>Input Database Connection</para>

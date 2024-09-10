@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Fill Gaps</para>
 		/// </summary>
-		public override string DisplayName => "Fill Gaps";
+		public override string DisplayName() => "Fill Gaps";
 
 		/// <summary>
 		/// <para>Tool Name : FillGaps</para>
 		/// </summary>
-		public override string ToolName => "FillGaps";
+		public override string ToolName() => "FillGaps";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.FillGaps</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.FillGaps";
+		public override string ExcuteName() => "topographic.FillGaps";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, MaxGapArea, FillOption, FillUnenclosedGaps, MaxGapDistance, UpdatedFeatures };
+		public override object[] Parameters() => new object[] { InputFeatures, MaxGapArea, FillOption, FillUnenclosedGaps, MaxGapDistance, UpdatedFeatures };
 
 		/// <summary>
 		/// <para>Input Features</para>

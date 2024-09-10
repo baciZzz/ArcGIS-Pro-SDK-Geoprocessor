@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Z-value</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Z-value";
+		public override string DisplayName() => "Calculate Z-value";
 
 		/// <summary>
 		/// <para>Tool Name : GACalculateZValue</para>
 		/// </summary>
-		public override string ToolName => "GACalculateZValue";
+		public override string ToolName() => "GACalculateZValue";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.GACalculateZValue</para>
 		/// </summary>
-		public override string ExcuteName => "ga.GACalculateZValue";
+		public override string ExcuteName() => "ga.GACalculateZValue";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeostatLayer, PointCoord, OutZValue };
+		public override object[] Parameters() => new object[] { InGeostatLayer, PointCoord, OutZValue };
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>

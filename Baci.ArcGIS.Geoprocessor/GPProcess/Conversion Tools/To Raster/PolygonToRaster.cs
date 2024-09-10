@@ -42,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Polygon to Raster</para>
 		/// </summary>
-		public override string DisplayName => "Polygon to Raster";
+		public override string DisplayName() => "Polygon to Raster";
 
 		/// <summary>
 		/// <para>Tool Name : PolygonToRaster</para>
 		/// </summary>
-		public override string ToolName => "PolygonToRaster";
+		public override string ToolName() => "PolygonToRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.PolygonToRaster</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.PolygonToRaster";
+		public override string ExcuteName() => "conversion.PolygonToRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "pyramid", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "pyramid", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ValueField, OutRasterdataset, CellAssignment, PriorityField, Cellsize, BuildRat };
+		public override object[] Parameters() => new object[] { InFeatures, ValueField, OutRasterdataset, CellAssignment, PriorityField, Cellsize, BuildRat };
 
 		/// <summary>
 		/// <para>Input Features</para>

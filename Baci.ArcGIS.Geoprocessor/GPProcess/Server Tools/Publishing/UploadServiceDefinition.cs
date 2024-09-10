@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Upload Service Definition</para>
 		/// </summary>
-		public override string DisplayName => "Upload Service Definition";
+		public override string DisplayName() => "Upload Service Definition";
 
 		/// <summary>
 		/// <para>Tool Name : UploadServiceDefinition</para>
 		/// </summary>
-		public override string ToolName => "UploadServiceDefinition";
+		public override string ToolName() => "UploadServiceDefinition";
 
 		/// <summary>
 		/// <para>Tool Excute Name : server.UploadServiceDefinition</para>
 		/// </summary>
-		public override string ExcuteName => "server.UploadServiceDefinition";
+		public override string ExcuteName() => "server.UploadServiceDefinition";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Server Tools";
+		public override string ToolboxDisplayName() => "Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : server</para>
 		/// </summary>
-		public override string ToolboxAlise => "server";
+		public override string ToolboxAlise() => "server";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSdFile, InServer, InServiceName, InCluster, InFolderType, InFolder, InStartuptype, InOverride, InMyContents, InPublic, InOrganization, InGroups, OutSoapSvcUrl, OutRestSvcUrl, OutMapserviceitemid, OutFeatserviceitemid, OutCachedService, OutFeatureserviceurl, OutMapserviceurl, OutLayeridmap, OutStandalonetableidmap, OutVectortileserviceid, OutVectortileserviceurl };
+		public override object[] Parameters() => new object[] { InSdFile, InServer, InServiceName, InCluster, InFolderType, InFolder, InStartuptype, InOverride, InMyContents, InPublic, InOrganization, InGroups, OutSoapSvcUrl, OutRestSvcUrl, OutMapserviceitemid, OutFeatserviceitemid, OutCachedService, OutFeatureserviceurl, OutMapserviceurl, OutLayeridmap, OutStandalonetableidmap, OutVectortileserviceid, OutVectortileserviceurl };
 
 		/// <summary>
 		/// <para>Service Definition</para>

@@ -38,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Manage Map Server Cache Status</para>
 		/// </summary>
-		public override string DisplayName => "Manage Map Server Cache Status";
+		public override string DisplayName() => "Manage Map Server Cache Status";
 
 		/// <summary>
 		/// <para>Tool Name : ManageMapServerCacheStatus</para>
 		/// </summary>
-		public override string ToolName => "ManageMapServerCacheStatus";
+		public override string ToolName() => "ManageMapServerCacheStatus";
 
 		/// <summary>
 		/// <para>Tool Excute Name : server.ManageMapServerCacheStatus</para>
 		/// </summary>
-		public override string ExcuteName => "server.ManageMapServerCacheStatus";
+		public override string ExcuteName() => "server.ManageMapServerCacheStatus";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Server Tools";
+		public override string ToolboxDisplayName() => "Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : server</para>
 		/// </summary>
-		public override string ToolboxAlise => "server";
+		public override string ToolboxAlise() => "server";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputService, ManageMode, Scales, NumOfCachingServiceInstances, ReportFolder, AreaOfInterest, ReportExtent, OutputFolder };
+		public override object[] Parameters() => new object[] { InputService, ManageMode, Scales, NumOfCachingServiceInstances, ReportFolder, AreaOfInterest, ReportExtent, OutputFolder };
 
 		/// <summary>
 		/// <para>Input Service</para>

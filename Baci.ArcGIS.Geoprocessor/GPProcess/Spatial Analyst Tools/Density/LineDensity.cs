@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Line Density</para>
 		/// </summary>
-		public override string DisplayName => "Line Density";
+		public override string DisplayName() => "Line Density";
 
 		/// <summary>
 		/// <para>Tool Name : LineDensity</para>
 		/// </summary>
-		public override string ToolName => "LineDensity";
+		public override string ToolName() => "LineDensity";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.LineDensity</para>
 		/// </summary>
-		public override string ExcuteName => "sa.LineDensity";
+		public override string ExcuteName() => "sa.LineDensity";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPolylineFeatures, PopulationField, OutRaster, CellSize, SearchRadius, AreaUnitScaleFactor };
+		public override object[] Parameters() => new object[] { InPolylineFeatures, PopulationField, OutRaster, CellSize, SearchRadius, AreaUnitScaleFactor };
 
 		/// <summary>
 		/// <para>Input polyline features</para>

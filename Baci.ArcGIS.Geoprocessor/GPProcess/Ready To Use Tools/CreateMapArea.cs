@@ -29,37 +29,37 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Tool Display Name : ServerTool</para>
 		/// </summary>
-		public override string DisplayName => "ServerTool";
+		public override string DisplayName() => "ServerTool";
 
 		/// <summary>
 		/// <para>Tool Name : CreateMapArea</para>
 		/// </summary>
-		public override string ToolName => "CreateMapArea";
+		public override string ToolName() => "CreateMapArea";
 
 		/// <summary>
 		/// <para>Tool Excute Name : agolservices.CreateMapArea</para>
 		/// </summary>
-		public override string ExcuteName => "agolservices.CreateMapArea";
+		public override string ExcuteName() => "agolservices.CreateMapArea";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Ready To Use Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Ready To Use Tools";
+		public override string ToolboxDisplayName() => "Ready To Use Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : agolservices</para>
 		/// </summary>
-		public override string ToolboxAlise => "agolservices";
+		public override string ToolboxAlise() => "agolservices";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Mapitemid, Bookmark, Extent, Areatype, Area, Outputname, Mapareaitemid };
+		public override object[] Parameters() => new object[] { Mapitemid, Bookmark, Extent, Areatype, Area, Outputname, Mapareaitemid };
 
 		/// <summary>
 		/// <para>Map Item ID</para>

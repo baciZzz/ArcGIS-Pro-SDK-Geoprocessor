@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Trend</para>
 		/// </summary>
-		public override string DisplayName => "Trend";
+		public override string DisplayName() => "Trend";
 
 		/// <summary>
 		/// <para>Tool Name : Trend</para>
 		/// </summary>
-		public override string ToolName => "Trend";
+		public override string ToolName() => "Trend";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Trend</para>
 		/// </summary>
-		public override string ExcuteName => "sa.Trend";
+		public override string ExcuteName() => "sa.Trend";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, ZField, OutRaster, CellSize, Order, RegressionType, OutRmsFile };
+		public override object[] Parameters() => new object[] { InPointFeatures, ZField, OutRaster, CellSize, Order, RegressionType, OutRmsFile };
 
 		/// <summary>
 		/// <para>Input point features</para>

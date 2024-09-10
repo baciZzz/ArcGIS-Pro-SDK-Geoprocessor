@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Make OD Cost Matrix Analysis Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make OD Cost Matrix Analysis Layer";
+		public override string DisplayName() => "Make OD Cost Matrix Analysis Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeODCostMatrixAnalysisLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeODCostMatrixAnalysisLayer";
+		public override string ToolName() => "MakeODCostMatrixAnalysisLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.MakeODCostMatrixAnalysisLayer</para>
 		/// </summary>
-		public override string ExcuteName => "na.MakeODCostMatrixAnalysisLayer";
+		public override string ExcuteName() => "na.MakeODCostMatrixAnalysisLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { NetworkDataSource, LayerName, TravelMode, Cutoff, NumberOfDestinationsToFind, TimeOfDay, TimeZone, LineShape, AccumulateAttributes, OutNetworkAnalysisLayer };
+		public override object[] Parameters() => new object[] { NetworkDataSource, LayerName, TravelMode, Cutoff, NumberOfDestinationsToFind, TimeOfDay, TimeZone, LineShape, AccumulateAttributes, OutNetworkAnalysisLayer };
 
 		/// <summary>
 		/// <para>Network Data Source</para>

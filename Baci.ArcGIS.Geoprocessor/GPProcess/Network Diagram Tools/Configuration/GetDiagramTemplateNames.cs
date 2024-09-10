@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Get Diagram Template Names</para>
 		/// </summary>
-		public override string DisplayName => "Get Diagram Template Names";
+		public override string DisplayName() => "Get Diagram Template Names";
 
 		/// <summary>
 		/// <para>Tool Name : GetDiagramTemplateNames</para>
 		/// </summary>
-		public override string ToolName => "GetDiagramTemplateNames";
+		public override string ToolName() => "GetDiagramTemplateNames";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.GetDiagramTemplateNames</para>
 		/// </summary>
-		public override string ExcuteName => "nd.GetDiagramTemplateNames";
+		public override string ExcuteName() => "nd.GetDiagramTemplateNames";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, OutTemplateNames };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, OutTemplateNames };
 
 		/// <summary>
 		/// <para>Input Network</para>

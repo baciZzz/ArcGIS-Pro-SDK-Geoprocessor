@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Compute Segment Attributes</para>
 		/// </summary>
-		public override string DisplayName => "Compute Segment Attributes";
+		public override string DisplayName() => "Compute Segment Attributes";
 
 		/// <summary>
 		/// <para>Tool Name : ComputeSegmentAttributes</para>
 		/// </summary>
-		public override string ToolName => "ComputeSegmentAttributes";
+		public override string ToolName() => "ComputeSegmentAttributes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.ComputeSegmentAttributes</para>
 		/// </summary>
-		public override string ExcuteName => "ia.ComputeSegmentAttributes";
+		public override string ExcuteName() => "ia.ComputeSegmentAttributes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "compression", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "compression", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSegmentedRaster, OutIndexRasterDataset, InAdditionalRaster, UsedAttributes };
+		public override object[] Parameters() => new object[] { InSegmentedRaster, OutIndexRasterDataset, InAdditionalRaster, UsedAttributes };
 
 		/// <summary>
 		/// <para>Input Segmented RGB Or Gray Raster</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <para>Compactness—The degree to which a segment is compact or circular, on a per-segment basis. The values range from 0 to 1, in which 1 is a circle.</para>
 		/// <para>Rectangularity—The degree to which the segment is rectangular, on a per-segment basis. The values range from 0 to 1, in which 1 is a rectangle.</para>
 		/// <para>If the only input into the tool is a segmented image, the default attributes are Average chromaticity color, Count of pixels, Compactness, and Rectangularity. If an Additional Input Raster is also included as an input along with a segmented image, then Mean digital number and Standard deviation are available as options.</para>
-		/// <para><para/></para>
+		/// <para>&lt;para/&gt;</para>
 		/// <para><see cref="UsedAttributesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]

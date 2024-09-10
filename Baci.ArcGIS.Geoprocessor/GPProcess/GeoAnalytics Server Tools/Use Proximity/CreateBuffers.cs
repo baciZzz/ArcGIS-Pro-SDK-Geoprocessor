@@ -52,37 +52,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Buffers</para>
 		/// </summary>
-		public override string DisplayName => "Create Buffers";
+		public override string DisplayName() => "Create Buffers";
 
 		/// <summary>
 		/// <para>Tool Name : CreateBuffers</para>
 		/// </summary>
-		public override string ToolName => "CreateBuffers";
+		public override string ToolName() => "CreateBuffers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.CreateBuffers</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.CreateBuffers";
+		public override string ExcuteName() => "geoanalytics.CreateBuffers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutputName, Method, BufferType, BufferField, BufferDistance, BufferExpression, DissolveOption, DissolveFields, SummaryFields, Multipart, Output, DataStore };
+		public override object[] Parameters() => new object[] { InputLayer, OutputName, Method, BufferType, BufferField, BufferDistance, BufferExpression, DissolveOption, DissolveFields, SummaryFields, Multipart, Output, DataStore };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <para>Buffer Expression</para>
 		/// <para>An equation using fields and mathematical operators that will be applied as a buffer to each feature. Fields must be numeric, and the expression can include [+ - * / ] operators and multiple fields. Calculated values are applied in meters unless otherwise specified. For example, apply a buffer that multiples a numeric field named distance in kilometers by 2 and adds 15 meters.</para>
 		/// <para>ArcGIS Enterprise 10.5 and 10.5.1 expressions are formatted as as_kilometers(distance) * 2 + as_meters(15). For ArcGIS Enterprise 10.6 or later, use an Arcade expression such as as_kilometers($feature[&quot;distance&quot;]) * 2 + as_meters(15).</para>
-		/// <para><para/></para>
+		/// <para>&lt;para/&gt;</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCalculatorExpression()]

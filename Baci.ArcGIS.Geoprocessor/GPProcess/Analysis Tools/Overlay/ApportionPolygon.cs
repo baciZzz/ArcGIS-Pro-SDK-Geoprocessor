@@ -56,37 +56,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Apportion Polygon</para>
 		/// </summary>
-		public override string DisplayName => "Apportion Polygon";
+		public override string DisplayName() => "Apportion Polygon";
 
 		/// <summary>
 		/// <para>Tool Name : ApportionPolygon</para>
 		/// </summary>
-		public override string ToolName => "ApportionPolygon";
+		public override string ToolName() => "ApportionPolygon";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.ApportionPolygon</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.ApportionPolygon";
+		public override string ExcuteName() => "analysis.ApportionPolygon";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ApportionFields, TargetFeatures, OutFeatures, Method, EstimationFeatures, WeightField, MaintainGeometries };
+		public override object[] Parameters() => new object[] { InFeatures, ApportionFields, TargetFeatures, OutFeatures, Method, EstimationFeatures, WeightField, MaintainGeometries };
 
 		/// <summary>
 		/// <para>Input Polygons</para>

@@ -41,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Route Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make Route Layer";
+		public override string DisplayName() => "Make Route Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeRouteLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeRouteLayer";
+		public override string ToolName() => "MakeRouteLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.MakeRouteLayer</para>
 		/// </summary>
-		public override string ExcuteName => "na.MakeRouteLayer";
+		public override string ExcuteName() => "na.MakeRouteLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDataset, OutNetworkAnalysisLayer, ImpedanceAttribute, FindBestOrder, OrderingType, TimeWindows, AccumulateAttributeName, UturnPolicy, RestrictionAttributeName, Hierarchy, HierarchySettings, OutputPathShape, StartDateTime, OutputLayer };
+		public override object[] Parameters() => new object[] { InNetworkDataset, OutNetworkAnalysisLayer, ImpedanceAttribute, FindBestOrder, OrderingType, TimeWindows, AccumulateAttributeName, UturnPolicy, RestrictionAttributeName, Hierarchy, HierarchySettings, OutputPathShape, StartDateTime, OutputLayer };
 
 		/// <summary>
 		/// <para>Input Analysis Network</para>

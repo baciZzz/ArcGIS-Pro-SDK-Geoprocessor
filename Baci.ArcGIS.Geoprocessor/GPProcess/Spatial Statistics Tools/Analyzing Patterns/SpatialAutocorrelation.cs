@@ -65,37 +65,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Spatial Autocorrelation (Global Moran's I)</para>
 		/// </summary>
-		public override string DisplayName => "Spatial Autocorrelation (Global Moran's I)";
+		public override string DisplayName() => "Spatial Autocorrelation (Global Moran's I)";
 
 		/// <summary>
 		/// <para>Tool Name : SpatialAutocorrelation</para>
 		/// </summary>
-		public override string ToolName => "SpatialAutocorrelation";
+		public override string ToolName() => "SpatialAutocorrelation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.SpatialAutocorrelation</para>
 		/// </summary>
-		public override string ExcuteName => "stats.SpatialAutocorrelation";
+		public override string ExcuteName() => "stats.SpatialAutocorrelation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, InputField, GenerateReport, ConceptualizationOfSpatialRelationships, DistanceMethod, Standardization, DistanceBandOrThresholdDistance, WeightsMatrixFile, Index, Zscore, Pvalue, ReportFile, NumberOfNeighbors };
+		public override object[] Parameters() => new object[] { InputFeatureClass, InputField, GenerateReport, ConceptualizationOfSpatialRelationships, DistanceMethod, Standardization, DistanceBandOrThresholdDistance, WeightsMatrixFile, Index, Zscore, Pvalue, ReportFile, NumberOfNeighbors };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>

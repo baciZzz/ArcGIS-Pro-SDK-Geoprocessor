@@ -53,37 +53,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Vector Tile Package</para>
 		/// </summary>
-		public override string DisplayName => "Create Vector Tile Package";
+		public override string DisplayName() => "Create Vector Tile Package";
 
 		/// <summary>
 		/// <para>Tool Name : CreateVectorTilePackage</para>
 		/// </summary>
-		public override string ToolName => "CreateVectorTilePackage";
+		public override string ToolName() => "CreateVectorTilePackage";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateVectorTilePackage</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateVectorTilePackage";
+		public override string ExcuteName() => "management.CreateVectorTilePackage";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, OutputFile, ServiceType, TilingScheme, TileStructure, MinCachedScale, MaxCachedScale, IndexPolygons, Summary, Tags };
+		public override object[] Parameters() => new object[] { InMap, OutputFile, ServiceType, TilingScheme, TileStructure, MinCachedScale, MaxCachedScale, IndexPolygons, Summary, Tags };
 
 		/// <summary>
 		/// <para>Input Map</para>

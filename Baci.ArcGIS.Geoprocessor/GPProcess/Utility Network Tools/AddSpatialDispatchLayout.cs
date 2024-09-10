@@ -39,37 +39,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Spatial Dispatch Layout</para>
 		/// </summary>
-		public override string DisplayName => "Add Spatial Dispatch Layout";
+		public override string DisplayName() => "Add Spatial Dispatch Layout";
 
 		/// <summary>
 		/// <para>Tool Name : AddSpatialDispatchLayout</para>
 		/// </summary>
-		public override string ToolName => "AddSpatialDispatchLayout";
+		public override string ToolName() => "AddSpatialDispatchLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.AddSpatialDispatchLayout</para>
 		/// </summary>
-		public override string ExcuteName => "un.AddSpatialDispatchLayout";
+		public override string ExcuteName() => "un.AddSpatialDispatchLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved, IterationsNumber, MaximumShiftFactor, OutUtilityNetwork, OutTemplateName };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved, IterationsNumber, MaximumShiftFactor, OutUtilityNetwork, OutTemplateName };
 
 		/// <summary>
 		/// <para>Input Network</para>

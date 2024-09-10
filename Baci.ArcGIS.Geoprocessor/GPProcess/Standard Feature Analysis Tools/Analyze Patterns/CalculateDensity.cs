@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Density</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Density";
+		public override string DisplayName() => "Calculate Density";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateDensity</para>
 		/// </summary>
-		public override string ToolName => "CalculateDensity";
+		public override string ToolName() => "CalculateDensity";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sfa.CalculateDensity</para>
 		/// </summary>
-		public override string ExcuteName => "sfa.CalculateDensity";
+		public override string ExcuteName() => "sfa.CalculateDensity";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Standard Feature Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Standard Feature Analysis Tools";
+		public override string ToolboxDisplayName() => "Standard Feature Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sfa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sfa";
+		public override string ToolboxAlise() => "sfa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent" };
+		public override string[] ValidEnvironments() => new string[] { "extent" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputlayer, Outputname, Field, Cellsize, Cellsizeunits, Radius, Radiusunits, Boundingpolygonlayer, Areaunits, Classificationtype, Numclasses, Outputlayer };
+		public override object[] Parameters() => new object[] { Inputlayer, Outputname, Field, Cellsize, Cellsizeunits, Radius, Radiusunits, Boundingpolygonlayer, Areaunits, Classificationtype, Numclasses, Outputlayer };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -49,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Density-based Clustering</para>
 		/// </summary>
-		public override string DisplayName => "Density-based Clustering";
+		public override string DisplayName() => "Density-based Clustering";
 
 		/// <summary>
 		/// <para>Tool Name : DensityBasedClustering</para>
 		/// </summary>
-		public override string ToolName => "DensityBasedClustering";
+		public override string ToolName() => "DensityBasedClustering";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.DensityBasedClustering</para>
 		/// </summary>
-		public override string ExcuteName => "stats.DensityBasedClustering";
+		public override string ExcuteName() => "stats.DensityBasedClustering";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "outputZFlag", "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "outputZFlag", "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputFeatures, ClusterMethod, MinFeaturesCluster, SearchDistance, ClusterSensitivity, TimeField, SearchTimeInterval };
+		public override object[] Parameters() => new object[] { InFeatures, OutputFeatures, ClusterMethod, MinFeaturesCluster, SearchDistance, ClusterSensitivity, TimeField, SearchTimeInterval };
 
 		/// <summary>
 		/// <para>Input Point Features</para>

@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Create LRS Network From Existing Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Create LRS Network From Existing Dataset";
+		public override string DisplayName() => "Create LRS Network From Existing Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : CreateLRSNetworkFromExistingDataset</para>
 		/// </summary>
-		public override string ToolName => "CreateLRSNetworkFromExistingDataset";
+		public override string ToolName() => "CreateLRSNetworkFromExistingDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.CreateLRSNetworkFromExistingDataset</para>
 		/// </summary>
-		public override string ExcuteName => "locref.CreateLRSNetworkFromExistingDataset";
+		public override string ExcuteName() => "locref.CreateLRSNetworkFromExistingDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, LrsName, RouteIdField, RouteNameField, FromDateField, ToDateField, DeriveFromLineNetwork, LineNetworkName, IncludeFieldsToSupportLines, LineIdField, LineNameField, LineOrderField, OutFeatureClass, RouteIdConfiguration, IndividualRouteIdFields };
+		public override object[] Parameters() => new object[] { InFeatureClass, LrsName, RouteIdField, RouteNameField, FromDateField, ToDateField, DeriveFromLineNetwork, LineNetworkName, IncludeFieldsToSupportLines, LineIdField, LineNameField, LineOrderField, OutFeatureClass, RouteIdConfiguration, IndividualRouteIdFields };
 
 		/// <summary>
 		/// <para>LRS Network Feature Class</para>

@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Match Photos To Rows By Time</para>
 		/// </summary>
-		public override string DisplayName => "Match Photos To Rows By Time";
+		public override string DisplayName() => "Match Photos To Rows By Time";
 
 		/// <summary>
 		/// <para>Tool Name : MatchPhotosToRowsByTime</para>
 		/// </summary>
-		public override string ToolName => "MatchPhotosToRowsByTime";
+		public override string ToolName() => "MatchPhotosToRowsByTime";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MatchPhotosToRowsByTime</para>
 		/// </summary>
-		public override string ExcuteName => "management.MatchPhotosToRowsByTime";
+		public override string ExcuteName() => "management.MatchPhotosToRowsByTime";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFolder, InputTable, TimeField, OutputTable, UnmatchedPhotosTable, AddPhotosAsAttachments, TimeTolerance, ClockOffset };
+		public override object[] Parameters() => new object[] { InputFolder, InputTable, TimeField, OutputTable, UnmatchedPhotosTable, AddPhotosAsAttachments, TimeTolerance, ClockOffset };
 
 		/// <summary>
 		/// <para>Input Folder</para>

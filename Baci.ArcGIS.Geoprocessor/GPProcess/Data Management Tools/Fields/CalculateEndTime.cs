@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate End Time</para>
 		/// </summary>
-		public override string DisplayName => "Calculate End Time";
+		public override string DisplayName() => "Calculate End Time";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateEndTime</para>
 		/// </summary>
-		public override string ToolName => "CalculateEndTime";
+		public override string ToolName() => "CalculateEndTime";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CalculateEndTime</para>
 		/// </summary>
-		public override string ExcuteName => "management.CalculateEndTime";
+		public override string ExcuteName() => "management.CalculateEndTime";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, StartField, EndField, Fields, OutTable };
+		public override object[] Parameters() => new object[] { InTable, StartField, EndField, Fields, OutTable };
 
 		/// <summary>
 		/// <para>Input Table</para>

@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Call Links</para>
 		/// </summary>
-		public override string DisplayName => "Generate Call Links";
+		public override string DisplayName() => "Generate Call Links";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateCallLinks</para>
 		/// </summary>
-		public override string ToolName => "GenerateCallLinks";
+		public override string ToolName() => "GenerateCallLinks";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ca.GenerateCallLinks</para>
 		/// </summary>
-		public override string ExcuteName => "ca.GenerateCallLinks";
+		public override string ExcuteName() => "ca.GenerateCallLinks";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Crime Analysis and Safety Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Crime Analysis and Safety Tools";
+		public override string ToolboxDisplayName() => "Crime Analysis and Safety Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ca</para>
 		/// </summary>
-		public override string ToolboxAlise => "ca";
+		public override string ToolboxAlise() => "ca";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainAttachments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainAttachments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPrimaryFeatures, InSecondaryFeatures, OutFeatureClass, OutputType, PrimarySubscriberField, PrimaryDestinationField, PrimaryStartTimeField, SecondarySubscriberField, SecondaryDestinationField, SecondaryStartTimeField };
+		public override object[] Parameters() => new object[] { InPrimaryFeatures, InSecondaryFeatures, OutFeatureClass, OutputType, PrimarySubscriberField, PrimaryDestinationField, PrimaryStartTimeField, SecondarySubscriberField, SecondaryDestinationField, SecondaryStartTimeField };
 
 		/// <summary>
 		/// <para>Input Primary Phone Record Site Points or Sectors</para>

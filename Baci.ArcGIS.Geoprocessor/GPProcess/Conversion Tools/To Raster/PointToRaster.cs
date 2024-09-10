@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Point to Raster</para>
 		/// </summary>
-		public override string DisplayName => "Point to Raster";
+		public override string DisplayName() => "Point to Raster";
 
 		/// <summary>
 		/// <para>Tool Name : PointToRaster</para>
 		/// </summary>
-		public override string ToolName => "PointToRaster";
+		public override string ToolName() => "PointToRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.PointToRaster</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.PointToRaster";
+		public override string ExcuteName() => "conversion.PointToRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "pyramid", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "pyramid", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ValueField, OutRasterdataset, CellAssignment, PriorityField, Cellsize, BuildRat };
+		public override object[] Parameters() => new object[] { InFeatures, ValueField, OutRasterdataset, CellAssignment, PriorityField, Cellsize, BuildRat };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Central Feature</para>
 		/// </summary>
-		public override string DisplayName => "Central Feature";
+		public override string DisplayName() => "Central Feature";
 
 		/// <summary>
 		/// <para>Tool Name : CentralFeature</para>
 		/// </summary>
-		public override string ToolName => "CentralFeature";
+		public override string ToolName() => "CentralFeature";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.CentralFeature</para>
 		/// </summary>
-		public override string ExcuteName => "stats.CentralFeature";
+		public override string ExcuteName() => "stats.CentralFeature";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, OutputFeatureClass, DistanceMethod, WeightField, SelfPotentialWeightField, CaseField };
+		public override object[] Parameters() => new object[] { InputFeatureClass, OutputFeatureClass, DistanceMethod, WeightField, SelfPotentialWeightField, CaseField };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>

@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Grid From Point</para>
 		/// </summary>
-		public override string DisplayName => "Generate Grid From Point";
+		public override string DisplayName() => "Generate Grid From Point";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateGRGFromPoint</para>
 		/// </summary>
-		public override string ToolName => "GenerateGRGFromPoint";
+		public override string ToolName() => "GenerateGRGFromPoint";
 
 		/// <summary>
 		/// <para>Tool Excute Name : defense.GenerateGRGFromPoint</para>
 		/// </summary>
-		public override string ExcuteName => "defense.GenerateGRGFromPoint";
+		public override string ExcuteName() => "defense.GenerateGRGFromPoint";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Defense Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Defense Tools";
+		public override string ToolboxDisplayName() => "Defense Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : defense</para>
 		/// </summary>
-		public override string ToolboxAlise => "defense";
+		public override string ToolboxAlise() => "defense";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeature, OutFeatureClass, HorizontalCells, VerticalCells, CellWidth, CellHeight, CellUnits, LabelStartPosition, LabelFormat, LabelSeparator, GridAngle, GridAngleUnits };
+		public override object[] Parameters() => new object[] { InFeature, OutFeatureClass, HorizontalCells, VerticalCells, CellWidth, CellHeight, CellUnits, LabelStartPosition, LabelFormat, LabelSeparator, GridAngle, GridAngleUnits };
 
 		/// <summary>
 		/// <para>Input Feature</para>

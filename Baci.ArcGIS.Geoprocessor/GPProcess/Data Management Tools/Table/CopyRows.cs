@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Copy Rows</para>
 		/// </summary>
-		public override string DisplayName => "Copy Rows";
+		public override string DisplayName() => "Copy Rows";
 
 		/// <summary>
 		/// <para>Tool Name : CopyRows</para>
 		/// </summary>
-		public override string ToolName => "CopyRows";
+		public override string ToolName() => "CopyRows";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CopyRows</para>
 		/// </summary>
-		public override string ExcuteName => "management.CopyRows";
+		public override string ExcuteName() => "management.CopyRows";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "extent", "maintainAttachments", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "extent", "maintainAttachments", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRows, OutTable, ConfigKeyword };
+		public override object[] Parameters() => new object[] { InRows, OutTable, ConfigKeyword };
 
 		/// <summary>
 		/// <para>Input Rows</para>

@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Aviation Cartographic Features</para>
 		/// </summary>
-		public override string DisplayName => "Generate Aviation Cartographic Features";
+		public override string DisplayName() => "Generate Aviation Cartographic Features";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateAviationCartographicFeatures</para>
 		/// </summary>
-		public override string ToolName => "GenerateAviationCartographicFeatures";
+		public override string ToolName() => "GenerateAviationCartographicFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.GenerateAviationCartographicFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.GenerateAviationCartographicFeatures";
+		public override string ExcuteName() => "aviation.GenerateAviationCartographicFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { SourceTargetCartoFeatures, AoiFeatures, ExtractionQueryTable, InclusionExclusionTable, CartoFeatureClasses };
+		public override object[] Parameters() => new object[] { SourceTargetCartoFeatures, AoiFeatures, ExtractionQueryTable, InclusionExclusionTable, CartoFeatureClasses };
 
 		/// <summary>
 		/// <para>Source and Target Cartographic Features</para>

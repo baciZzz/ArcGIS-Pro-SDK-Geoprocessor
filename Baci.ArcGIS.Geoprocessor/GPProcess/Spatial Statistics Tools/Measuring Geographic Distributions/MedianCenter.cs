@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Median Center</para>
 		/// </summary>
-		public override string DisplayName => "Median Center";
+		public override string DisplayName() => "Median Center";
 
 		/// <summary>
 		/// <para>Tool Name : MedianCenter</para>
 		/// </summary>
-		public override string ToolName => "MedianCenter";
+		public override string ToolName() => "MedianCenter";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.MedianCenter</para>
 		/// </summary>
-		public override string ExcuteName => "stats.MedianCenter";
+		public override string ExcuteName() => "stats.MedianCenter";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, OutputFeatureClass, WeightField, CaseField, AttributeField };
+		public override object[] Parameters() => new object[] { InputFeatureClass, OutputFeatureClass, WeightField, CaseField, AttributeField };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>

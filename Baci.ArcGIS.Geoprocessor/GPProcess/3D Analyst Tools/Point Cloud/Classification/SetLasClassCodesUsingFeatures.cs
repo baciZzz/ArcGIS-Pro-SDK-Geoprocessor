@@ -44,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Set LAS Class Codes Using Features</para>
 		/// </summary>
-		public override string DisplayName => "Set LAS Class Codes Using Features";
+		public override string DisplayName() => "Set LAS Class Codes Using Features";
 
 		/// <summary>
 		/// <para>Tool Name : SetLasClassCodesUsingFeatures</para>
 		/// </summary>
-		public override string ToolName => "SetLasClassCodesUsingFeatures";
+		public override string ToolName() => "SetLasClassCodesUsingFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.SetLasClassCodesUsingFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "3d.SetLasClassCodesUsingFeatures";
+		public override string ExcuteName() => "3d.SetLasClassCodesUsingFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, FeatureClass, ComputeStats, DerivedLasDataset, UpdatePyramid };
+		public override object[] Parameters() => new object[] { InLasDataset, FeatureClass, ComputeStats, DerivedLasDataset, UpdatePyramid };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>

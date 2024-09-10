@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Build Seamlines</para>
 		/// </summary>
-		public override string DisplayName => "Build Seamlines";
+		public override string DisplayName() => "Build Seamlines";
 
 		/// <summary>
 		/// <para>Tool Name : BuildSeamlines</para>
 		/// </summary>
-		public override string ToolName => "BuildSeamlines";
+		public override string ToolName() => "BuildSeamlines";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.BuildSeamlines</para>
 		/// </summary>
-		public override string ExcuteName => "management.BuildSeamlines";
+		public override string ExcuteName() => "management.BuildSeamlines";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, CellSize, SortMethod, SortOrder, OrderByAttribute, OrderByBaseValue, ViewPoint, ComputationMethod, BlendWidth, BlendType, RequestSize, RequestSizeType, BlendWidthUnits, AreaOfInterest, WhereClause, UpdateExisting, OutMosaicDataset, MinRegionSize, MinThinnessRatio, MaxSliverSize };
+		public override object[] Parameters() => new object[] { InMosaicDataset, CellSize, SortMethod, SortOrder, OrderByAttribute, OrderByBaseValue, ViewPoint, ComputationMethod, BlendWidth, BlendType, RequestSize, RequestSizeType, BlendWidthUnits, AreaOfInterest, WhereClause, UpdateExisting, OutMosaicDataset, MinRegionSize, MinThinnessRatio, MaxSliverSize };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

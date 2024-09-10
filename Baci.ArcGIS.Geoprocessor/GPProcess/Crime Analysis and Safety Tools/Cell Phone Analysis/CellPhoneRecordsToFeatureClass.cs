@@ -44,7 +44,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <para>Cell Sector ID Fields</para>
 		/// <para>Specifies the unique ID field type and the fields that will be added to the output feature.</para>
 		/// <para>Use the Unique ID type when the Input Phone Records Table parameter value has a unique identifier for all cell sector antennas. Use a combination of other ID Type values when the Input Phone Records Table parameter value does not contain a universal unique identifier for all cell sector antennas.</para>
-		/// <para><para/></para>
+		/// <para>&lt;para/&gt;</para>
 		/// <para>ID Type—The field name to be included in the output feature classes.</para>
 		/// <para>Field—The name of the fields that uniquely identify the cell sector antennas. These will be added to the output feature class.</para>
 		/// <para>ID Type options are as follows:</para>
@@ -74,37 +74,37 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Tool Display Name : Cell Phone Records To Feature Class</para>
 		/// </summary>
-		public override string DisplayName => "Cell Phone Records To Feature Class";
+		public override string DisplayName() => "Cell Phone Records To Feature Class";
 
 		/// <summary>
 		/// <para>Tool Name : CellPhoneRecordsToFeatureClass</para>
 		/// </summary>
-		public override string ToolName => "CellPhoneRecordsToFeatureClass";
+		public override string ToolName() => "CellPhoneRecordsToFeatureClass";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ca.CellPhoneRecordsToFeatureClass</para>
 		/// </summary>
-		public override string ExcuteName => "ca.CellPhoneRecordsToFeatureClass";
+		public override string ExcuteName() => "ca.CellPhoneRecordsToFeatureClass";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Crime Analysis and Safety Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Crime Analysis and Safety Tools";
+		public override string ToolboxDisplayName() => "Crime Analysis and Safety Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ca</para>
 		/// </summary>
-		public override string ToolboxAlise => "ca";
+		public override string ToolboxAlise() => "ca";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainAttachments", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainAttachments", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, InSiteFeatures, InSectorFeatures, OutSiteFeatureClass, OutSectorFeatureClass, IdFields, SubscriberField, DestinationField, AdditionalIdFields, StartTimeField, DurationField, EndTimeField, ConvertUtc, LocationXField, LocationYField, LocationCoordinateSystem, OutCallPoints };
+		public override object[] Parameters() => new object[] { InTable, InSiteFeatures, InSectorFeatures, OutSiteFeatureClass, OutSectorFeatureClass, IdFields, SubscriberField, DestinationField, AdditionalIdFields, StartTimeField, DurationField, EndTimeField, ConvertUtc, LocationXField, LocationYField, LocationCoordinateSystem, OutCallPoints };
 
 		/// <summary>
 		/// <para>Input Phone Records Table</para>
@@ -158,7 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <para>Cell Sector ID Fields</para>
 		/// <para>Specifies the unique ID field type and the fields that will be added to the output feature.</para>
 		/// <para>Use the Unique ID type when the Input Phone Records Table parameter value has a unique identifier for all cell sector antennas. Use a combination of other ID Type values when the Input Phone Records Table parameter value does not contain a universal unique identifier for all cell sector antennas.</para>
-		/// <para><para/></para>
+		/// <para>&lt;para/&gt;</para>
 		/// <para>ID Type—The field name to be included in the output feature classes.</para>
 		/// <para>Field—The name of the fields that uniquely identify the cell sector antennas. These will be added to the output feature class.</para>
 		/// <para>ID Type options are as follows:</para>

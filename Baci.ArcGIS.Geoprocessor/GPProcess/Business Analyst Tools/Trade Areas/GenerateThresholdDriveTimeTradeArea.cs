@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Threshold Drive Times</para>
 		/// </summary>
-		public override string DisplayName => "Generate Threshold Drive Times";
+		public override string DisplayName() => "Generate Threshold Drive Times";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateThresholdDriveTimeTradeArea</para>
 		/// </summary>
-		public override string ToolName => "GenerateThresholdDriveTimeTradeArea";
+		public override string ToolName() => "GenerateThresholdDriveTimeTradeArea";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.GenerateThresholdDriveTimeTradeArea</para>
 		/// </summary>
-		public override string ExcuteName => "ba.GenerateThresholdDriveTimeTradeArea";
+		public override string ExcuteName() => "ba.GenerateThresholdDriveTimeTradeArea";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "baNetworkSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "baNetworkSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, ThresholdVariable, ThresholdValues, DistanceType, Units, IdField, TravelDirection, TimeOfDay, TimeZone, SearchTolerance, PolygonDetail, IterationsLimit, MinimumStep, TargetPercentDiff, InputMethod, Expression };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, ThresholdVariable, ThresholdValues, DistanceType, Units, IdField, TravelDirection, TimeOfDay, TimeZone, SearchTolerance, PolygonDetail, IterationsLimit, MinimumStep, TargetPercentDiff, InputMethod, Expression };
 
 		/// <summary>
 		/// <para>Input Features</para>

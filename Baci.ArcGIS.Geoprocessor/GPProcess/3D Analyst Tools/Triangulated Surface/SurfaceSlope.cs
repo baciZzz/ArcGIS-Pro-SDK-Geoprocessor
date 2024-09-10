@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Surface Slope</para>
 		/// </summary>
-		public override string DisplayName => "Surface Slope";
+		public override string DisplayName() => "Surface Slope";
 
 		/// <summary>
 		/// <para>Tool Name : SurfaceSlope</para>
 		/// </summary>
-		public override string ToolName => "SurfaceSlope";
+		public override string ToolName() => "SurfaceSlope";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.SurfaceSlope</para>
 		/// </summary>
-		public override string ExcuteName => "3d.SurfaceSlope";
+		public override string ExcuteName() => "3d.SurfaceSlope";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "terrainMemoryUsage", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "terrainMemoryUsage", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurface, OutFeatureClass, Units, ClassBreaksTable, SlopeField, ZFactor, PyramidLevelResolution };
+		public override object[] Parameters() => new object[] { InSurface, OutFeatureClass, Units, ClassBreaksTable, SlopeField, ZFactor, PyramidLevelResolution };
 
 		/// <summary>
 		/// <para>Input Surface</para>

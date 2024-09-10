@@ -44,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Visibility</para>
 		/// </summary>
-		public override string DisplayName => "Visibility";
+		public override string DisplayName() => "Visibility";
 
 		/// <summary>
 		/// <para>Tool Name : Visibility</para>
 		/// </summary>
-		public override string ToolName => "Visibility";
+		public override string ToolName() => "Visibility";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Visibility</para>
 		/// </summary>
-		public override string ExcuteName => "3d.Visibility";
+		public override string ExcuteName() => "3d.Visibility";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, InObserverFeatures, OutRaster, OutAglRaster, AnalysisType, NonvisibleCellValue, ZFactor, CurvatureCorrection, RefractivityCoefficient, SurfaceOffset, ObserverElevation, ObserverOffset, InnerRadius, OuterRadius, HorizontalStartAngle, HorizontalEndAngle, VerticalUpperAngle, VerticalLowerAngle };
+		public override object[] Parameters() => new object[] { InRaster, InObserverFeatures, OutRaster, OutAglRaster, AnalysisType, NonvisibleCellValue, ZFactor, CurvatureCorrection, RefractivityCoefficient, SurfaceOffset, ObserverElevation, ObserverOffset, InnerRadius, OuterRadius, HorizontalStartAngle, HorizontalEndAngle, VerticalUpperAngle, VerticalLowerAngle };
 
 		/// <summary>
 		/// <para>Input raster</para>

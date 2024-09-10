@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Spatially Constrained Multivariate Clustering</para>
 		/// </summary>
-		public override string DisplayName => "Spatially Constrained Multivariate Clustering";
+		public override string DisplayName() => "Spatially Constrained Multivariate Clustering";
 
 		/// <summary>
 		/// <para>Tool Name : SpatiallyConstrainedMultivariateClustering</para>
 		/// </summary>
-		public override string ToolName => "SpatiallyConstrainedMultivariateClustering";
+		public override string ToolName() => "SpatiallyConstrainedMultivariateClustering";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.SpatiallyConstrainedMultivariateClustering</para>
 		/// </summary>
-		public override string ExcuteName => "stats.SpatiallyConstrainedMultivariateClustering";
+		public override string ExcuteName() => "stats.SpatiallyConstrainedMultivariateClustering";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "parallelProcessingFactor", "qualifiedFieldNames", "randomGenerator", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "parallelProcessingFactor", "qualifiedFieldNames", "randomGenerator", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputFeatures, AnalysisFields, SizeConstraints, ConstraintField, MinConstraint, MaxConstraint, NumberOfClusters, SpatialConstraints, WeightsMatrixFile, NumberOfPermutations, OutputTable };
+		public override object[] Parameters() => new object[] { InFeatures, OutputFeatures, AnalysisFields, SizeConstraints, ConstraintField, MinConstraint, MaxConstraint, NumberOfClusters, SpatialConstraints, WeightsMatrixFile, NumberOfPermutations, OutputTable };
 
 		/// <summary>
 		/// <para>Input Features</para>

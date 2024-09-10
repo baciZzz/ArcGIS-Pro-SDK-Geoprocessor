@@ -25,37 +25,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : Merge Branch</para>
 		/// </summary>
-		public override string DisplayName => "Merge Branch";
+		public override string DisplayName() => "Merge Branch";
 
 		/// <summary>
 		/// <para>Tool Name : MergeBranch</para>
 		/// </summary>
-		public override string ToolName => "MergeBranch";
+		public override string ToolName() => "MergeBranch";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.MergeBranch</para>
 		/// </summary>
-		public override string ExcuteName => "mb.MergeBranch";
+		public override string ExcuteName() => "mb.MergeBranch";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InValues, OutValue };
+		public override object[] Parameters() => new object[] { InValues, OutValue };
 
 		/// <summary>
 		/// <para>In Values</para>

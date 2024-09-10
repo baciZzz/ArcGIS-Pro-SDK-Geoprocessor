@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Table View</para>
 		/// </summary>
-		public override string DisplayName => "Make Table View";
+		public override string DisplayName() => "Make Table View";
 
 		/// <summary>
 		/// <para>Tool Name : MakeTableView</para>
 		/// </summary>
-		public override string ToolName => "MakeTableView";
+		public override string ToolName() => "MakeTableView";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MakeTableView</para>
 		/// </summary>
-		public override string ExcuteName => "management.MakeTableView";
+		public override string ExcuteName() => "management.MakeTableView";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutView, WhereClause, Workspace, FieldInfo };
+		public override object[] Parameters() => new object[] { InTable, OutView, WhereClause, Workspace, FieldInfo };
 
 		/// <summary>
 		/// <para>Input Table</para>

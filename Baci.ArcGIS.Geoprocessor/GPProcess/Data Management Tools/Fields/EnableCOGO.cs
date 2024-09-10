@@ -32,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Enable COGO</para>
 		/// </summary>
-		public override string DisplayName => "Enable COGO";
+		public override string DisplayName() => "Enable COGO";
 
 		/// <summary>
 		/// <para>Tool Name : EnableCOGO</para>
 		/// </summary>
-		public override string ToolName => "EnableCOGO";
+		public override string ToolName() => "EnableCOGO";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.EnableCOGO</para>
 		/// </summary>
-		public override string ExcuteName => "management.EnableCOGO";
+		public override string ExcuteName() => "management.EnableCOGO";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLineFeatures, UpdatedLineFeatures };
+		public override object[] Parameters() => new object[] { InLineFeatures, UpdatedLineFeatures };
 
 		/// <summary>
 		/// <para>Input Line Features</para>

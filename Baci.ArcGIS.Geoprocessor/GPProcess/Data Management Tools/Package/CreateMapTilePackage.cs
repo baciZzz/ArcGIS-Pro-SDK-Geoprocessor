@@ -65,37 +65,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Map Tile Package</para>
 		/// </summary>
-		public override string DisplayName => "Create Map Tile Package";
+		public override string DisplayName() => "Create Map Tile Package";
 
 		/// <summary>
 		/// <para>Tool Name : CreateMapTilePackage</para>
 		/// </summary>
-		public override string ToolName => "CreateMapTilePackage";
+		public override string ToolName() => "CreateMapTilePackage";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateMapTilePackage</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateMapTilePackage";
+		public override string ExcuteName() => "management.CreateMapTilePackage";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, ServiceType, OutputFile, FormatType, LevelOfDetail, ServiceFile, Summary, Tags, Extent, CompressionQuality, PackageType, MinLevelOfDetail };
+		public override object[] Parameters() => new object[] { InMap, ServiceType, OutputFile, FormatType, LevelOfDetail, ServiceFile, Summary, Tags, Extent, CompressionQuality, PackageType, MinLevelOfDetail };
 
 		/// <summary>
 		/// <para>Input Map</para>

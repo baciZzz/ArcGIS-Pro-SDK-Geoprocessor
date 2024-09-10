@@ -41,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : If Row Count Is</para>
 		/// </summary>
-		public override string DisplayName => "If Row Count Is";
+		public override string DisplayName() => "If Row Count Is";
 
 		/// <summary>
 		/// <para>Tool Name : RowCountIfThenElse</para>
 		/// </summary>
-		public override string ToolName => "RowCountIfThenElse";
+		public override string ToolName() => "RowCountIfThenElse";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.RowCountIfThenElse</para>
 		/// </summary>
-		public override string ExcuteName => "mb.RowCountIfThenElse";
+		public override string ExcuteName() => "mb.RowCountIfThenElse";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayerOrView, CountCondition, Count, CountMin, CountMax, True, False };
+		public override object[] Parameters() => new object[] { InLayerOrView, CountCondition, Count, CountMin, CountMax, True, False };
 
 		/// <summary>
 		/// <para>Layer Name or Table View</para>

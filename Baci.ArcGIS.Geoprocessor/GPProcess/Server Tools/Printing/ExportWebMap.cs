@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Web Map</para>
 		/// </summary>
-		public override string DisplayName => "Export Web Map";
+		public override string DisplayName() => "Export Web Map";
 
 		/// <summary>
 		/// <para>Tool Name : ExportWebMap</para>
 		/// </summary>
-		public override string ToolName => "ExportWebMap";
+		public override string ToolName() => "ExportWebMap";
 
 		/// <summary>
 		/// <para>Tool Excute Name : server.ExportWebMap</para>
 		/// </summary>
-		public override string ExcuteName => "server.ExportWebMap";
+		public override string ExcuteName() => "server.ExportWebMap";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Server Tools";
+		public override string ToolboxDisplayName() => "Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : server</para>
 		/// </summary>
-		public override string ToolboxAlise => "server";
+		public override string ToolboxAlise() => "server";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { WebMapAsJSON, OutputFile, Format, LayoutTemplatesFolder, LayoutTemplate };
+		public override object[] Parameters() => new object[] { WebMapAsJSON, OutputFile, Format, LayoutTemplatesFolder, LayoutTemplate };
 
 		/// <summary>
 		/// <para>Web Map as JSON</para>
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Layout Templates Folder</para>
-		/// <para>The full path to the folder containing layout pages (.pagx files ) to be used as layout templates. The default location is <install_directory>\Resources\ArcToolBox\Templates\ExportWebMapTemplates.</para>
+		/// <para>The full path to the folder containing layout pages (.pagx files ) to be used as layout templates. The default location is &lt;install_directory&gt;\Resources\ArcToolBox\Templates\ExportWebMapTemplates.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]

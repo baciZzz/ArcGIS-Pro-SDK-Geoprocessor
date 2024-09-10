@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Convert LAS</para>
 		/// </summary>
-		public override string DisplayName => "Convert LAS";
+		public override string DisplayName() => "Convert LAS";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertLas</para>
 		/// </summary>
-		public override string ToolName => "ConvertLas";
+		public override string ToolName() => "ConvertLas";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.ConvertLas</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.ConvertLas";
+		public override string ExcuteName() => "conversion.ConvertLas";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLas, TargetFolder, FileVersion, PointFormat, Compression, LasOptions, OutLasDataset, DefineCoordinateSystem, InCoordinateSystem };
+		public override object[] Parameters() => new object[] { InLas, TargetFolder, FileVersion, PointFormat, Compression, LasOptions, OutLasDataset, DefineCoordinateSystem, InCoordinateSystem };
 
 		/// <summary>
 		/// <para>Input LAS</para>

@@ -46,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Shapes Features From GTFS</para>
 		/// </summary>
-		public override string DisplayName => "Generate Shapes Features From GTFS";
+		public override string DisplayName() => "Generate Shapes Features From GTFS";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateShapesFeaturesFromGTFS</para>
 		/// </summary>
-		public override string ToolName => "GenerateShapesFeaturesFromGTFS";
+		public override string ToolName() => "GenerateShapesFeaturesFromGTFS";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.GenerateShapesFeaturesFromGTFS</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.GenerateShapesFeaturesFromGTFS";
+		public override string ExcuteName() => "conversion.GenerateShapesFeaturesFromGTFS";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGtfsFolder, OutShapeLines, OutShapeStops, OutGtfsTrips, NetworkModes, NetworkDataSource, TravelMode, DriveSide, BearingTolerance, MaxBearingAngle };
+		public override object[] Parameters() => new object[] { InGtfsFolder, OutShapeLines, OutShapeStops, OutGtfsTrips, NetworkModes, NetworkDataSource, TravelMode, DriveSide, BearingTolerance, MaxBearingAngle };
 
 		/// <summary>
 		/// <para>Input GTFS Folder</para>

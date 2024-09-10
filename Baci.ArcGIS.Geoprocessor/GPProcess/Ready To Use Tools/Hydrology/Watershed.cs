@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Tool Display Name : Watershed</para>
 		/// </summary>
-		public override string DisplayName => "Watershed";
+		public override string DisplayName() => "Watershed";
 
 		/// <summary>
 		/// <para>Tool Name : Watershed</para>
 		/// </summary>
-		public override string ToolName => "Watershed";
+		public override string ToolName() => "Watershed";
 
 		/// <summary>
 		/// <para>Tool Excute Name : agolservices.Watershed</para>
 		/// </summary>
-		public override string ExcuteName => "agolservices.Watershed";
+		public override string ExcuteName() => "agolservices.Watershed";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Ready To Use Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Ready To Use Tools";
+		public override string ToolboxDisplayName() => "Ready To Use Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : agolservices</para>
 		/// </summary>
-		public override string ToolboxAlise => "agolservices";
+		public override string ToolboxAlise() => "agolservices";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputpoints, Pointidfield, Snapdistance, Snapdistanceunits, Datasourceresolution, Generalize, Returnsnappedpoints, Watershedarea, Snappedpoints };
+		public override object[] Parameters() => new object[] { Inputpoints, Pointidfield, Snapdistance, Snapdistanceunits, Datasourceresolution, Generalize, Returnsnappedpoints, Watershedarea, Snappedpoints };
 
 		/// <summary>
 		/// <para>Input Points</para>

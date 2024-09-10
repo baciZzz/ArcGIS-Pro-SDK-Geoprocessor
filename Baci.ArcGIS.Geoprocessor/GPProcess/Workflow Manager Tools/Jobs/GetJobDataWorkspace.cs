@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Display Name : Get Job Data Workspace</para>
 		/// </summary>
-		public override string DisplayName => "Get Job Data Workspace";
+		public override string DisplayName() => "Get Job Data Workspace";
 
 		/// <summary>
 		/// <para>Tool Name : GetJobDataWorkspace</para>
 		/// </summary>
-		public override string ToolName => "GetJobDataWorkspace";
+		public override string ToolName() => "GetJobDataWorkspace";
 
 		/// <summary>
 		/// <para>Tool Excute Name : wmx.GetJobDataWorkspace</para>
 		/// </summary>
-		public override string ExcuteName => "wmx.GetJobDataWorkspace";
+		public override string ExcuteName() => "wmx.GetJobDataWorkspace";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Workflow Manager Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Workflow Manager Tools";
+		public override string ToolboxDisplayName() => "Workflow Manager Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : wmx</para>
 		/// </summary>
-		public override string ToolboxAlise => "wmx";
+		public override string ToolboxAlise() => "wmx";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputJobid, InputDatabasepath, InputSdefilelocation, OutputJobdataworkspace };
+		public override object[] Parameters() => new object[] { InputJobid, InputDatabasepath, InputSdefilelocation, OutputJobdataworkspace };
 
 		/// <summary>
 		/// <para>Input Job ID</para>

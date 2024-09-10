@@ -44,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Display Name : Import Floorplans To Indoors Geodatabase</para>
 		/// </summary>
-		public override string DisplayName => "Import Floorplans To Indoors Geodatabase";
+		public override string DisplayName() => "Import Floorplans To Indoors Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : ImportFloorplansToIndoorsGDB</para>
 		/// </summary>
-		public override string ToolName => "ImportFloorplansToIndoorsGDB";
+		public override string ToolName() => "ImportFloorplansToIndoorsGDB";
 
 		/// <summary>
 		/// <para>Tool Excute Name : indoors.ImportFloorplansToIndoorsGDB</para>
 		/// </summary>
-		public override string ExcuteName => "indoors.ImportFloorplansToIndoorsGDB";
+		public override string ExcuteName() => "indoors.ImportFloorplansToIndoorsGDB";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Indoors Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Indoors Tools";
+		public override string ToolboxDisplayName() => "Indoors Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : indoors</para>
 		/// </summary>
-		public override string ToolboxAlise => "indoors";
+		public override string ToolboxAlise() => "indoors";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeodatabase, InExcelTemplate, UniqueidDelimiter, SliverThreshold, DoorCloseBuffer, UpdatedGdb, AreaUnitOfMeasure };
+		public override object[] Parameters() => new object[] { InGeodatabase, InExcelTemplate, UniqueidDelimiter, SliverThreshold, DoorCloseBuffer, UpdatedGdb, AreaUnitOfMeasure };
 
 		/// <summary>
 		/// <para>Input Geodatabase</para>

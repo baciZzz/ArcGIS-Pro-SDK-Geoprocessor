@@ -52,37 +52,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Composite Bands</para>
 		/// </summary>
-		public override string DisplayName => "Composite Bands";
+		public override string DisplayName() => "Composite Bands";
 
 		/// <summary>
 		/// <para>Tool Name : CompositeBands</para>
 		/// </summary>
-		public override string ToolName => "CompositeBands";
+		public override string ToolName() => "CompositeBands";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CompositeBands</para>
 		/// </summary>
-		public override string ExcuteName => "management.CompositeBands";
+		public override string ExcuteName() => "management.CompositeBands";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasters, OutRaster };
+		public override object[] Parameters() => new object[] { InRasters, OutRaster };
 
 		/// <summary>
 		/// <para>Input Rasters</para>

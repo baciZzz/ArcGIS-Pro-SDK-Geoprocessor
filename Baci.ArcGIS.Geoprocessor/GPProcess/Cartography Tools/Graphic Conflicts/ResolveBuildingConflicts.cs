@@ -57,37 +57,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Resolve Building Conflicts</para>
 		/// </summary>
-		public override string DisplayName => "Resolve Building Conflicts";
+		public override string DisplayName() => "Resolve Building Conflicts";
 
 		/// <summary>
 		/// <para>Tool Name : ResolveBuildingConflicts</para>
 		/// </summary>
-		public override string ToolName => "ResolveBuildingConflicts";
+		public override string ToolName() => "ResolveBuildingConflicts";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.ResolveBuildingConflicts</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.ResolveBuildingConflicts";
+		public override string ExcuteName() => "cartography.ResolveBuildingConflicts";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cartographicCoordinateSystem", "cartographicPartitions", "referenceScale" };
+		public override string[] ValidEnvironments() => new string[] { "cartographicCoordinateSystem", "cartographicPartitions", "referenceScale" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InBuildings, InvisibilityField, InBarriers, BuildingGap, MinimumSize, HierarchyField, OutLayers };
+		public override object[] Parameters() => new object[] { InBuildings, InvisibilityField, InBarriers, BuildingGap, MinimumSize, HierarchyField, OutLayers };
 
 		/// <summary>
 		/// <para>Input Building Layers</para>

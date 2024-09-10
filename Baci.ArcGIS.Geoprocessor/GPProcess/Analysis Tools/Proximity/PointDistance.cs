@@ -41,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Point Distance</para>
 		/// </summary>
-		public override string DisplayName => "Point Distance";
+		public override string DisplayName() => "Point Distance";
 
 		/// <summary>
 		/// <para>Tool Name : PointDistance</para>
 		/// </summary>
-		public override string ToolName => "PointDistance";
+		public override string ToolName() => "PointDistance";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.PointDistance</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.PointDistance";
+		public override string ExcuteName() => "analysis.PointDistance";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, NearFeatures, OutTable, SearchRadius };
+		public override object[] Parameters() => new object[] { InFeatures, NearFeatures, OutTable, SearchRadius };
 
 		/// <summary>
 		/// <para>Input Features</para>

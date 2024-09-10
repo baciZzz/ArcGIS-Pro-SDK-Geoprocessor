@@ -37,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Set Control Point By Angle</para>
 		/// </summary>
-		public override string DisplayName => "Set Control Point By Angle";
+		public override string DisplayName() => "Set Control Point By Angle";
 
 		/// <summary>
 		/// <para>Tool Name : SetControlPointByAngle</para>
 		/// </summary>
-		public override string ToolName => "SetControlPointByAngle";
+		public override string ToolName() => "SetControlPointByAngle";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.SetControlPointByAngle</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.SetControlPointByAngle";
+		public override string ExcuteName() => "cartography.SetControlPointByAngle";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, MaximumAngle, OutRepresentations };
+		public override object[] Parameters() => new object[] { InFeatures, MaximumAngle, OutRepresentations };
 
 		/// <summary>
 		/// <para>Input Features</para>

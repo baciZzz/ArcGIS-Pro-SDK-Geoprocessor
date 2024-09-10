@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Tool Display Name : 80-20 Analysis</para>
 		/// </summary>
-		public override string DisplayName => "80-20 Analysis";
+		public override string DisplayName() => "80-20 Analysis";
 
 		/// <summary>
 		/// <para>Tool Name : EightyTwentyAnalysis</para>
 		/// </summary>
-		public override string ToolName => "EightyTwentyAnalysis";
+		public override string ToolName() => "EightyTwentyAnalysis";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ca.EightyTwentyAnalysis</para>
 		/// </summary>
-		public override string ExcuteName => "ca.EightyTwentyAnalysis";
+		public override string ExcuteName() => "ca.EightyTwentyAnalysis";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Crime Analysis and Safety Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Crime Analysis and Safety Tools";
+		public override string ToolboxDisplayName() => "Crime Analysis and Safety Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ca</para>
 		/// </summary>
-		public override string ToolboxAlise => "ca";
+		public override string ToolboxAlise() => "ca";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainAttachments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainAttachments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, ClusterTolerance, OutFields };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, ClusterTolerance, OutFields };
 
 		/// <summary>
 		/// <para>Input Point Features</para>

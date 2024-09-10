@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Inside 3D</para>
 		/// </summary>
-		public override string DisplayName => "Inside 3D";
+		public override string DisplayName() => "Inside 3D";
 
 		/// <summary>
 		/// <para>Tool Name : Inside3D</para>
 		/// </summary>
-		public override string ToolName => "Inside3D";
+		public override string ToolName() => "Inside3D";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Inside3D</para>
 		/// </summary>
-		public override string ExcuteName => "3d.Inside3D";
+		public override string ExcuteName() => "3d.Inside3D";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "configKeyword", "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "configKeyword", "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTargetFeatureClass, InContainerFeatureClass, OutTable, ComplexOutput };
+		public override object[] Parameters() => new object[] { InTargetFeatureClass, InContainerFeatureClass, OutTable, ComplexOutput };
 
 		/// <summary>
 		/// <para>Input Features</para>

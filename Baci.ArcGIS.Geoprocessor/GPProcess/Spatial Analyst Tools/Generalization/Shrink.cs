@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Shrink</para>
 		/// </summary>
-		public override string DisplayName => "Shrink";
+		public override string DisplayName() => "Shrink";
 
 		/// <summary>
 		/// <para>Tool Name : Shrink</para>
 		/// </summary>
-		public override string ToolName => "Shrink";
+		public override string ToolName() => "Shrink";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Shrink</para>
 		/// </summary>
-		public override string ExcuteName => "sa.Shrink";
+		public override string ExcuteName() => "sa.Shrink";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, NumberCells, ZoneValues, ShrinkMethod };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, NumberCells, ZoneValues, ShrinkMethod };
 
 		/// <summary>
 		/// <para>Input raster</para>

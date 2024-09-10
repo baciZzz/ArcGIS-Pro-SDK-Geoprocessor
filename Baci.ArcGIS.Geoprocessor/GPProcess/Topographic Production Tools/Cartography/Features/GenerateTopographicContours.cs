@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Topographic Contours</para>
 		/// </summary>
-		public override string DisplayName => "Generate Topographic Contours";
+		public override string DisplayName() => "Generate Topographic Contours";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateTopographicContours</para>
 		/// </summary>
-		public override string ToolName => "GenerateTopographicContours";
+		public override string ToolName() => "GenerateTopographicContours";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.GenerateTopographicContours</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.GenerateTopographicContours";
+		public override string ExcuteName() => "topographic.GenerateTopographicContours";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasters, AreaOfInterest, ContourFeatures, ElevationField, ContourSubtype, Scale, ResampleRaster, ContourInterval, BaseContour, ZFactor, ZeroContour, CodeField, IndexInterval, IndexCode, IntermediateCode, DepressionCode, DepressionIntermediateCode, RasterSmoothTolerance, MinimumLength, ContourSmoothTolerance, UpdatedContourFeatures };
+		public override object[] Parameters() => new object[] { InRasters, AreaOfInterest, ContourFeatures, ElevationField, ContourSubtype, Scale, ResampleRaster, ContourInterval, BaseContour, ZFactor, ZeroContour, CodeField, IndexInterval, IndexCode, IntermediateCode, DepressionCode, DepressionIntermediateCode, RasterSmoothTolerance, MinimumLength, ContourSmoothTolerance, UpdatedContourFeatures };
 
 		/// <summary>
 		/// <para>Input Rasters</para>

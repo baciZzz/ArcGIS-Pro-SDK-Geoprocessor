@@ -51,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Update Globe Server Cache</para>
 		/// </summary>
-		public override string DisplayName => "Update Globe Server Cache";
+		public override string DisplayName() => "Update Globe Server Cache";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateGlobeServerCache</para>
 		/// </summary>
-		public override string ToolName => "UpdateGlobeServerCache";
+		public override string ToolName() => "UpdateGlobeServerCache";
 
 		/// <summary>
 		/// <para>Tool Excute Name : server.UpdateGlobeServerCache</para>
 		/// </summary>
-		public override string ExcuteName => "server.UpdateGlobeServerCache";
+		public override string ExcuteName() => "server.UpdateGlobeServerCache";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Server Tools";
+		public override string ToolboxDisplayName() => "Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : server</para>
 		/// </summary>
-		public override string ToolboxAlise => "server";
+		public override string ToolboxAlise() => "server";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ServerName, ObjectName, UpdateExtent, Layer, LodFrom, LodTo, ThreadCount, UpdateMode };
+		public override object[] Parameters() => new object[] { ServerName, ObjectName, UpdateExtent, Layer, LodFrom, LodTo, ThreadCount, UpdateMode };
 
 		/// <summary>
 		/// <para>Host</para>

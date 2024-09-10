@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : TIN Compare</para>
 		/// </summary>
-		public override string DisplayName => "TIN Compare";
+		public override string DisplayName() => "TIN Compare";
 
 		/// <summary>
 		/// <para>Tool Name : TINCompare</para>
 		/// </summary>
-		public override string ToolName => "TINCompare";
+		public override string ToolName() => "TINCompare";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.TINCompare</para>
 		/// </summary>
-		public override string ExcuteName => "management.TINCompare";
+		public override string ExcuteName() => "management.TINCompare";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InBaseTin, InTestTin, CompareType, ContinueCompare, OutCompareFile, CompareStatus };
+		public override object[] Parameters() => new object[] { InBaseTin, InTestTin, CompareType, ContinueCompare, OutCompareFile, CompareStatus };
 
 		/// <summary>
 		/// <para>Input Base Tin</para>

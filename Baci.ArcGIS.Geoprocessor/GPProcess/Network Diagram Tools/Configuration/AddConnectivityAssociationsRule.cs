@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Connectivity Associations Rule</para>
 		/// </summary>
-		public override string DisplayName => "Add Connectivity Associations Rule";
+		public override string DisplayName() => "Add Connectivity Associations Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AddConnectivityAssociationsRule</para>
 		/// </summary>
-		public override string ToolName => "AddConnectivityAssociationsRule";
+		public override string ToolName() => "AddConnectivityAssociationsRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddConnectivityAssociationsRule</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddConnectivityAssociationsRule";
+		public override string ExcuteName() => "nd.AddConnectivityAssociationsRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, Description, OutUtilityNetwork, OutTemplateName };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, Description, OutUtilityNetwork, OutTemplateName };
 
 		/// <summary>
 		/// <para>Input Network</para>

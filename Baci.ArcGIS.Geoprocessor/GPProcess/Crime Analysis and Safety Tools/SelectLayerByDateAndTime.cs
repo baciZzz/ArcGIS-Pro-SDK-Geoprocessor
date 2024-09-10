@@ -48,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Tool Display Name : Select Layer By Date And Time</para>
 		/// </summary>
-		public override string DisplayName => "Select Layer By Date And Time";
+		public override string DisplayName() => "Select Layer By Date And Time";
 
 		/// <summary>
 		/// <para>Tool Name : SelectLayerByDateAndTime</para>
 		/// </summary>
-		public override string ToolName => "SelectLayerByDateAndTime";
+		public override string ToolName() => "SelectLayerByDateAndTime";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ca.SelectLayerByDateAndTime</para>
 		/// </summary>
-		public override string ExcuteName => "ca.SelectLayerByDateAndTime";
+		public override string ExcuteName() => "ca.SelectLayerByDateAndTime";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Crime Analysis and Safety Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Crime Analysis and Safety Tools";
+		public override string ToolboxDisplayName() => "Crime Analysis and Safety Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ca</para>
 		/// </summary>
-		public override string ToolboxAlise => "ca";
+		public override string ToolboxAlise() => "ca";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayerOrView, SelectionType, TimeType, DateField, StartDateField, EndDateField, SelectionOptions, DateSelectionType, SingleDate, StartDate, EndDate, UseSystemTime, TimeSlice, StartTime, EndTime, DaysOfWeek, Months, Years, OutLayerOrView, Count };
+		public override object[] Parameters() => new object[] { InLayerOrView, SelectionType, TimeType, DateField, StartDateField, EndDateField, SelectionOptions, DateSelectionType, SingleDate, StartDate, EndDate, UseSystemTime, TimeSlice, StartTime, EndTime, DaysOfWeek, Months, Years, OutLayerOrView, Count };
 
 		/// <summary>
 		/// <para>Input Rows</para>

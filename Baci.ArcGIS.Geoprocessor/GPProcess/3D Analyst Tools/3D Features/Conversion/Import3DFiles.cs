@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Import 3D Files</para>
 		/// </summary>
-		public override string DisplayName => "Import 3D Files";
+		public override string DisplayName() => "Import 3D Files";
 
 		/// <summary>
 		/// <para>Tool Name : Import3DFiles</para>
 		/// </summary>
-		public override string ToolName => "Import3DFiles";
+		public override string ToolName() => "Import3DFiles";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Import3DFiles</para>
 		/// </summary>
-		public override string ExcuteName => "3d.Import3DFiles";
+		public override string ExcuteName() => "3d.Import3DFiles";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "ZDomain", "autoCommit", "configKeyword", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "ZDomain", "autoCommit", "configKeyword", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFiles, OutFeatureclass, RootPerFeature, SpatialReference, YIsUp, FileSuffix, InFeatureclass, SymbolField };
+		public override object[] Parameters() => new object[] { InFiles, OutFeatureclass, RootPerFeature, SpatialReference, YIsUp, FileSuffix, InFeatureclass, SymbolField };
 
 		/// <summary>
 		/// <para>Input Files</para>

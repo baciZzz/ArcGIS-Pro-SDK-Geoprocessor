@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 {
+    /// <summary>
+    /// GPSA Geo Data Attribute
+    /// </summary>
     public class GPSAGeoDataAttribute : BaseDataTypeAttribute
     {
     }

@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Spatial Outlier Detection</para>
 		/// </summary>
-		public override string DisplayName => "Spatial Outlier Detection";
+		public override string DisplayName() => "Spatial Outlier Detection";
 
 		/// <summary>
 		/// <para>Tool Name : SpatialOutlierDetection</para>
 		/// </summary>
-		public override string ToolName => "SpatialOutlierDetection";
+		public override string ToolName() => "SpatialOutlierDetection";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.SpatialOutlierDetection</para>
 		/// </summary>
-		public override string ExcuteName => "stats.SpatialOutlierDetection";
+		public override string ExcuteName() => "stats.SpatialOutlierDetection";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputFeatures, NNeighbors, PercentOutlier, OutputRaster };
+		public override object[] Parameters() => new object[] { InFeatures, OutputFeatures, NNeighbors, PercentOutlier, OutputRaster };
 
 		/// <summary>
 		/// <para>Input Features</para>

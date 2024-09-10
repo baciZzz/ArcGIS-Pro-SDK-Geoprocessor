@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Consolidate Map</para>
 		/// </summary>
-		public override string DisplayName => "Consolidate Map";
+		public override string DisplayName() => "Consolidate Map";
 
 		/// <summary>
 		/// <para>Tool Name : ConsolidateMap</para>
 		/// </summary>
-		public override string ToolName => "ConsolidateMap";
+		public override string ToolName() => "ConsolidateMap";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ConsolidateMap</para>
 		/// </summary>
-		public override string ExcuteName => "management.ConsolidateMap";
+		public override string ExcuteName() => "management.ConsolidateMap";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, OutputFolder, ConvertData, ConvertArcsdeData, Extent, ApplyExtentToArcsde, PreserveSqlite, SelectRelatedRows };
+		public override object[] Parameters() => new object[] { InMap, OutputFolder, ConvertData, ConvertArcsdeData, Extent, ApplyExtentToArcsde, PreserveSqlite, SelectRelatedRows };
 
 		/// <summary>
 		/// <para>Input Map</para>

@@ -52,42 +52,42 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Geographically Weighted Regression</para>
 		/// </summary>
-		public override string DisplayName => "Geographically Weighted Regression";
+		public override string DisplayName() => "Geographically Weighted Regression";
 
 		/// <summary>
 		/// <para>Tool Name : GeographicallyWeightedRegression</para>
 		/// </summary>
-		public override string ToolName => "GeographicallyWeightedRegression";
+		public override string ToolName() => "GeographicallyWeightedRegression";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.GeographicallyWeightedRegression</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.GeographicallyWeightedRegression";
+		public override string ExcuteName() => "analysis.GeographicallyWeightedRegression";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DependentField, ExplanatoryField, OutFeatureclass, KernelType, BandwidthMethod, Distance, NumberOfNeighbors, WeightField, CoefficientRasterWorkspace, CellSize, InPredictionLocations, PredictionExplanatoryField, OutPredictionFeatureclass, OutTable, OutRegressionRasters };
+		public override object[] Parameters() => new object[] { InFeatures, DependentField, ExplanatoryField, OutFeatureclass, KernelType, BandwidthMethod, Distance, NumberOfNeighbors, WeightField, CoefficientRasterWorkspace, CellSize, InPredictionLocations, PredictionExplanatoryField, OutPredictionFeatureclass, OutTable, OutRegressionRasters };
 
-		/// <summary>
-		/// <para>Input features</para>
-		/// </summary>
-		[ParamType(ParamTypeEnum.must)]
+        /// <summary>
+        /// <para>Input features</para>
+        /// </summary>
+        [ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
 		[GeometryType("Point", "Polygon")]

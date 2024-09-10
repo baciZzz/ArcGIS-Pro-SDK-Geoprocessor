@@ -55,37 +55,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Configure External Event With LRS</para>
 		/// </summary>
-		public override string DisplayName => "Configure External Event With LRS";
+		public override string DisplayName() => "Configure External Event With LRS";
 
 		/// <summary>
 		/// <para>Tool Name : ConfigureExternalEventWithLRS</para>
 		/// </summary>
-		public override string ToolName => "ConfigureExternalEventWithLRS";
+		public override string ToolName() => "ConfigureExternalEventWithLRS";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.ConfigureExternalEventWithLRS</para>
 		/// </summary>
-		public override string ExcuteName => "locref.ConfigureExternalEventWithLRS";
+		public override string ExcuteName() => "locref.ConfigureExternalEventWithLRS";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InEvent, ParentNetwork, EventName, EventIdField, RouteIdField, MeasureField, GeometryType, ToMeasureField, FromDateField, ToDateField, EventSpansRoutes, ToRouteIdField, StoreRouteName, RouteNameField, ToRouteNameField, CalibrateRule, RetireRule, ExtendRule, ReassignRule, RealignRule, OutExternalEventTable };
+		public override object[] Parameters() => new object[] { InEvent, ParentNetwork, EventName, EventIdField, RouteIdField, MeasureField, GeometryType, ToMeasureField, FromDateField, ToDateField, EventSpansRoutes, ToRouteIdField, StoreRouteName, RouteNameField, ToRouteNameField, CalibrateRule, RetireRule, ExtendRule, ReassignRule, RealignRule, OutExternalEventTable };
 
 		/// <summary>
 		/// <para>Input Event</para>

@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Vector Tile Index</para>
 		/// </summary>
-		public override string DisplayName => "Create Vector Tile Index";
+		public override string DisplayName() => "Create Vector Tile Index";
 
 		/// <summary>
 		/// <para>Tool Name : CreateVectorTileIndex</para>
 		/// </summary>
-		public override string ToolName => "CreateVectorTileIndex";
+		public override string ToolName() => "CreateVectorTileIndex";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateVectorTileIndex</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateVectorTileIndex";
+		public override string ExcuteName() => "management.CreateVectorTileIndex";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, OutFeatureclass, ServiceType, TilingScheme, VertexCount };
+		public override object[] Parameters() => new object[] { InMap, OutFeatureclass, ServiceType, TilingScheme, VertexCount };
 
 		/// <summary>
 		/// <para>Input Map</para>

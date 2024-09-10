@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Eliminate Polygon</para>
 		/// </summary>
-		public override string DisplayName => "Eliminate Polygon";
+		public override string DisplayName() => "Eliminate Polygon";
 
 		/// <summary>
 		/// <para>Tool Name : EliminatePolygon</para>
 		/// </summary>
-		public override string ToolName => "EliminatePolygon";
+		public override string ToolName() => "EliminatePolygon";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.EliminatePolygon</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.EliminatePolygon";
+		public override string ExcuteName() => "topographic.EliminatePolygon";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, SurroundingFeatures, MinArea, UpdatedFeatures };
+		public override object[] Parameters() => new object[] { InFeatures, SurroundingFeatures, MinArea, UpdatedFeatures };
 
 		/// <summary>
 		/// <para>Input Features</para>

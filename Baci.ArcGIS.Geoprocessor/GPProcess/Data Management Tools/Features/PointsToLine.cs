@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Points To Line</para>
 		/// </summary>
-		public override string DisplayName => "Points To Line";
+		public override string DisplayName() => "Points To Line";
 
 		/// <summary>
 		/// <para>Tool Name : PointsToLine</para>
 		/// </summary>
-		public override string ToolName => "PointsToLine";
+		public override string ToolName() => "PointsToLine";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.PointsToLine</para>
 		/// </summary>
-		public override string ExcuteName => "management.PointsToLine";
+		public override string ExcuteName() => "management.PointsToLine";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, OutputFeatureClass, LineField, SortField, CloseLine };
+		public override object[] Parameters() => new object[] { InputFeatures, OutputFeatureClass, LineField, SortField, CloseLine };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Manage Map Server Cache Tiles</para>
 		/// </summary>
-		public override string DisplayName => "Manage Map Server Cache Tiles";
+		public override string DisplayName() => "Manage Map Server Cache Tiles";
 
 		/// <summary>
 		/// <para>Tool Name : ManageMapServerCacheTiles</para>
 		/// </summary>
-		public override string ToolName => "ManageMapServerCacheTiles";
+		public override string ToolName() => "ManageMapServerCacheTiles";
 
 		/// <summary>
 		/// <para>Tool Excute Name : server.ManageMapServerCacheTiles</para>
 		/// </summary>
-		public override string ExcuteName => "server.ManageMapServerCacheTiles";
+		public override string ExcuteName() => "server.ManageMapServerCacheTiles";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Server Tools";
+		public override string ToolboxDisplayName() => "Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : server</para>
 		/// </summary>
-		public override string ToolboxAlise => "server";
+		public override string ToolboxAlise() => "server";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputService, Scales, UpdateMode, NumOfCachingServiceInstances, AreaOfInterest, UpdateExtent, WaitForJobCompletion, PortalUrl, OutJobUrl };
+		public override object[] Parameters() => new object[] { InputService, Scales, UpdateMode, NumOfCachingServiceInstances, AreaOfInterest, UpdateExtent, WaitForJobCompletion, PortalUrl, OutJobUrl };
 
 		/// <summary>
 		/// <para>Input Service</para>

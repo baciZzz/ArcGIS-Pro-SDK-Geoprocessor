@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Set Network Attribute</para>
 		/// </summary>
-		public override string DisplayName => "Set Network Attribute";
+		public override string DisplayName() => "Set Network Attribute";
 
 		/// <summary>
 		/// <para>Tool Name : SetNetworkAttribute</para>
 		/// </summary>
-		public override string ToolName => "SetNetworkAttribute";
+		public override string ToolName() => "SetNetworkAttribute";
 
 		/// <summary>
 		/// <para>Tool Excute Name : tn.SetNetworkAttribute</para>
 		/// </summary>
-		public override string ExcuteName => "tn.SetNetworkAttribute";
+		public override string ExcuteName() => "tn.SetNetworkAttribute";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Trace Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Trace Network Tools";
+		public override string ToolboxDisplayName() => "Trace Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : tn</para>
 		/// </summary>
-		public override string ToolboxAlise => "tn";
+		public override string ToolboxAlise() => "tn";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTraceNetwork, NetworkAttribute, Featureclass, Field, OutTraceNetwork };
+		public override object[] Parameters() => new object[] { InTraceNetwork, NetworkAttribute, Featureclass, Field, OutTraceNetwork };
 
 		/// <summary>
 		/// <para>Input Trace Network</para>

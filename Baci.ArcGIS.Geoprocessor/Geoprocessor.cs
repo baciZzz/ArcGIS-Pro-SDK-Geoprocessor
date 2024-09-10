@@ -14,8 +14,21 @@ using System.Threading.Tasks;
 
 namespace Baci.ArcGIS
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class _Geoprocessor
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="tooName"></param>
+        /// <param name="parameters"></param>
+        /// <param name="environments"></param>
+        /// <param name="cancellationTokenSource"></param>
+        /// <param name="gPToolExecuteEventHandler"></param>
+        /// <param name="gPExecuteToolFlags"></param>
+        /// <returns></returns>
         public static async Task<IGPResult> ExcuteAsync(string tooName, IReadOnlyList<string> parameters,
             IEnumerable<KeyValuePair<string, string>> environments = null,
             CancellationTokenSource cancellationTokenSource = null,
@@ -28,7 +41,16 @@ namespace Baci.ArcGIS
 
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="tooName"></param>
+        /// <param name="parameters"></param>
+        /// <param name="cancellationTokenSource"></param>
+        /// <param name="environments"></param>
+        /// <param name="gPToolExecuteEventHandler"></param>
+        /// <param name="gPExecuteToolFlags"></param>
+        /// <returns></returns>
         public static async Task<IGPResult> ExcuteAsync(string tooName, IReadOnlyList<string> parameters, CancellationTokenSource cancellationTokenSource,
             IEnumerable<KeyValuePair<string, string>> environments, GPToolExecuteEventHandler gPToolExecuteEventHandler, GPExecuteToolFlags gPExecuteToolFlags = GPExecuteToolFlags.Default)
         {

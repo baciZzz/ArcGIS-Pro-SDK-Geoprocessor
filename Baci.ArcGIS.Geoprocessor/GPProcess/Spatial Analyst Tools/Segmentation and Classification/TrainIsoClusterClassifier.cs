@@ -41,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Train ISO Cluster Classifier</para>
 		/// </summary>
-		public override string DisplayName => "Train ISO Cluster Classifier";
+		public override string DisplayName() => "Train ISO Cluster Classifier";
 
 		/// <summary>
 		/// <para>Tool Name : TrainIsoClusterClassifier</para>
 		/// </summary>
-		public override string ToolName => "TrainIsoClusterClassifier";
+		public override string ToolName() => "TrainIsoClusterClassifier";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.TrainIsoClusterClassifier</para>
 		/// </summary>
-		public override string ExcuteName => "sa.TrainIsoClusterClassifier";
+		public override string ExcuteName() => "sa.TrainIsoClusterClassifier";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, MaxClasses, OutClassifierDefinition, InAdditionalRaster, MaxIterations, MinSamplesPerCluster, SkipFactor, UsedAttributes, MaxMergePerIter, MaxMergeDistance };
+		public override object[] Parameters() => new object[] { InRaster, MaxClasses, OutClassifierDefinition, InAdditionalRaster, MaxIterations, MinSamplesPerCluster, SkipFactor, UsedAttributes, MaxMergePerIter, MaxMergeDistance };
 
 		/// <summary>
 		/// <para>Input Raster</para>

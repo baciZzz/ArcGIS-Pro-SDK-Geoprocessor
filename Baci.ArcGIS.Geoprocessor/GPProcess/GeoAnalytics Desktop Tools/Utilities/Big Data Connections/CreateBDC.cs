@@ -42,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Big Data Connection</para>
 		/// </summary>
-		public override string DisplayName => "Create Big Data Connection";
+		public override string DisplayName() => "Create Big Data Connection";
 
 		/// <summary>
 		/// <para>Tool Name : CreateBDC</para>
 		/// </summary>
-		public override string ToolName => "CreateBDC";
+		public override string ToolName() => "CreateBDC";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.CreateBDC</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.CreateBDC";
+		public override string ExcuteName() => "gapro.CreateBDC";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { BdcLocation, BdcName, ConnectionType, DataSourceFolder, VisibleGeometry, VisibleTime, OutputBdc };
+		public override object[] Parameters() => new object[] { BdcLocation, BdcName, ConnectionType, DataSourceFolder, VisibleGeometry, VisibleTime, OutputBdc };
 
 		/// <summary>
 		/// <para>Big Data Connection Output Location</para>

@@ -55,37 +55,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Overpass</para>
 		/// </summary>
-		public override string DisplayName => "Create Overpass";
+		public override string DisplayName() => "Create Overpass";
 
 		/// <summary>
 		/// <para>Tool Name : CreateOverpass</para>
 		/// </summary>
-		public override string ToolName => "CreateOverpass";
+		public override string ToolName() => "CreateOverpass";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.CreateOverpass</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.CreateOverpass";
+		public override string ExcuteName() => "cartography.CreateOverpass";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cartographicCoordinateSystem", "referenceScale" };
+		public override string[] ValidEnvironments() => new string[] { "cartographicCoordinateSystem", "referenceScale" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAboveFeatures, InBelowFeatures, MarginAlong, MarginAcross, OutOverpassFeatureClass, OutMaskRelationshipClass, WhereClause, OutDecorationFeatureClass, WingType, WingTickLength };
+		public override object[] Parameters() => new object[] { InAboveFeatures, InBelowFeatures, MarginAlong, MarginAcross, OutOverpassFeatureClass, OutMaskRelationshipClass, WhereClause, OutDecorationFeatureClass, WingType, WingTickLength };
 
 		/// <summary>
 		/// <para>Input Above Features</para>

@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Multipatch To Collada</para>
 		/// </summary>
-		public override string DisplayName => "Multipatch To Collada";
+		public override string DisplayName() => "Multipatch To Collada";
 
 		/// <summary>
 		/// <para>Tool Name : MultipatchToCollada</para>
 		/// </summary>
-		public override string ToolName => "MultipatchToCollada";
+		public override string ToolName() => "MultipatchToCollada";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.MultipatchToCollada</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.MultipatchToCollada";
+		public override string ExcuteName() => "conversion.MultipatchToCollada";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputFolder, PrependSource, FieldName };
+		public override object[] Parameters() => new object[] { InFeatures, OutputFolder, PrependSource, FieldName };
 
 		/// <summary>
 		/// <para>Input Multipatch Features</para>

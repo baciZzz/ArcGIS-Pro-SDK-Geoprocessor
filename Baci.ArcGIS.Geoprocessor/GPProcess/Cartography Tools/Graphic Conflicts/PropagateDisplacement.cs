@@ -46,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Propagate Displacement</para>
 		/// </summary>
-		public override string DisplayName => "Propagate Displacement";
+		public override string DisplayName() => "Propagate Displacement";
 
 		/// <summary>
 		/// <para>Tool Name : PropagateDisplacement</para>
 		/// </summary>
-		public override string ToolName => "PropagateDisplacement";
+		public override string ToolName() => "PropagateDisplacement";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.PropagateDisplacement</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.PropagateDisplacement";
+		public override string ExcuteName() => "cartography.PropagateDisplacement";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DisplacementFeatures, AdjustmentStyle, OutFeatures };
+		public override object[] Parameters() => new object[] { InFeatures, DisplacementFeatures, AdjustmentStyle, OutFeatures };
 
 		/// <summary>
 		/// <para>Input Features</para>

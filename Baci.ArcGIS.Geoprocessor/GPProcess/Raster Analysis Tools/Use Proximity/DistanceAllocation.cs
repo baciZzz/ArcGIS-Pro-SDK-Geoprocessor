@@ -37,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Distance Allocation</para>
 		/// </summary>
-		public override string DisplayName => "Distance Allocation";
+		public override string DisplayName() => "Distance Allocation";
 
 		/// <summary>
 		/// <para>Tool Name : DistanceAllocation</para>
 		/// </summary>
-		public override string ToolName => "DistanceAllocation";
+		public override string ToolName() => "DistanceAllocation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.DistanceAllocation</para>
 		/// </summary>
-		public override string ExcuteName => "ra.DistanceAllocation";
+		public override string ExcuteName() => "ra.DistanceAllocation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputsourcerasterorfeatures, Outputdistanceallocationrastername, Inputbarrierrasterorfeatures, Inputsurfaceraster, Inputcostraster, Inputverticalraster, Verticalfactor, Inputhorizontalraster, Horizontalfactor, Outputdistanceaccumulationrastername, Outputbackdirectionrastername, Outputsourcedirectionrastername, Outputsourcelocationrastername, Sourcefield, Sourceinitialaccumulation, Sourcemaximumaccumulation, Sourcecostmultiplier, Sourcedirection, Distancemethod, Outputdistanceallocationraster, Outputdistanceaccumulationraster, Outputbackdirectionraster, Outputsourcedirectionraster, Outputsourcelocationraster };
+		public override object[] Parameters() => new object[] { Inputsourcerasterorfeatures, Outputdistanceallocationrastername, Inputbarrierrasterorfeatures, Inputsurfaceraster, Inputcostraster, Inputverticalraster, Verticalfactor, Inputhorizontalraster, Horizontalfactor, Outputdistanceaccumulationrastername, Outputbackdirectionrastername, Outputsourcedirectionrastername, Outputsourcelocationrastername, Sourcefield, Sourceinitialaccumulation, Sourcemaximumaccumulation, Sourcecostmultiplier, Sourcedirection, Distancemethod, Outputdistanceallocationraster, Outputdistanceaccumulationraster, Outputbackdirectionraster, Outputsourcedirectionraster, Outputsourcelocationraster };
 
 		/// <summary>
 		/// <para>Input source raster or features</para>

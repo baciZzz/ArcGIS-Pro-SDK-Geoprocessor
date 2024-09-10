@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Find Similar Locations</para>
 		/// </summary>
-		public override string DisplayName => "Find Similar Locations";
+		public override string DisplayName() => "Find Similar Locations";
 
 		/// <summary>
 		/// <para>Tool Name : FindSimilarLocations</para>
 		/// </summary>
-		public override string ToolName => "FindSimilarLocations";
+		public override string ToolName() => "FindSimilarLocations";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.FindSimilarLocations</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.FindSimilarLocations";
+		public override string ExcuteName() => "geoanalytics.FindSimilarLocations";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, SearchLayer, OutputName, AnalysisFields, MostOrLeastSimilar, MatchMethod, NumberOfResults, AppendFields, Output, DataStore };
+		public override object[] Parameters() => new object[] { InputLayer, SearchLayer, OutputName, AnalysisFields, MostOrLeastSimilar, MatchMethod, NumberOfResults, AppendFields, Output, DataStore };
 
 		/// <summary>
 		/// <para>Input Layer</para>

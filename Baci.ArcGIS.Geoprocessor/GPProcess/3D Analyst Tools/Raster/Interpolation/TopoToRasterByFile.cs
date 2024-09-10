@@ -38,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Topo to Raster by File</para>
 		/// </summary>
-		public override string DisplayName => "Topo to Raster by File";
+		public override string DisplayName() => "Topo to Raster by File";
 
 		/// <summary>
 		/// <para>Tool Name : TopoToRasterByFile</para>
 		/// </summary>
-		public override string ToolName => "TopoToRasterByFile";
+		public override string ToolName() => "TopoToRasterByFile";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.TopoToRasterByFile</para>
 		/// </summary>
-		public override string ExcuteName => "3d.TopoToRasterByFile";
+		public override string ExcuteName() => "3d.TopoToRasterByFile";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "mask", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "snapRaster", "tileSize", "transferDomains", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "mask", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "snapRaster", "tileSize", "transferDomains", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InParameterFile, OutSurfaceRaster, OutStreamFeatures, OutSinkFeatures, OutResidualFeature, OutStreamCliffErrorFeature, OutContourErrorFeature };
+		public override object[] Parameters() => new object[] { InParameterFile, OutSurfaceRaster, OutStreamFeatures, OutSinkFeatures, OutResidualFeature, OutStreamCliffErrorFeature, OutContourErrorFeature };
 
 		/// <summary>
 		/// <para>Input parameter file</para>

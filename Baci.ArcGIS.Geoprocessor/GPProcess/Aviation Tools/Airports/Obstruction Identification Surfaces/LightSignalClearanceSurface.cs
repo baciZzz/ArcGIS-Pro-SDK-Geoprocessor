@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Light Signal Clearance Surface</para>
 		/// </summary>
-		public override string DisplayName => "Light Signal Clearance Surface";
+		public override string DisplayName() => "Light Signal Clearance Surface";
 
 		/// <summary>
 		/// <para>Tool Name : LightSignalClearanceSurface</para>
 		/// </summary>
-		public override string ToolName => "LightSignalClearanceSurface";
+		public override string ToolName() => "LightSignalClearanceSurface";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.LightSignalClearanceSurface</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.LightSignalClearanceSurface";
+		public override string ExcuteName() => "aviation.LightSignalClearanceSurface";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Target, RunwayDirection, Length, Divergence, Slope, DistanceFromThreshold, FirstPapiLight, LastPapiLight, StartHeight, DerivedOutfeatureclass, AirportControlPointFeatureClass, SurfacePosition };
+		public override object[] Parameters() => new object[] { InFeatures, Target, RunwayDirection, Length, Divergence, Slope, DistanceFromThreshold, FirstPapiLight, LastPapiLight, StartHeight, DerivedOutfeatureclass, AirportControlPointFeatureClass, SurfacePosition };
 
 		/// <summary>
 		/// <para>Input Runway Features</para>

@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Obstacle Features</para>
 		/// </summary>
-		public override string DisplayName => "Generate Obstacle Features";
+		public override string DisplayName() => "Generate Obstacle Features";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateObstacleFeatures</para>
 		/// </summary>
-		public override string ToolName => "GenerateObstacleFeatures";
+		public override string ToolName() => "GenerateObstacleFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.GenerateObstacleFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.GenerateObstacleFeatures";
+		public override string ExcuteName() => "intelligence.GenerateObstacleFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, HeightField, OutObstacleFeatures, OutObstacleBuffers, ClipFeatures };
+		public override object[] Parameters() => new object[] { InFeatures, HeightField, OutObstacleFeatures, OutObstacleBuffers, ClipFeatures };
 
 		/// <summary>
 		/// <para>Input Features</para>

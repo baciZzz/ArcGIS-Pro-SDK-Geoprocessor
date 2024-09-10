@@ -38,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : CopyMultiple</para>
 		/// </summary>
-		public override string DisplayName => "CopyMultiple";
+		public override string DisplayName() => "CopyMultiple";
 
 		/// <summary>
 		/// <para>Tool Name : CopyMultiple</para>
 		/// </summary>
-		public override string ToolName => "CopyMultiple";
+		public override string ToolName() => "CopyMultiple";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CopyMultiple</para>
 		/// </summary>
-		public override string ExcuteName => "management.CopyMultiple";
+		public override string ExcuteName() => "management.CopyMultiple";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, OutPath, OutDataName, AssociatedData, OutData };
+		public override object[] Parameters() => new object[] { InData, OutPath, OutDataName, AssociatedData, OutData };
 
 		/// <summary>
 		/// <para>Input Data</para>

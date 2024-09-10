@@ -31,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Uncompress File Geodatabase Data</para>
 		/// </summary>
-		public override string DisplayName => "Uncompress File Geodatabase Data";
+		public override string DisplayName() => "Uncompress File Geodatabase Data";
 
 		/// <summary>
 		/// <para>Tool Name : UncompressFileGeodatabaseData</para>
 		/// </summary>
-		public override string ToolName => "UncompressFileGeodatabaseData";
+		public override string ToolName() => "UncompressFileGeodatabaseData";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.UncompressFileGeodatabaseData</para>
 		/// </summary>
-		public override string ExcuteName => "management.UncompressFileGeodatabaseData";
+		public override string ExcuteName() => "management.UncompressFileGeodatabaseData";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, ConfigKeyword, OutData };
+		public override object[] Parameters() => new object[] { InData, ConfigKeyword, OutData };
 
 		/// <summary>
 		/// <para>Input file geodatabase data</para>

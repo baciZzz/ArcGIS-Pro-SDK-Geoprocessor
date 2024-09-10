@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Flow Direction</para>
 		/// </summary>
-		public override string DisplayName => "Flow Direction";
+		public override string DisplayName() => "Flow Direction";
 
 		/// <summary>
 		/// <para>Tool Name : FlowDirection</para>
 		/// </summary>
-		public override string ToolName => "FlowDirection";
+		public override string ToolName() => "FlowDirection";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.FlowDirection</para>
 		/// </summary>
-		public override string ExcuteName => "sa.FlowDirection";
+		public override string ExcuteName() => "sa.FlowDirection";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurfaceRaster, OutFlowDirectionRaster, ForceFlow, OutDropRaster, FlowDirectionType };
+		public override object[] Parameters() => new object[] { InSurfaceRaster, OutFlowDirectionRaster, ForceFlow, OutDropRaster, FlowDirectionType };
 
 		/// <summary>
 		/// <para>Input surface raster</para>

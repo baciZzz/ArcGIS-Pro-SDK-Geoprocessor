@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Tiled Labels To Annotation</para>
 		/// </summary>
-		public override string DisplayName => "Tiled Labels To Annotation";
+		public override string DisplayName() => "Tiled Labels To Annotation";
 
 		/// <summary>
 		/// <para>Tool Name : TiledLabelsToAnnotation</para>
 		/// </summary>
-		public override string ToolName => "TiledLabelsToAnnotation";
+		public override string ToolName() => "TiledLabelsToAnnotation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.TiledLabelsToAnnotation</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.TiledLabelsToAnnotation";
+		public override string ExcuteName() => "cartography.TiledLabelsToAnnotation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "annotationTextStringFieldLength", "referenceScale" };
+		public override string[] ValidEnvironments() => new string[] { "annotationTextStringFieldLength", "referenceScale" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputMap, PolygonIndexLayer, OutGeodatabase, OutLayer, AnnoSuffix, ReferenceScaleValue, ReferenceScaleField, TileIdField, CoordinateSysField, MapRotationField, FeatureLinked, GenerateUnplacedAnnotation, OutWorkspace, WhichLayers, SingleLayer, RequireSymbolId, AutoCreate, UpdateOnShapeChange, MultipleFeatureClasses, MergeLabelClasses };
+		public override object[] Parameters() => new object[] { InputMap, PolygonIndexLayer, OutGeodatabase, OutLayer, AnnoSuffix, ReferenceScaleValue, ReferenceScaleField, TileIdField, CoordinateSysField, MapRotationField, FeatureLinked, GenerateUnplacedAnnotation, OutWorkspace, WhichLayers, SingleLayer, RequireSymbolId, AutoCreate, UpdateOnShapeChange, MultipleFeatureClasses, MergeLabelClasses };
 
 		/// <summary>
 		/// <para>Input Map</para>

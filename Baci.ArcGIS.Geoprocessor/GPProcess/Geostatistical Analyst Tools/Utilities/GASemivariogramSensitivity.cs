@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Semivariogram Sensitivity</para>
 		/// </summary>
-		public override string DisplayName => "Semivariogram Sensitivity";
+		public override string DisplayName() => "Semivariogram Sensitivity";
 
 		/// <summary>
 		/// <para>Tool Name : GASemivariogramSensitivity</para>
 		/// </summary>
-		public override string ToolName => "GASemivariogramSensitivity";
+		public override string ToolName() => "GASemivariogramSensitivity";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.GASemivariogramSensitivity</para>
 		/// </summary>
-		public override string ExcuteName => "ga.GASemivariogramSensitivity";
+		public override string ExcuteName() => "ga.GASemivariogramSensitivity";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "coincidentPoints", "randomGenerator", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "coincidentPoints", "randomGenerator", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGaModelSource, InDatasets, InLocations, NuggetSpanPercents, NuggetCalcTimes, PartialsillSpanPercents, PartialsillCalcTimes, RangeSpanPercents, RangeCalcTimes, MinrangeSpanPercents, MinrangeCalcTimes, OutTable };
+		public override object[] Parameters() => new object[] { InGaModelSource, InDatasets, InLocations, NuggetSpanPercents, NuggetCalcTimes, PartialsillSpanPercents, PartialsillCalcTimes, RangeSpanPercents, RangeCalcTimes, MinrangeSpanPercents, MinrangeCalcTimes, OutTable };
 
 		/// <summary>
 		/// <para>Input geostatistical model source</para>

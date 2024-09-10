@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Share As Route Layers</para>
 		/// </summary>
-		public override string DisplayName => "Share As Route Layers";
+		public override string DisplayName() => "Share As Route Layers";
 
 		/// <summary>
 		/// <para>Tool Name : ShareAsRouteLayers</para>
 		/// </summary>
-		public override string ToolName => "ShareAsRouteLayers";
+		public override string ToolName() => "ShareAsRouteLayers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.ShareAsRouteLayers</para>
 		/// </summary>
-		public override string ExcuteName => "na.ShareAsRouteLayers";
+		public override string ExcuteName() => "na.ShareAsRouteLayers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkAnalysisLayer, Summary, Tags, RouteNamePrefix, PortalFolderName, ShareWith, Groups, RouteLayerItems };
+		public override object[] Parameters() => new object[] { InNetworkAnalysisLayer, Summary, Tags, RouteNamePrefix, PortalFolderName, ShareWith, Groups, RouteLayerItems };
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer or  Route Data</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Summary</para>
-		/// <para>The summary used by the route layer items. The summary is displayed as part of the item information for the route layer item. If a value is not specified, default summary text—Route and directions for <route name>—is used, where <route name> is replaced with the name of the route represented by the route layer.</para>
+		/// <para>The summary used by the route layer items. The summary is displayed as part of the item information for the route layer item. If a value is not specified, default summary text—Route and directions for &lt;route name&gt;—is used, where &lt;route name&gt; is replaced with the name of the route represented by the route layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

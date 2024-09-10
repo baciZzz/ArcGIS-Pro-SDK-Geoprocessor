@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Points From Business Listings</para>
 		/// </summary>
-		public override string DisplayName => "Generate Points From Business Listings";
+		public override string DisplayName() => "Generate Points From Business Listings";
 
 		/// <summary>
 		/// <para>Tool Name : GeneratePointsFromBusinessListings</para>
 		/// </summary>
-		public override string ToolName => "GeneratePointsFromBusinessListings";
+		public override string ToolName() => "GeneratePointsFromBusinessListings";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.GeneratePointsFromBusinessListings</para>
 		/// </summary>
-		public override string ExcuteName => "ba.GeneratePointsFromBusinessListings";
+		public override string ExcuteName() => "ba.GeneratePointsFromBusinessListings";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutFeatureClass, InSearchFeatures, SearchTerms, ExactMatch, MatchNameOnly, Filters, MaxCount, BusinessDataset };
+		public override object[] Parameters() => new object[] { OutFeatureClass, InSearchFeatures, SearchTerms, ExactMatch, MatchNameOnly, Filters, MaxCount, BusinessDataset };
 
 		/// <summary>
 		/// <para>Output Feature Class</para>

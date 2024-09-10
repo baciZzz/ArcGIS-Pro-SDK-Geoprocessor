@@ -63,37 +63,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Display Name : Visualize Space Time Cube in 2D</para>
 		/// </summary>
-		public override string DisplayName => "Visualize Space Time Cube in 2D";
+		public override string DisplayName() => "Visualize Space Time Cube in 2D";
 
 		/// <summary>
 		/// <para>Tool Name : VisualizeSpaceTimeCube2D</para>
 		/// </summary>
-		public override string ToolName => "VisualizeSpaceTimeCube2D";
+		public override string ToolName() => "VisualizeSpaceTimeCube2D";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stpm.VisualizeSpaceTimeCube2D</para>
 		/// </summary>
-		public override string ExcuteName => "stpm.VisualizeSpaceTimeCube2D";
+		public override string ExcuteName() => "stpm.VisualizeSpaceTimeCube2D";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Space Time Pattern Mining Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Space Time Pattern Mining Tools";
+		public override string ToolboxDisplayName() => "Space Time Pattern Mining Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stpm</para>
 		/// </summary>
-		public override string ToolboxAlise => "stpm";
+		public override string ToolboxAlise() => "stpm";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCube, CubeVariable, DisplayTheme, OutputFeatures, EnableTimeSeriesPopups };
+		public override object[] Parameters() => new object[] { InCube, CubeVariable, DisplayTheme, OutputFeatures, EnableTimeSeriesPopups };
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>

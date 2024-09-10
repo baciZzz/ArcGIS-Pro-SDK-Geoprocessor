@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Diagram Layer Definition</para>
 		/// </summary>
-		public override string DisplayName => "Export Diagram Layer Definition";
+		public override string DisplayName() => "Export Diagram Layer Definition";
 
 		/// <summary>
 		/// <para>Tool Name : ExportDiagramLayerDefinition</para>
 		/// </summary>
-		public override string ToolName => "ExportDiagramLayerDefinition";
+		public override string ToolName() => "ExportDiagramLayerDefinition";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.ExportDiagramLayerDefinition</para>
 		/// </summary>
-		public override string ExcuteName => "nd.ExportDiagramLayerDefinition";
+		public override string ExcuteName() => "nd.ExportDiagramLayerDefinition";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, OutNdldFile, OutNetworkDiagramLayer };
+		public override object[] Parameters() => new object[] { InNetworkDiagramLayer, OutNdldFile, OutNetworkDiagramLayer };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>

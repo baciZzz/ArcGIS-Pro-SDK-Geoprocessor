@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Fuzzy Overlay</para>
 		/// </summary>
-		public override string DisplayName => "Fuzzy Overlay";
+		public override string DisplayName() => "Fuzzy Overlay";
 
 		/// <summary>
 		/// <para>Tool Name : FuzzyOverlay</para>
 		/// </summary>
-		public override string ToolName => "FuzzyOverlay";
+		public override string ToolName() => "FuzzyOverlay";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.FuzzyOverlay</para>
 		/// </summary>
-		public override string ExcuteName => "sa.FuzzyOverlay";
+		public override string ExcuteName() => "sa.FuzzyOverlay";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasters, OutRaster, OverlayType, Gamma };
+		public override object[] Parameters() => new object[] { InRasters, OutRaster, OverlayType, Gamma };
 
 		/// <summary>
 		/// <para>Input rasters</para>

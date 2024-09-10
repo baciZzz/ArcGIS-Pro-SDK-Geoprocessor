@@ -37,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Alter Field</para>
 		/// </summary>
-		public override string DisplayName => "Alter Field";
+		public override string DisplayName() => "Alter Field";
 
 		/// <summary>
 		/// <para>Tool Name : AlterField</para>
 		/// </summary>
-		public override string ToolName => "AlterField";
+		public override string ToolName() => "AlterField";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AlterField</para>
 		/// </summary>
-		public override string ExcuteName => "management.AlterField";
+		public override string ExcuteName() => "management.AlterField";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Field, NewFieldName, NewFieldAlias, FieldType, FieldLength, FieldIsNullable, ClearFieldAlias, OutTable };
+		public override object[] Parameters() => new object[] { InTable, Field, NewFieldName, NewFieldAlias, FieldType, FieldLength, FieldIsNullable, ClearFieldAlias, OutTable };
 
 		/// <summary>
 		/// <para>Input Table</para>

@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Append Routes</para>
 		/// </summary>
-		public override string DisplayName => "Append Routes";
+		public override string DisplayName() => "Append Routes";
 
 		/// <summary>
 		/// <para>Tool Name : AppendRoutes</para>
 		/// </summary>
-		public override string ToolName => "AppendRoutes";
+		public override string ToolName() => "AppendRoutes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.AppendRoutes</para>
 		/// </summary>
-		public override string ExcuteName => "locref.AppendRoutes";
+		public override string ExcuteName() => "locref.AppendRoutes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { SourceRoutes, InLrsNetwork, RouteIdField, RouteNameField, FromDateField, ToDateField, LineIdField, LineNameField, LineOrderField, FieldMap, LoadType, OutLrsNetwork, OutDetailsFile };
+		public override object[] Parameters() => new object[] { SourceRoutes, InLrsNetwork, RouteIdField, RouteNameField, FromDateField, ToDateField, LineIdField, LineNameField, LineOrderField, FieldMap, LoadType, OutLrsNetwork, OutDetailsFile };
 
 		/// <summary>
 		/// <para>Source Routes</para>

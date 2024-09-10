@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Measure Cannibalization</para>
 		/// </summary>
-		public override string DisplayName => "Measure Cannibalization";
+		public override string DisplayName() => "Measure Cannibalization";
 
 		/// <summary>
 		/// <para>Tool Name : MeasureCannibalization</para>
 		/// </summary>
-		public override string ToolName => "MeasureCannibalization";
+		public override string ToolName() => "MeasureCannibalization";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.MeasureCannibalization</para>
 		/// </summary>
-		public override string ExcuteName => "ba.MeasureCannibalization";
+		public override string ExcuteName() => "ba.MeasureCannibalization";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, AreaIdField, AreaDescriptionField, OutFeatureClass, StoreIdField, CreateReport, ReportTitle, ReportFolder, ReportFormat, OutputReport, Variables };
+		public override object[] Parameters() => new object[] { InFeatures, AreaIdField, AreaDescriptionField, OutFeatureClass, StoreIdField, CreateReport, ReportTitle, ReportFolder, ReportFormat, OutputReport, Variables };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Set Value For Range Domain</para>
 		/// </summary>
-		public override string DisplayName => "Set Value For Range Domain";
+		public override string DisplayName() => "Set Value For Range Domain";
 
 		/// <summary>
 		/// <para>Tool Name : SetValueForRangeDomain</para>
 		/// </summary>
-		public override string ToolName => "SetValueForRangeDomain";
+		public override string ToolName() => "SetValueForRangeDomain";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SetValueForRangeDomain</para>
 		/// </summary>
-		public override string ExcuteName => "management.SetValueForRangeDomain";
+		public override string ExcuteName() => "management.SetValueForRangeDomain";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, DomainName, MinValue, MaxValue, OutWorkspace };
+		public override object[] Parameters() => new object[] { InWorkspace, DomainName, MinValue, MaxValue, OutWorkspace };
 
 		/// <summary>
 		/// <para>Input Workspace</para>

@@ -38,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Aggregate Polygons</para>
 		/// </summary>
-		public override string DisplayName => "Aggregate Polygons";
+		public override string DisplayName() => "Aggregate Polygons";
 
 		/// <summary>
 		/// <para>Tool Name : AggregatePolygons</para>
 		/// </summary>
-		public override string ToolName => "AggregatePolygons";
+		public override string ToolName() => "AggregatePolygons";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AggregatePolygons</para>
 		/// </summary>
-		public override string ExcuteName => "management.AggregatePolygons";
+		public override string ExcuteName() => "management.AggregatePolygons";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, AggregationDistance, MinimumArea, MinimumHoleSize, OrthogonalityOption, BarrierFeatures, OutTable, AggregateField };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, AggregationDistance, MinimumArea, MinimumHoleSize, OrthogonalityOption, BarrierFeatures, OutTable, AggregateField };
 
 		/// <summary>
 		/// <para>Input Features</para>

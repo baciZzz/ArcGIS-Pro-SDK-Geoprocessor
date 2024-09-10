@@ -41,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Contour</para>
 		/// </summary>
-		public override string DisplayName => "Contour";
+		public override string DisplayName() => "Contour";
 
 		/// <summary>
 		/// <para>Tool Name : Contour</para>
 		/// </summary>
-		public override string ToolName => "Contour";
+		public override string ToolName() => "Contour";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Contour</para>
 		/// </summary>
-		public override string ExcuteName => "sa.Contour";
+		public override string ExcuteName() => "sa.Contour";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutPolylineFeatures, ContourInterval, BaseContour, ZFactor, ContourType, MaxVerticesPerFeature };
+		public override object[] Parameters() => new object[] { InRaster, OutPolylineFeatures, ContourInterval, BaseContour, ZFactor, ContourType, MaxVerticesPerFeature };
 
 		/// <summary>
 		/// <para>Input raster</para>

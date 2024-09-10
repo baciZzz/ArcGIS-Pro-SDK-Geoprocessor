@@ -55,37 +55,37 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Range Fans From Features</para>
 		/// </summary>
-		public override string DisplayName => "Generate Range Fans From Features";
+		public override string DisplayName() => "Generate Range Fans From Features";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateRangeFansFromFeatures</para>
 		/// </summary>
-		public override string ToolName => "GenerateRangeFansFromFeatures";
+		public override string ToolName() => "GenerateRangeFansFromFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : defense.GenerateRangeFansFromFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "defense.GenerateRangeFansFromFeatures";
+		public override string ExcuteName() => "defense.GenerateRangeFansFromFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Defense Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Defense Tools";
+		public override string ToolboxDisplayName() => "Defense Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : defense</para>
 		/// </summary>
-		public override string ToolboxAlise => "defense";
+		public override string ToolboxAlise() => "defense";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputFeatureClass, InnerRadiusField, OuterRadiusField, StartAngleField, EndAngleField, DistanceUnits, AngleUnits };
+		public override object[] Parameters() => new object[] { InFeatures, OutputFeatureClass, InnerRadiusField, OuterRadiusField, StartAngleField, EndAngleField, DistanceUnits, AngleUnits };
 
 		/// <summary>
 		/// <para>Input Features</para>

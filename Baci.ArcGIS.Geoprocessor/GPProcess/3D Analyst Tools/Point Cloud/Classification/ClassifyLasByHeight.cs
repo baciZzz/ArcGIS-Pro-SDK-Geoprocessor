@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Classify LAS By Height</para>
 		/// </summary>
-		public override string DisplayName => "Classify LAS By Height";
+		public override string DisplayName() => "Classify LAS By Height";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyLasByHeight</para>
 		/// </summary>
-		public override string ToolName => "ClassifyLasByHeight";
+		public override string ToolName() => "ClassifyLasByHeight";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.ClassifyLasByHeight</para>
 		/// </summary>
-		public override string ExcuteName => "3d.ClassifyLasByHeight";
+		public override string ExcuteName() => "3d.ClassifyLasByHeight";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, GroundSource, HeightClassification, Noise, ComputeStats, Extent, ProcessEntireFiles, Boundary, OutLasDataset, UpdatePyramid };
+		public override object[] Parameters() => new object[] { InLasDataset, GroundSource, HeightClassification, Noise, ComputeStats, Extent, ProcessEntireFiles, Boundary, OutLasDataset, UpdatePyramid };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>

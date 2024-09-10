@@ -55,37 +55,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Calibration Points</para>
 		/// </summary>
-		public override string DisplayName => "Generate Calibration Points";
+		public override string DisplayName() => "Generate Calibration Points";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateCalibrationPoints</para>
 		/// </summary>
-		public override string ToolName => "GenerateCalibrationPoints";
+		public override string ToolName() => "GenerateCalibrationPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.GenerateCalibrationPoints</para>
 		/// </summary>
-		public override string ExcuteName => "locref.GenerateCalibrationPoints";
+		public override string ExcuteName() => "locref.GenerateCalibrationPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPolylineFeatures, RouteIdField, FromDateField, ToDateField, InCalibrationPointFeatureClass, LrsNetwork, CalibrationDirection, CalibrationMethod, OutCalibrationPointFeatureClass, OutDetailsFile };
+		public override object[] Parameters() => new object[] { InPolylineFeatures, RouteIdField, FromDateField, ToDateField, InCalibrationPointFeatureClass, LrsNetwork, CalibrationDirection, CalibrationMethod, OutCalibrationPointFeatureClass, OutDetailsFile };
 
 		/// <summary>
 		/// <para>Input Polyline Features</para>

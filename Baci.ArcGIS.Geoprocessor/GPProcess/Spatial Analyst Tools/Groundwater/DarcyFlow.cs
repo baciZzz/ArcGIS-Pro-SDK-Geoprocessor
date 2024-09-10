@@ -54,37 +54,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Darcy Flow</para>
 		/// </summary>
-		public override string DisplayName => "Darcy Flow";
+		public override string DisplayName() => "Darcy Flow";
 
 		/// <summary>
 		/// <para>Tool Name : DarcyFlow</para>
 		/// </summary>
-		public override string ToolName => "DarcyFlow";
+		public override string ToolName() => "DarcyFlow";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.DarcyFlow</para>
 		/// </summary>
-		public override string ExcuteName => "sa.DarcyFlow";
+		public override string ExcuteName() => "sa.DarcyFlow";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InHeadRaster, InPorosityRaster, InThicknessRaster, InTransmissivityRaster, OutVolumeRaster, OutDirectionRaster, OutMagnitudeRaster };
+		public override object[] Parameters() => new object[] { InHeadRaster, InPorosityRaster, InThicknessRaster, InTransmissivityRaster, OutVolumeRaster, OutDirectionRaster, OutMagnitudeRaster };
 
 		/// <summary>
 		/// <para>Input groundwater head elevation raster</para>

@@ -88,37 +88,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Locator</para>
 		/// </summary>
-		public override string DisplayName => "Create Locator";
+		public override string DisplayName() => "Create Locator";
 
 		/// <summary>
 		/// <para>Tool Name : CreateLocator</para>
 		/// </summary>
-		public override string ToolName => "CreateLocator";
+		public override string ToolName() => "CreateLocator";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geocoding.CreateLocator</para>
 		/// </summary>
-		public override string ExcuteName => "geocoding.CreateLocator";
+		public override string ExcuteName() => "geocoding.CreateLocator";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geocoding Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geocoding Tools";
+		public override string ToolboxDisplayName() => "Geocoding Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geocoding</para>
 		/// </summary>
-		public override string ToolboxAlise => "geocoding";
+		public override string ToolboxAlise() => "geocoding";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { CountryCode, PrimaryReferenceData, FieldMapping, OutLocator, LanguageCode, AlternatenameTables, AlternateFieldMapping, CustomOutputFields, PrecisionType };
+		public override object[] Parameters() => new object[] { CountryCode, PrimaryReferenceData, FieldMapping, OutLocator, LanguageCode, AlternatenameTables, AlternateFieldMapping, CustomOutputFields, PrecisionType };
 
 		/// <summary>
 		/// <para>Country or Region</para>

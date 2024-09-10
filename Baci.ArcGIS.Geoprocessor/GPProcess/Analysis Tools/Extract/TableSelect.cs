@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Table Select</para>
 		/// </summary>
-		public override string DisplayName => "Table Select";
+		public override string DisplayName() => "Table Select";
 
 		/// <summary>
 		/// <para>Tool Name : TableSelect</para>
 		/// </summary>
-		public override string ToolName => "TableSelect";
+		public override string ToolName() => "TableSelect";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.TableSelect</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.TableSelect";
+		public override string ExcuteName() => "analysis.TableSelect";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutTable, WhereClause };
+		public override object[] Parameters() => new object[] { InTable, OutTable, WhereClause };
 
 		/// <summary>
 		/// <para>Input Table</para>

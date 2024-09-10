@@ -48,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Space Time Cube</para>
 		/// </summary>
-		public override string DisplayName => "Create Space Time Cube";
+		public override string DisplayName() => "Create Space Time Cube";
 
 		/// <summary>
 		/// <para>Tool Name : CreateSpaceTimeCube</para>
 		/// </summary>
-		public override string ToolName => "CreateSpaceTimeCube";
+		public override string ToolName() => "CreateSpaceTimeCube";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.CreateSpaceTimeCube</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.CreateSpaceTimeCube";
+		public override string ExcuteName() => "geoanalytics.CreateSpaceTimeCube";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { PointLayer, OutputName, DistanceInterval, TimeStepInterval, TimeStepIntervalAlignment, ReferenceTime, SummaryFields, Output };
+		public override object[] Parameters() => new object[] { PointLayer, OutputName, DistanceInterval, TimeStepInterval, TimeStepIntervalAlignment, ReferenceTime, SummaryFields, Output };
 
 		/// <summary>
 		/// <para>Point Layer</para>

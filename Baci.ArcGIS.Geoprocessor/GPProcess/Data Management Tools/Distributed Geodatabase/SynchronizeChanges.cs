@@ -74,37 +74,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Synchronize Changes</para>
 		/// </summary>
-		public override string DisplayName => "Synchronize Changes";
+		public override string DisplayName() => "Synchronize Changes";
 
 		/// <summary>
 		/// <para>Tool Name : SynchronizeChanges</para>
 		/// </summary>
-		public override string ToolName => "SynchronizeChanges";
+		public override string ToolName() => "SynchronizeChanges";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SynchronizeChanges</para>
 		/// </summary>
-		public override string ExcuteName => "management.SynchronizeChanges";
+		public override string ExcuteName() => "management.SynchronizeChanges";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Geodatabase1, InReplica, Geodatabase2, InDirection, ConflictPolicy, ConflictDefinition, Reconcile, OutGeodatabase1, OutGeodatabase2 };
+		public override object[] Parameters() => new object[] { Geodatabase1, InReplica, Geodatabase2, InDirection, ConflictPolicy, ConflictDefinition, Reconcile, OutGeodatabase1, OutGeodatabase2 };
 
 		/// <summary>
 		/// <para>Geodatabase 1</para>

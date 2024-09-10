@@ -51,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Copy Raster</para>
 		/// </summary>
-		public override string DisplayName => "Copy Raster";
+		public override string DisplayName() => "Copy Raster";
 
 		/// <summary>
 		/// <para>Tool Name : CopyRaster</para>
 		/// </summary>
-		public override string ToolName => "CopyRaster";
+		public override string ToolName() => "CopyRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CopyRaster</para>
 		/// </summary>
-		public override string ExcuteName => "management.CopyRaster";
+		public override string ExcuteName() => "management.CopyRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellAlignment", "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellAlignment", "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRasterdataset, ConfigKeyword, BackgroundValue, NodataValue, OnebitToEightbit, ColormapToRGB, PixelType, ScalePixelValue, RGBToColormap, Format, Transform, ProcessAsMultidimensional, BuildMultidimensionalTranspose };
+		public override object[] Parameters() => new object[] { InRaster, OutRasterdataset, ConfigKeyword, BackgroundValue, NodataValue, OnebitToEightbit, ColormapToRGB, PixelType, ScalePixelValue, RGBToColormap, Format, Transform, ProcessAsMultidimensional, BuildMultidimensionalTranspose };
 
 		/// <summary>
 		/// <para>Input Raster</para>

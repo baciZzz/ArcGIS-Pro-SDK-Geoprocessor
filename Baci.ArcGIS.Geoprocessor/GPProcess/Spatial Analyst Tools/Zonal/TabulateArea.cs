@@ -55,37 +55,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Tabulate Area</para>
 		/// </summary>
-		public override string DisplayName => "Tabulate Area";
+		public override string DisplayName() => "Tabulate Area";
 
 		/// <summary>
 		/// <para>Tool Name : TabulateArea</para>
 		/// </summary>
-		public override string ToolName => "TabulateArea";
+		public override string ToolName() => "TabulateArea";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.TabulateArea</para>
 		/// </summary>
-		public override string ExcuteName => "sa.TabulateArea";
+		public override string ExcuteName() => "sa.TabulateArea";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "qualifiedFieldNames", "scratchWorkspace", "snapRaster", "tileSize", "transferDomains", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "qualifiedFieldNames", "scratchWorkspace", "snapRaster", "tileSize", "transferDomains", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InZoneData, ZoneField, InClassData, ClassField, OutTable, ProcessingCellSize, ClassesAsRows };
+		public override object[] Parameters() => new object[] { InZoneData, ZoneField, InClassData, ClassField, OutTable, ProcessingCellSize, ClassesAsRows };
 
 		/// <summary>
 		/// <para>Input raster or feature zone data</para>

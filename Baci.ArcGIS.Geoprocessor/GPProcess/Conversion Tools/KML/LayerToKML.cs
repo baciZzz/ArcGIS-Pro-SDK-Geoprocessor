@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Layer To KML</para>
 		/// </summary>
-		public override string DisplayName => "Layer To KML";
+		public override string DisplayName() => "Layer To KML";
 
 		/// <summary>
 		/// <para>Tool Name : LayerToKML</para>
 		/// </summary>
-		public override string ToolName => "LayerToKML";
+		public override string ToolName() => "LayerToKML";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.LayerToKML</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.LayerToKML";
+		public override string ExcuteName() => "conversion.LayerToKML";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "maintainAttachments", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "maintainAttachments", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Layer, OutKmzFile, LayerOutputScale, IsComposite, BoundaryBoxExtent, ImageSize, DpiOfClient, IgnoreZvalue };
+		public override object[] Parameters() => new object[] { Layer, OutKmzFile, LayerOutputScale, IsComposite, BoundaryBoxExtent, ImageSize, DpiOfClient, IgnoreZvalue };
 
 		/// <summary>
 		/// <para>Layer</para>

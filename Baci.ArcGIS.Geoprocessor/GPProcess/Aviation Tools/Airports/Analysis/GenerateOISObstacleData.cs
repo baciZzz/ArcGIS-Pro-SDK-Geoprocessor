@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate OIS Obstacle Data</para>
 		/// </summary>
-		public override string DisplayName => "Generate OIS Obstacle Data";
+		public override string DisplayName() => "Generate OIS Obstacle Data";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateOISObstacleData</para>
 		/// </summary>
-		public override string ToolName => "GenerateOISObstacleData";
+		public override string ToolName() => "GenerateOISObstacleData";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.GenerateOISObstacleData</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.GenerateOISObstacleData";
+		public override string ExcuteName() => "aviation.GenerateOISObstacleData";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRunwayFeatures, InDems, InObstacleFeatures, TargetOisFeatures, ObstacleHeightField, ObstacleHeightUnit, InFlightpathFeatures, OutOisFeatures, LabelField, HeightOption, ElevationOption, ElevationField, ElevationFieldUnit };
+		public override object[] Parameters() => new object[] { InRunwayFeatures, InDems, InObstacleFeatures, TargetOisFeatures, ObstacleHeightField, ObstacleHeightUnit, InFlightpathFeatures, OutOisFeatures, LabelField, HeightOption, ElevationOption, ElevationField, ElevationFieldUnit };
 
 		/// <summary>
 		/// <para>Input Runway Features</para>

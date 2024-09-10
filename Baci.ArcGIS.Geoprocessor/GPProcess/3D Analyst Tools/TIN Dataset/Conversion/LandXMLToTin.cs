@@ -28,7 +28,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </param>
 		/// <param name="TinBasename">
 		/// <para>Output TIN Base Name</para>
-		/// <para>The basename of the resulting TIN. When several TINs will be exported from the LandXML file, the basename is used to define a unique name for each output TIN. If <basename> already exists, the tool will not write anything. If <basename> does not exist but <basename>2 exists, the tool will create <basename> and <basename>2_1, instead of <basename>2.</para>
+		/// <para>The basename of the resulting TIN. When several TINs will be exported from the LandXML file, the basename is used to define a unique name for each output TIN. If &lt;basename&gt; already exists, the tool will not write anything. If &lt;basename&gt; does not exist but &lt;basename&gt;2 exists, the tool will create &lt;basename&gt; and &lt;basename&gt;2_1, instead of &lt;basename&gt;2.</para>
 		/// </param>
 		public LandXMLToTin(object InLandxmlPath, object OutTinFolder, object TinBasename)
 		{
@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : LandXML To TIN</para>
 		/// </summary>
-		public override string DisplayName => "LandXML To TIN";
+		public override string DisplayName() => "LandXML To TIN";
 
 		/// <summary>
 		/// <para>Tool Name : LandXMLToTin</para>
 		/// </summary>
-		public override string ToolName => "LandXMLToTin";
+		public override string ToolName() => "LandXMLToTin";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.LandXMLToTin</para>
 		/// </summary>
-		public override string ExcuteName => "3d.LandXMLToTin";
+		public override string ExcuteName() => "3d.LandXMLToTin";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "tinSaveVersion", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "tinSaveVersion", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLandxmlPath, OutTinFolder, TinBasename, Tinnames, DerivedTinFolder };
+		public override object[] Parameters() => new object[] { InLandxmlPath, OutTinFolder, TinBasename, Tinnames, DerivedTinFolder };
 
 		/// <summary>
 		/// <para>Input</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output TIN Base Name</para>
-		/// <para>The basename of the resulting TIN. When several TINs will be exported from the LandXML file, the basename is used to define a unique name for each output TIN. If <basename> already exists, the tool will not write anything. If <basename> does not exist but <basename>2 exists, the tool will create <basename> and <basename>2_1, instead of <basename>2.</para>
+		/// <para>The basename of the resulting TIN. When several TINs will be exported from the LandXML file, the basename is used to define a unique name for each output TIN. If &lt;basename&gt; already exists, the tool will not write anything. If &lt;basename&gt; does not exist but &lt;basename&gt;2 exists, the tool will create &lt;basename&gt; and &lt;basename&gt;2_1, instead of &lt;basename&gt;2.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

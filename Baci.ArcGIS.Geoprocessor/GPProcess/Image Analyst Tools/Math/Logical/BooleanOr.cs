@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Boolean Or</para>
 		/// </summary>
-		public override string DisplayName => "Boolean Or";
+		public override string DisplayName() => "Boolean Or";
 
 		/// <summary>
 		/// <para>Tool Name : BooleanOr</para>
 		/// </summary>
-		public override string ToolName => "BooleanOr";
+		public override string ToolName() => "BooleanOr";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.BooleanOr</para>
 		/// </summary>
-		public override string ExcuteName => "ia.BooleanOr";
+		public override string ExcuteName() => "ia.BooleanOr";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasterOrConstant1, InRasterOrConstant2, OutRaster };
+		public override object[] Parameters() => new object[] { InRasterOrConstant1, InRasterOrConstant2, OutRaster };
 
 		/// <summary>
 		/// <para>Input raster or constant value 1</para>

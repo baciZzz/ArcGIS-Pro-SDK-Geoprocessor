@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Sun Shadow Frequency</para>
 		/// </summary>
-		public override string DisplayName => "Sun Shadow Frequency";
+		public override string DisplayName() => "Sun Shadow Frequency";
 
 		/// <summary>
 		/// <para>Tool Name : SunShadowFrequency</para>
 		/// </summary>
-		public override string ToolName => "SunShadowFrequency";
+		public override string ToolName() => "SunShadowFrequency";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.SunShadowFrequency</para>
 		/// </summary>
-		public override string ExcuteName => "3d.SunShadowFrequency";
+		public override string ExcuteName() => "3d.SunShadowFrequency";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Ground, OutRaster, CellSize, StartTime, EndTime, TimeInterval, TimeZone, Dst, MaxShadowLength };
+		public override object[] Parameters() => new object[] { InFeatures, Ground, OutRaster, CellSize, StartTime, EndTime, TimeInterval, TimeZone, Dst, MaxShadowLength };
 
 		/// <summary>
 		/// <para>Input Features</para>

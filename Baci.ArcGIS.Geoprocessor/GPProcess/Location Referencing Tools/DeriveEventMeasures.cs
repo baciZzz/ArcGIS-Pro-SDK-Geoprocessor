@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Derive Event Measures</para>
 		/// </summary>
-		public override string DisplayName => "Derive Event Measures";
+		public override string DisplayName() => "Derive Event Measures";
 
 		/// <summary>
 		/// <para>Tool Name : DeriveEventMeasures</para>
 		/// </summary>
-		public override string ToolName => "DeriveEventMeasures";
+		public override string ToolName() => "DeriveEventMeasures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.DeriveEventMeasures</para>
 		/// </summary>
-		public override string ExcuteName => "locref.DeriveEventMeasures";
+		public override string ExcuteName() => "locref.DeriveEventMeasures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRouteFeatures, UpdateAllEvents, EventLayers, OutEvents, OutDetailsFile };
+		public override object[] Parameters() => new object[] { InRouteFeatures, UpdateAllEvents, EventLayers, OutEvents, OutDetailsFile };
 
 		/// <summary>
 		/// <para>Input Route Features</para>

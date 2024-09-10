@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Density</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Density";
+		public override string DisplayName() => "Calculate Density";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateDensity</para>
 		/// </summary>
-		public override string ToolName => "CalculateDensity";
+		public override string ToolName() => "CalculateDensity";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.CalculateDensity</para>
 		/// </summary>
-		public override string ExcuteName => "ra.CalculateDensity";
+		public override string ExcuteName() => "ra.CalculateDensity";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputpointorlinefeatures, Outputname, Countfield, Searchdistance, Outputareaunits, Outputcellsize, Outputraster, Inbarriers };
+		public override object[] Parameters() => new object[] { Inputpointorlinefeatures, Outputname, Countfield, Searchdistance, Outputareaunits, Outputcellsize, Outputraster, Inbarriers };
 
 		/// <summary>
 		/// <para>Input Point or Line Features</para>

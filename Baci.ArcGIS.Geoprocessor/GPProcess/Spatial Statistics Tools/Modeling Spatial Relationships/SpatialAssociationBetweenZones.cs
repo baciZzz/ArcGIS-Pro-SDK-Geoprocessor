@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Spatial Association Between Zones</para>
 		/// </summary>
-		public override string DisplayName => "Spatial Association Between Zones";
+		public override string DisplayName() => "Spatial Association Between Zones";
 
 		/// <summary>
 		/// <para>Tool Name : SpatialAssociationBetweenZones</para>
 		/// </summary>
-		public override string ToolName => "SpatialAssociationBetweenZones";
+		public override string ToolName() => "SpatialAssociationBetweenZones";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.SpatialAssociationBetweenZones</para>
 		/// </summary>
-		public override string ExcuteName => "stats.SpatialAssociationBetweenZones";
+		public override string ExcuteName() => "stats.SpatialAssociationBetweenZones";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "cellSizeProjectionMethod", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "cellSizeProjectionMethod", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureOrRaster, CategoricalZoneField, OverlayFeatureOrRaster, CategoricalOverlayZoneField, OutputFeatures, OutputRaster, CorrespondenceOverlayToInput, CorrespondenceInputToOverlay, GlobalMeasureOfSpatialAssociation, GlobalCorrespondenceInputToOverlay, GlobalCorrespondenceOverlayToInput };
+		public override object[] Parameters() => new object[] { InputFeatureOrRaster, CategoricalZoneField, OverlayFeatureOrRaster, CategoricalOverlayZoneField, OutputFeatures, OutputRaster, CorrespondenceOverlayToInput, CorrespondenceInputToOverlay, GlobalMeasureOfSpatialAssociation, GlobalCorrespondenceInputToOverlay, GlobalCorrespondenceOverlayToInput };
 
 		/// <summary>
 		/// <para>Input Polygon Feature or Raster Zones</para>

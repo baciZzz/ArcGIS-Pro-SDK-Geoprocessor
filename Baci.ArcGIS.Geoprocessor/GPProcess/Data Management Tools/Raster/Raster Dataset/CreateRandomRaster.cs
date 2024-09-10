@@ -41,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Random Raster</para>
 		/// </summary>
-		public override string DisplayName => "Create Random Raster";
+		public override string DisplayName() => "Create Random Raster";
 
 		/// <summary>
 		/// <para>Tool Name : CreateRandomRaster</para>
 		/// </summary>
-		public override string ToolName => "CreateRandomRaster";
+		public override string ToolName() => "CreateRandomRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateRandomRaster</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateRandomRaster";
+		public override string ExcuteName() => "management.CreateRandomRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "pyramid" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "pyramid" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutPath, OutName, Distribution, RasterExtent, Cellsize, OutRasterDataset, BuildRat };
+		public override object[] Parameters() => new object[] { OutPath, OutName, Distribution, RasterExtent, Cellsize, OutRasterDataset, BuildRat };
 
 		/// <summary>
 		/// <para>Output Location</para>

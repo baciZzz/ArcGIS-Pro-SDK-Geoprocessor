@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Recover File Geodatabase</para>
 		/// </summary>
-		public override string DisplayName => "Recover File Geodatabase";
+		public override string DisplayName() => "Recover File Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : RecoverFileGDB</para>
 		/// </summary>
-		public override string ToolName => "RecoverFileGDB";
+		public override string ToolName() => "RecoverFileGDB";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.RecoverFileGDB</para>
 		/// </summary>
-		public override string ExcuteName => "management.RecoverFileGDB";
+		public override string ExcuteName() => "management.RecoverFileGDB";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFileGdb, OutputLocation, OutName, OutFileGdb };
+		public override object[] Parameters() => new object[] { InputFileGdb, OutputLocation, OutName, OutFileGdb };
 
 		/// <summary>
 		/// <para>Input File Geodatabase</para>

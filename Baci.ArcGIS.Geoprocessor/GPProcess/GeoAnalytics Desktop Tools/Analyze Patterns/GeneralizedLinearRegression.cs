@@ -55,37 +55,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Generalized Linear Regression</para>
 		/// </summary>
-		public override string DisplayName => "Generalized Linear Regression";
+		public override string DisplayName() => "Generalized Linear Regression";
 
 		/// <summary>
 		/// <para>Tool Name : GeneralizedLinearRegression</para>
 		/// </summary>
-		public override string ToolName => "GeneralizedLinearRegression";
+		public override string ToolName() => "GeneralizedLinearRegression";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.GeneralizedLinearRegression</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.GeneralizedLinearRegression";
+		public override string ExcuteName() => "gapro.GeneralizedLinearRegression";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeatures, InputFeaturesToPredict, ExplanatoryVariablesToMatch, DependentVariableMapping, OutputPredictedFeatures, CoefficientTable };
+		public override object[] Parameters() => new object[] { InputFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeatures, InputFeaturesToPredict, ExplanatoryVariablesToMatch, DependentVariableMapping, OutputPredictedFeatures, CoefficientTable };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -62,37 +62,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Interpolate From Point Cloud</para>
 		/// </summary>
-		public override string DisplayName => "Interpolate From Point Cloud";
+		public override string DisplayName() => "Interpolate From Point Cloud";
 
 		/// <summary>
 		/// <para>Tool Name : InterpolateFromPointCloud</para>
 		/// </summary>
-		public override string ToolName => "InterpolateFromPointCloud";
+		public override string ToolName() => "InterpolateFromPointCloud";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.InterpolateFromPointCloud</para>
 		/// </summary>
-		public override string ExcuteName => "management.InterpolateFromPointCloud";
+		public override string ExcuteName() => "management.InterpolateFromPointCloud";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellAlignment", "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellAlignment", "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InContainer, OutRaster, CellSize, InterpolationMethod, SmoothMethod, SurfaceType, FillDem };
+		public override object[] Parameters() => new object[] { InContainer, OutRaster, CellSize, InterpolationMethod, SmoothMethod, SurfaceType, FillDem };
 
 		/// <summary>
 		/// <para>Input LAS Folder or Point Table</para>

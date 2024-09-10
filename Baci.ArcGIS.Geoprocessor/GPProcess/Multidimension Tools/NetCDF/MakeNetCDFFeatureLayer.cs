@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Display Name : Make NetCDF Feature Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make NetCDF Feature Layer";
+		public override string DisplayName() => "Make NetCDF Feature Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeNetCDFFeatureLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeNetCDFFeatureLayer";
+		public override string ToolName() => "MakeNetCDFFeatureLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : md.MakeNetCDFFeatureLayer</para>
 		/// </summary>
-		public override string ExcuteName => "md.MakeNetCDFFeatureLayer";
+		public override string ExcuteName() => "md.MakeNetCDFFeatureLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Multidimension Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Multidimension Tools";
+		public override string ToolboxDisplayName() => "Multidimension Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : md</para>
 		/// </summary>
-		public override string ToolboxAlise => "md";
+		public override string ToolboxAlise() => "md";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetcdfFile, Variable, XVariable, YVariable, OutFeatureLayer, RowDimension, ZVariable, MVariable, DimensionValues, ValueSelectionMethod };
+		public override object[] Parameters() => new object[] { InNetcdfFile, Variable, XVariable, YVariable, OutFeatureLayer, RowDimension, ZVariable, MVariable, DimensionValues, ValueSelectionMethod };
 
 		/// <summary>
 		/// <para>Input netCDF File</para>

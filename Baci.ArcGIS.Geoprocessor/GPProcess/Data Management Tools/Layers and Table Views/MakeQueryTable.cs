@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Query Table</para>
 		/// </summary>
-		public override string DisplayName => "Make Query Table";
+		public override string DisplayName() => "Make Query Table";
 
 		/// <summary>
 		/// <para>Tool Name : MakeQueryTable</para>
 		/// </summary>
-		public override string ToolName => "MakeQueryTable";
+		public override string ToolName() => "MakeQueryTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MakeQueryTable</para>
 		/// </summary>
-		public override string ExcuteName => "management.MakeQueryTable";
+		public override string ExcuteName() => "management.MakeQueryTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutTable, InKeyFieldOption, InKeyField, InField, WhereClause };
+		public override object[] Parameters() => new object[] { InTable, OutTable, InKeyFieldOption, InKeyField, InField, WhereClause };
 
 		/// <summary>
 		/// <para>Input Tables</para>

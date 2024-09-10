@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Tier Group</para>
 		/// </summary>
-		public override string DisplayName => "Add Tier Group";
+		public override string DisplayName() => "Add Tier Group";
 
 		/// <summary>
 		/// <para>Tool Name : AddTierGroup</para>
 		/// </summary>
-		public override string ToolName => "AddTierGroup";
+		public override string ToolName() => "AddTierGroup";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.AddTierGroup</para>
 		/// </summary>
-		public override string ExcuteName => "un.AddTierGroup";
+		public override string ExcuteName() => "un.AddTierGroup";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, DomainNetwork, Name, OutUtilityNetwork };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, DomainNetwork, Name, OutUtilityNetwork };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>

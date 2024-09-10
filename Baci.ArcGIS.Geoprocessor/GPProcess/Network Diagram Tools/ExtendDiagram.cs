@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Extend Diagram</para>
 		/// </summary>
-		public override string DisplayName => "Extend Diagram";
+		public override string DisplayName() => "Extend Diagram";
 
 		/// <summary>
 		/// <para>Tool Name : ExtendDiagram</para>
 		/// </summary>
-		public override string ToolName => "ExtendDiagram";
+		public override string ToolName() => "ExtendDiagram";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.ExtendDiagram</para>
 		/// </summary>
-		public override string ExcuteName => "nd.ExtendDiagram";
+		public override string ExcuteName() => "nd.ExtendDiagram";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, IgnoreTraversability, OutNetworkDiagramLayer, ExtensionType };
+		public override object[] Parameters() => new object[] { InNetworkDiagramLayer, IgnoreTraversability, OutNetworkDiagramLayer, ExtensionType };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>

@@ -34,37 +34,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Diagram</para>
 		/// </summary>
-		public override string DisplayName => "Create Diagram";
+		public override string DisplayName() => "Create Diagram";
 
 		/// <summary>
 		/// <para>Tool Name : CreateDiagram</para>
 		/// </summary>
-		public override string ToolName => "CreateDiagram";
+		public override string ToolName() => "CreateDiagram";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.CreateDiagram</para>
 		/// </summary>
-		public override string ExcuteName => "un.CreateDiagram";
+		public override string ExcuteName() => "un.CreateDiagram";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, Features, OutUtilityNetwork, OutName };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, Features, OutUtilityNetwork, OutName };
 
 		/// <summary>
 		/// <para>Input Network</para>

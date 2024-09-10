@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Flow Length</para>
 		/// </summary>
-		public override string DisplayName => "Flow Length";
+		public override string DisplayName() => "Flow Length";
 
 		/// <summary>
 		/// <para>Tool Name : FlowLength</para>
 		/// </summary>
-		public override string ToolName => "FlowLength";
+		public override string ToolName() => "FlowLength";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.FlowLength</para>
 		/// </summary>
-		public override string ExcuteName => "sa.FlowLength";
+		public override string ExcuteName() => "sa.FlowLength";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFlowDirectionRaster, OutRaster, DirectionMeasurement, InWeightRaster };
+		public override object[] Parameters() => new object[] { InFlowDirectionRaster, OutRaster, DirectionMeasurement, InWeightRaster };
 
 		/// <summary>
 		/// <para>Input flow direction raster</para>

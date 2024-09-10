@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Compute Pansharpen Weights</para>
 		/// </summary>
-		public override string DisplayName => "Compute Pansharpen Weights";
+		public override string DisplayName() => "Compute Pansharpen Weights";
 
 		/// <summary>
 		/// <para>Tool Name : ComputePansharpenWeights</para>
 		/// </summary>
-		public override string ToolName => "ComputePansharpenWeights";
+		public override string ToolName() => "ComputePansharpenWeights";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ComputePansharpenWeights</para>
 		/// </summary>
-		public override string ExcuteName => "management.ComputePansharpenWeights";
+		public override string ExcuteName() => "management.ComputePansharpenWeights";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, InPanchromaticImage, BandIndexes, OutString };
+		public override object[] Parameters() => new object[] { InRaster, InPanchromaticImage, BandIndexes, OutString };
 
 		/// <summary>
 		/// <para>Input Raster</para>

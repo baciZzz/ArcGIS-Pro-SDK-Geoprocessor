@@ -34,37 +34,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Export To Delta</para>
 		/// </summary>
-		public override string DisplayName => "Export To Delta";
+		public override string DisplayName() => "Export To Delta";
 
 		/// <summary>
 		/// <para>Tool Name : ExporttoDelta</para>
 		/// </summary>
-		public override string ToolName => "ExporttoDelta";
+		public override string ToolName() => "ExporttoDelta";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ExporttoDelta</para>
 		/// </summary>
-		public override string ExcuteName => "management.ExporttoDelta";
+		public override string ExcuteName() => "management.ExporttoDelta";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, DestDeltaDatabase };
+		public override object[] Parameters() => new object[] { InWorkspace, DestDeltaDatabase };
 
 		/// <summary>
 		/// <para>Export from Check-out Workspace</para>

@@ -42,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Apply Block Adjustment</para>
 		/// </summary>
-		public override string DisplayName => "Apply Block Adjustment";
+		public override string DisplayName() => "Apply Block Adjustment";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyBlockAdjustment</para>
 		/// </summary>
-		public override string ToolName => "ApplyBlockAdjustment";
+		public override string ToolName() => "ApplyBlockAdjustment";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ApplyBlockAdjustment</para>
 		/// </summary>
-		public override string ExcuteName => "management.ApplyBlockAdjustment";
+		public override string ExcuteName() => "management.ApplyBlockAdjustment";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, AdjustmentOperation, InputSolutionTable, PanToMsScalingFactor, OutMosaicDataset, DEM, Zoffset, ControlPointTable, AdjustFootprints, SolutionPointTable, OutControlPointTable };
+		public override object[] Parameters() => new object[] { InMosaicDataset, AdjustmentOperation, InputSolutionTable, PanToMsScalingFactor, OutMosaicDataset, DEM, Zoffset, ControlPointTable, AdjustFootprints, SolutionPointTable, OutControlPointTable };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>

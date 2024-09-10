@@ -25,37 +25,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Clear Workspace Cache</para>
 		/// </summary>
-		public override string DisplayName => "Clear Workspace Cache";
+		public override string DisplayName() => "Clear Workspace Cache";
 
 		/// <summary>
 		/// <para>Tool Name : ClearWorkspaceCache</para>
 		/// </summary>
-		public override string ToolName => "ClearWorkspaceCache";
+		public override string ToolName() => "ClearWorkspaceCache";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ClearWorkspaceCache</para>
 		/// </summary>
-		public override string ExcuteName => "management.ClearWorkspaceCache";
+		public override string ExcuteName() => "management.ClearWorkspaceCache";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, OutResults };
+		public override object[] Parameters() => new object[] { InData, OutResults };
 
 		/// <summary>
 		/// <para>Input Workspace</para>

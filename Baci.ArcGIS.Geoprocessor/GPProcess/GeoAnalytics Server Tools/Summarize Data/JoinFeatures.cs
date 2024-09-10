@@ -48,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Join Features</para>
 		/// </summary>
-		public override string DisplayName => "Join Features";
+		public override string DisplayName() => "Join Features";
 
 		/// <summary>
 		/// <para>Tool Name : JoinFeatures</para>
 		/// </summary>
-		public override string ToolName => "JoinFeatures";
+		public override string ToolName() => "JoinFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.JoinFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.JoinFeatures";
+		public override string ExcuteName() => "geoanalytics.JoinFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetLayer, JoinLayer, OutputName, JoinOperation, SpatialRelationship, SpatialNearDistance, TemporalRelationship, TemporalNearDistance, AttributeRelationship, SummaryFields, JoinCondition, Output, DataStore, KeepAllTargetFeatures };
+		public override object[] Parameters() => new object[] { TargetLayer, JoinLayer, OutputName, JoinOperation, SpatialRelationship, SpatialNearDistance, TemporalRelationship, TemporalNearDistance, AttributeRelationship, SummaryFields, JoinCondition, Output, DataStore, KeepAllTargetFeatures };
 
 		/// <summary>
 		/// <para>Target Layer</para>
@@ -207,7 +207,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <para>Join Condition</para>
 		/// <para>Applies a condition to specified fields. Only features with fields that meet these conditions will be joined.</para>
 		/// <para>For example, you could apply a join condition to features in which the HealthSpending attribute in the join layer is more than 20 percent of the Income attribute in the target layer. In 10.5 and 10.5.1, the join condition to use to apply this expression is join[&quot;HealthSpending&quot;] &gt; target[&quot;Income&quot;] * .2. In 10.6 and later, use an Arcade expression such as $join[&quot;HealthSpending&quot;] &gt; $target[&quot;Income&quot;] * .2.</para>
-		/// <para><para/></para>
+		/// <para>&lt;para/&gt;</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : CAD To Geodatabase</para>
 		/// </summary>
-		public override string DisplayName => "CAD To Geodatabase";
+		public override string DisplayName() => "CAD To Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : CADToGeodatabase</para>
 		/// </summary>
-		public override string ToolName => "CADToGeodatabase";
+		public override string ToolName() => "CADToGeodatabase";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.CADToGeodatabase</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.CADToGeodatabase";
+		public override string ExcuteName() => "conversion.CADToGeodatabase";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputCadDatasets, OutGdbPath, OutDatasetName, ReferenceScale, SpatialReference, OutDataset };
+		public override object[] Parameters() => new object[] { InputCadDatasets, OutGdbPath, OutDatasetName, ReferenceScale, SpatialReference, OutDataset };
 
 		/// <summary>
 		/// <para>Input CAD Datasets</para>

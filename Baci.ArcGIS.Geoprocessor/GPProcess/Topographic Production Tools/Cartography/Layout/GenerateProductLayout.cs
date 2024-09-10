@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Product Layout</para>
 		/// </summary>
-		public override string DisplayName => "Generate Product Layout";
+		public override string DisplayName() => "Generate Product Layout";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateProductLayout</para>
 		/// </summary>
-		public override string ToolName => "GenerateProductLayout";
+		public override string ToolName() => "GenerateProductLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.GenerateProductLayout</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.GenerateProductLayout";
+		public override string ExcuteName() => "topographic.GenerateProductLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Geodatabase, AoiLayer, Product, Version, OutputLocation, Rasters, Template, OutTemplate };
+		public override object[] Parameters() => new object[] { Geodatabase, AoiLayer, Product, Version, OutputLocation, Rasters, Template, OutTemplate };
 
 		/// <summary>
 		/// <para>Input Geodatabase</para>

@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Extract Package</para>
 		/// </summary>
-		public override string DisplayName => "Extract Package";
+		public override string DisplayName() => "Extract Package";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractPackage</para>
 		/// </summary>
-		public override string ToolName => "ExtractPackage";
+		public override string ToolName() => "ExtractPackage";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ExtractPackage</para>
 		/// </summary>
-		public override string ExcuteName => "management.ExtractPackage";
+		public override string ExcuteName() => "management.ExtractPackage";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPackage, OutputFolder, CachePackage, StorageFormatType, CreateReadyToServeFormat, TargetCloudConnection };
+		public override object[] Parameters() => new object[] { InPackage, OutputFolder, CachePackage, StorageFormatType, CreateReadyToServeFormat, TargetCloudConnection };
 
 		/// <summary>
 		/// <para>Input Package</para>

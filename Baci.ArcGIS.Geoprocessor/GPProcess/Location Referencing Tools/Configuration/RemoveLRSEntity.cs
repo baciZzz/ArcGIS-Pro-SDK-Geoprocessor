@@ -46,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Remove LRS Entity</para>
 		/// </summary>
-		public override string DisplayName => "Remove LRS Entity";
+		public override string DisplayName() => "Remove LRS Entity";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveLRSEntity</para>
 		/// </summary>
-		public override string ToolName => "RemoveLRSEntity";
+		public override string ToolName() => "RemoveLRSEntity";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.RemoveLRSEntity</para>
 		/// </summary>
-		public override string ExcuteName => "locref.RemoveLRSEntity";
+		public override string ExcuteName() => "locref.RemoveLRSEntity";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, LrsEntityType, LrsEntityName, OutWorkspace };
+		public override object[] Parameters() => new object[] { InWorkspace, LrsEntityType, LrsEntityName, OutWorkspace };
 
 		/// <summary>
 		/// <para>LRS Workspace</para>

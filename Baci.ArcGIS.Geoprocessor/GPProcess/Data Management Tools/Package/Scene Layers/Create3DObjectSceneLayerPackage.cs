@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create 3D Object Scene Layer Package</para>
 		/// </summary>
-		public override string DisplayName => "Create 3D Object Scene Layer Package";
+		public override string DisplayName() => "Create 3D Object Scene Layer Package";
 
 		/// <summary>
 		/// <para>Tool Name : Create3DObjectSceneLayerPackage</para>
 		/// </summary>
-		public override string ToolName => "Create3DObjectSceneLayerPackage";
+		public override string ToolName() => "Create3DObjectSceneLayerPackage";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Create3DObjectSceneLayerPackage</para>
 		/// </summary>
-		public override string ExcuteName => "management.Create3DObjectSceneLayerPackage";
+		public override string ExcuteName() => "management.Create3DObjectSceneLayerPackage";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutSlpk, OutCoorSystem, TransformMethod, TextureOptimization };
+		public override object[] Parameters() => new object[] { InDataset, OutSlpk, OutCoorSystem, TransformMethod, TextureOptimization };
 
 		/// <summary>
 		/// <para>Input  Dataset</para>

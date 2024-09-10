@@ -37,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : DEM to Raster</para>
 		/// </summary>
-		public override string DisplayName => "DEM to Raster";
+		public override string DisplayName() => "DEM to Raster";
 
 		/// <summary>
 		/// <para>Tool Name : DEMToRaster</para>
 		/// </summary>
-		public override string ToolName => "DEMToRaster";
+		public override string ToolName() => "DEMToRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.DEMToRaster</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.DEMToRaster";
+		public override string ExcuteName() => "conversion.DEMToRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "pyramid", "rasterStatistics", "scratchWorkspace", "tileSize" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "pyramid", "rasterStatistics", "scratchWorkspace", "tileSize" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDemFile, OutRaster, DataType, ZFactor };
+		public override object[] Parameters() => new object[] { InDemFile, OutRaster, DataType, ZFactor };
 
 		/// <summary>
 		/// <para>Input USGS DEM file</para>

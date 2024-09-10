@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Adjoining Sheets Features</para>
 		/// </summary>
-		public override string DisplayName => "Generate Adjoining Sheets Features";
+		public override string DisplayName() => "Generate Adjoining Sheets Features";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateAdjoiningSheetsFeatures</para>
 		/// </summary>
-		public override string ToolName => "GenerateAdjoiningSheetsFeatures";
+		public override string ToolName() => "GenerateAdjoiningSheetsFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.GenerateAdjoiningSheetsFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.GenerateAdjoiningSheetsFeatures";
+		public override string ExcuteName() => "topographic.GenerateAdjoiningSheetsFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureDataset, AreaOfInterest, LandFeatures, Scale, ClipAoiToSheets, ModifiedFeatureDataset };
+		public override object[] Parameters() => new object[] { InFeatureDataset, AreaOfInterest, LandFeatures, Scale, ClipAoiToSheets, ModifiedFeatureDataset };
 
 		/// <summary>
 		/// <para>Input Feature Dataset</para>

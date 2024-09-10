@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Features To GTFS Stops</para>
 		/// </summary>
-		public override string DisplayName => "Features To GTFS Stops";
+		public override string DisplayName() => "Features To GTFS Stops";
 
 		/// <summary>
 		/// <para>Tool Name : FeaturesToGTFSStops</para>
 		/// </summary>
-		public override string ToolName => "FeaturesToGTFSStops";
+		public override string ToolName() => "FeaturesToGTFSStops";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.FeaturesToGTFSStops</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.FeaturesToGTFSStops";
+		public override string ExcuteName() => "conversion.FeaturesToGTFSStops";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutGtfsStopsFile };
+		public override object[] Parameters() => new object[] { InFeatures, OutGtfsStopsFile };
 
 		/// <summary>
 		/// <para>Input Features</para>

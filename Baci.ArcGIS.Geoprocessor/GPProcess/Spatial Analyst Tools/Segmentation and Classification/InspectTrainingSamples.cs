@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Inspect Training Samples</para>
 		/// </summary>
-		public override string DisplayName => "Inspect Training Samples";
+		public override string DisplayName() => "Inspect Training Samples";
 
 		/// <summary>
 		/// <para>Tool Name : InspectTrainingSamples</para>
 		/// </summary>
-		public override string ToolName => "InspectTrainingSamples";
+		public override string ToolName() => "InspectTrainingSamples";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.InspectTrainingSamples</para>
 		/// </summary>
-		public override string ExcuteName => "sa.InspectTrainingSamples";
+		public override string ExcuteName() => "sa.InspectTrainingSamples";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, InTrainingFeatures, InClassifierDefinition, OutTrainingFeatureClass, OutMisclassifiedRaster, InAdditionalRaster };
+		public override object[] Parameters() => new object[] { InRaster, InTrainingFeatures, InClassifierDefinition, OutTrainingFeatureClass, OutMisclassifiedRaster, InAdditionalRaster };
 
 		/// <summary>
 		/// <para>Input Raster</para>

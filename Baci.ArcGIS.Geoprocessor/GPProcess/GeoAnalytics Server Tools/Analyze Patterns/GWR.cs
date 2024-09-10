@@ -67,37 +67,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Geographically Weighted Regression (GWR)</para>
 		/// </summary>
-		public override string DisplayName => "Geographically Weighted Regression (GWR)";
+		public override string DisplayName() => "Geographically Weighted Regression (GWR)";
 
 		/// <summary>
 		/// <para>Tool Name : GWR</para>
 		/// </summary>
-		public override string ToolName => "GWR";
+		public override string ToolName() => "GWR";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.GWR</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.GWR";
+		public override string ExcuteName() => "geoanalytics.GWR";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeatures, NeighborhoodType, NeighborhoodSelectionMethod, NumberOfNeighbors, DistanceBand, LocalWeightingScheme, DataStore, Output };
+		public override object[] Parameters() => new object[] { InFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeatures, NeighborhoodType, NeighborhoodSelectionMethod, NumberOfNeighbors, DistanceBand, LocalWeightingScheme, DataStore, Output };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -37,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Disable Attribute Rules</para>
 		/// </summary>
-		public override string DisplayName => "Disable Attribute Rules";
+		public override string DisplayName() => "Disable Attribute Rules";
 
 		/// <summary>
 		/// <para>Tool Name : DisableAttributeRules</para>
 		/// </summary>
-		public override string ToolName => "DisableAttributeRules";
+		public override string ToolName() => "DisableAttributeRules";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DisableAttributeRules</para>
 		/// </summary>
-		public override string ExcuteName => "management.DisableAttributeRules";
+		public override string ExcuteName() => "management.DisableAttributeRules";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Names, Type, OutTable };
+		public override object[] Parameters() => new object[] { InTable, Names, Type, OutTable };
 
 		/// <summary>
 		/// <para>Input Table</para>

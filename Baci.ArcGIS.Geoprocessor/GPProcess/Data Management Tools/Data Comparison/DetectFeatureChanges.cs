@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Detect Feature Changes</para>
 		/// </summary>
-		public override string DisplayName => "Detect Feature Changes";
+		public override string DisplayName() => "Detect Feature Changes";
 
 		/// <summary>
 		/// <para>Tool Name : DetectFeatureChanges</para>
 		/// </summary>
-		public override string ToolName => "DetectFeatureChanges";
+		public override string ToolName() => "DetectFeatureChanges";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DetectFeatureChanges</para>
 		/// </summary>
-		public override string ExcuteName => "management.DetectFeatureChanges";
+		public override string ExcuteName() => "management.DetectFeatureChanges";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { UpdateFeatures, BaseFeatures, OutFeatureClass, SearchDistance, MatchFields, OutMatchTable, ChangeTolerance, CompareFields, CompareLineDirection };
+		public override object[] Parameters() => new object[] { UpdateFeatures, BaseFeatures, OutFeatureClass, SearchDistance, MatchFields, OutMatchTable, ChangeTolerance, CompareFields, CompareLineDirection };
 
 		/// <summary>
 		/// <para>Update Features</para>

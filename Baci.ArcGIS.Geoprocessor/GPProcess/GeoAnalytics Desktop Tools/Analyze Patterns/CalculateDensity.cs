@@ -63,37 +63,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Density</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Density";
+		public override string DisplayName() => "Calculate Density";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateDensity</para>
 		/// </summary>
-		public override string ToolName => "CalculateDensity";
+		public override string ToolName() => "CalculateDensity";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.CalculateDensity</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.CalculateDensity";
+		public override string ExcuteName() => "gapro.CalculateDensity";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutFeatureClass, BinType, BinSize, Weight, NeighborhoodSize, Fields, AreaUnitScaleFactor, TimeStepInterval, TimeStepRepeat, TimeStepReference };
+		public override object[] Parameters() => new object[] { InputLayer, OutFeatureClass, BinType, BinSize, Weight, NeighborhoodSize, Fields, AreaUnitScaleFactor, TimeStepInterval, TimeStepRepeat, TimeStepReference };
 
 		/// <summary>
 		/// <para>Input layer</para>

@@ -37,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Reclassify Field</para>
 		/// </summary>
-		public override string DisplayName => "Reclassify Field";
+		public override string DisplayName() => "Reclassify Field";
 
 		/// <summary>
 		/// <para>Tool Name : ReclassifyField</para>
 		/// </summary>
-		public override string ToolName => "ReclassifyField";
+		public override string ToolName() => "ReclassifyField";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ReclassifyField</para>
 		/// </summary>
-		public override string ExcuteName => "management.ReclassifyField";
+		public override string ExcuteName() => "management.ReclassifyField";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent" };
+		public override string[] ValidEnvironments() => new string[] { "extent" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Field, Method, Classes, Interval, StandardDeviations, ReclassTable, ReverseValues, OutputFieldName, UpdatedTable };
+		public override object[] Parameters() => new object[] { InTable, Field, Method, Classes, Interval, StandardDeviations, ReclassTable, ReverseValues, OutputFieldName, UpdatedTable };
 
 		/// <summary>
 		/// <para>Input Table</para>

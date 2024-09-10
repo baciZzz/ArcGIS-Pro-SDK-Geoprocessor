@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Tabulate Intersection</para>
 		/// </summary>
-		public override string DisplayName => "Tabulate Intersection";
+		public override string DisplayName() => "Tabulate Intersection";
 
 		/// <summary>
 		/// <para>Tool Name : TabulateIntersection</para>
 		/// </summary>
-		public override string ToolName => "TabulateIntersection";
+		public override string ToolName() => "TabulateIntersection";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.TabulateIntersection</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.TabulateIntersection";
+		public override string ExcuteName() => "analysis.TabulateIntersection";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "autoCommit", "configKeyword", "extent", "outputCoordinateSystem", "qualifiedFieldNames", "scratchWorkspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "autoCommit", "configKeyword", "extent", "outputCoordinateSystem", "qualifiedFieldNames", "scratchWorkspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InZoneFeatures, ZoneFields, InClassFeatures, OutTable, ClassFields, SumFields, XyTolerance, OutUnits };
+		public override object[] Parameters() => new object[] { InZoneFeatures, ZoneFields, InClassFeatures, OutTable, ClassFields, SumFields, XyTolerance, OutUnits };
 
 		/// <summary>
 		/// <para>Input Zone Features</para>

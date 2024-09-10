@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Topology</para>
 		/// </summary>
-		public override string DisplayName => "Create Topology";
+		public override string DisplayName() => "Create Topology";
 
 		/// <summary>
 		/// <para>Tool Name : CreateTopology</para>
 		/// </summary>
-		public override string ToolName => "CreateTopology";
+		public override string ToolName() => "CreateTopology";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateTopology</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateTopology";
+		public override string ExcuteName() => "management.CreateTopology";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutName, InClusterTolerance, OutTopology };
+		public override object[] Parameters() => new object[] { InDataset, OutName, InClusterTolerance, OutTopology };
 
 		/// <summary>
 		/// <para>Input Feature Dataset</para>

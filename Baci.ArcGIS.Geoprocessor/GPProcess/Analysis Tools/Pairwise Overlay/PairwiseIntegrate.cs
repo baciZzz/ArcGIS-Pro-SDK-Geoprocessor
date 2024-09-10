@@ -32,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Pairwise Integrate</para>
 		/// </summary>
-		public override string DisplayName => "Pairwise Integrate";
+		public override string DisplayName() => "Pairwise Integrate";
 
 		/// <summary>
 		/// <para>Tool Name : PairwiseIntegrate</para>
 		/// </summary>
-		public override string ToolName => "PairwiseIntegrate";
+		public override string ToolName() => "PairwiseIntegrate";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.PairwiseIntegrate</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.PairwiseIntegrate";
+		public override string ExcuteName() => "analysis.PairwiseIntegrate";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYTolerance", "extent", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYTolerance", "extent", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ClusterTolerance, OutFeatures };
+		public override object[] Parameters() => new object[] { InFeatures, ClusterTolerance, OutFeatures };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Stream Order</para>
 		/// </summary>
-		public override string DisplayName => "Stream Order";
+		public override string DisplayName() => "Stream Order";
 
 		/// <summary>
 		/// <para>Tool Name : StreamOrder</para>
 		/// </summary>
-		public override string ToolName => "StreamOrder";
+		public override string ToolName() => "StreamOrder";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.StreamOrder</para>
 		/// </summary>
-		public override string ExcuteName => "sa.StreamOrder";
+		public override string ExcuteName() => "sa.StreamOrder";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InStreamRaster, InFlowDirectionRaster, OutRaster, OrderMethod };
+		public override object[] Parameters() => new object[] { InStreamRaster, InFlowDirectionRaster, OutRaster, OrderMethod };
 
 		/// <summary>
 		/// <para>Input stream raster</para>

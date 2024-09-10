@@ -27,41 +27,41 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Get Layout Templates Info</para>
 		/// </summary>
-		public override string DisplayName => "Get Layout Templates Info";
+		public override string DisplayName() => "Get Layout Templates Info";
 
 		/// <summary>
 		/// <para>Tool Name : GetLayoutTemplatesInfo</para>
 		/// </summary>
-		public override string ToolName => "GetLayoutTemplatesInfo";
+		public override string ToolName() => "GetLayoutTemplatesInfo";
 
 		/// <summary>
 		/// <para>Tool Excute Name : server.GetLayoutTemplatesInfo</para>
 		/// </summary>
-		public override string ExcuteName => "server.GetLayoutTemplatesInfo";
+		public override string ExcuteName() => "server.GetLayoutTemplatesInfo";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Server Tools";
+		public override string ToolboxDisplayName() => "Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : server</para>
 		/// </summary>
-		public override string ToolboxAlise => "server";
+		public override string ToolboxAlise() => "server";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { LayoutTemplatesFolder, OutputJSON };
+		public override object[] Parameters() => new object[] { LayoutTemplatesFolder, OutputJSON };
 
 		/// <summary>
 		/// <para>Layout Templates Folder</para>
-		/// <para>Full path to the folder where layout files (.pagx files), to be used as layout templates, are located. The default location is <install_directory>\Resources\ArcToolBox\Templates\ExportWebMapTemplates.</para>
+		/// <para>Full path to the folder where layout files (.pagx files), to be used as layout templates, are located. The default location is &lt;install_directory&gt;\Resources\ArcToolBox\Templates\ExportWebMapTemplates.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]

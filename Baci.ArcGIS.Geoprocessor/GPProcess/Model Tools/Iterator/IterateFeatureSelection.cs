@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : Iterate Feature Selection</para>
 		/// </summary>
-		public override string DisplayName => "Iterate Feature Selection";
+		public override string DisplayName() => "Iterate Feature Selection";
 
 		/// <summary>
 		/// <para>Tool Name : IterateFeatureSelection</para>
 		/// </summary>
-		public override string ToolName => "IterateFeatureSelection";
+		public override string ToolName() => "IterateFeatureSelection";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.IterateFeatureSelection</para>
 		/// </summary>
-		public override string ExcuteName => "mb.IterateFeatureSelection";
+		public override string ExcuteName() => "mb.IterateFeatureSelection";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Fields, SkipNulls, Selection, Value };
+		public override object[] Parameters() => new object[] { InFeatures, Fields, SkipNulls, Selection, Value };
 
 		/// <summary>
 		/// <para>In Features</para>

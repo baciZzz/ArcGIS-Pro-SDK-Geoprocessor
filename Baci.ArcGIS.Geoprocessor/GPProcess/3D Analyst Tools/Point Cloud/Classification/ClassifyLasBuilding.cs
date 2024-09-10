@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Classify LAS Building</para>
 		/// </summary>
-		public override string DisplayName => "Classify LAS Building";
+		public override string DisplayName() => "Classify LAS Building";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyLasBuilding</para>
 		/// </summary>
-		public override string ToolName => "ClassifyLasBuilding";
+		public override string ToolName() => "ClassifyLasBuilding";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.ClassifyLasBuilding</para>
 		/// </summary>
-		public override string ExcuteName => "3d.ClassifyLasBuilding";
+		public override string ExcuteName() => "3d.ClassifyLasBuilding";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, MinHeight, MinArea, ComputeStats, Extent, Boundary, ProcessEntireFiles, DerivedLasDataset, PointSpacing, ReuseBuilding, PhotogrammetricData, Method, ClassifyAboveRoof, AboveRoofHeight, AboveRoofCode, ClassifyBelowRoof, BelowRoofCode, UpdatePyramid };
+		public override object[] Parameters() => new object[] { InLasDataset, MinHeight, MinArea, ComputeStats, Extent, Boundary, ProcessEntireFiles, DerivedLasDataset, PointSpacing, ReuseBuilding, PhotogrammetricData, Method, ClassifyAboveRoof, AboveRoofHeight, AboveRoofCode, ClassifyBelowRoof, BelowRoofCode, UpdatePyramid };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>

@@ -44,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Directional Distribution (Standard Deviational Ellipse)</para>
 		/// </summary>
-		public override string DisplayName => "Directional Distribution (Standard Deviational Ellipse)";
+		public override string DisplayName() => "Directional Distribution (Standard Deviational Ellipse)";
 
 		/// <summary>
 		/// <para>Tool Name : DirectionalDistribution</para>
 		/// </summary>
-		public override string ToolName => "DirectionalDistribution";
+		public override string ToolName() => "DirectionalDistribution";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.DirectionalDistribution</para>
 		/// </summary>
-		public override string ExcuteName => "stats.DirectionalDistribution";
+		public override string ExcuteName() => "stats.DirectionalDistribution";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, OutputEllipseFeatureClass, EllipseSize, WeightField, CaseField };
+		public override object[] Parameters() => new object[] { InputFeatureClass, OutputEllipseFeatureClass, EllipseSize, WeightField, CaseField };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>

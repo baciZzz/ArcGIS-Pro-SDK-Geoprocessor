@@ -42,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Display Name : Replicate Job Data</para>
 		/// </summary>
-		public override string DisplayName => "Replicate Job Data";
+		public override string DisplayName() => "Replicate Job Data";
 
 		/// <summary>
 		/// <para>Tool Name : CreateJobDataReplica</para>
 		/// </summary>
-		public override string ToolName => "CreateJobDataReplica";
+		public override string ToolName() => "CreateJobDataReplica";
 
 		/// <summary>
 		/// <para>Tool Excute Name : wmx.CreateJobDataReplica</para>
 		/// </summary>
-		public override string ExcuteName => "wmx.CreateJobDataReplica";
+		public override string ExcuteName() => "wmx.CreateJobDataReplica";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Workflow Manager Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Workflow Manager Tools";
+		public override string ToolboxDisplayName() => "Workflow Manager Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : wmx</para>
 		/// </summary>
-		public override string ToolboxAlise => "wmx";
+		public override string ToolboxAlise() => "wmx";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputParentRepositoryURL, InputParentRepositoryName, InputMultiName, OutputCreatereplicastatus, OutputLastsync };
+		public override object[] Parameters() => new object[] { InputParentRepositoryURL, InputParentRepositoryName, InputMultiName, OutputCreatereplicastatus, OutputLastsync };
 
 		/// <summary>
 		/// <para>Parent Repository URL</para>

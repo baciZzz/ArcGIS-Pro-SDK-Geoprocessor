@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Diffusion Interpolation With Barriers</para>
 		/// </summary>
-		public override string DisplayName => "Diffusion Interpolation With Barriers";
+		public override string DisplayName() => "Diffusion Interpolation With Barriers";
 
 		/// <summary>
 		/// <para>Tool Name : DiffusionInterpolationWithBarriers</para>
 		/// </summary>
-		public override string ToolName => "DiffusionInterpolationWithBarriers";
+		public override string ToolName() => "DiffusionInterpolationWithBarriers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.DiffusionInterpolationWithBarriers</para>
 		/// </summary>
-		public override string ExcuteName => "ga.DiffusionInterpolationWithBarriers";
+		public override string ExcuteName() => "ga.DiffusionInterpolationWithBarriers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ZField, OutGaLayer, OutRaster, CellSize, InBarrierFeatures, Bandwidth, NumberIterations, WeightField, InAdditiveBarrierRaster, InCumulativeBarrierRaster, InFlowBarrierRaster };
+		public override object[] Parameters() => new object[] { InFeatures, ZField, OutGaLayer, OutRaster, CellSize, InBarrierFeatures, Bandwidth, NumberIterations, WeightField, InAdditiveBarrierRaster, InCumulativeBarrierRaster, InFlowBarrierRaster };
 
 		/// <summary>
 		/// <para>Input features</para>
@@ -178,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Input flow barrier raster</para>
 		/// <para>A flow barrier is used when interpolating data with preferential direction of data variation, based on this formula:</para>
-		/// <para>Indicator (cost values in theneighboring cell &gt; cost values in theneighboring cell) * (cost values in theneighboring cell - cost values in theneighboring cell) + (distance between cell centers),<italics>to</italics><italics>from</italics><italics>to</italics><italics>from</italics></para>
+		/// <para>Indicator (cost values in theneighboring cell &gt; cost values in theneighboring cell) * (cost values in theneighboring cell - cost values in theneighboring cell) + (distance between cell centers),&lt;italics&gt;to&lt;/italics&gt;&lt;italics&gt;from&lt;/italics&gt;&lt;italics&gt;to&lt;/italics&gt;&lt;italics&gt;from&lt;/italics&gt;</para>
 		/// <para>where indicator(true) = 1 and indicator(false) = 0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]

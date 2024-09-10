@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Update Measures From LRS</para>
 		/// </summary>
-		public override string DisplayName => "Update Measures From LRS";
+		public override string DisplayName() => "Update Measures From LRS";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateMeasuresFromLRS</para>
 		/// </summary>
-		public override string ToolName => "UpdateMeasuresFromLRS";
+		public override string ToolName() => "UpdateMeasuresFromLRS";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.UpdateMeasuresFromLRS</para>
 		/// </summary>
-		public override string ExcuteName => "locref.UpdateMeasuresFromLRS";
+		public override string ExcuteName() => "locref.UpdateMeasuresFromLRS";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { LrsNetwork, LrsDate, InFeatures, RouteIdField, FromMeasureField, ToMeasureField, OutFeatures, OutDetailsFile };
+		public override object[] Parameters() => new object[] { LrsNetwork, LrsDate, InFeatures, RouteIdField, FromMeasureField, ToMeasureField, OutFeatures, OutDetailsFile };
 
 		/// <summary>
 		/// <para>LRS Network</para>

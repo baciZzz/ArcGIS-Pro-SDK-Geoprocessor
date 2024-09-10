@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate OIS Intersection</para>
 		/// </summary>
-		public override string DisplayName => "Generate OIS Intersection";
+		public override string DisplayName() => "Generate OIS Intersection";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateOISIntersection</para>
 		/// </summary>
-		public override string ToolName => "GenerateOISIntersection";
+		public override string ToolName() => "GenerateOISIntersection";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.GenerateOISIntersection</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.GenerateOISIntersection";
+		public override string ExcuteName() => "aviation.GenerateOISIntersection";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InOisFeatures, OutOisFeatures, MultipartFeature };
+		public override object[] Parameters() => new object[] { InOisFeatures, OutOisFeatures, MultipartFeature };
 
 		/// <summary>
 		/// <para>Input OIS Features</para>

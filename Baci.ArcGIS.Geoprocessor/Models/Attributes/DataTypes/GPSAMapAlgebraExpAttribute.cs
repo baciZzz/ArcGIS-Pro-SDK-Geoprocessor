@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 {
+    /// <summary>
+    /// GPSA Map Algebra Exp Attribute
+    /// </summary>
     public class GPSAMapAlgebraExpAttribute : BaseDataTypeAttribute
     {
     }

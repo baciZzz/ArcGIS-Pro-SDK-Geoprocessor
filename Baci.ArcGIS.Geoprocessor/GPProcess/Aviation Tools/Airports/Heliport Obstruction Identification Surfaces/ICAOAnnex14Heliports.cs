@@ -52,37 +52,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : ICAO Annex 14 Heliports</para>
 		/// </summary>
-		public override string DisplayName => "ICAO Annex 14 Heliports";
+		public override string DisplayName() => "ICAO Annex 14 Heliports";
 
 		/// <summary>
 		/// <para>Tool Name : ICAOAnnex14Heliports</para>
 		/// </summary>
-		public override string ToolName => "ICAOAnnex14Heliports";
+		public override string ToolName() => "ICAOAnnex14Heliports";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.ICAOAnnex14Heliports</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.ICAOAnnex14Heliports";
+		public override string ExcuteName() => "aviation.ICAOAnnex14Heliports";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputSafetyAreaFeatures, TargetOisFeatures, SurfaceClassification, OperationType, RotorDiameter, ClearwayLength, SurfaceShape, ApproachBearing, InFlightpathFeatures, HeliportElevation, CustomJsonFile, DerivedOutfeatureclass };
+		public override object[] Parameters() => new object[] { InputSafetyAreaFeatures, TargetOisFeatures, SurfaceClassification, OperationType, RotorDiameter, ClearwayLength, SurfaceShape, ApproachBearing, InFlightpathFeatures, HeliportElevation, CustomJsonFile, DerivedOutfeatureclass };
 
 		/// <summary>
 		/// <para>Input Safety Area Features</para>

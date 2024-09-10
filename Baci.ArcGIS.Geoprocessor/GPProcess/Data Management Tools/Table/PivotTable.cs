@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Pivot Table</para>
 		/// </summary>
-		public override string DisplayName => "Pivot Table";
+		public override string DisplayName() => "Pivot Table";
 
 		/// <summary>
 		/// <para>Tool Name : PivotTable</para>
 		/// </summary>
-		public override string ToolName => "PivotTable";
+		public override string ToolName() => "PivotTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.PivotTable</para>
 		/// </summary>
-		public override string ExcuteName => "management.PivotTable";
+		public override string ExcuteName() => "management.PivotTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Fields, PivotField, ValueField, OutTable };
+		public override object[] Parameters() => new object[] { InTable, Fields, PivotField, ValueField, OutTable };
 
 		/// <summary>
 		/// <para>Input Table</para>

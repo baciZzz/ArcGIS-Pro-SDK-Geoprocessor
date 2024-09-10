@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Raster to ASCII</para>
 		/// </summary>
-		public override string DisplayName => "Raster to ASCII";
+		public override string DisplayName() => "Raster to ASCII";
 
 		/// <summary>
 		/// <para>Tool Name : RasterToASCII</para>
 		/// </summary>
-		public override string ToolName => "RasterToASCII";
+		public override string ToolName() => "RasterToASCII";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.RasterToASCII</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.RasterToASCII";
+		public override string ExcuteName() => "conversion.RasterToASCII";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutAsciiFile };
+		public override object[] Parameters() => new object[] { InRaster, OutAsciiFile };
 
 		/// <summary>
 		/// <para>Input raster</para>

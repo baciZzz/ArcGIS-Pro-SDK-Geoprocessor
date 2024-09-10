@@ -42,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Iso Cluster</para>
 		/// </summary>
-		public override string DisplayName => "Iso Cluster";
+		public override string DisplayName() => "Iso Cluster";
 
 		/// <summary>
 		/// <para>Tool Name : IsoCluster</para>
 		/// </summary>
-		public override string ToolName => "IsoCluster";
+		public override string ToolName() => "IsoCluster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.IsoCluster</para>
 		/// </summary>
-		public override string ExcuteName => "sa.IsoCluster";
+		public override string ExcuteName() => "sa.IsoCluster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "cellSizeProjectionMethod", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "cellSizeProjectionMethod", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasterBands, OutSignatureFile, NumberClasses, NumberIterations, MinClassSize, SampleInterval };
+		public override object[] Parameters() => new object[] { InRasterBands, OutSignatureFile, NumberClasses, NumberIterations, MinClassSize, SampleInterval };
 
 		/// <summary>
 		/// <para>Input raster bands</para>

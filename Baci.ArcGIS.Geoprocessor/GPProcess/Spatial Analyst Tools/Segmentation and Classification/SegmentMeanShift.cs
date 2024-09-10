@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Segment Mean Shift</para>
 		/// </summary>
-		public override string DisplayName => "Segment Mean Shift";
+		public override string DisplayName() => "Segment Mean Shift";
 
 		/// <summary>
 		/// <para>Tool Name : SegmentMeanShift</para>
 		/// </summary>
-		public override string ToolName => "SegmentMeanShift";
+		public override string ToolName() => "SegmentMeanShift";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.SegmentMeanShift</para>
 		/// </summary>
-		public override string ExcuteName => "sa.SegmentMeanShift";
+		public override string ExcuteName() => "sa.SegmentMeanShift";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRasterDataset, SpectralDetail, SpatialDetail, MinSegmentSize, BandIndexes, MaxSegmentSize };
+		public override object[] Parameters() => new object[] { InRaster, OutRasterDataset, SpectralDetail, SpatialDetail, MinSegmentSize, BandIndexes, MaxSegmentSize };
 
 		/// <summary>
 		/// <para>Input Raster</para>

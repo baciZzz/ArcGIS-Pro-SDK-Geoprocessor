@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Enable Referent Fields</para>
 		/// </summary>
-		public override string DisplayName => "Enable Referent Fields";
+		public override string DisplayName() => "Enable Referent Fields";
 
 		/// <summary>
 		/// <para>Tool Name : EnableReferentFields</para>
 		/// </summary>
-		public override string ToolName => "EnableReferentFields";
+		public override string ToolName() => "EnableReferentFields";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.EnableReferentFields</para>
 		/// </summary>
-		public override string ExcuteName => "locref.EnableReferentFields";
+		public override string ExcuteName() => "locref.EnableReferentFields";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, FromReferentMethodField, FromReferentLocationField, FromReferentOffsetField, ToReferentMethodField, ToReferentLocationField, ToReferentOffsetField, OffsetUnits, OutFeatureClass };
+		public override object[] Parameters() => new object[] { InFeatureClass, FromReferentMethodField, FromReferentLocationField, FromReferentOffsetField, ToReferentMethodField, ToReferentLocationField, ToReferentOffsetField, OffsetUnits, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Event Feature Class</para>

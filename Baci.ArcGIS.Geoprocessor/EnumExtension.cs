@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace System
 {
+    /// <summary>
+    /// Enum Extension
+    /// </summary>
     public static class EnumExtension
     {
         /// <summary>

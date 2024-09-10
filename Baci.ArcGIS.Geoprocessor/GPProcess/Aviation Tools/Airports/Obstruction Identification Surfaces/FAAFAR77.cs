@@ -64,37 +64,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : FAA FAR 77</para>
 		/// </summary>
-		public override string DisplayName => "FAA FAR 77";
+		public override string DisplayName() => "FAA FAR 77";
 
 		/// <summary>
 		/// <para>Tool Name : FAAFAR77</para>
 		/// </summary>
-		public override string ToolName => "FAAFAR77";
+		public override string ToolName() => "FAAFAR77";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.FAAFAR77</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.FAAFAR77";
+		public override string ExcuteName() => "aviation.FAAFAR77";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Target, HighRunwayEndType, LowRunwayEndType, SpeciallyPreparedHardSurfaceRunway, HighendClearWayLength, LowendClearWayLength, AirportElevation, IncludeMergedSurface, DerivedOutfeatureclass, CustomJsonFile, AirportControlPointFeatureClass };
+		public override object[] Parameters() => new object[] { InFeatures, Target, HighRunwayEndType, LowRunwayEndType, SpeciallyPreparedHardSurfaceRunway, HighendClearWayLength, LowendClearWayLength, AirportElevation, IncludeMergedSurface, DerivedOutfeatureclass, CustomJsonFile, AirportControlPointFeatureClass };
 
 		/// <summary>
 		/// <para>Input Runway Features</para>

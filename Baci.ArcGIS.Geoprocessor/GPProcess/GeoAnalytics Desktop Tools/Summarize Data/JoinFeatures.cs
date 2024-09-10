@@ -48,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Join Features</para>
 		/// </summary>
-		public override string DisplayName => "Join Features";
+		public override string DisplayName() => "Join Features";
 
 		/// <summary>
 		/// <para>Tool Name : JoinFeatures</para>
 		/// </summary>
-		public override string ToolName => "JoinFeatures";
+		public override string ToolName() => "JoinFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.JoinFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.JoinFeatures";
+		public override string ExcuteName() => "gapro.JoinFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetLayer, JoinLayer, Output, JoinOperation, SpatialRelationship, SpatialNearDistance, TemporalRelationship, TemporalNearDistance, AttributeRelationship, SummaryFields, JoinCondition, KeepAllTargetFeatures };
+		public override object[] Parameters() => new object[] { TargetLayer, JoinLayer, Output, JoinOperation, SpatialRelationship, SpatialNearDistance, TemporalRelationship, TemporalNearDistance, AttributeRelationship, SummaryFields, JoinCondition, KeepAllTargetFeatures };
 
 		/// <summary>
 		/// <para>Target Layer</para>

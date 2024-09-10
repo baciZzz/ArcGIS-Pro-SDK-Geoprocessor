@@ -38,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Average Nearest Neighbor</para>
 		/// </summary>
-		public override string DisplayName => "Average Nearest Neighbor";
+		public override string DisplayName() => "Average Nearest Neighbor";
 
 		/// <summary>
 		/// <para>Tool Name : AverageNearestNeighbor</para>
 		/// </summary>
-		public override string ToolName => "AverageNearestNeighbor";
+		public override string ToolName() => "AverageNearestNeighbor";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.AverageNearestNeighbor</para>
 		/// </summary>
-		public override string ExcuteName => "stats.AverageNearestNeighbor";
+		public override string ExcuteName() => "stats.AverageNearestNeighbor";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, DistanceMethod, GenerateReport, Area, Nnratio, Nnzscore, Pvalue, Nnexpected, Nnobserved, ReportFile };
+		public override object[] Parameters() => new object[] { InputFeatureClass, DistanceMethod, GenerateReport, Area, Nnratio, Nnzscore, Pvalue, Nnexpected, Nnobserved, ReportFile };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>

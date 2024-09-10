@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : Iterate Layers</para>
 		/// </summary>
-		public override string DisplayName => "Iterate Layers";
+		public override string DisplayName() => "Iterate Layers";
 
 		/// <summary>
 		/// <para>Tool Name : IterateLayers</para>
 		/// </summary>
-		public override string ToolName => "IterateLayers";
+		public override string ToolName() => "IterateLayers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.IterateLayers</para>
 		/// </summary>
-		public override string ExcuteName => "mb.IterateLayers";
+		public override string ExcuteName() => "mb.IterateLayers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputMap, Wildcard, LayerType, WorkspaceType, FeatureType, RasterFormatType, LayerVisibility, LayerState, Recursive, OutputLayer, OutputName, OutputLayerType, OutputWorkspaceType };
+		public override object[] Parameters() => new object[] { InputMap, Wildcard, LayerType, WorkspaceType, FeatureType, RasterFormatType, LayerVisibility, LayerState, Recursive, OutputLayer, OutputName, OutputLayerType, OutputWorkspaceType };
 
 		/// <summary>
 		/// <para>Input Map</para>

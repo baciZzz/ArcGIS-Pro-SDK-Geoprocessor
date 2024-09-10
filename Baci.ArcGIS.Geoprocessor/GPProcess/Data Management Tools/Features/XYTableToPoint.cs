@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : XY Table To Point</para>
 		/// </summary>
-		public override string DisplayName => "XY Table To Point";
+		public override string DisplayName() => "XY Table To Point";
 
 		/// <summary>
 		/// <para>Tool Name : XYTableToPoint</para>
 		/// </summary>
-		public override string ToolName => "XYTableToPoint";
+		public override string ToolName() => "XYTableToPoint";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.XYTableToPoint</para>
 		/// </summary>
-		public override string ExcuteName => "management.XYTableToPoint";
+		public override string ExcuteName() => "management.XYTableToPoint";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutFeatureClass, XField, YField, ZField, CoordinateSystem };
+		public override object[] Parameters() => new object[] { InTable, OutFeatureClass, XField, YField, ZField, CoordinateSystem };
 
 		/// <summary>
 		/// <para>Input Table</para>

@@ -37,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Distance Allocation</para>
 		/// </summary>
-		public override string DisplayName => "Distance Allocation";
+		public override string DisplayName() => "Distance Allocation";
 
 		/// <summary>
 		/// <para>Tool Name : DistanceAllocation</para>
 		/// </summary>
-		public override string ToolName => "DistanceAllocation";
+		public override string ToolName() => "DistanceAllocation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.DistanceAllocation</para>
 		/// </summary>
-		public override string ExcuteName => "sa.DistanceAllocation";
+		public override string ExcuteName() => "sa.DistanceAllocation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSourceData, OutDistanceAllocationRaster, InBarrierData, InSurfaceRaster, InCostRaster, InVerticalRaster, VerticalFactor, InHorizontalRaster, HorizontalFactor, OutDistanceAccumulationRaster, OutBackDirectionRaster, OutSourceDirectionRaster, OutSourceLocationRaster, SourceField, SourceInitialAccumulation, SourceMaximumAccumulation, SourceCostMultiplier, SourceDirection, DistanceMethod };
+		public override object[] Parameters() => new object[] { InSourceData, OutDistanceAllocationRaster, InBarrierData, InSurfaceRaster, InCostRaster, InVerticalRaster, VerticalFactor, InHorizontalRaster, HorizontalFactor, OutDistanceAccumulationRaster, OutBackDirectionRaster, OutSourceDirectionRaster, OutSourceLocationRaster, SourceField, SourceInitialAccumulation, SourceMaximumAccumulation, SourceCostMultiplier, SourceDirection, DistanceMethod };
 
 		/// <summary>
 		/// <para>Input raster or feature source data</para>

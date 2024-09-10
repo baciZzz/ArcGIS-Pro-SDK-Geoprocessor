@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Enrich Layer</para>
 		/// </summary>
-		public override string DisplayName => "Enrich Layer";
+		public override string DisplayName() => "Enrich Layer";
 
 		/// <summary>
 		/// <para>Tool Name : EnrichLayer</para>
 		/// </summary>
-		public override string ToolName => "EnrichLayer";
+		public override string ToolName() => "EnrichLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.EnrichLayer</para>
 		/// </summary>
-		public override string ExcuteName => "ba.EnrichLayer";
+		public override string ExcuteName() => "ba.EnrichLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "baUseDetailedAggregation", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "baUseDetailedAggregation", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Variables, BufferType, Distance, Unit };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, Variables, BufferType, Distance, Unit };
 
 		/// <summary>
 		/// <para>Input Features</para>

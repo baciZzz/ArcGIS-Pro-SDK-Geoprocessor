@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Find Hot Spots</para>
 		/// </summary>
-		public override string DisplayName => "Find Hot Spots";
+		public override string DisplayName() => "Find Hot Spots";
 
 		/// <summary>
 		/// <para>Tool Name : FindHotSpots</para>
 		/// </summary>
-		public override string ToolName => "FindHotSpots";
+		public override string ToolName() => "FindHotSpots";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.FindHotSpots</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.FindHotSpots";
+		public override string ExcuteName() => "geoanalytics.FindHotSpots";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { PointLayer, OutputName, BinSize, NeighborhoodSize, TimeStepInterval, TimeStepAlignment, TimeStepReference, Output, DataStore };
+		public override object[] Parameters() => new object[] { PointLayer, OutputName, BinSize, NeighborhoodSize, TimeStepInterval, TimeStepAlignment, TimeStepReference, Output, DataStore };
 
 		/// <summary>
 		/// <para>Point Layer</para>

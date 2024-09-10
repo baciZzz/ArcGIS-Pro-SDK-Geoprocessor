@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Raster To TIN</para>
 		/// </summary>
-		public override string DisplayName => "Raster To TIN";
+		public override string DisplayName() => "Raster To TIN";
 
 		/// <summary>
 		/// <para>Tool Name : RasterTin</para>
 		/// </summary>
-		public override string ToolName => "RasterTin";
+		public override string ToolName() => "RasterTin";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.RasterTin</para>
 		/// </summary>
-		public override string ExcuteName => "3d.RasterTin";
+		public override string ExcuteName() => "3d.RasterTin";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "tinSaveVersion", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "tinSaveVersion", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutTin, ZTolerance, MaxPoints, ZFactor };
+		public override object[] Parameters() => new object[] { InRaster, OutTin, ZTolerance, MaxPoints, ZFactor };
 
 		/// <summary>
 		/// <para>Input Raster</para>

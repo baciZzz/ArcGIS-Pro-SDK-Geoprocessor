@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Subset Polygons</para>
 		/// </summary>
-		public override string DisplayName => "Generate Subset Polygons";
+		public override string DisplayName() => "Generate Subset Polygons";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateSubsetPolygons</para>
 		/// </summary>
-		public override string ToolName => "GenerateSubsetPolygons";
+		public override string ToolName() => "GenerateSubsetPolygons";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.GenerateSubsetPolygons</para>
 		/// </summary>
-		public override string ExcuteName => "ga.GenerateSubsetPolygons";
+		public override string ExcuteName() => "ga.GenerateSubsetPolygons";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, OutFeatureClass, MinPointsPerSubset, MaxPointsPerSubset, CoincidentPoints };
+		public override object[] Parameters() => new object[] { InPointFeatures, OutFeatureClass, MinPointsPerSubset, MaxPointsPerSubset, CoincidentPoints };
 
 		/// <summary>
 		/// <para>Input point features</para>

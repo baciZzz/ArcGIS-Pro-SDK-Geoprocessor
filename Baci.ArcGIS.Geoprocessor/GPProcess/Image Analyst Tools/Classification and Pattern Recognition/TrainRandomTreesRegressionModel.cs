@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Train Random Trees Regression Model</para>
 		/// </summary>
-		public override string DisplayName => "Train Random Trees Regression Model";
+		public override string DisplayName() => "Train Random Trees Regression Model";
 
 		/// <summary>
 		/// <para>Tool Name : TrainRandomTreesRegressionModel</para>
 		/// </summary>
-		public override string ToolName => "TrainRandomTreesRegressionModel";
+		public override string ToolName() => "TrainRandomTreesRegressionModel";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.TrainRandomTreesRegressionModel</para>
 		/// </summary>
-		public override string ExcuteName => "ia.TrainRandomTreesRegressionModel";
+		public override string ExcuteName() => "ia.TrainRandomTreesRegressionModel";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasters, InTargetData, OutRegressionDefinition, TargetValueField, TargetDimensionField, RasterDimension, OutImportanceTable, MaxNumTrees, MaxTreeDepth, MaxSamples, AveragePointsPerCell };
+		public override object[] Parameters() => new object[] { InRasters, InTargetData, OutRegressionDefinition, TargetValueField, TargetDimensionField, RasterDimension, OutImportanceTable, MaxNumTrees, MaxTreeDepth, MaxSamples, AveragePointsPerCell };
 
 		/// <summary>
 		/// <para>Input Rasters</para>

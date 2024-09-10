@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Locations</para>
 		/// </summary>
-		public override string DisplayName => "Add Locations";
+		public override string DisplayName() => "Add Locations";
 
 		/// <summary>
 		/// <para>Tool Name : AddLocations</para>
 		/// </summary>
-		public override string ToolName => "AddLocations";
+		public override string ToolName() => "AddLocations";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.AddLocations</para>
 		/// </summary>
-		public override string ExcuteName => "na.AddLocations";
+		public override string ExcuteName() => "na.AddLocations";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkAnalysisLayer, SubLayer, InTable, FieldMappings, SearchTolerance, SortField, SearchCriteria, MatchType, Append, SnapToPositionAlongNetwork, SnapOffset, ExcludeRestrictedElements, SearchQuery, OutputLayer };
+		public override object[] Parameters() => new object[] { InNetworkAnalysisLayer, SubLayer, InTable, FieldMappings, SearchTolerance, SortField, SearchCriteria, MatchType, Append, SnapToPositionAlongNetwork, SnapOffset, ExcludeRestrictedElements, SearchQuery, OutputLayer };
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer</para>

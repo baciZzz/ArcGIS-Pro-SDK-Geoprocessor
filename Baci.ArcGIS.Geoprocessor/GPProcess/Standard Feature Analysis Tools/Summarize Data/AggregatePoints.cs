@@ -48,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Aggregate Points</para>
 		/// </summary>
-		public override string DisplayName => "Aggregate Points";
+		public override string DisplayName() => "Aggregate Points";
 
 		/// <summary>
 		/// <para>Tool Name : AggregatePoints</para>
 		/// </summary>
-		public override string ToolName => "AggregatePoints";
+		public override string ToolName() => "AggregatePoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sfa.AggregatePoints</para>
 		/// </summary>
-		public override string ExcuteName => "sfa.AggregatePoints";
+		public override string ExcuteName() => "sfa.AggregatePoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Standard Feature Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Standard Feature Analysis Tools";
+		public override string ToolboxDisplayName() => "Standard Feature Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sfa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sfa";
+		public override string ToolboxAlise() => "sfa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Pointlayer, Polygonlayer, Outputname, Keepboundarieswithnopoints, Summaryfields, Groupbyfield, Minoritymajority, Percentpoints, Aggregatedlayer, Groupsummary };
+		public override object[] Parameters() => new object[] { Pointlayer, Polygonlayer, Outputname, Keepboundarieswithnopoints, Summaryfields, Groupbyfield, Minoritymajority, Percentpoints, Aggregatedlayer, Groupsummary };
 
 		/// <summary>
 		/// <para>Input Points</para>

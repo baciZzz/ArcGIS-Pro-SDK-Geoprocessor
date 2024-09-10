@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Verify Network Topology</para>
 		/// </summary>
-		public override string DisplayName => "Verify Network Topology";
+		public override string DisplayName() => "Verify Network Topology";
 
 		/// <summary>
 		/// <para>Tool Name : VerifyNetworkTopology</para>
 		/// </summary>
-		public override string ToolName => "VerifyNetworkTopology";
+		public override string ToolName() => "VerifyNetworkTopology";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.VerifyNetworkTopology</para>
 		/// </summary>
-		public override string ExcuteName => "un.VerifyNetworkTopology";
+		public override string ExcuteName() => "un.VerifyNetworkTopology";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, OutLogFile };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, OutLogFile };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>

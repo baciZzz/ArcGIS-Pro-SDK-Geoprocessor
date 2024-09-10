@@ -63,37 +63,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Geographically Weighted Regression (GWR)</para>
 		/// </summary>
-		public override string DisplayName => "Geographically Weighted Regression (GWR)";
+		public override string DisplayName() => "Geographically Weighted Regression (GWR)";
 
 		/// <summary>
 		/// <para>Tool Name : GeographicallyWeightedRegression</para>
 		/// </summary>
-		public override string ToolName => "GeographicallyWeightedRegression";
+		public override string ToolName() => "GeographicallyWeightedRegression";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.GeographicallyWeightedRegression</para>
 		/// </summary>
-		public override string ExcuteName => "stats.GeographicallyWeightedRegression";
+		public override string ExcuteName() => "stats.GeographicallyWeightedRegression";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DependentField, ExplanatoryField, OutFeatureclass, KernelType, BandwidthMethod, Distance, NumberOfNeighbors, WeightField, CoefficientRasterWorkspace, CellSize, InPredictionLocations, PredictionExplanatoryField, OutPredictionFeatureclass, OutTable, OutRegressionRasters };
+		public override object[] Parameters() => new object[] { InFeatures, DependentField, ExplanatoryField, OutFeatureclass, KernelType, BandwidthMethod, Distance, NumberOfNeighbors, WeightField, CoefficientRasterWorkspace, CellSize, InPredictionLocations, PredictionExplanatoryField, OutPredictionFeatureclass, OutTable, OutRegressionRasters };
 
 		/// <summary>
 		/// <para>Input features</para>

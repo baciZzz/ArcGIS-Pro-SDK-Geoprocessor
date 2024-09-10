@@ -52,37 +52,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Surface Information</para>
 		/// </summary>
-		public override string DisplayName => "Add Surface Information";
+		public override string DisplayName() => "Add Surface Information";
 
 		/// <summary>
 		/// <para>Tool Name : AddSurfaceInformation</para>
 		/// </summary>
-		public override string ToolName => "AddSurfaceInformation";
+		public override string ToolName() => "AddSurfaceInformation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.AddSurfaceInformation</para>
 		/// </summary>
-		public override string ExcuteName => "sa.AddSurfaceInformation";
+		public override string ExcuteName() => "sa.AddSurfaceInformation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "extent", "geographicTransformations", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "extent", "geographicTransformations", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, InSurface, OutProperty, Method, SampleDistance, ZFactor, PyramidLevelResolution, NoiseFiltering, OutputFeatureClass };
+		public override object[] Parameters() => new object[] { InFeatureClass, InSurface, OutProperty, Method, SampleDistance, ZFactor, PyramidLevelResolution, NoiseFiltering, OutputFeatureClass };
 
 		/// <summary>
 		/// <para>Input Features</para>

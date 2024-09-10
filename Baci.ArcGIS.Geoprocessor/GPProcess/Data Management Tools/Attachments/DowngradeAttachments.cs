@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Downgrade Attachments</para>
 		/// </summary>
-		public override string DisplayName => "Downgrade Attachments";
+		public override string DisplayName() => "Downgrade Attachments";
 
 		/// <summary>
 		/// <para>Tool Name : DowngradeAttachments</para>
 		/// </summary>
-		public override string ToolName => "DowngradeAttachments";
+		public override string ToolName() => "DowngradeAttachments";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DowngradeAttachments</para>
 		/// </summary>
-		public override string ExcuteName => "management.DowngradeAttachments";
+		public override string ExcuteName() => "management.DowngradeAttachments";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutDataset };
+		public override object[] Parameters() => new object[] { InDataset, OutDataset };
 
 		/// <summary>
 		/// <para>Input Dataset</para>

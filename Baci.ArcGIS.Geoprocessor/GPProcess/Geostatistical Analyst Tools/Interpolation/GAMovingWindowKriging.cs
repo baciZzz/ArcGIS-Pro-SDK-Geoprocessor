@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Moving Window Kriging</para>
 		/// </summary>
-		public override string DisplayName => "Moving Window Kriging";
+		public override string DisplayName() => "Moving Window Kriging";
 
 		/// <summary>
 		/// <para>Tool Name : GAMovingWindowKriging</para>
 		/// </summary>
-		public override string ToolName => "GAMovingWindowKriging";
+		public override string ToolName() => "GAMovingWindowKriging";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.GAMovingWindowKriging</para>
 		/// </summary>
-		public override string ExcuteName => "ga.GAMovingWindowKriging";
+		public override string ExcuteName() => "ga.GAMovingWindowKriging";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGaModelSource, InDatasets, InLocations, NeighborsMax, OutFeatureclass, CellSize, OutSurfaceGrid };
+		public override object[] Parameters() => new object[] { InGaModelSource, InDatasets, InLocations, NeighborsMax, OutFeatureclass, CellSize, OutSurfaceGrid };
 
 		/// <summary>
 		/// <para>Input geostatistical model source</para>

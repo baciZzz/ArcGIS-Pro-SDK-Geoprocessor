@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Extract Locations From Text</para>
 		/// </summary>
-		public override string DisplayName => "Extract Locations From Text";
+		public override string DisplayName() => "Extract Locations From Text";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractLocationsText</para>
 		/// </summary>
-		public override string ToolName => "ExtractLocationsText";
+		public override string ToolName() => "ExtractLocationsText";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.ExtractLocationsText</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.ExtractLocationsText";
+		public override string ExcuteName() => "conversion.ExtractLocationsText";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InText, OutFeatureClass, InTemplate, CoordDdLatlon, CoordDdXydeg, CoordDdXyplain, CoordDmLatlon, CoordDmXymin, CoordDmsLatlon, CoordDmsXysec, CoordDmsXysep, CoordUtm, CoordUpsNorth, CoordUpsSouth, CoordMgrs, CoordMgrsNorthpolar, CoordMgrsSouthpolar, CommaDecimal, CoordUseLonlat, InCoorSystem, InCustomLocations, FuzzyMatch, MaxFeaturesExtracted, IgnoreFirstFeatures, DateMonthname, DateMDY, DateYyyymmdd, DateYymmdd, DateYyjjj, MaxDatesExtracted, IgnoreFirstDates, DateRangeBegin, DateRangeEnd, InCustomAttributes, FileLink, FileModDatetime, PreTextLength, PostTextLength, StdCoordFmt, ReqWordBreaks };
+		public override object[] Parameters() => new object[] { InText, OutFeatureClass, InTemplate, CoordDdLatlon, CoordDdXydeg, CoordDdXyplain, CoordDmLatlon, CoordDmXymin, CoordDmsLatlon, CoordDmsXysec, CoordDmsXysep, CoordUtm, CoordUpsNorth, CoordUpsSouth, CoordMgrs, CoordMgrsNorthpolar, CoordMgrsSouthpolar, CommaDecimal, CoordUseLonlat, InCoorSystem, InCustomLocations, FuzzyMatch, MaxFeaturesExtracted, IgnoreFirstFeatures, DateMonthname, DateMDY, DateYyyymmdd, DateYymmdd, DateYyjjj, MaxDatesExtracted, IgnoreFirstDates, DateRangeBegin, DateRangeEnd, InCustomAttributes, FileLink, FileModDatetime, PreTextLength, PostTextLength, StdCoordFmt, ReqWordBreaks };
 
 		/// <summary>
 		/// <para>Input Text or File Path</para>

@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Truncate Table</para>
 		/// </summary>
-		public override string DisplayName => "Truncate Table";
+		public override string DisplayName() => "Truncate Table";
 
 		/// <summary>
 		/// <para>Tool Name : TruncateTable</para>
 		/// </summary>
-		public override string ToolName => "TruncateTable";
+		public override string ToolName() => "TruncateTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.TruncateTable</para>
 		/// </summary>
-		public override string ExcuteName => "management.TruncateTable";
+		public override string ExcuteName() => "management.TruncateTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutTable };
+		public override object[] Parameters() => new object[] { InTable, OutTable };
 
 		/// <summary>
 		/// <para>Input Table</para>

@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Update</para>
 		/// </summary>
-		public override string DisplayName => "Update";
+		public override string DisplayName() => "Update";
 
 		/// <summary>
 		/// <para>Tool Name : Update</para>
 		/// </summary>
-		public override string ToolName => "Update";
+		public override string ToolName() => "Update";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.Update</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.Update";
+		public override string ExcuteName() => "analysis.Update";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "parallelProcessingFactor", "qualifiedFieldNames" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "parallelProcessingFactor", "qualifiedFieldNames" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, UpdateFeatures, OutFeatureClass, KeepBorders, ClusterTolerance };
+		public override object[] Parameters() => new object[] { InFeatures, UpdateFeatures, OutFeatureClass, KeepBorders, ClusterTolerance };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Remove Overlapping Centerlines</para>
 		/// </summary>
-		public override string DisplayName => "Remove Overlapping Centerlines";
+		public override string DisplayName() => "Remove Overlapping Centerlines";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveOverlappingCenterlines</para>
 		/// </summary>
-		public override string ToolName => "RemoveOverlappingCenterlines";
+		public override string ToolName() => "RemoveOverlappingCenterlines";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.RemoveOverlappingCenterlines</para>
 		/// </summary>
-		public override string ExcuteName => "locref.RemoveOverlappingCenterlines";
+		public override string ExcuteName() => "locref.RemoveOverlappingCenterlines";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCenterlineFeatures, UpdatedCenterlineFeatures, OutDetailsFile };
+		public override object[] Parameters() => new object[] { InCenterlineFeatures, UpdatedCenterlineFeatures, OutDetailsFile };
 
 		/// <summary>
 		/// <para>Input Centerline Features</para>

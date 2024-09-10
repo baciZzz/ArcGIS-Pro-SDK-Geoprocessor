@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Raster to Point</para>
 		/// </summary>
-		public override string DisplayName => "Raster to Point";
+		public override string DisplayName() => "Raster to Point";
 
 		/// <summary>
 		/// <para>Tool Name : RasterToPoint</para>
 		/// </summary>
-		public override string ToolName => "RasterToPoint";
+		public override string ToolName() => "RasterToPoint";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.RasterToPoint</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.RasterToPoint";
+		public override string ExcuteName() => "conversion.RasterToPoint";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutPointFeatures, RasterField };
+		public override object[] Parameters() => new object[] { InRaster, OutPointFeatures, RasterField };
 
 		/// <summary>
 		/// <para>Input raster</para>

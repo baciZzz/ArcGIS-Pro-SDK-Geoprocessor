@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Display Name : Rebuild Address Locator</para>
 		/// </summary>
-		public override string DisplayName => "Rebuild Address Locator";
+		public override string DisplayName() => "Rebuild Address Locator";
 
 		/// <summary>
 		/// <para>Tool Name : RebuildAddressLocator</para>
 		/// </summary>
-		public override string ToolName => "RebuildAddressLocator";
+		public override string ToolName() => "RebuildAddressLocator";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geocoding.RebuildAddressLocator</para>
 		/// </summary>
-		public override string ExcuteName => "geocoding.RebuildAddressLocator";
+		public override string ExcuteName() => "geocoding.RebuildAddressLocator";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geocoding Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geocoding Tools";
+		public override string ToolboxDisplayName() => "Geocoding Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geocoding</para>
 		/// </summary>
-		public override string ToolboxAlise => "geocoding";
+		public override string ToolboxAlise() => "geocoding";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAddressLocator, OutAddressLocator };
+		public override object[] Parameters() => new object[] { InAddressLocator, OutAddressLocator };
 
 		/// <summary>
 		/// <para>Input Address Locator</para>

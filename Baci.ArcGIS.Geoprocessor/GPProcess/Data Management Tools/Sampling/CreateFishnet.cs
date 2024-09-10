@@ -60,37 +60,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Fishnet</para>
 		/// </summary>
-		public override string DisplayName => "Create Fishnet";
+		public override string DisplayName() => "Create Fishnet";
 
 		/// <summary>
 		/// <para>Tool Name : CreateFishnet</para>
 		/// </summary>
-		public override string ToolName => "CreateFishnet";
+		public override string ToolName() => "CreateFishnet";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateFishnet</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateFishnet";
+		public override string ExcuteName() => "management.CreateFishnet";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "XYDomain", "ZDomain", "configKeyword", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "XYDomain", "ZDomain", "configKeyword", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutFeatureClass, OriginCoord, YAxisCoord, CellWidth, CellHeight, NumberRows, NumberColumns, CornerCoord, Labels, Template, GeometryType, OutLabel };
+		public override object[] Parameters() => new object[] { OutFeatureClass, OriginCoord, YAxisCoord, CellWidth, CellHeight, NumberRows, NumberColumns, CornerCoord, Labels, Template, GeometryType, OutLabel };
 
 		/// <summary>
 		/// <para>Output Feature Class</para>

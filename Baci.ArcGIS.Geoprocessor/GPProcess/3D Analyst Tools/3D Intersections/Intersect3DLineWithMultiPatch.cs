@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Intersect 3D Line With Multipatch</para>
 		/// </summary>
-		public override string DisplayName => "Intersect 3D Line With Multipatch";
+		public override string DisplayName() => "Intersect 3D Line With Multipatch";
 
 		/// <summary>
 		/// <para>Tool Name : Intersect3DLineWithMultiPatch</para>
 		/// </summary>
-		public override string ToolName => "Intersect3DLineWithMultiPatch";
+		public override string ToolName() => "Intersect3DLineWithMultiPatch";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Intersect3DLineWithMultiPatch</para>
 		/// </summary>
-		public override string ExcuteName => "3d.Intersect3DLineWithMultiPatch";
+		public override string ExcuteName() => "3d.Intersect3DLineWithMultiPatch";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLineFeatures, InMultipatchFeatures, JoinAttributes, OutPointFeatureClass, OutLineFeatureClass, OutIntersectionCount };
+		public override object[] Parameters() => new object[] { InLineFeatures, InMultipatchFeatures, JoinAttributes, OutPointFeatureClass, OutLineFeatureClass, OutIntersectionCount };
 
 		/// <summary>
 		/// <para>Input Line Features</para>

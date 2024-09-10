@@ -49,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Routes</para>
 		/// </summary>
-		public override string DisplayName => "Create Routes";
+		public override string DisplayName() => "Create Routes";
 
 		/// <summary>
 		/// <para>Tool Name : CreateRoutes</para>
 		/// </summary>
-		public override string ToolName => "CreateRoutes";
+		public override string ToolName() => "CreateRoutes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : lr.CreateRoutes</para>
 		/// </summary>
-		public override string ExcuteName => "lr.CreateRoutes";
+		public override string ExcuteName() => "lr.CreateRoutes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Linear Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Linear Referencing Tools";
+		public override string ToolboxDisplayName() => "Linear Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : lr</para>
 		/// </summary>
-		public override string ToolboxAlise => "lr";
+		public override string ToolboxAlise() => "lr";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "ZDomain", "configKeyword", "extent", "outputCoordinateSystem", "outputZFlag", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "ZDomain", "configKeyword", "extent", "outputCoordinateSystem", "outputZFlag", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLineFeatures, RouteIdField, OutFeatureClass, MeasureSource, FromMeasureField, ToMeasureField, CoordinatePriority, MeasureFactor, MeasureOffset, IgnoreGaps, BuildIndex };
+		public override object[] Parameters() => new object[] { InLineFeatures, RouteIdField, OutFeatureClass, MeasureSource, FromMeasureField, ToMeasureField, CoordinatePriority, MeasureFactor, MeasureOffset, IgnoreGaps, BuildIndex };
 
 		/// <summary>
 		/// <para>Input Line Features</para>

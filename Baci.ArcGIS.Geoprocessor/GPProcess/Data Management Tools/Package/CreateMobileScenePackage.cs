@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Mobile Scene Package</para>
 		/// </summary>
-		public override string DisplayName => "Create Mobile Scene Package";
+		public override string DisplayName() => "Create Mobile Scene Package";
 
 		/// <summary>
 		/// <para>Tool Name : CreateMobileScenePackage</para>
 		/// </summary>
-		public override string ToolName => "CreateMobileScenePackage";
+		public override string ToolName() => "CreateMobileScenePackage";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateMobileScenePackage</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateMobileScenePackage";
+		public override string ExcuteName() => "management.CreateMobileScenePackage";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InScene, OutputFile, InLocator, AreaOfInterest, Extent, ClipFeatures, Title, Summary, Description, Tags, Credits, UseLimitations, AnonymousUse, TextureOptimization, EnableSceneExpiration, SceneExpirationType, ExpirationDate, ExpirationMessage, SelectRelatedRows, ReferenceOnlineContent };
+		public override object[] Parameters() => new object[] { InScene, OutputFile, InLocator, AreaOfInterest, Extent, ClipFeatures, Title, Summary, Description, Tags, Credits, UseLimitations, AnonymousUse, TextureOptimization, EnableSceneExpiration, SceneExpirationType, ExpirationDate, ExpirationMessage, SelectRelatedRows, ReferenceOnlineContent };
 
 		/// <summary>
 		/// <para>Input Scene</para>

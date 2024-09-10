@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Events</para>
 		/// </summary>
-		public override string DisplayName => "Generate Events";
+		public override string DisplayName() => "Generate Events";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateEvents</para>
 		/// </summary>
-		public override string ToolName => "GenerateEvents";
+		public override string ToolName() => "GenerateEvents";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.GenerateEvents</para>
 		/// </summary>
-		public override string ExcuteName => "locref.GenerateEvents";
+		public override string ExcuteName() => "locref.GenerateEvents";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InEventLayer, OutEventLayers };
+		public override object[] Parameters() => new object[] { InEventLayer, OutEventLayers };
 
 		/// <summary>
 		/// <para>Event Layer</para>

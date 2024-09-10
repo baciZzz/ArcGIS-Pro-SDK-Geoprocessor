@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Generalized Linear Regression (GLR)</para>
 		/// </summary>
-		public override string DisplayName => "Generalized Linear Regression (GLR)";
+		public override string DisplayName() => "Generalized Linear Regression (GLR)";
 
 		/// <summary>
 		/// <para>Tool Name : GeneralizedLinearRegression</para>
 		/// </summary>
-		public override string ToolName => "GeneralizedLinearRegression";
+		public override string ToolName() => "GeneralizedLinearRegression";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.GeneralizedLinearRegression</para>
 		/// </summary>
-		public override string ExcuteName => "stats.GeneralizedLinearRegression";
+		public override string ExcuteName() => "stats.GeneralizedLinearRegression";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DependentVariable, ModelType, OutputFeatures, ExplanatoryVariables, DistanceFeatures, PredictionLocations, ExplanatoryVariablesToMatch, ExplanatoryDistanceMatching, OutputPredictedFeatures };
+		public override object[] Parameters() => new object[] { InFeatures, DependentVariable, ModelType, OutputFeatures, ExplanatoryVariables, DistanceFeatures, PredictionLocations, ExplanatoryVariablesToMatch, ExplanatoryDistanceMatching, OutputPredictedFeatures };
 
 		/// <summary>
 		/// <para>Input Features</para>

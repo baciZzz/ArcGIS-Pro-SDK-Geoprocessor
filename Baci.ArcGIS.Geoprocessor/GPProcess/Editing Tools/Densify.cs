@@ -32,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Display Name : Densify</para>
 		/// </summary>
-		public override string DisplayName => "Densify";
+		public override string DisplayName() => "Densify";
 
 		/// <summary>
 		/// <para>Tool Name : Densify</para>
 		/// </summary>
-		public override string ToolName => "Densify";
+		public override string ToolName() => "Densify";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.Densify</para>
 		/// </summary>
-		public override string ExcuteName => "edit.Densify";
+		public override string ExcuteName() => "edit.Densify";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Editing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Editing Tools";
+		public override string ToolboxDisplayName() => "Editing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : edit</para>
 		/// </summary>
-		public override string ToolboxAlise => "edit";
+		public override string ToolboxAlise() => "edit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DensificationMethod, Distance, MaxDeviation, MaxAngle, OutFeatureClass, MaxVertexPerSegment };
+		public override object[] Parameters() => new object[] { InFeatures, DensificationMethod, Distance, MaxDeviation, MaxAngle, OutFeatureClass, MaxVertexPerSegment };
 
 		/// <summary>
 		/// <para>Input Features</para>

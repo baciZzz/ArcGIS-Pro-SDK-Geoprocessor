@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Import Digital Obstacle File</para>
 		/// </summary>
-		public override string DisplayName => "Import Digital Obstacle File";
+		public override string DisplayName() => "Import Digital Obstacle File";
 
 		/// <summary>
 		/// <para>Tool Name : ImportDOF</para>
 		/// </summary>
-		public override string ToolName => "ImportDOF";
+		public override string ToolName() => "ImportDOF";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.ImportDOF</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.ImportDOF";
+		public override string ExcuteName() => "aviation.ImportDOF";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InObstacleFile, ObstacleFeatures, UpdatedObstacleFeatures };
+		public override object[] Parameters() => new object[] { InObstacleFile, ObstacleFeatures, UpdatedObstacleFeatures };
 
 		/// <summary>
 		/// <para>Input Digital Obstacle File</para>

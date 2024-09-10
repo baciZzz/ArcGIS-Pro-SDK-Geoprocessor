@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Vehicle Routing Problem Routes</para>
 		/// </summary>
-		public override string DisplayName => "Add Vehicle Routing Problem Routes";
+		public override string DisplayName() => "Add Vehicle Routing Problem Routes";
 
 		/// <summary>
 		/// <para>Tool Name : AddVehicleRoutingProblemRoutes</para>
 		/// </summary>
-		public override string ToolName => "AddVehicleRoutingProblemRoutes";
+		public override string ToolName() => "AddVehicleRoutingProblemRoutes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.AddVehicleRoutingProblemRoutes</para>
 		/// </summary>
-		public override string ExcuteName => "na.AddVehicleRoutingProblemRoutes";
+		public override string ExcuteName() => "na.AddVehicleRoutingProblemRoutes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InVrpLayer, NumberOfRoutes, RouteNamePrefix, StartDepotName, EndDepotName, EarliestStartTime, LatestStartTime, MaxOrderCount, Capacities, RouteConstraints, Costs, AdditionalRouteTime, AppendToExistingRoutes, OutVrpLayer };
+		public override object[] Parameters() => new object[] { InVrpLayer, NumberOfRoutes, RouteNamePrefix, StartDepotName, EndDepotName, EarliestStartTime, LatestStartTime, MaxOrderCount, Capacities, RouteConstraints, Costs, AdditionalRouteTime, AppendToExistingRoutes, OutVrpLayer };
 
 		/// <summary>
 		/// <para>Input Vehicle Routing Problem Layer</para>

@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Sort</para>
 		/// </summary>
-		public override string DisplayName => "Sort";
+		public override string DisplayName() => "Sort";
 
 		/// <summary>
 		/// <para>Tool Name : Sort</para>
 		/// </summary>
-		public override string ToolName => "Sort";
+		public override string ToolName() => "Sort";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Sort</para>
 		/// </summary>
-		public override string ExcuteName => "management.Sort";
+		public override string ExcuteName() => "management.Sort";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "maintainAttachments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "transferGDBAttributeProperties", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "maintainAttachments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "transferGDBAttributeProperties", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutDataset, SortField, SpatialSortMethod };
+		public override object[] Parameters() => new object[] { InDataset, OutDataset, SortField, SpatialSortMethod };
 
 		/// <summary>
 		/// <para>Input Dataset</para>

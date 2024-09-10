@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Raster to Polyline</para>
 		/// </summary>
-		public override string DisplayName => "Raster to Polyline";
+		public override string DisplayName() => "Raster to Polyline";
 
 		/// <summary>
 		/// <para>Tool Name : RasterToPolyline</para>
 		/// </summary>
-		public override string ToolName => "RasterToPolyline";
+		public override string ToolName() => "RasterToPolyline";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.RasterToPolyline</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.RasterToPolyline";
+		public override string ExcuteName() => "conversion.RasterToPolyline";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutPolylineFeatures, BackgroundValue, MinimumDangleLength, Simplify, RasterField };
+		public override object[] Parameters() => new object[] { InRaster, OutPolylineFeatures, BackgroundValue, MinimumDangleLength, Simplify, RasterField };
 
 		/// <summary>
 		/// <para>Input raster</para>

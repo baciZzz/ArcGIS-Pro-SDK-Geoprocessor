@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 {
+    /// <summary>
+    /// DE Terrain Attribute
+    /// </summary>
     public class DETerrainAttribute : BaseDataTypeAttribute
     {
     }

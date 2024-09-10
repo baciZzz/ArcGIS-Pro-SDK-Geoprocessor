@@ -46,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Display Name : Fill Missing Values</para>
 		/// </summary>
-		public override string DisplayName => "Fill Missing Values";
+		public override string DisplayName() => "Fill Missing Values";
 
 		/// <summary>
 		/// <para>Tool Name : FillMissingValues</para>
 		/// </summary>
-		public override string ToolName => "FillMissingValues";
+		public override string ToolName() => "FillMissingValues";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stpm.FillMissingValues</para>
 		/// </summary>
-		public override string ExcuteName => "stpm.FillMissingValues";
+		public override string ExcuteName() => "stpm.FillMissingValues";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Space Time Pattern Mining Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Space Time Pattern Mining Tools";
+		public override string ToolboxDisplayName() => "Space Time Pattern Mining Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stpm</para>
 		/// </summary>
-		public override string ToolboxAlise => "stpm";
+		public override string ToolboxAlise() => "stpm";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatures, FieldsToFill, FillMethod, ConceptualizationOfSpatialRelationships, DistanceBand, TemporalNeighborhood, TimeField, NumberOfSpatialNeighbors, LocationId, RelatedTable, RelatedLocationId, WeightsMatrixFile, UniqueId, NullValue, OutTable, AppendToInput, UpdatedFeatures };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatures, FieldsToFill, FillMethod, ConceptualizationOfSpatialRelationships, DistanceBand, TemporalNeighborhood, TimeField, NumberOfSpatialNeighbors, LocationId, RelatedTable, RelatedLocationId, WeightsMatrixFile, UniqueId, NullValue, OutTable, AppendToInput, UpdatedFeatures };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -230,7 +230,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Null Value</para>
-		/// <para>The value that represents null (missing) values. If no value is specified, <Null> is assumed for geodatabase feature classes. For shapefile input, a numeric value of the null placeholder is required.</para>
+		/// <para>The value that represents null (missing) values. If no value is specified, &lt;Null&gt; is assumed for geodatabase feature classes. For shapefile input, a numeric value of the null placeholder is required.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

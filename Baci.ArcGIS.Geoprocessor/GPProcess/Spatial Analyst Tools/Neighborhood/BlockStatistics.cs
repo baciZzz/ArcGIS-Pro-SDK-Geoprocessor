@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Block Statistics</para>
 		/// </summary>
-		public override string DisplayName => "Block Statistics";
+		public override string DisplayName() => "Block Statistics";
 
 		/// <summary>
 		/// <para>Tool Name : BlockStatistics</para>
 		/// </summary>
-		public override string ToolName => "BlockStatistics";
+		public override string ToolName() => "BlockStatistics";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.BlockStatistics</para>
 		/// </summary>
-		public override string ExcuteName => "sa.BlockStatistics";
+		public override string ExcuteName() => "sa.BlockStatistics";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, Neighborhood, StatisticsType, IgnoreNodata };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, Neighborhood, StatisticsType, IgnoreNodata };
 
 		/// <summary>
 		/// <para>Input raster</para>

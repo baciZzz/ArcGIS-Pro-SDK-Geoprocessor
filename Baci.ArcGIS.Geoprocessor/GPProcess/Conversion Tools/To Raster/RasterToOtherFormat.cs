@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Raster To Other Format</para>
 		/// </summary>
-		public override string DisplayName => "Raster To Other Format";
+		public override string DisplayName() => "Raster To Other Format";
 
 		/// <summary>
 		/// <para>Tool Name : RasterToOtherFormat</para>
 		/// </summary>
-		public override string ToolName => "RasterToOtherFormat";
+		public override string ToolName() => "RasterToOtherFormat";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.RasterToOtherFormat</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.RasterToOtherFormat";
+		public override string ExcuteName() => "conversion.RasterToOtherFormat";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "ZDomain", "ZResolution", "compression", "configKeyword", "extent", "nodata", "outputCoordinateSystem", "outputZFlag", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "ZDomain", "ZResolution", "compression", "configKeyword", "extent", "nodata", "outputCoordinateSystem", "outputZFlag", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputRasters, OutputWorkspace, RasterFormat, DerivedWorkspace };
+		public override object[] Parameters() => new object[] { InputRasters, OutputWorkspace, RasterFormat, DerivedWorkspace };
 
 		/// <summary>
 		/// <para>Input Rasters</para>

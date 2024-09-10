@@ -42,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Natural Neighbor</para>
 		/// </summary>
-		public override string DisplayName => "Natural Neighbor";
+		public override string DisplayName() => "Natural Neighbor";
 
 		/// <summary>
 		/// <para>Tool Name : NaturalNeighbor</para>
 		/// </summary>
-		public override string ToolName => "NaturalNeighbor";
+		public override string ToolName() => "NaturalNeighbor";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.NaturalNeighbor</para>
 		/// </summary>
-		public override string ExcuteName => "3d.NaturalNeighbor";
+		public override string ExcuteName() => "3d.NaturalNeighbor";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, ZField, OutRaster, CellSize };
+		public override object[] Parameters() => new object[] { InPointFeatures, ZField, OutRaster, CellSize };
 
 		/// <summary>
 		/// <para>Input point features</para>

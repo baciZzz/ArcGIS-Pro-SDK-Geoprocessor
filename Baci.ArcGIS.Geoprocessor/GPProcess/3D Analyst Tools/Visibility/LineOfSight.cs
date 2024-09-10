@@ -41,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Line Of Sight</para>
 		/// </summary>
-		public override string DisplayName => "Line Of Sight";
+		public override string DisplayName() => "Line Of Sight";
 
 		/// <summary>
 		/// <para>Tool Name : LineOfSight</para>
 		/// </summary>
-		public override string ToolName => "LineOfSight";
+		public override string ToolName() => "LineOfSight";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.LineOfSight</para>
 		/// </summary>
-		public override string ExcuteName => "3d.LineOfSight";
+		public override string ExcuteName() => "3d.LineOfSight";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "terrainMemoryUsage", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "terrainMemoryUsage", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurface, InLineFeatureClass, OutLosFeatureClass, OutObstructionFeatureClass, UseCurvature, UseRefraction, RefractionFactor, PyramidLevelResolution, InFeatures };
+		public override object[] Parameters() => new object[] { InSurface, InLineFeatureClass, OutLosFeatureClass, OutObstructionFeatureClass, UseCurvature, UseRefraction, RefractionFactor, PyramidLevelResolution, InFeatures };
 
 		/// <summary>
 		/// <para>Input Surface</para>

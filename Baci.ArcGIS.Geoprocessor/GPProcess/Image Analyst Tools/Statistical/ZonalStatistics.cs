@@ -47,37 +47,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Zonal Statistics</para>
 		/// </summary>
-		public override string DisplayName => "Zonal Statistics";
+		public override string DisplayName() => "Zonal Statistics";
 
 		/// <summary>
 		/// <para>Tool Name : ZonalStatistics</para>
 		/// </summary>
-		public override string ToolName => "ZonalStatistics";
+		public override string ToolName() => "ZonalStatistics";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.ZonalStatistics</para>
 		/// </summary>
-		public override string ExcuteName => "ia.ZonalStatistics";
+		public override string ExcuteName() => "ia.ZonalStatistics";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InZoneData, ZoneField, InValueRaster, OutRaster, StatisticsType, IgnoreNodata, ProcessAsMultidimensional, PercentileValue, PercentileInterpolationType };
+		public override object[] Parameters() => new object[] { InZoneData, ZoneField, InValueRaster, OutRaster, StatisticsType, IgnoreNodata, ProcessAsMultidimensional, PercentileValue, PercentileInterpolationType };
 
 		/// <summary>
 		/// <para>Input raster or feature zone data</para>

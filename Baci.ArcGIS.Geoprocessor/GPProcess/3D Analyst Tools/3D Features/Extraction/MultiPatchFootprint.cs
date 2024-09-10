@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Multipatch Footprint</para>
 		/// </summary>
-		public override string DisplayName => "Multipatch Footprint";
+		public override string DisplayName() => "Multipatch Footprint";
 
 		/// <summary>
 		/// <para>Tool Name : MultiPatchFootprint</para>
 		/// </summary>
-		public override string ToolName => "MultiPatchFootprint";
+		public override string ToolName() => "MultiPatchFootprint";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.MultiPatchFootprint</para>
 		/// </summary>
-		public override string ExcuteName => "3d.MultiPatchFootprint";
+		public override string ExcuteName() => "3d.MultiPatchFootprint";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYResolution", "XYTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYResolution", "XYTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, OutFeatureClass, GroupField };
+		public override object[] Parameters() => new object[] { InFeatureClass, OutFeatureClass, GroupField };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>

@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Sun Shadow Volume</para>
 		/// </summary>
-		public override string DisplayName => "Sun Shadow Volume";
+		public override string DisplayName() => "Sun Shadow Volume";
 
 		/// <summary>
 		/// <para>Tool Name : SunShadowVolume</para>
 		/// </summary>
-		public override string ToolName => "SunShadowVolume";
+		public override string ToolName() => "SunShadowVolume";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.SunShadowVolume</para>
 		/// </summary>
-		public override string ExcuteName => "3d.SunShadowVolume";
+		public override string ExcuteName() => "3d.SunShadowVolume";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "ZDomain", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "ZDomain", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, StartDateAndTime, OutFeatureClass, AdjustedForDst, TimeZone, EndDateAndTime, IterationInterval, IterationUnit };
+		public override object[] Parameters() => new object[] { InFeatures, StartDateAndTime, OutFeatureClass, AdjustedForDst, TimeZone, EndDateAndTime, IterationInterval, IterationUnit };
 
 		/// <summary>
 		/// <para>Input Features</para>

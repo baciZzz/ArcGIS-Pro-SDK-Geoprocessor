@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate HLZ Suitability</para>
 		/// </summary>
-		public override string DisplayName => "Generate HLZ Suitability";
+		public override string DisplayName() => "Generate HLZ Suitability";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateHLZSuitability</para>
 		/// </summary>
-		public override string ToolName => "GenerateHLZSuitability";
+		public override string ToolName() => "GenerateHLZSuitability";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.GenerateHLZSuitability</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.GenerateHLZSuitability";
+		public override string ExcuteName() => "intelligence.GenerateHLZSuitability";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSlopeRaster, InLandCoverRaster, InObstacleBufferFeatures, OutRaster };
+		public override object[] Parameters() => new object[] { InSlopeRaster, InLandCoverRaster, InObstacleBufferFeatures, OutRaster };
 
 		/// <summary>
 		/// <para>Input Slope Raster</para>

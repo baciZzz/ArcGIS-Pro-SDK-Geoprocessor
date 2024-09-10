@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Global Polynomial Interpolation</para>
 		/// </summary>
-		public override string DisplayName => "Global Polynomial Interpolation";
+		public override string DisplayName() => "Global Polynomial Interpolation";
 
 		/// <summary>
 		/// <para>Tool Name : GlobalPolynomialInterpolation</para>
 		/// </summary>
-		public override string ToolName => "GlobalPolynomialInterpolation";
+		public override string ToolName() => "GlobalPolynomialInterpolation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.GlobalPolynomialInterpolation</para>
 		/// </summary>
-		public override string ExcuteName => "ga.GlobalPolynomialInterpolation";
+		public override string ExcuteName() => "ga.GlobalPolynomialInterpolation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ZField, OutGaLayer, OutRaster, CellSize, Power, WeightField };
+		public override object[] Parameters() => new object[] { InFeatures, ZField, OutGaLayer, OutRaster, CellSize, Power, WeightField };
 
 		/// <summary>
 		/// <para>Input features</para>

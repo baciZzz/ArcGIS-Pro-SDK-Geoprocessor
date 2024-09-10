@@ -75,37 +75,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Customer Derived Trade Areas</para>
 		/// </summary>
-		public override string DisplayName => "Generate Customer Derived Trade Areas";
+		public override string DisplayName() => "Generate Customer Derived Trade Areas";
 
 		/// <summary>
 		/// <para>Tool Name : CustomerDerivedTA</para>
 		/// </summary>
-		public override string ToolName => "CustomerDerivedTA";
+		public override string ToolName() => "CustomerDerivedTA";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.CustomerDerivedTA</para>
 		/// </summary>
-		public override string ExcuteName => "ba.CustomerDerivedTA";
+		public override string ExcuteName() => "ba.CustomerDerivedTA";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "baNetworkSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "baNetworkSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InStoresLayer, StoreIdField, InCustomersLayer, LinkField, OutFeatureClass, Method, Rings, CustomerAggregationType, CustomerWeightField, ExcludeOutlyingCustomers, CutoffDistance, DissolveOption, UseCustomerCentroids, DistanceType, Units, TravelDirection, TimeOfDay, TimeZone, SearchTolerance, PolygonDetail, IterationsLimit, MinimumStep, TargetPercentDiff };
+		public override object[] Parameters() => new object[] { InStoresLayer, StoreIdField, InCustomersLayer, LinkField, OutFeatureClass, Method, Rings, CustomerAggregationType, CustomerWeightField, ExcludeOutlyingCustomers, CutoffDistance, DissolveOption, UseCustomerCentroids, DistanceType, Units, TravelDirection, TimeOfDay, TimeZone, SearchTolerance, PolygonDetail, IterationsLimit, MinimumStep, TargetPercentDiff };
 
 		/// <summary>
 		/// <para>Stores</para>

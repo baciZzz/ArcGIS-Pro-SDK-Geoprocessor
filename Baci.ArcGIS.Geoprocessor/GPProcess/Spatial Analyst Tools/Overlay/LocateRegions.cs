@@ -47,37 +47,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Locate Regions</para>
 		/// </summary>
-		public override string DisplayName => "Locate Regions";
+		public override string DisplayName() => "Locate Regions";
 
 		/// <summary>
 		/// <para>Tool Name : LocateRegions</para>
 		/// </summary>
-		public override string ToolName => "LocateRegions";
+		public override string ToolName() => "LocateRegions";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.LocateRegions</para>
 		/// </summary>
-		public override string ExcuteName => "sa.LocateRegions";
+		public override string ExcuteName() => "sa.LocateRegions";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "rasterStatistics", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "rasterStatistics", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, TotalArea, AreaUnits, NumberOfRegions, RegionShape, RegionOrientation, ShapeTradeoff, EvaluationMethod, MinimumArea, MaximumArea, MinimumDistance, MaximumDistance, DistanceUnits, InExistingRegions, NumberOfNeighbors, NoIslands, RegionSeeds, RegionResolution, SelectionMethod };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, TotalArea, AreaUnits, NumberOfRegions, RegionShape, RegionOrientation, ShapeTradeoff, EvaluationMethod, MinimumArea, MaximumArea, MinimumDistance, MaximumDistance, DistanceUnits, InExistingRegions, NumberOfNeighbors, NoIslands, RegionSeeds, RegionResolution, SelectionMethod };
 
 		/// <summary>
 		/// <para>Input raster</para>

@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Split Line At Vertices</para>
 		/// </summary>
-		public override string DisplayName => "Split Line At Vertices";
+		public override string DisplayName() => "Split Line At Vertices";
 
 		/// <summary>
 		/// <para>Tool Name : SplitLine</para>
 		/// </summary>
-		public override string ToolName => "SplitLine";
+		public override string ToolName() => "SplitLine";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SplitLine</para>
 		/// </summary>
-		public override string ExcuteName => "management.SplitLine";
+		public override string ExcuteName() => "management.SplitLine";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Input Features</para>

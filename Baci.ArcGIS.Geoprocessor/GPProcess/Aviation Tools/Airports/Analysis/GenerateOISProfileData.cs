@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate OIS Profile Data</para>
 		/// </summary>
-		public override string DisplayName => "Generate OIS Profile Data";
+		public override string DisplayName() => "Generate OIS Profile Data";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateOISProfileData</para>
 		/// </summary>
-		public override string ToolName => "GenerateOISProfileData";
+		public override string ToolName() => "GenerateOISProfileData";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.GenerateOISProfileData</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.GenerateOISProfileData";
+		public override string ExcuteName() => "aviation.GenerateOISProfileData";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRunwayFeatures, InDems, TargetOisFeatures, InFlightpathFeatures, SamplingDistance, SampleProfileOis, SampleProfileRunways, OutOisFeatures };
+		public override object[] Parameters() => new object[] { InRunwayFeatures, InDems, TargetOisFeatures, InFlightpathFeatures, SamplingDistance, SampleProfileOis, SampleProfileRunways, OutOisFeatures };
 
 		/// <summary>
 		/// <para>Input Runway Features</para>

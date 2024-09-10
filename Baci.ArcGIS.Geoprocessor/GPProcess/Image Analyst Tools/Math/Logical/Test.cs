@@ -42,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Test</para>
 		/// </summary>
-		public override string DisplayName => "Test";
+		public override string DisplayName() => "Test";
 
 		/// <summary>
 		/// <para>Tool Name : Test</para>
 		/// </summary>
-		public override string ToolName => "Test";
+		public override string ToolName() => "Test";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.Test</para>
 		/// </summary>
-		public override string ExcuteName => "ia.Test";
+		public override string ExcuteName() => "ia.Test";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, WhereClause, OutRaster };
+		public override object[] Parameters() => new object[] { InRaster, WhereClause, OutRaster };
 
 		/// <summary>
 		/// <para>Input raster</para>

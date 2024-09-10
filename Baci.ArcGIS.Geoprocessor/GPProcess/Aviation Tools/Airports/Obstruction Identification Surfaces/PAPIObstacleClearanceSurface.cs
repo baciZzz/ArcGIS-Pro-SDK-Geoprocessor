@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : PAPI Obstacle Clearance Surface</para>
 		/// </summary>
-		public override string DisplayName => "PAPI Obstacle Clearance Surface";
+		public override string DisplayName() => "PAPI Obstacle Clearance Surface";
 
 		/// <summary>
 		/// <para>Tool Name : PAPIObstacleClearanceSurface</para>
 		/// </summary>
-		public override string ToolName => "PAPIObstacleClearanceSurface";
+		public override string ToolName() => "PAPIObstacleClearanceSurface";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.PAPIObstacleClearanceSurface</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.PAPIObstacleClearanceSurface";
+		public override string ExcuteName() => "aviation.PAPIObstacleClearanceSurface";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Target, RunwayDirection, Length, Divergence, Slope, DistanceFromThreshold, StartHeight, DerivedOutfeatureclass, AirportControlPointFeatureClass };
+		public override object[] Parameters() => new object[] { InFeatures, Target, RunwayDirection, Length, Divergence, Slope, DistanceFromThreshold, StartHeight, DerivedOutfeatureclass, AirportControlPointFeatureClass };
 
 		/// <summary>
 		/// <para>Input Runway Features</para>

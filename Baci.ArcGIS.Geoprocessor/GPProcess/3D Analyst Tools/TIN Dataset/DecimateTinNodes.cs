@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Decimate TIN Nodes</para>
 		/// </summary>
-		public override string DisplayName => "Decimate TIN Nodes";
+		public override string DisplayName() => "Decimate TIN Nodes";
 
 		/// <summary>
 		/// <para>Tool Name : DecimateTinNodes</para>
 		/// </summary>
-		public override string ToolName => "DecimateTinNodes";
+		public override string ToolName() => "DecimateTinNodes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.DecimateTinNodes</para>
 		/// </summary>
-		public override string ExcuteName => "3d.DecimateTinNodes";
+		public override string ExcuteName() => "3d.DecimateTinNodes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "tinSaveVersion", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "tinSaveVersion", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTin, OutTin, Method, CopyBreaklines, ZToleranceValue, MaxNodeValue };
+		public override object[] Parameters() => new object[] { InTin, OutTin, Method, CopyBreaklines, ZToleranceValue, MaxNodeValue };
 
 		/// <summary>
 		/// <para>Input TIN</para>

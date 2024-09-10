@@ -46,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Display Name : Snap</para>
 		/// </summary>
-		public override string DisplayName => "Snap";
+		public override string DisplayName() => "Snap";
 
 		/// <summary>
 		/// <para>Tool Name : Snap</para>
 		/// </summary>
-		public override string ToolName => "Snap";
+		public override string ToolName() => "Snap";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.Snap</para>
 		/// </summary>
-		public override string ExcuteName => "edit.Snap";
+		public override string ExcuteName() => "edit.Snap";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Editing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Editing Tools";
+		public override string ToolboxDisplayName() => "Editing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : edit</para>
 		/// </summary>
-		public override string ToolboxAlise => "edit";
+		public override string ToolboxAlise() => "edit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, SnapEnvironment, OutFeatureClass };
+		public override object[] Parameters() => new object[] { InFeatures, SnapEnvironment, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Input Features</para>

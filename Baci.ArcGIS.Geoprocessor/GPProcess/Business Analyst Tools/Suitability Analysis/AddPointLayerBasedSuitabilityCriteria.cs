@@ -54,37 +54,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Point Layer Based Suitability Criteria</para>
 		/// </summary>
-		public override string DisplayName => "Add Point Layer Based Suitability Criteria";
+		public override string DisplayName() => "Add Point Layer Based Suitability Criteria";
 
 		/// <summary>
 		/// <para>Tool Name : AddPointLayerBasedSuitabilityCriteria</para>
 		/// </summary>
-		public override string ToolName => "AddPointLayerBasedSuitabilityCriteria";
+		public override string ToolName() => "AddPointLayerBasedSuitabilityCriteria";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.AddPointLayerBasedSuitabilityCriteria</para>
 		/// </summary>
-		public override string ExcuteName => "ba.AddPointLayerBasedSuitabilityCriteria";
+		public override string ExcuteName() => "ba.AddPointLayerBasedSuitabilityCriteria";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "baNetworkSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "baNetworkSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAnalysisLayer, SiteLayerIdField, InPointFeatures, CriteriaType, DistanceType, Units, InSiteCentersFeatures, SiteCentersIdField, WeightField, StatisticsType, OutAnalysisLayer, OutCriteriaName, CutoffDistance };
+		public override object[] Parameters() => new object[] { InAnalysisLayer, SiteLayerIdField, InPointFeatures, CriteriaType, DistanceType, Units, InSiteCentersFeatures, SiteCentersIdField, WeightField, StatisticsType, OutAnalysisLayer, OutCriteriaName, CutoffDistance };
 
 		/// <summary>
 		/// <para>Input Suitability Analysis Layer</para>

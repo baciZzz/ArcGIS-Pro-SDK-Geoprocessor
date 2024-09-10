@@ -44,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Colocation Analysis</para>
 		/// </summary>
-		public override string DisplayName => "Colocation Analysis";
+		public override string DisplayName() => "Colocation Analysis";
 
 		/// <summary>
 		/// <para>Tool Name : ColocationAnalysis</para>
 		/// </summary>
-		public override string ToolName => "ColocationAnalysis";
+		public override string ToolName() => "ColocationAnalysis";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.ColocationAnalysis</para>
 		/// </summary>
-		public override string ExcuteName => "stats.ColocationAnalysis";
+		public override string ExcuteName() => "stats.ColocationAnalysis";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputType, InFeaturesOfInterest, OutputFeatures, FieldOfInterest, TimeFieldOfInterest, CategoryOfInterest, InputFeatureForComparison, FieldForComparison, TimeFieldForComparison, CategoryForComparison, NeighborhoodType, NumberOfNeighbors, DistanceBand, WeightsMatrixFile, TemporalRelationshipType, TimeStepInterval, NumberOfPermutations, LocalWeightingScheme, OutputTable };
+		public override object[] Parameters() => new object[] { InputType, InFeaturesOfInterest, OutputFeatures, FieldOfInterest, TimeFieldOfInterest, CategoryOfInterest, InputFeatureForComparison, FieldForComparison, TimeFieldForComparison, CategoryForComparison, NeighborhoodType, NumberOfNeighbors, DistanceBand, WeightsMatrixFile, TemporalRelationshipType, TimeStepInterval, NumberOfPermutations, LocalWeightingScheme, OutputTable };
 
 		/// <summary>
 		/// <para>Input Type</para>

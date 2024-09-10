@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Display Name : Validate S-57 File</para>
 		/// </summary>
-		public override string DisplayName => "Validate S-57 File";
+		public override string DisplayName() => "Validate S-57 File";
 
 		/// <summary>
 		/// <para>Tool Name : ValidateS57File</para>
 		/// </summary>
-		public override string ToolName => "ValidateS57File";
+		public override string ToolName() => "ValidateS57File";
 
 		/// <summary>
 		/// <para>Tool Excute Name : maritime.ValidateS57File</para>
 		/// </summary>
-		public override string ExcuteName => "maritime.ValidateS57File";
+		public override string ExcuteName() => "maritime.ValidateS57File";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Maritime Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Maritime Tools";
+		public override string ToolboxDisplayName() => "Maritime Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : maritime</para>
 		/// </summary>
-		public override string ToolboxAlise => "maritime";
+		public override string ToolboxAlise() => "maritime";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InS57File, OutDirectory, InUpdateCells, RegionalRules, InIgnoreList, OutLogFile };
+		public override object[] Parameters() => new object[] { InS57File, OutDirectory, InUpdateCells, RegionalRules, InIgnoreList, OutLogFile };
 
 		/// <summary>
 		/// <para>Input S-57 File</para>

@@ -83,37 +83,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Intersecting Layers Masks</para>
 		/// </summary>
-		public override string DisplayName => "Intersecting Layers Masks";
+		public override string DisplayName() => "Intersecting Layers Masks";
 
 		/// <summary>
 		/// <para>Tool Name : IntersectingLayersMasks</para>
 		/// </summary>
-		public override string ToolName => "IntersectingLayersMasks";
+		public override string ToolName() => "IntersectingLayersMasks";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.IntersectingLayersMasks</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.IntersectingLayersMasks";
+		public override string ExcuteName() => "cartography.IntersectingLayersMasks";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cartographicCoordinateSystem", "cartographicPartitions" };
+		public override string[] ValidEnvironments() => new string[] { "cartographicCoordinateSystem", "cartographicPartitions" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { MaskingLayer, MaskedLayer, OutputFc, ReferenceScale, SpatialReference, Margin, Method, MaskForNonPlacedAnno, Attributes };
+		public override object[] Parameters() => new object[] { MaskingLayer, MaskedLayer, OutputFc, ReferenceScale, SpatialReference, Margin, Method, MaskForNonPlacedAnno, Attributes };
 
 		/// <summary>
 		/// <para>Masking Layer</para>

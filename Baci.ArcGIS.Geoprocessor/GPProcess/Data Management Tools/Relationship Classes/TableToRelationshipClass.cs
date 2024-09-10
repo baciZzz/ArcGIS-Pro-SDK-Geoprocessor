@@ -108,37 +108,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Table To Relationship Class</para>
 		/// </summary>
-		public override string DisplayName => "Table To Relationship Class";
+		public override string DisplayName() => "Table To Relationship Class";
 
 		/// <summary>
 		/// <para>Tool Name : TableToRelationshipClass</para>
 		/// </summary>
-		public override string ToolName => "TableToRelationshipClass";
+		public override string ToolName() => "TableToRelationshipClass";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.TableToRelationshipClass</para>
 		/// </summary>
-		public override string ExcuteName => "management.TableToRelationshipClass";
+		public override string ExcuteName() => "management.TableToRelationshipClass";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OriginTable, DestinationTable, OutRelationshipClass, RelationshipType, ForwardLabel, BackwardLabel, MessageDirection, Cardinality, RelationshipTable, AttributeFields, OriginPrimaryKey, OriginForeignKey, DestinationPrimaryKey, DestinationForeignKey };
+		public override object[] Parameters() => new object[] { OriginTable, DestinationTable, OutRelationshipClass, RelationshipType, ForwardLabel, BackwardLabel, MessageDirection, Cardinality, RelationshipTable, AttributeFields, OriginPrimaryKey, OriginForeignKey, DestinationPrimaryKey, DestinationForeignKey };
 
 		/// <summary>
 		/// <para>Origin Table</para>

@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Prepare Aviation Data</para>
 		/// </summary>
-		public override string DisplayName => "Prepare Aviation Data";
+		public override string DisplayName() => "Prepare Aviation Data";
 
 		/// <summary>
 		/// <para>Tool Name : PrepareAviationData</para>
 		/// </summary>
-		public override string ToolName => "PrepareAviationData";
+		public override string ToolName() => "PrepareAviationData";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.PrepareAviationData</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.PrepareAviationData";
+		public override string ExcuteName() => "aviation.PrepareAviationData";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetGdb, ConfigFile, InDatasetNames, OutWorkspace };
+		public override object[] Parameters() => new object[] { TargetGdb, ConfigFile, InDatasetNames, OutWorkspace };
 
 		/// <summary>
 		/// <para>Target Geodatabase</para>

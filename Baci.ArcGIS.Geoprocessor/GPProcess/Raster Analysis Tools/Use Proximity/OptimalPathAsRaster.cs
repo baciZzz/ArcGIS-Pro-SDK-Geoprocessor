@@ -48,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Optimal Path As Raster</para>
 		/// </summary>
-		public override string DisplayName => "Optimal Path As Raster";
+		public override string DisplayName() => "Optimal Path As Raster";
 
 		/// <summary>
 		/// <para>Tool Name : OptimalPathAsRaster</para>
 		/// </summary>
-		public override string ToolName => "OptimalPathAsRaster";
+		public override string ToolName() => "OptimalPathAsRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.OptimalPathAsRaster</para>
 		/// </summary>
-		public override string ExcuteName => "ra.OptimalPathAsRaster";
+		public override string ExcuteName() => "ra.OptimalPathAsRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputdestinationrasterorfeatures, Inputdistanceaccumulationraster, Inputbackdirectionraster, Outputrastername, Destinationfield, Pathtype, Outputraster };
+		public override object[] Parameters() => new object[] { Inputdestinationrasterorfeatures, Inputdistanceaccumulationraster, Inputbackdirectionraster, Outputrastername, Destinationfield, Pathtype, Outputraster };
 
 		/// <summary>
 		/// <para>Input raster or feature destination data</para>

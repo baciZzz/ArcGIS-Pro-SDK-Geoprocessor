@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Unregister Replica</para>
 		/// </summary>
-		public override string DisplayName => "Unregister Replica";
+		public override string DisplayName() => "Unregister Replica";
 
 		/// <summary>
 		/// <para>Tool Name : UnregisterReplica</para>
 		/// </summary>
-		public override string ToolName => "UnregisterReplica";
+		public override string ToolName() => "UnregisterReplica";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.UnregisterReplica</para>
 		/// </summary>
-		public override string ExcuteName => "management.UnregisterReplica";
+		public override string ExcuteName() => "management.UnregisterReplica";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeodatabase, InReplica, UpdatedGeodatabase };
+		public override object[] Parameters() => new object[] { InGeodatabase, InReplica, UpdatedGeodatabase };
 
 		/// <summary>
 		/// <para>Input Geodatabase</para>

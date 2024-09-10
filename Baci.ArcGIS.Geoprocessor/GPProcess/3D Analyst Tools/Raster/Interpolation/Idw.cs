@@ -42,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : IDW</para>
 		/// </summary>
-		public override string DisplayName => "IDW";
+		public override string DisplayName() => "IDW";
 
 		/// <summary>
 		/// <para>Tool Name : Idw</para>
 		/// </summary>
-		public override string ToolName => "Idw";
+		public override string ToolName() => "Idw";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Idw</para>
 		/// </summary>
-		public override string ExcuteName => "3d.Idw";
+		public override string ExcuteName() => "3d.Idw";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, ZField, OutRaster, CellSize, Power, SearchRadius, InBarrierPolylineFeatures };
+		public override object[] Parameters() => new object[] { InPointFeatures, ZField, OutRaster, CellSize, Power, SearchRadius, InBarrierPolylineFeatures };
 
 		/// <summary>
 		/// <para>Input point features</para>

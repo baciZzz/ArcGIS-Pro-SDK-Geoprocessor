@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Display Name : Load Territory Records</para>
 		/// </summary>
-		public override string DisplayName => "Load Territory Records";
+		public override string DisplayName() => "Load Territory Records";
 
 		/// <summary>
 		/// <para>Tool Name : LoadTerritoryRecords</para>
 		/// </summary>
-		public override string ToolName => "LoadTerritoryRecords";
+		public override string ToolName() => "LoadTerritoryRecords";
 
 		/// <summary>
 		/// <para>Tool Excute Name : td.LoadTerritoryRecords</para>
 		/// </summary>
-		public override string ExcuteName => "td.LoadTerritoryRecords";
+		public override string ExcuteName() => "td.LoadTerritoryRecords";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Territory Design Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Territory Design Tools";
+		public override string ToolboxDisplayName() => "Territory Design Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : td</para>
 		/// </summary>
-		public override string ToolboxAlise => "td";
+		public override string ToolboxAlise() => "td";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, Level, InData, IdField, NameField, FieldMap, AppendData, OutTerritorySolution };
+		public override object[] Parameters() => new object[] { InTerritorySolution, Level, InData, IdField, NameField, FieldMap, AppendData, OutTerritorySolution };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>

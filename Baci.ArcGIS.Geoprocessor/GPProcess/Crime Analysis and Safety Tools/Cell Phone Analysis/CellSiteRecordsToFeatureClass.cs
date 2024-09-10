@@ -76,37 +76,37 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Tool Display Name : Cell Site Records To Feature Class</para>
 		/// </summary>
-		public override string DisplayName => "Cell Site Records To Feature Class";
+		public override string DisplayName() => "Cell Site Records To Feature Class";
 
 		/// <summary>
 		/// <para>Tool Name : CellSiteRecordsToFeatureClass</para>
 		/// </summary>
-		public override string ToolName => "CellSiteRecordsToFeatureClass";
+		public override string ToolName() => "CellSiteRecordsToFeatureClass";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ca.CellSiteRecordsToFeatureClass</para>
 		/// </summary>
-		public override string ExcuteName => "ca.CellSiteRecordsToFeatureClass";
+		public override string ExcuteName() => "ca.CellSiteRecordsToFeatureClass";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Crime Analysis and Safety Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Crime Analysis and Safety Tools";
+		public override string ToolboxDisplayName() => "Crime Analysis and Safety Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ca</para>
 		/// </summary>
-		public override string ToolboxAlise => "ca";
+		public override string ToolboxAlise() => "ca";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainAttachments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainAttachments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutSiteFeatureClass, OutSectorFeatureClass, IdFields, XField, YField, InCoordinateSystem, OutCoordinateSystem, AzimuthField, DefaultAzimuth, BeamwidthField, BeamwidthType, DefaultBeamwidth, RadiusField, RadiusUnit, DefaultRadiusLength };
+		public override object[] Parameters() => new object[] { InTable, OutSiteFeatureClass, OutSectorFeatureClass, IdFields, XField, YField, InCoordinateSystem, OutCoordinateSystem, AzimuthField, DefaultAzimuth, BeamwidthField, BeamwidthType, DefaultBeamwidth, RadiusField, RadiusUnit, DefaultRadiusLength };
 
 		/// <summary>
 		/// <para>Input Cell Site Table</para>

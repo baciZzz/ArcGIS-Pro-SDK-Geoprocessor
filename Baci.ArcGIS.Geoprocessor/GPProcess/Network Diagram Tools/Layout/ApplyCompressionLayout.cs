@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Apply Compression Layout</para>
 		/// </summary>
-		public override string DisplayName => "Apply Compression Layout";
+		public override string DisplayName() => "Apply Compression Layout";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyCompressionLayout</para>
 		/// </summary>
-		public override string ToolName => "ApplyCompressionLayout";
+		public override string ToolName() => "ApplyCompressionLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.ApplyCompressionLayout</para>
 		/// </summary>
-		public override string ExcuteName => "nd.ApplyCompressionLayout";
+		public override string ExcuteName() => "nd.ApplyCompressionLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, AreContainersPreserved, GroupingDistanceAbsolute, VerticesRemovalRule, OutNetworkDiagramLayer, RunAsync };
+		public override object[] Parameters() => new object[] { InNetworkDiagramLayer, AreContainersPreserved, GroupingDistanceAbsolute, VerticesRemovalRule, OutNetworkDiagramLayer, RunAsync };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>

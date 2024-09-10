@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : EBK Regression Prediction</para>
 		/// </summary>
-		public override string DisplayName => "EBK Regression Prediction";
+		public override string DisplayName() => "EBK Regression Prediction";
 
 		/// <summary>
 		/// <para>Tool Name : EBKRegressionPrediction</para>
 		/// </summary>
-		public override string ToolName => "EBKRegressionPrediction";
+		public override string ToolName() => "EBKRegressionPrediction";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.EBKRegressionPrediction</para>
 		/// </summary>
-		public override string ExcuteName => "ga.EBKRegressionPrediction";
+		public override string ExcuteName() => "ga.EBKRegressionPrediction";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DependentField, InExplanatoryRasters, OutGaLayer, OutRaster, OutDiagnosticFeatureClass, MeasurementErrorField, MinCumulativeVariance, InSubsetFeatures, TransformationType, SemivariogramModelType, MaxLocalPoints, OverlapFactor, NumberSimulations, SearchNeighborhood };
+		public override object[] Parameters() => new object[] { InFeatures, DependentField, InExplanatoryRasters, OutGaLayer, OutRaster, OutDiagnosticFeatureClass, MeasurementErrorField, MinCumulativeVariance, InSubsetFeatures, TransformationType, SemivariogramModelType, MaxLocalPoints, OverlapFactor, NumberSimulations, SearchNeighborhood };
 
 		/// <summary>
 		/// <para>Input dependent variable features</para>

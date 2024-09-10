@@ -38,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Display Name : Import Job Data</para>
 		/// </summary>
-		public override string DisplayName => "Import Job Data";
+		public override string DisplayName() => "Import Job Data";
 
 		/// <summary>
 		/// <para>Tool Name : ImportJobData</para>
 		/// </summary>
-		public override string ToolName => "ImportJobData";
+		public override string ToolName() => "ImportJobData";
 
 		/// <summary>
 		/// <para>Tool Excute Name : wmx.ImportJobData</para>
 		/// </summary>
-		public override string ExcuteName => "wmx.ImportJobData";
+		public override string ExcuteName() => "wmx.ImportJobData";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Workflow Manager Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Workflow Manager Tools";
+		public override string ToolboxDisplayName() => "Workflow Manager Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : wmx</para>
 		/// </summary>
-		public override string ToolboxAlise => "wmx";
+		public override string ToolboxAlise() => "wmx";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFile, InputMerge, InputDatabasepath, InputRepositoryName, OutputStatus };
+		public override object[] Parameters() => new object[] { InputFile, InputMerge, InputDatabasepath, InputRepositoryName, OutputStatus };
 
 		/// <summary>
 		/// <para>Input JXL/Acknowledgement</para>

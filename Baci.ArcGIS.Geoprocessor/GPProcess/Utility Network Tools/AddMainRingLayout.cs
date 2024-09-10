@@ -39,37 +39,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Main Ring Layout</para>
 		/// </summary>
-		public override string DisplayName => "Add Main Ring Layout";
+		public override string DisplayName() => "Add Main Ring Layout";
 
 		/// <summary>
 		/// <para>Tool Name : AddMainRingLayout</para>
 		/// </summary>
-		public override string ToolName => "AddMainRingLayout";
+		public override string ToolName() => "AddMainRingLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.AddMainRingLayout</para>
 		/// </summary>
-		public override string ExcuteName => "un.AddMainRingLayout";
+		public override string ExcuteName() => "un.AddMainRingLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved, RingType, IsUnitAbsolute, RingWidthAbsolute, RingWidthProportional, RingHeightAbsolute, RingHeightProportional, TreeType, PerpendicularAbsolute, PerpendicularProportional, AlongAbsolute, AlongProportional, BreakpointPosition, EdgeDisplayType, OutUtilityNetwork, OutTemplateName, OffsetAbsolute, OffsetProportional };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved, RingType, IsUnitAbsolute, RingWidthAbsolute, RingWidthProportional, RingHeightAbsolute, RingHeightProportional, TreeType, PerpendicularAbsolute, PerpendicularProportional, AlongAbsolute, AlongProportional, BreakpointPosition, EdgeDisplayType, OutUtilityNetwork, OutTemplateName, OffsetAbsolute, OffsetProportional };
 
 		/// <summary>
 		/// <para>Input Network</para>

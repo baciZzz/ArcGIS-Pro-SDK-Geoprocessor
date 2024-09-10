@@ -44,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Extract Video Frames To Images</para>
 		/// </summary>
-		public override string DisplayName => "Extract Video Frames To Images";
+		public override string DisplayName() => "Extract Video Frames To Images";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractVideoFramesToImages</para>
 		/// </summary>
-		public override string ToolName => "ExtractVideoFramesToImages";
+		public override string ToolName() => "ExtractVideoFramesToImages";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.ExtractVideoFramesToImages</para>
 		/// </summary>
-		public override string ExcuteName => "ia.ExtractVideoFramesToImages";
+		public override string ExcuteName() => "ia.ExtractVideoFramesToImages";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InVideo, OutFolder, ImageType, ImageOverlap, RequireFreshMetadata, MinTime };
+		public override object[] Parameters() => new object[] { InVideo, OutFolder, ImageType, ImageOverlap, RequireFreshMetadata, MinTime };
 
 		/// <summary>
 		/// <para>Input Video File</para>

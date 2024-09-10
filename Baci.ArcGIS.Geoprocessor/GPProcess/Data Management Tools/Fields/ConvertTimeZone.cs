@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Convert Time Zone</para>
 		/// </summary>
-		public override string DisplayName => "Convert Time Zone";
+		public override string DisplayName() => "Convert Time Zone";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertTimeZone</para>
 		/// </summary>
-		public override string ToolName => "ConvertTimeZone";
+		public override string ToolName() => "ConvertTimeZone";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ConvertTimeZone</para>
 		/// </summary>
-		public override string ExcuteName => "management.ConvertTimeZone";
+		public override string ExcuteName() => "management.ConvertTimeZone";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, InputTimeField, InputTimeZone, OutputTimeField, OutputTimeZone, InputDst, OutputDst, OutTable };
+		public override object[] Parameters() => new object[] { InTable, InputTimeField, InputTimeZone, OutputTimeField, OutputTimeZone, InputDst, OutputDst, OutTable };
 
 		/// <summary>
 		/// <para>Input Table</para>

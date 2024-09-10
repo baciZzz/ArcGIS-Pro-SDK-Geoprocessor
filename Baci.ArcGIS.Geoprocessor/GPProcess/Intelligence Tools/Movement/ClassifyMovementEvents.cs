@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Classify Movement Events</para>
 		/// </summary>
-		public override string DisplayName => "Classify Movement Events";
+		public override string DisplayName() => "Classify Movement Events";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyMovementEvents</para>
 		/// </summary>
-		public override string ToolName => "ClassifyMovementEvents";
+		public override string ToolName() => "ClassifyMovementEvents";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.ClassifyMovementEvents</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.ClassifyMovementEvents";
+		public override string ExcuteName() => "intelligence.ClassifyMovementEvents";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, IdField, OutFeatureclass, Curvature, NumberOfPoints, RegionsOfInterest, RoiIdField };
+		public override object[] Parameters() => new object[] { InFeatures, IdField, OutFeatureclass, Curvature, NumberOfPoints, RegionsOfInterest, RoiIdField };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Suitability Analysis Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make Suitability Analysis Layer";
+		public override string DisplayName() => "Make Suitability Analysis Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeSuitabilityAnalysisLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeSuitabilityAnalysisLayer";
+		public override string ToolName() => "MakeSuitabilityAnalysisLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.MakeSuitabilityAnalysisLayer</para>
 		/// </summary>
-		public override string ExcuteName => "ba.MakeSuitabilityAnalysisLayer";
+		public override string ExcuteName() => "ba.MakeSuitabilityAnalysisLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, LayerName, OutAnalysisLayer };
+		public override object[] Parameters() => new object[] { InFeatures, LayerName, OutAnalysisLayer };
 
 		/// <summary>
 		/// <para>Input Features</para>

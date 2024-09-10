@@ -63,37 +63,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Grouping Analysis</para>
 		/// </summary>
-		public override string DisplayName => "Grouping Analysis";
+		public override string DisplayName() => "Grouping Analysis";
 
 		/// <summary>
 		/// <para>Tool Name : GroupingAnalysis</para>
 		/// </summary>
-		public override string ToolName => "GroupingAnalysis";
+		public override string ToolName() => "GroupingAnalysis";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.GroupingAnalysis</para>
 		/// </summary>
-		public override string ExcuteName => "stats.GroupingAnalysis";
+		public override string ExcuteName() => "stats.GroupingAnalysis";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "randomGenerator", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "randomGenerator", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, UniqueIDField, OutputFeatureClass, NumberOfGroups, AnalysisFields, SpatialConstraints, DistanceMethod, NumberOfNeighbors, WeightsMatrixFile, InitializationMethod, InitializationField, OutputReportFile, EvaluateOptimalNumberOfGroups, OutputFstat, MaxFstatGroup, MaxFstat };
+		public override object[] Parameters() => new object[] { InputFeatures, UniqueIDField, OutputFeatureClass, NumberOfGroups, AnalysisFields, SpatialConstraints, DistanceMethod, NumberOfNeighbors, WeightsMatrixFile, InitializationMethod, InitializationField, OutputReportFile, EvaluateOptimalNumberOfGroups, OutputFstat, MaxFstatGroup, MaxFstat };
 
 		/// <summary>
 		/// <para>Input Features</para>

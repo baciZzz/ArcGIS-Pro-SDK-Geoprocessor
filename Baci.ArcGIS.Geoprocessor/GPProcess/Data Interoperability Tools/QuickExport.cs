@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataInteroperabilityTools
 		/// <summary>
 		/// <para>Tool Display Name : Quick Export</para>
 		/// </summary>
-		public override string DisplayName => "Quick Export";
+		public override string DisplayName() => "Quick Export";
 
 		/// <summary>
 		/// <para>Tool Name : QuickExport</para>
 		/// </summary>
-		public override string ToolName => "QuickExport";
+		public override string ToolName() => "QuickExport";
 
 		/// <summary>
 		/// <para>Tool Excute Name : interop.QuickExport</para>
 		/// </summary>
-		public override string ExcuteName => "interop.QuickExport";
+		public override string ExcuteName() => "interop.QuickExport";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Interoperability Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Interoperability Tools";
+		public override string ToolboxDisplayName() => "Data Interoperability Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : interop</para>
 		/// </summary>
-		public override string ToolboxAlise => "interop";
+		public override string ToolboxAlise() => "interop";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace", "scratchWorkspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace", "scratchWorkspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Input, Output };
+		public override object[] Parameters() => new object[] { Input, Output };
 
 		/// <summary>
 		/// <para>Input Layer</para>

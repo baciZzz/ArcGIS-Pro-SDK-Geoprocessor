@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Delete Network Category</para>
 		/// </summary>
-		public override string DisplayName => "Delete Network Category";
+		public override string DisplayName() => "Delete Network Category";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteNetworkCategory</para>
 		/// </summary>
-		public override string ToolName => "DeleteNetworkCategory";
+		public override string ToolName() => "DeleteNetworkCategory";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.DeleteNetworkCategory</para>
 		/// </summary>
-		public override string ExcuteName => "un.DeleteNetworkCategory";
+		public override string ExcuteName() => "un.DeleteNetworkCategory";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, CategoryName, OutUtilityNetwork };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, CategoryName, OutUtilityNetwork };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>

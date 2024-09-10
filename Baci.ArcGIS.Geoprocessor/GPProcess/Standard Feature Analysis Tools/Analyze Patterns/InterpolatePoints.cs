@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Interpolate Points</para>
 		/// </summary>
-		public override string DisplayName => "Interpolate Points";
+		public override string DisplayName() => "Interpolate Points";
 
 		/// <summary>
 		/// <para>Tool Name : InterpolatePoints</para>
 		/// </summary>
-		public override string ToolName => "InterpolatePoints";
+		public override string ToolName() => "InterpolatePoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sfa.InterpolatePoints</para>
 		/// </summary>
-		public override string ExcuteName => "sfa.InterpolatePoints";
+		public override string ExcuteName() => "sfa.InterpolatePoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Standard Feature Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Standard Feature Analysis Tools";
+		public override string ToolboxDisplayName() => "Standard Feature Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sfa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sfa";
+		public override string ToolboxAlise() => "sfa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent" };
+		public override string[] ValidEnvironments() => new string[] { "extent" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputlayer, Outputname, Field, Interpolateoption, Outputpredictionerror, Classificationtype, Numclasses, Classbreaks, Boundingpolygonlayer, Predictatpointlayer, Outputlayer, Outputpredictionerrorlayer, Outputpredictedpointslayer };
+		public override object[] Parameters() => new object[] { Inputlayer, Outputname, Field, Interpolateoption, Outputpredictionerror, Classificationtype, Numclasses, Classbreaks, Boundingpolygonlayer, Predictatpointlayer, Outputlayer, Outputpredictionerrorlayer, Outputpredictedpointslayer };
 
 		/// <summary>
 		/// <para>Input Features</para>

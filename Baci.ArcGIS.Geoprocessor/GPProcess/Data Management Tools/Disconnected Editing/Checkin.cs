@@ -34,37 +34,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Check In</para>
 		/// </summary>
-		public override string DisplayName => "Check In";
+		public override string DisplayName() => "Check In";
 
 		/// <summary>
 		/// <para>Tool Name : Checkin</para>
 		/// </summary>
-		public override string ToolName => "Checkin";
+		public override string ToolName() => "Checkin";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Checkin</para>
 		/// </summary>
-		public override string ExcuteName => "management.Checkin";
+		public override string ExcuteName() => "management.Checkin";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, DestWorkspace, Reconcile, OutputWorkspace };
+		public override object[] Parameters() => new object[] { InWorkspace, DestWorkspace, Reconcile, OutputWorkspace };
 
 		/// <summary>
 		/// <para>Check-in from Workspace</para>

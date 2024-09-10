@@ -47,37 +47,37 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Display Name : Transfer Attributes</para>
 		/// </summary>
-		public override string DisplayName => "Transfer Attributes";
+		public override string DisplayName() => "Transfer Attributes";
 
 		/// <summary>
 		/// <para>Tool Name : TransferAttributes</para>
 		/// </summary>
-		public override string ToolName => "TransferAttributes";
+		public override string ToolName() => "TransferAttributes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.TransferAttributes</para>
 		/// </summary>
-		public override string ExcuteName => "edit.TransferAttributes";
+		public override string ExcuteName() => "edit.TransferAttributes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Editing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Editing Tools";
+		public override string ToolboxDisplayName() => "Editing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : edit</para>
 		/// </summary>
-		public override string ToolboxAlise => "edit";
+		public override string ToolboxAlise() => "edit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { SourceFeatures, TargetFeatures, TransferFields, SearchDistance, MatchFields, OutMatchTable, OutFeatureClass, TransferRuleFields };
+		public override object[] Parameters() => new object[] { SourceFeatures, TargetFeatures, TransferFields, SearchDistance, MatchFields, OutMatchTable, OutFeatureClass, TransferRuleFields };
 
 		/// <summary>
 		/// <para>Source Features</para>

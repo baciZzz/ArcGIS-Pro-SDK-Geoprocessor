@@ -42,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Composite Address Locator</para>
 		/// </summary>
-		public override string DisplayName => "Create Composite Address Locator";
+		public override string DisplayName() => "Create Composite Address Locator";
 
 		/// <summary>
 		/// <para>Tool Name : CreateCompositeAddressLocator</para>
 		/// </summary>
-		public override string ToolName => "CreateCompositeAddressLocator";
+		public override string ToolName() => "CreateCompositeAddressLocator";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geocoding.CreateCompositeAddressLocator</para>
 		/// </summary>
-		public override string ExcuteName => "geocoding.CreateCompositeAddressLocator";
+		public override string ExcuteName() => "geocoding.CreateCompositeAddressLocator";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geocoding Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geocoding Tools";
+		public override string ToolboxDisplayName() => "Geocoding Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geocoding</para>
 		/// </summary>
-		public override string ToolboxAlise => "geocoding";
+		public override string ToolboxAlise() => "geocoding";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAddressLocators, InFieldMap, InSelectionCriteria, OutCompositeAddressLocator };
+		public override object[] Parameters() => new object[] { InAddressLocators, InFieldMap, InSelectionCriteria, OutCompositeAddressLocator };
 
 		/// <summary>
 		/// <para>Address Locators</para>

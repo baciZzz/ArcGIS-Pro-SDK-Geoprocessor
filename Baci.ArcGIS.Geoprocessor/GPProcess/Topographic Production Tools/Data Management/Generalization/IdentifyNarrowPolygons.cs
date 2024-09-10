@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Identify Narrow Polygons</para>
 		/// </summary>
-		public override string DisplayName => "Identify Narrow Polygons";
+		public override string DisplayName() => "Identify Narrow Polygons";
 
 		/// <summary>
 		/// <para>Tool Name : IdentifyNarrowPolygons</para>
 		/// </summary>
-		public override string ToolName => "IdentifyNarrowPolygons";
+		public override string ToolName() => "IdentifyNarrowPolygons";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.IdentifyNarrowPolygons</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.IdentifyNarrowPolygons";
+		public override string ExcuteName() => "topographic.IdentifyNarrowPolygons";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, MinWidth, MinLength, TaperLength, ConnectingFeatures };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, MinWidth, MinLength, TaperLength, ConnectingFeatures };
 
 		/// <summary>
 		/// <para>Input Features</para>

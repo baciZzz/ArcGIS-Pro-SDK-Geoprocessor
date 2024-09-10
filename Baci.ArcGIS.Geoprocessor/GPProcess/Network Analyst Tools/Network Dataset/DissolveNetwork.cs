@@ -39,37 +39,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Dissolve Network</para>
 		/// </summary>
-		public override string DisplayName => "Dissolve Network";
+		public override string DisplayName() => "Dissolve Network";
 
 		/// <summary>
 		/// <para>Tool Name : DissolveNetwork</para>
 		/// </summary>
-		public override string ToolName => "DissolveNetwork";
+		public override string ToolName() => "DissolveNetwork";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.DissolveNetwork</para>
 		/// </summary>
-		public override string ExcuteName => "na.DissolveNetwork";
+		public override string ExcuteName() => "na.DissolveNetwork";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDataset, OutWorkspaceLocation, OutNetworkDataset };
+		public override object[] Parameters() => new object[] { InNetworkDataset, OutWorkspaceLocation, OutNetworkDataset };
 
 		/// <summary>
 		/// <para>Input Network Dataset</para>

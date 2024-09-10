@@ -39,37 +39,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Reshape Diagram Edges Layout</para>
 		/// </summary>
-		public override string DisplayName => "Add Reshape Diagram Edges Layout";
+		public override string DisplayName() => "Add Reshape Diagram Edges Layout";
 
 		/// <summary>
 		/// <para>Tool Name : AddReshapeDiagramEdgesLayout</para>
 		/// </summary>
-		public override string ToolName => "AddReshapeDiagramEdgesLayout";
+		public override string ToolName() => "AddReshapeDiagramEdgesLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.AddReshapeDiagramEdgesLayout</para>
 		/// </summary>
-		public override string ExcuteName => "un.AddReshapeDiagramEdgesLayout";
+		public override string ExcuteName() => "un.AddReshapeDiagramEdgesLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved, ReshapeType, IsPathPreserved, OffsetBetweenSegmentAbsolute, BreakpointAbsolute, ShiftBetweenEdgeAbsolute, AngleThreshold, OutUtilityNetwork, OutTemplateName, CircularArcRadius, CircularArcPosition };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved, ReshapeType, IsPathPreserved, OffsetBetweenSegmentAbsolute, BreakpointAbsolute, ShiftBetweenEdgeAbsolute, AngleThreshold, OutUtilityNetwork, OutTemplateName, CircularArcRadius, CircularArcPosition };
 
 		/// <summary>
 		/// <para>Input Network</para>

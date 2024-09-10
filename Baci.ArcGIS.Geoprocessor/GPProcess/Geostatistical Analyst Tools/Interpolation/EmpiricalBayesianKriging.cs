@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Empirical Bayesian Kriging</para>
 		/// </summary>
-		public override string DisplayName => "Empirical Bayesian Kriging";
+		public override string DisplayName() => "Empirical Bayesian Kriging";
 
 		/// <summary>
 		/// <para>Tool Name : EmpiricalBayesianKriging</para>
 		/// </summary>
-		public override string ToolName => "EmpiricalBayesianKriging";
+		public override string ToolName() => "EmpiricalBayesianKriging";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.EmpiricalBayesianKriging</para>
 		/// </summary>
-		public override string ExcuteName => "ga.EmpiricalBayesianKriging";
+		public override string ExcuteName() => "ga.EmpiricalBayesianKriging";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ZField, OutGaLayer, OutRaster, CellSize, TransformationType, MaxLocalPoints, OverlapFactor, NumberSemivariograms, SearchNeighborhood, OutputType, QuantileValue, ThresholdType, ProbabilityThreshold, SemivariogramModelType };
+		public override object[] Parameters() => new object[] { InFeatures, ZField, OutGaLayer, OutRaster, CellSize, TransformationType, MaxLocalPoints, OverlapFactor, NumberSemivariograms, SearchNeighborhood, OutputType, QuantileValue, ThresholdType, ProbabilityThreshold, SemivariogramModelType };
 
 		/// <summary>
 		/// <para>Input features</para>

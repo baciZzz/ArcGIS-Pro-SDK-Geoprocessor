@@ -38,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Cell Statistics</para>
 		/// </summary>
-		public override string DisplayName => "Cell Statistics";
+		public override string DisplayName() => "Cell Statistics";
 
 		/// <summary>
 		/// <para>Tool Name : CellStatistics</para>
 		/// </summary>
-		public override string ToolName => "CellStatistics";
+		public override string ToolName() => "CellStatistics";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.CellStatistics</para>
 		/// </summary>
-		public override string ExcuteName => "ia.CellStatistics";
+		public override string ExcuteName() => "ia.CellStatistics";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRastersOrConstants, OutRaster, StatisticsType, IgnoreNodata, ProcessAsMultiband };
+		public override object[] Parameters() => new object[] { InRastersOrConstants, OutRaster, StatisticsType, IgnoreNodata, ProcessAsMultiband };
 
 		/// <summary>
 		/// <para>Input rasters or constant values</para>

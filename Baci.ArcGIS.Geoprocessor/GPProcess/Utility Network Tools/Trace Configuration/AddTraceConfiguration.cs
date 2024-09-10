@@ -49,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Trace Configuration</para>
 		/// </summary>
-		public override string DisplayName => "Add Trace Configuration";
+		public override string DisplayName() => "Add Trace Configuration";
 
 		/// <summary>
 		/// <para>Tool Name : AddTraceConfiguration</para>
 		/// </summary>
-		public override string ToolName => "AddTraceConfiguration";
+		public override string ToolName() => "AddTraceConfiguration";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.AddTraceConfiguration</para>
 		/// </summary>
-		public override string ExcuteName => "un.AddTraceConfiguration";
+		public override string ExcuteName() => "un.AddTraceConfiguration";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TraceConfigName, TraceType, Description, Tags, DomainNetwork, Tier, TargetTier, SubnetworkName, ShortestPathNetworkAttributeName, IncludeContainers, IncludeContent, IncludeStructures, IncludeBarriers, ValidateConsistency, ConditionBarriers, FunctionBarriers, TraversabilityScope, FilterBarriers, FilterFunctionBarriers, FilterScope, FilterBitsetNetworkAttributeName, FilterNearest, NearestCount, NearestCostNetworkAttribute, NearestCategories, NearestAssets, Functions, Propagators, OutputAssettypes, OutputConditions, OutUtilityNetwork, IncludeIsolatedFeatures, IgnoreBarriersAtStartingPoints, IncludeUpToFirstSpatialContainer, ResultTypes, AllowIndeterminateFlow, ValidateLocatability };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TraceConfigName, TraceType, Description, Tags, DomainNetwork, Tier, TargetTier, SubnetworkName, ShortestPathNetworkAttributeName, IncludeContainers, IncludeContent, IncludeStructures, IncludeBarriers, ValidateConsistency, ConditionBarriers, FunctionBarriers, TraversabilityScope, FilterBarriers, FilterFunctionBarriers, FilterScope, FilterBitsetNetworkAttributeName, FilterNearest, NearestCount, NearestCostNetworkAttribute, NearestCategories, NearestAssets, Functions, Propagators, OutputAssettypes, OutputConditions, OutUtilityNetwork, IncludeIsolatedFeatures, IgnoreBarriersAtStartingPoints, IncludeUpToFirstSpatialContainer, ResultTypes, AllowIndeterminateFlow, ValidateLocatability };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>

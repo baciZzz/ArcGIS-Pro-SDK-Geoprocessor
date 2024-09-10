@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Update Property Count</para>
 		/// </summary>
-		public override string DisplayName => "Update Property Count";
+		public override string DisplayName() => "Update Property Count";
 
 		/// <summary>
 		/// <para>Tool Name : UpdatePropertyCount</para>
 		/// </summary>
-		public override string ToolName => "UpdatePropertyCount";
+		public override string ToolName() => "UpdatePropertyCount";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.UpdatePropertyCount</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.UpdatePropertyCount";
+		public override string ExcuteName() => "topographic.UpdatePropertyCount";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { JobId, PropertiesTableName, PropertyField, UpdateValue, DatabasePath, UpdatedJobId };
+		public override object[] Parameters() => new object[] { JobId, PropertiesTableName, PropertyField, UpdateValue, DatabasePath, UpdatedJobId };
 
 		/// <summary>
 		/// <para>Job ID</para>

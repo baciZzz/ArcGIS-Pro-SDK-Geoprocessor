@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Compact</para>
 		/// </summary>
-		public override string DisplayName => "Compact";
+		public override string DisplayName() => "Compact";
 
 		/// <summary>
 		/// <para>Tool Name : Compact</para>
 		/// </summary>
-		public override string ToolName => "Compact";
+		public override string ToolName() => "Compact";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Compact</para>
 		/// </summary>
-		public override string ExcuteName => "management.Compact";
+		public override string ExcuteName() => "management.Compact";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, OutWorkspace };
+		public override object[] Parameters() => new object[] { InWorkspace, OutWorkspace };
 
 		/// <summary>
 		/// <para>Input Workspace</para>

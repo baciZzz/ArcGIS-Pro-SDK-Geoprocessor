@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Raster From Raster Function</para>
 		/// </summary>
-		public override string DisplayName => "Generate Raster From Raster Function";
+		public override string DisplayName() => "Generate Raster From Raster Function";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateRasterFromRasterFunction</para>
 		/// </summary>
-		public override string ToolName => "GenerateRasterFromRasterFunction";
+		public override string ToolName() => "GenerateRasterFromRasterFunction";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.GenerateRasterFromRasterFunction</para>
 		/// </summary>
-		public override string ExcuteName => "management.GenerateRasterFromRasterFunction";
+		public override string ExcuteName() => "management.GenerateRasterFromRasterFunction";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellAlignment", "cellSize", "compression", "extent", "geographicTransformations", "gpuID", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "processorType", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellAlignment", "cellSize", "compression", "extent", "geographicTransformations", "gpuID", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "processorType", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { RasterFunction, OutRasterDataset, RasterFunctionArguments, RasterProperties, Format, ProcessAsMultidimensional };
+		public override object[] Parameters() => new object[] { RasterFunction, OutRasterDataset, RasterFunctionArguments, RasterProperties, Format, ProcessAsMultidimensional };
 
 		/// <summary>
 		/// <para>Input Raster Function</para>

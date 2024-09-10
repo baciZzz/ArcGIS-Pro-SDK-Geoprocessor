@@ -51,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Network Spatial Weights</para>
 		/// </summary>
-		public override string DisplayName => "Generate Network Spatial Weights";
+		public override string DisplayName() => "Generate Network Spatial Weights";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateNetworkSpatialWeights</para>
 		/// </summary>
-		public override string ToolName => "GenerateNetworkSpatialWeights";
+		public override string ToolName() => "GenerateNetworkSpatialWeights";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.GenerateNetworkSpatialWeights</para>
 		/// </summary>
-		public override string ExcuteName => "stats.GenerateNetworkSpatialWeights";
+		public override string ExcuteName() => "stats.GenerateNetworkSpatialWeights";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, UniqueIDField, OutputSpatialWeightsMatrixFile, InputNetwork, ImpedanceAttribute, ImpedanceCutoff, MaximumNumberOfNeighbors, Barriers, UTurnPolicy, Restrictions, UseHierarchyInAnalysis, SearchTolerance, ConceptualizationOfSpatialRelationships, Exponent, RowStandardization, TravelMode, TimeOfDay };
+		public override object[] Parameters() => new object[] { InputFeatureClass, UniqueIDField, OutputSpatialWeightsMatrixFile, InputNetwork, ImpedanceAttribute, ImpedanceCutoff, MaximumNumberOfNeighbors, Barriers, UTurnPolicy, Restrictions, UseHierarchyInAnalysis, SearchTolerance, ConceptualizationOfSpatialRelationships, Exponent, RowStandardization, TravelMode, TimeOfDay };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>

@@ -36,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Raster to Polygon</para>
 		/// </summary>
-		public override string DisplayName => "Raster to Polygon";
+		public override string DisplayName() => "Raster to Polygon";
 
 		/// <summary>
 		/// <para>Tool Name : RasterToPolygon</para>
 		/// </summary>
-		public override string ToolName => "RasterToPolygon";
+		public override string ToolName() => "RasterToPolygon";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.RasterToPolygon</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.RasterToPolygon";
+		public override string ExcuteName() => "conversion.RasterToPolygon";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutPolygonFeatures, Simplify, RasterField, CreateMultipartFeatures, MaxVerticesPerFeature };
+		public override object[] Parameters() => new object[] { InRaster, OutPolygonFeatures, Simplify, RasterField, CreateMultipartFeatures, MaxVerticesPerFeature };
 
 		/// <summary>
 		/// <para>Input raster</para>

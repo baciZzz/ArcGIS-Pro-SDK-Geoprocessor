@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : If Field Exists</para>
 		/// </summary>
-		public override string DisplayName => "If Field Exists";
+		public override string DisplayName() => "If Field Exists";
 
 		/// <summary>
 		/// <para>Tool Name : FieldExistsIfThenElse</para>
 		/// </summary>
-		public override string ToolName => "FieldExistsIfThenElse";
+		public override string ToolName() => "FieldExistsIfThenElse";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.FieldExistsIfThenElse</para>
 		/// </summary>
-		public override string ExcuteName => "mb.FieldExistsIfThenElse";
+		public override string ExcuteName() => "mb.FieldExistsIfThenElse";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, FieldTestType, Field, True, False };
+		public override object[] Parameters() => new object[] { InTable, FieldTestType, Field, True, False };
 
 		/// <summary>
 		/// <para>Input Table</para>

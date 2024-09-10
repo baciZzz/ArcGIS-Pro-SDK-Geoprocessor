@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Simplify 3D Line</para>
 		/// </summary>
-		public override string DisplayName => "Simplify 3D Line";
+		public override string DisplayName() => "Simplify 3D Line";
 
 		/// <summary>
 		/// <para>Tool Name : Simplify3DLine</para>
 		/// </summary>
-		public override string ToolName => "Simplify3DLine";
+		public override string ToolName() => "Simplify3DLine";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Simplify3DLine</para>
 		/// </summary>
-		public override string ExcuteName => "3d.Simplify3DLine";
+		public override string ExcuteName() => "3d.Simplify3DLine";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Tolerance };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, Tolerance };
 
 		/// <summary>
 		/// <para>Input Line Features</para>

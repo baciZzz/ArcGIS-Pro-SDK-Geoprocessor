@@ -39,37 +39,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Grid Layout</para>
 		/// </summary>
-		public override string DisplayName => "Add Grid Layout";
+		public override string DisplayName() => "Add Grid Layout";
 
 		/// <summary>
 		/// <para>Tool Name : AddGridLayout</para>
 		/// </summary>
-		public override string ToolName => "AddGridLayout";
+		public override string ToolName() => "AddGridLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.AddGridLayout</para>
 		/// </summary>
-		public override string ExcuteName => "un.AddGridLayout";
+		public override string ExcuteName() => "un.AddGridLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved, CellWidthAbsolute, CellHeightAbsolute, OutUtilityNetwork, OutTemplateName };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved, CellWidthAbsolute, CellHeightAbsolute, OutUtilityNetwork, OutTemplateName };
 
 		/// <summary>
 		/// <para>Input Network</para>

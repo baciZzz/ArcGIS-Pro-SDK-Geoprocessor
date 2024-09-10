@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Delete</para>
 		/// </summary>
-		public override string DisplayName => "Delete";
+		public override string DisplayName() => "Delete";
 
 		/// <summary>
 		/// <para>Tool Name : Delete</para>
 		/// </summary>
-		public override string ToolName => "Delete";
+		public override string ToolName() => "Delete";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Delete</para>
 		/// </summary>
-		public override string ExcuteName => "management.Delete";
+		public override string ExcuteName() => "management.Delete";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, DataType, OutResults };
+		public override object[] Parameters() => new object[] { InData, DataType, OutResults };
 
 		/// <summary>
 		/// <para>Input Data Element</para>

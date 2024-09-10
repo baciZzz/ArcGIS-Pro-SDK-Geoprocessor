@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Training Samples From Seed Points</para>
 		/// </summary>
-		public override string DisplayName => "Generate Training Samples From Seed Points";
+		public override string DisplayName() => "Generate Training Samples From Seed Points";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateTrainingSamplesFromSeedPoints</para>
 		/// </summary>
-		public override string ToolName => "GenerateTrainingSamplesFromSeedPoints";
+		public override string ToolName() => "GenerateTrainingSamplesFromSeedPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.GenerateTrainingSamplesFromSeedPoints</para>
 		/// </summary>
-		public override string ExcuteName => "sa.GenerateTrainingSamplesFromSeedPoints";
+		public override string ExcuteName() => "sa.GenerateTrainingSamplesFromSeedPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InClassData, InSeedPoints, OutTrainingFeatureClass, MinSampleArea, MaxSampleRadius };
+		public override object[] Parameters() => new object[] { InClassData, InSeedPoints, OutTrainingFeatureClass, MinSampleArea, MaxSampleRadius };
 
 		/// <summary>
 		/// <para>Input Raster or Feature Class Data</para>

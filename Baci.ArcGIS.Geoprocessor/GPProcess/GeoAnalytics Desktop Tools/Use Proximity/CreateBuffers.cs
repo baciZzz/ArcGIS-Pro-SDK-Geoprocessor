@@ -52,37 +52,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Buffers</para>
 		/// </summary>
-		public override string DisplayName => "Create Buffers";
+		public override string DisplayName() => "Create Buffers";
 
 		/// <summary>
 		/// <para>Tool Name : CreateBuffers</para>
 		/// </summary>
-		public override string ToolName => "CreateBuffers";
+		public override string ToolName() => "CreateBuffers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.CreateBuffers</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.CreateBuffers";
+		public override string ExcuteName() => "gapro.CreateBuffers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutFeatureClass, Method, BufferType, BufferField, BufferDistance, BufferExpression, DissolveOption, DissolveFields, SummaryFields, Multipart };
+		public override object[] Parameters() => new object[] { InputLayer, OutFeatureClass, Method, BufferType, BufferField, BufferDistance, BufferExpression, DissolveOption, DissolveFields, SummaryFields, Multipart };
 
 		/// <summary>
 		/// <para>Input Layer</para>

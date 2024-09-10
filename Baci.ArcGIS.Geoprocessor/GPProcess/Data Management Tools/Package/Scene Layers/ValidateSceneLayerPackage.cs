@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Validate Scene Layer</para>
 		/// </summary>
-		public override string DisplayName => "Validate Scene Layer";
+		public override string DisplayName() => "Validate Scene Layer";
 
 		/// <summary>
 		/// <para>Tool Name : ValidateSceneLayerPackage</para>
 		/// </summary>
-		public override string ToolName => "ValidateSceneLayerPackage";
+		public override string ToolName() => "ValidateSceneLayerPackage";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ValidateSceneLayerPackage</para>
 		/// </summary>
-		public override string ExcuteName => "management.ValidateSceneLayerPackage";
+		public override string ExcuteName() => "management.ValidateSceneLayerPackage";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSlpk, OutReport };
+		public override object[] Parameters() => new object[] { InSlpk, OutReport };
 
 		/// <summary>
 		/// <para>Input Scene Layer</para>

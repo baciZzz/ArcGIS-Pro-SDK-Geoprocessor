@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : LAS Building Multipatch</para>
 		/// </summary>
-		public override string DisplayName => "LAS Building Multipatch";
+		public override string DisplayName() => "LAS Building Multipatch";
 
 		/// <summary>
 		/// <para>Tool Name : LasBuildingMultipatch</para>
 		/// </summary>
-		public override string ToolName => "LasBuildingMultipatch";
+		public override string ToolName() => "LasBuildingMultipatch";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.LasBuildingMultipatch</para>
 		/// </summary>
-		public override string ExcuteName => "3d.LasBuildingMultipatch";
+		public override string ExcuteName() => "3d.LasBuildingMultipatch";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, InFeatures, Ground, OutFeatureClass, PointSelection, Simplification };
+		public override object[] Parameters() => new object[] { InLasDataset, InFeatures, Ground, OutFeatureClass, PointSelection, Simplification };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>

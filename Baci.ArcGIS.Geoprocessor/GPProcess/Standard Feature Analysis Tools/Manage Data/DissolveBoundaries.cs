@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Dissolve Boundaries</para>
 		/// </summary>
-		public override string DisplayName => "Dissolve Boundaries";
+		public override string DisplayName() => "Dissolve Boundaries";
 
 		/// <summary>
 		/// <para>Tool Name : DissolveBoundaries</para>
 		/// </summary>
-		public override string ToolName => "DissolveBoundaries";
+		public override string ToolName() => "DissolveBoundaries";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sfa.DissolveBoundaries</para>
 		/// </summary>
-		public override string ExcuteName => "sfa.DissolveBoundaries";
+		public override string ExcuteName() => "sfa.DissolveBoundaries";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Standard Feature Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Standard Feature Analysis Tools";
+		public override string ToolboxDisplayName() => "Standard Feature Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sfa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sfa";
+		public override string ToolboxAlise() => "sfa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent" };
+		public override string[] ValidEnvironments() => new string[] { "extent" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputlayer, Outputname, Dissolvefields, Summaryfields, Output };
+		public override object[] Parameters() => new object[] { Inputlayer, Outputname, Dissolvefields, Summaryfields, Output };
 
 		/// <summary>
 		/// <para>Input Layer</para>

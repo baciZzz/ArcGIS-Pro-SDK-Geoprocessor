@@ -37,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Diagnose Version Metadata</para>
 		/// </summary>
-		public override string DisplayName => "Diagnose Version Metadata";
+		public override string DisplayName() => "Diagnose Version Metadata";
 
 		/// <summary>
 		/// <para>Tool Name : DiagnoseVersionMetadata</para>
 		/// </summary>
-		public override string ToolName => "DiagnoseVersionMetadata";
+		public override string ToolName() => "DiagnoseVersionMetadata";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DiagnoseVersionMetadata</para>
 		/// </summary>
-		public override string ExcuteName => "management.DiagnoseVersionMetadata";
+		public override string ExcuteName() => "management.DiagnoseVersionMetadata";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabase, OutLog, OutWorkspace };
+		public override object[] Parameters() => new object[] { InputDatabase, OutLog, OutWorkspace };
 
 		/// <summary>
 		/// <para>Input Database Connection</para>

@@ -34,37 +34,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Outside Boundary</para>
 		/// </summary>
-		public override string DisplayName => "Outside Boundary";
+		public override string DisplayName() => "Outside Boundary";
 
 		/// <summary>
 		/// <para>Tool Name : OutsideBoundary</para>
 		/// </summary>
-		public override string ToolName => "OutsideBoundary";
+		public override string ToolName() => "OutsideBoundary";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.OutsideBoundary</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.OutsideBoundary";
+		public override string ExcuteName() => "intelligence.OutsideBoundary";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputPointFeatures, InputAreaFeatures, InputSearchExpression, InputAreaExpression, OutputIdList };
+		public override object[] Parameters() => new object[] { InputPointFeatures, InputAreaFeatures, InputSearchExpression, InputAreaExpression, OutputIdList };
 
 		/// <summary>
 		/// <para>Input Points</para>

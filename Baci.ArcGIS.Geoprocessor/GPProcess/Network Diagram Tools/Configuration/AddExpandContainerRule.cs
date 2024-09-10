@@ -68,37 +68,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Expand Container Rule</para>
 		/// </summary>
-		public override string DisplayName => "Add Expand Container Rule";
+		public override string DisplayName() => "Add Expand Container Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AddExpandContainerRule</para>
 		/// </summary>
-		public override string ToolName => "AddExpandContainerRule";
+		public override string ToolName() => "AddExpandContainerRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddExpandContainerRule</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddExpandContainerRule";
+		public override string ExcuteName() => "nd.AddExpandContainerRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, ContainersVisibility, ContainerType, InverseSourceSelection, ContainerSources, Description, OutUtilityNetwork, OutTemplateName };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, ContainersVisibility, ContainerType, InverseSourceSelection, ContainerSources, Description, OutUtilityNetwork, OutTemplateName };
 
 		/// <summary>
 		/// <para>Input Network</para>

@@ -38,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Float to Raster</para>
 		/// </summary>
-		public override string DisplayName => "Float to Raster";
+		public override string DisplayName() => "Float to Raster";
 
 		/// <summary>
 		/// <para>Tool Name : FloatToRaster</para>
 		/// </summary>
-		public override string ToolName => "FloatToRaster";
+		public override string ToolName() => "FloatToRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.FloatToRaster</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.FloatToRaster";
+		public override string ExcuteName() => "conversion.FloatToRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "compression", "configKeyword", "pyramid", "scratchWorkspace", "tileSize" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "compression", "configKeyword", "pyramid", "scratchWorkspace", "tileSize" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFloatFile, OutRaster };
+		public override object[] Parameters() => new object[] { InFloatFile, OutRaster };
 
 		/// <summary>
 		/// <para>Input floating point raster file</para>

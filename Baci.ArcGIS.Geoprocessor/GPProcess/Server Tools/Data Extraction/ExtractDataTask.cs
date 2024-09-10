@@ -72,37 +72,37 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Extract Data Task</para>
 		/// </summary>
-		public override string DisplayName => "Extract Data Task";
+		public override string DisplayName() => "Extract Data Task";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractDataTask</para>
 		/// </summary>
-		public override string ToolName => "ExtractDataTask";
+		public override string ToolName() => "ExtractDataTask";
 
 		/// <summary>
 		/// <para>Tool Excute Name : server.ExtractDataTask</para>
 		/// </summary>
-		public override string ExcuteName => "server.ExtractDataTask";
+		public override string ExcuteName() => "server.ExtractDataTask";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Server Tools";
+		public override string ToolboxDisplayName() => "Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : server</para>
 		/// </summary>
-		public override string ToolboxAlise => "server";
+		public override string ToolboxAlise() => "server";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { LayersToClip, AreaOfInterest, FeatureFormat, RasterFormat, OutputZipFile };
+		public override object[] Parameters() => new object[] { LayersToClip, AreaOfInterest, FeatureFormat, RasterFormat, OutputZipFile };
 
 		/// <summary>
 		/// <para>Layers to Clip</para>

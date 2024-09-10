@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Display Name : Import S-57 To Geodatabase</para>
 		/// </summary>
-		public override string DisplayName => "Import S-57 To Geodatabase";
+		public override string DisplayName() => "Import S-57 To Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : ImportS57ToGeodatabase</para>
 		/// </summary>
-		public override string ToolName => "ImportS57ToGeodatabase";
+		public override string ToolName() => "ImportS57ToGeodatabase";
 
 		/// <summary>
 		/// <para>Tool Excute Name : maritime.ImportS57ToGeodatabase</para>
 		/// </summary>
-		public override string ExcuteName => "maritime.ImportS57ToGeodatabase";
+		public override string ExcuteName() => "maritime.ImportS57ToGeodatabase";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Maritime Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Maritime Tools";
+		public override string ToolboxDisplayName() => "Maritime Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : maritime</para>
 		/// </summary>
-		public override string ToolboxAlise => "maritime";
+		public override string ToolboxAlise() => "maritime";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InBaseCell, TargetWorkspace, InUpdateCells, InProductConfig, OutputWorkspace };
+		public override object[] Parameters() => new object[] { InBaseCell, TargetWorkspace, InUpdateCells, InProductConfig, OutputWorkspace };
 
 		/// <summary>
 		/// <para>Input Base S-57 Cell</para>

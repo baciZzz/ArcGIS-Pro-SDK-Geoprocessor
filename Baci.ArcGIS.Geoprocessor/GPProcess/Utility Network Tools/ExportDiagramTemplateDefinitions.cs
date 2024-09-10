@@ -34,37 +34,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Diagram Template Definitions</para>
 		/// </summary>
-		public override string DisplayName => "Export Diagram Template Definitions";
+		public override string DisplayName() => "Export Diagram Template Definitions";
 
 		/// <summary>
 		/// <para>Tool Name : ExportDiagramTemplateDefinitions</para>
 		/// </summary>
-		public override string ToolName => "ExportDiagramTemplateDefinitions";
+		public override string ToolName() => "ExportDiagramTemplateDefinitions";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.ExportDiagramTemplateDefinitions</para>
 		/// </summary>
-		public override string ExcuteName => "un.ExportDiagramTemplateDefinitions";
+		public override string ExcuteName() => "un.ExportDiagramTemplateDefinitions";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, OutNdbdFile, OutNdldFile, OutUtilityNetwork, OutTemplateName };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, OutNdbdFile, OutNdldFile, OutUtilityNetwork, OutTemplateName };
 
 		/// <summary>
 		/// <para>Input Network</para>

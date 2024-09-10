@@ -44,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : If Field Value Is</para>
 		/// </summary>
-		public override string DisplayName => "If Field Value Is";
+		public override string DisplayName() => "If Field Value Is";
 
 		/// <summary>
 		/// <para>Tool Name : FieldValueIsIfThenElse</para>
 		/// </summary>
-		public override string ToolName => "FieldValueIsIfThenElse";
+		public override string ToolName() => "FieldValueIsIfThenElse";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.FieldValueIsIfThenElse</para>
 		/// </summary>
-		public override string ExcuteName => "mb.FieldValueIsIfThenElse";
+		public override string ExcuteName() => "mb.FieldValueIsIfThenElse";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, WhereClause, InvertWhereClause, SelectionCondition, Count, CountMin, CountMax, True, False };
+		public override object[] Parameters() => new object[] { InData, WhereClause, InvertWhereClause, SelectionCondition, Count, CountMin, CountMax, True, False };
 
 		/// <summary>
 		/// <para>Input Data Element</para>

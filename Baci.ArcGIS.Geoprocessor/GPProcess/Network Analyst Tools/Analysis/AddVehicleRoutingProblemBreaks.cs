@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Vehicle Routing Problem Breaks</para>
 		/// </summary>
-		public override string DisplayName => "Add Vehicle Routing Problem Breaks";
+		public override string DisplayName() => "Add Vehicle Routing Problem Breaks";
 
 		/// <summary>
 		/// <para>Tool Name : AddVehicleRoutingProblemBreaks</para>
 		/// </summary>
-		public override string ToolName => "AddVehicleRoutingProblemBreaks";
+		public override string ToolName() => "AddVehicleRoutingProblemBreaks";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.AddVehicleRoutingProblemBreaks</para>
 		/// </summary>
-		public override string ExcuteName => "na.AddVehicleRoutingProblemBreaks";
+		public override string ExcuteName() => "na.AddVehicleRoutingProblemBreaks";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InVrpLayer, TargetRoute, BreakType, TimeWindowProperties, TravelTimeProperties, WorkTimeProperties, AppendToExistingBreaks, OutVrpLayer };
+		public override object[] Parameters() => new object[] { InVrpLayer, TargetRoute, BreakType, TimeWindowProperties, TravelTimeProperties, WorkTimeProperties, AppendToExistingBreaks, OutVrpLayer };
 
 		/// <summary>
 		/// <para>Input Vehicle Routing Problem Layer</para>

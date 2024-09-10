@@ -50,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Resample</para>
 		/// </summary>
-		public override string DisplayName => "Resample";
+		public override string DisplayName() => "Resample";
 
 		/// <summary>
 		/// <para>Tool Name : Resample</para>
 		/// </summary>
-		public override string ToolName => "Resample";
+		public override string ToolName() => "Resample";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Resample</para>
 		/// </summary>
-		public override string ExcuteName => "management.Resample";
+		public override string ExcuteName() => "management.Resample";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, CellSize, ResamplingType };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, CellSize, ResamplingType };
 
 		/// <summary>
 		/// <para>Input Raster</para>

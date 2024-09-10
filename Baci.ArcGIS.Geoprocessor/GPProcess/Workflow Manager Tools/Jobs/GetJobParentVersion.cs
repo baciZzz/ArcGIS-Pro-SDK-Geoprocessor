@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Display Name : Get Job Parent Version</para>
 		/// </summary>
-		public override string DisplayName => "Get Job Parent Version";
+		public override string DisplayName() => "Get Job Parent Version";
 
 		/// <summary>
 		/// <para>Tool Name : GetJobParentVersion</para>
 		/// </summary>
-		public override string ToolName => "GetJobParentVersion";
+		public override string ToolName() => "GetJobParentVersion";
 
 		/// <summary>
 		/// <para>Tool Excute Name : wmx.GetJobParentVersion</para>
 		/// </summary>
-		public override string ExcuteName => "wmx.GetJobParentVersion";
+		public override string ExcuteName() => "wmx.GetJobParentVersion";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Workflow Manager Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Workflow Manager Tools";
+		public override string ToolboxDisplayName() => "Workflow Manager Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : wmx</para>
 		/// </summary>
-		public override string ToolboxAlise => "wmx";
+		public override string ToolboxAlise() => "wmx";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputJobid, InputDatabasepath, OutputJobparentversion };
+		public override object[] Parameters() => new object[] { InputJobid, InputDatabasepath, OutputJobparentversion };
 
 		/// <summary>
 		/// <para>Input Job ID</para>

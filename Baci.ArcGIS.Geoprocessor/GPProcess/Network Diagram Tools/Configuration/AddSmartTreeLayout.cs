@@ -43,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Smart Tree Layout</para>
 		/// </summary>
-		public override string DisplayName => "Add Smart Tree Layout";
+		public override string DisplayName() => "Add Smart Tree Layout";
 
 		/// <summary>
 		/// <para>Tool Name : AddSmartTreeLayout</para>
 		/// </summary>
-		public override string ToolName => "AddSmartTreeLayout";
+		public override string ToolName() => "AddSmartTreeLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddSmartTreeLayout</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddSmartTreeLayout";
+		public override string ExcuteName() => "nd.AddSmartTreeLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved, TreeDirection, IsUnitAbsolute, SubtreeAbsolute, SubtreeProportional, PerpendicularAbsolute, PerpendicularProportional, AlongAbsolute, AlongProportional, DisjoinedGraphAbsolute, DisjoinedGraphProportional, AreEdgesOrthogonal, BreakpointPosition, OutUtilityNetwork, OutTemplateName, EdgeDisplayType, OffsetAbsolute, OffsetProportional };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved, TreeDirection, IsUnitAbsolute, SubtreeAbsolute, SubtreeProportional, PerpendicularAbsolute, PerpendicularProportional, AlongAbsolute, AlongProportional, DisjoinedGraphAbsolute, DisjoinedGraphProportional, AreEdgesOrthogonal, BreakpointPosition, OutUtilityNetwork, OutTemplateName, EdgeDisplayType, OffsetAbsolute, OffsetProportional };
 
 		/// <summary>
 		/// <para>Input Network</para>

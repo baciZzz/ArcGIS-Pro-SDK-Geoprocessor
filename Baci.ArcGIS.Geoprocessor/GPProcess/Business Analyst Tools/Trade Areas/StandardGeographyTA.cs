@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Standard Geography Trade Areas</para>
 		/// </summary>
-		public override string DisplayName => "Generate Standard Geography Trade Areas";
+		public override string DisplayName() => "Generate Standard Geography Trade Areas";
 
 		/// <summary>
 		/// <para>Tool Name : StandardGeographyTA</para>
 		/// </summary>
-		public override string ToolName => "StandardGeographyTA";
+		public override string ToolName() => "StandardGeographyTA";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.StandardGeographyTA</para>
 		/// </summary>
-		public override string ExcuteName => "ba.StandardGeographyTA";
+		public override string ExcuteName() => "ba.StandardGeographyTA";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { GeographyLevel, OutFeatureClass, InputType, InIdsTable, GeographyKeyField, IdsList, SummarizeDuplicates, GroupField, DissolveOutput };
+		public override object[] Parameters() => new object[] { GeographyLevel, OutFeatureClass, InputType, InIdsTable, GeographyKeyField, IdsList, SummarizeDuplicates, GroupField, DissolveOutput };
 
 		/// <summary>
 		/// <para>Geography Level</para>

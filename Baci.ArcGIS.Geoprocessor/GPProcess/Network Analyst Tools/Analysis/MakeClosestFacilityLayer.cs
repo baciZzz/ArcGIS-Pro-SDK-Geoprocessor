@@ -41,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Closest Facility Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make Closest Facility Layer";
+		public override string DisplayName() => "Make Closest Facility Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeClosestFacilityLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeClosestFacilityLayer";
+		public override string ToolName() => "MakeClosestFacilityLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.MakeClosestFacilityLayer</para>
 		/// </summary>
-		public override string ExcuteName => "na.MakeClosestFacilityLayer";
+		public override string ExcuteName() => "na.MakeClosestFacilityLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDataset, OutNetworkAnalysisLayer, ImpedanceAttribute, TravelFromTo, DefaultCutoff, DefaultNumberFacilitiesToFind, AccumulateAttributeName, UturnPolicy, RestrictionAttributeName, Hierarchy, HierarchySettings, OutputPathShape, TimeOfDay, TimeOfDayUsage, OutputLayer };
+		public override object[] Parameters() => new object[] { InNetworkDataset, OutNetworkAnalysisLayer, ImpedanceAttribute, TravelFromTo, DefaultCutoff, DefaultNumberFacilitiesToFind, AccumulateAttributeName, UturnPolicy, RestrictionAttributeName, Hierarchy, HierarchySettings, OutputPathShape, TimeOfDay, TimeOfDayUsage, OutputLayer };
 
 		/// <summary>
 		/// <para>Input Analysis Network</para>

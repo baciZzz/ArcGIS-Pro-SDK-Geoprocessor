@@ -41,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Prepare Point Cloud Training Data</para>
 		/// </summary>
-		public override string DisplayName => "Prepare Point Cloud Training Data";
+		public override string DisplayName() => "Prepare Point Cloud Training Data";
 
 		/// <summary>
 		/// <para>Tool Name : PreparePointCloudTrainingData</para>
 		/// </summary>
-		public override string ToolName => "PreparePointCloudTrainingData";
+		public override string ToolName() => "PreparePointCloudTrainingData";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.PreparePointCloudTrainingData</para>
 		/// </summary>
-		public override string ExcuteName => "3d.PreparePointCloudTrainingData";
+		public override string ExcuteName() => "3d.PreparePointCloudTrainingData";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointCloud, BlockSize, OutTrainingData, TrainingBoundary, ValidationPointCloud, ValidationBoundary, ClassCodesOfInterest, BlockPointLimit };
+		public override object[] Parameters() => new object[] { InPointCloud, BlockSize, OutTrainingData, TrainingBoundary, ValidationPointCloud, ValidationBoundary, ClassCodesOfInterest, BlockPointLimit };
 
 		/// <summary>
 		/// <para>Input Point Cloud</para>

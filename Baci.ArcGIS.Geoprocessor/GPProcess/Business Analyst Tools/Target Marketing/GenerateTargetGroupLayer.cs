@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Target Group Layer</para>
 		/// </summary>
-		public override string DisplayName => "Generate Target Group Layer";
+		public override string DisplayName() => "Generate Target Group Layer";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateTargetGroupLayer</para>
 		/// </summary>
-		public override string ToolName => "GenerateTargetGroupLayer";
+		public override string ToolName() => "GenerateTargetGroupLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.GenerateTargetGroupLayer</para>
 		/// </summary>
-		public override string ExcuteName => "ba.GenerateTargetGroupLayer";
+		public override string ExcuteName() => "ba.GenerateTargetGroupLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { GeographyLevel, SegmentationBase, OutFeatureClass, TargetGroup, BoundaryLayer };
+		public override object[] Parameters() => new object[] { GeographyLevel, SegmentationBase, OutFeatureClass, TargetGroup, BoundaryLayer };
 
 		/// <summary>
 		/// <para>Geography Level</para>

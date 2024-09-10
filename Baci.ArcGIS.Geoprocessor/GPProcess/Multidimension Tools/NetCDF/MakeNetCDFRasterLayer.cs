@@ -52,37 +52,37 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Display Name : Make NetCDF Raster Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make NetCDF Raster Layer";
+		public override string DisplayName() => "Make NetCDF Raster Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeNetCDFRasterLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeNetCDFRasterLayer";
+		public override string ToolName() => "MakeNetCDFRasterLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : md.MakeNetCDFRasterLayer</para>
 		/// </summary>
-		public override string ExcuteName => "md.MakeNetCDFRasterLayer";
+		public override string ExcuteName() => "md.MakeNetCDFRasterLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Multidimension Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Multidimension Tools";
+		public override string ToolboxDisplayName() => "Multidimension Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : md</para>
 		/// </summary>
-		public override string ToolboxAlise => "md";
+		public override string ToolboxAlise() => "md";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetcdfFile, Variable, XDimension, YDimension, OutRasterLayer, BandDimension, DimensionValues, ValueSelectionMethod, CellRegistration };
+		public override object[] Parameters() => new object[] { InNetcdfFile, Variable, XDimension, YDimension, OutRasterLayer, BandDimension, DimensionValues, ValueSelectionMethod, CellRegistration };
 
 		/// <summary>
 		/// <para>Input netCDF File</para>

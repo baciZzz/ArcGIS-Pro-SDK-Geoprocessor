@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Summarize Center And Dispersion</para>
 		/// </summary>
-		public override string DisplayName => "Summarize Center And Dispersion";
+		public override string DisplayName() => "Summarize Center And Dispersion";
 
 		/// <summary>
 		/// <para>Tool Name : SummarizeCenterAndDispersion</para>
 		/// </summary>
-		public override string ToolName => "SummarizeCenterAndDispersion";
+		public override string ToolName() => "SummarizeCenterAndDispersion";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.SummarizeCenterAndDispersion</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.SummarizeCenterAndDispersion";
+		public override string ExcuteName() => "gapro.SummarizeCenterAndDispersion";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutCentralFeature, OutMeanCenter, OutMedianCenter, OutEllipse, EllipseSize, WeightField, GroupByField };
+		public override object[] Parameters() => new object[] { InputLayer, OutCentralFeature, OutMeanCenter, OutMedianCenter, OutEllipse, EllipseSize, WeightField, GroupByField };
 
 		/// <summary>
 		/// <para>Input Layer</para>

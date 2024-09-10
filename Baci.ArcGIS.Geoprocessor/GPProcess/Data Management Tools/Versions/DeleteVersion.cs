@@ -37,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Delete Version</para>
 		/// </summary>
-		public override string DisplayName => "Delete Version";
+		public override string DisplayName() => "Delete Version";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteVersion</para>
 		/// </summary>
-		public override string ToolName => "DeleteVersion";
+		public override string ToolName() => "DeleteVersion";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DeleteVersion</para>
 		/// </summary>
-		public override string ExcuteName => "management.DeleteVersion";
+		public override string ExcuteName() => "management.DeleteVersion";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, VersionName, OutWorkspace };
+		public override object[] Parameters() => new object[] { InWorkspace, VersionName, OutWorkspace };
 
 		/// <summary>
 		/// <para>Input Workspace</para>

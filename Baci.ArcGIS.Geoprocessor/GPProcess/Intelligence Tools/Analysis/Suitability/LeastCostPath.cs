@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Least Cost Path</para>
 		/// </summary>
-		public override string DisplayName => "Least Cost Path";
+		public override string DisplayName() => "Least Cost Path";
 
 		/// <summary>
 		/// <para>Tool Name : LeastCostPath</para>
 		/// </summary>
-		public override string ToolName => "LeastCostPath";
+		public override string ToolName() => "LeastCostPath";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.LeastCostPath</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.LeastCostPath";
+		public override string ExcuteName() => "intelligence.LeastCostPath";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCostSurface, InStartPoint, InEndPoint, OutPathFeatureClass, HandleZeros, OutStartPoint, OutEndPoint };
+		public override object[] Parameters() => new object[] { InCostSurface, InStartPoint, InEndPoint, OutPathFeatureClass, HandleZeros, OutStartPoint, OutEndPoint };
 
 		/// <summary>
 		/// <para>Input Cost Surface</para>

@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Import XML Workspace Document</para>
 		/// </summary>
-		public override string DisplayName => "Import XML Workspace Document";
+		public override string DisplayName() => "Import XML Workspace Document";
 
 		/// <summary>
 		/// <para>Tool Name : ImportXMLWorkspaceDocument</para>
 		/// </summary>
-		public override string ToolName => "ImportXMLWorkspaceDocument";
+		public override string ToolName() => "ImportXMLWorkspaceDocument";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ImportXMLWorkspaceDocument</para>
 		/// </summary>
-		public override string ExcuteName => "management.ImportXMLWorkspaceDocument";
+		public override string ExcuteName() => "management.ImportXMLWorkspaceDocument";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetGeodatabase, InFile, ImportType, ConfigKeyword, OutGeodatabase };
+		public override object[] Parameters() => new object[] { TargetGeodatabase, InFile, ImportType, ConfigKeyword, OutGeodatabase };
 
 		/// <summary>
 		/// <para>Target Geodatabase</para>

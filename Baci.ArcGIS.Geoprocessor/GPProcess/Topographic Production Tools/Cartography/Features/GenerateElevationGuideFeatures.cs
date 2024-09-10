@@ -44,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Elevation Guide Features</para>
 		/// </summary>
-		public override string DisplayName => "Generate Elevation Guide Features";
+		public override string DisplayName() => "Generate Elevation Guide Features";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateElevationGuideFeatures</para>
 		/// </summary>
-		public override string ToolName => "GenerateElevationGuideFeatures";
+		public override string ToolName() => "GenerateElevationGuideFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.GenerateElevationGuideFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.GenerateElevationGuideFeatures";
+		public override string ExcuteName() => "topographic.GenerateElevationGuideFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureDataset, AreaOfInterest, InRasters, HydroExclusionFeatures, SpotHeightFeatures, HydroLineFeatures, HydroAreaFeatures, ContourInterval, BandsMinarea, SmoothTolerance, NumberOfBands, HeightField, SearchDistance, HydrolineMinlength, HydrolineMinspacing, HydroareaMinlength, HydroareaMinwidth, OutFeatureDataset };
+		public override object[] Parameters() => new object[] { InFeatureDataset, AreaOfInterest, InRasters, HydroExclusionFeatures, SpotHeightFeatures, HydroLineFeatures, HydroAreaFeatures, ContourInterval, BandsMinarea, SmoothTolerance, NumberOfBands, HeightField, SearchDistance, HydrolineMinlength, HydrolineMinspacing, HydroareaMinlength, HydroareaMinwidth, OutFeatureDataset };
 
 		/// <summary>
 		/// <para>Input Feature Dataset</para>

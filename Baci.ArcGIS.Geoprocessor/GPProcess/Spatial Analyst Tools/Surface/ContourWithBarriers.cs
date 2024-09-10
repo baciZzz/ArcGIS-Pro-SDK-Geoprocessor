@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Contour with Barriers</para>
 		/// </summary>
-		public override string DisplayName => "Contour with Barriers";
+		public override string DisplayName() => "Contour with Barriers";
 
 		/// <summary>
 		/// <para>Tool Name : ContourWithBarriers</para>
 		/// </summary>
-		public override string ToolName => "ContourWithBarriers";
+		public override string ToolName() => "ContourWithBarriers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.ContourWithBarriers</para>
 		/// </summary>
-		public override string ExcuteName => "sa.ContourWithBarriers";
+		public override string ExcuteName() => "sa.ContourWithBarriers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutContourFeatureClass, InBarrierFeatures, InContourType, InContourValuesFile, ExplicitOnly, InBaseContour, InContourInterval, InIndexedContourInterval, InContourList, InZFactor };
+		public override object[] Parameters() => new object[] { InRaster, OutContourFeatureClass, InBarrierFeatures, InContourType, InContourValuesFile, ExplicitOnly, InBaseContour, InContourInterval, InIndexedContourInterval, InContourList, InZFactor };
 
 		/// <summary>
 		/// <para>Input Raster</para>

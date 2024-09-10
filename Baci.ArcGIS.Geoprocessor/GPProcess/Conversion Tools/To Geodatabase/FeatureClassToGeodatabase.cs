@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Feature Class To Geodatabase</para>
 		/// </summary>
-		public override string DisplayName => "Feature Class To Geodatabase";
+		public override string DisplayName() => "Feature Class To Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureClassToGeodatabase</para>
 		/// </summary>
-		public override string ToolName => "FeatureClassToGeodatabase";
+		public override string ToolName() => "FeatureClassToGeodatabase";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.FeatureClassToGeodatabase</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.FeatureClassToGeodatabase";
+		public override string ExcuteName() => "conversion.FeatureClassToGeodatabase";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "transferDomains", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "transferDomains", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, OutputGeodatabase, DerivedGeodatabase };
+		public override object[] Parameters() => new object[] { InputFeatures, OutputGeodatabase, DerivedGeodatabase };
 
 		/// <summary>
 		/// <para>Input Features</para>

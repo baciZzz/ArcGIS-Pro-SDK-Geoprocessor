@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Origin-Destination Links</para>
 		/// </summary>
-		public override string DisplayName => "Generate Origin-Destination Links";
+		public override string DisplayName() => "Generate Origin-Destination Links";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateOriginDestinationLinks</para>
 		/// </summary>
-		public override string ToolName => "GenerateOriginDestinationLinks";
+		public override string ToolName() => "GenerateOriginDestinationLinks";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.GenerateOriginDestinationLinks</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.GenerateOriginDestinationLinks";
+		public override string ExcuteName() => "analysis.GenerateOriginDestinationLinks";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OriginFeatures, DestinationFeatures, OutFeatureClass, OriginGroupField, DestinationGroupField, LineType, NumNearest, SearchDistance, DistanceUnit, AggregateLinks, SumFields };
+		public override object[] Parameters() => new object[] { OriginFeatures, DestinationFeatures, OutFeatureClass, OriginGroupField, DestinationGroupField, LineType, NumNearest, SearchDistance, DistanceUnit, AggregateLinks, SumFields };
 
 		/// <summary>
 		/// <para>Origin Features</para>

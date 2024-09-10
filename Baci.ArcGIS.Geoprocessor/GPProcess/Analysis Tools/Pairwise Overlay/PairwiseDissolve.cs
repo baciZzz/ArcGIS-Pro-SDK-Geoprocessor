@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Pairwise Dissolve</para>
 		/// </summary>
-		public override string DisplayName => "Pairwise Dissolve";
+		public override string DisplayName() => "Pairwise Dissolve";
 
 		/// <summary>
 		/// <para>Tool Name : PairwiseDissolve</para>
 		/// </summary>
-		public override string ToolName => "PairwiseDissolve";
+		public override string ToolName() => "PairwiseDissolve";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.PairwiseDissolve</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.PairwiseDissolve";
+		public override string ExcuteName() => "analysis.PairwiseDissolve";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainCurveSegments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "parallelProcessingFactor", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainCurveSegments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "parallelProcessingFactor", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, DissolveField, StatisticsFields, MultiPart };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, DissolveField, StatisticsFields, MultiPart };
 
 		/// <summary>
 		/// <para>Input Features</para>

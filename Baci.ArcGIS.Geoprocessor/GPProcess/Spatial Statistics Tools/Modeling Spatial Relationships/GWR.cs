@@ -71,37 +71,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Geographically Weighted Regression (GWR)</para>
 		/// </summary>
-		public override string DisplayName => "Geographically Weighted Regression (GWR)";
+		public override string DisplayName() => "Geographically Weighted Regression (GWR)";
 
 		/// <summary>
 		/// <para>Tool Name : GWR</para>
 		/// </summary>
-		public override string ToolName => "GWR";
+		public override string ToolName() => "GWR";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.GWR</para>
 		/// </summary>
-		public override string ExcuteName => "stats.GWR";
+		public override string ExcuteName() => "stats.GWR";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeatures, NeighborhoodType, NeighborhoodSelectionMethod, MinimumNumberOfNeighbors, MaximumNumberOfNeighbors, MinimumSearchDistance, MaximumSearchDistance, NumberOfNeighborsIncrement, SearchDistanceIncrement, NumberOfIncrements, NumberOfNeighbors, DistanceBand, PredictionLocations, ExplanatoryVariablesToMatch, OutputPredictedFeatures, RobustPrediction, LocalWeightingScheme, CoefficientRasterWorkspace, CoefficientRasterLayers };
+		public override object[] Parameters() => new object[] { InFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeatures, NeighborhoodType, NeighborhoodSelectionMethod, MinimumNumberOfNeighbors, MaximumNumberOfNeighbors, MinimumSearchDistance, MaximumSearchDistance, NumberOfNeighborsIncrement, SearchDistanceIncrement, NumberOfIncrements, NumberOfNeighbors, DistanceBand, PredictionLocations, ExplanatoryVariablesToMatch, OutputPredictedFeatures, RobustPrediction, LocalWeightingScheme, CoefficientRasterWorkspace, CoefficientRasterLayers };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -68,37 +68,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Trace Proximity Events</para>
 		/// </summary>
-		public override string DisplayName => "Trace Proximity Events";
+		public override string DisplayName() => "Trace Proximity Events";
 
 		/// <summary>
 		/// <para>Tool Name : TraceProximityEvents</para>
 		/// </summary>
-		public override string ToolName => "TraceProximityEvents";
+		public override string ToolName() => "TraceProximityEvents";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.TraceProximityEvents</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.TraceProximityEvents";
+		public override string ExcuteName() => "geoanalytics.TraceProximityEvents";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPoints, EntityIdField, OutputName, DistanceMethod, SpatialSearchDistance, TemporalSearchDistance, EntitiesOfInterestInputType, EntitiesInterestIds, EntitiesInterestLayer, IncludeTracksLayer, MaxTraceDepth, AttributeMatchCriteria, DataStore, Output, TracksLayer };
+		public override object[] Parameters() => new object[] { InPoints, EntityIdField, OutputName, DistanceMethod, SpatialSearchDistance, TemporalSearchDistance, EntitiesOfInterestInputType, EntitiesInterestIds, EntitiesInterestLayer, IncludeTracksLayer, MaxTraceDepth, AttributeMatchCriteria, DataStore, Output, TracksLayer };
 
 		/// <summary>
 		/// <para>Input Points</para>

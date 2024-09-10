@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Raster to GeoPackage</para>
 		/// </summary>
-		public override string DisplayName => "Add Raster to GeoPackage";
+		public override string DisplayName() => "Add Raster to GeoPackage";
 
 		/// <summary>
 		/// <para>Tool Name : AddRasterToGeoPackage</para>
 		/// </summary>
-		public override string ToolName => "AddRasterToGeoPackage";
+		public override string ToolName() => "AddRasterToGeoPackage";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.AddRasterToGeoPackage</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.AddRasterToGeoPackage";
+		public override string ExcuteName() => "conversion.AddRasterToGeoPackage";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "compression", "pyramid" };
+		public override string[] ValidEnvironments() => new string[] { "compression", "pyramid" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, TargetGeopackage, RasterName, TilingScheme, TilingSchemeFile, OutGeopackageRaster, AreaOfInterest };
+		public override object[] Parameters() => new object[] { InDataset, TargetGeopackage, RasterName, TilingScheme, TilingSchemeFile, OutGeopackageRaster, AreaOfInterest };
 
 		/// <summary>
 		/// <para>Input Raster</para>

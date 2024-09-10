@@ -45,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Geographies From Overlay</para>
 		/// </summary>
-		public override string DisplayName => "Generate Geographies From Overlay";
+		public override string DisplayName() => "Generate Geographies From Overlay";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateGeographiesFromOverlay</para>
 		/// </summary>
-		public override string ToolName => "GenerateGeographiesFromOverlay";
+		public override string ToolName() => "GenerateGeographiesFromOverlay";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.GenerateGeographiesFromOverlay</para>
 		/// </summary>
-		public override string ExcuteName => "ba.GenerateGeographiesFromOverlay";
+		public override string ExcuteName() => "ba.GenerateGeographiesFromOverlay";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { GeographyLevel, InFeatures, IdField, OutFeatureClass, OverlapType, Ratios };
+		public override object[] Parameters() => new object[] { GeographyLevel, InFeatures, IdField, OutFeatureClass, OverlapType, Ratios };
 
 		/// <summary>
 		/// <para>Geography Level</para>

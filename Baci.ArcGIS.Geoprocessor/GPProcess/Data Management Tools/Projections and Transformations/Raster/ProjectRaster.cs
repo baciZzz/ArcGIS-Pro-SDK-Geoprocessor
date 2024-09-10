@@ -57,37 +57,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Project Raster</para>
 		/// </summary>
-		public override string DisplayName => "Project Raster";
+		public override string DisplayName() => "Project Raster";
 
 		/// <summary>
 		/// <para>Tool Name : ProjectRaster</para>
 		/// </summary>
-		public override string ToolName => "ProjectRaster";
+		public override string ToolName() => "ProjectRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ProjectRaster</para>
 		/// </summary>
-		public override string ExcuteName => "management.ProjectRaster";
+		public override string ExcuteName() => "management.ProjectRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, OutCoorSystem, ResamplingType, CellSize, GeographicTransform, RegistrationPoint, InCoorSystem, Vertical };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, OutCoorSystem, ResamplingType, CellSize, GeographicTransform, RegistrationPoint, InCoorSystem, Vertical };
 
 		/// <summary>
 		/// <para>Input Raster</para>

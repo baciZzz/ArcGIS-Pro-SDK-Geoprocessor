@@ -30,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Remove Rule From Relationship Class</para>
 		/// </summary>
-		public override string DisplayName => "Remove Rule From Relationship Class";
+		public override string DisplayName() => "Remove Rule From Relationship Class";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveRuleFromRelationshipClass</para>
 		/// </summary>
-		public override string ToolName => "RemoveRuleFromRelationshipClass";
+		public override string ToolName() => "RemoveRuleFromRelationshipClass";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.RemoveRuleFromRelationshipClass</para>
 		/// </summary>
-		public override string ExcuteName => "management.RemoveRuleFromRelationshipClass";
+		public override string ExcuteName() => "management.RemoveRuleFromRelationshipClass";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRelClass, OriginSubtype, DestinationSubtype, RemoveAll, OutRelClass };
+		public override object[] Parameters() => new object[] { InRelClass, OriginSubtype, DestinationSubtype, RemoveAll, OutRelClass };
 
 		/// <summary>
 		/// <para>Input Relationship Class</para>

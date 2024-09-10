@@ -35,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Domain</para>
 		/// </summary>
-		public override string DisplayName => "Create Domain";
+		public override string DisplayName() => "Create Domain";
 
 		/// <summary>
 		/// <para>Tool Name : CreateDomain</para>
 		/// </summary>
-		public override string ToolName => "CreateDomain";
+		public override string ToolName() => "CreateDomain";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateDomain</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateDomain";
+		public override string ExcuteName() => "management.CreateDomain";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, DomainName, DomainDescription, FieldType, DomainType, SplitPolicy, MergePolicy, OutWorkspace };
+		public override object[] Parameters() => new object[] { InWorkspace, DomainName, DomainDescription, FieldType, DomainType, SplitPolicy, MergePolicy, OutWorkspace };
 
 		/// <summary>
 		/// <para>Input Workspace</para>

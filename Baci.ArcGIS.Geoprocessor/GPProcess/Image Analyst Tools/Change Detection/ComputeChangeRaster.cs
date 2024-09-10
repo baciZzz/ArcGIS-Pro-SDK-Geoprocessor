@@ -40,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Compute Change Raster</para>
 		/// </summary>
-		public override string DisplayName => "Compute Change Raster";
+		public override string DisplayName() => "Compute Change Raster";
 
 		/// <summary>
 		/// <para>Tool Name : ComputeChangeRaster</para>
 		/// </summary>
-		public override string ToolName => "ComputeChangeRaster";
+		public override string ToolName() => "ComputeChangeRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.ComputeChangeRaster</para>
 		/// </summary>
-		public override string ExcuteName => "ia.ComputeChangeRaster";
+		public override string ExcuteName() => "ia.ComputeChangeRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellAlignment", "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellAlignment", "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { FromRaster, ToRaster, OutRasterDataset, ComputeChangeMethod, FromClasses, ToClasses, FilterMethod, DefineTransitionColors };
+		public override object[] Parameters() => new object[] { FromRaster, ToRaster, OutRasterDataset, ComputeChangeMethod, FromClasses, ToClasses, FilterMethod, DefineTransitionColors };
 
 		/// <summary>
 		/// <para>From Raster</para>

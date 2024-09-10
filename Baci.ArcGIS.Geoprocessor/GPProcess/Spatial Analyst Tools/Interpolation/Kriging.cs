@@ -63,37 +63,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Kriging</para>
 		/// </summary>
-		public override string DisplayName => "Kriging";
+		public override string DisplayName() => "Kriging";
 
 		/// <summary>
 		/// <para>Tool Name : Kriging</para>
 		/// </summary>
-		public override string ToolName => "Kriging";
+		public override string ToolName() => "Kriging";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Kriging</para>
 		/// </summary>
-		public override string ExcuteName => "sa.Kriging";
+		public override string ExcuteName() => "sa.Kriging";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, ZField, OutSurfaceRaster, SemivariogramProps, CellSize, SearchRadius, OutVariancePredictionRaster };
+		public override object[] Parameters() => new object[] { InPointFeatures, ZField, OutSurfaceRaster, SemivariogramProps, CellSize, SearchRadius, OutVariancePredictionRaster };
 
 		/// <summary>
 		/// <para>Input point features</para>
