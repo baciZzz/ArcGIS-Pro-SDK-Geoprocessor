@@ -20,12 +20,11 @@ namespace System
         /// <typeparam name="T"></typeparam>
         /// <param name="gPProcess"></param>
         /// <param name="cancellationTokenSource"></param>
-        /// <param name="showResultDig"></param>
         /// <param name="gPToolExecuteEventHandler"></param>
         /// <param name="gPExecuteToolFlags"></param>
         /// <returns></returns>
         public static async Task<T> Run<T>(this T gPProcess, CancellationTokenSource cancellationTokenSource = null,
-            bool showResultDig = false, GPToolExecuteEventHandler gPToolExecuteEventHandler = null,
+            GPToolExecuteEventHandler gPToolExecuteEventHandler = null,
             GPExecuteToolFlags gPExecuteToolFlags = GPExecuteToolFlags.None) where T : IGPProcess
         {
             var parameterInfo = Geoprocessing.MakeValueArray(gPProcess.Parameters());
@@ -69,12 +68,7 @@ namespace System
 
                     var type = gPProcess.GetType();
 
-                    var property = type.GetProperty($"{propertyName}");
-
-                    if (property is null)
-                    {
-                        throw new Exception($"Can't Find Property ：{propertyName}");
-                    }
+                    var property = type.GetProperty($"{propertyName}") ?? throw new Exception($"Can't Find Property ：{propertyName}");
 
                     property.SetValue(gPProcess, tp.Item3);
                 }
@@ -86,7 +80,7 @@ namespace System
 
             }
 
-            string ToolParamNameFix(string text)
+            static string ToolParamNameFix(string text)
             {
                 if (text.Contains("_") || text.Contains("-"))
                 {
