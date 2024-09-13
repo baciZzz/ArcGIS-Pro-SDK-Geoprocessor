@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Repair Version Tables</para>
-	/// <para>修复版本表</para>
-	/// <para>用于修复注册传统版本化的数据集增量（A 和 D）表中的不一致。</para>
+	/// <para>Repair Version Tables</para>
+	/// <para>Repairs inconsistencies in the delta (A and D) tables of datasets that are registered for traditional versioning.</para>
 	/// </summary>
 	public class RepairVersionTables : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputDatabase">
 		/// <para>Input Database Connection</para>
-		/// <para>与企业级地理数据库的数据库连接（.sde 文件），其中存在增量表不一致。 必须由地理数据库管理员建立此连接。</para>
+		/// <para>The database connection (.sde file) to the enterprise geodatabase in which delta table inconsistencies exist. The connection must be made as the geodatabase administrator.</para>
 		/// </param>
 		/// <param name="OutLog">
 		/// <para>Repair Version Tables Log</para>
-		/// <para>日志文件的写入位置和日志文件名称。 日志文件是包含修复操作结果的 ASCII 文件。</para>
+		/// <para>The location where the log file will be written and the name of the log file. The log file is an ASCII file containing the results of the repair operation.</para>
 		/// </param>
 		public RepairVersionTables(object InputDatabase, object OutLog)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 修复版本表</para>
+		/// <para>Tool Display Name : Repair Version Tables</para>
 		/// </summary>
-		public override string DisplayName() => "修复版本表";
+		public override string DisplayName() => "Repair Version Tables";
 
 		/// <summary>
 		/// <para>Tool Name : RepairVersionTables</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
-		/// <para>与企业级地理数据库的数据库连接（.sde 文件），其中存在增量表不一致。 必须由地理数据库管理员建立此连接。</para>
+		/// <para>The database connection (.sde file) to the enterprise geodatabase in which delta table inconsistencies exist. The connection must be made as the geodatabase administrator.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Repair Version Tables Log</para>
-		/// <para>日志文件的写入位置和日志文件名称。 日志文件是包含修复操作结果的 ASCII 文件。</para>
+		/// <para>The location where the log file will be written and the name of the log file. The log file is an ASCII file containing the results of the repair operation.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Version</para>
-		/// <para>待修复的地理数据库版本。 使用为输入数据集连接参数指定的地理数据库中的现有版本填充下拉列表。 如果未选定版本，则将处理所有版本。</para>
+		/// <para>The geodatabase version to be repaired. The drop-down list is populated with the existing versions in the geodatabase specified for the Input Database Connection parameter. If no version is selected, all versions are processed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Tables</para>
-		/// <para>单个表或文本文件，其中包含其关联增量表待修复的版本化表的列表。 在文本文件中使用完全限定的表名，每个表名占据一行。 如果未指定表或文件，则将处理所有表。</para>
+		/// <para>A single table or a text file containing a list of versioned tables with the associated delta tables to be repaired. Use fully-qualified table names in the text file, and place one table name per line. If no table or file is specified, all tables are processed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]

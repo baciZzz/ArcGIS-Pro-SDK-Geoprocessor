@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Register As Versioned</para>
-	/// <para>注册版本</para>
-	/// <para>将企业级地理数据库数据集注册为版本化。</para>
+	/// <para>Register As Versioned</para>
+	/// <para>Registers an enterprise geodatabase dataset as versioned.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>要注册为版本的数据集。</para>
+		/// <para>The dataset to be registered as versioned.</para>
 		/// </param>
 		public RegisterAsVersioned(object InDataset)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 注册版本</para>
+		/// <para>Tool Display Name : Register As Versioned</para>
 		/// </summary>
-		public override string DisplayName() => "注册版本";
+		public override string DisplayName() => "Register As Versioned";
 
 		/// <summary>
 		/// <para>Tool Name : RegisterAsVersioned</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>要注册为版本的数据集。</para>
+		/// <para>The dataset to be registered as versioned.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -75,9 +75,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Register the selected objects with the option to move edits to base</para>
-		/// <para>指定是否将对默认版本进行的编辑移动到基表。</para>
-		/// <para>选中 - 对数据集进行版本化时使用“将编辑内容移动至基表”选项。</para>
-		/// <para>未选中 - 对数据集进行版本化时不使用“将编辑内容移动至基表”选项。这是默认设置。</para>
+		/// <para>Specifies whether edits made to the default version will be moved to the base tables.</para>
+		/// <para>Checked—The dataset will be versioned with the option of moving edits to base.</para>
+		/// <para>Unchecked—The dataset will be versioned without the option of moving edits to base. This is the default.</para>
 		/// <para><see cref="EditToBaseEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -109,14 +109,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum EditToBaseEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The dataset will be versioned with the option of moving edits to base.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EDITS_TO_BASE")]
 			EDITS_TO_BASE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The dataset will be versioned without the option of moving edits to base. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_EDITS_TO_BASE")]

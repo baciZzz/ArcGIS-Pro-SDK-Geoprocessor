@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add 3D Formats To Multipatch</para>
-	/// <para>将 3D 格式添加到多面体</para>
-	/// <para>通过链接要素类与一种或多种 3D 模型格式，将多面体转换为 3D 对象要素图层。</para>
+	/// <para>Add 3D Formats To Multipatch</para>
+	/// <para>Converts a multipatch to a 3D object feature layer by linking the feature class with one or more 3D model formats.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>将转换为 3D 对象要素图层的输入地理数据库多面体要素。</para>
+		/// <para>The input geodatabase multipatch feature that will be converted to a 3D object feature layer.</para>
 		/// </param>
 		public Add3DFormats(object InFeatures)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 将 3D 格式添加到多面体</para>
+		/// <para>Tool Display Name : Add 3D Formats To Multipatch</para>
 		/// </summary>
-		public override string DisplayName() => "将 3D 格式添加到多面体";
+		public override string DisplayName() => "Add 3D Formats To Multipatch";
 
 		/// <summary>
 		/// <para>Tool Name : Add3DFormats</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>将转换为 3D 对象要素图层的输入地理数据库多面体要素。</para>
+		/// <para>The input geodatabase multipatch feature that will be converted to a 3D object feature layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -77,9 +77,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Use multipatch materials</para>
-		/// <para>指定是使用关联 3D 模型中的材料信息还是随多面体一起存储的纹理和颜色信息来可视化多面体几何。</para>
-		/// <para>选中 - 将使用与 3D 模型关联的纹理、颜色、效果和材料来可视化多面体几何。 这是默认设置。</para>
-		/// <para>未选中 - 将使用为多面体定义的纹理和颜色可视化多面体几何。</para>
+		/// <para>Specifies whether the multipatch geometry will be visualized using material information from the associated 3D models or the texture and color information stored with the multipatch.</para>
+		/// <para>Checked—The multipatch geometry will be visualized using the textures, colors, effects, and materials associated with the 3D models. This is the default.</para>
+		/// <para>Unchecked—The multipatch geometry will be visualized using the textures and colors defined for the multipatch.</para>
 		/// <para><see cref="MultipatchMaterialsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -89,13 +89,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>3D Formats to Add</para>
-		/// <para>指定将与多面体要素关联的 3D 格式。 将为每个选定格式复制所有输入要素。 可用选项取决于计算机上安装的编解码器。</para>
-		/// <para>Collada (.dae)—将添加 COLLADA 格式。</para>
-		/// <para>Autodesk (.fbx)—将添加 Autodesk FilmBox 格式。</para>
-		/// <para>Khronos Group glTF json (.gltf)—将添加 JSON 图形库传输格式。</para>
-		/// <para>Khronos Group glTF 二进制 (.glb)—将添加二进制图形库传输格式。</para>
-		/// <para>Wavefront (.obj)—将添加 Wavefront 格式。</para>
-		/// <para>Autodesk Drawing (.dwg)—将添加 DWG 格式。</para>
+		/// <para>Specifies the 3D formats that will be associated with the multipatch features. Each input feature will be duplicated for each selected format. The available options depend on the codecs installed on the computer.</para>
+		/// <para>Collada (.dae)—The COLLADA format will be added.</para>
+		/// <para>Autodesk (.fbx)—The Autodesk FilmBox format will be added.</para>
+		/// <para>Khronos Group glTF json (.gltf)—The JSON Graphics Library Transmission format will be added.</para>
+		/// <para>Khronos Group glTF binary (.glb)—The binary Graphics Library Transmission format will be added.</para>
+		/// <para>Wavefront (.obj)—The Wavefront format will be added.</para>
+		/// <para>Autodesk Drawing (.dwg)—The DWG format will be added.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -125,14 +125,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MultipatchMaterialsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The multipatch geometry will be visualized using the textures, colors, effects, and materials associated with the 3D models. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MULTIPATCH_WITH_MATERIALS")]
 			MULTIPATCH_WITH_MATERIALS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The multipatch geometry will be visualized using the textures and colors defined for the multipatch.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("MULTIPATCH_WITHOUT_MATERIALS")]

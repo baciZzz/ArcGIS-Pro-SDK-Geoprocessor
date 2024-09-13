@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Features From CityEngine Rules</para>
-	/// <para>基于 CityEngine 规则转换要素</para>
-	/// <para>按照在 ArcGIS CityEngine 中创作的规则基于现有 2D 和 3D 输入要素生成 3D 几何。</para>
+	/// <para>Features From CityEngine Rules</para>
+	/// <para>Generates 3D geometries  from existing 2D and 3D input features using rules authored in ArcGIS CityEngine.</para>
 	/// </summary>
 	public class FeaturesFromCityEngineRules : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>输入点、面或多面体要素。 输入要素可以是按程序符号化的要素图层。 将支持字段映射（属性驱动的符号属性）。</para>
+		/// <para>The input point, polygon, or multipatch features. Input features can be procedurally symbolized feature layers. Field mapping (attribute-driven symbol properties) will be honored.</para>
 		/// </param>
 		/// <param name="InRulePackage">
 		/// <para>Rule Package</para>
-		/// <para>包含 CGA 规则信息和资源的 CityEngine 规则包文件 (*.rpk)。 对于用于点要素的规则包，应将 .rpk 文件内使用 @StartRule 注释的规则注释为 @InPoint，对于用于面要素的规则包，应注释为 @InPolygon，对于用于多面体要素的规则包，应注释为 @InMesh。 如果 @StartRule 未使用 @InPoint、@InPolygon 或 @InMesh 进行注记，将假设要素类型为面。</para>
+		/// <para>The CityEngine rule package file (*.rpk) containing CGA rule information and assets. The rule annotated with @StartRule in the .rpk file should be annotated @InPoint for a rule package intended for point features, @InPolygon for a rule package intended for polygon features, or @InMesh for a rule package intended for multipatch features. If @StartRule is not annotated with @InPoint, @InPolygon, or @InMesh, the feature type will be assumed to be polygon.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Features</para>
-		/// <para>包含应用 CGA 规则生成的多面体要素的输出要素类。 可以将 OriginalOID 字段添加到输出要素类，从而包含已生成各个输出要素的输入要素的 ObjectID。</para>
+		/// <para>The output feature class containing multipatch features with CGA rules applied. An OriginalOID field is added to the output feature classes to contain the ObjectID of the input feature from which each output feature has been generated.</para>
 		/// </param>
 		public FeaturesFromCityEngineRules(object InFeatures, object InRulePackage, object OutFeatureClass)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 基于 CityEngine 规则转换要素</para>
+		/// <para>Tool Display Name : Features From CityEngine Rules</para>
 		/// </summary>
-		public override string DisplayName() => "基于 CityEngine 规则转换要素";
+		public override string DisplayName() => "Features From CityEngine Rules";
 
 		/// <summary>
 		/// <para>Tool Name : FeaturesFromCityEngineRules</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>输入点、面或多面体要素。 输入要素可以是按程序符号化的要素图层。 将支持字段映射（属性驱动的符号属性）。</para>
+		/// <para>The input point, polygon, or multipatch features. Input features can be procedurally symbolized feature layers. Field mapping (attribute-driven symbol properties) will be honored.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Rule Package</para>
-		/// <para>包含 CGA 规则信息和资源的 CityEngine 规则包文件 (*.rpk)。 对于用于点要素的规则包，应将 .rpk 文件内使用 @StartRule 注释的规则注释为 @InPoint，对于用于面要素的规则包，应注释为 @InPolygon，对于用于多面体要素的规则包，应注释为 @InMesh。 如果 @StartRule 未使用 @InPoint、@InPolygon 或 @InMesh 进行注记，将假设要素类型为面。</para>
+		/// <para>The CityEngine rule package file (*.rpk) containing CGA rule information and assets. The rule annotated with @StartRule in the .rpk file should be annotated @InPoint for a rule package intended for point features, @InPolygon for a rule package intended for polygon features, or @InMesh for a rule package intended for multipatch features. If @StartRule is not annotated with @InPoint, @InPolygon, or @InMesh, the feature type will be assumed to be polygon.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Features</para>
-		/// <para>包含应用 CGA 规则生成的多面体要素的输出要素类。 可以将 OriginalOID 字段添加到输出要素类，从而包含已生成各个输出要素的输入要素的 ObjectID。</para>
+		/// <para>The output feature class containing multipatch features with CGA rules applied. An OriginalOID field is added to the output feature classes to contain the ObjectID of the input feature from which each output feature has been generated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -104,9 +104,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Include Existing Fields</para>
-		/// <para>指定输出要素类是否将包含输入要素类的属性字段。</para>
-		/// <para>选中 - 输出要素类中将包含输入要素类的属性字段。 这是默认设置。</para>
-		/// <para>未选中 - 输出要素类中将不包含输入要素类的属性字段。 如果选中导出 Leaf Shape 参数，将会自动使用此选项。</para>
+		/// <para>Specifies whether the output feature class will include the attribute fields of the input feature class.</para>
+		/// <para>Checked—The attribute fields of the input feature class will be included in the output feature class. This is the default.</para>
+		/// <para>Unchecked—The attribute fields of the input feature class will not be included in the output feature class. This option will be used automatically if the Export Leaf Shapes parameter is checked.</para>
 		/// <para><see cref="InExistingFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -116,10 +116,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Include Reports</para>
-		/// <para>指定输出是否将包含程序规则包所指定的附加报告字段。 根据创建规则包的方法，报告可能包含创建模型时生成一个或多个报告的逻辑。 这些报告可以包含有关要素的各种信息。 例如，报告为每个建筑模型生成的窗口数的规则包。</para>
-		/// <para>选中 - 输出要素类将包含新的属性字段，以按照规则包报告生成逻辑来包含每个要素的已报告值。 为每个报告值创建唯一的属性。</para>
-		/// <para>未选中 - 将会忽略在规则包中生成的报告，且将不会生成与这些报告相关的任何新属性。 这是默认设置。</para>
-		/// <para>如果规则包不包含生成报告的逻辑，将会忽略此参数。</para>
+		/// <para>Specifies whether the output will include additional reporting fields as specified by the procedural rule package. Depending on how the rule package has been authored, it may contain logic that generates one or more reports as the models are created. These reports can contain a variety of information about the features. An example is a rule package that reports the number of windows generated for each building model.</para>
+		/// <para>Checked—The output feature class will include new attribute fields to hold reported values for each feature as defined by the rule package report generation logic. A unique attribute is created for each reported value.</para>
+		/// <para>Unchecked—Reports generated in the rule package will be ignored, and no new attributes relating to the reports will be generated. This is the default.</para>
+		/// <para>This parameter is ignored if the rule package does not contain logic to generate reports.</para>
 		/// <para><see cref="InIncludeReportsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -129,11 +129,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Export Leaf Shapes</para>
-		/// <para>指定每个输入要素是将转换为单个合并的多面体要素，还是将成为多个要素（可能是点、线或多面体）的集合。</para>
-		/// <para>CityEngine 规则包通过生成组件部分并将其合并至单个的 3D 对象来构建内容。 然而，还可以将这些组件或叶形状存储为独立的要素。 此选项在使用 3D 对象子元素（如建筑物的窗户）运行分析操作时特别重要。</para>
-		/// <para>例如，某规则可能使用输入面轮廓线生成无缝建筑物模型，或者为每个公寓面（包括朝外的面板、代表中心的点以及显示边界的线）创建单独的要素。 在本示例中，应将公寓面板、中心点和轮廓均视为叶形状。</para>
-		/// <para>选中 - 系统将生成其他输出要素类。 输出要素类中将不包括输入要素类的属性字段。 输出要素类将包含名为 OriginalOID 的字段，此字段引用了生成输出的输入要素 ObjectID。</para>
-		/// <para>未选中 - 即使在规则逻辑中定义了附加叶形状，也将不会生成附加输出要素类。 几何的所有组成部分均将包含在输出多面体要素中。 这是默认设置。</para>
+		/// <para>Specifies whether each input feature will be convert to a single, merged multipatch feature or become a set of many features that can be points, lines, or multipatches.</para>
+		/// <para>CityEngine rule packages construct content by generating component pieces and merging them into a single 3D object. However, these components, or leaf shapes, can also be stored as separate features. This option can be especially important when running analytical operations using subelements of a 3D object, such as the windows of a building.</para>
+		/// <para>For example, a rule may generate seamless building models from input polygon footprints, or alternatively, it may create separate features for each apartment face, including an outward-facing panel, a representative center point, and lines showing the borders. In this example, the apartment panels, center points, and outlines are all considered leaf shapes.</para>
+		/// <para>Checked—Additional output feature classes will be generated. The attribute fields from the input feature class will not be included in the output feature class. The output feature class will contain a field named OriginalOID that references the ObjectID of the input feature from which the output was generated.</para>
+		/// <para>Unchecked—Additional output feature classes will not be generated, even if additional leaf shapes are defined in the logic of the rule. All of the geometry will be contained within the output multipatch features. This is the default.</para>
 		/// <para><see cref="InLeafShapesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -170,14 +170,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum InExistingFieldsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The attribute fields of the input feature class will be included in the output feature class. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_EXISTING_FIELDS")]
 			INCLUDE_EXISTING_FIELDS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The attribute fields of the input feature class will not be included in the output feature class. This option will be used automatically if the Export Leaf Shapes parameter is checked.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DROP_EXISTING_FIELDS")]
@@ -191,14 +191,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum InIncludeReportsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The output feature class will include new attribute fields to hold reported values for each feature as defined by the rule package report generation logic. A unique attribute is created for each reported value.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_REPORTS")]
 			INCLUDE_REPORTS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Reports generated in the rule package will be ignored, and no new attributes relating to the reports will be generated. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXCLUDE_REPORTS")]
@@ -212,14 +212,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum InLeafShapesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Additional output feature classes will be generated. The attribute fields from the input feature class will not be included in the output feature class. The output feature class will contain a field named OriginalOID that references the ObjectID of the input feature from which the output was generated.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FEATURE_PER_LEAF_SHAPE")]
 			FEATURE_PER_LEAF_SHAPE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Additional output feature classes will not be generated, even if additional leaf shapes are defined in the logic of the rule. All of the geometry will be contained within the output multipatch features. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("FEATURE_PER_SHAPE")]

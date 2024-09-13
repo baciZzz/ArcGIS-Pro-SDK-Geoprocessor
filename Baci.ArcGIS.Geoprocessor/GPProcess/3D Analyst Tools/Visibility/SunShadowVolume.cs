@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Sun Shadow Volume</para>
-	/// <para>太阳阴影体</para>
-	/// <para>利用每个要素在给定日期和时间的光照条件下所投射出的模型阴影来创建闭合体。</para>
+	/// <para>Sun Shadow Volume</para>
+	/// <para>Creates closed volumes that model shadows cast by each feature using sunlight for a given date and time.</para>
 	/// </summary>
 	public class SunShadowVolume : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>用于模拟阴影的多面体要素。如果面要素和线要素添加为一个拉伸 3D 图层，则也可使用它们。</para>
+		/// <para>The multipatch features that will be used to model shadows. Polygon and line features can also be used if they are added as an extruded 3D layer.</para>
 		/// </param>
 		/// <param name="StartDateAndTime">
 		/// <para>Start Date and Time</para>
-		/// <para>将计算阳光轨线来对阴影进行建模的日期和时间。</para>
+		/// <para>The date and time that the trajectory of sunlight will be calculated for modeling the shadows.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>存储生成的阴影体的多面体要素类。</para>
+		/// <para>The multipatch feature class that will store the resulting shadow volumes.</para>
 		/// </param>
 		public SunShadowVolume(object InFeatures, object StartDateAndTime, object OutFeatureClass)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 太阳阴影体</para>
+		/// <para>Tool Display Name : Sun Shadow Volume</para>
 		/// </summary>
-		public override string DisplayName() => "太阳阴影体";
+		public override string DisplayName() => "Sun Shadow Volume";
 
 		/// <summary>
 		/// <para>Tool Name : SunShadowVolume</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>用于模拟阴影的多面体要素。如果面要素和线要素添加为一个拉伸 3D 图层，则也可使用它们。</para>
+		/// <para>The multipatch features that will be used to model shadows. Polygon and line features can also be used if they are added as an extruded 3D layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Start Date and Time</para>
-		/// <para>将计算阳光轨线来对阴影进行建模的日期和时间。</para>
+		/// <para>The date and time that the trajectory of sunlight will be calculated for modeling the shadows.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDate()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>存储生成的阴影体的多面体要素类。</para>
+		/// <para>The multipatch feature class that will store the resulting shadow volumes.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -101,9 +101,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Adjusted for Daylight Savings Time</para>
-		/// <para>指定时间值是否调整为夏令时 (DST)。</para>
-		/// <para>未选中 - 不遵守 DST。这是默认设置。</para>
-		/// <para>选中 - 遵守 DST。</para>
+		/// <para>Specifies if time value is adjusted for Daylight Savings Time (DST).</para>
+		/// <para>Unchecked—DST is not observed. This is the default.</para>
+		/// <para>Checked—DST is observed.</para>
 		/// <para><see cref="AdjustedForDstEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Time Zone</para>
-		/// <para>参与输入所在的时区。默认设置是操作系统所设置的时区。</para>
+		/// <para>The time zone in which the participating input is located. The default setting is the time zone to which the operating system is set.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>End Date and Time</para>
-		/// <para>用于计算太阳位置的最终日期和时间。如果只提供一个日期，则假设最终时间为日落。</para>
+		/// <para>The final date and time for calculating sun position. If only a date is provided, the final time is presumed to be sunset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Iteration Interval</para>
-		/// <para>用于定义从开始日期起的时间迭代的值。</para>
+		/// <para>The value used to define the iteration of time from the start date.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -138,10 +138,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Iteration Unit</para>
-		/// <para>定义应用到起始日期和时间的迭代值的单位。</para>
-		/// <para>天—迭代值将表示天数。这是默认设置。</para>
-		/// <para>小时—迭代值将表示一个或几个小时。</para>
-		/// <para>分—迭代值将表示一分钟或几分钟。</para>
+		/// <para>The unit that defines the iteration value applied to the Start Date and Time.</para>
+		/// <para>Days—Iteration value will represent days. This is the default.</para>
+		/// <para>Hours—Iteration value will represent one or more hours.</para>
+		/// <para>Minutes—Iteration value will represent one or more minutes.</para>
 		/// <para><see cref="IterationUnitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -166,14 +166,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum AdjustedForDstEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—DST is observed.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADJUSTED_FOR_DST")]
 			ADJUSTED_FOR_DST,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—DST is not observed. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_ADJUSTED_FOR_DST")]
@@ -187,24 +187,24 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum IterationUnitEnum 
 		{
 			/// <summary>
-			/// <para>天—迭代值将表示天数。这是默认设置。</para>
+			/// <para>Days—Iteration value will represent days. This is the default.</para>
 			/// </summary>
 			[GPValue("DAYS")]
-			[Description("天")]
+			[Description("Days")]
 			Days,
 
 			/// <summary>
-			/// <para>小时—迭代值将表示一个或几个小时。</para>
+			/// <para>Hours—Iteration value will represent one or more hours.</para>
 			/// </summary>
 			[GPValue("HOURS")]
-			[Description("小时")]
+			[Description("Hours")]
 			Hours,
 
 			/// <summary>
-			/// <para>分—迭代值将表示一分钟或几分钟。</para>
+			/// <para>Minutes—Iteration value will represent one or more minutes.</para>
 			/// </summary>
 			[GPValue("MINUTES")]
-			[Description("分")]
+			[Description("Minutes")]
 			Minutes,
 
 		}

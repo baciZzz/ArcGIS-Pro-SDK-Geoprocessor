@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Identical</para>
-	/// <para>删除相同项</para>
-	/// <para>如果要素类或表中的记录在字段列表中具有相同值，则可删除这些记录。如果选择了几何字段，将会对要素几何进行比较。</para>
+	/// <para>Delete Identical</para>
+	/// <para>Deletes records in a feature class or table which have identical values in a list of fields. If the geometry field is selected, feature geometries are compared.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>将删除相同记录的表或要素类。</para>
+		/// <para>The table or feature class that will have its identical records deleted.</para>
 		/// </param>
 		/// <param name="Fields">
 		/// <para>Field(s)</para>
-		/// <para>将对字段值进行比较以查找相同记录的一个或多个字段。</para>
+		/// <para>The field or fields whose values will be compared to find identical records.</para>
 		/// </param>
 		public DeleteIdentical(object InDataset, object Fields)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 删除相同项</para>
+		/// <para>Tool Display Name : Delete Identical</para>
 		/// </summary>
-		public override string DisplayName() => "删除相同项";
+		public override string DisplayName() => "Delete Identical";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteIdentical</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>将删除相同记录的表或要素类。</para>
+		/// <para>The table or feature class that will have its identical records deleted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field(s)</para>
-		/// <para>将对字段值进行比较以查找相同记录的一个或多个字段。</para>
+		/// <para>The field or fields whose values will be compared to find identical records.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>XY Tolerance</para>
-		/// <para>在计算时应用于每个折点的 xy 容差（如果另一要素中存在相同的折点）。</para>
+		/// <para>The xy tolerance that will be applied to each vertex when evaluating if there is an identical vertex in another feature.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Z Tolerance</para>
-		/// <para>在计算时应用于每个折点的 z 容差（如果另一要素中存在相同的折点）。</para>
+		/// <para>The z tolerance that will be applied to each vertex when evaluating if there is an identical vertex in another feature.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>LAS Building Multipatch</para>
-	/// <para>LAS 建筑物多面体</para>
-	/// <para>通过从激光雷达数据中捕获的屋顶点创建建筑物模型。</para>
+	/// <para>LAS Building Multipatch</para>
+	/// <para>Creates building models derived from rooftop points captured in lidar data.</para>
 	/// </summary>
 	public class LasBuildingMultipatch : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InLasDataset">
 		/// <para>Input LAS Dataset</para>
-		/// <para>LAS 数据集包含将用于定义建筑物屋顶的点。</para>
+		/// <para>The LAS dataset containing the points that will define the building rooftop.</para>
 		/// </param>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>定义建筑物覆盖区面的面要素。</para>
+		/// <para>The polygon features that define the building footprint.</para>
 		/// </param>
 		/// <param name="Ground">
 		/// <para>Ground Height</para>
-		/// <para>地面高度值的来源可以是建筑物覆盖区面属性表中的数值字段、栅格或 TIN 表面。 基于字段的地面源将比基于表面的地面源的处理速度快。</para>
+		/// <para>The source of ground height values can be either a numeric field in the building footprint attribute table or a raster or TIN surface. A field-based ground source will be processed faster than a surface-based ground source.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Multipatch Feature Class</para>
-		/// <para>用于存储输出建筑物模型的多面体要素类。</para>
+		/// <para>The multipatch feature class that will store the output building models.</para>
 		/// </param>
 		public LasBuildingMultipatch(object InLasDataset, object InFeatures, object Ground, object OutFeatureClass)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : LAS 建筑物多面体</para>
+		/// <para>Tool Display Name : LAS Building Multipatch</para>
 		/// </summary>
-		public override string DisplayName() => "LAS 建筑物多面体";
+		public override string DisplayName() => "LAS Building Multipatch";
 
 		/// <summary>
 		/// <para>Tool Name : LasBuildingMultipatch</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
-		/// <para>LAS 数据集包含将用于定义建筑物屋顶的点。</para>
+		/// <para>The LAS dataset containing the points that will define the building rooftop.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLasDatasetLayer()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>定义建筑物覆盖区面的面要素。</para>
+		/// <para>The polygon features that define the building footprint.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Ground Height</para>
-		/// <para>地面高度值的来源可以是建筑物覆盖区面属性表中的数值字段、栅格或 TIN 表面。 基于字段的地面源将比基于表面的地面源的处理速度快。</para>
+		/// <para>The source of ground height values can be either a numeric field in the building footprint attribute table or a raster or TIN surface. A field-based ground source will be processed faster than a surface-based ground source.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Multipatch Feature Class</para>
-		/// <para>用于存储输出建筑物模型的多面体要素类。</para>
+		/// <para>The multipatch feature class that will store the output building models.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -115,10 +115,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>LAS Rooftop Point Selection</para>
-		/// <para>指定将用于定义建筑物屋顶的 LAS 点。</para>
-		/// <para>建筑物分类点—将使用分配的类代码值为 6 的 LAS 点。 这是默认设置。</para>
-		/// <para>图层过滤点—将使用按输入图层过滤的 LAS 点。</para>
-		/// <para>所有点—将使用与建筑物覆盖区面重叠的所有 LAS 点。</para>
+		/// <para>Specifies the LAS points that will be used to define the building rooftop.</para>
+		/// <para>Building Classified Points—LAS points assigned a class code value of 6 will be used. This is the default.</para>
+		/// <para>Layer Filtered Points—LAS points that are filtered by the input layer will be used.</para>
+		/// <para>All Points—All LAS points that overlay the building footprint will be used.</para>
 		/// <para><see cref="PointSelectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Simplification Tolerance</para>
-		/// <para>将用于简化屋顶几何图形的 z 容差值。 该值定义了输出屋顶模型与使用 LAS 点创建的 TIN 表面的最大偏差。</para>
+		/// <para>A z-tolerance value that will be used to simplify the rooftop geometry. This value defines the maximum deviation of the output rooftop model from the TIN surface created using the LAS points.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Sampling Resolution</para>
-		/// <para>用于在构建屋顶表面之前细化点云的分组大小。</para>
+		/// <para>The binning size used to thin the point cloud prior to constructing the rooftop surface.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -161,24 +161,24 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum PointSelectionEnum 
 		{
 			/// <summary>
-			/// <para>建筑物分类点—将使用分配的类代码值为 6 的 LAS 点。 这是默认设置。</para>
+			/// <para>Building Classified Points—LAS points assigned a class code value of 6 will be used. This is the default.</para>
 			/// </summary>
 			[GPValue("BUILDING_CLASSIFIED_POINTS")]
-			[Description("建筑物分类点")]
+			[Description("Building Classified Points")]
 			Building_Classified_Points,
 
 			/// <summary>
-			/// <para>图层过滤点—将使用按输入图层过滤的 LAS 点。</para>
+			/// <para>Layer Filtered Points—LAS points that are filtered by the input layer will be used.</para>
 			/// </summary>
 			[GPValue("LAYER_FILTERED_POINTS")]
-			[Description("图层过滤点")]
+			[Description("Layer Filtered Points")]
 			Layer_Filtered_Points,
 
 			/// <summary>
-			/// <para>所有点—将使用与建筑物覆盖区面重叠的所有 LAS 点。</para>
+			/// <para>All Points—All LAS points that overlay the building footprint will be used.</para>
 			/// </summary>
 			[GPValue("ALL_POINTS")]
-			[Description("所有点")]
+			[Description("All Points")]
 			All_Points,
 
 		}

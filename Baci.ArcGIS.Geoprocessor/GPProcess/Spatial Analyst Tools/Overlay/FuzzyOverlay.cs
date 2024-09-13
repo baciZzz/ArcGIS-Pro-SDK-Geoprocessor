@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Fuzzy Overlay</para>
-	/// <para>模糊叠加</para>
-	/// <para>基于所选叠加类型组合模糊分类栅格数据。</para>
+	/// <para>Fuzzy Overlay</para>
+	/// <para>Combine fuzzy membership rasters data together, based on selected overlay type.</para>
 	/// </summary>
 	public class FuzzyOverlay : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRasters">
 		/// <para>Input rasters</para>
-		/// <para>要在叠加中进行组合的输入隶属度栅格列表。</para>
+		/// <para>A list of input membership rasters to be combined in the overlay.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>应用模糊运算符后得到的输出栅格。</para>
-		/// <para>输出值将始终介于 0 到 1 之间。</para>
+		/// <para>The output raster which is the result of applying the fuzzy operator.</para>
+		/// <para>This output will always have a value between 0 and 1.</para>
 		/// </param>
 		public FuzzyOverlay(object InRasters, object OutRaster)
 		{
@@ -35,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 模糊叠加</para>
+		/// <para>Tool Display Name : Fuzzy Overlay</para>
 		/// </summary>
-		public override string DisplayName() => "模糊叠加";
+		public override string DisplayName() => "Fuzzy Overlay";
 
 		/// <summary>
 		/// <para>Tool Name : FuzzyOverlay</para>
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input rasters</para>
-		/// <para>要在叠加中进行组合的输入隶属度栅格列表。</para>
+		/// <para>A list of input membership rasters to be combined in the overlay.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -83,8 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>应用模糊运算符后得到的输出栅格。</para>
-		/// <para>输出值将始终介于 0 到 1 之间。</para>
+		/// <para>The output raster which is the result of applying the fuzzy operator.</para>
+		/// <para>This output will always have a value between 0 and 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -92,12 +92,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Overlay type</para>
-		/// <para>指定在组合两个或多个隶属度数据时所使用的方法。</para>
-		/// <para>与—输入模糊栅格中模糊隶属度栅格的最小值。</para>
-		/// <para>或—输入栅格中模糊隶属度栅格的最大值。</para>
-		/// <para>产品—递减函数。当多个证据栅格的组合的重要性或该组合小于任何单个输入栅格时使用此函数。</para>
-		/// <para>总和—递增函数。当多个证据栅格的组合的重要性或该组合大于任何单个输入栅格时使用此函数。</para>
-		/// <para>Gamma—以 fuzzy 总和和 fuzzy 产品为底，以 gamma 为指数的代数乘积。</para>
+		/// <para>Specifies the method used to combine two or more membership data.</para>
+		/// <para>And—The minimum of the fuzzy memberships from the input fuzzy rasters.</para>
+		/// <para>Or—The maximum of the fuzzy memberships from the input rasters.</para>
+		/// <para>Product—A decreasive function. Use this when the combination of multiple evidence is less important or smaller than any of the inputs alone.</para>
+		/// <para>Sum—An increasive function. Use this when the combination of multiple evidence is more important or larger than any of the inputs alone.</para>
+		/// <para>Gamma—The algebraic product of the fuzzy Sum and fuzzy Product, both raised to the power of gamma.</para>
 		/// <para><see cref="OverlayTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -107,8 +107,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Gamma</para>
-		/// <para>要使用的 gamma 值。仅适用于将叠加类型设置为 Gamma 时。</para>
-		/// <para>默认值为 0.9。</para>
+		/// <para>The gamma value to be used. This is only available when the Overlay type is set to Gamma.</para>
+		/// <para>Default value is 0.9.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -134,35 +134,35 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum OverlayTypeEnum 
 		{
 			/// <summary>
-			/// <para>与—输入模糊栅格中模糊隶属度栅格的最小值。</para>
+			/// <para>And—The minimum of the fuzzy memberships from the input fuzzy rasters.</para>
 			/// </summary>
 			[GPValue("AND")]
-			[Description("与")]
+			[Description("And")]
 			And,
 
 			/// <summary>
-			/// <para>或—输入栅格中模糊隶属度栅格的最大值。</para>
+			/// <para>Or—The maximum of the fuzzy memberships from the input rasters.</para>
 			/// </summary>
 			[GPValue("OR")]
-			[Description("或")]
+			[Description("Or")]
 			Or,
 
 			/// <summary>
-			/// <para>总和—递增函数。当多个证据栅格的组合的重要性或该组合大于任何单个输入栅格时使用此函数。</para>
+			/// <para>Sum—An increasive function. Use this when the combination of multiple evidence is more important or larger than any of the inputs alone.</para>
 			/// </summary>
 			[GPValue("SUM")]
-			[Description("总和")]
+			[Description("Sum")]
 			Sum,
 
 			/// <summary>
-			/// <para>产品—递减函数。当多个证据栅格的组合的重要性或该组合小于任何单个输入栅格时使用此函数。</para>
+			/// <para>Product—A decreasive function. Use this when the combination of multiple evidence is less important or smaller than any of the inputs alone.</para>
 			/// </summary>
 			[GPValue("PRODUCT")]
-			[Description("产品")]
+			[Description("Product")]
 			Product,
 
 			/// <summary>
-			/// <para>Gamma—以 fuzzy 总和和 fuzzy 产品为底，以 gamma 为指数的代数乘积。</para>
+			/// <para>Gamma—The algebraic product of the fuzzy Sum and fuzzy Product, both raised to the power of gamma.</para>
 			/// </summary>
 			[GPValue("GAMMA")]
 			[Description("Gamma")]

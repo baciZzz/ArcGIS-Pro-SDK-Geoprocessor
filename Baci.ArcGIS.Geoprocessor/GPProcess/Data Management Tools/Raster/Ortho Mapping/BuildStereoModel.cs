@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Stereo Model</para>
-	/// <para>构建立体模型</para>
-	/// <para>根据用户提供的立体像对构建镶嵌数据集的立体模型。</para>
+	/// <para>Build Stereo Model</para>
+	/// <para>Builds a stereo model of a mosaic dataset based on a user-provided stereo pair.</para>
 	/// </summary>
 	public class BuildStereoModel : AbstractGPProcess
 	{
@@ -21,8 +21,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>构建立体模型时基于的镶嵌数据集。</para>
-		/// <para>在输入镶嵌数据集上先运行应用区域网平差有助于创建更加准确的立体模型。</para>
+		/// <para>The mosaic dataset on which the stereo model will be built.</para>
+		/// <para>Running Apply Block Adjustment on the input mosaic dataset first will help create a more accurate stereo model.</para>
 		/// </param>
 		public BuildStereoModel(object InMosaicDataset)
 		{
@@ -30,9 +30,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 构建立体模型</para>
+		/// <para>Tool Display Name : Build Stereo Model</para>
 		/// </summary>
-		public override string DisplayName() => "构建立体模型";
+		public override string DisplayName() => "Build Stereo Model";
 
 		/// <summary>
 		/// <para>Tool Name : BuildStereoModel</para>
@@ -66,8 +66,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>构建立体模型时基于的镶嵌数据集。</para>
-		/// <para>在输入镶嵌数据集上先运行应用区域网平差有助于创建更加准确的立体模型。</para>
+		/// <para>The mosaic dataset on which the stereo model will be built.</para>
+		/// <para>Running Apply Block Adjustment on the input mosaic dataset first will help create a more accurate stereo model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Minimum Intersection Angle (in degree)</para>
-		/// <para>用于定义立体像对必须满足的最小角度的值（单位为度）。默认值为 10。</para>
+		/// <para>The value, in degrees, that defines the minimum angle the stereo pair must meet. The default is 10.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Intersection Angle (in degree)</para>
-		/// <para>用于定义立体像对必须满足的最大角度的值（单位为度）。默认值为 70。</para>
+		/// <para>The value, in degrees, that defines the maximum angle the stereo pair must meet. The default is 70.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Minimum Area Overlap</para>
-		/// <para>重叠区域在整个图像中所占的百分比。默认值为 0.5。</para>
+		/// <para>The percentage of the overlapping area over the whole image. The default is 0.5.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Omega/Phi Difference (in degree)</para>
-		/// <para>两个图像对之间的 Omega 和 Phi 差异的最大阈值。将比较图像对的 Omega 值和 Phi 值。如果两个 Omega 值或两个 Phi 值之差大于阈值，则该像对将不会被格式化为立体像对。</para>
+		/// <para>The maximum threshold for the Omega and Phi difference between the two image pairs. The Omega values and Phi values for the image pairs are compared. If the difference between either the two Omega or the two Phi values is above the threshold, the pairs will not be formatted as a stereo pair.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum GSD Difference</para>
-		/// <para>像对中两个图像间的最大 GSD 阈值。如果这两个图像之间的分辨率比值大于阈值，则该像对将不会被构建为立体像对。默认值为 2。</para>
+		/// <para>The threshold for the maximum GSD between two images in a pair. If the resolution ratio between the two images is greater than the threshold value, the pairs will not be built as a stereo pair. The default is 2.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Group by</para>
-		/// <para>根据镶嵌数据集字段（如 RGB、全色或红外）定义的同一组内的栅格项目构建立体模型。</para>
+		/// <para>Builds the stereo model from raster items within the same group, defined by a mosaic dataset field such as RGB, Panchromatic, or Infrared.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -132,10 +132,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Only pick stereo models in the same flight line</para>
-		/// <para>指定如何选择立体模型。</para>
-		/// <para>选中 - 将沿同一航线选择立体像对。</para>
-		/// <para>未选中 - 将沿不同航线选择立体像对。这是默认设置。</para>
-		/// <para>此参数不适用于基于卫星的传感器。</para>
+		/// <para>Specifies how the stereo models will be selected.</para>
+		/// <para>Checked—Stereo pairs will be selected along the same flight line.</para>
+		/// <para>Unchecked—Stereo pairs will be selected across flight lines. This is the default.</para>
+		/// <para>This parameter is not applicable to satellite-based sensors.</para>
 		/// <para><see cref="SameFlightEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -151,14 +151,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SameFlightEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Stereo pairs will be selected along the same flight line.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SAMEFLIGHT")]
 			SAMEFLIGHT,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Stereo pairs will be selected across flight lines. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SAMEFLIGHT")]

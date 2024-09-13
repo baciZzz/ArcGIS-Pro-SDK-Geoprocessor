@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Extract by Polygon</para>
-	/// <para>按多边形提取</para>
-	/// <para>通过指定多边形顶点，基于多边形提取栅格像元。</para>
+	/// <para>Extract by Polygon</para>
+	/// <para>Extracts the cells of a raster based on a polygon by specifying the polygon's vertices.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.SpatialAnalystTools.ExtractByMask"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
 	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.SpatialAnalystTools.ExtractByMask))]
@@ -23,17 +23,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>从中提取像元的输入栅格。</para>
+		/// <para>The input raster from which cells will be extracted.</para>
 		/// </param>
 		/// <param name="Polygon">
 		/// <para>Polygon</para>
-		/// <para>由一系列折点（x,y 点坐标）定义的一个或多个多边形，用于标识要提取的输入栅格区域。 一个多边形部分的最后一个坐标应与第一个坐标相同，从而使多边形闭合。</para>
-		/// <para>指定多个多边形时，这些多边形必须是连续的。 逐一输入各个多边形的坐标。 通过定义最后一个坐标与第一个坐标相同来确保每个部分保持闭合。</para>
-		/// <para>点所使用的地图单位与输入栅格相同。</para>
+		/// <para>A polygon (or polygons) defined by a series of vertices (x,y point coordinates) that identify the area of the input raster to be extracted. The last coordinate of a polygon part should be the same as the first in order to close a polygon.</para>
+		/// <para>When specifying multiple polygons, they must be contiguous. Enter the series of coordinates polygon by polygon. Be sure to close each part by defining the last coordinate the same as the first one.</para>
+		/// <para>The points are in the same map units as the input raster.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>包含从输入栅格中提取的像元值的输出栅格。</para>
+		/// <para>The output raster containing the cell values extracted from the input raster.</para>
 		/// </param>
 		public ExtractByPolygon(object InRaster, object Polygon, object OutRaster)
 		{
@@ -43,9 +43,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 按多边形提取</para>
+		/// <para>Tool Display Name : Extract by Polygon</para>
 		/// </summary>
-		public override string DisplayName() => "按多边形提取";
+		public override string DisplayName() => "Extract by Polygon";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractByPolygon</para>
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>从中提取像元的输入栅格。</para>
+		/// <para>The input raster from which cells will be extracted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -91,9 +91,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Polygon</para>
-		/// <para>由一系列折点（x,y 点坐标）定义的一个或多个多边形，用于标识要提取的输入栅格区域。 一个多边形部分的最后一个坐标应与第一个坐标相同，从而使多边形闭合。</para>
-		/// <para>指定多个多边形时，这些多边形必须是连续的。 逐一输入各个多边形的坐标。 通过定义最后一个坐标与第一个坐标相同来确保每个部分保持闭合。</para>
-		/// <para>点所使用的地图单位与输入栅格相同。</para>
+		/// <para>A polygon (or polygons) defined by a series of vertices (x,y point coordinates) that identify the area of the input raster to be extracted. The last coordinate of a polygon part should be the same as the first in order to close a polygon.</para>
+		/// <para>When specifying multiple polygons, they must be contiguous. Enter the series of coordinates polygon by polygon. Be sure to close each part by defining the last coordinate the same as the first one.</para>
+		/// <para>The points are in the same map units as the input raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>包含从输入栅格中提取的像元值的输出栅格。</para>
+		/// <para>The output raster containing the cell values extracted from the input raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -109,9 +109,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Extraction area</para>
-		/// <para>标识要提取输入多边形内部还是输入多边形外部的像元。</para>
-		/// <para>内部—应选择输入多边形内部的像元并将其写入输出栅格。 多边形区域外部的所有像元都将在输出栅格中获得 NoData 值。</para>
-		/// <para>外部—应选择输入多边形外部的像元并将其写入输出栅格。 多边形内部的所有像元均会获得 NoData。</para>
+		/// <para>Identifies whether to extract cells inside or outside the input polygon.</para>
+		/// <para>Inside—The cells inside the input polygon should be selected and written to the output raster. All cells outside the polygon will receive NoData values on the output raster.</para>
+		/// <para>Outside—The cells outside the input polygon should be selected and written to the output raster. All cells inside the polygon will receive NoData.</para>
 		/// <para><see cref="ExtractionAreaEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -136,17 +136,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ExtractionAreaEnum 
 		{
 			/// <summary>
-			/// <para>内部—应选择输入多边形内部的像元并将其写入输出栅格。 多边形区域外部的所有像元都将在输出栅格中获得 NoData 值。</para>
+			/// <para>Inside—The cells inside the input polygon should be selected and written to the output raster. All cells outside the polygon will receive NoData values on the output raster.</para>
 			/// </summary>
 			[GPValue("INSIDE")]
-			[Description("内部")]
+			[Description("Inside")]
 			Inside,
 
 			/// <summary>
-			/// <para>外部—应选择输入多边形外部的像元并将其写入输出栅格。 多边形内部的所有像元均会获得 NoData。</para>
+			/// <para>Outside—The cells outside the input polygon should be selected and written to the output raster. All cells inside the polygon will receive NoData.</para>
 			/// </summary>
 			[GPValue("OUTSIDE")]
-			[Description("外部")]
+			[Description("Outside")]
 			Outside,
 
 		}

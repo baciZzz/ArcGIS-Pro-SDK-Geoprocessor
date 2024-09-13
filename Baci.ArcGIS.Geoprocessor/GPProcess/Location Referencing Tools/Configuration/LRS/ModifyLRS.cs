@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Modify LRS</para>
-	/// <para>修改 LRS</para>
-	/// <para>修改指定工作空间中的现有线性参考系统 (LRS)。</para>
+	/// <para>Modify LRS</para>
+	/// <para>Modifies an existing linear referencing system (LRS) in the specified workspace.</para>
 	/// </summary>
 	public class ModifyLRS : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InWorkspace">
 		/// <para>Input Workspace</para>
-		/// <para>LRS 工作空间。</para>
+		/// <para>The LRS workspace.</para>
 		/// </param>
 		/// <param name="CurrentLrsName">
 		/// <para>Current LRS Name</para>
-		/// <para>当前 LRS 名称。</para>
+		/// <para>The name of the current LRS.</para>
 		/// </param>
 		public ModifyLRS(object InWorkspace, object CurrentLrsName)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 修改 LRS</para>
+		/// <para>Tool Display Name : Modify LRS</para>
 		/// </summary>
-		public override string DisplayName() => "修改 LRS";
+		public override string DisplayName() => "Modify LRS";
 
 		/// <summary>
 		/// <para>Tool Name : ModifyLRS</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Input Workspace</para>
-		/// <para>LRS 工作空间。</para>
+		/// <para>The LRS workspace.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Current LRS Name</para>
-		/// <para>当前 LRS 名称。</para>
+		/// <para>The name of the current LRS.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>New LRS Name</para>
-		/// <para>当前 LRS 的新名称。</para>
+		/// <para>The new name of the current LRS.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Centerline - Feature Class</para>
-		/// <para>最小模式的现有中心线要素类。</para>
+		/// <para>An existing centerline feature class for the minimum schema.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Centerline - Centerline ID Field</para>
-		/// <para>中心线 - 要素类参数值中的中心线 ID 字段的名称。</para>
+		/// <para>The name of the centerline ID field from the Centerline - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Centerline Sequence - Table</para>
-		/// <para>最小模式的现有中心线序列表。</para>
+		/// <para>An existing centerline sequence table for the minimum schema.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Centerline Sequence - Centerline ID Field</para>
-		/// <para>中心线序列 - 表参数值中的中心线 ID 字段的名称。</para>
+		/// <para>The name of the centerline ID field from the Centerline Sequence - Table parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Centerline Sequence - Route ID Field</para>
-		/// <para>中心线序列 - 表参数值中的路径 ID 字段的名称。</para>
+		/// <para>The name of the route ID field from the Centerline Sequence - Table parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -148,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Centerline Sequence - From Date Field</para>
-		/// <para>中心线序列 - 表参数值中的开始日期字段的名称。</para>
+		/// <para>The name of the from date field from the Centerline Sequence - Table parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -159,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Centerline Sequence - To Date Field</para>
-		/// <para>中心线序列 - 表参数值中的结束日期字段的名称。</para>
+		/// <para>The name of the to date field from the Centerline Sequence - Table parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Centerline Sequence - Network ID Field</para>
-		/// <para>中心线序列 - 表参数值中的网络 ID 字段的名称。</para>
+		/// <para>The name of the network ID field from the Centerline Sequence - Table parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -181,7 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Calibration Point - Feature Class</para>
-		/// <para>最小模式的现有校准点要素类。</para>
+		/// <para>An existing calibration point feature class for the minimum schema.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -192,7 +192,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Calibration Point - Measure Field</para>
-		/// <para>校准点 - 要素类参数值的测量字段的名称。</para>
+		/// <para>The name of the measure field from the Calibration Point - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -203,7 +203,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Calibration Point - From Date Field</para>
-		/// <para>校准点 - 要素类参数值的开始日期字段的名称。</para>
+		/// <para>The name of the from date field from the Calibration Point - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -214,7 +214,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Calibration Point - To Date Field</para>
-		/// <para>校准点 - 要素类参数值的结束日期字段的名称。</para>
+		/// <para>The name of the to date field from the Calibration Point - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -225,7 +225,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Calibration Point - Route ID Field</para>
-		/// <para>校准点 - 要素类参数值中的路径 ID 字段的名称。</para>
+		/// <para>The name of the route ID field from the Calibration Point - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -236,7 +236,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Calibration Point - Network ID Field</para>
-		/// <para>校准点 - 要素类参数值中的网络 ID 字段的名称。</para>
+		/// <para>The name of the network ID field from the Calibration Point - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -247,7 +247,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Redline - Feature Class</para>
-		/// <para>最小模式的现有红线要素类。</para>
+		/// <para>An existing redline feature class for the minimum schema.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -258,7 +258,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Redline - From Measure Field</para>
-		/// <para>红线 - 要素类参数值的测量始于字段的名称。</para>
+		/// <para>The name of the from measure field from the Redline - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -269,7 +269,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Redline - To  Measure Field</para>
-		/// <para>红线 - 要素类参数值的测量止于字段的名称。</para>
+		/// <para>The name of the to measure field from the Redline - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -280,7 +280,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Redline - Route ID Field</para>
-		/// <para>红线 - 要素类参数值的路径 ID 字段的名称。</para>
+		/// <para>The name of the route ID field from the Redline - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -291,7 +291,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Redline - Route Name Field</para>
-		/// <para>红线 - 要素类参数值的路径名称字段的名称。</para>
+		/// <para>The name of the route name field from the Redline - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -302,7 +302,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Redline - Effective Date Field</para>
-		/// <para>红线 - 要素类参数值的生效日期字段的名称。</para>
+		/// <para>The name of the effective date field from the Redline - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -313,7 +313,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Redline - Activity Type Field</para>
-		/// <para>红线 - 要素类参数值的活动类型字段的名称。</para>
+		/// <para>The name of the activity type field from the Redline - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -324,7 +324,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Redline - Network ID Field</para>
-		/// <para>红线 - 要素类参数值的网络 ID 字段的名称。</para>
+		/// <para>The name of the network ID field from the Redline - Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -342,10 +342,10 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Conflict Prevention</para>
-		/// <para>指定是否将为输入 LRS 启用冲突预防。 冲突预防仅在对作为要素服务发布的分支版本化数据进行编辑或执行地理处理时可用。</para>
-		/// <para>原样—将使用当前的冲突预防设置。 这是默认设置。</para>
-		/// <para>启用—将为输入 LRS 启用冲突预防。</para>
-		/// <para>禁用—将为输入 LRS 禁用冲突预防。</para>
+		/// <para>Specifies whether conflict prevention will be enabled for the input LRS. Conflict prevention is only available when editing or performing geoprocessing on branch versioned data that is published as a feature service.</para>
+		/// <para>As is—The current conflict prevention setting will be used. This is the default.</para>
+		/// <para>Enable—Conflict prevention will be enabled for the input LRS.</para>
+		/// <para>Disable—Conflict prevention will be disabled for the input LRS.</para>
 		/// <para><see cref="ConflictPreventionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -355,9 +355,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Move required feature classes to feature dataset</para>
-		/// <para>指定是否将要素类移动到所需的 LRS 要素数据集。</para>
-		/// <para>选中 - 将要素类移动到所需的 LRS 要素数据集。</para>
-		/// <para>未选中 - 不将要素类移动到所需的 LRS 要素数据集。 这是默认设置。</para>
+		/// <para>Specifies whether feature classes will be moved to the required LRS feature dataset.</para>
+		/// <para>Checked—Feature classes will be moved to the required LRS feature dataset.</para>
+		/// <para>Unchecked—Feature classes will not be moved to the required LRS feature dataset. This is the default.</para>
 		/// <para><see cref="MoveToFeatureDatasetEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -382,24 +382,24 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum ConflictPreventionEnum 
 		{
 			/// <summary>
-			/// <para>原样—将使用当前的冲突预防设置。 这是默认设置。</para>
+			/// <para>As is—The current conflict prevention setting will be used. This is the default.</para>
 			/// </summary>
 			[GPValue("AS_IS")]
-			[Description("原样")]
+			[Description("As is")]
 			As_is,
 
 			/// <summary>
-			/// <para>启用—将为输入 LRS 启用冲突预防。</para>
+			/// <para>Enable—Conflict prevention will be enabled for the input LRS.</para>
 			/// </summary>
 			[GPValue("ENABLE")]
-			[Description("启用")]
+			[Description("Enable")]
 			Enable,
 
 			/// <summary>
-			/// <para>禁用—将为输入 LRS 禁用冲突预防。</para>
+			/// <para>Disable—Conflict prevention will be disabled for the input LRS.</para>
 			/// </summary>
 			[GPValue("DISABLE")]
-			[Description("禁用")]
+			[Description("Disable")]
 			Disable,
 
 		}
@@ -410,14 +410,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum MoveToFeatureDatasetEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Feature classes will be moved to the required LRS feature dataset.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MOVE")]
 			MOVE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Feature classes will not be moved to the required LRS feature dataset. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_MOVE")]

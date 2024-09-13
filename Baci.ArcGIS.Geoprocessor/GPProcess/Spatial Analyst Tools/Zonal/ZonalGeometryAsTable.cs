@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Zonal Geometry as Table</para>
-	/// <para>以表格显示分区几何统计</para>
-	/// <para>为数据集中的各个区域计算几何测量值（面积、周长、厚度和椭圆的特征值），并以表的形式来显示结果。</para>
+	/// <para>Zonal Geometry as Table</para>
+	/// <para>Calculates the geometry measures (area, perimeter, thickness, and the characteristics of ellipse) for each zone in a dataset and reports the results as a table.</para>
 	/// </summary>
 	public class ZonalGeometryAsTable : AbstractGPProcess
 	{
@@ -21,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InZoneData">
 		/// <para>Input raster or feature zone data</para>
-		/// <para>定义区域的数据集。</para>
-		/// <para>可通过整型栅格或要素图层来定义区域。</para>
+		/// <para>The dataset that defines the zones.</para>
+		/// <para>The zones can be defined by an integer raster or a feature layer.</para>
 		/// </param>
 		/// <param name="ZoneField">
 		/// <para>Zone field</para>
-		/// <para>包含定义每个区域的值的字段。</para>
-		/// <para>必须是区域数据集的整型字段。</para>
+		/// <para>The field that contains the values that define each zone.</para>
+		/// <para>It must be an integer field of the zone dataset.</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output table</para>
-		/// <para>将包含每个区域中值的汇总的输出表。</para>
-		/// <para>表的格式由输出位置和路径确定。 默认情况下，输出为一张地理数据库表。 如果路径不在地理数据库中，则格式将由表达式确定。 如果扩展名为 .dbf，则将采用 dBASE 格式。 如果未指定扩展名，则输出将为 INFO 表。 不支持将 INFO 表作为 ArcGIS Pro 中的输入且无法显示 INFO 表。</para>
+		/// <para>Output table that will contain the summary of the values in each zone.</para>
+		/// <para>The format of the table is determined by the output location and path. By default, the output will be a geodatabase table. If the path is not in a geodatabase, the format is determined by the extension. If the extension is .dbf, it will be in dBASE format. If no extension is specified, the output will be an INFO table. INFO tables are not supported as input in ArcGIS Pro and cannot be displayed</para>
 		/// </param>
 		public ZonalGeometryAsTable(object InZoneData, object ZoneField, object OutTable)
 		{
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 以表格显示分区几何统计</para>
+		/// <para>Tool Display Name : Zonal Geometry as Table</para>
 		/// </summary>
-		public override string DisplayName() => "以表格显示分区几何统计";
+		public override string DisplayName() => "Zonal Geometry as Table";
 
 		/// <summary>
 		/// <para>Tool Name : ZonalGeometryAsTable</para>
@@ -78,8 +78,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or feature zone data</para>
-		/// <para>定义区域的数据集。</para>
-		/// <para>可通过整型栅格或要素图层来定义区域。</para>
+		/// <para>The dataset that defines the zones.</para>
+		/// <para>The zones can be defined by an integer raster or a feature layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -91,8 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Zone field</para>
-		/// <para>包含定义每个区域的值的字段。</para>
-		/// <para>必须是区域数据集的整型字段。</para>
+		/// <para>The field that contains the values that define each zone.</para>
+		/// <para>It must be an integer field of the zone dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -102,8 +102,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output table</para>
-		/// <para>将包含每个区域中值的汇总的输出表。</para>
-		/// <para>表的格式由输出位置和路径确定。 默认情况下，输出为一张地理数据库表。 如果路径不在地理数据库中，则格式将由表达式确定。 如果扩展名为 .dbf，则将采用 dBASE 格式。 如果未指定扩展名，则输出将为 INFO 表。 不支持将 INFO 表作为 ArcGIS Pro 中的输入且无法显示 INFO 表。</para>
+		/// <para>Output table that will contain the summary of the values in each zone.</para>
+		/// <para>The format of the table is determined by the output location and path. By default, the output will be a geodatabase table. If the path is not in a geodatabase, the format is determined by the extension. If the extension is .dbf, it will be in dBASE format. If no extension is specified, the output will be an INFO table. INFO tables are not supported as input in ArcGIS Pro and cannot be displayed</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -111,8 +111,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Processing cell size</para>
-		/// <para>将创建的输出栅格的像元大小。</para>
-		/// <para>此参数可以通过数值进行定义，也可以从现有栅格数据集获取。 如果未将像元大小明确指定为参数值，则将使用环境像元大小值（如果已指定）；否则，将使用其他规则通过其他输出计算像元大小。 有关详细信息，请参阅用法部分。</para>
+		/// <para>The cell size of the output raster that will be created.</para>
+		/// <para>This parameter can be defined by a numeric value or obtained from an existing raster dataset. If the cell size hasn&apos;t been explicitly specified as the parameter value, the environment cell size value will be used if specified; otherwise, additional rules will be used to calculate it from the other inputs. See the usage section for more detail.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]

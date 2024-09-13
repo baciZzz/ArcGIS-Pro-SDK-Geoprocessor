@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Graphic Buffer</para>
-	/// <para>图形缓冲</para>
-	/// <para>在输入要素周围某一指定距离内创建缓冲区多边形。 在要素周围生成缓冲区时，多种制图形状对缓冲区末端（端头）和拐角（连接）可用。</para>
+	/// <para>Graphic Buffer</para>
+	/// <para>Creates buffer polygons around input features to a specified distance. A number of cartographic shapes are available for buffer ends (caps) and corners (joins) when the buffer is generated around the feature.</para>
 	/// </summary>
 	public class GraphicBuffer : AbstractGPProcess
 	{
@@ -21,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>要进行缓冲的输入点、线或面要素。</para>
+		/// <para>The input point, line, or polygon features to be buffered.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>包含输出缓冲区的要素类。</para>
+		/// <para>The feature class containing the output buffers.</para>
 		/// </param>
 		/// <param name="BufferDistanceOrField">
 		/// <para>Distance [value or field]</para>
-		/// <para>与要缓冲的输入要素之间的距离。 该距离可以用表示线性距离的某个值来指定，也可以用输入要素中的某个字段（包含用来对每个要素进行缓冲的距离）来指定。</para>
-		/// <para>如果未指定线性单位或输入了“未知”，则将使用输入要素空间参考的线性单位。</para>
+		/// <para>The distance around the input features that will be buffered. Distances can be provided as either a value representing a linear distance or as a field from the input features that contains the distance to buffer each feature.</para>
+		/// <para>If linear units are not specified or are entered as Unknown, the linear unit of the input features&apos; spatial reference will be used.</para>
 		/// </param>
 		public GraphicBuffer(object InFeatures, object OutFeatureClass, object BufferDistanceOrField)
 		{
@@ -40,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 图形缓冲</para>
+		/// <para>Tool Display Name : Graphic Buffer</para>
 		/// </summary>
-		public override string DisplayName() => "图形缓冲";
+		public override string DisplayName() => "Graphic Buffer";
 
 		/// <summary>
 		/// <para>Tool Name : GraphicBuffer</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>要进行缓冲的输入点、线或面要素。</para>
+		/// <para>The input point, line, or polygon features to be buffered.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>包含输出缓冲区的要素类。</para>
+		/// <para>The feature class containing the output buffers.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -92,8 +92,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Distance [value or field]</para>
-		/// <para>与要缓冲的输入要素之间的距离。 该距离可以用表示线性距离的某个值来指定，也可以用输入要素中的某个字段（包含用来对每个要素进行缓冲的距离）来指定。</para>
-		/// <para>如果未指定线性单位或输入了“未知”，则将使用输入要素空间参考的线性单位。</para>
+		/// <para>The distance around the input features that will be buffered. Distances can be provided as either a value representing a linear distance or as a field from the input features that contains the distance to buffer each feature.</para>
+		/// <para>If linear units are not specified or are entered as Unknown, the linear unit of the input features&apos; spatial reference will be used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -102,10 +102,10 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Caps Type</para>
-		/// <para>指定将要进行缓冲的输入要素的端头（末端）类型。 该参数仅支持点和面要素。</para>
-		/// <para>正方形—输入段末端周围的输出缓冲区将具有方形端头。 这是默认设置。</para>
-		/// <para>平端头—输出缓冲区的端头将垂直于输入段末端。</para>
-		/// <para>圆形—输入段末端的输出缓冲区将具有圆形端头。</para>
+		/// <para>Specifies the type of caps (ends) of the input features that will be buffered. This parameter is only supported for point and polygon features.</para>
+		/// <para>Square—The output buffer will have a square cap around the end of the input segment. This is the default.</para>
+		/// <para>Butt—The output buffer will have a cap perpendicular to the end of the input segment.</para>
+		/// <para>Round—The output buffer will have a cap that is round at the end of the input segment.</para>
 		/// <para><see cref="LineCapsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -115,10 +115,10 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Join Type</para>
-		/// <para>两条线段连接拐角处的缓冲区的形状。 该参数仅支持线和面要素。</para>
-		/// <para>尖头斜接—在拐角周围生成方形或尖角形状的输出缓冲区要素。 例如，方形输入面要素具有方形缓冲区要素。 这是默认设置。</para>
-		/// <para>平头斜接—内拐角的输出缓冲区要素将为方形，而垂直于拐角最远点的外拐角将被切掉。</para>
-		/// <para>圆形—内拐角的输出缓冲区要素为方形，而外拐角则为圆形。</para>
+		/// <para>The shape of the buffer at corners where two segments join. This parameter is only supported for line and polygon features.</para>
+		/// <para>Miter—Results in an output buffer feature that is a square or sharp shape around corners. For example, a square input polygon feature will have a square buffer feature. This is the default.</para>
+		/// <para>Bevel—The output buffer feature for inner corners will be squared while the outer corner will be cut perpendicular to the furthest point of the corner.</para>
+		/// <para>Round—The output buffer feature for inner corners will be squared while the outer corner will be round.</para>
 		/// <para><see cref="LineJoinsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Miter Limit</para>
-		/// <para>当线段相交呈锐角且指定了斜接角连接类型时，可使用该参数来控制缓冲输出的锐角如何逐渐变为点。 某些情况下，当使用斜接角连接类型时，两条线连接形成的外角会非常大。 这可能会导致拐角点的延伸超出预期。</para>
+		/// <para>Where line segments meet at a sharp angle and a Join Type of MITER has been specified, this parameter can be used to control how sharp corners in buffer output come to a point. In some cases, the outer angle where two lines join is quite large when using the MITER Join Type. This could cause the point of the corner to extend further than intended.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -136,9 +136,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Maximum Offset Deviation</para>
-		/// <para>输出缓冲区面边界将从实际理想缓冲区边界偏移的最大距离。 实际缓冲区边界为曲线，输出面边界为增密折线。 可以使用此参数来控制面边界与实际缓冲区边界的近似程度。</para>
-		/// <para>如果此参数未设置或设置为 0，则工具将确定最大偏差。 建议您使用默认值。 造成工具或后续分析性能下降的原因可能为使用的最大偏移偏差值过小。</para>
-		/// <para>有关详细信息，请参阅增密工具文档中的最大偏移偏差参数信息。</para>
+		/// <para>The maximum distance the output buffer polygon boundary will deviate from the true ideal buffer boundary. The true buffer boundary is a curve, and the output polygon boundary is a densified polyline. Using this parameter, you can control how well the output polygon boundary approximates the true buffer boundary.</para>
+		/// <para>If the parameter is not set or is set to 0, the tool will identify the maximum deviation. It is recommended that you use the default value. Performance degradation in the tool or in subsequent analysis can result from using a maximum offset deviation value that is too small.</para>
+		/// <para>See the Maximum Offset Deviation parameter information in the Densify tool documentation for more details.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -161,24 +161,24 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum LineCapsEnum 
 		{
 			/// <summary>
-			/// <para>正方形—输入段末端周围的输出缓冲区将具有方形端头。 这是默认设置。</para>
+			/// <para>Square—The output buffer will have a square cap around the end of the input segment. This is the default.</para>
 			/// </summary>
 			[GPValue("SQUARE")]
-			[Description("正方形")]
+			[Description("Square")]
 			Square,
 
 			/// <summary>
-			/// <para>平端头—输出缓冲区的端头将垂直于输入段末端。</para>
+			/// <para>Butt—The output buffer will have a cap perpendicular to the end of the input segment.</para>
 			/// </summary>
 			[GPValue("BUTT")]
-			[Description("平端头")]
+			[Description("Butt")]
 			Butt,
 
 			/// <summary>
-			/// <para>圆形—输入段末端的输出缓冲区将具有圆形端头。</para>
+			/// <para>Round—The output buffer will have a cap that is round at the end of the input segment.</para>
 			/// </summary>
 			[GPValue("ROUND")]
-			[Description("圆形")]
+			[Description("Round")]
 			Round,
 
 		}
@@ -189,24 +189,24 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum LineJoinsEnum 
 		{
 			/// <summary>
-			/// <para>尖头斜接—在拐角周围生成方形或尖角形状的输出缓冲区要素。 例如，方形输入面要素具有方形缓冲区要素。 这是默认设置。</para>
+			/// <para>Miter—Results in an output buffer feature that is a square or sharp shape around corners. For example, a square input polygon feature will have a square buffer feature. This is the default.</para>
 			/// </summary>
 			[GPValue("MITER")]
-			[Description("尖头斜接")]
+			[Description("Miter")]
 			Miter,
 
 			/// <summary>
-			/// <para>平头斜接—内拐角的输出缓冲区要素将为方形，而垂直于拐角最远点的外拐角将被切掉。</para>
+			/// <para>Bevel—The output buffer feature for inner corners will be squared while the outer corner will be cut perpendicular to the furthest point of the corner.</para>
 			/// </summary>
 			[GPValue("BEVEL")]
-			[Description("平头斜接")]
+			[Description("Bevel")]
 			Bevel,
 
 			/// <summary>
-			/// <para>圆形—内拐角的输出缓冲区要素为方形，而外拐角则为圆形。</para>
+			/// <para>Round—The output buffer feature for inner corners will be squared while the outer corner will be round.</para>
 			/// </summary>
 			[GPValue("ROUND")]
-			[Description("圆形")]
+			[Description("Round")]
 			Round,
 
 		}

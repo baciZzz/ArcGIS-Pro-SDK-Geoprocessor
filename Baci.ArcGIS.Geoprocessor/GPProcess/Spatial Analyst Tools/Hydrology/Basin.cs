@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Basin</para>
-	/// <para>盆域</para>
-	/// <para>创建描绘所有流域盆地的栅格。</para>
+	/// <para>Basin</para>
+	/// <para>Creates a raster delineating all drainage basins.</para>
 	/// </summary>
 	public class Basin : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InFlowDirectionRaster">
 		/// <para>Input D8 flow direction raster</para>
-		/// <para>根据每个像元来显示流向的输入栅格。</para>
-		/// <para>可以在流向工具中，使用默认的 D8 流向类型创建流向栅格。</para>
+		/// <para>The input raster that shows the direction of flow out of each cell.</para>
+		/// <para>A flow direction raster can be created with the Flow Direction tool, using the default D8 flow direction type .</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>描绘流域盆地的输出栅格。</para>
-		/// <para>输出为整型。</para>
+		/// <para>The output raster that delineates the drainage basins.</para>
+		/// <para>This output is of integer type.</para>
 		/// </param>
 		public Basin(object InFlowDirectionRaster, object OutRaster)
 		{
@@ -36,14 +36,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 盆域</para>
+		/// <para>Tool Display Name : Basin</para>
 		/// </summary>
-		public override string DisplayName() => "盆域";
+		public override string DisplayName() => "Basin";
 
 		/// <summary>
-		/// <para>Tool Name : 盆域</para>
+		/// <para>Tool Name : Basin</para>
 		/// </summary>
-		public override string ToolName() => "盆域";
+		public override string ToolName() => "Basin";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Basin</para>
@@ -72,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input D8 flow direction raster</para>
-		/// <para>根据每个像元来显示流向的输入栅格。</para>
-		/// <para>可以在流向工具中，使用默认的 D8 流向类型创建流向栅格。</para>
+		/// <para>The input raster that shows the direction of flow out of each cell.</para>
+		/// <para>A flow direction raster can be created with the Flow Direction tool, using the default D8 flow direction type .</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -85,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>描绘流域盆地的输出栅格。</para>
-		/// <para>输出为整型。</para>
+		/// <para>The output raster that delineates the drainage basins.</para>
+		/// <para>This output is of integer type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

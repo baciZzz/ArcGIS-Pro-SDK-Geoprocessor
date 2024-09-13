@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Manage Map Server Cache Scales</para>
-	/// <para>管理地图服务器缓存比例</para>
-	/// <para>用于在 ArcGIS Enterprise 中的现有地图图像图层或独立服务器上的已缓存地图或影像服务中更新比例级别。 使用此工具可添加新比例或从缓存中删除现有比例。</para>
+	/// <para>Manage Map Server Cache Scales</para>
+	/// <para>Updates the scale levels in an existing map image layer in ArcGIS Enterprise or in a cached map or image service on a stand-alone server. Use this tool to add new scales or delete existing scales from a cache.</para>
 	/// </summary>
 	public class ManageMapServerCacheScales : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		/// <param name="InputService">
 		/// <para>Input Service</para>
-		/// <para>将添加或删除缓存比例的地图图像图层或地图或影像服务。 您可以通过拖动目录树中的地图或影像服务以提供此参数值。</para>
+		/// <para>The map image layer or map or image service where cache scales will be added or removed. You can drag a map or an image service from the Catalog tree to supply this parameter value.</para>
 		/// </param>
 		/// <param name="Scales">
 		/// <para>Scales</para>
-		/// <para>将包含在已更新切片方案中的比例值。</para>
+		/// <para>The scale values that will be included in the updated tiling scheme.</para>
 		/// </param>
 		public ManageMapServerCacheScales(object InputService, object Scales)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 管理地图服务器缓存比例</para>
+		/// <para>Tool Display Name : Manage Map Server Cache Scales</para>
 		/// </summary>
-		public override string DisplayName() => "管理地图服务器缓存比例";
+		public override string DisplayName() => "Manage Map Server Cache Scales";
 
 		/// <summary>
 		/// <para>Tool Name : ManageMapServerCacheScales</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Input Service</para>
-		/// <para>将添加或删除缓存比例的地图图像图层或地图或影像服务。 您可以通过拖动目录树中的地图或影像服务以提供此参数值。</para>
+		/// <para>The map image layer or map or image service where cache scales will be added or removed. You can drag a map or an image service from the Catalog tree to supply this parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Scales</para>
-		/// <para>将包含在已更新切片方案中的比例值。</para>
+		/// <para>The scale values that will be included in the updated tiling scheme.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]

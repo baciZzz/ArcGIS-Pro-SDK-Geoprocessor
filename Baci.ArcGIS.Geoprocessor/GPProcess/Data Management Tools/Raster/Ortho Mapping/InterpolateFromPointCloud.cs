@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Interpolate From Point Cloud</para>
-	/// <para>基于点云进行插值</para>
-	/// <para>从点云对数字地形模型 (DTM) 或数字表面模型 (DSM) 进行插值。</para>
+	/// <para>Interpolate From Point Cloud</para>
+	/// <para>Interpolates a digital terrain model (DTM) or a digital surface model (DSM) from a point cloud.</para>
 	/// </summary>
 	public class InterpolateFromPointCloud : AbstractGPProcess
 	{
@@ -21,34 +21,34 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InContainer">
 		/// <para>Input LAS Folder or Point Table</para>
-		/// <para>文件、文件夹或要素图层的路径和名称。 输入可以是 LAS 文件的文件夹或正射映射工具的解决方案点表。</para>
-		/// <para>LAS 文件可以是生成点云工具的输出，其中 LAS 点分为地面点和地上点两种类型。 解决方案点表为计算区域网平差工具或计算照相机模型工具的输出。</para>
+		/// <para>The path and name of the file, folder, or feature layer. The input can be a folder of LAS files or a solution point table from orthomapping tools.</para>
+		/// <para>The LAS files can be the output from the Generate Point Cloud tool, in which LAS points are categorized as ground and above ground. The solution point table is output from either the Compute Block Adjustments tool or the Compute Camera Model tool.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output Raster</para>
-		/// <para>输出栅格数据集的位置、名称和文件扩展名。</para>
-		/// <para>可以以大多数可写栅格格式（例如 TIFF、CRF 或 IMG）创建输出。</para>
+		/// <para>The output raster dataset location, name, and file extension.</para>
+		/// <para>The output can be created in most writable raster formats, such as TIFF, CRF, or IMG.</para>
 		/// </param>
 		/// <param name="CellSize">
 		/// <para>Cellsize</para>
-		/// <para>输出栅格数据集的像元大小。</para>
+		/// <para>The cell size of the output raster dataset.</para>
 		/// </param>
 		/// <param name="InterpolationMethod">
 		/// <para>Interpolation Method</para>
-		/// <para>指定将用于从点云对输出栅格数据集进行插值的方法。</para>
-		/// <para>TIN 线性插值法—将使用三角测量方法。 亦称作不规则三角网 (TIN) 线性插值法，适用于不规则分布的稀疏点，例如从区域网平差计算中得到的解决方案点。</para>
-		/// <para>TIN 自然邻域插值法—将使用自然邻域法。 其与三角测量类似，但是生成的表面更为平滑且运算量更大。</para>
-		/// <para>反距离权重平均插值法—将使用反距离权重 (IDW) 平均方法。 此方法适用于规则分布的密集点，例如通过生成点云工具得到的点云 LAS 文件。 IDW 搜索半径将根据平均点密度自动进行计算。</para>
+		/// <para>Specifies the method that will be used to interpolate the output raster dataset from the point cloud.</para>
+		/// <para>TIN linear interpolation— The triangulation method will be used. It is also known as triangulated irregular network (TIN) linear interpolation and is designed for irregularly distributed sparse points, such as solution points from block adjustment computation.</para>
+		/// <para>TIN natural neighbor interpolation—The natural neighbor method will be used. It is similar to triangulation but generates a smoother surface and is more computationally intensive.</para>
+		/// <para>Inverse distance weighted average interpolation—The inverse distance weighted (IDW) average method will be used. It is used for regularly distributed dense points, such as point cloud LAS files from the Generate Point Cloud tool. The IDW search radius is automatically computed based on average point density.</para>
 		/// <para><see cref="InterpolationMethodEnum"/></para>
 		/// </param>
 		/// <param name="SmoothMethod">
 		/// <para>Smoothing Method</para>
-		/// <para>指定将用于平滑输出栅格数据集的滤波器。</para>
-		/// <para>高斯 3 x 3—将使用具有 3 x 3 窗口的高斯滤波器。</para>
-		/// <para>高斯 5 x 5—将使用具有 5 x 5 窗口的高斯滤波器。</para>
-		/// <para>高斯 7 x 7—将使用具有 7 x 7 窗口的高斯滤波器。</para>
-		/// <para>高斯 9 x 9—将使用具有 9 x 9 窗口的高斯滤波器。</para>
-		/// <para>无平滑—将使用平滑滤波器。</para>
+		/// <para>Specifies the filter that will be used to smooth the output raster dataset.</para>
+		/// <para>Gaussian 3 by 3—A Gaussian filter with a 3 by 3 window will be used.</para>
+		/// <para>Gaussian 5 by 5—A Gaussian filter with a 5 by 5 window will be used.</para>
+		/// <para>Gaussian 7 by 7—A Gaussian filter with a 7 by 7 window will be used.</para>
+		/// <para>Gaussian 9 by 9—A Gaussian filter with a 9 by 9 window will be used.</para>
+		/// <para>No smoothing—No smoothing filter will be used.</para>
 		/// <para><see cref="SmoothMethodEnum"/></para>
 		/// </param>
 		public InterpolateFromPointCloud(object InContainer, object OutRaster, object CellSize, object InterpolationMethod, object SmoothMethod)
@@ -61,9 +61,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 基于点云进行插值</para>
+		/// <para>Tool Display Name : Interpolate From Point Cloud</para>
 		/// </summary>
-		public override string DisplayName() => "基于点云进行插值";
+		public override string DisplayName() => "Interpolate From Point Cloud";
 
 		/// <summary>
 		/// <para>Tool Name : InterpolateFromPointCloud</para>
@@ -97,8 +97,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input LAS Folder or Point Table</para>
-		/// <para>文件、文件夹或要素图层的路径和名称。 输入可以是 LAS 文件的文件夹或正射映射工具的解决方案点表。</para>
-		/// <para>LAS 文件可以是生成点云工具的输出，其中 LAS 点分为地面点和地上点两种类型。 解决方案点表为计算区域网平差工具或计算照相机模型工具的输出。</para>
+		/// <para>The path and name of the file, folder, or feature layer. The input can be a folder of LAS files or a solution point table from orthomapping tools.</para>
+		/// <para>The LAS files can be the output from the Generate Point Cloud tool, in which LAS points are categorized as ground and above ground. The solution point table is output from either the Compute Block Adjustments tool or the Compute Camera Model tool.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -106,8 +106,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Raster</para>
-		/// <para>输出栅格数据集的位置、名称和文件扩展名。</para>
-		/// <para>可以以大多数可写栅格格式（例如 TIFF、CRF 或 IMG）创建输出。</para>
+		/// <para>The output raster dataset location, name, and file extension.</para>
+		/// <para>The output can be created in most writable raster formats, such as TIFF, CRF, or IMG.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Cellsize</para>
-		/// <para>输出栅格数据集的像元大小。</para>
+		/// <para>The cell size of the output raster dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -123,10 +123,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Interpolation Method</para>
-		/// <para>指定将用于从点云对输出栅格数据集进行插值的方法。</para>
-		/// <para>TIN 线性插值法—将使用三角测量方法。 亦称作不规则三角网 (TIN) 线性插值法，适用于不规则分布的稀疏点，例如从区域网平差计算中得到的解决方案点。</para>
-		/// <para>TIN 自然邻域插值法—将使用自然邻域法。 其与三角测量类似，但是生成的表面更为平滑且运算量更大。</para>
-		/// <para>反距离权重平均插值法—将使用反距离权重 (IDW) 平均方法。 此方法适用于规则分布的密集点，例如通过生成点云工具得到的点云 LAS 文件。 IDW 搜索半径将根据平均点密度自动进行计算。</para>
+		/// <para>Specifies the method that will be used to interpolate the output raster dataset from the point cloud.</para>
+		/// <para>TIN linear interpolation— The triangulation method will be used. It is also known as triangulated irregular network (TIN) linear interpolation and is designed for irregularly distributed sparse points, such as solution points from block adjustment computation.</para>
+		/// <para>TIN natural neighbor interpolation—The natural neighbor method will be used. It is similar to triangulation but generates a smoother surface and is more computationally intensive.</para>
+		/// <para>Inverse distance weighted average interpolation—The inverse distance weighted (IDW) average method will be used. It is used for regularly distributed dense points, such as point cloud LAS files from the Generate Point Cloud tool. The IDW search radius is automatically computed based on average point density.</para>
 		/// <para><see cref="InterpolationMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -136,12 +136,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Smoothing Method</para>
-		/// <para>指定将用于平滑输出栅格数据集的滤波器。</para>
-		/// <para>高斯 3 x 3—将使用具有 3 x 3 窗口的高斯滤波器。</para>
-		/// <para>高斯 5 x 5—将使用具有 5 x 5 窗口的高斯滤波器。</para>
-		/// <para>高斯 7 x 7—将使用具有 7 x 7 窗口的高斯滤波器。</para>
-		/// <para>高斯 9 x 9—将使用具有 9 x 9 窗口的高斯滤波器。</para>
-		/// <para>无平滑—将使用平滑滤波器。</para>
+		/// <para>Specifies the filter that will be used to smooth the output raster dataset.</para>
+		/// <para>Gaussian 3 by 3—A Gaussian filter with a 3 by 3 window will be used.</para>
+		/// <para>Gaussian 5 by 5—A Gaussian filter with a 5 by 5 window will be used.</para>
+		/// <para>Gaussian 7 by 7—A Gaussian filter with a 7 by 7 window will be used.</para>
+		/// <para>Gaussian 9 by 9—A Gaussian filter with a 9 by 9 window will be used.</para>
+		/// <para>No smoothing—No smoothing filter will be used.</para>
 		/// <para><see cref="SmoothMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -151,9 +151,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Surface Type</para>
-		/// <para>指定是否创建数字地形模型或数字表面模型。</para>
-		/// <para>数字地形模型—将通过仅插入地面点创建数字地形模型。</para>
-		/// <para>数字表面模型—将通过插入所有点创建数字表面模型。</para>
+		/// <para>Specifies whether a digital terrain model or a digital surface model will be created.</para>
+		/// <para>Digital terrain model—A digital terrain model will be created by interpolating only the ground points.</para>
+		/// <para>Digital surface model—A digital surface model will be created by interpolating all the points.</para>
 		/// <para><see cref="SurfaceTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -163,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Fill DEM</para>
-		/// <para>用于填充 NoData 区域的 DEM 栅格输入。 NoData 区域可以存在于像素未从输入获得足够生成值所需信息的位置。</para>
+		/// <para>A DEM raster input that is used to fill NoData areas. Areas of NoData may exist where pixels do not have enough information from the input to generate values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -186,24 +186,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum InterpolationMethodEnum 
 		{
 			/// <summary>
-			/// <para>TIN 线性插值法—将使用三角测量方法。 亦称作不规则三角网 (TIN) 线性插值法，适用于不规则分布的稀疏点，例如从区域网平差计算中得到的解决方案点。</para>
+			/// <para>TIN linear interpolation— The triangulation method will be used. It is also known as triangulated irregular network (TIN) linear interpolation and is designed for irregularly distributed sparse points, such as solution points from block adjustment computation.</para>
 			/// </summary>
 			[GPValue("TRIANGULATION")]
-			[Description("TIN 线性插值法")]
+			[Description("TIN linear interpolation")]
 			TIN_linear_interpolation,
 
 			/// <summary>
-			/// <para>TIN 自然邻域插值法—将使用自然邻域法。 其与三角测量类似，但是生成的表面更为平滑且运算量更大。</para>
+			/// <para>TIN natural neighbor interpolation—The natural neighbor method will be used. It is similar to triangulation but generates a smoother surface and is more computationally intensive.</para>
 			/// </summary>
 			[GPValue("NATURAL_NEIGHBOR")]
-			[Description("TIN 自然邻域插值法")]
+			[Description("TIN natural neighbor interpolation")]
 			TIN_natural_neighbor_interpolation,
 
 			/// <summary>
-			/// <para>反距离权重平均插值法—将使用反距离权重 (IDW) 平均方法。 此方法适用于规则分布的密集点，例如通过生成点云工具得到的点云 LAS 文件。 IDW 搜索半径将根据平均点密度自动进行计算。</para>
+			/// <para>Inverse distance weighted average interpolation—The inverse distance weighted (IDW) average method will be used. It is used for regularly distributed dense points, such as point cloud LAS files from the Generate Point Cloud tool. The IDW search radius is automatically computed based on average point density.</para>
 			/// </summary>
 			[GPValue("IDW")]
-			[Description("反距离权重平均插值法")]
+			[Description("Inverse distance weighted average interpolation")]
 			Inverse_distance_weighted_average_interpolation,
 
 		}
@@ -214,38 +214,38 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SmoothMethodEnum 
 		{
 			/// <summary>
-			/// <para>高斯 3 x 3—将使用具有 3 x 3 窗口的高斯滤波器。</para>
+			/// <para>Gaussian 3 by 3—A Gaussian filter with a 3 by 3 window will be used.</para>
 			/// </summary>
 			[GPValue("GAUSS3x3")]
-			[Description("高斯 3 x 3")]
+			[Description("Gaussian 3 by 3")]
 			Gaussian_3_by_3,
 
 			/// <summary>
-			/// <para>高斯 5 x 5—将使用具有 5 x 5 窗口的高斯滤波器。</para>
+			/// <para>Gaussian 5 by 5—A Gaussian filter with a 5 by 5 window will be used.</para>
 			/// </summary>
 			[GPValue("GAUSS5x5")]
-			[Description("高斯 5 x 5")]
+			[Description("Gaussian 5 by 5")]
 			Gaussian_5_by_5,
 
 			/// <summary>
-			/// <para>高斯 7 x 7—将使用具有 7 x 7 窗口的高斯滤波器。</para>
+			/// <para>Gaussian 7 by 7—A Gaussian filter with a 7 by 7 window will be used.</para>
 			/// </summary>
 			[GPValue("GAUSS7x7")]
-			[Description("高斯 7 x 7")]
+			[Description("Gaussian 7 by 7")]
 			Gaussian_7_by_7,
 
 			/// <summary>
-			/// <para>高斯 9 x 9—将使用具有 9 x 9 窗口的高斯滤波器。</para>
+			/// <para>Gaussian 9 by 9—A Gaussian filter with a 9 by 9 window will be used.</para>
 			/// </summary>
 			[GPValue("GAUSS9x9")]
-			[Description("高斯 9 x 9")]
+			[Description("Gaussian 9 by 9")]
 			Gaussian_9_by_9,
 
 			/// <summary>
-			/// <para>无平滑—将使用平滑滤波器。</para>
+			/// <para>No smoothing—No smoothing filter will be used.</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("无平滑")]
+			[Description("No smoothing")]
 			No_smoothing,
 
 		}
@@ -256,17 +256,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SurfaceTypeEnum 
 		{
 			/// <summary>
-			/// <para>数字地形模型—将通过仅插入地面点创建数字地形模型。</para>
+			/// <para>Digital terrain model—A digital terrain model will be created by interpolating only the ground points.</para>
 			/// </summary>
 			[GPValue("DTM")]
-			[Description("数字地形模型")]
+			[Description("Digital terrain model")]
 			Digital_terrain_model,
 
 			/// <summary>
-			/// <para>数字表面模型—将通过插入所有点创建数字表面模型。</para>
+			/// <para>Digital surface model—A digital surface model will be created by interpolating all the points.</para>
 			/// </summary>
 			[GPValue("DSM")]
-			[Description("数字表面模型")]
+			[Description("Digital surface model")]
 			Digital_surface_model,
 
 		}

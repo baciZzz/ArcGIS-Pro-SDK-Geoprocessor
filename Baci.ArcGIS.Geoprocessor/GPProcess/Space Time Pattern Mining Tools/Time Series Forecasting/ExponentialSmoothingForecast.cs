@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Exponential Smoothing Forecast</para>
-	/// <para>指数平滑预测</para>
-	/// <para>通过将各位置立方体的时间序列分解为季节和趋势分量，使用霍尔特-温特指数平滑方法来预测时空立方体中各位置的值。</para>
+	/// <para>Exponential Smoothing Forecast</para>
+	/// <para>Forecasts the values of each location of a space-time cube using the Holt-Winters exponential smoothing method by decomposing the time series at each location cube into seasonal  and trend components.</para>
 	/// </summary>
 	public class ExponentialSmoothingForecast : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		/// <param name="InCube">
 		/// <para>Input Space Time Cube</para>
-		/// <para>netCDF 立方体包含用于预测未来时间步的变量。此文件必须具有 .nc 文件扩展名，并且必须使用通过聚合点创建时空立方体、通过已定义位置创建时空立方体或通过多维栅格图层创建时空立方体工具进行创建。</para>
+		/// <para>The netCDF cube containing the variable to forecast to future time steps. This file must have an .nc file extension and must have been created using the Create Space Time Cube By Aggregating Points, Create Space Time Cube From Defined Locations, or Create Space Time Cube From Multidimensional Raster Layer tool.</para>
 		/// </param>
 		/// <param name="AnalysisVariable">
 		/// <para>Analysis Variable</para>
-		/// <para>netCDF 文件中的数值变量，用于预测未来时间步长。</para>
+		/// <para>The numeric variable in the netCDF file that will be forecasted to future time steps.</para>
 		/// </param>
 		/// <param name="OutputFeatures">
 		/// <para>Output Features</para>
-		/// <para>时空立方体中所有位置的输出要素类，其中的预测值将存储为字段。 该图层显示对最后的时间步长的预测，并包含弹出图表，其中显示每个位置的时间序列、预测和 90% 的置信界限。</para>
+		/// <para>The output feature class of all locations in the space-time cube with forecasted values stored as fields. The layer displays the forecast for the final time step and contains pop-up charts showing the time series, forecasts, and 90 percent confidence bounds for each location.</para>
 		/// </param>
 		public ExponentialSmoothingForecast(object InCube, object AnalysisVariable, object OutputFeatures)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 指数平滑预测</para>
+		/// <para>Tool Display Name : Exponential Smoothing Forecast</para>
 		/// </summary>
-		public override string DisplayName() => "指数平滑预测";
+		public override string DisplayName() => "Exponential Smoothing Forecast";
 
 		/// <summary>
 		/// <para>Tool Name : ExponentialSmoothingForecast</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>
-		/// <para>netCDF 立方体包含用于预测未来时间步的变量。此文件必须具有 .nc 文件扩展名，并且必须使用通过聚合点创建时空立方体、通过已定义位置创建时空立方体或通过多维栅格图层创建时空立方体工具进行创建。</para>
+		/// <para>The netCDF cube containing the variable to forecast to future time steps. This file must have an .nc file extension and must have been created using the Create Space Time Cube By Aggregating Points, Create Space Time Cube From Defined Locations, or Create Space Time Cube From Multidimensional Raster Layer tool.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Analysis Variable</para>
-		/// <para>netCDF 文件中的数值变量，用于预测未来时间步长。</para>
+		/// <para>The numeric variable in the netCDF file that will be forecasted to future time steps.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Output Features</para>
-		/// <para>时空立方体中所有位置的输出要素类，其中的预测值将存储为字段。 该图层显示对最后的时间步长的预测，并包含弹出图表，其中显示每个位置的时间序列、预测和 90% 的置信界限。</para>
+		/// <para>The output feature class of all locations in the space-time cube with forecasted values stored as fields. The layer displays the forecast for the final time step and contains pop-up charts showing the time series, forecasts, and 90 percent confidence bounds for each location.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Output Space Time Cube</para>
-		/// <para>新的时空立方体（.nc 文件），其中包含输入时空立方体的值，并追加了预测时间步长。可视化 3D 时空立方体工具可用于同时查看所有观测值和预测值。</para>
+		/// <para>A new space-time cube (.nc file) containing the values of the input space-time cube with the forecasted time steps appended. The Visualize Space Time Cube in 3D tool can be used to see all of the observed and forecasted values simultaneously.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Number of Time Steps to Forecast</para>
-		/// <para>正整数，用于指定预测时间步长数。此值不能大于输入时空立方体中的时间步长数的百分之五十。默认值为一个时间步长。</para>
+		/// <para>A positive integer specifying the number of time steps to forecast. This value cannot be larger than 50 percent of the total time steps in the input space-time cube. The default value is one time step.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Season Length</para>
-		/// <para>各位置一个季节对应的时间步长数。如果数据中具有多个季节，建议您使用最长的季节以生成最可靠的结果。如果未指定任何值，则使用光谱密度函数为每个位置估算季节长度。</para>
+		/// <para>The number of time steps corresponding to one season at each location. If there are multiple seasons in the data, it is recommended that you use the longest season to produce the most reliable result. If no value is specified, a season length will be estimated by the tool at each location using a spectral density function.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Number of Time Steps to Exclude for Validation</para>
-		/// <para>为进行验证，在每个时间序列末尾排除的时间步长数。默认值为输入时间步长的 10％（向下舍入），且该值不能大于时间步长的 25％。要不排除任何时间步长，请提供值 0。</para>
+		/// <para>The number of time steps at the end of each time series to exclude for validation. The default value is 10 percent (rounded down) of the number of input time steps, and this value cannot be larger than 25 percent of the number of time steps. Provide the value 0 to not exclude any time steps.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -136,9 +136,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Outlier Option</para>
-		/// <para>指定是否将识别具有统计意义的时间序列异常值。</para>
-		/// <para>无—不会识别异常值。这是默认设置。</para>
-		/// <para>识别异常值—将使用广义 ESD 测试来识别异常值。</para>
+		/// <para>Specifies whether statistically significant time series outliers will be identified.</para>
+		/// <para>None—Outliers will not be identified. This is the default.</para>
+		/// <para>Identify outliers—Outliers will be identified using the Generalized ESD test.</para>
 		/// <para><see cref="OutlierOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -148,10 +148,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Level of Confidence</para>
-		/// <para>指定时间序列异常值测试的置信度。</para>
-		/// <para>90%—测试置信度为 90％。这是默认设置。</para>
-		/// <para>95%—测试置信度为 95％。</para>
-		/// <para>99%—测试置信度为 99％。</para>
+		/// <para>Specifies the confidence level for the test for time series outliers.</para>
+		/// <para>90%—The confidence level for the test is 90 percent. This is the default.</para>
+		/// <para>95%—The confidence level for the test is 95 percent.</para>
+		/// <para>99%—The confidence level for the test is 99 percent.</para>
 		/// <para><see cref="LevelOfConfidenceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Maximum Number of Outliers</para>
-		/// <para>每个位置可以声明为异常值的最大时间步数。默认值对应于输入时空立方体的时间步数的 5％（向下舍入）（将始终使用至少为 1 的值）。该值不能超过时间步数的 20％。</para>
+		/// <para>The maximum number of time steps that can be declared outliers for each location. The default value corresponds to 5 percent (rounded down) of the number of time steps of the input space-time cube (a value of at least 1 will always be used). This value cannot exceed 20 percent of the number of time steps.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -184,17 +184,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		public enum OutlierOptionEnum 
 		{
 			/// <summary>
-			/// <para>无—不会识别异常值。这是默认设置。</para>
+			/// <para>None—Outliers will not be identified. This is the default.</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("无")]
+			[Description("None")]
 			None,
 
 			/// <summary>
-			/// <para>识别异常值—将使用广义 ESD 测试来识别异常值。</para>
+			/// <para>Identify outliers—Outliers will be identified using the Generalized ESD test.</para>
 			/// </summary>
 			[GPValue("IDENTIFY")]
-			[Description("识别异常值")]
+			[Description("Identify outliers")]
 			Identify_outliers,
 
 		}
@@ -205,21 +205,21 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		public enum LevelOfConfidenceEnum 
 		{
 			/// <summary>
-			/// <para>90%—测试置信度为 90％。这是默认设置。</para>
+			/// <para>90%—The confidence level for the test is 90 percent. This is the default.</para>
 			/// </summary>
 			[GPValue("90%")]
 			[Description("90%")]
 			_90percent,
 
 			/// <summary>
-			/// <para>95%—测试置信度为 95％。</para>
+			/// <para>95%—The confidence level for the test is 95 percent.</para>
 			/// </summary>
 			[GPValue("95%")]
 			[Description("95%")]
 			_95percent,
 
 			/// <summary>
-			/// <para>99%—测试置信度为 99％。</para>
+			/// <para>99%—The confidence level for the test is 99 percent.</para>
 			/// </summary>
 			[GPValue("99%")]
 			[Description("99%")]

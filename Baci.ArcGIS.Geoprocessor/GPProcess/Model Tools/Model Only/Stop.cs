@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Stop</para>
-	/// <para>停止</para>
-	/// <para>如果输入值设置为 true 或 false，将使模型退出迭代循环。对于一组输入值，如果所有输入为 true，则迭代会继续；如果任何一个输入为 false，则迭代会停止。该工具的功能与 While 工具非常类似，但如果模型中存在一个 While 循环迭代器且没有其他迭代器可添加时，则该工具对于停止模型非常有用。</para>
+	/// <para>Stop</para>
+	/// <para>Exits a model out of the iteration loop if the input values are set to true or set to false.  For the set of input values, iteration will continue if all the inputs are true and stop if any one of the inputs is false. It is functionally similar to the While tool but is useful to stop a model if there is one While iterator in a model and no additional iterators can be added.</para>
 	/// </summary>
 	public class Stop : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="InValues">
 		/// <para>Input Values</para>
-		/// <para>模型迭代之前，待检查的值将停止。</para>
+		/// <para>The values that will be checked before the model iteration will stop.</para>
 		/// </param>
 		public Stop(object InValues)
 		{
@@ -29,14 +29,14 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 停止</para>
+		/// <para>Tool Display Name : Stop</para>
 		/// </summary>
-		public override string DisplayName() => "停止";
+		public override string DisplayName() => "Stop";
 
 		/// <summary>
-		/// <para>Tool Name : 停止</para>
+		/// <para>Tool Name : Stop</para>
 		/// </summary>
-		public override string ToolName() => "停止";
+		public override string ToolName() => "Stop";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.Stop</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Input Values</para>
-		/// <para>模型迭代之前，待检查的值将停止。</para>
+		/// <para>The values that will be checked before the model iteration will stop.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -73,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Stop when inputs are</para>
-		/// <para>指定在所有输入值被设置为 true 或 false 之前是否运行迭代。</para>
-		/// <para>True—迭代会一直运行到所有输入值均为 true 时为止 这是默认设置。</para>
-		/// <para>False—迭代会一直运行到所有输入值均为 false 时为止。</para>
+		/// <para>Specifies whether the iteration will run until all the inputs values are true or all the input values are false.</para>
+		/// <para>True—The iteration will run until all the input values are true. This is the default.</para>
+		/// <para>False—The iteration will run until all the input values are false.</para>
 		/// <para><see cref="ConditionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -98,14 +98,14 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		public enum ConditionEnum 
 		{
 			/// <summary>
-			/// <para>True—迭代会一直运行到所有输入值均为 true 时为止 这是默认设置。</para>
+			/// <para>True—The iteration will run until all the input values are true. This is the default.</para>
 			/// </summary>
 			[GPValue("TRUE")]
 			[Description("True")]
 			True,
 
 			/// <summary>
-			/// <para>False—迭代会一直运行到所有输入值均为 false 时为止。</para>
+			/// <para>False—The iteration will run until all the input values are false.</para>
 			/// </summary>
 			[GPValue("FALSE")]
 			[Description("False")]

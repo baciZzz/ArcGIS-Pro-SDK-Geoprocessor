@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Aspect</para>
-	/// <para>坡向</para>
-	/// <para>从栅格表面的每个像元派生出坡向。</para>
+	/// <para>Aspect</para>
+	/// <para>Derives the aspect from each cell of a raster surface.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.Analyst3DTools.SurfaceParameters"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
 	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.Analyst3DTools.SurfaceParameters))]
@@ -23,12 +23,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>输入表面栅格。</para>
+		/// <para>The input surface raster.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>输出坡向栅格。</para>
-		/// <para>此栅格为浮点类型。</para>
+		/// <para>The output aspect raster.</para>
+		/// <para>It will be floating-point type.</para>
 		/// </param>
 		public Aspect(object InRaster, object OutRaster)
 		{
@@ -37,14 +37,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 坡向</para>
+		/// <para>Tool Display Name : Aspect</para>
 		/// </summary>
-		public override string DisplayName() => "坡向";
+		public override string DisplayName() => "Aspect";
 
 		/// <summary>
-		/// <para>Tool Name : 坡向</para>
+		/// <para>Tool Name : Aspect</para>
 		/// </summary>
-		public override string ToolName() => "坡向";
+		public override string ToolName() => "Aspect";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Aspect</para>
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>输入表面栅格。</para>
+		/// <para>The input surface raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -85,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出坡向栅格。</para>
-		/// <para>此栅格为浮点类型。</para>
+		/// <para>The output aspect raster.</para>
+		/// <para>It will be floating-point type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -94,10 +94,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>指定计算将基于平面（平地）还是测地线（椭球）方法。</para>
-		/// <para>平面—将使用 2D 笛卡尔坐标系对投影平面执行计算。 这是默认方法。</para>
-		/// <para>测地线—通过将地球形状视为椭球体，在 3D 笛卡尔坐标系中执行计算。</para>
-		/// <para>平面方法适用于保持正确距离和面积的投影中的局部区域。 适用于覆盖诸如城市、县或面积较小的州等区域的分析。 测地线方法可以产生更精确的结果，但会造成处理时间这一潜在成本增加。</para>
+		/// <para>Specifies whether the calculation will be based on a planar (flat earth) or a geodesic (ellipsoid) method.</para>
+		/// <para>Planar—The calculation will be performed on a projected flat plane using a 2D Cartesian coordinate system. This is the default method.</para>
+		/// <para>Geodesic—The calculation will be performed in a 3D Cartesian coordinate system by considering the shape of the earth as an ellipsoid.</para>
+		/// <para>The planar method is appropriate to use on local areas in a projection that maintains correct distance and area. It is suitable for analyses that cover areas such cities, counties, or smaller states in area. The geodesic method produces a more accurate result, at the potential cost of an increase in processing time.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -107,18 +107,18 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Z unit</para>
-		/// <para>垂直 z 值的线性单位。</para>
-		/// <para>由垂直坐标系（如果存在）定义。 如果垂直坐标系不存在，则应根据单位列表来定义 z 单位，以确保测地线计算正确。 默认单位为米。</para>
-		/// <para>英寸—线性单位将为英寸。</para>
-		/// <para>英尺—线性单位将为英尺。</para>
-		/// <para>码—线性单位将为码。</para>
-		/// <para>英里(美制)—线性单位将为英里。</para>
-		/// <para>海里—线性单位将为海里。</para>
-		/// <para>毫米—线性单位将为毫米。</para>
-		/// <para>厘米—线性单位将为厘米。</para>
-		/// <para>米—线性单位将为米。</para>
-		/// <para>千米—线性单位将为公里。</para>
-		/// <para>分米—线性单位将为分米。</para>
+		/// <para>The linear unit of vertical z-values.</para>
+		/// <para>It is defined by a vertical coordinate system if it exists. If a vertical coordinate system does not exist, the z-unit should be defined from the unit list to ensure correct geodesic computation. The default is meter.</para>
+		/// <para>Inch—The linear unit will be inches.</para>
+		/// <para>Foot—The linear unit will be feet.</para>
+		/// <para>Yard—The linear unit will be yards.</para>
+		/// <para>Mile US—The linear unit will be miles.</para>
+		/// <para>Nautical mile—The linear unit will be nautical miles.</para>
+		/// <para>Millimeter—The linear unit will be millimeters.</para>
+		/// <para>Centimeter—The linear unit will be centimeters.</para>
+		/// <para>Meter—The linear unit will be meters.</para>
+		/// <para>Kilometer—The linear unit will be kilometers.</para>
+		/// <para>Decimeter—The linear unit will be decimeters.</para>
 		/// <para><see cref="ZUnitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -128,9 +128,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Project geodesic azimuths</para>
-		/// <para>指定是否将投影测地线方位角以校正由输出空间参考引起的角度失真。</para>
-		/// <para>未选中 - 将不会投影测地线方位角。 这是默认设置。</para>
-		/// <para>选中 - 将投影测地线方位角。</para>
+		/// <para>Specifies whether geodesic azimuths will be projected to correct the angle distortion caused by the output spatial reference.</para>
+		/// <para>Unchecked—Geodesic azimuths will not be projected. This is the default.</para>
+		/// <para>Checked—Geodesic azimuths will be projected.</para>
 		/// <para><see cref="ProjectGeodesicAzimuthsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -155,17 +155,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>平面—将使用 2D 笛卡尔坐标系对投影平面执行计算。 这是默认方法。</para>
+			/// <para>Planar—The calculation will be performed on a projected flat plane using a 2D Cartesian coordinate system. This is the default method.</para>
 			/// </summary>
 			[GPValue("PLANAR")]
-			[Description("平面")]
+			[Description("Planar")]
 			Planar,
 
 			/// <summary>
-			/// <para>测地线—通过将地球形状视为椭球体，在 3D 笛卡尔坐标系中执行计算。</para>
+			/// <para>Geodesic—The calculation will be performed in a 3D Cartesian coordinate system by considering the shape of the earth as an ellipsoid.</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
-			[Description("测地线")]
+			[Description("Geodesic")]
 			Geodesic,
 
 		}
@@ -176,73 +176,73 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ZUnitEnum 
 		{
 			/// <summary>
-			/// <para>英寸—线性单位将为英寸。</para>
+			/// <para>Inch—The linear unit will be inches.</para>
 			/// </summary>
 			[GPValue("INCH")]
-			[Description("英寸")]
+			[Description("Inch")]
 			Inch,
 
 			/// <summary>
-			/// <para>英尺—线性单位将为英尺。</para>
+			/// <para>Foot—The linear unit will be feet.</para>
 			/// </summary>
 			[GPValue("FOOT")]
-			[Description("英尺")]
+			[Description("Foot")]
 			Foot,
 
 			/// <summary>
-			/// <para>码—线性单位将为码。</para>
+			/// <para>Yard—The linear unit will be yards.</para>
 			/// </summary>
 			[GPValue("YARD")]
-			[Description("码")]
+			[Description("Yard")]
 			Yard,
 
 			/// <summary>
-			/// <para>英里(美制)—线性单位将为英里。</para>
+			/// <para>Mile US—The linear unit will be miles.</para>
 			/// </summary>
 			[GPValue("MILE_US")]
-			[Description("英里(美制)")]
+			[Description("Mile US")]
 			Mile_US,
 
 			/// <summary>
-			/// <para>海里—线性单位将为海里。</para>
+			/// <para>Nautical mile—The linear unit will be nautical miles.</para>
 			/// </summary>
 			[GPValue("NAUTICAL_MILE")]
-			[Description("海里")]
+			[Description("Nautical mile")]
 			Nautical_mile,
 
 			/// <summary>
-			/// <para>毫米—线性单位将为毫米。</para>
+			/// <para>Millimeter—The linear unit will be millimeters.</para>
 			/// </summary>
 			[GPValue("MILLIMETER")]
-			[Description("毫米")]
+			[Description("Millimeter")]
 			Millimeter,
 
 			/// <summary>
-			/// <para>厘米—线性单位将为厘米。</para>
+			/// <para>Centimeter—The linear unit will be centimeters.</para>
 			/// </summary>
 			[GPValue("CENTIMETER")]
-			[Description("厘米")]
+			[Description("Centimeter")]
 			Centimeter,
 
 			/// <summary>
-			/// <para>米—线性单位将为米。</para>
+			/// <para>Meter—The linear unit will be meters.</para>
 			/// </summary>
 			[GPValue("METER")]
-			[Description("米")]
+			[Description("Meter")]
 			Meter,
 
 			/// <summary>
-			/// <para>千米—线性单位将为公里。</para>
+			/// <para>Kilometer—The linear unit will be kilometers.</para>
 			/// </summary>
 			[GPValue("KILOMETER")]
-			[Description("千米")]
+			[Description("Kilometer")]
 			Kilometer,
 
 			/// <summary>
-			/// <para>分米—线性单位将为分米。</para>
+			/// <para>Decimeter—The linear unit will be decimeters.</para>
 			/// </summary>
 			[GPValue("DECIMETER")]
-			[Description("分米")]
+			[Description("Decimeter")]
 			Decimeter,
 
 		}
@@ -253,14 +253,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ProjectGeodesicAzimuthsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Geodesic azimuths will not be projected. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("GEODESIC_AZIMUTHS")]
 			GEODESIC_AZIMUTHS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Geodesic azimuths will be projected.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PROJECT_GEODESIC_AZIMUTHS")]

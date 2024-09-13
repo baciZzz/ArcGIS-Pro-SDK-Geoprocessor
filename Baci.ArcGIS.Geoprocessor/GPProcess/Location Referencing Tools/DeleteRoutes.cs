@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Delete Routes</para>
-	/// <para>删除路径</para>
-	/// <para>从 LRS 网络中删除路径和相关数据元素。</para>
+	/// <para>Delete Routes</para>
+	/// <para>Deletes routes and associated data elements from the LRS Network.</para>
 	/// </summary>
 	public class DeleteRoutes : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InRouteFeatures">
 		/// <para>Input Route Features</para>
-		/// <para>在网络中注册的路径要素类。</para>
+		/// <para>The route feature class registered with the network.</para>
 		/// </param>
 		public DeleteRoutes(object InRouteFeatures)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 删除路径</para>
+		/// <para>Tool Display Name : Delete Routes</para>
 		/// </summary>
-		public override string DisplayName() => "删除路径";
+		public override string DisplayName() => "Delete Routes";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteRoutes</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Input Route Features</para>
-		/// <para>在网络中注册的路径要素类。</para>
+		/// <para>The route feature class registered with the network.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -75,9 +75,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Delete associated calibration points</para>
-		/// <para>指定是否删除与已删除路径关联的校准点。</para>
-		/// <para>选中 - 将删除与路径关联的校准点。</para>
-		/// <para>未选中 - 不会删除与路径关联的校准点。 这是默认设置。</para>
+		/// <para>Specifies whether calibration points associated with the deleted routes will be deleted.</para>
+		/// <para>Checked—Calibration points associated with the routes will be deleted.</para>
+		/// <para>Unchecked—Calibration points associated with the routes will not be deleted. This is the default.</para>
 		/// <para><see cref="DeleteAssociatedCalibrationPointsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -87,9 +87,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Delete associated events</para>
-		/// <para>指定是否删除与已删除路径关联的事件。</para>
-		/// <para>选中 - 将删除与路径关联的事件。</para>
-		/// <para>未选中 - 不会删除与路径关联的事件。 这是默认设置。</para>
+		/// <para>Specifies whether events associated with the deleted routes will be deleted.</para>
+		/// <para>Checked—Events associated with the routes will be deleted.</para>
+		/// <para>Unchecked—Events associated with the routes will not be deleted. This is the default.</para>
 		/// <para><see cref="DeleteAssociatedEventsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -99,9 +99,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Delete associated centerlines</para>
-		/// <para>指定是否将删除仅与已删除路径关联的中心线。</para>
-		/// <para>选中 - 将删除仅与所选路径关联的中心线。 如果在网络之间共享中心线，则不会删除这些公共中心线。</para>
-		/// <para>未选中 - 不会删除中心线。 这是默认设置。</para>
+		/// <para>Specifies whether centerlines that are exclusively associated with the deleted routes will be deleted.</para>
+		/// <para>Checked—Centerlines exclusively associated with the selected routes will be deleted. If centerlines are shared between networks, those common centerlines will not be deleted.</para>
+		/// <para>Unchecked—Centerlines will not be deleted. This is the default.</para>
 		/// <para><see cref="DeleteAssociatedCenterlinesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -147,14 +147,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum DeleteAssociatedCalibrationPointsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Calibration points associated with the routes will be deleted.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DELETE_CALIBRATION_POINTS")]
 			DELETE_CALIBRATION_POINTS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Calibration points associated with the routes will not be deleted. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DELETE_CALIBRATION_POINTS")]
@@ -168,14 +168,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum DeleteAssociatedEventsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Events associated with the routes will be deleted.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DELETE_EVENTS")]
 			DELETE_EVENTS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Events associated with the routes will not be deleted. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DELETE_EVENTS")]
@@ -189,14 +189,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum DeleteAssociatedCenterlinesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Centerlines exclusively associated with the selected routes will be deleted. If centerlines are shared between networks, those common centerlines will not be deleted.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DELETE_CENTERLINES")]
 			DELETE_CENTERLINES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Centerlines will not be deleted. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DELETE_CENTERLINES")]

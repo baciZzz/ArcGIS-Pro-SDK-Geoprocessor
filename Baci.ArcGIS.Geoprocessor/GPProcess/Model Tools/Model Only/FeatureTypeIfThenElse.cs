@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>If Feature Type Is</para>
-	/// <para>如果要素类型为</para>
-	/// <para>用于评估要素类是否为指定要素类型。</para>
+	/// <para>If Feature Type Is</para>
+	/// <para>Evaluates if a feature class is of the specified feature type.</para>
 	/// </summary>
 	public class FeatureTypeIfThenElse : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>要评估的输入要素图层。</para>
+		/// <para>Input feature layer to evaluate.</para>
 		/// </param>
 		/// <param name="FeatureType">
 		/// <para>Feature Type</para>
-		/// <para>正在进行评估的要素类型。</para>
-		/// <para>注记—评估输入要素是否为注记要素。</para>
-		/// <para>尺寸—评估输入要素是否为尺寸要素。</para>
-		/// <para>边—评估输入要素是否为边要素。</para>
-		/// <para>交汇点—评估输入要素是否为交汇点要素。</para>
-		/// <para>线— 评估输入要素是否为线要素。</para>
-		/// <para>点—评估输入要素是否为点要素。</para>
-		/// <para>面—评估输入要素是否为面要素。</para>
-		/// <para>多面体—评估输入要素是否为多面体要素。</para>
+		/// <para>The type of feature being evaluated.</para>
+		/// <para>Annotation—Evaluate if the input features are annotation features.</para>
+		/// <para>Dimension—Evaluate if the input features are dimension features</para>
+		/// <para>Edge—Evaluate if the input features are edge features.</para>
+		/// <para>Junction—Evaluate if the input features are junction features.</para>
+		/// <para>Line— Evaluate if the input features are line features.</para>
+		/// <para>Point—Evaluate if the input features are point features.</para>
+		/// <para>Polygon—Evaluate if the input features are polygon features.</para>
+		/// <para>Multipatch—Evaluate if the input features are multipatch features.</para>
 		/// <para><see cref="FeatureTypeEnum"/></para>
 		/// </param>
 		public FeatureTypeIfThenElse(object InFeatures, object FeatureType)
@@ -43,9 +43,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 如果要素类型为</para>
+		/// <para>Tool Display Name : If Feature Type Is</para>
 		/// </summary>
-		public override string DisplayName() => "如果要素类型为";
+		public override string DisplayName() => "If Feature Type Is";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureTypeIfThenElse</para>
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>要评估的输入要素图层。</para>
+		/// <para>Input feature layer to evaluate.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -87,15 +87,15 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Feature Type</para>
-		/// <para>正在进行评估的要素类型。</para>
-		/// <para>注记—评估输入要素是否为注记要素。</para>
-		/// <para>尺寸—评估输入要素是否为尺寸要素。</para>
-		/// <para>边—评估输入要素是否为边要素。</para>
-		/// <para>交汇点—评估输入要素是否为交汇点要素。</para>
-		/// <para>线— 评估输入要素是否为线要素。</para>
-		/// <para>点—评估输入要素是否为点要素。</para>
-		/// <para>面—评估输入要素是否为面要素。</para>
-		/// <para>多面体—评估输入要素是否为多面体要素。</para>
+		/// <para>The type of feature being evaluated.</para>
+		/// <para>Annotation—Evaluate if the input features are annotation features.</para>
+		/// <para>Dimension—Evaluate if the input features are dimension features</para>
+		/// <para>Edge—Evaluate if the input features are edge features.</para>
+		/// <para>Junction—Evaluate if the input features are junction features.</para>
+		/// <para>Line— Evaluate if the input features are line features.</para>
+		/// <para>Point—Evaluate if the input features are point features.</para>
+		/// <para>Polygon—Evaluate if the input features are polygon features.</para>
+		/// <para>Multipatch—Evaluate if the input features are multipatch features.</para>
 		/// <para><see cref="FeatureTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -125,59 +125,59 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		public enum FeatureTypeEnum 
 		{
 			/// <summary>
-			/// <para>注记—评估输入要素是否为注记要素。</para>
+			/// <para>Annotation—Evaluate if the input features are annotation features.</para>
 			/// </summary>
 			[GPValue("ANNOTATION")]
-			[Description("注记")]
+			[Description("Annotation")]
 			Annotation,
 
 			/// <summary>
-			/// <para>尺寸—评估输入要素是否为尺寸要素。</para>
+			/// <para>Dimension—Evaluate if the input features are dimension features</para>
 			/// </summary>
 			[GPValue("DIMENSION")]
-			[Description("尺寸")]
+			[Description("Dimension")]
 			Dimension,
 
 			/// <summary>
-			/// <para>边—评估输入要素是否为边要素。</para>
+			/// <para>Edge—Evaluate if the input features are edge features.</para>
 			/// </summary>
 			[GPValue("EDGE")]
-			[Description("边")]
+			[Description("Edge")]
 			Edge,
 
 			/// <summary>
-			/// <para>交汇点—评估输入要素是否为交汇点要素。</para>
+			/// <para>Junction—Evaluate if the input features are junction features.</para>
 			/// </summary>
 			[GPValue("JUNCTION")]
-			[Description("交汇点")]
+			[Description("Junction")]
 			Junction,
 
 			/// <summary>
-			/// <para>线— 评估输入要素是否为线要素。</para>
+			/// <para>Line— Evaluate if the input features are line features.</para>
 			/// </summary>
 			[GPValue("LINE")]
-			[Description("线")]
+			[Description("Line")]
 			Line,
 
 			/// <summary>
-			/// <para>点—评估输入要素是否为点要素。</para>
+			/// <para>Point—Evaluate if the input features are point features.</para>
 			/// </summary>
 			[GPValue("POINT")]
-			[Description("点")]
+			[Description("Point")]
 			Point,
 
 			/// <summary>
-			/// <para>面—评估输入要素是否为面要素。</para>
+			/// <para>Polygon—Evaluate if the input features are polygon features.</para>
 			/// </summary>
 			[GPValue("POLYGON")]
-			[Description("面")]
+			[Description("Polygon")]
 			Polygon,
 
 			/// <summary>
-			/// <para>多面体—评估输入要素是否为多面体要素。</para>
+			/// <para>Multipatch—Evaluate if the input features are multipatch features.</para>
 			/// </summary>
 			[GPValue("MULTIPATCH")]
-			[Description("多面体")]
+			[Description("Multipatch")]
 			Multipatch,
 
 		}

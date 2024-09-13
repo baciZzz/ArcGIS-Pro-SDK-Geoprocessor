@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Train Point Cloud Classification Model</para>
-	/// <para>训练点云分类模型</para>
-	/// <para>使用 PointCNN 架构为点云分类训练深度学习模型。</para>
+	/// <para>Train Point Cloud Classification Model</para>
+	/// <para>Trains a deep learning model for point cloud classification using the PointCNN architecture.</para>
 	/// </summary>
 	public class TrainPointCloudClassificationModel : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTrainingData">
 		/// <para>Input Training Data</para>
-		/// <para>点云训练数据（*.pctd 文件）不能用于训练分类模型。</para>
+		/// <para>The point cloud training data (*.pctd file) that will be used to train the classification model.</para>
 		/// </param>
 		/// <param name="OutModelLocation">
 		/// <para>Output Model Location</para>
-		/// <para>现有文件夹将存储包含深度学习模型的新目录。</para>
+		/// <para>The existing folder that will store the new directory containing the deep learning model.</para>
 		/// </param>
 		/// <param name="OutModelName">
 		/// <para>Output Model Name</para>
-		/// <para>输出 Esri 模型定义文件的名称 (*.emd)、深度学习包 (*.dlpk) 以及将被创建以用于存储它们的新目录名称。</para>
+		/// <para>The name of the output Esri model definition file (*.emd), deep learning package (*.dlpk), and the new directory that will be created to store them.</para>
 		/// </param>
 		public TrainPointCloudClassificationModel(object InTrainingData, object OutModelLocation, object OutModelName)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 训练点云分类模型</para>
+		/// <para>Tool Display Name : Train Point Cloud Classification Model</para>
 		/// </summary>
-		public override string DisplayName() => "训练点云分类模型";
+		public override string DisplayName() => "Train Point Cloud Classification Model";
 
 		/// <summary>
 		/// <para>Tool Name : TrainPointCloudClassificationModel</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Training Data</para>
-		/// <para>点云训练数据（*.pctd 文件）不能用于训练分类模型。</para>
+		/// <para>The point cloud training data (*.pctd file) that will be used to train the classification model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Model Location</para>
-		/// <para>现有文件夹将存储包含深度学习模型的新目录。</para>
+		/// <para>The existing folder that will store the new directory containing the deep learning model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Model Name</para>
-		/// <para>输出 Esri 模型定义文件的名称 (*.emd)、深度学习包 (*.dlpk) 以及将被创建以用于存储它们的新目录名称。</para>
+		/// <para>The name of the output Esri model definition file (*.emd), deep learning package (*.dlpk), and the new directory that will be created to store them.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Pre-trained Model</para>
-		/// <para>将优化的预训练模型。 提供预训练的模型时，输入训练数据的属性、类代码和最大点数必须与生成此模型的训练数据所使用的相同。</para>
+		/// <para>The pretrained model that will be refined. When a pretrained model is provided, the input training data must have the same attributes, class codes, and maximum number of points that were used by the training data that generated this model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -111,15 +111,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Attribute Selection</para>
-		/// <para>指定训练模型时将与分类代码配合使用的点属性。 仅点云训练数据中存在的属性可用。 默认情况下，不包含其他属性。</para>
-		/// <para>强度—将使用激光雷达脉冲返回幅度的测量值。</para>
-		/// <para>回波编号—将使用从给定的激光雷达脉冲获得的点顺序位置。</para>
-		/// <para>回波数—将使用在与给定点关联的脉冲中被识别为点的激光雷达回波总数。</para>
-		/// <para>红色波段—将使用来自具有颜色信息的点云的红色波段值。</para>
-		/// <para>绿色波段—将使用来自具有颜色信息的点云的绿色波段值。</para>
-		/// <para>蓝色波段—将使用来自具有颜色信息的点云的蓝色波段值。</para>
-		/// <para>近红外波段—将使用来自具有近红外信息的点云的近红外波段值。</para>
-		/// <para>相对高度—每个点相对于参考表面的相对高度，参考表面通常是裸露地表 DEM。</para>
+		/// <para>Specifies the point attributes that will be used with the classification code when training the model. Only the attributes that are present in the point cloud training data will be available. No additional attributes are included by default.</para>
+		/// <para>Intensity—The measure of the magnitude of the lidar pulse return will be used.</para>
+		/// <para>Return Number—The ordinal position of the point obtained from a given lidar pulse will be used.</para>
+		/// <para>Number of Returns—The total number of lidar returns that were identified as points from the pulse associated with a given point will be used.</para>
+		/// <para>Red Band—The red band&apos;s value from a point cloud with color information will be used.</para>
+		/// <para>Green Band—The green band&apos;s value from a point cloud with color information will be used.</para>
+		/// <para>Blue Band—The blue band&apos;s value from a point cloud with color information will be used.</para>
+		/// <para>Near Infrared Band—The near infrared band&apos;s value from a point cloud with near infrared information will be used.</para>
+		/// <para>Relative Height—The relative height of each point in relation to a reference surface, which would typically be a bare earth DEM.</para>
 		/// <para><see cref="AttributesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Minimum Points Per Block</para>
-		/// <para>训练模型时，给定块中必须存在的最小点数。 默认值为 0。</para>
+		/// <para>The minimum number of points that must be present in a given block for it to be used when training the model. The default is 0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Class Remapping</para>
-		/// <para>定义在训练深度学习模型前类代码值将如何映射到新值。</para>
+		/// <para>Defines how class code values will map to new values prior to training the deep learning model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Class Codes Of Interest</para>
-		/// <para>将用于过滤训练数据中的块的类代码。 指定了感兴趣区域的类代码后，所有其他类代码都将重新映射为背景类代码。</para>
+		/// <para>The class codes that will be used to filter the blocks in the training data. When class codes of interest are specified, all other class codes are remapped to the background class code.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -157,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Background Class Code</para>
-		/// <para>指定了感兴趣内容的类代码后，将用于所有其他类代码的类代码值。</para>
+		/// <para>The class code value that will be used for all other class codes when class codes of interest have been specified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -167,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Class Description</para>
-		/// <para>有关训练数据中每个类代码代表内容的描述。</para>
+		/// <para>The descriptions of what each class code in the training data represents.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -177,12 +177,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Model Selection Criteria</para>
-		/// <para>指定将用于确定最终模型的统计基础。</para>
-		/// <para>验证损失—使用将熵损失函数应用于验证数据时可以获得最低结果的模型。</para>
-		/// <para>召回率—将使用针对所有类代码均能获得召回率的最佳宏平均值的模型。 每个类代码的召回率值均由正确分类的点（正确）占所有使用该值进行分类的点（预期正确）的比率确定。 这是默认设置。</para>
-		/// <para>F1 得分—将使用针对所有类代码均能获得精度和召回率宏平均值的最佳谐波均值的模型。 这样可以在精度和召回率之间取得平衡，从而有利于提高整体性能。</para>
-		/// <para>精度—将使用针对所有类代码均能获得精度的最佳宏平均值的模型。 每个类代码的精度均由正确分类的点（正确）占所有被分类点（正确和误报）的比率确定。</para>
-		/// <para>准确性—将使用可以在验证数据的所有点之间获得最高正确分类点比率的模型。</para>
+		/// <para>Specifies the statistical basis that will be used to determine the final model.</para>
+		/// <para>Validation Loss—The model that achieves the lowest result when the entropy loss function is applied to the validation data will be used.</para>
+		/// <para>Recall—The model that achieves the best macro average of the recall for all class codes will be used. Each class code&apos;s recall value is determined by the ratio of correctly classified points (true positives) over all the points that should have been classified with this value (expected positives). This is the default.</para>
+		/// <para>F1 Score—The model that achieves the best harmonic mean between the macro average of the precision and recall values for all class codes will be used. This provides a balance between precision and recall, which favors better overall performance.</para>
+		/// <para>Precision—The model that achieves the best macro average of the precision for all class codes will be used. Each class code&apos;s precision is determined by the ratio of points that are correctly classified (true positives) over all the points that are classified (true positives and false positives).</para>
+		/// <para>Accuracy—The model that achieves the highest ratio of corrected classified points over all the points in the validation data will be used.</para>
 		/// <para><see cref="ModelSelectionCriteriaEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -193,7 +193,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Maximum Number of Epochs</para>
-		/// <para>每个数据块通过神经网络向前和向后传递的次数。 默认值为 25。</para>
+		/// <para>The number of times each block of data is passed forward and backward through the neural network. The default is 25.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -202,7 +202,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Iterations Per Epoch (%)</para>
-		/// <para>在每个训练时期中处理的数据的百分比。 默认值为 100。</para>
+		/// <para>The percentage of the data that is processed in each training epoch. The default is 100.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -212,7 +212,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Learning Rate</para>
-		/// <para>现有信息将被新信息覆盖的比率。 如果未指定任何值，则系统将在训练过程中从学习曲线中提取最佳学习率。 这是默认设置。</para>
+		/// <para>The rate at which existing information will be overwritten with new information. If no value is specified, the optimal learning rate will be extracted from the learning curve during the training process. This is the default.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -222,7 +222,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Batch Size</para>
-		/// <para>在任何给定时间将要处理的训练数据块的数量。 默认值为 2。</para>
+		/// <para>The number of training data blocks that will be processed at any given time. The default is 2.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -232,9 +232,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Stop training when model no longer improves</para>
-		/// <para>指定为模型选择标准参数指定的指标在连续 5 个时期未记录任何改进后，模型训练是否将停止。</para>
-		/// <para>选中 - 当模型不再改进时，模型训练将停止。 这是默认设置。</para>
-		/// <para>未选中 - 模型训练将一直持续，直至达到最大时期数为止。</para>
+		/// <para>Specifies whether the model training will stop when the metric specified in the Model Selection Criteria parameter does not register any improvement after 5 consecutive epochs.</para>
+		/// <para>Checked—The model training will stop when the model is no longer improving. This is the default.</para>
+		/// <para>Unchecked—The model training will continue until the maximum number of epochs has been reached.</para>
 		/// <para><see cref="EarlyStopEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -259,9 +259,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Learning Rate Strategy</para>
-		/// <para>指定在训练期间修改学习率的方式。</para>
-		/// <para>单周期学习率—学习率将在每个时期中循环，使用 1cycle 技术的 Fast.AI 实施来训练神经网络，从而帮助改进卷积神经网络的训练。 这是默认设置。</para>
-		/// <para>固定学习率—在整个训练过程中将使用相同的学习率。</para>
+		/// <para>Specifies how the learning rate will be modified during training.</para>
+		/// <para>One Cycle Learning Rate—The learning rate will be cycled throughout each epoch using Fast.AI&apos;s implementation of the 1cycle technique for training neural networks to help improve the training of a convolutional neural network. This is the default.</para>
+		/// <para>Fixed Learning Rate—The same learning rate will be used throughout the training process.</para>
 		/// <para><see cref="LearningRateStrategyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -294,59 +294,59 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum AttributesEnum 
 		{
 			/// <summary>
-			/// <para>强度—将使用激光雷达脉冲返回幅度的测量值。</para>
+			/// <para>Intensity—The measure of the magnitude of the lidar pulse return will be used.</para>
 			/// </summary>
 			[GPValue("INTENSITY")]
-			[Description("强度")]
+			[Description("Intensity")]
 			Intensity,
 
 			/// <summary>
-			/// <para>回波编号—将使用从给定的激光雷达脉冲获得的点顺序位置。</para>
+			/// <para>Return Number—The ordinal position of the point obtained from a given lidar pulse will be used.</para>
 			/// </summary>
 			[GPValue("RETURN_NUMBER")]
-			[Description("回波编号")]
+			[Description("Return Number")]
 			Return_Number,
 
 			/// <summary>
-			/// <para>回波数—将使用在与给定点关联的脉冲中被识别为点的激光雷达回波总数。</para>
+			/// <para>Number of Returns—The total number of lidar returns that were identified as points from the pulse associated with a given point will be used.</para>
 			/// </summary>
 			[GPValue("NUMBER_OF_RETURNS")]
-			[Description("回波数")]
+			[Description("Number of Returns")]
 			Number_of_Returns,
 
 			/// <summary>
-			/// <para>红色波段—将使用来自具有颜色信息的点云的红色波段值。</para>
+			/// <para>Red Band—The red band&apos;s value from a point cloud with color information will be used.</para>
 			/// </summary>
 			[GPValue("RED")]
-			[Description("红色波段")]
+			[Description("Red Band")]
 			Red_Band,
 
 			/// <summary>
-			/// <para>绿色波段—将使用来自具有颜色信息的点云的绿色波段值。</para>
+			/// <para>Green Band—The green band&apos;s value from a point cloud with color information will be used.</para>
 			/// </summary>
 			[GPValue("GREEN")]
-			[Description("绿色波段")]
+			[Description("Green Band")]
 			Green_Band,
 
 			/// <summary>
-			/// <para>蓝色波段—将使用来自具有颜色信息的点云的蓝色波段值。</para>
+			/// <para>Blue Band—The blue band&apos;s value from a point cloud with color information will be used.</para>
 			/// </summary>
 			[GPValue("BLUE")]
-			[Description("蓝色波段")]
+			[Description("Blue Band")]
 			Blue_Band,
 
 			/// <summary>
-			/// <para>近红外波段—将使用来自具有近红外信息的点云的近红外波段值。</para>
+			/// <para>Near Infrared Band—The near infrared band&apos;s value from a point cloud with near infrared information will be used.</para>
 			/// </summary>
 			[GPValue("NEAR_INFRARED")]
-			[Description("近红外波段")]
+			[Description("Near Infrared Band")]
 			Near_Infrared_Band,
 
 			/// <summary>
-			/// <para>相对高度—每个点相对于参考表面的相对高度，参考表面通常是裸露地表 DEM。</para>
+			/// <para>Relative Height—The relative height of each point in relation to a reference surface, which would typically be a bare earth DEM.</para>
 			/// </summary>
 			[GPValue("RELATIVE_HEIGHT")]
-			[Description("相对高度")]
+			[Description("Relative Height")]
 			Relative_Height,
 
 		}
@@ -357,38 +357,38 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ModelSelectionCriteriaEnum 
 		{
 			/// <summary>
-			/// <para>验证损失—使用将熵损失函数应用于验证数据时可以获得最低结果的模型。</para>
+			/// <para>Validation Loss—The model that achieves the lowest result when the entropy loss function is applied to the validation data will be used.</para>
 			/// </summary>
 			[GPValue("VALIDATION_LOSS")]
-			[Description("验证损失")]
+			[Description("Validation Loss")]
 			Validation_Loss,
 
 			/// <summary>
-			/// <para>准确性—将使用可以在验证数据的所有点之间获得最高正确分类点比率的模型。</para>
+			/// <para>Accuracy—The model that achieves the highest ratio of corrected classified points over all the points in the validation data will be used.</para>
 			/// </summary>
 			[GPValue("ACCURACY")]
-			[Description("准确性")]
+			[Description("Accuracy")]
 			Accuracy,
 
 			/// <summary>
-			/// <para>召回率—将使用针对所有类代码均能获得召回率的最佳宏平均值的模型。 每个类代码的召回率值均由正确分类的点（正确）占所有使用该值进行分类的点（预期正确）的比率确定。 这是默认设置。</para>
+			/// <para>Recall—The model that achieves the best macro average of the recall for all class codes will be used. Each class code&apos;s recall value is determined by the ratio of correctly classified points (true positives) over all the points that should have been classified with this value (expected positives). This is the default.</para>
 			/// </summary>
 			[GPValue("RECALL")]
-			[Description("召回率")]
+			[Description("Recall")]
 			Recall,
 
 			/// <summary>
-			/// <para>F1 得分—将使用针对所有类代码均能获得精度和召回率宏平均值的最佳谐波均值的模型。 这样可以在精度和召回率之间取得平衡，从而有利于提高整体性能。</para>
+			/// <para>F1 Score—The model that achieves the best harmonic mean between the macro average of the precision and recall values for all class codes will be used. This provides a balance between precision and recall, which favors better overall performance.</para>
 			/// </summary>
 			[GPValue("F1_SCORE")]
-			[Description("F1 得分")]
+			[Description("F1 Score")]
 			F1_Score,
 
 			/// <summary>
-			/// <para>精度—将使用针对所有类代码均能获得精度的最佳宏平均值的模型。 每个类代码的精度均由正确分类的点（正确）占所有被分类点（正确和误报）的比率确定。</para>
+			/// <para>Precision—The model that achieves the best macro average of the precision for all class codes will be used. Each class code&apos;s precision is determined by the ratio of points that are correctly classified (true positives) over all the points that are classified (true positives and false positives).</para>
 			/// </summary>
 			[GPValue("PRECISION")]
-			[Description("精度")]
+			[Description("Precision")]
 			Precision,
 
 		}
@@ -399,14 +399,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum EarlyStopEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The model training will stop when the model is no longer improving. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EARLY_STOP")]
 			EARLY_STOP,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The model training will continue until the maximum number of epochs has been reached.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_EARLY_STOP")]
@@ -420,17 +420,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum LearningRateStrategyEnum 
 		{
 			/// <summary>
-			/// <para>单周期学习率—学习率将在每个时期中循环，使用 1cycle 技术的 Fast.AI 实施来训练神经网络，从而帮助改进卷积神经网络的训练。 这是默认设置。</para>
+			/// <para>One Cycle Learning Rate—The learning rate will be cycled throughout each epoch using Fast.AI&apos;s implementation of the 1cycle technique for training neural networks to help improve the training of a convolutional neural network. This is the default.</para>
 			/// </summary>
 			[GPValue("ONE_CYCLE")]
-			[Description("单周期学习率")]
+			[Description("One Cycle Learning Rate")]
 			One_Cycle_Learning_Rate,
 
 			/// <summary>
-			/// <para>固定学习率—在整个训练过程中将使用相同的学习率。</para>
+			/// <para>Fixed Learning Rate—The same learning rate will be used throughout the training process.</para>
 			/// </summary>
 			[GPValue("FIXED")]
-			[Description("固定学习率")]
+			[Description("Fixed Learning Rate")]
 			Fixed_Learning_Rate,
 
 		}

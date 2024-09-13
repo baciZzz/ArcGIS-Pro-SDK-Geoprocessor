@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Raster to Polyline</para>
-	/// <para>栅格转折线</para>
-	/// <para>将栅格数据集转换为折线要素。</para>
+	/// <para>Raster to Polyline</para>
+	/// <para>Converts a raster dataset to polyline features.</para>
 	/// </summary>
 	public class RasterToPolyline : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>输入栅格数据集。</para>
-		/// <para>栅格数据必须是整型。</para>
+		/// <para>The input raster dataset.</para>
+		/// <para>The raster must be integer type.</para>
 		/// </param>
 		/// <param name="OutPolylineFeatures">
 		/// <para>Output polyline features</para>
-		/// <para>包含已转换折线的输出要素类。</para>
+		/// <para>The output feature class that will contain the converted polylines.</para>
 		/// </param>
 		public RasterToPolyline(object InRaster, object OutPolylineFeatures)
 		{
@@ -35,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 栅格转折线</para>
+		/// <para>Tool Display Name : Raster to Polyline</para>
 		/// </summary>
-		public override string DisplayName() => "栅格转折线";
+		public override string DisplayName() => "Raster to Polyline";
 
 		/// <summary>
 		/// <para>Tool Name : RasterToPolyline</para>
@@ -71,8 +71,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>输入栅格数据集。</para>
-		/// <para>栅格数据必须是整型。</para>
+		/// <para>The input raster dataset.</para>
+		/// <para>The raster must be integer type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output polyline features</para>
-		/// <para>包含已转换折线的输出要素类。</para>
+		/// <para>The output feature class that will contain the converted polylines.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -92,9 +92,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Background value</para>
-		/// <para>可指定用于识别背景像元的值。栅格数据集可看作是一系列前景像元与背景像元的组合。线状要素将基于前景单元生成。</para>
-		/// <para>零—背景由 zero 像元、less 像元或 NoData 像元组成。而所有值大于零的像元均将视为前景值。</para>
-		/// <para>NoData—背景由 NoData 单元组成。所有具备有效值的单元均属于前景单元。</para>
+		/// <para>Specifies the value that will identify the background cells. The raster dataset is viewed as a set of foreground cells and background cells. The linear features are formed from the foreground cells.</para>
+		/// <para>Zero—The background is composed of cells of zero or less or NoData. All cells with a value greater than zero are considered a foreground value.</para>
+		/// <para>NoData—The background is composed of NoData cells. All cells with valid values belong to the foreground.</para>
 		/// <para><see cref="BackgroundValueEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Minimum dangle length</para>
-		/// <para>将被保留的悬挂折线的最小长度值。默认值为零。</para>
+		/// <para>Minimum length of dangling polylines that will be retained. The default is zero.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -114,9 +114,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Simplify polylines</para>
-		/// <para>在保持线的基本形状不变的前提下，通过移除其中小的凹进和凸起或无关紧要的折弯来简化线。</para>
-		/// <para>选中 - 这些折线将简化为简单的形状，因此每个形状拥有最少的线段数。这是默认设置。</para>
-		/// <para>未选中 - 折线不会被简化。</para>
+		/// <para>Simplifies a line by removing small fluctuations or extraneous bends from it while preserving its essential shape.</para>
+		/// <para>Checked—The polylines will be simplified into simpler shapes such that each contains a minimum number of segments. This is the default.</para>
+		/// <para>Unchecked—The polylines will not be simplified.</para>
 		/// <para><see cref="SimplifyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -126,8 +126,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Field</para>
-		/// <para>此字段用于将输入栅格中像元值指定给输出数据集中的折线要素。</para>
-		/// <para>栅格字段可为整型或字符串型字段。</para>
+		/// <para>The field used to assign values from the cells in the input raster to the polyline features in the output dataset.</para>
+		/// <para>It can be an integer or a string field.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -152,14 +152,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum BackgroundValueEnum 
 		{
 			/// <summary>
-			/// <para>零—背景由 zero 像元、less 像元或 NoData 像元组成。而所有值大于零的像元均将视为前景值。</para>
+			/// <para>Zero—The background is composed of cells of zero or less or NoData. All cells with a value greater than zero are considered a foreground value.</para>
 			/// </summary>
 			[GPValue("ZERO")]
-			[Description("零")]
+			[Description("Zero")]
 			Zero,
 
 			/// <summary>
-			/// <para>NoData—背景由 NoData 单元组成。所有具备有效值的单元均属于前景单元。</para>
+			/// <para>NoData—The background is composed of NoData cells. All cells with valid values belong to the foreground.</para>
 			/// </summary>
 			[GPValue("NODATA")]
 			[Description("NoData")]
@@ -173,14 +173,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum SimplifyEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The polylines will be simplified into simpler shapes such that each contains a minimum number of segments. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SIMPLIFY")]
 			SIMPLIFY,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The polylines will not be simplified.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SIMPLIFY")]

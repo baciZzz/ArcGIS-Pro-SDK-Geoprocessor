@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Terminal Configuration</para>
-	/// <para>添加终端配置</para>
-	/// <para>用于向现有公共设施网络添加终端配置。</para>
+	/// <para>Add Terminal Configuration</para>
+	/// <para>Adds a terminal configuration to an existing utility network.</para>
 	/// </summary>
 	public class AddTerminalConfiguration : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>将添加终端配置的输入公共设施网络。</para>
+		/// <para>The input utility network to which the terminal configuration will be added.</para>
 		/// </param>
 		/// <param name="TerminalConfigurationName">
 		/// <para>Name</para>
-		/// <para>终端配置的名称。</para>
+		/// <para>The name of the terminal configuration.</para>
 		/// </param>
 		/// <param name="TraversabilityModel">
 		/// <para>Directionality</para>
-		/// <para>指定终端配置的方向性。 定向可遍历性模型意味着终端的流动仅有一个方向。 双向可遍历性模型意味着终端允许双向流动。</para>
-		/// <para>定向—仅允许一个流向。</para>
-		/// <para>双向—允许两个流向。</para>
+		/// <para>Specifies the directionality of the terminal configuration. A directional traversability model means the flow for the terminal will only go in one direction. A bidirectional traversability model means the terminal allows flow in both directions.</para>
+		/// <para>Directional—Only one flow direction is permitted.</para>
+		/// <para>Bidirectional—Both flow directions are permitted.</para>
 		/// <para><see cref="TraversabilityModelEnum"/></para>
 		/// </param>
 		public AddTerminalConfiguration(object InUtilityNetwork, object TerminalConfigurationName, object TraversabilityModel)
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 添加终端配置</para>
+		/// <para>Tool Display Name : Add Terminal Configuration</para>
 		/// </summary>
-		public override string DisplayName() => "添加终端配置";
+		public override string DisplayName() => "Add Terminal Configuration";
 
 		/// <summary>
 		/// <para>Tool Name : AddTerminalConfiguration</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>将添加终端配置的输入公共设施网络。</para>
+		/// <para>The input utility network to which the terminal configuration will be added.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Name</para>
-		/// <para>终端配置的名称。</para>
+		/// <para>The name of the terminal configuration.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -94,9 +94,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Directionality</para>
-		/// <para>指定终端配置的方向性。 定向可遍历性模型意味着终端的流动仅有一个方向。 双向可遍历性模型意味着终端允许双向流动。</para>
-		/// <para>定向—仅允许一个流向。</para>
-		/// <para>双向—允许两个流向。</para>
+		/// <para>Specifies the directionality of the terminal configuration. A directional traversability model means the flow for the terminal will only go in one direction. A bidirectional traversability model means the terminal allows flow in both directions.</para>
+		/// <para>Directional—Only one flow direction is permitted.</para>
+		/// <para>Bidirectional—Both flow directions are permitted.</para>
 		/// <para><see cref="TraversabilityModelEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -106,11 +106,11 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Terminals</para>
-		/// <para>每个定向终端的名称和方向流。 最少必须指定 2 个终端，最多可以指定 8 个终端。 每个终端的名称不能超过 32 个字符。 如果方向性参数值为定向，则此参数为必需项。</para>
-		/// <para>名称 - 提供终端的名称。</para>
-		/// <para>上游 - 指示终端为上游或下游。</para>
-		/// <para>选中 - 终端为上游。</para>
-		/// <para>未选中 - 终端为下游。</para>
+		/// <para>The name and directional flow of each directional terminal. A minimum of two terminals must be specified, and a maximum of eight can be specified. The name of each terminal cannot exceed 32 characters. This parameter is required if the Directionality parameter value is Directional.</para>
+		/// <para>Name—Provide the name of the terminal.</para>
+		/// <para>Upstream—Indicate whether the terminal is upstream or downstream.</para>
+		/// <para>Checked—The terminal is upstream.</para>
+		/// <para>Unchecked—The terminal is downstream.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Terminals</para>
-		/// <para>每个双向终端的名称。 最少必须指定 2 个终端，最多可以指定 8 个终端。 每个终端的名称不能超过 32 个字符。 如果方向性参数值为双向（在 Python 中为 traversability_model = "BIDIRECTIONAL"），则此参数为必需项。</para>
+		/// <para>The name of each bidirectional terminal. A minimum of two terminals must be specified, and a maximum of eight can be specified. The name of each terminal cannot exceed 32 characters. This parameter is required if the Directionality parameter value is Bidirectional (traversability_model = "BIDIRECTIONAL" in Python).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -126,12 +126,12 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Valid Path(s)</para>
-		/// <para>终端配置的有效路径的名称。 对于双向可遍历性，如果存在三个或四个终端，则需要此参数。 如果使用定向可遍历性，则其中一个终端必须为上游，才能具有有效配置。 必须创建有效路径才能指示设备或交汇点对象内要遍历的资源的有效路径。 为每个有效路径提供名称并指定值。</para>
-		/// <para>名称 - 有效路径的名称。</para>
-		/// <para>值 - 有效路径的值。</para>
-		/// <para>全部 - 输入值“全部”以创建一个选项，表示所有路径均有效。</para>
-		/// <para>无 - 输入值“无”以创建一个选项，表示所有路径均无效。</para>
-		/// <para>终端对 - 输入单个终端对或终端对集合。 输入单个终端对，方法是指定从一个终端到另一个终端的路径，使用连字符分隔，例如，A-B。 输入通过逗号分隔的终端对集合，例如，A-B, A-C。</para>
+		/// <para>The name or names and valid path or paths for the terminal configuration. For bidirectional traversability, this parameter is required if you have three or four terminals. If you are using directional traversability, one of the terminals must be upstream to have valid configurations. Valid paths must be created to indicate which path or paths in a device or junction object are valid for a resource to travel through. Provide a name for each valid path as well as a value.</para>
+		/// <para>Name—The name of the valid path.</para>
+		/// <para>Value—The value of the valid path.</para>
+		/// <para>All—Enter a value of All to create an option that indicates all paths are valid.</para>
+		/// <para>None—Enter a value of None to create an option that indicates that no paths are valid.</para>
+		/// <para>Terminal pair(s)—Enter a single or collection of terminal pairs. Enter a single terminal pair by specifying the path from one terminal to another separated by a hyphen, for example, A-B. Enter a collection of terminal pairs separated by a comma, for example, A-B, A-C.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -139,10 +139,10 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Default Path</para>
-		/// <para>有效配置的默认路径。 该路径将分配至将此终端配置分配至其资产类型的新要素。 如果未指定有效路径，将使用默认路径全部。</para>
-		/// <para>全部 - 所有路径均有效。 这是默认设置。</para>
-		/// <para>无 - 所有路径均无效。</para>
-		/// <para>有效路径 - 在有效路径参数中指定的有效路径。</para>
+		/// <para>The default path of the valid configurations. This will be assigned to new features that have this terminal configuration assigned to their asset type. If no valid paths have been specified, the default path All will be used.</para>
+		/// <para>All—All paths are valid. This is the default.</para>
+		/// <para>None—No paths are valid.</para>
+		/// <para>Valid path—A valid path specified in the Valid Path(s) parameter.</para>
 		/// <para><see cref="DefaultPathEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -165,17 +165,17 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum TraversabilityModelEnum 
 		{
 			/// <summary>
-			/// <para>定向—仅允许一个流向。</para>
+			/// <para>Directionality</para>
 			/// </summary>
 			[GPValue("DIRECTIONAL")]
-			[Description("定向")]
+			[Description("Directional")]
 			Directional,
 
 			/// <summary>
-			/// <para>双向—允许两个流向。</para>
+			/// <para>Bidirectional—Both flow directions are permitted.</para>
 			/// </summary>
 			[GPValue("BIDIRECTIONAL")]
-			[Description("双向")]
+			[Description("Bidirectional")]
 			Bidirectional,
 
 		}
@@ -186,17 +186,17 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum DefaultPathEnum 
 		{
 			/// <summary>
-			/// <para>全部 - 所有路径均有效。 这是默认设置。</para>
+			/// <para>All—All paths are valid. This is the default.</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("全部")]
+			[Description("All")]
 			All,
 
 			/// <summary>
-			/// <para>无 - 所有路径均无效。</para>
+			/// <para>None—No paths are valid.</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("无")]
+			[Description("None")]
 			None,
 
 		}

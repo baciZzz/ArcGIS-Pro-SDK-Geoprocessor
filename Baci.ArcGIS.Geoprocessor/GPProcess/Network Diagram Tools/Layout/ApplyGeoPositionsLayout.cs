@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Apply Geo Positions Layout</para>
-	/// <para>应用地理位置布局</para>
-	/// <para>用于移动各个逻辑示意图交汇点和边要素，以使其与关联网络要素的地理位置相匹配。</para>
+	/// <para>Apply Geo Positions Layout</para>
+	/// <para>Moves each diagram junction and edge feature so they match the geographical positions of the associated network features.</para>
 	/// </summary>
 	public class ApplyGeoPositionsLayout : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InNetworkDiagramLayer">
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>将应用布局的网络逻辑示意图。</para>
+		/// <para>The network diagram to which the layout will be applied.</para>
 		/// </param>
 		public ApplyGeoPositionsLayout(object InNetworkDiagramLayer)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 应用地理位置布局</para>
+		/// <para>Tool Display Name : Apply Geo Positions Layout</para>
 		/// </summary>
-		public override string DisplayName() => "应用地理位置布局";
+		public override string DisplayName() => "Apply Geo Positions Layout";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyGeoPositionsLayout</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>将应用布局的网络逻辑示意图。</para>
+		/// <para>The network diagram to which the layout will be applied.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDiagramLayer()]
@@ -73,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Restore edges geographic positions</para>
-		/// <para>指示是否将逻辑示意图边恢复到其折点的地理位置：</para>
-		/// <para>选中 - 将恢复沿逻辑示意图边的折点（如有可能），对其进行移动以与网络要素的地理位置相匹配。这是默认设置。</para>
-		/// <para>未选中 - 将不恢复沿逻辑示意图边的折点。其将显示为其连接交汇点之间的直线。</para>
+		/// <para>Indicates whether or not diagram edges will be restored to the geographic position of their vertices:</para>
+		/// <para>Checked—Vertices along diagram edges will be restored when possible, moving them to match the geographic positions of the network features. This is the default.</para>
+		/// <para>Unchecked—Vertices along diagram edges will not be restored. They will appear as straight lines between their connecting junctions.</para>
 		/// <para><see cref="RestoreEdgesGeoPositionsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -92,9 +92,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Run in asynchronous mode on the server</para>
-		/// <para>指定布局算法在服务器上将异步运行还是同步运行。</para>
-		/// <para>选中 - 布局算法将在服务器上异步运行。 服务器资源可通过该选项来运行超时较长的布局算法。 当执行耗时且可能导致服务器超时的布局（例如，部分重叠边）并应用于大型逻辑示意图（超过 25,000 个要素）时，建议进行异步运行。</para>
-		/// <para>未选中 - 布局算法将在服务器上同步运行。 如果执行时超过服务默认超时值（600 秒），则布局算法可能失败，无法完成。 这是默认设置。</para>
+		/// <para>Specifies whether the layout algorithm will run asynchronously or synchronously on the server.</para>
+		/// <para>Checked—The layout algorithm will run asynchronously on the server. This option dedicates server resources to run the layout algorithm with a longer time-out. Running asynchronously is recommended when executing layouts that are time consuming and may exceed the server time-out (for example, Partial Overlapping Edges) and applying to large diagrams (more than 25,000 features).</para>
+		/// <para>Unchecked—The layout algorithm will run synchronously on the server. It can fail without completion if its execution exceeds the service default time-out value of 600 seconds. This is the default.</para>
 		/// <para><see cref="RunAsyncEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -111,14 +111,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum RestoreEdgesGeoPositionsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Vertices along diagram edges will be restored when possible, moving them to match the geographic positions of the network features. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RESTORE_EDGES_GEO_POSITIONS")]
 			RESTORE_EDGES_GEO_POSITIONS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Vertices along diagram edges will not be restored. They will appear as straight lines between their connecting junctions.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_RESTORE_EDGES_GEO_POSITIONS")]
@@ -132,14 +132,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum RunAsyncEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The layout algorithm will run asynchronously on the server. This option dedicates server resources to run the layout algorithm with a longer time-out. Running asynchronously is recommended when executing layouts that are time consuming and may exceed the server time-out (for example, Partial Overlapping Edges) and applying to large diagrams (more than 25,000 features).</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RUN_ASYNCHRONOUSLY")]
 			RUN_ASYNCHRONOUSLY,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The layout algorithm will run synchronously on the server. It can fail without completion if its execution exceeds the service default time-out value of 600 seconds. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("RUN_SYNCHRONOUSLY")]

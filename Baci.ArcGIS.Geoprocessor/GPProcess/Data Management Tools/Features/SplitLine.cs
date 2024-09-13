@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Split Line At Vertices</para>
-	/// <para>在折点处分割线</para>
-	/// <para>通过在折点处分割输入线或面来创建折线要素类。</para>
+	/// <para>Split Line At Vertices</para>
+	/// <para>Creates a polyline feature class by splitting input lines or polygons at their vertices.</para>
 	/// </summary>
 	public class SplitLine : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>输入线或面要素。</para>
+		/// <para>The input line or polygon features.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>输出线要素类。</para>
+		/// <para>The output line feature class.</para>
 		/// </param>
 		public SplitLine(object InFeatures, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 在折点处分割线</para>
+		/// <para>Tool Display Name : Split Line At Vertices</para>
 		/// </summary>
-		public override string DisplayName() => "在折点处分割线";
+		public override string DisplayName() => "Split Line At Vertices";
 
 		/// <summary>
 		/// <para>Tool Name : SplitLine</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>输入线或面要素。</para>
+		/// <para>The input line or polygon features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>输出线要素类。</para>
+		/// <para>The output line feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Iterate Rasters</para>
-	/// <para>迭代栅格数据</para>
-	/// <para>迭代工作空间中的所有栅格数据。</para>
+	/// <para>Iterate Rasters</para>
+	/// <para>Iterates over rasters in a workspace.</para>
 	/// </summary>
 	public class IterateRasters : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="InWorkspace">
 		/// <para>Workspace</para>
-		/// <para>要进行迭代的栅格所在的工作空间。</para>
+		/// <para>The workspace containing the rasters to iterate through.</para>
 		/// </param>
 		public IterateRasters(object InWorkspace)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 迭代栅格数据</para>
+		/// <para>Tool Display Name : Iterate Rasters</para>
 		/// </summary>
-		public override string DisplayName() => "迭代栅格数据";
+		public override string DisplayName() => "Iterate Rasters";
 
 		/// <summary>
 		/// <para>Tool Name : IterateRasters</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Workspace</para>
-		/// <para>要进行迭代的栅格所在的工作空间。</para>
+		/// <para>The workspace containing the rasters to iterate through.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Wildcard</para>
-		/// <para>* 与有助于限制结果的字符的组合。 星号相当于指定全部。 如果未指定通配符，将返回所有输入。 例如，可将其用于将输入名称迭代限制为从某一字符或词语开始（例如，A*、Ari* 或 Land* 等）。</para>
+		/// <para>A combination of * and characters that help to limit the results. The asterisk is the same as specifying ALL. If no wildcard is specified, all inputs will be returned. For example, it can be used to restrict Iteration over input names starting with a certain character or word (for example, A* or Ari* or Land* and so on).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Raster Format</para>
-		/// <para>栅格格式的扩展名，如 ASC、BIL、BIP、BMP 等，或输入其他扩展名。</para>
+		/// <para>The extension of the raster format, such as ASC, BIL, BIP, BMP, and so on, or type in another extension.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -90,9 +90,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Recursive</para>
-		/// <para>指定是否以递归方式迭代主文件夹的子文件夹。</para>
-		/// <para>选中 - 将迭代子文件夹。</para>
-		/// <para>未选中 - 不会迭代子文件夹。</para>
+		/// <para>Specifies whether subfolders of the main folder will be iterated through recursively.</para>
+		/// <para>Checked—Subfolders will be iterated.</para>
+		/// <para>Unchecked—Subfolders will not be iterated.</para>
 		/// <para><see cref="RecursiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -122,14 +122,14 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		public enum RecursiveEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Subfolders will be iterated.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RECURSIVE")]
 			RECURSIVE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Subfolders will not be iterated.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_RECURSIVE")]

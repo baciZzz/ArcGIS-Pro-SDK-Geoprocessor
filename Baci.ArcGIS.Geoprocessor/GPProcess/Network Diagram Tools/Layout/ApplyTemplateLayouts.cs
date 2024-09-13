@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Apply Template Layouts</para>
-	/// <para>应用模板布局</para>
-	/// <para>用于将当前为逻辑示意图模板配置的布局算法列表应用于输入网络逻辑示意图图层。</para>
+	/// <para>Apply Template Layouts</para>
+	/// <para>Applies the list of layout algorithms currently configured for the diagram template to the input network diagram layer.</para>
 	/// </summary>
 	public class ApplyTemplateLayouts : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InNetworkDiagramLayer">
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>将应用布局的网络逻辑示意图。</para>
+		/// <para>The network diagram to which the layout will be applied.</para>
 		/// </param>
 		public ApplyTemplateLayouts(object InNetworkDiagramLayer)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 应用模板布局</para>
+		/// <para>Tool Display Name : Apply Template Layouts</para>
 		/// </summary>
-		public override string DisplayName() => "应用模板布局";
+		public override string DisplayName() => "Apply Template Layouts";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyTemplateLayouts</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>将应用布局的网络逻辑示意图。</para>
+		/// <para>The network diagram to which the layout will be applied.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDiagramLayer()]

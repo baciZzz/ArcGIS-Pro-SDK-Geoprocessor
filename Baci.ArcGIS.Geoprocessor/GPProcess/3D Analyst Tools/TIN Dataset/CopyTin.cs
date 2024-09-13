@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Copy TIN</para>
-	/// <para>复制 TIN</para>
-	/// <para>创建不规则三角网 (TIN) 数据集的副本。</para>
+	/// <para>Copy TIN</para>
+	/// <para>Creates a copy of a triangulated irregular network (TIN) dataset.</para>
 	/// </summary>
 	public class CopyTin : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTin">
 		/// <para>Input TIN</para>
-		/// <para>将要复制的 TIN。</para>
+		/// <para>The TIN that will be copied.</para>
 		/// </param>
 		/// <param name="OutTin">
 		/// <para>Output TIN</para>
-		/// <para>将要生成的 TIN 数据集。</para>
+		/// <para>The TIN dataset that will be generated.</para>
 		/// </param>
 		public CopyTin(object InTin, object OutTin)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 复制 TIN</para>
+		/// <para>Tool Display Name : Copy TIN</para>
 		/// </summary>
-		public override string DisplayName() => "复制 TIN";
+		public override string DisplayName() => "Copy TIN";
 
 		/// <summary>
 		/// <para>Tool Name : CopyTin</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input TIN</para>
-		/// <para>将要复制的 TIN。</para>
+		/// <para>The TIN that will be copied.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTinLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output TIN</para>
-		/// <para>将要生成的 TIN 数据集。</para>
+		/// <para>The TIN dataset that will be generated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETin()]
@@ -86,9 +86,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Version</para>
-		/// <para>输出 TIN 的版本。</para>
-		/// <para>Current—当前 TIN 版本，支持约束型 Delaunay 三角测量、增强的空间参考信息以及结点源和边标签值的存储。生成的 TIN 不会向后兼容 10.0 之前的 ArcGIS 版本。这是默认设置。</para>
-		/// <para>Pre 10.0—TIN 会向后兼容 10.0 之前的 ArcGIS 版本，且仅支持符合 Delaunay 的三角测量。</para>
+		/// <para>The version of the output TIN.</para>
+		/// <para>Current—The current TIN version, which supports constrained Delaunay triangulation, enhanced spatial reference information, and storage of node source and edge tag values. The resulting TIN will not be backward compatible with versions of ArcGIS prior to 10.0. This is the default.</para>
+		/// <para>Pre 10.0—The TIN will be backward compatible with versions of ArcGIS prior to 10.0, which only supports conforming Delaunay triangulation.</para>
 		/// <para><see cref="VersionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -113,14 +113,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum VersionEnum 
 		{
 			/// <summary>
-			/// <para>Pre 10.0—TIN 会向后兼容 10.0 之前的 ArcGIS 版本，且仅支持符合 Delaunay 的三角测量。</para>
+			/// <para>Pre 10.0—The TIN will be backward compatible with versions of ArcGIS prior to 10.0, which only supports conforming Delaunay triangulation.</para>
 			/// </summary>
 			[GPValue("PRE_10.0")]
 			[Description("Pre 10.0")]
 			Pre_100,
 
 			/// <summary>
-			/// <para>Current—当前 TIN 版本，支持约束型 Delaunay 三角测量、增强的空间参考信息以及结点源和边标签值的存储。生成的 TIN 不会向后兼容 10.0 之前的 ArcGIS 版本。这是默认设置。</para>
+			/// <para>Current—The current TIN version, which supports constrained Delaunay triangulation, enhanced spatial reference information, and storage of node source and edge tag values. The resulting TIN will not be backward compatible with versions of ArcGIS prior to 10.0. This is the default.</para>
 			/// </summary>
 			[GPValue("CURRENT")]
 			[Description("Current")]

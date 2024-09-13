@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Relate</para>
-	/// <para>添加关联</para>
-	/// <para>基于字段值将图层关联到另一图层或表。支持带有栅格属性表的要素图层、表视图和栅格图层。</para>
+	/// <para>Add Relate</para>
+	/// <para>Relates a layer to another layer or table based on a field value. Feature layers, table views, and raster layers with a raster attribute table are supported.</para>
 	/// </summary>
 	public class AddRelate : AbstractGPProcess
 	{
@@ -21,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InLayerOrView">
 		/// <para>Layer Name or Table View</para>
-		/// <para>关联表将关联的图层或表视图。</para>
+		/// <para>The layer or table view to which the relate table will be related.</para>
 		/// </param>
 		/// <param name="InField">
 		/// <para>Input Relate Field</para>
-		/// <para>关联基于的输入图层或表视图中的字段。</para>
+		/// <para>The field in the input layer or table view on which the relate will be based.</para>
 		/// </param>
 		/// <param name="RelateTable">
 		/// <para>Relate Table</para>
-		/// <para>将关联到输入图层或表视图的表或表视图。</para>
+		/// <para>The table or table view to be related to the input layer or table view.</para>
 		/// </param>
 		/// <param name="RelateField">
 		/// <para>Output Relate Field</para>
-		/// <para>关联表中的字段，包含关联将基于的值。</para>
+		/// <para>The field in the relate table that contains the values on which the relate will be based.</para>
 		/// </param>
 		/// <param name="RelateName">
 		/// <para>Relate Name</para>
-		/// <para>指定给关联的唯一名称。</para>
+		/// <para>The unique name given to a relate.</para>
 		/// </param>
 		public AddRelate(object InLayerOrView, object InField, object RelateTable, object RelateField, object RelateName)
 		{
@@ -49,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 添加关联</para>
+		/// <para>Tool Display Name : Add Relate</para>
 		/// </summary>
-		public override string DisplayName() => "添加关联";
+		public override string DisplayName() => "Add Relate";
 
 		/// <summary>
 		/// <para>Tool Name : AddRelate</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Layer Name or Table View</para>
-		/// <para>关联表将关联的图层或表视图。</para>
+		/// <para>The layer or table view to which the relate table will be related.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Relate Field</para>
-		/// <para>关联基于的输入图层或表视图中的字段。</para>
+		/// <para>The field in the input layer or table view on which the relate will be based.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Relate Table</para>
-		/// <para>将关联到输入图层或表视图的表或表视图。</para>
+		/// <para>The table or table view to be related to the input layer or table view.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Relate Field</para>
-		/// <para>关联表中的字段，包含关联将基于的值。</para>
+		/// <para>The field in the relate table that contains the values on which the relate will be based.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Relate Name</para>
-		/// <para>指定给关联的唯一名称。</para>
+		/// <para>The unique name given to a relate.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -129,10 +129,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Cardinality</para>
-		/// <para>关系的基数。</para>
-		/// <para>一对一—指定输入表和关联表间是一对一的关系。例如，输入表中的一个记录在关联表中只有一个匹配记录。</para>
-		/// <para>一对多—指定输入表和关联表间是一对多的关系。例如，输入表中的一个记录在关联表中有多个匹配记录。这是默认设置。</para>
-		/// <para>多对多—指定输入表和关联表间是多对多的关系。例如，输入表中相同值的多个记录在关联表中有多个匹配记录。</para>
+		/// <para>The cardinality of the relationship.</para>
+		/// <para>One to one—Specifies that the relationship between the input table and related table is one to one. For example, one record in the input table will only have one matching record in the related table.</para>
+		/// <para>One to many—Specifies that the relationship between the input table and related table is one to many. For example, one record in the input table can have multiple matching records in the related table. This is the default.</para>
+		/// <para>Many to many—Specifies that the relationship between the input table and related table is many to many. For example, many records with the same value in the input table can have multiple matching records in the related table.</para>
 		/// <para><see cref="CardinalityEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -164,24 +164,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CardinalityEnum 
 		{
 			/// <summary>
-			/// <para>一对一—指定输入表和关联表间是一对一的关系。例如，输入表中的一个记录在关联表中只有一个匹配记录。</para>
+			/// <para>One to one—Specifies that the relationship between the input table and related table is one to one. For example, one record in the input table will only have one matching record in the related table.</para>
 			/// </summary>
 			[GPValue("ONE_TO_ONE")]
-			[Description("一对一")]
+			[Description("One to one")]
 			One_to_one,
 
 			/// <summary>
-			/// <para>一对多—指定输入表和关联表间是一对多的关系。例如，输入表中的一个记录在关联表中有多个匹配记录。这是默认设置。</para>
+			/// <para>One to many—Specifies that the relationship between the input table and related table is one to many. For example, one record in the input table can have multiple matching records in the related table. This is the default.</para>
 			/// </summary>
 			[GPValue("ONE_TO_MANY")]
-			[Description("一对多")]
+			[Description("One to many")]
 			One_to_many,
 
 			/// <summary>
-			/// <para>多对多—指定输入表和关联表间是多对多的关系。例如，输入表中相同值的多个记录在关联表中有多个匹配记录。</para>
+			/// <para>Many to many—Specifies that the relationship between the input table and related table is many to many. For example, many records with the same value in the input table can have multiple matching records in the related table.</para>
 			/// </summary>
 			[GPValue("MANY_TO_MANY")]
-			[Description("多对多")]
+			[Description("Many to many")]
 			Many_to_many,
 
 		}

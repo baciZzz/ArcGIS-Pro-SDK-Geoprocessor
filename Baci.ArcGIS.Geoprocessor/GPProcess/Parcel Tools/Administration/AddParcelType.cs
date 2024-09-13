@@ -11,8 +11,9 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Add Parcel Type</para>
-	/// <para>添加宗地类型</para>
-	/// <para>向宗地结构添加宗地类型。 宗地类型由单独的面和线要素类进行定义。 宗地类型要素类由宗地结构数据集进行控制。</para>
+	/// <para>Add Parcel Type</para>
+	/// <para>Adds a parcel type to a parcel fabric.</para>
+	/// <para>A parcel type is defined by a separate polygon and  line feature class. Parcel type feature classes are controlled by the parcel fabric dataset.</para>
 	/// </summary>
 	public class AddParcelType : AbstractGPProcess
 	{
@@ -21,11 +22,11 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="InParcelFabric">
 		/// <para>Input Parcel Fabric</para>
-		/// <para>宗地类型将被添加到的宗地结构。 宗地结构可来自文件地理数据库、企业级地理数据库或移动地理数据库。</para>
+		/// <para>The parcel fabric to which the parcel type will be added. The parcel fabric can be from a file, enterprise, or mobile geodatabase.</para>
 		/// </param>
 		/// <param name="Name">
 		/// <para>Name</para>
-		/// <para>宗地类型的名称。 该名称将分配给输出面和线要素类。</para>
+		/// <para>The name of the parcel type. The name will be assigned to the output polygon and line feature classes.</para>
 		/// </param>
 		public AddParcelType(object InParcelFabric, object Name)
 		{
@@ -34,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 添加宗地类型</para>
+		/// <para>Tool Display Name : Add Parcel Type</para>
 		/// </summary>
-		public override string DisplayName() => "添加宗地类型";
+		public override string DisplayName() => "Add Parcel Type";
 
 		/// <summary>
 		/// <para>Tool Name : AddParcelType</para>
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>
-		/// <para>宗地类型将被添加到的宗地结构。 宗地结构可来自文件地理数据库、企业级地理数据库或移动地理数据库。</para>
+		/// <para>The parcel fabric to which the parcel type will be added. The parcel fabric can be from a file, enterprise, or mobile geodatabase.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPParcelLayer()]
@@ -78,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Name</para>
-		/// <para>宗地类型的名称。 该名称将分配给输出面和线要素类。</para>
+		/// <para>The name of the parcel type. The name will be assigned to the output polygon and line feature classes.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -107,9 +108,9 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Use for administrative boundaries</para>
-		/// <para>指定宗地类型将用于存储具有行政边界还是常规边界的宗地。 行政边界将用于非常大的宗地，例如国家宗地或州宗地。 宗地类型面要素类将不参与宗地结构拓扑。</para>
-		/// <para>选中 - 宗地类型将用于存储行政边界。 宗地类型面要素类将不参与宗地结构拓扑。</para>
-		/// <para>未选中 - 宗地类型不会用于存储行政边界。 宗地类型面要素类将参与宗地结构拓扑。 这是默认设置。</para>
+		/// <para>Specifies whether the parcel type will be used to store parcels with administrative boundaries or regular boundaries. Administrative boundaries are used for very large parcels such as country parcels or state parcels. The parcel type polygon feature class will not participate in the parcel fabric topology.</para>
+		/// <para>Checked—The parcel type will be used to store administrative boundaries. The parcel type polygon feature class will not participate in the parcel fabric topology.</para>
+		/// <para>Unchecked—The parcel type will not be used to store administrative boundaries. The parcel type polygon feature class will participate in the parcel fabric topology. This is the default.</para>
 		/// <para><see cref="AdministrativePolygonEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -125,14 +126,14 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		public enum AdministrativePolygonEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The parcel type will be used to store administrative boundaries. The parcel type polygon feature class will not participate in the parcel fabric topology.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADMINISTRATIVE_POLYGON")]
 			ADMINISTRATIVE_POLYGON,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The parcel type will not be used to store administrative boundaries. The parcel type polygon feature class will participate in the parcel fabric topology. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("TOPOLOGY_POLYGON")]

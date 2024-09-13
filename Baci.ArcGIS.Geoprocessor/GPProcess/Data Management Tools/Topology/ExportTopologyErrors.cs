@@ -11,8 +11,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Topology Errors</para>
-	/// <para>导出拓扑错误</para>
-	/// <para>将错误和异常从地理数据库拓扑导出到目标地理数据库。将导出与错误和异常相关联的所有信息，如错误或异常所引用的要素。导出错误和异常后，可使用任何许可级别的 ArcGIS 访问要素类。要素类可与按位置选择图层工具配合使用，并可共享给无权访问拓扑的其他用户。</para>
+	/// <para>Export Topology Errors</para>
+	/// <para>Exports the errors and exceptions from a geodatabase topology to the target geodatabase.  All information associated with the errors and exceptions, such as the features referenced by the error or exception, is exported.</para>
+	/// <para>Once the errors and exceptions are exported, the feature classes can be accessed using any license level of ArcGIS.  The feature classes can be used with the Select Layer By Location tool and can be shared with other users who do not have access to the topology.</para>
 	/// </summary>
 	public class ExportTopologyErrors : AbstractGPProcess
 	{
@@ -21,15 +22,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTopology">
 		/// <para>Input Topology</para>
-		/// <para>将从中导出错误的拓扑。</para>
+		/// <para>The topology from which the errors will be exported.</para>
 		/// </param>
 		/// <param name="OutPath">
 		/// <para>Output Location</para>
-		/// <para>要创建要素类的输出工作空间。默认设置为拓扑所在的工作空间。如果输入是拓扑服务，则默认值将是工程的默认地理数据库。</para>
+		/// <para>The output workspace in which the feature classes will be created. The default is the workspace where the topology is located. If the input is a topology service, the default will be the default geodatabase for the project.</para>
 		/// </param>
 		/// <param name="OutBasename">
 		/// <para>Base Name</para>
-		/// <para>要加到每个输出要素类前面的名称。向同一工作空间进行多个导出操作时，可通过该名称指定唯一的输出名称。默认设置为拓扑名称。</para>
+		/// <para>The name to prefix to each output feature class. This allows you to specify unique output names when running multiple exports to the same workspace. The default is the topology name.</para>
 		/// </param>
 		public ExportTopologyErrors(object InTopology, object OutPath, object OutBasename)
 		{
@@ -39,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 导出拓扑错误</para>
+		/// <para>Tool Display Name : Export Topology Errors</para>
 		/// </summary>
-		public override string DisplayName() => "导出拓扑错误";
+		public override string DisplayName() => "Export Topology Errors";
 
 		/// <summary>
 		/// <para>Tool Name : ExportTopologyErrors</para>
@@ -75,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Topology</para>
-		/// <para>将从中导出错误的拓扑。</para>
+		/// <para>The topology from which the errors will be exported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTopologyLayer()]
@@ -83,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Location</para>
-		/// <para>要创建要素类的输出工作空间。默认设置为拓扑所在的工作空间。如果输入是拓扑服务，则默认值将是工程的默认地理数据库。</para>
+		/// <para>The output workspace in which the feature classes will be created. The default is the workspace where the topology is located. If the input is a topology service, the default will be the default geodatabase for the project.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -91,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Base Name</para>
-		/// <para>要加到每个输出要素类前面的名称。向同一工作空间进行多个导出操作时，可通过该名称指定唯一的输出名称。默认设置为拓扑名称。</para>
+		/// <para>The name to prefix to each output feature class. This allows you to specify unique output names when running multiple exports to the same workspace. The default is the topology name.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

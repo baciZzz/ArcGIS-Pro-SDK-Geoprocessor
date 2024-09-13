@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Append Events</para>
-	/// <para>追加事件</para>
-	/// <para>将其他事件记录从表、图层或要素类附加到现有的 ArcGIS Location Referencing 事件要素类。</para>
+	/// <para>Append Events</para>
+	/// <para>Appends event records from a table, layer, or feature class to an existing ArcGIS Location Referencing event feature class.</para>
 	/// </summary>
 	public class AppendEvents : AbstractGPProcess
 	{
@@ -21,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Event</para>
-		/// <para>要追加的源事件记录。</para>
+		/// <para>The source event records to append.</para>
 		/// </param>
 		/// <param name="InTargetEvent">
 		/// <para>Target Event</para>
-		/// <para>源事件记录将追加到的 Location Referencing 事件图层或要素类。</para>
+		/// <para>The Location Referencing event layer or feature class into which the source event records will be appended.</para>
 		/// </param>
 		/// <param name="FieldMapping">
 		/// <para>Field Map</para>
-		/// <para>控制如何将输入事件参数值字段中的属性信息传输到目标事件参数值。</para>
-		/// <para>由于输入事件参数值被追加到具有预定义方案（字段定义）的现有目标数据集中，因此不允许在目标数据集中添加或移除字段。 虽然您可以为每个输出字段设置合并规则，但该工具会忽略这些规则。</para>
+		/// <para>Controls how the attribute information in fields of the Input Event parameter value is transferred to the Target Event parameter value.</para>
+		/// <para>Because the Input Event parameter value is appended into an existing event that has a predefined schema (field definitions), fields cannot be added or removed from the target dataset. While you can set merge rules for each output field, the tool ignores those rules.</para>
 		/// </param>
 		public AppendEvents(object InDataset, object InTargetEvent, object FieldMapping)
 		{
@@ -40,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 追加事件</para>
+		/// <para>Tool Display Name : Append Events</para>
 		/// </summary>
-		public override string DisplayName() => "追加事件";
+		public override string DisplayName() => "Append Events";
 
 		/// <summary>
 		/// <para>Tool Name : AppendEvents</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Input Event</para>
-		/// <para>要追加的源事件记录。</para>
+		/// <para>The source event records to append.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Target Event</para>
-		/// <para>源事件记录将追加到的 Location Referencing 事件图层或要素类。</para>
+		/// <para>The Location Referencing event layer or feature class into which the source event records will be appended.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -94,8 +94,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Field Map</para>
-		/// <para>控制如何将输入事件参数值字段中的属性信息传输到目标事件参数值。</para>
-		/// <para>由于输入事件参数值被追加到具有预定义方案（字段定义）的现有目标数据集中，因此不允许在目标数据集中添加或移除字段。 虽然您可以为每个输出字段设置合并规则，但该工具会忽略这些规则。</para>
+		/// <para>Controls how the attribute information in fields of the Input Event parameter value is transferred to the Target Event parameter value.</para>
+		/// <para>Because the Input Event parameter value is appended into an existing event that has a predefined schema (field definitions), fields cannot be added or removed from the target dataset. While you can set merge rules for each output field, the tool ignores those rules.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFieldMapping()]
@@ -103,11 +103,11 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Load Type</para>
-		/// <para>指定如何将与目标事件记录具有相同事件 ID、测量值或时间性重叠的追加事件，加载到事件要素类中。</para>
-		/// <para>加—输入事件记录将追加到目标事件参数值。 不会对目标事件记录进行任何更改。</para>
-		/// <para>淘汰重叠—输入事件记录将追加到目标事件的参数值，并且目标事件参数值中与追加事件具有相同测量值或时间性重叠的任何记录都将被淘汰。 如果追加事件超过目标事件参数值，则目标事件参数值将被删除。 此选项应仅用于线性事件。</para>
-		/// <para>按事件 ID 淘汰—输入事件记录将追加到目标事件的参数值，并且目标事件参数值中与追加事件具有相同事件 ID 和时间性重叠的任何记录都将被淘汰。 如果追加事件超过具有相同事件 ID 的目标事件参数值，则目标事件参数值将被删除。</para>
-		/// <para>按事件 ID 替换—输入事件记录将追加到目标事件的参数值，并且目标事件参数值中与追加事件具有相同事件 ID 的任何记录都将被删除。</para>
+		/// <para>Specifies how appended events with measure or temporality overlaps with identical Event IDs as Target Event records will be loaded into the event feature class.</para>
+		/// <para>Add—The Input Event records will be appended to the Target Event parameter value. No changes are made to Target Event records.</para>
+		/// <para>Retire overlaps—The Input Event records will be appended to the Target Event parameter value and any records in the Target Event parameter value with measure or temporality overlaps as the appended events will be retired. If the appended event eclipses the Target Event parameter value, the Target Event parameter value will be deleted. This option should only be used for linear events.</para>
+		/// <para>Retire by event ID—The Input Event records will be appended to the Target Event parameter value and any records in the Target Event parameter value with the same Event ID and temporality overlaps as the appended events will be retired. If the appended event eclipses a Target Event parameter value with the same Event ID, the Target Event parameter value will be deleted.</para>
+		/// <para>Replace by event ID—The Input Event records will be appended to the Target Event parameter value and any records in the Target Event parameter value with the same Event ID as the appended events will be deleted.</para>
 		/// <para><see cref="LoadTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -117,9 +117,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Generate Event ID GUIDs for loaded events</para>
-		/// <para>指定是否将为追加的输入事件记录生成事件 ID。 事件 ID 的生成将仅应用于 Event ID 字段值为 Null 的输入事件记录。</para>
-		/// <para>选中 - 将为正在追加的输入事件记录生成事件 ID。</para>
-		/// <para>未选中 - 不会为正在追加的输入事件记录生成事件 ID。 这是默认设置。</para>
+		/// <para>Specifies whether event IDs will be generated for Input Event records being appended. Generation of event IDs will only be applied to Input Event records with a Null value for the Event ID field.</para>
+		/// <para>Checked—Event IDs for the Input Event records being appended will be generated.</para>
+		/// <para>Unchecked—Event IDs for the Input Event records being appended will not be generated. This is the default.</para>
 		/// <para><see cref="GenerateEventIdsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -129,9 +129,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Generate Shapes</para>
-		/// <para>指定是否将为正在追加的记录重新生成形状。 仅当输入事件是要素图层或要素类时，此参数才有效。</para>
-		/// <para>选中 - 将重新生成输入事件要素的形状。 这是默认设置。</para>
-		/// <para>未选中 - 不会重新生成输入事件要素的形状。</para>
+		/// <para>Specifies whether the shapes of the records being appended will be regenerated. This parameter is only active when the Input Event is a feature layer or feature class.</para>
+		/// <para>Checked—The shapes of the input event features will be regenerated. This is the default.</para>
+		/// <para>Unchecked—The shapes of the input event features will not be regenerated.</para>
 		/// <para><see cref="GenerateShapesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -170,31 +170,31 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum LoadTypeEnum 
 		{
 			/// <summary>
-			/// <para>加—输入事件记录将追加到目标事件参数值。 不会对目标事件记录进行任何更改。</para>
+			/// <para>Add—The Input Event records will be appended to the Target Event parameter value. No changes are made to Target Event records.</para>
 			/// </summary>
 			[GPValue("ADD")]
-			[Description("加")]
+			[Description("Add")]
 			Add,
 
 			/// <summary>
-			/// <para>淘汰重叠—输入事件记录将追加到目标事件的参数值，并且目标事件参数值中与追加事件具有相同测量值或时间性重叠的任何记录都将被淘汰。 如果追加事件超过目标事件参数值，则目标事件参数值将被删除。 此选项应仅用于线性事件。</para>
+			/// <para>Retire overlaps—The Input Event records will be appended to the Target Event parameter value and any records in the Target Event parameter value with measure or temporality overlaps as the appended events will be retired. If the appended event eclipses the Target Event parameter value, the Target Event parameter value will be deleted. This option should only be used for linear events.</para>
 			/// </summary>
 			[GPValue("RETIRE_OVERLAPS")]
-			[Description("淘汰重叠")]
+			[Description("Retire overlaps")]
 			Retire_overlaps,
 
 			/// <summary>
-			/// <para>按事件 ID 淘汰—输入事件记录将追加到目标事件的参数值，并且目标事件参数值中与追加事件具有相同事件 ID 和时间性重叠的任何记录都将被淘汰。 如果追加事件超过具有相同事件 ID 的目标事件参数值，则目标事件参数值将被删除。</para>
+			/// <para>Retire by event ID—The Input Event records will be appended to the Target Event parameter value and any records in the Target Event parameter value with the same Event ID and temporality overlaps as the appended events will be retired. If the appended event eclipses a Target Event parameter value with the same Event ID, the Target Event parameter value will be deleted.</para>
 			/// </summary>
 			[GPValue("RETIRE_BY_EVENT_ID")]
-			[Description("按事件 ID 淘汰")]
+			[Description("Retire by event ID")]
 			Retire_by_event_ID,
 
 			/// <summary>
-			/// <para>按事件 ID 替换—输入事件记录将追加到目标事件的参数值，并且目标事件参数值中与追加事件具有相同事件 ID 的任何记录都将被删除。</para>
+			/// <para>Replace by event ID—The Input Event records will be appended to the Target Event parameter value and any records in the Target Event parameter value with the same Event ID as the appended events will be deleted.</para>
 			/// </summary>
 			[GPValue("REPLACE_BY_EVENT_ID")]
-			[Description("按事件 ID 替换")]
+			[Description("Replace by event ID")]
 			Replace_by_event_ID,
 
 		}
@@ -205,14 +205,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum GenerateEventIdsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Event IDs for the Input Event records being appended will be generated.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("GENERATE_EVENT_IDS")]
 			GENERATE_EVENT_IDS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Event IDs for the Input Event records being appended will not be generated. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_GENERATE_EVENT_IDS")]
@@ -226,14 +226,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum GenerateShapesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The shapes of the input event features will be regenerated. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("GENERATE_SHAPES")]
 			GENERATE_SHAPES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The shapes of the input event features will not be regenerated.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SHAPES")]

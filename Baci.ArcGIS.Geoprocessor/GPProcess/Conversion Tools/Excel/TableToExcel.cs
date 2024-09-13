@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Table To Excel</para>
-	/// <para>表转 Excel</para>
-	/// <para>将表转换为 Microsoft Excel 文件（.xls 或 .xlsx）。</para>
+	/// <para>Table To Excel</para>
+	/// <para>Converts  a table to a Microsoft Excel file (.xls or .xlsx).</para>
 	/// </summary>
 	public class TableToExcel : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InputTable">
 		/// <para>Input Table</para>
-		/// <para>要转换为 Excel 文件的一个或多个表。</para>
+		/// <para>The table or tables to be converted to an Excel file.</para>
 		/// </param>
 		/// <param name="OutputExcelFile">
 		/// <para>Output Excel File (.xls or .xlsx)</para>
-		/// <para>输出 Excel 文件。 使用 .xls 或 .xlsx 文件扩展名指定 Excel 文件的格式。</para>
+		/// <para>The output Excel file. Specify the format of the Excel file using the .xls or .xlsx file extension.</para>
 		/// </param>
 		public TableToExcel(object InputTable, object OutputExcelFile)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 表转 Excel</para>
+		/// <para>Tool Display Name : Table To Excel</para>
 		/// </summary>
-		public override string DisplayName() => "表转 Excel";
+		public override string DisplayName() => "Table To Excel";
 
 		/// <summary>
 		/// <para>Tool Name : TableToExcel</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>要转换为 Excel 文件的一个或多个表。</para>
+		/// <para>The table or tables to be converted to an Excel file.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Excel File (.xls or .xlsx)</para>
-		/// <para>输出 Excel 文件。 使用 .xls 或 .xlsx 文件扩展名指定 Excel 文件的格式。</para>
+		/// <para>The output Excel file. Specify the format of the Excel file using the .xls or .xlsx file extension.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -88,9 +88,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Use field alias as column header</para>
-		/// <para>指定是否将输入字段名称或字段别名用作输出列名称。</para>
-		/// <para>未选中 - 将使用输入的字段名称来设置列标题。 这是默认设置。</para>
-		/// <para>选中 - 使用输入地理数据库表格的字段别名来设置列标题。 如果输入为地图内的图层，请忽略该图层的已设的字段别名。</para>
+		/// <para>Specifies whether input field names or field aliases will be used as the output column names.</para>
+		/// <para>Unchecked—Column headers will be set using the input field names. This is the default.</para>
+		/// <para>Checked—Column headers will be set using the input geodatabase table&apos;s field aliases. If the input is a layer in a map, the value set on the layer&apos;s field alias is ignored.</para>
 		/// <para><see cref="UseFieldAliasAsColumnHeaderEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -100,9 +100,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Use domain and subtype description</para>
-		/// <para>指定是否将子类型字段或具有编码值属性域的字段中的值传输至输出。</para>
-		/// <para>未选中 - 将使用所有的字段值，因为这些字段值均存储在表中。 这是默认设置。</para>
-		/// <para>选中 - 对于子类型字段，将使用子类型描述。 对于具有编码值属性域的字段，将使用编码值描述。</para>
+		/// <para>Specifies whether values from subtype fields or fields with a coded value domain will be transferred to the output.</para>
+		/// <para>Unchecked—All field values will be used as they are stored in the table. This is the default.</para>
+		/// <para>Checked—For subtype fields, the subtype description will be used. For fields with a coded value domain, the coded value descriptions will be used.</para>
 		/// <para><see cref="UseDomainAndSubtypeDescriptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -127,14 +127,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum UseFieldAliasAsColumnHeaderEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Column headers will be set using the input geodatabase table&apos;s field aliases. If the input is a layer in a map, the value set on the layer&apos;s field alias is ignored.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ALIAS")]
 			ALIAS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Column headers will be set using the input field names. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NAME")]
@@ -148,14 +148,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum UseDomainAndSubtypeDescriptionEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—For subtype fields, the subtype description will be used. For fields with a coded value domain, the coded value descriptions will be used.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DESCRIPTION")]
 			DESCRIPTION,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—All field values will be used as they are stored in the table. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("CODE")]

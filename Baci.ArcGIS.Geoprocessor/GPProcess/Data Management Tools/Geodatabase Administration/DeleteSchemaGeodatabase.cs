@@ -11,8 +11,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Schema Geodatabase</para>
-	/// <para>删除方案地理数据库</para>
-	/// <para>从 Oracle 用户方案中删除地理数据库。</para>
+	/// <para>Delete Schema Geodatabase</para>
+	/// <para>Deletes a geodatabase</para>
+	/// <para>from a user's schema in Oracle.</para>
 	/// </summary>
 	public class DeleteSchemaGeodatabase : AbstractGPProcess
 	{
@@ -21,7 +22,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputDatabase">
 		/// <para>Input Database Connection</para>
-		/// <para>将删除用户方案地理数据库的数据库连接文件 (.sde)。您必须以方案所有者的身份进行连接。</para>
+		/// <para>The database connection file (.sde) of the user-schema geodatabase to be deleted. You must connect as the schema owner.</para>
 		/// </param>
 		public DeleteSchemaGeodatabase(object InputDatabase)
 		{
@@ -29,9 +30,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 删除方案地理数据库</para>
+		/// <para>Tool Display Name : Delete Schema Geodatabase</para>
 		/// </summary>
-		public override string DisplayName() => "删除方案地理数据库";
+		public override string DisplayName() => "Delete Schema Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteSchemaGeodatabase</para>
@@ -65,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
-		/// <para>将删除用户方案地理数据库的数据库连接文件 (.sde)。您必须以方案所有者的身份进行连接。</para>
+		/// <para>The database connection file (.sde) of the user-schema geodatabase to be deleted. You must connect as the schema owner.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]

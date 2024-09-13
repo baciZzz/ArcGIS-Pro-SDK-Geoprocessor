@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Clear Workspace Cache</para>
-	/// <para>清除工作空间缓存</para>
-	/// <para>清除企业级地理数据库工作空间缓存中的全部企业级地理数据库工作空间。</para>
+	/// <para>Clear Workspace Cache</para>
+	/// <para>Clears any enterprise geodatabase workspaces from the enterprise geodatabase workspace cache.</para>
 	/// </summary>
 	public class ClearWorkspaceCache : AbstractGPProcess
 	{
@@ -24,9 +24,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 清除工作空间缓存</para>
+		/// <para>Tool Display Name : Clear Workspace Cache</para>
 		/// </summary>
-		public override string DisplayName() => "清除工作空间缓存";
+		public override string DisplayName() => "Clear Workspace Cache";
 
 		/// <summary>
 		/// <para>Tool Name : ClearWorkspaceCache</para>
@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Workspace</para>
-		/// <para>企业级地理数据库连接文件代表要从缓存中移除的企业级地理数据库工作空间。指定在运行地理处理工具时使用的企业级地理数据库连接路径，以从缓存中移除特定的企业级地理数据库工作空间。不给出任何输入数据将会清除该缓存中的所有企业级地理数据库工作空间。</para>
+		/// <para>The enterprise geodatabase database connection file representing the enterprise geodatabase workspace to be removed from the cache. Specify the path to the enterprise geodatabase connection file that was used in running your geoprocessing tools in order to remove the specific enterprise geodatabase workspace from the cache. Passing no input parameter will clear all enterprise geodatabase workspaces from the cache.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]

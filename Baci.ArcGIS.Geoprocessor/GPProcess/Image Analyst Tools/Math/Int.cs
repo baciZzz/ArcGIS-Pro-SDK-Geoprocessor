@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Int</para>
-	/// <para>转为整型</para>
-	/// <para>通过截断将栅格的每个像元值转换为整型。</para>
+	/// <para>Int</para>
+	/// <para>Converts each cell value of a raster to an integer by truncation.</para>
 	/// </summary>
 	public class Int : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRasterOrConstant">
 		/// <para>Input raster or constant value</para>
-		/// <para>要转换为整型的输入栅格。</para>
-		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input raster to be converted to integer.</para>
+		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>像元值是通过截断方式转换为整型的输入值。</para>
+		/// <para>The output raster.</para>
+		/// <para>The cell values are the input values converted to integers by truncation.</para>
 		/// </param>
 		public Int(object InRasterOrConstant, object OutRaster)
 		{
@@ -36,14 +36,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 转为整型</para>
+		/// <para>Tool Display Name : Int</para>
 		/// </summary>
-		public override string DisplayName() => "转为整型";
+		public override string DisplayName() => "Int";
 
 		/// <summary>
-		/// <para>Tool Name : 转为整型</para>
+		/// <para>Tool Name : Int</para>
 		/// </summary>
-		public override string ToolName() => "转为整型";
+		public override string ToolName() => "Int";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.Int</para>
@@ -72,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value</para>
-		/// <para>要转换为整型的输入栅格。</para>
-		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input raster to be converted to integer.</para>
+		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -85,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>像元值是通过截断方式转换为整型的输入值。</para>
+		/// <para>The output raster.</para>
+		/// <para>The cell values are the input values converted to integers by truncation.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

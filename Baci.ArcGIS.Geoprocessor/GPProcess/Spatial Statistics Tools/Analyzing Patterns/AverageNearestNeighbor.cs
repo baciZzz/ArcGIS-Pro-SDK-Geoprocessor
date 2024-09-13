@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Average Nearest Neighbor</para>
-	/// <para>平均最近邻</para>
-	/// <para>根据每个要素与其最近邻要素之间的平均距离计算其最近邻指数。</para>
+	/// <para>Average Nearest Neighbor</para>
+	/// <para>Calculates a nearest neighbor index based on the average distance from each feature to its nearest neighboring feature.</para>
 	/// </summary>
 	public class AverageNearestNeighbor : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InputFeatureClass">
 		/// <para>Input Feature Class</para>
-		/// <para>要对平均最近邻距离进行计算的要素类（通常是点要素类）。</para>
+		/// <para>The feature class, typically a point feature class, for which the average nearest neighbor distance will be calculated.</para>
 		/// </param>
 		/// <param name="DistanceMethod">
 		/// <para>Distance Method</para>
-		/// <para>指定计算每个要素与邻近要素之间的距离的方式。</para>
-		/// <para>欧氏—两点间的直线距离</para>
-		/// <para>曼哈顿—沿垂直轴度量的两点间的距离（城市街区）；计算方法是对两点的 x 和 y 坐标的差值（绝对值）求和。</para>
+		/// <para>Specifies how distances are calculated from each feature to neighboring features.</para>
+		/// <para>Euclidean—The straight-line distance between two points (as the crow flies)</para>
+		/// <para>Manhattan—The distance between two points measured along axes at right angles (city block); calculated by summing the (absolute) difference between the x- and y-coordinates</para>
 		/// <para><see cref="DistanceMethodEnum"/></para>
 		/// </param>
 		public AverageNearestNeighbor(object InputFeatureClass, object DistanceMethod)
@@ -37,9 +37,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 平均最近邻</para>
+		/// <para>Tool Display Name : Average Nearest Neighbor</para>
 		/// </summary>
-		public override string DisplayName() => "平均最近邻";
+		public override string DisplayName() => "Average Nearest Neighbor";
 
 		/// <summary>
 		/// <para>Tool Name : AverageNearestNeighbor</para>
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>要对平均最近邻距离进行计算的要素类（通常是点要素类）。</para>
+		/// <para>The feature class, typically a point feature class, for which the average nearest neighbor distance will be calculated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -81,9 +81,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Distance Method</para>
-		/// <para>指定计算每个要素与邻近要素之间的距离的方式。</para>
-		/// <para>欧氏—两点间的直线距离</para>
-		/// <para>曼哈顿—沿垂直轴度量的两点间的距离（城市街区）；计算方法是对两点的 x 和 y 坐标的差值（绝对值）求和。</para>
+		/// <para>Specifies how distances are calculated from each feature to neighboring features.</para>
+		/// <para>Euclidean—The straight-line distance between two points (as the crow flies)</para>
+		/// <para>Manhattan—The distance between two points measured along axes at right angles (city block); calculated by summing the (absolute) difference between the x- and y-coordinates</para>
 		/// <para><see cref="DistanceMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -93,9 +93,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Generate Report</para>
-		/// <para>指定工具是否将创建结果的图形汇总。</para>
-		/// <para>选中 - 图形汇总将以 HTML 文件形式创建。</para>
-		/// <para>未选中 - 不会创建图形汇总。这是默认设置。</para>
+		/// <para>Specifies whether the tool will create a graphical summary of results.</para>
+		/// <para>Checked—A graphical summary will be created as an HTML file.</para>
+		/// <para>Unchecked—No graphical summary will be created. This is the default.</para>
 		/// <para><see cref="GenerateReportEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Area</para>
-		/// <para>表示研究区域大小的数值。默认值是包含所有要素（或所有选定要素）的最小外接矩形的面积。单位应与“输出坐标系”的单位一致。</para>
+		/// <para>A numeric value representing the study area size. The default value is the area of the minimum enclosing rectangle that would encompass all features (or all selected features). Units should match those for the Output Coordinate System.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -171,17 +171,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum DistanceMethodEnum 
 		{
 			/// <summary>
-			/// <para>欧氏—两点间的直线距离</para>
+			/// <para>Euclidean—The straight-line distance between two points (as the crow flies)</para>
 			/// </summary>
 			[GPValue("EUCLIDEAN_DISTANCE")]
-			[Description("欧氏")]
+			[Description("Euclidean")]
 			Euclidean,
 
 			/// <summary>
-			/// <para>曼哈顿—沿垂直轴度量的两点间的距离（城市街区）；计算方法是对两点的 x 和 y 坐标的差值（绝对值）求和。</para>
+			/// <para>Manhattan—The distance between two points measured along axes at right angles (city block); calculated by summing the (absolute) difference between the x- and y-coordinates</para>
 			/// </summary>
 			[GPValue("MANHATTAN_DISTANCE")]
-			[Description("曼哈顿")]
+			[Description("Manhattan")]
 			Manhattan,
 
 		}
@@ -192,14 +192,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum GenerateReportEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—A graphical summary will be created as an HTML file.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("GENERATE_REPORT")]
 			GENERATE_REPORT,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—No graphical summary will be created. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_REPORT")]

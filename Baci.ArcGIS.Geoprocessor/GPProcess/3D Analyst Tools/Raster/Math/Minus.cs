@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Minus</para>
-	/// <para>减</para>
-	/// <para>逐个像元地从第一个输入栅格的值中减去第二个输入栅格的值。</para>
+	/// <para>Minus</para>
+	/// <para>Subtracts the value of the second input raster from the value of the first input raster on a cell-by-cell basis.</para>
 	/// </summary>
 	public class Minus : AbstractGPProcess
 	{
@@ -21,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InRasterOrConstant1">
 		/// <para>Input raster or constant value 1</para>
-		/// <para>该输入用于减去第二个输入中的值。</para>
-		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input from which to subtract the values in the second input.</para>
+		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
 		/// </param>
 		/// <param name="InRasterOrConstant2">
 		/// <para>Input raster or constant value 2</para>
-		/// <para>要从第一个输入的值减去的输入值。</para>
-		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input values to subtract from the values in the first input.</para>
+		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>像元值是从第一个输入减去第二个输入的结果。</para>
+		/// <para>The output raster.</para>
+		/// <para>The cell values are the result of subtracting the second input from the first.</para>
 		/// </param>
 		public Minus(object InRasterOrConstant1, object InRasterOrConstant2, object OutRaster)
 		{
@@ -42,14 +42,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 减</para>
+		/// <para>Tool Display Name : Minus</para>
 		/// </summary>
-		public override string DisplayName() => "减";
+		public override string DisplayName() => "Minus";
 
 		/// <summary>
-		/// <para>Tool Name : 减</para>
+		/// <para>Tool Name : Minus</para>
 		/// </summary>
-		public override string ToolName() => "减";
+		public override string ToolName() => "Minus";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Minus</para>
@@ -78,8 +78,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 1</para>
-		/// <para>该输入用于减去第二个输入中的值。</para>
-		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input from which to subtract the values in the second input.</para>
+		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -91,8 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 2</para>
-		/// <para>要从第一个输入的值减去的输入值。</para>
-		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input values to subtract from the values in the first input.</para>
+		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -104,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>像元值是从第一个输入减去第二个输入的结果。</para>
+		/// <para>The output raster.</para>
+		/// <para>The cell values are the result of subtracting the second input from the first.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

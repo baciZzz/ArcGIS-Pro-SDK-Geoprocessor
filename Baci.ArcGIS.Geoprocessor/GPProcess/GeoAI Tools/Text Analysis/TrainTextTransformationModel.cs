@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 {
 	/// <summary>
 	/// <para>Train Text Transformation Model</para>
-	/// <para>训练文本转换模型</para>
-	/// <para>训练文本转换模型以转换、翻译或汇总文本。</para>
+	/// <para>Train Text Transformation Model</para>
+	/// <para>Trains a text transformation model to transform, translate, or summarize text.</para>
 	/// </summary>
 	public class TrainTextTransformationModel : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>要素类或表，其中包含带有模型输入文本的文本字段和包含目标转换文本的标注字段。</para>
+		/// <para>A feature class or table containing a text field with the input text for the model and a label field containing the target transformed text.</para>
 		/// </param>
 		/// <param name="TextField">
 		/// <para>Text Field</para>
-		/// <para>输入要素类或表中的文本字段，其中包含将按模型转换的输入文本。</para>
+		/// <para>A text field in the input feature class or table that contains the input text that will be transformed by the model.</para>
 		/// </param>
 		/// <param name="LabelField">
 		/// <para>Label Field</para>
-		/// <para>输入要素类或表中的文本字段，其中包含用于训练模型的目标转换文本。</para>
+		/// <para>A text field in the input feature class or table that contains the target transformed text for training the model.</para>
 		/// </param>
 		/// <param name="OutModel">
 		/// <para>Output Model</para>
-		/// <para>将存储经训练模型的输出文件夹位置。</para>
+		/// <para>The output folder location that will store the trained model.</para>
 		/// </param>
 		public TrainTextTransformationModel(object InTable, object TextField, object LabelField, object OutModel)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 训练文本转换模型</para>
+		/// <para>Tool Display Name : Train Text Transformation Model</para>
 		/// </summary>
-		public override string DisplayName() => "训练文本转换模型";
+		public override string DisplayName() => "Train Text Transformation Model";
 
 		/// <summary>
 		/// <para>Tool Name : TrainTextTransformationModel</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>要素类或表，其中包含带有模型输入文本的文本字段和包含目标转换文本的标注字段。</para>
+		/// <para>A feature class or table containing a text field with the input text for the model and a label field containing the target transformed text.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Text Field</para>
-		/// <para>输入要素类或表中的文本字段，其中包含将按模型转换的输入文本。</para>
+		/// <para>A text field in the input feature class or table that contains the input text that will be transformed by the model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Label Field</para>
-		/// <para>输入要素类或表中的文本字段，其中包含用于训练模型的目标转换文本。</para>
+		/// <para>A text field in the input feature class or table that contains the target transformed text for training the model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Output Model</para>
-		/// <para>将存储经训练模型的输出文件夹位置。</para>
+		/// <para>The output folder location that will store the trained model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -116,8 +116,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Pretrained Model File</para>
-		/// <para>将用于微调新模型的预训练模型。 输入可以是 Esri 模型定义文件 (.emd) 或深度学习包文件 (.dlpk)。</para>
-		/// <para>可以对执行类似任务的预训练模型进行微调以适应训练数据。 预训练模型必须已使用将用于训练新模型的相同模型类型和骨干模型进行了训练。</para>
+		/// <para>A pretrained model that will be used to fine-tune the new model. The input can be an Esri model definition file (.emd) or a deep learning package file (.dlpk).</para>
+		/// <para>A pretrained model that performs a similar task can be fine-tuned to fit the training data. The pretrained model must have been trained with the same model type and backbone model that will be used to train the new model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Max Epochs</para>
-		/// <para>将用于训练模型的最大时期数。 最大时期值为 1 意味着数据集将通过神经网络向前和向后传递一次。 默认值为 5。</para>
+		/// <para>The maximum number of epochs for which the model will be trained. A maximum epoch value of 1 means the dataset will be passed forward and backward through the neural network one time. The default value is 5.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -135,10 +135,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Model Backbone</para>
-		/// <para>指定要用作训练新模型的架构的、预先配置的神经网络。</para>
-		/// <para>t5-small—该新模型将使用 T5 神经网络进行训练。 T5 是一个统一的框架，可以将每个语言问题转换为文本到文本格式。t5-small 是 T5 的小型变体。</para>
-		/// <para>t5-base—该新模型将使用 T5 神经网络进行训练。 T5 是一个统一的框架，可以将每个语言问题转换为文本到文本格式。t5-base 是 T5 的中型变体。</para>
-		/// <para>t5-large—该新模型将使用 T5 神经网络进行训练。 T5 是一个统一的框架，可以将每个语言问题转换为文本到文本格式。t5-large 是 T5 的大型变体。</para>
+		/// <para>Specifies the preconfigured neural network that will be used as the architecture for training the new model.</para>
+		/// <para>t5-small—The new model will be trained using the T5 neural network. T5 is a unified framework that converts every language problem into a text-to-text format. t5-small is the small variant of T5.</para>
+		/// <para>t5-base—The new model will be trained using the T5 neural network. T5 is a unified framework that converts every language problem into a text-to-text format. t5-base is the medium variant of T5.</para>
+		/// <para>t5-large—The new model will be trained using the T5 neural network. T5 is a unified framework that converts every language problem into a text-to-text format. t5-large is the large variant of T5.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -147,8 +147,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Batch Size</para>
-		/// <para>一次需要处理的训练样本数。 默认值为 2。</para>
-		/// <para>增加批处理大小可以提高工具性能；但是，随着批处理大小的增加，会占用更多内存。 如果发生内存不足错误，请使用较小的批处理大小。</para>
+		/// <para>The number of training samples that will be processed at one time. The default value is 2.</para>
+		/// <para>Increasing the batch size can improve tool performance; however, as the batch size increases, more memory is used. If an out of memory error occurs, use a smaller batch size.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -157,8 +157,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Model Arguments</para>
-		/// <para>用于初始化模型的其他参数（例如，用于训练数据的最大序列长度的 seq_len）将被考虑用于训练模型。</para>
-		/// <para>有关可以使用的受支持模型参数列表，请参阅 SequenceToSequence 文档中的关键字参数。</para>
+		/// <para>Additional arguments for initializing the model, such as seq_len for the maximum sequence length of the training data, that will be considered for training the model.</para>
+		/// <para>See keyword arguments in the SequenceToSequence documentation for the list of supported models arguments that can be used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -167,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Learning Rate</para>
-		/// <para>指示在训练过程中将调整多少模型权重的步长。 如果未指定值，将自动推断出最佳学习率。</para>
+		/// <para>The step size indicating how much the model weights will be adjusted during the training process. If no value is specified, an optimal learning rate will be deduced automatically.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -176,7 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Validation Percentage</para>
-		/// <para>将用于验证模型的训练样本的百分比。 默认值为 10。</para>
+		/// <para>The percentage of training samples that will be used for validating the model. The default value is 10.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -185,9 +185,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Stop when model stops improving</para>
-		/// <para>指定模型训练是在模型不再改进时停止还是直至达到最大时期参数值时才停止。</para>
-		/// <para>选中 - 当模型不再改进时，无论所指定的最大时期参数值是什么，模型训练都将停止。 这是默认设置。</para>
-		/// <para>未选中 - 模型训练将一直持续，直至达到最大时期参数值为止。</para>
+		/// <para>Specifies whether model training will stop when the model is no longer improving or until the Max Epochs parameter value is reached.</para>
+		/// <para>Checked—The model training will stop when the model is no longer improving, regardless of the Max Epochs parameter value specified. This is the default.</para>
+		/// <para>Unchecked—The model training will continue until the Max Epochs parameter value is reached.</para>
 		/// <para><see cref="StopTrainingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -198,9 +198,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Make model backbone trainable</para>
-		/// <para>指定是否冻结预训练模型中的骨干层，以使权重和偏差保持原始设计。</para>
-		/// <para>选中 - 不会冻结骨干图层，模型骨干参数值的权重和偏差可能会进行更改以更好地适合您的训练样本。 这将需要花费更多的时间来处理，但通常会产生更好的结果。 这是默认设置。</para>
-		/// <para>未选中 - 将冻结骨干图层，在训练过程中不会更改预定义的模型骨干参数值的权重和偏差。</para>
+		/// <para>Specifies whether the backbone layers in the pretrained model will be frozen, so that the weights and biases remain as originally designed.</para>
+		/// <para>Checked—The backbone layers will not be frozen, and the weights and biases of the Model Backbone parameter value can be altered to fit the training samples. This takes more time to process but typically produces better results. This is the default.</para>
+		/// <para>Unchecked—The backbone layers will be frozen, and the predefined weights and biases of the Model Backbone parameter value will not be altered during training.</para>
 		/// <para><see cref="MakeTrainableEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -211,9 +211,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Remove HTML Tags</para>
-		/// <para>指定是否将从输入文本中移除 HTML 标签。</para>
-		/// <para>选中 - 输入文本中的 HTML 标签将被移除。 这是默认设置。</para>
-		/// <para>未选中 - 输入文本中的 HTML 标签不会被移除。</para>
+		/// <para>Specifies whether HTML tags will be removed from the input text.</para>
+		/// <para>Checked—The HTML tags in the input text will be removed. This is the default.</para>
+		/// <para>Unchecked—The HTML tags in the input text will not be removed.</para>
 		/// <para><see cref="RemoveHtmlTagsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -224,9 +224,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Remove URLs</para>
-		/// <para>指定是否将从输入文本中移除 URL。</para>
-		/// <para>选中 - 输入文本中的 URL 将被移除。 这是默认设置。</para>
-		/// <para>未选中 - 输入文本中的 URL 不会被移除。</para>
+		/// <para>Specifies whether URLs will removed from the input text.</para>
+		/// <para>Checked—The URLs in the input text will be removed. This is the default.</para>
+		/// <para>Unchecked—The URLs in the input text will not be removed.</para>
 		/// <para><see cref="RemoveUrlsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -252,14 +252,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		public enum StopTrainingEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The model training will stop when the model is no longer improving, regardless of the Max Epochs parameter value specified. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("STOP_TRAINING")]
 			STOP_TRAINING,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The model training will continue until the Max Epochs parameter value is reached.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("CONTINUE_TRAINING")]
@@ -273,14 +273,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		public enum MakeTrainableEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The backbone layers will not be frozen, and the weights and biases of the Model Backbone parameter value can be altered to fit the training samples. This takes more time to process but typically produces better results. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("TRAIN_MODEL_BACKBONE")]
 			TRAIN_MODEL_BACKBONE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The backbone layers will be frozen, and the predefined weights and biases of the Model Backbone parameter value will not be altered during training.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("FREEZE_MODEL_BACKBONE")]
@@ -294,14 +294,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		public enum RemoveHtmlTagsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The HTML tags in the input text will be removed. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REMOVE_HTML_TAGS")]
 			REMOVE_HTML_TAGS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The HTML tags in the input text will not be removed.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_REMOVE_HTML_TAGS")]
@@ -315,14 +315,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		public enum RemoveUrlsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The URLs in the input text will be removed. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REMOVE_URLS")]
 			REMOVE_URLS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The URLs in the input text will not be removed.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_REMOVE_URLS")]

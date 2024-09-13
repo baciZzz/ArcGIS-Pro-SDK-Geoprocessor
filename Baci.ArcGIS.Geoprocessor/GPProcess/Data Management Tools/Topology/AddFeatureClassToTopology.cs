@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Feature Class To Topology</para>
-	/// <para>向拓扑中添加要素类</para>
-	/// <para>向拓扑中添加要素类。</para>
+	/// <para>Add Feature Class To Topology</para>
+	/// <para>Adds a feature class to a topology.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,19 +23,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTopology">
 		/// <para>Input Topology</para>
-		/// <para>要素类将参与的拓扑。</para>
+		/// <para>The topology to which the feature class will participate.</para>
 		/// </param>
 		/// <param name="InFeatureclass">
 		/// <para>Input Feature class</para>
-		/// <para>要向拓扑中添加的要素类。该要素类必须与拓扑处于同一要素数据集。</para>
+		/// <para>The feature class to add to the topology. The feature class must be in the same feature dataset as the topology.</para>
 		/// </param>
 		/// <param name="XyRank">
 		/// <para>XY Rank</para>
-		/// <para>此要素类中的要素折点的关联位置精度与参与拓扑的其他要素类中要素折点的关联位置精度之间的相对等级。精度最高的要素类的等级应高于（数字较小，如 1）精度较低的要素类。</para>
+		/// <para>The relative degree of positional accuracy associated with vertices of features in the feature class versus those in other feature classes participating in the topology. The feature class with the highest accuracy should get a higher rank (lower number, for example, 1) than a feature class which is known to be less accurate.</para>
 		/// </param>
 		/// <param name="ZRank">
 		/// <para>Z Rank</para>
-		/// <para>含 z 值的要素类已将每个折点的高程值嵌入几何。通过设置 z 等级，可影响使用所含 z 测量值精度较低的折点捕捉或聚类含精确 z 值的折点的方式。</para>
+		/// <para>Feature classes that are z-aware have elevation values embedded in their geometry for each vertex. By setting a z rank, you can influence how vertices with accurate z-values are snapped or clustered with vertices that contain less accurate z measurements.</para>
 		/// </param>
 		public AddFeatureClassToTopology(object InTopology, object InFeatureclass, object XyRank, object ZRank)
 		{
@@ -46,9 +46,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 向拓扑中添加要素类</para>
+		/// <para>Tool Display Name : Add Feature Class To Topology</para>
 		/// </summary>
-		public override string DisplayName() => "向拓扑中添加要素类";
+		public override string DisplayName() => "Add Feature Class To Topology";
 
 		/// <summary>
 		/// <para>Tool Name : AddFeatureClassToTopology</para>
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Topology</para>
-		/// <para>要素类将参与的拓扑。</para>
+		/// <para>The topology to which the feature class will participate.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTopologyLayer()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Feature class</para>
-		/// <para>要向拓扑中添加的要素类。该要素类必须与拓扑处于同一要素数据集。</para>
+		/// <para>The feature class to add to the topology. The feature class must be in the same feature dataset as the topology.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>XY Rank</para>
-		/// <para>此要素类中的要素折点的关联位置精度与参与拓扑的其他要素类中要素折点的关联位置精度之间的相对等级。精度最高的要素类的等级应高于（数字较小，如 1）精度较低的要素类。</para>
+		/// <para>The relative degree of positional accuracy associated with vertices of features in the feature class versus those in other feature classes participating in the topology. The feature class with the highest accuracy should get a higher rank (lower number, for example, 1) than a feature class which is known to be less accurate.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Z Rank</para>
-		/// <para>含 z 值的要素类已将每个折点的高程值嵌入几何。通过设置 z 等级，可影响使用所含 z 测量值精度较低的折点捕捉或聚类含精确 z 值的折点的方式。</para>
+		/// <para>Feature classes that are z-aware have elevation values embedded in their geometry for each vertex. By setting a z rank, you can influence how vertices with accurate z-values are snapped or clustered with vertices that contain less accurate z measurements.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]

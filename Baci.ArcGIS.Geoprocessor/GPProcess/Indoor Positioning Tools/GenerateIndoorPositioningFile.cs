@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorPositioningTools
 {
 	/// <summary>
 	/// <para>Generate Indoor Positioning File</para>
-	/// <para>生成室内定位文件</para>
-	/// <para>根据 ArcGIS IPS Setup 调查记录生成定位文件。</para>
+	/// <para>Generate Indoor Positioning File</para>
+	/// <para>Generates a positioning file from ArcGIS IPS Setup survey recordings.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorPositioningTools
 		/// </summary>
 		/// <param name="InIpsRecordings">
 		/// <para>IPS Recordings Features</para>
-		/// <para>包含 ArcGIS IPS Setup 调查记录的要素类或要素服务。</para>
+		/// <para>The feature class or feature service that contains ArcGIS IPS Setup survey recordings.</para>
 		/// </param>
 		/// <param name="TargetIpsPositioning">
 		/// <para>Target IPS Positioning Table</para>
-		/// <para>将存储生成的 IPS 定位文件的表或要素服务。</para>
+		/// <para>The table or feature service where the generated IPS positioning file will be stored.</para>
 		/// </param>
 		public GenerateIndoorPositioningFile(object InIpsRecordings, object TargetIpsPositioning)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorPositioningTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 生成室内定位文件</para>
+		/// <para>Tool Display Name : Generate Indoor Positioning File</para>
 		/// </summary>
-		public override string DisplayName() => "生成室内定位文件";
+		public override string DisplayName() => "Generate Indoor Positioning File";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateIndoorPositioningFile</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorPositioningTools
 
 		/// <summary>
 		/// <para>IPS Recordings Features</para>
-		/// <para>包含 ArcGIS IPS Setup 调查记录的要素类或要素服务。</para>
+		/// <para>The feature class or feature service that contains ArcGIS IPS Setup survey recordings.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorPositioningTools
 
 		/// <summary>
 		/// <para>Target IPS Positioning Table</para>
-		/// <para>将存储生成的 IPS 定位文件的表或要素服务。</para>
+		/// <para>The table or feature service where the generated IPS positioning file will be stored.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorPositioningTools
 
 		/// <summary>
 		/// <para>IPS Transitions Features</para>
-		/// <para>包含定义设施点入口和出口的 TRANSITION_TYPE、VERTICAL_ORDER_FROM 和 VERTICAL_ORDER_TO 字段的线要素类。 ArcGIS IPS 使用这些线要素类改进室内和室外定位和切换。 此工具使用的入口和出口 TRANSITION_TYPE 字段必须包含值 7。</para>
+		/// <para>The line feature class that contains the TRANSITION_TYPE, VERTICAL_ORDER_FROM, and VERTICAL_ORDER_TO fields that define facility entrances and exits. These are used by ArcGIS IPS to improve indoor and outdoor localization and switching. The TRANSITION_TYPE field for entrances and exits must contain a value of 7 to be used by this tool.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorPositioningTools
 
 		/// <summary>
 		/// <para>Comment</para>
-		/// <para>将用于填充目标 IPS 定位表值中定位文件条目的 Comment 字段的文本。</para>
+		/// <para>The text that will be used to populate the Comment field of the positioning file entry in the Target IPS Positioning Table value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

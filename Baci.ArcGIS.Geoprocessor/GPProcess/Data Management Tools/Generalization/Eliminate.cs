@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Eliminate</para>
-	/// <para>消除</para>
-	/// <para>通过将面与具有最大面积或最长共享边界的相邻面合并来消除面。 消除通常用于移除叠加操作（例如执行相交和联合工具）所生成的小的狭长面。</para>
+	/// <para>Eliminate</para>
+	/// <para>Eliminates polygons by merging them with neighboring polygons that have the largest area or the longest shared border. Eliminate is often used to remove small sliver polygons that are the result of overlay operations, such as those performed by Intersect and Union tools.</para>
 	/// </summary>
 	public class Eliminate : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Layer</para>
-		/// <para>包含要与邻近面合并的面的图层。</para>
+		/// <para>The layer with the polygons that will be merged with neighboring polygons.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>待创建的要素类。</para>
+		/// <para>The feature class to be created.</para>
 		/// </param>
 		public Eliminate(object InFeatures, object OutFeatureClass)
 		{
@@ -34,14 +34,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 消除</para>
+		/// <para>Tool Display Name : Eliminate</para>
 		/// </summary>
-		public override string DisplayName() => "消除";
+		public override string DisplayName() => "Eliminate";
 
 		/// <summary>
-		/// <para>Tool Name : 消除</para>
+		/// <para>Tool Name : Eliminate</para>
 		/// </summary>
-		public override string ToolName() => "消除";
+		public override string ToolName() => "Eliminate";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Eliminate</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>包含要与邻近面合并的面的图层。</para>
+		/// <para>The layer with the polygons that will be merged with neighboring polygons.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>待创建的要素类。</para>
+		/// <para>The feature class to be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -86,9 +86,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Eliminating polygon by border</para>
-		/// <para>指定所选面是否要与具有最长共享边界或最大面积的面合并。</para>
-		/// <para>选中 - 所选面将与具有最长共享边界的邻近面合并。 这是默认设置。</para>
-		/// <para>未选中 - 所选面将与具有最大面积的邻近面合并。</para>
+		/// <para>Specifies whether the selected polygon will be merged with a polygon with the longest shared border or the largest area.</para>
+		/// <para>Checked—The selected polygon will be merged with the neighboring polygon with the longest shared border. This is the default.</para>
+		/// <para>Unchecked—The selected polygon will be merged with the neighboring polygon with the largest area.</para>
 		/// <para><see cref="SelectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Exclusion Expression</para>
-		/// <para>将用于识别不会被更改的要素的 SQL 表达式。</para>
+		/// <para>An SQL expression that will be used to identify features that will not be altered.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Exclusion Layer</para>
-		/// <para>定义不会被消除的面边界（或部分）的输入折线、面要素类或图层。</para>
+		/// <para>An input polyline or polygon feature class or layer that defines polygon boundaries, or portions thereof, that will not be eliminated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -129,14 +129,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SelectionEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The selected polygon will be merged with the neighboring polygon with the longest shared border. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("LENGTH")]
 			LENGTH,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The selected polygon will be merged with the neighboring polygon with the largest area.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("AREA")]

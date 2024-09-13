@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>GA Layer To Rasters</para>
-	/// <para>GA 图层转栅格</para>
-	/// <para>将地统计图层导出为一个或多个栅格。</para>
+	/// <para>GA Layer To Rasters</para>
+	/// <para>Exports a geostatistical layer to one or multiple rasters.</para>
 	/// </summary>
 	public class GALayerToRasters : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InGeostatLayer">
 		/// <para>Input geostatistical layer</para>
-		/// <para>要分析的地统计图层。</para>
+		/// <para>The geostatistical layer to be analyzed.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>要创建的主要输出栅格。其他栅格可以通过附加输出栅格参数进行创建。</para>
+		/// <para>The primary output raster to be created. Additional rasters can be created with the Additional output rasters parameter.</para>
 		/// </param>
 		public GALayerToRasters(object InGeostatLayer, object OutRaster)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : GA 图层转栅格</para>
+		/// <para>Tool Display Name : GA Layer To Rasters</para>
 		/// </summary>
-		public override string DisplayName() => "GA 图层转栅格";
+		public override string DisplayName() => "GA Layer To Rasters";
 
 		/// <summary>
 		/// <para>Tool Name : GALayerToRasters</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>
-		/// <para>要分析的地统计图层。</para>
+		/// <para>The geostatistical layer to be analyzed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPGALayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>要创建的主要输出栅格。其他栅格可以通过附加输出栅格参数进行创建。</para>
+		/// <para>The primary output raster to be created. Additional rasters can be created with the Additional output rasters parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -86,14 +86,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output Surface Type</para>
-		/// <para>输出栅格的表面类型。</para>
-		/// <para>有关详细信息，请参阅插值模型可以生成何种类型的输出表面？</para>
-		/// <para>预测—预测值的栅格。</para>
-		/// <para>预测标准误差—预测标准误差的栅格。</para>
-		/// <para>概率—用于预测超出阈值的概率的栅格。</para>
-		/// <para>分位数—用于预测预测值分位数的栅格。</para>
-		/// <para>标准误差指示图—指示器标准误差的栅格。</para>
-		/// <para>条件数—用于显示局部多项式插值法中预测条件数的栅格。条件数表面表示在特定位置计算的稳定性。条件数越大，预测越不稳定，所以条件数较大的位置更容易出现伪影和不稳定的预测值。</para>
+		/// <para>The surface type of the output raster.</para>
+		/// <para>For more information, see What output surface types can the interpolation models generate?</para>
+		/// <para>Prediction—A raster of predicted values.</para>
+		/// <para>Prediction standard error—A raster of standard errors of prediction.</para>
+		/// <para>Probability—A raster predicting the probability that a threshold is exceeded.</para>
+		/// <para>Quantile—A raster predicting the quantile of the predicted value.</para>
+		/// <para>Standard error of indicators—A raster of standard errors of indicators.</para>
+		/// <para>Condition number—A raster showing the condition number for predictions in Local Polynomial Interpolation. The condition number surface indicates the stability of calculations at a particular location. The larger the condition number, the more unstable the prediction, so locations with large condition numbers may be prone to artifacts and erratic predicted values.</para>
 		/// <para><see cref="OutputTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -103,8 +103,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Quantile or probability value</para>
-		/// <para>如果输出表面类型设置为分位数，则使用此参数输入请求的分位数。如果输出表面类型设置为概率，则使用此参数输入请求的阈值，然后即可计算超出此阈值的概率。</para>
-		/// <para>如果输入地统计图层是通过未超出地图选项创建的指示器概率图或标准误差图，则将计算不超出阈值的概率。该功能适用于此工具的所有概率栅格输出。</para>
+		/// <para>If the Output surface type is set to Quantile, use this parameter to enter the requested quantile. If the Output surface type is set to Probability, use this parameter to enter the requested threshold value, then the probability that the threshold is exceeded will be calculated.</para>
+		/// <para>If the Input geostatistical layer is a probability or standard errors of indicators map that was created with the Not exceed option, then the probability that this threshold is not exceeded will be calculated. This will apply to all probability raster outputs from this tool.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>输出栅格的像元大小。该值将由输出栅格和附加输出栅格参数共享。</para>
+		/// <para>The cell size of the output rasters. This value will be shared by the Output raster and the Additional output rasters parameters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Number of points in the cell (horizontal)</para>
-		/// <para>针对水平方向上的各像元用于分块内插的预测数。 默认值为 1。</para>
+		/// <para>The number of predictions for each cell in the horizontal direction for block interpolation. The default is 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Number of points in the cell (vertical)</para>
-		/// <para>针对垂直方向上的各像元用于分块内插的预测数。 默认值为 1。</para>
+		/// <para>The number of predictions for each cell in the vertical direction for block interpolation. The default is 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Additional output rasters</para>
-		/// <para>用于为每一个附加输出栅格提供名称、输出类型及分位数或概率值。有关详细信息，请参阅上述参数的描述。这些附加栅格将与输出栅格保存在同一位置。</para>
+		/// <para>Provide the name, output type, and quantile or probability value for each additional output raster. See the descriptions of parameters above for more information. These additional rasters will be saved in the same location as the Output raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -159,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output elevation</para>
-		/// <para>对于 3D 插值模型，可以导出任何高程处的栅格。可以使用此参数来指定要导出的高程。如果留空，则将从输入图层继承高程。单位将默认为输入图层的相同单位。</para>
+		/// <para>For 3D interpolation models, you can export rasters at any elevation. Use this parameter to specify the elevation you want to export. If left empty, the elevation will be inherited from the input layer. The units will default to the same units of the input layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -183,45 +183,45 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum OutputTypeEnum 
 		{
 			/// <summary>
-			/// <para>预测—预测值的栅格。</para>
+			/// <para>Prediction—A raster of predicted values.</para>
 			/// </summary>
 			[GPValue("PREDICTION")]
-			[Description("预测")]
+			[Description("Prediction")]
 			Prediction,
 
 			/// <summary>
-			/// <para>预测标准误差—预测标准误差的栅格。</para>
+			/// <para>Prediction standard error—A raster of standard errors of prediction.</para>
 			/// </summary>
 			[GPValue("PREDICTION_STANDARD_ERROR")]
-			[Description("预测标准误差")]
+			[Description("Prediction standard error")]
 			Prediction_standard_error,
 
 			/// <summary>
-			/// <para>概率—用于预测超出阈值的概率的栅格。</para>
+			/// <para>Probability—A raster predicting the probability that a threshold is exceeded.</para>
 			/// </summary>
 			[GPValue("PROBABILITY")]
-			[Description("概率")]
+			[Description("Probability")]
 			Probability,
 
 			/// <summary>
-			/// <para>分位数—用于预测预测值分位数的栅格。</para>
+			/// <para>Quantile—A raster predicting the quantile of the predicted value.</para>
 			/// </summary>
 			[GPValue("QUANTILE")]
-			[Description("分位数")]
+			[Description("Quantile")]
 			Quantile,
 
 			/// <summary>
-			/// <para>条件数—用于显示局部多项式插值法中预测条件数的栅格。条件数表面表示在特定位置计算的稳定性。条件数越大，预测越不稳定，所以条件数较大的位置更容易出现伪影和不稳定的预测值。</para>
+			/// <para>Condition number—A raster showing the condition number for predictions in Local Polynomial Interpolation. The condition number surface indicates the stability of calculations at a particular location. The larger the condition number, the more unstable the prediction, so locations with large condition numbers may be prone to artifacts and erratic predicted values.</para>
 			/// </summary>
 			[GPValue("CONDITION_NUMBER")]
-			[Description("条件数")]
+			[Description("Condition number")]
 			Condition_number,
 
 			/// <summary>
-			/// <para>标准误差指示图—指示器标准误差的栅格。</para>
+			/// <para>Standard error of indicators—A raster of standard errors of indicators.</para>
 			/// </summary>
 			[GPValue("STANDARD_ERROR_INDICATORS")]
-			[Description("标准误差指示图")]
+			[Description("Standard error of indicators")]
 			Standard_error_of_indicators,
 
 		}

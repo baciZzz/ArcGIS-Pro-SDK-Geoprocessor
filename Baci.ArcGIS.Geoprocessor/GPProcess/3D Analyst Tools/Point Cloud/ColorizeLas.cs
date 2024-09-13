@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Colorize LAS</para>
-	/// <para>着色 LAS</para>
-	/// <para>将正射影像的颜色和近红外值应用于 LAS 点。</para>
+	/// <para>Colorize LAS</para>
+	/// <para>Applies colors and near-infrared values from orthographic imagery  to LAS points.</para>
 	/// </summary>
 	public class ColorizeLas : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InLasDataset">
 		/// <para>Input LAS Dataset</para>
-		/// <para>待处理的 LAS 数据集。</para>
+		/// <para>The LAS dataset to process.</para>
 		/// </param>
 		/// <param name="InImage">
 		/// <para>Input Image</para>
-		/// <para>用于将颜色分配到 LAS 点的影像。</para>
+		/// <para>The image that will be used to assign colors to LAS points.</para>
 		/// </param>
 		/// <param name="Bands">
 		/// <para>Band Assignment</para>
-		/// <para>来自输入影像，将被分配到和输出 LAS 点相关联的颜色通道的波段。</para>
+		/// <para>The bands from the input image that will be assigned to the color channels associated with the output LAS points.</para>
 		/// </param>
 		/// <param name="TargetFolder">
 		/// <para>Target Folder</para>
-		/// <para>输出 .las 文件将要写入的现有文件夹。</para>
+		/// <para>The existing folder to which the output .las files will be written.</para>
 		/// </param>
 		public ColorizeLas(object InLasDataset, object InImage, object Bands, object TargetFolder)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 着色 LAS</para>
+		/// <para>Tool Display Name : Colorize LAS</para>
 		/// </summary>
-		public override string DisplayName() => "着色 LAS";
+		public override string DisplayName() => "Colorize LAS";
 
 		/// <summary>
 		/// <para>Tool Name : ColorizeLas</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
-		/// <para>待处理的 LAS 数据集。</para>
+		/// <para>The LAS dataset to process.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLasDatasetLayer()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Image</para>
-		/// <para>用于将颜色分配到 LAS 点的影像。</para>
+		/// <para>The image that will be used to assign colors to LAS points.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Band Assignment</para>
-		/// <para>来自输入影像，将被分配到和输出 LAS 点相关联的颜色通道的波段。</para>
+		/// <para>The bands from the input image that will be assigned to the color channels associated with the output LAS points.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Target Folder</para>
-		/// <para>输出 .las 文件将要写入的现有文件夹。</para>
+		/// <para>The existing folder to which the output .las files will be written.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output File Name Suffix</para>
-		/// <para>将追加到每个输出 .las 文件名的文本。 每个文件都将从其源文件继承其基本名称，后跟此参数中指定的后缀。</para>
+		/// <para>The text that will be appended to the name of each output .las file. Each file will inherit its base name from its source file, followed by the suffix specified in this parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -122,10 +122,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>LAS File Version</para>
-		/// <para>正在创建的输出文件的 LAS 版本。</para>
-		/// <para>LAS 1.2 文件—将创建 LAS 文件版本 1.2。</para>
-		/// <para>LAS 1.3 文件—将创建 LAS 文件版本 1.3。</para>
-		/// <para>LAS 1.4 文件—将创建 LAS 文件版本 1.4。这是默认设置。</para>
+		/// <para>The LAS version of the output files being created.</para>
+		/// <para>LAS 1.2 Files—LAS file version 1.2 will be created.</para>
+		/// <para>LAS 1.3 Files—LAS file version 1.3 will be created.</para>
+		/// <para>LAS 1.4 Files—LAS file version 1.4 will be created. This is the default.</para>
 		/// <para><see cref="LasVersionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -136,11 +136,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Point Format</para>
-		/// <para>输出 LAS 文件的点记录格式。</para>
-		/// <para>2—点记录格式 2。</para>
-		/// <para>3—点记录格式 3 支持存储 GPS 时间。</para>
-		/// <para>7—点记录格式 7。这是默认值，且仅适用于 LAS 版本 1.4</para>
-		/// <para>8—点记录格式 8 支持存储近红外值。这仅适用于 LAS 版本 1.4。</para>
+		/// <para>The point record format of the output LAS files.</para>
+		/// <para>2—Point record format 2.</para>
+		/// <para>3—Point record format 3 supports the storage of GPS time.</para>
+		/// <para>7—Point record format 7. This is the default value and is only available for LAS version 1.4</para>
+		/// <para>8—Point record format 8 supports the storage of near-infrared values. This is only available for LAS version 1.4.</para>
 		/// <para><see cref="PointFormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -151,9 +151,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Compression</para>
-		/// <para>指定输出 .las 文件为压缩格式还是标准 LAS 格式。</para>
-		/// <para>不压缩—输出将为标准 LAS 格式（*.las 文件）。 这是默认设置。</para>
-		/// <para>zLAS 压缩—输出 .las 文件将以 zLAS 格式压缩。</para>
+		/// <para>Specifies whether the output .las file will be in a compressed format or the standard LAS format.</para>
+		/// <para>No Compression—The output will be in the standard LAS format (*.las file). This is the default.</para>
+		/// <para>zLAS Compression—Output .las files will be compressed in the zLAS format.</para>
 		/// <para><see cref="CompressionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -164,9 +164,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Rearrange Points</para>
-		/// <para>指定 .las 文件中的点是否将重新排列。</para>
-		/// <para>未选中 - .las 文件中点的顺序将不会重新排列。</para>
-		/// <para>选中 - 将重新排列 .las 文件中的点。 这是默认设置。</para>
+		/// <para>Specifies whether points in the .las files will be rearranged.</para>
+		/// <para>Unchecked—The order of the points in the .las files will not be rearranged.</para>
+		/// <para>Checked—The points in the .las files will be rearranged. This is the default.</para>
 		/// <para><see cref="RearrangePointsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -177,9 +177,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Compute Statistics</para>
-		/// <para>指定是否将计算 LAS 数据集引用的 .las 文件的统计数据。 计算统计数据时会为每个 .las 文件提供一个空间索引，从而提高了分析和显示性能。 统计数据还可通过将 LAS 属性（例如分类代码和返回信息）显示限制为 .las 文件中存在的值来提升过滤和符号系统体验。</para>
-		/// <para>选中 - 将计算统计数据。 这是默认设置。</para>
-		/// <para>未选中 - 不计算统计数据。</para>
+		/// <para>Specifies whether statistics will be computed for the .las files referenced by the LAS dataset. Computing statistics provides a spatial index for each .las file, which improves analysis and display performance. Statistics also enhance the filtering and symbology experience by limiting the display of LAS attributes, such as classification codes and return information, to values that are present in the .las file.</para>
+		/// <para>Checked—Statistics will be computed. This is the default.</para>
+		/// <para>Unchecked—Statistics will not be computed.</para>
 		/// <para><see cref="ComputeStatsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -190,7 +190,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output LAS Dataset</para>
-		/// <para>参考新创建的 .las 文件的输出 LAS 数据集。</para>
+		/// <para>The output LAS dataset referencing the newly created .las files.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DELasDataset()]
@@ -220,24 +220,24 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum LasVersionEnum 
 		{
 			/// <summary>
-			/// <para>LAS 1.2 文件—将创建 LAS 文件版本 1.2。</para>
+			/// <para>LAS 1.2 Files—LAS file version 1.2 will be created.</para>
 			/// </summary>
 			[GPValue("1.2")]
-			[Description("LAS 1.2 文件")]
+			[Description("LAS 1.2 Files")]
 			LAS_12_Files,
 
 			/// <summary>
-			/// <para>LAS 1.3 文件—将创建 LAS 文件版本 1.3。</para>
+			/// <para>LAS 1.3 Files—LAS file version 1.3 will be created.</para>
 			/// </summary>
 			[GPValue("1.3")]
-			[Description("LAS 1.3 文件")]
+			[Description("LAS 1.3 Files")]
 			LAS_13_Files,
 
 			/// <summary>
-			/// <para>LAS 1.4 文件—将创建 LAS 文件版本 1.4。这是默认设置。</para>
+			/// <para>LAS 1.4 Files—LAS file version 1.4 will be created. This is the default.</para>
 			/// </summary>
 			[GPValue("1.4")]
-			[Description("LAS 1.4 文件")]
+			[Description("LAS 1.4 Files")]
 			LAS_14_Files,
 
 		}
@@ -248,14 +248,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum PointFormatEnum 
 		{
 			/// <summary>
-			/// <para>7—点记录格式 7。这是默认值，且仅适用于 LAS 版本 1.4</para>
+			/// <para>7—Point record format 7. This is the default value and is only available for LAS version 1.4</para>
 			/// </summary>
 			[GPValue("7")]
 			[Description("7")]
 			_7,
 
 			/// <summary>
-			/// <para>8—点记录格式 8 支持存储近红外值。这仅适用于 LAS 版本 1.4。</para>
+			/// <para>8—Point record format 8 supports the storage of near-infrared values. This is only available for LAS version 1.4.</para>
 			/// </summary>
 			[GPValue("8")]
 			[Description("8")]
@@ -269,17 +269,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum CompressionEnum 
 		{
 			/// <summary>
-			/// <para>不压缩—输出将为标准 LAS 格式（*.las 文件）。 这是默认设置。</para>
+			/// <para>No Compression—The output will be in the standard LAS format (*.las file). This is the default.</para>
 			/// </summary>
 			[GPValue("NO_COMPRESSION")]
-			[Description("不压缩")]
+			[Description("No Compression")]
 			No_Compression,
 
 			/// <summary>
-			/// <para>zLAS 压缩—输出 .las 文件将以 zLAS 格式压缩。</para>
+			/// <para>zLAS Compression—Output .las files will be compressed in the zLAS format.</para>
 			/// </summary>
 			[GPValue("ZLAS")]
-			[Description("zLAS 压缩")]
+			[Description("zLAS Compression")]
 			zLAS_Compression,
 
 		}
@@ -290,14 +290,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum RearrangePointsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The points in the .las files will be rearranged. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REARRANGE_POINTS")]
 			REARRANGE_POINTS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The order of the points in the .las files will not be rearranged.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_REARRANGE_POINTS")]
@@ -311,14 +311,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ComputeStatsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Statistics will be computed. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("COMPUTE_STATS")]
 			COMPUTE_STATS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Statistics will not be computed.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_COMPUTE_STATS")]

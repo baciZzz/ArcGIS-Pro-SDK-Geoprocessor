@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Recover File Geodatabase</para>
-	/// <para>恢复文件地理数据库</para>
-	/// <para>从已损坏的文件地理数据库中恢复数据。</para>
+	/// <para>Recover File Geodatabase</para>
+	/// <para>Recovers data from a file geodatabase that has become corrupt.</para>
 	/// </summary>
 	public class RecoverFileGDB : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputFileGdb">
 		/// <para>Input File Geodatabase</para>
-		/// <para>输入损坏的文件地理数据库。</para>
+		/// <para>Input corrupt file geodatabase.</para>
 		/// </param>
 		/// <param name="OutputLocation">
 		/// <para>Output Location</para>
-		/// <para>恢复文件地理数据库的输出文件夹位置。</para>
+		/// <para>Output folder location for the recovered file geodatabase.</para>
 		/// </param>
 		/// <param name="OutName">
 		/// <para>File Geodatabase Name</para>
-		/// <para>输出文件地理数据库的名称。</para>
+		/// <para>Name for the output file geodatabase.</para>
 		/// </param>
 		public RecoverFileGDB(object InputFileGdb, object OutputLocation, object OutName)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 恢复文件地理数据库</para>
+		/// <para>Tool Display Name : Recover File Geodatabase</para>
 		/// </summary>
-		public override string DisplayName() => "恢复文件地理数据库";
+		public override string DisplayName() => "Recover File Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : RecoverFileGDB</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input File Geodatabase</para>
-		/// <para>输入损坏的文件地理数据库。</para>
+		/// <para>Input corrupt file geodatabase.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Location</para>
-		/// <para>恢复文件地理数据库的输出文件夹位置。</para>
+		/// <para>Output folder location for the recovered file geodatabase.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>File Geodatabase Name</para>
-		/// <para>输出文件地理数据库的名称。</para>
+		/// <para>Name for the output file geodatabase.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

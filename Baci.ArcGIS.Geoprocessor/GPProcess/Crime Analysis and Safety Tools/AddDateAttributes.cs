@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 {
 	/// <summary>
 	/// <para>Add Date Attributes</para>
-	/// <para>添加日期属性</para>
-	/// <para>添加包含输入日期字段中的日期或时间属性的字段，例如星期全名、日、月和年。</para>
+	/// <para>Add Date Attributes</para>
+	/// <para>Adds fields containing date or time properties from an input date field, for example, day full name, day of the month, month, and year.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>包含待提取日期值的字段所在的图层或表。</para>
+		/// <para>The layer or table that contains the field with the date values that will be extracted.</para>
 		/// </param>
 		/// <param name="DateField">
 		/// <para>Date Field</para>
-		/// <para>将从中提取数据和时间属性以填充新字段值的日期字段。</para>
+		/// <para>The date field from which data and time properties will be extracted to populate the new field values.</para>
 		/// </param>
 		public AddDateAttributes(object InTable, object DateField)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 添加日期属性</para>
+		/// <para>Tool Display Name : Add Date Attributes</para>
 		/// </summary>
-		public override string DisplayName() => "添加日期属性";
+		public override string DisplayName() => "Add Date Attributes";
 
 		/// <summary>
 		/// <para>Tool Name : AddDateAttributes</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>包含待提取日期值的字段所在的图层或表。</para>
+		/// <para>The layer or table that contains the field with the date values that will be extracted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Date Field</para>
-		/// <para>将从中提取数据和时间属性以填充新字段值的日期字段。</para>
+		/// <para>The date field from which data and time properties will be extracted to populate the new field values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -90,16 +90,16 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Date Attributes</para>
-		/// <para>将添加到输入表的日期和时间属性以及字段。</para>
-		/// <para>输出时间格式 - 将添加到输出字段名称的日期或时间属性。</para>
-		/// <para>输出字段名称 - 将添加到输入表的字段的名称。</para>
-		/// <para>输出时间格式选项如下：</para>
-		/// <para>小时 - 介于 0 到 23 之间的小时值。</para>
-		/// <para>星期全名 - 星期全名，例如，星期三。</para>
-		/// <para>星期数值 - 介于 1 到 7 之间的星期值。</para>
-		/// <para>月 - 介于 1 到 12 之间的月值。</para>
-		/// <para>日 - 介于 1 到 31 之间日值。</para>
-		/// <para>年 - 采用 yyyy 格式的年值，例如 1983。</para>
+		/// <para>The date and time properties and fields that will be added to the input table.</para>
+		/// <para>Output Time Format—The date or time property that will be added to Output Field Name.</para>
+		/// <para>Output Field Name—The name of the field that will be added to the input table.</para>
+		/// <para>The Output Time Format options are as follows:</para>
+		/// <para>Hour—The hour value between 0 and 23.</para>
+		/// <para>Day Full Name—The full name of the day of the week, for example, Wednesday.</para>
+		/// <para>Day Numeric Value—The day of the week value between 1 and 7.</para>
+		/// <para>Month—The month value between 1 and 12.</para>
+		/// <para>Day of the Month—The day of the month value between 1 and 31.</para>
+		/// <para>Year—The year value in yyyy format, for example, 1983.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Apply Event Behaviors</para>
-	/// <para>应用事件行为</para>
-	/// <para>根据执行的路径编辑更新在输入网络中注册的所有事件要素类的事件位置。</para>
+	/// <para>Apply Event Behaviors</para>
+	/// <para>Updates the event locations for all event feature classes registered with the input network based on the route edit performed.</para>
 	/// </summary>
 	public class ApplyEventBehaviors : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InRouteFeatures">
 		/// <para>Input Route Features</para>
-		/// <para>将更新其活动位置的 LRS 网络。 必须是向 LRS 注册为网络的要素图层。</para>
+		/// <para>The LRS Network for which event locations will be updated. This must be a feature layer registered as a network with the LRS.</para>
 		/// </param>
 		public ApplyEventBehaviors(object InRouteFeatures)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 应用事件行为</para>
+		/// <para>Tool Display Name : Apply Event Behaviors</para>
 		/// </summary>
-		public override string DisplayName() => "应用事件行为";
+		public override string DisplayName() => "Apply Event Behaviors";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyEventBehaviors</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Input Route Features</para>
-		/// <para>将更新其活动位置的 LRS 网络。 必须是向 LRS 注册为网络的要素图层。</para>
+		/// <para>The LRS Network for which event locations will be updated. This must be a feature layer registered as a network with the LRS.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]

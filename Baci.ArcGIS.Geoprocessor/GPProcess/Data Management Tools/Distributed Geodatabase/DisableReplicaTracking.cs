@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Disable Replica Tracking</para>
-	/// <para>禁用复本追踪</para>
-	/// <para>禁用对数据的复本追踪。</para>
+	/// <para>Disable Replica Tracking</para>
+	/// <para>Disables replica tracking on data.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>禁用复本追踪的企业级地理数据库表、要素类、要素数据集、属性关系类或多对多关系类。</para>
+		/// <para>The enterprise geodatabase table, feature class, feature dataset, attributed relationship class, or many-to-many relationship class on which to disable replica tracking.</para>
 		/// </param>
 		public DisableReplicaTracking(object InDataset)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 禁用复本追踪</para>
+		/// <para>Tool Display Name : Disable Replica Tracking</para>
 		/// </summary>
-		public override string DisplayName() => "禁用复本追踪";
+		public override string DisplayName() => "Disable Replica Tracking";
 
 		/// <summary>
 		/// <para>Tool Name : DisableReplicaTracking</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>禁用复本追踪的企业级地理数据库表、要素类、要素数据集、属性关系类或多对多关系类。</para>
+		/// <para>The enterprise geodatabase table, feature class, feature dataset, attributed relationship class, or many-to-many relationship class on which to disable replica tracking.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]

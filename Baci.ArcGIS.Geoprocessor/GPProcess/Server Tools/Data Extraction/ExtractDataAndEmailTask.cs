@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Extract Data and Email Task</para>
-	/// <para>提取数据并通过电子邮件发送任务</para>
-	/// <para>将指定图层和感兴趣区域内的数据提取为选定的格式和空间参考、压缩数据并将数据以电子邮件形式发送到指定的地址。此工具可用于创建“数据提取”地理处理服务。</para>
+	/// <para>Extract Data and Email Task</para>
+	/// <para>Extracts the data in the specified layers and area of interest to the selected format and spatial reference, zips the data, and emails it to the specified address. This tool can be used to create a Data Extraction geoprocessing service.</para>
 	/// </summary>
 	public class ExtractDataAndEmailTask : AbstractGPProcess
 	{
@@ -21,32 +21,32 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		/// <param name="LayersToClip">
 		/// <para>Layers to Clip</para>
-		/// <para>要裁剪的图层。 图层必须是要素或栅格；不支持图层文件。</para>
+		/// <para>The layers to be clipped. Layers must be feature or raster; layer files are not supported.</para>
 		/// </param>
 		/// <param name="AreaOfInterest">
 		/// <para>Area of Interest</para>
-		/// <para>裁剪图层所依据的一个或多个面。</para>
+		/// <para>One or more polygons by which the layers will be clipped.</para>
 		/// </param>
 		/// <param name="FeatureFormat">
 		/// <para>Feature Format</para>
-		/// <para>指定输出要素的格式。 格式应指定如下：</para>
-		/// <para>名称或格式 - 名称缩写 - 扩展名（如果存在）</para>
-		/// <para>必须使用连字符且连字符前后必须各有一个空格。</para>
-		/// <para>例如：</para>
+		/// <para>Specifies the format of the output features. The format should be specified as follows:</para>
+		/// <para>Name or format - Short Name - extension (if any)</para>
+		/// <para>The hyphens are required and there must be one space before and after the hyphen.</para>
+		/// <para>For example:</para>
 		/// <para>File Geodatabase - GDB - .gdb</para>
 		/// <para>Shapefile - SHP - .shp</para>
 		/// <para>Autodesk AutoCAD - DXF_R2007 - .dxf</para>
 		/// <para>Autodesk AutoCAD - DWG_R2007 - .dwg</para>
 		/// <para>Bentley Microstation Design (V8) - DGN_V8 - .dgn</para>
-		/// <para>支持的名称缩写列表中包含 DGN_V8、DWG_R14、DWG_R2000、DWG_R2004、DWG_R2005、DWG_R2007、DWG_R2010、DXF_R14、DXF_R2000、DXF_R2004、DXF_R2005、DXF_R2007 和 DXF_R2010。</para>
+		/// <para>The list of short names supported includes DGN_V8, DWG_R14, DWG_R2000, DWG_R2004, DWG_R2005, DWG_R2007, DWG_R2010, DXF_R14, DXF_R2000, DXF_R2004, DXF_R2005, DXF_R2007, and DXF_R2010.</para>
 		/// <para><see cref="FeatureFormatEnum"/></para>
 		/// </param>
 		/// <param name="RasterFormat">
 		/// <para>Raster Format</para>
-		/// <para>指定输出栅格数据集的格式。 格式应指定如下：</para>
-		/// <para>格式名称 - 名称缩写 - 扩展名（如果有）。</para>
-		/// <para>必须使用连字符且连字符前后必须各有一个空格。</para>
-		/// <para>例如：</para>
+		/// <para>Specifies the format of the output raster datasets. The format should be specified as follows:</para>
+		/// <para>Name of format - Short Name - extension (if any)</para>
+		/// <para>The hyphens are required and there must be one space before and after the hyphen.</para>
+		/// <para>For example:</para>
 		/// <para>Esri GRID - GRID</para>
 		/// <para>File Geodatabase - GDB - .gdb</para>
 		/// <para>ERDAS IMAGINE - IMG - .img</para>
@@ -56,13 +56,13 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <para>Joint Photographics Experts Group - JPEG - .jpg</para>
 		/// <para>Joint Photographics Experts Group - JPEG - .jp2</para>
 		/// <para>Bitmap - BMP - .bmp</para>
-		/// <para>上述的某些栅格格式存在限制，所以并非所有数据都可以转换为此格式。</para>
+		/// <para>Some of the above raster formats have limitations and not all data can be converted to the format.</para>
 		/// <para><see cref="RasterFormatEnum"/></para>
 		/// </param>
 		/// <param name="To">
 		/// <para>To</para>
-		/// <para>收件人的电子邮件地址。</para>
-		/// <para>当且仅当此模型内已配置 SMTP 服务器时，此工具才能将电子邮件发送至该地址。</para>
+		/// <para>The email address of the recipient.</para>
+		/// <para>This tool will be able to email to this address if and only if the SMTP server has been configured within this model.</para>
 		/// </param>
 		public ExtractDataAndEmailTask(object LayersToClip, object AreaOfInterest, object FeatureFormat, object RasterFormat, object To)
 		{
@@ -74,9 +74,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 提取数据并通过电子邮件发送任务</para>
+		/// <para>Tool Display Name : Extract Data and Email Task</para>
 		/// </summary>
-		public override string DisplayName() => "提取数据并通过电子邮件发送任务";
+		public override string DisplayName() => "Extract Data and Email Task";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractDataAndEmailTask</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Layers to Clip</para>
-		/// <para>要裁剪的图层。 图层必须是要素或栅格；不支持图层文件。</para>
+		/// <para>The layers to be clipped. Layers must be feature or raster; layer files are not supported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Area of Interest</para>
-		/// <para>裁剪图层所依据的一个或多个面。</para>
+		/// <para>One or more polygons by which the layers will be clipped.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -129,16 +129,16 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Feature Format</para>
-		/// <para>指定输出要素的格式。 格式应指定如下：</para>
-		/// <para>名称或格式 - 名称缩写 - 扩展名（如果存在）</para>
-		/// <para>必须使用连字符且连字符前后必须各有一个空格。</para>
-		/// <para>例如：</para>
+		/// <para>Specifies the format of the output features. The format should be specified as follows:</para>
+		/// <para>Name or format - Short Name - extension (if any)</para>
+		/// <para>The hyphens are required and there must be one space before and after the hyphen.</para>
+		/// <para>For example:</para>
 		/// <para>File Geodatabase - GDB - .gdb</para>
 		/// <para>Shapefile - SHP - .shp</para>
 		/// <para>Autodesk AutoCAD - DXF_R2007 - .dxf</para>
 		/// <para>Autodesk AutoCAD - DWG_R2007 - .dwg</para>
 		/// <para>Bentley Microstation Design (V8) - DGN_V8 - .dgn</para>
-		/// <para>支持的名称缩写列表中包含 DGN_V8、DWG_R14、DWG_R2000、DWG_R2004、DWG_R2005、DWG_R2007、DWG_R2010、DXF_R14、DXF_R2000、DXF_R2004、DXF_R2005、DXF_R2007 和 DXF_R2010。</para>
+		/// <para>The list of short names supported includes DGN_V8, DWG_R14, DWG_R2000, DWG_R2004, DWG_R2005, DWG_R2007, DWG_R2010, DXF_R14, DXF_R2000, DXF_R2004, DXF_R2005, DXF_R2007, and DXF_R2010.</para>
 		/// <para><see cref="FeatureFormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -148,10 +148,10 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Raster Format</para>
-		/// <para>指定输出栅格数据集的格式。 格式应指定如下：</para>
-		/// <para>格式名称 - 名称缩写 - 扩展名（如果有）。</para>
-		/// <para>必须使用连字符且连字符前后必须各有一个空格。</para>
-		/// <para>例如：</para>
+		/// <para>Specifies the format of the output raster datasets. The format should be specified as follows:</para>
+		/// <para>Name of format - Short Name - extension (if any)</para>
+		/// <para>The hyphens are required and there must be one space before and after the hyphen.</para>
+		/// <para>For example:</para>
 		/// <para>Esri GRID - GRID</para>
 		/// <para>File Geodatabase - GDB - .gdb</para>
 		/// <para>ERDAS IMAGINE - IMG - .img</para>
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <para>Joint Photographics Experts Group - JPEG - .jpg</para>
 		/// <para>Joint Photographics Experts Group - JPEG - .jp2</para>
 		/// <para>Bitmap - BMP - .bmp</para>
-		/// <para>上述的某些栅格格式存在限制，所以并非所有数据都可以转换为此格式。</para>
+		/// <para>Some of the above raster formats have limitations and not all data can be converted to the format.</para>
 		/// <para><see cref="RasterFormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -171,8 +171,8 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>To</para>
-		/// <para>收件人的电子邮件地址。</para>
-		/// <para>当且仅当此模型内已配置 SMTP 服务器时，此工具才能将电子邮件发送至该地址。</para>
+		/// <para>The email address of the recipient.</para>
+		/// <para>This tool will be able to email to this address if and only if the SMTP server has been configured within this model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

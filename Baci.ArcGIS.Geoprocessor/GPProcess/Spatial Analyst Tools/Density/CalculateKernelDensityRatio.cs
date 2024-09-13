@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Calculate Kernel Density Ratio</para>
-	/// <para>计算核密度比</para>
-	/// <para>使用两个输入要素数据集计算空间相对风险表面。 该比率中的分子代表案例，例如犯罪数量或患者人数，而分母代表对照，例如总人口。</para>
+	/// <para>Calculate Kernel Density Ratio</para>
+	/// <para>Calculates a spatial relative risk surface using two input feature datasets. The numerator in the ratio represents cases, such as number of crimes or number of patients, and the denominator represents the control, such as the total population.</para>
 	/// </summary>
 	public class CalculateKernelDensityRatio : AbstractGPProcess
 	{
@@ -21,30 +21,30 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InFeaturesNumerator">
 		/// <para>Input point or polyline features as numerator</para>
-		/// <para>将为其计算密度的示例中的输入要素（点或线）。</para>
+		/// <para>The input features (point or line) of the cases for which density will be calculated.</para>
 		/// </param>
 		/// <param name="InFeaturesDenominator">
 		/// <para>Input point or polyline features as denominator</para>
-		/// <para>将为其计算密度的控件中的输入要素（点或线）。</para>
+		/// <para>The input features (point or line) of the control for which density will be calculated.</para>
 		/// </param>
 		/// <param name="PopulationFieldNumerator">
 		/// <para>Population field of numerator</para>
-		/// <para>表示各要素的 population 值的字段。 总体字段表示遍布于用来创建连续表面的景观内的计数或数量。</para>
-		/// <para>如果不使用任何项目或特殊值，则选择 OID 或 FID，这样每一要素就只计数一次。</para>
-		/// <para>population 字段的值可以是整型或浮点型。</para>
-		/// <para>如果输入要素包含 Z 值，则可以使用 Shape 字段。</para>
+		/// <para>The field denoting population values for each feature. The population field is the count or quantity to be spread across the landscape to create a continuous surface.</para>
+		/// <para>Use OID or FID if no item or special value will be used and each feature will be counted once.</para>
+		/// <para>Values in the population field can be integer or floating point.</para>
+		/// <para>You can use the Shape field if input features contain Z-values.</para>
 		/// </param>
 		/// <param name="PopulationFieldDenominator">
 		/// <para>Population field of denominator</para>
-		/// <para>表示各要素的 population 值的字段。 总体字段表示遍布于用来创建连续表面的景观内的计数或数量。</para>
-		/// <para>如果不使用任何项目或特殊值，则选择 OID 或 FID，这样每一要素就只计数一次。</para>
-		/// <para>population 字段的值可以是整型或浮点型。</para>
-		/// <para>如果输入要素包含 Z 值，则可以使用 Shape 字段。</para>
+		/// <para>The field denoting population values for each feature. The population field is the count or quantity to be spread across the landscape to create a continuous surface.</para>
+		/// <para>Use OID or FID if no item or special value will be used and each feature will be counted once.</para>
+		/// <para>Values in the population field can be integer or floating point.</para>
+		/// <para>You can use the Shape field if input features contain Z-values.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>输出核密度栅格。</para>
-		/// <para>总为浮点栅格。</para>
+		/// <para>The output kernel density raster.</para>
+		/// <para>It is always a floating point raster.</para>
 		/// </param>
 		public CalculateKernelDensityRatio(object InFeaturesNumerator, object InFeaturesDenominator, object PopulationFieldNumerator, object PopulationFieldDenominator, object OutRaster)
 		{
@@ -56,9 +56,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 计算核密度比</para>
+		/// <para>Tool Display Name : Calculate Kernel Density Ratio</para>
 		/// </summary>
-		public override string DisplayName() => "计算核密度比";
+		public override string DisplayName() => "Calculate Kernel Density Ratio";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateKernelDensityRatio</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input point or polyline features as numerator</para>
-		/// <para>将为其计算密度的示例中的输入要素（点或线）。</para>
+		/// <para>The input features (point or line) of the cases for which density will be calculated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input point or polyline features as denominator</para>
-		/// <para>将为其计算密度的控件中的输入要素（点或线）。</para>
+		/// <para>The input features (point or line) of the control for which density will be calculated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -114,10 +114,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Population field of numerator</para>
-		/// <para>表示各要素的 population 值的字段。 总体字段表示遍布于用来创建连续表面的景观内的计数或数量。</para>
-		/// <para>如果不使用任何项目或特殊值，则选择 OID 或 FID，这样每一要素就只计数一次。</para>
-		/// <para>population 字段的值可以是整型或浮点型。</para>
-		/// <para>如果输入要素包含 Z 值，则可以使用 Shape 字段。</para>
+		/// <para>The field denoting population values for each feature. The population field is the count or quantity to be spread across the landscape to create a continuous surface.</para>
+		/// <para>Use OID or FID if no item or special value will be used and each feature will be counted once.</para>
+		/// <para>Values in the population field can be integer or floating point.</para>
+		/// <para>You can use the Shape field if input features contain Z-values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -125,10 +125,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Population field of denominator</para>
-		/// <para>表示各要素的 population 值的字段。 总体字段表示遍布于用来创建连续表面的景观内的计数或数量。</para>
-		/// <para>如果不使用任何项目或特殊值，则选择 OID 或 FID，这样每一要素就只计数一次。</para>
-		/// <para>population 字段的值可以是整型或浮点型。</para>
-		/// <para>如果输入要素包含 Z 值，则可以使用 Shape 字段。</para>
+		/// <para>The field denoting population values for each feature. The population field is the count or quantity to be spread across the landscape to create a continuous surface.</para>
+		/// <para>Use OID or FID if no item or special value will be used and each feature will be counted once.</para>
+		/// <para>Values in the population field can be integer or floating point.</para>
+		/// <para>You can use the Shape field if input features contain Z-values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -136,8 +136,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出核密度栅格。</para>
-		/// <para>总为浮点栅格。</para>
+		/// <para>The output kernel density raster.</para>
+		/// <para>It is always a floating point raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -145,8 +145,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>将创建的输出栅格的像元大小。</para>
-		/// <para>此参数可以通过数值进行定义，也可以从现有栅格数据集获取。 如果未将像元大小明确指定为参数值，则将使用环境像元大小值（如果已指定）；否则，将使用其他规则通过其他输出计算像元大小。 有关详细信息，请参阅用法部分。</para>
+		/// <para>The cell size of the output raster that will be created.</para>
+		/// <para>This parameter can be defined by a numeric value or obtained from an existing raster dataset. If the cell size hasn&apos;t been explicitly specified as the parameter value, the environment cell size value will be used if specified; otherwise, additional rules will be used to calculate it from the other inputs. See the usage section for more detail.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -154,9 +154,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Search radius of numerator</para>
-		/// <para>在其范围内计算密度的搜索半径。 单位基于输出空间参考投影的线性单位。</para>
-		/// <para>例如，如果单位为米，若要包含一英里邻域内的所有要素，可将搜索半径设置为 1609.344（1 英里 = 1609.344 米）。</para>
-		/// <para>使用“Silverman 经验规则”（Silverman，1986 年版）的空间变量专为输入数据集计算默认搜索半径，该变量足够强大，可避免空间异常值（距离其余点太远的点）。 有关该算法的描述，请参阅使用提示。</para>
+		/// <para>The search radius within which density will be calculated. Units are based on the linear unit of the projection of the output spatial reference.</para>
+		/// <para>For example, if the units are meters—to include all features within a one-mile neighborhood—set the search radius equal to 1609.344 (1 mile = 1609.344 meters).</para>
+		/// <para>The default search radius is computed specifically for the input dataset using a spatial variant of Silverman&apos;s Rule of Thumb (Silverman, 1986) that is robust enough for spatial outliers (points that are far away from the rest of the points). See the usage tips for a description of the algorithm.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -164,9 +164,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Search radius of denominator</para>
-		/// <para>在其范围内计算密度的搜索半径。 单位基于输出空间参考投影的线性单位。</para>
-		/// <para>例如，如果单位为米，若要包含一英里邻域内的所有要素，可将搜索半径设置为 1609.344（1 英里 = 1609.344 米）。</para>
-		/// <para>使用“Silverman 经验规则”（Silverman，1986 年版）的空间变量专为输入数据集计算默认搜索半径，该变量足够强大，可避免空间异常值（距离其余点太远的点）。 有关该算法的描述，请参阅使用提示。</para>
+		/// <para>The search radius within which density will be calculated. Units are based on the linear unit of the projection of the output spatial reference.</para>
+		/// <para>For example, if the units are meters—to include all features within a one-mile neighborhood—set the search radius equal to 1609.344 (1 mile = 1609.344 meters).</para>
+		/// <para>The default search radius is computed specifically for the input dataset using a spatial variant of Silverman&apos;s Rule of Thumb (Silverman, 1986) that is robust enough for spatial outliers (points that are far away from the rest of the points). See the usage tips for a description of the algorithm.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -174,10 +174,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output cell values</para>
-		/// <para>指定输出栅格中的值的含义。</para>
-		/// <para>密度—输出值表示为每个像元计算的每单位面积的密度值。 这是默认设置。</para>
-		/// <para>预期计数—输出值表示所计算的每单位面积的密度值。</para>
-		/// <para>由于像元值链接到指定像元大小，因此无法将生成的栅格重新采样为不同像元大小。</para>
+		/// <para>Specifies what the values in the output raster represent.</para>
+		/// <para>Densities—The output values represent the calculated density value per unit area for each cell. This is the default.</para>
+		/// <para>Expected counts—The output values represent the calculated density value per cell area.</para>
+		/// <para>Since the cell value is linked to the specified cell size, the resulting raster cannot be resampled to a different cell size.</para>
 		/// <para><see cref="OutCellValuesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -187,10 +187,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>指定将使用地平（平面）距离还是椭球体上的最短路径（测地线）距离。</para>
-		/// <para>平面—将使用要素之间的平面距离。 这是默认设置。</para>
-		/// <para>测地线—将使用要素之间的测地线距离。</para>
-		/// <para>测地线方法仅支持作为输入要素的点。</para>
+		/// <para>Specifies whether the flat earth (planar) or the shortest path on a spheroid (geodesic) distance will be used.</para>
+		/// <para>Planar—The planar distance between features will be used. This is the default.</para>
+		/// <para>Geodesic—The geodesic distance between features will be used.</para>
+		/// <para>The geodesic method only supports points as input features.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -200,8 +200,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input barrier features for numerator</para>
-		/// <para>定义障碍的数据集。</para>
-		/// <para>障碍可以是折线或面要素的要素图层。</para>
+		/// <para>The dataset that defines the barriers.</para>
+		/// <para>The barriers can be a feature layer of polyline or polygon features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -212,8 +212,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input barrier features for denominator</para>
-		/// <para>定义障碍的数据集。</para>
-		/// <para>障碍可以是折线或面要素的要素图层。</para>
+		/// <para>The dataset that defines the barriers.</para>
+		/// <para>The barriers can be a feature layer of polyline or polygon features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -239,17 +239,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum OutCellValuesEnum 
 		{
 			/// <summary>
-			/// <para>密度—输出值表示为每个像元计算的每单位面积的密度值。 这是默认设置。</para>
+			/// <para>Densities—The output values represent the calculated density value per unit area for each cell. This is the default.</para>
 			/// </summary>
 			[GPValue("DENSITIES")]
-			[Description("密度")]
+			[Description("Densities")]
 			Densities,
 
 			/// <summary>
-			/// <para>预期计数—输出值表示所计算的每单位面积的密度值。</para>
+			/// <para>Expected counts—The output values represent the calculated density value per cell area.</para>
 			/// </summary>
 			[GPValue("EXPECTED_COUNTS")]
-			[Description("预期计数")]
+			[Description("Expected counts")]
 			Expected_counts,
 
 		}
@@ -260,17 +260,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>平面—将使用要素之间的平面距离。 这是默认设置。</para>
+			/// <para>Planar—The planar distance between features will be used. This is the default.</para>
 			/// </summary>
 			[GPValue("PLANAR")]
-			[Description("平面")]
+			[Description("Planar")]
 			Planar,
 
 			/// <summary>
-			/// <para>测地线—将使用要素之间的测地线距离。</para>
+			/// <para>Geodesic—The geodesic distance between features will be used.</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
-			[Description("测地线")]
+			[Description("Geodesic")]
 			Geodesic,
 
 		}

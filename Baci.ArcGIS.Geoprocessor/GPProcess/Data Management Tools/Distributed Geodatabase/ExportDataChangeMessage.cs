@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Data Change Message</para>
-	/// <para>导出数据变更消息</para>
-	/// <para>创建包含输入复本更新的输出增量文件。</para>
+	/// <para>Export Data Change Message</para>
+	/// <para>Creates an output delta file containing updates from an input replica.</para>
 	/// </summary>
 	public class ExportDataChangeMessage : AbstractGPProcess
 	{
@@ -21,38 +21,38 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InGeodatabase">
 		/// <para>Export from Replica Geodatabase</para>
-		/// <para>将从中导出数据变更消息的复本地理数据库。 地理数据库可以是本地地理数据库也可以是远程地理数据库。</para>
+		/// <para>The replica geodatabase from which the data change message will be exported. The geodatabase can be local or remote.</para>
 		/// </param>
 		/// <param name="OutDataChangesFile">
 		/// <para>Output Data Changes File</para>
-		/// <para>输出增量文件。</para>
+		/// <para>The output delta file.</para>
 		/// </param>
 		/// <param name="InReplica">
 		/// <para>Replica</para>
-		/// <para>包含要导出的更新的复本。</para>
+		/// <para>The replica containing the updates to be exported.</para>
 		/// </param>
 		/// <param name="SwitchToReceiver">
 		/// <para>Switch to Receiver once the message has been exported</para>
-		/// <para>指定复本角色是否将从发送者更改为接收者。 在来自相关复本发送者的更新到达之前，接收者可能不会发送复本更新。</para>
-		/// <para>未选中 - 复本角色不会更改。 这是默认设置。</para>
-		/// <para>选中 - 复本角色将从发送者更改为接收者。</para>
+		/// <para>Specifies whether the replica role will be changed from a sender to a receiver. The receiver may not send replica updates until updates from the relative replica sender arrive.</para>
+		/// <para>Unchecked—The replica role will not be changed. This is the default.</para>
+		/// <para>Checked—The replica role will be changed from a sender to a receiver.</para>
 		/// <para><see cref="SwitchToReceiverEnum"/></para>
 		/// </param>
 		/// <param name="IncludeUnacknowledgedChanges">
 		/// <para>Include unacknowledged data changes</para>
-		/// <para>指定是否包括之前导出的未收到确认消息的数据变更。</para>
-		/// <para>未选中 - 先前发送的数据变更将不包括在内。</para>
-		/// <para>选中 - 将包括之前导出的未收到确认消息的数据变更。 这是默认设置。</para>
+		/// <para>Specifies whether data changes that were previously exported for which no acknowledgment message was received will be included.</para>
+		/// <para>Unchecked—Data changes that were previously sent will not be included.</para>
+		/// <para>Checked—All data changes that were previously exported for which no acknowledgment message was received will be included. This is the default.</para>
 		/// <para><see cref="IncludeUnacknowledgedChangesEnum"/></para>
 		/// </param>
 		/// <param name="IncludeNewChanges">
 		/// <para>Include new data changes since last export</para>
-		/// <para>指定是否包含最后一次导出数据变更消息后所做的所有数据变更。</para>
-		/// <para>未选中 - 不包含最后一次导出数据变更消息后所做的数据变更。</para>
-		/// <para>选中 - 包含最后一次导出数据变更消息后所做的所有数据变更。 这是默认设置。</para>
-		/// <para>指定是否包含最后一次导出数据变更消息后所做的所有数据变更。</para>
-		/// <para>NO_NEW_CHANGES—不包含最后一次导出数据变更消息后所做的数据变更。</para>
-		/// <para>NEW_CHANGES—包含最后一次导出数据变更消息后所做的所有数据变更。 这是默认设置。</para>
+		/// <para>Specifies whether all data changes made since the last exported data change message will be included.</para>
+		/// <para>Unchecked—Data changes made since the last exported data change message will not be included.</para>
+		/// <para>Checked—All data changes made since the last exported data change message will be included. This is the default.</para>
+		/// <para>Specifies whether all data changes made since the last exported data change message will be included.</para>
+		/// <para>NO_NEW_CHANGES—Data changes made since the last exported data change message will not be included.</para>
+		/// <para>NEW_CHANGES—All data changes made since the last exported data change message will be included. This is the default.</para>
 		/// <para><see cref="IncludeNewChangesEnum"/></para>
 		/// </param>
 		public ExportDataChangeMessage(object InGeodatabase, object OutDataChangesFile, object InReplica, object SwitchToReceiver, object IncludeUnacknowledgedChanges, object IncludeNewChanges)
@@ -66,9 +66,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 导出数据变更消息</para>
+		/// <para>Tool Display Name : Export Data Change Message</para>
 		/// </summary>
-		public override string DisplayName() => "导出数据变更消息";
+		public override string DisplayName() => "Export Data Change Message";
 
 		/// <summary>
 		/// <para>Tool Name : ExportDataChangeMessage</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Export from Replica Geodatabase</para>
-		/// <para>将从中导出数据变更消息的复本地理数据库。 地理数据库可以是本地地理数据库也可以是远程地理数据库。</para>
+		/// <para>The replica geodatabase from which the data change message will be exported. The geodatabase can be local or remote.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Data Changes File</para>
-		/// <para>输出增量文件。</para>
+		/// <para>The output delta file.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Replica</para>
-		/// <para>包含要导出的更新的复本。</para>
+		/// <para>The replica containing the updates to be exported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -129,9 +129,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Switch to Receiver once the message has been exported</para>
-		/// <para>指定复本角色是否将从发送者更改为接收者。 在来自相关复本发送者的更新到达之前，接收者可能不会发送复本更新。</para>
-		/// <para>未选中 - 复本角色不会更改。 这是默认设置。</para>
-		/// <para>选中 - 复本角色将从发送者更改为接收者。</para>
+		/// <para>Specifies whether the replica role will be changed from a sender to a receiver. The receiver may not send replica updates until updates from the relative replica sender arrive.</para>
+		/// <para>Unchecked—The replica role will not be changed. This is the default.</para>
+		/// <para>Checked—The replica role will be changed from a sender to a receiver.</para>
 		/// <para><see cref="SwitchToReceiverEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -141,9 +141,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Include unacknowledged data changes</para>
-		/// <para>指定是否包括之前导出的未收到确认消息的数据变更。</para>
-		/// <para>未选中 - 先前发送的数据变更将不包括在内。</para>
-		/// <para>选中 - 将包括之前导出的未收到确认消息的数据变更。 这是默认设置。</para>
+		/// <para>Specifies whether data changes that were previously exported for which no acknowledgment message was received will be included.</para>
+		/// <para>Unchecked—Data changes that were previously sent will not be included.</para>
+		/// <para>Checked—All data changes that were previously exported for which no acknowledgment message was received will be included. This is the default.</para>
 		/// <para><see cref="IncludeUnacknowledgedChangesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -153,12 +153,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Include new data changes since last export</para>
-		/// <para>指定是否包含最后一次导出数据变更消息后所做的所有数据变更。</para>
-		/// <para>未选中 - 不包含最后一次导出数据变更消息后所做的数据变更。</para>
-		/// <para>选中 - 包含最后一次导出数据变更消息后所做的所有数据变更。 这是默认设置。</para>
-		/// <para>指定是否包含最后一次导出数据变更消息后所做的所有数据变更。</para>
-		/// <para>NO_NEW_CHANGES—不包含最后一次导出数据变更消息后所做的数据变更。</para>
-		/// <para>NEW_CHANGES—包含最后一次导出数据变更消息后所做的所有数据变更。 这是默认设置。</para>
+		/// <para>Specifies whether all data changes made since the last exported data change message will be included.</para>
+		/// <para>Unchecked—Data changes made since the last exported data change message will not be included.</para>
+		/// <para>Checked—All data changes made since the last exported data change message will be included. This is the default.</para>
+		/// <para>Specifies whether all data changes made since the last exported data change message will be included.</para>
+		/// <para>NO_NEW_CHANGES—Data changes made since the last exported data change message will not be included.</para>
+		/// <para>NEW_CHANGES—All data changes made since the last exported data change message will be included. This is the default.</para>
 		/// <para><see cref="IncludeNewChangesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -183,14 +183,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SwitchToReceiverEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The replica role will be changed from a sender to a receiver.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SWITCH")]
 			SWITCH,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The replica role will not be changed. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_SWITCH")]
@@ -204,14 +204,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum IncludeUnacknowledgedChangesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—All data changes that were previously exported for which no acknowledgment message was received will be included. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UNACKNOWLEDGED")]
 			UNACKNOWLEDGED,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Data changes that were previously sent will not be included.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_UNACKNOWLEDGED")]
@@ -225,14 +225,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum IncludeNewChangesEnum 
 		{
 			/// <summary>
-			/// <para>NEW_CHANGES—包含最后一次导出数据变更消息后所做的所有数据变更。 这是默认设置。</para>
+			/// <para>NEW_CHANGES—All data changes made since the last exported data change message will be included. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("NEW_CHANGES")]
 			NEW_CHANGES,
 
 			/// <summary>
-			/// <para>NO_NEW_CHANGES—不包含最后一次导出数据变更消息后所做的数据变更。</para>
+			/// <para>NO_NEW_CHANGES—Data changes made since the last exported data change message will not be included.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_NEW_CHANGES")]

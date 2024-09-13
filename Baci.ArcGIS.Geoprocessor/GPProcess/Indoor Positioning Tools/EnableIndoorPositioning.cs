@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorPositioningTools
 {
 	/// <summary>
 	/// <para>Enable Indoor Positioning</para>
-	/// <para>启用室内定位</para>
-	/// <para>用于创建在现有地理数据库中存储 ArcGIS IPS 数据所需的要素类和表。</para>
+	/// <para>Enable Indoor Positioning</para>
+	/// <para>Creates the feature classes and table necessary for storing ArcGIS IPS data in an existing geodatabase.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorPositioningTools
 		/// </summary>
 		/// <param name="InWorkspace">
 		/// <para>Input Workspace</para>
-		/// <para>将在其中创建 ArcGIS IPS 表和要素类的地理数据库。 这可以是文件或企业级地理数据库。</para>
+		/// <para>The geodatabase where the ArcGIS IPS table and feature classes will be created. This can be a file or enterprise geodatabase.</para>
 		/// </param>
 		public EnableIndoorPositioning(object InWorkspace)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorPositioningTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 启用室内定位</para>
+		/// <para>Tool Display Name : Enable Indoor Positioning</para>
 		/// </summary>
-		public override string DisplayName() => "启用室内定位";
+		public override string DisplayName() => "Enable Indoor Positioning";
 
 		/// <summary>
 		/// <para>Tool Name : EnableIndoorPositioning</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorPositioningTools
 
 		/// <summary>
 		/// <para>Input Workspace</para>
-		/// <para>将在其中创建 ArcGIS IPS 表和要素类的地理数据库。 这可以是文件或企业级地理数据库。</para>
+		/// <para>The geodatabase where the ArcGIS IPS table and feature classes will be created. This can be a file or enterprise geodatabase.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]

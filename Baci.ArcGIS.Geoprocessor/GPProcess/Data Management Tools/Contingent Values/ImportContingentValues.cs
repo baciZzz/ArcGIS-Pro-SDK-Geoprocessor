@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Import Contingent Values</para>
-	/// <para>导入条件值</para>
-	/// <para>将多个条件值和字段组从逗号分隔值文件 (.csv) 导入到数据集中。</para>
+	/// <para>Import Contingent Values</para>
+	/// <para>Imports multiple contingent values and field groups from a comma-separated values file (.csv) into a dataset.</para>
 	/// </summary>
 	public class ImportContingentValues : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="TargetTable">
 		/// <para>Target Table</para>
-		/// <para>将向其中导入字段组和条件值的输入地理数据库表或要素类。</para>
+		/// <para>The input geodatabase table or feature class to which the field groups and contingent values will be imported.</para>
 		/// </param>
 		/// <param name="FieldGroupFile">
 		/// <para>Field Groups Input File (.csv)</para>
-		/// <para>带有包含字段组相关信息的指定列名称的 .csv 文件。</para>
+		/// <para>A .csv file with specific column names that contains information about the field groups.</para>
 		/// </param>
 		/// <param name="ContingentValueFile">
 		/// <para>Contingent Values Input File (.csv)</para>
-		/// <para>带有包含条件值相关信息的指定列名称的 .csv 文件。</para>
+		/// <para>A .csv file with specific column names that contains information about the contingent values.</para>
 		/// </param>
 		public ImportContingentValues(object TargetTable, object FieldGroupFile, object ContingentValueFile)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 导入条件值</para>
+		/// <para>Tool Display Name : Import Contingent Values</para>
 		/// </summary>
-		public override string DisplayName() => "导入条件值";
+		public override string DisplayName() => "Import Contingent Values";
 
 		/// <summary>
 		/// <para>Tool Name : ImportContingentValues</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Table</para>
-		/// <para>将向其中导入字段组和条件值的输入地理数据库表或要素类。</para>
+		/// <para>The input geodatabase table or feature class to which the field groups and contingent values will be imported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field Groups Input File (.csv)</para>
-		/// <para>带有包含字段组相关信息的指定列名称的 .csv 文件。</para>
+		/// <para>A .csv file with specific column names that contains information about the field groups.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Contingent Values Input File (.csv)</para>
-		/// <para>带有包含条件值相关信息的指定列名称的 .csv 文件。</para>
+		/// <para>A .csv file with specific column names that contains information about the contingent values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -103,9 +103,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Replace existing contingent values</para>
-		/// <para>指定导入时将替换还是合并现有值。</para>
-		/// <para>选中 - 目标表的现有值将被替换为输入 .csv 文件中的值。</para>
-		/// <para>未选中 - 现有值将与输入 .csv 文件中的值合并。任何重复项都将被排除。这是默认设置。</para>
+		/// <para>Specifies whether existing values will be replaced or merged upon import.</para>
+		/// <para>Checked—Existing values for the target table will be replaced with the values in the input .csv files.</para>
+		/// <para>Unchecked—Existing values will be merged with the values in the input .csv files. Any duplicates will be excluded. This is the default.</para>
 		/// <para><see cref="ImportTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -137,14 +137,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ImportTypeEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Existing values for the target table will be replaced with the values in the input .csv files.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REPLACE")]
 			REPLACE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Existing values will be merged with the values in the input .csv files. Any duplicates will be excluded. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("UNION")]

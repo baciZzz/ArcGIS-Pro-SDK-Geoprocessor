@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Relative Mainline Layout</para>
-	/// <para>添加相对主线布局</para>
-	/// <para>用于将“相对主线布局”算法添加到基于给定模板构建逻辑示意图结束时自动进行链接的布局列表。此工具还会针对基于该模板的任意逻辑示意图预设“相对主线布局”算法参数。</para>
+	/// <para>Add Relative Mainline Layout</para>
+	/// <para>Adds the Relative Mainline Layout algorithm to the list of layouts to be automatically chained at the end of the building of diagrams based on a given template. This tool also presets the Relative Mainline Layout algorithm parameters for any diagram based on that template.</para>
 	/// </summary>
 	public class AddRelativeMainlineLayout : AbstractGPProcess
 	{
@@ -21,22 +21,22 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
+		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>要修改的逻辑示意图模板名称</para>
+		/// <para>The name of the diagram template that will be modified.</para>
 		/// </param>
 		/// <param name="IsActive">
 		/// <para>Active</para>
-		/// <para>指定是否将在基于指定模板生成逻辑示意图时自动运行布局算法。</para>
-		/// <para>选中 - 添加的布局算法会在基于输入逻辑示意图模板参数值生成任何逻辑示意图的过程中自动运行。 这是默认设置。为布局算法指定的参数值是在生成逻辑示意图的过程中用于运行布局的参数值。 如果要对基于输入模板的任何逻辑示意图运行此算法，则还会默认加载这些参数值。</para>
-		/// <para>未选中 - 如果要对基于输入模板的任何逻辑示意图运行此算法，则还将默认加载当前为添加的布局逻辑示意图指定的所有参数值。</para>
+		/// <para>Specifies whether the layout algorithm will automatically run when generating diagrams based on the specified template.</para>
+		/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter value. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+		/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </param>
 		/// <param name="LineAttribute">
 		/// <para>Line Attribute</para>
-		/// <para>用于标识构成直线的线的网络属性的名称。此网络属性必须存在于网络线类中。对于构成直线（例如线 1、线 2 等等）的所有边，其值都必须相同。</para>
+		/// <para>The name of the network attribute that will be used to identify the lines that comprise the straight lines. This network attribute must exist in the network line classes. Its values must be the same for all the edges that comprise a straight line, for example, Line 1, Line 2, and so on.</para>
 		/// </param>
 		public AddRelativeMainlineLayout(object InUtilityNetwork, object TemplateName, object IsActive, object LineAttribute)
 		{
@@ -47,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 添加相对主线布局</para>
+		/// <para>Tool Display Name : Add Relative Mainline Layout</para>
 		/// </summary>
-		public override string DisplayName() => "添加相对主线布局";
+		public override string DisplayName() => "Add Relative Mainline Layout";
 
 		/// <summary>
 		/// <para>Tool Name : AddRelativeMainlineLayout</para>
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
+		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>要修改的逻辑示意图模板名称</para>
+		/// <para>The name of the diagram template that will be modified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -99,9 +99,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Active</para>
-		/// <para>指定是否将在基于指定模板生成逻辑示意图时自动运行布局算法。</para>
-		/// <para>选中 - 添加的布局算法会在基于输入逻辑示意图模板参数值生成任何逻辑示意图的过程中自动运行。 这是默认设置。为布局算法指定的参数值是在生成逻辑示意图的过程中用于运行布局的参数值。 如果要对基于输入模板的任何逻辑示意图运行此算法，则还会默认加载这些参数值。</para>
-		/// <para>未选中 - 如果要对基于输入模板的任何逻辑示意图运行此算法，则还将默认加载当前为添加的布局逻辑示意图指定的所有参数值。</para>
+		/// <para>Specifies whether the layout algorithm will automatically run when generating diagrams based on the specified template.</para>
+		/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter value. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+		/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Line Attribute</para>
-		/// <para>用于标识构成直线的线的网络属性的名称。此网络属性必须存在于网络线类中。对于构成直线（例如线 1、线 2 等等）的所有边，其值都必须相同。</para>
+		/// <para>The name of the network attribute that will be used to identify the lines that comprise the straight lines. This network attribute must exist in the network line classes. Its values must be the same for all the edges that comprise a straight line, for example, Line 1, Line 2, and so on.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -119,9 +119,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Direction</para>
-		/// <para>指定主线的方向。</para>
-		/// <para>从左到右—主线将绘制为从左侧开始并于右侧终止的水平线。这是默认设置。</para>
-		/// <para>从上到下—主线将绘制为从顶部开始并于底部终止的垂直线。</para>
+		/// <para>Specifies the direction of the main line.</para>
+		/// <para>From left to right—The main line will be drawn as a horizontal line starting from the left and ending on the right. This is the default.</para>
+		/// <para>From top to bottom—The main line will be drawn as a vertical line starting from the top and ending at the bottom.</para>
 		/// <para><see cref="MainlineDirectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Offset Between Branches</para>
-		/// <para>两个相邻分支沿垂直于线方向的轴之间的间距。</para>
+		/// <para>The spacing between two adjacent branches along the axis perpendicular to the direction of the lines.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Break Point Angle (in degrees)</para>
-		/// <para>用于在分支上定位中断点的角度。该值介于 30 度和 90 度之间，与分支间的偏移量参数值结合使用可计算出这个位置。中断点角度值为 90 度时，将正交显示每个分支。</para>
+		/// <para>The angle that will be used to position the break point on the branches. It is a value between 30 and 90 degrees that is combined with the Offset Between Branches parameter value to compute this position. When the break point angle value is 90 degrees, each branch displays orthogonally.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -147,8 +147,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Type Attribute</para>
-		/// <para>用于限定线的网络属性的名称。此网络属性可能存在于网络线类中。</para>
-		/// <para>类型属性和线属性参数值可以是相同的。</para>
+		/// <para>The name of the network attribute that will be used to qualify the lines. This network attribute may exist in the network line classes.</para>
+		/// <para>The Type Attribute and Line Attribute parameter values can be the same.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -157,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Mainline Values</para>
-		/// <para>用于标识主线的类型属性值。如果存在这样的值，则无论主线相关网络要素线类或边对象表为何，对于构成主线的任何边而言，该值都必须是相同的。</para>
+		/// <para>The Type Attribute values that identify the main lines. When such values exist, they must be the same for any edge that comprises the main lines, regardless of their related network feature line classes or edge object tables.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -167,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Branch Values</para>
-		/// <para>用于标识分支的类型属性值。</para>
+		/// <para>The Type Attribute values that identify the branches.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -177,7 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Excluded Values</para>
-		/// <para>用于标识边的类型属性值将从直线（交线或梯形线）中排除。</para>
+		/// <para>The Type Attribute values that identify the edges that will be excluded from the straight lines (crossovers or ladders).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -187,9 +187,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Compression along the direction</para>
-		/// <para>指定是否压缩图形。</para>
-		/// <para>选中 - 将使用压缩。在处理结束后将执行一个附加步骤，用于缩短邻近交汇点的相邻组之间沿该方向的距离，同时还保持这些组之间的相对定位。邻近交汇点是指地理位置彼此靠近但没有直接连接的交汇点。</para>
-		/// <para>未选中 - 将不使用压缩。这是默认设置。</para>
+		/// <para>Specifies whether the graph will be compressed.</para>
+		/// <para>Checked—Compression will be used. An additional step is executed at the end of the process to reduce the distances between adjacent groups of neighbor junctions along the direction while maintaining relative positioning between these groups. Neighbor junctions are junctions that are geographically close to each other without being directly connected.</para>
+		/// <para>Unchecked—Compression will not be used. This is the default.</para>
 		/// <para><see cref="IsCompressingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -200,7 +200,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Ratio (%)</para>
-		/// <para>0 和 100 之间应用于任何边的长度（在减去其长度的最小距离后）的值。比率 (%) 为 100 时，检测的各个交汇点组之间的距离等于最小距离。</para>
+		/// <para>A value between 0 and 100 that is applied to the length of any edge after subtracting the minimal distance of its length. When Ratio (%) is 100, the distance between each detected junction group is equal to the minimal distance.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -209,7 +209,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Minimal Distance</para>
-		/// <para>两个邻近交汇点的相邻组之间的最小距离。此最小距离也用于根据邻近交汇点沿方向轴的投影将它们分组。当在该轴上投影的两个交汇点之间的距离小于此距离时，这两个交汇点将属于同一组。</para>
+		/// <para>The minimal distance between two adjacent groups of neighbor junctions. This minimal distance is also used to group neighbor junctions based on their projection along the direction axis. Two junctions projected on this axis will belong to the same group when the distance between the two projected points is less than this distance.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -218,7 +218,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Alignment Attribute</para>
-		/// <para>用于对齐分割的线的网络属性的名称。此算法将线与相同的属性值对齐。</para>
+		/// <para>The name of the network attribute that will be used to align lines that are split. The algorithm aligns lines with the same attribute value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -227,9 +227,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Initial Distances</para>
-		/// <para>用于指定如何评估逻辑示意图边的长度。此长度可确定交汇点沿这一方向的位置。已连接交汇点沿方向的距离并不相等；它们彼此相关且取决于当前边的长度和最短边的长度。</para>
-		/// <para>根据当前边几何— 根据当前的边几何计算距离。这是默认设置。</para>
-		/// <para>根据属性边—根据边上存在的给定属性计算距离。</para>
+		/// <para>Specifies how the length of the diagram edges will be assessed. This length determines the positions of the junctions along the direction. The distances between the connected junctions along the direction are not equidistant; they are relative to each other and depend on the current edge length and the length of the shortest edge.</para>
+		/// <para>From current edge geometry— The distances will be computed from the current edge geometry. This is the default.</para>
+		/// <para>From attribute edge—The distances will be computed from a given attribute that exists on an edge.</para>
 		/// <para><see cref="InitialDistancesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -240,7 +240,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Length Attribute</para>
-		/// <para>当初始距离为 根据属性边时，将用于计算距离的网络属性。</para>
+		/// <para>The network attribute from which the distances will be computed when Initial Distances is From attribute edge.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -269,14 +269,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsActiveEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter value. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ACTIVE")]
 			ACTIVE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INACTIVE")]
@@ -290,17 +290,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum MainlineDirectionEnum 
 		{
 			/// <summary>
-			/// <para>从左到右—主线将绘制为从左侧开始并于右侧终止的水平线。这是默认设置。</para>
+			/// <para>From left to right—The main line will be drawn as a horizontal line starting from the left and ending on the right. This is the default.</para>
 			/// </summary>
 			[GPValue("FROM_LEFT_TO_RIGHT")]
-			[Description("从左到右")]
+			[Description("From left to right")]
 			From_left_to_right,
 
 			/// <summary>
-			/// <para>从上到下—主线将绘制为从顶部开始并于底部终止的垂直线。</para>
+			/// <para>From top to bottom—The main line will be drawn as a vertical line starting from the top and ending at the bottom.</para>
 			/// </summary>
 			[GPValue("FROM_TOP_TO_BOTTOM")]
-			[Description("从上到下")]
+			[Description("From top to bottom")]
 			From_top_to_bottom,
 
 		}
@@ -311,14 +311,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsCompressingEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Compression will be used. An additional step is executed at the end of the process to reduce the distances between adjacent groups of neighbor junctions along the direction while maintaining relative positioning between these groups. Neighbor junctions are junctions that are geographically close to each other without being directly connected.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("USE_COMPRESSION")]
 			USE_COMPRESSION,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Compression will not be used. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_USE_COMPRESSION")]
@@ -332,17 +332,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum InitialDistancesEnum 
 		{
 			/// <summary>
-			/// <para>根据当前边几何— 根据当前的边几何计算距离。这是默认设置。</para>
+			/// <para>From current edge geometry— The distances will be computed from the current edge geometry. This is the default.</para>
 			/// </summary>
 			[GPValue("FROM_CURRENT_EDGE_GEOMETRY")]
-			[Description("根据当前边几何")]
+			[Description("From current edge geometry")]
 			From_current_edge_geometry,
 
 			/// <summary>
-			/// <para>根据属性边—根据边上存在的给定属性计算距离。</para>
+			/// <para>From attribute edge—The distances will be computed from a given attribute that exists on an edge.</para>
 			/// </summary>
 			[GPValue("FROM_ATTRIBUTE_EDGE")]
-			[Description("根据属性边")]
+			[Description("From attribute edge")]
 			From_attribute_edge,
 
 		}

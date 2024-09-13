@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Mobile Geodatabase</para>
-	/// <para>创建移动地理数据库</para>
-	/// <para>创建移动地理数据库。</para>
+	/// <para>Create Mobile Geodatabase</para>
+	/// <para>Creates a mobile geodatabase.</para>
 	/// </summary>
 	public class CreateMobileGDB : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="OutFolderPath">
 		/// <para>Mobile Geodatabase Location</para>
-		/// <para>将创建移动地理数据库的文件夹。</para>
+		/// <para>The folder where the mobile geodatabase will be created.</para>
 		/// </param>
 		/// <param name="OutName">
 		/// <para>Mobile Geodatabase Name</para>
-		/// <para>要创建的移动地理数据库的名称。</para>
+		/// <para>The name of the mobile geodatabase to be created.</para>
 		/// </param>
 		public CreateMobileGDB(object OutFolderPath, object OutName)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建移动地理数据库</para>
+		/// <para>Tool Display Name : Create Mobile Geodatabase</para>
 		/// </summary>
-		public override string DisplayName() => "创建移动地理数据库";
+		public override string DisplayName() => "Create Mobile Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : CreateMobileGDB</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mobile Geodatabase Location</para>
-		/// <para>将创建移动地理数据库的文件夹。</para>
+		/// <para>The folder where the mobile geodatabase will be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mobile Geodatabase Name</para>
-		/// <para>要创建的移动地理数据库的名称。</para>
+		/// <para>The name of the mobile geodatabase to be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

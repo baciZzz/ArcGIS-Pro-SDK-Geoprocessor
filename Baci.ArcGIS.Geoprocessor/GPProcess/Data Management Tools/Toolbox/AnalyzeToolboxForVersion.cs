@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Analyze Toolbox For Version</para>
-	/// <para>分析工具箱的版本</para>
-	/// <para>分析工具箱的内容并识别与 ArcGIS 软件先前版本的兼容性问题。</para>
+	/// <para>Analyze Toolbox For Version</para>
+	/// <para>Analyzes the contents of a toolbox and identifies compatibility issues with previous versions of ArcGIS software.</para>
 	/// </summary>
 	public class AnalyzeToolboxForVersion : AbstractGPProcess
 	{
@@ -21,24 +21,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InToolbox">
 		/// <para>Input</para>
-		/// <para>将要分析的输入工具箱（.tbx 或 .atbx）。</para>
-		/// <para>不支持将 Python 工具箱 (.pyt) 格式作为输入。</para>
+		/// <para>The input toolbox (.tbx or .atbx) that will be analyzed.</para>
+		/// <para>The Python toolbox (.pyt) format is not supported as an input.</para>
 		/// </param>
 		/// <param name="Version">
 		/// <para>Target  Version</para>
-		/// <para>指定将用于工具箱兼容性分析的软件版本。</para>
-		/// <para>10.6.0—ArcGIS Desktop 10.6.0 将用于工具箱兼容性问题分析。</para>
-		/// <para>10.7.0—ArcGIS Desktop 10.7.0 将用于工具箱兼容性问题分析。</para>
-		/// <para>10.8.0—ArcGIS Desktop 10.8.0 将用于工具箱兼容性问题分析。</para>
-		/// <para>10.8.2—ArcGIS Desktop 10.8.2 将用于工具箱兼容性问题分析。</para>
-		/// <para>2.2—ArcGIS Pro 2.2 将用于工具箱兼容性问题分析。</para>
-		/// <para>2.3—ArcGIS Pro 2.3 将用于工具箱兼容性问题分析。</para>
-		/// <para>2.4—ArcGIS Pro 2.4 将用于工具箱兼容性问题分析。</para>
-		/// <para>2.5—ArcGIS Pro 2.5 将用于工具箱兼容性问题分析。</para>
-		/// <para>2.6—ArcGIS Pro 2.6 将用于工具箱兼容性问题分析。</para>
-		/// <para>2.7—ArcGIS Pro 2.7 将用于工具箱兼容性问题分析。</para>
-		/// <para>2.8—ArcGIS Pro 2.8 将用于工具箱兼容性问题分析。</para>
-		/// <para>2.9—ArcGIS Pro 2.9 将用于工具箱兼容性问题分析。</para>
+		/// <para>Specifies the software version that will be used for toolbox compatibility analysis.</para>
+		/// <para>10.6.0—ArcGIS Desktop 10.6.0 will be used for toolbox compatibility issue analysis.</para>
+		/// <para>10.7.0—ArcGIS Desktop 10.7.0 will be used for toolbox compatibility issue analysis.</para>
+		/// <para>10.8.0—ArcGIS Desktop 10.8.0 will be used for toolbox compatibility issue analysis.</para>
+		/// <para>10.8.2—ArcGIS Desktop 10.8.2 will be used for toolbox compatibility issue analysis.</para>
+		/// <para>2.2—ArcGIS Pro 2.2 will be used for toolbox compatibility issue analysis.</para>
+		/// <para>2.3—ArcGIS Pro 2.3 will be used for toolbox compatibility issue analysis.</para>
+		/// <para>2.4—ArcGIS Pro 2.4 will be used for toolbox compatibility issue analysis.</para>
+		/// <para>2.5—ArcGIS Pro2.5 will be used for toolbox compatibility issue analysis.</para>
+		/// <para>2.6—ArcGIS Pro 2.6 will be used for toolbox compatibility issue analysis.</para>
+		/// <para>2.7—ArcGIS Pro 2.7 will be used for toolbox compatibility issue analysis.</para>
+		/// <para>2.8—ArcGIS Pro 2.8 will be used for toolbox compatibility issue analysis.</para>
+		/// <para>2.9—ArcGIS Pro 2.9 will be used for toolbox compatibility issue analysis.</para>
 		/// </param>
 		public AnalyzeToolboxForVersion(object InToolbox, object Version)
 		{
@@ -47,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 分析工具箱的版本</para>
+		/// <para>Tool Display Name : Analyze Toolbox For Version</para>
 		/// </summary>
-		public override string DisplayName() => "分析工具箱的版本";
+		public override string DisplayName() => "Analyze Toolbox For Version";
 
 		/// <summary>
 		/// <para>Tool Name : AnalyzeToolboxForVersion</para>
@@ -83,8 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input</para>
-		/// <para>将要分析的输入工具箱（.tbx 或 .atbx）。</para>
-		/// <para>不支持将 Python 工具箱 (.pyt) 格式作为输入。</para>
+		/// <para>The input toolbox (.tbx or .atbx) that will be analyzed.</para>
+		/// <para>The Python toolbox (.pyt) format is not supported as an input.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEToolbox()]
@@ -92,19 +92,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target  Version</para>
-		/// <para>指定将用于工具箱兼容性分析的软件版本。</para>
-		/// <para>10.6.0—ArcGIS Desktop 10.6.0 将用于工具箱兼容性问题分析。</para>
-		/// <para>10.7.0—ArcGIS Desktop 10.7.0 将用于工具箱兼容性问题分析。</para>
-		/// <para>10.8.0—ArcGIS Desktop 10.8.0 将用于工具箱兼容性问题分析。</para>
-		/// <para>10.8.2—ArcGIS Desktop 10.8.2 将用于工具箱兼容性问题分析。</para>
-		/// <para>2.2—ArcGIS Pro 2.2 将用于工具箱兼容性问题分析。</para>
-		/// <para>2.3—ArcGIS Pro 2.3 将用于工具箱兼容性问题分析。</para>
-		/// <para>2.4—ArcGIS Pro 2.4 将用于工具箱兼容性问题分析。</para>
-		/// <para>2.5—ArcGIS Pro 2.5 将用于工具箱兼容性问题分析。</para>
-		/// <para>2.6—ArcGIS Pro 2.6 将用于工具箱兼容性问题分析。</para>
-		/// <para>2.7—ArcGIS Pro 2.7 将用于工具箱兼容性问题分析。</para>
-		/// <para>2.8—ArcGIS Pro 2.8 将用于工具箱兼容性问题分析。</para>
-		/// <para>2.9—ArcGIS Pro 2.9 将用于工具箱兼容性问题分析。</para>
+		/// <para>Specifies the software version that will be used for toolbox compatibility analysis.</para>
+		/// <para>10.6.0—ArcGIS Desktop 10.6.0 will be used for toolbox compatibility issue analysis.</para>
+		/// <para>10.7.0—ArcGIS Desktop 10.7.0 will be used for toolbox compatibility issue analysis.</para>
+		/// <para>10.8.0—ArcGIS Desktop 10.8.0 will be used for toolbox compatibility issue analysis.</para>
+		/// <para>10.8.2—ArcGIS Desktop 10.8.2 will be used for toolbox compatibility issue analysis.</para>
+		/// <para>2.2—ArcGIS Pro 2.2 will be used for toolbox compatibility issue analysis.</para>
+		/// <para>2.3—ArcGIS Pro 2.3 will be used for toolbox compatibility issue analysis.</para>
+		/// <para>2.4—ArcGIS Pro 2.4 will be used for toolbox compatibility issue analysis.</para>
+		/// <para>2.5—ArcGIS Pro2.5 will be used for toolbox compatibility issue analysis.</para>
+		/// <para>2.6—ArcGIS Pro 2.6 will be used for toolbox compatibility issue analysis.</para>
+		/// <para>2.7—ArcGIS Pro 2.7 will be used for toolbox compatibility issue analysis.</para>
+		/// <para>2.8—ArcGIS Pro 2.8 will be used for toolbox compatibility issue analysis.</para>
+		/// <para>2.9—ArcGIS Pro 2.9 will be used for toolbox compatibility issue analysis.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output File</para>
-		/// <para>将创建的文本文件，其中包含分析程序识别的兼容性问题。</para>
+		/// <para>The text file that will be created containing the compatibility issues identified by the analyzers.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]

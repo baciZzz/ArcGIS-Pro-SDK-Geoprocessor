@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Watershed</para>
-	/// <para>集水区</para>
-	/// <para>确定栅格中一组像元之上的汇流区域。</para>
+	/// <para>Watershed</para>
+	/// <para>Determines the contributing area above a set of cells in a raster.</para>
 	/// </summary>
 	public class Watershed : AbstractGPProcess
 	{
@@ -21,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		/// <param name="Inputflowdirectionraster">
 		/// <para>Input Flow Direction Raster</para>
-		/// <para>根据每个像元来显示流向的输入栅格。</para>
+		/// <para>The input raster that shows the direction of flow out of each cell.</para>
 		/// </param>
 		/// <param name="Inpourpointrasterorfeatures">
 		/// <para>Input Pour Point Raster or Features</para>
-		/// <para>输入倾泻点位置。</para>
+		/// <para>The input pour point locations.</para>
 		/// </param>
 		/// <param name="Outputname">
 		/// <para>Output Name</para>
-		/// <para>输出分水岭栅格服务的名称。</para>
-		/// <para>默认名称基于工具名称以及输入图层名称。 如果该图层名称已存在，则系统将提示您提供其他名称。</para>
+		/// <para>The name of the output watershed raster service.</para>
+		/// <para>The default name is based on the tool name and the input layer name. If the layer name already exists, you will be prompted to provide another name.</para>
 		/// </param>
 		public Watershed(object Inputflowdirectionraster, object Inpourpointrasterorfeatures, object Outputname)
 		{
@@ -40,14 +40,14 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 集水区</para>
+		/// <para>Tool Display Name : Watershed</para>
 		/// </summary>
-		public override string DisplayName() => "集水区";
+		public override string DisplayName() => "Watershed";
 
 		/// <summary>
-		/// <para>Tool Name : 集水区</para>
+		/// <para>Tool Name : Watershed</para>
 		/// </summary>
-		public override string ToolName() => "集水区";
+		public override string ToolName() => "Watershed";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.Watershed</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Flow Direction Raster</para>
-		/// <para>根据每个像元来显示流向的输入栅格。</para>
+		/// <para>The input raster that shows the direction of flow out of each cell.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Pour Point Raster or Features</para>
-		/// <para>输入倾泻点位置。</para>
+		/// <para>The input pour point locations.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -94,8 +94,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>输出分水岭栅格服务的名称。</para>
-		/// <para>默认名称基于工具名称以及输入图层名称。 如果该图层名称已存在，则系统将提示您提供其他名称。</para>
+		/// <para>The name of the output watershed raster service.</para>
+		/// <para>The default name is based on the tool name and the input layer name. If the layer name already exists, you will be prompted to provide another name.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Pour Point Field</para>
-		/// <para>用于为倾泻点位置赋值的字段。</para>
+		/// <para>Field used to assign values to the pour point locations.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

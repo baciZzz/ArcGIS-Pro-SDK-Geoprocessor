@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Find Cotravelers</para>
-	/// <para>查找同行者</para>
-	/// <para>用于提取点轨迹数据集中以指定的间隔在空间和时间中移动的唯一标识符。</para>
+	/// <para>Find Cotravelers</para>
+	/// <para>Extracts unique identifiers that are moving through space and time at specified intervals in a point track dataset.</para>
 	/// </summary>
 	public class FindCotravelers : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		/// <param name="InputFeatures">
 		/// <para>Input Features</para>
-		/// <para>启用时间的要素，表示将用于查找同行者的已知标识符。 唯一标识符、时间戳和位置将传输到输出图层，以帮助计算时间和空间间隔。</para>
+		/// <para>The time-enabled features representing the known identifier that will be used to find cotravelers. The unique identifiers, time stamps, and locations will be transferred to the output layer to assist with calculating the time and spatial separation.</para>
 		/// </param>
 		/// <param name="OutFeatureclass">
 		/// <para>Output Feature Class</para>
-		/// <para>该输出要素类将包含标识为与输入源图层同行的点轨迹段。 该要素类将包含与指定点轨迹段关联的源。 将为每个点轨迹要素计算时间和空间间隔。</para>
+		/// <para>The output feature class that will contain the point track segments identified as cotraveling with the input source layers. This feature class will include the source with which the specified point track segment is associated. Time and spatial separation will be calculated for each point track feature.</para>
 		/// </param>
 		/// <param name="IdField">
 		/// <para>ID Field</para>
-		/// <para>输入要素参数中的字段，用于获取每个点轨迹的唯一标识符。 该字段将复制到输出要素类。</para>
+		/// <para>A field from the Input Features parameter that will be used to obtain the unique identifiers per point track. The field will be copied to the output feature class.</para>
 		/// </param>
 		public FindCotravelers(object InputFeatures, object OutFeatureclass, object IdField)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 查找同行者</para>
+		/// <para>Tool Display Name : Find Cotravelers</para>
 		/// </summary>
-		public override string DisplayName() => "查找同行者";
+		public override string DisplayName() => "Find Cotravelers";
 
 		/// <summary>
 		/// <para>Tool Name : FindCotravelers</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>启用时间的要素，表示将用于查找同行者的已知标识符。 唯一标识符、时间戳和位置将传输到输出图层，以帮助计算时间和空间间隔。</para>
+		/// <para>The time-enabled features representing the known identifier that will be used to find cotravelers. The unique identifiers, time stamps, and locations will be transferred to the output layer to assist with calculating the time and spatial separation.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>该输出要素类将包含标识为与输入源图层同行的点轨迹段。 该要素类将包含与指定点轨迹段关联的源。 将为每个点轨迹要素计算时间和空间间隔。</para>
+		/// <para>The output feature class that will contain the point track segments identified as cotraveling with the input source layers. This feature class will include the source with which the specified point track segment is associated. Time and spatial separation will be calculated for each point track feature.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>ID Field</para>
-		/// <para>输入要素参数中的字段，用于获取每个点轨迹的唯一标识符。 该字段将复制到输出要素类。</para>
+		/// <para>A field from the Input Features parameter that will be used to obtain the unique identifiers per point track. The field will be copied to the output feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Search Distance</para>
-		/// <para>在要素不被视为同行要素之前可以分隔的最大距离。 默认值为 100 英尺。</para>
+		/// <para>The maximum distance that can separate features before they are considered not to be cotraveling features. The default is 100 feet.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Time Difference</para>
-		/// <para>在要素不被视为同行要素之前可以分隔的最大时间差。 默认值为 10 秒。</para>
+		/// <para>The maximum time difference that can separate features before they are considered not to be cotraveling features. The default is 10 seconds.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -121,9 +121,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Type</para>
-		/// <para>指定将在一个要素类中还是在跨要素类检测同行者。</para>
-		/// <para>一个要素类—将在一个要素类中检测同行者。 这是默认设置。</para>
-		/// <para>两个要素类—将在两个要素类中检测同行者。</para>
+		/// <para>Specifies whether cotravelers will be detected in one feature class or across two.</para>
+		/// <para>One Feature Class— Cotravelers will be detected in one feature class. This is the default.</para>
+		/// <para>Two Feature Classes—Cotravelers will be detected across two feature classes.</para>
 		/// <para><see cref="InputTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -133,10 +133,10 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Secondary Features</para>
-		/// <para>将用于标识同行者的第二个要素类。 将使用以下内容来评估潜在同行者：</para>
-		/// <para>同行者正在输入要素内同行。</para>
-		/// <para>同行者正在次要要素内同行。</para>
-		/// <para>同行者正在输入要素和次要要素之间同行。</para>
+		/// <para>A second feature class that will identify cotravelers. Potential cotravelers will be evaluated using the following:</para>
+		/// <para>Cotravelers are cotraveling inside the input features.</para>
+		/// <para>Cotravelers are cotraveling inside the secondary features.</para>
+		/// <para>Cotravelers are cotraveling between the input features and secondary features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Secondary ID Field</para>
-		/// <para>次要要素参数中的字段，用于获取每个点轨迹的唯一标识符。 该字段将复制到输出要素类。</para>
+		/// <para>A field from the Secondary Features parameter that will be used to obtain the unique identifiers per point track. The field will be copied to the output feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -157,9 +157,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Create Summary Table</para>
-		/// <para>指定是否将创建输出汇总表。</para>
-		/// <para>选中 - 将创建汇总表。</para>
-		/// <para>未选中 - 将不会创建汇总表。 这是默认设置。</para>
+		/// <para>Specifies whether an output summary table will be created.</para>
+		/// <para>Checked—A summary table will be created.</para>
+		/// <para>Unchecked—A summary table will not be created. This is the default.</para>
 		/// <para><see cref="CreateSummaryTableEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -169,7 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Output Summary Table</para>
-		/// <para>将存储汇总信息的输出表。 此参数仅在选中创建汇总表参数时处于活动状态。 输出文件必须是文件地理数据库、文本文件或逗号分隔值文件 (.csv) 中的表。</para>
+		/// <para>The output table that will store the summary information. This parameter is only active when the Create Summary Table parameter is checked. Output files must be tables in a file geodatabase, text files, or comma-separated value files (.csv).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -177,9 +177,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Include Minimum Cotraveling Duration Filter</para>
-		/// <para>指定是否将应用仅返回满足最短共同出行时间的同行者的过滤器。</para>
-		/// <para>选中 - 将应用最短同行者持续时间过滤器。</para>
-		/// <para>未选中 - 将不会应用最短同行者持续时间过滤器。 这是默认设置。</para>
+		/// <para>Specifies whether a filter that only returns cotravelers who meet a minimum time of traveling together will be applied.</para>
+		/// <para>Checked—The minimum cotraveler duration filter will be applied.</para>
+		/// <para>Unchecked—The minimum cotraveler duration filter will not be applied. This is the default.</para>
 		/// <para><see cref="IncludeMinCotravelingDurationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -189,7 +189,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Minimum Cotraveling Duration</para>
-		/// <para>两个要素在被视为同行者之前，必须先在空间和时间上一起运动的最短时间。</para>
+		/// <para>The minimum amount of time that two features must be moving through space and time together before they will be considered cotravelers.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -213,17 +213,17 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		public enum InputTypeEnum 
 		{
 			/// <summary>
-			/// <para>一个要素类—将在一个要素类中检测同行者。 这是默认设置。</para>
+			/// <para>One Feature Class— Cotravelers will be detected in one feature class. This is the default.</para>
 			/// </summary>
 			[GPValue("ONE_FEATURECLASS")]
-			[Description("一个要素类")]
+			[Description("One Feature Class")]
 			One_Feature_Class,
 
 			/// <summary>
-			/// <para>两个要素类—将在两个要素类中检测同行者。</para>
+			/// <para>Two Feature Classes—Cotravelers will be detected across two feature classes.</para>
 			/// </summary>
 			[GPValue("TWO_FEATURECLASSES")]
-			[Description("两个要素类")]
+			[Description("Two Feature Classes")]
 			Two_Feature_Classes,
 
 		}
@@ -234,14 +234,14 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		public enum CreateSummaryTableEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—A summary table will be created.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CREATE_SUMMARY_TABLE")]
 			CREATE_SUMMARY_TABLE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—A summary table will not be created. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SUMMARY_TABLE")]
@@ -255,14 +255,14 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		public enum IncludeMinCotravelingDurationEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The minimum cotraveler duration filter will be applied.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MIN_COTRAVELING_DURATION")]
 			MIN_COTRAVELING_DURATION,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The minimum cotraveler duration filter will not be applied. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_MIN_COTRAVELING_DURATION")]

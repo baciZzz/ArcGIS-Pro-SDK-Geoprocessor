@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Create LRS</para>
-	/// <para>创建 LRS</para>
-	/// <para>在指定工作空间中创建 ArcGIS Location Referencing 线性参考系统 (LRS) 和最小模式项目。</para>
+	/// <para>Create LRS</para>
+	/// <para>Creates an ArcGIS Location Referencing linear referencing system (LRS) and minimum schema items in a specified workspace.</para>
 	/// </summary>
 	public class CreateLRS : AbstractGPProcess
 	{
@@ -21,31 +21,31 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InWorkspace">
 		/// <para>Input Location</para>
-		/// <para>将在其中创建 LRS 和最小模式的文件或多用途地理数据库。</para>
+		/// <para>The file or multipurpose geodatabase where the LRS and minimum schema will be created.</para>
 		/// </param>
 		/// <param name="LrsName">
 		/// <para>LRS Name</para>
-		/// <para>输出 LRS 的名称。</para>
+		/// <para>The name of the output LRS.</para>
 		/// </param>
 		/// <param name="CenterlineFeatureClassName">
 		/// <para>Centerline Feature Class Name</para>
-		/// <para>输出中心线要素类的名称。</para>
+		/// <para>The name of the output centerline feature class.</para>
 		/// </param>
 		/// <param name="CalibrationPointFeatureClassName">
 		/// <para>Calibration Point Feature Class Name</para>
-		/// <para>输出校准点要素类的名称。</para>
+		/// <para>The name of the output calibration point feature class.</para>
 		/// </param>
 		/// <param name="RedlineFeatureClassName">
 		/// <para>Redline Feature Class Name</para>
-		/// <para>输出红线要素类的名称。</para>
+		/// <para>The name of the output redline feature class.</para>
 		/// </param>
 		/// <param name="CenterlineSequenceTableName">
 		/// <para>Centerline Sequence Table Name</para>
-		/// <para>输出中心线序列表的名称。</para>
+		/// <para>The name of the output centerline sequence table.</para>
 		/// </param>
 		/// <param name="SpatialReference">
 		/// <para>Spatial Reference</para>
-		/// <para>输出要素类的空间参考。 使用 Python 脚本时，可以将熟知 ID (WKID) 用作空间参考。</para>
+		/// <para>The spatial reference for the output feature classes. When using a Python script, you can use the Well Known ID (WKID) for the spatial reference.</para>
 		/// </param>
 		public CreateLRS(object InWorkspace, object LrsName, object CenterlineFeatureClassName, object CalibrationPointFeatureClassName, object RedlineFeatureClassName, object CenterlineSequenceTableName, object SpatialReference)
 		{
@@ -59,9 +59,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建 LRS</para>
+		/// <para>Tool Display Name : Create LRS</para>
 		/// </summary>
-		public override string DisplayName() => "创建 LRS";
+		public override string DisplayName() => "Create LRS";
 
 		/// <summary>
 		/// <para>Tool Name : CreateLRS</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Input Location</para>
-		/// <para>将在其中创建 LRS 和最小模式的文件或多用途地理数据库。</para>
+		/// <para>The file or multipurpose geodatabase where the LRS and minimum schema will be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>LRS Name</para>
-		/// <para>输出 LRS 的名称。</para>
+		/// <para>The name of the output LRS.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Centerline Feature Class Name</para>
-		/// <para>输出中心线要素类的名称。</para>
+		/// <para>The name of the output centerline feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Calibration Point Feature Class Name</para>
-		/// <para>输出校准点要素类的名称。</para>
+		/// <para>The name of the output calibration point feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Redline Feature Class Name</para>
-		/// <para>输出红线要素类的名称。</para>
+		/// <para>The name of the output redline feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Centerline Sequence Table Name</para>
-		/// <para>输出中心线序列表的名称。</para>
+		/// <para>The name of the output centerline sequence table.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Spatial Reference</para>
-		/// <para>输出要素类的空间参考。 使用 Python 脚本时，可以将熟知 ID (WKID) 用作空间参考。</para>
+		/// <para>The spatial reference for the output feature classes. When using a Python script, you can use the Well Known ID (WKID) for the spatial reference.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSpatialReference()]
@@ -151,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>XY Tolerance</para>
-		/// <para>输出要素类的 x,y 容差。</para>
+		/// <para>The x,y-tolerance of the output feature classes.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -159,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Z Tolerance</para>
-		/// <para>输出要素类的 z 容差。</para>
+		/// <para>The z-tolerance of the output feature classes.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -167,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>XY Resolution</para>
-		/// <para>输出要素类的 x、y 分辨率。</para>
+		/// <para>The x,y-resolution of the output feature classes.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -175,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Z Resolution</para>
-		/// <para>输出要素类的 z 分辨率。</para>
+		/// <para>The z-resolution of the output feature classes.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]

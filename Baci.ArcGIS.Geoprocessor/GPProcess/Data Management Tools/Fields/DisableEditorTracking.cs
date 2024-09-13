@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Disable Editor Tracking</para>
-	/// <para>禁用编辑者追踪</para>
-	/// <para>用于对要素类、表、要素数据集或镶嵌数据集禁用编辑者追踪。</para>
+	/// <para>Disable Editor Tracking</para>
+	/// <para>Disables editor tracking on a feature class, table, feature dataset, or mosaic dataset.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>将禁用编辑者追踪的要素类、表、要素数据集或镶嵌数据集。</para>
+		/// <para>The feature class, table, feature dataset, or mosaic dataset in which editor tracking will be disabled.</para>
 		/// </param>
 		public DisableEditorTracking(object InDataset)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 禁用编辑者追踪</para>
+		/// <para>Tool Display Name : Disable Editor Tracking</para>
 		/// </summary>
-		public override string DisplayName() => "禁用编辑者追踪";
+		public override string DisplayName() => "Disable Editor Tracking";
 
 		/// <summary>
 		/// <para>Tool Name : DisableEditorTracking</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>将禁用编辑者追踪的要素类、表、要素数据集或镶嵌数据集。</para>
+		/// <para>The feature class, table, feature dataset, or mosaic dataset in which editor tracking will be disabled.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -75,9 +75,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Disable Creator Tracking</para>
-		/// <para>指定是否禁用创建者字段的编辑者追踪。</para>
-		/// <para>选中 - 禁用创建者字段的编辑者追踪。这是默认设置。</para>
-		/// <para>未选中 - 不禁用创建者字段的编辑者追踪。</para>
+		/// <para>Specifies whether editor tracking for the creator field will be disabled.</para>
+		/// <para>Checked—Editor tracking for the creator field will be disabled. This is the default.</para>
+		/// <para>Unchecked—Editor tracking for the creator field will not be disabled.</para>
 		/// <para><see cref="CreatorEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -87,9 +87,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Disable Creation Date Tracking</para>
-		/// <para>指定是否禁用创建日期字段的编辑者追踪。</para>
-		/// <para>选中 - 禁用创建日期字段的编辑者追踪。这是默认设置。</para>
-		/// <para>未选中 - 不禁用创建日期字段的编辑者追踪。</para>
+		/// <para>Specifies whether editor tracking for the creation date field will be disabled.</para>
+		/// <para>Checked—Editor tracking for the creation date field will be disabled. This is the default.</para>
+		/// <para>Unchecked—Editor tracking for the creation date field will not be disabled.</para>
 		/// <para><see cref="CreationDateEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -99,9 +99,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Disable Last Editor Tracking</para>
-		/// <para>指定是否禁用上一个编辑者字段的编辑者追踪。</para>
-		/// <para>选中 - 禁用上一个编辑者字段的编辑者追踪。这是默认设置。</para>
-		/// <para>未选中 - 不禁用上一个编辑者字段的编辑者追踪。</para>
+		/// <para>Specifies whether editor tracking for the last editor field will be disabled.</para>
+		/// <para>Checked—Editor tracking for the last editor field will be disabled. This is the default.</para>
+		/// <para>Unchecked—Editor tracking for the last editor field will not be disabled.</para>
 		/// <para><see cref="LastEditorEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -111,9 +111,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Disable Last Edit Date Tracking</para>
-		/// <para>指定是否禁用最后一次编辑日期字段的编辑者追踪。</para>
-		/// <para>选中 - 禁用最后一次编辑日期字段的编辑者追踪。这是默认设置。</para>
-		/// <para>未选中 - 不禁用最后一次编辑日期字段的编辑者追踪。</para>
+		/// <para>Specifies whether editor tracking for the last edit date field will be disabled.</para>
+		/// <para>Checked—Editor tracking for the last edit date field will be disabled. This is the default.</para>
+		/// <para>Unchecked—Editor tracking for the last edit date field will not be disabled.</para>
 		/// <para><see cref="LastEditDateEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -136,14 +136,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CreatorEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Editor tracking for the creator field will be disabled. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DISABLE_CREATOR")]
 			DISABLE_CREATOR,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Editor tracking for the creator field will not be disabled.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DISABLE_CREATOR")]
@@ -157,14 +157,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CreationDateEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Editor tracking for the creation date field will be disabled. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DISABLE_CREATION_DATE")]
 			DISABLE_CREATION_DATE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Editor tracking for the creation date field will not be disabled.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DISABLE_CREATION_DATE")]
@@ -178,14 +178,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum LastEditorEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Editor tracking for the last editor field will be disabled. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DISABLE_LAST_EDITOR")]
 			DISABLE_LAST_EDITOR,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Editor tracking for the last editor field will not be disabled.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DISABLE_LAST_EDITOR")]
@@ -199,14 +199,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum LastEditDateEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Editor tracking for the last edit date field will be disabled. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DISABLE_LAST_EDIT_DATE")]
 			DISABLE_LAST_EDIT_DATE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Editor tracking for the last edit date field will not be disabled.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DISABLE_LAST_EDIT_DATE")]

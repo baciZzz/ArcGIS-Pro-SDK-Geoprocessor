@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Boolean XOr</para>
-	/// <para>布尔异或</para>
-	/// <para>对两个输入栅格的像元值执行“布尔异或”运算。</para>
+	/// <para>Boolean XOr</para>
+	/// <para>Performs a Boolean eXclusive Or operation on the cell values of two input rasters.</para>
 	/// </summary>
 	public class BooleanXOr : AbstractGPProcess
 	{
@@ -21,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRasterOrConstant1">
 		/// <para>Input raster or constant value 1</para>
-		/// <para>此布尔运算中所使用的第一个输入。</para>
-		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The first input to use in this Boolean operation.</para>
+		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
 		/// </param>
 		/// <param name="InRasterOrConstant2">
 		/// <para>Input raster or constant value 2</para>
-		/// <para>此布尔运算中所使用的第二个输入。</para>
-		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The second input to use in this Boolean operation.</para>
+		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>输出像元值为 0 或 1。</para>
+		/// <para>The output raster.</para>
+		/// <para>The output cell values will be either 0 or 1.</para>
 		/// </param>
 		public BooleanXOr(object InRasterOrConstant1, object InRasterOrConstant2, object OutRaster)
 		{
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 布尔异或</para>
+		/// <para>Tool Display Name : Boolean XOr</para>
 		/// </summary>
-		public override string DisplayName() => "布尔异或";
+		public override string DisplayName() => "Boolean XOr";
 
 		/// <summary>
 		/// <para>Tool Name : BooleanXOr</para>
@@ -78,8 +78,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 1</para>
-		/// <para>此布尔运算中所使用的第一个输入。</para>
-		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The first input to use in this Boolean operation.</para>
+		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -91,8 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 2</para>
-		/// <para>此布尔运算中所使用的第二个输入。</para>
-		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The second input to use in this Boolean operation.</para>
+		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -104,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>输出像元值为 0 或 1。</para>
+		/// <para>The output raster.</para>
+		/// <para>The output cell values will be either 0 or 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

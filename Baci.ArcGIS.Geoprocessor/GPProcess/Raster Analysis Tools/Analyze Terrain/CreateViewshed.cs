@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Create Viewshed</para>
-	/// <para>创建视域</para>
-	/// <para>创建能够查看地面上对象的观察点区域。 输入观察点可以表示观察点（例如地面上的人或火警瞭望塔上的人）或被观察的对象（例如，风力涡轮机、水塔、车辆或其他人）。</para>
+	/// <para>Create Viewshed</para>
+	/// <para>Creates areas where an observer can see objects on the ground. The input observer points can represent either observers (such as people on the ground or lookouts in a fire tower) or observed objects (such as wind turbines, water towers, vehicles, or other people).</para>
 	/// </summary>
 	public class CreateViewshed : AbstractGPProcess
 	{
@@ -21,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		/// <param name="Inputelevationsurface">
 		/// <para>Input Elevation Surface</para>
-		/// <para>用于计算视域的高程表面。</para>
-		/// <para>如果输入表面的垂直单位与水平单位存在差异（例如，高程值用英尺表示，但坐标系用米表示），则该表面必须具有确定的垂直坐标系。 其原因在于，工具将使用垂直 (Z) 和水平 (XY) 单位来计算视域分析所需的 z 因子。 没有了垂直坐标系，也就没有了可用的 Z 单位信息，此时工具将假定 Z 单位与 XY 单位相同。 结果导致分析中将使用内部 Z 因子 1.0，从而导致意外的结果。</para>
-		/// <para>高程表面可为整型或浮点型。</para>
+		/// <para>The elevation surface to use for calculating the viewshed.</para>
+		/// <para>If the vertical unit of the input surface is different from the horizontal unit, such as when the elevation values are represented in feet but the coordinate system is in meters, the surface must have a defined vertical coordinate system. The reason for this is that the tool uses the vertical (Z) and horizontal (XY) units to compute a z-factor for the viewshed analysis. Without a vertical coordinate system, and thus having no Z unit information available, the tool will assume that the Z unit is the same as the XY unit. The result of this is that an internal Z factor of 1.0 will be used for the analysis, which may give unexpected results.</para>
+		/// <para>The elevation surface can be integer or floating point.</para>
 		/// </param>
 		/// <param name="Inputobserverfeatures">
 		/// <para>Observer Features</para>
-		/// <para>计算视域时表示观察者位置的点要素。</para>
+		/// <para>The point features that represent the observer locations when calculating the viewsheds.</para>
 		/// </param>
 		/// <param name="Outputname">
 		/// <para>Output Name</para>
-		/// <para>输出栅格服务的名称。</para>
-		/// <para>默认名称基于工具名称以及输入图层名称。 如果该图层名称已存在，则系统将提示您提供其他名称。</para>
+		/// <para>The name of the output raster service.</para>
+		/// <para>The default name is based on the tool name and the input layer name. If the layer name already exists, you will be prompted to provide another name.</para>
 		/// </param>
 		public CreateViewshed(object Inputelevationsurface, object Inputobserverfeatures, object Outputname)
 		{
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建视域</para>
+		/// <para>Tool Display Name : Create Viewshed</para>
 		/// </summary>
-		public override string DisplayName() => "创建视域";
+		public override string DisplayName() => "Create Viewshed";
 
 		/// <summary>
 		/// <para>Tool Name : CreateViewshed</para>
@@ -78,9 +78,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Elevation Surface</para>
-		/// <para>用于计算视域的高程表面。</para>
-		/// <para>如果输入表面的垂直单位与水平单位存在差异（例如，高程值用英尺表示，但坐标系用米表示），则该表面必须具有确定的垂直坐标系。 其原因在于，工具将使用垂直 (Z) 和水平 (XY) 单位来计算视域分析所需的 z 因子。 没有了垂直坐标系，也就没有了可用的 Z 单位信息，此时工具将假定 Z 单位与 XY 单位相同。 结果导致分析中将使用内部 Z 因子 1.0，从而导致意外的结果。</para>
-		/// <para>高程表面可为整型或浮点型。</para>
+		/// <para>The elevation surface to use for calculating the viewshed.</para>
+		/// <para>If the vertical unit of the input surface is different from the horizontal unit, such as when the elevation values are represented in feet but the coordinate system is in meters, the surface must have a defined vertical coordinate system. The reason for this is that the tool uses the vertical (Z) and horizontal (XY) units to compute a z-factor for the viewshed analysis. Without a vertical coordinate system, and thus having no Z unit information available, the tool will assume that the Z unit is the same as the XY unit. The result of this is that an internal Z factor of 1.0 will be used for the analysis, which may give unexpected results.</para>
+		/// <para>The elevation surface can be integer or floating point.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Observer Features</para>
-		/// <para>计算视域时表示观察者位置的点要素。</para>
+		/// <para>The point features that represent the observer locations when calculating the viewsheds.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -100,8 +100,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>输出栅格服务的名称。</para>
-		/// <para>默认名称基于工具名称以及输入图层名称。 如果该图层名称已存在，则系统将提示您提供其他名称。</para>
+		/// <para>The name of the output raster service.</para>
+		/// <para>The default name is based on the tool name and the input layer name. If the layer name already exists, you will be prompted to provide another name.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -109,9 +109,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Optimize For</para>
-		/// <para>用于计算视域的优化方法。</para>
-		/// <para>速度—此方法可优化处理速度，牺牲一些精度以获得更高的性能。 这是默认设置。</para>
-		/// <para>准确性—此方法可用来优化结果的精度，代价是需要更长的处理时间。</para>
+		/// <para>The optimization method to use for calculating the viewshed.</para>
+		/// <para>Speed—This method optimizes the processing speed, trading some accuracy in the result for higher performance. This is the default.</para>
+		/// <para>Accuracy—This method is optimized for accuracy in the results, at the expense of a longer processing time.</para>
 		/// <para><see cref="OptimizeforEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -121,10 +121,10 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Maximum Viewing Distance Type</para>
-		/// <para>选择用于确定最大可视距离的方法。</para>
-		/// <para>距离分析—最大距离由指定值定义。 这是默认方法。</para>
-		/// <para>字段—各观察点位置的最大距离由指定字段中的值来决定。</para>
-		/// <para>如果将类型由“距离”更改为“字段”，则最大可视距离参数将更改为最大可视距离字段。</para>
+		/// <para>The method by which the maximum viewing distance will be determined.</para>
+		/// <para>Distance—The maximum distance is defined by a value you specify. This is the default method.</para>
+		/// <para>Field— The maximum distance for each observer location is determined by the values in a field you specify.</para>
+		/// <para>If you change the type from Distance to Field, the Maximum Viewing Distance parameter will change to Maximum Viewing Distance Field.</para>
 		/// <para><see cref="MaximumviewingdistancetypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -134,9 +134,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Maximum Viewing Distance</para>
-		/// <para>这就是停止计算可见区域的中断距离。 超出此距离，就无法确定观察点和其他对象互相能否看见。</para>
-		/// <para>单位可以是千米、米、英里、码或英尺。</para>
-		/// <para>默认单位为英里。</para>
+		/// <para>This is a cutoff distance, where the computation of visible areas stops. Beyond this distance, it is unknown whether the observer points and the other objects can see each other.</para>
+		/// <para>The units can be Kilometers, Meters, Miles, Yards, or Feet.</para>
+		/// <para>The default is miles.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -145,8 +145,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Maximum Viewing Distance Field</para>
-		/// <para>您可以用此字段指定每个观察点的最大可视距离。 字段中包含的值的单位必须与输入高程表面的 XY 单位相同。</para>
-		/// <para>最大可视距离是停止计算可见区域的中断距离。 超出此距离，就无法确定观察点和其他对象互相能否看见。</para>
+		/// <para>This is a field you can use to specify the maximum viewing distance for each observer. The values contained in the field must be in the same unit as the XY unit of the input elevation surface.</para>
+		/// <para>The maximum viewing distance is a cutoff distance where the computation of visible areas stops. Beyond this distance, it is unknown whether the observer points and the other objects can see each other.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -156,10 +156,10 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Minimum Viewing Distance Type</para>
-		/// <para>选择用于确定最小可视距离的方法。</para>
-		/// <para>距离分析—最小距离由您指定的值定义。 这是默认方法。</para>
-		/// <para>字段—各观察点位置的最小距离由指定字段中的值来决定。</para>
-		/// <para>如果将类型由“距离”更改为“字段”，则最小可视距离参数将更改为最小可视距离字段。</para>
+		/// <para>Choose the method by which the minimum visible distance will be determined.</para>
+		/// <para>Distance—The minimum distance is defined by a value you specify. This is the default method.</para>
+		/// <para>Field— The minimum distance for each observer location is determined by the values in a field you specify.</para>
+		/// <para>If you change the type from Distance to Field, the Minimum Viewing Distance parameter will change to Minimum Viewing Distance Field.</para>
 		/// <para><see cref="MinimumviewingdistancetypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -169,9 +169,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Minimum Viewing Distance</para>
-		/// <para>这就是开始计算可见区域的距离。 表面上小于此距离的像元在输出中不可见，但仍会妨碍最小可视距离和最大可视距离之间像元的可见性。</para>
-		/// <para>单位可以是千米、米、英里、码或英尺。</para>
-		/// <para>默认单位是米。</para>
+		/// <para>This is a distance where the computation of visible areas begins. Cells on the surface closer than this distance are not visible in the output but can still block visibility of the cells between the minimum and maximum viewing distance.</para>
+		/// <para>The units can be Kilometers, Meters, Miles, Yards, or Feet.</para>
+		/// <para>The default units are Meters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -180,8 +180,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Minimum Viewing Distance Field</para>
-		/// <para>您可以用此字段指定每个观察点的最小可视距离。 字段中包含的值的单位必须与输入高程表面的 XY 单位相同。</para>
-		/// <para>最小可视距离定义计算可见区域的起始点。 表面上小于此距离的像元在输出中不可见，但仍会妨碍最小可视距离和最大可视距离之间像元的可见性。</para>
+		/// <para>This is a field you can use to specify the minimum viewing distance for each observer. The values contained in the field must be in the same unit as the XY unit of the input elevation surface.</para>
+		/// <para>The minimum viewing distance defines where the computation of visible areas begins. Cells on the surface closer than this distance are not visible in the output but can still block visibility of the cells between the minimum and maximum viewing distance.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -191,9 +191,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Viewing Distance is 3D</para>
-		/// <para>指定最小可视距离和最大可视距离参数是采用三维方式还是更简单的二维方式进行测量。 2D 距离是观察者和目标之间最简单的线性距离，通过两者在海平面上的投影位置测得。 3D 距离可将两者的相关高度纳入考量范围，从而能够得出更为真实的值。</para>
-		/// <para>选中 - 可视距离在 3D 距离中测得。</para>
-		/// <para>未选中 - 可视距离在 2D 距离中测得。 这是默认设置。</para>
+		/// <para>Specify whether the minimum and maximum viewing distance parameters are measured in a three-dimensional way or a simpler, two-dimensional way. A 2D distance is the simple linear distance measured between an observer and the target using their projected locations at sea level. A 3D distance gives a more realistic value by taking their relative heights into consideration.</para>
+		/// <para>Checked—The viewing distance is measured in 3D distance.</para>
+		/// <para>Unchecked—The viewing distance is measured in 2D distance. This is the default.</para>
 		/// <para><see cref="Viewingdistanceis3dEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -203,10 +203,10 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Observers Elevation Type</para>
-		/// <para>选择用于确定观察点高程的方法。</para>
-		/// <para>高程—观察点高程由指定的值定义。 这是默认方法。</para>
-		/// <para>字段—每个观察点位置的高程由指定字段中的值来确定。</para>
-		/// <para>如果将类型由“高程”更改为“字段”，则观察点高程参数将更改为观察点高程字段。</para>
+		/// <para>The method by which the elevation of the observers will be determined.</para>
+		/// <para>Elevation—The observer elevation is defined by a value you specify. This is the default method.</para>
+		/// <para>Field—The elevation for each observer location is determined by the values in a field you specify.</para>
+		/// <para>If you change the type from Elevation to Field, the Observers Elevation parameter will change to Observers Elevation Field.</para>
 		/// <para><see cref="ObserverselevationtypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -216,10 +216,10 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Observers Elevation</para>
-		/// <para>这是观察点位置的高程。</para>
-		/// <para>如果未指定此参数，则会使用双线性插值法从表面栅格中获取观察点高程。 如果为此参数设置了一个值，则该值将应用到所有观察点。 要为每个观察点指定不同的值，请将此参数设置为输入观察点要素中的某个字段。</para>
-		/// <para>单位可以是千米、米、英里、码或英尺。</para>
-		/// <para>默认单位是米。</para>
+		/// <para>This is the elevation of your observer locations.</para>
+		/// <para>If this parameter is not specified, the observer elevation will be obtained from the surface raster using bilinear interpolation. If this parameter is set to a value, that value will be applied to all the observers. To specify different values for each observer, set this parameter to a field in the input observer features.</para>
+		/// <para>The units can be Kilometers, Meters, Miles, Yards, or Feet.</para>
+		/// <para>The default units are Meters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -228,8 +228,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Observers Elevation Field</para>
-		/// <para>您可以用此字段指定观察点高程。 字段中包含的值的单位必须与输入高程表面的 Z 单位相同。</para>
-		/// <para>如果未指定此参数，则会使用双线性插值法从表面栅格中获取观察点高程。</para>
+		/// <para>This is a field you can use to specify the elevation for the observers. The value contained in the field must be in the same unit as the Z unit of the input elevation surface.</para>
+		/// <para>If this parameter is not specified, the observer elevation will be obtained from the surface raster using bilinear interpolation.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -239,10 +239,10 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Observers Height Type</para>
-		/// <para>选择用于确定观察点高度的方法。</para>
-		/// <para>高度—观察点高度通过指定的值获得。 这是默认方法。</para>
-		/// <para>字段—每个观察点位置的高度由指定字段中的值来确定。</para>
-		/// <para>如果将类型由“高度”更改为“字段”，则观察点高度参数将更改为观察点高度字段。</para>
+		/// <para>The method by which the height of the observers will be determined.</para>
+		/// <para>Height—The observer height is obtained from the value you specify. This is the default method.</para>
+		/// <para>Field— The height for each observer location is determined by the values in a field you specify.</para>
+		/// <para>If you change the type from Height to Field, the Observers Height parameter will change to Observers Height Field.</para>
 		/// <para><see cref="ObserversheighttypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -252,9 +252,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Observers Height</para>
-		/// <para>这是用于观察点位置的高度。</para>
-		/// <para>单位可以是千米、米、英里、码或英尺。</para>
-		/// <para>默认单位是米。</para>
+		/// <para>This is the height used for your observer locations.</para>
+		/// <para>The units can be Kilometers, Meters, Miles, Yards, or Feet.</para>
+		/// <para>The default units are Meters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -263,7 +263,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Observers Height Field</para>
-		/// <para>您可以用此字段指定观察点高度。 字段中包含的值的单位必须与输入高程表面的 Z 单位相同。</para>
+		/// <para>This is a field you can use to specify the height for the observers. The value contained in the field must be in the same unit as the Z unit of the input elevation surface.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -273,10 +273,10 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Target Height Type</para>
-		/// <para>选择用于确定目标高度的方法。</para>
-		/// <para>高度—目标高度通过指定的值获得。 这是默认方法。</para>
-		/// <para>字段—每个目标的高度由指定字段中的值来确定。</para>
-		/// <para>如果将类型由“高度”更改为“字段”，则目标高度参数将更改为目标高度字段。</para>
+		/// <para>The method by which the height of the targets will be determined.</para>
+		/// <para>Height—The target height is obtained from the value you specify. This is the default method.</para>
+		/// <para>Field— The height for each target is determined by the values in a field you specify.</para>
+		/// <para>If you change the type from Height to Field, the Target Height parameter will change to Target Height Field.</para>
 		/// <para><see cref="TargetheighttypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -286,9 +286,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Target Height</para>
-		/// <para>这是地面上建筑物或人的高度，用于确立可见性。 结果视域为观察点可看到这些其他对象的区域。 反之亦然，其他对象也可以看到观察点。</para>
-		/// <para>单位可以是千米、米、英里、码或英尺。</para>
-		/// <para>默认单位是米。</para>
+		/// <para>This is the height of structures or people on the ground used to establish visibility. The result viewshed are those areas where an observer point can see these other objects. The converse is also true; the other objects can see an observer point.</para>
+		/// <para>The units can be Kilometers, Meters, Miles, Yards, or Feet.</para>
+		/// <para>The default units are Meters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -297,7 +297,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Target Height Field</para>
-		/// <para>您可以用此字段指定目标高度。 字段中包含的值的单位必须与输入高程表面的 Z 单位相同。</para>
+		/// <para>This is a field used to specify the height for the targets. The value contained in the field must be in the same unit as the Z unit of the input elevation surface.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -307,7 +307,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Above Ground Level Output Name</para>
-		/// <para>地平面以上 (AGL) 栅格输出结果的名称。 AGL 结果是一个栅格，其中每个像元值都记录了为保证像元至少对一个观察点可见而需要向该像元添加的最小高度（若不添加此高度，像元不可见）。 在输出栅格中为已可见的像元分配 0。</para>
+		/// <para>The name of the output aboveground-level (AGL) raster. The AGL result is a raster where each cell value is the minimum height that must be added to an otherwise nonvisible cell to make it visible by at least one observer. Cells that were already visible will be assigned 0 in this output raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -344,17 +344,17 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public enum OptimizeforEnum 
 		{
 			/// <summary>
-			/// <para>速度—此方法可优化处理速度，牺牲一些精度以获得更高的性能。 这是默认设置。</para>
+			/// <para>Speed—This method optimizes the processing speed, trading some accuracy in the result for higher performance. This is the default.</para>
 			/// </summary>
 			[GPValue("SPEED")]
-			[Description("速度")]
+			[Description("Speed")]
 			Speed,
 
 			/// <summary>
-			/// <para>准确性—此方法可用来优化结果的精度，代价是需要更长的处理时间。</para>
+			/// <para>Accuracy—This method is optimized for accuracy in the results, at the expense of a longer processing time.</para>
 			/// </summary>
 			[GPValue("ACCURACY")]
-			[Description("准确性")]
+			[Description("Accuracy")]
 			Accuracy,
 
 		}
@@ -365,17 +365,17 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public enum MaximumviewingdistancetypeEnum 
 		{
 			/// <summary>
-			/// <para>距离分析—最大距离由指定值定义。 这是默认方法。</para>
+			/// <para>Distance—The maximum distance is defined by a value you specify. This is the default method.</para>
 			/// </summary>
 			[GPValue("DISTANCE")]
-			[Description("距离分析")]
+			[Description("Distance")]
 			Distance,
 
 			/// <summary>
-			/// <para>字段—各观察点位置的最大距离由指定字段中的值来决定。</para>
+			/// <para>Field— The maximum distance for each observer location is determined by the values in a field you specify.</para>
 			/// </summary>
 			[GPValue("FIELD")]
-			[Description("字段")]
+			[Description("Field")]
 			Field,
 
 		}
@@ -386,17 +386,17 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public enum MinimumviewingdistancetypeEnum 
 		{
 			/// <summary>
-			/// <para>距离分析—最小距离由您指定的值定义。 这是默认方法。</para>
+			/// <para>Distance—The minimum distance is defined by a value you specify. This is the default method.</para>
 			/// </summary>
 			[GPValue("DISTANCE")]
-			[Description("距离分析")]
+			[Description("Distance")]
 			Distance,
 
 			/// <summary>
-			/// <para>字段—各观察点位置的最小距离由指定字段中的值来决定。</para>
+			/// <para>Field— The minimum distance for each observer location is determined by the values in a field you specify.</para>
 			/// </summary>
 			[GPValue("FIELD")]
-			[Description("字段")]
+			[Description("Field")]
 			Field,
 
 		}
@@ -407,14 +407,14 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public enum Viewingdistanceis3dEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The viewing distance is measured in 3D distance.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("3D")]
 			_3D,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The viewing distance is measured in 2D distance. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("2D")]
@@ -428,17 +428,17 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public enum ObserverselevationtypeEnum 
 		{
 			/// <summary>
-			/// <para>高程—观察点高程由指定的值定义。 这是默认方法。</para>
+			/// <para>Elevation—The observer elevation is defined by a value you specify. This is the default method.</para>
 			/// </summary>
 			[GPValue("ELEVATION")]
-			[Description("高程")]
+			[Description("Elevation")]
 			Elevation,
 
 			/// <summary>
-			/// <para>字段—每个观察点位置的高程由指定字段中的值来确定。</para>
+			/// <para>Field—The elevation for each observer location is determined by the values in a field you specify.</para>
 			/// </summary>
 			[GPValue("FIELD")]
-			[Description("字段")]
+			[Description("Field")]
 			Field,
 
 		}
@@ -449,17 +449,17 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public enum ObserversheighttypeEnum 
 		{
 			/// <summary>
-			/// <para>高度—观察点高度通过指定的值获得。 这是默认方法。</para>
+			/// <para>Height—The observer height is obtained from the value you specify. This is the default method.</para>
 			/// </summary>
 			[GPValue("HEIGHT")]
-			[Description("高度")]
+			[Description("Height")]
 			Height,
 
 			/// <summary>
-			/// <para>字段—每个观察点位置的高度由指定字段中的值来确定。</para>
+			/// <para>Field— The height for each observer location is determined by the values in a field you specify.</para>
 			/// </summary>
 			[GPValue("FIELD")]
-			[Description("字段")]
+			[Description("Field")]
 			Field,
 
 		}
@@ -470,17 +470,17 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public enum TargetheighttypeEnum 
 		{
 			/// <summary>
-			/// <para>高度—目标高度通过指定的值获得。 这是默认方法。</para>
+			/// <para>Height—The target height is obtained from the value you specify. This is the default method.</para>
 			/// </summary>
 			[GPValue("HEIGHT")]
-			[Description("高度")]
+			[Description("Height")]
 			Height,
 
 			/// <summary>
-			/// <para>字段—每个目标的高度由指定字段中的值来确定。</para>
+			/// <para>Field— The height for each target is determined by the values in a field you specify.</para>
 			/// </summary>
 			[GPValue("FIELD")]
-			[Description("字段")]
+			[Description("Field")]
 			Field,
 
 		}

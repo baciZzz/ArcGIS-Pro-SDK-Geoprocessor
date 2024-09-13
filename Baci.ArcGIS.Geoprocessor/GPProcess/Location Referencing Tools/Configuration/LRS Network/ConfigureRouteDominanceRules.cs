@@ -11,8 +11,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Configure Route Dominance Rules</para>
-	/// <para>配置路径优先级规则</para>
-	/// <para>配置一组规则以确定存在并发路径的网络中的主要路径。</para>
+	/// <para>Configure Route Dominance Rules</para>
+	/// <para>Configures a set of rules to determine the dominant route in a</para>
+	/// <para>network where there are concurrent routes.</para>
 	/// </summary>
 	public class ConfigureRouteDominanceRules : AbstractGPProcess
 	{
@@ -21,19 +22,19 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InFeatureClass">
 		/// <para>LRS Network Feature Class</para>
-		/// <para>输入要素类。 仅可使用已注册的 LRS 网络要素类。</para>
+		/// <para>The input feature class. Only a registered LRS Network feature class can be used.</para>
 		/// </param>
 		/// <param name="ConfigureType">
 		/// <para>Configure Type</para>
-		/// <para>指定将应用于 LRS 网络要素类参数值的配置类型。</para>
-		/// <para>添加—新规则将添加到配置中。</para>
-		/// <para>更新—将更新现有规则。</para>
-		/// <para>删除—将删除现有规则。</para>
+		/// <para>Specifies the type of configuration that will be applied to the LRS Network Feature Class parameter value.</para>
+		/// <para>Add—A new rule will be added to the configuration.</para>
+		/// <para>Update—An existing rule will be updated.</para>
+		/// <para>Delete—An existing rule will be deleted.</para>
 		/// <para><see cref="ConfigureTypeEnum"/></para>
 		/// </param>
 		/// <param name="RuleName">
 		/// <para>Rule Name</para>
-		/// <para>将添加、更新或删除的规则名称。 规则名称最多可包含 30 个字符。</para>
+		/// <para>The name of the rule that will be added, updated, or deleted. The rule name can be up to 30 characters.</para>
 		/// </param>
 		public ConfigureRouteDominanceRules(object InFeatureClass, object ConfigureType, object RuleName)
 		{
@@ -43,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 配置路径优先级规则</para>
+		/// <para>Tool Display Name : Configure Route Dominance Rules</para>
 		/// </summary>
-		public override string DisplayName() => "配置路径优先级规则";
+		public override string DisplayName() => "Configure Route Dominance Rules";
 
 		/// <summary>
 		/// <para>Tool Name : ConfigureRouteDominanceRules</para>
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>LRS Network Feature Class</para>
-		/// <para>输入要素类。 仅可使用已注册的 LRS 网络要素类。</para>
+		/// <para>The input feature class. Only a registered LRS Network feature class can be used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -89,10 +90,10 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Configure Type</para>
-		/// <para>指定将应用于 LRS 网络要素类参数值的配置类型。</para>
-		/// <para>添加—新规则将添加到配置中。</para>
-		/// <para>更新—将更新现有规则。</para>
-		/// <para>删除—将删除现有规则。</para>
+		/// <para>Specifies the type of configuration that will be applied to the LRS Network Feature Class parameter value.</para>
+		/// <para>Add—A new rule will be added to the configuration.</para>
+		/// <para>Update—An existing rule will be updated.</para>
+		/// <para>Delete—An existing rule will be deleted.</para>
 		/// <para><see cref="ConfigureTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Rule Name</para>
-		/// <para>将添加、更新或删除的规则名称。 规则名称最多可包含 30 个字符。</para>
+		/// <para>The name of the rule that will be added, updated, or deleted. The rule name can be up to 30 characters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -111,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Updated Rule Name</para>
-		/// <para>规则的更新名称。 此参数仅在将更新指定为配置类型参数值时使用。</para>
+		/// <para>The updated name of the rule. This parameter is only used when Update is specified as the Configure Type parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -119,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Source Table Name</para>
-		/// <para>注册到 LRS 网络要素类参数值的源事件表或要素类。 或者，可以使用网络要素类。 仅支持非跨线事件。</para>
+		/// <para>The source event table or feature class registered to the LRS Network Feature Class parameter value. Alternatively, the network feature class can be used. Only nonspanning line events are supported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -128,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Fields</para>
-		/// <para>源表中的属性字段别名。 如果使用多个字段，它们将被串连起来。</para>
+		/// <para>The attribute field aliases in the source table. If multiple fields are used, they will be concatenated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -136,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Order Method</para>
-		/// <para>指定路径优先级排序是否将由较小或较大的值确定。</para>
+		/// <para>Specifies whether route dominance ordering will be determined by lesser or greater values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -144,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Order Type</para>
-		/// <para>指定在评估数字或字母数字字符串时将使用的排序类型。</para>
+		/// <para>Specifies the ordering type that will be used when evaluating numeric or alphanumeric strings.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -152,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Prioritized Exceptions</para>
-		/// <para>用户提供的异常的逗号分隔列表。</para>
+		/// <para>A comma-separated list of user-provided exceptions.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -173,24 +174,24 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum ConfigureTypeEnum 
 		{
 			/// <summary>
-			/// <para>添加—新规则将添加到配置中。</para>
+			/// <para>Add—A new rule will be added to the configuration.</para>
 			/// </summary>
 			[GPValue("ADD")]
-			[Description("添加")]
+			[Description("Add")]
 			Add,
 
 			/// <summary>
-			/// <para>更新—将更新现有规则。</para>
+			/// <para>Update—An existing rule will be updated.</para>
 			/// </summary>
 			[GPValue("UPDATE")]
-			[Description("更新")]
+			[Description("Update")]
 			Update,
 
 			/// <summary>
-			/// <para>删除—将删除现有规则。</para>
+			/// <para>Delete—An existing rule will be deleted.</para>
 			/// </summary>
 			[GPValue("DELETE")]
-			[Description("删除")]
+			[Description("Delete")]
 			Delete,
 
 		}

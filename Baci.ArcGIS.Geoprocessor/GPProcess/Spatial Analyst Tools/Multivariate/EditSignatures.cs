@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Edit Signatures</para>
-	/// <para>编辑特征文件</para>
-	/// <para>通过合并、重新编号和删除类特征来编辑和更新特征文件。</para>
+	/// <para>Edit Signatures</para>
+	/// <para>Edits and updates a signature file by merging, renumbering, and deleting class signatures.</para>
 	/// </summary>
 	public class EditSignatures : AbstractGPProcess
 	{
@@ -21,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRasterBands">
 		/// <para>Input raster bands</para>
-		/// <para>要编辑特征的输入栅格波段。</para>
-		/// <para>可为整型或浮点型。</para>
+		/// <para>The input raster bands for which to edit the signatures.</para>
+		/// <para>They can be integer or floating point type.</para>
 		/// </param>
 		/// <param name="InSignatureFile">
 		/// <para>Input signature file</para>
-		/// <para>要编辑类特征的输入特征文件。</para>
-		/// <para>需要使用 .gsg 扩展名。</para>
+		/// <para>Input signature file whose class signatures are to be edited.</para>
+		/// <para>A .gsg extension is required.</para>
 		/// </param>
 		/// <param name="InSignatureRemapFile">
 		/// <para>Input signature remap file</para>
-		/// <para>包含要进行合并、重新编号或删除的类 ID 的输入 ASCII 重映射表。</para>
-		/// <para>扩展名可以为 .rmp、.asc 或 .txt。默认值为 .rmp。</para>
+		/// <para>Input ASCII remap table containing the class IDs to be merged, renumbered, or deleted.</para>
+		/// <para>The extension can be .rmp, .asc or .txt. The default is .rmp.</para>
 		/// </param>
 		/// <param name="OutSignatureFile">
 		/// <para>Output signature file</para>
-		/// <para>输出特征文件。</para>
-		/// <para>必须指定 .gsg 扩展名。</para>
+		/// <para>The output signature file.</para>
+		/// <para>A .gsg extension must be specified.</para>
 		/// </param>
 		public EditSignatures(object InRasterBands, object InSignatureFile, object InSignatureRemapFile, object OutSignatureFile)
 		{
@@ -48,9 +48,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 编辑特征文件</para>
+		/// <para>Tool Display Name : Edit Signatures</para>
 		/// </summary>
-		public override string DisplayName() => "编辑特征文件";
+		public override string DisplayName() => "Edit Signatures";
 
 		/// <summary>
 		/// <para>Tool Name : EditSignatures</para>
@@ -84,8 +84,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster bands</para>
-		/// <para>要编辑特征的输入栅格波段。</para>
-		/// <para>可为整型或浮点型。</para>
+		/// <para>The input raster bands for which to edit the signatures.</para>
+		/// <para>They can be integer or floating point type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -97,8 +97,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input signature file</para>
-		/// <para>要编辑类特征的输入特征文件。</para>
-		/// <para>需要使用 .gsg 扩展名。</para>
+		/// <para>Input signature file whose class signatures are to be edited.</para>
+		/// <para>A .gsg extension is required.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -108,8 +108,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input signature remap file</para>
-		/// <para>包含要进行合并、重新编号或删除的类 ID 的输入 ASCII 重映射表。</para>
-		/// <para>扩展名可以为 .rmp、.asc 或 .txt。默认值为 .rmp。</para>
+		/// <para>Input ASCII remap table containing the class IDs to be merged, renumbered, or deleted.</para>
+		/// <para>The extension can be .rmp, .asc or .txt. The default is .rmp.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -119,8 +119,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output signature file</para>
-		/// <para>输出特征文件。</para>
-		/// <para>必须指定 .gsg 扩展名。</para>
+		/// <para>The output signature file.</para>
+		/// <para>A .gsg extension must be specified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -130,8 +130,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Sample interval</para>
-		/// <para>采样所使用的间隔。</para>
-		/// <para>默认值为 10。</para>
+		/// <para>The interval to be used for sampling.</para>
+		/// <para>The default is 10.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Edgematch Features</para>
-	/// <para>边匹配要素</para>
-	/// <para>通过空间调整其形状来修改输入线要素，由指定的边缘匹配链接引导，使其与相邻数据集中的线连接。</para>
+	/// <para>Edgematch Features</para>
+	/// <para>Modifies input line features by spatially adjusting their shapes, guided by the specified edgematch links, so they become connected with the lines in the adjacent dataset.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>要调整的输入线要素。</para>
+		/// <para>Input line features to be adjusted.</para>
 		/// </param>
 		/// <param name="InLinkFeatures">
 		/// <para>Input Link Features</para>
-		/// <para>输入线要素类，表示边匹配链接。</para>
+		/// <para>Input line features representing edgematch links.</para>
 		/// </param>
 		public EdgematchFeatures(object InFeatures, object InLinkFeatures)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 边匹配要素</para>
+		/// <para>Tool Display Name : Edgematch Features</para>
 		/// </summary>
-		public override string DisplayName() => "边匹配要素";
+		public override string DisplayName() => "Edgematch Features";
 
 		/// <summary>
 		/// <para>Tool Name : EdgematchFeatures</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>要调整的输入线要素。</para>
+		/// <para>Input line features to be adjusted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Input Link Features</para>
-		/// <para>输入线要素类，表示边匹配链接。</para>
+		/// <para>Input line features representing edgematch links.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -93,10 +93,10 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>边匹配方法用于仅将输入要素，或将输入要素和相邻要素一起，调整到新的连接位置。</para>
-		/// <para>移动端点—将线端点移动至新的连接位置。 这是默认设置。</para>
-		/// <para>添加线段—在线端点处添加直线段，从而使输入线端点位于新的连接位置。</para>
-		/// <para>调整折点—将线端点调整至新的连接位置。 同时也会对其余折点进行调整，从而使这些折点的位置变化朝着线的另一端逐渐减少。</para>
+		/// <para>Edgematch method to be used to adjust either input features only or both input features and adjacent features to new connecting locations.</para>
+		/// <para>Move endpoint—Moves the endpoint of a line to the new connecting location. This is the default.</para>
+		/// <para>Add segment—Adds a straight segment at the end of a line so it ends at the new connecting location.</para>
+		/// <para>Adjust vertices—Adjusts the endpoint of a line to the new connecting location. The remaining vertices are also adjusted so its positional changes are gradually reduced toward the opposite end of the line.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Adjacent Features</para>
-		/// <para>与输入要素相邻的线要素。 在经过指定的情况下，输入要素与相邻要素会调整为在新连接位置相连接，新连接位置将是边匹配链接的中点或与边界要素的链接中点距离最近的位置（如果指定）。</para>
+		/// <para>Line features that are adjacent to input features. If specified, both the input and adjacent features are adjusted to meet at new connecting locations, either the midpoints of the edgematch links or locations nearest to the midpoints of the links on the border features (if specified).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Border Features</para>
-		/// <para>表示输入要素与相邻要素之间边界的线要素或面要素。 指定边界要素时，输入要素与相邻要素都会调整至在距离边界要素的链接中点最近的新连接位置相连接。</para>
+		/// <para>Line or polygon features representing borders between the input and adjacent features. When you specify border features, both input and adjacent features are adjusted to meet at new connecting locations nearest to the midpoints of the links on the border features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -149,24 +149,24 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>移动端点—将线端点移动至新的连接位置。 这是默认设置。</para>
+			/// <para>Move endpoint—Moves the endpoint of a line to the new connecting location. This is the default.</para>
 			/// </summary>
 			[GPValue("MOVE_ENDPOINT")]
-			[Description("移动端点")]
+			[Description("Move endpoint")]
 			Move_endpoint,
 
 			/// <summary>
-			/// <para>添加线段—在线端点处添加直线段，从而使输入线端点位于新的连接位置。</para>
+			/// <para>Add segment—Adds a straight segment at the end of a line so it ends at the new connecting location.</para>
 			/// </summary>
 			[GPValue("ADD_SEGMENT")]
-			[Description("添加线段")]
+			[Description("Add segment")]
 			Add_segment,
 
 			/// <summary>
-			/// <para>调整折点—将线端点调整至新的连接位置。 同时也会对其余折点进行调整，从而使这些折点的位置变化朝着线的另一端逐渐减少。</para>
+			/// <para>Adjust vertices—Adjusts the endpoint of a line to the new connecting location. The remaining vertices are also adjusted so its positional changes are gradually reduced toward the opposite end of the line.</para>
 			/// </summary>
 			[GPValue("ADJUST_VERTICES")]
-			[Description("调整折点")]
+			[Description("Adjust vertices")]
 			Adjust_vertices,
 
 		}

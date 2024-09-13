@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Raster To Other Format</para>
-	/// <para>栅格转其他格式</para>
-	/// <para>将一个或多个栅格数据集转换为其他格式。</para>
+	/// <para>Raster To Other Format</para>
+	/// <para>Converts one or more raster datasets to a different format.</para>
 	/// </summary>
 	public class RasterToOtherFormat : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InputRasters">
 		/// <para>Input Rasters</para>
-		/// <para>待转换的栅格数据集。</para>
+		/// <para>The raster datasets to convert.</para>
 		/// </param>
 		/// <param name="OutputWorkspace">
 		/// <para>Output Workspace</para>
-		/// <para>将写入栅格数据集的文件夹。</para>
+		/// <para>The folder where the raster dataset will be written.</para>
 		/// </param>
 		public RasterToOtherFormat(object InputRasters, object OutputWorkspace)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 栅格转其他格式</para>
+		/// <para>Tool Display Name : Raster To Other Format</para>
 		/// </summary>
-		public override string DisplayName() => "栅格转其他格式";
+		public override string DisplayName() => "Raster To Other Format";
 
 		/// <summary>
 		/// <para>Tool Name : RasterToOtherFormat</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Rasters</para>
-		/// <para>待转换的栅格数据集。</para>
+		/// <para>The raster datasets to convert.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Workspace</para>
-		/// <para>将写入栅格数据集的文件夹。</para>
+		/// <para>The folder where the raster dataset will be written.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -86,21 +86,21 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Raster Format</para>
-		/// <para>新栅格数据集的格式。</para>
-		/// <para>BIL—Esri 波段按行交叉格式文件</para>
-		/// <para>BIP—Esri 波段按像素交叉格式文件</para>
-		/// <para>BMP—Microsoft 位图图形栅格数据集格式</para>
-		/// <para>BSQ—Esri 波段顺序格式文件</para>
-		/// <para>CRF—云栅格格式</para>
-		/// <para>ENVI DAT 文件—ENVI DAT 文件</para>
-		/// <para>GIF—栅格数据集的图形交换格式</para>
-		/// <para>Esri Grid—Esri 格网栅格数据集格式</para>
-		/// <para>ERDAS IMAGINE 文件—ERDAS IMAGINE 栅格数据格式</para>
-		/// <para>JPEG 2000—JPEG 2000 栅格数据集格式</para>
-		/// <para>JPEG—联合图像专家组栅格数据集格式</para>
-		/// <para>MRF—元栅格格式</para>
-		/// <para>PNG—可移植网络图形栅格数据集格式</para>
-		/// <para>TIFF—栅格数据集的标记图像文件格式</para>
+		/// <para>The format of the new raster dataset.</para>
+		/// <para>BIL—Esri Band Interleaved by Line file</para>
+		/// <para>BIP—Esri Band Interleaved by Pixel file</para>
+		/// <para>BMP—Microsoft bitmap graphic raster dataset format</para>
+		/// <para>BSQ—Esri Band Sequential file</para>
+		/// <para>CRF—Cloud Raster Format</para>
+		/// <para>ENVI DAT file—ENVI DAT file</para>
+		/// <para>GIF—Graphic Interchange Format for raster datasets</para>
+		/// <para>Esri Grid—Esri Grid raster dataset format</para>
+		/// <para>ERDAS IMAGINE file—ERDAS IMAGINE raster data format</para>
+		/// <para>JPEG 2000—JPEG 2000 raster dataset format</para>
+		/// <para>JPEG—Joint Photographic Experts Group raster dataset format</para>
+		/// <para>MRF—Meta Raster Format</para>
+		/// <para>PNG—Portable Network Graphic raster dataset format</para>
+		/// <para>TIFF—Tagged Image File Format for raster datasets</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

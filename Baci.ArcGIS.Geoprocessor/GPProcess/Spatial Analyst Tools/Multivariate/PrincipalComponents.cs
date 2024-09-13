@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Principal Components</para>
-	/// <para>主成分分析</para>
-	/// <para>对一组栅格波段执行主成分分析 (PCA) 并生成单波段栅格作为输出。</para>
+	/// <para>Principal Components</para>
+	/// <para>Performs Principal Component Analysis (PCA) on a set of raster bands and generates a single multiband raster as output.</para>
 	/// </summary>
 	public class PrincipalComponents : AbstractGPProcess
 	{
@@ -21,14 +21,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRasterBands">
 		/// <para>Input raster bands</para>
-		/// <para>输入栅格波段。</para>
-		/// <para>可为整型或浮点型。</para>
+		/// <para>The input raster bands.</para>
+		/// <para>They can be integer or floating point type.</para>
 		/// </param>
 		/// <param name="OutMultibandRaster">
 		/// <para>Output multiband raster</para>
-		/// <para>输出多波段栅格数据集。</para>
-		/// <para>如果所有的输入波段为整型，那么输出栅格波段也为整型。如果任何输入波段属于浮点型，则输出波段也将为浮点型。</para>
-		/// <para>如果输出是一个 Esri Grid 栅格，名称必须少于 10 个字符。</para>
+		/// <para>The output multiband raster dataset.</para>
+		/// <para>If all of the input bands are integer type, the output raster bands will be integer. If any of the input bands are floating point, the output will be floating point.</para>
+		/// <para>If the output is an Esri Grid raster, the name must have less than 10 characters.</para>
 		/// </param>
 		public PrincipalComponents(object InRasterBands, object OutMultibandRaster)
 		{
@@ -37,9 +37,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 主成分分析</para>
+		/// <para>Tool Display Name : Principal Components</para>
 		/// </summary>
-		public override string DisplayName() => "主成分分析";
+		public override string DisplayName() => "Principal Components";
 
 		/// <summary>
 		/// <para>Tool Name : PrincipalComponents</para>
@@ -73,8 +73,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster bands</para>
-		/// <para>输入栅格波段。</para>
-		/// <para>可为整型或浮点型。</para>
+		/// <para>The input raster bands.</para>
+		/// <para>They can be integer or floating point type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -86,9 +86,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output multiband raster</para>
-		/// <para>输出多波段栅格数据集。</para>
-		/// <para>如果所有的输入波段为整型，那么输出栅格波段也为整型。如果任何输入波段属于浮点型，则输出波段也将为浮点型。</para>
-		/// <para>如果输出是一个 Esri Grid 栅格，名称必须少于 10 个字符。</para>
+		/// <para>The output multiband raster dataset.</para>
+		/// <para>If all of the input bands are integer type, the output raster bands will be integer. If any of the input bands are floating point, the output will be floating point.</para>
+		/// <para>If the output is an Esri Grid raster, the name must have less than 10 characters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -96,9 +96,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Number of Principal components</para>
-		/// <para>主成分的数目。</para>
-		/// <para>该数目必须大于零并小于等于输入栅格波段总数。</para>
-		/// <para>默认值为输入的栅格波段总数。</para>
+		/// <para>Number of principal components.</para>
+		/// <para>The number must be greater than zero and less than or equal to the total number of input raster bands.</para>
+		/// <para>The default is the total number of rasters in the input.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -108,9 +108,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output data file</para>
-		/// <para>存储主成分参数的输出 ASCII 数据文件。</para>
-		/// <para>输出数据文件记录协方差和相关矩阵、特征值和特征向量以及各特征值所捕获的百分比方差和特征值所述的累积方差。</para>
-		/// <para>该输出文件的扩展名可以是 .txt 或 .asc。</para>
+		/// <para>Output ASCII data file storing principal component parameters.</para>
+		/// <para>The output data file records the correlation and covariance matrices, the eigenvalues and eigenvectors, the percent variance each eigenvalue captures, and the accumulative variance described by the eigenvalues.</para>
+		/// <para>The extension for the output file can be .txt or .asc.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>CAD To Geodatabase</para>
-	/// <para>CAD 至地理数据库</para>
-	/// <para>读取 CAD 数据集并创建工程图对应的要素类。这些要素类将被写入地理数据库要素数据集中。</para>
+	/// <para>CAD To Geodatabase</para>
+	/// <para>Reads a CAD dataset and creates feature classes of the drawing. The feature classes are written to a geodatabase feature dataset.</para>
 	/// </summary>
 	public class CADToGeodatabase : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InputCadDatasets">
 		/// <para>Input CAD Datasets</para>
-		/// <para>要转换为地理数据库要素的 CAD 文件的集合。</para>
+		/// <para>The collection of CAD files to convert to geodatabase features.</para>
 		/// </param>
 		/// <param name="OutGdbPath">
 		/// <para>Output Geodatabase</para>
-		/// <para>将创建输出要素数据集的地理数据库。此地理数据库必须已经存在。</para>
+		/// <para>The geodatabase where the output feature dataset will be created. This geodatabase must already exist.</para>
 		/// </param>
 		/// <param name="OutDatasetName">
 		/// <para>Dataset</para>
-		/// <para>要创建的要素数据集的名称。</para>
+		/// <para>The name of the feature dataset to be created.</para>
 		/// </param>
 		/// <param name="ReferenceScale">
 		/// <para>Reference scale</para>
-		/// <para>由于 CAD 注记被视为 ArcGIS Pro 中的点，所以该工具不需要此参数。</para>
+		/// <para>This parameter is not needed for this tool as CAD annotation is treated as points in ArcGIS Pro.</para>
 		/// </param>
 		public CADToGeodatabase(object InputCadDatasets, object OutGdbPath, object OutDatasetName, object ReferenceScale)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : CAD 至地理数据库</para>
+		/// <para>Tool Display Name : CAD To Geodatabase</para>
 		/// </summary>
-		public override string DisplayName() => "CAD 至地理数据库";
+		public override string DisplayName() => "CAD To Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : CADToGeodatabase</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input CAD Datasets</para>
-		/// <para>要转换为地理数据库要素的 CAD 文件的集合。</para>
+		/// <para>The collection of CAD files to convert to geodatabase features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Geodatabase</para>
-		/// <para>将创建输出要素数据集的地理数据库。此地理数据库必须已经存在。</para>
+		/// <para>The geodatabase where the output feature dataset will be created. This geodatabase must already exist.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Dataset</para>
-		/// <para>要创建的要素数据集的名称。</para>
+		/// <para>The name of the feature dataset to be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Reference scale</para>
-		/// <para>由于 CAD 注记被视为 ArcGIS Pro 中的点，所以该工具不需要此参数。</para>
+		/// <para>This parameter is not needed for this tool as CAD annotation is treated as points in ArcGIS Pro.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Spatial Reference</para>
-		/// <para>输出要素数据集的空间参考。如果要控制空间参考的其他方面（例如，xy 值域、z 值域、m 值域、分辨率和容差），请设置相应的地理处理环境。</para>
+		/// <para>The spatial reference of the output feature dataset. If you wish to control other aspects of the spatial reference, such as the xy, z, m domains, resolutions, and tolerances, set the appropriate geoprocessing environments.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]

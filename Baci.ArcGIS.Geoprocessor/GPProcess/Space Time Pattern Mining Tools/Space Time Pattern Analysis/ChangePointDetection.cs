@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Change Point Detection</para>
-	/// <para>变化点检测</para>
-	/// <para>在时空立方体的每个位置的时间序列的统计属性发生变化时检测时间步长。</para>
+	/// <para>Change Point Detection</para>
+	/// <para>Detects time steps when a statistical property of the time series changes for each location of a space-time cube.</para>
 	/// </summary>
 	public class ChangePointDetection : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		/// <param name="InCube">
 		/// <para>Input Space Time Cube</para>
-		/// <para>包含要分析的变量的时空立方体。 时空立方体具有 .nc 文件扩展名，是使用时空模式挖掘工具箱中的各种工具创建的。</para>
+		/// <para>The space-time cube containing the variable to be analyzed. Space-time cubes have a .nc file extension and are created using various tools in the Space Time Pattern Mining toolbox.</para>
 		/// </param>
 		/// <param name="AnalysisVariable">
 		/// <para>Analysis Variable</para>
-		/// <para>包含每个位置的时间序列值的时空立方体的数值变量。</para>
+		/// <para>The numeric variable of the space-time cube containing the time series values of each location.</para>
 		/// </param>
 		/// <param name="OutputFeatures">
 		/// <para>Output Features</para>
-		/// <para>将包含变化点检测结果的输出要素类。 图层显示在每个位置检测到的变化点数量，并包含显示时间序列值、变化点和每个分段平均值或标准差的估算值的弹出图表。</para>
+		/// <para>The output feature class that will contain the change point detection results. The layer displays the number of change points detected at each location and contains pop-up line charts showing the time series values, change points, and estimates of mean or standard deviation of each segment.</para>
 		/// </param>
 		public ChangePointDetection(object InCube, object AnalysisVariable, object OutputFeatures)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 变化点检测</para>
+		/// <para>Tool Display Name : Change Point Detection</para>
 		/// </summary>
-		public override string DisplayName() => "变化点检测";
+		public override string DisplayName() => "Change Point Detection";
 
 		/// <summary>
 		/// <para>Tool Name : ChangePointDetection</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>
-		/// <para>包含要分析的变量的时空立方体。 时空立方体具有 .nc 文件扩展名，是使用时空模式挖掘工具箱中的各种工具创建的。</para>
+		/// <para>The space-time cube containing the variable to be analyzed. Space-time cubes have a .nc file extension and are created using various tools in the Space Time Pattern Mining toolbox.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Analysis Variable</para>
-		/// <para>包含每个位置的时间序列值的时空立方体的数值变量。</para>
+		/// <para>The numeric variable of the space-time cube containing the time series values of each location.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Output Features</para>
-		/// <para>将包含变化点检测结果的输出要素类。 图层显示在每个位置检测到的变化点数量，并包含显示时间序列值、变化点和每个分段平均值或标准差的估算值的弹出图表。</para>
+		/// <para>The output feature class that will contain the change point detection results. The layer displays the number of change points detected at each location and contains pop-up line charts showing the time series values, change points, and estimates of mean or standard deviation of each segment.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -101,11 +101,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Change Type</para>
-		/// <para>为检测到的变化指定类型。 各选项用于指定时间序列的统计属性，假设在每个分段中都是常数。 该值将在时间序列中的每个变化点更改为一个新的常数值。</para>
-		/// <para>均值漂移—将检测平均值的平移。 这是默认设置。</para>
-		/// <para>标准差—将检测标准差的变化。</para>
-		/// <para>坡度（线性趋势）—将检测坡度的变化（线性趋势）。</para>
-		/// <para>计数—将检测计数数据平均值的变化。</para>
+		/// <para>Specifies the type of change that will be detected. Each option specifies a statistical property of the time series that is assumed to be constant in each segment. The value changes to a new constant value at each change point in the time series.</para>
+		/// <para>Mean shift—Shifts in mean value will be detected. This is the default.</para>
+		/// <para>Standard deviation—Changes in standard deviation will be detected.</para>
+		/// <para>Slope (Linear trend)—Changes in slope (linear trend) will be detected.</para>
+		/// <para>Count—Changes in the mean of count data will be detected.</para>
 		/// <para><see cref="ChangeTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -115,9 +115,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>指定是自动检测变化点的数量还是由用于所有位置的变化点定义数量指定。</para>
-		/// <para>自动检测变化点数 (PELT)—将自动检测变化点数量。 检测灵敏度将由检测灵敏度参数定义。 这是默认设置。</para>
-		/// <para>变化点定义数量 (SegNeigh)—变化点数量将由变化点数量参数定义。</para>
+		/// <para>Specifies whether the number of change points will be detected automatically or specified by a defined number of change points used for all locations.</para>
+		/// <para>Auto-detect number of change points (PELT)—The number of change points will be detected automatically. The sensitivity of the detection will be defined by the Detection Sensitivity parameter. This is the default.</para>
+		/// <para>Defined number of change points (SegNeigh)—The number of change points will be defined by the Number of Change Points parameter.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Number of Change Points</para>
-		/// <para>将检测各位置的变化点数量。 默认值为 1。</para>
+		/// <para>The number of change points that will be detected at each location. The default is 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Detection Sensitivity</para>
-		/// <para>介于 0 和 1 之间的数值，用于定义检测的灵敏度。 值越大，在每个位置检测到的变化点越多。 默认值为 0.5。</para>
+		/// <para>A number between 0 and 1 that defines the sensitivity of the detection. Larger values will result in more detected change points at each location. The default is 0.5.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -144,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Minimum Segment Length</para>
-		/// <para>每分段内的最小时间步长数。 变化点会将每个时间序列划分为多个分段，其中每个分段应至少具有此数量的时间步长。 对于均值、标准差和计数的变化，默认值为 1，这意味着每个时间步长都可以是一个变化点。 对于坡度变化（线性趋势），默认值为 2，因为至少需要两个值才可以拟合线。 该值必须小于时间序列中时间步长数的一半。</para>
+		/// <para>The minimum number of time steps within each segment. The change points will divide each time series into segments in which each segment has at least this number of time steps. For change in mean, standard deviation, and count, the default is 1, meaning that every time step can be a change point. For change in slope (linear trend), the default is 2 because at least two values are required to fit a line. The value must be less than half the number of time steps in the time series.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -167,31 +167,31 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		public enum ChangeTypeEnum 
 		{
 			/// <summary>
-			/// <para>均值漂移—将检测平均值的平移。 这是默认设置。</para>
+			/// <para>Mean shift—Shifts in mean value will be detected. This is the default.</para>
 			/// </summary>
 			[GPValue("MEAN")]
-			[Description("均值漂移")]
+			[Description("Mean shift")]
 			Mean_shift,
 
 			/// <summary>
-			/// <para>标准差—将检测标准差的变化。</para>
+			/// <para>Standard deviation—Changes in standard deviation will be detected.</para>
 			/// </summary>
 			[GPValue("STANDARD_DEVIATION")]
-			[Description("标准差")]
+			[Description("Standard deviation")]
 			Standard_deviation,
 
 			/// <summary>
-			/// <para>坡度（线性趋势）—将检测坡度的变化（线性趋势）。</para>
+			/// <para>Slope (Linear trend)—Changes in slope (linear trend) will be detected.</para>
 			/// </summary>
 			[GPValue("SLOPE")]
-			[Description("坡度（线性趋势）")]
+			[Description("Slope (Linear trend)")]
 			SLOPE,
 
 			/// <summary>
-			/// <para>计数—将检测计数数据平均值的变化。</para>
+			/// <para>Count—Changes in the mean of count data will be detected.</para>
 			/// </summary>
 			[GPValue("COUNT")]
-			[Description("计数")]
+			[Description("Count")]
 			Count,
 
 		}
@@ -202,17 +202,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>自动检测变化点数 (PELT)—将自动检测变化点数量。 检测灵敏度将由检测灵敏度参数定义。 这是默认设置。</para>
+			/// <para>Auto-detect number of change points (PELT)—The number of change points will be detected automatically. The sensitivity of the detection will be defined by the Detection Sensitivity parameter. This is the default.</para>
 			/// </summary>
 			[GPValue("AUTO_DETECT")]
-			[Description("自动检测变化点数 (PELT)")]
+			[Description("Auto-detect number of change points (PELT)")]
 			AUTO_DETECT,
 
 			/// <summary>
-			/// <para>变化点定义数量 (SegNeigh)—变化点数量将由变化点数量参数定义。</para>
+			/// <para>Defined number of change points (SegNeigh)—The number of change points will be defined by the Number of Change Points parameter.</para>
 			/// </summary>
 			[GPValue("DEFINED_NUMBER")]
-			[Description("变化点定义数量 (SegNeigh)")]
+			[Description("Defined number of change points (SegNeigh)")]
 			DEFINED_NUMBER,
 
 		}

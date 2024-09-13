@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Boundary Clean</para>
-	/// <para>边界清理</para>
-	/// <para>平滑栅格中区域之间的边界。</para>
+	/// <para>Boundary Clean</para>
+	/// <para>Smooths the boundary between zones in a raster.</para>
 	/// </summary>
 	public class BoundaryClean : AbstractGPProcess
 	{
@@ -21,14 +21,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>将平滑区域之间边界的输入栅格。</para>
-		/// <para>必须为整型。</para>
+		/// <para>The input raster for which the boundary between zones will be smoothed.</para>
+		/// <para>It must be of integer type.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>输出概化的栅格。</para>
-		/// <para>将对输入中的区域间边界进行平滑处理。</para>
-		/// <para>输出始终为整型。</para>
+		/// <para>The output generalized raster.</para>
+		/// <para>The boundaries between zones in the input will be smoothed.</para>
+		/// <para>The output is always of integer type.</para>
 		/// </param>
 		public BoundaryClean(object InRaster, object OutRaster)
 		{
@@ -37,9 +37,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 边界清理</para>
+		/// <para>Tool Display Name : Boundary Clean</para>
 		/// </summary>
-		public override string DisplayName() => "边界清理";
+		public override string DisplayName() => "Boundary Clean";
 
 		/// <summary>
 		/// <para>Tool Name : BoundaryClean</para>
@@ -73,8 +73,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>将平滑区域之间边界的输入栅格。</para>
-		/// <para>必须为整型。</para>
+		/// <para>The input raster for which the boundary between zones will be smoothed.</para>
+		/// <para>It must be of integer type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -86,9 +86,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出概化的栅格。</para>
-		/// <para>将对输入中的区域间边界进行平滑处理。</para>
-		/// <para>输出始终为整型。</para>
+		/// <para>The output generalized raster.</para>
+		/// <para>The boundaries between zones in the input will be smoothed.</para>
+		/// <para>The output is always of integer type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -96,11 +96,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Sort type</para>
-		/// <para>指定要在平滑处理中使用的排序类型。将由排序确定像元可扩展到相邻像元的优先级。</para>
-		/// <para>排序可以基于区域值或区域大小。</para>
-		/// <para>不排序—优先级将由区域值确定。不考虑区域的大小。值较大的区域优先级较高，可以扩展到平滑输出中值较小的区域中。这是默认设置。</para>
-		/// <para>降序—区域按大小降序排列。总面积较大的区域具有较高的优先级，可以扩展到总面积较小的若干区域。此选项倾向于消除或减少平滑输出中较小区域的像元分布。</para>
-		/// <para>升序—区域按大小升序排列。总面积较小的区域具有较高的优先级，可以扩展到总面积较大的若干区域。此选项倾向于保留或增加平滑输出中较小区域的像元分步。</para>
+		/// <para>Specifies the type of sorting to use in the smoothing process. The sorting determines the priority by which cells can expand into their neighbors.</para>
+		/// <para>The sorting can be based on zone value or zone size.</para>
+		/// <para>Do not sort—The priority is determined by zone value. The size of the zones is not considered. Zones with larger values will have a higher priority to expand into zones with smaller values in the smoothed output. This is the default.</para>
+		/// <para>Descending—Zones are sorted in descending order by size. Zones with larger total areas have a higher priority to expand into zones with smaller total areas. This option tends to eliminate or reduce the prevalence of cells from smaller zones in the smoothed output.</para>
+		/// <para>Ascending—Zones are sorted in ascending order by size. Zones with smaller total areas have a higher priority to expand into zones with larger total areas. This option tends to preserve or increase the prevalence of cells from smaller zones in the smoothed output.</para>
 		/// <para><see cref="SortTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -110,9 +110,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Run expansion and shrinking twice</para>
-		/// <para>指定平滑过程的执行次数：两次或一次。</para>
-		/// <para>选中 - 扩展与收缩操作执行两次。第一次，将根据指定的排序类型执行操作。第二次，按照相反的优先级额外执行一次收缩和扩展操作。这是默认设置。</para>
-		/// <para>未选中 - 将根据排序类型执行一次扩展和收缩操作。</para>
+		/// <para>Specifies the number of times the smoothing process will occur, twice or once.</para>
+		/// <para>Checked—The expansion and shrinking operation is performed twice. The first time, the operation is performed according to the specified sort type. The second time, an additional expansion and shrinking operation is performed with the priority reversed. This is the default.</para>
+		/// <para>Unchecked—The expansion and shrinking operation is performed once according to the sort type.</para>
 		/// <para><see cref="NumberOfRunsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -137,24 +137,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum SortTypeEnum 
 		{
 			/// <summary>
-			/// <para>不排序—优先级将由区域值确定。不考虑区域的大小。值较大的区域优先级较高，可以扩展到平滑输出中值较小的区域中。这是默认设置。</para>
+			/// <para>Do not sort—The priority is determined by zone value. The size of the zones is not considered. Zones with larger values will have a higher priority to expand into zones with smaller values in the smoothed output. This is the default.</para>
 			/// </summary>
 			[GPValue("NO_SORT")]
-			[Description("不排序")]
+			[Description("Do not sort")]
 			Do_not_sort,
 
 			/// <summary>
-			/// <para>降序—区域按大小降序排列。总面积较大的区域具有较高的优先级，可以扩展到总面积较小的若干区域。此选项倾向于消除或减少平滑输出中较小区域的像元分布。</para>
+			/// <para>Descending—Zones are sorted in descending order by size. Zones with larger total areas have a higher priority to expand into zones with smaller total areas. This option tends to eliminate or reduce the prevalence of cells from smaller zones in the smoothed output.</para>
 			/// </summary>
 			[GPValue("DESCEND")]
-			[Description("降序")]
+			[Description("Descending")]
 			Descending,
 
 			/// <summary>
-			/// <para>升序—区域按大小升序排列。总面积较小的区域具有较高的优先级，可以扩展到总面积较大的若干区域。此选项倾向于保留或增加平滑输出中较小区域的像元分步。</para>
+			/// <para>Ascending—Zones are sorted in ascending order by size. Zones with smaller total areas have a higher priority to expand into zones with larger total areas. This option tends to preserve or increase the prevalence of cells from smaller zones in the smoothed output.</para>
 			/// </summary>
 			[GPValue("ASCEND")]
-			[Description("升序")]
+			[Description("Ascending")]
 			Ascending,
 
 		}
@@ -165,14 +165,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum NumberOfRunsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The expansion and shrinking operation is performed twice. The first time, the operation is performed according to the specified sort type. The second time, an additional expansion and shrinking operation is performed with the priority reversed. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("TWO_WAY")]
 			TWO_WAY,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The expansion and shrinking operation is performed once according to the sort type.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ONE_WAY")]

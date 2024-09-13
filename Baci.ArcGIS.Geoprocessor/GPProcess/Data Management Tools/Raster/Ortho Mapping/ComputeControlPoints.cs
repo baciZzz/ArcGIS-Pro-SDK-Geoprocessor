@@ -11,8 +11,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Compute Control Points</para>
-	/// <para>计算控制点</para>
-	/// <para>在镶嵌数据集与参考影像之间创建控制点。 然后，可将控制点与连接点一起用于计算镶嵌数据集的校正。</para>
+	/// <para>Compute Control Points</para>
+	/// <para>Creates the control points between the mosaic dataset and the reference image.</para>
+	/// <para>The control points can then be used in conjunction with tie points to  compute the adjustments for the mosaic dataset.</para>
 	/// </summary>
 	public class ComputeControlPoints : AbstractGPProcess
 	{
@@ -21,15 +22,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>将用于创建控制点的输入镶嵌数据集。</para>
+		/// <para>The input mosaic dataset that will be used to create control points.</para>
 		/// </param>
 		/// <param name="InReferenceImages">
 		/// <para>Input Reference Images</para>
-		/// <para>将用于为镶嵌数据集创建控制点的参考影像。 如果您有多个影像，则从影像创建镶嵌数据集，然后将镶嵌数据集用作参考。</para>
+		/// <para>The reference images that will be used to create control points for your mosaic dataset. If you have multiple images, create a mosaic dataset from the images and use the mosaic dataset as the reference.</para>
 		/// </param>
 		/// <param name="OutControlPoints">
 		/// <para>Output Control Points</para>
-		/// <para>输出控制点表。 该表包含已创建的控制点。</para>
+		/// <para>The output control point table. This table will contain the control points that were created.</para>
 		/// </param>
 		public ComputeControlPoints(object InMosaicDataset, object InReferenceImages, object OutControlPoints)
 		{
@@ -39,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 计算控制点</para>
+		/// <para>Tool Display Name : Compute Control Points</para>
 		/// </summary>
-		public override string DisplayName() => "计算控制点";
+		public override string DisplayName() => "Compute Control Points";
 
 		/// <summary>
 		/// <para>Tool Name : ComputeControlPoints</para>
@@ -75,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>将用于创建控制点的输入镶嵌数据集。</para>
+		/// <para>The input mosaic dataset that will be used to create control points.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Reference Images</para>
-		/// <para>将用于为镶嵌数据集创建控制点的参考影像。 如果您有多个影像，则从影像创建镶嵌数据集，然后将镶嵌数据集用作参考。</para>
+		/// <para>The reference images that will be used to create control points for your mosaic dataset. If you have multiple images, create a mosaic dataset from the images and use the mosaic dataset as the reference.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -91,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Control Points</para>
-		/// <para>输出控制点表。 该表包含已创建的控制点。</para>
+		/// <para>The output control point table. This table will contain the control points that were created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -99,10 +100,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Similarity</para>
-		/// <para>指定将用于匹配连接点的相似性级别。</para>
-		/// <para>低级相似性—两个匹配点的相似性条件为低级。 此选项将生成最匹配的连接点对，但是某些匹配连接点对的错误误差等级可能比较高。</para>
-		/// <para>中级相似性—此匹配点对的相似性等级为中级。</para>
-		/// <para>高级相似性—此匹配点对的相似性等级为高级。 此选项将生成数目最少的匹配连接点对，但是每个匹配连接点对的误差等级可能比较低。</para>
+		/// <para>Specifies the similarity level that will be used for matching tie points.</para>
+		/// <para>Low similarity—The similarity criteria for the two matching points will be low. This option will produce the most matching points, but some of the matches may have a higher level of error.</para>
+		/// <para>Medium similarity—The similarity criteria for the matching points will be medium.</para>
+		/// <para>High similarity—The similarity criteria for the matching points will be high. This option will produce the fewest matching points, but each match will have a lower level of error.</para>
 		/// <para><see cref="SimilarityEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -112,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Image Features</para>
-		/// <para>输出影像要素点表。 该表将保存为面要素类。 此输出可能非常大。</para>
+		/// <para>The output image feature points table. This will be saved as a polygon feature class. This output can be quite large.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -120,10 +121,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Point Density</para>
-		/// <para>指定要创建的连接点数。</para>
-		/// <para>低点密度—点的密度将较低，这将创建数量最少的连接点。</para>
-		/// <para>中等点密度—点的密度将为中等，这将创建中等数量的连接点。</para>
-		/// <para>高点密度—点的密度将较高，这将创建数量最多的连接点。</para>
+		/// <para>Specifies the number of tie points to be created.</para>
+		/// <para>Low point density—The density of points will be low, creating the fewest number of tie points.</para>
+		/// <para>Medium point density—The density of points will be medium, creating a moderate number of points.</para>
+		/// <para>High point density—The density of points will be high, creating the highest number of points.</para>
 		/// <para><see cref="DensityEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -133,9 +134,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Point Distribution</para>
-		/// <para>指定点具有常规分布还是随机分布。</para>
-		/// <para>随机点分布—点将以随机方式生成。 随机生成的点更适合与不规则形状重叠的区域。</para>
-		/// <para>常规点分布—将基于固定图案生成点。 基于固定图案生成的点使用点密度来确定点的创建频率。</para>
+		/// <para>Specifies whether the points will have regular or random distribution.</para>
+		/// <para>Random point distribution—Points will be generated randomly. Randomly generated points are better for overlapping areas with irregular shapes.</para>
+		/// <para>Regular point distribution—Points will be generated based on a fixed pattern. Points based on a fixed pattern use the point density to determine how frequently to create points.</para>
 		/// <para><see cref="DistributionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -145,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Area of Interest</para>
-		/// <para>将生成连接点的区域限定到仅此面要素类。</para>
+		/// <para>Limit the area in which tie points are generated to only this polygon feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -153,10 +154,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Image Location Accuracy</para>
-		/// <para>指定用于描述影像精度的关键字。</para>
-		/// <para>低影像位置精度—影像具有大幅度偏移和大幅度旋转（&gt; 5 度）。SIFT 算法将用于点匹配计算。</para>
-		/// <para>中等影像位置精度—影像具有中等幅度偏移和小幅度旋转（&lt;5 度）。Harris 算法将用于点匹配计算。</para>
-		/// <para>高影像位置精度—影像具有小幅度偏移和小幅度旋转。Harris 算法将用于点匹配计算。</para>
+		/// <para>Specifies the keyword that describes the accuracy of the imagery.</para>
+		/// <para>Low image location accuracy—Images have a large shift and a large rotation (&gt; 5 degrees).The SIFT algorithm will be used in the point-matching computation.</para>
+		/// <para>Medium image location accuracy—Images have a medium shift and a small rotation (&lt;5 degrees).The Harris algorithm will be used in the point-matching computation.</para>
+		/// <para>High image location accuracy—Images have a small shift and a small rotation.The Harris algorithm will be used in the point-matching computation.</para>
 		/// <para><see cref="LocationAccuracyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -181,24 +182,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SimilarityEnum 
 		{
 			/// <summary>
-			/// <para>低级相似性—两个匹配点的相似性条件为低级。 此选项将生成最匹配的连接点对，但是某些匹配连接点对的错误误差等级可能比较高。</para>
+			/// <para>Low similarity—The similarity criteria for the two matching points will be low. This option will produce the most matching points, but some of the matches may have a higher level of error.</para>
 			/// </summary>
 			[GPValue("LOW")]
-			[Description("低级相似性")]
+			[Description("Low similarity")]
 			Low_similarity,
 
 			/// <summary>
-			/// <para>中级相似性—此匹配点对的相似性等级为中级。</para>
+			/// <para>Medium similarity—The similarity criteria for the matching points will be medium.</para>
 			/// </summary>
 			[GPValue("MEDIUM")]
-			[Description("中级相似性")]
+			[Description("Medium similarity")]
 			Medium_similarity,
 
 			/// <summary>
-			/// <para>高级相似性—此匹配点对的相似性等级为高级。 此选项将生成数目最少的匹配连接点对，但是每个匹配连接点对的误差等级可能比较低。</para>
+			/// <para>High similarity—The similarity criteria for the matching points will be high. This option will produce the fewest matching points, but each match will have a lower level of error.</para>
 			/// </summary>
 			[GPValue("HIGH")]
-			[Description("高级相似性")]
+			[Description("High similarity")]
 			High_similarity,
 
 		}
@@ -209,24 +210,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DensityEnum 
 		{
 			/// <summary>
-			/// <para>低点密度—点的密度将较低，这将创建数量最少的连接点。</para>
+			/// <para>Low point density—The density of points will be low, creating the fewest number of tie points.</para>
 			/// </summary>
 			[GPValue("LOW")]
-			[Description("低点密度")]
+			[Description("Low point density")]
 			Low_point_density,
 
 			/// <summary>
-			/// <para>中等点密度—点的密度将为中等，这将创建中等数量的连接点。</para>
+			/// <para>Medium point density—The density of points will be medium, creating a moderate number of points.</para>
 			/// </summary>
 			[GPValue("MEDIUM")]
-			[Description("中等点密度")]
+			[Description("Medium point density")]
 			Medium_point_density,
 
 			/// <summary>
-			/// <para>高点密度—点的密度将较高，这将创建数量最多的连接点。</para>
+			/// <para>High point density—The density of points will be high, creating the highest number of points.</para>
 			/// </summary>
 			[GPValue("HIGH")]
-			[Description("高点密度")]
+			[Description("High point density")]
 			High_point_density,
 
 		}
@@ -237,17 +238,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DistributionEnum 
 		{
 			/// <summary>
-			/// <para>随机点分布—点将以随机方式生成。 随机生成的点更适合与不规则形状重叠的区域。</para>
+			/// <para>Random point distribution—Points will be generated randomly. Randomly generated points are better for overlapping areas with irregular shapes.</para>
 			/// </summary>
 			[GPValue("RANDOM")]
-			[Description("随机点分布")]
+			[Description("Random point distribution")]
 			Random_point_distribution,
 
 			/// <summary>
-			/// <para>常规点分布—将基于固定图案生成点。 基于固定图案生成的点使用点密度来确定点的创建频率。</para>
+			/// <para>Regular point distribution—Points will be generated based on a fixed pattern. Points based on a fixed pattern use the point density to determine how frequently to create points.</para>
 			/// </summary>
 			[GPValue("REGULAR")]
-			[Description("常规点分布")]
+			[Description("Regular point distribution")]
 			Regular_point_distribution,
 
 		}
@@ -258,24 +259,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum LocationAccuracyEnum 
 		{
 			/// <summary>
-			/// <para>低影像位置精度—影像具有大幅度偏移和大幅度旋转（&gt; 5 度）。SIFT 算法将用于点匹配计算。</para>
+			/// <para>Low image location accuracy—Images have a large shift and a large rotation (&gt; 5 degrees).The SIFT algorithm will be used in the point-matching computation.</para>
 			/// </summary>
 			[GPValue("LOW")]
-			[Description("低影像位置精度")]
+			[Description("Low image location accuracy")]
 			Low_image_location_accuracy,
 
 			/// <summary>
-			/// <para>中等影像位置精度—影像具有中等幅度偏移和小幅度旋转（&lt;5 度）。Harris 算法将用于点匹配计算。</para>
+			/// <para>Medium image location accuracy—Images have a medium shift and a small rotation (&lt;5 degrees).The Harris algorithm will be used in the point-matching computation.</para>
 			/// </summary>
 			[GPValue("MEDIUM")]
-			[Description("中等影像位置精度")]
+			[Description("Medium image location accuracy")]
 			Medium_image_location_accuracy,
 
 			/// <summary>
-			/// <para>高影像位置精度—影像具有小幅度偏移和小幅度旋转。Harris 算法将用于点匹配计算。</para>
+			/// <para>High image location accuracy—Images have a small shift and a small rotation.The Harris algorithm will be used in the point-matching computation.</para>
 			/// </summary>
 			[GPValue("HIGH")]
-			[Description("高影像位置精度")]
+			[Description("High image location accuracy")]
 			High_image_location_accuracy,
 
 		}

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Raster to NetCDF</para>
-	/// <para>栅格至 NetCDF</para>
-	/// <para>将栅格数据集转换为 NetCDF 文件。</para>
+	/// <para>Raster to NetCDF</para>
+	/// <para>Converts a raster dataset to a netCDF file.</para>
 	/// </summary>
 	public class RasterToNetCDF : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>输入栅格数据集。</para>
+		/// <para>The input raster dataset.</para>
 		/// </param>
 		/// <param name="OutNetcdfFile">
 		/// <para>Output netCDF File</para>
-		/// <para>输出的 netCDF 文件。 文件名的扩展名必须是 .nc。</para>
+		/// <para>The output netCDF file. The file name must have an .nc extension.</para>
 		/// </param>
 		public RasterToNetCDF(object InRaster, object OutNetcdfFile)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 栅格至 NetCDF</para>
+		/// <para>Tool Display Name : Raster to NetCDF</para>
 		/// </summary>
-		public override string DisplayName() => "栅格至 NetCDF";
+		public override string DisplayName() => "Raster to NetCDF";
 
 		/// <summary>
 		/// <para>Tool Name : RasterToNetCDF</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>输入栅格数据集。</para>
+		/// <para>The input raster dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Output netCDF File</para>
-		/// <para>输出的 netCDF 文件。 文件名的扩展名必须是 .nc。</para>
+		/// <para>The output netCDF file. The file name must have an .nc extension.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Variable</para>
-		/// <para>将在输出 netCDF 文件中使用的 netCDF 变量名。此变量将包含输入栅格中像元的值。</para>
+		/// <para>The netCDF variable name that will be used in the output netCDF file. This variable will contain the values of cells in the input raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Variable Units</para>
-		/// <para>包含在变量中的数据的单位。变量名在变量参数中指定。</para>
+		/// <para>The units of the data contained within the variable. The variable name is specified in the Variable parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>X Dimension</para>
-		/// <para>将用于指定 x 坐标或经度坐标的 NetCDF 维度名称。</para>
+		/// <para>The netCDF dimension name that will be used to specify x, or longitude, coordinates.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Y Dimension</para>
-		/// <para>将用于指定 y 坐标或纬度坐标的 NetCDF 维度名称。</para>
+		/// <para>The netCDF dimension name that will be used to specify y, or latitude, coordinates.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Band Dimension</para>
-		/// <para>将用于指定波段的 NetCDF 维度名称。</para>
+		/// <para>The netCDF dimension name that will be used to specify bands.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -128,10 +128,10 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Fields to Dimensions</para>
-		/// <para>在 netCDF 文件中创建维度时使用的字段。</para>
-		/// <para>Field - 输入栅格属性表中的某个字段。</para>
-		/// <para>Dimension - netCDF 维度名称</para>
-		/// <para>Units - 由字段表示的数据的单位</para>
+		/// <para>The field or fields used to create dimensions in the netCDF file.</para>
+		/// <para>Field—A field in the input raster attribute table.</para>
+		/// <para>Dimension—The netCDF dimension name</para>
+		/// <para>Units—The units of the data represented by the field</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Compression Level</para>
-		/// <para>输出 netCDF 文件将被压缩的级别。默认值为 0，表示不进行压缩。值为 9 表示压缩程度最大。</para>
+		/// <para>The level at which the output netCDF file will be compressed. The default value is 0, which implies no compression. A value of 9 represents maximum compression.</para>
 		/// <para><see cref="CompressionLevelEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Disable Stationing Fields</para>
-	/// <para>禁用定点字段</para>
-	/// <para>禁用已注册 LRS 事件的定点字段。</para>
+	/// <para>Disable Stationing Fields</para>
+	/// <para>Disables stationing fields for the registered LRS event.</para>
 	/// </summary>
 	public class DisableStationingFields : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InFeatureClass">
 		/// <para>Event Feature Class</para>
-		/// <para>已注册到 LRS 的现有事件要素类或要素图层。</para>
+		/// <para>An existing event feature class or feature layer that is registered to an LRS.</para>
 		/// </param>
 		public DisableStationingFields(object InFeatureClass)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 禁用定点字段</para>
+		/// <para>Tool Display Name : Disable Stationing Fields</para>
 		/// </summary>
-		public override string DisplayName() => "禁用定点字段";
+		public override string DisplayName() => "Disable Stationing Fields";
 
 		/// <summary>
 		/// <para>Tool Name : DisableStationingFields</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Event Feature Class</para>
-		/// <para>已注册到 LRS 的现有事件要素类或要素图层。</para>
+		/// <para>An existing event feature class or feature layer that is registered to an LRS.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Determine Travel Cost Path As Polyline</para>
-	/// <para>确定行程成本路径为折线</para>
-	/// <para>计算源和目的地之间的最低成本折线路径。</para>
+	/// <para>Determine Travel Cost Path As Polyline</para>
+	/// <para>Calculates the least-cost polyline path between sources and destinations.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.RasterAnalysisTools.OptimalPathAsLine"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
 	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.RasterAnalysisTools.OptimalPathAsLine))]
@@ -23,25 +23,25 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		/// <param name="Inputsourcerasterorfeatures">
 		/// <para>Input Source Raster or Features</para>
-		/// <para>用于识别这些像元的影像服务或要素服务（将确定的最小成本路径为这些像元与目的地之间的路径）。</para>
-		/// <para>如果输入是影像服务，则输入由具有有效值（零是有效值）的像元组成，并且必须为其余的像元指定 NoData。</para>
+		/// <para>An image service or feature service that identifies the cells from which the least-cost path is determined to the destinations.</para>
+		/// <para>If the input is an image service, the input consists of cells that have valid values (zero is a valid value), and the remaining cells must be assigned NoData.</para>
 		/// </param>
 		/// <param name="Inputcostraster">
 		/// <para>Input Cost Raster</para>
-		/// <para>要用于确定从源到目的地的最小成本路径的成本栅格影像服务的名称。</para>
-		/// <para>每个像元位置上的值表示经过像元时移动每单位距离所需的成本。 每个像元位置值乘以像元分辨率，同时也会补偿对角线移动来获取经过像元的总成本。</para>
-		/// <para>成本栅格的值可以是整型或浮点型，但不可以为负值或零（不存在负成本或零成本）。</para>
+		/// <para>The name of a cost raster image service to be used to determine the least-cost path from the sources to the destinations.</para>
+		/// <para>The value at each cell location represents the cost-per-unit distance for moving through the cell. Each cell location value is multiplied by the cell resolution while also compensating for diagonal movement to obtain the total cost of passing through the cell.</para>
+		/// <para>The values of the cost raster can be integer or floating point, but they cannot be negative or zero (you cannot have a negative or zero cost).</para>
 		/// </param>
 		/// <param name="Inputdestinationrasterorfeatures">
 		/// <para>Input Destination Raster or Features</para>
-		/// <para>用于识别这些像元的影像服务或要素服务（将计算这些像元的最小成本路径）。</para>
+		/// <para>An image service or feature service that identifies the cells to which the least-cost path is calculated.</para>
 		/// </param>
 		/// <param name="Outputpolylinename">
 		/// <para>Output Polyline Name</para>
-		/// <para>输出折线要素服务的名称。</para>
-		/// <para>连接源和目的地的最佳（最低成本）路径的折线要素服务。</para>
-		/// <para>每个路径（或线）都具有唯一编号，并在属性表中包含名为 DestID 的附加字段，该字段可将路径与目标栅格上的唯一标识符相连。</para>
-		/// <para>由于每条路径都是由唯一的线所表示，因此多条路径可经过同一路线的位置会存在多条线。</para>
+		/// <para>The name of the output polyline feature service.</para>
+		/// <para>The polyline feature service of the optimum (least-cost) paths connecting sources and destinations.</para>
+		/// <para>Each path (or line) is uniquely numbered, and has an additional field in the attribute table called DestID, which connects it back to the unique identifier on the destination raster.</para>
+		/// <para>Since each path is represented by a unique line, there can be multiple lines in locations where paths travel the same route.</para>
 		/// </param>
 		public DetermineTravelCostPathAsPolyline(object Inputsourcerasterorfeatures, object Inputcostraster, object Inputdestinationrasterorfeatures, object Outputpolylinename)
 		{
@@ -52,9 +52,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 确定行程成本路径为折线</para>
+		/// <para>Tool Display Name : Determine Travel Cost Path As Polyline</para>
 		/// </summary>
-		public override string DisplayName() => "确定行程成本路径为折线";
+		public override string DisplayName() => "Determine Travel Cost Path As Polyline";
 
 		/// <summary>
 		/// <para>Tool Name : DetermineTravelCostPathAsPolyline</para>
@@ -88,8 +88,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Source Raster or Features</para>
-		/// <para>用于识别这些像元的影像服务或要素服务（将确定的最小成本路径为这些像元与目的地之间的路径）。</para>
-		/// <para>如果输入是影像服务，则输入由具有有效值（零是有效值）的像元组成，并且必须为其余的像元指定 NoData。</para>
+		/// <para>An image service or feature service that identifies the cells from which the least-cost path is determined to the destinations.</para>
+		/// <para>If the input is an image service, the input consists of cells that have valid values (zero is a valid value), and the remaining cells must be assigned NoData.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -98,9 +98,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Cost Raster</para>
-		/// <para>要用于确定从源到目的地的最小成本路径的成本栅格影像服务的名称。</para>
-		/// <para>每个像元位置上的值表示经过像元时移动每单位距离所需的成本。 每个像元位置值乘以像元分辨率，同时也会补偿对角线移动来获取经过像元的总成本。</para>
-		/// <para>成本栅格的值可以是整型或浮点型，但不可以为负值或零（不存在负成本或零成本）。</para>
+		/// <para>The name of a cost raster image service to be used to determine the least-cost path from the sources to the destinations.</para>
+		/// <para>The value at each cell location represents the cost-per-unit distance for moving through the cell. Each cell location value is multiplied by the cell resolution while also compensating for diagonal movement to obtain the total cost of passing through the cell.</para>
+		/// <para>The values of the cost raster can be integer or floating point, but they cannot be negative or zero (you cannot have a negative or zero cost).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Destination Raster or Features</para>
-		/// <para>用于识别这些像元的影像服务或要素服务（将计算这些像元的最小成本路径）。</para>
+		/// <para>An image service or feature service that identifies the cells to which the least-cost path is calculated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -118,10 +118,10 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Polyline Name</para>
-		/// <para>输出折线要素服务的名称。</para>
-		/// <para>连接源和目的地的最佳（最低成本）路径的折线要素服务。</para>
-		/// <para>每个路径（或线）都具有唯一编号，并在属性表中包含名为 DestID 的附加字段，该字段可将路径与目标栅格上的唯一标识符相连。</para>
-		/// <para>由于每条路径都是由唯一的线所表示，因此多条路径可经过同一路线的位置会存在多条线。</para>
+		/// <para>The name of the output polyline feature service.</para>
+		/// <para>The polyline feature service of the optimum (least-cost) paths connecting sources and destinations.</para>
+		/// <para>Each path (or line) is uniquely numbered, and has an additional field in the attribute table called DestID, which connects it back to the unique identifier on the destination raster.</para>
+		/// <para>Since each path is represented by a unique line, there can be multiple lines in locations where paths travel the same route.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -129,10 +129,10 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Path Type</para>
-		/// <para>用于指定输入目标数据上的值和区域在成本路径计算中的解释方式。</para>
-		/// <para>至每个像元—对于输入目标数据上每一个具有有效值的像元或位置，系统会确定最小成本路径并将该路径保存在输出上。 利用该选项，系统会分别处理输入目标数据中的每个像元或位置，并确定每个“起始”像元的最小成本路径。</para>
-		/// <para>至每个区域—对于输入目标数据上的每个区域，系统会确定最小成本路径并将该路径保存在输出上。 利用该选项，每个区域的最小成本路径可起始于区域内成本距离权重最小的位置。</para>
-		/// <para>最佳单一—对于输入目标数据上的所有位置，最小成本路径派生自距源位置具有最小成本路径的最小值的位置。 这是默认设置。</para>
+		/// <para>Specifies the manner in which the values and zones on the input destination data will be interpreted in the cost path calculations.</para>
+		/// <para>To each cell—For each cell or location with valid values on the input destination data, a least-cost path is determined and saved on the output. With this option, each cell or location of the input destination data is treated separately, and a least-cost path is determined for each from cell.</para>
+		/// <para>To each zone—For each zone on the input destination data, a least-cost path is determined and saved to the output. With this option, the least-cost path for each zone begins at the location with the lowest cost distance weighting in the zone.</para>
+		/// <para>Best single—For all locations on the input destination data, the least-cost path is derived from the location with the minimum of the least-cost paths to source locations. This is the default.</para>
 		/// <para><see cref="PathtypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -149,8 +149,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Destination Field</para>
-		/// <para>用于获得目标位置的值的字段。</para>
-		/// <para>输入要素数据必须至少包含一个有效整型字段。</para>
+		/// <para>The field used to obtain values for the destination locations.</para>
+		/// <para>Input feature data must contain at least one valid integer field.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -173,24 +173,24 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public enum PathtypeEnum 
 		{
 			/// <summary>
-			/// <para>至每个像元—对于输入目标数据上每一个具有有效值的像元或位置，系统会确定最小成本路径并将该路径保存在输出上。 利用该选项，系统会分别处理输入目标数据中的每个像元或位置，并确定每个“起始”像元的最小成本路径。</para>
+			/// <para>To each cell—For each cell or location with valid values on the input destination data, a least-cost path is determined and saved on the output. With this option, each cell or location of the input destination data is treated separately, and a least-cost path is determined for each from cell.</para>
 			/// </summary>
 			[GPValue("EACH_CELL")]
-			[Description("至每个像元")]
+			[Description("To each cell")]
 			To_each_cell,
 
 			/// <summary>
-			/// <para>至每个区域—对于输入目标数据上的每个区域，系统会确定最小成本路径并将该路径保存在输出上。 利用该选项，每个区域的最小成本路径可起始于区域内成本距离权重最小的位置。</para>
+			/// <para>To each zone—For each zone on the input destination data, a least-cost path is determined and saved to the output. With this option, the least-cost path for each zone begins at the location with the lowest cost distance weighting in the zone.</para>
 			/// </summary>
 			[GPValue("EACH_ZONE")]
-			[Description("至每个区域")]
+			[Description("To each zone")]
 			To_each_zone,
 
 			/// <summary>
-			/// <para>最佳单一—对于输入目标数据上的所有位置，最小成本路径派生自距源位置具有最小成本路径的最小值的位置。 这是默认设置。</para>
+			/// <para>Best single—For all locations on the input destination data, the least-cost path is derived from the location with the minimum of the least-cost paths to source locations. This is the default.</para>
 			/// </summary>
 			[GPValue("BEST_SINGLE")]
-			[Description("最佳单一")]
+			[Description("Best single")]
 			Best_single,
 
 		}

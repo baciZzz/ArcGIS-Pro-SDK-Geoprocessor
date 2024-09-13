@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Extract by Rectangle</para>
-	/// <para>按矩形提取</para>
-	/// <para>通过指定矩形范围，基于矩形提取栅格像元。</para>
+	/// <para>Extract by Rectangle</para>
+	/// <para>Extracts the cells of a raster based on a rectangle by specifying the rectangle's extent.</para>
 	/// </summary>
 	public class ExtractByRectangle : AbstractGPProcess
 	{
@@ -21,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>从中提取像元的输入栅格。</para>
+		/// <para>The input raster from which cells will be extracted.</para>
 		/// </param>
 		/// <param name="Rectangle">
 		/// <para>Extent</para>
-		/// <para>用于定义待提取区域的矩形。</para>
-		/// <para>如果将范围参数设置为如下面的指定，则使用通过左箭头和下箭头识别的参数定义待提取区域左下方的坐标，并使用通过右箭头和上箭头识别的参数定义右上方的坐标。</para>
-		/// <para>如果将范围参数设置为浏览，则可选择将通过边界框定义范围的数据集。</para>
-		/// <para>将指定坐标使用与输入栅格相同的地图单位。</para>
+		/// <para>A rectangle that defines the area to be extracted.</para>
+		/// <para>If the Extent parameter is set to As Specified Below, use the parameters identified with the left and down arrows to define the lower left coordinate of the area to be extracted, and those with the right and up arrows to define the upper right coordinate.</para>
+		/// <para>If the Extent parameter is set to Browse, you can select a dataset whose bounding box will define the extent.</para>
+		/// <para>The coordinates are specified in the same map units as the input raster.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>包含从输入栅格中提取的像元值的输出栅格。</para>
+		/// <para>The output raster containing the cell values extracted from the input raster.</para>
 		/// </param>
 		public ExtractByRectangle(object InRaster, object Rectangle, object OutRaster)
 		{
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 按矩形提取</para>
+		/// <para>Tool Display Name : Extract by Rectangle</para>
 		/// </summary>
-		public override string DisplayName() => "按矩形提取";
+		public override string DisplayName() => "Extract by Rectangle";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractByRectangle</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>从中提取像元的输入栅格。</para>
+		/// <para>The input raster from which cells will be extracted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -90,10 +90,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Extent</para>
-		/// <para>用于定义待提取区域的矩形。</para>
-		/// <para>如果将范围参数设置为如下面的指定，则使用通过左箭头和下箭头识别的参数定义待提取区域左下方的坐标，并使用通过右箭头和上箭头识别的参数定义右上方的坐标。</para>
-		/// <para>如果将范围参数设置为浏览，则可选择将通过边界框定义范围的数据集。</para>
-		/// <para>将指定坐标使用与输入栅格相同的地图单位。</para>
+		/// <para>A rectangle that defines the area to be extracted.</para>
+		/// <para>If the Extent parameter is set to As Specified Below, use the parameters identified with the left and down arrows to define the lower left coordinate of the area to be extracted, and those with the right and up arrows to define the upper right coordinate.</para>
+		/// <para>If the Extent parameter is set to Browse, you can select a dataset whose bounding box will define the extent.</para>
+		/// <para>The coordinates are specified in the same map units as the input raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPExtent()]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>包含从输入栅格中提取的像元值的输出栅格。</para>
+		/// <para>The output raster containing the cell values extracted from the input raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -109,9 +109,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Extraction area</para>
-		/// <para>指定是选择输入矩形内部还是外部的像元并将其写入输出栅格。</para>
-		/// <para>内部—将选择输入矩形内部的像元并将其写入输出栅格。 矩形区域外部的所有像元都将在输出栅格中获得 NoData 值。</para>
-		/// <para>外部—将选择输入矩形外部的像元并将其写入输出栅格。 矩形区域内部的所有像元都将在输出栅格中获得 NoData 值。</para>
+		/// <para>Specifies whether cells inside or outside the input rectangle will be selected and written to the output raster.</para>
+		/// <para>Inside—Cells inside the input rectangle will be selected and written to the output raster. All cells outside the rectangle will receive NoData values on the output raster.</para>
+		/// <para>Outside—Cells outside the input rectangle will be selected and written to the output raster. All cells inside the rectangle will receive NoData values on the output raster.</para>
 		/// <para><see cref="ExtractionAreaEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -136,17 +136,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ExtractionAreaEnum 
 		{
 			/// <summary>
-			/// <para>内部—将选择输入矩形内部的像元并将其写入输出栅格。 矩形区域外部的所有像元都将在输出栅格中获得 NoData 值。</para>
+			/// <para>Inside—Cells inside the input rectangle will be selected and written to the output raster. All cells outside the rectangle will receive NoData values on the output raster.</para>
 			/// </summary>
 			[GPValue("INSIDE")]
-			[Description("内部")]
+			[Description("Inside")]
 			Inside,
 
 			/// <summary>
-			/// <para>外部—将选择输入矩形外部的像元并将其写入输出栅格。 矩形区域内部的所有像元都将在输出栅格中获得 NoData 值。</para>
+			/// <para>Outside—Cells outside the input rectangle will be selected and written to the output raster. All cells inside the rectangle will receive NoData values on the output raster.</para>
 			/// </summary>
 			[GPValue("OUTSIDE")]
-			[Description("外部")]
+			[Description("Outside")]
 			Outside,
 
 		}

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Summarize Attributes</para>
-	/// <para>汇总属性</para>
-	/// <para>针对要素类中的字段计算汇总统计数据。</para>
+	/// <para>Summarize Attributes</para>
+	/// <para>Calculates summary statistics for fields in a feature class.</para>
 	/// </summary>
 	public class SummarizeAttributes : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input Layer</para>
-		/// <para>要进行汇总的点、折线或面图层。</para>
+		/// <para>The point, polyline, or polygon layer to be summarized.</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
-		/// <para>包含汇总属性的新表。</para>
+		/// <para>A new table with the summarized attributes.</para>
 		/// </param>
 		public SummarizeAttributes(object InputLayer, object OutTable)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 汇总属性</para>
+		/// <para>Tool Display Name : Summarize Attributes</para>
 		/// </summary>
-		public override string DisplayName() => "汇总属性";
+		public override string DisplayName() => "Summarize Attributes";
 
 		/// <summary>
 		/// <para>Tool Name : SummarizeAttributes</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>要进行汇总的点、折线或面图层。</para>
+		/// <para>The point, polyline, or polygon layer to be summarized.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>包含汇总属性的新表。</para>
+		/// <para>A new table with the summarized attributes.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -86,8 +86,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Fields</para>
-		/// <para>用于汇总相似要素的一个或多个字段。例如，如果选择具有商业和住宅值的名为 PropertyType 的单个字段，则会将所有具有住宅字段值的字段汇总到一起，计算汇总统计数据，并会将所有具有商业字段值的字段汇总到一起。本示例将在输出中生成两行，一行用于商业，一行用于住宅汇总值。</para>
-		/// <para>您可以不选择任何字段，并在单个汇总结果中汇总所有要素。</para>
+		/// <para>A field or fields used to summarize similar features. For example, if you choose a single field called PropertyType with the values of commercial and residential, all of the fields with the value residential fields will be summarized together, with summary statistics calculated, and all of the fields with the value commercial will be summarized together. This example will results in two rows in the output, one for commercial, and one for residential summary values.</para>
+		/// <para>You can optionally select no fields and summarize all features in a single summary result.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Summary Fields</para>
-		/// <para>将根据指定字段进行计算的统计数据。</para>
+		/// <para>The statistics that will be calculated on specified fields.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -106,8 +106,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Time step interval</para>
-		/// <para>用来指定时间步长持续时间的值。 只有在输入点启用了时间且表示时刻时，此参数才可用。</para>
-		/// <para>只有对输入启用了时间的情况下，才可应用时间步长。</para>
+		/// <para>A value that specifies the duration of the time step. This parameter is only available if the input points are time enabled and represent an instant in time.</para>
+		/// <para>Time stepping can only be applied if time is enabled on the input.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Time step repeat</para>
-		/// <para>用来指定时间步长间隔发生频率的值。 只有在输入点启用了时间且表示时刻时，此参数才可用。</para>
+		/// <para>A value that specifies how often the time-step interval occurs. This parameter is only available if the input points are time enabled and represent an instant in time.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Time step reference</para>
-		/// <para>用来指定时间步长所要对齐的参考时间的日期。 默认情况下为 1970 年 1 月 1 日 12:00 a.m.。只有在输入点启用了时间且表示时刻时，此参数才可用。</para>
+		/// <para>A date that specifies the reference time with which to align the time steps. The default is January 1, 1970, at 12:00 a.m. This parameter is only available if the input points are time enabled and represent an instant in time.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]

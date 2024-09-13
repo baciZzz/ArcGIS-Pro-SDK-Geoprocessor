@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Raster Domain</para>
-	/// <para>栅格范围</para>
-	/// <para>用于构造 3D 面或折线，以描绘沿栅格表面边界的高度。</para>
+	/// <para>Raster Domain</para>
+	/// <para>Constructs a 3D polygon or polyline delineating the height along the boundary of a raster surface.</para>
 	/// </summary>
 	public class RasterDomain : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>待处理的栅格。</para>
+		/// <para>The raster to process.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>将生成的要素类。</para>
+		/// <para>The feature class that will be produced.</para>
 		/// </param>
 		/// <param name="OutGeometryType">
 		/// <para>Output Feature Class Type</para>
-		/// <para>输出要素类的几何。</para>
-		/// <para>线—输出将是启用了 z 值的线要素类。</para>
-		/// <para>面—输出将是启用了 z 值的面要素类。</para>
+		/// <para>The geometry of the output feature class.</para>
+		/// <para>Line—The output will be a z-enabled line feature class.</para>
+		/// <para>Polygon—The output will be a z-enabled polygon feature class.</para>
 		/// <para><see cref="OutGeometryTypeEnum"/></para>
 		/// </param>
 		public RasterDomain(object InRaster, object OutFeatureClass, object OutGeometryType)
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 栅格范围</para>
+		/// <para>Tool Display Name : Raster Domain</para>
 		/// </summary>
-		public override string DisplayName() => "栅格范围";
+		public override string DisplayName() => "Raster Domain";
 
 		/// <summary>
 		/// <para>Tool Name : RasterDomain</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>待处理的栅格。</para>
+		/// <para>The raster to process.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>将生成的要素类。</para>
+		/// <para>The feature class that will be produced.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -94,9 +94,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class Type</para>
-		/// <para>输出要素类的几何。</para>
-		/// <para>线—输出将是启用了 z 值的线要素类。</para>
-		/// <para>面—输出将是启用了 z 值的面要素类。</para>
+		/// <para>The geometry of the output feature class.</para>
+		/// <para>Line—The output will be a z-enabled line feature class.</para>
+		/// <para>Polygon—The output will be a z-enabled polygon feature class.</para>
 		/// <para><see cref="OutGeometryTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -121,17 +121,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum OutGeometryTypeEnum 
 		{
 			/// <summary>
-			/// <para>线—输出将是启用了 z 值的线要素类。</para>
+			/// <para>Line—The output will be a z-enabled line feature class.</para>
 			/// </summary>
 			[GPValue("LINE")]
-			[Description("线")]
+			[Description("Line")]
 			Line,
 
 			/// <summary>
-			/// <para>面—输出将是启用了 z 值的面要素类。</para>
+			/// <para>Polygon—The output will be a z-enabled polygon feature class.</para>
 			/// </summary>
 			[GPValue("POLYGON")]
-			[Description("面")]
+			[Description("Polygon")]
 			Polygon,
 
 		}

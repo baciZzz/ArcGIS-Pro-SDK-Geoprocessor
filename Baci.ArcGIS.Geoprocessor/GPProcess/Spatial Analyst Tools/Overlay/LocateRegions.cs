@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Locate Regions</para>
-	/// <para>查找区域</para>
-	/// <para>通过满足指定评估标准且满足确定形状、大小、数量和区域间距离约束的输入效用值（适宜性）栅格来标识最佳区域或连续像元组。</para>
+	/// <para>Locate Regions</para>
+	/// <para>Identifies the best regions, or groups of contiguous cells, from an input utility (suitability) raster that satisfy a specified evaluation criterion and that meet identified shape, size, number, and interregion distance constraints.</para>
 	/// </summary>
 	public class LocateRegions : AbstractGPProcess
 	{
@@ -21,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>从中派生区域的输入效用值栅格。</para>
-		/// <para>输入栅格中的值越大，效用越大。</para>
-		/// <para>栅格可为整型或浮点型。</para>
+		/// <para>The input utility raster from which the regions will be derived.</para>
+		/// <para>The higher the value in the input raster, the greater the utility.</para>
+		/// <para>The raster can be of either integer or floating-point type.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>输出区域栅格。</para>
-		/// <para>每个区域均以大于零的值单独进行编号。不属于任何区域的像元编号为零。输出始终为整型栅格。</para>
-		/// <para>针对选定区域存储统计数据的各个区域计算其他字段。这些字段包括：</para>
-		/// <para>AVERAGE—区域的平均效用值。</para>
-		/// <para>TOTAL—区域内效用值总和。</para>
-		/// <para>MEDIAN—区域的中值效用值。</para>
-		/// <para>HIGHEST—区域内包含的最高单个像元值。</para>
-		/// <para>LOWEST—区域内包含的最低单个像元值。</para>
-		/// <para>COREAREA—核心面积。远于区域边缘像元的所有像元均视为核心的一部分。</para>
-		/// <para>CORESUM—核心面积的效用值累计总和。</para>
-		/// <para>EDGE—使用 P1 比率的边缘量，其中 P1 指形状周长与相同面积圆周长的比率。圆的 P1 比率为 1。</para>
+		/// <para>The output regions raster.</para>
+		/// <para>Each region is uniquely numbered with values greater than zero. Cells that do not belong to any regions will be assigned zero. The output is always an integer raster.</para>
+		/// <para>Additional fields are calculated for each region storing statistics of the selected regions. These fields are the following:</para>
+		/// <para>AVERAGE—The average utility value of the region.</para>
+		/// <para>TOTAL—The total sum of the utility values within the region.</para>
+		/// <para>MEDIAN—The median utility value of the region.</para>
+		/// <para>HIGHEST—The highest individual cell value contained within the region.</para>
+		/// <para>LOWEST—The lowest individual cell value contained within the region.</para>
+		/// <para>COREAREA—The core area. Any cell farther than one cell from the region&apos;s edge is considered to be part of the core.</para>
+		/// <para>CORESUM—The cumulative sum of the utility values for the core area.</para>
+		/// <para>EDGE—The amount of edge using the P1 ratio, which is the ratio of the perimeter of the shape to the perimeter of a circle of the same area. The P1 ratio for a circle is 1.</para>
 		/// </param>
 		public LocateRegions(object InRaster, object OutRaster)
 		{
@@ -46,9 +46,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 查找区域</para>
+		/// <para>Tool Display Name : Locate Regions</para>
 		/// </summary>
-		public override string DisplayName() => "查找区域";
+		public override string DisplayName() => "Locate Regions";
 
 		/// <summary>
 		/// <para>Tool Name : LocateRegions</para>
@@ -82,9 +82,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>从中派生区域的输入效用值栅格。</para>
-		/// <para>输入栅格中的值越大，效用越大。</para>
-		/// <para>栅格可为整型或浮点型。</para>
+		/// <para>The input utility raster from which the regions will be derived.</para>
+		/// <para>The higher the value in the input raster, the greater the utility.</para>
+		/// <para>The raster can be of either integer or floating-point type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -96,17 +96,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出区域栅格。</para>
-		/// <para>每个区域均以大于零的值单独进行编号。不属于任何区域的像元编号为零。输出始终为整型栅格。</para>
-		/// <para>针对选定区域存储统计数据的各个区域计算其他字段。这些字段包括：</para>
-		/// <para>AVERAGE—区域的平均效用值。</para>
-		/// <para>TOTAL—区域内效用值总和。</para>
-		/// <para>MEDIAN—区域的中值效用值。</para>
-		/// <para>HIGHEST—区域内包含的最高单个像元值。</para>
-		/// <para>LOWEST—区域内包含的最低单个像元值。</para>
-		/// <para>COREAREA—核心面积。远于区域边缘像元的所有像元均视为核心的一部分。</para>
-		/// <para>CORESUM—核心面积的效用值累计总和。</para>
-		/// <para>EDGE—使用 P1 比率的边缘量，其中 P1 指形状周长与相同面积圆周长的比率。圆的 P1 比率为 1。</para>
+		/// <para>The output regions raster.</para>
+		/// <para>Each region is uniquely numbered with values greater than zero. Cells that do not belong to any regions will be assigned zero. The output is always an integer raster.</para>
+		/// <para>Additional fields are calculated for each region storing statistics of the selected regions. These fields are the following:</para>
+		/// <para>AVERAGE—The average utility value of the region.</para>
+		/// <para>TOTAL—The total sum of the utility values within the region.</para>
+		/// <para>MEDIAN—The median utility value of the region.</para>
+		/// <para>HIGHEST—The highest individual cell value contained within the region.</para>
+		/// <para>LOWEST—The lowest individual cell value contained within the region.</para>
+		/// <para>COREAREA—The core area. Any cell farther than one cell from the region&apos;s edge is considered to be part of the core.</para>
+		/// <para>CORESUM—The cumulative sum of the utility values for the core area.</para>
+		/// <para>EDGE—The amount of edge using the P1 ratio, which is the ratio of the perimeter of the shape to the perimeter of a circle of the same area. The P1 ratio for a circle is 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -114,8 +114,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Total area</para>
-		/// <para>所有区域的总面积。</para>
-		/// <para>默认为处理范围内输入像元的百分之 10。</para>
+		/// <para>The total amount of area for all regions.</para>
+		/// <para>The default is 10 percent of the input cells within the processing extent.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -124,17 +124,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Area units</para>
-		/// <para>定义总面积、区域最小面积和区域最大面积参数使用的面积单位。</para>
-		/// <para>可用选项及相应的单位如下：</para>
-		/// <para>平方地图单位—输出空间参考的线性单位的平方</para>
-		/// <para>平方英里—英里</para>
-		/// <para>平方千米—千米</para>
-		/// <para>公顷—公顷</para>
-		/// <para>英亩—英亩</para>
-		/// <para>平方米—米</para>
-		/// <para>平方码—码</para>
-		/// <para>平方英尺—英尺</para>
-		/// <para>默认单位取决于输入栅格数据集。如果输入栅格的单位为英尺、码、英里或任何其他英制单位，则将使用 Square miles。如果输入栅格的单位为米、千米或任何其他公制单位，则将使用 Square kilometers。</para>
+		/// <para>Defines the area units used for the Total area, Region minimum area, and Region maximum area parameters.</para>
+		/// <para>The available options and their corresponding units are the following:</para>
+		/// <para>Square map units—For the square of the linear units of the output spatial reference</para>
+		/// <para>Square miles—For miles</para>
+		/// <para>Square kilometers—For kilometers</para>
+		/// <para>Hectares—For hectares</para>
+		/// <para>Acres—For acres</para>
+		/// <para>Square meters—For meters</para>
+		/// <para>Square yards—For yards</para>
+		/// <para>Square feet—For feet</para>
+		/// <para>The default is based on the input raster dataset. If the input raster is in feet, yards, miles or any other imperial unit, Square miles will be used. If the input raster is in meters, kilometers, or any other metric unit, Square kilometers will be used.</para>
 		/// <para><see cref="AreaUnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -144,8 +144,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Number of regions</para>
-		/// <para>确定跨总面积分配的区域数。</para>
-		/// <para>可指定的区域最大数为 30。默认值为 1。</para>
+		/// <para>Determines how many regions the Total area will be distributed across.</para>
+		/// <para>The maximum number of regions that can be specified is 30. The default is 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -154,16 +154,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Region shape</para>
-		/// <para>定义输出区域的形状特征。</para>
-		/// <para>区域从种子像元位置开始向外增长，优先考虑能够保持所需形状的像元。</para>
-		/// <para>可用形状选项如下：</para>
-		/// <para>圆形—保持圆形区域的像元将获得较大的权重。这是默认设置。</para>
-		/// <para>椭圆形—保持椭圆形区域的像元将获得较大的权重。</para>
-		/// <para>等边三角形—保持等边三角形区域的像元将获得较大的权重。</para>
-		/// <para>正方形—保持方形区域的像元将获得较大的权重。</para>
-		/// <para>五边形—保持五角形区域的像元将获得较大的权重。</para>
-		/// <para>六边形—保持六角形区域的像元将获得较大的权重。</para>
-		/// <para>八边形—保持八角形区域的像元将获得较大的权重。</para>
+		/// <para>Defines the shape characteristics for the output regions.</para>
+		/// <para>The regions start out from seed cell locations and grow outward with preference given to the cells that maintain the desired shape.</para>
+		/// <para>The available shape options are the following:</para>
+		/// <para>Circle—Cells that maintain circular regions will receive a greater weight. This is the default.</para>
+		/// <para>Ellipse—Cells that maintain elliptical-shaped regions will receive a greater weight.</para>
+		/// <para>Equilateral triangle—Cells that maintain equilateral triangular-shaped regions will receive a greater weight.</para>
+		/// <para>Square—Cells that maintain square-shaped regions will receive a greater weight.</para>
+		/// <para>Pentagon—Cells that maintain pentagon-shaped regions will receive a greater weight.</para>
+		/// <para>Hexagon—Cells that maintain hexagon-shaped regions will receive a greater weight.</para>
+		/// <para>Octagon—Cells that maintain octagon-shaped regions will receive a greater weight.</para>
 		/// <para><see cref="RegionShapeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -173,10 +173,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Region orientation</para>
-		/// <para>定义已定义形状的方向。区域从种子位置开始向外增长，优先考虑能保持所需区域形状方向的像元。</para>
-		/// <para>方向值以罗盘度为单位，范围从 0 到 360，从北开始顺时针增加。默认值为 0。</para>
-		/// <para>默认值 0 按照以下方式确定形状的方向：圆形 - 无影响；椭圆形 - 短轴指向南北方向；三角形和五角形 - 一点竖直向上；方形、六角形和八角形 - 一侧直边指向东西方向。</para>
-		/// <para>如果区域形状设置为 Circle，则区域方向参数不可用。</para>
+		/// <para>Defines the orientation of the defined shape. Regions are grown out from the seed locations with preference given to the cells that maintain the desired orientation of the region shapes.</para>
+		/// <para>The orientation values are in compass degrees ranging from 0 to 360, increasing clockwise starting from north. The default is 0.</para>
+		/// <para>The default of 0 orients the shapes in the following manner: Circle—no effect; Ellipse—the minor axis is orientated north-south; Triangle and Pentagon—one point is straight up; Square, Hexagon, and Octagon—one flat side is oriented east-west.</para>
+		/// <para>If the Region shape is set to Circle, the Region orientation parameter is unavailable.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -187,9 +187,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Shape/Utility tradeoff (%)</para>
-		/// <para>确定采用参数化区域增长算法使候选区域增长时的像元权重。权重是像元在保持所需区域形状与像元属性值效用（适宜性）两方面的折衷。</para>
-		/// <para>值越高，表示保持区域形状越重要于选择较高的效用值。可接受的百分比值为 0 到 100（包括 0 和 100）。默认值为 50。</para>
-		/// <para>此参数用于确定可行候选区域。算法选择的候选区域由评估方法参数控制。</para>
+		/// <para>Identifies the weight for the cells when growing the candidate regions in the parameterized region-growing algorithm. The weighting is a tradeoff between a cell&apos;s contribution for maintaining the region shape relative to the utility contribution of the cell&apos;s attribute value.</para>
+		/// <para>Higher values indicates maintaining the shape of the region is more important than selecting higher utility values. The acceptable percent values are 0 to 100, inclusively. The default is 50.</para>
+		/// <para>This parameter is used to identify the feasible candidate regions. The candidate regions that will be selected by the algorithm are controlled by the Evaluation method parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -199,16 +199,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Evaluation method</para>
-		/// <para>评估标准，用于确定采用参数化区域增长算法确定的候选区域中哪个优先级最高。可根据效用值的特定统计数据或区域内像元的空间排列来指定优先级。</para>
-		/// <para>可用选项如下：</para>
-		/// <para>最高平均值—根据最高平均值选择区域。这是默认设置。</para>
-		/// <para>最高总和—根据最高总和选择区域。</para>
-		/// <para>最高中值—根据最高中值选择区域。</para>
-		/// <para>最高值—根据区域内包含的最高单个像元值选择区域。此选项可确保选择各个最佳像元。</para>
-		/// <para>最低值—根据区域内包含的最高最低单个像元值选择区域。此选项可确保选定区域包含的像元效用值确实低。</para>
-		/// <para>最大核心面积—根据最大核心面积选择区域。远于区域边缘像元的所有像元均视为核心的一部分。可通过分析像元大小控制边缘距离。设置的像元大小越小，核心面积越大。</para>
-		/// <para>核心效用值最高总和—根据核心面积效用值的最高累计总和选择区域。可通过分析像元大小控制边缘距离。</para>
-		/// <para>最大边缘—使用 P1 比率根据最大边缘数选择区域，其中 P1 指形状周长与相同面积圆周长的比率。圆的 P1 比率为 1。</para>
+		/// <para>The evaluation criteria to be used for determining which of the candidate regions identified in the parameterized region-growing algorithm are most preferred. The preference can be specified based on a particular statistic of the utility values, or spatial arrangement of the cells within the regions.</para>
+		/// <para>The available options are the following:</para>
+		/// <para>Highest average value—Selects regions based on the highest average value. This is the default.</para>
+		/// <para>Highest sum—Selects regions based on the highest sum.</para>
+		/// <para>Highest median value—Selects regions based on the highest median value.</para>
+		/// <para>Highest value—Selects regions based on the highest individual cell value contained within the region. This option ensures the best individual cells are selected.</para>
+		/// <para>Lowest value—Selects regions based on the highest lowest individual cell value contained within the region. This option ensures the selected regions contain cells with really low utility.</para>
+		/// <para>Greatest core area—Selects regions based on the greatest core area.Any cell that is farther than one cell from the edge of a region is considered to be part of the core. The edge distance can be controlled by the analysis cell size. Setting a smaller cell size can increase the core area.</para>
+		/// <para>Highest sum of core utility values—Selects regions based on the highest cumulative sum of the utility values for the core area. The edge distance can be controlled by the analysis cell size.</para>
+		/// <para>Greatest edge—Selects regions based on the greatest amount of edge using the P1 ratio, which is the ratio of the perimeter of the shape to the perimeter of a circle of the same area. The P1 ratio for a circle is 1.</para>
 		/// <para><see cref="EvaluationMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -218,8 +218,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Region minimum area</para>
-		/// <para>定义每个区域允许的最小面积。</para>
-		/// <para>将使用面积单位参数指定的单位。</para>
+		/// <para>Define the minimum area allowed for each region.</para>
+		/// <para>The units specified by the Area units parameter will be used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -228,8 +228,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Region maximum area</para>
-		/// <para>定义每个区域允许的最大面积。</para>
-		/// <para>将使用面积单位参数指定的单位。</para>
+		/// <para>Define the maximum area allowed for each region.</para>
+		/// <para>The units specified by the Area units parameter will be used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -238,9 +238,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Minimum distance between regions</para>
-		/// <para>定义区域间允许的最小距离。此距离内无法存在两个区域。</para>
-		/// <para>此参数影响参数化区域增长 (PRG) 算法。如果某像元可能添加到候选区域中，但其对于输入栅格或现有区域的要素参数指定的数据集中的任何单个区域而言均在此距离内，则不会将此区域考虑为候选区域。不会向排除的位置（NoData 像元）应用最小距离设置。</para>
-		/// <para>将使用由距离单位参数指定的单位。</para>
+		/// <para>Define the minimum distance allowed between regions. No two regions can be within this distance.</para>
+		/// <para>This parameter influences the parameterized region-growing (PRG) algorithm. If a cell has the potential of being added to a candidate region, but it is within this distance from any individual region in the dataset specified by the Input raster or feature of existing regions parameter, it will not be considered for the candidate region. The minimum distance setting is not applied to excluded locations (NoData cells).</para>
+		/// <para>The units specified by the Distance units parameter will be used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -250,10 +250,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Maximum distance between regions</para>
-		/// <para>定义区域间允许的最大距离。两个区域之间的距离不可远于此距离。</para>
-		/// <para>按顺序依次选择区域时，如果最佳区域与任何已选择区域的距离远于此距离，则此次不会选择该区域，但是可在稍后选择更多区域时选择该区域。</para>
-		/// <para>最大距离应用于输入栅格或现有区域的要素参数指定的数据集，在这种情况下，必须至少有一个选定区域在现有区域的最大距离范围内。最大距离设置不应用于排除位置（NoData 像元），且不对 PRG 算法产生影响。</para>
-		/// <para>将使用由距离单位参数指定的单位。</para>
+		/// <para>Define the maximum distance allowed between regions. No region can be farther apart than this distance from at least one other region.</para>
+		/// <para>When sequentially selecting regions, if the next best region is farther than this distance from any of the already selected regions, it will not be considered at this time, but it may be selected later when more regions are selected.</para>
+		/// <para>The maximum distance is applied to the dataset specified in the Input raster or feature of existing regions parameter, in that at least one of the selected regions must be within the maximum distance from existing regions. The maximum distance setting is not applied to excluded areas (NoData cells) and has no effect on the PRG algorithm.</para>
+		/// <para>The units specified by the Distance units parameter will be used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -263,15 +263,15 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Distance units</para>
-		/// <para>定义用于区域间最小距离和区域间最大距离参数的距离单位。</para>
-		/// <para>可用选项及相应的单位如下：</para>
-		/// <para>地图单位—输出空间参考的线性单位</para>
-		/// <para>英里—英里</para>
-		/// <para>千米—千米</para>
-		/// <para>米—米</para>
-		/// <para>码—码</para>
-		/// <para>英尺—英尺</para>
-		/// <para>默认单位取决于输入栅格数据集。如果输入栅格的单位为英尺、码、英里或任何其他英制单位，则将使用 Miles。如果输入栅格的单位为米、千米或任何其他公制单位，则将使用 Kilometers。</para>
+		/// <para>Defines the distance units that will be used for the Minimum distance between regions and Maximum distance between regions parameters.</para>
+		/// <para>The available options and their corresponding units are the following:</para>
+		/// <para>Map units—For the linear units of the output spatial reference</para>
+		/// <para>Miles—For miles</para>
+		/// <para>Kilometers—For kilometers</para>
+		/// <para>Meters—For meters</para>
+		/// <para>Yards—For yards</para>
+		/// <para>Feet—For feet</para>
+		/// <para>The default is based on the input raster dataset. If the input raster is in feet, yards, miles, or any other imperial unit, Miles will be used. If the input raster is in meters, kilometers, or any other metric unit, Kilometers will be used.</para>
 		/// <para><see cref="DistanceUnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -281,9 +281,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or feature of existing regions</para>
-		/// <para>定义已存在区域之处的数据集。</para>
-		/// <para>输入可以为栅格或要素数据集。如果输入为栅格，则会将栅格内所有含有效值的位置视为已分配。所有其他位置均设为 NoData。</para>
-		/// <para>在参数化区域增长算法中，区域不会从标识为现有区域的任何位置增长。如以上相应参数说明所述，现有区域将用于区域间最小距离和区域间最大距离参数的增长和评估。</para>
+		/// <para>A dataset identifying where regions already exist.</para>
+		/// <para>The input can be a raster or feature dataset. If the input is a raster, any location in the raster with a valid value is considered already allocated. All other locations are set to NoData.</para>
+		/// <para>In the parameterized region-growing algorithm, no region will grow from any location identified as an existing region. Existing regions will be used in the growth and evaluation of the Minimum distance between regions and Maximum distance between regions parameters as described in the corresponding parameter descriptions above.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
@@ -295,10 +295,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Number of neighbors to use in growth</para>
-		/// <para>定义在区域增长时要使用的相邻像元。</para>
-		/// <para>可用选项如下：</para>
-		/// <para>四—区域增长时仅考虑区域直接（正交）相邻的四个像元。</para>
-		/// <para>八—区域增长时考虑八个最近像元（正交和对角线）。这是默认设置。</para>
+		/// <para>Defines which neighboring cells to use in the growth of the regions.</para>
+		/// <para>The available options are the following:</para>
+		/// <para>Four—Only the four direct (orthogonal) neighbors of the region cells will be considered in the region growth.</para>
+		/// <para>Eight—The eight nearest neighbors (orthogonal and diagonal) will be considered in the region growth. This is the default.</para>
 		/// <para><see cref="NumberOfNeighborsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -309,9 +309,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Islands not allowed in regions</para>
-		/// <para>定义潜在区域内是否允许岛屿。</para>
-		/// <para>选中 - 参数化区域增长算法确保区域内无岛屿。这是默认设置。创建区域后但选择区域前，会将洪水字段算法实施为后处理。如果区域内存在岛屿，则将填充岛屿，且会向区域添加像元。由于填充过程发生在选择过程之前，因此会将岛屿像元的效用添加到区域中，将在区域选择过程中和输出区域的统计数据内包括效用值。填充过程完成后，分配的总面积可能会超过总面积参数指定的目标。</para>
-		/// <para>未选中 - 允许岛屿。</para>
+		/// <para>Defines whether or not islands will be allowed within the potential regions.</para>
+		/// <para>Checked—The parameterized region-growing algorithm ensures there will be no islands within a region. This is the default.A flood field algorithm is implemented as a postprocess once the regions are created but before the regions are selected. If there are islands within a region, they will be filled in and the cells will join the region. Since the fill process occurs before the selection process, the utility of the island cells will be added to the region, and their values will be included in the selection process of the regions and in the statistics of the output regions. As a result of the fill process, it is likely that the total area allocated will exceed the target specified by the Total area parameter.</para>
+		/// <para>Unchecked—Islands will be allowed.</para>
 		/// <para><see cref="NoIslandsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -322,13 +322,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Number of seeds to grow from</para>
-		/// <para>定义可用于增长潜在区域的种子数。</para>
-		/// <para>可用选项如下：</para>
-		/// <para>基于输入—种子数取决于输入栅格中的像元数。输入栅格的像元数少于等于 100,000 时，默认为 Maximum。输入栅格的像元数大于 100,000 时，默认为 Small。这是默认设置。</para>
-		/// <para>小型—排除 NoData 像元后，种子数等于输入栅格中像元数的 10%，但不超过 1,600 个种子。</para>
-		/// <para>中等—排除 NoData 像元后，种子数等于输入栅格中像元数的 20%，但不超过 2,500 个种子。</para>
-		/// <para>大型—排除 NoData 像元后，种子数等于输入栅格中像元数的 30%，但不超过 3,600 个种子。</para>
-		/// <para>最大值—输入栅格内的每个可用像元均会发生区域增长。可用像元指所有非 NoData 像元和所有未识别为现有区域的像元。</para>
+		/// <para>Defines the number of seeds from which to grow the potential regions.</para>
+		/// <para>The available options are the following:</para>
+		/// <para>Based on input—The number of seeds will be based on the number of cells in the input raster. When the input raster has 100,000 cells or fewer, the default is Maximum. When the input raster has more than 100,000 cells, the default is Small. This is the default.</para>
+		/// <para>Small—The number of seeds will be equal to 10 percent of the number of cells in the input raster, after NoData cells are excluded, but not to exceed 1,600 seeds.</para>
+		/// <para>Medium—The number of seeds will be equal to 20 percent of the number of cells in the input raster, after NoData cells are excluded, but not to exceed 2,500 seeds.</para>
+		/// <para>Large—The number of seeds will be equal to 30 percent of the number of cells in the input raster, after NoData cells are excluded, but not to exceed 3,600 seeds.</para>
+		/// <para>Maximum—The region growth will occur at each available cell within the input raster. Available cells are all cells that are not NoData and not identified as an existing region.</para>
 		/// <para><see cref="RegionSeedsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -339,16 +339,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Resolution of the growth</para>
-		/// <para>设置区域增长的分辨率。</para>
-		/// <para>输入栅格将以此参数识别的像元的数量确定的分辨率重新采样（见下文）。例如，针对 LOW，输入栅格对 147,356 个像元重新采样。参数化区域增长算法在重新采样的中间栅格基础上增长。从重新采样的中间栅格中选择区域后，选定区域将以环境像元大小重新采样。</para>
-		/// <para>如果所需平均区域大小的像元数过小或过大，则会对目标分辨率进行以下调整。此调整将确保每个所需区域中均有足够的像元，且不会产生不必要的处理。因此，以下各个指定分辨率的中间重新采样栅格的总像元数可低于或高于目标像元数。</para>
-		/// <para>如果输入的像元少于 147,356 个，或选择了 Maximum，则不会重新采样，而是对输入栅格内的所有像元进行区域增长。如果输入栅格的像元少于 147,356 个，则 Low、Medium 或 High 选项将没有效果。</para>
-		/// <para>可用选项如下：</para>
-		/// <para>基于输入—分辨率取决于输入栅格中的像元数。输入栅格的像元数少于等于 500,000 时，默认为 Maximum。输入栅格的像元数大于 500,000 时，默认为 Low。这是默认设置。</para>
-		/// <para>低—将对包含 147,356 个 (384 x 384) 像元（这些像元以相同的 x 比率和 y 比率分配为输入栅格）的中间栅格执行分析。</para>
-		/// <para>中等—将对包含 262,144 个 (512 x 512) 像元（这些像元以相同的 x 比率和 y 比率分配为输入栅格）的中间栅格执行分析。</para>
-		/// <para>高—将对包含 589,824 个 (768 x 768) 像元（这些像元以相同的 x 比率和 y 比率分配为输入栅格）的中间栅格执行分析。</para>
-		/// <para>最大值—将对输入栅格中的所有像元执行分析。</para>
+		/// <para>Sets the resolution at which region growth occurs.</para>
+		/// <para>The input raster will be resampled to the resolution determined by the number of cells identified by this parameter (see below). For example, for LOW, the input raster is resampled to 147,356 cells. The parameterized region-growing algorithm grows on the resampled intermediate raster. Once the regions are selected from the resampled intermediate raster, the selected regions will be resampled to the Environment cell size.</para>
+		/// <para>An adjustment to the target resolutions identified below may be implemented if the number of cells in the desired average region size is too small or too large. This adjustment makes sure there will be enough cells in each desired region or that unnecessary processing will not occur. As a result, the total cells for the intermediate resampled raster for each of the specified resolutions below can be lower or higher than the target number of cells.</para>
+		/// <para>If the input has less than 147,356 cells or Maximum is selected, no resampling will occur and the region growth will process on all cells in the input raster. If the input raster has less than 147,356 cells, the Low, Medium, or High options have no effect.</para>
+		/// <para>The available options are the following:</para>
+		/// <para>Based on input—The resolution will be based on the number of cells in the input raster. When the input raster has 500,000 cells or fewer, the default is Maximum. When the input raster has more than 500,000 cells, the default is Low. This is the default.</para>
+		/// <para>Low—The analysis will be performed on an intermediate raster containing 147,356 (384 x 384) cells distributed in the same x and y ratio as the input raster.</para>
+		/// <para>Medium—The analysis will be performed on an intermediate raster containing 262,144 (512 x 512) cells distributed in the same x and y ratio as the input raster.</para>
+		/// <para>High—The analysis will be performed on an intermediate raster containing 589,824 (768 x 768) cells distributed in the same x and y ratio as the input raster.</para>
+		/// <para>Maximum—The analysis will be performed on all cells in the input raster.</para>
 		/// <para><see cref="RegionResolutionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -359,11 +359,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Region selection method</para>
-		/// <para>确定如何选择区域。</para>
-		/// <para>可用选项如下：</para>
-		/// <para>根据区域数—选择方法取决于区域数参数。如果区域数小于等于 8，则使用 Combinatorial 选择方法。如果区域数参数大于 8，则使用 Sequential 选择方法。这是默认设置。</para>
-		/// <para>组合—在考虑到空间约束的情况下，根据参数化区域增长 (PRG) 算法测试候选区域内所需区域数的所有组合，基于指定评估方法选择最佳区域。</para>
-		/// <para>相继—基于评估方法依序选择满足空间约束的最佳区域，直至达到所需区域数。</para>
+		/// <para>Identifies how the regions will be selected.</para>
+		/// <para>The available options are the following:</para>
+		/// <para>Based on number of regions—The selection method is based on the Number of regions parameter. If the Number of regions is eight or less, the Combinatorial selection method is used. If the Number of regions parameter is greater than eight, the Sequential selection method is used. This is the default.</para>
+		/// <para>Combinatorial—Selects the best regions based on the specified evaluation method, while honoring the spatial constraints, by testing all combinations of the desired number of regions within the candidate regions from the parameterized region-growing (PRG) algorithm.</para>
+		/// <para>Sequential—Sequentially selects the best regions based on the evaluation method and that meets the spatial constraints until the desired number of regions is reached.</para>
 		/// <para><see cref="SelectionMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -389,59 +389,59 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum AreaUnitsEnum 
 		{
 			/// <summary>
-			/// <para>平方地图单位—输出空间参考的线性单位的平方</para>
+			/// <para>Square map units—For the square of the linear units of the output spatial reference</para>
 			/// </summary>
 			[GPValue("SQUARE_MAP_UNITS")]
-			[Description("平方地图单位")]
+			[Description("Square map units")]
 			Square_map_units,
 
 			/// <summary>
-			/// <para>平方英里—英里</para>
+			/// <para>Square miles—For miles</para>
 			/// </summary>
 			[GPValue("SQUARE_MILES")]
-			[Description("平方英里")]
+			[Description("Square miles")]
 			Square_miles,
 
 			/// <summary>
-			/// <para>平方千米—千米</para>
+			/// <para>Square kilometers—For kilometers</para>
 			/// </summary>
 			[GPValue("SQUARE_KILOMETERS")]
-			[Description("平方千米")]
+			[Description("Square kilometers")]
 			Square_kilometers,
 
 			/// <summary>
-			/// <para>公顷—公顷</para>
+			/// <para>Hectares—For hectares</para>
 			/// </summary>
 			[GPValue("HECTARES")]
-			[Description("公顷")]
+			[Description("Hectares")]
 			Hectares,
 
 			/// <summary>
-			/// <para>英亩—英亩</para>
+			/// <para>Acres—For acres</para>
 			/// </summary>
 			[GPValue("ACRES")]
-			[Description("英亩")]
+			[Description("Acres")]
 			Acres,
 
 			/// <summary>
-			/// <para>平方米—米</para>
+			/// <para>Square meters—For meters</para>
 			/// </summary>
 			[GPValue("SQUARE_METERS")]
-			[Description("平方米")]
+			[Description("Square meters")]
 			Square_meters,
 
 			/// <summary>
-			/// <para>平方码—码</para>
+			/// <para>Square yards—For yards</para>
 			/// </summary>
 			[GPValue("SQUARE_YARDS")]
-			[Description("平方码")]
+			[Description("Square yards")]
 			Square_yards,
 
 			/// <summary>
-			/// <para>平方英尺—英尺</para>
+			/// <para>Square feet—For feet</para>
 			/// </summary>
 			[GPValue("SQUARE_FEET")]
-			[Description("平方英尺")]
+			[Description("Square feet")]
 			Square_feet,
 
 		}
@@ -452,52 +452,52 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum RegionShapeEnum 
 		{
 			/// <summary>
-			/// <para>圆形—保持圆形区域的像元将获得较大的权重。这是默认设置。</para>
+			/// <para>Circle—Cells that maintain circular regions will receive a greater weight. This is the default.</para>
 			/// </summary>
 			[GPValue("CIRCLE")]
-			[Description("圆形")]
+			[Description("Circle")]
 			Circle,
 
 			/// <summary>
-			/// <para>椭圆形—保持椭圆形区域的像元将获得较大的权重。</para>
+			/// <para>Ellipse—Cells that maintain elliptical-shaped regions will receive a greater weight.</para>
 			/// </summary>
 			[GPValue("ELLIPSE")]
-			[Description("椭圆形")]
+			[Description("Ellipse")]
 			Ellipse,
 
 			/// <summary>
-			/// <para>等边三角形—保持等边三角形区域的像元将获得较大的权重。</para>
+			/// <para>Equilateral triangle—Cells that maintain equilateral triangular-shaped regions will receive a greater weight.</para>
 			/// </summary>
 			[GPValue("TRIANGLE")]
-			[Description("等边三角形")]
+			[Description("Equilateral triangle")]
 			Equilateral_triangle,
 
 			/// <summary>
-			/// <para>正方形—保持方形区域的像元将获得较大的权重。</para>
+			/// <para>Square—Cells that maintain square-shaped regions will receive a greater weight.</para>
 			/// </summary>
 			[GPValue("SQUARE")]
-			[Description("正方形")]
+			[Description("Square")]
 			Square,
 
 			/// <summary>
-			/// <para>五边形—保持五角形区域的像元将获得较大的权重。</para>
+			/// <para>Pentagon—Cells that maintain pentagon-shaped regions will receive a greater weight.</para>
 			/// </summary>
 			[GPValue("PENTAGON")]
-			[Description("五边形")]
+			[Description("Pentagon")]
 			Pentagon,
 
 			/// <summary>
-			/// <para>六边形—保持六角形区域的像元将获得较大的权重。</para>
+			/// <para>Hexagon—Cells that maintain hexagon-shaped regions will receive a greater weight.</para>
 			/// </summary>
 			[GPValue("HEXAGON")]
-			[Description("六边形")]
+			[Description("Hexagon")]
 			Hexagon,
 
 			/// <summary>
-			/// <para>八边形—保持八角形区域的像元将获得较大的权重。</para>
+			/// <para>Octagon—Cells that maintain octagon-shaped regions will receive a greater weight.</para>
 			/// </summary>
 			[GPValue("OCTAGON")]
-			[Description("八边形")]
+			[Description("Octagon")]
 			Octagon,
 
 		}
@@ -508,59 +508,59 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum EvaluationMethodEnum 
 		{
 			/// <summary>
-			/// <para>最高平均值—根据最高平均值选择区域。这是默认设置。</para>
+			/// <para>Highest average value—Selects regions based on the highest average value. This is the default.</para>
 			/// </summary>
 			[GPValue("HIGHEST_AVERAGE_VALUE")]
-			[Description("最高平均值")]
+			[Description("Highest average value")]
 			Highest_average_value,
 
 			/// <summary>
-			/// <para>最高总和—根据最高总和选择区域。</para>
+			/// <para>Highest sum—Selects regions based on the highest sum.</para>
 			/// </summary>
 			[GPValue("HIGHEST_SUM")]
-			[Description("最高总和")]
+			[Description("Highest sum")]
 			Highest_sum,
 
 			/// <summary>
-			/// <para>最高中值—根据最高中值选择区域。</para>
+			/// <para>Highest median value—Selects regions based on the highest median value.</para>
 			/// </summary>
 			[GPValue("HIGHEST_MEDIAN_VALUE")]
-			[Description("最高中值")]
+			[Description("Highest median value")]
 			Highest_median_value,
 
 			/// <summary>
-			/// <para>最高值—根据区域内包含的最高单个像元值选择区域。此选项可确保选择各个最佳像元。</para>
+			/// <para>Highest value—Selects regions based on the highest individual cell value contained within the region. This option ensures the best individual cells are selected.</para>
 			/// </summary>
 			[GPValue("HIGHEST_VALUE")]
-			[Description("最高值")]
+			[Description("Highest value")]
 			Highest_value,
 
 			/// <summary>
-			/// <para>最低值—根据区域内包含的最高最低单个像元值选择区域。此选项可确保选定区域包含的像元效用值确实低。</para>
+			/// <para>Lowest value—Selects regions based on the highest lowest individual cell value contained within the region. This option ensures the selected regions contain cells with really low utility.</para>
 			/// </summary>
 			[GPValue("LOWEST_VALUE")]
-			[Description("最低值")]
+			[Description("Lowest value")]
 			Lowest_value,
 
 			/// <summary>
-			/// <para>最大核心面积—根据最大核心面积选择区域。远于区域边缘像元的所有像元均视为核心的一部分。可通过分析像元大小控制边缘距离。设置的像元大小越小，核心面积越大。</para>
+			/// <para>Greatest core area—Selects regions based on the greatest core area.Any cell that is farther than one cell from the edge of a region is considered to be part of the core. The edge distance can be controlled by the analysis cell size. Setting a smaller cell size can increase the core area.</para>
 			/// </summary>
 			[GPValue("GREATEST_CORE_AREA")]
-			[Description("最大核心面积")]
+			[Description("Greatest core area")]
 			Greatest_core_area,
 
 			/// <summary>
-			/// <para>核心效用值最高总和—根据核心面积效用值的最高累计总和选择区域。可通过分析像元大小控制边缘距离。</para>
+			/// <para>Highest sum of core utility values—Selects regions based on the highest cumulative sum of the utility values for the core area. The edge distance can be controlled by the analysis cell size.</para>
 			/// </summary>
 			[GPValue("HIGHEST_CORE_SUM")]
-			[Description("核心效用值最高总和")]
+			[Description("Highest sum of core utility values")]
 			Highest_sum_of_core_utility_values,
 
 			/// <summary>
-			/// <para>最大边缘—使用 P1 比率根据最大边缘数选择区域，其中 P1 指形状周长与相同面积圆周长的比率。圆的 P1 比率为 1。</para>
+			/// <para>Greatest edge—Selects regions based on the greatest amount of edge using the P1 ratio, which is the ratio of the perimeter of the shape to the perimeter of a circle of the same area. The P1 ratio for a circle is 1.</para>
 			/// </summary>
 			[GPValue("GREATEST_EDGE")]
-			[Description("最大边缘")]
+			[Description("Greatest edge")]
 			Greatest_edge,
 
 		}
@@ -571,45 +571,45 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum DistanceUnitsEnum 
 		{
 			/// <summary>
-			/// <para>地图单位—输出空间参考的线性单位</para>
+			/// <para>Map units—For the linear units of the output spatial reference</para>
 			/// </summary>
 			[GPValue("MAP_UNITS")]
-			[Description("地图单位")]
+			[Description("Map units")]
 			Map_units,
 
 			/// <summary>
-			/// <para>英里—英里</para>
+			/// <para>Miles—For miles</para>
 			/// </summary>
 			[GPValue("MILES")]
-			[Description("英里")]
+			[Description("Miles")]
 			Miles,
 
 			/// <summary>
-			/// <para>千米—千米</para>
+			/// <para>Kilometers—For kilometers</para>
 			/// </summary>
 			[GPValue("KILOMETERS")]
-			[Description("千米")]
+			[Description("Kilometers")]
 			Kilometers,
 
 			/// <summary>
-			/// <para>米—米</para>
+			/// <para>Meters—For meters</para>
 			/// </summary>
 			[GPValue("METERS")]
-			[Description("米")]
+			[Description("Meters")]
 			Meters,
 
 			/// <summary>
-			/// <para>码—码</para>
+			/// <para>Yards—For yards</para>
 			/// </summary>
 			[GPValue("YARDS")]
-			[Description("码")]
+			[Description("Yards")]
 			Yards,
 
 			/// <summary>
-			/// <para>英尺—英尺</para>
+			/// <para>Feet—For feet</para>
 			/// </summary>
 			[GPValue("FEET")]
-			[Description("英尺")]
+			[Description("Feet")]
 			Feet,
 
 		}
@@ -620,17 +620,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum NumberOfNeighborsEnum 
 		{
 			/// <summary>
-			/// <para>八—区域增长时考虑八个最近像元（正交和对角线）。这是默认设置。</para>
+			/// <para>Eight—The eight nearest neighbors (orthogonal and diagonal) will be considered in the region growth. This is the default.</para>
 			/// </summary>
 			[GPValue("EIGHT")]
-			[Description("八")]
+			[Description("Eight")]
 			Eight,
 
 			/// <summary>
-			/// <para>四—区域增长时仅考虑区域直接（正交）相邻的四个像元。</para>
+			/// <para>Four—Only the four direct (orthogonal) neighbors of the region cells will be considered in the region growth.</para>
 			/// </summary>
 			[GPValue("FOUR")]
-			[Description("四")]
+			[Description("Four")]
 			Four,
 
 		}
@@ -641,14 +641,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum NoIslandsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The parameterized region-growing algorithm ensures there will be no islands within a region. This is the default.A flood field algorithm is implemented as a postprocess once the regions are created but before the regions are selected. If there are islands within a region, they will be filled in and the cells will join the region. Since the fill process occurs before the selection process, the utility of the island cells will be added to the region, and their values will be included in the selection process of the regions and in the statistics of the output regions. As a result of the fill process, it is likely that the total area allocated will exceed the target specified by the Total area parameter.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("NO_ISLANDS")]
 			NO_ISLANDS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Islands will be allowed.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ISLANDS_ALLOWED")]
@@ -662,38 +662,38 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum RegionSeedsEnum 
 		{
 			/// <summary>
-			/// <para>基于输入—种子数取决于输入栅格中的像元数。输入栅格的像元数少于等于 100,000 时，默认为 Maximum。输入栅格的像元数大于 100,000 时，默认为 Small。这是默认设置。</para>
+			/// <para>Based on input—The number of seeds will be based on the number of cells in the input raster. When the input raster has 100,000 cells or fewer, the default is Maximum. When the input raster has more than 100,000 cells, the default is Small. This is the default.</para>
 			/// </summary>
 			[GPValue("AUTO")]
-			[Description("基于输入")]
+			[Description("Based on input")]
 			Based_on_input,
 
 			/// <summary>
-			/// <para>小型—排除 NoData 像元后，种子数等于输入栅格中像元数的 10%，但不超过 1,600 个种子。</para>
+			/// <para>Small—The number of seeds will be equal to 10 percent of the number of cells in the input raster, after NoData cells are excluded, but not to exceed 1,600 seeds.</para>
 			/// </summary>
 			[GPValue("SMALL")]
-			[Description("小型")]
+			[Description("Small")]
 			Small,
 
 			/// <summary>
-			/// <para>中等—排除 NoData 像元后，种子数等于输入栅格中像元数的 20%，但不超过 2,500 个种子。</para>
+			/// <para>Medium—The number of seeds will be equal to 20 percent of the number of cells in the input raster, after NoData cells are excluded, but not to exceed 2,500 seeds.</para>
 			/// </summary>
 			[GPValue("MEDIUM")]
-			[Description("中等")]
+			[Description("Medium")]
 			Medium,
 
 			/// <summary>
-			/// <para>大型—排除 NoData 像元后，种子数等于输入栅格中像元数的 30%，但不超过 3,600 个种子。</para>
+			/// <para>Large—The number of seeds will be equal to 30 percent of the number of cells in the input raster, after NoData cells are excluded, but not to exceed 3,600 seeds.</para>
 			/// </summary>
 			[GPValue("LARGE")]
-			[Description("大型")]
+			[Description("Large")]
 			Large,
 
 			/// <summary>
-			/// <para>最大值—输入栅格内的每个可用像元均会发生区域增长。可用像元指所有非 NoData 像元和所有未识别为现有区域的像元。</para>
+			/// <para>Maximum—The region growth will occur at each available cell within the input raster. Available cells are all cells that are not NoData and not identified as an existing region.</para>
 			/// </summary>
 			[GPValue("MAXIMUM")]
-			[Description("最大值")]
+			[Description("Maximum")]
 			Maximum,
 
 		}
@@ -704,38 +704,38 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum RegionResolutionEnum 
 		{
 			/// <summary>
-			/// <para>基于输入—分辨率取决于输入栅格中的像元数。输入栅格的像元数少于等于 500,000 时，默认为 Maximum。输入栅格的像元数大于 500,000 时，默认为 Low。这是默认设置。</para>
+			/// <para>Based on input—The resolution will be based on the number of cells in the input raster. When the input raster has 500,000 cells or fewer, the default is Maximum. When the input raster has more than 500,000 cells, the default is Low. This is the default.</para>
 			/// </summary>
 			[GPValue("AUTO")]
-			[Description("基于输入")]
+			[Description("Based on input")]
 			Based_on_input,
 
 			/// <summary>
-			/// <para>低—将对包含 147,356 个 (384 x 384) 像元（这些像元以相同的 x 比率和 y 比率分配为输入栅格）的中间栅格执行分析。</para>
+			/// <para>Low—The analysis will be performed on an intermediate raster containing 147,356 (384 x 384) cells distributed in the same x and y ratio as the input raster.</para>
 			/// </summary>
 			[GPValue("LOW")]
-			[Description("低")]
+			[Description("Low")]
 			Low,
 
 			/// <summary>
-			/// <para>中等—将对包含 262,144 个 (512 x 512) 像元（这些像元以相同的 x 比率和 y 比率分配为输入栅格）的中间栅格执行分析。</para>
+			/// <para>Medium—The analysis will be performed on an intermediate raster containing 262,144 (512 x 512) cells distributed in the same x and y ratio as the input raster.</para>
 			/// </summary>
 			[GPValue("MEDIUM")]
-			[Description("中等")]
+			[Description("Medium")]
 			Medium,
 
 			/// <summary>
-			/// <para>高—将对包含 589,824 个 (768 x 768) 像元（这些像元以相同的 x 比率和 y 比率分配为输入栅格）的中间栅格执行分析。</para>
+			/// <para>High—The analysis will be performed on an intermediate raster containing 589,824 (768 x 768) cells distributed in the same x and y ratio as the input raster.</para>
 			/// </summary>
 			[GPValue("HIGH")]
-			[Description("高")]
+			[Description("High")]
 			High,
 
 			/// <summary>
-			/// <para>最大值—将对输入栅格中的所有像元执行分析。</para>
+			/// <para>Maximum—The analysis will be performed on all cells in the input raster.</para>
 			/// </summary>
 			[GPValue("MAXIMUM")]
-			[Description("最大值")]
+			[Description("Maximum")]
 			Maximum,
 
 		}
@@ -746,24 +746,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum SelectionMethodEnum 
 		{
 			/// <summary>
-			/// <para>根据区域数—选择方法取决于区域数参数。如果区域数小于等于 8，则使用 Combinatorial 选择方法。如果区域数参数大于 8，则使用 Sequential 选择方法。这是默认设置。</para>
+			/// <para>Based on number of regions—The selection method is based on the Number of regions parameter. If the Number of regions is eight or less, the Combinatorial selection method is used. If the Number of regions parameter is greater than eight, the Sequential selection method is used. This is the default.</para>
 			/// </summary>
 			[GPValue("AUTO")]
-			[Description("根据区域数")]
+			[Description("Based on number of regions")]
 			Based_on_number_of_regions,
 
 			/// <summary>
-			/// <para>组合—在考虑到空间约束的情况下，根据参数化区域增长 (PRG) 算法测试候选区域内所需区域数的所有组合，基于指定评估方法选择最佳区域。</para>
+			/// <para>Combinatorial—Selects the best regions based on the specified evaluation method, while honoring the spatial constraints, by testing all combinations of the desired number of regions within the candidate regions from the parameterized region-growing (PRG) algorithm.</para>
 			/// </summary>
 			[GPValue("COMBINATORIAL")]
-			[Description("组合")]
+			[Description("Combinatorial")]
 			Combinatorial,
 
 			/// <summary>
-			/// <para>相继—基于评估方法依序选择满足空间约束的最佳区域，直至达到所需区域数。</para>
+			/// <para>Sequential—Sequentially selects the best regions based on the evaluation method and that meets the spatial constraints until the desired number of regions is reached.</para>
 			/// </summary>
 			[GPValue("SEQUENTIAL")]
-			[Description("相继")]
+			[Description("Sequential")]
 			Sequential,
 
 		}

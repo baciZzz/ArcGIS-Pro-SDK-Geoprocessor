@@ -12,7 +12,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 	/// <summary>
 	/// <para>ATan</para>
 	/// <para>ATan</para>
-	/// <para>计算栅格中各像元的反正切值。</para>
+	/// <para>Calculates the inverse tangent of cells in a raster.</para>
 	/// </summary>
 	public class ATan : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRasterOrConstant">
 		/// <para>Input raster or constant value</para>
-		/// <para>用于计算反正切值的输入数据。</para>
-		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input for which to calculate the inverse tangent values.</para>
+		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>这些值是输入值的反正切值。</para>
+		/// <para>The output raster.</para>
+		/// <para>The values are the inverse tangent of the input values.</para>
 		/// </param>
 		public ATan(object InRasterOrConstant, object OutRaster)
 		{
@@ -72,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value</para>
-		/// <para>用于计算反正切值的输入数据。</para>
-		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input for which to calculate the inverse tangent values.</para>
+		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -85,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>这些值是输入值的反正切值。</para>
+		/// <para>The output raster.</para>
+		/// <para>The values are the inverse tangent of the input values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

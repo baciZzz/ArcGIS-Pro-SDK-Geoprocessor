@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Raster To Geodatabase</para>
-	/// <para>栅格数据至地理数据库</para>
-	/// <para>将多个栅格数据集加载到地理数据库。</para>
+	/// <para>Raster To Geodatabase</para>
+	/// <para>Loads multiple raster datasets into a geodatabase.</para>
 	/// </summary>
 	public class RasterToGeodatabase : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InputRasters">
 		/// <para>Input Rasters</para>
-		/// <para>输入栅格数据集。</para>
+		/// <para>Input raster dataset(s).</para>
 		/// </param>
 		/// <param name="OutputGeodatabase">
 		/// <para>Output Geodatabase</para>
-		/// <para>地理数据库的路径和名称。</para>
+		/// <para>The path and name of a geodatabase.</para>
 		/// </param>
 		public RasterToGeodatabase(object InputRasters, object OutputGeodatabase)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 栅格数据至地理数据库</para>
+		/// <para>Tool Display Name : Raster To Geodatabase</para>
 		/// </summary>
-		public override string DisplayName() => "栅格数据至地理数据库";
+		public override string DisplayName() => "Raster To Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : RasterToGeodatabase</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Rasters</para>
-		/// <para>输入栅格数据集。</para>
+		/// <para>Input raster dataset(s).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Geodatabase</para>
-		/// <para>地理数据库的路径和名称。</para>
+		/// <para>The path and name of a geodatabase.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
-		/// <para>地理数据库存储参数（配置）。 配置关键字由数据库管理员进行设置。</para>
+		/// <para>The storage parameters (configuration) for a geodatabase. Configuration keywords are set up by your database administrator.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

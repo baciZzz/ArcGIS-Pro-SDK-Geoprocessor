@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>TIN Compare</para>
-	/// <para>TIN 比较</para>
-	/// <para>比较两个 TIN 并返回比较结果。</para>
+	/// <para>TIN Compare</para>
+	/// <para>Compares two TINs and returns the comparison results.</para>
 	/// </summary>
 	public class TINCompare : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InBaseTin">
 		/// <para>Input Base Tin</para>
-		/// <para>“输入基础 TIN”与“输入测试 TIN”进行比较。“输入基础 TIN”是指已被您声明为有效的数据。该基础数据具有正确的几何、标记值（如果存在）和空间参考。</para>
+		/// <para>The Input Base Tin is compared with the Input Test Tin. Input Base Tin refers to data that you have declared valid. This base data has the correct geometry, tag values (if any), and spatial reference.</para>
 		/// </param>
 		/// <param name="InTestTin">
 		/// <para>Input Test Tin</para>
-		/// <para>“输入测试 TIN”与“输入基础 TIN”进行比较。</para>
+		/// <para>The Input Test Tin is compared against the Input Base Tin.</para>
 		/// </param>
 		public TINCompare(object InBaseTin, object InTestTin)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : TIN 比较</para>
+		/// <para>Tool Display Name : TIN Compare</para>
 		/// </summary>
-		public override string DisplayName() => "TIN 比较";
+		public override string DisplayName() => "TIN Compare";
 
 		/// <summary>
 		/// <para>Tool Name : TINCompare</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Base Tin</para>
-		/// <para>“输入基础 TIN”与“输入测试 TIN”进行比较。“输入基础 TIN”是指已被您声明为有效的数据。该基础数据具有正确的几何、标记值（如果存在）和空间参考。</para>
+		/// <para>The Input Base Tin is compared with the Input Test Tin. Input Base Tin refers to data that you have declared valid. This base data has the correct geometry, tag values (if any), and spatial reference.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTinLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Test Tin</para>
-		/// <para>“输入测试 TIN”与“输入基础 TIN”进行比较。</para>
+		/// <para>The Input Test Tin is compared against the Input Base Tin.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTinLayer()]
@@ -86,10 +86,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Compare Type</para>
-		/// <para>比较类型。</para>
-		/// <para>所有—这是默认设置。</para>
-		/// <para>仅限属性—如果存在几何和 TIN 标记值，则会被指定给结点和三角形。</para>
-		/// <para>仅限空间参考—坐标系信息。</para>
+		/// <para>The comparison type.</para>
+		/// <para>All—This is the default.</para>
+		/// <para>Properties only—Refers to both geometry and TIN tag values, if any, that are assigned to nodes and triangles.</para>
+		/// <para>Spatial Reference only—Coordinate system information.</para>
 		/// <para><see cref="CompareTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -99,9 +99,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Continue Comparison</para>
-		/// <para>指示在遇到第一个不匹配项后是否继续比较所有属性。</para>
-		/// <para>未选中 - 在遇到第一个不匹配项后即停止比较。这是默认设置。</para>
-		/// <para>选中 - 在遇到第一个不匹配项后继续比较其他属性。</para>
+		/// <para>Indicates whether to compare all properties after encountering the first mismatch.</para>
+		/// <para>Unchecked—Stop after encountering the first mismatch. This is the default.</para>
+		/// <para>Checked—Compare other properties after encountering the first mismatch.</para>
 		/// <para><see cref="ContinueCompareEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Compare File</para>
-		/// <para>包含比较结果的文本文件的名称和路径。</para>
+		/// <para>The name and path of the text file which will contain the comparison results.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -134,24 +134,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CompareTypeEnum 
 		{
 			/// <summary>
-			/// <para>所有—这是默认设置。</para>
+			/// <para>All—This is the default.</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("所有")]
+			[Description("All")]
 			All,
 
 			/// <summary>
-			/// <para>仅限属性—如果存在几何和 TIN 标记值，则会被指定给结点和三角形。</para>
+			/// <para>Properties only—Refers to both geometry and TIN tag values, if any, that are assigned to nodes and triangles.</para>
 			/// </summary>
 			[GPValue("PROPERTIES_ONLY")]
-			[Description("仅限属性")]
+			[Description("Properties only")]
 			Properties_only,
 
 			/// <summary>
-			/// <para>仅限空间参考—坐标系信息。</para>
+			/// <para>Spatial Reference only—Coordinate system information.</para>
 			/// </summary>
 			[GPValue("SPATIAL_REFERENCE_ONLY")]
-			[Description("仅限空间参考")]
+			[Description("Spatial Reference only")]
 			Spatial_Reference_only,
 
 		}
@@ -162,14 +162,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ContinueCompareEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Compare other properties after encountering the first mismatch.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CONTINUE_COMPARE")]
 			CONTINUE_COMPARE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Stop after encountering the first mismatch. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CONTINUE_COMPARE")]

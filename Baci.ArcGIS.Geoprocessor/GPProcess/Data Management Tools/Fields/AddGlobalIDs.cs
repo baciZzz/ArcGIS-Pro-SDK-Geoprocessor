@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Global IDs</para>
-	/// <para>添加全局 ID</para>
-	/// <para>向地理数据库要素类、表和要素数据集的列表添加全局 ID。</para>
+	/// <para>Add Global IDs</para>
+	/// <para>Adds global IDs to a list of geodatabase feature classes, tables, and feature datasets.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDatasets">
 		/// <para>Input Datasets</para>
-		/// <para>要添加全局 ID 的地理数据库要素类、表和要素数据集的列表。</para>
+		/// <para>A list of geodatabase classes, tables, and feature datasets to which global IDs will be added.</para>
 		/// </param>
 		public AddGlobalIDs(object InDatasets)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 添加全局 ID</para>
+		/// <para>Tool Display Name : Add Global IDs</para>
 		/// </summary>
-		public override string DisplayName() => "添加全局 ID";
+		public override string DisplayName() => "Add Global IDs";
 
 		/// <summary>
 		/// <para>Tool Name : AddGlobalIDs</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Datasets</para>
-		/// <para>要添加全局 ID 的地理数据库要素类、表和要素数据集的列表。</para>
+		/// <para>A list of geodatabase classes, tables, and feature datasets to which global IDs will be added.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Radial Basis Functions</para>
-	/// <para>径向基函数(RBF)插值法</para>
-	/// <para>使用五种基函数之一对准确经过各输入点的表面进行插值。</para>
+	/// <para>Radial Basis Functions</para>
+	/// <para>Uses one of five basis functions to interpolate a surfaces that passes through the input points exactly.</para>
 	/// </summary>
 	public class RadialBasisFunctions : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input features</para>
-		/// <para>包含要插入的 z 值的输入点要素。</para>
+		/// <para>The input point features containing the z-values to be interpolated.</para>
 		/// </param>
 		/// <param name="ZField">
 		/// <para>Z value field</para>
-		/// <para>表示每个点的高度或量级值的字段。如果输入要素包含 z 值或 m 值，则该字段可以是数值字段或 Shape 字段。</para>
+		/// <para>Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contain z-values or m-values.</para>
 		/// </param>
 		public RadialBasisFunctions(object InFeatures, object ZField)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 径向基函数(RBF)插值法</para>
+		/// <para>Tool Display Name : Radial Basis Functions</para>
 		/// </summary>
-		public override string DisplayName() => "径向基函数(RBF)插值法";
+		public override string DisplayName() => "Radial Basis Functions";
 
 		/// <summary>
 		/// <para>Tool Name : RadialBasisFunctions</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input features</para>
-		/// <para>包含要插入的 z 值的输入点要素。</para>
+		/// <para>The input point features containing the z-values to be interpolated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Z value field</para>
-		/// <para>表示每个点的高度或量级值的字段。如果输入要素包含 z 值或 m 值，则该字段可以是数值字段或 Shape 字段。</para>
+		/// <para>Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contain z-values or m-values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output geostatistical layer</para>
-		/// <para>生成的地统计图层。只有未请求任何输出栅格时才需要输出该图层。</para>
+		/// <para>The geostatistical layer produced. This layer is required output only if no output raster is requested.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGALayer()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出栅格。只有未请求任何输出地统计图层时才需要输出该栅格。</para>
+		/// <para>The output raster. This raster is required output only if no output geostatistical layer is requested.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -106,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>要创建的输出栅格的像元大小。</para>
-		/// <para>可以通过像元大小参数在环境中明确设置该值。</para>
-		/// <para>如果未设置，则该值为输入空间参考中输入点要素范围的宽度与高度中的较小值除以 250。</para>
+		/// <para>The cell size at which the output raster will be created.</para>
+		/// <para>This value can be explicitly set in the Environments by the Cell Size parameter.</para>
+		/// <para>If not set, it is the shorter of the width or the height of the extent of the input point features, in the input spatial reference, divided by 250.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -120,28 +120,28 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Search neighborhood</para>
-		/// <para>定义用于控制输出的周围点。“标准”为默认选项。</para>
-		/// <para>标准版</para>
-		/// <para>长半轴 - 搜索邻域的长半轴值。</para>
-		/// <para>短半轴 - 搜索邻域的短半轴值。</para>
-		/// <para>角度 - 移动窗口的轴（圆）或长半轴（椭圆）的旋转角度。</para>
-		/// <para>最大邻点数 - 用于估计未知位置值的最大相邻数。</para>
-		/// <para>最小邻点数 - 用于估计未知位置值的最小相邻数。</para>
-		/// <para>分区类型 - 邻域的几何。</para>
-		/// <para>单扇区 - 单个椭圆。</para>
-		/// <para>四扇区 - 分为四个扇区的椭圆。</para>
-		/// <para>偏移四扇区 - 分为四个扇区且偏移 45 度的椭圆。</para>
-		/// <para>八扇区 - 分为八个扇区的椭圆。</para>
-		/// <para>标准圆形</para>
-		/// <para>半径 - 搜索圆的半径长度。</para>
-		/// <para>角度 - 移动窗口的轴（圆）或长半轴（椭圆）的旋转角度。</para>
-		/// <para>最大邻点数 - 用于估计未知位置值的最大相邻数。</para>
-		/// <para>最小邻点数 - 用于估计未知位置值的最小相邻数。</para>
-		/// <para>分区类型 - 邻域的几何。</para>
-		/// <para>单扇区 - 单个椭圆。</para>
-		/// <para>四扇区 - 分为四个扇区的椭圆。</para>
-		/// <para>偏移四扇区 - 分为四个扇区且偏移 45 度的椭圆。</para>
-		/// <para>八扇区 - 分为八个扇区的椭圆。</para>
+		/// <para>Defines which surrounding points will be used to control the output. Standard is the default.</para>
+		/// <para>Standard</para>
+		/// <para>Major semiaxis—The major semiaxis value of the searching neighborhood.</para>
+		/// <para>Minor semiaxis—The minor semiaxis value of the searching neighborhood.</para>
+		/// <para>Angle—The angle of rotation for the axis (circle) or semimajor axis (ellipse) of the moving window.</para>
+		/// <para>Max neighbors—The maximum number of neighbors that will be used to estimate the value at the unknown location.</para>
+		/// <para>Min neighbors—The minimum number of neighbors that will be used to estimate the value at the unknown location.</para>
+		/// <para>Sector Type—The geometry of the neighborhood.</para>
+		/// <para>One sector—Single ellipse.</para>
+		/// <para>Four sectors—Ellipse divided into four sectors.</para>
+		/// <para>Four sectors shifted—Ellipse divided into four sectors and shifted 45 degrees.</para>
+		/// <para>Eight sectors—Ellipse divided into eight sectors.</para>
+		/// <para>Standard Circular</para>
+		/// <para>Radius—The length of the radius of the search circle.</para>
+		/// <para>Angle—The angle of rotation for the axis (circle) or semimajor axis (ellipse) of the moving window.</para>
+		/// <para>Max neighbors—The maximum number of neighbors that will be used to estimate the value at the unknown location.</para>
+		/// <para>Min neighbors—The minimum number of neighbors that will be used to estimate the value at the unknown location.</para>
+		/// <para>Sector Type—The geometry of the neighborhood.</para>
+		/// <para>One sector—Single ellipse.</para>
+		/// <para>Four sectors—Ellipse divided into four sectors.</para>
+		/// <para>Four sectors shifted—Ellipse divided into four sectors and shifted 45 degrees.</para>
+		/// <para>Eight sectors—Ellipse divided into eight sectors.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGASearchNeighborhood()]
@@ -151,12 +151,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Radial basis function</para>
-		/// <para>有以下五种可用的径向基函数：</para>
-		/// <para>薄板样条函数—薄板样条函数</para>
-		/// <para>张力样条函数— 张力样条函数</para>
-		/// <para>规则样条函数— 完全规则样条函数</para>
-		/// <para>高次曲面函数— 高次曲面样条函数</para>
-		/// <para>反高次曲面样条函数—反高次曲面样条函数</para>
+		/// <para>There are five radial basis functions available.</para>
+		/// <para>Thin plate spline—Thin-plate spline function</para>
+		/// <para>Spline with tension— Spline with tension function</para>
+		/// <para>Completely regularized spline— Completely regularized spline function</para>
+		/// <para>Multiquadric— Multiquadric spline function</para>
+		/// <para>Inverse multiquadric—Inverse multiquadric spline function</para>
 		/// <para><see cref="Radial_Basis_FunctionsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -166,7 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Small scale parameter</para>
-		/// <para>用于计算分配给移动窗口内的点的权重。每个径向基函数都有一个控制表面小规模变化程度的参数。可通过寻找使均方根预测误差 (RMSPE) 最小的值来确定（最佳）参数。</para>
+		/// <para>Used to calculate the weights assigned to the points located in the moving window. Each of the radial basis functions has a parameter that controls the degree of small-scale variation of the surface. The (optimal) parameter is determined by finding the value that minimizes the root mean square prediction error (RMSPE).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -190,38 +190,38 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum Radial_Basis_FunctionsEnum 
 		{
 			/// <summary>
-			/// <para>规则样条函数— 完全规则样条函数</para>
+			/// <para>Completely regularized spline— Completely regularized spline function</para>
 			/// </summary>
 			[GPValue("COMPLETELY_REGULARIZED_SPLINE")]
-			[Description("规则样条函数")]
+			[Description("Completely regularized spline")]
 			Completely_regularized_spline,
 
 			/// <summary>
-			/// <para>张力样条函数— 张力样条函数</para>
+			/// <para>Spline with tension— Spline with tension function</para>
 			/// </summary>
 			[GPValue("SPLINE_WITH_TENSION")]
-			[Description("张力样条函数")]
+			[Description("Spline with tension")]
 			Spline_with_tension,
 
 			/// <summary>
-			/// <para>高次曲面函数— 高次曲面样条函数</para>
+			/// <para>Multiquadric— Multiquadric spline function</para>
 			/// </summary>
 			[GPValue("MULTIQUADRIC_FUNCTION")]
-			[Description("高次曲面函数")]
+			[Description("Multiquadric")]
 			Multiquadric,
 
 			/// <summary>
-			/// <para>反高次曲面样条函数—反高次曲面样条函数</para>
+			/// <para>Inverse multiquadric—Inverse multiquadric spline function</para>
 			/// </summary>
 			[GPValue("INVERSE_MULTIQUADRIC_FUNCTION")]
-			[Description("反高次曲面样条函数")]
+			[Description("Inverse multiquadric")]
 			Inverse_multiquadric,
 
 			/// <summary>
-			/// <para>薄板样条函数—薄板样条函数</para>
+			/// <para>Thin plate spline—Thin-plate spline function</para>
 			/// </summary>
 			[GPValue("THIN_PLATE_SPLINE")]
-			[Description("薄板样条函数")]
+			[Description("Thin plate spline")]
 			Thin_plate_spline,
 
 		}

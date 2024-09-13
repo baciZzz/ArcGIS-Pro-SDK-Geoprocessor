@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 {
 	/// <summary>
 	/// <para>Select Layer By Date And Time</para>
-	/// <para>按日期和时间选择</para>
-	/// <para>将根据日期和时间范围或日期属性（例如，单个日期、时间范围、时间段、星期、月或年）选择记录。</para>
+	/// <para>Select Layer By Date And Time</para>
+	/// <para>Selects records based on date and time ranges or date properties, for example, single date, time range, time period, days of the week, month, or year.</para>
 	/// </summary>
 	public class SelectLayerByDateAndTime : AbstractGPProcess
 	{
@@ -21,22 +21,22 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// </summary>
 		/// <param name="InLayerOrView">
 		/// <para>Input Rows</para>
-		/// <para>包含将应用选择内容的日期字段的数据。</para>
+		/// <para>The data containing a date field to which the selection will be applied.</para>
 		/// </param>
 		/// <param name="SelectionType">
 		/// <para>Selection Type</para>
-		/// <para>指定将如何应用选择内容，以及如果选择内容已存在，则将执行的操作。</para>
-		/// <para>新建选择内容—生成的选择内容将替换当前选择内容。 这是默认设置。</para>
-		/// <para>添加到当前选择内容—当存在一个选择内容时，会将生成的选择内容添加到当前选择内容中。 如果不存在选择内容，该选项的作用与新选择内容选项的作用相同。</para>
-		/// <para>从当前选择内容中移除—将生成的选择内容从当前选择内容中移除。 如果不存在选择内容，该选项不起作用。</para>
-		/// <para>选择当前选择内容的子集—将生成的选择内容与当前选择内容进行组合。 仅两者共有的记录保持选中状态。</para>
+		/// <para>Specifies how the selection will be applied and what will occur if a selection already exists.</para>
+		/// <para>New selection— The resulting selection will replace the current selection. This is the default.</para>
+		/// <para>Add to the current selection— The resulting selection will be added to the current selection if one exists. If no selection exists, this is the same as the new selection option.</para>
+		/// <para>Remove from the current selection— The resulting selection will be removed from the current selection. If no selection exists, this option has no effect.</para>
+		/// <para>Select subset from the current selection— The resulting selection will be combined with the current selection. Only records that are common to both remain selected.</para>
 		/// <para><see cref="SelectionTypeEnum"/></para>
 		/// </param>
 		/// <param name="TimeType">
 		/// <para>Time Type</para>
-		/// <para>指定将用于选择记录的日期和时间字段。</para>
-		/// <para>单个时间字段—将基于输入要素上的单个时间字段选择记录。</para>
-		/// <para>时间范围字段—将基于输入要素上的起始和结束时间字段选择记录。</para>
+		/// <para>Specifies how date and time fields will be used to select records.</para>
+		/// <para>Single Time Field—Records will be selected based on a single time field on the input feature.</para>
+		/// <para>Time Range Fields—Records will be selected based on start and end time fields on the input feature.</para>
 		/// <para><see cref="TimeTypeEnum"/></para>
 		/// </param>
 		public SelectLayerByDateAndTime(object InLayerOrView, object SelectionType, object TimeType)
@@ -47,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 按日期和时间选择</para>
+		/// <para>Tool Display Name : Select Layer By Date And Time</para>
 		/// </summary>
-		public override string DisplayName() => "按日期和时间选择";
+		public override string DisplayName() => "Select Layer By Date And Time";
 
 		/// <summary>
 		/// <para>Tool Name : SelectLayerByDateAndTime</para>
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Input Rows</para>
-		/// <para>包含将应用选择内容的日期字段的数据。</para>
+		/// <para>The data containing a date field to which the selection will be applied.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -92,11 +92,11 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Selection Type</para>
-		/// <para>指定将如何应用选择内容，以及如果选择内容已存在，则将执行的操作。</para>
-		/// <para>新建选择内容—生成的选择内容将替换当前选择内容。 这是默认设置。</para>
-		/// <para>添加到当前选择内容—当存在一个选择内容时，会将生成的选择内容添加到当前选择内容中。 如果不存在选择内容，该选项的作用与新选择内容选项的作用相同。</para>
-		/// <para>从当前选择内容中移除—将生成的选择内容从当前选择内容中移除。 如果不存在选择内容，该选项不起作用。</para>
-		/// <para>选择当前选择内容的子集—将生成的选择内容与当前选择内容进行组合。 仅两者共有的记录保持选中状态。</para>
+		/// <para>Specifies how the selection will be applied and what will occur if a selection already exists.</para>
+		/// <para>New selection— The resulting selection will replace the current selection. This is the default.</para>
+		/// <para>Add to the current selection— The resulting selection will be added to the current selection if one exists. If no selection exists, this is the same as the new selection option.</para>
+		/// <para>Remove from the current selection— The resulting selection will be removed from the current selection. If no selection exists, this option has no effect.</para>
+		/// <para>Select subset from the current selection— The resulting selection will be combined with the current selection. Only records that are common to both remain selected.</para>
 		/// <para><see cref="SelectionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -106,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Time Type</para>
-		/// <para>指定将用于选择记录的日期和时间字段。</para>
-		/// <para>单个时间字段—将基于输入要素上的单个时间字段选择记录。</para>
-		/// <para>时间范围字段—将基于输入要素上的起始和结束时间字段选择记录。</para>
+		/// <para>Specifies how date and time fields will be used to select records.</para>
+		/// <para>Single Time Field—Records will be selected based on a single time field on the input feature.</para>
+		/// <para>Time Range Fields—Records will be selected based on start and end time fields on the input feature.</para>
 		/// <para><see cref="TimeTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Date Field</para>
-		/// <para>输入图层中将用作选择依据的日期字段。 如果时间类型参数设置为单个时间字段，则此参数仅处于活动状态。</para>
+		/// <para>The date field from the input layer on which the selection will be based. This parameter is only active if the Time Type parameter is set to Single Time Field.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Start Date Field</para>
-		/// <para>时间范围中将用作选择依据的起始日期字段。 如果时间类型参数设置为时间范围字段，则此参数仅处于活动状态。</para>
+		/// <para>The start date field from the time range on which the selection will be based. This parameter is only active if the Time Type parameter is set to Time Range Fields .</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>End Date Field</para>
-		/// <para>时间范围中将用作选择依据的结束日期字段。 如果时间类型参数设置为时间范围字段，则此参数仅处于活动状态。</para>
+		/// <para>The end date field from the time range on which the selection will be based. This parameter is only active if the Time Type parameter is set to Time Range Fields.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -148,12 +148,12 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Selection Options</para>
-		/// <para>指定将如何选择日期和时间。</para>
-		/// <para>日期—将按日期进行选择。</para>
-		/// <para>时间—将按时间进行选择。</para>
-		/// <para>星期—将按星期进行选择。</para>
-		/// <para>月—将按月进行选择。</para>
-		/// <para>年—将按年进行选择。</para>
+		/// <para>Specifies how date and time selections will be made.</para>
+		/// <para>Date—The selection will be by date.</para>
+		/// <para>Time—The selection will be by time of day.</para>
+		/// <para>Day of week—The selection will be by day of the week.</para>
+		/// <para>Month—The selection will be by month.</para>
+		/// <para>Year—The selection will be by year.</para>
 		/// <para><see cref="SelectionOptionsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -163,12 +163,12 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Date Selection Type</para>
-		/// <para>指定根据日期范围、单数日期、新近时间段或比较时间段选择记录。</para>
-		/// <para>仅在将选择选项参数设置为日期时才启用此参数。</para>
-		/// <para>按日期范围—将根据起始和结束日期范围选择记录。</para>
-		/// <para>按单个日期—将根据指定日期选择记录。</para>
-		/// <para>按新近性—将根据与当前日期（系统日期和时间）相关的时间段（例如最近 14 天内）选择记录。</para>
-		/// <para>按比较时间段—将根据与当前日期（系统日期和时间）相关的最近时间段的上一时间段选择记录。 例如，如果当前日期为 1 月 29 日，时间片为 14 天，则将选择 1 月 1 日至 1 月 14 日之间发生的记录。 此选项可以与后续按新近性（Python 中的 RECENCY）选择结合使用，用于比较两个相邻时间段之间的记录计数（例如，1 月 1 日至 14 日和 1 月 15 日至 28 日的两个 14 天时间段）。</para>
+		/// <para>Specifies whether records will be selected based on a date range, singular date, recency period, or comparative time period.</para>
+		/// <para>This parameter is only active when the Selection Options parameter is set to Date.</para>
+		/// <para>By Date Range—Records will be selected based on a start and end date range.</para>
+		/// <para>By Single Date—Records will be selected based on the date specified.</para>
+		/// <para>By Recency—Records will be selected based on a time period in relation to the current date (system date and time), for example, within the last 14 days.</para>
+		/// <para>By Comparative Time Period—Records will be selected based on the time period immediately preceding a recent time period in relation to the current date (system date and time). For example, if the current date is January 29 and the time slice is 14 days, records occurring between January 1 and January 14 will be selected. This option can be used in combination with a subsequent By Recency (RECENCY in Python) selection to compare record counts between two adjacent time periods (for example, the two 14-day time periods of January 1–14 and January 15–28).</para>
 		/// <para><see cref="DateSelectionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -179,8 +179,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Date</para>
-		/// <para>要选择的单个日期和时间。</para>
-		/// <para>仅在将日期选择类型参数设置为按单个日期时才启用此参数。</para>
+		/// <para>The single date and time to be selected.</para>
+		/// <para>This parameter is only active when the Date Selection Type parameter is set to By Single Date.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -189,8 +189,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Start Date</para>
-		/// <para>日期范围的开始日期。</para>
-		/// <para>仅在将日期选择类型参数设置为按日期范围时才启用此参数。</para>
+		/// <para>The start date of the date range.</para>
+		/// <para>This parameter is only active when the Date Selection Type parameter is set to By Date Range.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -199,8 +199,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>End Date</para>
-		/// <para>日期范围的结束日期。</para>
-		/// <para>仅在将日期选择类型参数设置为按日期范围时才启用此参数。</para>
+		/// <para>The end date of the date range.</para>
+		/// <para>This parameter is only active when the Date Selection Type parameter is set to By Date Range.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -209,11 +209,11 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Use Current System time as End Time</para>
-		/// <para>指定是否将当前日期（本地系统时间）的记录包含在选择中（如果其在最近时间段中存在）。</para>
-		/// <para>选中 - 当前日期的记录将包含在选择中。</para>
-		/// <para>未选中 - 当前日期的记录将不包含在选择中。</para>
-		/// <para>例如，指定的时间片为 14 天，本地系统时间为 5:00 p.m.，该工具在 1 月 15 日执行时，新近时间段将包含 14 天前的日期 5:00 p.m. 和执行工具当天 5:00 p.m. 之间的所有记录，并选中此参数。 在本示例中，对于 14 天时间片，选择将为 2017 年 1 月 1 日 5:00:00 PM 至 2017 年 1 月 15 日 5:00:00 PM。 如果在未选中此参数的情况下使用此相同示例，则最近时间段将使用当天的开始时间作为结束时间（基于本地系统时间）。 在本示例中，对于 14 天时间片，选择将为 2017 年 1 月 1 日 12:00:00 AM 至 2017 年 1 月 15 日 12:00:00 AM。</para>
-		/// <para>仅在将日期选择类型参数设置为按比较时间段或按新近性时才启用此参数。</para>
+		/// <para>Specifies whether records from the current day (local system time) will be included in the selection if they exist in the recent time period.</para>
+		/// <para>Checked—Records from the current day will be included in the selection.</para>
+		/// <para>Unchecked—Records from the current day will not be included in the selection.</para>
+		/// <para>For example, the time slice specified is 14 days, the local system time is 5:00 p.m on January 15 when the tool executes, the recency time period includes all records between 5:00 p.m. on the date 14 days ago and 5:00 p.m. on the day the tool is executed, and this parameter is checked. In this example, the selection will be January 1, 2017 5:00:00 PM to January 15, 2017 5:00:00 PM for the 14-day time slice. Using this same example with this parameter unchecked, the recent period uses the beginning of the current day as the end time (based on local system time). In this case, the selection will be January 1, 2017 12:00:00 AM to January 15, 12:00:00 AM for the 14-day time slice.</para>
+		/// <para>This parameter is only active when the Date Selection Type parameter is set to By Comparative Time Period or By Recency.</para>
 		/// <para><see cref="UseSystemTimeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -224,8 +224,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Time Slice</para>
-		/// <para>用于定义选择将基于的最近时间段的时间单位（分钟、小时、天、周、月或年）数量，例如最近 14 天内的事件。</para>
-		/// <para>仅在将日期选择类型参数设置为按比较时间段或按新近性时才启用此参数。</para>
+		/// <para>The number of time units (minutes, hours, days, weeks, months, or years) defining the recent time period on which the selection will be based, for example, events within the last 14 days.</para>
+		/// <para>This parameter is only active when the Date Selection Type parameter is set to By Comparative Time Period or By Recency.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -235,8 +235,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Start Time</para>
-		/// <para>时间范围的开始时间。</para>
-		/// <para>仅在将选择选项参数设置为时间时才启用此参数。</para>
+		/// <para>The start time of the time range.</para>
+		/// <para>This parameter is only active when the Selection Options parameter is set to Time.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -245,8 +245,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>End Time</para>
-		/// <para>时间范围的结束时间。</para>
-		/// <para>仅在将选择选项参数设置为时间时才启用此参数。</para>
+		/// <para>The end time of the time range.</para>
+		/// <para>This parameter is only active when the Selection Options parameter is set to Time.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -255,15 +255,15 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Days of Week</para>
-		/// <para>指定用于选择记录的星期。</para>
-		/// <para>星期一—将选择星期一发生的记录。</para>
-		/// <para>星期二—将选择星期二发生的记录。</para>
-		/// <para>星期三—将选择星期三发生的记录。</para>
-		/// <para>星期四—将选择星期四发生的记录。</para>
-		/// <para>星期五—将选择星期五发生的记录。</para>
-		/// <para>星期六—将选择星期六发生的记录。</para>
-		/// <para>星期日—将选择星期日发生的记录。</para>
-		/// <para>仅在将选择选项参数设置为星期时才启用此参数。</para>
+		/// <para>Specifies the days of the week used to select records.</para>
+		/// <para>Monday—Records occurring on Monday will be selected.</para>
+		/// <para>Tuesday—Records occurring on Tuesday will be selected.</para>
+		/// <para>Wednesday—Records occurring on Wednesday will be selected.</para>
+		/// <para>Thursday—Records occurring on Thursday will be selected.</para>
+		/// <para>Friday—Records occurring on Friday will be selected.</para>
+		/// <para>Saturday—Records occurring on Saturday will be selected.</para>
+		/// <para>Sunday—Records occurring on Sunday will be selected.</para>
+		/// <para>This parameter is only active when the Selection Options parameter is set to Day of week.</para>
 		/// <para><see cref="DaysOfWeekEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -274,20 +274,20 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Months</para>
-		/// <para>指定用于选择记录的月。</para>
-		/// <para>一月—将选择 1 月发生的记录。</para>
-		/// <para>二月—将选择 2 月发生的记录。</para>
-		/// <para>三月—将选择 3 月发生的记录。</para>
-		/// <para>四月—将选择 4 月发生的记录。</para>
-		/// <para>五月—将选择 5 月发生的记录。</para>
-		/// <para>六月—将选择 6 月发生的记录。</para>
-		/// <para>七月—将选择 7 月发生的记录。</para>
-		/// <para>八月—将选择 8 月发生的记录。</para>
-		/// <para>九月—将选择 9 月发生的记录。</para>
-		/// <para>十月—将选择 10 月发生的记录。</para>
-		/// <para>十一月—将选择 11 月发生的记录。</para>
-		/// <para>十二月—将选择 12 月发生的记录。</para>
-		/// <para>仅在将选择选项参数设置为月时才启用此参数。</para>
+		/// <para>Specifies the months used to select records.</para>
+		/// <para>January—Records occurring in January will be selected.</para>
+		/// <para>February—Records occurring in February will be selected.</para>
+		/// <para>March—Records occurring in March will be selected.</para>
+		/// <para>April—Records occurring in April will be selected.</para>
+		/// <para>May—Records occurring in May will be selected.</para>
+		/// <para>June—Records occurring in June will be selected.</para>
+		/// <para>July—Records occurring in July will be selected.</para>
+		/// <para>August—Records occurring in August will be selected.</para>
+		/// <para>September—Records occurring in September will be selected.</para>
+		/// <para>October—Records occurring in October will be selected.</para>
+		/// <para>November—Records occurring in November will be selected.</para>
+		/// <para>December—Records occurring in December will be selected.</para>
+		/// <para>This parameter is only active when the Selection Options parameter is set to Month.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -297,8 +297,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Years</para>
-		/// <para>指定用于选择记录的年。</para>
-		/// <para>仅在将选择选项参数设置为年时才启用此参数。</para>
+		/// <para>Specifies the years used to select records.</para>
+		/// <para>This parameter is only active when the Selection Options parameter is set to Years.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -329,31 +329,31 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		public enum SelectionTypeEnum 
 		{
 			/// <summary>
-			/// <para>新建选择内容—生成的选择内容将替换当前选择内容。 这是默认设置。</para>
+			/// <para>New selection— The resulting selection will replace the current selection. This is the default.</para>
 			/// </summary>
 			[GPValue("NEW_SELECTION")]
-			[Description("新建选择内容")]
+			[Description("New selection")]
 			New_selection,
 
 			/// <summary>
-			/// <para>添加到当前选择内容—当存在一个选择内容时，会将生成的选择内容添加到当前选择内容中。 如果不存在选择内容，该选项的作用与新选择内容选项的作用相同。</para>
+			/// <para>Add to the current selection— The resulting selection will be added to the current selection if one exists. If no selection exists, this is the same as the new selection option.</para>
 			/// </summary>
 			[GPValue("ADD_TO_SELECTION")]
-			[Description("添加到当前选择内容")]
+			[Description("Add to the current selection")]
 			Add_to_the_current_selection,
 
 			/// <summary>
-			/// <para>从当前选择内容中移除—将生成的选择内容从当前选择内容中移除。 如果不存在选择内容，该选项不起作用。</para>
+			/// <para>Remove from the current selection— The resulting selection will be removed from the current selection. If no selection exists, this option has no effect.</para>
 			/// </summary>
 			[GPValue("REMOVE_FROM_SELECTION")]
-			[Description("从当前选择内容中移除")]
+			[Description("Remove from the current selection")]
 			Remove_from_the_current_selection,
 
 			/// <summary>
-			/// <para>选择当前选择内容的子集—将生成的选择内容与当前选择内容进行组合。 仅两者共有的记录保持选中状态。</para>
+			/// <para>Select subset from the current selection— The resulting selection will be combined with the current selection. Only records that are common to both remain selected.</para>
 			/// </summary>
 			[GPValue("SUBSET_SELECTION")]
-			[Description("选择当前选择内容的子集")]
+			[Description("Select subset from the current selection")]
 			Select_subset_from_the_current_selection,
 
 		}
@@ -364,17 +364,17 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		public enum TimeTypeEnum 
 		{
 			/// <summary>
-			/// <para>单个时间字段—将基于输入要素上的单个时间字段选择记录。</para>
+			/// <para>Single Time Field—Records will be selected based on a single time field on the input feature.</para>
 			/// </summary>
 			[GPValue("SINGLE_TIME_FIELD")]
-			[Description("单个时间字段")]
+			[Description("Single Time Field")]
 			Single_Time_Field,
 
 			/// <summary>
-			/// <para>时间范围字段—将基于输入要素上的起始和结束时间字段选择记录。</para>
+			/// <para>Time Range Fields—Records will be selected based on start and end time fields on the input feature.</para>
 			/// </summary>
 			[GPValue("TIME_RANGE_FIELDS")]
-			[Description("时间范围字段")]
+			[Description("Time Range Fields")]
 			Time_Range_Fields,
 
 		}
@@ -385,38 +385,38 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		public enum SelectionOptionsEnum 
 		{
 			/// <summary>
-			/// <para>日期—将按日期进行选择。</para>
+			/// <para>Date—The selection will be by date.</para>
 			/// </summary>
 			[GPValue("DATE")]
-			[Description("日期")]
+			[Description("Date")]
 			Date,
 
 			/// <summary>
-			/// <para>时间—将按时间进行选择。</para>
+			/// <para>Time—The selection will be by time of day.</para>
 			/// </summary>
 			[GPValue("TIME")]
-			[Description("时间")]
+			[Description("Time")]
 			Time,
 
 			/// <summary>
-			/// <para>星期—将按星期进行选择。</para>
+			/// <para>Day of week—The selection will be by day of the week.</para>
 			/// </summary>
 			[GPValue("DAY_OF_WEEK")]
-			[Description("星期")]
+			[Description("Day of week")]
 			Day_of_week,
 
 			/// <summary>
-			/// <para>月—将按月进行选择。</para>
+			/// <para>Month—The selection will be by month.</para>
 			/// </summary>
 			[GPValue("MONTH")]
-			[Description("月")]
+			[Description("Month")]
 			Month,
 
 			/// <summary>
-			/// <para>年—将按年进行选择。</para>
+			/// <para>Year—The selection will be by year.</para>
 			/// </summary>
 			[GPValue("YEAR")]
-			[Description("年")]
+			[Description("Year")]
 			Year,
 
 		}
@@ -427,31 +427,31 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		public enum DateSelectionTypeEnum 
 		{
 			/// <summary>
-			/// <para>按日期范围—将根据起始和结束日期范围选择记录。</para>
+			/// <para>By Date Range—Records will be selected based on a start and end date range.</para>
 			/// </summary>
 			[GPValue("DATE_RANGE")]
-			[Description("按日期范围")]
+			[Description("By Date Range")]
 			By_Date_Range,
 
 			/// <summary>
-			/// <para>按单个日期—将根据指定日期选择记录。</para>
+			/// <para>By Single Date—Records will be selected based on the date specified.</para>
 			/// </summary>
 			[GPValue("SINGLE_DATE")]
-			[Description("按单个日期")]
+			[Description("By Single Date")]
 			By_Single_Date,
 
 			/// <summary>
-			/// <para>按新近性—将根据与当前日期（系统日期和时间）相关的时间段（例如最近 14 天内）选择记录。</para>
+			/// <para>By Recency—Records will be selected based on a time period in relation to the current date (system date and time), for example, within the last 14 days.</para>
 			/// </summary>
 			[GPValue("RECENCY")]
-			[Description("按新近性")]
+			[Description("By Recency")]
 			By_Recency,
 
 			/// <summary>
-			/// <para>按比较时间段—将根据与当前日期（系统日期和时间）相关的最近时间段的上一时间段选择记录。 例如，如果当前日期为 1 月 29 日，时间片为 14 天，则将选择 1 月 1 日至 1 月 14 日之间发生的记录。 此选项可以与后续按新近性（Python 中的 RECENCY）选择结合使用，用于比较两个相邻时间段之间的记录计数（例如，1 月 1 日至 14 日和 1 月 15 日至 28 日的两个 14 天时间段）。</para>
+			/// <para>By Comparative Time Period—Records will be selected based on the time period immediately preceding a recent time period in relation to the current date (system date and time). For example, if the current date is January 29 and the time slice is 14 days, records occurring between January 1 and January 14 will be selected. This option can be used in combination with a subsequent By Recency (RECENCY in Python) selection to compare record counts between two adjacent time periods (for example, the two 14-day time periods of January 1–14 and January 15–28).</para>
 			/// </summary>
 			[GPValue("COMPARATIVE")]
-			[Description("按比较时间段")]
+			[Description("By Comparative Time Period")]
 			By_Comparative_Time_Period,
 
 		}
@@ -462,14 +462,14 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		public enum UseSystemTimeEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Records from the current day will be included in the selection.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SYSTEM_TIME")]
 			SYSTEM_TIME,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Records from the current day will not be included in the selection.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SYSTEM_TIME")]
@@ -483,52 +483,52 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		public enum DaysOfWeekEnum 
 		{
 			/// <summary>
-			/// <para>星期一—将选择星期一发生的记录。</para>
+			/// <para>Monday—Records occurring on Monday will be selected.</para>
 			/// </summary>
 			[GPValue("MONDAY")]
-			[Description("星期一")]
+			[Description("Monday")]
 			Monday,
 
 			/// <summary>
-			/// <para>星期二—将选择星期二发生的记录。</para>
+			/// <para>Tuesday—Records occurring on Tuesday will be selected.</para>
 			/// </summary>
 			[GPValue("TUESDAY")]
-			[Description("星期二")]
+			[Description("Tuesday")]
 			Tuesday,
 
 			/// <summary>
-			/// <para>星期三—将选择星期三发生的记录。</para>
+			/// <para>Wednesday—Records occurring on Wednesday will be selected.</para>
 			/// </summary>
 			[GPValue("WEDNESDAY")]
-			[Description("星期三")]
+			[Description("Wednesday")]
 			Wednesday,
 
 			/// <summary>
-			/// <para>星期四—将选择星期四发生的记录。</para>
+			/// <para>Thursday—Records occurring on Thursday will be selected.</para>
 			/// </summary>
 			[GPValue("THURSDAY")]
-			[Description("星期四")]
+			[Description("Thursday")]
 			Thursday,
 
 			/// <summary>
-			/// <para>星期五—将选择星期五发生的记录。</para>
+			/// <para>Friday—Records occurring on Friday will be selected.</para>
 			/// </summary>
 			[GPValue("FRIDAY")]
-			[Description("星期五")]
+			[Description("Friday")]
 			Friday,
 
 			/// <summary>
-			/// <para>星期六—将选择星期六发生的记录。</para>
+			/// <para>Saturday—Records occurring on Saturday will be selected.</para>
 			/// </summary>
 			[GPValue("SATURDAY")]
-			[Description("星期六")]
+			[Description("Saturday")]
 			Saturday,
 
 			/// <summary>
-			/// <para>星期日—将选择星期日发生的记录。</para>
+			/// <para>Sunday—Records occurring on Sunday will be selected.</para>
 			/// </summary>
 			[GPValue("SUNDAY")]
-			[Description("星期日")]
+			[Description("Sunday")]
 			Sunday,
 
 		}

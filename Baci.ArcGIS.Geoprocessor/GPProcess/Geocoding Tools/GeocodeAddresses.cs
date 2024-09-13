@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 {
 	/// <summary>
 	/// <para>Geocode Addresses</para>
-	/// <para>地理编码地址</para>
-	/// <para>对地址表进行地理编码。 此过程需要一个存储有要进行地理编码的地址的表和一个地址定位器或复合地址定位器。 此工具根据定位器来匹配存储的地址并将每个输入记录的结果保存在新的点要素类中。 使用 ArcGIS World Geocoding Service 时，此操作可能会消耗配额。</para>
+	/// <para>Geocode Addresses</para>
+	/// <para>Geocodes a table of addresses. This process requires a table that stores the addresses you want to geocode and an address locator or a composite address locator. This tool matches the stored addresses against the locator and saves the result for each input record in a new point feature class. When using the ArcGIS World Geocoding Service, this operation may consume credits.</para>
 	/// </summary>
 	public class GeocodeAddresses : AbstractGPProcess
 	{
@@ -21,22 +21,22 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>要对其进行地理编码的地址表。</para>
+		/// <para>The table of addresses to geocode.</para>
 		/// </param>
 		/// <param name="AddressLocator">
 		/// <para>Input Address Locator</para>
-		/// <para>要用于对地址表进行地理编码的地址定位器。在定位器路径末尾的定位器名称后包含 .loc 扩展名为可选项。</para>
+		/// <para>The address locator to use to geocode the table of addresses.Including the .loc extension after the locator name at the end of the locator path is optional.</para>
 		/// </param>
 		/// <param name="InAddressFields">
 		/// <para>Input Address Fields</para>
-		/// <para>地址定位器所使用的地址字段与输入地址表中的字段之间的映射。 如果完整地址储存在输入表的一个字段中，例如 303 Peachtree St NE, Atlanta, GA 30308，请选择单个字段。 如果将常规美国地址的输入地址拆分成 Address、City、State 和 ZIP 等多个字段，请选择多个字段。 如果将完整地址和国家/地区拆分为多个字段，例如 Address (303 Peachtree St NE, Atlanta, GA 30308) 和 Country (USA)，则选择单个字段和国家/地区字段。</para>
-		/// <para>某些定位器支持多个输入地址字段，例如 Address、Address2 和 Address3。 在此情况下，可以将地址组件分为多个字段，然后在进行地理编码时将地址字段连接在一起。 例如，跨三个字段的 100、Main st 和 Apt 140，或者跨两个字段的 100 Main st 和 Apt 140，在进行地理编码时，都将成为 100 Main st Apt 140。</para>
-		/// <para>如果不想将地址定位器所使用的可选输入地址字段映射到输入地址表中的字段，请使用 &lt;None&gt; 来代替字段名，以此指定不存在任何映射。</para>
+		/// <para>The mapping of address fields used by the address locator to fields in the input table of addresses. Select Single Field if the complete address is stored in one field in the input table, for example, 303 Peachtree St NE, Atlanta, GA 30308. Select Multiple Fields if the input addresses are split into multiple fields such as Address, City, State, and ZIP for a general United States address. Select Single Field and Country Field if the complete address and the country are split into separate fields such as Address (303 Peachtree St NE, Atlanta, GA 30308) and Country (USA).</para>
+		/// <para>Some locators support multiple input addresses fields, such as Address, Address2, and Address3. In this case, the address component can be separated into multiple fields, and the address fields will be concatenated at the time of geocoding. For example, 100, Main st, and Apt 140 across three fields, or 100 Main st and Apt 140 across two fields, both become 100 Main st Apt 140 when geocoding.</para>
+		/// <para>If you do not map an optional input address field used by the address locator to a field in the input table of addresses, specify that there is no mapping using &lt;None&gt; in place of the field name.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>经过地理编码的输出要素类。</para>
-		/// <para>由于 shapefile 限制，系统不支持将输出保存为 shapefile 格式。</para>
+		/// <para>The output geocoded feature class.</para>
+		/// <para>Saving the output to shapefile format is not supported due to shapefile limitations.</para>
 		/// </param>
 		public GeocodeAddresses(object InTable, object AddressLocator, object InAddressFields, object OutFeatureClass)
 		{
@@ -47,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 地理编码地址</para>
+		/// <para>Tool Display Name : Geocode Addresses</para>
 		/// </summary>
-		public override string DisplayName() => "地理编码地址";
+		public override string DisplayName() => "Geocode Addresses";
 
 		/// <summary>
 		/// <para>Tool Name : GeocodeAddresses</para>
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>要对其进行地理编码的地址表。</para>
+		/// <para>The table of addresses to geocode.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Input Address Locator</para>
-		/// <para>要用于对地址表进行地理编码的地址定位器。在定位器路径末尾的定位器名称后包含 .loc 扩展名为可选项。</para>
+		/// <para>The address locator to use to geocode the table of addresses.Including the .loc extension after the locator name at the end of the locator path is optional.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEAddressLocator()]
@@ -101,9 +101,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Input Address Fields</para>
-		/// <para>地址定位器所使用的地址字段与输入地址表中的字段之间的映射。 如果完整地址储存在输入表的一个字段中，例如 303 Peachtree St NE, Atlanta, GA 30308，请选择单个字段。 如果将常规美国地址的输入地址拆分成 Address、City、State 和 ZIP 等多个字段，请选择多个字段。 如果将完整地址和国家/地区拆分为多个字段，例如 Address (303 Peachtree St NE, Atlanta, GA 30308) 和 Country (USA)，则选择单个字段和国家/地区字段。</para>
-		/// <para>某些定位器支持多个输入地址字段，例如 Address、Address2 和 Address3。 在此情况下，可以将地址组件分为多个字段，然后在进行地理编码时将地址字段连接在一起。 例如，跨三个字段的 100、Main st 和 Apt 140，或者跨两个字段的 100 Main st 和 Apt 140，在进行地理编码时，都将成为 100 Main st Apt 140。</para>
-		/// <para>如果不想将地址定位器所使用的可选输入地址字段映射到输入地址表中的字段，请使用 &lt;None&gt; 来代替字段名，以此指定不存在任何映射。</para>
+		/// <para>The mapping of address fields used by the address locator to fields in the input table of addresses. Select Single Field if the complete address is stored in one field in the input table, for example, 303 Peachtree St NE, Atlanta, GA 30308. Select Multiple Fields if the input addresses are split into multiple fields such as Address, City, State, and ZIP for a general United States address. Select Single Field and Country Field if the complete address and the country are split into separate fields such as Address (303 Peachtree St NE, Atlanta, GA 30308) and Country (USA).</para>
+		/// <para>Some locators support multiple input addresses fields, such as Address, Address2, and Address3. In this case, the address component can be separated into multiple fields, and the address fields will be concatenated at the time of geocoding. For example, 100, Main st, and Apt 140 across three fields, or 100 Main st and Apt 140 across two fields, both become 100 Main st Apt 140 when geocoding.</para>
+		/// <para>If you do not map an optional input address field used by the address locator to a field in the input table of addresses, specify that there is no mapping using &lt;None&gt; in place of the field name.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFieldInfo()]
@@ -111,8 +111,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>经过地理编码的输出要素类。</para>
-		/// <para>由于 shapefile 限制，系统不支持将输出保存为 shapefile 格式。</para>
+		/// <para>The output geocoded feature class.</para>
+		/// <para>Saving the output to shapefile format is not supported due to shapefile limitations.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Dynamic Output Feature Class</para>
-		/// <para>参数在 ArcGIS Pro 中处于非活动状态。 保留它是为了支持 ArcGIS Desktop 向后兼容。</para>
+		/// <para>This parameter is inactive in ArcGIS Pro. It remains to support backward compatibility with ArcGIS Desktop.</para>
 		/// <para><see cref="OutRelationshipTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -132,9 +132,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Country</para>
-		/// <para>此参数可用于支持国家/地区参数的定位器，并将地理编码限制在所选国家/地区。 选择一个国家/地区将在大多数情况下提高地理编码的准确性。 当为输入地址字段参数选择单个字段和国家/地区字段，并在映射表示国家的字段时将输入表参数值用于输入地址字段参数值的 Country 字段，输入表参数值中的国家/地区值将覆盖国家/地区参数。</para>
-		/// <para>这仅限于所选的一个或多个国家/地区。 如果未指定国家/地区，则使用定位器的所有受支持国家/地区执行地理编码。</para>
-		/// <para>国家/地区参数不适用于所有定位器。</para>
+		/// <para>This parameter is available for locators that support a country parameter and will limit geocoding to the selected countries. Selecting a country will improve the accuracy of geocoding in most cases. When you select Single Field and Country Field for the Input Address Fields parameter and map a field representing countries using the Input Table parameter value to the Country field for the Input Address Fields parameter value, the country value from the Input Table parameter value will override the Country parameter.</para>
+		/// <para>This is limited to the selected country or countries. When no country is specified, geocoding is performed using all supported countries of the locator.</para>
+		/// <para>The Country parameter is not supported for all locators.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -143,10 +143,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Preferred Location Type</para>
-		/// <para>用于指定 PointAddress 匹配的首选输出几何。 此参数的选项是路径位置（街道位置的一侧），可用于路径或表示地址屋顶或宗地质心的地址位置。 如果数据中不存在首选位置，则将返回默认位置。 对于 Addr_type=PointAddress 的地理编码结果，x,y 属性值用于描述沿着街道的地址的坐标，而 DisplayX 和 DisplayY 值用于描述屋顶或建筑物质心坐标。</para>
-		/// <para>此参数并非支持所有定位器。</para>
-		/// <para>地址位置—将返回地理编码结果的几何，该几何可以表示地址位置，例如屋顶位置、宗地质心或前门。</para>
-		/// <para>路径位置—将返回地理编码结果的几何，该几何表示靠近街道一侧的位置，可用于车辆配送。 这是默认设置。</para>
+		/// <para>Specifies the preferred output geometry for PointAddress matches. The options for this parameter are Routing location, the side of street location, which can be used for routing, or Address location, the location that represents the rooftop or parcel centroid for the address. If the preferred location does not exist in the data, the default location will be returned instead. For geocode results with Addr_type=PointAddress, the x,y attribute values describe the coordinates of the address along the street, while the DisplayX and DisplayY values describe the rooftop or building centroid coordinates.</para>
+		/// <para>This parameter is not supported for all locators.</para>
+		/// <para>Address location—Geometry for geocode results that represent an address location such as rooftop location, parcel centroid, or front door will be returned.</para>
+		/// <para>Routing location—Geometry for geocode results that represent a location close to the side of the street, which can be used for vehicle routing, will be returned. This is the default.</para>
 		/// <para><see cref="LocationTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -156,12 +156,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Category</para>
-		/// <para>限制定位器搜索的地点类型，从而消除误报匹配并可能加快搜索过程的速度。 如果未使用任何类别，将使用所有支持的类别执行地理编码。 并非所有位置和国家/地区都支持所有类别值。 通常，该参数可以用于以下几个方面：</para>
-		/// <para>将匹配限制到特定地点类型或地址级别</para>
-		/// <para>避免回退匹配到不需要的地址级别</para>
-		/// <para>消除坐标搜索的歧义</para>
-		/// <para>此参数并非支持所有定位器。</para>
-		/// <para>有关类别过滤的详细信息，请参阅 ArcGIS REST API Web 帮助。</para>
+		/// <para>Limits the types of places the locator searches, which eliminates false positive matches and potentially speeds up the search process. When no category is used, geocoding is performed using all supported categories. Not all category values are supported for all locations and countries. In general, the parameter can be used for the following:</para>
+		/// <para>Limit matches to specific place types or address levels</para>
+		/// <para>Avoid fallback matches to unwanted address levels</para>
+		/// <para>Disambiguate coordinate searches</para>
+		/// <para>This parameter is not supported for all locators.</para>
+		/// <para>See the ArcGIS REST API web help for details about category filtering.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -169,11 +169,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Output Fields</para>
-		/// <para>指定将在地理编码结果中返回的定位器输出字段。</para>
-		/// <para>此参数可与使用创建定位器工具或创建要素定位器工具创建的输入定位器一起使用，这些定位器存储在磁盘上或已发布到 Enterprise 10.9 或更高版本。 包含至少一个使用创建地址定位器工具创建的定位器的复合定位器不支持此参数。</para>
-		/// <para>全部—在地理编码结果中包含所有可用的定位器输出字段。 这是默认设置。</para>
-		/// <para>仅位置—在地理编码结果中存储 Shape 字段。 输入表参数中的原始字段名称与其原始字段名称一起保留。</para>
-		/// <para>最小化—添加以下字段，用于描述位置以及其与地理编码结果中定位器中的信息的匹配程度：Shape、Status、Score、Match_type、Match_addr 和 Addr_type。 保留输入表参数中的原始字段名称。</para>
+		/// <para>Specifies which locator output fields will be returned in the geocode results.</para>
+		/// <para>This parameter can be used with input locators created with the Create Locator tool or Create Feature Locator tool stored on disk or published to Enterprise 10.9 or later. Composite locators that contain at least one locator created with the Create Address Locator tool do not support this parameter.</para>
+		/// <para>All— Includes all available locator output fields in the geocode results. This is the default.</para>
+		/// <para>Location Only—Stores the Shape field in the geocode results. The original field names from the Input Table parameter are maintained with their original field names.</para>
+		/// <para>Minimal—Adds the following fields that describe the location and how well it matches information in the locator in the geocode results: Shape, Status, Score, Match_type, Match_addr, and Addr_type. The original field names from the Input Table parameter are maintained.</para>
 		/// <para><see cref="OutputFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -220,17 +220,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		public enum LocationTypeEnum 
 		{
 			/// <summary>
-			/// <para>路径位置—将返回地理编码结果的几何，该几何表示靠近街道一侧的位置，可用于车辆配送。 这是默认设置。</para>
+			/// <para>Routing location—Geometry for geocode results that represent a location close to the side of the street, which can be used for vehicle routing, will be returned. This is the default.</para>
 			/// </summary>
 			[GPValue("ROUTING_LOCATION")]
-			[Description("路径位置")]
+			[Description("Routing location")]
 			Routing_location,
 
 			/// <summary>
-			/// <para>地址位置—将返回地理编码结果的几何，该几何可以表示地址位置，例如屋顶位置、宗地质心或前门。</para>
+			/// <para>Address location—Geometry for geocode results that represent an address location such as rooftop location, parcel centroid, or front door will be returned.</para>
 			/// </summary>
 			[GPValue("ADDRESS_LOCATION")]
-			[Description("地址位置")]
+			[Description("Address location")]
 			Address_location,
 
 		}
@@ -241,24 +241,24 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		public enum OutputFieldsEnum 
 		{
 			/// <summary>
-			/// <para>全部—在地理编码结果中包含所有可用的定位器输出字段。 这是默认设置。</para>
+			/// <para>All— Includes all available locator output fields in the geocode results. This is the default.</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("全部")]
+			[Description("All")]
 			All,
 
 			/// <summary>
-			/// <para>最小化—添加以下字段，用于描述位置以及其与地理编码结果中定位器中的信息的匹配程度：Shape、Status、Score、Match_type、Match_addr 和 Addr_type。 保留输入表参数中的原始字段名称。</para>
+			/// <para>Minimal—Adds the following fields that describe the location and how well it matches information in the locator in the geocode results: Shape, Status, Score, Match_type, Match_addr, and Addr_type. The original field names from the Input Table parameter are maintained.</para>
 			/// </summary>
 			[GPValue("MINIMAL")]
-			[Description("最小化")]
+			[Description("Minimal")]
 			Minimal,
 
 			/// <summary>
-			/// <para>仅位置—在地理编码结果中存储 Shape 字段。 输入表参数中的原始字段名称与其原始字段名称一起保留。</para>
+			/// <para>Location Only—Stores the Shape field in the geocode results. The original field names from the Input Table parameter are maintained with their original field names.</para>
 			/// </summary>
 			[GPValue("LOCATION_ONLY")]
-			[Description("仅位置")]
+			[Description("Location Only")]
 			Location_Only,
 
 		}

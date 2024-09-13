@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Color Balance Mosaic Dataset</para>
-	/// <para>平衡镶嵌数据集色彩</para>
-	/// <para>使图像与相邻图像之间的过渡无缝显示。</para>
+	/// <para>Color Balance Mosaic Dataset</para>
+	/// <para>Makes transitions from one image to an adjoining image appear seamless.</para>
 	/// </summary>
 	public class ColorBalanceMosaicDataset : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>想要进行色彩平衡的镶嵌数据集。</para>
+		/// <para>The mosaic dataset you want to color balance.</para>
 		/// </param>
 		public ColorBalanceMosaicDataset(object InMosaicDataset)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 平衡镶嵌数据集色彩</para>
+		/// <para>Tool Display Name : Color Balance Mosaic Dataset</para>
 		/// </summary>
-		public override string DisplayName() => "平衡镶嵌数据集色彩";
+		public override string DisplayName() => "Color Balance Mosaic Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : ColorBalanceMosaicDataset</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>想要进行色彩平衡的镶嵌数据集。</para>
+		/// <para>The mosaic dataset you want to color balance.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMosaicLayer()]
@@ -73,10 +73,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Balance Method</para>
-		/// <para>要使用的平衡算法。</para>
-		/// <para>匀光—将每个像素的值更改为目标颜色。使用该技术也必须选择目标颜色表面的类型，该类型将对目标颜色产生影响。多数情况下，匀光会取得最佳的效果。</para>
-		/// <para>直方图—根据每个像素值与目标直方图的关系更改像素值。从所有的栅格中均可获得目标直方图，也可以指定栅格以从中获得目标直方图。当所有栅格的直方图形状都相似时，该技术会取得较好的效果。</para>
-		/// <para>标准差—根据像素值与其目标栅格直方图的关系，在标准方差的范围内更改每个像素的值。标准差可由所有镶嵌数据集的栅格计算获得，也可指定目标栅格来计算标准差。当所有栅格均为正态分布时，该技术取得的效果最佳。</para>
+		/// <para>The balancing algorithm to use.</para>
+		/// <para>Dodging—Change each pixel&apos;s value toward a target color. With this technique, you must also choose the type of target color surface, which affects the target color. Dodging tends to give the best result in most cases.</para>
+		/// <para>Histogram—Change each pixel&apos;s value according to its relationship with a target histogram. The target histogram can be derived from all of the rasters, or you can specify a raster. This technique works well when all of the rasters have a similar histogram.</para>
+		/// <para>Standard deviation—Change each of the pixel&apos;s values according to its relationship with the histogram of the target raster, within one standard deviation. The standard deviation can be calculated from all of the rasters in the mosaic dataset, or you can specify a target raster. This technique works best when all of the rasters have normal distributions.</para>
 		/// <para><see cref="BalancingMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -86,12 +86,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Color Surface Type</para>
-		/// <para>使用匀光平衡方法时，每个像素都需要一个目标颜色，而目标颜色是根据表面类型而确定的。</para>
-		/// <para>单色—在栅格数据集数量少且地面物体种类少时使用。如果存在过多的栅格数据集或过多类型的地表，则输出颜色可能会变得模糊。所有像素均基于一个单色点 - 即所有像素的平均值进行更改。</para>
-		/// <para>颜色格网— 在栅格数据集数量很多或区域内的地面物体种类很多时使用。像素根据多目标颜色进行改变，这些目标颜色分布在镶嵌数据集中。</para>
-		/// <para>一阶— 与颜色格网表面相比，该技术所创建的颜色改变更为平滑，而且使用的辅助表存储空间更少，但可能需要花费更长时间进行处理。所有像素都根据从二维多项式倾斜平面获取的多个点进行更改。</para>
-		/// <para>二阶— 与颜色格网表面相比，该技术所创建的颜色改变更为平滑，而且使用的辅助表存储空间更少，但可能需要花费更长时间进行处理。所有输入像素都根据从二维多项式抛物线表面获取的一组多点进行更改。</para>
-		/// <para>三阶— 与颜色格网表面相比，该技术所创建的颜色改变更为平滑，而且使用的辅助表存储空间更少，但可能需要花费更长时间进行处理。所有输入像素都根据从三次表面获取的多个点进行更改。</para>
+		/// <para>When using the Dodging balance method, each pixel needs a target color, which is determined by the surface type.</para>
+		/// <para>Single color—Use when there are only a small number of raster datasets and a few different types of ground objects. If there are too many raster datasets or too many types of ground surfaces, the output color may become blurred. All the pixels are altered toward a single color point—the average of all pixels.</para>
+		/// <para>Color grid— Use when you have a large number of raster datasets, or areas with a large number of diverse ground objects. Pixels are altered toward multiple target colors, which are distributed across the mosaic dataset.</para>
+		/// <para>First order— This technique tends to create a smoother color change and uses less storage in the auxiliary table, but it may take longer to process compared to the color grid surface. All pixels are altered toward many points obtained from the two-dimensional polynomial slanted plane.</para>
+		/// <para>Second order— This technique tends to create a smoother color change and uses less storage in the auxiliary table, but it may take longer to process compared to the color grid surface. All input pixels are altered toward a set of multiple points obtained from the two-dimensional polynomial parabolic surface.</para>
+		/// <para>Third order— This technique tends to create a smoother color change and uses less storage in the auxiliary table, but it may take longer to process compared to the color grid surface. All input pixels are altered toward multiple points obtained from the cubic surface.</para>
 		/// <para><see cref="ColorSurfaceTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Raster</para>
-		/// <para>想要用于对其他图像进行色彩平衡的栅格。如果适用，将从该图像中获取平衡方法和颜色表面类型。</para>
+		/// <para>The raster you want to use to color balance the other images. The balance method and color surface type, if applicable, will be derived from this image.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Exclude Area Raster</para>
-		/// <para>对镶嵌数据集进行色彩平衡之前应用掩膜。使用生成排除区域工具创建掩膜。</para>
+		/// <para>Apply a mask before color balancing the mosaic dataset. Create the mask using the Generate Exclude Area tool.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRasterLayer()]
@@ -118,11 +118,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Stretch Type</para>
-		/// <para>进行色彩平衡前，拉伸值的范围。选择以下选项之一:</para>
-		/// <para>无— 使用原始像素值。这是默认设置。</para>
-		/// <para>自适应— 将在执行任何处理之前应用自适应预拉伸。</para>
-		/// <para>最小最大值— 在实际最小值和最大值之间拉伸值。</para>
-		/// <para>标准差— 在默认标准差数之间拉抻值。</para>
+		/// <para>Stretch the range of values before color balancing. Choose from one of the following options:</para>
+		/// <para>None— Use the original pixel values. This is the default.</para>
+		/// <para>Adaptive— An adaptive prestretch will be applied before any processing takes place.</para>
+		/// <para>Minimum Maximum— Stretch the values between their actual minimum and maximum values.</para>
+		/// <para>Standard deviation— Stretch the values between the default number of standard deviations.</para>
 		/// <para><see cref="StretchTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Gamma</para>
-		/// <para>调整图像的整体亮度。值越小，显示越暗，中等值之间的对比度越低。值越大，显示越亮，对比度越高。</para>
+		/// <para>Adjust the overall brightness of an image. A low value will minimize the contrast between moderate values by making them appear darker. Higher values increase the contrast by making them appear brighter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Block Field</para>
-		/// <para>镶嵌数据集属性表中的字段名称，用于标识在执行某些计算和操作时应被视为单一项目的多个项目。</para>
+		/// <para>The name of the field in a mosaic dataset's attribute table used to identify items that should be considered one item when performing some calculations and operations.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -172,24 +172,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum BalancingMethodEnum 
 		{
 			/// <summary>
-			/// <para>匀光—将每个像素的值更改为目标颜色。使用该技术也必须选择目标颜色表面的类型，该类型将对目标颜色产生影响。多数情况下，匀光会取得最佳的效果。</para>
+			/// <para>Dodging—Change each pixel&apos;s value toward a target color. With this technique, you must also choose the type of target color surface, which affects the target color. Dodging tends to give the best result in most cases.</para>
 			/// </summary>
 			[GPValue("DODGING")]
-			[Description("匀光")]
+			[Description("Dodging")]
 			Dodging,
 
 			/// <summary>
-			/// <para>直方图—根据每个像素值与目标直方图的关系更改像素值。从所有的栅格中均可获得目标直方图，也可以指定栅格以从中获得目标直方图。当所有栅格的直方图形状都相似时，该技术会取得较好的效果。</para>
+			/// <para>Histogram—Change each pixel&apos;s value according to its relationship with a target histogram. The target histogram can be derived from all of the rasters, or you can specify a raster. This technique works well when all of the rasters have a similar histogram.</para>
 			/// </summary>
 			[GPValue("HISTOGRAM")]
-			[Description("直方图")]
+			[Description("Histogram")]
 			Histogram,
 
 			/// <summary>
-			/// <para>标准差—根据像素值与其目标栅格直方图的关系，在标准方差的范围内更改每个像素的值。标准差可由所有镶嵌数据集的栅格计算获得，也可指定目标栅格来计算标准差。当所有栅格均为正态分布时，该技术取得的效果最佳。</para>
+			/// <para>Standard deviation—Change each of the pixel&apos;s values according to its relationship with the histogram of the target raster, within one standard deviation. The standard deviation can be calculated from all of the rasters in the mosaic dataset, or you can specify a target raster. This technique works best when all of the rasters have normal distributions.</para>
 			/// </summary>
 			[GPValue("STANDARD_DEVIATION")]
-			[Description("标准差")]
+			[Description("Standard deviation")]
 			Standard_deviation,
 
 		}
@@ -200,38 +200,38 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ColorSurfaceTypeEnum 
 		{
 			/// <summary>
-			/// <para>单色—在栅格数据集数量少且地面物体种类少时使用。如果存在过多的栅格数据集或过多类型的地表，则输出颜色可能会变得模糊。所有像素均基于一个单色点 - 即所有像素的平均值进行更改。</para>
+			/// <para>Single color—Use when there are only a small number of raster datasets and a few different types of ground objects. If there are too many raster datasets or too many types of ground surfaces, the output color may become blurred. All the pixels are altered toward a single color point—the average of all pixels.</para>
 			/// </summary>
 			[GPValue("SINGLE_COLOR")]
-			[Description("单色")]
+			[Description("Single color")]
 			Single_color,
 
 			/// <summary>
-			/// <para>颜色格网— 在栅格数据集数量很多或区域内的地面物体种类很多时使用。像素根据多目标颜色进行改变，这些目标颜色分布在镶嵌数据集中。</para>
+			/// <para>Color grid— Use when you have a large number of raster datasets, or areas with a large number of diverse ground objects. Pixels are altered toward multiple target colors, which are distributed across the mosaic dataset.</para>
 			/// </summary>
 			[GPValue("COLOR_GRID")]
-			[Description("颜色格网")]
+			[Description("Color grid")]
 			Color_grid,
 
 			/// <summary>
-			/// <para>一阶— 与颜色格网表面相比，该技术所创建的颜色改变更为平滑，而且使用的辅助表存储空间更少，但可能需要花费更长时间进行处理。所有像素都根据从二维多项式倾斜平面获取的多个点进行更改。</para>
+			/// <para>First order— This technique tends to create a smoother color change and uses less storage in the auxiliary table, but it may take longer to process compared to the color grid surface. All pixels are altered toward many points obtained from the two-dimensional polynomial slanted plane.</para>
 			/// </summary>
 			[GPValue("FIRST_ORDER")]
-			[Description("一阶")]
+			[Description("First order")]
 			First_order,
 
 			/// <summary>
-			/// <para>二阶— 与颜色格网表面相比，该技术所创建的颜色改变更为平滑，而且使用的辅助表存储空间更少，但可能需要花费更长时间进行处理。所有输入像素都根据从二维多项式抛物线表面获取的一组多点进行更改。</para>
+			/// <para>Second order— This technique tends to create a smoother color change and uses less storage in the auxiliary table, but it may take longer to process compared to the color grid surface. All input pixels are altered toward a set of multiple points obtained from the two-dimensional polynomial parabolic surface.</para>
 			/// </summary>
 			[GPValue("SECOND_ORDER")]
-			[Description("二阶")]
+			[Description("Second order")]
 			Second_order,
 
 			/// <summary>
-			/// <para>三阶— 与颜色格网表面相比，该技术所创建的颜色改变更为平滑，而且使用的辅助表存储空间更少，但可能需要花费更长时间进行处理。所有输入像素都根据从三次表面获取的多个点进行更改。</para>
+			/// <para>Third order— This technique tends to create a smoother color change and uses less storage in the auxiliary table, but it may take longer to process compared to the color grid surface. All input pixels are altered toward multiple points obtained from the cubic surface.</para>
 			/// </summary>
 			[GPValue("THIRD_ORDER")]
-			[Description("三阶")]
+			[Description("Third order")]
 			Third_order,
 
 		}
@@ -242,31 +242,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum StretchTypeEnum 
 		{
 			/// <summary>
-			/// <para>无— 使用原始像素值。这是默认设置。</para>
+			/// <para>None— Use the original pixel values. This is the default.</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("无")]
+			[Description("None")]
 			None,
 
 			/// <summary>
-			/// <para>标准差— 在默认标准差数之间拉抻值。</para>
+			/// <para>Standard deviation— Stretch the values between the default number of standard deviations.</para>
 			/// </summary>
 			[GPValue("STANDARD_DEVIATION")]
-			[Description("标准差")]
+			[Description("Standard deviation")]
 			Standard_deviation,
 
 			/// <summary>
-			/// <para>最小最大值— 在实际最小值和最大值之间拉伸值。</para>
+			/// <para>Minimum Maximum— Stretch the values between their actual minimum and maximum values.</para>
 			/// </summary>
 			[GPValue("MINIMUM_MAXIMUM")]
-			[Description("最小最大值")]
+			[Description("Minimum Maximum")]
 			Minimum_Maximum,
 
 			/// <summary>
-			/// <para>自适应— 将在执行任何处理之前应用自适应预拉伸。</para>
+			/// <para>Adaptive— An adaptive prestretch will be applied before any processing takes place.</para>
 			/// </summary>
 			[GPValue("ADAPTIVE")]
-			[Description("自适应")]
+			[Description("Adaptive")]
 			Adaptive,
 
 		}

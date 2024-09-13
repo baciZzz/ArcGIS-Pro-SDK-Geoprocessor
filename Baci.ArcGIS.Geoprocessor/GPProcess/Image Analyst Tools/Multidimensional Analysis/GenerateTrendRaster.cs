@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Trend Raster</para>
-	/// <para>生成趋势栅格</para>
-	/// <para>用于面向多维栅格中一个或多个变量估计每个像素沿维度的趋势。</para>
+	/// <para>Generate Trend Raster</para>
+	/// <para>Estimates the trend for each pixel along a dimension for one or more variables in a multidimensional raster.</para>
 	/// </summary>
 	public class GenerateTrendRaster : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InMultidimensionalRaster">
 		/// <para>Input Multidimensional Raster</para>
-		/// <para>输入多维栅格数据集。</para>
+		/// <para>The input multidimensional raster dataset.</para>
 		/// </param>
 		/// <param name="OutMultidimensionalRaster">
 		/// <para>Output Multidimensional Raster</para>
-		/// <para>输出云栅格格式 (CRF) 多维栅格数据集。</para>
+		/// <para>The output Cloud Raster Format (CRF) multidimensional raster dataset.</para>
 		/// </param>
 		/// <param name="Dimension">
 		/// <para>Dimension</para>
-		/// <para>将沿此维度为分析中所选的一个或多个变量提取趋势。</para>
+		/// <para>The dimension along which a trend will be extracted for the variable or variables selected in the analysis.</para>
 		/// </param>
 		public GenerateTrendRaster(object InMultidimensionalRaster, object OutMultidimensionalRaster, object Dimension)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 生成趋势栅格</para>
+		/// <para>Tool Display Name : Generate Trend Raster</para>
 		/// </summary>
-		public override string DisplayName() => "生成趋势栅格";
+		public override string DisplayName() => "Generate Trend Raster";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateTrendRaster</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>
-		/// <para>输入多维栅格数据集。</para>
+		/// <para>The input multidimensional raster dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Multidimensional Raster</para>
-		/// <para>输出云栅格格式 (CRF) 多维栅格数据集。</para>
+		/// <para>The output Cloud Raster Format (CRF) multidimensional raster dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Dimension</para>
-		/// <para>将沿此维度为分析中所选的一个或多个变量提取趋势。</para>
+		/// <para>The dimension along which a trend will be extracted for the variable or variables selected in the analysis.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Variables [Dimension Info] (Description)</para>
-		/// <para>将计算趋势的一个或多个变量。如果未指定变量，则将分析多维栅格中的第一个变量。</para>
+		/// <para>The variable or variables for which trends will be calculated. If no variable is specified, the first variable in the multidimensional raster will be analyzed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -108,12 +108,12 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Trend Type</para>
-		/// <para>指定用于执行沿维度像素值的趋势分析的类型。</para>
-		/// <para>线性—将沿线性趋势线拟合变量像素值。这是默认设置。</para>
-		/// <para>多项式—将沿二阶多项式趋势线拟合变量像素值。</para>
-		/// <para>谐波—将沿谐波趋势线拟合变量像素值。</para>
-		/// <para>Mann-Kendall—变量像素值将使用 Mann-Kendall 趋势测试进行评估。</para>
-		/// <para>Seasonal-Kendall—变量像素值将使用 Seasonal-Kendall 趋势测试进行评估。</para>
+		/// <para>Specifies the type of trend analysis to perform to pixel values along a dimension.</para>
+		/// <para>Linear—Variable pixel values will be fitted along a linear trend line. This is the default.</para>
+		/// <para>Polynomial—Variable pixel values will be fitted along a second order polynomial trend line.</para>
+		/// <para>Harmonic—Variable pixel values will be fitted along a harmonic trend line.</para>
+		/// <para>Mann-Kendall—Variable pixel values will be evaluated using the Mann-Kendall trend test.</para>
+		/// <para>Seasonal-Kendall—Variable pixel values will be evaluated using the Seasonal-Kendall trend test.</para>
 		/// <para><see cref="LineTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -123,10 +123,10 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Frequency / Polynomial Order</para>
-		/// <para>趋势拟合中使用的频率或多项式阶数。如果趋势类型是多项式，则此参数将指定多项式阶数。如果趋势类型为谐波，则此参数将指定用于拟合趋势的模型数量。</para>
-		/// <para>仅当分析的维度是时间时，趋势分析中才会包含此参数。</para>
-		/// <para>如果趋势类型参数为谐波，则默认值为 1，这意味着将使用一阶谐波曲线来拟合模型。</para>
-		/// <para>如果趋势类型参数是多项式，则默认值为 2 或二阶多项式。</para>
+		/// <para>The frequency or the polynomial order number to use in the trend fitting. If the trend type is polynomial, this parameter specifies the polynomial order. If the trend type is harmonic, this parameter specifies the number of models to use to fit the trend.</para>
+		/// <para>This parameter is only included in the trend analysis when the dimension being analyzed is time.</para>
+		/// <para>If the Trend Type parameter is Harmonic, the default value is 1, meaning a first order harmonic curve is used to fit the model.</para>
+		/// <para>If the Trend Type parameter is Polynomial, the default value is 2, or second order polynomial.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -134,9 +134,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Ignore NoData</para>
-		/// <para>指定分析中是否忽略 NoData 值。</para>
-		/// <para>已选中 - 分析将包括沿给定维度的所有有效像素，并忽略所有 NoData 像素。 这是默认设置。</para>
-		/// <para>未选中 - 如果沿给定维度的像素包含任意 NoData 值，则分析结果将变为 NoData。</para>
+		/// <para>Specifies whether NoData values are ignored in the analysis.</para>
+		/// <para>Checked—The analysis will include all valid pixels along a given dimension and ignore any NoData pixels. This is the default.</para>
+		/// <para>Unchecked—The analysis will result in NoData if there are any NoData values for the pixels along the given dimension.</para>
 		/// <para><see cref="IgnoreNodataEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -146,8 +146,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Length of Cycle</para>
-		/// <para>要进行建模的周期性变化的长度。当趋势类型设置为谐波时，此参数为必需项。例如，叶绿度通常在一年中具有一个较强的变化周期，因此周期长度为 1 年。每小时温度数据在一天中具有一个较强的变化周期，因此周期长度为 1 天。</para>
-		/// <para>对于每年周期变化的数据，默认长度为 1 年。</para>
+		/// <para>The length of periodic variation to model. This parameter is required when Trend Type is set to Harmonic. For example, leaf greenness often has one strong cycle of variation in a single year, so the cycle length is 1 year. Hourly temperature data has one strong cycle of variation throughout a single day, so the cycle length is 1 day.</para>
+		/// <para>The default length is 1 year for data that varies on an annual cycle.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -155,9 +155,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Cycle Unit</para>
-		/// <para>指定用于谐波周期长度的时间单位。</para>
-		/// <para>天—谐波周期的长度单位为天。</para>
-		/// <para>年—谐波周期的长度单位为年。这是默认设置。</para>
+		/// <para>Specifies the time unit to be used for the length of a harmonic cycle.</para>
+		/// <para>Days—The unit for the length of the harmonic cycle is days.</para>
+		/// <para>Years—The unit for the length of the harmonic cycle is years. This is the default.</para>
 		/// <para><see cref="CycleUnitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -167,9 +167,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>RMSE</para>
-		/// <para>指定是否将计算趋势拟合线的均方根误差 (RMSE)。</para>
-		/// <para>选中 - 将计算 RMSE 并显示在栅格数据集属性窗口的统计数据下方。这是默认设置。</para>
-		/// <para>未选中 - 将不计算 RMSE。</para>
+		/// <para>Specifies whether the root mean square error (RMSE) of the trend fit line will be calculated.</para>
+		/// <para>Checked—The RMSE will be calculated and displayed in the raster dataset properties window under Statistics. This is the default.</para>
+		/// <para>Unchecked—The RMSE will not be calculated.</para>
 		/// <para><see cref="RmseEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -180,9 +180,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>R-Squared</para>
-		/// <para>指定是否将为趋势拟合线计算 R 平方拟合优度统计数据。</para>
-		/// <para>选中 - 将计算 R 平方值并显示在栅格数据集属性窗口的统计数据下方。</para>
-		/// <para>未选中 - 将不计算 R 平方值。这是默认设置。</para>
+		/// <para>Specifies whether the R-squared goodness-of-fit statistic for the trend fit line will be calculated.</para>
+		/// <para>Checked—The R-squared value will be calculated and displayed in the raster dataset properties window under Statistics.</para>
+		/// <para>Unchecked—The R-squared value will not be calculated. This is the default.</para>
 		/// <para><see cref="R2Enum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -193,9 +193,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>P-Value of Slope Coefficient</para>
-		/// <para>指定是否将为趋势线的斜率系数计算 p 值统计数据。</para>
-		/// <para>选中 - 将计算 p 值并显示在栅格数据集属性窗口的统计数据下方。</para>
-		/// <para>未选中 - 将不计算 p 值。这是默认设置。</para>
+		/// <para>Specifies whether the p-value statistic for the slope coefficient of the trend line will be calculated.</para>
+		/// <para>Checked—The p-value will be calculated and displayed in the raster dataset properties window under Statistics.</para>
+		/// <para>Unchecked—The p-value will not be calculated. This is the default.</para>
 		/// <para><see cref="SlopePValueEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -206,9 +206,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Seasonal Period</para>
-		/// <para>指定在执行 Seasonal-Kendall 测试时用于季节性期间长度的时间单位。</para>
-		/// <para>天—季节性期间的长度单位为天。这是默认设置。</para>
-		/// <para>月—季节性期间的长度单位为月。</para>
+		/// <para>Specifies the time unit to be used for the length of a seasonal period when performing the Seasonal-Kendall test.</para>
+		/// <para>Days—The unit for the length of the seasonal period is days. This is the default.</para>
+		/// <para>Months—The unit for the length of the seasonal period is months.</para>
 		/// <para><see cref="SeasonalPeriodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -233,35 +233,35 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum LineTypeEnum 
 		{
 			/// <summary>
-			/// <para>线性—将沿线性趋势线拟合变量像素值。这是默认设置。</para>
+			/// <para>Linear—Variable pixel values will be fitted along a linear trend line. This is the default.</para>
 			/// </summary>
 			[GPValue("LINEAR")]
-			[Description("线性")]
+			[Description("Linear")]
 			Linear,
 
 			/// <summary>
-			/// <para>谐波—将沿谐波趋势线拟合变量像素值。</para>
+			/// <para>Harmonic—Variable pixel values will be fitted along a harmonic trend line.</para>
 			/// </summary>
 			[GPValue("HARMONIC")]
-			[Description("谐波")]
+			[Description("Harmonic")]
 			Harmonic,
 
 			/// <summary>
-			/// <para>多项式—将沿二阶多项式趋势线拟合变量像素值。</para>
+			/// <para>Polynomial—Variable pixel values will be fitted along a second order polynomial trend line.</para>
 			/// </summary>
 			[GPValue("POLYNOMIAL")]
-			[Description("多项式")]
+			[Description("Polynomial")]
 			Polynomial,
 
 			/// <summary>
-			/// <para>Mann-Kendall—变量像素值将使用 Mann-Kendall 趋势测试进行评估。</para>
+			/// <para>Mann-Kendall—Variable pixel values will be evaluated using the Mann-Kendall trend test.</para>
 			/// </summary>
 			[GPValue("MANN-KENDALL")]
 			[Description("Mann-Kendall")]
 			MANN_KENDALL,
 
 			/// <summary>
-			/// <para>Seasonal-Kendall—变量像素值将使用 Seasonal-Kendall 趋势测试进行评估。</para>
+			/// <para>Seasonal-Kendall—Variable pixel values will be evaluated using the Seasonal-Kendall trend test.</para>
 			/// </summary>
 			[GPValue("SEASONAL-KENDALL")]
 			[Description("Seasonal-Kendall")]
@@ -275,14 +275,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum IgnoreNodataEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The analysis will include all valid pixels along a given dimension and ignore any NoData pixels. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DATA")]
 			DATA,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The analysis will result in NoData if there are any NoData values for the pixels along the given dimension.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NODATA")]
@@ -296,17 +296,17 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum CycleUnitEnum 
 		{
 			/// <summary>
-			/// <para>天—谐波周期的长度单位为天。</para>
+			/// <para>Days—The unit for the length of the harmonic cycle is days.</para>
 			/// </summary>
 			[GPValue("DAYS")]
-			[Description("天")]
+			[Description("Days")]
 			Days,
 
 			/// <summary>
-			/// <para>年—谐波周期的长度单位为年。这是默认设置。</para>
+			/// <para>Years—The unit for the length of the harmonic cycle is years. This is the default.</para>
 			/// </summary>
 			[GPValue("YEARS")]
-			[Description("年")]
+			[Description("Years")]
 			Years,
 
 		}
@@ -324,7 +324,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 			RMSE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The RMSE will not be calculated.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_RMSE")]
@@ -338,14 +338,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum R2Enum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The R-squared value will be calculated and displayed in the raster dataset properties window under Statistics.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("R2")]
 			R2,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The R-squared value will not be calculated. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_R2")]
@@ -359,14 +359,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum SlopePValueEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The p-value will be calculated and displayed in the raster dataset properties window under Statistics.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SLOPEPVALUE")]
 			SLOPEPVALUE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The p-value will not be calculated. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SLOPEPVALUE")]
@@ -380,17 +380,17 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum SeasonalPeriodEnum 
 		{
 			/// <summary>
-			/// <para>天—季节性期间的长度单位为天。这是默认设置。</para>
+			/// <para>Days—The unit for the length of the seasonal period is days. This is the default.</para>
 			/// </summary>
 			[GPValue("DAYS")]
-			[Description("天")]
+			[Description("Days")]
 			Days,
 
 			/// <summary>
-			/// <para>月—季节性期间的长度单位为月。</para>
+			/// <para>Months—The unit for the length of the seasonal period is months.</para>
 			/// </summary>
 			[GPValue("MONTHS")]
-			[Description("月")]
+			[Description("Months")]
 			Months,
 
 		}

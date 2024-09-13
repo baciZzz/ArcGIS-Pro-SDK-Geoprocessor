@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>NetCDF Trajectories To Feature Class (Discrete Sampling Geometry)</para>
-	/// <para>NetCDF 轨迹转要素类（离散采样几何）</para>
-	/// <para>根据 netCDF 文件中的轨迹创建要素类。 在气候和预报 (CF) 元数据约定中，轨迹是一种离散采样几何 (DSG)。</para>
+	/// <para>NetCDF Trajectories To Feature Class (Discrete Sampling Geometry)</para>
+	/// <para>Creates a feature class from trajectories in netCDF files. In the Climate and Forecast (CF) metadata convention, a trajectory is a type of discrete sampling geometry (DSG).</para>
 	/// </summary>
 	public class NetCDFTrajectoriesToFeatureClass : AbstractGPProcess
 	{
@@ -21,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		/// <param name="InFilesOrFolders">
 		/// <para>Input NetCDF Files or Folders</para>
-		/// <para>将用于创建要素类的输入 netCDF 文件。 可以使用单个 netCDF 文件以及包含多个 netCDF 文件的文件夹。</para>
-		/// <para>输入 netCDF 文件必须具有相同的 DSG 要素类型和方案。</para>
+		/// <para>The input netCDF files that will be used to create a feature class. Individual netCDF files, as well as folders that contain multiple netCDF files, can be used.</para>
+		/// <para>The input netCDF files must have the same DSG feature type and schema.</para>
 		/// </param>
 		/// <param name="TargetWorkspace">
 		/// <para>Target Workspace</para>
-		/// <para>将在其中创建输出要素类和表的企业级地理数据库或文件地理数据库。 该工作空间必须是现有的工作空间。</para>
+		/// <para>The enterprise or file geodatabase in which the output feature class and table will be created. This must be an existing workspace.</para>
 		/// </param>
 		/// <param name="OutPointOrPolylineName">
 		/// <para>Output Point or Polyline Name</para>
-		/// <para>将包含来自 netCDF 变量的位置的要素类的名称。 这些变量将作为实例变量参数中的字段进行添加。</para>
+		/// <para>The name of the feature class that will contain the locations from the netCDF variables. These variables will be added as fields from the Instance Variables parameter.</para>
 		/// </param>
 		public NetCDFTrajectoriesToFeatureClass(object InFilesOrFolders, object TargetWorkspace, object OutPointOrPolylineName)
 		{
@@ -40,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : NetCDF 轨迹转要素类（离散采样几何）</para>
+		/// <para>Tool Display Name : NetCDF Trajectories To Feature Class (Discrete Sampling Geometry)</para>
 		/// </summary>
-		public override string DisplayName() => "NetCDF 轨迹转要素类（离散采样几何）";
+		public override string DisplayName() => "NetCDF Trajectories To Feature Class (Discrete Sampling Geometry)";
 
 		/// <summary>
 		/// <para>Tool Name : NetCDFTrajectoriesToFeatureClass</para>
@@ -76,8 +76,8 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Input NetCDF Files or Folders</para>
-		/// <para>将用于创建要素类的输入 netCDF 文件。 可以使用单个 netCDF 文件以及包含多个 netCDF 文件的文件夹。</para>
-		/// <para>输入 netCDF 文件必须具有相同的 DSG 要素类型和方案。</para>
+		/// <para>The input netCDF files that will be used to create a feature class. Individual netCDF files, as well as folders that contain multiple netCDF files, can be used.</para>
+		/// <para>The input netCDF files must have the same DSG feature type and schema.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Target Workspace</para>
-		/// <para>将在其中创建输出要素类和表的企业级地理数据库或文件地理数据库。 该工作空间必须是现有的工作空间。</para>
+		/// <para>The enterprise or file geodatabase in which the output feature class and table will be created. This must be an existing workspace.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Output Point or Polyline Name</para>
-		/// <para>将包含来自 netCDF 变量的位置的要素类的名称。 这些变量将作为实例变量参数中的字段进行添加。</para>
+		/// <para>The name of the feature class that will contain the locations from the netCDF variables. These variables will be added as fields from the Instance Variables parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Observation Variables</para>
-		/// <para>包含每个位置和每个垂直级别的所有观测值的 netCDF 变量。 这些变量将作为字段添加到输出表</para>
+		/// <para>The netCDF variables that contain all the observation values at each location and each vertical level. These will be added as fields to the output table</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Output Event Table Name</para>
-		/// <para>将包含观测变量中所有记录的输出表的名称。</para>
+		/// <para>The name of the output table that will contain all the records from the observation variables.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Instance Variables</para>
-		/// <para>区分各个要素并表示执行观测的位置的 netCDF 变量。 这些变量将作为字段添加到输出要素类。</para>
+		/// <para>The netCDF variables that differentiate individual features and represent the locations where observations are made. These variables will be added as fields to the output feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -127,9 +127,9 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Output Schema</para>
-		/// <para>指定将创建的输出要素类类型。</para>
-		/// <para>路径和事件—将创建一个显示路径信息的 2D 或 3D 折线要素类。</para>
-		/// <para>点—将创建一个显示所有执行观测的位置的 2D 或 3D 要素类。</para>
+		/// <para>Specifies the output feature class type that will be created.</para>
+		/// <para>Route and Event—A 2D or 3D polyline feature class will be created showing the path information.</para>
+		/// <para>Point—A 2D or 3D feature class will be created showing all locations where observations are made.</para>
 		/// <para><see cref="OutSchemaEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -139,9 +139,9 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Include Subdirectories</para>
-		/// <para>指定是否使用位于输入文件夹子目录中的文件。</para>
-		/// <para>选中 - 将使用所有子目录中的所有 netCDF 文件。</para>
-		/// <para>未选中 - 仅使用输入文件夹中的文件。 这是默认设置。</para>
+		/// <para>Specifies whether the files residing in the subdirectories of an input folder will be used.</para>
+		/// <para>Checked—All netCDF files in all subdirectories will be used.</para>
+		/// <para>Unchecked—Only files in the input folder will be used. This is the default.</para>
 		/// <para><see cref="IncludeSubdirectoriesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -151,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Input Climate and Forecast Metadata</para>
-		/// <para>带有 .ncml 扩展名的 XML 文件，将为输入 netCDF 文件提供丢失或更改的 CF 信息。</para>
+		/// <para>The XML file with an .ncml extension that will supply missing or altered CF information for the input netCDF files.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Analysis Extent</para>
-		/// <para>定义输出要素类区域的范围。</para>
+		/// <para>The extent that defines the area of the output feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -201,17 +201,17 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		public enum OutSchemaEnum 
 		{
 			/// <summary>
-			/// <para>路径和事件—将创建一个显示路径信息的 2D 或 3D 折线要素类。</para>
+			/// <para>Route and Event—A 2D or 3D polyline feature class will be created showing the path information.</para>
 			/// </summary>
 			[GPValue("ROUTE_AND_EVENT")]
-			[Description("路径和事件")]
+			[Description("Route and Event")]
 			Route_and_Event,
 
 			/// <summary>
-			/// <para>点—将创建一个显示所有执行观测的位置的 2D 或 3D 要素类。</para>
+			/// <para>Point—A 2D or 3D feature class will be created showing all locations where observations are made.</para>
 			/// </summary>
 			[GPValue("POINT")]
-			[Description("点")]
+			[Description("Point")]
 			Point,
 
 		}
@@ -222,14 +222,14 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		public enum IncludeSubdirectoriesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—All netCDF files in all subdirectories will be used.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_SUBDIRECTORIES")]
 			INCLUDE_SUBDIRECTORIES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Only files in the input folder will be used. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_INCLUDE_SUBDIRECTORIES")]

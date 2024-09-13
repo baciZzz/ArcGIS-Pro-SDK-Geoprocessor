@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>LAS Height Metrics</para>
-	/// <para>LAS 高度度量</para>
-	/// <para>计算有关 LAS 数据中捕获的植被点高程测量分布的统计数据。</para>
+	/// <para>LAS Height Metrics</para>
+	/// <para>Calculates statistics about the distribution of elevation measurements of vegetation points captured in LAS data.</para>
 	/// </summary>
 	public class LasHeightMetrics : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InLasDataset">
 		/// <para>Input LAS Dataset</para>
-		/// <para>待处理的 LAS 数据集。</para>
+		/// <para>The LAS dataset to process.</para>
 		/// </param>
 		/// <param name="OutLocation">
 		/// <para>Output Location</para>
-		/// <para>存放输出栅格数据集的文件夹以及地理数据库。一旦输出位置为文件夹，则生成的栅格数据集将采用 TIFF 格式。</para>
+		/// <para>The folder or geodatabase where the output raster datasets will reside. When the output location is a folder, the resulting raster datasets will be in the TIFF format.</para>
 		/// </param>
 		public LasHeightMetrics(object InLasDataset, object OutLocation)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : LAS 高度度量</para>
+		/// <para>Tool Display Name : LAS Height Metrics</para>
 		/// </summary>
-		public override string DisplayName() => "LAS 高度度量";
+		public override string DisplayName() => "LAS Height Metrics";
 
 		/// <summary>
 		/// <para>Tool Name : LasHeightMetrics</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
-		/// <para>待处理的 LAS 数据集。</para>
+		/// <para>The LAS dataset to process.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLasDatasetLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Location</para>
-		/// <para>存放输出栅格数据集的文件夹以及地理数据库。一旦输出位置为文件夹，则生成的栅格数据集将采用 TIFF 格式。</para>
+		/// <para>The folder or geodatabase where the output raster datasets will reside. When the output location is a folder, the resulting raster datasets will be in the TIFF format.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Base Name</para>
-		/// <para>输出栅格数据集的基本名称。</para>
+		/// <para>The base name for the output raster datasets.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -94,12 +94,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Statistics Options</para>
-		/// <para>指定针对输出栅格中每个像元区域内的未分类点和地面上的植被点所计算的统计数据。</para>
-		/// <para>平均值—LAS 点的高度平均值。</para>
-		/// <para>峰度—LAS 点高度变化的剧烈程度。</para>
-		/// <para>偏度—LAS 点标称高度的偏差方向，用于指示不对称的级别和方向。</para>
-		/// <para>标准差—点高度的变化。</para>
-		/// <para>中位数绝对差—中等高度偏差的中值。</para>
+		/// <para>Specifies the statistics calculated for the unclassified and vegetation points above the ground that are within the area of each cell in the output raster.</para>
+		/// <para>Mean—The average height of the LAS points.</para>
+		/// <para>Kurtosis—The sharpness of the change in the height of the LAS points.</para>
+		/// <para>Skewness—The direction of deviation from the nominal height of the LAS points, which indicates the level and direction of asymmetry.</para>
+		/// <para>Standard Deviation—The variation of the height of the points.</para>
+		/// <para>Median Absolute Deviation—The median value of the deviation from the median height.</para>
 		/// <para><see cref="StatisticsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Height Percentiles</para>
-		/// <para>像元中指定百分比的点所低于的高度。例如，此值为 95 意味着生成的像元值表明出现了 95％ 的点高于地面的高度。</para>
+		/// <para>The height at which the specified percentage of points in the cell fall below. For example, a value of 95 means the resulting cell values indicate the height at which 95 percent of points above the ground occur.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Minimum Height</para>
-		/// <para>将评估的点的地面上最小高度。</para>
+		/// <para>The minimum height above ground for points that will be evaluated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Minimum Number of Points</para>
-		/// <para>必须存在于给定像元中，以计算高度度量的点的最小数量。点数小于指定最小数量的像元在输出中将没有数据。</para>
+		/// <para>The minimum number of points that must be present in a given cell to calculate height metrics. Cells with fewer points than the specified minimum will have no data in the output.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Cell Size</para>
-		/// <para>输出栅格数据集的像元大小。</para>
+		/// <para>The cell size of the output raster datasets.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -158,10 +158,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Raster Format</para>
-		/// <para>指定当输出位置为文件夹时将创建的栅格格式。</para>
-		/// <para>GeoTiff—输出将以 GeoTIFF 格式创建。这是默认设置。</para>
-		/// <para>Erdas Imagine (IMG)—输出将以 ERDAS IMAGINE 格式创建。</para>
-		/// <para>Esri Grid—输出将以 Esri Grid 格式创建。</para>
+		/// <para>Specifies the raster format that will be created when the output location is a folder.</para>
+		/// <para>GeoTiff—Output will be created in the GeoTIFF format. This is the default.</para>
+		/// <para>Erdas Imagine (IMG)—Output will be created in the ERDAS IMAGINE format.</para>
+		/// <para>Esri Grid—Output will be created in the Esri Grid format.</para>
 		/// <para><see cref="RasterFormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -186,38 +186,38 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum StatisticsEnum 
 		{
 			/// <summary>
-			/// <para>平均值—LAS 点的高度平均值。</para>
+			/// <para>Mean—The average height of the LAS points.</para>
 			/// </summary>
 			[GPValue("MEAN")]
-			[Description("平均值")]
+			[Description("Mean")]
 			Mean,
 
 			/// <summary>
-			/// <para>标准差—点高度的变化。</para>
+			/// <para>Standard Deviation—The variation of the height of the points.</para>
 			/// </summary>
 			[GPValue("STANDARD_DEVIATION")]
-			[Description("标准差")]
+			[Description("Standard Deviation")]
 			Standard_Deviation,
 
 			/// <summary>
-			/// <para>偏度—LAS 点标称高度的偏差方向，用于指示不对称的级别和方向。</para>
+			/// <para>Skewness—The direction of deviation from the nominal height of the LAS points, which indicates the level and direction of asymmetry.</para>
 			/// </summary>
 			[GPValue("SKEWNESS")]
-			[Description("偏度")]
+			[Description("Skewness")]
 			Skewness,
 
 			/// <summary>
-			/// <para>峰度—LAS 点高度变化的剧烈程度。</para>
+			/// <para>Kurtosis—The sharpness of the change in the height of the LAS points.</para>
 			/// </summary>
 			[GPValue("KURTOSIS")]
-			[Description("峰度")]
+			[Description("Kurtosis")]
 			Kurtosis,
 
 			/// <summary>
-			/// <para>中位数绝对差—中等高度偏差的中值。</para>
+			/// <para>Median Absolute Deviation—The median value of the deviation from the median height.</para>
 			/// </summary>
 			[GPValue("MEDIAN_ABSOLUTE_DEVIATION")]
-			[Description("中位数绝对差")]
+			[Description("Median Absolute Deviation")]
 			Median_Absolute_Deviation,
 
 		}
@@ -228,21 +228,21 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum RasterFormatEnum 
 		{
 			/// <summary>
-			/// <para>GeoTiff—输出将以 GeoTIFF 格式创建。这是默认设置。</para>
+			/// <para>GeoTiff—Output will be created in the GeoTIFF format. This is the default.</para>
 			/// </summary>
 			[GPValue("TIFF")]
 			[Description("GeoTiff")]
 			GeoTiff,
 
 			/// <summary>
-			/// <para>Erdas Imagine (IMG)—输出将以 ERDAS IMAGINE 格式创建。</para>
+			/// <para>Erdas Imagine (IMG)—Output will be created in the ERDAS IMAGINE format.</para>
 			/// </summary>
 			[GPValue("IMG")]
 			[Description("Erdas Imagine (IMG)")]
 			IMG,
 
 			/// <summary>
-			/// <para>Esri Grid—输出将以 Esri Grid 格式创建。</para>
+			/// <para>Esri Grid—Output will be created in the Esri Grid format.</para>
 			/// </summary>
 			[GPValue("ESRI_GRID")]
 			[Description("Esri Grid")]

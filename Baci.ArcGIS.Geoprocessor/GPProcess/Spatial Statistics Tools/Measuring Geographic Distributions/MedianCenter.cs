@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Median Center</para>
-	/// <para>中位数中心</para>
-	/// <para>识别使数据集中要素之间的总欧氏距离达到最小的位置点。</para>
+	/// <para>Median Center</para>
+	/// <para>Identifies the location that minimizes overall Euclidean distance to the features in a dataset.</para>
 	/// </summary>
 	public class MedianCenter : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InputFeatureClass">
 		/// <para>Input Feature Class</para>
-		/// <para>将计算其中位数中心的要素类。</para>
+		/// <para>A feature class for which the median center will be calculated.</para>
 		/// </param>
 		/// <param name="OutputFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>将包含用于表示输入要素类的中位数中心的要素的点要素类。</para>
+		/// <para>A point feature class that will contain the features representing the median centers of the input feature class.</para>
 		/// </param>
 		public MedianCenter(object InputFeatureClass, object OutputFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 中位数中心</para>
+		/// <para>Tool Display Name : Median Center</para>
 		/// </summary>
-		public override string DisplayName() => "中位数中心";
+		public override string DisplayName() => "Median Center";
 
 		/// <summary>
 		/// <para>Tool Name : MedianCenter</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>将计算其中位数中心的要素类。</para>
+		/// <para>A feature class for which the median center will be calculated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>将包含用于表示输入要素类的中位数中心的要素的点要素类。</para>
+		/// <para>A point feature class that will contain the features representing the median centers of the input feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Weight Field</para>
-		/// <para>用于创建加权中位数中心的数值字段。</para>
+		/// <para>The numeric field used to create a weighted median center.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Case Field</para>
-		/// <para>用于对要素进行分组以独立计算中位数中心的字段。案例分组字段可以为整型、日期型或字符串型。</para>
+		/// <para>Field used to group features for separate median center calculations. The case field can be of integer, date, or string type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Attribute Field</para>
-		/// <para>将对其计算数据中值的数值字段。</para>
+		/// <para>Numeric field(s) for which the data median value will be computed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]

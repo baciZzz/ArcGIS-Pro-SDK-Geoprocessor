@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Alter Field Group</para>
-	/// <para>更改字段组</para>
-	/// <para>用于更改字段组的属性。</para>
+	/// <para>Alter Field Group</para>
+	/// <para>Alters the properties of a field group.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="TargetTable">
 		/// <para>Target Table</para>
-		/// <para>包含要更改的字段组的表。</para>
+		/// <para>The table containing the field group to be altered.</para>
 		/// </param>
 		/// <param name="Name">
 		/// <para>Field Group Name</para>
-		/// <para>要更改的字段组的名称。</para>
+		/// <para>The name of the field group to be altered.</para>
 		/// </param>
 		public AlterFieldGroup(object TargetTable, object Name)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 更改字段组</para>
+		/// <para>Tool Display Name : Alter Field Group</para>
 		/// </summary>
-		public override string DisplayName() => "更改字段组";
+		public override string DisplayName() => "Alter Field Group";
 
 		/// <summary>
 		/// <para>Tool Name : AlterFieldGroup</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Table</para>
-		/// <para>包含要更改的字段组的表。</para>
+		/// <para>The table containing the field group to be altered.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field Group Name</para>
-		/// <para>要更改的字段组的名称。</para>
+		/// <para>The name of the field group to be altered.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>New Field Group Name</para>
-		/// <para>字段组唯一的新名称。</para>
+		/// <para>The new, unique name for the field group.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>New Fields</para>
-		/// <para>参与字段组的字段。要修改字段，请输入新的字段名称。输入的值将会替换（而非追加）字段组中当前包含字段的列表。如果未提供值，则不会更改字段。</para>
+		/// <para>The fields that participate in the field group. To modify the fields, enter new field names. Provided values will replace, not append, the current list of fields that participates in the field group. If no values are provided, the fields will not be altered.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -111,9 +111,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Is Restrictive</para>
-		/// <para>指定字段组是否具有限制性。此参数允许您控制使用条件值时的编辑体验。</para>
-		/// <para>选中 - 字段组具有限制性。在字段组的字段上输入的值将限制为指定为条件值的值。这是默认设置。</para>
-		/// <para>未选中 - 字段组不具有限制性。即使未将值指定为条件值，也可以将其提交到字段组中的字段。</para>
+		/// <para>Specifies whether the field group is restrictive. This parameter allows you to control the editing experience when using contingent values.</para>
+		/// <para>Checked—The field group is restrictive. Values entered on a field in the field group are restricted to those specified as contingent values. This is the default.</para>
+		/// <para>Unchecked—The field group is not restrictive. Values can be committed to a field in a field group even if they are not specified as contingent values.</para>
 		/// <para><see cref="IsRestrictiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -138,14 +138,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum IsRestrictiveEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The field group is restrictive. Values entered on a field in the field group are restricted to those specified as contingent values. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RESTRICT")]
 			RESTRICT,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The field group is not restrictive. Values can be committed to a field in a field group even if they are not specified as contingent values.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_RESTRICT")]

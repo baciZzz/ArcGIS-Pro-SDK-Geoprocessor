@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Convert Feature To Raster</para>
-	/// <para>要素转栅格</para>
-	/// <para>将要素转换为栅格数据集。</para>
+	/// <para>Convert Feature To Raster</para>
+	/// <para>Converts features to a raster dataset.</para>
 	/// </summary>
 	public class ConvertFeatureToRaster : AbstractGPProcess
 	{
@@ -21,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		/// <param name="Inputfeatures">
 		/// <para>Input Features</para>
-		/// <para>输入要素图层。</para>
+		/// <para>The input feature layer.</para>
 		/// </param>
 		/// <param name="Valuefield">
 		/// <para>Value field</para>
-		/// <para>选择用于向输出栅格分配值的字段。</para>
+		/// <para>Choose the field that will be used to assign values to the output raster.</para>
 		/// </param>
 		/// <param name="Outputname">
 		/// <para>Output Name</para>
-		/// <para>输出栅格服务的名称。</para>
-		/// <para>默认名称基于工具名称以及输入图层名称。 如果该图层名称已存在，则系统将提示您提供其他名称。</para>
+		/// <para>The name of the output raster service.</para>
+		/// <para>The default name is based on the tool name and the input layer name. If the layer name already exists, you will be prompted to provide another name.</para>
 		/// </param>
 		public ConvertFeatureToRaster(object Inputfeatures, object Valuefield, object Outputname)
 		{
@@ -40,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 要素转栅格</para>
+		/// <para>Tool Display Name : Convert Feature To Raster</para>
 		/// </summary>
-		public override string DisplayName() => "要素转栅格";
+		public override string DisplayName() => "Convert Feature To Raster";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertFeatureToRaster</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>输入要素图层。</para>
+		/// <para>The input feature layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Value field</para>
-		/// <para>选择用于向输出栅格分配值的字段。</para>
+		/// <para>Choose the field that will be used to assign values to the output raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -92,8 +92,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>输出栅格服务的名称。</para>
-		/// <para>默认名称基于工具名称以及输入图层名称。 如果该图层名称已存在，则系统将提示您提供其他名称。</para>
+		/// <para>The name of the output raster service.</para>
+		/// <para>The default name is based on the tool name and the input layer name. If the layer name already exists, you will be prompted to provide another name.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -101,9 +101,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Cell Size</para>
-		/// <para>输入输出栅格的像元大小和单位。</para>
-		/// <para>单位可以是千米、米、英里或英尺。</para>
-		/// <para>默认单位是米。</para>
+		/// <para>Enter the cell size and unit for the output raster.</para>
+		/// <para>The units can be Kilometers, Meters, Miles, or Feet.</para>
+		/// <para>The default units are Meters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]

@@ -11,8 +11,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Generalized Linear Regression</para>
-	/// <para>广义线性回归</para>
-	/// <para>执行广义线性回归 (GLR) 可生成预测，或对因变量与一组解释变量的关系进行建模。此工具可用于拟合连续 (OLS)、二进制（逻辑）和计数（泊松）模型。</para>
+	/// <para>Generalized Linear Regression</para>
+	/// <para>Performs generalized linear regression </para>
+	/// <para>(GLR) to generate predictions or to model a dependent variable in terms of its relationship to a set of explanatory variables. This tool can be used to fit continuous (OLS), binary (logistic), and count (Poisson) models.</para>
 	/// </summary>
 	public class GeneralizedLinearRegression : AbstractGPProcess
 	{
@@ -21,27 +22,27 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		/// <param name="InputFeatures">
 		/// <para>Input Features</para>
-		/// <para>包含因变量和自变量的图层。</para>
+		/// <para>The layer containing the dependent and independent variables.</para>
 		/// </param>
 		/// <param name="DependentVariable">
 		/// <para>Dependent Variable</para>
-		/// <para>包含要进行建模的观测值的数值字段。</para>
+		/// <para>The numeric field containing the observed values to be modeled.</para>
 		/// </param>
 		/// <param name="ModelType">
 		/// <para>Model Type</para>
-		/// <para>用于指定将进行建模的数据类型。</para>
-		/// <para>连续（高斯）— 因变量是连续的。将使用高斯模型，并且工具将执行普通最小二乘法回归。这是默认设置。</para>
-		/// <para>二进制（逻辑）— 因变量表示存在或不存在。这可以是常规的 1 和 0，也可以是explanatory_variables_to_match参数中映射到 0 或 1 的字符串值。将使用逻辑回归模型。</para>
-		/// <para>计数（泊松）—因变量是离散的，并且可以表示事件，例如犯罪计数、疾病事件或交通事故。将使用泊松回归模型。</para>
+		/// <para>Specifies the type of data that will be modeled.</para>
+		/// <para>Continuous (Gaussian)— The Dependent Variable is continuous. The Gaussian model will be used, and the tool will perform ordinary least squares regression. This is the default.</para>
+		/// <para>Binary (Logistic)— The Dependent Variable represents presence or absence. This can be either conventional 1s and 0s, or string values mapped to 0 or 1s in the explanatory_variables_to_match parameter. The Logistic regression model will be used.</para>
+		/// <para>Count (Poisson)—The Dependent Variable is discrete and represents events, for example, crime counts, disease incidents, or traffic accidents. The Poisson regression model will be used.</para>
 		/// <para><see cref="ModelTypeEnum"/></para>
 		/// </param>
 		/// <param name="ExplanatoryVariables">
 		/// <para>Explanatory Variable(s)</para>
-		/// <para>表示回归模型中的解释变量或自变量的字段列表。</para>
+		/// <para>A list of fields representing independent explanatory variables in the regression model.</para>
 		/// </param>
 		/// <param name="OutputFeaturesName">
 		/// <para>Output Features Name</para>
-		/// <para>将创建的包含因变量的估计数和残差的要素类的名称。</para>
+		/// <para>The name of the feature class that will be created containing the dependent variable estimates and residuals.</para>
 		/// </param>
 		public GeneralizedLinearRegression(object InputFeatures, object DependentVariable, object ModelType, object ExplanatoryVariables, object OutputFeaturesName)
 		{
@@ -53,9 +54,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 广义线性回归</para>
+		/// <para>Tool Display Name : Generalized Linear Regression</para>
 		/// </summary>
-		public override string DisplayName() => "广义线性回归";
+		public override string DisplayName() => "Generalized Linear Regression";
 
 		/// <summary>
 		/// <para>Tool Name : GeneralizedLinearRegression</para>
@@ -89,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>包含因变量和自变量的图层。</para>
+		/// <para>The layer containing the dependent and independent variables.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRecordSet()]
@@ -99,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Dependent Variable</para>
-		/// <para>包含要进行建模的观测值的数值字段。</para>
+		/// <para>The numeric field containing the observed values to be modeled.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -109,10 +110,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Model Type</para>
-		/// <para>用于指定将进行建模的数据类型。</para>
-		/// <para>连续（高斯）— 因变量是连续的。将使用高斯模型，并且工具将执行普通最小二乘法回归。这是默认设置。</para>
-		/// <para>二进制（逻辑）— 因变量表示存在或不存在。这可以是常规的 1 和 0，也可以是explanatory_variables_to_match参数中映射到 0 或 1 的字符串值。将使用逻辑回归模型。</para>
-		/// <para>计数（泊松）—因变量是离散的，并且可以表示事件，例如犯罪计数、疾病事件或交通事故。将使用泊松回归模型。</para>
+		/// <para>Specifies the type of data that will be modeled.</para>
+		/// <para>Continuous (Gaussian)— The Dependent Variable is continuous. The Gaussian model will be used, and the tool will perform ordinary least squares regression. This is the default.</para>
+		/// <para>Binary (Logistic)— The Dependent Variable represents presence or absence. This can be either conventional 1s and 0s, or string values mapped to 0 or 1s in the explanatory_variables_to_match parameter. The Logistic regression model will be used.</para>
+		/// <para>Count (Poisson)—The Dependent Variable is discrete and represents events, for example, crime counts, disease incidents, or traffic accidents. The Poisson regression model will be used.</para>
 		/// <para><see cref="ModelTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -122,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Explanatory Variable(s)</para>
-		/// <para>表示回归模型中的解释变量或自变量的字段列表。</para>
+		/// <para>A list of fields representing independent explanatory variables in the regression model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -132,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Output Features Name</para>
-		/// <para>将创建的包含因变量的估计数和残差的要素类的名称。</para>
+		/// <para>The name of the feature class that will be created containing the dependent variable estimates and residuals.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -140,9 +141,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Generate Coefficient Table</para>
-		/// <para>指定是否将生成具有系数（布尔）值的输出表。</para>
-		/// <para>选中 - 将生成具有系数值的表。</para>
-		/// <para>未选中 - 将不会生成具有系数值的表。这是默认设置。</para>
+		/// <para>Specifies whether an output table with coefficient (Boolean) values will be generated.</para>
+		/// <para>Checked—A table with coefficient values will be generated.</para>
+		/// <para>Unchecked—A table with coefficient values will not be generated. This is the default.</para>
 		/// <para><see cref="GenerateCoefficientTableEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -152,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Input Prediction Features</para>
-		/// <para>一个图层，包含表示将计算评估值的位置的要素。此数据集中的每个要素都应包含指定的所有解释变量的值。将使用针对输入图层数据进行校准的模型来评估这些要素的因变量。</para>
+		/// <para>A layer containing features representing locations where estimates will be computed. Each feature in this dataset should contain values for all the explanatory variables specified. The dependent variable for these features will be estimated using the model calibrated for the input layer data.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRecordSet()]
@@ -163,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Match Explanatory Variables</para>
-		/// <para>将输入预测要素参数中的解释变量与输入要素参数中的相应解释变量进行匹配。</para>
+		/// <para>Matches the explanatory variables in the Input Prediction Features parameter to corresponding explanatory variables from the Input Features parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -173,7 +174,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Map Dependent Variables</para>
-		/// <para>表示用于映射到二元回归的 0（不存在）和 1（存在）的值的两个字符串。默认情况下将使用 0 和 1。例如，要预测一次具有“逮捕”和“未逮捕”字段值的逮捕，您需要为 False Value (0) 输入 No Arrest，并为 True Value (1) 输入 Arrest。</para>
+		/// <para>Two strings representing the values used to map to 0 (absence) and 1 (presence) for binary regression. By default, 0 and 1 will be used. For example, to predict an arrest with field values of Arrest and No Arrest, you would enter No Arrest for False Value (0) and Arrest for True Value (1).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -181,9 +182,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Data Store</para>
-		/// <para>指定将用于保存输出的 ArcGIS Data Store。 默认设置为时空大数据存储。 在时空大数据存储中存储的所有结果都将存储在 WGS84 中。 在关系数据存储中存储的结果都将保持各自的坐标系。</para>
-		/// <para>时空大数据存储—输出将存储在时空大数据存储中。 这是默认设置。</para>
-		/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
+		/// <para>Specifies the ArcGIS Data Store where the output will be saved. The default is Spatiotemporal big data store. All results stored in a spatiotemporal big data store will be stored in WGS84. Results stored in a relational data store will maintain their coordinate system.</para>
+		/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
+		/// <para>Relational data store—Output will be stored in a relational data store.</para>
 		/// <para><see cref="DataStoreEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -230,24 +231,24 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum ModelTypeEnum 
 		{
 			/// <summary>
-			/// <para>二进制（逻辑）— 因变量表示存在或不存在。这可以是常规的 1 和 0，也可以是explanatory_variables_to_match参数中映射到 0 或 1 的字符串值。将使用逻辑回归模型。</para>
+			/// <para>Binary (Logistic)— The Dependent Variable represents presence or absence. This can be either conventional 1s and 0s, or string values mapped to 0 or 1s in the explanatory_variables_to_match parameter. The Logistic regression model will be used.</para>
 			/// </summary>
 			[GPValue("BINARY")]
-			[Description("二进制（逻辑）")]
+			[Description("Binary (Logistic)")]
 			BINARY,
 
 			/// <summary>
-			/// <para>连续（高斯）— 因变量是连续的。将使用高斯模型，并且工具将执行普通最小二乘法回归。这是默认设置。</para>
+			/// <para>Continuous (Gaussian)— The Dependent Variable is continuous. The Gaussian model will be used, and the tool will perform ordinary least squares regression. This is the default.</para>
 			/// </summary>
 			[GPValue("CONTINUOUS")]
-			[Description("连续（高斯）")]
+			[Description("Continuous (Gaussian)")]
 			CONTINUOUS,
 
 			/// <summary>
-			/// <para>计数（泊松）—因变量是离散的，并且可以表示事件，例如犯罪计数、疾病事件或交通事故。将使用泊松回归模型。</para>
+			/// <para>Count (Poisson)—The Dependent Variable is discrete and represents events, for example, crime counts, disease incidents, or traffic accidents. The Poisson regression model will be used.</para>
 			/// </summary>
 			[GPValue("COUNT")]
-			[Description("计数（泊松）")]
+			[Description("Count (Poisson)")]
 			COUNT,
 
 		}
@@ -258,14 +259,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum GenerateCoefficientTableEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—A table with coefficient values will be generated.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CREATE_TABLE")]
 			CREATE_TABLE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—A table with coefficient values will not be generated. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_TABLE")]
@@ -279,17 +280,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum DataStoreEnum 
 		{
 			/// <summary>
-			/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
+			/// <para>Relational data store—Output will be stored in a relational data store.</para>
 			/// </summary>
 			[GPValue("RELATIONAL_DATA_STORE")]
-			[Description("关系数据存储")]
+			[Description("Relational data store")]
 			Relational_data_store,
 
 			/// <summary>
-			/// <para>时空大数据存储—输出将存储在时空大数据存储中。 这是默认设置。</para>
+			/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
 			/// </summary>
 			[GPValue("SPATIOTEMPORAL_DATA_STORE")]
-			[Description("时空大数据存储")]
+			[Description("Spatiotemporal big data store")]
 			Spatiotemporal_big_data_store,
 
 		}

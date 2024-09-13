@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make Query Table</para>
-	/// <para>创建查询表</para>
-	/// <para>可对数据库应用 SQL 查询，并在图层或表视图中表示结果。 查询可用于连接多个表或返回数据库的原始数据中的字段或行的子集。</para>
+	/// <para>Make Query Table</para>
+	/// <para>Applies an SQL query to a database, and the results are represented in either a layer or table view. The query can be used to join several tables or return a subset of fields or rows from the original data in the database.</para>
 	/// </summary>
 	public class MakeQueryTable : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Tables</para>
-		/// <para>要在查询中使用的一个表或多个表的名称。 如果列出多个表，表达式参数可用于定义这些表的连接方式。</para>
-		/// <para>输入表可来自地理数据库或数据库连接。</para>
+		/// <para>The name of the table or tables to be used in the query. If several tables are listed, the Expression parameter can be used to define how they will be joined.</para>
+		/// <para>The input table can be from a geodatabase or a database connection.</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Table Name</para>
-		/// <para>将创建的图层或表视图的名称。</para>
+		/// <para>The name of the layer or table view that will be created.</para>
 		/// </param>
 		/// <param name="InKeyFieldOption">
 		/// <para>Key Field Options</para>
-		/// <para>指定将如何针对查询生成 ObjectID 字段（如果存在）。 ArcGIS 中的图层和表视图需要 ObjectID 字段。 ObjectID 字段是一个整型字段，用于唯一标识正在使用的数据中的行。 默认字段是使用关键字段（Python 中的 USE_KEY_FIELDS）。</para>
-		/// <para>使用关键字段—在关键字段参数中的指定字段将用于唯一标识输出表中的行。 该字段可以是单一字段也可以是多个字段，合并后可唯一标识输出表中的行。 如果未在关键字段列表中未指定任何字段，则会自动应用生成关键字段选项（Python 中的 ADD VIRTUAL_KEY_FIELD）。</para>
-		/// <para>生成关键字段—如果未指定任何关键字段，则将生成唯一标识输出表中每一行的 ObjectID。</para>
-		/// <para>无关键字段—不会生成任何 ObjectID 字段。 表视图将不支持选择。如果字段列表中已经存在 ObjectID 类型的字段，那么即使选择此选项，也仍会将该列用作 ObjectID。</para>
+		/// <para>Specifies how an ObjectID field will be generated (if at all) for the query. Layers and table views in ArcGIS require an ObjectID field. An ObjectID field is an integer field that uniquely identifies rows in the data being used. The default is Use key fields (USE_KEY_FIELDS in Python).</para>
+		/// <para>Use key fields—Specified fields in the Key Fields parameter will be used to uniquely identify a row in the output table. This can be a single field or multiple fields, which, when combined, uniquely identify a row in the output table. If no fields are specified in the key fields list, the Generate a key field option (ADD VIRTUAL_KEY_FIELD in Python) is automatically applied.</para>
+		/// <para>Generate a key field—If no key fields have been specified, an ObjectID that uniquely identifies each row in the output table will be generated.</para>
+		/// <para>No key field—No ObjectID field will be generated. Selections will not be supported for the table view.If there is already a field of type ObjectID in the fields list, it will be used as the ObjectID even if this option is chosen.</para>
 		/// <para><see cref="InKeyFieldOptionEnum"/></para>
 		/// </param>
 		public MakeQueryTable(object InTable, object OutTable, object InKeyFieldOption)
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建查询表</para>
+		/// <para>Tool Display Name : Make Query Table</para>
 		/// </summary>
-		public override string DisplayName() => "创建查询表";
+		public override string DisplayName() => "Make Query Table";
 
 		/// <summary>
 		/// <para>Tool Name : MakeQueryTable</para>
@@ -80,8 +80,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Tables</para>
-		/// <para>要在查询中使用的一个表或多个表的名称。 如果列出多个表，表达式参数可用于定义这些表的连接方式。</para>
-		/// <para>输入表可来自地理数据库或数据库连接。</para>
+		/// <para>The name of the table or tables to be used in the query. If several tables are listed, the Expression parameter can be used to define how they will be joined.</para>
+		/// <para>The input table can be from a geodatabase or a database connection.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Table Name</para>
-		/// <para>将创建的图层或表视图的名称。</para>
+		/// <para>The name of the layer or table view that will be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -98,10 +98,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Key Field Options</para>
-		/// <para>指定将如何针对查询生成 ObjectID 字段（如果存在）。 ArcGIS 中的图层和表视图需要 ObjectID 字段。 ObjectID 字段是一个整型字段，用于唯一标识正在使用的数据中的行。 默认字段是使用关键字段（Python 中的 USE_KEY_FIELDS）。</para>
-		/// <para>使用关键字段—在关键字段参数中的指定字段将用于唯一标识输出表中的行。 该字段可以是单一字段也可以是多个字段，合并后可唯一标识输出表中的行。 如果未在关键字段列表中未指定任何字段，则会自动应用生成关键字段选项（Python 中的 ADD VIRTUAL_KEY_FIELD）。</para>
-		/// <para>生成关键字段—如果未指定任何关键字段，则将生成唯一标识输出表中每一行的 ObjectID。</para>
-		/// <para>无关键字段—不会生成任何 ObjectID 字段。 表视图将不支持选择。如果字段列表中已经存在 ObjectID 类型的字段，那么即使选择此选项，也仍会将该列用作 ObjectID。</para>
+		/// <para>Specifies how an ObjectID field will be generated (if at all) for the query. Layers and table views in ArcGIS require an ObjectID field. An ObjectID field is an integer field that uniquely identifies rows in the data being used. The default is Use key fields (USE_KEY_FIELDS in Python).</para>
+		/// <para>Use key fields—Specified fields in the Key Fields parameter will be used to uniquely identify a row in the output table. This can be a single field or multiple fields, which, when combined, uniquely identify a row in the output table. If no fields are specified in the key fields list, the Generate a key field option (ADD VIRTUAL_KEY_FIELD in Python) is automatically applied.</para>
+		/// <para>Generate a key field—If no key fields have been specified, an ObjectID that uniquely identifies each row in the output table will be generated.</para>
+		/// <para>No key field—No ObjectID field will be generated. Selections will not be supported for the table view.If there is already a field of type ObjectID in the fields list, it will be used as the ObjectID even if this option is chosen.</para>
 		/// <para><see cref="InKeyFieldOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Key Fields</para>
-		/// <para>将用于唯一识别查询中的一行的字段或字段组合。 此参数仅在将关键字段选项参数设置为使用关键字段时使用。</para>
+		/// <para>A field or combination of fields that will be used to uniquely identify a row in the query. This parameter is used only when the Key Field Options parameter is set to Use Key Fields.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Fields</para>
-		/// <para>要包含在图层或表视图中的字段。 如果为字段设置了一个别名，则这个别名就是显示的名称。 如果未指定任何字段，则将包含所有表中的所有字段。 如果将 Shape 字段添加到字段列表，结果将为图层，否则将为表视图。</para>
+		/// <para>The fields to include in the layer or table view. If an alias is set for a field, this is the name that appears. If no fields are specified, all fields from all tables are included. If a Shape field is added to the field list, the result is a layer; otherwise it is a table view.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>用于选择记录子集的 SQL 表达式。</para>
+		/// <para>An SQL expression used to select a subset of records.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -152,24 +152,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum InKeyFieldOptionEnum 
 		{
 			/// <summary>
-			/// <para>使用关键字段—在关键字段参数中的指定字段将用于唯一标识输出表中的行。 该字段可以是单一字段也可以是多个字段，合并后可唯一标识输出表中的行。 如果未在关键字段列表中未指定任何字段，则会自动应用生成关键字段选项（Python 中的 ADD VIRTUAL_KEY_FIELD）。</para>
+			/// <para>Use key fields—Specified fields in the Key Fields parameter will be used to uniquely identify a row in the output table. This can be a single field or multiple fields, which, when combined, uniquely identify a row in the output table. If no fields are specified in the key fields list, the Generate a key field option (ADD VIRTUAL_KEY_FIELD in Python) is automatically applied.</para>
 			/// </summary>
 			[GPValue("USE_KEY_FIELDS")]
-			[Description("使用关键字段")]
+			[Description("Use key fields")]
 			Use_key_fields,
 
 			/// <summary>
-			/// <para>生成关键字段—如果未指定任何关键字段，则将生成唯一标识输出表中每一行的 ObjectID。</para>
+			/// <para>Generate a key field—If no key fields have been specified, an ObjectID that uniquely identifies each row in the output table will be generated.</para>
 			/// </summary>
 			[GPValue("ADD_VIRTUAL_KEY_FIELD")]
-			[Description("生成关键字段")]
+			[Description("Generate a key field")]
 			Generate_a_key_field,
 
 			/// <summary>
-			/// <para>无关键字段—不会生成任何 ObjectID 字段。 表视图将不支持选择。如果字段列表中已经存在 ObjectID 类型的字段，那么即使选择此选项，也仍会将该列用作 ObjectID。</para>
+			/// <para>No key field—No ObjectID field will be generated. Selections will not be supported for the table view.If there is already a field of type ObjectID in the fields list, it will be used as the ObjectID even if this option is chosen.</para>
 			/// </summary>
 			[GPValue("NO_KEY_FIELD")]
-			[Description("无关键字段")]
+			[Description("No key field")]
 			No_key_field,
 
 		}

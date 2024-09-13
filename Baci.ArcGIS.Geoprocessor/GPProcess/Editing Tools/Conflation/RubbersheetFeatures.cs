@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Rubbersheet Features</para>
-	/// <para>橡皮页变换要素</para>
-	/// <para>利用指定的橡皮页变换链接，通过橡皮页变换对输入要素进行空间调整修改，从而使输入要素更好地与所需目标要素对齐。</para>
+	/// <para>Rubbersheet Features</para>
+	/// <para>Modifies input features by spatially adjusting them through rubbersheeting, using the specified rubbersheet links, so they are better aligned with the intended target features.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>要调整的输入要素。 可以为点、线、面或注记。</para>
+		/// <para>The input features to be adjusted. They can be points, lines, polygons, or annotations.</para>
 		/// </param>
 		/// <param name="InLinkFeatures">
 		/// <para>Input Link Features</para>
-		/// <para>表示橡皮页变换常规链接的输入线要素。</para>
+		/// <para>The input line features representing regular links for rubbersheeting.</para>
 		/// </param>
 		public RubbersheetFeatures(object InFeatures, object InLinkFeatures)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 橡皮页变换要素</para>
+		/// <para>Tool Display Name : Rubbersheet Features</para>
 		/// </summary>
-		public override string DisplayName() => "橡皮页变换要素";
+		public override string DisplayName() => "Rubbersheet Features";
 
 		/// <summary>
 		/// <para>Tool Name : RubbersheetFeatures</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>要调整的输入要素。 可以为点、线、面或注记。</para>
+		/// <para>The input features to be adjusted. They can be points, lines, polygons, or annotations.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Input Link Features</para>
-		/// <para>表示橡皮页变换常规链接的输入线要素。</para>
+		/// <para>The input line features representing regular links for rubbersheeting.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Input Point Features As Identity Links</para>
-		/// <para>表示橡皮页变换识别链接的输入点要素。</para>
+		/// <para>The input point features representing identity links for rubbersheeting.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -102,9 +102,9 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>指定校正要素所用到的橡皮页变换法。</para>
-		/// <para>线性—此方法稍快，并且当很多连接线均匀分布在校正的数据上时可以生成不错的结果。 这是默认设置。</para>
-		/// <para>自然邻域法—当您的链接很少且相距很远时，应使用此方法。</para>
+		/// <para>Specifies the rubbersheeting method to be used to adjust features.</para>
+		/// <para>Linear—This method is slightly faster and produces good results when you have many links spread uniformly over the data you are adjusting. This is the default.</para>
+		/// <para>Natural neighbor—This method should be used when you have few links spaced widely apart.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -136,17 +136,17 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>线性—此方法稍快，并且当很多连接线均匀分布在校正的数据上时可以生成不错的结果。 这是默认设置。</para>
+			/// <para>Linear—This method is slightly faster and produces good results when you have many links spread uniformly over the data you are adjusting. This is the default.</para>
 			/// </summary>
 			[GPValue("LINEAR")]
-			[Description("线性")]
+			[Description("Linear")]
 			Linear,
 
 			/// <summary>
-			/// <para>自然邻域法—当您的链接很少且相距很远时，应使用此方法。</para>
+			/// <para>Natural neighbor—This method should be used when you have few links spaced widely apart.</para>
 			/// </summary>
 			[GPValue("NATURAL_NEIGHBOR")]
-			[Description("自然邻域法")]
+			[Description("Natural neighbor")]
 			Natural_neighbor,
 
 		}

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Semivariogram Sensitivity</para>
-	/// <para>半变异函数灵敏度</para>
-	/// <para>此工具通过在原始值的某一百分比范围内更改模型的半变异函数参数（块金、偏基台和主/次变程）对预测值和关联的标准误差执行灵敏度分析。</para>
+	/// <para>Semivariogram Sensitivity</para>
+	/// <para>This tool performs a sensitivity analysis on the predicted values and associated standard errors by changing the model's semivariogram parameters (the nugget, partial sill, and major/minor ranges) within a percentage of the original values.</para>
 	/// </summary>
 	public class GASemivariogramSensitivity : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InGaModelSource">
 		/// <para>Input geostatistical model source</para>
-		/// <para>要分析的地统计模型源。</para>
+		/// <para>The geostatistical model source to be analyzed.</para>
 		/// </param>
 		/// <param name="InDatasets">
 		/// <para>Input dataset(s)</para>
-		/// <para>用于创建输出图层的输入数据集的名称和字段名称。</para>
+		/// <para>The name of the input datasets and field names used in the creation of the output layer.</para>
 		/// </param>
 		/// <param name="InLocations">
 		/// <para>Input point observation locations</para>
-		/// <para>执行灵敏度分析的点位置。</para>
+		/// <para>Point locations where the sensitivity analysis is performed.</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output table</para>
-		/// <para>存储灵敏度结果的表。</para>
+		/// <para>Table storing the sensitivity results.</para>
 		/// </param>
 		public GASemivariogramSensitivity(object InGaModelSource, object InDatasets, object InLocations, object OutTable)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 半变异函数灵敏度</para>
+		/// <para>Tool Display Name : Semivariogram Sensitivity</para>
 		/// </summary>
-		public override string DisplayName() => "半变异函数灵敏度";
+		public override string DisplayName() => "Semivariogram Sensitivity";
 
 		/// <summary>
 		/// <para>Tool Name : GASemivariogramSensitivity</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input geostatistical model source</para>
-		/// <para>要分析的地统计模型源。</para>
+		/// <para>The geostatistical model source to be analyzed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input dataset(s)</para>
-		/// <para>用于创建输出图层的输入数据集的名称和字段名称。</para>
+		/// <para>The name of the input datasets and field names used in the creation of the output layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPGAValueTable()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input point observation locations</para>
-		/// <para>执行灵敏度分析的点位置。</para>
+		/// <para>Point locations where the sensitivity analysis is performed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Nugget span (% of model value)</para>
-		/// <para>从块金参数中减去和添加的百分比，用于创建后续随机块金参数选择的范围。</para>
+		/// <para>The percentage subtracted and added to the Nugget parameter to create a range for a subsequent random Nugget parameter selection.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Number of calculations for Nugget</para>
-		/// <para>从块金跨度中随机采样的随机块金值的数目。</para>
+		/// <para>Number of random Nugget values randomly sampled from the Nugget span.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Partial Sill span (% of model value)</para>
-		/// <para>从偏基台参数中减去和添加到的百分比，用于创建随机偏基台选择的范围。</para>
+		/// <para>Percentage subtracted from and added to the Partial Sill parameter to create a range for a random Partial Sill selection.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Number of calculations for Partial Sill</para>
-		/// <para>从偏基台跨度中随机采样的偏基台值的数目。</para>
+		/// <para>Number of Partial Sill values randomly sampled from the Partial Sill span.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Major Range span (% of model value)</para>
-		/// <para>从主变程参数中减去和添加的百分比，可创建随机选择主变程的范围。</para>
+		/// <para>Percentage subtracted and added to the Major Range parameter to create a range for a random Major Range selection.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Number of calculations for Major Range</para>
-		/// <para>从主变程跨度中随机采样的主变程值的数目。</para>
+		/// <para>Number of Major Range values randomly sampled from the Major Range span.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Minor Range span (% of model value)</para>
-		/// <para>从次变程参数中减去和添加到次变程参数中的百分比，用于创建随机次变程选择的范围。</para>
+		/// <para>Percentage subtracted and added to the Minor Range parameter to create a range for a random Minor Range selection.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -170,8 +170,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Number of calculations for Minor Range</para>
-		/// <para>从次变程跨度中随机采样的次变程值的数目。</para>
-		/// <para>如果已在输入地统计模型源中设置“各向异性”，则需要提供值。</para>
+		/// <para>Number of Minor Range values randomly sampled from the Minor Range span.</para>
+		/// <para>If Anisotropy has been set in the input geostatistical model source, a value is required.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -180,7 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output table</para>
-		/// <para>存储灵敏度结果的表。</para>
+		/// <para>Table storing the sensitivity results.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]

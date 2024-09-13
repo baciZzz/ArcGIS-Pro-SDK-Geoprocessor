@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Apply Angle Directed Layout</para>
-	/// <para>应用遵循角度布局</para>
-	/// <para>用于沿指定对齐方向移动逻辑示意图的边。</para>
+	/// <para>Apply Angle Directed Layout</para>
+	/// <para>Moves a diagram's edges in specified alignment directions.</para>
 	/// </summary>
 	public class ApplyAngleDirectedLayout : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InNetworkDiagramLayer">
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>将应用布局的网络逻辑示意图。</para>
+		/// <para>The network diagram to which the layout will be applied.</para>
 		/// </param>
 		public ApplyAngleDirectedLayout(object InNetworkDiagramLayer)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 应用遵循角度布局</para>
+		/// <para>Tool Display Name : Apply Angle Directed Layout</para>
 		/// </summary>
-		public override string DisplayName() => "应用遵循角度布局";
+		public override string DisplayName() => "Apply Angle Directed Layout";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyAngleDirectedLayout</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>将应用布局的网络逻辑示意图。</para>
+		/// <para>The network diagram to which the layout will be applied.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDiagramLayer()]
@@ -73,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Preserve container layout</para>
-		/// <para>指定算法将如何处理容器。</para>
-		/// <para>选中 - 将对逻辑示意图的上方图执行布局算法，以保留容器。</para>
-		/// <para>未选中 - 将对逻辑示意图中的内容要素和非内容要素执行布局算法。 这是默认设置。</para>
+		/// <para>Specifies how the algorithm will process containers.</para>
+		/// <para>Checked—The layout algorithm will execute on the top graph of the diagram so containers are preserved.</para>
+		/// <para>Unchecked—The layout algorithm will execute on both content and noncontent features in the diagram. This is the default.</para>
 		/// <para><see cref="AreContainersPreservedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Number of Iterations</para>
-		/// <para>要处理的迭代次数。默认值为 1。</para>
+		/// <para>The number of iterations to process. The default is 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -93,10 +93,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Number of Directions</para>
-		/// <para>对齐逻辑示意图边及其连接的交汇点将使用的方向数。</para>
-		/// <para>12 个方向—将移动边，以使其逐渐接近 12 个轴中的一个（轴从边的起始交汇点处开始，倾斜角度分别为 30 度、60 度、90 度、120 度、150 度、180 度、210 度、240 度、270 度、300 度、330 度或 360 度）。</para>
-		/// <para>8 个方向—将移动边，以使其逐渐接近 8 个轴中的一个（轴从边的起始交汇点处开始，倾斜角度分别为 45 度、90 度、135 度、180 度、225 度、270 度、315 度或 360 度）。这是默认设置。</para>
-		/// <para>4 个方向—将移动边，以使其逐渐接近 4 个轴中的一个（轴从边的起始交汇点处开始，倾斜角度分别为 90 度、180 度、270 度或 360 度）。</para>
+		/// <para>The number of directions that will be used to align the diagram edges and their connected junctions.</para>
+		/// <para>12 directions—The edges will move so they progressively approach one of the 12 axes, starting with the edge&apos;s origin junction and inclined at 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, or 360 degrees.</para>
+		/// <para>8 directions—The edges will move so they progressively approach one of the 8 axes, starting with the edge&apos;s origin junction and inclined at 45, 90, 135, 180, 225, 270, 315, or 360 degrees. This is the default.</para>
+		/// <para>4 directions—The edges will move so they progressively approach one of the 4 axes, starting with the edge&apos;s origin junction and inclined at 90, 180, 270, or 360 degrees.</para>
 		/// <para><see cref="NumberOfDirectionsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -113,9 +113,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Run in asynchronous mode on the server</para>
-		/// <para>指定布局算法在服务器上将异步运行还是同步运行。</para>
-		/// <para>选中 - 布局算法将在服务器上异步运行。 服务器资源可通过该选项来运行超时较长的布局算法。 当执行耗时且可能导致服务器超时的布局（例如，部分重叠边）并应用于大型逻辑示意图（超过 25,000 个要素）时，建议进行异步运行。</para>
-		/// <para>未选中 - 布局算法将在服务器上同步运行。 如果执行时超过服务默认超时值（600 秒），则布局算法可能失败，无法完成。 这是默认设置。</para>
+		/// <para>Specifies whether the layout algorithm will run asynchronously or synchronously on the server.</para>
+		/// <para>Checked—The layout algorithm will run asynchronously on the server. This option dedicates server resources to run the layout algorithm with a longer time-out. Running asynchronously is recommended when executing layouts that are time consuming and may exceed the server time-out (for example, Partial Overlapping Edges) and applying to large diagrams (more than 25,000 features).</para>
+		/// <para>Unchecked—The layout algorithm will run synchronously on the server. It can fail without completion if its execution exceeds the service default time-out value of 600 seconds. This is the default.</para>
 		/// <para><see cref="RunAsyncEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -132,14 +132,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum AreContainersPreservedEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The layout algorithm will execute on the top graph of the diagram so containers are preserved.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PRESERVE_CONTAINERS")]
 			PRESERVE_CONTAINERS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The layout algorithm will execute on both content and noncontent features in the diagram. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("IGNORE_CONTAINERS")]
@@ -153,24 +153,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum NumberOfDirectionsEnum 
 		{
 			/// <summary>
-			/// <para>12 个方向—将移动边，以使其逐渐接近 12 个轴中的一个（轴从边的起始交汇点处开始，倾斜角度分别为 30 度、60 度、90 度、120 度、150 度、180 度、210 度、240 度、270 度、300 度、330 度或 360 度）。</para>
+			/// <para>12 directions—The edges will move so they progressively approach one of the 12 axes, starting with the edge&apos;s origin junction and inclined at 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, or 360 degrees.</para>
 			/// </summary>
 			[GPValue("TWELVE_DIRECTIONS")]
-			[Description("12 个方向")]
+			[Description("12 directions")]
 			_12_directions,
 
 			/// <summary>
-			/// <para>8 个方向—将移动边，以使其逐渐接近 8 个轴中的一个（轴从边的起始交汇点处开始，倾斜角度分别为 45 度、90 度、135 度、180 度、225 度、270 度、315 度或 360 度）。这是默认设置。</para>
+			/// <para>8 directions—The edges will move so they progressively approach one of the 8 axes, starting with the edge&apos;s origin junction and inclined at 45, 90, 135, 180, 225, 270, 315, or 360 degrees. This is the default.</para>
 			/// </summary>
 			[GPValue("EIGHT_DIRECTIONS")]
-			[Description("8 个方向")]
+			[Description("8 directions")]
 			_8_directions,
 
 			/// <summary>
-			/// <para>4 个方向—将移动边，以使其逐渐接近 4 个轴中的一个（轴从边的起始交汇点处开始，倾斜角度分别为 90 度、180 度、270 度或 360 度）。</para>
+			/// <para>4 directions—The edges will move so they progressively approach one of the 4 axes, starting with the edge&apos;s origin junction and inclined at 90, 180, 270, or 360 degrees.</para>
 			/// </summary>
 			[GPValue("FOUR_DIRECTIONS")]
-			[Description("4 个方向")]
+			[Description("4 directions")]
 			_4_directions,
 
 		}
@@ -181,14 +181,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum RunAsyncEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The layout algorithm will run asynchronously on the server. This option dedicates server resources to run the layout algorithm with a longer time-out. Running asynchronously is recommended when executing layouts that are time consuming and may exceed the server time-out (for example, Partial Overlapping Edges) and applying to large diagrams (more than 25,000 features).</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RUN_ASYNCHRONOUSLY")]
 			RUN_ASYNCHRONOUSLY,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The layout algorithm will run synchronously on the server. It can fail without completion if its execution exceeds the service default time-out value of 600 seconds. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("RUN_SYNCHRONOUSLY")]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Mosaic Dataset To Mobile Mosaic Dataset</para>
-	/// <para>镶嵌数据集至移动镶嵌数据集</para>
-	/// <para>将镶嵌数据集转换为兼容 ArcGIS Runtime SDK 的移动镶嵌数据集。移动镶嵌数据集位于移动地理数据库。</para>
+	/// <para>Mosaic Dataset To Mobile Mosaic Dataset</para>
+	/// <para>Converts a mosaic dataset into a mobile mosaic dataset compatible with ArcGIS Runtime SDK. A mobile mosaic dataset resides in a mobile geodatabase.</para>
 	/// </summary>
 	public class MosaicDatasetToMobileMosaicDataset : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>要转换为移动镶嵌数据集的镶嵌数据集。</para>
+		/// <para>The mosaic dataset to be converted to a mobile mosaic dataset.</para>
 		/// </param>
 		/// <param name="OutMobileGdb">
 		/// <para>Mobile Geodatabase</para>
-		/// <para>用于在其中创建转换的镶嵌数据集的地理数据库。</para>
+		/// <para>The geodatabase where the converted mosaic dataset will be created.</para>
 		/// </param>
 		/// <param name="MosaicDatasetName">
 		/// <para>Mosaic Dataset Name</para>
-		/// <para>要创建的移动镶嵌数据集的名称。</para>
+		/// <para>The name of the mobile mosaic dataset to be created.</para>
 		/// </param>
 		public MosaicDatasetToMobileMosaicDataset(object InMosaicDataset, object OutMobileGdb, object MosaicDatasetName)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 镶嵌数据集至移动镶嵌数据集</para>
+		/// <para>Tool Display Name : Mosaic Dataset To Mobile Mosaic Dataset</para>
 		/// </summary>
-		public override string DisplayName() => "镶嵌数据集至移动镶嵌数据集";
+		public override string DisplayName() => "Mosaic Dataset To Mobile Mosaic Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : MosaicDatasetToMobileMosaicDataset</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>要转换为移动镶嵌数据集的镶嵌数据集。</para>
+		/// <para>The mosaic dataset to be converted to a mobile mosaic dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mobile Geodatabase</para>
-		/// <para>用于在其中创建转换的镶嵌数据集的地理数据库。</para>
+		/// <para>The geodatabase where the converted mosaic dataset will be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset Name</para>
-		/// <para>要创建的移动镶嵌数据集的名称。</para>
+		/// <para>The name of the mobile mosaic dataset to be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Query Definition</para>
-		/// <para>用来选择将特定项目添加到移动镶嵌数据集的 SQL 表达式。</para>
+		/// <para>An SQL expression to select specific items to add to the mobile mosaic dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -108,11 +108,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Selection Feature</para>
-		/// <para>要添加到输出中的镶嵌数据集项目基于其他影像或要素类的范围。位于已定义范围边缘的项目将被包含到镶嵌数据集中。因此将不会进行裁剪。</para>
-		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
-		/// <para>当前显示范围 - 该范围与数据框或可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
-		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
-		/// <para>浏览 - 该范围将基于现有数据集。</para>
+		/// <para>The mosaic dataset items to be included in the output based on the extent of another image or feature class. Items that lay along the defined extent will be included in the mosaic dataset. They will not be clipped.</para>
+		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
+		/// <para>Current Display Extent—The extent is equal to the data frame or visible display. The option is not available when there is no active map.</para>
+		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
+		/// <para>Browse—The extent will be based on an existing dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Data Folder</para>
-		/// <para>如果指定，则工具将在此文件夹中创建源数据的副本。如果选中转换栅格，则将在创建副本前执行与镶嵌数据集相关的所有栅格函数。</para>
+		/// <para>If specified, the tool will create a copy of the source data in this folder. If Convert Rasters is checked, any raster functions associated with the mosaic dataset are processed before creating the copy.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
@@ -130,9 +130,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Convert Rasters</para>
-		/// <para>创建移动镶嵌数据集前应用与输入镶嵌数据集相关的栅格函数。如果已选中，且 ArcGIS Runtime SDK 不支持栅格函数，工具将应用栅格函数链并将输出另存为已转换的栅格项目。如未选中，工具将不转换栅格项目。如果 ArcGIS Runtime SDK 不支持栅格函数，工具将返回相应的错误消息。</para>
-		/// <para>未选中 - 不转换带有 ArcGIS Runtime SDK 不支持函数的栅格项目。这是默认设置。</para>
-		/// <para>选中 - 应用栅格函数链并将输出另存为已转换的栅格项目。</para>
+		/// <para>Applies the raster functions associated with the input mosaic dataset before creating the mobile mosaic dataset. If checked and you have raster functions that are not supported by ArcGIS Runtime SDK, the tool will apply the raster function chain and save the output as converted raster items. If left unchecked, the tool will not convert raster items. If you have raster functions that are not supported by ArcGIS Runtime SDK, the tool will return the appropriate error message.</para>
+		/// <para>Unchecked—Do not convert raster items with functions that are not supported by ArcGIS Runtime SDK. This is the default.</para>
+		/// <para>Checked—Apply the raster function chain and save the output as converted raster items.</para>
 		/// <para><see cref="ConvertRastersEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Base Name</para>
-		/// <para>为每个复制或转换到输出数据文件夹的项目追加一个前缀。</para>
+		/// <para>Appends a prefix to each item, which is copied or converted into the output data folder.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -152,11 +152,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Format</para>
-		/// <para>写入到输出数据文件夹中的栅格的格式。</para>
-		/// <para>TIFF—TIFF 格式</para>
-		/// <para>PNG—PNG 格式</para>
-		/// <para>JPEG—JPEG 格式</para>
-		/// <para>JPEG2000—JPEG2000 格式</para>
+		/// <para>The format for the rasters written to the output data folder.</para>
+		/// <para>TIFF—TIFF format</para>
+		/// <para>PNG—PNG format</para>
+		/// <para>JPEG—JPEG format</para>
+		/// <para>JPEG2000—JPEG2000 format</para>
 		/// <para><see cref="FormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -167,11 +167,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Compression Method</para>
-		/// <para>用于将镶嵌影像从计算机传输到显示器（或者从服务器到客户端）的压缩方法。</para>
-		/// <para>无—不应用压缩。</para>
-		/// <para>JPEG—最多压缩至 8:1 并且适合用作背景。</para>
-		/// <para>LZ77—压缩大约为 2:1。适合用于分析。</para>
-		/// <para>RLE—无损压缩 适用于分类数据集。</para>
+		/// <para>The method of compression for transmitting the mosaicked image from the computer to the display (or from the server to the client).</para>
+		/// <para>None—No compression will be used.</para>
+		/// <para>JPEG—Compresses up to 8:1 and is suitable for backdrops.</para>
+		/// <para>LZ77—Compresses approximately 2:1. Suitable for analysis.</para>
+		/// <para>RLE—Lossless compression. Suitable for categorical datasets.</para>
 		/// <para><see cref="CompressionMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -182,7 +182,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Compression Quality</para>
-		/// <para>0 到 100 之间的值。数字越大，意味着影像的质量越高，但压缩程度越低。仅在指定压缩方法为 JPEG 或 JP2000 时启用。</para>
+		/// <para>A value from 0 to 100. A higher number means better image quality but less compression. Only enabled when JPEG or JP2000 is specified as the compression method.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -213,14 +213,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ConvertRastersEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Apply the raster function chain and save the output as converted raster items.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ALWAYS")]
 			ALWAYS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Do not convert raster items with functions that are not supported by ArcGIS Runtime SDK. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("AS_REQUIRED")]
@@ -234,28 +234,28 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum FormatEnum 
 		{
 			/// <summary>
-			/// <para>TIFF—TIFF 格式</para>
+			/// <para>TIFF—TIFF format</para>
 			/// </summary>
 			[GPValue("TIFF")]
 			[Description("TIFF")]
 			TIFF,
 
 			/// <summary>
-			/// <para>PNG—PNG 格式</para>
+			/// <para>PNG—PNG format</para>
 			/// </summary>
 			[GPValue("PNG")]
 			[Description("PNG")]
 			PNG,
 
 			/// <summary>
-			/// <para>JPEG—JPEG 格式</para>
+			/// <para>JPEG—JPEG format</para>
 			/// </summary>
 			[GPValue("JPEG")]
 			[Description("JPEG")]
 			JPEG,
 
 			/// <summary>
-			/// <para>JPEG2000—JPEG2000 格式</para>
+			/// <para>JPEG2000—JPEG2000 format</para>
 			/// </summary>
 			[GPValue("JP2")]
 			[Description("JPEG2000")]
@@ -269,28 +269,28 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CompressionMethodEnum 
 		{
 			/// <summary>
-			/// <para>无—不应用压缩。</para>
+			/// <para>None—No compression will be used.</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("无")]
+			[Description("None")]
 			None,
 
 			/// <summary>
-			/// <para>JPEG—最多压缩至 8:1 并且适合用作背景。</para>
+			/// <para>JPEG—Compresses up to 8:1 and is suitable for backdrops.</para>
 			/// </summary>
 			[GPValue("JPEG")]
 			[Description("JPEG")]
 			JPEG,
 
 			/// <summary>
-			/// <para>LZ77—压缩大约为 2:1。适合用于分析。</para>
+			/// <para>LZ77—Compresses approximately 2:1. Suitable for analysis.</para>
 			/// </summary>
 			[GPValue("LZW")]
 			[Description("LZ77")]
 			LZ77,
 
 			/// <summary>
-			/// <para>RLE—无损压缩 适用于分类数据集。</para>
+			/// <para>RLE—Lossless compression. Suitable for categorical datasets.</para>
 			/// </summary>
 			[GPValue("RLE")]
 			[Description("RLE")]

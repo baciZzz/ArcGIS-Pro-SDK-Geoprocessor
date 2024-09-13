@@ -12,7 +12,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 	/// <summary>
 	/// <para>Abs</para>
 	/// <para>Abs</para>
-	/// <para>计算栅格中像元值的绝对值。</para>
+	/// <para>Calculates the absolute value of the cells in a raster.</para>
 	/// </summary>
 	public class Abs : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRasterOrConstant">
 		/// <para>Input raster or constant value</para>
-		/// <para>要计算绝对值的输入栅格。</para>
-		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input raster for which to calculate the absolute values.</para>
+		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>像元值是输入栅格像元的绝对值。</para>
+		/// <para>The output raster.</para>
+		/// <para>The cell values are the absolute value of the cells of the input raster.</para>
 		/// </param>
 		public Abs(object InRasterOrConstant, object OutRaster)
 		{
@@ -72,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value</para>
-		/// <para>要计算绝对值的输入栅格。</para>
-		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input raster for which to calculate the absolute values.</para>
+		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -85,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>像元值是输入栅格像元的绝对值。</para>
+		/// <para>The output raster.</para>
+		/// <para>The cell values are the absolute value of the cells of the input raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

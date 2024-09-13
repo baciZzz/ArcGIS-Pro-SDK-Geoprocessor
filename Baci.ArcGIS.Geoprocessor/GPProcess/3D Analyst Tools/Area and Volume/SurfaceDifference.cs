@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Surface Difference</para>
-	/// <para>表面差异</para>
-	/// <para>计算两个表面之间的位移来确定哪个表面在上、哪个表面在下或两个表面位置相同。</para>
+	/// <para>Surface Difference</para>
+	/// <para>Calculate the displacement between two surfaces to determine where one is above, below or the same as the other surface.</para>
 	/// </summary>
 	public class SurfaceDifference : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InSurface">
 		/// <para>Input Surface</para>
-		/// <para>从参考表面评估其相对位移的三角化网格面。</para>
+		/// <para>The triangulated surface whose relative displacement is being evaluated from the reference surface.</para>
 		/// </param>
 		/// <param name="InReferenceSurface">
 		/// <para>Reference Surface</para>
-		/// <para>将作为基线用于确定输入表面相对位移的三角化网格面。</para>
+		/// <para>The triangulated surface that will be used as the baseline for determining the relative displacement of the input surface.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>包含了因分类相同而划分为面的连续三角形和三角面部件的输出要素类。每个差异区域包围的体积均列于属性表中。</para>
+		/// <para>The output feature class containing contiguous triangles and triangle parts that have the same classification grouped into polygons. The volume enclosed by each region of difference is listed in the attribute table.</para>
 		/// </param>
 		public SurfaceDifference(object InSurface, object InReferenceSurface, object OutFeatureClass)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 表面差异</para>
+		/// <para>Tool Display Name : Surface Difference</para>
 		/// </summary>
-		public override string DisplayName() => "表面差异";
+		public override string DisplayName() => "Surface Difference";
 
 		/// <summary>
 		/// <para>Tool Name : SurfaceDifference</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Surface</para>
-		/// <para>从参考表面评估其相对位移的三角化网格面。</para>
+		/// <para>The triangulated surface whose relative displacement is being evaluated from the reference surface.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Reference Surface</para>
-		/// <para>将作为基线用于确定输入表面相对位移的三角化网格面。</para>
+		/// <para>The triangulated surface that will be used as the baseline for determining the relative displacement of the input surface.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>包含了因分类相同而划分为面的连续三角形和三角面部件的输出要素类。每个差异区域包围的体积均列于属性表中。</para>
+		/// <para>The output feature class containing contiguous triangles and triangle parts that have the same classification grouped into polygons. The volume enclosed by each region of difference is listed in the attribute table.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Analysis Resolution</para>
-		/// <para>将用于生成输入表面的分辨率。对于 terrain 数据集，此分辨率与其金字塔等级定义对应，其中默认值 0 表示全分辨率。对于 LAS 数据集，此值表示用于稀疏化 LAS 点回波的方形区域各边的长度。</para>
+		/// <para>The resolution that will be used to generate the input surface. For a terrain dataset, this will correspond to its pyramid-level definitions, where the default of 0 represents full resolution. For a LAS dataset, this value represents the length of each side of the square area that will be used to thin the LAS point returns.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Reference Analysis Resolution</para>
-		/// <para>将用于生成参考表面的分辨率。对于 terrain 数据集，此分辨率与其金字塔等级定义对应，其中默认值 0 表示全分辨率。对于 LAS 数据集，此值表示用于稀疏化 LAS 点回波的方形区域各边的长度。</para>
+		/// <para>The resolution that will be used to generate the reference surface. For a terrain dataset, this will correspond to its pyramid-level definitions, where the default of 0 represents full resolution. For a LAS dataset, this value represents the length of each side of the square area that will be used to thin the LAS points returns.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Raster</para>
-		/// <para>其值代表对参考表面进行归一化的输入表面的输出栅格表面。正值反映输入表面位于参考表面之上的区域，而负值表示输入表面位于参考表面之下的区域。使用线性插值法从 TIN 获取栅格值。</para>
+		/// <para>The output raster surface whose values represent the input surface normalized against the reference surface. Positive values reflect areas where the input surface is above the reference surface, whereas negative values indicate the areas where the input surface is below the reference surface. The raster's values are derived from a TIN using linear interpolation.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Raster Cell Size</para>
-		/// <para>输出栅格的像元大小。</para>
+		/// <para>The cell size of the output raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output TIN Folder</para>
-		/// <para>存储其值代表输入和参考表面之间差异的一个或多个 TIN 表面的文件夹位置。</para>
+		/// <para>The folder location for storing one or more TIN surfaces whose values represent the difference between the input and reference surface.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
@@ -144,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output TIN Base Name</para>
-		/// <para>指定给每个输出 TIN 表面的基本名称。如果一个 TIN 数据不足以表示数据，则会创建多个具有相同基本名称的 TIN。</para>
+		/// <para>The base name given to each output TIN surface. If one TIN dataset is not sufficient to represent the data, multiple TINs will be created with the same base name.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -153,10 +153,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>LAS Thinning Method</para>
-		/// <para>在应用某一分析分辨率来稀疏化输入 LAS 数据集表面时，在每个分析窗口中选择 LAS 点所使用的方法。所生成的点将用于构建三角化网格面。</para>
-		/// <para>最接近平均值—将使用值最接近分析窗口中所有 LAS 点的平均值的 LAS 点。这是默认设置。</para>
-		/// <para>最小值—在分析窗口的所有 LAS 点中 z 值最小的 LAS 点。</para>
-		/// <para>最大值—在分析窗口的所有 LAS 点中 z 值最高的 LAS 点。</para>
+		/// <para>The method used to select a LAS point in each analysis window when applying an analysis resolution to thin the input LAS dataset surface. The resulting points will be used to construct a triangulated surface.</para>
+		/// <para>Closest to mean—The LAS point whose value is closest to the mean of all LAS points in the analysis window will be used. This is the default.</para>
+		/// <para>Minimum—The LAS point with the smallest z-value among all the LAS points in the analysis window.</para>
+		/// <para>Maximum—The LAS point with the highest z-value among all the LAS points in the analysis window.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -166,10 +166,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Reference LAS Thinning Method</para>
-		/// <para>在应用某一分析分辨率来稀疏化输入 LAS 数据集表面时，在每个分析窗口中选择 LAS 点所使用的方法。所生成的点将用于构建三角化网格面。</para>
-		/// <para>最接近平均值—将使用值最接近分析窗口中所有 LAS 点的平均值的 LAS 点。这是默认设置。</para>
-		/// <para>最小值—在分析窗口的所有 LAS 点中 z 值最小的 LAS 点。</para>
-		/// <para>最大值—在分析窗口的所有 LAS 点中 z 值最高的 LAS 点。</para>
+		/// <para>The method used to select a LAS point in each analysis window when applying an analysis resolution to thin the input LAS dataset surface. The resulting points will be used to construct a triangulated surface.</para>
+		/// <para>Closest to mean—The LAS point whose value is closest to the mean of all LAS points in the analysis window will be used. This is the default.</para>
+		/// <para>Minimum—The LAS point with the smallest z-value among all the LAS points in the analysis window.</para>
+		/// <para>Maximum—The LAS point with the highest z-value among all the LAS points in the analysis window.</para>
 		/// <para><see cref="ReferenceMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -179,13 +179,13 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Processing Extent</para>
-		/// <para>待评估数据的范围。</para>
-		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
-		/// <para>输入的并集 - 该范围将基于所有输入的最大范围。</para>
-		/// <para>输入的交集 - 该范围将基于所有输入共用的最小区域。</para>
-		/// <para>当前显示范围 - 该范围与可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
-		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
-		/// <para>浏览 - 该范围将基于现有数据集。</para>
+		/// <para>The extent of the data that will be evaluated.</para>
+		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
+		/// <para>Union of Inputs—The extent will be based on the maximum extent of all inputs.</para>
+		/// <para>Intersection of Inputs—The extent will be based on the minimum area common to all inputs.</para>
+		/// <para>Current Display Extent—The extent is equal to the visible display. The option is not available when there is no active map.</para>
+		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
+		/// <para>Browse—The extent will be based on an existing dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -194,7 +194,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Processing Boundary</para>
-		/// <para>定义将进行处理的感兴趣区域的面要素。</para>
+		/// <para>A polygon feature that defines the area of interest to be processed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -220,24 +220,24 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>最小值—在分析窗口的所有 LAS 点中 z 值最小的 LAS 点。</para>
+			/// <para>Minimum—The LAS point with the smallest z-value among all the LAS points in the analysis window.</para>
 			/// </summary>
 			[GPValue("MIN")]
-			[Description("最小值")]
+			[Description("Minimum")]
 			Minimum,
 
 			/// <summary>
-			/// <para>最大值—在分析窗口的所有 LAS 点中 z 值最高的 LAS 点。</para>
+			/// <para>Maximum—The LAS point with the highest z-value among all the LAS points in the analysis window.</para>
 			/// </summary>
 			[GPValue("MAX")]
-			[Description("最大值")]
+			[Description("Maximum")]
 			Maximum,
 
 			/// <summary>
-			/// <para>最接近平均值—将使用值最接近分析窗口中所有 LAS 点的平均值的 LAS 点。这是默认设置。</para>
+			/// <para>Closest to mean—The LAS point whose value is closest to the mean of all LAS points in the analysis window will be used. This is the default.</para>
 			/// </summary>
 			[GPValue("CLOSEST_TO_MEAN")]
-			[Description("最接近平均值")]
+			[Description("Closest to mean")]
 			Closest_to_mean,
 
 		}
@@ -248,24 +248,24 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ReferenceMethodEnum 
 		{
 			/// <summary>
-			/// <para>最小值—在分析窗口的所有 LAS 点中 z 值最小的 LAS 点。</para>
+			/// <para>Minimum—The LAS point with the smallest z-value among all the LAS points in the analysis window.</para>
 			/// </summary>
 			[GPValue("MIN")]
-			[Description("最小值")]
+			[Description("Minimum")]
 			Minimum,
 
 			/// <summary>
-			/// <para>最大值—在分析窗口的所有 LAS 点中 z 值最高的 LAS 点。</para>
+			/// <para>Maximum—The LAS point with the highest z-value among all the LAS points in the analysis window.</para>
 			/// </summary>
 			[GPValue("MAX")]
-			[Description("最大值")]
+			[Description("Maximum")]
 			Maximum,
 
 			/// <summary>
-			/// <para>最接近平均值—将使用值最接近分析窗口中所有 LAS 点的平均值的 LAS 点。这是默认设置。</para>
+			/// <para>Closest to mean—The LAS point whose value is closest to the mean of all LAS points in the analysis window will be used. This is the default.</para>
 			/// </summary>
 			[GPValue("CLOSEST_TO_MEAN")]
-			[Description("最接近平均值")]
+			[Description("Closest to mean")]
 			Closest_to_mean,
 
 		}

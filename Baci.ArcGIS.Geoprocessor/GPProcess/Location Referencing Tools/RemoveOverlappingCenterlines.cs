@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Remove Overlapping Centerlines</para>
-	/// <para>移除重叠中心线</para>
-	/// <para>移除重叠中心线部分，以确保在中心线几何重叠的情况下存在一条公共中心线。</para>
+	/// <para>Remove Overlapping Centerlines</para>
+	/// <para>Removes overlapping centerline sections to ensure that there is one common centerline in cases where centerline geometry overlaps.</para>
 	/// </summary>
 	public class RemoveOverlappingCenterlines : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InCenterlineFeatures">
 		/// <para>Input Centerline Features</para>
-		/// <para>表示 LRS 中心线的输入图层或要素类。</para>
+		/// <para>An input layer or feature class representing an LRS centerline.</para>
 		/// </param>
 		public RemoveOverlappingCenterlines(object InCenterlineFeatures)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 移除重叠中心线</para>
+		/// <para>Tool Display Name : Remove Overlapping Centerlines</para>
 		/// </summary>
-		public override string DisplayName() => "移除重叠中心线";
+		public override string DisplayName() => "Remove Overlapping Centerlines";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveOverlappingCenterlines</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Input Centerline Features</para>
-		/// <para>表示 LRS 中心线的输入图层或要素类。</para>
+		/// <para>An input layer or feature class representing an LRS centerline.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Manage Map Server Cache Status</para>
-	/// <para>管理地图服务器缓存状态</para>
-	/// <para>管理服务器所保存的与地图或影像服务缓存中的构建切片有关的内部数据。</para>
+	/// <para>Manage Map Server Cache Status</para>
+	/// <para>Manages internal data kept by the server about the built tiles in a map or image service cache.</para>
 	/// </summary>
 	public class ManageMapServerCacheStatus : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		/// <param name="InputService">
 		/// <para>Input Service</para>
-		/// <para>将修改其缓存状态的地图影像图层。 可以通过在门户中浏览至所需的服务来对其进行选择，也可以从目录窗格的门户选项卡拖放一个 web 切片图层来提供此参数。</para>
+		/// <para>The map image layer for which the cache status will be modified.. You can choose it by browsing to the desired service in Portal or you can drag and drop a web tile layer from the Catalog pane Portal tab to supply this parameter.</para>
 		/// </param>
 		/// <param name="ManageMode">
 		/// <para>Manage Mode</para>
-		/// <para>删除缓存状态—删除服务器所使用的状态信息。</para>
-		/// <para>重建缓存状态—删除服务器所使用的状态信息，然后重新构建该状态信息。</para>
-		/// <para>重建包状态—在一个名为 Status.gdb 的新文件地理数据库中创建状态信息，此文件地理数据库位于在输出文件夹参数指定的文件夹中。 该选项用于为特定感兴趣区域或比例设置创建自定义状态报告。</para>
+		/// <para>Delete cache status—Deletes the status information used by the server.</para>
+		/// <para>Rebuild cache status—Deletes, then rebuilds the status information used by the server.</para>
+		/// <para>Rebuild bundle status—Creates status information in a new file geodatabase named Status.gdb in a folder you specify in the Output Folder parameter. This option is used when you want to create a custom status report for a particular area of interest or set of scales.</para>
 		/// <para><see cref="ManageModeEnum"/></para>
 		/// </param>
 		public ManageMapServerCacheStatus(object InputService, object ManageMode)
@@ -37,9 +37,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 管理地图服务器缓存状态</para>
+		/// <para>Tool Display Name : Manage Map Server Cache Status</para>
 		/// </summary>
-		public override string DisplayName() => "管理地图服务器缓存状态";
+		public override string DisplayName() => "Manage Map Server Cache Status";
 
 		/// <summary>
 		/// <para>Tool Name : ManageMapServerCacheStatus</para>
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Input Service</para>
-		/// <para>将修改其缓存状态的地图影像图层。 可以通过在门户中浏览至所需的服务来对其进行选择，也可以从目录窗格的门户选项卡拖放一个 web 切片图层来提供此参数。</para>
+		/// <para>The map image layer for which the cache status will be modified.. You can choose it by browsing to the desired service in Portal or you can drag and drop a web tile layer from the Catalog pane Portal tab to supply this parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -81,9 +81,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Manage Mode</para>
-		/// <para>删除缓存状态—删除服务器所使用的状态信息。</para>
-		/// <para>重建缓存状态—删除服务器所使用的状态信息，然后重新构建该状态信息。</para>
-		/// <para>重建包状态—在一个名为 Status.gdb 的新文件地理数据库中创建状态信息，此文件地理数据库位于在输出文件夹参数指定的文件夹中。 该选项用于为特定感兴趣区域或比例设置创建自定义状态报告。</para>
+		/// <para>Delete cache status—Deletes the status information used by the server.</para>
+		/// <para>Rebuild cache status—Deletes, then rebuilds the status information used by the server.</para>
+		/// <para>Rebuild bundle status—Creates status information in a new file geodatabase named Status.gdb in a folder you specify in the Output Folder parameter. This option is used when you want to create a custom status report for a particular area of interest or set of scales.</para>
 		/// <para><see cref="ManageModeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Scales</para>
-		/// <para>将修改其状态的比例级别。 此参数仅适用于使用重建包状态选项为管理模式参数构建自定义状态的情况。</para>
+		/// <para>The scale levels for which the status will be modified. This parameter is only applicable when building a custom status using the Rebuild bundle status option for the Manage Mode parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Number of caching service instances</para>
-		/// <para>定义用于更新/生成切片的实例数。 该参数的值将设置为无限 (-1)，且无法进行修改。</para>
+		/// <para>Defines the number of instances that will be used to update/generate the tiles. The value for this parameter is set to unlimited (-1) and cannot be modified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Output Folder</para>
-		/// <para>Status.gdb 的输出文件夹。 此参数仅适用于使用重建包状态选项构建自定义状态的情况。</para>
+		/// <para>Output folder for the Status.gdb. This parameter is only applicable when building a custom status using the Rebuild bundle status option.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Area Of Interest</para>
-		/// <para>感兴趣区(面)决定着状态报告将覆盖的地理形态。 此参数仅适用于使用重建包状态选项构建自定义状态的情况。</para>
+		/// <para>An area of interest (polygon) that determines what geography the status report will cover. This parameter is only applicable when building a custom status using the Rebuild bundle status option.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -125,12 +125,12 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Report Extent</para>
-		/// <para>定义构建状态区域的矩形范围。 此参数仅适用于使用重建包状态选项构建自定义状态的情况。</para>
-		/// <para>请注意，感兴趣区参数可指定非矩形感兴趣区。</para>
-		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
-		/// <para>当前显示范围 - 该范围与数据框或可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
-		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
-		/// <para>浏览 - 该范围将基于现有数据集。</para>
+		/// <para>A rectangular extent defining the area for which the status will be built. This parameter is only applicable when building a custom status using the Rebuild bundle status option.</para>
+		/// <para>Note that the Area Of Interest parameter allows you to specify an area of interest that is nonrectangular.</para>
+		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
+		/// <para>Current Display Extent—The extent is equal to the data frame or visible display. The option is not available when there is no active map.</para>
+		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
+		/// <para>Browse—The extent will be based on an existing dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -152,24 +152,24 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		public enum ManageModeEnum 
 		{
 			/// <summary>
-			/// <para>重建缓存状态—删除服务器所使用的状态信息，然后重新构建该状态信息。</para>
+			/// <para>Rebuild cache status—Deletes, then rebuilds the status information used by the server.</para>
 			/// </summary>
 			[GPValue("REBUILD_CACHE_STATUS")]
-			[Description("重建缓存状态")]
+			[Description("Rebuild cache status")]
 			Rebuild_cache_status,
 
 			/// <summary>
-			/// <para>删除缓存状态—删除服务器所使用的状态信息。</para>
+			/// <para>Delete cache status—Deletes the status information used by the server.</para>
 			/// </summary>
 			[GPValue("DELETE_CACHE_STATUS")]
-			[Description("删除缓存状态")]
+			[Description("Delete cache status")]
 			Delete_cache_status,
 
 			/// <summary>
-			/// <para>重建包状态—在一个名为 Status.gdb 的新文件地理数据库中创建状态信息，此文件地理数据库位于在输出文件夹参数指定的文件夹中。 该选项用于为特定感兴趣区域或比例设置创建自定义状态报告。</para>
+			/// <para>Rebuild bundle status—Creates status information in a new file geodatabase named Status.gdb in a folder you specify in the Output Folder parameter. This option is used when you want to create a custom status report for a particular area of interest or set of scales.</para>
 			/// </summary>
 			[GPValue("REPORT_BUNDLE_STATUS")]
-			[Description("重建包状态")]
+			[Description("Rebuild bundle status")]
 			Rebuild_bundle_status,
 
 		}

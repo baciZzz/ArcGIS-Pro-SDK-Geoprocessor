@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Exploratory Regression</para>
-	/// <para>探索性回归</para>
-	/// <para>对输入的候选解释变量的所有可能组合进行评估，以便根据用户所指定的指标来查找能够最好地对因变量做出解释的 OLS 模型。</para>
+	/// <para>Exploratory Regression</para>
+	/// <para>Evaluates all possible combinations of the input candidate explanatory variables, looking for OLS models that best explain the dependent variable within the context of user-specified criteria.</para>
 	/// </summary>
 	public class ExploratoryRegression : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InputFeatures">
 		/// <para>Input Features</para>
-		/// <para>包含要分析的因变量和候选解释变量的要素类或要素图层。</para>
+		/// <para>The feature class or feature layer containing the dependent and candidate explanatory variables to analyze.</para>
 		/// </param>
 		/// <param name="DependentVariable">
 		/// <para>Dependent Variable</para>
-		/// <para>包含要使用 OLS 进行建模的观测值的数值型字段。</para>
+		/// <para>The numeric field containing the observed values you want to model using OLS.</para>
 		/// </param>
 		/// <param name="CandidateExplanatoryVariables">
 		/// <para>Candidate Explanatory Variables</para>
-		/// <para>尝试作为 OLS 模型解释变量的字段列表。</para>
+		/// <para>A list of fields to try as OLS model explanatory variables.</para>
 		/// </param>
 		public ExploratoryRegression(object InputFeatures, object DependentVariable, object CandidateExplanatoryVariables)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 探索性回归</para>
+		/// <para>Tool Display Name : Exploratory Regression</para>
 		/// </summary>
-		public override string DisplayName() => "探索性回归";
+		public override string DisplayName() => "Exploratory Regression";
 
 		/// <summary>
 		/// <para>Tool Name : ExploratoryRegression</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>包含要分析的因变量和候选解释变量的要素类或要素图层。</para>
+		/// <para>The feature class or feature layer containing the dependent and candidate explanatory variables to analyze.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Dependent Variable</para>
-		/// <para>包含要使用 OLS 进行建模的观测值的数值型字段。</para>
+		/// <para>The numeric field containing the observed values you want to model using OLS.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Candidate Explanatory Variables</para>
-		/// <para>尝试作为 OLS 模型解释变量的字段列表。</para>
+		/// <para>A list of fields to try as OLS model explanatory variables.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -103,8 +103,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Weights Matrix File</para>
-		/// <para>包含用于定义输入要素之间空间关系的空间权重的文件。此文件用于评估回归残差之间的空间自相关。您可以使用生成空间权重矩阵文件工具来创建此文件。尚未提供空间权重矩阵文件的情况下，将根据每个要素的 8 个最相邻像元对残差的空间自相关进行评估。</para>
-		/// <para>注意：空间权重矩阵文件仅用于分析模型残差中的空间结构；不用于构建或校准任何 OLS 模型。</para>
+		/// <para>A file containing spatial weights that define the spatial relationships among your input features. This file is used to assess spatial autocorrelation among regression residuals. You can use the Generate Spatial Weights Matrix File tool to create this. When you do not provide a spatial weights matrix file, residuals are assessed for spatial autocorrelation based on each feature&apos;s 8 nearest neighbors.</para>
+		/// <para>Note: The spatial weights matrix file is only used to analyze spatial structure in model residuals; it is not used to build or to calibrate any of the OLS models.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Report File</para>
-		/// <para>报表文件包含工具结果，包括已通过您所输入的所有搜索条件的任何模型的相关详细信息。此输出文件还包含诊断信息，以帮助您在没有找到任何合格模型的情况下修复常见的回归问题。</para>
+		/// <para>The report file contains tool results, including details about any models found that passed all the search criteria you entered. This output file also contains diagnostics to help you fix common regression problems in the case that you don't find any passing models.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Results Table</para>
-		/// <para>创建的可选输出表，包含系数 p 值和 VIF 值边界内所有模型的解释变量和诊断信息。</para>
+		/// <para>The optional output table created containing the explanatory variables and diagnostics for all of the models within the Coefficient p-value and VIF value cutoffs.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Maximum Number of Explanatory Variables</para>
-		/// <para>将对解释变量数不超过此处输入值的所有模型进行评估。例如，如果解释变量的最小数量是 2，解释变量的最大数量是 3，探索性回归工具会对包含两个解释变量的任一组合的所有模型进行评估，还会对包含三个解释变量的任一组合的所有模型进行评估。</para>
+		/// <para>All models with explanatory variables up to the value entered here will be assessed. If, for example, the Minimum Number of Explanatory Variables is 2 and the Maximum Number of Explanatory Variables is 3, the Exploratory Regression tool will try all models with every combination of two explanatory variables, and all models with every combination of three explanatory variables.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Minimum Number of Explanatory Variables</para>
-		/// <para>此值表示所评估模型的解释变量的最小数量。例如，如果解释变量的最小数量是 2，解释变量的最大数量是 3，探索性回归工具会对包含两个解释变量的任一组合的所有模型进行评估，还会对包含三个解释变量的任一组合的所有模型进行评估。</para>
+		/// <para>This value represents the minimum number of explanatory variables for models evaluated. If, for example, the Minimum Number of Explanatory Variables is 2 and the Maximum Number of Explanatory Variables is 3, the Exploratory Regression tool will try all models with every combination of two explanatory variables, and all models with every combination of three explanatory variables.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Minimum Acceptable Adj R Squared</para>
-		/// <para>这是您视为合格模型的最小校正可决系数值。如果模型已通过所有其他搜索条件，但“校正可决系数”值小于此处输入的值，则不会在输出报表文件中将其显示为“合格模型”。此参数的有效值范围是 0.0 至 1.0。默认值为 0.05，表示合格模型将解释因变量中至少 50% 的变化。</para>
+		/// <para>This is the lowest Adjusted R-Squared value you consider a passing model. If a model passes all of your other search criteria, but has an Adjusted R-Squared value smaller than the value entered here, it will not show up as a Passing Model in the Output Report File. Valid values for this parameter range from 0.0 to 1.0. The default value is 0.05, indicating that passing models will explain at least 50 percent of the variation in the dependent variable.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -160,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Maximum Coefficient p value Cutoff</para>
-		/// <para>对于所评估的每个模型，OLS 会计算解释变量系数 p 值。此处输入的边界 p 值表示模型中所有系数所需的置信度，需要达到此置信度才能认为模型满足条件。p 值较小表示置信度较强。此参数有效值的范围是 1.0 至 0.0，但很可能是 0.1、0.05、0.01、0.001 等等。默认值是 0.05，表示合格模型只包含其系数在统计学上处于 95% 置信度（p 值小于 0.05）的解释变量。要放宽此默认值，则应输入较大的 p 值边界，例如 0.1。如果得到的合格模型较多，则您可能希望使此搜索条件更为严格，那么可以将默认 p 值边界从 0.05 减小为 0.01 或者更小的值。</para>
+		/// <para>For each model evaluated, OLS computes explanatory variable coefficient p-values. The cutoff p-value you enter here represents the confidence level you require for all coefficients in the model in order to consider the model passing. Small p-values reflect a stronger confidence level. Valid values for this parameter range from 1.0 down to 0.0, but will most likely be 0.1, 0.05, 0.01, 0.001, and so on. The default value is 0.05, indicating passing models will only contain explanatory variables whose coefficients are statistically at the 95 percent confidence level (p-values smaller than 0.05). To relax this default you would enter a larger p-value cutoff, such as 0.1. If you are getting lots of passing models, you will likely want to make this search criteria more stringent by decreasing the default p-value cutoff from 0.05 to 0.01 or smaller.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Maximum VIF Value Cutoff</para>
-		/// <para>此值表示您可接受的模型解释变量之间的冗余（多重共线性）。当 VIF（方差膨胀因子）值高于 7.5 时，多重共线性会使模型变得不稳定；因此，此处的默认值是 7.5。如果您想让合格模型具有更少的冗余，则应为此参数输入较小的值，如 5.0。</para>
+		/// <para>This value reflects how much redundancy (multicollinearity) among model explanatory variables you will tolerate. When the VIF (Variance Inflation Factor) value is higher than about 7.5, multicollinearity can make a model unstable; consequently, 7.5 is the default value here. If you want your passing models to have less redundancy, you would enter a smaller value, such as 5.0, for this parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -180,7 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Minimum Acceptable Jarque Bera p value</para>
-		/// <para>Jarque-Bera 诊断检验所返回的 p 值将表示模型残差是否呈正态分布。如果 p 值在统计学上具有显著性（小），则模型残差不呈现正态分布，模型有偏差。合格模型应具有较大的 Jarque-Bera p 值。默认可接受的最小 p 值是 0.1。只有返回的 p 值大于此最小值的模型才被认为是合格的。如果查找无偏合格模型很困难，并决定放宽此条件，则可以输入更小的最小 p 值，如 0.05。</para>
+		/// <para>The p-value returned by the Jarque-Bera diagnostic test indicates whether the model residuals are normally distributed. If the p-value is statistically significant (small), the model residuals are not normal and the model is biased. Passing models should have large Jarque-Bera p-values. The default minimum acceptable p-value is 0.1. Only models returning p-values larger than this minimum will be considered passing. If you are having trouble finding unbiased passing models, and decide to relax this criterion, you might enter a smaller minimum p-value such as 0.05.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -190,7 +190,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Minimum Acceptable Spatial Autocorrelation p value</para>
-		/// <para>对于通过所有其他搜索条件的模型，探索性回归工具将使用 Global Moran's I 对模型残差进行空间聚类检查。当此诊断检验的 p 值在统计学上具有显著性（小）时，表示该模型很可能缺少关键的解释变量（不能说明整个情况）。遗憾的是，如果回归残差中存在空间自相关，则模型将被错误指定，因此您的结果是无法信任的。对于此诊断检验，合格模型应具有较大的 p 值。默认的最小 p 值是 0.1。只有返回的 p 值大于此最小值的模型才被认为是合格的。如果对于此诊断检验，查找正确指定的模型很困难，并决定放宽此搜索条件，则可以输入更小的最小值，如 0.05。</para>
+		/// <para>For models that pass all of the other search criteria, the Exploratory Regression tool will check model residuals for spatial clustering using Global Moran's I. When the p-value for this diagnostic test is statistically significant (small), it indicates the model is very likely missing key explanatory variables (it isn't telling the whole story). Unfortunately, if you have spatial autocorrelation in your regression residuals, your model is misspecified, so you cannot trust your results. Passing models should have large p-values for this diagnostic test. The default minimum p-value is 0.1. Only models returning p-values larger than this minimum will be considered passing. If you are having trouble finding properly specified models because of this diagnostic test, and decide to relax this search criteria, you might enter a smaller minimum such as 0.05.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

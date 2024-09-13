@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Plus</para>
-	/// <para>加</para>
-	/// <para>逐个像元地将两个栅格的值相加（求和）。</para>
+	/// <para>Plus</para>
+	/// <para>Adds (sums) the values of two rasters on a cell-by-cell basis.</para>
 	/// </summary>
 	public class Plus : AbstractGPProcess
 	{
@@ -21,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InRasterOrConstant1">
 		/// <para>Input raster or constant value 1</para>
-		/// <para>值将用于相加的输入。</para>
-		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input whose values will be added to.</para>
+		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
 		/// </param>
 		/// <param name="InRasterOrConstant2">
 		/// <para>Input raster or constant value 2</para>
-		/// <para>该输入值将与第一个输入的值进行相加。</para>
-		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input whose values will be added to the first input.</para>
+		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>像元值是第一个输入与第二个输入相加之和。</para>
+		/// <para>The output raster.</para>
+		/// <para>The cell values are the sum of the first input added to the second.</para>
 		/// </param>
 		public Plus(object InRasterOrConstant1, object InRasterOrConstant2, object OutRaster)
 		{
@@ -42,14 +42,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 加</para>
+		/// <para>Tool Display Name : Plus</para>
 		/// </summary>
-		public override string DisplayName() => "加";
+		public override string DisplayName() => "Plus";
 
 		/// <summary>
-		/// <para>Tool Name : 加</para>
+		/// <para>Tool Name : Plus</para>
 		/// </summary>
-		public override string ToolName() => "加";
+		public override string ToolName() => "Plus";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Plus</para>
@@ -78,8 +78,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 1</para>
-		/// <para>值将用于相加的输入。</para>
-		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input whose values will be added to.</para>
+		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -91,8 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 2</para>
-		/// <para>该输入值将与第一个输入的值进行相加。</para>
-		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input whose values will be added to the first input.</para>
+		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -104,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>像元值是第一个输入与第二个输入相加之和。</para>
+		/// <para>The output raster.</para>
+		/// <para>The cell values are the sum of the first input added to the second.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

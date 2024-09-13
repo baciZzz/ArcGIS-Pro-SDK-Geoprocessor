@@ -11,8 +11,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Copy Network Analysis Layer</para>
-	/// <para>复制网络分析图层</para>
-	/// <para>将网络分析图层复制到复本图层。 新图层将具有与原始图层相同的分析设置和网络数据源以及原始图层分析数据的复本。</para>
+	/// <para>Copy Network Analysis Layer</para>
+	/// <para>Copies a network analysis layer </para>
+	/// <para>to a duplicate layer. The new layer will have the same analysis settings and network data source as the original layer and a copy of the original layer's analysis data.</para>
 	/// </summary>
 	public class CopyNetworkAnalysisLayer : AbstractGPProcess
 	{
@@ -21,7 +22,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="InNetworkAnalysisLayer">
 		/// <para>Input Network Analysis Layer</para>
-		/// <para>要复制的网络分析图层。</para>
+		/// <para>The network analysis layer to copy.</para>
 		/// </param>
 		public CopyNetworkAnalysisLayer(object InNetworkAnalysisLayer)
 		{
@@ -29,9 +30,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 复制网络分析图层</para>
+		/// <para>Tool Display Name : Copy Network Analysis Layer</para>
 		/// </summary>
-		public override string DisplayName() => "复制网络分析图层";
+		public override string DisplayName() => "Copy Network Analysis Layer";
 
 		/// <summary>
 		/// <para>Tool Name : CopyNetworkAnalysisLayer</para>
@@ -65,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer</para>
-		/// <para>要复制的网络分析图层。</para>
+		/// <para>The network analysis layer to copy.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPNALayer()]
@@ -73,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Layer Name</para>
-		/// <para>要创建的网络分析图层的名称。</para>
+		/// <para>The name of the network analysis layer to create.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

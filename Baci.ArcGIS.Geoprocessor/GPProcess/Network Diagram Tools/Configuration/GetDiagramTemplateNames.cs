@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Get Diagram Template Names</para>
-	/// <para>获得逻辑示意图模板名称</para>
-	/// <para>返回与网络相关的所有逻辑示意图模板的名称。</para>
+	/// <para>Get Diagram Template Names</para>
+	/// <para>Returns the names of all diagram templates related to a network.</para>
 	/// </summary>
 	public class GetDiagramTemplateNames : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>与逻辑示意图模板名称相关的 utility network or trace network。</para>
+		/// <para>The utility network or trace network to which the diagram template names are related.</para>
 		/// </param>
 		public GetDiagramTemplateNames(object InUtilityNetwork)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 获得逻辑示意图模板名称</para>
+		/// <para>Tool Display Name : Get Diagram Template Names</para>
 		/// </summary>
-		public override string DisplayName() => "获得逻辑示意图模板名称";
+		public override string DisplayName() => "Get Diagram Template Names";
 
 		/// <summary>
 		/// <para>Tool Name : GetDiagramTemplateNames</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>与逻辑示意图模板名称相关的 utility network or trace network。</para>
+		/// <para>The utility network or trace network to which the diagram template names are related.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]

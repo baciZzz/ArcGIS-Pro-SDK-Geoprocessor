@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Populate Alternate ID Fields</para>
-	/// <para>填充备用 ID 字段</para>
-	/// <para>为通过备用 ID 来引用边的转弯要素类创建并填充附加字段。通过备用 ID 可以使用其他一组 ID，从而有助于在编辑源边时保持转弯要素的完整性。</para>
+	/// <para>Populate Alternate ID Fields</para>
+	/// <para>Creates and populates additional fields on the turn feature classes that reference the edges by alternate IDs. The alternate IDs allow for another set of IDs that can help maintain the integrity of the turn features in case the source edges are being edited.</para>
 	/// </summary>
 	public class PopulateAlternateIDFields : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="InNetworkDataset">
 		/// <para>Input Network Dataset</para>
-		/// <para>为转弯要素类创建备用 ID 字段时所在的网络数据集。将为所有作为转弯源添加到网络数据集中的转弯要素类创建字段。</para>
+		/// <para>The network dataset whose turn feature classes are to receive alternate ID fields. The fields will be created on all of the turn feature classes added as a turn source to the network dataset.</para>
 		/// </param>
 		/// <param name="AlternateIDFieldName">
 		/// <para>Alternate ID Field Name</para>
-		/// <para>网络数据集中边要素源的备用 ID 字段名称。 对于转弯引用的所有边要素源，其备用 ID 字段的名称必须相同。</para>
+		/// <para>The name of the alternate ID field on the edge feature sources of the network dataset. All edge feature sources referenced by turns must have the same name for the alternate ID field.</para>
 		/// </param>
 		public PopulateAlternateIDFields(object InNetworkDataset, object AlternateIDFieldName)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 填充备用 ID 字段</para>
+		/// <para>Tool Display Name : Populate Alternate ID Fields</para>
 		/// </summary>
-		public override string DisplayName() => "填充备用 ID 字段";
+		public override string DisplayName() => "Populate Alternate ID Fields";
 
 		/// <summary>
 		/// <para>Tool Name : PopulateAlternateIDFields</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Input Network Dataset</para>
-		/// <para>为转弯要素类创建备用 ID 字段时所在的网络数据集。将为所有作为转弯源添加到网络数据集中的转弯要素类创建字段。</para>
+		/// <para>The network dataset whose turn feature classes are to receive alternate ID fields. The fields will be created on all of the turn feature classes added as a turn source to the network dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPNetworkDatasetLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Alternate ID Field Name</para>
-		/// <para>网络数据集中边要素源的备用 ID 字段名称。 对于转弯引用的所有边要素源，其备用 ID 字段的名称必须相同。</para>
+		/// <para>The name of the alternate ID field on the edge feature sources of the network dataset. All edge feature sources referenced by turns must have the same name for the alternate ID field.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

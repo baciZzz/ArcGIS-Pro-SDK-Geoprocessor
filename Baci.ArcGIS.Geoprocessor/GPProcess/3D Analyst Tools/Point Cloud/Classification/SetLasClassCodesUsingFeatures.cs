@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Set LAS Class Codes Using Features</para>
-	/// <para>使用要素设置 LAS 类代码</para>
-	/// <para>对与输入要素二维范围相交的 LAS 点进行分类。</para>
+	/// <para>Set LAS Class Codes Using Features</para>
+	/// <para>Classifies LAS points that intersect the two-dimensional extent of input features.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,18 +23,18 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InLasDataset">
 		/// <para>Input LAS Dataset</para>
-		/// <para>待处理的 LAS 数据集。</para>
+		/// <para>The LAS dataset to process.</para>
 		/// </param>
 		/// <param name="FeatureClass">
 		/// <para>Input Feature Class</para>
-		/// <para>一个或多个输入要素，用于为 LAS 数据集引用的激光雷达文件定义类代码值。 分类标记选项默认为无更改，但您可以使用设置分配标记或使用清除将其移除。 每个要素均具有以下选项：</para>
-		/// <para>要素 - 用于对 LAS 点进行重新分类的要素。</para>
-		/// <para>缓冲距离 - 确定与缓冲区域相交的 LAS 点之前，缓冲输入要素的距离。</para>
-		/// <para>新建类 - 要分配的类代码。</para>
-		/// <para>合成 -“合成”分类标记可用于识别未从激光雷达传感器获取但包含在 .las 文件中的点，例如激光雷达传感器尚未捕获的测量控制点。</para>
-		/// <para>关键点 -“模型关键点”分类标记代表在激光雷达集合中捕获特定细节层次所需的点子集。 过去，此标记与代表特定 z 容差内细化的地面点相关联。</para>
-		/// <para>保留 -“保留”分类标记表示应从分析和可视化中排除的错误数据。</para>
-		/// <para>重叠 -“重叠”标识可以标识重叠扫描的点，仅在 LAS 1.4 文件中受支持。</para>
+		/// <para>One or more input features that will be used to define class code values for the lidar files referenced by the LAS dataset. The classification flag option default is No change but you can assign the flag using Set or remove it using Clear. Each feature has the following options:</para>
+		/// <para>Features—The features used for reclassifying LAS points.</para>
+		/// <para>Buffer Distance—The distance that input features are buffered by prior to determining the LAS points that intersect the buffered area.</para>
+		/// <para>New Class—The class code to be assigned.</para>
+		/// <para>Synthetic—The Synthetic classification flag is used to identify points that were not obtained from a lidar sensor but were included in the .las file, such as survey control points that may not have been captured by the lidar sensor.</para>
+		/// <para>KeyPoint—The Model Key Point classification flag represents a subset of points that are required to capture a particular level of detail in the lidar collection. Historically, this flag was associated with representing thinned ground points within a specific z-tolerance.</para>
+		/// <para>Withheld—The Withheld classification flag signifies erroneous data that should be excluded from analysis and visualization.</para>
+		/// <para>Overlap—The Overlap designation identifies points from overlapping scans and is only supported in LAS 1.4 files.</para>
 		/// </param>
 		public SetLasClassCodesUsingFeatures(object InLasDataset, object FeatureClass)
 		{
@@ -43,9 +43,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 使用要素设置 LAS 类代码</para>
+		/// <para>Tool Display Name : Set LAS Class Codes Using Features</para>
 		/// </summary>
-		public override string DisplayName() => "使用要素设置 LAS 类代码";
+		public override string DisplayName() => "Set LAS Class Codes Using Features";
 
 		/// <summary>
 		/// <para>Tool Name : SetLasClassCodesUsingFeatures</para>
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
-		/// <para>待处理的 LAS 数据集。</para>
+		/// <para>The LAS dataset to process.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLasDatasetLayer()]
@@ -87,14 +87,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>一个或多个输入要素，用于为 LAS 数据集引用的激光雷达文件定义类代码值。 分类标记选项默认为无更改，但您可以使用设置分配标记或使用清除将其移除。 每个要素均具有以下选项：</para>
-		/// <para>要素 - 用于对 LAS 点进行重新分类的要素。</para>
-		/// <para>缓冲距离 - 确定与缓冲区域相交的 LAS 点之前，缓冲输入要素的距离。</para>
-		/// <para>新建类 - 要分配的类代码。</para>
-		/// <para>合成 -“合成”分类标记可用于识别未从激光雷达传感器获取但包含在 .las 文件中的点，例如激光雷达传感器尚未捕获的测量控制点。</para>
-		/// <para>关键点 -“模型关键点”分类标记代表在激光雷达集合中捕获特定细节层次所需的点子集。 过去，此标记与代表特定 z 容差内细化的地面点相关联。</para>
-		/// <para>保留 -“保留”分类标记表示应从分析和可视化中排除的错误数据。</para>
-		/// <para>重叠 -“重叠”标识可以标识重叠扫描的点，仅在 LAS 1.4 文件中受支持。</para>
+		/// <para>One or more input features that will be used to define class code values for the lidar files referenced by the LAS dataset. The classification flag option default is No change but you can assign the flag using Set or remove it using Clear. Each feature has the following options:</para>
+		/// <para>Features—The features used for reclassifying LAS points.</para>
+		/// <para>Buffer Distance—The distance that input features are buffered by prior to determining the LAS points that intersect the buffered area.</para>
+		/// <para>New Class—The class code to be assigned.</para>
+		/// <para>Synthetic—The Synthetic classification flag is used to identify points that were not obtained from a lidar sensor but were included in the .las file, such as survey control points that may not have been captured by the lidar sensor.</para>
+		/// <para>KeyPoint—The Model Key Point classification flag represents a subset of points that are required to capture a particular level of detail in the lidar collection. Historically, this flag was associated with representing thinned ground points within a specific z-tolerance.</para>
+		/// <para>Withheld—The Withheld classification flag signifies erroneous data that should be excluded from analysis and visualization.</para>
+		/// <para>Overlap—The Overlap designation identifies points from overlapping scans and is only supported in LAS 1.4 files.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -103,9 +103,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Compute statistics</para>
-		/// <para>指定是否将计算 LAS 数据集引用的 .las 文件的统计数据。 计算统计数据时会为每个 .las 文件提供一个空间索引，从而提高了分析和显示性能。 统计数据还可通过将 LAS 属性（例如分类代码和返回信息）显示限制为 .las 文件中存在的值来提升过滤和符号系统体验。</para>
-		/// <para>选中 - 将计算统计数据。 这是默认设置。</para>
-		/// <para>未选中 - 不计算统计数据。</para>
+		/// <para>Specifies whether statistics will be computed for the .las files referenced by the LAS dataset. Computing statistics provides a spatial index for each .las file, which improves analysis and display performance. Statistics also enhance the filtering and symbology experience by limiting the display of LAS attributes, such as classification codes and return information, to values that are present in the .las file.</para>
+		/// <para>Checked—Statistics will be computed. This is the default.</para>
+		/// <para>Unchecked—Statistics will not be computed.</para>
 		/// <para><see cref="ComputeStatsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -122,9 +122,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Update pyramid</para>
-		/// <para>指定修改类代码后，LAS 数据集金字塔是否会更新。</para>
-		/// <para>选中 - LAS 数据集金字塔将更新。 这是默认设置。</para>
-		/// <para>未选中 - LAS 数据集金字塔不会更新。</para>
+		/// <para>Specifies whether the LAS dataset pyramid will be updated after the class codes are modified.</para>
+		/// <para>Checked—The LAS dataset pyramid will be updated. This is the default.</para>
+		/// <para>Unchecked—The LAS dataset pyramid will not be updated.</para>
 		/// <para><see cref="UpdatePyramidEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -149,14 +149,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ComputeStatsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Statistics will be computed. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("COMPUTE_STATS")]
 			COMPUTE_STATS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Statistics will not be computed.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_COMPUTE_STATS")]
@@ -170,14 +170,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum UpdatePyramidEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The LAS dataset pyramid will be updated. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE_PYRAMID")]
 			UPDATE_PYRAMID,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The LAS dataset pyramid will not be updated.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_UPDATE_PYRAMID")]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Create Cartographic Partitions</para>
-	/// <para>创建制图分区</para>
-	/// <para>创建一组网状面要素，来覆盖输入要素类，其中每个输出面封闭的输入要素或输入折点不超过指定的数量，该数量由输入要素的密度和分布决定。</para>
+	/// <para>Create Cartographic Partitions</para>
+	/// <para>Creates a mesh of polygon features that cover the input feature class in which each output polygon encloses no more than a specified number of  input features or input vertices. as determined by the density and distribution of the input features.</para>
 	/// </summary>
 	public class CreateCartographicPartitions : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>要素分布和密度或折点分布和密度指定输出面的大小和排列的输入要素类或图层。 输入要素通常会使用其他地理处理工具进行后续处理。 同时处理输入要素时，通常会超出其他工具的内存限制，所以要创建分区以细分要处理的输入。</para>
+		/// <para>The input feature classes or layers with feature distribution and density, or vertex distribution and density, that determine the size and arrangement of output polygons. The input features are typically destined for subsequent processing with other geoprocessing tools. Typically, the input features, when considered simultaneously, would exceed memory limitations of other tools, so partitions are created to subdivide inputs for processing.</para>
 		/// </param>
 		/// <param name="OutFeatures">
 		/// <para>Output Features</para>
-		/// <para>分区的输出面要素类，其中的每个面封闭数量可控的输入要素或输入折点，不超过要素计数参数指定的数量。</para>
+		/// <para>The output polygon feature class of partitions each of which encloses a manageable number of input features or manageable number of input vertices not exceeding the number specified by the Feature Count parameter.</para>
 		/// </param>
 		/// <param name="FeatureCount">
 		/// <para>Feature Count</para>
-		/// <para>输出要素类中每个面封闭的理想要素或折点数（取决于分区方法参数值）。 建议的要素计数为 50,000，该值为默认值。 对于折点，一百万个折点将消耗大约 0.5 GB 的内存，具体取决于使用分区的工具。 要素计数不能少于 500。</para>
+		/// <para>The ideal number of features or vertices (depending on the Partition Method parameter value) to be enclosed by each polygon in the output feature class. The recommended count for features is 50,000, which is the default value. For vertices, 1 million vertices will consume approximately 0.5 GB of memory depending on the tool using the partitions. The feature count cannot be less than 500.</para>
 		/// </param>
 		public CreateCartographicPartitions(object InFeatures, object OutFeatures, object FeatureCount)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建制图分区</para>
+		/// <para>Tool Display Name : Create Cartographic Partitions</para>
 		/// </summary>
-		public override string DisplayName() => "创建制图分区";
+		public override string DisplayName() => "Create Cartographic Partitions";
 
 		/// <summary>
 		/// <para>Tool Name : CreateCartographicPartitions</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>要素分布和密度或折点分布和密度指定输出面的大小和排列的输入要素类或图层。 输入要素通常会使用其他地理处理工具进行后续处理。 同时处理输入要素时，通常会超出其他工具的内存限制，所以要创建分区以细分要处理的输入。</para>
+		/// <para>The input feature classes or layers with feature distribution and density, or vertex distribution and density, that determine the size and arrangement of output polygons. The input features are typically destined for subsequent processing with other geoprocessing tools. Typically, the input features, when considered simultaneously, would exceed memory limitations of other tools, so partitions are created to subdivide inputs for processing.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Features</para>
-		/// <para>分区的输出面要素类，其中的每个面封闭数量可控的输入要素或输入折点，不超过要素计数参数指定的数量。</para>
+		/// <para>The output polygon feature class of partitions each of which encloses a manageable number of input features or manageable number of input vertices not exceeding the number specified by the Feature Count parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Feature Count</para>
-		/// <para>输出要素类中每个面封闭的理想要素或折点数（取决于分区方法参数值）。 建议的要素计数为 50,000，该值为默认值。 对于折点，一百万个折点将消耗大约 0.5 GB 的内存，具体取决于使用分区的工具。 要素计数不能少于 500。</para>
+		/// <para>The ideal number of features or vertices (depending on the Partition Method parameter value) to be enclosed by each polygon in the output feature class. The recommended count for features is 50,000, which is the default value. For vertices, 1 million vertices will consume approximately 0.5 GB of memory depending on the tool using the partitions. The feature count cannot be less than 500.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -102,9 +102,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Partition Method</para>
-		/// <para>指定要素计数参数是否引用每个输出面中的理想要素数或理想折点数。</para>
-		/// <para>要素—分区考虑了各个要素的数量和密度。 此方法为默认方法，适用于大多数情况。</para>
-		/// <para>折点—分区考虑了折点的数量和密度。 在输入数据包含数量相对较少的极复杂要素（如高分辨率国家/地区面）的情况下，或者在极长要素（如等值线）可能跨越多个分区边界的情况下，使用该方法。</para>
+		/// <para>Specifies whether the Feature Count parameter references the ideal number of features or the ideal number of vertices in each output polygon.</para>
+		/// <para>Features—Partitioning considers the number and density of individual features. This method is applicable in most cases and is the default.</para>
+		/// <para>Vertices—Partitioning considers the number and density of vertices. This method is used in cases in which the input data contains a relatively small number of very complex features, such as high-resolution country polygons, or when very long features are likely to cross multiple partition boundaries, such as contour lines.</para>
 		/// <para><see cref="PartitionMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -129,17 +129,17 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum PartitionMethodEnum 
 		{
 			/// <summary>
-			/// <para>要素—分区考虑了各个要素的数量和密度。 此方法为默认方法，适用于大多数情况。</para>
+			/// <para>Features—Partitioning considers the number and density of individual features. This method is applicable in most cases and is the default.</para>
 			/// </summary>
 			[GPValue("FEATURES")]
-			[Description("要素")]
+			[Description("Features")]
 			Features,
 
 			/// <summary>
-			/// <para>折点—分区考虑了折点的数量和密度。 在输入数据包含数量相对较少的极复杂要素（如高分辨率国家/地区面）的情况下，或者在极长要素（如等值线）可能跨越多个分区边界的情况下，使用该方法。</para>
+			/// <para>Vertices—Partitioning considers the number and density of vertices. This method is used in cases in which the input data contains a relatively small number of very complex features, such as high-resolution country polygons, or when very long features are likely to cross multiple partition boundaries, such as contour lines.</para>
 			/// </summary>
 			[GPValue("VERTICES")]
-			[Description("折点")]
+			[Description("Vertices")]
 			Vertices,
 
 		}

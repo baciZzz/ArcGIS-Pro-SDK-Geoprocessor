@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Apply Orbit Correction</para>
-	/// <para>应用轨道校正</para>
-	/// <para>使用更准确的轨道状态矢量文件更新合成孔径雷达 (SAR) 数据集中的轨道信息。</para>
+	/// <para>Apply Orbit Correction</para>
+	/// <para>Updates the orbital information in the synthetic aperture radar (SAR) dataset using a more accurate orbit state vector file.</para>
 	/// </summary>
 	public class ApplyOrbitCorrection : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRadarData">
 		/// <para>Input Radar Data</para>
-		/// <para>输入雷达数据。</para>
+		/// <para>The input radar data.</para>
 		/// </param>
 		public ApplyOrbitCorrection(object InRadarData)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 应用轨道校正</para>
+		/// <para>Tool Display Name : Apply Orbit Correction</para>
 		/// </summary>
-		public override string DisplayName() => "应用轨道校正";
+		public override string DisplayName() => "Apply Orbit Correction";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyOrbitCorrection</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Radar Data</para>
-		/// <para>输入雷达数据。</para>
+		/// <para>The input radar data.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Orbit File</para>
-		/// <para>输入轨道文件。</para>
+		/// <para>The input orbit file.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Select Layer By Attribute</para>
-	/// <para>按属性选择图层</para>
-	/// <para>基于属性查询添加、更新或移除选择内容。</para>
+	/// <para>Select Layer By Attribute</para>
+	/// <para>Adds, updates, or removes a selection based on an attribute query.</para>
 	/// </summary>
 	public class SelectLayerByAttribute : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InLayerOrView">
 		/// <para>Input Rows</para>
-		/// <para>将应用选择的数据。</para>
+		/// <para>The data to which the selection will be applied.</para>
 		/// </param>
 		public SelectLayerByAttribute(object InLayerOrView)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 按属性选择图层</para>
+		/// <para>Tool Display Name : Select Layer By Attribute</para>
 		/// </summary>
-		public override string DisplayName() => "按属性选择图层";
+		public override string DisplayName() => "Select Layer By Attribute";
 
 		/// <summary>
 		/// <para>Tool Name : SelectLayerByAttribute</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Rows</para>
-		/// <para>将应用选择的数据。</para>
+		/// <para>The data to which the selection will be applied.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,13 +73,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Selection Type</para>
-		/// <para>指定如何应用所选内容以及如果已存在所选内容时应执行的操作。</para>
-		/// <para>新建选择内容—生成的选择内容将替换当前选择内容。 这是默认设置。</para>
-		/// <para>添加到当前选择内容—当存在一个选择内容时，会将生成的选择内容添加到当前选择内容中。 如果不存在选择内容，该选项的作用与新选择内容选项的作用相同。</para>
-		/// <para>从当前选择内容中移除—将生成的选择内容从当前选择内容中移除。 如果不存在选择内容，该选项不起作用。</para>
-		/// <para>选择当前选择内容的子集—将生成的选择内容与当前选择内容进行组合。 仅两者共有的记录保持选中状态。</para>
-		/// <para>切换当前选择内容—选择内容将被切换。 将所选的所有记录从当前选择内容中移除，并将未选取的所有记录添加到当前选择内容中。 当指定该选项时将忽略表达式参数（Python 中的 where_clause）。</para>
-		/// <para>清除当前选择内容—随即清除或移除选择内容。 当指定该选项时将忽略表达式参数（Python 中的 where_clause）。</para>
+		/// <para>Specifies how the selection will be applied and what to do if a selection already exists.</para>
+		/// <para>New selection—The resulting selection replaces the current selection. This is the default.</para>
+		/// <para>Add to the current selection—The resulting selection is added to the current selection if one exists. If no selection exists, this is the same as the new selection option.</para>
+		/// <para>Remove from the current selection—The resulting selection is removed from the current selection. If no selection exists, this option has no effect.</para>
+		/// <para>Select subset from the current selection—The resulting selection is combined with the current selection. Only records that are common to both remain selected.</para>
+		/// <para>Switch the current selection—The selection is switched. All records that were selected are removed from the current selection, and all records that were not selected are added to the current selection. The Expression parameter (where_clause in Python) is ignored when this option is specified.</para>
+		/// <para>Clear the current selection—The selection is cleared or removed. The Expression parameter (where_clause in Python) is ignored when this option is specified.</para>
 		/// <para><see cref="SelectionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>用于选择记录子集的 SQL 表达式。</para>
+		/// <para>An SQL expression used to select a subset of records.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -104,9 +104,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Invert Where Clause</para>
-		/// <para>指定是按原样使用表达式，还是使用与表达式相反的表达式。</para>
-		/// <para>未选中 - 将按原样使用查询。 这是默认设置。</para>
-		/// <para>选中 - 将反转查询。 如果使用选择类型参数，则将先反转选择，然后再将其与现有选择组合。</para>
+		/// <para>Specifies whether the expression will be used as is, or the opposite of the expression will be used.</para>
+		/// <para>Unchecked—The query will be used as is. This is the default.</para>
+		/// <para>Checked—The opposite of the query will be used. If the Selection Type parameter is used, the reversal of the selection occurs before it is combined with existing selections.</para>
 		/// <para><see cref="InvertWhereClauseEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -129,45 +129,45 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SelectionTypeEnum 
 		{
 			/// <summary>
-			/// <para>新建选择内容—生成的选择内容将替换当前选择内容。 这是默认设置。</para>
+			/// <para>New selection—The resulting selection replaces the current selection. This is the default.</para>
 			/// </summary>
 			[GPValue("NEW_SELECTION")]
-			[Description("新建选择内容")]
+			[Description("New selection")]
 			New_selection,
 
 			/// <summary>
-			/// <para>添加到当前选择内容—当存在一个选择内容时，会将生成的选择内容添加到当前选择内容中。 如果不存在选择内容，该选项的作用与新选择内容选项的作用相同。</para>
+			/// <para>Add to the current selection—The resulting selection is added to the current selection if one exists. If no selection exists, this is the same as the new selection option.</para>
 			/// </summary>
 			[GPValue("ADD_TO_SELECTION")]
-			[Description("添加到当前选择内容")]
+			[Description("Add to the current selection")]
 			Add_to_the_current_selection,
 
 			/// <summary>
-			/// <para>从当前选择内容中移除—将生成的选择内容从当前选择内容中移除。 如果不存在选择内容，该选项不起作用。</para>
+			/// <para>Remove from the current selection—The resulting selection is removed from the current selection. If no selection exists, this option has no effect.</para>
 			/// </summary>
 			[GPValue("REMOVE_FROM_SELECTION")]
-			[Description("从当前选择内容中移除")]
+			[Description("Remove from the current selection")]
 			Remove_from_the_current_selection,
 
 			/// <summary>
-			/// <para>选择当前选择内容的子集—将生成的选择内容与当前选择内容进行组合。 仅两者共有的记录保持选中状态。</para>
+			/// <para>Select subset from the current selection—The resulting selection is combined with the current selection. Only records that are common to both remain selected.</para>
 			/// </summary>
 			[GPValue("SUBSET_SELECTION")]
-			[Description("选择当前选择内容的子集")]
+			[Description("Select subset from the current selection")]
 			Select_subset_from_the_current_selection,
 
 			/// <summary>
-			/// <para>切换当前选择内容—选择内容将被切换。 将所选的所有记录从当前选择内容中移除，并将未选取的所有记录添加到当前选择内容中。 当指定该选项时将忽略表达式参数（Python 中的 where_clause）。</para>
+			/// <para>Switch the current selection—The selection is switched. All records that were selected are removed from the current selection, and all records that were not selected are added to the current selection. The Expression parameter (where_clause in Python) is ignored when this option is specified.</para>
 			/// </summary>
 			[GPValue("SWITCH_SELECTION")]
-			[Description("切换当前选择内容")]
+			[Description("Switch the current selection")]
 			Switch_the_current_selection,
 
 			/// <summary>
-			/// <para>清除当前选择内容—随即清除或移除选择内容。 当指定该选项时将忽略表达式参数（Python 中的 where_clause）。</para>
+			/// <para>Clear the current selection—The selection is cleared or removed. The Expression parameter (where_clause in Python) is ignored when this option is specified.</para>
 			/// </summary>
 			[GPValue("CLEAR_SELECTION")]
-			[Description("清除当前选择内容")]
+			[Description("Clear the current selection")]
 			Clear_the_current_selection,
 
 		}
@@ -178,14 +178,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum InvertWhereClauseEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The opposite of the query will be used. If the Selection Type parameter is used, the reversal of the selection occurs before it is combined with existing selections.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INVERT")]
 			INVERT,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The query will be used as is. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NON_INVERT")]

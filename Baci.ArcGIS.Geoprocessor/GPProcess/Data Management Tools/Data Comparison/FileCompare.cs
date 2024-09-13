@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>File Compare</para>
-	/// <para>文件比较</para>
-	/// <para>比较两个文件并返回比较结果。</para>
+	/// <para>File Compare</para>
+	/// <para>Compares two files and returns the comparison results..</para>
 	/// </summary>
 	public class FileCompare : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InBaseFile">
 		/// <para>Input Base File</para>
-		/// <para>将输入基础文件与输入测试文件进行比较。输入基础文件是指已被声明为有效的文件。此基础文件包含正确的内容和信息。</para>
+		/// <para>The Input Base File is compared with the Input Test File. The Input Base File refers to a file that you have declared valid. This base file has the correct content and information.</para>
 		/// </param>
 		/// <param name="InTestFile">
 		/// <para>Input Test File</para>
-		/// <para>将输入测试文件与输入基础文件进行比较。输入测试文件是指已通过编辑或编译新信息而进行更改的文件。</para>
+		/// <para>The Input Test File is compared against the Input Base File. The Input Test File refers to a file that you have made changes to by editing or compiling new information.</para>
 		/// </param>
 		public FileCompare(object InBaseFile, object InTestFile)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 文件比较</para>
+		/// <para>Tool Display Name : File Compare</para>
 		/// </summary>
-		public override string DisplayName() => "文件比较";
+		public override string DisplayName() => "File Compare";
 
 		/// <summary>
 		/// <para>Tool Name : FileCompare</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Base File</para>
-		/// <para>将输入基础文件与输入测试文件进行比较。输入基础文件是指已被声明为有效的文件。此基础文件包含正确的内容和信息。</para>
+		/// <para>The Input Base File is compared with the Input Test File. The Input Base File refers to a file that you have declared valid. This base file has the correct content and information.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Test File</para>
-		/// <para>将输入测试文件与输入基础文件进行比较。输入测试文件是指已通过编辑或编译新信息而进行更改的文件。</para>
+		/// <para>The Input Test File is compared against the Input Base File. The Input Test File refers to a file that you have made changes to by editing or compiling new information.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -86,9 +86,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>File Type</para>
-		/// <para>进行比较的文件的类型。</para>
-		/// <para>ASCII—使用 ASCII 字符进行比较。这是默认设置。</para>
-		/// <para>二进制—执行二进制比较。</para>
+		/// <para>The type of files being compared.</para>
+		/// <para>ASCII—Compare using ASCII characters. This is the default.</para>
+		/// <para>Binary—Perform a binary compare.</para>
 		/// <para><see cref="FileTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -98,9 +98,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Continue Comparison</para>
-		/// <para>指示在遇到第一个不匹配项后是否继续比较所有属性。</para>
-		/// <para>未选中 - 在遇到第一个不匹配项后停止比较。这是默认设置。</para>
-		/// <para>选中 - 在遇到第一个不匹配项后继续比较其他属性。</para>
+		/// <para>Indicates whether to compare all properties after encountering the first mismatch.</para>
+		/// <para>Unchecked—Stops after encountering the first mismatch. This is the default.</para>
+		/// <para>Checked—Compares other properties after encountering the first mismatch.</para>
 		/// <para><see cref="ContinueCompareEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Compare File</para>
-		/// <para>此文件将包含输入基础文件与输入测试文件之间的所有异同点。该文件是一个以逗号分隔的文本文件，在 ArcGIS 中可以表的形式对其进行查看和使用。</para>
+		/// <para>This file will contain all similarities and differences between the Input Base File and the Input Test File. This file is a comma-delimited text file which can be viewed and used as a table in ArcGIS.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -133,17 +133,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum FileTypeEnum 
 		{
 			/// <summary>
-			/// <para>ASCII—使用 ASCII 字符进行比较。这是默认设置。</para>
+			/// <para>ASCII—Compare using ASCII characters. This is the default.</para>
 			/// </summary>
 			[GPValue("ASCII")]
 			[Description("ASCII")]
 			ASCII,
 
 			/// <summary>
-			/// <para>二进制—执行二进制比较。</para>
+			/// <para>Binary—Perform a binary compare.</para>
 			/// </summary>
 			[GPValue("BINARY")]
-			[Description("二进制")]
+			[Description("Binary")]
 			Binary,
 
 		}
@@ -154,14 +154,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ContinueCompareEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Compares other properties after encountering the first mismatch.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CONTINUE_COMPARE")]
 			CONTINUE_COMPARE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Stops after encountering the first mismatch. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CONTINUE_COMPARE")]

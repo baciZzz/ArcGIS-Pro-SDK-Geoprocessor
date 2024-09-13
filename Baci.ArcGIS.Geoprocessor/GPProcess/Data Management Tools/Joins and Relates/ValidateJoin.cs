@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Validate Join</para>
-	/// <para>验证连接</para>
-	/// <para>验证两个图层或表之间的连接，以确定图层或表是否具有有效的字段名称和对象 ID 字段，但前提是该连接生成匹配记录，是一对一或一对多连接，以及其他连接属性。</para>
+	/// <para>Validate Join</para>
+	/// <para>Validates a  join between two layers or tables to determine if the layers or tables have valid field names and Object ID fields, if the join produces matching records, is a one-to-one or one-to-many join, and other properties of the join.</para>
 	/// </summary>
 	public class ValidateJoin : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InLayerOrView">
 		/// <para>Input Layer or Table View</para>
-		/// <para>具有与将要验证的连接表之间的连接的图层或表视图。</para>
+		/// <para>The layer or table view with the join to the join table that will be validated.</para>
 		/// </param>
 		/// <param name="InField">
 		/// <para>Input Join Field</para>
-		/// <para>连接基于的输入图层或表视图中的字段。</para>
+		/// <para>The field in the input layer or table view on which the join will be based.</para>
 		/// </param>
 		/// <param name="JoinTable">
 		/// <para>Join Table</para>
-		/// <para>具有与输入图层或表视图的连接的图表或表视图。</para>
+		/// <para>The table or table view with the join to the input layer or table view that will be validated.</para>
 		/// </param>
 		/// <param name="JoinField">
 		/// <para>Join Table Field</para>
-		/// <para>连接表中的字段，包含连接将基于的值。</para>
+		/// <para>The field in the join table that contains the values on which the join will be based.</para>
 		/// </param>
 		public ValidateJoin(object InLayerOrView, object InField, object JoinTable, object JoinField)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 验证连接</para>
+		/// <para>Tool Display Name : Validate Join</para>
 		/// </summary>
-		public override string DisplayName() => "验证连接";
+		public override string DisplayName() => "Validate Join";
 
 		/// <summary>
 		/// <para>Tool Name : ValidateJoin</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Layer or Table View</para>
-		/// <para>具有与将要验证的连接表之间的连接的图层或表视图。</para>
+		/// <para>The layer or table view with the join to the join table that will be validated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Join Field</para>
-		/// <para>连接基于的输入图层或表视图中的字段。</para>
+		/// <para>The field in the input layer or table view on which the join will be based.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Join Table</para>
-		/// <para>具有与输入图层或表视图的连接的图表或表视图。</para>
+		/// <para>The table or table view with the join to the input layer or table view that will be validated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Join Table Field</para>
-		/// <para>连接表中的字段，包含连接将基于的值。</para>
+		/// <para>The field in the join table that contains the values on which the join will be based.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>以表格形式包含验证消息的输出表。</para>
+		/// <para>The output table containing the validation messages in a tabular form.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Export to CAD</para>
-	/// <para>导出为 CAD</para>
-	/// <para>根据一个或多个输入要素图层或要素类将要素导出到新的或现有的 CAD 文件。</para>
+	/// <para>Export to CAD</para>
+	/// <para>Exports features to  new or existing CAD files based on one or more input feature layers or feature classes.</para>
 	/// </summary>
 	public class ExportCAD : AbstractGPProcess
 	{
@@ -21,32 +21,32 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>其空间参考和几何将导出到一个或多个 CAD 文件的要素类和要素图层的集合。 要素几何和要素属性都将添加到 AutoCAD 格式的文件中。</para>
+		/// <para>A collection of feature classes and feature layers whose spatial reference and geometry will be exported to one or more CAD files. Both the feature geometry and the feature attributes will be added to AutoCAD formatted files.</para>
 		/// </param>
 		/// <param name="OutputType">
 		/// <para>Output Type</para>
-		/// <para>指定将用于新输出 CAD 文件的 CAD 平台和文件版本。 多个版本的 CAD 软件可能会为多个版本共享一种文件格式版本。 选择将指定文件格式版本，该版本不一定是可能仍使用以前文件格式版本的软件版本。</para>
-		/// <para>Microstation DGN 文件—输出类型将为 Microstation DGN。</para>
-		/// <para>DWG 2018 版—输出类型将为 DWG 2018 版。 这是默认设置。</para>
-		/// <para>DWG 2013 版—输出类型将为 DWG 2013 版。</para>
-		/// <para>DWG 2010 版—输出类型将为 DWG 2010 版。</para>
-		/// <para>DWG 2007 版—输出类型将为 DWG 2007 版。</para>
-		/// <para>DWG 2005 版—输出类型将为 DWG 2005 版。</para>
-		/// <para>DWG 2004 版—输出类型将为 DWG 2004 版。</para>
-		/// <para>DWG 2000 版—输出类型将为 DWG 2000 版。</para>
-		/// <para>DWG 14 版—输出类型将为 DWG 14 版。</para>
-		/// <para>DXF 2018 版—输出类型将为 DXF 2018 版。</para>
-		/// <para>DXF 2013 版—输出类型将为 DXF 2013 版。</para>
-		/// <para>DXF 2010 版—输出类型将为 DXF 2010 版。</para>
-		/// <para>DXF 2007 版—输出类型将为 DXF 2007 版。</para>
-		/// <para>DXF 2005 版—输出类型将为 DXF 2005 版。</para>
-		/// <para>DXF 2004 版—输出类型将为 DXF 2004 版。</para>
-		/// <para>DXF 2000 版—输出类型将为 DXF 2000 版。</para>
-		/// <para>DXF 14 版—输出类型将为 DXF 14 版。</para>
+		/// <para>Specifies the CAD platform and file version that will be used for new output CAD files. Multiple versions of CAD software may share one file format version for multiple releases. The choices specify the file format version, not necessarily the software version that may still use a previous file format version.</para>
+		/// <para>Microstation DGN file—The output type will be Microstation DGN.</para>
+		/// <para>DWG version 2018—The output type will be DWG version 2018. This is the default.</para>
+		/// <para>DWG version 2013—The output type will be DWG version 2013.</para>
+		/// <para>DWG version 2010—The output type will be DWG version 2010.</para>
+		/// <para>DWG version 2007—The output type will be DWG version 2007.</para>
+		/// <para>DWG version 2005—The output type will be DWG version 2005.</para>
+		/// <para>DWG version 2004—The output type will be DWG version 2004.</para>
+		/// <para>DWG version 2000—The output type will be DWG version 2000.</para>
+		/// <para>DWG version 14—The output type will be DWG version 14.</para>
+		/// <para>DXF version 2018—The output type will be DXF version 2018.</para>
+		/// <para>DXF version 2013—The output type will be DXF version 2013.</para>
+		/// <para>DXF version 2010—The output type will be DXF version 2010.</para>
+		/// <para>DXF version 2007—The output type will be DXF version 2007.</para>
+		/// <para>DXF version 2005—The output type will be DXF version 2005.</para>
+		/// <para>DXF version 2004—The output type will be DXF version 2004.</para>
+		/// <para>DXF version 2000—The output type will be DXF version 2000.</para>
+		/// <para>DXF version 14—The output type will be DXF version 14.</para>
 		/// </param>
 		/// <param name="OutputFile">
 		/// <para>Output File</para>
-		/// <para>输出的 CAD 工程图文件的路径。 除非选中了忽略表中的路径参数，否则此路径将被作为字段值包含在输入要素字段或名为 DocPath 的别名字段中的任何有效文件路径覆盖。</para>
+		/// <para>The path of the output CAD drawing file. This path will be overridden by any valid file paths included as field values in the input feature's field or alias field named DocPath unless the Ignore Paths in Tables parameter is checked.</para>
 		/// </param>
 		public ExportCAD(object InFeatures, object OutputType, object OutputFile)
 		{
@@ -56,9 +56,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 导出为 CAD</para>
+		/// <para>Tool Display Name : Export to CAD</para>
 		/// </summary>
-		public override string DisplayName() => "导出为 CAD";
+		public override string DisplayName() => "Export to CAD";
 
 		/// <summary>
 		/// <para>Tool Name : ExportCAD</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>其空间参考和几何将导出到一个或多个 CAD 文件的要素类和要素图层的集合。 要素几何和要素属性都将添加到 AutoCAD 格式的文件中。</para>
+		/// <para>A collection of feature classes and feature layers whose spatial reference and geometry will be exported to one or more CAD files. Both the feature geometry and the feature attributes will be added to AutoCAD formatted files.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -102,24 +102,24 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Type</para>
-		/// <para>指定将用于新输出 CAD 文件的 CAD 平台和文件版本。 多个版本的 CAD 软件可能会为多个版本共享一种文件格式版本。 选择将指定文件格式版本，该版本不一定是可能仍使用以前文件格式版本的软件版本。</para>
-		/// <para>Microstation DGN 文件—输出类型将为 Microstation DGN。</para>
-		/// <para>DWG 2018 版—输出类型将为 DWG 2018 版。 这是默认设置。</para>
-		/// <para>DWG 2013 版—输出类型将为 DWG 2013 版。</para>
-		/// <para>DWG 2010 版—输出类型将为 DWG 2010 版。</para>
-		/// <para>DWG 2007 版—输出类型将为 DWG 2007 版。</para>
-		/// <para>DWG 2005 版—输出类型将为 DWG 2005 版。</para>
-		/// <para>DWG 2004 版—输出类型将为 DWG 2004 版。</para>
-		/// <para>DWG 2000 版—输出类型将为 DWG 2000 版。</para>
-		/// <para>DWG 14 版—输出类型将为 DWG 14 版。</para>
-		/// <para>DXF 2018 版—输出类型将为 DXF 2018 版。</para>
-		/// <para>DXF 2013 版—输出类型将为 DXF 2013 版。</para>
-		/// <para>DXF 2010 版—输出类型将为 DXF 2010 版。</para>
-		/// <para>DXF 2007 版—输出类型将为 DXF 2007 版。</para>
-		/// <para>DXF 2005 版—输出类型将为 DXF 2005 版。</para>
-		/// <para>DXF 2004 版—输出类型将为 DXF 2004 版。</para>
-		/// <para>DXF 2000 版—输出类型将为 DXF 2000 版。</para>
-		/// <para>DXF 14 版—输出类型将为 DXF 14 版。</para>
+		/// <para>Specifies the CAD platform and file version that will be used for new output CAD files. Multiple versions of CAD software may share one file format version for multiple releases. The choices specify the file format version, not necessarily the software version that may still use a previous file format version.</para>
+		/// <para>Microstation DGN file—The output type will be Microstation DGN.</para>
+		/// <para>DWG version 2018—The output type will be DWG version 2018. This is the default.</para>
+		/// <para>DWG version 2013—The output type will be DWG version 2013.</para>
+		/// <para>DWG version 2010—The output type will be DWG version 2010.</para>
+		/// <para>DWG version 2007—The output type will be DWG version 2007.</para>
+		/// <para>DWG version 2005—The output type will be DWG version 2005.</para>
+		/// <para>DWG version 2004—The output type will be DWG version 2004.</para>
+		/// <para>DWG version 2000—The output type will be DWG version 2000.</para>
+		/// <para>DWG version 14—The output type will be DWG version 14.</para>
+		/// <para>DXF version 2018—The output type will be DXF version 2018.</para>
+		/// <para>DXF version 2013—The output type will be DXF version 2013.</para>
+		/// <para>DXF version 2010—The output type will be DXF version 2010.</para>
+		/// <para>DXF version 2007—The output type will be DXF version 2007.</para>
+		/// <para>DXF version 2005—The output type will be DXF version 2005.</para>
+		/// <para>DXF version 2004—The output type will be DXF version 2004.</para>
+		/// <para>DXF version 2000—The output type will be DXF version 2000.</para>
+		/// <para>DXF version 14—The output type will be DXF version 14.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output File</para>
-		/// <para>输出的 CAD 工程图文件的路径。 除非选中了忽略表中的路径参数，否则此路径将被作为字段值包含在输入要素字段或名为 DocPath 的别名字段中的任何有效文件路径覆盖。</para>
+		/// <para>The path of the output CAD drawing file. This path will be overridden by any valid file paths included as field values in the input feature's field or alias field named DocPath unless the Ignore Paths in Tables parameter is checked.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DECadDrawingDataset()]
@@ -136,9 +136,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Ignore Paths in Tables</para>
-		/// <para>指定是否忽略输入要素 DocPath 字段中包含的有效路径。</para>
-		/// <para>选中 - 将忽略有效路径，并将所有实体的输出添加到输出文件参数值中。 这是默认设置。</para>
-		/// <para>未选中 - 将使用有效路径，以便将每个新 CAD 实体写入由该字段值指定的文件。</para>
+		/// <para>Specifies whether valid paths included in the DocPath field of input features will be ignored.</para>
+		/// <para>Checked—Valid paths will be ignored and the output of all entities will be added to the Output File parameter value. This is the default.</para>
+		/// <para>Unchecked—Valid paths will be used so that each new CAD entity will be written to the file specified by that field value.</para>
 		/// <para><see cref="IgnoreFilenamesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -148,9 +148,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Append to Existing Files</para>
-		/// <para>指定实体是否将追加到现有的输出 CAD 文件，或由输出文件参数指定的 CAD 文件或根据忽略表中的路径参数包含在 DocPath 字段值中的任何有效文件路径将被覆盖。</para>
-		/// <para>选中 - 实体将被追加到输出 CAD 文件（如果存在）。 现有 CAD 文件内容将被保留。</para>
-		/// <para>未选中 - 如果存在输出 CAD 文件，它将被覆盖。 这是默认设置。</para>
+		/// <para>Specifies whether entities will be appended to an existing output CAD file or CAD files specified by the Output File parameter or any valid file paths contained in DocPath field values according to the Ignore Paths in Tables parameter will be overwritten.</para>
+		/// <para>Checked—Entities will be appended to an output CAD file if one exists. The existing CAD file content will be retained.</para>
+		/// <para>Unchecked—If an output CAD file exists, it will be overwritten. This is the default.</para>
 		/// <para><see cref="AppendToExistingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -160,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Seed File</para>
-		/// <para>创建输出 CAD 文件时，现有 CAD 工程图的内容以及文档和图层属性将用作种子文件。 种子文件的 CAD 平台及格式版本会覆盖输出类型参数所指定的值。 如果追加到现有 CAD 文件，则种子图将被忽略。</para>
+		/// <para>An existing CAD drawing whose contents and document and layer properties will be used as a seed file when output CAD files are created. The CAD platform and format version of the seed file overrides the value specified by the Output Type parameter. If appending to existing CAD files, the seed drawing is ignored.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DECadDrawingDataset()]
@@ -183,14 +183,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum IgnoreFilenamesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Valid paths will be ignored and the output of all entities will be added to the Output File parameter value. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("Ignore_Filenames_in_Tables")]
 			Ignore_Filenames_in_Tables,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Valid paths will be used so that each new CAD entity will be written to the file specified by that field value.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("Use_Filenames_in_Tables")]
@@ -204,14 +204,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum AppendToExistingEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Entities will be appended to an output CAD file if one exists. The existing CAD file content will be retained.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("Append_To_Existing_Files")]
 			Append_To_Existing_Files,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—If an output CAD file exists, it will be overwritten. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("Overwrite_Existing_Files")]

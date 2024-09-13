@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>ASCII 3D To Feature Class</para>
-	/// <para>3D ASCII 文件转要素类</para>
-	/// <para>将 3D 要素从一个或多个以 XYZ、XYZI 或 GENERATE 格式存储的 ASCII 文件导入到新要素类中。</para>
+	/// <para>ASCII 3D To Feature Class</para>
+	/// <para>Imports 3D features from one or more ASCII files stored in XYZ, XYZI, or GENERATE formats into a new feature class.</para>
 	/// </summary>
 	public class ASCII3DToFeatureClass : AbstractGPProcess
 	{
@@ -21,28 +21,28 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="Input">
 		/// <para>ASCII 3D Data</para>
-		/// <para>包含 XYZ、XYZI（具有激光雷达强度）或 3D GENERATE 格式数据的 ASCII 文件或文件夹。所有输入文件的格式必须相同。如果指定了某个文件夹，则文件后缀参数将成为必选项，并将处理所有与指定后缀具有相同扩展名的文件。</para>
-		/// <para>在“工具”对话框中，可将文件夹指定为输入，具体方法如下：在 Windows 资源管理器中选择文件夹，然后将其拖动到参数的输入框上。</para>
+		/// <para>The ASCII files or folders containing data in XYZ, XYZI (with lidar intensity), or 3D GENERATE format. All input files must be in the same format. If a folder is specified, the File Suffix parameter becomes required, and all the files that have the same extension as the specified suffix will be processed.</para>
+		/// <para>In the tool dialog box, a folder can also be specified as an input by selecting the folder in Windows Explorer and dragging it onto the parameter&apos;s input box.</para>
 		/// </param>
 		/// <param name="InFileType">
 		/// <para>File Format</para>
-		/// <para>将转换为要素类的 ASCII 文件格式。</para>
-		/// <para>XYZ—包含存储为 XYZ 坐标的几何信息的文本文件。</para>
-		/// <para>XYZI—同时包含 XYZ 坐标和强度测量值的文本文件。</para>
-		/// <para>生成—以 GENERATE 格式进行结构化的文本文件。</para>
+		/// <para>The format of the ASCII files that will be converted to a feature class.</para>
+		/// <para>XYZ—Text file that contain geometry information stored as XYZ coordinates.</para>
+		/// <para>XYZI—Text files that contain XYZ coordinates alongside intensity measurements.</para>
+		/// <para>Generate—Text files structured in the Generate format.</para>
 		/// <para><see cref="InFileTypeEnum"/></para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>将生成的要素类。</para>
+		/// <para>The feature class that will be produced.</para>
 		/// </param>
 		/// <param name="OutGeometryType">
 		/// <para>Output Feature Class Type</para>
-		/// <para>输出要素类的几何类型。</para>
-		/// <para>多点要素—由于输入数据包含大量每个要素不需要的点和属性，所以建议使用多点。</para>
-		/// <para>点要素—每个 XYZ 坐标将生成一个点要素。</para>
-		/// <para>折线要素—输出将包含折线要素。</para>
-		/// <para>多边形要素—输出将包含面要素。</para>
+		/// <para>The geometry type of the output feature class.</para>
+		/// <para>Multipoint features—Multipoints are recommended the input data contains a large number of points and attributes per feature are not required.</para>
+		/// <para>Point features—Each XYZ coordinate will produce one point feature.</para>
+		/// <para>Polyline features—The output will contain polyline features.</para>
+		/// <para>Polygon features—The output will contain polygon features.</para>
 		/// <para><see cref="OutGeometryTypeEnum"/></para>
 		/// </param>
 		public ASCII3DToFeatureClass(object Input, object InFileType, object OutFeatureClass, object OutGeometryType)
@@ -54,9 +54,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 3D ASCII 文件转要素类</para>
+		/// <para>Tool Display Name : ASCII 3D To Feature Class</para>
 		/// </summary>
-		public override string DisplayName() => "3D ASCII 文件转要素类";
+		public override string DisplayName() => "ASCII 3D To Feature Class";
 
 		/// <summary>
 		/// <para>Tool Name : ASCII3DToFeatureClass</para>
@@ -90,8 +90,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>ASCII 3D Data</para>
-		/// <para>包含 XYZ、XYZI（具有激光雷达强度）或 3D GENERATE 格式数据的 ASCII 文件或文件夹。所有输入文件的格式必须相同。如果指定了某个文件夹，则文件后缀参数将成为必选项，并将处理所有与指定后缀具有相同扩展名的文件。</para>
-		/// <para>在“工具”对话框中，可将文件夹指定为输入，具体方法如下：在 Windows 资源管理器中选择文件夹，然后将其拖动到参数的输入框上。</para>
+		/// <para>The ASCII files or folders containing data in XYZ, XYZI (with lidar intensity), or 3D GENERATE format. All input files must be in the same format. If a folder is specified, the File Suffix parameter becomes required, and all the files that have the same extension as the specified suffix will be processed.</para>
+		/// <para>In the tool dialog box, a folder can also be specified as an input by selecting the folder in Windows Explorer and dragging it onto the parameter&apos;s input box.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -100,10 +100,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>File Format</para>
-		/// <para>将转换为要素类的 ASCII 文件格式。</para>
-		/// <para>XYZ—包含存储为 XYZ 坐标的几何信息的文本文件。</para>
-		/// <para>XYZI—同时包含 XYZ 坐标和强度测量值的文本文件。</para>
-		/// <para>生成—以 GENERATE 格式进行结构化的文本文件。</para>
+		/// <para>The format of the ASCII files that will be converted to a feature class.</para>
+		/// <para>XYZ—Text file that contain geometry information stored as XYZ coordinates.</para>
+		/// <para>XYZI—Text files that contain XYZ coordinates alongside intensity measurements.</para>
+		/// <para>Generate—Text files structured in the Generate format.</para>
 		/// <para><see cref="InFileTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>将生成的要素类。</para>
+		/// <para>The feature class that will be produced.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -121,11 +121,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class Type</para>
-		/// <para>输出要素类的几何类型。</para>
-		/// <para>多点要素—由于输入数据包含大量每个要素不需要的点和属性，所以建议使用多点。</para>
-		/// <para>点要素—每个 XYZ 坐标将生成一个点要素。</para>
-		/// <para>折线要素—输出将包含折线要素。</para>
-		/// <para>多边形要素—输出将包含面要素。</para>
+		/// <para>The geometry type of the output feature class.</para>
+		/// <para>Multipoint features—Multipoints are recommended the input data contains a large number of points and attributes per feature are not required.</para>
+		/// <para>Point features—Each XYZ coordinate will produce one point feature.</para>
+		/// <para>Polyline features—The output will contain polyline features.</para>
+		/// <para>Polygon features—The output will contain polygon features.</para>
 		/// <para><see cref="OutGeometryTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Z Factor</para>
-		/// <para>Z 值将乘上的系数。 此值通常用于转换 z 线性单位来匹配 x,y 线性单位。 默认值为 1，此时高程值保持不变。 如果输入表面的空间参考具有已指定线性单位的 z 基准，则此参数不可用。</para>
+		/// <para>The factor by which z-values will be multiplied. This is typically used to convert z linear units to match x,y linear units. The default is 1, which leaves elevation values unchanged. This parameter is not available if the spatial reference of the input surface has a z datum with a specified linear unit.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Coordinate System</para>
-		/// <para>输入数据的坐标系。默认为“未知坐标系”。如果已指定坐标系，则输出可能会（也可能不会）被投影到不同的坐标系中。这取决于地理处理环境是否具有为目标要素类位置而定义的坐标系。</para>
+		/// <para>The coordinate system of the input data. The default is an Unknown Coordinate System. If specified, the output may or may not be projected into a different coordinate system. This depends the whether the geoprocessing environment has a coordinate system defined for the location of the target feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
@@ -151,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Average Point Spacing</para>
-		/// <para>输入点之间的平均平面距离。仅当将输出几何设置为 MULTIPOINT 时才可使用此参数，且其功能是提供一个平均值以将点归组到一起。结合每个形状限制的点数使用该值，以构造用于组合点的虚拟分块系统。分块系统的原点取决于目标要素类的空间域。指定目标要素类的水平单位的间距。</para>
+		/// <para>The average planimetric distance between points of the input. This parameter is only used when the output geometry is set to MULTIPOINT, and its function is to provide a means for grouping the points together. This value is used in conjunction with the points per shape limit to construct a virtual tile system used to group the points. The tile system's origin is based on the domain of the target feature class. Specify the spacing in the horizontal units of the target feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -159,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>File Suffix</para>
-		/// <para>将从输入文件夹导入的文件的后缀。 将文件夹指定为输入时，此参数为必填项。</para>
+		/// <para>The suffix of the files that will be imported from an input folder. This parameter is required when a folder is specified as input.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -167,9 +167,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Decimal Separator</para>
-		/// <para>文本文件中将用于区分数字的整数部分与其小数部分的小数分隔符。</para>
-		/// <para>点—将使用点作为小数字符。 这是默认设置。</para>
-		/// <para>逗号—将使用逗号作为小数字符。</para>
+		/// <para>The decimal character that will be used in the text file to differentiate the integer of a number from its fractional part.</para>
+		/// <para>Point—A point will be used as the decimal character. This is the default.</para>
+		/// <para>Comma—A comma will be used as the decimal character.</para>
 		/// <para><see cref="DecimalSeparatorEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -194,24 +194,24 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum InFileTypeEnum 
 		{
 			/// <summary>
-			/// <para>XYZ—包含存储为 XYZ 坐标的几何信息的文本文件。</para>
+			/// <para>XYZ—Text file that contain geometry information stored as XYZ coordinates.</para>
 			/// </summary>
 			[GPValue("XYZ")]
 			[Description("XYZ")]
 			XYZ,
 
 			/// <summary>
-			/// <para>XYZI—同时包含 XYZ 坐标和强度测量值的文本文件。</para>
+			/// <para>XYZI—Text files that contain XYZ coordinates alongside intensity measurements.</para>
 			/// </summary>
 			[GPValue("XYZI")]
 			[Description("XYZI")]
 			XYZI,
 
 			/// <summary>
-			/// <para>生成—以 GENERATE 格式进行结构化的文本文件。</para>
+			/// <para>Generate—Text files structured in the Generate format.</para>
 			/// </summary>
 			[GPValue("GENERATE")]
-			[Description("生成")]
+			[Description("Generate")]
 			Generate,
 
 		}
@@ -222,31 +222,31 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum OutGeometryTypeEnum 
 		{
 			/// <summary>
-			/// <para>点要素—每个 XYZ 坐标将生成一个点要素。</para>
+			/// <para>Point features—Each XYZ coordinate will produce one point feature.</para>
 			/// </summary>
 			[GPValue("POINT")]
-			[Description("点要素")]
+			[Description("Point features")]
 			Point_features,
 
 			/// <summary>
-			/// <para>多点要素—由于输入数据包含大量每个要素不需要的点和属性，所以建议使用多点。</para>
+			/// <para>Multipoint features—Multipoints are recommended the input data contains a large number of points and attributes per feature are not required.</para>
 			/// </summary>
 			[GPValue("MULTIPOINT")]
-			[Description("多点要素")]
+			[Description("Multipoint features")]
 			Multipoint_features,
 
 			/// <summary>
-			/// <para>折线要素—输出将包含折线要素。</para>
+			/// <para>Polyline features—The output will contain polyline features.</para>
 			/// </summary>
 			[GPValue("POLYLINE")]
-			[Description("折线要素")]
+			[Description("Polyline features")]
 			Polyline_features,
 
 			/// <summary>
-			/// <para>多边形要素—输出将包含面要素。</para>
+			/// <para>Polygon features—The output will contain polygon features.</para>
 			/// </summary>
 			[GPValue("POLYGON")]
-			[Description("多边形要素")]
+			[Description("Polygon features")]
 			Polygon_features,
 
 		}
@@ -257,17 +257,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum DecimalSeparatorEnum 
 		{
 			/// <summary>
-			/// <para>点—将使用点作为小数字符。 这是默认设置。</para>
+			/// <para>Point—A point will be used as the decimal character. This is the default.</para>
 			/// </summary>
 			[GPValue("DECIMAL_POINT")]
-			[Description("点")]
+			[Description("Point")]
 			Point,
 
 			/// <summary>
-			/// <para>逗号—将使用逗号作为小数字符。</para>
+			/// <para>Comma—A comma will be used as the decimal character.</para>
 			/// </summary>
 			[GPValue("DECIMAL_COMMA")]
-			[Description("逗号")]
+			[Description("Comma")]
 			Comma,
 
 		}

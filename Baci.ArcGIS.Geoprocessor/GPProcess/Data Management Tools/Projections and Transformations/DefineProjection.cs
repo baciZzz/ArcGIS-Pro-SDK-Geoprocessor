@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Define Projection</para>
-	/// <para>定义投影</para>
-	/// <para>覆盖与数据集一同存储的坐标系信息（地图投影和基准面）。 此工具用于坐标系未知或定义错误的数据集。</para>
+	/// <para>Define Projection</para>
+	/// <para>Overwrites the coordinate system information (map projection and datum) stored with a dataset. This tool is intended for datasets that have an unknown or incorrect coordinate system defined.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset or Feature Class</para>
-		/// <para>将定义其投影的数据集或要素类。</para>
+		/// <para>The dataset or feature class whose projection will be defined.</para>
 		/// </param>
 		/// <param name="CoorSystem">
 		/// <para>Coordinate System</para>
-		/// <para>将要应用于输入的坐标系。</para>
+		/// <para>The coordinate system that will be applied to the input.</para>
 		/// </param>
 		public DefineProjection(object InDataset, object CoorSystem)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 定义投影</para>
+		/// <para>Tool Display Name : Define Projection</para>
 		/// </summary>
-		public override string DisplayName() => "定义投影";
+		public override string DisplayName() => "Define Projection";
 
 		/// <summary>
 		/// <para>Tool Name : DefineProjection</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset or Feature Class</para>
-		/// <para>将定义其投影的数据集或要素类。</para>
+		/// <para>The dataset or feature class whose projection will be defined.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Coordinate System</para>
-		/// <para>将要应用于输入的坐标系。</para>
+		/// <para>The coordinate system that will be applied to the input.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPCoordinateSystem()]

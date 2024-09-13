@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Feature To Polygon</para>
-	/// <para>要素转面</para>
-	/// <para>创建包含从输入线或面要素所封闭的区域生成的面的要素类。</para>
+	/// <para>Feature To Polygon</para>
+	/// <para>Creates a feature class containing polygons generated from areas enclosed by input line or polygon features.</para>
 	/// </summary>
 	public class FeatureToPolygon : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>输入要素可以是线或面，或是两者兼而有之。</para>
+		/// <para>The input features, which can be line, polygon, or both.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>输出面要素类。</para>
+		/// <para>The output polygon feature class.</para>
 		/// </param>
 		public FeatureToPolygon(object InFeatures, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 要素转面</para>
+		/// <para>Tool Display Name : Feature To Polygon</para>
 		/// </summary>
-		public override string DisplayName() => "要素转面";
+		public override string DisplayName() => "Feature To Polygon";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureToPolygon</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>输入要素可以是线或面，或是两者兼而有之。</para>
+		/// <para>The input features, which can be line, polygon, or both.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>输出面要素类。</para>
+		/// <para>The output polygon feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -88,8 +88,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>XY Tolerance</para>
-		/// <para>进行空间计算时所有要素坐标之间的最小距离以及坐标可以沿 X 和/或 Y 方向移动的距离。默认 XY 容差设定值为 0.001 米，或者为其等效值（以要素单位表示）。</para>
-		/// <para>更改此参数的值可能会导致出现故障或意外结果。 建议不要修改此参数。 已将其从工具对话框的视图中移除。 默认情况下，将使用输入要素类的空间参考 x,y 容差属性。</para>
+		/// <para>The minimum distance separating all feature coordinates, and the distance a coordinate can move in X, Y, or both during spatial computation. The default XY tolerance is set to 0.001 meter or its equivalent in feature units.</para>
+		/// <para>Changing this parameter&apos;s value may cause failure or unexpected results. It is recommended that you do not modify this parameter. It has been removed from view on the tool dialog box. By default, the input feature class&apos;s spatial reference x,y tolerance property is used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Preserve attributes</para>
-		/// <para>现在，已不再支持此参数。</para>
+		/// <para>This parameter is no longer supported.</para>
 		/// <para><see cref="AttributesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Label Features</para>
-		/// <para>保存包含要传递到输出面要素的属性的可选输入点要素。</para>
+		/// <para>The optional input point features that contain the attributes to be transferred to the output polygon features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]

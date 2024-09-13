@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Import Associations</para>
-	/// <para>导入关联</para>
-	/// <para>从逗号分隔值文件导入关联 (.csv) 到现有公共设施网络。 此工具可以与导出关联工具配合使用。</para>
+	/// <para>Import Associations</para>
+	/// <para>Imports associations from a comma-separated values file (.csv) into an existing utility network. This tool can be used in conjunction with the Export Associations tool.</para>
 	/// </summary>
 	public class ImportAssociations : AbstractGPProcess
 	{
@@ -21,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>将导入关联的公共设施网络。</para>
+		/// <para>The utility network to which the associations will be imported.</para>
 		/// </param>
 		/// <param name="AssociationType">
 		/// <para>Association Type</para>
-		/// <para>指定要导入的关联类型。</para>
-		/// <para>全部—将导入所有关联类型。</para>
-		/// <para>交汇点-交汇点连通性—将导入交汇点-交汇点连通性关联类型。</para>
-		/// <para>包含—将导入包含关联类型。</para>
-		/// <para>附件—将导入结构附件关联类型。</para>
-		/// <para>交汇点-边连通性（自边的一侧）—将导入交汇点-边连通性（自边的一侧）关联类型。</para>
-		/// <para>交汇点-边连通规则（中跨）—将导入交汇点-边连通性（中跨）关联类型。</para>
-		/// <para>交汇点-边连通性（至边的一侧）—将导入交汇点-边连通性（至边的一侧）关联类型。</para>
+		/// <para>Specifies the type of association that will be imported.</para>
+		/// <para>All—All association types will be imported.</para>
+		/// <para>Junction-junction connectivity—The junction-junction connectivity association type will be imported.</para>
+		/// <para>Containment—The containment association type will be imported.</para>
+		/// <para>Attachment—The structural attachment association type will be imported.</para>
+		/// <para>Junction-edge connectivity (from side of edge)—The junction-edge connectivity (from side of edge) association type will be imported.</para>
+		/// <para>Junction-edge connectivity (midspan)—The junction-edge connectivity (midspan) association type will be imported.</para>
+		/// <para>Junction-edge connectivity (to side of edge)—The junction-edge connectivity (to side of edge) association type will be imported.</para>
 		/// <para><see cref="AssociationTypeEnum"/></para>
 		/// </param>
 		/// <param name="CsvFile">
 		/// <para>Input File</para>
-		/// <para>将从中导入关联的 .csv 文件。</para>
+		/// <para>The .csv file from which the associations will be imported.</para>
 		/// </param>
 		public ImportAssociations(object InUtilityNetwork, object AssociationType, object CsvFile)
 		{
@@ -47,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 导入关联</para>
+		/// <para>Tool Display Name : Import Associations</para>
 		/// </summary>
-		public override string DisplayName() => "导入关联";
+		public override string DisplayName() => "Import Associations";
 
 		/// <summary>
 		/// <para>Tool Name : ImportAssociations</para>
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>将导入关联的公共设施网络。</para>
+		/// <para>The utility network to which the associations will be imported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -91,14 +91,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Association Type</para>
-		/// <para>指定要导入的关联类型。</para>
-		/// <para>全部—将导入所有关联类型。</para>
-		/// <para>交汇点-交汇点连通性—将导入交汇点-交汇点连通性关联类型。</para>
-		/// <para>包含—将导入包含关联类型。</para>
-		/// <para>附件—将导入结构附件关联类型。</para>
-		/// <para>交汇点-边连通性（自边的一侧）—将导入交汇点-边连通性（自边的一侧）关联类型。</para>
-		/// <para>交汇点-边连通规则（中跨）—将导入交汇点-边连通性（中跨）关联类型。</para>
-		/// <para>交汇点-边连通性（至边的一侧）—将导入交汇点-边连通性（至边的一侧）关联类型。</para>
+		/// <para>Specifies the type of association that will be imported.</para>
+		/// <para>All—All association types will be imported.</para>
+		/// <para>Junction-junction connectivity—The junction-junction connectivity association type will be imported.</para>
+		/// <para>Containment—The containment association type will be imported.</para>
+		/// <para>Attachment—The structural attachment association type will be imported.</para>
+		/// <para>Junction-edge connectivity (from side of edge)—The junction-edge connectivity (from side of edge) association type will be imported.</para>
+		/// <para>Junction-edge connectivity (midspan)—The junction-edge connectivity (midspan) association type will be imported.</para>
+		/// <para>Junction-edge connectivity (to side of edge)—The junction-edge connectivity (to side of edge) association type will be imported.</para>
 		/// <para><see cref="AssociationTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input File</para>
-		/// <para>将从中导入关联的 .csv 文件。</para>
+		/// <para>The .csv file from which the associations will be imported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -140,52 +140,52 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum AssociationTypeEnum 
 		{
 			/// <summary>
-			/// <para>全部—将导入所有关联类型。</para>
+			/// <para>All—All association types will be imported.</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("全部")]
+			[Description("All")]
 			All,
 
 			/// <summary>
-			/// <para>交汇点-交汇点连通性—将导入交汇点-交汇点连通性关联类型。</para>
+			/// <para>Junction-junction connectivity—The junction-junction connectivity association type will be imported.</para>
 			/// </summary>
 			[GPValue("JUNCTION_JUNCTION_CONNECTIVITY")]
-			[Description("交汇点-交汇点连通性")]
+			[Description("Junction-junction connectivity")]
 			JUNCTION_JUNCTION_CONNECTIVITY,
 
 			/// <summary>
-			/// <para>包含—将导入包含关联类型。</para>
+			/// <para>Containment—The containment association type will be imported.</para>
 			/// </summary>
 			[GPValue("CONTAINMENT")]
-			[Description("包含")]
+			[Description("Containment")]
 			Containment,
 
 			/// <summary>
-			/// <para>附件—将导入结构附件关联类型。</para>
+			/// <para>Attachment—The structural attachment association type will be imported.</para>
 			/// </summary>
 			[GPValue("STRUCTURAL_ATTACHMENT")]
-			[Description("附件")]
+			[Description("Attachment")]
 			Attachment,
 
 			/// <summary>
-			/// <para>交汇点-边连通性（自边的一侧）—将导入交汇点-边连通性（自边的一侧）关联类型。</para>
+			/// <para>Junction-edge connectivity (from side of edge)—The junction-edge connectivity (from side of edge) association type will be imported.</para>
 			/// </summary>
 			[GPValue("JUNCTION_EDGE_FROM_CONNECTIVITY")]
-			[Description("交汇点-边连通性（自边的一侧）")]
+			[Description("Junction-edge connectivity (from side of edge)")]
 			JUNCTION_EDGE_FROM_CONNECTIVITY,
 
 			/// <summary>
-			/// <para>交汇点-边连通规则（中跨）—将导入交汇点-边连通性（中跨）关联类型。</para>
+			/// <para>Junction-edge connectivity (midspan)—The junction-edge connectivity (midspan) association type will be imported.</para>
 			/// </summary>
 			[GPValue("JUNCTION_EDGE_MIDSPAN_CONNECTIVITY")]
-			[Description("交汇点-边连通规则（中跨）")]
+			[Description("Junction-edge connectivity (midspan)")]
 			JUNCTION_EDGE_MIDSPAN_CONNECTIVITY,
 
 			/// <summary>
-			/// <para>交汇点-边连通性（至边的一侧）—将导入交汇点-边连通性（至边的一侧）关联类型。</para>
+			/// <para>Junction-edge connectivity (to side of edge)—The junction-edge connectivity (to side of edge) association type will be imported.</para>
 			/// </summary>
 			[GPValue("JUNCTION_EDGE_TO_CONNECTIVITY")]
-			[Description("交汇点-边连通性（至边的一侧）")]
+			[Description("Junction-edge connectivity (to side of edge)")]
 			JUNCTION_EDGE_TO_CONNECTIVITY,
 
 		}

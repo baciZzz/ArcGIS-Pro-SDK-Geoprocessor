@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Extract by Attributes</para>
-	/// <para>按属性提取</para>
-	/// <para>基于逻辑查询提取栅格的像元。</para>
+	/// <para>Extract by Attributes</para>
+	/// <para>Extracts the cells of a raster based on a logical query.</para>
 	/// </summary>
 	public class ExtractByAttributes : AbstractGPProcess
 	{
@@ -21,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>从中提取像元的输入栅格。</para>
+		/// <para>The input raster from which cells will be extracted.</para>
 		/// </param>
 		/// <param name="WhereClause">
 		/// <para>Where clause</para>
-		/// <para>用于选择栅格像元子集的逻辑表达式。</para>
-		/// <para>Where 子句遵循 SQL 表达式的一般格式。 如果您单击编辑 SQL 模式按钮 ，则可以直接输入，例如 VALUE &gt; 100。 如果处于编辑子句模式 中，则可以通过单击添加子句模式按钮来开始构建表达式。</para>
+		/// <para>A logical expression that selects a subset of raster cells.</para>
+		/// <para>The Where clause follows the general form of an SQL expression. It can be entered directly, for example, VALUE &gt; 100, if you click the Edit SQL mode button . If in the Edit Clause Mode , you can begin constructing the expression by clicking on the Add Clause Mode button.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>包含从输入栅格中提取的像元值的输出栅格。</para>
+		/// <para>The output raster containing the cell values extracted from the input raster.</para>
 		/// </param>
 		public ExtractByAttributes(object InRaster, object WhereClause, object OutRaster)
 		{
@@ -40,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 按属性提取</para>
+		/// <para>Tool Display Name : Extract by Attributes</para>
 		/// </summary>
-		public override string DisplayName() => "按属性提取";
+		public override string DisplayName() => "Extract by Attributes";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractByAttributes</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>从中提取像元的输入栅格。</para>
+		/// <para>The input raster from which cells will be extracted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -88,8 +88,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Where clause</para>
-		/// <para>用于选择栅格像元子集的逻辑表达式。</para>
-		/// <para>Where 子句遵循 SQL 表达式的一般格式。 如果您单击编辑 SQL 模式按钮 ，则可以直接输入，例如 VALUE &gt; 100。 如果处于编辑子句模式 中，则可以通过单击添加子句模式按钮来开始构建表达式。</para>
+		/// <para>A logical expression that selects a subset of raster cells.</para>
+		/// <para>The Where clause follows the general form of an SQL expression. It can be entered directly, for example, VALUE &gt; 100, if you click the Edit SQL mode button . If in the Edit Clause Mode , you can begin constructing the expression by clicking on the Add Clause Mode button.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSQLExpression()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>包含从输入栅格中提取的像元值的输出栅格。</para>
+		/// <para>The output raster containing the cell values extracted from the input raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Acknowledgement Message</para>
-	/// <para>导出确认消息</para>
-	/// <para>创建输出确认文件以便确认接收到之前收到的数据变更消息。</para>
+	/// <para>Export Acknowledgement Message</para>
+	/// <para>Creates an output acknowledgement file to acknowledge the reception of previously received data change messages.</para>
 	/// </summary>
 	public class ExportAcknowledgementMessage : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InGeodatabase">
 		/// <para>Export from Replica Geodatabase</para>
-		/// <para>指定要导出确认消息的复本地理数据库。地理数据库可以是本地地理数据库也可以是远程地理数据库。</para>
+		/// <para>Specifies the replica geodatabase from which to export the acknowledgement message. The geodatabase may be local or remote.</para>
 		/// </param>
 		/// <param name="OutAcknowledgementFile">
 		/// <para>Output Acknowledgement File</para>
-		/// <para>指定要导出到的增量文件。</para>
+		/// <para>Specifies the delta file to export to.</para>
 		/// </param>
 		/// <param name="InReplica">
 		/// <para>Replica</para>
-		/// <para>要导出确认消息的复本。</para>
+		/// <para>The replica from which the acknowledgement message will be exported.</para>
 		/// </param>
 		public ExportAcknowledgementMessage(object InGeodatabase, object OutAcknowledgementFile, object InReplica)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 导出确认消息</para>
+		/// <para>Tool Display Name : Export Acknowledgement Message</para>
 		/// </summary>
-		public override string DisplayName() => "导出确认消息";
+		public override string DisplayName() => "Export Acknowledgement Message";
 
 		/// <summary>
 		/// <para>Tool Name : ExportAcknowledgementMessage</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Export from Replica Geodatabase</para>
-		/// <para>指定要导出确认消息的复本地理数据库。地理数据库可以是本地地理数据库也可以是远程地理数据库。</para>
+		/// <para>Specifies the replica geodatabase from which to export the acknowledgement message. The geodatabase may be local or remote.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Acknowledgement File</para>
-		/// <para>指定要导出到的增量文件。</para>
+		/// <para>Specifies the delta file to export to.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Replica</para>
-		/// <para>要导出确认消息的复本。</para>
+		/// <para>The replica from which the acknowledgement message will be exported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

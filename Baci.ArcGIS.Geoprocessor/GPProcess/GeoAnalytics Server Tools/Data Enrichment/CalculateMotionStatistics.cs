@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Calculate Motion Statistics</para>
-	/// <para>计算动态统计数据</para>
-	/// <para>计算启用时间的要素类中点的动态统计数据。</para>
+	/// <para>Calculate Motion Statistics</para>
+	/// <para>Calculates motion statistics for points in a time-enabled feature class.</para>
 	/// </summary>
 	public class CalculateMotionStatistics : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input Layer</para>
-		/// <para>将计算动态统计数据的启用时间的点要素。</para>
+		/// <para>The time-enabled point features on which motion statistics will be calculated.</para>
 		/// </param>
 		/// <param name="OutputName">
 		/// <para>Output Name</para>
-		/// <para>结果图层的名称。</para>
+		/// <para>The name of the result layer.</para>
 		/// </param>
 		/// <param name="TrackFields">
 		/// <para>Track Fields</para>
-		/// <para>用于标识不同实体的一个或多个字段。</para>
+		/// <para>One or more fields used to identify distinct entities.</para>
 		/// </param>
 		/// <param name="TrackHistoryWindow">
 		/// <para>Track History Window</para>
-		/// <para>将用于汇总统计数据的观测点数（包括当前观测点）。 默认值为 3，这意味着将使用当前观测点和前两个观测点在轨迹的每个点上计算汇总统计数据。 此参数不会影响瞬时统计数据或空闲分类。</para>
+		/// <para>The number of observations (including the current observation) that will be used for summary statistics. The default value is 3, which means that the summary statistics will be calculated at each point in a track using the current observation and the previous two observations. This parameter does not affect instantaneous statistics or idle classification.</para>
 		/// </param>
 		public CalculateMotionStatistics(object InputLayer, object OutputName, object TrackFields, object TrackHistoryWindow)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 计算动态统计数据</para>
+		/// <para>Tool Display Name : Calculate Motion Statistics</para>
 		/// </summary>
-		public override string DisplayName() => "计算动态统计数据";
+		public override string DisplayName() => "Calculate Motion Statistics";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateMotionStatistics</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>将计算动态统计数据的启用时间的点要素。</para>
+		/// <para>The time-enabled point features on which motion statistics will be calculated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>结果图层的名称。</para>
+		/// <para>The name of the result layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Track Fields</para>
-		/// <para>用于标识不同实体的一个或多个字段。</para>
+		/// <para>One or more fields used to identify distinct entities.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Track History Window</para>
-		/// <para>将用于汇总统计数据的观测点数（包括当前观测点）。 默认值为 3，这意味着将使用当前观测点和前两个观测点在轨迹的每个点上计算汇总统计数据。 此参数不会影响瞬时统计数据或空闲分类。</para>
+		/// <para>The number of observations (including the current observation) that will be used for summary statistics. The default value is 3, which means that the summary statistics will be calculated at each point in a track using the current observation and the previous two observations. This parameter does not affect instantaneous statistics or idle classification.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -117,15 +117,15 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Motion Statistics</para>
-		/// <para>指定包含要计算并写入结果的统计数据的组。 如果未提供任何值，则将计算所有组的所有统计数据。</para>
-		/// <para>距离分析—将计算轨迹历史记录窗口中当前观测点和先前观测点之间的距离以及最大距离、最小距离、平均距离和总距离。</para>
-		/// <para>持续时间—将计算轨迹历史记录窗口中当前观测点和先前观测点之间的持续时间以及最大持续时间、最小持续时间、平均持续时间和总持续时间。</para>
-		/// <para>速度—将计算轨迹历史记录窗口中当前观测点和先前观测点之间的行驶速度以及最大行驶速度、最小行驶速度和平均行驶速度。</para>
-		/// <para>加速—将计算轨迹历史记录窗口中当前速度和先前速度之间的加速度以及最大加速度、最小加速度和平均加速度。</para>
-		/// <para>高程—将计算轨迹历史记录窗口中的当前高程、当前高程和先前高程之间的高程变化以及最大高程变化、最小高程变化、平均高程变化和总高程变化。</para>
-		/// <para>坡度—将计算轨迹历史记录窗口中当前观测点和先前观测点之间的坡度以及最大坡度、最小坡度和平均坡度。</para>
-		/// <para>空闲—将计算轨迹历史记录窗口实体当前是否空闲以及空闲时间百分比和总空闲时间。</para>
-		/// <para>方位—将计算先前观测点与当前观测点之间的行驶角度。</para>
+		/// <para>Specifies the group containing the statistics to be calculated and written to the result. If no value is provided, all statistics from all groups will be calculated.</para>
+		/// <para>Distance—The distance between the current and previous observation and the maximum, minimum, average, and total distance in the track history window will be calculated.</para>
+		/// <para>Duration—The duration between the current and previous observation and the maximum, minimum, average, and total duration in the track history window will be calculated.</para>
+		/// <para>Speed—The speed of travel between the current and previous observation and the maximum, minimum, and average speed in the track history window will be calculated.</para>
+		/// <para>Acceleration—The acceleration between the current speed and the previous speed and the maximum, minimum, and average acceleration in the track history window will be calculated.</para>
+		/// <para>Elevation—The current elevation, the elevation change between the current and previous observation, and the maximum, minimum, average, and total elevation change in the track history window will be calculated.</para>
+		/// <para>Slope—The slope between the current and previous observation and the maximum, minimum, and average slope in the track history window will be calculated.</para>
+		/// <para>Idle—Whether an entity is currently idling, as well as the percentage idle time and total idle time in the track history window will be calculated.</para>
+		/// <para>Bearing—The angle of travel between the previous observation and the current observation will be calculated.</para>
 		/// <para><see cref="MotionStatisticsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -135,9 +135,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Distance Method</para>
-		/// <para>指定在计算动态统计数据时将使用的距离测量方法。</para>
-		/// <para>测地线—将使用测地线距离。</para>
-		/// <para>平面—将使用平面距离。 这是默认设置。</para>
+		/// <para>Specifies the distance measurement method that will be used when calculating motion statistics.</para>
+		/// <para>Geodesic—Geodesic distance will be used.</para>
+		/// <para>Planar—Planar distance will be used. This is the default.</para>
 		/// <para><see cref="DistanceMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Idle Distance Tolerance</para>
-		/// <para>轨迹中的两个连续点视为空闲时可以分开的最大距离。 此参数与空闲时间容差参数一起用于确定实体是否空闲。 如果在动态统计数据参数中指定了空闲统计数据组，或者如果要计算所有组中的统计数据，空闲距离容差参数为必需项。</para>
+		/// <para>The maximum distance that two sequential points in a track can be apart and still be considered idle. This parameter is used with the Idle Time Tolerance parameter to determine if an entity is idling. The Idle Distance Tolerance parameter is required if the Idle statistic group is specified in the Motion Statistics parameter or if statistics in all the groups will be calculated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Idle Time Tolerance</para>
-		/// <para>轨迹中的两个连续点视为空闲时必须彼此靠近的最小持续时间。 此参数与空闲距离容差参数一起用于确定实体是否空闲。 如果在动态统计数据参数中指定了空闲统计数据组，或者如果要计算所有组中的统计数据，空闲时间容差参数为必需项。</para>
+		/// <para>The minimum duration that two sequential points in a track must be near each other to be considered idle. This parameter is used with the Idle Distance Tolerance parameter to determine if an entity is idling. The Idle Time Tolerance parameter is required if the Idle statistic group is specified in the Motion Statistics parameter or if statistics in all the groups will be calculated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -165,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Time Boundary Split</para>
-		/// <para>用于分割输入数据以进行分析的时间跨度。 您可通过时间界限分析定义的时间跨度内的值。 例如，如果您使用始于 1980 年 1 月 1 日的 1 天的时间界限，则轨迹将在每天开始时被分割。 此参数仅适用于 ArcGIS Enterprise 10.7 及更高版本。</para>
+		/// <para>A time span to split the input data into for analysis. A time boundary allows you to analyze values within a defined time span. For example, if you use a time boundary of 1 day, starting on January 1, 1980, tracks will be split at the beginning of every day. This parameter is only available with ArcGIS Enterprise 10.7 and later.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -175,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Time Boundary Reference</para>
-		/// <para>用于分割输入数据以进行分析的参考时间。 将为整个数据跨度创建时间界限，且不需要在开始时产生参考时间。 如果未指定参考时间，则将使用 1970 年 1 月 1 日。 此参数仅适用于 ArcGIS Enterprise 10.7 及更高版本。</para>
+		/// <para>The reference time used to split the input data into for analysis. Time boundaries will be created for the entire span of the data, and the reference time does not need to occur at the start. If no reference time is specified, January 1, 1970, is used. This parameter is only available with ArcGIS Enterprise 10.7 and later.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -184,13 +184,13 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Distance Unit</para>
-		/// <para>指定输出要素类中距离值的测量单位。</para>
-		/// <para>米—测量单位为米。 这是默认设置。</para>
-		/// <para>千米—测量单位为千米。</para>
-		/// <para>英里—测量单位为英里。</para>
-		/// <para>海里—测量单位为海里。</para>
-		/// <para>码—测量单位为码。</para>
-		/// <para>英尺—测量单位为英尺。</para>
+		/// <para>Specifies the unit of measure for distance values in the output feature class.</para>
+		/// <para>Meters—The unit of measure will be meters. This is the default.</para>
+		/// <para>Kilometers—The unit of measure will be kilometers.</para>
+		/// <para>Miles—The unit of measure will be miles.</para>
+		/// <para>Nautical Miles—The unit of measure will be nautical miles.</para>
+		/// <para>Yards—The unit of measure will be yards.</para>
+		/// <para>Feet—The unit of measure will be feet.</para>
 		/// <para><see cref="DistanceUnitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -201,15 +201,15 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Duration Unit</para>
-		/// <para>指定输出要素类中持续时间值的测量单位。</para>
-		/// <para>年—测量单位为年。</para>
-		/// <para>月—测量单位为月。</para>
-		/// <para>周—测量单位为周。</para>
-		/// <para>天—测量单位为天。</para>
-		/// <para>小时—测量单位为小时。</para>
-		/// <para>分—测量单位为分钟。</para>
-		/// <para>秒—测量单位为秒。 这是默认设置。</para>
-		/// <para>毫秒—测量单位为毫秒。</para>
+		/// <para>Specifies the unit of measure for duration values in the output feature class.</para>
+		/// <para>Years—The unit of measure will years.</para>
+		/// <para>Months—The unit of measure will be months.</para>
+		/// <para>Weeks—The unit of measure will be weeks.</para>
+		/// <para>Days—The unit of measure will be days.</para>
+		/// <para>Hours—The unit of measure will be hours.</para>
+		/// <para>Minutes—The unit of measure will be minutes.</para>
+		/// <para>Seconds—The unit of measure will be seconds. This is the default.</para>
+		/// <para>Milliseconds—The unit of measure will be milliseconds.</para>
 		/// <para><see cref="DurationUnitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -220,12 +220,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Speed Unit</para>
-		/// <para>指定输出要素类中速度值的测量单位。</para>
-		/// <para>米/秒—测量单位为米/秒。 这是默认设置。</para>
-		/// <para>英里/小时—测量单位为英里/小时。</para>
-		/// <para>千米/小时—测量单位为千米/小时。</para>
-		/// <para>英尺/秒—测量单位为英尺/秒。</para>
-		/// <para>海里/小时—测量单位为海里/小时。</para>
+		/// <para>Specifies the unit of measure for speed values in the output feature class.</para>
+		/// <para>Meters Per Second—The unit of measure will be meters per second. This is the default.</para>
+		/// <para>Miles Per Hour—The unit of measure will be miles per hour.</para>
+		/// <para>Kilometers Per Hour—The unit of measure will be kilometers per hour.</para>
+		/// <para>Feet Per Second—The unit of measure will be feet per second.</para>
+		/// <para>Nautical Miles Per Hour—The unit of measure will be nautical miles per hour.</para>
 		/// <para><see cref="SpeedUnitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -236,9 +236,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Acceleration Unit</para>
-		/// <para>指定输出要素类中加速度值的测量单位。</para>
-		/// <para>米/平方秒—测量单位为米/平方秒。 这是默认设置。</para>
-		/// <para>英尺/平方秒—测量单位为英尺/平方秒。</para>
+		/// <para>Specifies the unit of measure for acceleration values in the output feature class.</para>
+		/// <para>Meters Per Second Squared—The unit of measure will be meters per second squared. This is the default.</para>
+		/// <para>Feet Per Second Squared—The unit of measure will be feet per second squared.</para>
 		/// <para><see cref="AccelerationUnitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -249,13 +249,13 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Elevation Unit</para>
-		/// <para>指定输出要素类中高程值的测量单位。</para>
-		/// <para>米—测量单位为米。 这是默认设置。</para>
-		/// <para>千米—测量单位为千米。</para>
-		/// <para>英里—测量单位为英里。</para>
-		/// <para>海里—测量单位为海里。</para>
-		/// <para>码—测量单位为码。</para>
-		/// <para>英尺—测量单位为英尺。</para>
+		/// <para>Specifies the unit of measure for elevation values in the output feature class.</para>
+		/// <para>Meters—The unit of measure will be meters. This is the default.</para>
+		/// <para>Kilometers—The unit of measure will be kilometers.</para>
+		/// <para>Miles—The unit of measure will be miles.</para>
+		/// <para>Nautical Miles—The unit of measure will be nautical miles.</para>
+		/// <para>Yards—The unit of measure will be yards.</para>
+		/// <para>Feet—The unit of measure will be feet.</para>
 		/// <para><see cref="ElevationUnitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -266,9 +266,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Data Store</para>
-		/// <para>指定将用于保存输出的 ArcGIS Data Store。 默认为 SPATIOTEMPORAL_DATA_STORE。 在时空大数据存储中存储的所有结果都将存储在 WGS84 中。 在关系数据存储中存储的结果都将保持各自的坐标系。</para>
-		/// <para>时空大数据存储—输出将存储在时空大数据存储中。 这是默认设置。</para>
-		/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
+		/// <para>Specifies the ArcGIS Data Store where the output will be saved. The default is SPATIOTEMPORAL_DATA_STORE. All results stored in a spatiotemporal big data store will be stored in WGS84. Results stored in a relational data store will maintain their coordinate system.</para>
+		/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
+		/// <para>Relational data store—Output will be stored in a relational data store.</para>
 		/// <para><see cref="DataStoreEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -301,59 +301,59 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum MotionStatisticsEnum 
 		{
 			/// <summary>
-			/// <para>距离分析—将计算轨迹历史记录窗口中当前观测点和先前观测点之间的距离以及最大距离、最小距离、平均距离和总距离。</para>
+			/// <para>Distance—The distance between the current and previous observation and the maximum, minimum, average, and total distance in the track history window will be calculated.</para>
 			/// </summary>
 			[GPValue("DISTANCE")]
-			[Description("距离分析")]
+			[Description("Distance")]
 			Distance,
 
 			/// <summary>
-			/// <para>持续时间—将计算轨迹历史记录窗口中当前观测点和先前观测点之间的持续时间以及最大持续时间、最小持续时间、平均持续时间和总持续时间。</para>
+			/// <para>Duration—The duration between the current and previous observation and the maximum, minimum, average, and total duration in the track history window will be calculated.</para>
 			/// </summary>
 			[GPValue("DURATION")]
-			[Description("持续时间")]
+			[Description("Duration")]
 			Duration,
 
 			/// <summary>
-			/// <para>速度—将计算轨迹历史记录窗口中当前观测点和先前观测点之间的行驶速度以及最大行驶速度、最小行驶速度和平均行驶速度。</para>
+			/// <para>Speed—The speed of travel between the current and previous observation and the maximum, minimum, and average speed in the track history window will be calculated.</para>
 			/// </summary>
 			[GPValue("SPEED")]
-			[Description("速度")]
+			[Description("Speed")]
 			Speed,
 
 			/// <summary>
-			/// <para>加速—将计算轨迹历史记录窗口中当前速度和先前速度之间的加速度以及最大加速度、最小加速度和平均加速度。</para>
+			/// <para>Acceleration—The acceleration between the current speed and the previous speed and the maximum, minimum, and average acceleration in the track history window will be calculated.</para>
 			/// </summary>
 			[GPValue("ACCELERATION")]
-			[Description("加速")]
+			[Description("Acceleration")]
 			Acceleration,
 
 			/// <summary>
-			/// <para>高程—将计算轨迹历史记录窗口中的当前高程、当前高程和先前高程之间的高程变化以及最大高程变化、最小高程变化、平均高程变化和总高程变化。</para>
+			/// <para>Elevation—The current elevation, the elevation change between the current and previous observation, and the maximum, minimum, average, and total elevation change in the track history window will be calculated.</para>
 			/// </summary>
 			[GPValue("ELEVATION")]
-			[Description("高程")]
+			[Description("Elevation")]
 			Elevation,
 
 			/// <summary>
-			/// <para>坡度—将计算轨迹历史记录窗口中当前观测点和先前观测点之间的坡度以及最大坡度、最小坡度和平均坡度。</para>
+			/// <para>Slope—The slope between the current and previous observation and the maximum, minimum, and average slope in the track history window will be calculated.</para>
 			/// </summary>
 			[GPValue("SLOPE")]
-			[Description("坡度")]
+			[Description("Slope")]
 			Slope,
 
 			/// <summary>
-			/// <para>方位—将计算先前观测点与当前观测点之间的行驶角度。</para>
+			/// <para>Bearing—The angle of travel between the previous observation and the current observation will be calculated.</para>
 			/// </summary>
 			[GPValue("BEARING")]
-			[Description("方位")]
+			[Description("Bearing")]
 			Bearing,
 
 			/// <summary>
-			/// <para>空闲—将计算轨迹历史记录窗口实体当前是否空闲以及空闲时间百分比和总空闲时间。</para>
+			/// <para>Idle—Whether an entity is currently idling, as well as the percentage idle time and total idle time in the track history window will be calculated.</para>
 			/// </summary>
 			[GPValue("IDLE")]
-			[Description("空闲")]
+			[Description("Idle")]
 			Idle,
 
 		}
@@ -364,17 +364,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum DistanceMethodEnum 
 		{
 			/// <summary>
-			/// <para>平面—将使用平面距离。 这是默认设置。</para>
+			/// <para>Planar—Planar distance will be used. This is the default.</para>
 			/// </summary>
 			[GPValue("PLANAR")]
-			[Description("平面")]
+			[Description("Planar")]
 			Planar,
 
 			/// <summary>
-			/// <para>测地线—将使用测地线距离。</para>
+			/// <para>Geodesic—Geodesic distance will be used.</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
-			[Description("测地线")]
+			[Description("Geodesic")]
 			Geodesic,
 
 		}
@@ -385,45 +385,45 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum DistanceUnitEnum 
 		{
 			/// <summary>
-			/// <para>千米—测量单位为千米。</para>
+			/// <para>Kilometers—The unit of measure will be kilometers.</para>
 			/// </summary>
 			[GPValue("KILOMETERS")]
-			[Description("千米")]
+			[Description("Kilometers")]
 			Kilometers,
 
 			/// <summary>
-			/// <para>米—测量单位为米。 这是默认设置。</para>
+			/// <para>Meters—The unit of measure will be meters. This is the default.</para>
 			/// </summary>
 			[GPValue("METERS")]
-			[Description("米")]
+			[Description("Meters")]
 			Meters,
 
 			/// <summary>
-			/// <para>英里—测量单位为英里。</para>
+			/// <para>Miles—The unit of measure will be miles.</para>
 			/// </summary>
 			[GPValue("MILES")]
-			[Description("英里")]
+			[Description("Miles")]
 			Miles,
 
 			/// <summary>
-			/// <para>海里—测量单位为海里。</para>
+			/// <para>Nautical Miles—The unit of measure will be nautical miles.</para>
 			/// </summary>
 			[GPValue("NAUTICAL_MILES")]
-			[Description("海里")]
+			[Description("Nautical Miles")]
 			Nautical_Miles,
 
 			/// <summary>
-			/// <para>码—测量单位为码。</para>
+			/// <para>Yards—The unit of measure will be yards.</para>
 			/// </summary>
 			[GPValue("YARDS")]
-			[Description("码")]
+			[Description("Yards")]
 			Yards,
 
 			/// <summary>
-			/// <para>英尺—测量单位为英尺。</para>
+			/// <para>Feet—The unit of measure will be feet.</para>
 			/// </summary>
 			[GPValue("FEET")]
-			[Description("英尺")]
+			[Description("Feet")]
 			Feet,
 
 		}
@@ -434,59 +434,59 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum DurationUnitEnum 
 		{
 			/// <summary>
-			/// <para>年—测量单位为年。</para>
+			/// <para>Years—The unit of measure will years.</para>
 			/// </summary>
 			[GPValue("YEARS")]
-			[Description("年")]
+			[Description("Years")]
 			Years,
 
 			/// <summary>
-			/// <para>月—测量单位为月。</para>
+			/// <para>Months—The unit of measure will be months.</para>
 			/// </summary>
 			[GPValue("MONTHS")]
-			[Description("月")]
+			[Description("Months")]
 			Months,
 
 			/// <summary>
-			/// <para>周—测量单位为周。</para>
+			/// <para>Weeks—The unit of measure will be weeks.</para>
 			/// </summary>
 			[GPValue("WEEKS")]
-			[Description("周")]
+			[Description("Weeks")]
 			Weeks,
 
 			/// <summary>
-			/// <para>天—测量单位为天。</para>
+			/// <para>Days—The unit of measure will be days.</para>
 			/// </summary>
 			[GPValue("DAYS")]
-			[Description("天")]
+			[Description("Days")]
 			Days,
 
 			/// <summary>
-			/// <para>小时—测量单位为小时。</para>
+			/// <para>Hours—The unit of measure will be hours.</para>
 			/// </summary>
 			[GPValue("HOURS")]
-			[Description("小时")]
+			[Description("Hours")]
 			Hours,
 
 			/// <summary>
-			/// <para>分—测量单位为分钟。</para>
+			/// <para>Minutes—The unit of measure will be minutes.</para>
 			/// </summary>
 			[GPValue("MINUTES")]
-			[Description("分")]
+			[Description("Minutes")]
 			Minutes,
 
 			/// <summary>
-			/// <para>秒—测量单位为秒。 这是默认设置。</para>
+			/// <para>Seconds—The unit of measure will be seconds. This is the default.</para>
 			/// </summary>
 			[GPValue("SECONDS")]
-			[Description("秒")]
+			[Description("Seconds")]
 			Seconds,
 
 			/// <summary>
-			/// <para>毫秒—测量单位为毫秒。</para>
+			/// <para>Milliseconds—The unit of measure will be milliseconds.</para>
 			/// </summary>
 			[GPValue("MILLISECONDS")]
-			[Description("毫秒")]
+			[Description("Milliseconds")]
 			Milliseconds,
 
 		}
@@ -497,38 +497,38 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum SpeedUnitEnum 
 		{
 			/// <summary>
-			/// <para>米/秒—测量单位为米/秒。 这是默认设置。</para>
+			/// <para>Meters Per Second—The unit of measure will be meters per second. This is the default.</para>
 			/// </summary>
 			[GPValue("METERS_PER_SECOND")]
-			[Description("米/秒")]
+			[Description("Meters Per Second")]
 			Meters_Per_Second,
 
 			/// <summary>
-			/// <para>英里/小时—测量单位为英里/小时。</para>
+			/// <para>Miles Per Hour—The unit of measure will be miles per hour.</para>
 			/// </summary>
 			[GPValue("MILES_PER_HOUR")]
-			[Description("英里/小时")]
+			[Description("Miles Per Hour")]
 			Miles_Per_Hour,
 
 			/// <summary>
-			/// <para>千米/小时—测量单位为千米/小时。</para>
+			/// <para>Kilometers Per Hour—The unit of measure will be kilometers per hour.</para>
 			/// </summary>
 			[GPValue("KILOMETERS_PER_HOUR")]
-			[Description("千米/小时")]
+			[Description("Kilometers Per Hour")]
 			Kilometers_Per_Hour,
 
 			/// <summary>
-			/// <para>英尺/秒—测量单位为英尺/秒。</para>
+			/// <para>Feet Per Second—The unit of measure will be feet per second.</para>
 			/// </summary>
 			[GPValue("FEET_PER_SECOND")]
-			[Description("英尺/秒")]
+			[Description("Feet Per Second")]
 			Feet_Per_Second,
 
 			/// <summary>
-			/// <para>海里/小时—测量单位为海里/小时。</para>
+			/// <para>Nautical Miles Per Hour—The unit of measure will be nautical miles per hour.</para>
 			/// </summary>
 			[GPValue("NAUTICAL_MILES_PER_HOUR")]
-			[Description("海里/小时")]
+			[Description("Nautical Miles Per Hour")]
 			Nautical_Miles_Per_Hour,
 
 		}
@@ -539,17 +539,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum AccelerationUnitEnum 
 		{
 			/// <summary>
-			/// <para>米/平方秒—测量单位为米/平方秒。 这是默认设置。</para>
+			/// <para>Meters Per Second Squared—The unit of measure will be meters per second squared. This is the default.</para>
 			/// </summary>
 			[GPValue("METERS_PER_SECOND_SQUARED")]
-			[Description("米/平方秒")]
+			[Description("Meters Per Second Squared")]
 			Meters_Per_Second_Squared,
 
 			/// <summary>
-			/// <para>英尺/平方秒—测量单位为英尺/平方秒。</para>
+			/// <para>Feet Per Second Squared—The unit of measure will be feet per second squared.</para>
 			/// </summary>
 			[GPValue("FEET_PER_SECOND_SQUARED")]
-			[Description("英尺/平方秒")]
+			[Description("Feet Per Second Squared")]
 			Feet_Per_Second_Squared,
 
 		}
@@ -560,45 +560,45 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum ElevationUnitEnum 
 		{
 			/// <summary>
-			/// <para>千米—测量单位为千米。</para>
+			/// <para>Kilometers—The unit of measure will be kilometers.</para>
 			/// </summary>
 			[GPValue("KILOMETERS")]
-			[Description("千米")]
+			[Description("Kilometers")]
 			Kilometers,
 
 			/// <summary>
-			/// <para>米—测量单位为米。 这是默认设置。</para>
+			/// <para>Meters—The unit of measure will be meters. This is the default.</para>
 			/// </summary>
 			[GPValue("METERS")]
-			[Description("米")]
+			[Description("Meters")]
 			Meters,
 
 			/// <summary>
-			/// <para>英里—测量单位为英里。</para>
+			/// <para>Miles—The unit of measure will be miles.</para>
 			/// </summary>
 			[GPValue("MILES")]
-			[Description("英里")]
+			[Description("Miles")]
 			Miles,
 
 			/// <summary>
-			/// <para>海里—测量单位为海里。</para>
+			/// <para>Nautical Miles—The unit of measure will be nautical miles.</para>
 			/// </summary>
 			[GPValue("NAUTICAL_MILES")]
-			[Description("海里")]
+			[Description("Nautical Miles")]
 			Nautical_Miles,
 
 			/// <summary>
-			/// <para>码—测量单位为码。</para>
+			/// <para>Yards—The unit of measure will be yards.</para>
 			/// </summary>
 			[GPValue("YARDS")]
-			[Description("码")]
+			[Description("Yards")]
 			Yards,
 
 			/// <summary>
-			/// <para>英尺—测量单位为英尺。</para>
+			/// <para>Feet—The unit of measure will be feet.</para>
 			/// </summary>
 			[GPValue("FEET")]
-			[Description("英尺")]
+			[Description("Feet")]
 			Feet,
 
 		}
@@ -609,17 +609,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum DataStoreEnum 
 		{
 			/// <summary>
-			/// <para>时空大数据存储—输出将存储在时空大数据存储中。 这是默认设置。</para>
+			/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
 			/// </summary>
 			[GPValue("SPATIOTEMPORAL_DATA_STORE")]
-			[Description("时空大数据存储")]
+			[Description("Spatiotemporal big data store")]
 			Spatiotemporal_big_data_store,
 
 			/// <summary>
-			/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
+			/// <para>Relational data store—Output will be stored in a relational data store.</para>
 			/// </summary>
 			[GPValue("RELATIONAL_DATA_STORE")]
-			[Description("关系数据存储")]
+			[Description("Relational data store")]
 			Relational_data_store,
 
 		}

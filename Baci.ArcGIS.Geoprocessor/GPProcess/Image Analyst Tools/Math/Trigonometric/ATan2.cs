@@ -12,7 +12,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 	/// <summary>
 	/// <para>ATan2</para>
 	/// <para>ATan2</para>
-	/// <para>计算栅格中各像元的反正切值（基于 x,y）。</para>
+	/// <para>Calculates the inverse tangent (based on x,y) of cells in a raster.</para>
 	/// </summary>
 	public class ATan2 : AbstractGPProcess
 	{
@@ -21,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRasterOrConstant1">
 		/// <para>Input raster or constant value 1</para>
-		/// <para>此输入用于在计算反正切值时指定要使用的分子或 y 值。</para>
-		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input that specifies the numerator, or y value, to use when calculating the inverse tangent.</para>
+		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
 		/// </param>
 		/// <param name="InRasterOrConstant2">
 		/// <para>Input raster or constant value 2</para>
-		/// <para>此输入用于在计算反正切值时指定要使用的分母或 x 值。</para>
-		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input that specifies the denominator, or x value, to use when calculating the inverse tangent.</para>
+		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>这些值是输入值的反正切角。</para>
+		/// <para>The output raster.</para>
+		/// <para>The values are the inverse tangent angle of the input values.</para>
 		/// </param>
 		public ATan2(object InRasterOrConstant1, object InRasterOrConstant2, object OutRaster)
 		{
@@ -78,8 +78,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 1</para>
-		/// <para>此输入用于在计算反正切值时指定要使用的分子或 y 值。</para>
-		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input that specifies the numerator, or y value, to use when calculating the inverse tangent.</para>
+		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -91,8 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 2</para>
-		/// <para>此输入用于在计算反正切值时指定要使用的分母或 x 值。</para>
-		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input that specifies the denominator, or x value, to use when calculating the inverse tangent.</para>
+		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -104,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>这些值是输入值的反正切角。</para>
+		/// <para>The output raster.</para>
+		/// <para>The values are the inverse tangent angle of the input values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

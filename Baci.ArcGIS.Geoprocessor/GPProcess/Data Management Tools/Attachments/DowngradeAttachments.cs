@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Downgrade Attachments</para>
-	/// <para>降级附件</para>
-	/// <para>降级要素类或表的附件功能。</para>
+	/// <para>Downgrade Attachments</para>
+	/// <para>Downgrades the attachments functionality of a feature class or table.</para>
 	/// </summary>
 	public class DowngradeAttachments : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>将降级其附件功能的要素类或表。</para>
+		/// <para>The feature class or table that will have its attachments functionality downgraded.</para>
 		/// </param>
 		public DowngradeAttachments(object InDataset)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 降级附件</para>
+		/// <para>Tool Display Name : Downgrade Attachments</para>
 		/// </summary>
-		public override string DisplayName() => "降级附件";
+		public override string DisplayName() => "Downgrade Attachments";
 
 		/// <summary>
 		/// <para>Tool Name : DowngradeAttachments</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>将降级其附件功能的要素类或表。</para>
+		/// <para>The feature class or table that will have its attachments functionality downgraded.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]

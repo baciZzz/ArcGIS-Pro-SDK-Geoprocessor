@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 {
 	/// <summary>
 	/// <para>Generate Shapes Features From GTFS</para>
-	/// <para>根据 GTFS 生成形状要素</para>
-	/// <para>用于生成公共交通系统中车辆所行驶路径的预估。 该工具的输出可用于为 GTFS 公共交通数据集生成新的 shapes.txt 文件。</para>
+	/// <para>Generate Shapes Features From GTFS</para>
+	/// <para>Generates an estimate of the paths traveled by the vehicles in a public transit system. The output from this tool can be used to generate a new shapes.txt file for a GTFS public transit dataset.</para>
 	/// </summary>
 	public class GenerateShapesFeaturesFromGTFS : AbstractGPProcess
 	{
@@ -21,20 +21,20 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 		/// </summary>
 		/// <param name="InGtfsFolder">
 		/// <para>Input GTFS Folder</para>
-		/// <para>一个文件夹，其中包含要为其新建 shapes.txt 文件的有效 GTFS 数据集。 该文件夹必须包含 GTFS stops.txt、trips.txt、routes.txt 和 stop_times.txt 文件。</para>
+		/// <para>A folder containing a valid GTFS dataset for which you want to create a new shapes.txt file. The folder must contain the GTFS stops.txt, trips.txt, routes.txt, and stop_times.txt files.</para>
 		/// </param>
 		/// <param name="OutShapeLines">
 		/// <para>Output Transit Shape Lines</para>
-		/// <para>一个线要素类，表示此工具计算的预估路径形状。 输出中的每行均表示此 GTFS 数据集所需的唯一形状。 可以编辑线几何，并使用此要素类作为要素转 GTFS 形状工具的输入。</para>
+		/// <para>A line feature class representing the estimated route shapes calculated by this tool. Each line in the output represents a unique shape required for this GTFS dataset. You can edit the line geometry and use this feature class as input to the Features To GTFS Shapes tool.</para>
 		/// </param>
 		/// <param name="OutShapeStops">
 		/// <para>Output Shape Stops</para>
-		/// <para>GTFS 交通停靠点的点要素类，其中 ID 可将其与该工具要创建的每个形状线相关联。 如果多个形状访问相同的 GTFS 停靠点，则此要素类将包含该停靠点的多个副本，一个副本对应于与该停靠点相关联的每个形状。 如果一次编辑一个形状线，则此要素类对定义查询非常有用。 可以使用此要素类作为要素转 GTFS 形状工具的输入。</para>
-		/// <para>此输出要素类不等同于 GTFS 停靠点转要素工具的输出。 该工具将生成 GTFS 停靠点的要素类，这些要素类与原始数据集中的要素类完全相同；此工具可能会生成每个停靠点的多个副本，以将其与不同的形状相关联。 将此输出要素类与根据 GTFS 生成形状要素工具的其他输出配合使用以创建 shapes.txt 文件。</para>
+		/// <para>A point feature class of GTFS transit stops with an ID associating them with each shape line to be created by the tool. In cases where the same GTFS stop is visited by multiple shapes, this feature class will contain multiple copies of that stop, one for each shape with which it is associated. This feature class is useful with definition queries when editing one shape line at a time. Use this feature class as input to the Features To GTFS Shapes tool.</para>
+		/// <para>This output feature class is not equivalent to the output of the GTFS Stops To Features tool. That tool produces a feature class of the GTFS stops exactly as they are in the original dataset; this tool may produce multiple copies of each stop to associate them with different shapes. Use this output feature class in conjunction with the other outputs of the Generate Shapes Features From GTFS tool to create a shapes.txt file.</para>
 		/// </param>
 		/// <param name="OutGtfsTrips">
 		/// <para>Output GTFS Trips</para>
-		/// <para>输出 GTFS trips.txt 文件。 此文件将等同于输入 GTFS 文件夹中的 trips.txt 文件，但将包含添加的 shape_id 字段，已使用与输出交通形状线要素类中的 shape_id 字段对应的值填充该字段。</para>
+		/// <para>The output GTFS trips.txt file. This file will be equivalent to the trips.txt file in the input GTFS folder but will include the shape_id field added and populated with values corresponding to the shape_id field in the Output Transit Shape Lines feature class.</para>
 		/// </param>
 		public GenerateShapesFeaturesFromGTFS(object InGtfsFolder, object OutShapeLines, object OutShapeStops, object OutGtfsTrips)
 		{
@@ -45,9 +45,9 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 根据 GTFS 生成形状要素</para>
+		/// <para>Tool Display Name : Generate Shapes Features From GTFS</para>
 		/// </summary>
-		public override string DisplayName() => "根据 GTFS 生成形状要素";
+		public override string DisplayName() => "Generate Shapes Features From GTFS";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateShapesFeaturesFromGTFS</para>
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 
 		/// <summary>
 		/// <para>Input GTFS Folder</para>
-		/// <para>一个文件夹，其中包含要为其新建 shapes.txt 文件的有效 GTFS 数据集。 该文件夹必须包含 GTFS stops.txt、trips.txt、routes.txt 和 stop_times.txt 文件。</para>
+		/// <para>A folder containing a valid GTFS dataset for which you want to create a new shapes.txt file. The folder must contain the GTFS stops.txt, trips.txt, routes.txt, and stop_times.txt files.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 
 		/// <summary>
 		/// <para>Output Transit Shape Lines</para>
-		/// <para>一个线要素类，表示此工具计算的预估路径形状。 输出中的每行均表示此 GTFS 数据集所需的唯一形状。 可以编辑线几何，并使用此要素类作为要素转 GTFS 形状工具的输入。</para>
+		/// <para>A line feature class representing the estimated route shapes calculated by this tool. Each line in the output represents a unique shape required for this GTFS dataset. You can edit the line geometry and use this feature class as input to the Features To GTFS Shapes tool.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -97,8 +97,8 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 
 		/// <summary>
 		/// <para>Output Shape Stops</para>
-		/// <para>GTFS 交通停靠点的点要素类，其中 ID 可将其与该工具要创建的每个形状线相关联。 如果多个形状访问相同的 GTFS 停靠点，则此要素类将包含该停靠点的多个副本，一个副本对应于与该停靠点相关联的每个形状。 如果一次编辑一个形状线，则此要素类对定义查询非常有用。 可以使用此要素类作为要素转 GTFS 形状工具的输入。</para>
-		/// <para>此输出要素类不等同于 GTFS 停靠点转要素工具的输出。 该工具将生成 GTFS 停靠点的要素类，这些要素类与原始数据集中的要素类完全相同；此工具可能会生成每个停靠点的多个副本，以将其与不同的形状相关联。 将此输出要素类与根据 GTFS 生成形状要素工具的其他输出配合使用以创建 shapes.txt 文件。</para>
+		/// <para>A point feature class of GTFS transit stops with an ID associating them with each shape line to be created by the tool. In cases where the same GTFS stop is visited by multiple shapes, this feature class will contain multiple copies of that stop, one for each shape with which it is associated. This feature class is useful with definition queries when editing one shape line at a time. Use this feature class as input to the Features To GTFS Shapes tool.</para>
+		/// <para>This output feature class is not equivalent to the output of the GTFS Stops To Features tool. That tool produces a feature class of the GTFS stops exactly as they are in the original dataset; this tool may produce multiple copies of each stop to associate them with different shapes. Use this output feature class in conjunction with the other outputs of the Generate Shapes Features From GTFS tool to create a shapes.txt file.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 
 		/// <summary>
 		/// <para>Output GTFS Trips</para>
-		/// <para>输出 GTFS trips.txt 文件。 此文件将等同于输入 GTFS 文件夹中的 trips.txt 文件，但将包含添加的 shape_id 字段，已使用与输出交通形状线要素类中的 shape_id 字段对应的值填充该字段。</para>
+		/// <para>The output GTFS trips.txt file. This file will be equivalent to the trips.txt file in the input GTFS folder but will include the shape_id field added and populated with values corresponding to the shape_id field in the Output Transit Shape Lines feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -116,21 +116,21 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 
 		/// <summary>
 		/// <para>Transit Modes for Network</para>
-		/// <para>指定将沿道路网络，而非直线生成线形状的交通模式。 将使用直线生成未选择的所有模式的形状。</para>
-		/// <para>通常，您应该选择在街道上运行的模式，例如公共汽车，因为道路网络可以最准确地表示这些模式。 请勿选择道路网络未进行模拟的模式。 例如，除非您的网络明确模拟渡轮车道，否则请勿使用网络来表示渡轮行驶的路径。</para>
-		/// <para>可以使用下表中的代码来指定模式。 这些模式对应于 GTFS 文档中的有效 GTFS routes.txt 文件的 route_type 字段值。</para>
-		/// <para>默认使用模式 3、5 和 11，</para>
-		/// <para>有轨电车、地面电车、轻轨 (GTFS 0)—有轨电车、地面电车、轻轨。 该模式对应于 GTFS route_type 0。</para>
-		/// <para>地铁 (GTFS 1)—地铁。 该模式对应于 GTFS route_type 1。</para>
-		/// <para>铁路 (GTFS 2)—铁路。 该模式对应于 GTFS route_type 2。</para>
-		/// <para>公共汽车 (GTFS 3)—公共汽车。 该模式对应于 GTFS route_type 3。</para>
-		/// <para>渡轮 (GTFS 4)—渡轮。 该模式对应于 GTFS route_type 4。</para>
-		/// <para>缆道电车 (GTFS 5)—缆道电车。 该模式对应于 GTFS route_type 5。</para>
-		/// <para>空中缆车、缆索车、缆车、架空索道 (GTFS 6)—空中缆车、缆索车、缆车、架空索道。 该模式对应于 GTFS route_type 6。</para>
-		/// <para>索道 (GTFS 7)—索道。 该模式对应于 GTFS route_type 7。</para>
-		/// <para>无轨电车 (GTFS 11)—无轨电车。 该模式对应于 GTFS route_type 11。</para>
-		/// <para>单轨索道 (GTFS 12)—单轨索道。 该模式对应于 GTFS route_type 12。</para>
-		/// <para>其他交通模式—此选项与其他选项未涵盖的任何公共交通模式相对应。</para>
+		/// <para>Specifies the modes of transit for which line shapes will be generated along the road network rather than with straight lines. Shapes for all modes not selected will be generated using straight lines.</para>
+		/// <para>You should typically select modes that run on streets, such as buses, since those modes are most accurately represented by the road network. Do not select modes that are not modeled by your road network. For example, unless your network explicitly models ferry lanes, don&apos;t use the network to represent the paths traveled by ferries.</para>
+		/// <para>The modes are specified using the codes in the table below. These correspond to the valid GTFS routes.txt file&apos;s route_type field values from the GTFS documentation.</para>
+		/// <para>Modes 3, 5, and 11 are used by default.</para>
+		/// <para>Tram, streetcar, light rail (GTFS 0)— Tram, streetcar, light rail. This mode corresponds to GTFS route_type 0.</para>
+		/// <para>Subway, metro (GTFS 1)— Subway or metro. This mode corresponds to GTFS route_type 1.</para>
+		/// <para>Rail (GTFS 2)— Rail. This mode corresponds to GTFS route_type 2.</para>
+		/// <para>Bus (GTFS 3)— Bus. This mode corresponds to GTFS route_type 3.</para>
+		/// <para>Ferry (GTFS 4)— Ferry. This mode corresponds to GTFS route_type 4.</para>
+		/// <para>Cable tram (GTFS 5)— Cable tram. This mode corresponds to GTFS route_type 5.</para>
+		/// <para>Aerial lift, suspended cable car, gondola lift, aerial tramway (GTFS 6)— Aerial lift, suspended cable car, gondola lift, aerial tramway. This mode corresponds to GTFS route_type 6.</para>
+		/// <para>Funicular (GTFS 7)— Funicular. This mode corresponds to GTFS route_type 7.</para>
+		/// <para>Trolleybus (GTFS 11)— Trolleybus. This mode corresponds to GTFS route_type 11.</para>
+		/// <para>Monorail (GTFS 12)— Monorail. This mode corresponds to GTFS route_type 12.</para>
+		/// <para>Other transit mode—This option corresponds to any mode of public transit not encompassed by the other options.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -139,11 +139,11 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 
 		/// <summary>
 		/// <para>Network Data Source</para>
-		/// <para>网络数据集或服务，将用于计算沿道路网络的路径形状。 可以使用网络数据集的目录路径、网络数据集图层对象、网络数据集图层的字符串名称或网络分析服务的门户 URL。 网络必须包含至少一个出行模式。</para>
-		/// <para>要使用门户 URL，您必须使用具有路径选择权限的帐户登录门户。</para>
-		/// <para>如果使用 ArcGIS Online 作为网络数据源，则运行该工具将消耗配额。</para>
-		/// <para>如果选择任何网络模式，则此参数为必需项。</para>
-		/// <para>您选择的网络数据集应该适用于模拟在街道上行驶的交通车辆，例如公共汽车。 请勿使用经过配置的网络数据集，该网络数据集将公共交通数据与公共交通赋值器配合使用，因为此类型的网络将模拟乘坐公共交通的乘客，而非在街道上行驶的公共交通车辆。</para>
+		/// <para>The network dataset or service that will be used for calculating route shapes along a road network. You can use a catalog path to a network dataset, a network dataset layer object, the string name of the network dataset layer, or a portal URL for a network analysis service. The network must have at least one travel mode.</para>
+		/// <para>To use a portal URL, you must be signed in to the portal with an account that has routing privileges.</para>
+		/// <para>Running the tool will consume credits if you use ArcGIS Online as the network data source.</para>
+		/// <para>This parameter is required when any network modes are selected.</para>
+		/// <para>The network dataset you choose should be appropriate for modeling transit vehicles, such as buses, driving on streets. Don&apos;t use a network dataset configured to use public transit data with the Public Transit evaluator because this type of network models passengers riding on public transit, not public transit vehicles driving on streets.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPNetworkDataSource()]
@@ -152,10 +152,10 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 
 		/// <summary>
 		/// <para>Travel Mode</para>
-		/// <para>计算沿道路网络的路径形状时将使用的网络数据源上的出行模式。 可以指定出行模式作为出行模式的字符串名称，也可以作为 arcpy.nax.TravelMode 对象。</para>
-		/// <para>在沿道路网络行驶的交通系统中，可以使用最适用于模拟车辆的出行模式。</para>
-		/// <para>如果选择任何网络模式，则此参数为必需项。</para>
-		/// <para>请勿将出行模式与使用公共交通赋值器的阻抗属性配合使用，因为该出行模式将模拟乘坐公共交通的乘客，而非在街道上行驶的交通车辆。</para>
+		/// <para>The travel mode on the network data source that will be used when calculating route shapes along a road network. You can specify the travel mode as a string name of the travel mode or as an arcpy.nax.TravelMode object.</para>
+		/// <para>Use the travel mode most appropriate for modeling vehicles in your transit system driving along the road network.</para>
+		/// <para>This parameter is required when any network modes are selected.</para>
+		/// <para>Do not use a travel mode with an impedance attribute that uses the Public Transit evaluator because that travel mode models passengers riding on public transit, not transit vehicles driving on streets.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[NetworkTravelMode()]
@@ -164,9 +164,9 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 
 		/// <summary>
 		/// <para>Side of Road on which Vehicles Drive</para>
-		/// <para>指定车辆在交通系统中行驶的道路侧。 这可用于确保访问正确道路侧上的停靠点。</para>
-		/// <para>左侧—车辆将行驶在道路左侧。</para>
-		/// <para>右—车辆将行驶在道路右侧。 这是默认设置。</para>
+		/// <para>Specifies the side of the road on which vehicles drive in your transit system. This is used to ensure that stops are visited on the correct side of the road.</para>
+		/// <para>Left—Vehicles drive on the left side of the road.</para>
+		/// <para>Right—Vehicles drive on the right side of the road. This is the default.</para>
 		/// <para><see cref="DriveSideEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -177,9 +177,9 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 
 		/// <summary>
 		/// <para>Bearing Tolerance</para>
-		/// <para>停靠点处交通车辆的预估行驶方向之间的最大允许角度以及该停靠点所在网络边的角度。 如果角度差值超过此值，则假设这并非要在其上定位停靠点的正确网络边，并且 Network Analyst 将继续搜索其他附近网络边以寻找更合适的网络边。</para>
-		/// <para>在计算沿道路网络的路径形状时，方位角和方位角容差可用于更精确地定位沿道路网络的交通停靠点。 根据当前停靠点与沿交通路径的上一个停靠点和下一个停靠点之间的角度，估算每个停靠点处交通车辆的方位角。</para>
-		/// <para>指定一个介于 0 到 180 之间的值，以度为单位。 默认值为 30。</para>
+		/// <para>The maximum allowed angle between a transit vehicle&apos;s estimated direction of travel at a stop and the angle of the network edge where the stop could locate. If the angles differ by more than this value, it is assumed that this is not the correct network edge on which to locate the stop, and Network Analyst will continue searching other nearby network edges for a more appropriate edge.</para>
+		/// <para>When calculating route shapes along a road network, bearing and bearing tolerance are used to more accurately locate transit stops along the road network. The transit vehicle&apos;s bearing is estimated at each stop based on the angles between the current stop and the previous and next stops along the transit route.</para>
+		/// <para>Specify the value in units of degrees between 0 and 180. The default is 30.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -189,10 +189,10 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 
 		/// <summary>
 		/// <para>Maximum Bearing Angle Difference</para>
-		/// <para>上一个停靠点与当前停靠点站以及当前停靠点到下一个停靠点之间的最大允许方位角差。</para>
-		/// <para>根据当前停靠点与沿交通路径的上一个停靠点和下一个停靠点之间的角度，估算每个停靠点处交通车辆的方位角。 如果交通路径沿相对较直的道路，则此角度是方位角的良好表示。 但是，如果该路径出现转弯、调头、弯路或者改道进入停车场或旁路，则平均角度不是方位角的良好预估，使用此预估会导致要在网络上定位的停靠点远离其应有位置，并且会降低工具输出的质量。</para>
-		/// <para>如果上一个停靠点到当前停靠点以及当前停靠点到下一个停靠点的角度差值大于此参数中指定的值，则该工具将忽略方位角预估。 在这种情况下，停靠点将恢复为正常网络定位行为，并将捕捉到最近的非限制网络边。</para>
-		/// <para>指定一个介于 0 到 180 之间的值，以度为单位。 默认值为 65。</para>
+		/// <para>The maximum allowable difference in bearing angle between the previous stop and the current stop and the current stop to the next stop.</para>
+		/// <para>The transit vehicle&apos;s bearing is estimated at each stop based on the angles between the current stop and the previous and next stops along the transit route. When the transit route follows a relatively straight road, this angle is a good representation of the bearing. However, if the route goes around a corner, makes a U-turn, follows a twisty road, or diverts into a parking lot or side road, the average angle is not a good estimate of bearing and using this estimate can cause the stop to locate on the network far away from where it should and worsen the quality of the tool output.</para>
+		/// <para>The tool will ignore the bearing estimate if the difference in angle from the previous stop to the current stop and the current stop to the next stop is greater than the value specified in this parameter. In this situation, the stop will revert to the normal network locating behavior and will snap to the closest nonrestricted network edge.</para>
+		/// <para>Specify the value in units of degrees between 0 and 180. The default is 65.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -208,17 +208,17 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 		public enum DriveSideEnum 
 		{
 			/// <summary>
-			/// <para>左侧—车辆将行驶在道路左侧。</para>
+			/// <para>Left—Vehicles drive on the left side of the road.</para>
 			/// </summary>
 			[GPValue("LEFT")]
-			[Description("左侧")]
+			[Description("Left")]
 			Left,
 
 			/// <summary>
-			/// <para>右—车辆将行驶在道路右侧。 这是默认设置。</para>
+			/// <para>Right—Vehicles drive on the right side of the road. This is the default.</para>
 			/// </summary>
 			[GPValue("RIGHT")]
-			[Description("右")]
+			[Description("Right")]
 			Right,
 
 		}

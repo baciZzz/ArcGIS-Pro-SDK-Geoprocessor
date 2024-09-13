@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Set Cluster Tolerance</para>
-	/// <para>设置拓扑容差</para>
-	/// <para>设置拓扑的拓扑容差。</para>
+	/// <para>Set Cluster Tolerance</para>
+	/// <para>Sets the cluster tolerance of a topology.</para>
 	/// </summary>
 	public class SetClusterTolerance : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTopology">
 		/// <para>Input Topology</para>
-		/// <para>要更改拓扑容差的拓扑。</para>
+		/// <para>The topology for which you want to change the cluster tolerance.</para>
 		/// </param>
 		/// <param name="ClusterTolerance">
 		/// <para>Cluster Tolerance</para>
-		/// <para>要设置为所选拓扑的拓扑容差属性的值。如果输入值为零，则将对拓扑应用默认拓扑容差或最小拓扑容差。</para>
+		/// <para>The value to be set as the cluster tolerance property of the selected topology. If you enter a value of zero, the default or minimum cluster tolerance will be applied to the topology.</para>
 		/// </param>
 		public SetClusterTolerance(object InTopology, object ClusterTolerance)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 设置拓扑容差</para>
+		/// <para>Tool Display Name : Set Cluster Tolerance</para>
 		/// </summary>
-		public override string DisplayName() => "设置拓扑容差";
+		public override string DisplayName() => "Set Cluster Tolerance";
 
 		/// <summary>
 		/// <para>Tool Name : SetClusterTolerance</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Topology</para>
-		/// <para>要更改拓扑容差的拓扑。</para>
+		/// <para>The topology for which you want to change the cluster tolerance.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTopologyLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Cluster Tolerance</para>
-		/// <para>要设置为所选拓扑的拓扑容差属性的值。如果输入值为零，则将对拓扑应用默认拓扑容差或最小拓扑容差。</para>
+		/// <para>The value to be set as the cluster tolerance property of the selected topology. If you enter a value of zero, the default or minimum cluster tolerance will be applied to the topology.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]

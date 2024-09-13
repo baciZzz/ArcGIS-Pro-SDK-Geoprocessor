@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Migrate Storage</para>
-	/// <para>迁移存储</para>
-	/// <para>将数据从一种数据类型的二进制、空间或空间属性列移动到 Oracle 和 SQL Server 地理数据库中的其他数据类型的新列。迁移时指定的配置关键字可决定用于新列的数据类型。</para>
+	/// <para>Migrate Storage</para>
+	/// <para>Moves the data from a binary, spatial, or spatial attribute column of one data type to a new column of a different data type in geodatabases in Oracle and SQL Server. The configuration keyword you specify when migrating determines the data type used for the new column.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDatasets">
 		/// <para>Input Datasets</para>
-		/// <para>要迁移的数据集。您用于访问数据集的连接必须以数据集所有者的身份连接。</para>
+		/// <para>Datasets to be migrated. The connection you use to access the datasets must be connecting as the dataset owner.</para>
 		/// </param>
 		/// <param name="ConfigKeyword">
 		/// <para>Configuration Keyword</para>
-		/// <para>包含适用于该迁移操作的参数值的配置关键字。参数值由地理数据库管理员设置。如果不确定要使用的配置关键字，请与地理数据库管理员联系。</para>
+		/// <para>Configuration keyword containing the appropriate parameter values for the migration. Parameter values are set by the geodatabase administrator. Contact your geodatabase administrator if you are unsure which configuration keyword to use.</para>
 		/// </param>
 		public MigrateStorage(object InDatasets, object ConfigKeyword)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 迁移存储</para>
+		/// <para>Tool Display Name : Migrate Storage</para>
 		/// </summary>
-		public override string DisplayName() => "迁移存储";
+		public override string DisplayName() => "Migrate Storage";
 
 		/// <summary>
 		/// <para>Tool Name : MigrateStorage</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Datasets</para>
-		/// <para>要迁移的数据集。您用于访问数据集的连接必须以数据集所有者的身份连接。</para>
+		/// <para>Datasets to be migrated. The connection you use to access the datasets must be connecting as the dataset owner.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
-		/// <para>包含适用于该迁移操作的参数值的配置关键字。参数值由地理数据库管理员设置。如果不确定要使用的配置关键字，请与地理数据库管理员联系。</para>
+		/// <para>Configuration keyword containing the appropriate parameter values for the migration. Parameter values are set by the geodatabase administrator. Contact your geodatabase administrator if you are unsure which configuration keyword to use.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

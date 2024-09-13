@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Make Location-Allocation Analysis Layer</para>
-	/// <para>创建位置分配图层</para>
-	/// <para>创建位置分配网络分析图层并设置其分析属性。 位置分配分析图层对于从一组可能位置中选择指定数量的设施点（以便以最佳且高效的方式将需求点分配给设施点）十分有用。 该图层可通过本地网络数据集进行创建，也可通过在线托管服务或门户托管服务进行创建。</para>
+	/// <para>Make Location-Allocation Analysis Layer</para>
+	/// <para>Makes a location-allocation network analysis layer and sets its analysis properties. A location-allocation analysis layer is useful for choosing a given number of facilities from a set of potential locations such that a demand will be allocated to facilities in an optimal and efficient manner. The layer can be created using a local network dataset or using a service hosted online or in a portal.</para>
 	/// </summary>
 	public class MakeLocationAllocationAnalysisLayer : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="NetworkDataSource">
 		/// <para>Network Data Source</para>
-		/// <para>将对其执行网络分析的网络数据集或服务。 将门户 URL 用于服务。</para>
+		/// <para>The network dataset or service on which the network analysis will be performed. Use the portal URL for a service.</para>
 		/// </param>
 		public MakeLocationAllocationAnalysisLayer(object NetworkDataSource)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建位置分配图层</para>
+		/// <para>Tool Display Name : Make Location-Allocation Analysis Layer</para>
 		/// </summary>
-		public override string DisplayName() => "创建位置分配图层";
+		public override string DisplayName() => "Make Location-Allocation Analysis Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeLocationAllocationAnalysisLayer</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Network Data Source</para>
-		/// <para>将对其执行网络分析的网络数据集或服务。 将门户 URL 用于服务。</para>
+		/// <para>The network dataset or service on which the network analysis will be performed. Use the portal URL for a service.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Layer Name</para>
-		/// <para>要创建的网络分析图层的名称。</para>
+		/// <para>The name of the network analysis layer to create.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -81,8 +81,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Travel Mode</para>
-		/// <para>分析中使用的出行模式名称。 出行模式为一组网络设置（例如行驶限制和 U 形转弯），用于确定行人、车辆、卡车或其他交通媒介在网络中的移动方式。 出行模式在网络数据源中进行定义。</para>
-		/// <para>arcpy.na.TravelMode 对象和包含出行模式有效 JSON 表示的字符串也可用作参数的输入。</para>
+		/// <para>The name of the travel mode to use in the analysis. The travel mode represents a collection of network settings, such as travel restrictions and U-turn policies, that determine how a pedestrian, car, truck, or other medium of transportation moves through the network. Travel modes are defined on your network data source.</para>
+		/// <para>An arcpy.na.TravelMode object and a string containing the valid JSON representation of a travel mode can also be used as input to the parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -91,10 +91,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Travel Direction</para>
-		/// <para>指定计算网络成本时设施点与请求点之间的行驶方向。</para>
-		/// <para>远离设施点—行驶方向从设施点到请求点。 这是默认设置。 消防部门通常使用该设置，因为他们需要关注从消防站行驶到紧急救援位置所需的时间。</para>
-		/// <para>朝向设施点—行驶方向从请求点到设施点。 零售店通常使用该设置，因为他们需要关注购物者到达商店所需的时间。</para>
-		/// <para>使用此选项会影响具有单向限制和根据方向不同阻抗不同的网络上的请求点到设施点的分配。 例如，从请求点驾车到达设施点可能需要 15 分钟，但从设施点驾车行驶至请求点仅需 10 分钟。</para>
+		/// <para>Specifies the direction of travel between facilities and demand points when calculating the network costs.</para>
+		/// <para>Away from facilities—Direction of travel is from facilities to demand points. This is the default. Fire departments commonly use this setting, since they are concerned with the time it takes to travel from the fire station to the location of the emergency.</para>
+		/// <para>Toward facilities—Direction of travel is from demand points to facilities. Retail stores commonly use this setting, since they are concerned with the time it takes the shoppers to reach the store.</para>
+		/// <para>Using this option can affect the allocation of the demand points to the facilities on a network with one-way restrictions and different impedances based on direction of travel. For instance, it may take 15 minutes to drive from the demand point to the facility but only 10 minutes when driving from the facility to the demand point.</para>
 		/// <para><see cref="TravelDirectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -104,14 +104,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Problem Type</para>
-		/// <para>将要求解的问题的类型。 问题类型的选择取决于要定位的设施点种类。 不同种类的设施点具有不同的优先级和约束。</para>
-		/// <para>最小化阻抗—此选项可解决仓库位置问题。 它选择一组使加权阻抗（请求的位置乘以到最近设施点的阻抗）的总和最小的设施点。 此问题类型通常称为 P 中位数问题。 此为默认问题类型。</para>
-		/// <para>最大化覆盖范围—此选项可解决消防站位置问题。 它选择了多个设施点以保证所有或最大数量的请求点处于指定的阻抗中断范围内。</para>
-		/// <para>最大化具有容量限制的覆盖范围—此选项用于求解容量有限的设施点的位置问题。 此选项将选择一组满足所有或最大数量的请求而不超出任何设施点容量的设施点。 除了支持容量外，该选项还选择一组使加权阻抗（分配给某个设施点的请求点乘以到该设施点的阻抗）的总和最小的设施点。</para>
-		/// <para>最小化设施点数—此选项可解决消防站位置问题。 它将选择当在指定的阻抗中断范围内覆盖了所有或最大数量的请求点时所需要的设施点的最小数量。</para>
-		/// <para>最大化人流量—此选项可解决邻域存储位置问题，其中分配给最近所选设施点的请求比例将随距离的增加而降低。 已选择最大化总分配请求点的设施点集。 大于指定的阻抗中断的请求点不会影响所选的设施点集。</para>
-		/// <para>最大化市场份额—此选项可解决竞争性设施点的位置问题。 它选择当存在竞争性设施点时可最大化市场份额的设施点。 重力模型概念用于确定分配给每个设施点的请求点比例。 已选择最大化总分配请求点的设施点集。</para>
-		/// <para>目标市场份额—此选项可解决竞争性设施点的位置问题。 它选择当存在竞争性设施点时可达到指定目标市场份额的设施点。 重力模型概念用于确定分配给每个设施点的请求点比例。 已选择的最小设施点量需达到指定的目标市场份额。</para>
+		/// <para>The problem type that will be solved. The choice of the problem type depends on the kind of facility being located. Different kinds of facilities have different priorities and constraints.</para>
+		/// <para>Minimize impedance—This option solves the warehouse location problem. It selects a set of facilities such that the total sum of weighted impedances (demand at a location times the impedance to the closest facility) is minimized. This problem type is often known as the P-Median problem. This is the default problem type.</para>
+		/// <para>Maximize coverage—This option solves the fire station location problem. It chooses facilities such that all or the greatest amount of demand is within a specified impedance cutoff.</para>
+		/// <para>Maximize capacitated coverage—This option solves the location problem where facilities have a finite capacity. It chooses facilities such that all or the greatest amount of demand can be served without exceeding the capacity of any facility. In addition to honoring capacity, it selects facilities such that the total sum of weighted impedance (demand allocated to a facility multiplied by the impedance to or from the facility) is minimized.</para>
+		/// <para>Minimize facilities—This option solves the fire station location problem. It chooses the minimum number of facilities needed to cover all or the greatest amount of demand within a specified impedance cutoff.</para>
+		/// <para>Maximize attendance—This option solves the neighborhood store location problem where the proportion of demand allocated to the nearest chosen facility falls with increasing distance. The set of facilities that maximize the total allocated demand is chosen. Demand further than the specified impedance cutoff does not affect the chosen set of facilities.</para>
+		/// <para>Maximize market share—This option solves the competitive facility location problem. It chooses facilities to maximize market share in the presence of competitive facilities. Gravity model concepts are used to determine the proportion of demand allocated to each facility. The set of facilities that maximizes the total allocated demand is chosen.</para>
+		/// <para>Target market share—This option solves the competitive facility location problem. It chooses facilities to reach a specified target market share in the presence of competitive facilities. Gravity model concepts are used to determine the proportion of demand allocated to each facility. The minimum number of facilities needed to reach the specified target market share is chosen.</para>
 		/// <para><see cref="ProblemTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -122,9 +122,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Cutoff</para>
-		/// <para>请求点可分配给设施点的最大阻抗的单位是您所选出行模式所使用的阻抗属性的单位。 最大阻抗以沿网络的最小成本路径进行测量。 如果请求点位于中断外，则不会被分配。 此属性可用于对人们为前往商店而愿意行进的最大距离，以及消防站到达社区中任一请求点所允许的最大时间进行建模。</para>
-		/// <para>可通过在 Cutoff_ [阻抗] 属性中指定请求点子图层中的单个中断值来逐个请求点覆盖中断。 例如，您可能会发现，乡村居民愿意走 10 英里远去往某个设施点，而城镇居民则只愿意走 2 英里的路程。 可按如下方式对此行为进行建模：将分析图层的中断值设置为 10 并将城区中各请求点的 Cutoff_Miles 值设置为 2。</para>
-		/// <para>默认情况下分析不使用中断。</para>
+		/// <para>The maximum impedance at which a demand point can be allocated to a facility in the units of the impedance attribute used by your chosen Travel Mode. The maximum impedance is measured by the least-cost path along the network. If a demand point is outside the cutoff, it is left unallocated. This property might be used to model the maximum distance that people are willing to travel to visit your stores or the maximum time that is permitted for a fire department to reach anyone in the community.</para>
+		/// <para>This cutoff can be overridden on a per-demand-point basis by specifying individual cutoff values in the demand points sublayer in the Cutoff_[Impedance] property. For example, you might find that people in rural areas are willing to travel up to 10 miles to reach a facility while urbanites are only willing to travel up to 2 miles. You can model this behavior by setting the Cutoff value of the analysis layer to 10 and setting the Cutoff_Miles value of each demand point in an urban areas to 2.</para>
+		/// <para>By default, no cutoff is used for the analysis.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -133,11 +133,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Number of Facilities to Find</para>
-		/// <para>指定求解程序将查找的设施点数。 默认情况下，此参数设置为 1。</para>
-		/// <para>当要查找的设施点多于所需设施点时，FacilityType 值为必选项的设施点将始终为解的一部分；要选择的任何额外设施点都将从候选设施点中选取。</para>
-		/// <para>在求解前所有 FacilityType 值为已选项的设施点在求解时都将视为候选设施点。</para>
-		/// <para>对于最小化设施点数问题类型，不会考虑参数值，因为求解程序会确定最小的设施点数来查找最大的覆盖范围。</para>
-		/// <para>对于目标市场份额问题类型，参数值会被覆盖，因为求解程序会搜索要占有指定市场份额所需的最小设施点数。</para>
+		/// <para>Specifies the number of facilities that the solver should locate. By default, this parameter is set to 1.</para>
+		/// <para>The facilities with a FacilityType value of Required are always part of the solution when there are more facilities to find than required facilities; any excess facilities to choose are picked from candidate facilities.</para>
+		/// <para>Any facilities that have a FacilityType value of Chosen before solving are treated as candidate facilities at solve time.</para>
+		/// <para>The parameter value is not considered for the Minimize facilities problem type since the solver determines the minimum number of facilities to locate to maximize coverage.</para>
+		/// <para>The parameter value is overridden for the Target market share problem type because the solver searches for the minimum number of facilities required to capture the specified market share.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -146,11 +146,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Decay Function Type</para>
-		/// <para>此属性可设置对设施点与请求点间网络成本进行变换的方程。 此属性与衰减函数参数值结合使用，可指定设施点与请求点间的网络阻抗对求解程序选择设施点的影响的严重程度。</para>
-		/// <para>线性—设施点和请求点之间变换的网络阻抗与它们之间的最短路径网络阻抗相同。 使用此选项，阻抗参数始终设置为 1。 这是默认设置。</para>
-		/// <para>幂—设施点和请求点之间变换的网络阻抗等于以最短路径网络阻抗为底，以阻抗参数所指定的数为指数的幂运算结果。 将此选项与正阻抗参数结合使用可对附近的设施点指定较高的权重。</para>
-		/// <para>指数—设施点和请求点之间变换的网络阻抗等于以数学常量 e 为底，以最短路径网络阻抗所指定的数为指数的幂乘以阻抗参数。 将此选项与正阻抗参数结合使用可对附近的设施点指定很高的权重。指数变换通常与阻抗中断结合使用。</para>
-		/// <para>如果设置请求点的 ImpedanceTransformation 属性，则该属性会逐个请求点覆盖分析图层的衰减函数参数值属性。 这时，您可能要针对城镇居民和乡村居民使用不同的衰减函数。 可通过为分析图层设置阻抗变换以匹配乡村居民的衰减函数，同时为城镇地区中的各个请求点设置阻抗变换以匹配城镇居民的衰减函数，来执行建模。</para>
+		/// <para>This sets the equation for transforming the network cost between facilities and demand points. This property, coupled with the Decay Function Parameter Value, specifies how severely the network impedance between facilities and demand points influences the solver&apos;s choice of facilities.</para>
+		/// <para>Linear—The transformed network impedance between the facility and the demand point is the same as the shortest-path network impedance between them. With this option, the impedance parameter is always set to 1. This is the default.</para>
+		/// <para>Power—The transformed network impedance between the facility and the demand point is equal to the shortest-path network impedance raised to the power specified by the impedance parameter. Use this option with a positive impedance parameter to specify higher weight to nearby facilities.</para>
+		/// <para>Exponential—The transformed network impedance between the facility and the demand point is equal to the mathematical constant e raised to the power specified by the shortest-path network impedance multiplied with the impedance parameter. Use this option with a positive impedance parameter to specify a very high weight to nearby facilities.Exponential transformations are commonly used in conjunction with an impedance cutoff.</para>
+		/// <para>Demand points have an ImpedanceTransformation property, which, if set, overrides the Decay Function Parameter Value property of the analysis layer on a per-demand-point basis. You might determine that the decay function should be different for urban and rural residents. You can model this by setting the impedance transformation for the analysis layer to match that of rural residents and setting the impedance transformation for the individual demand points located in urban areas to match that of urbanites.</para>
 		/// <para><see cref="DecayFunctionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -161,8 +161,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Decay Function Parameter Value</para>
-		/// <para>衰减函数类型参数中指定的方程的参数值。 当衰减函数的类型为线性时会忽略参数值。 对于幂和指数衰减参数，应设置非零值。</para>
-		/// <para>如果设置请求点的 ImpedanceTransformation 属性，则该属性会逐个请求点覆盖分析图层的衰减函数参数值属性。 这时，您可能要针对城镇居民和乡村居民使用不同的衰减函数。 可通过为分析图层设置阻抗变换以匹配乡村居民的衰减函数，同时为城镇地区中的各个请求点设置阻抗变换以匹配城镇居民的衰减函数，来执行建模。</para>
+		/// <para>A parameter value for the equations specified in the Decay Function Type parameter. The parameter value is ignored when the decay function is of type Linear. For Power and Exponential decay functions, the value should be nonzero.</para>
+		/// <para>Demand points have an ImpedanceTransformation property, which, if set, overrides the Decay Function Parameter Value property of the analysis layer on a per-demand-point basis. You might determine that the decay function should be different for urban and rural residents. You can model this by setting the impedance transformation for the analysis layer to match that of rural residents and setting the impedance transformation for the individual demand points located in urban areas to match that of urbanites.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -171,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Target Market Share</para>
-		/// <para>指定当问题类型参数设置为目标市场份额时要求解的目标市场份额百分比。 它是您希望设施点解占总请求权重的百分比。 求解程序会求出为占有该值指定的目标市场份额所需的最小设施点数。</para>
+		/// <para>Specifies the target market share in percentage to solve for when the Problem Type parameter is set to Target market share. It is the percentage of the total demand weight that you want your solution facilities to capture. The solver chooses the minimum number of facilities required to capture the target market share specified by this numeric value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -180,8 +180,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Capacity</para>
-		/// <para>指定问题类型参数设置为最大化有容量限制的覆盖范围时默认的设施点容量。 对于所有其他问题类型，可忽略此参数。</para>
-		/// <para>设施点有容量属性，如果此属性设置为非空值，将覆盖该设施点的容量参数。</para>
+		/// <para>Specifies the default capacity of facilities when the Problem Type parameter is set to Maximize capacitated coverage. This parameter is ignored for all other problem types.</para>
+		/// <para>Facilities have a Capacity property, which, if set to a nonnull value, overrides the Capacity parameter for that facility.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -190,17 +190,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Time of Day</para>
-		/// <para>出发的时间和日期。 出发时间可以来自设施点或请求点，取决于行驶方向是从请求点到设施点还是从设施点到请求点。</para>
-		/// <para>如果您已经选择了基于流量的阻抗属性，将会根据特定的某天某时的动态交通状况来生成解决方案。 日期和时间可被指定为 5/14/2012 10:30 AM。</para>
-		/// <para>可使用以下日期来指定一周中的每一天，而无需使用特定的日期：</para>
-		/// <para>今天 - 12/30/1899</para>
-		/// <para>星期日 - 12/31/1899</para>
-		/// <para>星期一 - 1/1/1900</para>
-		/// <para>星期二 - 1/2/1900</para>
-		/// <para>星期三 - 1/3/1900</para>
-		/// <para>星期四 - 1/4/1900</para>
-		/// <para>星期五 - 1/5/1900</para>
-		/// <para>星期六 - 1/6/1900</para>
+		/// <para>The time and date of departure. The departure time can be from facilities or demand points, depending on whether Travel Direction is from demand to facility or facility to demand.</para>
+		/// <para>If you have chosen a traffic-based impedance attribute, the solution will be generated given dynamic traffic conditions at the time of day specified here. A date and time can be specified as 5/14/2012 10:30 AM.</para>
+		/// <para>Instead of using a particular date, a day of the week can be specified using the following dates:</para>
+		/// <para>Today—12/30/1899</para>
+		/// <para>Sunday—12/31/1899</para>
+		/// <para>Monday—1/1/1900</para>
+		/// <para>Tuesday—1/2/1900</para>
+		/// <para>Wednesday—1/3/1900</para>
+		/// <para>Thursday—1/4/1900</para>
+		/// <para>Friday—1/5/1900</para>
+		/// <para>Saturday—1/6/1900</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -209,9 +209,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Time Zone</para>
-		/// <para>时间参数的时区。</para>
-		/// <para>各位置的本地时间—时间参数是指设施点或请求点所处的时区。 如果行驶方向是从设施点到请求点，此为设施点所处的时区。 如果行驶方向是从请求点到设施点，此为请求点所处的时区。 这是默认设置。</para>
-		/// <para>UTC—时间参数是指协调世界时间 (UTC)。 如果您想要在指定时间内（如现在）选择最佳位置，但不确定设施点或请求点所在的时区，请选择此选项。</para>
+		/// <para>The time zone of the Time of Day parameter.</para>
+		/// <para>Local time at locations—The Time of Day parameter refers to the time zone in which the facilities or demand points are located. If Travel Direction is facilities to demand points, this is the time zone of the facilities. If Travel Direction is demand points to facilities, this is the time zone of the demand points. This is the default.</para>
+		/// <para>UTC—The Time of Day parameter refers to Coordinated Universal Time (UTC). Choose this option if you want to choose the best location for a specific time, such as now, but aren&apos;t certain in which time zone the facilities or demand points will be located.</para>
 		/// <para><see cref="TimeZoneEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -222,10 +222,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Line Shape</para>
-		/// <para>指定输出线形状。</para>
-		/// <para>无线—将不会为分析的输出生成任何形状。 如果您想求解超大型问题，并且仅对解决方案表感兴趣而不想查看地图中的结果，则此选项十分有用。</para>
-		/// <para>直线—输出线形状是对设施点及其分配的请求点进行连接的直线。 这是默认设置。</para>
-		/// <para>无论选择何种输出 shape 类型，最佳路径始终由网络阻抗（而非欧氏距离）决定。 这表示只是路径形状不同，而对网络进行的基础遍历则相同。</para>
+		/// <para>Specifies the output line shape.</para>
+		/// <para>No lines—No shape will be generated for the output of the analysis. This is useful if you are solving a very large problem and are interested only in solution table and are not interested in visualizing your results in a map.</para>
+		/// <para>Straight lines—The output line shapes will be straight lines connecting the solution facilities to their allocated demand points. This is the default.</para>
+		/// <para>Regardless of the output shape type specified, the best route is always determined by the network impedance, never Euclidean distance. This means that only the route shapes are different, not the underlying traversal of the network.</para>
 		/// <para><see cref="LineShapeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -236,9 +236,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Accumulate Attributes</para>
-		/// <para>分析过程中要累积的成本属性的列表。 这些累积属性仅供参考；求解程序仅使用求解分析时指定的出行模式所使用的成本属性。</para>
-		/// <para>对于每个累积的成本属性，会在网络分析输出要素中填充 Total_[阻抗] 属性。</para>
-		/// <para>如果网络数据源为 ArcGIS Online 服务，或如果网络数据源是不支持累积的 Portal for ArcGIS 版本上的服务，则此参数不可用。</para>
+		/// <para>A list of cost attributes to be accumulated during analysis. These accumulated attributes are for reference only; the solver only uses the cost attribute used by the designated travel mode when solving the analysis.</para>
+		/// <para>For each cost attribute that is accumulated, a Total_[Impedance] property is populated in the network analysis output features.</para>
+		/// <para>This parameter is not available if the network data source is an ArcGIS Online service or the network data source is a service on a version of Portal for ArcGIS that does not support accumulation.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -255,9 +255,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Ignore Invalid Locations at Solve Time</para>
-		/// <para>指定是否忽略无效的输入位置。 通常，如果无法在网络上定位，则位置无效。 当无效位置被忽略时，求解器将跳过它们并尝试使用剩余位置执行分析。</para>
-		/// <para>选中 - 将忽略无效的输入位置，并且仅使用有效的位置。 这是默认设置。</para>
-		/// <para>未选中 - 将使用所有输入位置。 无效的位置将导致分析失败。</para>
+		/// <para>Specifies whether invalid input locations will be ignored. Typically, locations are invalid if they cannot be located on the network. When invalid locations are ignored, the solver will skip them and attempt to perform the analysis using the remaining locations.</para>
+		/// <para>Checked—Invalid input locations will be ignored and only valid locations will be used. This is the default.</para>
+		/// <para>Unchecked—All input locations will be used. Invalid locations will cause the analysis to fail.</para>
 		/// <para><see cref="IgnoreInvalidLocationsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -283,17 +283,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum TravelDirectionEnum 
 		{
 			/// <summary>
-			/// <para>朝向设施点—行驶方向从请求点到设施点。 零售店通常使用该设置，因为他们需要关注购物者到达商店所需的时间。</para>
+			/// <para>Toward facilities—Direction of travel is from demand points to facilities. Retail stores commonly use this setting, since they are concerned with the time it takes the shoppers to reach the store.</para>
 			/// </summary>
 			[GPValue("TO_FACILITIES")]
-			[Description("朝向设施点")]
+			[Description("Toward facilities")]
 			Toward_facilities,
 
 			/// <summary>
-			/// <para>远离设施点—行驶方向从设施点到请求点。 这是默认设置。 消防部门通常使用该设置，因为他们需要关注从消防站行驶到紧急救援位置所需的时间。</para>
+			/// <para>Away from facilities—Direction of travel is from facilities to demand points. This is the default. Fire departments commonly use this setting, since they are concerned with the time it takes to travel from the fire station to the location of the emergency.</para>
 			/// </summary>
 			[GPValue("FROM_FACILITIES")]
-			[Description("远离设施点")]
+			[Description("Away from facilities")]
 			Away_from_facilities,
 
 		}
@@ -304,52 +304,52 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum ProblemTypeEnum 
 		{
 			/// <summary>
-			/// <para>最小化阻抗—此选项可解决仓库位置问题。 它选择一组使加权阻抗（请求的位置乘以到最近设施点的阻抗）的总和最小的设施点。 此问题类型通常称为 P 中位数问题。 此为默认问题类型。</para>
+			/// <para>Minimize impedance—This option solves the warehouse location problem. It selects a set of facilities such that the total sum of weighted impedances (demand at a location times the impedance to the closest facility) is minimized. This problem type is often known as the P-Median problem. This is the default problem type.</para>
 			/// </summary>
 			[GPValue("MINIMIZE_IMPEDANCE")]
-			[Description("最小化阻抗")]
+			[Description("Minimize impedance")]
 			Minimize_impedance,
 
 			/// <summary>
-			/// <para>最大化覆盖范围—此选项可解决消防站位置问题。 它选择了多个设施点以保证所有或最大数量的请求点处于指定的阻抗中断范围内。</para>
+			/// <para>Maximize coverage—This option solves the fire station location problem. It chooses facilities such that all or the greatest amount of demand is within a specified impedance cutoff.</para>
 			/// </summary>
 			[GPValue("MAXIMIZE_COVERAGE")]
-			[Description("最大化覆盖范围")]
+			[Description("Maximize coverage")]
 			Maximize_coverage,
 
 			/// <summary>
-			/// <para>最大化具有容量限制的覆盖范围—此选项用于求解容量有限的设施点的位置问题。 此选项将选择一组满足所有或最大数量的请求而不超出任何设施点容量的设施点。 除了支持容量外，该选项还选择一组使加权阻抗（分配给某个设施点的请求点乘以到该设施点的阻抗）的总和最小的设施点。</para>
+			/// <para>Maximize capacitated coverage—This option solves the location problem where facilities have a finite capacity. It chooses facilities such that all or the greatest amount of demand can be served without exceeding the capacity of any facility. In addition to honoring capacity, it selects facilities such that the total sum of weighted impedance (demand allocated to a facility multiplied by the impedance to or from the facility) is minimized.</para>
 			/// </summary>
 			[GPValue("MAXIMIZE_CAPACITATED_COVERAGE")]
-			[Description("最大化具有容量限制的覆盖范围")]
+			[Description("Maximize capacitated coverage")]
 			Maximize_capacitated_coverage,
 
 			/// <summary>
-			/// <para>最小化设施点数—此选项可解决消防站位置问题。 它将选择当在指定的阻抗中断范围内覆盖了所有或最大数量的请求点时所需要的设施点的最小数量。</para>
+			/// <para>Minimize facilities—This option solves the fire station location problem. It chooses the minimum number of facilities needed to cover all or the greatest amount of demand within a specified impedance cutoff.</para>
 			/// </summary>
 			[GPValue("MINIMIZE_FACILITIES")]
-			[Description("最小化设施点数")]
+			[Description("Minimize facilities")]
 			Minimize_facilities,
 
 			/// <summary>
-			/// <para>最大化人流量—此选项可解决邻域存储位置问题，其中分配给最近所选设施点的请求比例将随距离的增加而降低。 已选择最大化总分配请求点的设施点集。 大于指定的阻抗中断的请求点不会影响所选的设施点集。</para>
+			/// <para>Maximize attendance—This option solves the neighborhood store location problem where the proportion of demand allocated to the nearest chosen facility falls with increasing distance. The set of facilities that maximize the total allocated demand is chosen. Demand further than the specified impedance cutoff does not affect the chosen set of facilities.</para>
 			/// </summary>
 			[GPValue("MAXIMIZE_ATTENDANCE")]
-			[Description("最大化人流量")]
+			[Description("Maximize attendance")]
 			Maximize_attendance,
 
 			/// <summary>
-			/// <para>最大化市场份额—此选项可解决竞争性设施点的位置问题。 它选择当存在竞争性设施点时可最大化市场份额的设施点。 重力模型概念用于确定分配给每个设施点的请求点比例。 已选择最大化总分配请求点的设施点集。</para>
+			/// <para>Maximize market share—This option solves the competitive facility location problem. It chooses facilities to maximize market share in the presence of competitive facilities. Gravity model concepts are used to determine the proportion of demand allocated to each facility. The set of facilities that maximizes the total allocated demand is chosen.</para>
 			/// </summary>
 			[GPValue("MAXIMIZE_MARKET_SHARE")]
-			[Description("最大化市场份额")]
+			[Description("Maximize market share")]
 			Maximize_market_share,
 
 			/// <summary>
-			/// <para>目标市场份额—此选项可解决竞争性设施点的位置问题。 它选择当存在竞争性设施点时可达到指定目标市场份额的设施点。 重力模型概念用于确定分配给每个设施点的请求点比例。 已选择的最小设施点量需达到指定的目标市场份额。</para>
+			/// <para>Target market share—This option solves the competitive facility location problem. It chooses facilities to reach a specified target market share in the presence of competitive facilities. Gravity model concepts are used to determine the proportion of demand allocated to each facility. The minimum number of facilities needed to reach the specified target market share is chosen.</para>
 			/// </summary>
 			[GPValue("TARGET_MARKET_SHARE")]
-			[Description("目标市场份额")]
+			[Description("Target market share")]
 			Target_market_share,
 
 		}
@@ -360,24 +360,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum DecayFunctionTypeEnum 
 		{
 			/// <summary>
-			/// <para>线性—设施点和请求点之间变换的网络阻抗与它们之间的最短路径网络阻抗相同。 使用此选项，阻抗参数始终设置为 1。 这是默认设置。</para>
+			/// <para>Linear—The transformed network impedance between the facility and the demand point is the same as the shortest-path network impedance between them. With this option, the impedance parameter is always set to 1. This is the default.</para>
 			/// </summary>
 			[GPValue("LINEAR")]
-			[Description("线性")]
+			[Description("Linear")]
 			Linear,
 
 			/// <summary>
-			/// <para>幂—设施点和请求点之间变换的网络阻抗等于以最短路径网络阻抗为底，以阻抗参数所指定的数为指数的幂运算结果。 将此选项与正阻抗参数结合使用可对附近的设施点指定较高的权重。</para>
+			/// <para>Power—The transformed network impedance between the facility and the demand point is equal to the shortest-path network impedance raised to the power specified by the impedance parameter. Use this option with a positive impedance parameter to specify higher weight to nearby facilities.</para>
 			/// </summary>
 			[GPValue("POWER")]
-			[Description("幂")]
+			[Description("Power")]
 			Power,
 
 			/// <summary>
-			/// <para>指数—设施点和请求点之间变换的网络阻抗等于以数学常量 e 为底，以最短路径网络阻抗所指定的数为指数的幂乘以阻抗参数。 将此选项与正阻抗参数结合使用可对附近的设施点指定很高的权重。指数变换通常与阻抗中断结合使用。</para>
+			/// <para>Exponential—The transformed network impedance between the facility and the demand point is equal to the mathematical constant e raised to the power specified by the shortest-path network impedance multiplied with the impedance parameter. Use this option with a positive impedance parameter to specify a very high weight to nearby facilities.Exponential transformations are commonly used in conjunction with an impedance cutoff.</para>
 			/// </summary>
 			[GPValue("EXPONENTIAL")]
-			[Description("指数")]
+			[Description("Exponential")]
 			Exponential,
 
 		}
@@ -388,17 +388,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum TimeZoneEnum 
 		{
 			/// <summary>
-			/// <para>UTC—时间参数是指协调世界时间 (UTC)。 如果您想要在指定时间内（如现在）选择最佳位置，但不确定设施点或请求点所在的时区，请选择此选项。</para>
+			/// <para>UTC—The Time of Day parameter refers to Coordinated Universal Time (UTC). Choose this option if you want to choose the best location for a specific time, such as now, but aren&apos;t certain in which time zone the facilities or demand points will be located.</para>
 			/// </summary>
 			[GPValue("UTC")]
 			[Description("UTC")]
 			UTC,
 
 			/// <summary>
-			/// <para>各位置的本地时间—时间参数是指设施点或请求点所处的时区。 如果行驶方向是从设施点到请求点，此为设施点所处的时区。 如果行驶方向是从请求点到设施点，此为请求点所处的时区。 这是默认设置。</para>
+			/// <para>Local time at locations—The Time of Day parameter refers to the time zone in which the facilities or demand points are located. If Travel Direction is facilities to demand points, this is the time zone of the facilities. If Travel Direction is demand points to facilities, this is the time zone of the demand points. This is the default.</para>
 			/// </summary>
 			[GPValue("LOCAL_TIME_AT_LOCATIONS")]
-			[Description("各位置的本地时间")]
+			[Description("Local time at locations")]
 			Local_time_at_locations,
 
 		}
@@ -409,17 +409,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum LineShapeEnum 
 		{
 			/// <summary>
-			/// <para>无线—将不会为分析的输出生成任何形状。 如果您想求解超大型问题，并且仅对解决方案表感兴趣而不想查看地图中的结果，则此选项十分有用。</para>
+			/// <para>No lines—No shape will be generated for the output of the analysis. This is useful if you are solving a very large problem and are interested only in solution table and are not interested in visualizing your results in a map.</para>
 			/// </summary>
 			[GPValue("NO_LINES")]
-			[Description("无线")]
+			[Description("No lines")]
 			No_lines,
 
 			/// <summary>
-			/// <para>直线—输出线形状是对设施点及其分配的请求点进行连接的直线。 这是默认设置。</para>
+			/// <para>Straight lines—The output line shapes will be straight lines connecting the solution facilities to their allocated demand points. This is the default.</para>
 			/// </summary>
 			[GPValue("STRAIGHT_LINES")]
-			[Description("直线")]
+			[Description("Straight lines")]
 			Straight_lines,
 
 		}
@@ -430,14 +430,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum IgnoreInvalidLocationsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Invalid input locations will be ignored and only valid locations will be used. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SKIP")]
 			SKIP,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—All input locations will be used. Invalid locations will cause the analysis to fail.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("HALT")]

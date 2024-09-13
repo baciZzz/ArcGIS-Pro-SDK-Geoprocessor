@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Generate Hachures For Defined Slopes</para>
-	/// <para>为定义的坡度生成影线</para>
-	/// <para>用于在表示坡度的上部和下部的线之间创建表示坡度的多部分线或面。</para>
+	/// <para>Generate Hachures For Defined Slopes</para>
+	/// <para>Creates multipart lines or polygons representing the slope between the lines representing the upper and lower parts of a slope.</para>
 	/// </summary>
 	public class GenerateHachuresForDefinedSlopes : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="UpperLines">
 		/// <para>Upper Line Features</para>
-		/// <para>表示斜坡顶部的线要素。</para>
+		/// <para>The line features that represent the top of a slope.</para>
 		/// </param>
 		/// <param name="LowerLines">
 		/// <para>Lower Line Features</para>
-		/// <para>表示斜坡底部的线要素。</para>
+		/// <para>The line features that represent the bottom of a slope.</para>
 		/// </param>
 		/// <param name="OutputFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>此输出要素类包含表示坡度区域的多部分线或面影线。</para>
+		/// <para>The output feature class containing multipart line or polygon hachures representing the slope area.</para>
 		/// </param>
 		public GenerateHachuresForDefinedSlopes(object UpperLines, object LowerLines, object OutputFeatureClass)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 为定义的坡度生成影线</para>
+		/// <para>Tool Display Name : Generate Hachures For Defined Slopes</para>
 		/// </summary>
-		public override string DisplayName() => "为定义的坡度生成影线";
+		public override string DisplayName() => "Generate Hachures For Defined Slopes";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateHachuresForDefinedSlopes</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Upper Line Features</para>
-		/// <para>表示斜坡顶部的线要素。</para>
+		/// <para>The line features that represent the top of a slope.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Lower Line Features</para>
-		/// <para>表示斜坡底部的线要素。</para>
+		/// <para>The line features that represent the bottom of a slope.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>此输出要素类包含表示坡度区域的多部分线或面影线。</para>
+		/// <para>The output feature class containing multipart line or polygon hachures representing the slope area.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -103,9 +103,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Feature Type</para>
-		/// <para>指定是否将创建面三角形或刻度线来表示坡度。</para>
-		/// <para>面三角形—将创建多部分面要素，可在其中为每个影线创建三角形面（具有沿着上线的基线）。 这是默认设置。</para>
-		/// <para>线刻度—系统将创建多部分线要素，可在其中为每个影线创建线性刻度。</para>
+		/// <para>Specifies whether polygon triangles or tick lines will be created to represent the slope.</para>
+		/// <para>Polygon triangles—Multipart polygon features will be created in which a triangular polygon is created for each hachure, with the base along the upper line. This is the default.</para>
+		/// <para>Line ticks—Multipart line features will be created in which a linear tick is created for each hachure.</para>
 		/// <para><see cref="OutputTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -115,9 +115,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Fully connected</para>
-		/// <para>指定输入数据中的上下线是否来自完全连接的区域。 如果上下线未完全连接，请取消选中此参数，以在通过连接上下要素的端点而派生的区域内创建影线。 如果上下线已完全连接，请选中此参数以在完全封闭的区域内创建影线。</para>
-		/// <para>未选中 - 输入数据中的上下要素未完全链接。 将派生上下部要素之间的新连接。 这是默认设置。</para>
-		/// <para>选中 - 输入数据中的上下要素将完全链接。 不会派生部要素之间的新连接。</para>
+		/// <para>Specifies whether the upper and lower lines in the input data form fully connected areas. If the upper and lower lines are not fully connected, leave this parameter unchecked to create hachures inside areas that are derived by connecting the extremities of the upper and lower features. If the upper and lower lines are fully connected, check this parameter to create hachures inside the fully enclosed areas.</para>
+		/// <para>Unchecked—The upper and lower features are not fully connected in the input data. New connections between the upper and lower features will be derived. This is the default.</para>
+		/// <para>Checked—The upper and lower features are fully connected in the input data. New connections between features will not be derived.</para>
 		/// <para><see cref="FullyConnectedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Search Distance</para>
-		/// <para>获取上部要素和下部要素之间的连接时使用的距离。 当上部和下部要素的端点位于此距离内时，要素之间的区域将用于创建影线。 默认值是 20 米。 选中完全连接参数时，此参数不可用。</para>
+		/// <para>The distance used when deriving connections between the upper and lower features. When the extremities for the upper and lower feature are within this distance, the area between the features is used for creating hachures. The default value is 20 meters. When the Fully connected parameter is checked, this parameter is not available.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Hachure Interval</para>
-		/// <para>坡度区域内影线刻度或三角形之间的距离。 默认值是 10 米。</para>
+		/// <para>The distance between the hachure ticks or triangles within the slope area. The default value is 10 meters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Minimum Length</para>
-		/// <para>必须创建影线刻度或三角形的长度。 短于此长度的影线将不会被创建。 默认值是 0 米。</para>
+		/// <para>The length a hachure tick or triangle must be to be created. Hachures that are shorter than this length will not be created. The default value is 0 meters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -151,9 +151,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Alternate length of every other hachure</para>
-		/// <para>指定所有其他三角形或刻度的长度是否会不同。</para>
-		/// <para>未选中 - 所有影线的长度（即，上下坡度线之间的距离）均等。 这是默认设置。</para>
-		/// <para>选中 - 所有其他影线都将是上下坡度线之间距离的一半。</para>
+		/// <para>Specifies whether the length of every other hachure triangle or tick will differ.</para>
+		/// <para>Unchecked—All hachures will be of uniform length, which is the distance between the upper and lower slope lines. This is the default.</para>
+		/// <para>Checked—Every other hachure will be one-half the distance between the upper and lower slope lines.</para>
 		/// <para><see cref="AlternateHachuresEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -163,9 +163,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Perpendicular to upper line</para>
-		/// <para>指定影线刻度或三角形是否将垂直于上坡线。</para>
-		/// <para>未选中 - 将对影线定向以获得均匀的间距。 这是默认设置。</para>
-		/// <para>选中 - 将垂直于上线对影线进行定向。</para>
+		/// <para>Specifies whether the hachure ticks or triangles will be perpendicular to the upper slope line.</para>
+		/// <para>Unchecked—Hachures will be oriented to obtain even spacing. This is the default.</para>
+		/// <para>Checked—Hachures will be oriented perpendicularly to the upper line.</para>
 		/// <para><see cref="PerpendicularEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -175,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Polygon Base Width</para>
-		/// <para>三角形面影线底部的宽度。 仅当输出要素类型参数设置为面三角形时，此参数才会处于活动状态。 默认值是 5 米。</para>
+		/// <para>The width of the base of triangular polygon hachures. This parameter is active only when the Output Feature Type parameter is set to Polygon triangles. The default value is 5 meters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -198,17 +198,17 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum OutputTypeEnum 
 		{
 			/// <summary>
-			/// <para>面三角形—将创建多部分面要素，可在其中为每个影线创建三角形面（具有沿着上线的基线）。 这是默认设置。</para>
+			/// <para>Polygon triangles—Multipart polygon features will be created in which a triangular polygon is created for each hachure, with the base along the upper line. This is the default.</para>
 			/// </summary>
 			[GPValue("POLYGON_TRIANGLES")]
-			[Description("面三角形")]
+			[Description("Polygon triangles")]
 			Polygon_triangles,
 
 			/// <summary>
-			/// <para>线刻度—系统将创建多部分线要素，可在其中为每个影线创建线性刻度。</para>
+			/// <para>Line ticks—Multipart line features will be created in which a linear tick is created for each hachure.</para>
 			/// </summary>
 			[GPValue("LINE_TICKS")]
-			[Description("线刻度")]
+			[Description("Line ticks")]
 			Line_ticks,
 
 		}
@@ -219,14 +219,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum FullyConnectedEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The upper and lower features are fully connected in the input data. New connections between features will not be derived.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FULLY_CONNECTED")]
 			FULLY_CONNECTED,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The upper and lower features are not fully connected in the input data. New connections between the upper and lower features will be derived. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_CONNECTED")]
@@ -240,14 +240,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum AlternateHachuresEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Every other hachure will be one-half the distance between the upper and lower slope lines.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ALTERNATE_HACHURES")]
 			ALTERNATE_HACHURES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—All hachures will be of uniform length, which is the distance between the upper and lower slope lines. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("UNIFORM_HACHURES")]
@@ -261,14 +261,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum PerpendicularEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Hachures will be oriented perpendicularly to the upper line.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PERPENDICULAR")]
 			PERPENDICULAR,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Hachures will be oriented to obtain even spacing. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_PERPENDICULAR")]

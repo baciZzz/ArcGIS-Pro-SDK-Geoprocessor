@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Replica From Server</para>
-	/// <para>从服务器创建复本</para>
-	/// <para>使用在 ArcGIS Server 上发布的地理数据服务，从远程地理数据库利用指定列表中的要素类、图层、要素数据集和表创建复本。</para>
+	/// <para>Create Replica From Server</para>
+	/// <para>Creates a replica using a specified list of feature classes, layers, feature datasets, and tables from a remote geodatabase using a geodata service published on ArcGIS Server.</para>
 	/// </summary>
 	public class CreateReplicaFromServer : AbstractGPProcess
 	{
@@ -21,34 +21,34 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InGeodataservice">
 		/// <para>Geodata Service</para>
-		/// <para>表示用于创建复本的地理数据库的地理数据服务。 地理数据服务所引用的地理数据库必须是企业级地理数据库。</para>
+		/// <para>The geodata service representing the geodatabase from which the replica will be created. The geodatabase referenced by the geodata service must be an enterprise geodatabase.</para>
 		/// </param>
 		/// <param name="Datasets">
 		/// <para>Datasets</para>
-		/// <para>地理数据服务中要复制的要素数据集、独立要素类、表和独立属性关系类的列表。</para>
+		/// <para>The list of the feature datasets, stand-alone feature classes, tables, and stand-alone attributed relationship classes from the geodata service to replicate.</para>
 		/// </param>
 		/// <param name="InType">
 		/// <para>Replica Type</para>
-		/// <para>指定要创建的复本类型。</para>
-		/// <para>双向复本—变更将在子复本和父复本之间进行双向发送。</para>
-		/// <para>单向复本—变更只能从父复本发送到子复本。</para>
-		/// <para>检出复本—一次复制、编辑并检回数据。</para>
-		/// <para>“子-父”单向复本—变更只能从子复本发送到父复本。</para>
+		/// <para>Specifies the type of replica that will be created.</para>
+		/// <para>Two way replica— Changes will be sent between child and parent replicas in both directions.</para>
+		/// <para>One way replica—Changes will be sent from the parent replica to the child replica only.</para>
+		/// <para>Check out replica—Data will be replicated, edited, and checked back in one time.</para>
+		/// <para>One way child to parent replica—Changes will be sent from the child replica to the parent replica only.</para>
 		/// <para><see cref="InTypeEnum"/></para>
 		/// </param>
 		/// <param name="OutGeodatabase">
 		/// <para>Geodatabase to replicate data to</para>
-		/// <para>将托管子复本的本地地理数据库。 地理数据服务用于表示远程地理数据库。 地理数据库可以是企业级或文件地理数据库。 对于双向复本，子地理数据库必须是企业级地理数据库。 对于单向复本和检出复本，地理数据库可以是文件或者企业级地理数据库。 运行此工具前，必须存在文件地理数据库。</para>
+		/// <para>The local geodatabase that will host the child replica. Geodata services are used to represent remote geodatabases. The geodatabase can be an enterprise or file geodatabase. For two-way replicas, the child geodatabase must be an enterprise geodatabase. For one-way and check-out replicas, the geodatabase can be a file or enterprise geodatabase. File geodatabases must exist before running this tool.</para>
 		/// </param>
 		/// <param name="OutName">
 		/// <para>Replica Name</para>
-		/// <para>用于识别复本的名称。</para>
+		/// <para>The name that identifies the replica.</para>
 		/// </param>
 		/// <param name="Archiving">
 		/// <para>Use archiving to track changes for 1 way replication</para>
-		/// <para>指定是否使用存档类来追踪变更而非对增量表进行版本化。 这仅适用于单向复本。</para>
-		/// <para>选中 - 存档将用于追踪变更。</para>
-		/// <para>未选中 - 存档将不会用于追踪变更。 这是默认设置。</para>
+		/// <para>Specifies whether the archive class will be used to track changes instead of the versioning delta tables. This is only available for one-way replicas.</para>
+		/// <para>Checked—Archiving will be used to track changes.</para>
+		/// <para>Not checked—Archiving will not be used to track changes. This is the default.</para>
 		/// <para><see cref="ArchivingEnum"/></para>
 		/// </param>
 		public CreateReplicaFromServer(object InGeodataservice, object Datasets, object InType, object OutGeodatabase, object OutName, object Archiving)
@@ -62,9 +62,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 从服务器创建复本</para>
+		/// <para>Tool Display Name : Create Replica From Server</para>
 		/// </summary>
-		public override string DisplayName() => "从服务器创建复本";
+		public override string DisplayName() => "Create Replica From Server";
 
 		/// <summary>
 		/// <para>Tool Name : CreateReplicaFromServer</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Geodata Service</para>
-		/// <para>表示用于创建复本的地理数据库的地理数据服务。 地理数据服务所引用的地理数据库必须是企业级地理数据库。</para>
+		/// <para>The geodata service representing the geodatabase from which the replica will be created. The geodatabase referenced by the geodata service must be an enterprise geodatabase.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEGeoDataServer()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Datasets</para>
-		/// <para>地理数据服务中要复制的要素数据集、独立要素类、表和独立属性关系类的列表。</para>
+		/// <para>The list of the feature datasets, stand-alone feature classes, tables, and stand-alone attributed relationship classes from the geodata service to replicate.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -114,11 +114,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Replica Type</para>
-		/// <para>指定要创建的复本类型。</para>
-		/// <para>双向复本—变更将在子复本和父复本之间进行双向发送。</para>
-		/// <para>单向复本—变更只能从父复本发送到子复本。</para>
-		/// <para>检出复本—一次复制、编辑并检回数据。</para>
-		/// <para>“子-父”单向复本—变更只能从子复本发送到父复本。</para>
+		/// <para>Specifies the type of replica that will be created.</para>
+		/// <para>Two way replica— Changes will be sent between child and parent replicas in both directions.</para>
+		/// <para>One way replica—Changes will be sent from the parent replica to the child replica only.</para>
+		/// <para>Check out replica—Data will be replicated, edited, and checked back in one time.</para>
+		/// <para>One way child to parent replica—Changes will be sent from the child replica to the parent replica only.</para>
 		/// <para><see cref="InTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Geodatabase to replicate data to</para>
-		/// <para>将托管子复本的本地地理数据库。 地理数据服务用于表示远程地理数据库。 地理数据库可以是企业级或文件地理数据库。 对于双向复本，子地理数据库必须是企业级地理数据库。 对于单向复本和检出复本，地理数据库可以是文件或者企业级地理数据库。 运行此工具前，必须存在文件地理数据库。</para>
+		/// <para>The local geodatabase that will host the child replica. Geodata services are used to represent remote geodatabases. The geodatabase can be an enterprise or file geodatabase. For two-way replicas, the child geodatabase must be an enterprise geodatabase. For one-way and check-out replicas, the geodatabase can be a file or enterprise geodatabase. File geodatabases must exist before running this tool.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Replica Name</para>
-		/// <para>用于识别复本的名称。</para>
+		/// <para>The name that identifies the replica.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -145,9 +145,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Replica Access Type</para>
-		/// <para>指定要创建的复本访问类型。</para>
-		/// <para>全部—支持复杂类型（例如拓扑），并且必须对数据进行版本化。 这是默认设置。</para>
-		/// <para>简单—子复本上的数据不可版本化且必须为简单形式。 将允许复本互相操作。 在复制期间，父地理数据库中的非简单要素（例如，拓扑中的要素）转换为简单要素（例如点、线和面要素类）。</para>
+		/// <para>Specifies the type of replica access.</para>
+		/// <para>Full—Complex types such as topologies, are supported and the data must be versioned. This is the default.</para>
+		/// <para>Simple—The data on the child is not versioned and must be simple. This allows the replica to be interoperable. Nonsimple features in the parent (for example, features in topologies) are converted to simple features (for example, point, line, and polygon feature classes).</para>
 		/// <para><see cref="AccessTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -158,9 +158,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Initial Data Sender</para>
-		/// <para>指定在断开连接模式下哪个复本可发送变更。 如果在连接模式下工作，此参数无关紧要。 这样可确保首先从初始数据发送方接收到变更后，关系复本才发送更新。</para>
-		/// <para>子数据发送方—子复本将为初始数据发送方。 这是默认设置。</para>
-		/// <para>父数据发送方—父复本将为初始数据发送方。</para>
+		/// <para>Specifies which replica will send changes when in disconnected mode. If you are working in a connected mode, this parameter is inconsequential. This ensures that the relative replica will not send updates until the changes are first received from the initial data sender.</para>
+		/// <para>Child data sender—The child replica will be the initial data sender. This is the default.</para>
+		/// <para>Parent data sender—The parent replica will be the initial data sender.</para>
 		/// <para><see cref="InitialDataSenderEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -171,11 +171,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Expand Feature Classes and Tables</para>
-		/// <para>指定是否将添加扩展要素类和表（例如网络、拓扑或关系类中的要素类和表）。</para>
-		/// <para>使用默认值—将添加与复本中的要素类和表相关的扩展要素类和表。 要素类的默认设置是复制所有与空间过滤器相交的要素。 如果未提供任何空间过滤器，则系统会将所有要素包括在内。 表的默认设置是仅复制方案。 这是默认设置。</para>
-		/// <para>仅使用方案添加—将仅为扩展要素类和表添加方案。</para>
-		/// <para>所有行—将为扩展要素类和表添加所有行。</para>
-		/// <para>不添加—将不添加扩展要素类或表。</para>
+		/// <para>Specifies whether expanded feature classes and tables—such as those in networks, topologies, or relationship classes—will be added.</para>
+		/// <para>Use defaults—The expanded feature classes and tables related to the feature classes and tables in the replica will be added. The default for feature classes is to replicate all features intersecting the spatial filter. If no spatial filter has been provided, all features will be included. The default for tables is to replicate the schema only. This is the default.</para>
+		/// <para>Add with schema only—Only the schema for the expanded feature classes and tables will be added.</para>
+		/// <para>All rows—All rows for expanded feature classes and tables will be added.</para>
+		/// <para>Do not add—No expanded feature classes or tables will be added.</para>
 		/// <para><see cref="ExpandFeatureClassesAndTablesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -186,9 +186,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Re-use Schema</para>
-		/// <para>指定是否将重用包含要复制数据的方案的地理数据库。 这可以减少复制数据所需的时间。 此参数仅适用于检出复本。</para>
-		/// <para>不重用—将不会重用方案。 这是默认设置。</para>
-		/// <para>重用—将使用方案。</para>
+		/// <para>Specifies whether a geodatabase that contains the schema of the data to be replicated will be reused. This reduces the amount of time required to replicate the data. This parameter is only available for checkout replicas.</para>
+		/// <para>Do not reuse—Schema will not be reused. This is the default.</para>
+		/// <para>Reuse—Schema will be used.</para>
 		/// <para><see cref="ReuseSchemaEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -199,9 +199,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Replicate Related Data</para>
-		/// <para>指定是否将复制与复本中现有行相关的行。 例如，复本过滤器内部存在一个要素 (f1)，且该过滤器外部存在一个来自其他类的相关要素 (f2)。 如果您选择获取相关数据，则要素 f2 会包含到复本中。</para>
-		/// <para>不取得关联—将不会复制相关数据。</para>
-		/// <para>取得关联—将复制相关数据。 这是默认设置。</para>
+		/// <para>Specifies whether rows related to rows existing in the replica will be replicated. For example, a feature (f1) is inside the replication filter and a related feature (f2) from another class is outside the filter. Feature f2 is included in the replica if you choose to get related data.</para>
+		/// <para>Do not get related—Related data will not be replicated.</para>
+		/// <para>Get related—Related data will be replicated. This is the default.</para>
 		/// <para><see cref="GetRelatedDataEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -212,7 +212,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Replica Geometry Features</para>
-		/// <para>将用于定义要复制区域的要素。</para>
+		/// <para>The features that will be used to define the area to replicate.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -223,9 +223,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Use archiving to track changes for 1 way replication</para>
-		/// <para>指定是否使用存档类来追踪变更而非对增量表进行版本化。 这仅适用于单向复本。</para>
-		/// <para>选中 - 存档将用于追踪变更。</para>
-		/// <para>未选中 - 存档将不会用于追踪变更。 这是默认设置。</para>
+		/// <para>Specifies whether the archive class will be used to track changes instead of the versioning delta tables. This is only available for one-way replicas.</para>
+		/// <para>Checked—Archiving will be used to track changes.</para>
+		/// <para>Not checked—Archiving will not be used to track changes. This is the default.</para>
 		/// <para><see cref="ArchivingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -265,31 +265,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum InTypeEnum 
 		{
 			/// <summary>
-			/// <para>双向复本—变更将在子复本和父复本之间进行双向发送。</para>
+			/// <para>Two way replica— Changes will be sent between child and parent replicas in both directions.</para>
 			/// </summary>
 			[GPValue("TWO_WAY_REPLICA")]
-			[Description("双向复本")]
+			[Description("Two way replica")]
 			Two_way_replica,
 
 			/// <summary>
-			/// <para>单向复本—变更只能从父复本发送到子复本。</para>
+			/// <para>One way replica—Changes will be sent from the parent replica to the child replica only.</para>
 			/// </summary>
 			[GPValue("ONE_WAY_REPLICA")]
-			[Description("单向复本")]
+			[Description("One way replica")]
 			One_way_replica,
 
 			/// <summary>
-			/// <para>检出复本—一次复制、编辑并检回数据。</para>
+			/// <para>Check out replica—Data will be replicated, edited, and checked back in one time.</para>
 			/// </summary>
 			[GPValue("CHECK_OUT")]
-			[Description("检出复本")]
+			[Description("Check out replica")]
 			Check_out_replica,
 
 			/// <summary>
-			/// <para>“子-父”单向复本—变更只能从子复本发送到父复本。</para>
+			/// <para>One way child to parent replica—Changes will be sent from the child replica to the parent replica only.</para>
 			/// </summary>
 			[GPValue("ONE_WAY_CHILD_TO_PARENT_REPLICA")]
-			[Description("“子-父”单向复本")]
+			[Description("One way child to parent replica")]
 			One_way_child_to_parent_replica,
 
 		}
@@ -300,17 +300,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AccessTypeEnum 
 		{
 			/// <summary>
-			/// <para>全部—支持复杂类型（例如拓扑），并且必须对数据进行版本化。 这是默认设置。</para>
+			/// <para>Full—Complex types such as topologies, are supported and the data must be versioned. This is the default.</para>
 			/// </summary>
 			[GPValue("FULL")]
-			[Description("全部")]
+			[Description("Full")]
 			Full,
 
 			/// <summary>
-			/// <para>简单—子复本上的数据不可版本化且必须为简单形式。 将允许复本互相操作。 在复制期间，父地理数据库中的非简单要素（例如，拓扑中的要素）转换为简单要素（例如点、线和面要素类）。</para>
+			/// <para>Simple—The data on the child is not versioned and must be simple. This allows the replica to be interoperable. Nonsimple features in the parent (for example, features in topologies) are converted to simple features (for example, point, line, and polygon feature classes).</para>
 			/// </summary>
 			[GPValue("SIMPLE")]
-			[Description("简单")]
+			[Description("Simple")]
 			Simple,
 
 		}
@@ -321,17 +321,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum InitialDataSenderEnum 
 		{
 			/// <summary>
-			/// <para>子数据发送方—子复本将为初始数据发送方。 这是默认设置。</para>
+			/// <para>Child data sender—The child replica will be the initial data sender. This is the default.</para>
 			/// </summary>
 			[GPValue("CHILD_DATA_SENDER")]
-			[Description("子数据发送方")]
+			[Description("Child data sender")]
 			Child_data_sender,
 
 			/// <summary>
-			/// <para>父数据发送方—父复本将为初始数据发送方。</para>
+			/// <para>Parent data sender—The parent replica will be the initial data sender.</para>
 			/// </summary>
 			[GPValue("PARENT_DATA_SENDER")]
-			[Description("父数据发送方")]
+			[Description("Parent data sender")]
 			Parent_data_sender,
 
 		}
@@ -342,31 +342,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ExpandFeatureClassesAndTablesEnum 
 		{
 			/// <summary>
-			/// <para>使用默认值—将添加与复本中的要素类和表相关的扩展要素类和表。 要素类的默认设置是复制所有与空间过滤器相交的要素。 如果未提供任何空间过滤器，则系统会将所有要素包括在内。 表的默认设置是仅复制方案。 这是默认设置。</para>
+			/// <para>Use defaults—The expanded feature classes and tables related to the feature classes and tables in the replica will be added. The default for feature classes is to replicate all features intersecting the spatial filter. If no spatial filter has been provided, all features will be included. The default for tables is to replicate the schema only. This is the default.</para>
 			/// </summary>
 			[GPValue("USE_DEFAULTS")]
-			[Description("使用默认值")]
+			[Description("Use defaults")]
 			Use_defaults,
 
 			/// <summary>
-			/// <para>仅使用方案添加—将仅为扩展要素类和表添加方案。</para>
+			/// <para>Add with schema only—Only the schema for the expanded feature classes and tables will be added.</para>
 			/// </summary>
 			[GPValue("ADD_WITH_SCHEMA_ONLY")]
-			[Description("仅使用方案添加")]
+			[Description("Add with schema only")]
 			Add_with_schema_only,
 
 			/// <summary>
-			/// <para>所有行—将为扩展要素类和表添加所有行。</para>
+			/// <para>All rows—All rows for expanded feature classes and tables will be added.</para>
 			/// </summary>
 			[GPValue("ALL_ROWS")]
-			[Description("所有行")]
+			[Description("All rows")]
 			All_rows,
 
 			/// <summary>
-			/// <para>不添加—将不添加扩展要素类或表。</para>
+			/// <para>Do not add—No expanded feature classes or tables will be added.</para>
 			/// </summary>
 			[GPValue("DO_NOT_ADD")]
-			[Description("不添加")]
+			[Description("Do not add")]
 			Do_not_add,
 
 		}
@@ -377,17 +377,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ReuseSchemaEnum 
 		{
 			/// <summary>
-			/// <para>重用—将使用方案。</para>
+			/// <para>Reuse—Schema will be used.</para>
 			/// </summary>
 			[GPValue("REUSE")]
-			[Description("重用")]
+			[Description("Reuse")]
 			Reuse,
 
 			/// <summary>
-			/// <para>不重用—将不会重用方案。 这是默认设置。</para>
+			/// <para>Do not reuse—Schema will not be reused. This is the default.</para>
 			/// </summary>
 			[GPValue("DO_NOT_REUSE")]
-			[Description("不重用")]
+			[Description("Do not reuse")]
 			Do_not_reuse,
 
 		}
@@ -398,17 +398,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum GetRelatedDataEnum 
 		{
 			/// <summary>
-			/// <para>取得关联—将复制相关数据。 这是默认设置。</para>
+			/// <para>Get related—Related data will be replicated. This is the default.</para>
 			/// </summary>
 			[GPValue("GET_RELATED")]
-			[Description("取得关联")]
+			[Description("Get related")]
 			Get_related,
 
 			/// <summary>
-			/// <para>不取得关联—将不会复制相关数据。</para>
+			/// <para>Do not get related—Related data will not be replicated.</para>
 			/// </summary>
 			[GPValue("DO_NOT_GET_RELATED")]
-			[Description("不取得关联")]
+			[Description("Do not get related")]
 			Do_not_get_related,
 
 		}
@@ -419,7 +419,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ArchivingEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Archiving will be used to track changes.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ARCHIVING")]

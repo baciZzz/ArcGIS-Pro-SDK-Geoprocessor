@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Consolidate Project</para>
-	/// <para>合并工程</para>
-	/// <para>将工程（.aprx 文件）与引用的地图和数据合并到一个指定的输出文件夹。</para>
+	/// <para>Consolidate Project</para>
+	/// <para>Consolidates a project (an .aprx file) and referenced maps and data into a specified output folder.</para>
 	/// </summary>
 	public class ConsolidateProject : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InProject">
 		/// <para>Input Project</para>
-		/// <para>要合并的工程（.aprx 文件）。</para>
+		/// <para>The project (.aprx file) to be consolidated.</para>
 		/// </param>
 		/// <param name="OutputFolder">
 		/// <para>Output Folder</para>
-		/// <para>此输出文件夹将包含合并的工程和数据。 如果指定的文件夹不存在，将创建一个文件夹。</para>
+		/// <para>The output folder that will contain the consolidated project and data. If the specified folder does not exist, a folder will be created.</para>
 		/// </param>
 		public ConsolidateProject(object InProject, object OutputFolder)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 合并工程</para>
+		/// <para>Tool Display Name : Consolidate Project</para>
 		/// </summary>
-		public override string DisplayName() => "合并工程";
+		public override string DisplayName() => "Consolidate Project";
 
 		/// <summary>
 		/// <para>Tool Name : ConsolidateProject</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Project</para>
-		/// <para>要合并的工程（.aprx 文件）。</para>
+		/// <para>The project (.aprx file) to be consolidated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Folder</para>
-		/// <para>此输出文件夹将包含合并的工程和数据。 如果指定的文件夹不存在，将创建一个文件夹。</para>
+		/// <para>The output folder that will contain the consolidated project and data. If the specified folder does not exist, a folder will be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -88,9 +88,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Share outside of organization</para>
-		/// <para>指定是将工程和所有数据合并到单个文件夹（在组织外共享）还是引用这些工程和数据（在组织内共享）。 通过企业级地理数据库或 UNC 文件系统引用的数据路径可在内部共享。 如果工程并非通过此类数据路径构建，则数据将合并到工程包中。如果工程通过本地路径（例如 c:\gisdata\landrecords.gdb\）引用数据和地图，则将对这些数据和地图进行合并和打包（不考虑该参数设置）。</para>
-		/// <para>未选中 - 工程及其数据源将不会合并到输出文件夹。 这是默认设置。 该参数适用于企业级地理数据库数据源，其中包括通过 UNC 路径引用的企业级地理数据库和文件夹。</para>
-		/// <para>选中 - 工程及其数据源将被复制和保留（如有可能）。</para>
+		/// <para>Specifies whether the project and all data will be consolidated into a single folder (for sharing outside your organization) or referenced (for sharing inside your organization). Data paths referenced from enterprise geodatabases or a UNC file system can be shared internally. If the project was not built with data paths like this, the data will be consolidated into the project package.Data and maps will be consolidated and packaged if the project references them from a local path, such as c:\gisdata\landrecords.gdb\ regardless of this parameter&apos;s setting.</para>
+		/// <para>Unchecked—The project and its data sources will not be consolidated into the output folder. This is the default. This parameter applies to enterprise geodatabase data sources, including enterprise geodatabases and folders referenced through a UNC path.</para>
+		/// <para>Checked—The project and its data sources will be copied and preserved when possible.</para>
 		/// <para><see cref="SharingInternalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -100,13 +100,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Extent</para>
-		/// <para>指定用于选择或裁剪要素的范围。</para>
-		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
-		/// <para>输入的并集 - 该范围将基于所有输入的最大范围。</para>
-		/// <para>输入的交集 - 该范围将基于所有输入共用的最小区域。</para>
-		/// <para>当前显示范围 - 该范围与可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
-		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
-		/// <para>浏览 - 该范围将基于现有数据集。</para>
+		/// <para>Specifies the extent that will be used to select or clip features.</para>
+		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
+		/// <para>Union of Inputs—The extent will be based on the maximum extent of all inputs.</para>
+		/// <para>Intersection of Inputs—The extent will be based on the minimum area common to all inputs.</para>
+		/// <para>Current Display Extent—The extent is equal to the visible display. The option is not available when there is no active map.</para>
+		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
+		/// <para>Browse—The extent will be based on an existing dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -114,9 +114,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Apply Extent only to enterprise geodatabase layers</para>
-		/// <para>指定将范围参数应用到所有图层，还是仅应用到企业级地理数据库图层。</para>
-		/// <para>未选中 - 范围将应用到所有图层。 这是默认设置。</para>
-		/// <para>选中 - 范围将仅应用到企业级地理数据库图层。</para>
+		/// <para>Specifies whether the Extent parameter will be applied to all layers or to enterprise geodatabase layers only.</para>
+		/// <para>Unchecked—The extent will be applied to all layers. This is the default.</para>
+		/// <para>Checked—The extent will be applied to enterprise geodatabase layers only.</para>
 		/// <para><see cref="ApplyExtentToEnterpriseGeoEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -126,9 +126,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Consolidate as template</para>
-		/// <para>指定将工程作为模板工程还是规则工程进行合并。 模板可以包含地图、布局、数据库和服务器的连接等。 通过工程模板，您可以标准化一系列地图以在工程中使用，并确保人们可立即使用正确的图层。</para>
-		/// <para>未选中 - 该工程将被作为工程合并到文件夹中。 这是默认设置。</para>
-		/// <para>选中 - 该工程将被作为模板合并到文件夹中。</para>
+		/// <para>Specifies whether the project will be consolidated as a template or a regular project. Templates can include maps, layouts, connections to databases and servers, and so on. A project template allows you to standardize a series of maps for use in a project and ensure that the correct layers are immediately available for use.</para>
+		/// <para>Unchecked—The project will be consolidated as a project into a folder. This is the default.</para>
+		/// <para>Checked—The project will be consolidated as a template into a folder.</para>
 		/// <para><see cref="PackageAsTemplateEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -138,9 +138,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Preserve Mobile Geodatabase</para>
-		/// <para>用于指定是保留移动地理数据库还是将其转换为文件地理数据库。该参数仅适用于移动地理数据库 (.geodatabase)，主要用于 ArcGIS Runtime 应用程序中的离线工作流。 文件扩展名为 .sqlite 或 .gpkg 的 SQLite 数据库将转换为文件地理数据库。</para>
-		/// <para>未选中 - 移动地理数据库将被转换为文件地理数据库。 这是默认设置。</para>
-		/// <para>选中 - 将保留移动地理数据库。</para>
+		/// <para>Specifies whether mobile geodatabases will be preserved or converted to file geodatabases.This parameter applies only to mobile geodatabases (.geodatabase), used primarily for offline workflows in ArcGIS Runtime apps. SQLite databases with .sqlite or .gpkg file extensions will be converted to file geodatabases.</para>
+		/// <para>Unchecked—Mobile geodatabases will be converted to file geodatabases. This is the default.</para>
+		/// <para>Checked—Mobile geodatabases will be preserved.</para>
 		/// <para><see cref="PreserveSqliteEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -150,17 +150,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Version</para>
-		/// <para>指定合并工程的另存 ArcGIS Pro 版本。 保存到较早版本可以确保工具向后兼容。 如果尝试将工具箱合并到较早版本，而工具箱中包含仅在较新版本中可用的功能，则会发生错误。 您必须移除与较早版本不兼容的工具或指定兼容的版本。</para>
-		/// <para>当前版本—合并的文件夹将包含与当前版本兼容的地理数据库和地图。</para>
-		/// <para>2.2—合并的文件夹将包含与 2.2 版本兼容的地理数据库和地图。</para>
-		/// <para>2.3—合并的文件夹将包含与 2.3 版本兼容的地理数据库和地图。</para>
-		/// <para>2.4—合并的文件夹将包含与 2.4 版本兼容的地理数据库和地图。</para>
-		/// <para>2.5—合并的文件夹将包含与 2.5 版本兼容的地理数据库和地图。</para>
-		/// <para>2.6—合并的文件夹将包含与 2.6 版本兼容的地理数据库和地图。</para>
-		/// <para>2.7—合并的文件夹将包含与 2.7 版本兼容的地理数据库和地图。</para>
-		/// <para>2.8—合并的文件夹将包含与 2.8 版本兼容的地理数据库和地图。</para>
-		/// <para>2.9—合并的文件夹将包含与 2.9 版本兼容的地理数据库和地图。</para>
-		/// <para>3.0—合并的文件夹将包含与 3.0 版本兼容的地理数据库和地图。</para>
+		/// <para>Specifies the ArcGIS Pro version that the consolidated project will be saved as. Saving to an earlier version will ensure tool backward compatibility. If you attempt to consolidate a toolbox to an earlier version and capabilities that are only available in the newer version are included, an error will occur. You must remove tools that are incompatible with the earlier version, or specify a compatible version.</para>
+		/// <para>Current version— The consolidated folder will contain geodatabases and maps compatible with the version of the current release.</para>
+		/// <para>2.2— The consolidated folder will contain geodatabases and maps compatible with version 2.2.</para>
+		/// <para>2.3—The consolidated folder will contain geodatabases and maps compatible with version 2.3.</para>
+		/// <para>2.4—The consolidated folder will contain geodatabases and maps compatible with version 2.4.</para>
+		/// <para>2.5—The consolidated folder will contain geodatabases and maps compatible with version 2.5.</para>
+		/// <para>2.6—The consolidated folder will contain geodatabases and maps compatible with version 2.6.</para>
+		/// <para>2.7—The consolidated folder will contain geodatabases and maps compatible with version 2.7.</para>
+		/// <para>2.8—The consolidated folder will contain geodatabases and maps compatible with version 2.8.</para>
+		/// <para>2.9—The consolidated folder will contain geodatabases and maps compatible with version 2.9.</para>
+		/// <para>3.0—The consolidated folder will contain geodatabases and maps compatible with version 3.0.</para>
 		/// <para><see cref="VersionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -170,9 +170,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Keep only the rows which are related to features within the extent</para>
-		/// <para>指定是否将指定的范围应用至相关数据源。</para>
-		/// <para>未选中 - 相关的数据源将全部合并。 这是默认设置。</para>
-		/// <para>选中 - 仅合并指定范围内与记录对应的相关数据。</para>
+		/// <para>Specifies whether the specified extent will be applied to related data sources.</para>
+		/// <para>Unchecked—Related data sources will be consolidated in their entirety. This is the default.</para>
+		/// <para>Checked—Only related data corresponding to records within the specified extent will be consolidated.</para>
 		/// <para><see cref="SelectRelatedRowsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -197,14 +197,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SharingInternalEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The project and its data sources will be copied and preserved when possible.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EXTERNAL")]
 			EXTERNAL,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The project and its data sources will not be consolidated into the output folder. This is the default. This parameter applies to enterprise geodatabase data sources, including enterprise geodatabases and folders referenced through a UNC path.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INTERNAL")]
@@ -218,14 +218,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ApplyExtentToEnterpriseGeoEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The extent will be applied to enterprise geodatabase layers only.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ENTERPRISE_ONLY")]
 			ENTERPRISE_ONLY,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The extent will be applied to all layers. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ALL")]
@@ -239,14 +239,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum PackageAsTemplateEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The project will be consolidated as a template into a folder.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PROJECT_TEMPLATE")]
 			PROJECT_TEMPLATE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The project will be consolidated as a project into a folder. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("PROJECT_PACKAGE")]
@@ -260,14 +260,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum PreserveSqliteEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Mobile geodatabases will be preserved.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PRESERVE_SQLITE")]
 			PRESERVE_SQLITE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Mobile geodatabases will be converted to file geodatabases. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("CONVERT_SQLITE")]
@@ -281,70 +281,70 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum VersionEnum 
 		{
 			/// <summary>
-			/// <para>当前版本—合并的文件夹将包含与当前版本兼容的地理数据库和地图。</para>
+			/// <para>Current version— The consolidated folder will contain geodatabases and maps compatible with the version of the current release.</para>
 			/// </summary>
 			[GPValue("CURRENT")]
-			[Description("当前版本")]
+			[Description("Current version")]
 			Current_version,
 
 			/// <summary>
-			/// <para>2.2—合并的文件夹将包含与 2.2 版本兼容的地理数据库和地图。</para>
+			/// <para>2.2— The consolidated folder will contain geodatabases and maps compatible with version 2.2.</para>
 			/// </summary>
 			[GPValue("2.2")]
 			[Description("2.2")]
 			_22,
 
 			/// <summary>
-			/// <para>2.3—合并的文件夹将包含与 2.3 版本兼容的地理数据库和地图。</para>
+			/// <para>2.3—The consolidated folder will contain geodatabases and maps compatible with version 2.3.</para>
 			/// </summary>
 			[GPValue("2.3")]
 			[Description("2.3")]
 			_23,
 
 			/// <summary>
-			/// <para>2.4—合并的文件夹将包含与 2.4 版本兼容的地理数据库和地图。</para>
+			/// <para>2.4—The consolidated folder will contain geodatabases and maps compatible with version 2.4.</para>
 			/// </summary>
 			[GPValue("2.4")]
 			[Description("2.4")]
 			_24,
 
 			/// <summary>
-			/// <para>2.5—合并的文件夹将包含与 2.5 版本兼容的地理数据库和地图。</para>
+			/// <para>2.5—The consolidated folder will contain geodatabases and maps compatible with version 2.5.</para>
 			/// </summary>
 			[GPValue("2.5")]
 			[Description("2.5")]
 			_25,
 
 			/// <summary>
-			/// <para>2.6—合并的文件夹将包含与 2.6 版本兼容的地理数据库和地图。</para>
+			/// <para>2.6—The consolidated folder will contain geodatabases and maps compatible with version 2.6.</para>
 			/// </summary>
 			[GPValue("2.6")]
 			[Description("2.6")]
 			_26,
 
 			/// <summary>
-			/// <para>2.7—合并的文件夹将包含与 2.7 版本兼容的地理数据库和地图。</para>
+			/// <para>2.7—The consolidated folder will contain geodatabases and maps compatible with version 2.7.</para>
 			/// </summary>
 			[GPValue("2.7")]
 			[Description("2.7")]
 			_27,
 
 			/// <summary>
-			/// <para>2.8—合并的文件夹将包含与 2.8 版本兼容的地理数据库和地图。</para>
+			/// <para>2.8—The consolidated folder will contain geodatabases and maps compatible with version 2.8.</para>
 			/// </summary>
 			[GPValue("2.8")]
 			[Description("2.8")]
 			_28,
 
 			/// <summary>
-			/// <para>2.9—合并的文件夹将包含与 2.9 版本兼容的地理数据库和地图。</para>
+			/// <para>2.9—The consolidated folder will contain geodatabases and maps compatible with version 2.9.</para>
 			/// </summary>
 			[GPValue("2.9")]
 			[Description("2.9")]
 			_29,
 
 			/// <summary>
-			/// <para>3.0—合并的文件夹将包含与 3.0 版本兼容的地理数据库和地图。</para>
+			/// <para>3.0—The consolidated folder will contain geodatabases and maps compatible with version 3.0.</para>
 			/// </summary>
 			[GPValue("3.0")]
 			[Description("3.0")]
@@ -358,14 +358,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SelectRelatedRowsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Only related data corresponding to records within the specified extent will be consolidated.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("KEEP_ONLY_RELATED_ROWS")]
 			KEEP_ONLY_RELATED_ROWS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Related data sources will be consolidated in their entirety. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("KEEP_ALL_RELATED_ROWS")]

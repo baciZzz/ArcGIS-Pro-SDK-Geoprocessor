@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Dimensional Moving Statistics</para>
-	/// <para>维度移动统计数据</para>
-	/// <para>在沿指定维度的多维数据的移动窗口上计算统计数据。</para>
+	/// <para>Dimensional Moving Statistics</para>
+	/// <para>Calculates statistics over a moving window on multidimensional data along a specified dimension.</para>
 	/// </summary>
 	public class DimensionalMovingStatistics : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Multidimensional Raster</para>
-		/// <para>输入栅格只能是云栅格格式（.crf 文件）的多维栅格。</para>
+		/// <para>The input raster can only be a multidimensional raster in Cloud Raster Format (.crf file).</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output Multidimensional Raster</para>
-		/// <para>输出栅格只能是云栅格格式（.crf 文件）的多维栅格。</para>
+		/// <para>The output raster can only be a multidimensional raster in Cloud Raster Format (.crf file).</para>
 		/// </param>
 		public DimensionalMovingStatistics(object InRaster, object OutRaster)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 维度移动统计数据</para>
+		/// <para>Tool Display Name : Dimensional Moving Statistics</para>
 		/// </summary>
-		public override string DisplayName() => "维度移动统计数据";
+		public override string DisplayName() => "Dimensional Moving Statistics";
 
 		/// <summary>
 		/// <para>Tool Name : DimensionalMovingStatistics</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>
-		/// <para>输入栅格只能是云栅格格式（.crf 文件）的多维栅格。</para>
+		/// <para>The input raster can only be a multidimensional raster in Cloud Raster Format (.crf file).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRasterLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output Multidimensional Raster</para>
-		/// <para>输出栅格只能是云栅格格式（.crf 文件）的多维栅格。</para>
+		/// <para>The output raster can only be a multidimensional raster in Cloud Raster Format (.crf file).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -86,8 +86,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Dimension</para>
-		/// <para>窗口将沿其移动的维度名称。</para>
-		/// <para>默认值是输入多维栅格中除 x,y 之外的第一个维度。</para>
+		/// <para>The name of the dimension along which the window will move.</para>
+		/// <para>The default value is the first dimension other than x,y found in the input multidimensional raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -95,8 +95,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Backward Window</para>
-		/// <para>定义窗口中将包含的之前或上方切片数量的值。 该值必须是 1 到 100 之间的正整数。 默认值为 1。</para>
-		/// <para>参数单位为切片。</para>
+		/// <para>The value of how many slices before or above to be included in the defined window. The value must be a positive integer from 1 to 100. The default value is 1.</para>
+		/// <para>The unit of this parameter is slice.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -105,8 +105,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Forward Window</para>
-		/// <para>定义窗口中将包含的之后或下方切片数量的值。 该值必须是 1 到 100 之间的正整数。 默认值为 1。</para>
-		/// <para>参数单位为切片。</para>
+		/// <para>The value of how many slices after or below to be included in the defined window. The value must be a positive integer from 1 to 100. The default value is 1.</para>
+		/// <para>The unit of this parameter is slice.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -115,10 +115,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>NoData Handling</para>
-		/// <para>指定进行统计计算时将如何处理 NoData 值。</para>
-		/// <para>数据—值输入中的 NoData 值将在其所落入定义窗口的结果中被忽略。 这是默认设置。</para>
-		/// <para>NoData—如果在定义窗口的输入中找到任何 NoData 值，则输出值将为 NoData。</para>
-		/// <para>填充 NoData—NoData 像元值将使用定义窗口内的值的所选统计数据替换。</para>
+		/// <para>Specifies how NoData values will be handled by the statistic calculation.</para>
+		/// <para>Data—NoData values in the value input will be ignored in the results of the defined window that they fall within. This is the default.</para>
+		/// <para>NoData—Output values will be NoData if any NoData values are found in the input within the defined window.</para>
+		/// <para>Fill NoData—NoData cell values will be replaced using the selected statistic on the values within the defined window.</para>
 		/// <para><see cref="NodataHandlingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -128,14 +128,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Statistics Type</para>
-		/// <para>指定要计算的统计数据类型。</para>
-		/// <para>平均值—将计算定义窗口内像元的平均值。 这是默认设置。</para>
-		/// <para>圆平均值—将计算角度或其他循环量（例如以度为单位的罗盘方向、日间或实数的小数部分）的平均值。 选择此统计类型后，圆换行值参数将处于可用状态。 使用此参数指定换行值。</para>
-		/// <para>众数—将识别定义窗口内像元的众数（出现次数最多的值）。</para>
-		/// <para>最大值—将识别定义窗口内像元的最大值。</para>
-		/// <para>中值—将识别定义窗口内像元的中值。</para>
-		/// <para>最小值—将识别定义窗口内像元的最小值。</para>
-		/// <para>百分比数—将计算定义窗口内像元的百分比数。 默认情况下将计算 90% 百分比数。 选择此统计类型后，百分比值和百分比插值类型参数处于可用状态。 分别使用这些新参数指定要计算的百分比数和选择要使用的插值类型。</para>
+		/// <para>Specifies the statistic type to be calculated.</para>
+		/// <para>Mean—The mean (average value) of the cells in the defined window will be calculated. This is the default.</para>
+		/// <para>Circular Mean—The mean for angles or other cyclic quantities—such as compass direction in degrees, daytimes, or fractional parts of real numbers—will be calculated. When this statistics type is selected, the Circular Wrap Value parameter becomes available. Use this parameter to designate a wrap value.</para>
+		/// <para>Majority—The majority (value that occurs most often) of the cells in the defined window will be identified.</para>
+		/// <para>Maximum—The maximum (largest value) of the cells in the defined window will be identified.</para>
+		/// <para>Median—The median of the cells in the defined window will be identified.</para>
+		/// <para>Minimum—The minimum (smallest value) of the cells in the defined window will be identified.</para>
+		/// <para>Percentile—A percentile of the cells in the defined window will be calculated. The 90th percentile is calculated by default. When this statistics type is selected, the Percentile Value and Percentile Interpolation Type parameters become available. Use these new parameters to designate the percentile to calculate and choose the interpolation type to use, respectively.</para>
 		/// <para><see cref="StatisticsTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -145,9 +145,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Percentile Value</para>
-		/// <para>将计算百分数值。 对于 90%，其默认值为 90。</para>
-		/// <para>值范围可以介于 0 到 100 之间。 0% 基本上等同于“最小值”统计数据，而 100% 则等同于“最大值”统计数据。 值 50 所生成的结果基本等同于“中值”统计数据的结果。</para>
-		/// <para>仅当统计类型参数设置为百分比数时，系统才支持此参数。</para>
+		/// <para>The percentile value that will be calculated. The default is 90, for the 90th percentile.</para>
+		/// <para>The value can range from 0 to 100. The 0th percentile is essentially equivalent to the minimum statistic, and the 100th percentile is equivalent to the maximum statistic. A value of 50 will produce essentially the same result as the median statistic.</para>
+		/// <para>This parameter is only supported if the Statistics Type parameter is set to Percentile.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -156,11 +156,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Percentile Interpolation Type</para>
-		/// <para>指定当百分比值介于两个像元值之间时要使用的插值方法。</para>
-		/// <para>仅当统计类型参数设置为中值或百分比数时，系统才支持此参数。</para>
-		/// <para>自动检测—如果输入栅格的像素类型为整型，则将使用最近方法。 如果输入栅格的像素类型为浮点型，则将使用线性方法。</para>
-		/// <para>最邻近—使用最接近的百分位数的可用值。 在这种情况下，输出像素类型与输入栅格的像素类型相同。</para>
-		/// <para>线性—将使用接近百分位数的两个值的加权平均值。 在这种情况下，输出像素类型为浮点型。</para>
+		/// <para>Specifies the method of interpolation that will be used when the percentile value falls between two cell values.</para>
+		/// <para>This parameter is only supported if the Statistics Type parameter is set to Median or Percentile.</para>
+		/// <para>Auto-detect—If the input raster is of integer pixel type, the Nearest method will be used. If the input raster is of float pixel type, the Linear method will be used.</para>
+		/// <para>Nearest—The nearest available value to the percentile will be used. In this case, the output pixel type will be the same as that of the input raster.</para>
+		/// <para>Linear—The weighted average of the two surrounding values from the percentile will be used. In this case, the output pixel type will be floating point.</para>
 		/// <para><see cref="PercentileInterpolationTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -170,8 +170,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Circular Wrap Value</para>
-		/// <para>将用于将线性值转换为给定圆平均值范围的值。 其值必须为正值。 默认值为 360 度。</para>
-		/// <para>仅当统计类型参数设置为圆平均值时，系统才支持此参数。</para>
+		/// <para>The value that will be used to convert a linear value to the range of a given circular mean. Its value must be positive. The default value is 360 degrees.</para>
+		/// <para>This parameter is only supported if the Statistics Type parameter is set to Circular Mean.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -202,10 +202,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum NodataHandlingEnum 
 		{
 			/// <summary>
-			/// <para>数据—值输入中的 NoData 值将在其所落入定义窗口的结果中被忽略。 这是默认设置。</para>
+			/// <para>Data—NoData values in the value input will be ignored in the results of the defined window that they fall within. This is the default.</para>
 			/// </summary>
 			[GPValue("DATA")]
-			[Description("数据")]
+			[Description("Data")]
 			Data,
 
 			/// <summary>
@@ -216,10 +216,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 			NoData,
 
 			/// <summary>
-			/// <para>填充 NoData—NoData 像元值将使用定义窗口内的值的所选统计数据替换。</para>
+			/// <para>Fill NoData—NoData cell values will be replaced using the selected statistic on the values within the defined window.</para>
 			/// </summary>
 			[GPValue("FILL_NODATA")]
-			[Description("填充 NoData")]
+			[Description("Fill NoData")]
 			Fill_NoData,
 
 		}
@@ -230,52 +230,52 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum StatisticsTypeEnum 
 		{
 			/// <summary>
-			/// <para>平均值—将计算定义窗口内像元的平均值。 这是默认设置。</para>
+			/// <para>Mean—The mean (average value) of the cells in the defined window will be calculated. This is the default.</para>
 			/// </summary>
 			[GPValue("MEAN")]
-			[Description("平均值")]
+			[Description("Mean")]
 			Mean,
 
 			/// <summary>
-			/// <para>圆平均值—将计算角度或其他循环量（例如以度为单位的罗盘方向、日间或实数的小数部分）的平均值。 选择此统计类型后，圆换行值参数将处于可用状态。 使用此参数指定换行值。</para>
+			/// <para>Circular Mean—The mean for angles or other cyclic quantities—such as compass direction in degrees, daytimes, or fractional parts of real numbers—will be calculated. When this statistics type is selected, the Circular Wrap Value parameter becomes available. Use this parameter to designate a wrap value.</para>
 			/// </summary>
 			[GPValue("CIRCULAR_MEAN")]
-			[Description("圆平均值")]
+			[Description("Circular Mean")]
 			Circular_Mean,
 
 			/// <summary>
-			/// <para>众数—将识别定义窗口内像元的众数（出现次数最多的值）。</para>
+			/// <para>Majority—The majority (value that occurs most often) of the cells in the defined window will be identified.</para>
 			/// </summary>
 			[GPValue("MAJORITY")]
-			[Description("众数")]
+			[Description("Majority")]
 			Majority,
 
 			/// <summary>
-			/// <para>最大值—将识别定义窗口内像元的最大值。</para>
+			/// <para>Maximum—The maximum (largest value) of the cells in the defined window will be identified.</para>
 			/// </summary>
 			[GPValue("MAXIMUM")]
-			[Description("最大值")]
+			[Description("Maximum")]
 			Maximum,
 
 			/// <summary>
-			/// <para>中值—将识别定义窗口内像元的中值。</para>
+			/// <para>Median—The median of the cells in the defined window will be identified.</para>
 			/// </summary>
 			[GPValue("MEDIAN")]
-			[Description("中值")]
+			[Description("Median")]
 			Median,
 
 			/// <summary>
-			/// <para>最小值—将识别定义窗口内像元的最小值。</para>
+			/// <para>Minimum—The minimum (smallest value) of the cells in the defined window will be identified.</para>
 			/// </summary>
 			[GPValue("MINIMUM")]
-			[Description("最小值")]
+			[Description("Minimum")]
 			Minimum,
 
 			/// <summary>
-			/// <para>百分比数—将计算定义窗口内像元的百分比数。 默认情况下将计算 90% 百分比数。 选择此统计类型后，百分比值和百分比插值类型参数处于可用状态。 分别使用这些新参数指定要计算的百分比数和选择要使用的插值类型。</para>
+			/// <para>Percentile—A percentile of the cells in the defined window will be calculated. The 90th percentile is calculated by default. When this statistics type is selected, the Percentile Value and Percentile Interpolation Type parameters become available. Use these new parameters to designate the percentile to calculate and choose the interpolation type to use, respectively.</para>
 			/// </summary>
 			[GPValue("PERCENTILE")]
-			[Description("百分比数")]
+			[Description("Percentile")]
 			Percentile,
 
 		}
@@ -286,24 +286,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum PercentileInterpolationTypeEnum 
 		{
 			/// <summary>
-			/// <para>自动检测—如果输入栅格的像素类型为整型，则将使用最近方法。 如果输入栅格的像素类型为浮点型，则将使用线性方法。</para>
+			/// <para>Auto-detect—If the input raster is of integer pixel type, the Nearest method will be used. If the input raster is of float pixel type, the Linear method will be used.</para>
 			/// </summary>
 			[GPValue("AUTO_DETECT")]
-			[Description("自动检测")]
+			[Description("Auto-detect")]
 			AUTO_DETECT,
 
 			/// <summary>
-			/// <para>最邻近—使用最接近的百分位数的可用值。 在这种情况下，输出像素类型与输入栅格的像素类型相同。</para>
+			/// <para>Nearest—The nearest available value to the percentile will be used. In this case, the output pixel type will be the same as that of the input raster.</para>
 			/// </summary>
 			[GPValue("NEAREST")]
-			[Description("最邻近")]
+			[Description("Nearest")]
 			Nearest,
 
 			/// <summary>
-			/// <para>线性—将使用接近百分位数的两个值的加权平均值。 在这种情况下，输出像素类型为浮点型。</para>
+			/// <para>Linear—The weighted average of the two surrounding values from the percentile will be used. In this case, the output pixel type will be floating point.</para>
 			/// </summary>
 			[GPValue("LINEAR")]
-			[Description("线性")]
+			[Description("Linear")]
 			Linear,
 
 		}

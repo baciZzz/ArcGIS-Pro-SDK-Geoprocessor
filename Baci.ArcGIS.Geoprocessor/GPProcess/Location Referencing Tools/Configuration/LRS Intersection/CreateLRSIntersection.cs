@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Create LRS Intersection</para>
-	/// <para>创建 LRS 交叉点</para>
-	/// <para>为现有 LRS 网络创建交叉点要素类。</para>
+	/// <para>Create LRS Intersection</para>
+	/// <para>Creates an intersection feature class for an existing LRS Network.</para>
 	/// </summary>
 	public class CreateLRSIntersection : AbstractGPProcess
 	{
@@ -21,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="ParentNetwork">
 		/// <para>Parent LRS Network</para>
-		/// <para>交叉点将注册到的网络。</para>
+		/// <para>The network to which the intersection will be registered.</para>
 		/// </param>
 		/// <param name="NetworkDescriptionField">
 		/// <para>Network Description Field</para>
-		/// <para>网络图层中的字段，用于命名与其他相交图层的交叉点。</para>
+		/// <para>The field in the network layer that will be used to name the intersections with other intersecting layers.</para>
 		/// </param>
 		/// <param name="IntersectionFeatureClassName">
 		/// <para>Intersection Feature Class</para>
-		/// <para>新建交点要素类的名称。</para>
+		/// <para>The name of the new intersection point feature class.</para>
 		/// </param>
 		/// <param name="IntersectingLayers">
 		/// <para>Intersecting Layers</para>
-		/// <para>与 LRS 网络相交并包含以下信息的要素类：</para>
-		/// <para>交叉点图层 - 与 LRS 网络相交的要素类。</para>
-		/// <para>ID 字段 - 相交图层中用于唯一识别与网络相交的要素的字段。</para>
-		/// <para>描述字段 - 提供相交要素的描述（例如镇或县名称）的字段。</para>
-		/// <para>名称分隔符 - 交叉点的名称分隔符，例如 AND、INTERSECT、+ 或 |。</para>
+		/// <para>The feature class that intersects the LRS Network and contains the following information:</para>
+		/// <para>Intersection Layer—The feature class that intersects the LRS Network.</para>
+		/// <para>ID Field—The field in the intersecting layer used to uniquely identify the feature that intersects the network.</para>
+		/// <para>Description Field—The field that provides the description, such as town or county name, of the intersecting feature.</para>
+		/// <para>Name Separator—The name separator for the intersection, such as AND, INTERSECT, +, or |.</para>
 		/// </param>
 		public CreateLRSIntersection(object ParentNetwork, object NetworkDescriptionField, object IntersectionFeatureClassName, object IntersectingLayers)
 		{
@@ -48,9 +48,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建 LRS 交叉点</para>
+		/// <para>Tool Display Name : Create LRS Intersection</para>
 		/// </summary>
-		public override string DisplayName() => "创建 LRS 交叉点";
+		public override string DisplayName() => "Create LRS Intersection";
 
 		/// <summary>
 		/// <para>Tool Name : CreateLRSIntersection</para>
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Parent LRS Network</para>
-		/// <para>交叉点将注册到的网络。</para>
+		/// <para>The network to which the intersection will be registered.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Network Description Field</para>
-		/// <para>网络图层中的字段，用于命名与其他相交图层的交叉点。</para>
+		/// <para>The field in the network layer that will be used to name the intersections with other intersecting layers.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Intersection Feature Class</para>
-		/// <para>新建交点要素类的名称。</para>
+		/// <para>The name of the new intersection point feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -112,11 +112,11 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Intersecting Layers</para>
-		/// <para>与 LRS 网络相交并包含以下信息的要素类：</para>
-		/// <para>交叉点图层 - 与 LRS 网络相交的要素类。</para>
-		/// <para>ID 字段 - 相交图层中用于唯一识别与网络相交的要素的字段。</para>
-		/// <para>描述字段 - 提供相交要素的描述（例如镇或县名称）的字段。</para>
-		/// <para>名称分隔符 - 交叉点的名称分隔符，例如 AND、INTERSECT、+ 或 |。</para>
+		/// <para>The feature class that intersects the LRS Network and contains the following information:</para>
+		/// <para>Intersection Layer—The feature class that intersects the LRS Network.</para>
+		/// <para>ID Field—The field in the intersecting layer used to uniquely identify the feature that intersects the network.</para>
+		/// <para>Description Field—The field that provides the description, such as town or county name, of the intersecting feature.</para>
+		/// <para>Name Separator—The name separator for the intersection, such as AND, INTERSECT, +, or |.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -125,9 +125,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Consider z-values when generating intersections</para>
-		/// <para>指定生成交叉点时是否使用 z 值。</para>
-		/// <para>选中 - 将在交叉点生成期间使用 Z 值。</para>
-		/// <para>未选中 - 在交叉点生成期间不会使用 Z 值。 这是默认设置。</para>
+		/// <para>Specifies whether z-values will be used when generating intersections.</para>
+		/// <para>Checked—Z-values will be used during generation of intersections.</para>
+		/// <para>Unchecked—Z-values will not be used during generation of intersections. This is the default.</para>
 		/// <para><see cref="ConsiderZEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Z Tolerance</para>
-		/// <para>用于生成交叉点的 z 容差。</para>
+		/// <para>The z-tolerance used to generate intersections.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -158,14 +158,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum ConsiderZEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Z-values will be used during generation of intersections.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CONSIDER_Z")]
 			CONSIDER_Z,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Z-values will not be used during generation of intersections. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_CONSIDER_Z")]

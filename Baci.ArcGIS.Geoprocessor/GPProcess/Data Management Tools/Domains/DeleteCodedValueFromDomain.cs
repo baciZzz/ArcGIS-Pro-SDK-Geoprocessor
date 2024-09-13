@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Coded Value From Domain</para>
-	/// <para>从属性域中删除编码值</para>
-	/// <para>从编码值属性域中移除值。</para>
+	/// <para>Delete Coded Value From Domain</para>
+	/// <para>Removes a value from a coded value domain.</para>
 	/// </summary>
 	public class DeleteCodedValueFromDomain : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InWorkspace">
 		/// <para>Input Workspace</para>
-		/// <para>包含要更新的属性域的工作空间。</para>
+		/// <para>The workspace containing the domain to be updated.</para>
 		/// </param>
 		/// <param name="DomainName">
 		/// <para>Domain Name</para>
-		/// <para>要更新的编码值属性域的名称。</para>
+		/// <para>The name of the coded value domain to be updated.</para>
 		/// </param>
 		/// <param name="Code">
 		/// <para>Code Value</para>
-		/// <para>要从指定的属性域中删除的值。</para>
+		/// <para>The value(s) to be deleted from the specified domain.</para>
 		/// </param>
 		public DeleteCodedValueFromDomain(object InWorkspace, object DomainName, object Code)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 从属性域中删除编码值</para>
+		/// <para>Tool Display Name : Delete Coded Value From Domain</para>
 		/// </summary>
-		public override string DisplayName() => "从属性域中删除编码值";
+		public override string DisplayName() => "Delete Coded Value From Domain";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteCodedValueFromDomain</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Workspace</para>
-		/// <para>包含要更新的属性域的工作空间。</para>
+		/// <para>The workspace containing the domain to be updated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Domain Name</para>
-		/// <para>要更新的编码值属性域的名称。</para>
+		/// <para>The name of the coded value domain to be updated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Code Value</para>
-		/// <para>要从指定的属性域中删除的值。</para>
+		/// <para>The value(s) to be deleted from the specified domain.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]

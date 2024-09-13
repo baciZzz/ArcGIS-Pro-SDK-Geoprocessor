@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Lowest Position</para>
-	/// <para>最低位置</para>
-	/// <para>逐个像元确定一组栅格中具有最小值的栅格的位置。</para>
+	/// <para>Lowest Position</para>
+	/// <para>Determines on a cell-by-cell basis the position of the raster with the minimum value in a set of rasters.</para>
 	/// </summary>
 	public class LowestPosition : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRastersOrConstants">
 		/// <para>Input rasters or constant values</para>
-		/// <para>确定具有最低值的输入栅格的位置时所用的输入栅格列表。</para>
-		/// <para>数字可以作为输入，但是必须先在环境中设置像元大小和范围。</para>
+		/// <para>The list of input rasters for which the position of the input with the lowest value will be determined.</para>
+		/// <para>A number can be used as an input; however, the cell size and extent must first be set in the environment.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>对于输出栅格中的各个像元，该值表示具有最低值的栅格的位置。</para>
+		/// <para>The output raster.</para>
+		/// <para>For each cell in the output raster, the value represents the position of the raster with the lowest value.</para>
 		/// </param>
 		public LowestPosition(object InRastersOrConstants, object OutRaster)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 最低位置</para>
+		/// <para>Tool Display Name : Lowest Position</para>
 		/// </summary>
-		public override string DisplayName() => "最低位置";
+		public override string DisplayName() => "Lowest Position";
 
 		/// <summary>
 		/// <para>Tool Name : LowestPosition</para>
@@ -72,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input rasters or constant values</para>
-		/// <para>确定具有最低值的输入栅格的位置时所用的输入栅格列表。</para>
-		/// <para>数字可以作为输入，但是必须先在环境中设置像元大小和范围。</para>
+		/// <para>The list of input rasters for which the position of the input with the lowest value will be determined.</para>
+		/// <para>A number can be used as an input; however, the cell size and extent must first be set in the environment.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -85,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>对于输出栅格中的各个像元，该值表示具有最低值的栅格的位置。</para>
+		/// <para>The output raster.</para>
+		/// <para>For each cell in the output raster, the value represents the position of the raster with the lowest value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

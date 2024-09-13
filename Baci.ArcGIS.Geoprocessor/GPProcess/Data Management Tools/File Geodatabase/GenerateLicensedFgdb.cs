@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Licensed File Geodatabase</para>
-	/// <para>生成已许可的文件地理数据库</para>
-	/// <para>生成许可定义文件 (.licdef) 用于定义和限制在文件地理数据库中显示的内容。可通过创建许可文件 (*.sdlic) 并使用 ArcGIS Administrator 对其进行安装来查看经许可的文件地理数据的内容。许可文件是使用生成文件地理数据库许可工具创建的。</para>
+	/// <para>Generate Licensed File Geodatabase</para>
+	/// <para>Generates a license definition file (.licdef) that defines and restricts the display of contents in a file geodatabase.  The contents of the licensed file geodatabase can be viewed by creating  a license file (*.sdlic) and installing it with ArcGIS Administrator.  The license file is created using the Generate File Geodatabase License tool.</para>
 	/// </summary>
 	public class GenerateLicensedFgdb : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFgdb">
 		/// <para>Input File Geodatabase</para>
-		/// <para>要进行许可的未经许可的文件地理数据库。</para>
+		/// <para>The unlicensed file geodatabase to make licensed.</para>
 		/// </param>
 		/// <param name="OutFgdb">
 		/// <para>Output Licensed File Geodatabase</para>
-		/// <para>要创建经许可的文件地理数据库的名称和位置。</para>
+		/// <para>The name of and location to create the licensed file geodatabase.</para>
 		/// </param>
 		/// <param name="OutLicDef">
 		/// <para>Output License Definition File</para>
-		/// <para>许可定义文件。</para>
+		/// <para>The license definition file.</para>
 		/// </param>
 		public GenerateLicensedFgdb(object InFgdb, object OutFgdb, object OutLicDef)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 生成已许可的文件地理数据库</para>
+		/// <para>Tool Display Name : Generate Licensed File Geodatabase</para>
 		/// </summary>
-		public override string DisplayName() => "生成已许可的文件地理数据库";
+		public override string DisplayName() => "Generate Licensed File Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateLicensedFgdb</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input File Geodatabase</para>
-		/// <para>要进行许可的未经许可的文件地理数据库。</para>
+		/// <para>The unlicensed file geodatabase to make licensed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Licensed File Geodatabase</para>
-		/// <para>要创建经许可的文件地理数据库的名称和位置。</para>
+		/// <para>The name of and location to create the licensed file geodatabase.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output License Definition File</para>
-		/// <para>许可定义文件。</para>
+		/// <para>The license definition file.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Unregister As Versioned</para>
-	/// <para>取消注册版本</para>
-	/// <para>将企业级地理数据库数据集取消注册版本。</para>
+	/// <para>Unregister As Versioned</para>
+	/// <para>Unregisters an enterprise geodatabase dataset as versioned.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>要取消注册版本的数据集的名称。</para>
+		/// <para>The name of the dataset to be unregistered as versioned.</para>
 		/// </param>
 		public UnregisterAsVersioned(object InDataset)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 取消注册版本</para>
+		/// <para>Tool Display Name : Unregister As Versioned</para>
 		/// </summary>
-		public override string DisplayName() => "取消注册版本";
+		public override string DisplayName() => "Unregister As Versioned";
 
 		/// <summary>
 		/// <para>Tool Name : UnregisterAsVersioned</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>要取消注册版本的数据集的名称。</para>
+		/// <para>The name of the dataset to be unregistered as versioned.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -75,9 +75,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Do not run if there are versions with edits</para>
-		/// <para>指定是否将保留对版本化数据所做的编辑。</para>
-		/// <para>选中 - 如果增量表中已存在编辑，则工具会失败并显示错误消息。如果您想在将“默认”版本中的所有编辑内容压缩到基表中参数中压缩“默认”版本的编辑内容，请不要使用此选项。这是默认设置。</para>
-		/// <para>未选中 - 如果增量表中已存在编辑，则该工具可删除这些编辑。如果您想在将“默认”版本中的所有编辑内容压缩到基表中参数中压缩“默认”版本的编辑内容，请使用此选项。</para>
+		/// <para>Specifies whether edits made to the versioned data will be maintained.</para>
+		/// <para>Checked—If there are existing edits in the delta tables, the tool will fail with an error message. Do not use this option if you intend to compress your edits from the Default version in the Compress all edits in the Default version into the base table parameter. This is the default.</para>
+		/// <para>Unchecked—If there are existing edits in the delta tables, the tool will allow deletion of these edits. Use this option if you intend to compress your edits from the Default version in the Compress all edits in the Default version into the base table parameter.</para>
 		/// <para><see cref="KeepEditEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -87,9 +87,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Compress all edits in the Default version into the base table</para>
-		/// <para>指定是否要压缩编辑内容以及是否要移除未使用的数据。如果已选中如果版本中已存在编辑，则请勿运行，则将忽略此选项。</para>
-		/// <para>选中 -“默认”版本中的编辑内容将被压缩到基表中。</para>
-		/// <para>未选中 - 保留在增量表中的所有编辑内容不会被压缩。这是默认设置。</para>
+		/// <para>Specifies whether edits will be compressed and unused data will be removed. This option is ignored if the Do not run if there are versions with edits parameter is checked.</para>
+		/// <para>Checked—Edits in the Default version will be compressed to the base table.</para>
+		/// <para>Unchecked—Any edits remaining in the delta tables will not be compressed. This is the default.</para>
 		/// <para><see cref="CompressDefaultEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -121,14 +121,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum KeepEditEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—If there are existing edits in the delta tables, the tool will fail with an error message. Do not use this option if you intend to compress your edits from the Default version in the Compress all edits in the Default version into the base table parameter. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("KEEP_EDIT")]
 			KEEP_EDIT,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—If there are existing edits in the delta tables, the tool will allow deletion of these edits. Use this option if you intend to compress your edits from the Default version in the Compress all edits in the Default version into the base table parameter.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_KEEP_EDIT")]
@@ -142,14 +142,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CompressDefaultEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Edits in the Default version will be compressed to the base table.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("COMPRESS_DEFAULT")]
 			COMPRESS_DEFAULT,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Any edits remaining in the delta tables will not be compressed. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_COMPRESS_DEFAULT")]

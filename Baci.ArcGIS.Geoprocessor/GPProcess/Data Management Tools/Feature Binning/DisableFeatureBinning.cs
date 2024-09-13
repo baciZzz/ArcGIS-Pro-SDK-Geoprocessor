@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Disable Feature Binning</para>
-	/// <para>禁用要素分箱</para>
-	/// <para>禁用要素类上的要素分箱。</para>
+	/// <para>Disable Feature Binning</para>
+	/// <para>Disables feature binning on a feature class.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>要禁用要素分箱的要素类。</para>
+		/// <para>The feature class for which feature binning will be disabled.</para>
 		/// </param>
 		public DisableFeatureBinning(object InFeatures)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 禁用要素分箱</para>
+		/// <para>Tool Display Name : Disable Feature Binning</para>
 		/// </summary>
-		public override string DisplayName() => "禁用要素分箱";
+		public override string DisplayName() => "Disable Feature Binning";
 
 		/// <summary>
 		/// <para>Tool Name : DisableFeatureBinning</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>要禁用要素分箱的要素类。</para>
+		/// <para>The feature class for which feature binning will be disabled.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]

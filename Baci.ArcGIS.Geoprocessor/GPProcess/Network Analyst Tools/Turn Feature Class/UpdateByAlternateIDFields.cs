@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Update by Alternate ID Fields</para>
-	/// <para>按备用 ID 字段更新</para>
-	/// <para>使用备用 ID 字段更新转弯要素类中的所有边引用。对转弯要素所引用的输入线要素进行编辑后，应使用此工具根据备用 ID 字段来同步转弯要素。</para>
+	/// <para>Update by Alternate ID Fields</para>
+	/// <para>Updates all the edge references in turn feature classes using an alternate ID field. This tool should be used after making edits to the input line features that are referenced by the turn features to synchronize the turn features based on the alternate ID fields.</para>
 	/// </summary>
 	public class UpdateByAlternateIDFields : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="InNetworkDataset">
 		/// <para>Input Network Dataset</para>
-		/// <para>要按备用 ID 字段更新转弯要素类的网络数据集。</para>
+		/// <para>The network dataset whose turn feature classes are being updated by their alternate ID fields.</para>
 		/// </param>
 		/// <param name="AlternateIDFieldName">
 		/// <para>Alternate ID Field Name</para>
-		/// <para>网络数据集中边要素源的备用 ID 字段名称。 对于转弯引用的所有边要素源，其备用 ID 字段的名称必须相同。</para>
+		/// <para>The name of the alternate ID field on the edge feature sources of the network dataset. All edge feature sources referenced by turns must have the same name for the alternate ID field.</para>
 		/// </param>
 		public UpdateByAlternateIDFields(object InNetworkDataset, object AlternateIDFieldName)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 按备用 ID 字段更新</para>
+		/// <para>Tool Display Name : Update by Alternate ID Fields</para>
 		/// </summary>
-		public override string DisplayName() => "按备用 ID 字段更新";
+		public override string DisplayName() => "Update by Alternate ID Fields";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateByAlternateIDFields</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Input Network Dataset</para>
-		/// <para>要按备用 ID 字段更新转弯要素类的网络数据集。</para>
+		/// <para>The network dataset whose turn feature classes are being updated by their alternate ID fields.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPNetworkDatasetLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Alternate ID Field Name</para>
-		/// <para>网络数据集中边要素源的备用 ID 字段名称。 对于转弯引用的所有边要素源，其备用 ID 字段的名称必须相同。</para>
+		/// <para>The name of the alternate ID field on the edge feature sources of the network dataset. All edge feature sources referenced by turns must have the same name for the alternate ID field.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

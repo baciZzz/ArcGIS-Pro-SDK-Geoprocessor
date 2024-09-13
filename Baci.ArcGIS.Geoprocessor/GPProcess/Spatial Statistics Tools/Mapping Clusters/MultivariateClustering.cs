@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Multivariate Clustering</para>
-	/// <para>多元聚类</para>
-	/// <para>仅根据要素属性值查找要素的自然聚类。</para>
+	/// <para>Multivariate Clustering</para>
+	/// <para>Finds natural clusters of features based solely on feature attribute values.</para>
 	/// </summary>
 	public class MultivariateClustering : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>将为其创建聚类的要素类或要素图层。</para>
+		/// <para>The feature class or feature layer for which clusters will be created.</para>
 		/// </param>
 		/// <param name="OutputFeatures">
 		/// <para>Output Features</para>
-		/// <para>将要创建的输出要素类，其中包含所有要素、指定的分析字段以及一个用于指明每个要素所属聚类的字段。</para>
+		/// <para>The output feature class that will be created containing all features, the analysis fields specified, and a field indicating to which cluster each feature belongs.</para>
 		/// </param>
 		/// <param name="AnalysisFields">
 		/// <para>Analysis Fields</para>
-		/// <para>将用于区分各个聚类的字段的列表。</para>
+		/// <para>A list of fields that will be used to distinguish one cluster from another.</para>
 		/// </param>
 		public MultivariateClustering(object InFeatures, object OutputFeatures, object AnalysisFields)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 多元聚类</para>
+		/// <para>Tool Display Name : Multivariate Clustering</para>
 		/// </summary>
-		public override string DisplayName() => "多元聚类";
+		public override string DisplayName() => "Multivariate Clustering";
 
 		/// <summary>
 		/// <para>Tool Name : MultivariateClustering</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>将为其创建聚类的要素类或要素图层。</para>
+		/// <para>The feature class or feature layer for which clusters will be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Features</para>
-		/// <para>将要创建的输出要素类，其中包含所有要素、指定的分析字段以及一个用于指明每个要素所属聚类的字段。</para>
+		/// <para>The output feature class that will be created containing all features, the analysis fields specified, and a field indicating to which cluster each feature belongs.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Analysis Fields</para>
-		/// <para>将用于区分各个聚类的字段的列表。</para>
+		/// <para>A list of fields that will be used to distinguish one cluster from another.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -101,10 +101,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Clustering Method</para>
-		/// <para>指定要使用的聚类算法。</para>
-		/// <para>K 均值和 K 中心点选项通常将产生类似的结果。 但是，K 中心点对于输入要素参数值中的噪点和异常值更加可靠。 K 均值通常比 K 中心点更快，建议用于大型数据集。</para>
-		/// <para>K 均值—将使用 K 均值算法对输入要素参数值进行聚类。 这是默认设置。</para>
-		/// <para>K 中心点—将使用 K 中心点算法对输入要素参数值进行聚类。</para>
+		/// <para>Specifies the clustering algorithm that will be used.</para>
+		/// <para>The K means and K medoids options generally produce similar results. However, K medoids is more robust to noise and outliers in the Input Features parameter value. K means is generally faster than K medoids and is recommended for large data sets.</para>
+		/// <para>K means—The Input Features parameter value will be clustered using the K means algorithm. This is the default.</para>
+		/// <para>K medoids—The Input Features parameter value will be clustered using the K medoids algorithm.</para>
 		/// <para><see cref="ClusteringMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -114,10 +114,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Initialization Method</para>
-		/// <para>指定用于发展聚类的初始种子的获得方法。 例如，如果您指明需要三个聚类，则分析将从三个种子开始。</para>
-		/// <para>优化的种子位置—选择种子要素以便优化分析结果和性能。 这是默认设置。</para>
-		/// <para>用户定义的种子位置—初始化字段参数值中的非零条目将被用作发展聚类的起点。</para>
-		/// <para>随机种子位置—将随机选择初始种子要素。</para>
+		/// <para>Specifies how initial seeds used to grow clusters will be obtained. If you indicate you want three clusters, for example, the analysis will begin with three seeds.</para>
+		/// <para>Optimized seed locations—Seed features will be selected to optimize analysis results and performance. This is the default.</para>
+		/// <para>User defined seed locations—Nonzero entries in the Initialization Field parameter value will be used as starting points to grow clusters.</para>
+		/// <para>Random seed locations—Initial seed features will be randomly selected.</para>
 		/// <para><see cref="InitializationMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Initialization Field</para>
-		/// <para>用于标识种子要素的数值型字段。 将使用此字段中具有 1 值的要素发展聚类。 每个种子将生成一个聚类，因此必须至少提供两个种子要素。</para>
+		/// <para>The numeric field identifying seed features. Features with a value of 1 for this field will be used to grow clusters. Each seed results in a cluster, so at least two seed features must be provided.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -137,8 +137,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Number of Clusters</para>
-		/// <para>将要创建的聚类数。 如果将此参数留空时，该工具将计算具有 2 至 30 个聚类的聚类解决方案的伪 F 统计量，以评估出最佳聚类数。</para>
-		/// <para>如果在初始化字段中提供了种子位置，该参数将被禁用。</para>
+		/// <para>The number of clusters that will be created. If you leave this parameter empty, the tool will evaluate the optimal number of clusters by computing a pseudo F-statistic for clustering solutions with 2 through 30 clusters.</para>
+		/// <para>This parameter is disabled if the seed locations were provided in an initialization field.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Table for Evaluating Number of Clusters</para>
-		/// <para>表中包含经计算用来评估最佳聚类数的聚类解决方案 2 至 30 的伪 F 统计量。 基于该表创建的图表可通过内容窗格独立表部分进行访问。</para>
+		/// <para>The table containing the pseudo F-statistic for clustering solutions 2 through 30, calculated to evaluate the optimal number of clusters. The chart created from this table can be accessed in the stand-alone tables section of the Contents pane.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -169,17 +169,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum ClusteringMethodEnum 
 		{
 			/// <summary>
-			/// <para>K 均值和 K 中心点选项通常将产生类似的结果。 但是，K 中心点对于输入要素参数值中的噪点和异常值更加可靠。 K 均值通常比 K 中心点更快，建议用于大型数据集。</para>
+			/// <para>K means—The Input Features parameter value will be clustered using the K means algorithm. This is the default.</para>
 			/// </summary>
 			[GPValue("K_MEANS")]
-			[Description("K 均值")]
+			[Description("K means")]
 			K_means,
 
 			/// <summary>
-			/// <para>K 中心点—将使用 K 中心点算法对输入要素参数值进行聚类。</para>
+			/// <para>K medoids—The Input Features parameter value will be clustered using the K medoids algorithm.</para>
 			/// </summary>
 			[GPValue("K_MEDOIDS")]
-			[Description("K 中心点")]
+			[Description("K medoids")]
 			K_medoids,
 
 		}
@@ -190,24 +190,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum InitializationMethodEnum 
 		{
 			/// <summary>
-			/// <para>优化的种子位置—选择种子要素以便优化分析结果和性能。 这是默认设置。</para>
+			/// <para>Optimized seed locations—Seed features will be selected to optimize analysis results and performance. This is the default.</para>
 			/// </summary>
 			[GPValue("OPTIMIZED_SEED_LOCATIONS")]
-			[Description("优化的种子位置")]
+			[Description("Optimized seed locations")]
 			Optimized_seed_locations,
 
 			/// <summary>
-			/// <para>用户定义的种子位置—初始化字段参数值中的非零条目将被用作发展聚类的起点。</para>
+			/// <para>User defined seed locations—Nonzero entries in the Initialization Field parameter value will be used as starting points to grow clusters.</para>
 			/// </summary>
 			[GPValue("USER_DEFINED_SEED_LOCATIONS")]
-			[Description("用户定义的种子位置")]
+			[Description("User defined seed locations")]
 			User_defined_seed_locations,
 
 			/// <summary>
-			/// <para>随机种子位置—将随机选择初始种子要素。</para>
+			/// <para>Random seed locations—Initial seed features will be randomly selected.</para>
 			/// </summary>
 			[GPValue("RANDOM_SEED_LOCATIONS")]
-			[Description("随机种子位置")]
+			[Description("Random seed locations")]
 			Random_seed_locations,
 
 		}

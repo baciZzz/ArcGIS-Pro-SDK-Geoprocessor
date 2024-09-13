@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Point Cloud</para>
-	/// <para>生成点云</para>
-	/// <para>基于立体像对计算 3D 点并将点云作为一组 LAS 文件进行输出。</para>
+	/// <para>Generate Point Cloud</para>
+	/// <para>Computes 3D points from stereo pairs and outputs a point cloud as a set of LAS files.</para>
 	/// </summary>
 	public class GeneratePointCloud : AbstractGPProcess
 	{
@@ -21,28 +21,28 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>必须已完成区域网平差过程且具有立体模型的输入镶嵌数据集。</para>
-		/// <para>要对镶嵌数据集执行区域网平差，请使用应用区域网平差工具。要基于镶嵌数据集构建立体模型，请使用构建立体模型工具。</para>
+		/// <para>The input mosaic dataset, which must have completed the block adjustment process and have a stereo model.</para>
+		/// <para>To block adjust the mosaic dataset, use the Apply Block Adjustment tool. To build a stereo model on the mosaic dataset, use the Build Stereo Model tool.</para>
 		/// </param>
 		/// <param name="MatchingMethod">
 		/// <para>Matching Method</para>
-		/// <para>用于生成 3D 点的方法。</para>
-		/// <para>扩展的地形匹配—一种使用 Harris 算子检测要素点的，基于要素的立体匹配。由于提取的要素点较少，此方法速度较快，可用于地形变化和细节较少的数据。</para>
-		/// <para>半全局匹配—半全局匹配 (SGM) 可生成密度较高且具有更多详细地形信息的点。可将其用于城市区域的影像。与 ETM 相比，此方法运算量更大。1</para>
-		/// <para>多视图影像匹配—多视图影像匹配 (MVM) 基于 SGM 匹配方法，且随后采用合并跨单个立体模型的冗余深度估计的融合步骤。此方法可生成密集的 3D 点且具有较高的运算效率。2</para>
-		/// <para>参考文献：</para>
-		/// <para>Heiko Hirschmuller et al., Memory Efficient Semi-Global Matching, ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences，卷 1–3，(2012): 371–376.</para>
+		/// <para>The method used to generate 3D points.</para>
+		/// <para>Extended terrain matching—A feature-based stereo matching in which the Harris operator is used in detecting feature points. Since less feature points are extracted, this method is fast and can be used for data with less terrain variations and detail.</para>
+		/// <para>Semiglobal matching—Semi-Global Matching (SGM) produces points that are denser and have more detailed terrain information. It can be used for images of urban areas. This is more computational intensive than ETM.1</para>
+		/// <para>Multi-view image matching—Multi-view image matching (MVM) is based on the SGM matching method followed by a fusion step in which the redundant depth estimations across a single stereo model are merged. It produces dense 3D points and is computationally efficient.2</para>
+		/// <para>References:</para>
+		/// <para>Heiko Hirschmuller et al., &quot;Memory Efficient Semi-Global Matching,&quot; ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume 1–3, (2012): 371–376.</para>
 		/// <para>Hirschmuller, H. &quot;Stereo Processing by Semiglobal Matching and Mutual Information.&quot; Pattern Analysis and Machine Intelligence, (2008).</para>
 		/// <para><see cref="MatchingMethodEnum"/></para>
 		/// </param>
 		/// <param name="OutFolder">
 		/// <para>Output LAS Folder</para>
-		/// <para>用于存储输出 LAS 文件的文件夹。</para>
-		/// <para>如果使用相同的输入参数多次运行此工具，则由于采样是随机的，因此输出可能稍有不同。</para>
+		/// <para>The folder used to store the output LAS files.</para>
+		/// <para>If this tool is run multiple times with the same input parameters, the output may be slightly different due to random sampling.</para>
 		/// </param>
 		/// <param name="OutBaseName">
 		/// <para>Output LAS Base Name</para>
-		/// <para>用作格式化输出 LAS 文件名的前缀的字符串。例如，如果以 name 为基础，则输出文件将命名为 name1.las、name2.las，以此类推。</para>
+		/// <para>A string used as a prefix to formulate the output LAS file names. For example, if name is used as the base, the output files will be named name1.las, name2.las, and so on.</para>
 		/// </param>
 		public GeneratePointCloud(object InMosaicDataset, object MatchingMethod, object OutFolder, object OutBaseName)
 		{
@@ -53,9 +53,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 生成点云</para>
+		/// <para>Tool Display Name : Generate Point Cloud</para>
 		/// </summary>
-		public override string DisplayName() => "生成点云";
+		public override string DisplayName() => "Generate Point Cloud";
 
 		/// <summary>
 		/// <para>Tool Name : GeneratePointCloud</para>
@@ -89,8 +89,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>必须已完成区域网平差过程且具有立体模型的输入镶嵌数据集。</para>
-		/// <para>要对镶嵌数据集执行区域网平差，请使用应用区域网平差工具。要基于镶嵌数据集构建立体模型，请使用构建立体模型工具。</para>
+		/// <para>The input mosaic dataset, which must have completed the block adjustment process and have a stereo model.</para>
+		/// <para>To block adjust the mosaic dataset, use the Apply Block Adjustment tool. To build a stereo model on the mosaic dataset, use the Build Stereo Model tool.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -98,12 +98,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Matching Method</para>
-		/// <para>用于生成 3D 点的方法。</para>
-		/// <para>扩展的地形匹配—一种使用 Harris 算子检测要素点的，基于要素的立体匹配。由于提取的要素点较少，此方法速度较快，可用于地形变化和细节较少的数据。</para>
-		/// <para>半全局匹配—半全局匹配 (SGM) 可生成密度较高且具有更多详细地形信息的点。可将其用于城市区域的影像。与 ETM 相比，此方法运算量更大。1</para>
-		/// <para>多视图影像匹配—多视图影像匹配 (MVM) 基于 SGM 匹配方法，且随后采用合并跨单个立体模型的冗余深度估计的融合步骤。此方法可生成密集的 3D 点且具有较高的运算效率。2</para>
-		/// <para>参考文献：</para>
-		/// <para>Heiko Hirschmuller et al., Memory Efficient Semi-Global Matching, ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences，卷 1–3，(2012): 371–376.</para>
+		/// <para>The method used to generate 3D points.</para>
+		/// <para>Extended terrain matching—A feature-based stereo matching in which the Harris operator is used in detecting feature points. Since less feature points are extracted, this method is fast and can be used for data with less terrain variations and detail.</para>
+		/// <para>Semiglobal matching—Semi-Global Matching (SGM) produces points that are denser and have more detailed terrain information. It can be used for images of urban areas. This is more computational intensive than ETM.1</para>
+		/// <para>Multi-view image matching—Multi-view image matching (MVM) is based on the SGM matching method followed by a fusion step in which the redundant depth estimations across a single stereo model are merged. It produces dense 3D points and is computationally efficient.2</para>
+		/// <para>References:</para>
+		/// <para>Heiko Hirschmuller et al., &quot;Memory Efficient Semi-Global Matching,&quot; ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume 1–3, (2012): 371–376.</para>
 		/// <para>Hirschmuller, H. &quot;Stereo Processing by Semiglobal Matching and Mutual Information.&quot; Pattern Analysis and Machine Intelligence, (2008).</para>
 		/// <para><see cref="MatchingMethodEnum"/></para>
 		/// </summary>
@@ -114,8 +114,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output LAS Folder</para>
-		/// <para>用于存储输出 LAS 文件的文件夹。</para>
-		/// <para>如果使用相同的输入参数多次运行此工具，则由于采样是随机的，因此输出可能稍有不同。</para>
+		/// <para>The folder used to store the output LAS files.</para>
+		/// <para>If this tool is run multiple times with the same input parameters, the output may be slightly different due to random sampling.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output LAS Base Name</para>
-		/// <para>用作格式化输出 LAS 文件名的前缀的字符串。例如，如果以 name 为基础，则输出文件将命名为 name1.las、name2.las，以此类推。</para>
+		/// <para>A string used as a prefix to formulate the output LAS file names. For example, if name is used as the base, the output files will be named name1.las, name2.las, and so on.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Object Size (in meter)</para>
-		/// <para>将在其中标识建筑物或树木等表面对象的搜索半径。它是以地图单位表示的线大小。</para>
+		/// <para>A search radius within which surface objects, such as buildings or trees, will be identified. It is the linear size in map units.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -139,8 +139,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>DSM Ground Spacing (in meter)</para>
-		/// <para>生成 3D 点时采用的地面间距（以米为单位）。</para>
-		/// <para>默认值为源影像像素大小的五倍。</para>
+		/// <para>The ground spacing, in meters, at which the 3D points are generated.</para>
+		/// <para>The default is five times the source image pixel size.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -148,8 +148,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Number of Image Pairs</para>
-		/// <para>用于生成 3D 点的影像对数量。默认值是最少 2 个影像对。</para>
-		/// <para>有时，一个位置可能被许多影像对覆盖。在此情况中，该工具将根据此工具中指定的不同阈值参数对这些影像对进行排序。将使用得分最高的影像对生成点。</para>
+		/// <para>The number of pairs used to generate 3D points. The default value is a minimum of 2 image pairs.</para>
+		/// <para>Sometimes a location may be covered with many image pairs. In this case, the tool will order the pairs based on the various threshold parameters specified in this tool. The pairs with the highest scores will be used to generate the points.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -157,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Overlap Area Threshold</para>
-		/// <para>指定可接受的最小重叠区域阈值，即影像对之间的重叠百分比。按照此条件，重叠区域小于此阈值的影像对将获得 0 分，且其在排序列表中的位置将下降。阈值的值范围介于 0 到 1 之间。默认阈值为 0.6，相当于 60%。</para>
+		/// <para>Specify a minimum overlap threshold area that is acceptable, which is a percentage of overlap between a pair of images. Image pairs with overlap areas smaller than this threshold will receive a score of 0 for this criteria and will descend in the ordered list. The range of values for the threshold is from 0 to 1. The default threshold value is 0.6, which is equal to 60 percent.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -165,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Adjustment Quality Threshold</para>
-		/// <para>指定可接受的最小校正质量。该阈值将与存储在立体模型中的校正质量值进行比较。按照此条件，校正质量低于此指定阈值的影像对将获得 0 分，且其在排序列表中的位置将下降。阈值的值范围介于 0 到 1 之间。默认值为 0.2，相当于 20%。</para>
+		/// <para>Specify the minimum adjustment quality that is acceptable. The threshold value will be compared to the adjustment quality value that is stored in the stereo model. Image pairs with an adjustment quality less than the specified threshold will receive a score of 0 for this criteria and will descend in the ordered list. The range of values for the threshold is from 0 to 1. The default value is 0.2, which is equal to 20 percent.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -173,7 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>GSD Difference Threshold</para>
-		/// <para>指定影像对中两个影像之间的地面采样间距 (GSD) 的最大允许阈值。两个影像之间的分辨率比值将与此阈值进行比较。按照此条件，地面采样比率大于此阈值的影像对将获得 0 分，且其在排序列表中的位置将下降。默认阈值比为 2。</para>
+		/// <para>Specify the maximum allowable threshold for the ground sample distance (GSD) between two images in a pair. The resolution ratio between the two images will be compared to the threshold value. Image pairs with a ground sample ratio greater than this threshold will receive a score of 0 for this criteria and will descend in the ordered list. The default threshold ratio is 2.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -181,7 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Omega/Phi Difference Threshold</para>
-		/// <para>指定两个影像对之间的 Omega\Phi 差异的最大阈值。将比较图像对的 Omega 值和 Phi 值。按照此条件，Omega 或 Phi 差异大于此阈值的影像对将获得 0 分，且其在排序列表中的位置将下降。每个比较项的默认阈值差异为 8。</para>
+		/// <para>Specify the maximum threshold for the Omega\Phi difference between the two image pairs. The Omega values and Phi values for the image pairs are compared. Image pairs with an Omega or a Phi difference greater than this threshold will receive a score of 0 for this criteria and will descend in the ordered list. The default threshold difference for each comparison is 8.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -204,24 +204,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MatchingMethodEnum 
 		{
 			/// <summary>
-			/// <para>扩展的地形匹配—一种使用 Harris 算子检测要素点的，基于要素的立体匹配。由于提取的要素点较少，此方法速度较快，可用于地形变化和细节较少的数据。</para>
+			/// <para>Extended terrain matching—A feature-based stereo matching in which the Harris operator is used in detecting feature points. Since less feature points are extracted, this method is fast and can be used for data with less terrain variations and detail.</para>
 			/// </summary>
 			[GPValue("ETM")]
-			[Description("扩展的地形匹配")]
+			[Description("Extended terrain matching")]
 			Extended_terrain_matching,
 
 			/// <summary>
-			/// <para>半全局匹配—半全局匹配 (SGM) 可生成密度较高且具有更多详细地形信息的点。可将其用于城市区域的影像。与 ETM 相比，此方法运算量更大。1</para>
+			/// <para>Semiglobal matching—Semi-Global Matching (SGM) produces points that are denser and have more detailed terrain information. It can be used for images of urban areas. This is more computational intensive than ETM.1</para>
 			/// </summary>
 			[GPValue("SGM")]
-			[Description("半全局匹配")]
+			[Description("Semiglobal matching")]
 			Semiglobal_matching,
 
 			/// <summary>
-			/// <para>多视图影像匹配—多视图影像匹配 (MVM) 基于 SGM 匹配方法，且随后采用合并跨单个立体模型的冗余深度估计的融合步骤。此方法可生成密集的 3D 点且具有较高的运算效率。2</para>
+			/// <para>Multi-view image matching—Multi-view image matching (MVM) is based on the SGM matching method followed by a fusion step in which the redundant depth estimations across a single stereo model are merged. It produces dense 3D points and is computationally efficient.2</para>
 			/// </summary>
 			[GPValue("MVM")]
-			[Description("多视图影像匹配")]
+			[Description("Multi-view image matching")]
 			MVM,
 
 		}

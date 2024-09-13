@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Field Statistics To Table</para>
-	/// <para>字段统计数据转表</para>
-	/// <para>为表或要素类中的一个或多个输入字段创建描述性统计表。</para>
+	/// <para>Field Statistics To Table</para>
+	/// <para>Creates a table of descriptive statistics for one or more input fields in a table or feature class.</para>
 	/// </summary>
 	public class FieldStatisticsToTable : AbstractGPProcess
 	{
@@ -21,24 +21,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>包含用于创建统计数据表的字段的输入表。</para>
+		/// <para>The input table containing the fields that will be used to create the statistics table.</para>
 		/// </param>
 		/// <param name="InFields">
 		/// <para>Input Fields</para>
-		/// <para>包含用于计算统计数据的值的字段。</para>
+		/// <para>The fields containing the values that will be used to calculate the statistics.</para>
 		/// </param>
 		/// <param name="OutLocation">
 		/// <para>Output Location</para>
-		/// <para>要创建输出表的位置。 位置可以为地理数据库、文件夹或要素数据集。</para>
+		/// <para>The location where the output tables will be created. The location can be a geodatabase, folder, or feature dataset.</para>
 		/// </param>
 		/// <param name="OutTables">
 		/// <para>Output Tables</para>
-		/// <para>包含统计数据的输出表。 字段类型列用于指定将包含在每个输出表中的字段类型，每个输出表的名称在输出名称列中提供。 例如，您可以创建一个包含所有字段类型的汇总表，或者您可以为数值、文本和日期字段类型创建单独的汇总表。</para>
-		/// <para>可用于字段类型列的选择如下：</para>
-		/// <para>数值 - 将创建输入数值字段（短整型、长整型、浮点型和双精度型）汇总表。</para>
-		/// <para>文本 - 将创建输入文本字段（文本型）汇总表。</para>
-		/// <para>日期 - 将创建输入日期字段（日期型）汇总表。</para>
-		/// <para>全部 - 将创建输入的所有数值、文本和日期字段的汇总表。 包含适用于多种字段类型的统计数据的输出字段将保存为文本型。 不适用于文本和日期型字段的输出统计数据将为空。</para>
+		/// <para>The output tables containing the statistics. The Field Types column specifies the field types that will be included in each output table, and the name of each output table is provided in the Output Name column. For example, you can create a single table with summaries of all field types, or you can create separate tables for summaries of Numeric, Text, and Date field types.</para>
+		/// <para>The following choices are available for the Field Types column:</para>
+		/// <para>Numeric—A table summarizing numeric fields of the input (Short, Long, Float, and Double types) will be created.</para>
+		/// <para>Text—A table summarizing text fields of the input (Text type) will be created.</para>
+		/// <para>Date—A table summarizing date fields of the input (Date type) will be created.</para>
+		/// <para>All—A table summarizing all numeric, text, and date fields of the input will be created. Output fields containing statistics that apply to multiple field types will be saved as type Text. Output statistics that do not apply to Text and Date type fields will be empty.</para>
 		/// </param>
 		public FieldStatisticsToTable(object InTable, object InFields, object OutLocation, object OutTables)
 		{
@@ -49,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 字段统计数据转表</para>
+		/// <para>Tool Display Name : Field Statistics To Table</para>
 		/// </summary>
-		public override string DisplayName() => "字段统计数据转表";
+		public override string DisplayName() => "Field Statistics To Table";
 
 		/// <summary>
 		/// <para>Tool Name : FieldStatisticsToTable</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>包含用于创建统计数据表的字段的输入表。</para>
+		/// <para>The input table containing the fields that will be used to create the statistics table.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Fields</para>
-		/// <para>包含用于计算统计数据的值的字段。</para>
+		/// <para>The fields containing the values that will be used to calculate the statistics.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Location</para>
-		/// <para>要创建输出表的位置。 位置可以为地理数据库、文件夹或要素数据集。</para>
+		/// <para>The location where the output tables will be created. The location can be a geodatabase, folder, or feature dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -111,12 +111,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Tables</para>
-		/// <para>包含统计数据的输出表。 字段类型列用于指定将包含在每个输出表中的字段类型，每个输出表的名称在输出名称列中提供。 例如，您可以创建一个包含所有字段类型的汇总表，或者您可以为数值、文本和日期字段类型创建单独的汇总表。</para>
-		/// <para>可用于字段类型列的选择如下：</para>
-		/// <para>数值 - 将创建输入数值字段（短整型、长整型、浮点型和双精度型）汇总表。</para>
-		/// <para>文本 - 将创建输入文本字段（文本型）汇总表。</para>
-		/// <para>日期 - 将创建输入日期字段（日期型）汇总表。</para>
-		/// <para>全部 - 将创建输入的所有数值、文本和日期字段的汇总表。 包含适用于多种字段类型的统计数据的输出字段将保存为文本型。 不适用于文本和日期型字段的输出统计数据将为空。</para>
+		/// <para>The output tables containing the statistics. The Field Types column specifies the field types that will be included in each output table, and the name of each output table is provided in the Output Name column. For example, you can create a single table with summaries of all field types, or you can create separate tables for summaries of Numeric, Text, and Date field types.</para>
+		/// <para>The following choices are available for the Field Types column:</para>
+		/// <para>Numeric—A table summarizing numeric fields of the input (Short, Long, Float, and Double types) will be created.</para>
+		/// <para>Text—A table summarizing text fields of the input (Text type) will be created.</para>
+		/// <para>Date—A table summarizing date fields of the input (Date type) will be created.</para>
+		/// <para>All—A table summarizing all numeric, text, and date fields of the input will be created. Output fields containing statistics that apply to multiple field types will be saved as type Text. Output statistics that do not apply to Text and Date type fields will be empty.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Group By Field</para>
-		/// <para>将用于对行进行分组的字段。 如果提供了分组依据字段，则输入的每个字段将在输出表中显示为一行，各分组依据字段中每个唯一值都会显示一次。</para>
+		/// <para>The field that will be used to group rows into categories. If a group by field is provided, each field of the input will appear as a row in the output table once per unique value in the group by field.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -135,30 +135,30 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Statistics</para>
-		/// <para>指定将汇总的统计数据以及包含统计数据的输出字段名称。 将在统计列中提供统计数据，并在输出字段名称列中提供输出字段的名称。 如果没有提供任何值，则系统将为针对所有输入字段计算所有适用的统计数据。</para>
-		/// <para>统计列提供了以下可用选项（仅适用于输入字段的统计数据才可用）：</para>
-		/// <para>字段名称 - 字段的名称。</para>
-		/// <para>别名 - 字段的别名。</para>
-		/// <para>字段类型 - 字段的字段类型（短整型、长整型、双精度型、浮点型、文本型或日期型）。</para>
-		/// <para>空 - 字段中包含空值的记录数。</para>
-		/// <para>最小值 - 字段中的最小值。</para>
-		/// <para>最大值 - 字段中的最大值。</para>
-		/// <para>平均值 - 字段中所有值的平均值（总和除以总计数）。 要计算日期字段的平均日期，通过计算日期与参考日期（例如 1900-01-01）之间的差（以毫秒为单位），将每个日期转换为数字。</para>
-		/// <para>标准差 - 字段中值的标准差。 它被计算为方差的平方根，其中方差是每个值与字段平均值的平方差的平均值。</para>
-		/// <para>中值 - 字段中所有值的中位数。 中位数是值的排序列表中的中间值。 如果有偶数个值，则中位数是分布中两个中间值的平均值。</para>
-		/// <para>计数 - 字段中非空值的数目。</para>
-		/// <para>唯一值数 - 字段的唯一值数量。</para>
-		/// <para>众数 - 字段中最常出现的值。</para>
-		/// <para>最不常见 - 字段中最不常见的值。</para>
-		/// <para>异常值 - 字段中具有异常值的记录数量。 异常值是大于字段值的第三四分位数或低于第一四分位数的四分位距的 1.5 倍的值。</para>
-		/// <para>总和 - 字段内所有值的总和。</para>
-		/// <para>范围 - 字段中最大和最小值之间的差。</para>
-		/// <para>四分位距 - 字段中第一四分位数和第三四分位数值之间的范围。 这表示数据中间一半的范围。</para>
-		/// <para>第一四分位数 - 字段中第一四分位数的值。 四分位数将值的排序列表分为四组，每组包含相等数量的值。 第一四分位数是升序的第一组的上限。</para>
-		/// <para>第三四分位数 - 字段中第三四分位数的值。 四分位数将值的排序列表分为四组，每组包含相等数量的值。 第三四分位数是升序的第三组的上限。</para>
-		/// <para>变化系数 - 字段中值的变化系数。 变化系数是值相对分布的度量。 计算方法为标准差除以字段的平均值。</para>
-		/// <para>偏度 - 字段中值的偏度。 偏度测量分布的对称性。 偏度的计算方法是三阶矩（三次方数据值的平均值）除以三次方标准差。</para>
-		/// <para>峰度 - 字段中值的峰度。 峰度描述了分布与正态分布的尾部相比的尾重，有助于识别极值的频率。 峰度的计算方法是：四阶矩（数据值的平均值取四次方）除以标准差的四次方。</para>
+		/// <para>Specifies the statistics that will be summarized and the names of the output fields containing the statistics. The statistic is provided in the Statistic column, and the name of the output field is provided in the Output Field Name column. If no values are provided, all applicable statistics will be calculated for all input fields.</para>
+		/// <para>The following choices are available for the Statistic column (only statistics applicable to the input fields will be available):</para>
+		/// <para>Field name—The name of the field.</para>
+		/// <para>Alias—The alias of the field.</para>
+		/// <para>Field type—The field type of the field (Short, Long, Double, Float, Text, or Date).</para>
+		/// <para>Nulls—The number of records containing null values of the field.</para>
+		/// <para>Minimum—The smallest value in the field.</para>
+		/// <para>Maximum—The largest value in the field.</para>
+		/// <para>Mean—The mean (sum divided by total count) of all values in the field. To calculate the mean date for date fields, each date is converted to a number by calculating the difference between the date and a reference date (for example, 1900-01-01), calculated in milliseconds.</para>
+		/// <para>Standard deviation—The standard deviation of the values in the field. It is calculated as the square root of the variance, in which the variance is the average squared difference of each value from the mean of the field.</para>
+		/// <para>Median—The median for all values in the field. The median is the middle value in the sorted list of values. If there is an even number of values, the median is the mean of the two middle values in the distribution.</para>
+		/// <para>Count—The number of nonnull values in the field.</para>
+		/// <para>Number of unique values—The number of unique values in the field.</para>
+		/// <para>Mode—The most frequently occurring value in the field.</para>
+		/// <para>Least common—The least common value in the field.</para>
+		/// <para>Outliers—The number of records with outlier values in the field. Outliers are values that are more than 1.5 times the interquartile range above the third quartile or below the first quartile of the values of the field.</para>
+		/// <para>Sum—The sum of all values in the field.</para>
+		/// <para>Range—The difference between the largest and smallest values in the field.</para>
+		/// <para>Interquartile range—The range between the first quartile and the third quartile of the values in the field. This represents the range of the middle half of the data.</para>
+		/// <para>First quartile—The value of the first quartile of the field. Quartiles divide the sorted list of values into four groups containing equal numbers of values. The first quartile is the upper limit of the first group in ascending order.</para>
+		/// <para>Third quartile—The value of the third quartile of the field. Quartiles divide the sorted list of values into four groups containing equal numbers of values. The third quartile is the upper limit of the third group in ascending order.</para>
+		/// <para>Coefficient of variation—The coefficient of variation of the values in the field. The coefficient of variation is a measure of the relative spread of the values. It is calculated as the standard deviation divided by the mean of the field.</para>
+		/// <para>Skewness—The skewness of the values in the field. Skewness measures the symmetry of the distribution. The skewness is calculated as the third moment (the average of the cubed data values) divided by the cubed standard deviation.</para>
+		/// <para>Kurtosis—The kurtosis of the values in the field. Kurtosis describes the heaviness of the tails of a distribution compared to the normal distribution, helping identify the frequency of extreme values. The kurtosis is calculated as the fourth moment (the average of the data values taken to the fourth power) divided by the fourth power of the standard deviation.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]

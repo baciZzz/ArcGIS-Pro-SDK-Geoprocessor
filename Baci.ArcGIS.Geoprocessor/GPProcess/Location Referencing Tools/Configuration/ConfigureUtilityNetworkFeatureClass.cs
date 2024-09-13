@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Configure Utility Network Feature Class</para>
-	/// <para>配置 Utility Network 要素类</para>
-	/// <para>配置 Utility Network 管道要素类以与线性参考系 (LRS) 搭配使用。</para>
+	/// <para>Configure Utility Network Feature Class</para>
+	/// <para>Configures a Utility Network pipeline feature class for use with a linear referencing system (LRS).</para>
 	/// </summary>
 	public class ConfigureUtilityNetworkFeatureClass : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InFeatureClass">
 		/// <para>Utility Network Feature Layer</para>
-		/// <para>同时是 LRS 中心线要素的输入 Utility Network 要素。</para>
+		/// <para>The input Utility Network feature that is also the LRS centerline feature.</para>
 		/// </param>
 		/// <param name="RouteIdField">
 		/// <para>Route ID Field</para>
-		/// <para>要素类中将映射为 LRS 网络路径 ID 的字段。</para>
+		/// <para>The field in the feature class that will be mapped as the LRS Network Route ID.</para>
 		/// </param>
 		/// <param name="FromMeasureField">
 		/// <para>From Measure Field</para>
-		/// <para>中心线要素类的测量始于字段。</para>
+		/// <para>The From measure field of the centerline feature class.</para>
 		/// </param>
 		/// <param name="ToMeasureField">
 		/// <para>To Measure Field</para>
-		/// <para>中心线要素类的测量止于字段。</para>
+		/// <para>The To measure field of the centerline feature class.</para>
 		/// </param>
 		public ConfigureUtilityNetworkFeatureClass(object InFeatureClass, object RouteIdField, object FromMeasureField, object ToMeasureField)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 配置 Utility Network 要素类</para>
+		/// <para>Tool Display Name : Configure Utility Network Feature Class</para>
 		/// </summary>
-		public override string DisplayName() => "配置 Utility Network 要素类";
+		public override string DisplayName() => "Configure Utility Network Feature Class";
 
 		/// <summary>
 		/// <para>Tool Name : ConfigureUtilityNetworkFeatureClass</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Utility Network Feature Layer</para>
-		/// <para>同时是 LRS 中心线要素的输入 Utility Network 要素。</para>
+		/// <para>The input Utility Network feature that is also the LRS centerline feature.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Route ID Field</para>
-		/// <para>要素类中将映射为 LRS 网络路径 ID 的字段。</para>
+		/// <para>The field in the feature class that will be mapped as the LRS Network Route ID.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>From Measure Field</para>
-		/// <para>中心线要素类的测量始于字段。</para>
+		/// <para>The From measure field of the centerline feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>To Measure Field</para>
-		/// <para>中心线要素类的测量止于字段。</para>
+		/// <para>The To measure field of the centerline feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]

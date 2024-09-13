@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 {
 	/// <summary>
 	/// <para>Classify Text Using Deep Learning</para>
-	/// <para>使用深度学习分类文本</para>
-	/// <para>在要素类或表中的文本字段上运行经过训练的文本分类模型，并使用已分配的类或类别标注更新每个记录。</para>
+	/// <para>Classify Text Using Deep Learning</para>
+	/// <para>Runs a trained text classification model on a text field in a feature class or table and updates each record with an assigned class or category label.</para>
 	/// </summary>
 	public class ClassifyTextUsingDeepLearning : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>输入点、线或面要素类或表，其中包含将分类和标注的文本。</para>
+		/// <para>The input point, line, or polygon feature class, or table, containing the text that will be classified and labelled.</para>
 		/// </param>
 		/// <param name="TextField">
 		/// <para>Text Field</para>
-		/// <para>输入要素类或表中的文本字段，其中包含将分类的文本。</para>
+		/// <para>A text field in the input feature class or table that contains the text that will be classified.</para>
 		/// </param>
 		/// <param name="InModelDefinitionFile">
 		/// <para>Input Model Definition File</para>
-		/// <para>将用于分类的训练模型。 模型定义文件可以是本地存储的 Esri 模型定义 JSON 文件 (.emd) 或深度学习模型包 (.dlpk)。</para>
+		/// <para>The trained model that will be used for classification. The model definition file can be an Esri model definition JSON file (.emd) or a deep learning model package (.dlpk) stored locally.</para>
 		/// </param>
 		public ClassifyTextUsingDeepLearning(object InTable, object TextField, object InModelDefinitionFile)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 使用深度学习分类文本</para>
+		/// <para>Tool Display Name : Classify Text Using Deep Learning</para>
 		/// </summary>
-		public override string DisplayName() => "使用深度学习分类文本";
+		public override string DisplayName() => "Classify Text Using Deep Learning";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyTextUsingDeepLearning</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>输入点、线或面要素类或表，其中包含将分类和标注的文本。</para>
+		/// <para>The input point, line, or polygon feature class, or table, containing the text that will be classified and labelled.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Text Field</para>
-		/// <para>输入要素类或表中的文本字段，其中包含将分类的文本。</para>
+		/// <para>A text field in the input feature class or table that contains the text that will be classified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Input Model Definition File</para>
-		/// <para>将用于分类的训练模型。 模型定义文件可以是本地存储的 Esri 模型定义 JSON 文件 (.emd) 或深度学习模型包 (.dlpk)。</para>
+		/// <para>The trained model that will be used for classification. The model definition file can be an Esri model definition JSON file (.emd) or a deep learning model package (.dlpk) stored locally.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Class Label Field</para>
-		/// <para>将包含模型分配的类或类别标注的字段名称。 默认字段名称为 ClassLabel。</para>
+		/// <para>The name of the field that will contain the class or category label assigned by the model. The default field name is ClassLabel.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -111,8 +111,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Model Arguments</para>
-		/// <para>将使用其他参数（例如，置信度阈值）调整模型的灵敏度。</para>
-		/// <para>将使用该工具填充参数名称。</para>
+		/// <para>Additional arguments, such as a confidence threshold, that will be used to adjust the sensitivity of the model.</para>
+		/// <para>The names of the arguments will be populated by the tool.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]

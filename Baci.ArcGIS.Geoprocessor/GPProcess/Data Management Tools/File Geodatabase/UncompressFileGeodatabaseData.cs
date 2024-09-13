@@ -11,8 +11,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Uncompress File Geodatabase Data</para>
-	/// <para>解压文件地理数据库数据</para>
-	/// <para>此工具可解压缩地理数据库中的所有内容、要素数据集中的所有内容或各个独立要素类/表。</para>
+	/// <para>Uncompress File Geodatabase Data</para>
+	/// <para>Uncompresses all the contents in a geodatabase, all the contents in a feature</para>
+	/// <para>dataset, or an individual stand-alone feature class or table.</para>
 	/// </summary>
 	public class UncompressFileGeodatabaseData : AbstractGPProcess
 	{
@@ -21,7 +22,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InData">
 		/// <para>Input file geodatabase data</para>
-		/// <para>要解压缩的地理数据库、要素数据集、要素类或表。</para>
+		/// <para>The geodatabase, feature dataset, feature class, or table to uncompress.</para>
 		/// </param>
 		public UncompressFileGeodatabaseData(object InData)
 		{
@@ -29,9 +30,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 解压文件地理数据库数据</para>
+		/// <para>Tool Display Name : Uncompress File Geodatabase Data</para>
 		/// </summary>
-		public override string DisplayName() => "解压文件地理数据库数据";
+		public override string DisplayName() => "Uncompress File Geodatabase Data";
 
 		/// <summary>
 		/// <para>Tool Name : UncompressFileGeodatabaseData</para>
@@ -65,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input file geodatabase data</para>
-		/// <para>要解压缩的地理数据库、要素数据集、要素类或表。</para>
+		/// <para>The geodatabase, feature dataset, feature class, or table to uncompress.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Configuration keyword</para>
-		/// <para>用于定义解压缩后数据的存储方式的配置关键字</para>
+		/// <para>The configuration keyword defining how the data will store once uncompressed</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

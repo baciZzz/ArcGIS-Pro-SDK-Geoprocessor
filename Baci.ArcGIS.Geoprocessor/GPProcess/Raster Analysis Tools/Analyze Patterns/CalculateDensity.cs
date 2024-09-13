@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Calculate Density</para>
-	/// <para>计算密度</para>
-	/// <para>通过在地图范围内扩展某一现象（表示为点或线的属性）的已知量，根据点要素或线要素创建密度图。 结果是按密度从小到大分类的面图层。</para>
+	/// <para>Calculate Density</para>
+	/// <para>Creates a density map from point or line features by spreading known quantities of some phenomenon (represented as attributes of the points or lines) across the map. The result is a layer of areas classified from least dense to most dense.</para>
 	/// </summary>
 	public class CalculateDensity : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		/// <param name="Inputpointorlinefeatures">
 		/// <para>Input Point or Line Features</para>
-		/// <para>将用于计算密度栅格的输入点或线要素。</para>
+		/// <para>The input point or line features that will be used to calculate the density raster.</para>
 		/// </param>
 		/// <param name="Outputname">
 		/// <para>Output Name</para>
-		/// <para>输出栅格服务的名称。</para>
-		/// <para>默认名称基于工具名称以及输入图层名称。 如果该图层名称已存在，则系统将提示您提供其他名称。</para>
+		/// <para>The name of the output raster service.</para>
+		/// <para>The default name is based on the tool name and the input layer name. If the layer name already exists, you will be prompted to provide another name.</para>
 		/// </param>
 		public CalculateDensity(object Inputpointorlinefeatures, object Outputname)
 		{
@@ -35,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 计算密度</para>
+		/// <para>Tool Display Name : Calculate Density</para>
 		/// </summary>
-		public override string DisplayName() => "计算密度";
+		public override string DisplayName() => "Calculate Density";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateDensity</para>
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Point or Line Features</para>
-		/// <para>将用于计算密度栅格的输入点或线要素。</para>
+		/// <para>The input point or line features that will be used to calculate the density raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -82,8 +82,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>输出栅格服务的名称。</para>
-		/// <para>默认名称基于工具名称以及输入图层名称。 如果该图层名称已存在，则系统将提示您提供其他名称。</para>
+		/// <para>The name of the output raster service.</para>
+		/// <para>The default name is based on the tool name and the input layer name. If the layer name already exists, you will be prompted to provide another name.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Count Field</para>
-		/// <para>此字段用于指示每个位置处的事件点数量。 例如，如果正在创建人口密度栅格且输入点为城市，则为计数字段使用城市人口最为合适，以便人口较多的城市对密度计算产生更大的影响。</para>
+		/// <para>A field indicating the number of incidents at each location. For example, if you are making a population density raster, and the input points are cities, it is appropriate to use the population of the city for the count field so cities with larger populations have more impact on the density calculations.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -101,9 +101,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Search Distance</para>
-		/// <para>搜索距离和距离单位。 计算像元的密度时，该距离内的所有要素都将用于该像元的密度计算。</para>
-		/// <para>单位可以是千米、米、英里或英尺。</para>
-		/// <para>默认单位是米。</para>
+		/// <para>The search distance and units for the distance. When calculating the density of a cell, all features within this distance will be used in the density calculation for that cell.</para>
+		/// <para>The units can be Kilometers, Meters, Miles, or Feet.</para>
+		/// <para>The default units are Meters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -112,11 +112,11 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Area Units</para>
-		/// <para>指定将用于计算面积的单位。 密度等于计数除以面积，此参数用于设置密度计算中的面积单位。</para>
-		/// <para>平方米—计算每平方米的密度。 这是默认设置。</para>
-		/// <para>平方千米—计算每平方千米的密度。</para>
-		/// <para>平方英尺—计算每平方英尺的密度。</para>
-		/// <para>平方英里—计算每平方英里的密度。</para>
+		/// <para>Specifies the units that will be used for calculating area. Density is count divided by area, and this parameter sets the units of the area in the density calculation.</para>
+		/// <para>Square Meters—Calculate the density per square meter. This is the default.</para>
+		/// <para>Square Kilometers—Calculate the density per square kilometer.</para>
+		/// <para>Square Feet—Calculate the density per square foot.</para>
+		/// <para>Square Miles—Calculate the density per square mile.</para>
 		/// <para><see cref="OutputareaunitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -126,9 +126,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Cell Size</para>
-		/// <para>输出栅格的像元大小和单位。</para>
-		/// <para>单位可以是千米、米、英里或英尺。</para>
-		/// <para>默认单位是米。</para>
+		/// <para>The cell size and units for the output raster.</para>
+		/// <para>The units can be Kilometers, Meters, Miles, or Feet.</para>
+		/// <para>The default units are Meters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -144,8 +144,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Barrier Features</para>
-		/// <para>定义障碍的数据集。</para>
-		/// <para>障碍可以是折线或面要素的要素图层。</para>
+		/// <para>The dataset that defines the barriers.</para>
+		/// <para>The barriers can be a feature layer of polyline or polygon features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -171,31 +171,31 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public enum OutputareaunitsEnum 
 		{
 			/// <summary>
-			/// <para>平方米—计算每平方米的密度。 这是默认设置。</para>
+			/// <para>Square Meters—Calculate the density per square meter. This is the default.</para>
 			/// </summary>
 			[GPValue("Square Meters")]
-			[Description("平方米")]
+			[Description("Square Meters")]
 			Square_Meters,
 
 			/// <summary>
-			/// <para>平方千米—计算每平方千米的密度。</para>
+			/// <para>Square Kilometers—Calculate the density per square kilometer.</para>
 			/// </summary>
 			[GPValue("Square Kilometers")]
-			[Description("平方千米")]
+			[Description("Square Kilometers")]
 			Square_Kilometers,
 
 			/// <summary>
-			/// <para>平方英尺—计算每平方英尺的密度。</para>
+			/// <para>Square Feet—Calculate the density per square foot.</para>
 			/// </summary>
 			[GPValue("Square Feet")]
-			[Description("平方英尺")]
+			[Description("Square Feet")]
 			Square_Feet,
 
 			/// <summary>
-			/// <para>平方英里—计算每平方英里的密度。</para>
+			/// <para>Square Miles—Calculate the density per square mile.</para>
 			/// </summary>
 			[GPValue("Square Miles")]
-			[Description("平方英里")]
+			[Description("Square Miles")]
 			Square_Miles,
 
 		}

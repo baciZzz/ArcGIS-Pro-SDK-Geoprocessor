@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Raster To Multipoint</para>
-	/// <para>栅格转多点</para>
-	/// <para>将栅格像元中心转换为 3D 多点要素（其 Z 值反映栅格像元值）。</para>
+	/// <para>Raster To Multipoint</para>
+	/// <para>Converts raster cell centers to 3D multipoint features with z-values that reflect the raster cell value.</para>
 	/// </summary>
 	public class RasterToMultipoint : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>将处理此栅格。</para>
+		/// <para>The raster that will be processed.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>将生成的要素类。</para>
+		/// <para>The feature class that will be produced.</para>
 		/// </param>
 		public RasterToMultipoint(object InRaster, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 栅格转多点</para>
+		/// <para>Tool Display Name : Raster To Multipoint</para>
 		/// </summary>
-		public override string DisplayName() => "栅格转多点";
+		public override string DisplayName() => "Raster To Multipoint";
 
 		/// <summary>
 		/// <para>Tool Name : RasterToMultipoint</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>将处理此栅格。</para>
+		/// <para>The raster that will be processed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>将生成的要素类。</para>
+		/// <para>The feature class that will be produced.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -86,8 +86,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output VIP table</para>
-		/// <para>在为细化方法参数指定 VIP 直方图时，将创建的直方图表格。</para>
-		/// <para>在为 method 参数指定 VIP_HISTOGRAM 时，将创建的直方图表格。</para>
+		/// <para>The histogram table that will be created when VIP Histogram is specified for the Thinning Method parameter.</para>
+		/// <para>The histogram table that will be created when VIP_HISTOGRAM is specified for the method parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -95,12 +95,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Thinning Method</para>
-		/// <para>指定要应用于输入栅格的细化方法，以选择要导出至多点要素类的像元的子集。</para>
-		/// <para>无细化—不应用细化。 这是默认设置。</para>
-		/// <para>Z 容差—仅导出维护输入栅格指定 Z 范围内的表面所需的像元。</para>
-		/// <para>核—根据细化值参数值将栅格划分为大小相等的分块，并导出一两个符合核方法参数值的像元。</para>
-		/// <para>VIP—采用创建三维最佳拟合平面所使用的 3 像元 × 3 像元的移动窗口。 每个像元都基于其与此平面的绝对差获得一个显著性得分。 随后，这些得分的直方图将用于根据细化值参数值确定要导出的像元。</para>
-		/// <para>VIP 直方图—创建表格以查看实际显著值和与这些值关联的相应点数。</para>
+		/// <para>Specifies the thinning method that will be applied to the input raster to select a subset of cells that will be exported to the multipoint feature class.</para>
+		/// <para>No Thinning—No thinning will be applied. This is the default.</para>
+		/// <para>Z Tolerance—Only the cells that are required for maintaining a surface within a specified z-range of the input raster will be exported.</para>
+		/// <para>Kernel—The raster will be divided into equal-sized tiles based on the Thinning Value parameter value, and one or two cells that meet the Kernel Method parameter value will be exported.</para>
+		/// <para>VIP—A roving 3-cell-by-3-cell window will be used to create a three-dimensional best fit plane. Each cell is given a significance score based on its absolute deviation from this plane. A histogram of these scores is then used to determine the cells that will be exported based on the Thinning Value parameter value.</para>
+		/// <para>VIP Histogram—A table will be created containing the significance values and the corresponding number of points associated with those values.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -110,11 +110,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Kernel Method</para>
-		/// <para>指定在输入栅格应用核细化时在每个核邻域中使用的选择方法。</para>
-		/// <para>最小值—在像元处（此像元具有在核邻域中找到的最小高程值）创建一个点。 这是默认设置。</para>
-		/// <para>最大值—在像元处（此像元具有在核邻域中找到的最大高程值）创建一个点。</para>
-		/// <para>最小值和最大值—在像元处（分别具有在核邻域中找到的最小和最大 Z 值）创建两个点。</para>
-		/// <para>最接近平均值—在像元处（其高程值最接近核邻域中像元的平均值）创建一个点。</para>
+		/// <para>Specifies the selection method that will be used in each kernel neighborhood when kernel thinning is applied on the input raster.</para>
+		/// <para>Minimum—A point will be created at the cell with the smallest elevation value found in the kernel neighborhood. This is the default.</para>
+		/// <para>Maximum—A point will be created at the cell with the largest elevation value found in the kernel neighborhood.</para>
+		/// <para>Minimum and Maximum—Two points will be created at the cells with the smallest and largest z-values found in the kernel neighborhood.</para>
+		/// <para>Closest to Mean—A point will be created at the cell whose elevation value is closest to the average of the cells in the kernel neighborhood.</para>
 		/// <para><see cref="KernelMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Z Factor</para>
-		/// <para>Z 值将乘上的系数。 此值通常用于转换 z 线性单位来匹配 x,y 线性单位。 默认值为 1，此时高程值保持不变。 如果输入表面的空间参考具有已指定线性单位的 z 基准，则此参数不可用。</para>
+		/// <para>The factor by which z-values will be multiplied. This is typically used to convert z linear units to match x,y linear units. The default is 1, which leaves elevation values unchanged. This parameter is not available if the spatial reference of the input surface has a z datum with a specified linear unit.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -132,10 +132,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Thinning Value</para>
-		/// <para>与细化方法参数值关联的细化值。</para>
-		/// <para>Z 容差 - 输入栅格与通过输出多点要素类创建的表面之间所允许的最大差异（z 单位）。 默认值是输入栅格 z 范围的 1/10。</para>
-		/// <para>核 - 每个分块边缘的栅格像元数。 默认值为 3，这意味着栅格将被划分为 3 像元 × 3 像元的窗口。</para>
-		/// <para>VIP - 显著性得分直方图的百分比数等级。 默认值为 5.0，这意味着将导出分数在直方图前 5 % 内的像元。</para>
+		/// <para>The thinning value associated with the Thinning Method parameter value.</para>
+		/// <para>Z Tolerance—The maximum allowable difference in z-units between the input raster and the surface created from the output multipoint feature class. The default value is one-tenth of the z-range of the input raster.</para>
+		/// <para>Kernel—The number of raster cells along the edge of each tile. The default value is 3, which means that the raster will be divided into 3-cell-by-3-cell windows.</para>
+		/// <para>VIP—The percentile rank of the histogram of significance scores. The default value is 5.0, which means that the cells with scores within the top 5 percent of the histogram will be exported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -158,38 +158,38 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Z 容差—仅导出维护输入栅格指定 Z 范围内的表面所需的像元。</para>
+			/// <para>Z Tolerance—Only the cells that are required for maintaining a surface within a specified z-range of the input raster will be exported.</para>
 			/// </summary>
 			[GPValue("ZTOLERANCE")]
-			[Description("Z 容差")]
+			[Description("Z Tolerance")]
 			Z_Tolerance,
 
 			/// <summary>
-			/// <para>核—根据细化值参数值将栅格划分为大小相等的分块，并导出一两个符合核方法参数值的像元。</para>
+			/// <para>Kernel—The raster will be divided into equal-sized tiles based on the Thinning Value parameter value, and one or two cells that meet the Kernel Method parameter value will be exported.</para>
 			/// </summary>
 			[GPValue("KERNEL")]
-			[Description("核")]
+			[Description("Kernel")]
 			Kernel,
 
 			/// <summary>
-			/// <para>VIP 直方图—创建表格以查看实际显著值和与这些值关联的相应点数。</para>
+			/// <para>VIP Histogram—A table will be created containing the significance values and the corresponding number of points associated with those values.</para>
 			/// </summary>
 			[GPValue("VIP_HISTOGRAM")]
-			[Description("VIP 直方图")]
+			[Description("VIP Histogram")]
 			VIP_Histogram,
 
 			/// <summary>
-			/// <para>VIP—采用创建三维最佳拟合平面所使用的 3 像元 × 3 像元的移动窗口。 每个像元都基于其与此平面的绝对差获得一个显著性得分。 随后，这些得分的直方图将用于根据细化值参数值确定要导出的像元。</para>
+			/// <para>VIP—A roving 3-cell-by-3-cell window will be used to create a three-dimensional best fit plane. Each cell is given a significance score based on its absolute deviation from this plane. A histogram of these scores is then used to determine the cells that will be exported based on the Thinning Value parameter value.</para>
 			/// </summary>
 			[GPValue("VIP")]
 			[Description("VIP")]
 			VIP,
 
 			/// <summary>
-			/// <para>无细化—不应用细化。 这是默认设置。</para>
+			/// <para>No Thinning—No thinning will be applied. This is the default.</para>
 			/// </summary>
 			[GPValue("NO_THIN")]
-			[Description("无细化")]
+			[Description("No Thinning")]
 			No_Thinning,
 
 		}
@@ -200,31 +200,31 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum KernelMethodEnum 
 		{
 			/// <summary>
-			/// <para>最小值—在像元处（此像元具有在核邻域中找到的最小高程值）创建一个点。 这是默认设置。</para>
+			/// <para>Minimum—A point will be created at the cell with the smallest elevation value found in the kernel neighborhood. This is the default.</para>
 			/// </summary>
 			[GPValue("MIN")]
-			[Description("最小值")]
+			[Description("Minimum")]
 			Minimum,
 
 			/// <summary>
-			/// <para>最大值—在像元处（此像元具有在核邻域中找到的最大高程值）创建一个点。</para>
+			/// <para>Maximum—A point will be created at the cell with the largest elevation value found in the kernel neighborhood.</para>
 			/// </summary>
 			[GPValue("MAX")]
-			[Description("最大值")]
+			[Description("Maximum")]
 			Maximum,
 
 			/// <summary>
-			/// <para>最小值和最大值—在像元处（分别具有在核邻域中找到的最小和最大 Z 值）创建两个点。</para>
+			/// <para>Minimum and Maximum—Two points will be created at the cells with the smallest and largest z-values found in the kernel neighborhood.</para>
 			/// </summary>
 			[GPValue("MINMAX")]
-			[Description("最小值和最大值")]
+			[Description("Minimum and Maximum")]
 			Minimum_and_Maximum,
 
 			/// <summary>
-			/// <para>最接近平均值—在像元处（其高程值最接近核邻域中像元的平均值）创建一个点。</para>
+			/// <para>Closest to Mean—A point will be created at the cell whose elevation value is closest to the average of the cells in the kernel neighborhood.</para>
 			/// </summary>
 			[GPValue("MEAN")]
-			[Description("最接近平均值")]
+			[Description("Closest to Mean")]
 			Closest_to_Mean,
 
 		}

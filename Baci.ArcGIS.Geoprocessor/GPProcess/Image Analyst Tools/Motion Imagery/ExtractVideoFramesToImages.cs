@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Extract Video Frames To Images</para>
-	/// <para>将视频帧提取为图像</para>
-	/// <para>从兼容 FMV 的视频流中提取视频帧图像和关联的元数据。 可将所提取的图像添加到镶嵌数据集或其他工具和函数中，以供进一步分析。</para>
+	/// <para>Extract Video Frames To Images</para>
+	/// <para>Extracts video frame images and associated metadata from a FMV-compliant video stream.  The extracted images can be added to a mosaic dataset or other tools and functions for further analysis.</para>
 	/// </summary>
 	public class ExtractVideoFramesToImages : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InVideo">
 		/// <para>Input Video File</para>
-		/// <para>所有受支持的视频文件格式的输入视频文件，包括 PS、TS、MPG、MPEG、MP2、MPG2、MPEG2、MP4、MPG4、MPEG4、H264、VOB 和 M2TS。</para>
+		/// <para>The input video file in any of the supported video file formats, including PS, TS, MPG, MPEG, MP2, MPG2, MPEG2, MP4, MPG4, MPEG4, H264, VOB, and M2TS.</para>
 		/// </param>
 		/// <param name="OutFolder">
 		/// <para>Output Folder</para>
-		/// <para>将用于保存输出图像和元数据的文件目录。</para>
+		/// <para>The file directory where the output images and metadata will be saved.</para>
 		/// </param>
 		public ExtractVideoFramesToImages(object InVideo, object OutFolder)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 将视频帧提取为图像</para>
+		/// <para>Tool Display Name : Extract Video Frames To Images</para>
 		/// </summary>
-		public override string DisplayName() => "将视频帧提取为图像";
+		public override string DisplayName() => "Extract Video Frames To Images";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractVideoFramesToImages</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Video File</para>
-		/// <para>所有受支持的视频文件格式的输入视频文件，包括 PS、TS、MPG、MPEG、MP2、MPG2、MPEG2、MP4、MPG4、MPEG4、H264、VOB 和 M2TS。</para>
+		/// <para>The input video file in any of the supported video file formats, including PS, TS, MPG, MPEG, MP2, MPG2, MPEG2, MP4, MPG4, MPEG4, H264, VOB, and M2TS.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Folder</para>
-		/// <para>将用于保存输出图像和元数据的文件目录。</para>
+		/// <para>The file directory where the output images and metadata will be saved.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -88,10 +88,10 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Image Type</para>
-		/// <para>指定输出图像格式。</para>
-		/// <para>JPEG—将以 JPEG 图像格式输出。</para>
-		/// <para>TIFF—将以 TIFF 图像格式输出。 这是默认设置。</para>
-		/// <para>NITF—将以 NITF 图像格式输出。</para>
+		/// <para>Specifies the output image format.</para>
+		/// <para>JPEG—The output will be in JPEG image format.</para>
+		/// <para>TIFF—The output will be in TIFF image format. This is the default.</para>
+		/// <para>NITF—The output will be in NITF image format.</para>
 		/// <para><see cref="ImageTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Maximum Overlap Percentage</para>
-		/// <para>两个图像之间的最大重叠百分比。 如果候选图像与写入到磁盘的最后一个图像之间的重叠大于该值，则将忽略此候选图像。 默认百分比为 100%，此时会将所有图像写入磁盘。</para>
+		/// <para>The maximum overlap percentage between two images. If the overlap between a candidate image and the last image written to disk is greater than this value, the candidate image will be ignored. The default percentage is 100 percent, which writes all images to disk.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -109,9 +109,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Require Fresh Metadata</para>
-		/// <para>指定是否要提取和保存具有关联元数据的视频帧。</para>
-		/// <para>选中 - 将仅保存具有关联元数据的视频帧。</para>
-		/// <para>未选中 - 将保存所有视频帧。 这是默认设置。</para>
+		/// <para>Specifies whether video frames with associated metadata will be extracted and saved.</para>
+		/// <para>Checked—Only video frames with associated metadata will be saved.</para>
+		/// <para>Unchecked—All video frames will be saved. This is the default.</para>
 		/// <para><see cref="RequireFreshMetadataEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Minimum Time Between Features</para>
-		/// <para>要保存的视频帧之间的最小时间间隔。 如果未指定该时间，则所有视频帧都将保存为图像。</para>
+		/// <para>The minimum time interval between video frames to be saved. If this is not specified, all video frames will be saved as images.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -135,21 +135,21 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum ImageTypeEnum 
 		{
 			/// <summary>
-			/// <para>JPEG—将以 JPEG 图像格式输出。</para>
+			/// <para>JPEG—The output will be in JPEG image format.</para>
 			/// </summary>
 			[GPValue("JPEG")]
 			[Description("JPEG")]
 			JPEG,
 
 			/// <summary>
-			/// <para>TIFF—将以 TIFF 图像格式输出。 这是默认设置。</para>
+			/// <para>TIFF—The output will be in TIFF image format. This is the default.</para>
 			/// </summary>
 			[GPValue("TIFF")]
 			[Description("TIFF")]
 			TIFF,
 
 			/// <summary>
-			/// <para>NITF—将以 NITF 图像格式输出。</para>
+			/// <para>NITF—The output will be in NITF image format.</para>
 			/// </summary>
 			[GPValue("NITF")]
 			[Description("NITF")]
@@ -163,14 +163,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum RequireFreshMetadataEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Only video frames with associated metadata will be saved.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REQUIRE_FRESH_METADATA")]
 			REQUIRE_FRESH_METADATA,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—All video frames will be saved. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_REQUIRE_FRESH_METADATA")]

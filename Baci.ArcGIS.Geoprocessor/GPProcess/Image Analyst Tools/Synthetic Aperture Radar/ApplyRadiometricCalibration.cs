@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Apply Radiometric Calibration</para>
-	/// <para>应用辐射校准</para>
-	/// <para>校正输入合成孔径雷达 (SAR) 数据中的系统误差，并将雷达反射率转换为参考平面上的雷达反向散射。</para>
+	/// <para>Apply Radiometric Calibration</para>
+	/// <para>Corrects systematic errors in the input synthetic aperture radar (SAR) data  and transforms radar reflectivity into radar backscatter on a reference plane.</para>
 	/// </summary>
 	public class ApplyRadiometricCalibration : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRadarData">
 		/// <para>Input Radar Data</para>
-		/// <para>输入雷达数据。</para>
+		/// <para>The input radar data.</para>
 		/// </param>
 		/// <param name="OutRadarData">
 		/// <para>Output Radar Data</para>
-		/// <para>校准的雷达数据。</para>
+		/// <para>The calibrated radar data.</para>
 		/// </param>
 		public ApplyRadiometricCalibration(object InRadarData, object OutRadarData)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 应用辐射校准</para>
+		/// <para>Tool Display Name : Apply Radiometric Calibration</para>
 		/// </summary>
-		public override string DisplayName() => "应用辐射校准";
+		public override string DisplayName() => "Apply Radiometric Calibration";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyRadiometricCalibration</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Radar Data</para>
-		/// <para>输入雷达数据。</para>
+		/// <para>The input radar data.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Radar Data</para>
-		/// <para>校准的雷达数据。</para>
+		/// <para>The calibrated radar data.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -86,8 +86,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Polarization Bands</para>
-		/// <para>要校正的极化波段。</para>
-		/// <para>默认情况下，第一个波段处于选中状态。</para>
+		/// <para>The polarization bands to be corrected.</para>
+		/// <para>The first band is selected by default.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -95,10 +95,10 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Calibration Type</para>
-		/// <para>指定将应用的校准类型。</para>
-		/// <para>Beta nought—雷达反射率将被校准为倾斜范围上单位面积的反向散射。 这是默认设置。</para>
-		/// <para>Sigma nought—返回的反向散射将从地面上的单位区域校准到天线，该平面与椭圆体局部相切。 这被称为雷达横截面。Sigma nought 值因入射角、波长、极化、地形和表面散射属性而有所不同。</para>
-		/// <para>Gamma nought—返回的反向散射将从与垂直于倾斜范围的平面对齐的单位区域校准到天线。 这将使用相对于椭球体的入射角来归一化 gamma nought。Gamma nought 值因波长、极化、地形和表面散射属性而有所不同。</para>
+		/// <para>Specifies the type of calibration that will be applied.</para>
+		/// <para>Beta nought—The radar reflectivity will be calibrated to backscatter for a unit area on the slant range. This is the default.</para>
+		/// <para>Sigma nought— The backscatter returned will be calibrated to the antenna from a unit area on the ground with the plane locally tangent to the ellipsoid. This is known as the radar cross section. Sigma nought values vary due to incidence angle, wavelength, polarization, terrain, and surface scattering properties.</para>
+		/// <para>Gamma nought—The backscatter returned will be calibrated to the antenna from a unit area aligned with the plane perpendicular to the slant range. This normalizes gamma nought using the incidence angle relative to the ellipsoid.Gamma nought values vary due to wavelength, polarization, terrain, and surface scattering properties.</para>
 		/// <para><see cref="CalibrationTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -123,21 +123,21 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum CalibrationTypeEnum 
 		{
 			/// <summary>
-			/// <para>Beta nought—雷达反射率将被校准为倾斜范围上单位面积的反向散射。 这是默认设置。</para>
+			/// <para>Beta nought—The radar reflectivity will be calibrated to backscatter for a unit area on the slant range. This is the default.</para>
 			/// </summary>
 			[GPValue("BETA_NOUGHT")]
 			[Description("Beta nought")]
 			Beta_nought,
 
 			/// <summary>
-			/// <para>Sigma nought—返回的反向散射将从地面上的单位区域校准到天线，该平面与椭圆体局部相切。 这被称为雷达横截面。Sigma nought 值因入射角、波长、极化、地形和表面散射属性而有所不同。</para>
+			/// <para>Sigma nought— The backscatter returned will be calibrated to the antenna from a unit area on the ground with the plane locally tangent to the ellipsoid. This is known as the radar cross section. Sigma nought values vary due to incidence angle, wavelength, polarization, terrain, and surface scattering properties.</para>
 			/// </summary>
 			[GPValue("SIGMA_NOUGHT")]
 			[Description("Sigma nought")]
 			Sigma_nought,
 
 			/// <summary>
-			/// <para>Gamma nought—返回的反向散射将从与垂直于倾斜范围的平面对齐的单位区域校准到天线。 这将使用相对于椭球体的入射角来归一化 gamma nought。Gamma nought 值因波长、极化、地形和表面散射属性而有所不同。</para>
+			/// <para>Gamma nought—The backscatter returned will be calibrated to the antenna from a unit area aligned with the plane perpendicular to the slant range. This normalizes gamma nought using the incidence angle relative to the ellipsoid.Gamma nought values vary due to wavelength, polarization, terrain, and surface scattering properties.</para>
 			/// </summary>
 			[GPValue("GAMMA_NOUGHT")]
 			[Description("Gamma nought")]

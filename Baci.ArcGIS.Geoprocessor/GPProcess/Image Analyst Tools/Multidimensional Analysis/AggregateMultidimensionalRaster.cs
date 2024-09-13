@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Aggregate Multidimensional Raster</para>
-	/// <para>聚合多维栅格</para>
-	/// <para>通过沿维度组合现有多维栅格变量来生成多维栅格数据集。</para>
+	/// <para>Aggregate Multidimensional Raster</para>
+	/// <para>Generates a multidimensional raster dataset by combining existing multidimensional raster variables along a dimension.</para>
 	/// </summary>
 	public class AggregateMultidimensionalRaster : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InMultidimensionalRaster">
 		/// <para>Input Multidimensional Raster</para>
-		/// <para>输入多维栅格数据集。</para>
+		/// <para>The input multidimensional raster dataset.</para>
 		/// </param>
 		/// <param name="Dimension">
 		/// <para>Dimension</para>
-		/// <para>聚合维度。 这是聚合变量时所沿的维度。</para>
+		/// <para>The aggregation dimension. This is the dimension along which the variables will be aggregated.</para>
 		/// </param>
 		/// <param name="OutMultidimensionalRaster">
 		/// <para>Output Multidimensional Raster</para>
-		/// <para>输出云栅格格式 (CRF) 多维栅格数据集。</para>
+		/// <para>The output Cloud Raster Format (CRF) multidimensional raster dataset.</para>
 		/// </param>
 		public AggregateMultidimensionalRaster(object InMultidimensionalRaster, object Dimension, object OutMultidimensionalRaster)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 聚合多维栅格</para>
+		/// <para>Tool Display Name : Aggregate Multidimensional Raster</para>
 		/// </summary>
-		public override string DisplayName() => "聚合多维栅格";
+		public override string DisplayName() => "Aggregate Multidimensional Raster";
 
 		/// <summary>
 		/// <para>Tool Name : AggregateMultidimensionalRaster</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>
-		/// <para>输入多维栅格数据集。</para>
+		/// <para>The input multidimensional raster dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Dimension</para>
-		/// <para>聚合维度。 这是聚合变量时所沿的维度。</para>
+		/// <para>The aggregation dimension. This is the dimension along which the variables will be aggregated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Multidimensional Raster</para>
-		/// <para>输出云栅格格式 (CRF) 多维栅格数据集。</para>
+		/// <para>The output Cloud Raster Format (CRF) multidimensional raster dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -101,20 +101,20 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Aggregation Method</para>
-		/// <para>指定将用于组合间隔中的已聚合剖切的数学方法。</para>
-		/// <para>平均值—将计算间隔中所有时间片的像素值的平均值。 这是默认设置。</para>
-		/// <para>最大值—将计算间隔中所有时间片的像素的最大值。</para>
-		/// <para>众数—将计算间隔中所有时间片最常出现的像素值。</para>
-		/// <para>最小值—将计算间隔中所有时间片的像素的最小值。</para>
-		/// <para>少数—将计算间隔中所有时间片最不常出现的像素值。</para>
-		/// <para>中值—将计算间隔中所有时间片的像素的中值。</para>
-		/// <para>百分比数—计算间隔中所有时间片的像素值百分比数。 默认情况下将计算 90% 百分比数。 您可以使用百分数值参数来指定其他值（从 0 到 100）。</para>
-		/// <para>范围—计算间隔中所有时间片的像素值范围。</para>
-		/// <para>标准差—将计算间隔中所有时间片的像素值的标准差。</para>
-		/// <para>总和—将计算间隔中所有时间片的像素值总和。</para>
-		/// <para>变异度—将计算间隔中所有时间片的唯一像素值的数量。</para>
-		/// <para>自定义—将基于自定义栅格函数来计算像素值。</para>
-		/// <para>当方法设置为自定义时，聚合函数参数变为活动状态。</para>
+		/// <para>Specifies the mathematical method that will be used to combine the aggregated slices in an interval.</para>
+		/// <para>Mean—The mean of a pixel&apos;s values will be calculated across all slices in the interval. This is the default.</para>
+		/// <para>Maximum—The maximum value of a pixel will be calculated across all slices in the interval.</para>
+		/// <para>Majority—The pixel value that occurred most frequently will be calculated across all slices in the interval.</para>
+		/// <para>Minimum—The minimum value of a pixel will be calculated across all slices in the interval.</para>
+		/// <para>Minority—The pixel value that occurred least frequently will be calculated across all slices in the interval.</para>
+		/// <para>Median—The median value of a pixel will be calculated across all slices in the interval.</para>
+		/// <para>Percentile—The percentile of values for a pixel will be calculated across all slices in the interval. The 90th percentile is calculated by default. You can specify other values (from 0 to 100) using the Percentile value parameter.</para>
+		/// <para>Range—The range of values for a pixel will be calculated across all slices in the interval.</para>
+		/// <para>Standard Deviation—The standard deviation of a pixel&apos;s values will be calculated across all slices in the interval.</para>
+		/// <para>Sum—The sum of a pixel&apos;s values will be calculated across all slices in the interval.</para>
+		/// <para>Variety—The number of unique pixel values will be calculated across all slices in the interval.</para>
+		/// <para>Custom—The pixel value will be calculated based on a custom raster function.</para>
+		/// <para>When the method is set to Custom, the Aggregation Function parameter becomes active.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -123,8 +123,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Variables [Dimension Info] (Description)</para>
-		/// <para>将沿给定维度聚合的一个或多个变量。 如果未指定变量，则将使用所选维度聚合所有变量。</para>
-		/// <para>例如，要将每日温度数据聚合到月平均值，请将温度指定为要聚合的变量。 如果您没有指定任何变量，并且您同时拥有每日温度和日降雨量变量，则这两个变量将聚合到月平均值，并且输出多维栅格将包含两个变量。</para>
+		/// <para>The variable or variables that will be aggregated along the given dimension. If no variable is specified, all variables with the selected dimension will be aggregated.</para>
+		/// <para>For example, to aggregate daily temperature data into monthly average values, specify temperature as the variable to be aggregated. If you do not specify any variables and you have both daily temperature and daily precipitation variables, both variables will be aggregated into monthly averages and the output multidimensional raster will include both variables.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -132,11 +132,11 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Aggregation Definition</para>
-		/// <para>指定要为其聚合数据的维度间隔。</para>
-		/// <para>全部—将聚合所有剖切的数据值。 这是默认设置。</para>
-		/// <para>间隔关键字—变量数据将使用常用间隔进行聚合。</para>
-		/// <para>间隔值—变量数据将使用用户指定的间隔和单位进行聚合。</para>
-		/// <para>间隔范围—变量数据将在指定的值对或日期之间进行聚合。</para>
+		/// <para>Specifies the dimension interval for which the data will be aggregated.</para>
+		/// <para>All—The data values will be aggregated across all slices. This is the default.</para>
+		/// <para>Interval Keyword—The variable data will be aggregated using a commonly known interval.</para>
+		/// <para>Interval Value—The variable data will be aggregated using a user-specified interval and unit.</para>
+		/// <para>Interval Ranges—The variable data will be aggregated between specified pairs of values or dates.</para>
 		/// <para><see cref="AggregationDefEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -146,19 +146,19 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Keyword Interval</para>
-		/// <para>指定沿维度聚合时将使用的关键字间隔。 当聚合定义参数设置为间隔关键字并且聚合必须跨时间时，此参数为必需项。</para>
-		/// <para>每小时—数据值将聚合为每小时时间步长，且结果将包括时间序列中的每个小时。</para>
-		/// <para>每天—数据值将聚合为每日时间步长，且结果将包括时间序列中的每一天。</para>
-		/// <para>每周—数据值将聚合为每周时间步长，且结果将包括时间序列中的每周。</para>
-		/// <para>每十年—数据值将聚合为 3 个周期，每个周期为 10 天。 最后一个周期所包含的天数可以多于或少于 10 天。 每个月的输出中将包括 3 个时间片。</para>
-		/// <para>每五年—数据值将聚合为 6 个周期，每个周期为 5 天。 最后一个周期所包含的天数可以多于或少于 5 天。 对于每个月，输出中将包括 6 个时间片。</para>
-		/// <para>每月—数据值将聚合为每月时间步长，且结果将包括时间序列中的每个月。</para>
-		/// <para>季度—数据值将聚合为季度时间步长，且结果将包括时间序列中的每个季度。</para>
-		/// <para>每年—数据值将聚合为年度时间步长，且结果将包括时间序列中的每年。</para>
-		/// <para>每天循环—数据值将聚合为每日时间步长，且结果将包括每个儒略日的一个聚合值。 输出中最多包括 366 个每日时间片。</para>
-		/// <para>每周循环—数据值将聚合为每周时间步长，且结果将包括每周的一个聚合值。 输出中最多包括 53 个每周时间片。</para>
-		/// <para>每月循环—数据值将聚合为每月时间步长，且结果将包括每月的一个聚合值。 输出中最多包括 12 个每月时间片。</para>
-		/// <para>每季度循环—数据值将聚合为季度时间步长，且结果将包括每季度的一个聚合值。 输出中最多包括 4 个季度时间片。</para>
+		/// <para>Specifies the keyword interval that will be used when aggregating along the dimension. This parameter is required when the Aggregation Definition parameter is set to Interval Keyword and the aggregation must be across time.</para>
+		/// <para>Hourly—The data values will be aggregated into hourly time steps, and the result will include every hour in the time series.</para>
+		/// <para>Daily—The data values will be aggregated into daily time steps, and the result will include every day in the time series.</para>
+		/// <para>Weekly—The data values will be aggregated into weekly time steps, and the result will include every week in the time series.</para>
+		/// <para>Dekadly—The data values will be aggregated into 3 periods of 10 days each. The last period can contain more or fewer than 10 days. The output will include 3 slices for each month.</para>
+		/// <para>Pentadly—The data values will be aggregated into 6 periods of 5 days each. The last period can contain more or fewer than 5 days. The output will include 6 slices for each month.</para>
+		/// <para>Monthly—The data values will be aggregated into monthly time steps, and the result will include every month in the time series.</para>
+		/// <para>Quarterly—The data values will be aggregated into quarterly time steps, and the result will include every quarter in the time series.</para>
+		/// <para>Yearly—The data values will be aggregated into yearly time steps, and the result will include every year in the time series.</para>
+		/// <para>Recurring daily—The data values will be aggregated into daily time steps, and the result will include one aggregated value per Julian day. The output will include, at most, 366 daily time slices.</para>
+		/// <para>Recurring weekly—The data values will be aggregated into weekly time steps, and the result will include one aggregated value per week. The output will include, at most, 53 weekly time slices.</para>
+		/// <para>Recurring monthly—The data values will be aggregated into monthly time steps, and the result will include one aggregated value per month. The output will include, at most, 12 monthly time slices.</para>
+		/// <para>Recurring quarterly—The data values will be aggregated into quarterly time steps, and the result will include one aggregated value per quarter. The output will include, at most, 4 quarterly time slices.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -167,8 +167,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Value Interval</para>
-		/// <para>将用于聚合的间隔大小。 当聚合定义参数设置为间隔值时，此参数为必需项。</para>
-		/// <para>例如，要将 30 年的每月温度数据聚合到 5 年增量，请输入 5 作为值间隔，并将单位指定为年。</para>
+		/// <para>The size of the interval that will be used for the aggregation. This parameter is required when the Aggregation Definition parameter is set to Interval Value.</para>
+		/// <para>For example, to aggregate 30 years of monthly temperature data into 5-year increments, enter 5 as the Value Interval, and specify Unit as Years.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -176,13 +176,13 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Unit</para>
-		/// <para>将用于值间隔参数的单位。 当维度参数为时间字段并且聚合定义参数设置为间隔值时，此参数为必需项。</para>
-		/// <para>如果要聚合除时间之外的任何内容，则此选项将不可用，并且间隔值的单位将与输入多维栅格数据的变量单位一致。</para>
-		/// <para>小时—数据值将按提供的间隔聚合到每小时时间片。</para>
-		/// <para>天—数据值将按提供的间隔聚合到每日时间片。</para>
-		/// <para>周—数据值将按提供的间隔聚合到每周时间片。</para>
-		/// <para>月—数据值将按提供的间隔聚合到每月时间片。</para>
-		/// <para>年—数据值将按提供的间隔聚合到每年时间片。</para>
+		/// <para>The unit that will be used for the Value Interval parameter. This parameter is required when the Dimension parameter is a time field and the Aggregation Definition parameter is set to Interval Value.</para>
+		/// <para>If you are aggregating anything other than time, this option will not be available and the unit for the interval value will match the variable unit of the input multidimensional raster data.</para>
+		/// <para>Hours—The data values will be aggregated into hourly time slices at the interval provided.</para>
+		/// <para>Days—The data values will be aggregated into daily time slices at the interval provided.</para>
+		/// <para>Weeks—The data values will be aggregated into weekly time slices at the interval provided.</para>
+		/// <para>Months—The data values will be aggregated into monthly time slices at the interval provided.</para>
+		/// <para>Years—The data values will be aggregated into yearly time slices at the interval provided.</para>
 		/// <para><see cref="IntervalUnitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -192,8 +192,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Range</para>
-		/// <para>在值表中指定的间隔范围将用于聚合值组。 值表由最小和最大范围值对组成，数据类型为双精度或日期。</para>
-		/// <para>当聚合定义参数设置为间隔范围时，此参数为必需项。</para>
+		/// <para>Interval ranges specified in a value table will be used to aggregate groups of values. The value table consists of pairs of minimum and maximum range values, with data type Double or Date.</para>
+		/// <para>This parameter is required when the Aggregation Definition parameter is set to Interval Ranges.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -201,8 +201,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Aggregation Function</para>
-		/// <para>将用于计算聚合栅格的像素值的自定义栅格函数。 输入是栅格函数 JSON 对象或基于函数链或自定义 Python 栅格函数创建的 .rft.xml 文件。</para>
-		/// <para>当聚合方法参数设置为自定义时，此参数为必需项。</para>
+		/// <para>A custom raster function that will be used to compute the pixel values of the aggregated rasters. The input is a raster function JSON object or an .rft.xml file created from a function chain or a custom Python raster function.</para>
+		/// <para>This parameter is required when the Aggregation Method parameter is set to Custom.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -211,9 +211,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Ignore NoData</para>
-		/// <para>指定分析中是否忽略 NoData 值。</para>
-		/// <para>已选中 - 分析将包括沿给定维度的所有有效像素，并忽略所有 NoData 像素。 这是默认设置。</para>
-		/// <para>未选中 - 如果沿给定维度的像素包含任意 NoData 值，则分析结果将变为 NoData。</para>
+		/// <para>Specifies whether NoData values are ignored in the analysis.</para>
+		/// <para>Checked—The analysis will include all valid pixels along a given dimension and ignore any NoData pixels. This is the default.</para>
+		/// <para>Unchecked—The analysis will result in NoData if there are any NoData values for the pixels along the given dimension.</para>
 		/// <para><see cref="IgnoreNodataEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -223,9 +223,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Dimensionless</para>
-		/// <para>指定图层是否具有维度值。 仅当选择单个剖切片来创建图层时，此参数才处于活动状态。</para>
-		/// <para>选中 - 图层没有维度值。</para>
-		/// <para>未选中 - 图层具有维度值。 这是默认设置。</para>
+		/// <para>Specifies whether the layer will have dimension values. This parameter is only active if a single slice is selected to create a layer.</para>
+		/// <para>Checked—The layer will not have dimension values.</para>
+		/// <para>Unchecked—The layer will have dimension values. This is the default.</para>
 		/// <para><see cref="DimensionlessEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -235,9 +235,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Percentile value</para>
-		/// <para>要计算的百分比数。 默认值为 90，指示 90%。</para>
-		/// <para>取值范围为 0 到 100。 0% 基本上等同于“最小值”统计数据，而 100% 则等同于“最大值”。 值 50 所生成的结果基本等同于“中值”统计数据的结果。</para>
-		/// <para>仅当统计类型参数设置为百分位数时，此参数才可用。</para>
+		/// <para>The percentile to calculate. The default is 90, indicating the 90th percentile.</para>
+		/// <para>The values can range from 0 to 100. The 0th percentile is essentially equivalent to the minimum statistic, and the 100th percentile is equivalent to maximum. A value of 50 will produce essentially the same result as the median statistic.</para>
+		/// <para>This parameter is only available if the Statistics type parameter is set to Percentile.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -245,9 +245,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Percentile interpolation type</para>
-		/// <para>指定输入栅格中要计算的值数为偶数时使用的百分位数插值方法。</para>
-		/// <para>最邻近—将使用最接近所需的百分位数的可用值。 在这种情况下，输出像素类型与输入值栅格的像素类型相同。</para>
-		/// <para>线性—将使用接近所需百分位数的两个值的加权平均值。 在这种情况下，输出像素类型为浮点型。</para>
+		/// <para>Specifies the method of percentile interpolation that will be used when there is an even number of values from the input raster to be calculated.</para>
+		/// <para>Nearest—The nearest available value to the desired percentile will be used. In this case, the output pixel type will be the same as that of the input value raster.</para>
+		/// <para>Linear—The weighted average of the two surrounding values from the desired percentile will be used. In this case, the output pixel type will be floating point.</para>
 		/// <para><see cref="PercentileInterpolationTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -272,31 +272,31 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum AggregationDefEnum 
 		{
 			/// <summary>
-			/// <para>全部—将聚合所有剖切的数据值。 这是默认设置。</para>
+			/// <para>All—The data values will be aggregated across all slices. This is the default.</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("全部")]
+			[Description("All")]
 			All,
 
 			/// <summary>
-			/// <para>间隔关键字—变量数据将使用常用间隔进行聚合。</para>
+			/// <para>Interval Keyword—The variable data will be aggregated using a commonly known interval.</para>
 			/// </summary>
 			[GPValue("INTERVAL_KEYWORD")]
-			[Description("间隔关键字")]
+			[Description("Interval Keyword")]
 			Interval_Keyword,
 
 			/// <summary>
-			/// <para>间隔值—变量数据将使用用户指定的间隔和单位进行聚合。</para>
+			/// <para>Interval Value—The variable data will be aggregated using a user-specified interval and unit.</para>
 			/// </summary>
 			[GPValue("INTERVAL_VALUE")]
-			[Description("间隔值")]
+			[Description("Interval Value")]
 			Interval_Value,
 
 			/// <summary>
-			/// <para>间隔范围—变量数据将在指定的值对或日期之间进行聚合。</para>
+			/// <para>Interval Ranges—The variable data will be aggregated between specified pairs of values or dates.</para>
 			/// </summary>
 			[GPValue("INTERVAL_RANGES")]
-			[Description("间隔范围")]
+			[Description("Interval Ranges")]
 			Interval_Ranges,
 
 		}
@@ -307,38 +307,38 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum IntervalUnitEnum 
 		{
 			/// <summary>
-			/// <para>小时—数据值将按提供的间隔聚合到每小时时间片。</para>
+			/// <para>Hours—The data values will be aggregated into hourly time slices at the interval provided.</para>
 			/// </summary>
 			[GPValue("HOURS")]
-			[Description("小时")]
+			[Description("Hours")]
 			Hours,
 
 			/// <summary>
-			/// <para>天—数据值将按提供的间隔聚合到每日时间片。</para>
+			/// <para>Days—The data values will be aggregated into daily time slices at the interval provided.</para>
 			/// </summary>
 			[GPValue("DAYS")]
-			[Description("天")]
+			[Description("Days")]
 			Days,
 
 			/// <summary>
-			/// <para>周—数据值将按提供的间隔聚合到每周时间片。</para>
+			/// <para>Weeks—The data values will be aggregated into weekly time slices at the interval provided.</para>
 			/// </summary>
 			[GPValue("WEEKS")]
-			[Description("周")]
+			[Description("Weeks")]
 			Weeks,
 
 			/// <summary>
-			/// <para>月—数据值将按提供的间隔聚合到每月时间片。</para>
+			/// <para>Months—The data values will be aggregated into monthly time slices at the interval provided.</para>
 			/// </summary>
 			[GPValue("MONTHS")]
-			[Description("月")]
+			[Description("Months")]
 			Months,
 
 			/// <summary>
-			/// <para>年—数据值将按提供的间隔聚合到每年时间片。</para>
+			/// <para>Years—The data values will be aggregated into yearly time slices at the interval provided.</para>
 			/// </summary>
 			[GPValue("YEARS")]
-			[Description("年")]
+			[Description("Years")]
 			Years,
 
 		}
@@ -349,14 +349,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum IgnoreNodataEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The analysis will include all valid pixels along a given dimension and ignore any NoData pixels. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DATA")]
 			DATA,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The analysis will result in NoData if there are any NoData values for the pixels along the given dimension.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NODATA")]
@@ -370,14 +370,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum DimensionlessEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The layer will not have dimension values.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("NO_DIMENSIONS")]
 			NO_DIMENSIONS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The layer will have dimension values. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DIMENSIONS")]
@@ -391,17 +391,17 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum PercentileInterpolationTypeEnum 
 		{
 			/// <summary>
-			/// <para>最邻近—将使用最接近所需的百分位数的可用值。 在这种情况下，输出像素类型与输入值栅格的像素类型相同。</para>
+			/// <para>Nearest—The nearest available value to the desired percentile will be used. In this case, the output pixel type will be the same as that of the input value raster.</para>
 			/// </summary>
 			[GPValue("NEAREST")]
-			[Description("最邻近")]
+			[Description("Nearest")]
 			Nearest,
 
 			/// <summary>
-			/// <para>线性—将使用接近所需百分位数的两个值的加权平均值。 在这种情况下，输出像素类型为浮点型。</para>
+			/// <para>Linear—The weighted average of the two surrounding values from the desired percentile will be used. In this case, the output pixel type will be floating point.</para>
 			/// </summary>
 			[GPValue("LINEAR")]
-			[Description("线性")]
+			[Description("Linear")]
 			Linear,
 
 		}

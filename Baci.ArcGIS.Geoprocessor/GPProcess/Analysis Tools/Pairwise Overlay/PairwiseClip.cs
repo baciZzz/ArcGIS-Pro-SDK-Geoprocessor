@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Pairwise Clip</para>
-	/// <para>成对裁剪</para>
-	/// <para>提取与裁剪要素相重叠的输入要素。</para>
+	/// <para>Pairwise Clip</para>
+	/// <para>Extracts input features that overlay the clip features.</para>
 	/// </summary>
 	public class PairwiseClip : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>要裁剪的要素。</para>
+		/// <para>The features to be clipped.</para>
 		/// </param>
 		/// <param name="ClipFeatures">
 		/// <para>Clip Features</para>
-		/// <para>用于裁剪输入要素的要素。</para>
+		/// <para>The features to use to clip the input features.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>待创建的要素类。</para>
+		/// <para>The feature class to be created.</para>
 		/// </param>
 		public PairwiseClip(object InFeatures, object ClipFeatures, object OutFeatureClass)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 成对裁剪</para>
+		/// <para>Tool Display Name : Pairwise Clip</para>
 		/// </summary>
-		public override string DisplayName() => "成对裁剪";
+		public override string DisplayName() => "Pairwise Clip";
 
 		/// <summary>
 		/// <para>Tool Name : PairwiseClip</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>要裁剪的要素。</para>
+		/// <para>The features to be clipped.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Clip Features</para>
-		/// <para>用于裁剪输入要素的要素。</para>
+		/// <para>The features to use to clip the input features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>待创建的要素类。</para>
+		/// <para>The feature class to be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -103,8 +103,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>XY Tolerance</para>
-		/// <para>所有要素坐标（节点和折点）之间的最小距离以及坐标可以沿 x 和/或 y 方向移动的距离。</para>
-		/// <para>更改此参数的值可能会导致出现故障或意外结果。 建议不要修改此参数。 已将其从工具对话框的视图中移除。 默认情况下，将使用输入要素类的空间参考 x,y 容差属性。</para>
+		/// <para>The minimum distance separating all feature coordinates (nodes and vertices) as well as the distance a coordinate can move in x or y (or both).</para>
+		/// <para>Changing this parameter&apos;s value may cause failure or unexpected results. It is recommended that you do not modify this parameter. It has been removed from view on the tool dialog box. By default, the input feature class&apos;s spatial reference x,y tolerance property is used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]

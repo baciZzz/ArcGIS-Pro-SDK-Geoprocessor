@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Manage Multidimensional Raster</para>
-	/// <para>管理多维栅格</para>
-	/// <para>通过添加或删除变量或维度来编辑多维栅格。</para>
+	/// <para>Manage Multidimensional Raster</para>
+	/// <para>Edits a multidimensional raster by adding or deleting variables or dimensions.</para>
 	/// </summary>
 	public class ManageMultidimensionalRaster : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		/// <param name="TargetMultidimensionalRaster">
 		/// <para>Target Multidimensional Raster</para>
-		/// <para>CRF 中要修改的多维栅格。</para>
+		/// <para>The multidimensional raster in CRF to modify.</para>
 		/// </param>
 		public ManageMultidimensionalRaster(object TargetMultidimensionalRaster)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 管理多维栅格</para>
+		/// <para>Tool Display Name : Manage Multidimensional Raster</para>
 		/// </summary>
-		public override string DisplayName() => "管理多维栅格";
+		public override string DisplayName() => "Manage Multidimensional Raster";
 
 		/// <summary>
 		/// <para>Tool Name : ManageMultidimensionalRaster</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Target Multidimensional Raster</para>
-		/// <para>CRF 中要修改的多维栅格。</para>
+		/// <para>The multidimensional raster in CRF to modify.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -74,13 +74,13 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Manage Mode</para>
-		/// <para>指定将在目标栅格上执行的修改的类型。</para>
-		/// <para>添加维度—维度将添加到输入多维栅格中。</para>
-		/// <para>追加剖切片—输入多维栅格中的剖切片将添加到维度的剖切片的末尾。 这是默认设置。</para>
-		/// <para>追加变量—将添加输入多维栅格中的变量。</para>
-		/// <para>替换剖切片—在特定的维度值下，现有剖切片将替换为另一个多维栅格中的剖切片。</para>
-		/// <para>删除变量—一个或多个变量将从多维栅格中删除。</para>
-		/// <para>移除维度—单剖切片多维栅格将转换为无维度栅格。</para>
+		/// <para>Specifies the type of modification that will be performed on the target raster.</para>
+		/// <para>Add Dimension—A dimension will be added to the input multidimensional raster.</para>
+		/// <para>Append Slices—Slices from the input multidimensional rasters will be added to the end of the slices for a dimension. This is the default.</para>
+		/// <para>Append Variables—The variables from the input multidimensional rasters will be added.</para>
+		/// <para>Replace Slices—Existing slices will be replaced by slices from another multidimensional raster, at specific dimension values.</para>
+		/// <para>Delete Variables—One or more variables will be deleted from the multidimensional raster.</para>
+		/// <para>Remove Dimension—A single slice multidimensional raster will be converted to a dimensionless raster.</para>
 		/// <para><see cref="ManageModeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -90,8 +90,8 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Variables</para>
-		/// <para>将在目标多维栅格中修改的一个或多个变量。 如果要执行的操作是对现有变量进行修改，则此参数为必需项。</para>
-		/// <para>如果未指定变量，则将修改目标多维栅格中的第一个变量。</para>
+		/// <para>The variable or variables that will be modified in the target multidimensional raster. This parameter is required if the operation being performed is a modification of an existing variable.</para>
+		/// <para>If no variable is specified, the first variable in the target multidimensional raster will be modified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Input Multidimensional Rasters</para>
-		/// <para>包含要添加到目标多维栅格的剖切片或变量的多维栅格数据集。 当管理模式设置为追加剖切片、替换剖切片或追加变量时，此参数为必需项。</para>
+		/// <para>The multidimensional raster datasets that contain the slices or variables to be added to the target multidimensional raster. This parameter is required when Manage Mode is set to Append Slices, Replace Slices, or Append Variables.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Dimension Name</para>
-		/// <para>要添加到栅格属性的新维度的名称。 如果将管理模式设置为添加维度，则此参数为必需项。</para>
+		/// <para>The name of the new dimension to be added to the raster properties. This parameter is required if Manage Mode is set to Add Dimension.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -115,8 +115,8 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Dimension Value</para>
-		/// <para>要添加的维度的值。 该值可以是单个值，也可以是值范围。 对于值范围，提供以逗号分隔的最小值和最大值。 例如，对于新的高度维度，输入 0,10 时生成的维度的第一个剖切片包含前 10 米高度的信息。</para>
-		/// <para>如果将管理模式设置为添加维度，则此参数为必需项。</para>
+		/// <para>The value of the dimension to be added. The value can be a single value or a range of values. For a range of values, provide the minimum and maximum values separated by a comma. For example, for a new height dimension, enter 0,10 to generate a dimension in which the first slice contains information for the first 10 meters of height.</para>
+		/// <para>This parameter is required if Manage Mode is set to Add Dimension.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Dimension Description</para>
-		/// <para>为了元数据将添加到栅格属性的新维度的描述。 如果将管理模式设置为添加维度，则启用此参数。</para>
+		/// <para>The description of the new dimension to be added to the raster properties for metadata purposes. This parameter is active if Manage Mode is set to Add Dimension.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Dimension Unit</para>
-		/// <para>为了元数据将添加到栅格属性的新维度的单位。 如果将管理模式设置为添加维度，则启用此参数。</para>
+		/// <para>The unit of the new dimension to be added to the raster properties for metadata purposes. This parameter is active if Manage Mode is set to Add Dimension.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -140,9 +140,9 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Update Statistics</para>
-		/// <para>指定是否将为多维栅格数据集重新计算统计数据。</para>
-		/// <para>选中 - 将重新计算统计数据。 这是默认设置。</para>
-		/// <para>未选中 - 将不会重新计算统计数据。</para>
+		/// <para>Specifies whether the statistics will be recalculated for the multidimensional raster dataset.</para>
+		/// <para>Checked—Statistics will be recalculated. This is the default.</para>
+		/// <para>Unchecked—Statistics will not be recalculated.</para>
 		/// <para><see cref="UpdateStatisticsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -152,9 +152,9 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Update Transpose</para>
-		/// <para>指定是否将为多维栅格数据集重新构建转置。</para>
-		/// <para>选中 - 将重新构建转置。 如果不存在转置，则系统将构建一个新转置。 这是默认设置。</para>
-		/// <para>未选中 - 不重新构建转置。</para>
+		/// <para>Specifies whether the transpose will be rebuilt for the multidimensional raster dataset.</para>
+		/// <para>Checked—The transpose will be rebuilt. If no transpose exists, a new transpose will be built. This is the default.</para>
+		/// <para>Unchecked—The transpose will not be rebuilt.</para>
 		/// <para><see cref="UpdateTransposeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -186,45 +186,45 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		public enum ManageModeEnum 
 		{
 			/// <summary>
-			/// <para>追加剖切片—输入多维栅格中的剖切片将添加到维度的剖切片的末尾。 这是默认设置。</para>
+			/// <para>Append Slices—Slices from the input multidimensional rasters will be added to the end of the slices for a dimension. This is the default.</para>
 			/// </summary>
 			[GPValue("APPEND_SLICES")]
-			[Description("追加剖切片")]
+			[Description("Append Slices")]
 			Append_Slices,
 
 			/// <summary>
-			/// <para>替换剖切片—在特定的维度值下，现有剖切片将替换为另一个多维栅格中的剖切片。</para>
+			/// <para>Replace Slices—Existing slices will be replaced by slices from another multidimensional raster, at specific dimension values.</para>
 			/// </summary>
 			[GPValue("REPLACE_SLICES")]
-			[Description("替换剖切片")]
+			[Description("Replace Slices")]
 			Replace_Slices,
 
 			/// <summary>
-			/// <para>追加变量—将添加输入多维栅格中的变量。</para>
+			/// <para>Append Variables—The variables from the input multidimensional rasters will be added.</para>
 			/// </summary>
 			[GPValue("APPEND_VARIABLES")]
-			[Description("追加变量")]
+			[Description("Append Variables")]
 			Append_Variables,
 
 			/// <summary>
-			/// <para>删除变量—一个或多个变量将从多维栅格中删除。</para>
+			/// <para>Delete Variables—One or more variables will be deleted from the multidimensional raster.</para>
 			/// </summary>
 			[GPValue("DELETE_VARIABLES")]
-			[Description("删除变量")]
+			[Description("Delete Variables")]
 			Delete_Variables,
 
 			/// <summary>
-			/// <para>添加维度—维度将添加到输入多维栅格中。</para>
+			/// <para>Add Dimension—A dimension will be added to the input multidimensional raster.</para>
 			/// </summary>
 			[GPValue("ADD_DIMENSION")]
-			[Description("添加维度")]
+			[Description("Add Dimension")]
 			Add_Dimension,
 
 			/// <summary>
-			/// <para>移除维度—单剖切片多维栅格将转换为无维度栅格。</para>
+			/// <para>Remove Dimension—A single slice multidimensional raster will be converted to a dimensionless raster.</para>
 			/// </summary>
 			[GPValue("REMOVE_DIMENSION")]
-			[Description("移除维度")]
+			[Description("Remove Dimension")]
 			Remove_Dimension,
 
 		}
@@ -235,14 +235,14 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		public enum UpdateStatisticsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Statistics will be recalculated. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE_STATISTICS")]
 			UPDATE_STATISTICS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Statistics will not be recalculated.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_UPDATE_STATISTICS")]
@@ -256,14 +256,14 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		public enum UpdateTransposeEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The transpose will be rebuilt. If no transpose exists, a new transpose will be built. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE_TRANSPOSE")]
 			UPDATE_TRANSPOSE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The transpose will not be rebuilt.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_UPDATE_TRANSPOSE")]

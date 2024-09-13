@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Is Closed 3D</para>
-	/// <para>是否为闭合 3D</para>
-	/// <para>评估多面体要素以确定是否每个要素为完全封闭的空间体。</para>
+	/// <para>Is Closed 3D</para>
+	/// <para>Evaluates multipatch features to determine whether each feature completely encloses a volume of space.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InFeatureClass">
 		/// <para>Input Multipatch Features</para>
-		/// <para>要测试的多面体要素。</para>
+		/// <para>The multipatch features to be tested.</para>
 		/// </param>
 		public IsClosed3D(object InFeatureClass)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 是否为闭合 3D</para>
+		/// <para>Tool Display Name : Is Closed 3D</para>
 		/// </summary>
-		public override string DisplayName() => "是否为闭合 3D";
+		public override string DisplayName() => "Is Closed 3D";
 
 		/// <summary>
 		/// <para>Tool Name : IsClosed3D</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Multipatch Features</para>
-		/// <para>要测试的多面体要素。</para>
+		/// <para>The multipatch features to be tested.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]

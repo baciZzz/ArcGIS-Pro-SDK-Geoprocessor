@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Popularity</para>
-	/// <para>频数取值</para>
-	/// <para>逐个像元地确定参数列表中具有特定频数级别的值。 特定的频数级别（每个值的出现次数）由第一个参数指定。</para>
+	/// <para>Popularity</para>
+	/// <para>Determines the value in an argument list that is at a certain level of popularity on a cell-by-cell basis. The particular level of popularity (the number of occurrences of each value) is specified by the first argument.</para>
 	/// </summary>
 	public class Popularity : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InPopularityRasterOrConstant">
 		/// <para>Input popularity raster or constant value</para>
-		/// <para>用于定义要返回的频数位置的输入栅格。</para>
-		/// <para>数字可以作为输入，但是必须先在环境中设置像元大小和范围。</para>
+		/// <para>The input raster that defines the popularity position to be returned.</para>
+		/// <para>A number can be used as an input; however, the cell size and extent must first be set in the environment.</para>
 		/// </param>
 		/// <param name="InRasters">
 		/// <para>Input rasters</para>
-		/// <para>用于为每个像元位置计算值的频数的输入栅格列表。</para>
+		/// <para>The list of input rasters used to evaluate the popularity of the values for each cell location.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>输出栅格上的每个像元都表示来自满足输入频数值的输入栅格的同一位置的值。</para>
+		/// <para>The output raster.</para>
+		/// <para>Each cell on the output raster represents the value from the same location of input rasters that meets the input popularity value.</para>
 		/// </param>
 		public Popularity(object InPopularityRasterOrConstant, object InRasters, object OutRaster)
 		{
@@ -41,14 +41,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 频数取值</para>
+		/// <para>Tool Display Name : Popularity</para>
 		/// </summary>
-		public override string DisplayName() => "频数取值";
+		public override string DisplayName() => "Popularity";
 
 		/// <summary>
-		/// <para>Tool Name : 频数取值</para>
+		/// <para>Tool Name : Popularity</para>
 		/// </summary>
-		public override string ToolName() => "频数取值";
+		public override string ToolName() => "Popularity";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Popularity</para>
@@ -77,8 +77,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input popularity raster or constant value</para>
-		/// <para>用于定义要返回的频数位置的输入栅格。</para>
-		/// <para>数字可以作为输入，但是必须先在环境中设置像元大小和范围。</para>
+		/// <para>The input raster that defines the popularity position to be returned.</para>
+		/// <para>A number can be used as an input; however, the cell size and extent must first be set in the environment.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input rasters</para>
-		/// <para>用于为每个像元位置计算值的频数的输入栅格列表。</para>
+		/// <para>The list of input rasters used to evaluate the popularity of the values for each cell location.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -102,8 +102,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>输出栅格上的每个像元都表示来自满足输入频数值的输入栅格的同一位置的值。</para>
+		/// <para>The output raster.</para>
+		/// <para>Each cell on the output raster represents the value from the same location of input rasters that meets the input popularity value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -111,9 +111,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Process as multiband</para>
-		/// <para>指定如何处理输入多波段栅格波段。</para>
-		/// <para>未选中 - 来自多波段栅格输入的每个波段将被单独处理为单波段栅格。 这是默认设置。</para>
-		/// <para>选中 - 每个多波段栅格输入都将作为多波段栅格进行处理。 将使用其他输入的相应波段数对一个输入的每个波段执行操作。</para>
+		/// <para>Specifies how the input multiband raster bands will be processed.</para>
+		/// <para>Unchecked—Each band from a multiband raster input will be processed separately as a single band raster. This is the default.</para>
+		/// <para>Checked—Each multiband raster input will be processed as a multiband raster. The operation will be performed for each band from one input using the corresponding band number from the other inputs.</para>
 		/// <para><see cref="ProcessAsMultibandEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -138,14 +138,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ProcessAsMultibandEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Each band from a multiband raster input will be processed separately as a single band raster. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("SINGLE_BAND")]
 			SINGLE_BAND,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Each multiband raster input will be processed as a multiband raster. The operation will be performed for each band from one input using the corresponding band number from the other inputs.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MULTI_BAND")]

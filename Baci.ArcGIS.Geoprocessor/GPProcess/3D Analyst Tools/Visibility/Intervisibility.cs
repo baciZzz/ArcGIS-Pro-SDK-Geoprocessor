@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Intervisibility</para>
-	/// <para>通视性</para>
-	/// <para>决定使用潜在障碍物并由 3D 要素和表面组合定义的视线可见性。</para>
+	/// <para>Intervisibility</para>
+	/// <para>Determines the visibility of sight lines using  potential obstructions defined by any combination of  3D features and surfaces.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="SightLines">
 		/// <para>Sight Lines</para>
-		/// <para>将对其可见性进行评估的 3D 视线。</para>
+		/// <para>The 3D sight lines whose visibility will be evaluated.</para>
 		/// </param>
 		/// <param name="Obstructions">
 		/// <para>Obstructions</para>
-		/// <para>3D 要素、集成网格场景图层以及为视线提供潜在障碍物的表面。</para>
+		/// <para>The 3D features, integrated mesh scene layers, and surfaces that provide potential obstructions for the sight lines.</para>
 		/// </param>
 		public Intervisibility(object SightLines, object Obstructions)
 		{
@@ -36,14 +36,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 通视性</para>
+		/// <para>Tool Display Name : Intervisibility</para>
 		/// </summary>
-		public override string DisplayName() => "通视性";
+		public override string DisplayName() => "Intervisibility";
 
 		/// <summary>
-		/// <para>Tool Name : 通视性</para>
+		/// <para>Tool Name : Intervisibility</para>
 		/// </summary>
-		public override string ToolName() => "通视性";
+		public override string ToolName() => "Intervisibility";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Intervisibility</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Sight Lines</para>
-		/// <para>将对其可见性进行评估的 3D 视线。</para>
+		/// <para>The 3D sight lines whose visibility will be evaluated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Obstructions</para>
-		/// <para>3D 要素、集成网格场景图层以及为视线提供潜在障碍物的表面。</para>
+		/// <para>The 3D features, integrated mesh scene layers, and surfaces that provide potential obstructions for the sight lines.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Visible Field Name</para>
-		/// <para>要存储可见性结果的字段的名称。生成的值 0 表示视线的起点和终点相互不可见。值 1 表示视线的起点和终点相互可见。默认字段名称为 VISIBLE。如果字段已存在，则会覆盖该字段的值。</para>
+		/// <para>The name of the field that will store the visibility results. A resulting value of 0 indicates that the sight line's start and end points are not visible to one another. A value of 1 indicates that the sight line's start and end points are visible to one another. The default field name is VISIBLE. If the field already exists, its values will be overwritten.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

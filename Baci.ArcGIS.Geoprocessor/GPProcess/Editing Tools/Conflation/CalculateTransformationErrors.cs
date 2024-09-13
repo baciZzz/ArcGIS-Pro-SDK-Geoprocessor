@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Calculate Transformation Errors</para>
-	/// <para>计算变换误差</para>
-	/// <para>根据要用于空间数据变换的已知控制点之间的输入链接的坐标来计算残差和均方根误差 (RMSE)。</para>
+	/// <para>Calculate Transformation Errors</para>
+	/// <para>Calculates residue errors and root mean square error (RMSE) based on the coordinates of the input links between known control points to be used for spatial data transformation.</para>
 	/// </summary>
 	public class CalculateTransformationErrors : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		/// <param name="InLinkFeatures">
 		/// <para>Input Link Features</para>
-		/// <para>空间变换的已知控制点的输入链接要素。</para>
+		/// <para>Input link features that link known control points for spatial transformation.</para>
 		/// </param>
 		/// <param name="OutLinkTable">
 		/// <para>Output Link Table</para>
-		/// <para>包含输入链接要素 ID 及其残差的输出表。 输入链接残差将写入包含以下字段的指定输出表格：</para>
-		/// <para>Orig_FID- 输入链接要素 ID</para>
-		/// <para>X_Source- 源的 x 坐标或来自链接的结束位置</para>
-		/// <para>Y_Source- 链接的源或起始端位置的 y 坐标</para>
-		/// <para>X_Destination- 链接的目标或结束端位置的 x 坐标</para>
-		/// <para>Y_Destination- 目标的 y 坐标或到链接的结束位置</para>
-		/// <para>Residual_Error- 变换位置的残差</para>
+		/// <para>The output table containing input links feature IDs and their residual errors. The residual errors for input links are written to the specified output table that contains the following fields:</para>
+		/// <para>Orig_FID—The input link feature ID</para>
+		/// <para>X_Source—The x coordinate of the source or from end location of the link</para>
+		/// <para>Y_Source—The y coordinate of the source or from end location of the link</para>
+		/// <para>X_Destination—The x coordinate of the destination or to end location of the link</para>
+		/// <para>Y_Destination—The y coordinate of the destination or to end location of the link</para>
+		/// <para>Residual_Error—The residual error of the transformed location</para>
 		/// </param>
 		public CalculateTransformationErrors(object InLinkFeatures, object OutLinkTable)
 		{
@@ -40,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 计算变换误差</para>
+		/// <para>Tool Display Name : Calculate Transformation Errors</para>
 		/// </summary>
-		public override string DisplayName() => "计算变换误差";
+		public override string DisplayName() => "Calculate Transformation Errors";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateTransformationErrors</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Input Link Features</para>
-		/// <para>空间变换的已知控制点的输入链接要素。</para>
+		/// <para>Input link features that link known control points for spatial transformation.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -86,13 +86,13 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Output Link Table</para>
-		/// <para>包含输入链接要素 ID 及其残差的输出表。 输入链接残差将写入包含以下字段的指定输出表格：</para>
-		/// <para>Orig_FID- 输入链接要素 ID</para>
-		/// <para>X_Source- 源的 x 坐标或来自链接的结束位置</para>
-		/// <para>Y_Source- 链接的源或起始端位置的 y 坐标</para>
-		/// <para>X_Destination- 链接的目标或结束端位置的 x 坐标</para>
-		/// <para>Y_Destination- 目标的 y 坐标或到链接的结束位置</para>
-		/// <para>Residual_Error- 变换位置的残差</para>
+		/// <para>The output table containing input links feature IDs and their residual errors. The residual errors for input links are written to the specified output table that contains the following fields:</para>
+		/// <para>Orig_FID—The input link feature ID</para>
+		/// <para>X_Source—The x coordinate of the source or from end location of the link</para>
+		/// <para>Y_Source—The y coordinate of the source or from end location of the link</para>
+		/// <para>X_Destination—The x coordinate of the destination or to end location of the link</para>
+		/// <para>Y_Destination—The y coordinate of the destination or to end location of the link</para>
+		/// <para>Residual_Error—The residual error of the transformed location</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -100,10 +100,10 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>用于转换输入要素坐标的变换方法。</para>
-		/// <para>仿射变换—仿射变换至少需要三个变换链接。 这是默认设置。</para>
-		/// <para>投影变换—射影变换至少需要四个变换链接。</para>
-		/// <para>相似变换—相似变换至少需要两个变换链接。</para>
+		/// <para>Transformation method to use to convert input feature coordinates.</para>
+		/// <para>Affine transformation—Affine transformation requires a minimum of three transformation links. This is the default.</para>
+		/// <para>Projective transformation—Projective transformation requires a minimum of four transformation links.</para>
+		/// <para>Similarity transformation—Similarity transformation requires a minimum of two transformation links.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -135,24 +135,24 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>仿射变换—仿射变换至少需要三个变换链接。 这是默认设置。</para>
+			/// <para>Affine transformation—Affine transformation requires a minimum of three transformation links. This is the default.</para>
 			/// </summary>
 			[GPValue("AFFINE")]
-			[Description("仿射变换")]
+			[Description("Affine transformation")]
 			Affine_transformation,
 
 			/// <summary>
-			/// <para>投影变换—射影变换至少需要四个变换链接。</para>
+			/// <para>Projective transformation—Projective transformation requires a minimum of four transformation links.</para>
 			/// </summary>
 			[GPValue("PROJECTIVE")]
-			[Description("投影变换")]
+			[Description("Projective transformation")]
 			Projective_transformation,
 
 			/// <summary>
-			/// <para>相似变换—相似变换至少需要两个变换链接。</para>
+			/// <para>Similarity transformation—Similarity transformation requires a minimum of two transformation links.</para>
 			/// </summary>
 			[GPValue("SIMILARITY")]
-			[Description("相似变换")]
+			[Description("Similarity transformation")]
 			Similarity_transformation,
 
 		}

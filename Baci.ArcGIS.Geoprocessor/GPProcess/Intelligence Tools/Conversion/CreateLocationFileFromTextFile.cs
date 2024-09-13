@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Create Location File From Text File</para>
-	/// <para>从文本文件创建位置文件</para>
-	/// <para>从 GeoNames、国家地理空间情报局 Geonet 名称服务器或美国地质勘探局地理名称信息服务的文本文件创建位置文件，以用于 ArcGIS LocateXT。</para>
+	/// <para>Create Location File From Text File</para>
+	/// <para>Creates a location file for use in ArcGIS LocateXT from a text file from GeoNames, National Geospatial-Intelligence Agency Geonet Names Server, or U.S. Geological Survey Geographic Names Information Service.</para>
 	/// </summary>
 	public class CreateLocationFileFromTextFile : AbstractGPProcess
 	{
@@ -21,20 +21,20 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		/// <param name="InPlacenamesFile">
 		/// <para>Input Placenames File</para>
-		/// <para>从 GeoNames、NGA GNS 或 USGS GNIS 获得的地名文本文件。</para>
+		/// <para>A place names text file obtained from GeoNames, NGA GNS, or USGS GNIS.</para>
 		/// </param>
 		/// <param name="DataSource">
 		/// <para>Data Source</para>
-		/// <para>指定用于创建输入的数据源。</para>
-		/// <para>GeoNames—输入文件来自 GeoNames.org。</para>
-		/// <para>NGA GNS—输入文件来自 NGA GNS。</para>
-		/// <para>USGS GNIS—输入文件来自 USGS GNIS。</para>
-		/// <para>USGS 南极名称—输入文件来自 USGS GNIS 南极名称。</para>
+		/// <para>Specifies the data source from which the input was created.</para>
+		/// <para>GeoNames— The input file is from GeoNames.org.</para>
+		/// <para>NGA GNS—The input file is from NGA GNS.</para>
+		/// <para>USGS GNIS—The input file is from USGS GNIS.</para>
+		/// <para>USGS Antarctic Names—The input file is from USGS GNIS Antarctic Names.</para>
 		/// <para><see cref="DataSourceEnum"/></para>
 		/// </param>
 		/// <param name="OutLocationFile">
 		/// <para>Output Location File</para>
-		/// <para>输出位置文件。</para>
+		/// <para>The output location file.</para>
 		/// </param>
 		public CreateLocationFileFromTextFile(object InPlacenamesFile, object DataSource, object OutLocationFile)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 从文本文件创建位置文件</para>
+		/// <para>Tool Display Name : Create Location File From Text File</para>
 		/// </summary>
-		public override string DisplayName() => "从文本文件创建位置文件";
+		public override string DisplayName() => "Create Location File From Text File";
 
 		/// <summary>
 		/// <para>Tool Name : CreateLocationFileFromTextFile</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Placenames File</para>
-		/// <para>从 GeoNames、NGA GNS 或 USGS GNIS 获得的地名文本文件。</para>
+		/// <para>A place names text file obtained from GeoNames, NGA GNS, or USGS GNIS.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -90,11 +90,11 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Data Source</para>
-		/// <para>指定用于创建输入的数据源。</para>
-		/// <para>GeoNames—输入文件来自 GeoNames.org。</para>
-		/// <para>NGA GNS—输入文件来自 NGA GNS。</para>
-		/// <para>USGS GNIS—输入文件来自 USGS GNIS。</para>
-		/// <para>USGS 南极名称—输入文件来自 USGS GNIS 南极名称。</para>
+		/// <para>Specifies the data source from which the input was created.</para>
+		/// <para>GeoNames— The input file is from GeoNames.org.</para>
+		/// <para>NGA GNS—The input file is from NGA GNS.</para>
+		/// <para>USGS GNIS—The input file is from USGS GNIS.</para>
+		/// <para>USGS Antarctic Names—The input file is from USGS GNIS Antarctic Names.</para>
 		/// <para><see cref="DataSourceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Output Location File</para>
-		/// <para>输出位置文件。</para>
+		/// <para>The output location file.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -112,16 +112,16 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Include Features</para>
-		/// <para>指定来自输入数据源的要素类类型，这些类型将包含在输出中。</para>
-		/// <para>行政要素—将包括如行政边界、城镇、州、部落、国家边界等行政要素。</para>
-		/// <para>水文要素—将包括如河流、湖泊、池塘和其他水体等要素。</para>
-		/// <para>地点要素—将包括如建筑物、教堂、医院和其他人造感兴趣点等要素。</para>
-		/// <para>居民区—将包括如城镇、城市、村庄和其他人员聚集区域等已命名地点的位置。</para>
-		/// <para>交通运输要素—将包括如道路、路径、铁路和机场等要素。</para>
-		/// <para>点要素—将包括如山峰和其他自然感兴趣点等测高要素。</para>
-		/// <para>地形要素—将包括如山脉、丘陵、悬崖、火山口和山脊等要素。</para>
-		/// <para>植被要素—将包括如森林、原始林区、灌木丛林地和其他统一植被区域等要素。</para>
-		/// <para>海底要素—将包括如礁石、障碍、沉船等要素。</para>
+		/// <para>Specifies the feature class types from the input data source that will be included in the output.</para>
+		/// <para>Administrative Features— Administrative features such as administrative boundaries, town, city, state, province, tribal, and country borders will be included.</para>
+		/// <para>Hydrological Features—Features such as rivers, lakes, ponds, and other water features will be included.</para>
+		/// <para>Locality Features—Features such as buildings, churches, hospitals, and other human-made points of interest will be included.</para>
+		/// <para>Populated Places—Locations of named places such as towns, cities, villages, and other consolidated areas of people will be included.</para>
+		/// <para>Transportation Features—Features such as roads, trails, railroads, and airports will be included.</para>
+		/// <para>Spot Features—Hypsographic features such as mountain peaks and other natural points of interest will be included.</para>
+		/// <para>Terrain Features—Features such as mountains, hills, cliffs, craters, and ridges will be included.</para>
+		/// <para>Vegetation Features—Features such as forests, bushland, scrubland, and other areas of consistent vegetation will be included.</para>
+		/// <para>Undersea Features—Undersea features such as reefs, bars, and shipwrecks will be included.</para>
 		/// <para><see cref="IncludeFeaturesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Regions Of Interest</para>
-		/// <para>将用于创建输入地名文件子集的要素图层。</para>
+		/// <para>The feature layer that will be used to create a subset of the input place names file.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -145,31 +145,31 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		public enum DataSourceEnum 
 		{
 			/// <summary>
-			/// <para>GeoNames—输入文件来自 GeoNames.org。</para>
+			/// <para>GeoNames— The input file is from GeoNames.org.</para>
 			/// </summary>
 			[GPValue("GEONAMES")]
 			[Description("GeoNames")]
 			GeoNames,
 
 			/// <summary>
-			/// <para>NGA GNS—输入文件来自 NGA GNS。</para>
+			/// <para>NGA GNS—The input file is from NGA GNS.</para>
 			/// </summary>
 			[GPValue("NGA_GNS")]
 			[Description("NGA GNS")]
 			NGA_GNS,
 
 			/// <summary>
-			/// <para>USGS GNIS—输入文件来自 USGS GNIS。</para>
+			/// <para>USGS GNIS—The input file is from USGS GNIS.</para>
 			/// </summary>
 			[GPValue("USGS_GNIS")]
 			[Description("USGS GNIS")]
 			USGS_GNIS,
 
 			/// <summary>
-			/// <para>USGS 南极名称—输入文件来自 USGS GNIS 南极名称。</para>
+			/// <para>USGS Antarctic Names—The input file is from USGS GNIS Antarctic Names.</para>
 			/// </summary>
 			[GPValue("USGS_ANTARCTIC_NAMES")]
-			[Description("USGS 南极名称")]
+			[Description("USGS Antarctic Names")]
 			USGS_Antarctic_Names,
 
 		}
@@ -180,66 +180,66 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		public enum IncludeFeaturesEnum 
 		{
 			/// <summary>
-			/// <para>行政要素—将包括如行政边界、城镇、州、部落、国家边界等行政要素。</para>
+			/// <para>Administrative Features— Administrative features such as administrative boundaries, town, city, state, province, tribal, and country borders will be included.</para>
 			/// </summary>
 			[GPValue("ADMINISTRATIVE_FEATURES")]
-			[Description("行政要素")]
+			[Description("Administrative Features")]
 			Administrative_Features,
 
 			/// <summary>
-			/// <para>水文要素—将包括如河流、湖泊、池塘和其他水体等要素。</para>
+			/// <para>Hydrological Features—Features such as rivers, lakes, ponds, and other water features will be included.</para>
 			/// </summary>
 			[GPValue("HYDROLOGICAL_FEATURES")]
-			[Description("水文要素")]
+			[Description("Hydrological Features")]
 			Hydrological_Features,
 
 			/// <summary>
-			/// <para>地点要素—将包括如建筑物、教堂、医院和其他人造感兴趣点等要素。</para>
+			/// <para>Locality Features—Features such as buildings, churches, hospitals, and other human-made points of interest will be included.</para>
 			/// </summary>
 			[GPValue("LOCALITY_FEATURES")]
-			[Description("地点要素")]
+			[Description("Locality Features")]
 			Locality_Features,
 
 			/// <summary>
-			/// <para>居民区—将包括如城镇、城市、村庄和其他人员聚集区域等已命名地点的位置。</para>
+			/// <para>Populated Places—Locations of named places such as towns, cities, villages, and other consolidated areas of people will be included.</para>
 			/// </summary>
 			[GPValue("POPULATED_PLACES")]
-			[Description("居民区")]
+			[Description("Populated Places")]
 			Populated_Places,
 
 			/// <summary>
-			/// <para>交通运输要素—将包括如道路、路径、铁路和机场等要素。</para>
+			/// <para>Transportation Features—Features such as roads, trails, railroads, and airports will be included.</para>
 			/// </summary>
 			[GPValue("TRANSPORTATION_FEATURES")]
-			[Description("交通运输要素")]
+			[Description("Transportation Features")]
 			Transportation_Features,
 
 			/// <summary>
-			/// <para>点要素—将包括如山峰和其他自然感兴趣点等测高要素。</para>
+			/// <para>Spot Features—Hypsographic features such as mountain peaks and other natural points of interest will be included.</para>
 			/// </summary>
 			[GPValue("SPOT_FEATURES")]
-			[Description("点要素")]
+			[Description("Spot Features")]
 			Spot_Features,
 
 			/// <summary>
-			/// <para>地形要素—将包括如山脉、丘陵、悬崖、火山口和山脊等要素。</para>
+			/// <para>Terrain Features—Features such as mountains, hills, cliffs, craters, and ridges will be included.</para>
 			/// </summary>
 			[GPValue("TERRAIN_FEATURES")]
-			[Description("地形要素")]
+			[Description("Terrain Features")]
 			Terrain_Features,
 
 			/// <summary>
-			/// <para>海底要素—将包括如礁石、障碍、沉船等要素。</para>
+			/// <para>Undersea Features—Undersea features such as reefs, bars, and shipwrecks will be included.</para>
 			/// </summary>
 			[GPValue("UNDERSEA_FEATURES")]
-			[Description("海底要素")]
+			[Description("Undersea Features")]
 			Undersea_Features,
 
 			/// <summary>
-			/// <para>植被要素—将包括如森林、原始林区、灌木丛林地和其他统一植被区域等要素。</para>
+			/// <para>Vegetation Features—Features such as forests, bushland, scrubland, and other areas of consistent vegetation will be included.</para>
 			/// </summary>
 			[GPValue("VEGETATION_FEATURES")]
-			[Description("植被要素")]
+			[Description("Vegetation Features")]
 			Vegetation_Features,
 
 		}

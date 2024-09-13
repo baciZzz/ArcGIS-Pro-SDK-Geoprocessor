@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Time Series Smoothing</para>
-	/// <para>时间序列平滑</para>
-	/// <para>使用居中、前移和后移平均值以及基于局部线性回归的自适应方法对一个或多个时间序列的数字变量进行平滑处理。 对短期波动进行平滑处理后，较长期的趋势或周期通常会变得明显。</para>
+	/// <para>Time Series Smoothing</para>
+	/// <para>Smooths a numeric variable of one or more time series using centered, forward, and backward moving averages, as well as an adaptive method based on local linear regression. After smoothing short-term fluctuations, longer-term trends or cycles often become apparent.</para>
 	/// </summary>
 	public class TimeSeriesSmoothing : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features or Table</para>
-		/// <para>包含时间序列数据和要平滑的字段的要素或表。</para>
+		/// <para>The features or table containing the time series data and the field to smooth.</para>
 		/// </param>
 		/// <param name="TimeField">
 		/// <para>Time Field</para>
-		/// <para>包含每条记录的时间的字段。</para>
+		/// <para>The field containing the time of each record.</para>
 		/// </param>
 		/// <param name="AnalysisField">
 		/// <para>Analysis Field</para>
-		/// <para>包含要平滑的值的字段。</para>
+		/// <para>The field containing the values that will be smoothed.</para>
 		/// </param>
 		public TimeSeriesSmoothing(object InFeatures, object TimeField, object AnalysisField)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 时间序列平滑</para>
+		/// <para>Tool Display Name : Time Series Smoothing</para>
 		/// </summary>
-		public override string DisplayName() => "时间序列平滑";
+		public override string DisplayName() => "Time Series Smoothing";
 
 		/// <summary>
 		/// <para>Tool Name : TimeSeriesSmoothing</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Features or Table</para>
-		/// <para>包含时间序列数据和要平滑的字段的要素或表。</para>
+		/// <para>The features or table containing the time series data and the field to smooth.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Time Field</para>
-		/// <para>包含每条记录的时间的字段。</para>
+		/// <para>The field containing the time of each record.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Analysis Field</para>
-		/// <para>包含要平滑的值的字段。</para>
+		/// <para>The field containing the values that will be smoothed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -104,10 +104,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Grouping Method</para>
-		/// <para>指定用于将记录分组至不同时间序列的方法。 每个时间序列都会单独进行平滑处理。</para>
-		/// <para>按位置—同一位置的要素将被分组到同一时间序列。 这是默认设置。</para>
-		/// <para>按 ID 字段—ID 字段值相同的记录将被分组到同一时间序列。</para>
-		/// <para>无—所有记录都将位于相同的时间序列中。</para>
+		/// <para>Specifies the method that will be used to group records into different time series. Smoothing is performed independently for each time series.</para>
+		/// <para>By location—Features at the same location will be grouped in the same time series. This is the default.</para>
+		/// <para>By ID field—Records with the same value of the ID field will be grouped in the same time series.</para>
+		/// <para>None—All records will be in the same time series.</para>
 		/// <para><see cref="GroupMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -117,11 +117,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Smoothing Method</para>
-		/// <para>指定将要使用的平滑方法。</para>
-		/// <para>后移平均值—平滑值是在时间窗范围内记录及其之前的值的平均值。 这是默认设置。</para>
-		/// <para>居中移动平均值—平滑值是记录及其之前和之后的值的平均值。 时间窗的一半用于记录的时间之前，另一半用于之后。</para>
-		/// <para>前移平均值—平滑值是在时间窗范围内记录及其之后的值的平均值。</para>
-		/// <para>自适应带宽局部线性回归—平滑值是以记录为中心的局部线性回归的结果。 时间窗的大小将针对每条记录进行优化。</para>
+		/// <para>Specifies the smoothing method that will be used.</para>
+		/// <para>Backward moving average—The smoothed value is the average of the record and the values within the time window before it. This is the default.</para>
+		/// <para>Centered moving average—The smoothed value is the average of the record and the values before and after it. Half of the time window is used before the time of the record, and half is used after.</para>
+		/// <para>Forward moving average—The smoothed value is the average of the record and the values within the time window after it.</para>
+		/// <para>Adaptive bandwidth local linear regression—The smoothed value is the result of a local linear regression centered at the record. The size of the time window is optimized for each record.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Time Window</para>
-		/// <para>时间窗的长度。 可以以秒、分钟、小时、天、周、月或年为单位提供该值。 对于后移、前移和居中移动平均值，必须提供值和单位。 对于自适应带宽局部线性回归，值可以留空，将会为每个值单独估计时间窗。 处于时间窗边界上的值将包含在时间窗内。 例如，如果您具有每日数据并使用时间窗为四天的后移平均值，则在平滑记录时，时间窗内将包含五个值：记录的值和前四天的值。</para>
+		/// <para>The length of the time window. The value can be provided in seconds, minutes, hours, days, weeks, months, or years. For backward, forward, and centered moving averages, the value and unit must be provided. For adaptive bandwidth local linear regression, the value can be left empty and a time window will be estimated independently for each value. Values that fall on the border of the time window are included within the window. For example, if you have daily data and you use a backward moving average with a time window of four days, five values will be included in the window when smoothing a record: the value of the record and the values of the four previous days.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -140,9 +140,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Append fields to input data</para>
-		/// <para>指定是将输出字段追加到输入数据集还是将其另存为新的输出表或要素类。 如果您选择将字段追加到输入，则会忽略输出坐标系环境。</para>
-		/// <para>选中 - 输出字段将被追加到输入要素。 此选项会修改输入数据。</para>
-		/// <para>未选中 - 输出字段将不会追加到输入。 将创建包含输出字段的输出表或要素类。 这是默认设置。</para>
+		/// <para>Specifies whether output fields will be appended to the input dataset or saved as a new output table or feature class. If you choose to append the fields to the input, the output coordinate system environment will be ignored.</para>
+		/// <para>Checked—The output fields will be appended to the input features. This option modifies the input data.</para>
+		/// <para>Unchecked—The output fields will not be appended to the input. An output table or a feature class will be created containing the output fields. This is the default.</para>
 		/// <para><see cref="AppendToInputEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Features</para>
-		/// <para>包含平滑值和时间窗的字段以及相邻要素数目的输出要素。</para>
+		/// <para>The output features containing the smoothed values as well as fields for the time window and number of neighbors.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>ID Field</para>
-		/// <para>包含每个时间序列的唯一 ID 的整数或文本字段。 所有此字段值相同的记录都是同一时间序列的一部分。</para>
+		/// <para>The integer or text field containing a unique ID for each time series. All records with the same value of this field are part of the same time series.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -171,9 +171,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Apply shorter time window at start and end</para>
-		/// <para>指定是否在每个时间序列的开始和结束位置缩短时间窗。</para>
-		/// <para>选中 - 将在时间序列的开始和结束位置缩短时间窗，从而使时间窗不会在时间序列开始前或结束后延伸。</para>
-		/// <para>未选中 - 时间窗不会缩短。 如果时间窗在时间序列开始前或结束后延伸，平滑值将为空。 这是默认设置。</para>
+		/// <para>Specifies whether the time window will be shortened at the start and end of each time series.</para>
+		/// <para>Checked—The time window will be shortened at the start and end of the time series so that the time window does not extend before the start or after the end of the time series.</para>
+		/// <para>Unchecked—The time window will not be shortened. If the time window extends before the start or after the end of the time series, the smoothed value will be null. This is the default.</para>
 		/// <para><see cref="ApplyShorterWindowEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -183,9 +183,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Enable time series pop-ups</para>
-		/// <para>指定输出要素或表是否包括弹出图表，以显示时间序列的原始和平滑值。</para>
-		/// <para>选中 - 输出将包括弹出图表。 这是默认设置。</para>
-		/// <para>未选中 - 输出将不包括弹出图表。</para>
+		/// <para>Specifies whether the output features or table will include pop-up charts showing the original and smoothed values of the time series.</para>
+		/// <para>Checked—The output will include pop-up charts. This is the default.</para>
+		/// <para>Unchecked—The output will not include pop-up charts.</para>
 		/// <para><see cref="EnableTimeSeriesPopupsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -218,24 +218,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum GroupMethodEnum 
 		{
 			/// <summary>
-			/// <para>按位置—同一位置的要素将被分组到同一时间序列。 这是默认设置。</para>
+			/// <para>By location—Features at the same location will be grouped in the same time series. This is the default.</para>
 			/// </summary>
 			[GPValue("LOCATION")]
-			[Description("按位置")]
+			[Description("By location")]
 			By_location,
 
 			/// <summary>
-			/// <para>按 ID 字段—ID 字段值相同的记录将被分组到同一时间序列。</para>
+			/// <para>By ID field—Records with the same value of the ID field will be grouped in the same time series.</para>
 			/// </summary>
 			[GPValue("ID_FIELD")]
-			[Description("按 ID 字段")]
+			[Description("By ID field")]
 			By_ID_field,
 
 			/// <summary>
-			/// <para>无—所有记录都将位于相同的时间序列中。</para>
+			/// <para>None—All records will be in the same time series.</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("无")]
+			[Description("None")]
 			None,
 
 		}
@@ -246,31 +246,31 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>后移平均值—平滑值是在时间窗范围内记录及其之前的值的平均值。 这是默认设置。</para>
+			/// <para>Backward moving average—The smoothed value is the average of the record and the values within the time window before it. This is the default.</para>
 			/// </summary>
 			[GPValue("BACKWARD")]
-			[Description("后移平均值")]
+			[Description("Backward moving average")]
 			Backward_moving_average,
 
 			/// <summary>
-			/// <para>居中移动平均值—平滑值是记录及其之前和之后的值的平均值。 时间窗的一半用于记录的时间之前，另一半用于之后。</para>
+			/// <para>Centered moving average—The smoothed value is the average of the record and the values before and after it. Half of the time window is used before the time of the record, and half is used after.</para>
 			/// </summary>
 			[GPValue("CENTERED")]
-			[Description("居中移动平均值")]
+			[Description("Centered moving average")]
 			Centered_moving_average,
 
 			/// <summary>
-			/// <para>前移平均值—平滑值是在时间窗范围内记录及其之后的值的平均值。</para>
+			/// <para>Forward moving average—The smoothed value is the average of the record and the values within the time window after it.</para>
 			/// </summary>
 			[GPValue("FORWARD")]
-			[Description("前移平均值")]
+			[Description("Forward moving average")]
 			Forward_moving_average,
 
 			/// <summary>
-			/// <para>自适应带宽局部线性回归—平滑值是以记录为中心的局部线性回归的结果。 时间窗的大小将针对每条记录进行优化。</para>
+			/// <para>Adaptive bandwidth local linear regression—The smoothed value is the result of a local linear regression centered at the record. The size of the time window is optimized for each record.</para>
 			/// </summary>
 			[GPValue("ADAPTIVE")]
-			[Description("自适应带宽局部线性回归")]
+			[Description("Adaptive bandwidth local linear regression")]
 			Adaptive_bandwidth_local_linear_regression,
 
 		}
@@ -281,14 +281,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum AppendToInputEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The output fields will be appended to the input features. This option modifies the input data.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("APPEND_TO_INPUT")]
 			APPEND_TO_INPUT,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The output fields will not be appended to the input. An output table or a feature class will be created containing the output fields. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NEW_OUTPUT")]
@@ -302,14 +302,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum ApplyShorterWindowEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The time window will be shortened at the start and end of the time series so that the time window does not extend before the start or after the end of the time series.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("APPLY_SHORTER_WINDOW")]
 			APPLY_SHORTER_WINDOW,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The time window will not be shortened. If the time window extends before the start or after the end of the time series, the smoothed value will be null. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_APPLY_SHORTER_WINDOW")]
@@ -323,14 +323,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum EnableTimeSeriesPopupsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The output will include pop-up charts. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CREATE_POPUP")]
 			CREATE_POPUP,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The output will not include pop-up charts.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_POPUP")]

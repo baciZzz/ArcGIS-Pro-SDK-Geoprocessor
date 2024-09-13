@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Update COGO</para>
-	/// <para>更新 COGO</para>
-	/// <para>更新启用 COGO 的线要素的 COGO 属性以匹配其线形几何。</para>
+	/// <para>Update COGO</para>
+	/// <para>Updates the COGO attributes of COGO-enabled line features to match their line shape geometries.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		/// <param name="InLineFeatures">
 		/// <para>Input Line Features</para>
-		/// <para>将更新的启用 COGO 的线要素。</para>
+		/// <para>The COGO-enabled line features that will be updated.</para>
 		/// </param>
 		public UpdateCOGO(object InLineFeatures)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 更新 COGO</para>
+		/// <para>Tool Display Name : Update COGO</para>
 		/// </summary>
-		public override string DisplayName() => "更新 COGO";
+		public override string DisplayName() => "Update COGO";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateCOGO</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Input Line Features</para>
-		/// <para>将更新的启用 COGO 的线要素。</para>
+		/// <para>The COGO-enabled line features that will be updated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -77,10 +77,10 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Update Distance, Radius, and Arc Length</para>
-		/// <para>指定更新输入线的 Distance、Radius 和 Arc Length COGO 属性的方式。</para>
-		/// <para>覆盖所有值—所有值（包括 NULL 值）都将更新以匹配形状长度。 这是默认设置。</para>
-		/// <para>使用最小差异更新值—将更新与形状长度相差超过指定容差的值以匹配形状长度。</para>
-		/// <para>不更新任何值—值不会更新。</para>
+		/// <para>Specifies how the input line&apos;s Distance, Radius, and Arc Length COGO attributes will be updated.</para>
+		/// <para>Overwrite all values—All values (including NULL values) will be updated to match the shape length. This is the default.</para>
+		/// <para>Update values using a minimum difference—Values that differ from the shape length by more than the specified tolerance will be updated to match the shape length.</para>
+		/// <para>Do not update any values—Values will not be updated.</para>
 		/// <para><see cref="DistancesTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Minimum Distance Difference</para>
-		/// <para>线形长度与 Distance、Radius 和 Arc Length 字段值之间的最小距离差。 如果距离差大于指定的容差，则将更新Distance、Radius 或 Arc Length 字段中的属性值以匹配线形长度。 默认值是 0 米。</para>
+		/// <para>The minimum distance difference between the line shape length and the value in the Distance, Radius, and Arc Length fields. If the difference in the distances is larger than the specified tolerance, the attribute value in the Distance, Radius, or Arc Length fields will be updated to match the line shape length. The default value is 0 meters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -98,10 +98,10 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Update Directions</para>
-		/// <para>指定更新输入的 Direction COGO 属性的方式。</para>
-		/// <para>覆盖所有值—所有值（包括 NULL 值）都将更新以匹配形状方向。 这是默认设置。</para>
-		/// <para>使用最小差异更新值—将更新与形状方向相差超过指定容差的值以匹配形状方向。</para>
-		/// <para>不更新任何值—值不会更新。</para>
+		/// <para>Specifies how the input&apos;s Direction COGO attributes will be updated.</para>
+		/// <para>Overwrite all values—All values (including NULL values) will be updated to match shape direction. This is the default.</para>
+		/// <para>Update values using a minimum difference—Values that differ from the shape direction by more than the specified tolerance will be updated to match the shape direction.</para>
+		/// <para>Do not update any values—Values will not be updated.</para>
 		/// <para><see cref="DirectionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Minimum Direction Difference (seconds)</para>
-		/// <para>线形方向与 Direction 字段值之间的最小方向差（以秒为单位）。 如果方向差大于指定的容差，则将更新 Direction 字段中的属性值以匹配线形方向。 默认值为 0。</para>
+		/// <para>The minimum direction difference (in seconds) between the line shape direction and the value in the Direction field. If the difference in the directions is larger than the specified tolerance, the attribute value in the Direction field will be updated to match the line shape direction. The default value is 0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Minimum Direction Lateral Offset</para>
-		/// <para>线形端点与使用 Direction 字段值绘制的线的端点之间允许的最小距离。 横向偏移容差可用于非常长的线，其中方向的微小变化会导致线端点的较大差异。 默认值是 0 米。</para>
+		/// <para>The minimum allowable distance between the endpoint of the line shape and the endpoint of the line drawn using the value in the Direction field. A lateral offset tolerance can be used for very long lines in which small changes in direction can result in large differences in line endpoints. The default value is 0 meters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Combined Scale Factor</para>
-		/// <para>基于地面到格网校正的比例因子，将应用于线形长度。 比例因子可以作为数字提供，也可以派生自使用线属性字段的 Arcade 表达式。 在 Distance、Radius 和 Arc Length 字段中填充的更新距离是形状长度乘以比例因子的结果。</para>
+		/// <para>A scale factor based on a ground to grid correction that will be applied to the line's shape length. The scale factor can be provided as a number or derived from an Arcade expression using the lines attribute fields. The updated distance populated in the Distance, Radius, and Arc Length fields is a result of the shape length multiplied by the scale factor.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCalculatorExpression()]
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Direction Offset (seconds)</para>
-		/// <para>基于地面到格网校正的旋转，将应用于线形方向。 方向偏移可以作为以秒为单位的数字提供，也可以派生自使用线属性字段的 Arcade 表达式。 在线 Direction 字段中填充的更新方向是按指定方向偏移旋转的线形方向。</para>
+		/// <para>A rotation based on a ground to grid correction that will be applied to the line's shape direction. The rotation offset can be provided as a value in seconds or derived from an Arcade expression using the line's attribute fields. The updated direction populated in the line's Direction field is the line shape direction rotated by the specified direction offset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCalculatorExpression()]
@@ -156,24 +156,24 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		public enum DistancesTypeEnum 
 		{
 			/// <summary>
-			/// <para>覆盖所有值—所有值（包括 NULL 值）都将更新以匹配形状长度。 这是默认设置。</para>
+			/// <para>Overwrite all values—All values (including NULL values) will be updated to match the shape length. This is the default.</para>
 			/// </summary>
 			[GPValue("OVERWRITE")]
-			[Description("覆盖所有值")]
+			[Description("Overwrite all values")]
 			Overwrite_all_values,
 
 			/// <summary>
-			/// <para>使用最小差异更新值—将更新与形状长度相差超过指定容差的值以匹配形状长度。</para>
+			/// <para>Update values using a minimum difference—Values that differ from the shape length by more than the specified tolerance will be updated to match the shape length.</para>
 			/// </summary>
 			[GPValue("USE_MINIMUM_DIFFERENCE")]
-			[Description("使用最小差异更新值")]
+			[Description("Update values using a minimum difference")]
 			Update_values_using_a_minimum_difference,
 
 			/// <summary>
-			/// <para>不更新任何值—值不会更新。</para>
+			/// <para>Do not update any values—Values will not be updated.</para>
 			/// </summary>
 			[GPValue("DO_NOT_UPDATE")]
-			[Description("不更新任何值")]
+			[Description("Do not update any values")]
 			Do_not_update_any_values,
 
 		}
@@ -184,24 +184,24 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		public enum DirectionTypeEnum 
 		{
 			/// <summary>
-			/// <para>覆盖所有值—所有值（包括 NULL 值）都将更新以匹配形状方向。 这是默认设置。</para>
+			/// <para>Overwrite all values—All values (including NULL values) will be updated to match shape direction. This is the default.</para>
 			/// </summary>
 			[GPValue("OVERWRITE")]
-			[Description("覆盖所有值")]
+			[Description("Overwrite all values")]
 			Overwrite_all_values,
 
 			/// <summary>
-			/// <para>使用最小差异更新值—将更新与形状方向相差超过指定容差的值以匹配形状方向。</para>
+			/// <para>Update values using a minimum difference—Values that differ from the shape direction by more than the specified tolerance will be updated to match the shape direction.</para>
 			/// </summary>
 			[GPValue("USE_MINIMUM_DIFFERENCE")]
-			[Description("使用最小差异更新值")]
+			[Description("Update values using a minimum difference")]
 			Update_values_using_a_minimum_difference,
 
 			/// <summary>
-			/// <para>不更新任何值—值不会更新。</para>
+			/// <para>Do not update any values—Values will not be updated.</para>
 			/// </summary>
 			[GPValue("DO_NOT_UPDATE")]
-			[Description("不更新任何值")]
+			[Description("Do not update any values")]
 			Do_not_update_any_values,
 
 		}

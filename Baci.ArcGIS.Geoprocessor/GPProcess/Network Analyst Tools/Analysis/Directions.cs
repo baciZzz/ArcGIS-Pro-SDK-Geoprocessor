@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Directions</para>
-	/// <para>描述</para>
-	/// <para>根据包含路径的网络分析图层生成转弯方向。可以将这些方向信息写入到文本、XML 或 HTML 格式的文件中。如果提供了适合的样式表，也可以将这些方向写入其他任何文件格式。</para>
+	/// <para>Directions</para>
+	/// <para>Generates turn-by-turn directions from a network analysis layer with routes. The directions can be written to a file in text, XML, or HTML format. If you provide an appropriate stylesheet, the directions can be written to any other file format.</para>
 	/// </summary>
 	public class Directions : AbstractGPProcess
 	{
@@ -21,24 +21,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="InNetworkAnalysisLayer">
 		/// <para>Input Network Analysis Layer</para>
-		/// <para>将生成方向信息的网络分析图层。只能为路径、最近设施点和车辆配送网络分析图层生成方向信息。</para>
+		/// <para>Network analysis layer for which directions will be generated. Directions can be generated only for route, closest facility, and vehicle routing problem network analysis layers.</para>
 		/// </param>
 		/// <param name="FileType">
 		/// <para>Output File Type</para>
-		/// <para>输出方向文件的格式。如果样式表参数中具有值，则会忽略此参数。</para>
-		/// <para>XML—将以 XML 文件的形式生成输出方向文件。除了路径的方向字符串和长度及时间信息外，该文件还包含有关每个方向的行进策略类型和转弯角度的信息。</para>
-		/// <para>Text—将以简单 TXT 文件的形式生成输出方向文件，其中包含路径的方向字符串和长度信息，另外还可包含路径的时间信息。</para>
-		/// <para>HTML—将以 HTML 文件的形式生成输出方向文件，其中包含路径的方向字符串和长度信息，另外还可包含路径的时间信息。</para>
+		/// <para>The format of the output directions file. This parameter is ignored if the stylesheet parameter has a value.</para>
+		/// <para>XML—The output directions file will be generated as an XML file. Apart from direction strings and the length and time information for the routes, the file will also contain information about the maneuver type and the turn angle for each direction.</para>
+		/// <para>Text—The output directions file will be generated as a simple TXT file containing the direction strings, the length and, optionally, the time information for the routes.</para>
+		/// <para>HTML—The output directions file will be generated as an HTML file containing the direction strings, the length and, optionally, the time information for the routes.</para>
 		/// <para><see cref="FileTypeEnum"/></para>
 		/// </param>
 		/// <param name="OutDirectionsFile">
 		/// <para>Output Directions File</para>
-		/// <para>方向文件将写入的完整路径。</para>
-		/// <para>如果在样式表参数中提供样式表，应确保输出方向文件的文件后缀与样式表生成的文件类型匹配。</para>
+		/// <para>The full path to the directions file that will be written.</para>
+		/// <para>If you provide a stylesheet in the Stylesheet parameter, make sure the file suffix for Output Directions File matches the file type your stylesheet produces.</para>
 		/// </param>
 		/// <param name="ReportUnits">
 		/// <para>Report Length in These Units</para>
-		/// <para>指定在方向文件中报告长度信息时所使用的线性单位。例如，即使阻抗的单位是米，您也可以选择使用英里显示方向。</para>
+		/// <para>Specifies the linear units in which the length information will be reported in the directions file. For example, even though your impedance was in meters, you can show directions in miles.</para>
 		/// <para><see cref="ReportUnitsEnum"/></para>
 		/// </param>
 		public Directions(object InNetworkAnalysisLayer, object FileType, object OutDirectionsFile, object ReportUnits)
@@ -50,14 +50,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 描述</para>
+		/// <para>Tool Display Name : Directions</para>
 		/// </summary>
-		public override string DisplayName() => "描述";
+		public override string DisplayName() => "Directions";
 
 		/// <summary>
-		/// <para>Tool Name : 描述</para>
+		/// <para>Tool Name : Directions</para>
 		/// </summary>
-		public override string ToolName() => "描述";
+		public override string ToolName() => "Directions";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.Directions</para>
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer</para>
-		/// <para>将生成方向信息的网络分析图层。只能为路径、最近设施点和车辆配送网络分析图层生成方向信息。</para>
+		/// <para>Network analysis layer for which directions will be generated. Directions can be generated only for route, closest facility, and vehicle routing problem network analysis layers.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPNALayer()]
@@ -94,10 +94,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output File Type</para>
-		/// <para>输出方向文件的格式。如果样式表参数中具有值，则会忽略此参数。</para>
-		/// <para>XML—将以 XML 文件的形式生成输出方向文件。除了路径的方向字符串和长度及时间信息外，该文件还包含有关每个方向的行进策略类型和转弯角度的信息。</para>
-		/// <para>Text—将以简单 TXT 文件的形式生成输出方向文件，其中包含路径的方向字符串和长度信息，另外还可包含路径的时间信息。</para>
-		/// <para>HTML—将以 HTML 文件的形式生成输出方向文件，其中包含路径的方向字符串和长度信息，另外还可包含路径的时间信息。</para>
+		/// <para>The format of the output directions file. This parameter is ignored if the stylesheet parameter has a value.</para>
+		/// <para>XML—The output directions file will be generated as an XML file. Apart from direction strings and the length and time information for the routes, the file will also contain information about the maneuver type and the turn angle for each direction.</para>
+		/// <para>Text—The output directions file will be generated as a simple TXT file containing the direction strings, the length and, optionally, the time information for the routes.</para>
+		/// <para>HTML—The output directions file will be generated as an HTML file containing the direction strings, the length and, optionally, the time information for the routes.</para>
 		/// <para><see cref="FileTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -107,8 +107,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Directions File</para>
-		/// <para>方向文件将写入的完整路径。</para>
-		/// <para>如果在样式表参数中提供样式表，应确保输出方向文件的文件后缀与样式表生成的文件类型匹配。</para>
+		/// <para>The full path to the directions file that will be written.</para>
+		/// <para>If you provide a stylesheet in the Stylesheet parameter, make sure the file suffix for Output Directions File matches the file type your stylesheet produces.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Report Length in These Units</para>
-		/// <para>指定在方向文件中报告长度信息时所使用的线性单位。例如，即使阻抗的单位是米，您也可以选择使用英里显示方向。</para>
+		/// <para>Specifies the linear units in which the length information will be reported in the directions file. For example, even though your impedance was in meters, you can show directions in miles.</para>
 		/// <para><see cref="ReportUnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -127,8 +127,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Report Travel Time</para>
-		/// <para>选中 - 在方向文件中报告行驶时间。这是默认值。</para>
-		/// <para>未选中 - 在方向文件中不报告行驶时间。</para>
+		/// <para>Checked—Report travel times in the directions file. This is the default value.</para>
+		/// <para>Unchecked—Do not report travel times in the directions file.</para>
 		/// <para><see cref="ReportTimeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Time Attribute</para>
-		/// <para>用于提供方向中各行驶时间的基于时间的成本属性。输入网络分析图层所使用的网络数据集中必须存在成本属性。</para>
+		/// <para>The time-based cost attribute to provide travel times in the directions. The cost attribute must exist on the network dataset used by the input network analysis layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -147,8 +147,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Language</para>
-		/// <para>选择生成驾车方向时所使用的语言。</para>
-		/// <para>此参数的输入应为两位或五位字符语言代码，表示用于方向生成的可用语言之一。在 Python 中，可使用 ListDirectionsLanguages 函数检索可用语言代码列表。</para>
+		/// <para>Choose a language in which to generate driving directions.</para>
+		/// <para>The input for this parameter should be a two- or five-character language code representing one of the available languages for directions generation. In Python, you can retrieve a list of available language codes using the ListDirectionsLanguages function.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -157,10 +157,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Style Name</para>
-		/// <para>选择方向的格式化样式名称。</para>
-		/// <para>可打印驾车方向—可打印转弯方向</para>
-		/// <para>导航设备的行驶方向—针对车辆内导航设备设计的转弯方向</para>
-		/// <para>步行方向—转弯行走方向，用于人行道</para>
+		/// <para>Choose the name of the formatting style for the directions.</para>
+		/// <para>Printable driving directions—Printable turn-by-turn directions</para>
+		/// <para>Driving directions for a navigation device—Turn-by-turn directions designed for an in-vehicle navigation device</para>
+		/// <para>Walking directions—Turn-by-turn walking directions, which are designed for pedestrian routes</para>
 		/// <para><see cref="StyleNameEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -170,8 +170,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Stylesheet</para>
-		/// <para>生成格式化输出文件类型（如 PDF、Word 或 HTML 文件）的样式表。输出方向文件参数中的文件后缀应与样式表所生成的文件类型相匹配。如果此参数中包含了参数值，则方向工具会重写输出文件类型参数。</para>
-		/// <para>如果想要领先创建自有文本和 HTML 样式表，请复制和编辑 Network Analyst 使用的样式表。它们位于以下目录中：&lt;ArcGIS installation directory&gt;\ArcGIS\ArcGIS Pro\Resources\NetworkAnalyst\Directions\Styles。样式表为 Dir2PHTML.xsl，文本样式表为 Dir2PlainText.xsl。</para>
+		/// <para>The stylesheet for generating a formatted output file type (such as a PDF, Word, or HTML file). The suffix of the file in the output directions file parameter should match the file type that the stylesheet generates. The Directions tool overrides the output file type parameter if this parameter contains a value.</para>
+		/// <para>If you want a head start on creating your own text and HTML stylesheets, copy and edit the stylesheets Network Analyst uses. You can find them in the following directory: &lt;ArcGIS installation directory&gt;\ArcGIS\ArcGIS Pro\Resources\NetworkAnalyst\Directions\Styles. The stylesheet is Dir2PHTML.xsl, and the text stylesheet is Dir2PlainText.xsl.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -203,21 +203,21 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum FileTypeEnum 
 		{
 			/// <summary>
-			/// <para>Text—将以简单 TXT 文件的形式生成输出方向文件，其中包含路径的方向字符串和长度信息，另外还可包含路径的时间信息。</para>
+			/// <para>Text—The output directions file will be generated as a simple TXT file containing the direction strings, the length and, optionally, the time information for the routes.</para>
 			/// </summary>
 			[GPValue("TEXT")]
 			[Description("Text")]
 			Text,
 
 			/// <summary>
-			/// <para>XML—将以 XML 文件的形式生成输出方向文件。除了路径的方向字符串和长度及时间信息外，该文件还包含有关每个方向的行进策略类型和转弯角度的信息。</para>
+			/// <para>XML—The output directions file will be generated as an XML file. Apart from direction strings and the length and time information for the routes, the file will also contain information about the maneuver type and the turn angle for each direction.</para>
 			/// </summary>
 			[GPValue("XML")]
 			[Description("XML")]
 			XML,
 
 			/// <summary>
-			/// <para>HTML—将以 HTML 文件的形式生成输出方向文件，其中包含路径的方向字符串和长度信息，另外还可包含路径的时间信息。</para>
+			/// <para>HTML—The output directions file will be generated as an HTML file containing the direction strings, the length and, optionally, the time information for the routes.</para>
 			/// </summary>
 			[GPValue("HTML")]
 			[Description("HTML")]
@@ -234,42 +234,42 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 			/// <para></para>
 			/// </summary>
 			[GPValue("Feet")]
-			[Description("英尺")]
+			[Description("Feet")]
 			Feet,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("Yards")]
-			[Description("码")]
+			[Description("Yards")]
 			Yards,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("Miles")]
-			[Description("英里")]
+			[Description("Miles")]
 			Miles,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("Meters")]
-			[Description("米")]
+			[Description("Meters")]
 			Meters,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("Kilometers")]
-			[Description("千米")]
+			[Description("Kilometers")]
 			Kilometers,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("NauticalMiles")]
-			[Description("海里")]
+			[Description("Nautical miles")]
 			Nautical_miles,
 
 		}
@@ -280,14 +280,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum ReportTimeEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Report travel times in the directions file. This is the default value.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REPORT_TIME")]
 			REPORT_TIME,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Do not report travel times in the directions file.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_REPORT_TIME")]
@@ -301,24 +301,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum StyleNameEnum 
 		{
 			/// <summary>
-			/// <para>可打印驾车方向—可打印转弯方向</para>
+			/// <para>Printable driving directions—Printable turn-by-turn directions</para>
 			/// </summary>
 			[GPValue("NA Desktop")]
-			[Description("可打印驾车方向")]
+			[Description("Printable driving directions")]
 			Printable_driving_directions,
 
 			/// <summary>
-			/// <para>导航设备的行驶方向—针对车辆内导航设备设计的转弯方向</para>
+			/// <para>Driving directions for a navigation device—Turn-by-turn directions designed for an in-vehicle navigation device</para>
 			/// </summary>
 			[GPValue("NA Navigation")]
-			[Description("导航设备的行驶方向")]
+			[Description("Driving directions for a navigation device")]
 			Driving_directions_for_a_navigation_device,
 
 			/// <summary>
-			/// <para>步行方向—转弯行走方向，用于人行道</para>
+			/// <para>Walking directions—Turn-by-turn walking directions, which are designed for pedestrian routes</para>
 			/// </summary>
 			[GPValue("NA Campus")]
-			[Description("步行方向")]
+			[Description("Walking directions")]
 			Walking_directions,
 
 		}

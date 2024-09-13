@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Apply Force Directed Layout</para>
-	/// <para>应用力导向布局</para>
-	/// <para>用于突出显示网络逻辑示意图中包含的闭合线。</para>
+	/// <para>Apply Force Directed Layout</para>
+	/// <para>Emphasizes loops contained in a network diagram.</para>
 	/// </summary>
 	public class ApplyForceDirectedLayout : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InNetworkDiagramLayer">
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>将应用布局的网络逻辑示意图。</para>
+		/// <para>The network diagram to which the layout will be applied.</para>
 		/// </param>
 		public ApplyForceDirectedLayout(object InNetworkDiagramLayer)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 应用力导向布局</para>
+		/// <para>Tool Display Name : Apply Force Directed Layout</para>
 		/// </summary>
-		public override string DisplayName() => "应用力导向布局";
+		public override string DisplayName() => "Apply Force Directed Layout";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyForceDirectedLayout</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>将应用布局的网络逻辑示意图。</para>
+		/// <para>The network diagram to which the layout will be applied.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDiagramLayer()]
@@ -73,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Preserve container layout</para>
-		/// <para>指定算法将如何处理容器。</para>
-		/// <para>选中 - 将对逻辑示意图的上方图执行布局算法，以保留容器。</para>
-		/// <para>未选中 - 将对逻辑示意图中的内容要素和非内容要素执行布局算法。 这是默认设置。</para>
+		/// <para>Specifies how the algorithm will process containers.</para>
+		/// <para>Checked—The layout algorithm will execute on the top graph of the diagram so containers are preserved.</para>
+		/// <para>Unchecked—The layout algorithm will execute on both content and noncontent features in the diagram. This is the default.</para>
 		/// <para><see cref="AreContainersPreservedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Number of Iterations</para>
-		/// <para>要处理的迭代次数。默认值为 20。</para>
+		/// <para>The number of iterations to process. The default is 20.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Repel Factor</para>
-		/// <para>用于在接近的逻辑示意图交汇点之间添加距离。排斥系数越大，则将在接近重叠的逻辑示意图交汇点之间添加的距离越大。默认值为 1。</para>
+		/// <para>Adds distance between diagram junctions that are close together. The larger the repel factor, the greater the distance that will be added between nearly overlapping diagram junctions. The default is 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -101,10 +101,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Degree of Freedom</para>
-		/// <para>指定每次算法迭代过程中，用于移动逻辑示意图交汇点的面积。</para>
-		/// <para>低—用于移动逻辑示意图交汇点的面积将受到限制。这是默认设置。</para>
-		/// <para>高—用于移动逻辑示意图交汇点的面积将比较大。</para>
-		/// <para>中—用于移动逻辑示意图交汇点的面积将为中等大小。</para>
+		/// <para>Specifies the area used to move the diagram junctions during each algorithm iteration.</para>
+		/// <para>Low—The area used to move the diagram junctions will be limited. This is the default.</para>
+		/// <para>High—The area used to move the diagram junctions will be large.</para>
+		/// <para>Medium—The area used to move the diagram junctions will be moderate.</para>
 		/// <para><see cref="DegreeFreedomEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -121,15 +121,15 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Break Point Relative Position (%)</para>
-		/// <para>边显示类型设置为弯曲边（Python 中的 edges_display_type = &quot;CURVED_EDGES&quot;）时，将沿逻辑示意图边插入的用于计算弯曲边几何的两个拐点的相对位置。以介于 15 和 40 之间的百分比表示；默认值为 30。例如，如果中断点相对位置 (%) 参数值为介于 15 和 40 之间的 N，则以下情况适用：</para>
-		/// <para>X 为边的自交汇点的 x 坐标，Y 为水平树边的至交汇点的 y 坐标：</para>
-		/// <para>第一个拐点将定位在 [XY] 线段长度的 N％</para>
-		/// <para>第二个拐点将定位在 [XY] 线段长度的 (100 - N)％</para>
-		/// <para>Y 为边的自交汇点的 y 坐标，X 为垂直树边的至交汇点的 x 坐标：</para>
-		/// <para>第一个拐点将定位在 [YX] 线段长度的 N％</para>
-		/// <para>第二个拐点将定位在 [XY] 线段长度的 (100 - N)％</para>
-		/// <para>上述自交汇点和至交汇点的概念与树方向相关；与网络要素或对象边的拓扑无关。</para>
-		/// <para>边显示类型参数设置为规则边（Python 中的 edges_display_type = &quot;REGULAR_EDGES&quot;）时，将忽略该参数。</para>
+		/// <para>The relative position of the two inflexion points that will be inserted along the diagram edges to compute the curved edges geometry when Edge Display Type is set to Curved edges (edges_display_type = &quot;CURVED_EDGES&quot; in Python). It is a percentage between 15 and 40; the default is 30. For example, with a Break Point Relative Position (%) parameter value of N between 15 and 40, the following is true:</para>
+		/// <para>X being the x-coordinate of the edge&apos;s from junction and Y being the y-coordinate of the edge&apos;s to junction for a horizontal tree:</para>
+		/// <para>The first inflexion point will be positioned at N% of the length of the [XY] segment</para>
+		/// <para>The second inflexion point will be positioned at (100 - N)% of the length of the [XY] segment</para>
+		/// <para>Y being the y-coordinate of the edge&apos;s from junction and X being the x-coordinate of the edge&apos;s to junction for a vertical tree:</para>
+		/// <para>The first inflexion point will be positioned at N% of the length of the [YX] segment</para>
+		/// <para>The second inflexion point will be positioned at (100 - N)% of the length of the [XY] segment</para>
+		/// <para>The concept of the from and to junctions above is relative to the tree direction; it is not related to the topology of the network feature or object edge.</para>
+		/// <para>This parameter is ignored when the Edge Display Type parameter is set to Regular edges (edges_display_type = &quot;REGULAR_EDGES&quot; in Python).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -137,9 +137,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Edge Display Type</para>
-		/// <para>指定逻辑示意图边的显示类型。</para>
-		/// <para>规则边—所有逻辑示意图边均显示为直线。这是默认设置。</para>
-		/// <para>弯曲边—所有逻辑示意图边均显示为曲线。</para>
+		/// <para>Specifies the type of display for the diagram edges.</para>
+		/// <para>Regular edges—All diagram edges display as straight lines. This is the default.</para>
+		/// <para>Curved edges—All diagram edges are curved.</para>
 		/// <para><see cref="EdgeDisplayTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -149,9 +149,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Run in asynchronous mode on the server</para>
-		/// <para>指定布局算法在服务器上将异步运行还是同步运行。</para>
-		/// <para>选中 - 布局算法将在服务器上异步运行。 服务器资源可通过该选项来运行超时较长的布局算法。 当执行耗时且可能导致服务器超时的布局（例如，部分重叠边）并应用于大型逻辑示意图（超过 25,000 个要素）时，建议进行异步运行。</para>
-		/// <para>未选中 - 布局算法将在服务器上同步运行。 如果执行时超过服务默认超时值（600 秒），则布局算法可能失败，无法完成。 这是默认设置。</para>
+		/// <para>Specifies whether the layout algorithm will run asynchronously or synchronously on the server.</para>
+		/// <para>Checked—The layout algorithm will run asynchronously on the server. This option dedicates server resources to run the layout algorithm with a longer time-out. Running asynchronously is recommended when executing layouts that are time consuming and may exceed the server time-out (for example, Partial Overlapping Edges) and applying to large diagrams (more than 25,000 features).</para>
+		/// <para>Unchecked—The layout algorithm will run synchronously on the server. It can fail without completion if its execution exceeds the service default time-out value of 600 seconds. This is the default.</para>
 		/// <para><see cref="RunAsyncEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -168,14 +168,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum AreContainersPreservedEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The layout algorithm will execute on the top graph of the diagram so containers are preserved.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PRESERVE_CONTAINERS")]
 			PRESERVE_CONTAINERS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The layout algorithm will execute on both content and noncontent features in the diagram. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("IGNORE_CONTAINERS")]
@@ -189,24 +189,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum DegreeFreedomEnum 
 		{
 			/// <summary>
-			/// <para>低—用于移动逻辑示意图交汇点的面积将受到限制。这是默认设置。</para>
+			/// <para>Low—The area used to move the diagram junctions will be limited. This is the default.</para>
 			/// </summary>
 			[GPValue("LOW")]
-			[Description("低")]
+			[Description("Low")]
 			Low,
 
 			/// <summary>
-			/// <para>中—用于移动逻辑示意图交汇点的面积将为中等大小。</para>
+			/// <para>Medium—The area used to move the diagram junctions will be moderate.</para>
 			/// </summary>
 			[GPValue("MEDIUM")]
-			[Description("中")]
+			[Description("Medium")]
 			Medium,
 
 			/// <summary>
-			/// <para>高—用于移动逻辑示意图交汇点的面积将比较大。</para>
+			/// <para>High—The area used to move the diagram junctions will be large.</para>
 			/// </summary>
 			[GPValue("HIGH")]
-			[Description("高")]
+			[Description("High")]
 			High,
 
 		}
@@ -217,17 +217,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum EdgeDisplayTypeEnum 
 		{
 			/// <summary>
-			/// <para>规则边—所有逻辑示意图边均显示为直线。这是默认设置。</para>
+			/// <para>Regular edges—All diagram edges display as straight lines. This is the default.</para>
 			/// </summary>
 			[GPValue("REGULAR_EDGES")]
-			[Description("规则边")]
+			[Description("Regular edges")]
 			Regular_edges,
 
 			/// <summary>
-			/// <para>弯曲边—所有逻辑示意图边均显示为曲线。</para>
+			/// <para>Curved edges—All diagram edges are curved.</para>
 			/// </summary>
 			[GPValue("CURVED_EDGES")]
-			[Description("弯曲边")]
+			[Description("Curved edges")]
 			Curved_edges,
 
 		}
@@ -238,14 +238,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum RunAsyncEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The layout algorithm will run asynchronously on the server. This option dedicates server resources to run the layout algorithm with a longer time-out. Running asynchronously is recommended when executing layouts that are time consuming and may exceed the server time-out (for example, Partial Overlapping Edges) and applying to large diagrams (more than 25,000 features).</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RUN_ASYNCHRONOUSLY")]
 			RUN_ASYNCHRONOUSLY,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The layout algorithm will run synchronously on the server. It can fail without completion if its execution exceeds the service default time-out value of 600 seconds. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("RUN_SYNCHRONOUSLY")]

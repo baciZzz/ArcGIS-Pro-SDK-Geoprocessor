@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Calculate Fields (multiple)</para>
-	/// <para>计算字段（多个）</para>
-	/// <para>为要素类、要素图层或栅格计算两个或更多个字段的值。</para>
+	/// <para>Calculate Fields (multiple)</para>
+	/// <para>Calculates the values of two or more fields for a feature class, feature layer, or raster.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,22 +23,22 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>包含将通过新的计算进行更新的字段的表。</para>
+		/// <para>The table containing the fields that will be updated with the new calculations.</para>
 		/// </param>
 		/// <param name="ExpressionType">
 		/// <para>Expression Type</para>
-		/// <para>指定要使用的表达式类型。</para>
-		/// <para>Python 3—将使用 Python 表达式类型。 这是默认设置。</para>
-		/// <para>Arcade—将使用 Arcade 表达式类型。</para>
-		/// <para>SQL—将使用 SQL 表达式类型。</para>
-		/// <para>要了解有关 Python 表达式的详细信息，请参阅计算字段 Python 示例。</para>
-		/// <para>要了解有关 Arcade 表达式的详细信息，请参阅 ArcGIS Arcade 指南。</para>
-		/// <para>要了解有关 SQL 表达式的详细信息，请参阅计算字段值。</para>
+		/// <para>Specifies the type of expression that will be used.</para>
+		/// <para>Python 3—The Python expression type will be used. This is the default.</para>
+		/// <para>Arcade—The Arcade expression type will be used.</para>
+		/// <para>SQL—The SQL expression type will be used.</para>
+		/// <para>To learn more about Python expressions, see Calculate Field Python examples.</para>
+		/// <para>To learn more about Arcade expressions, see the ArcGIS Arcade guide.</para>
+		/// <para>To learn more about SQL expressions, see Calculate field values.</para>
 		/// <para><see cref="ExpressionTypeEnum"/></para>
 		/// </param>
 		/// <param name="Fields">
 		/// <para>Fields</para>
-		/// <para>要计算的字段及其表达式。</para>
+		/// <para>The fields that will be calculated and their expressions.</para>
 		/// </param>
 		public CalculateFields(object InTable, object ExpressionType, object Fields)
 		{
@@ -48,9 +48,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 计算字段（多个）</para>
+		/// <para>Tool Display Name : Calculate Fields (multiple)</para>
 		/// </summary>
-		public override string DisplayName() => "计算字段（多个）";
+		public override string DisplayName() => "Calculate Fields (multiple)";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateFields</para>
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>包含将通过新的计算进行更新的字段的表。</para>
+		/// <para>The table containing the fields that will be updated with the new calculations.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -93,13 +93,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Expression Type</para>
-		/// <para>指定要使用的表达式类型。</para>
-		/// <para>Python 3—将使用 Python 表达式类型。 这是默认设置。</para>
-		/// <para>Arcade—将使用 Arcade 表达式类型。</para>
-		/// <para>SQL—将使用 SQL 表达式类型。</para>
-		/// <para>要了解有关 Python 表达式的详细信息，请参阅计算字段 Python 示例。</para>
-		/// <para>要了解有关 Arcade 表达式的详细信息，请参阅 ArcGIS Arcade 指南。</para>
-		/// <para>要了解有关 SQL 表达式的详细信息，请参阅计算字段值。</para>
+		/// <para>Specifies the type of expression that will be used.</para>
+		/// <para>Python 3—The Python expression type will be used. This is the default.</para>
+		/// <para>Arcade—The Arcade expression type will be used.</para>
+		/// <para>SQL—The SQL expression type will be used.</para>
+		/// <para>To learn more about Python expressions, see Calculate Field Python examples.</para>
+		/// <para>To learn more about Arcade expressions, see the ArcGIS Arcade guide.</para>
+		/// <para>To learn more about SQL expressions, see Calculate field values.</para>
 		/// <para><see cref="ExpressionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Fields</para>
-		/// <para>要计算的字段及其表达式。</para>
+		/// <para>The fields that will be calculated and their expressions.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -118,8 +118,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Code Block</para>
-		/// <para>将用于复杂表达式的代码块。</para>
-		/// <para>此函数不能用于返回多个值。</para>
+		/// <para>A block of code that will be used for complex expressions.</para>
+		/// <para>A function cannot be used to return multiple values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -134,9 +134,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Enforce Domains</para>
-		/// <para>指定是否将强制执行字段属性域规则。</para>
-		/// <para>选中 - 将强制执行字段属性域规则。 如果某个字段无法更新，则该字段值将保持不变，并且工具消息中将包含一条警告消息。</para>
-		/// <para>未选中 - 将不会强制执行字段属性域规则。 这是默认设置</para>
+		/// <para>Specifies whether field domain rules will be enforced.</para>
+		/// <para>Checked—Field domain rules will be enforced. If a field cannot be updated, the field value will remain unchanged, and the tool messages will include a warning message.</para>
+		/// <para>Unchecked—Field domain rules will not be enforced. This is the default</para>
 		/// <para><see cref="EnforceDomainsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -161,21 +161,21 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ExpressionTypeEnum 
 		{
 			/// <summary>
-			/// <para>Python 3—将使用 Python 表达式类型。 这是默认设置。</para>
+			/// <para>Python 3—The Python expression type will be used. This is the default.</para>
 			/// </summary>
 			[GPValue("PYTHON3")]
 			[Description("Python 3")]
 			Python_3,
 
 			/// <summary>
-			/// <para>Arcade—将使用 Arcade 表达式类型。</para>
+			/// <para>Arcade—The Arcade expression type will be used.</para>
 			/// </summary>
 			[GPValue("ARCADE")]
 			[Description("Arcade")]
 			Arcade,
 
 			/// <summary>
-			/// <para>SQL—将使用 SQL 表达式类型。</para>
+			/// <para>SQL—The SQL expression type will be used.</para>
 			/// </summary>
 			[GPValue("SQL")]
 			[Description("SQL")]
@@ -189,14 +189,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum EnforceDomainsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Field domain rules will be enforced. If a field cannot be updated, the field value will remain unchanged, and the tool messages will include a warning message.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ENFORCE_DOMAINS")]
 			ENFORCE_DOMAINS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Field domain rules will not be enforced. This is the default</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ENFORCE_DOMAINS")]

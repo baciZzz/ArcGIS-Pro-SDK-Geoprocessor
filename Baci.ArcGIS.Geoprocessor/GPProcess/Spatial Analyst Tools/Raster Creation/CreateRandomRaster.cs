@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Create Random Raster</para>
-	/// <para>创建随机栅格</para>
-	/// <para>基于“分析”窗口的范围和像元大小创建一个具有介于 0.0 与 1.0 之间的随机浮点值的栅格。</para>
+	/// <para>Create Random Raster</para>
+	/// <para>Creates a raster of random floating-point values between 0.0 and 1.0 within the extent and cell size of the analysis window.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.DataManagementTools.CreateRandomRaster"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
 	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.DataManagementTools.CreateRandomRaster))]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>0.0 到 1.0 之间随机分布值的输出栅格</para>
+		/// <para>The output raster of randomly distributed values with a range of 0.0 to 1.0</para>
 		/// </param>
 		public CreateRandomRaster(object OutRaster)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建随机栅格</para>
+		/// <para>Tool Display Name : Create Random Raster</para>
 		/// </summary>
-		public override string DisplayName() => "创建随机栅格";
+		public override string DisplayName() => "Create Random Raster";
 
 		/// <summary>
 		/// <para>Tool Name : CreateRandomRaster</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>0.0 到 1.0 之间随机分布值的输出栅格</para>
+		/// <para>The output raster of randomly distributed values with a range of 0.0 to 1.0</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -75,9 +75,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Seed value</para>
-		/// <para>用于重新填充随机数生成器的值。</para>
-		/// <para>可以是整数或浮点数。 栅格不可以作为输入。</para>
-		/// <para>随机数生成器会使用系统时钟的当前值（自 1970 年 1 月 1 日后的秒数）来进行自动播种。 种子值的允许值范围是 -231 + 1 到 231（或 -2,147,483,647 到 2,147,483,648）。</para>
+		/// <para>A value to be used to reseed the random number generator.</para>
+		/// <para>This may be an integer or floating-point number. Rasters are not permitted as input.</para>
+		/// <para>The random number generator is automatically seeded with the current value of the system clock (seconds since January 1, 1970). The range of permissible values for the seed value is -231 + 1 to 231 (or -2,147,483,647 to 2,147,483,648).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -88,8 +88,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>将创建的输出栅格的像元大小。</para>
-		/// <para>此参数可以通过数值进行定义，也可以从现有栅格数据集获取。 如果未将像元大小明确指定为参数值，则将使用环境像元大小值（如果已指定）；否则，将使用其他规则通过其他输出计算像元大小。 有关详细信息，请参阅用法部分。</para>
+		/// <para>The cell size of the output raster that will be created.</para>
+		/// <para>This parameter can be defined by a numeric value or obtained from an existing raster dataset. If the cell size hasn&apos;t been explicitly specified as the parameter value, the environment cell size value will be used if specified; otherwise, additional rules will be used to calculate it from the other inputs. See the usage section for more detail.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -101,8 +101,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output extent</para>
-		/// <para>输出栅格数据集的范围。</para>
-		/// <para>如果专门进行设置，则范围将为环境中的值。如果未进行专门设置，默认值将为 0、0、250、250。</para>
+		/// <para>The extent for the output raster dataset.</para>
+		/// <para>The extent will be the value in the environment if specifically set. If not specifically set, the default is 0, 0, 250, 250.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]

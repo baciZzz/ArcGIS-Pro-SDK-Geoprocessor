@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>GTFS Shapes To Features</para>
-	/// <para>GTFS 形状转要素</para>
-	/// <para>将 GTFS 公共交通数据集的 GTFS shapes.txt 文件转换为可显示公共交通系统中车辆所采用的物理路径的折线要素类。</para>
+	/// <para>GTFS Shapes To Features</para>
+	/// <para>Converts a GTFS shapes.txt file from a GTFS public transit dataset to a polyline feature class showing the physical paths taken by vehicles in the public transit system.</para>
 	/// </summary>
 	[Obsolete()]
 	public class GTFSShapesToFeatures : AbstractGPProcess
@@ -22,11 +22,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InGtfsShapesFile">
 		/// <para>Input GTFS Shapes File</para>
-		/// <para>来自 GTFS 数据集的有效 shapes.txt 文件。</para>
+		/// <para>A valid shapes.txt file from a GTFS dataset.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>输出要素类。</para>
+		/// <para>The output feature class.</para>
 		/// </param>
 		public GTFSShapesToFeatures(object InGtfsShapesFile, object OutFeatureClass)
 		{
@@ -35,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : GTFS 形状转要素</para>
+		/// <para>Tool Display Name : GTFS Shapes To Features</para>
 		/// </summary>
-		public override string DisplayName() => "GTFS 形状转要素";
+		public override string DisplayName() => "GTFS Shapes To Features";
 
 		/// <summary>
 		/// <para>Tool Name : GTFSShapesToFeatures</para>
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input GTFS Shapes File</para>
-		/// <para>来自 GTFS 数据集的有效 shapes.txt 文件。</para>
+		/// <para>A valid shapes.txt file from a GTFS dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>输出要素类。</para>
+		/// <para>The output feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]

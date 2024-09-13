@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Batch Calculate Statistics</para>
-	/// <para>批量计算统计数据</para>
-	/// <para>计算多个栅格数据集的统计数据。</para>
+	/// <para>Batch Calculate Statistics</para>
+	/// <para>Calculates statistics for  multiple raster datasets.</para>
 	/// </summary>
 	public class BatchCalculateStatistics : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputRasterDatasets">
 		/// <para>Input Raster Datasets</para>
-		/// <para>输入栅格数据集。</para>
+		/// <para>The input raster datasets.</para>
 		/// </param>
 		public BatchCalculateStatistics(object InputRasterDatasets)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 批量计算统计数据</para>
+		/// <para>Tool Display Name : Batch Calculate Statistics</para>
 		/// </summary>
-		public override string DisplayName() => "批量计算统计数据";
+		public override string DisplayName() => "Batch Calculate Statistics";
 
 		/// <summary>
 		/// <para>Tool Name : BatchCalculateStatistics</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster Datasets</para>
-		/// <para>输入栅格数据集。</para>
+		/// <para>The input raster datasets.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -73,10 +73,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>X Skip Factor</para>
-		/// <para>样本之间水平像素的数量。</para>
-		/// <para>在计算统计值时使用的那部分栅格由跳跃因子控制。特定输入值可指示水平或垂直跳跃因子，值为 1 时使用每个像素，值为 2 时则每隔一个像素使用一个。此跳跃因子的取值范围只能从 1 至栅格中列/行的数量。</para>
-		/// <para>此值必须大于零并小于等于栅格中的列数。默认值为 1 或者为上次使用的跳跃因子。</para>
-		/// <para>对于储存在文件地理数据库或企业级地理数据库中的栅格数据集，它们的跳跃因子并不相同。首先，如果 x 和 y 跳跃因子不同，则使用两者中较小的一个来作为 x 和 y 共同的跳跃因子。其次，跳跃因子同与其最接近的金字塔等级相关联。如果跳跃因子不等于金字塔图层中像素的数量，则该数量向下舍入至下一个金字塔等级，并使用那些统计值。</para>
+		/// <para>The number of horizontal pixels between samples.</para>
+		/// <para>A skip factor controls the portion of the raster that is used when calculating the statistics. The input value indicates the horizontal or vertical skip factor, where a value of 1 will use each pixel and a value of 2 will use every second pixel. The skip factor can only range from 1 to the number of columns/rows in the raster.</para>
+		/// <para>The value must be greater than zero and less than or equal to the number of columns in the raster. The default is 1 or the last skip factor used.</para>
+		/// <para>The skip factors for raster datasets stored in a file geodatabase or an enterprise geodatabase are different. First, if the x and y skip factors are different, the smaller skip factor will be used for both the x and y skip factors. Second, the skip factor is related to the pyramid level that most closely fits the skip factor chosen. If the skip factor value is not equal to the number of pixels in a pyramid layer, the number is rounded down to the next pyramid level, and those statistics are used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -84,10 +84,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Y Skip Factor</para>
-		/// <para>样本之间垂直像素的数量。</para>
-		/// <para>在计算统计值时使用的那部分栅格由跳跃因子控制。特定输入值可指示水平或垂直跳跃因子，值为 1 时使用每个像素，值为 2 时则每隔一个像素使用一个。此跳跃因子的取值范围只能从 1 至栅格中列/行的数量。</para>
-		/// <para>此值必须大于零并小于等于栅格中的行数。默认值为 1 或者为上次使用的 y 跳跃因子。</para>
-		/// <para>对于储存在文件地理数据库或企业级地理数据库中的栅格数据集，它们的跳跃因子并不相同。首先，如果 x 和 y 跳跃因子不同，则使用两者中较小的一个来作为 x 和 y 共同的跳跃因子。其次，跳跃因子同与其最接近的金字塔等级相关联。如果跳跃因子不等于金字塔图层中像素的数量，则该数量向下舍入至下一个金字塔等级，并使用那些统计值。</para>
+		/// <para>The number of vertical pixels between samples.</para>
+		/// <para>A skip factor controls the portion of the raster that is used when calculating the statistics. The input value indicates the horizontal or vertical skip factor, where a value of 1 will use each pixel and a value of 2 will use every second pixel. The skip factor can only range from 1 to the number of columns/rows in the raster.</para>
+		/// <para>The value must be greater than zero and less than or equal to the number of rows in the raster. The default is 1 or the last y skip factor used.</para>
+		/// <para>The skip factors for raster datasets stored in a file geodatabase or an enterprise geodatabase are different. First, if the x and y skip factors are different, the smaller skip factor will be used for both the x and y skip factors. Second, the skip factor is related to the pyramid level that most closely fits the skip factor chosen. If the skip factor value is not equal to the number of pixels in a pyramid layer, the number is rounded down to the next pyramid level, and those statistics are used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -95,8 +95,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Ignore values</para>
-		/// <para>排除在统计值计算之外的像素值。</para>
-		/// <para>默认情况下没有值。</para>
+		/// <para>The pixel values that are not to be included in the statistics calculation.</para>
+		/// <para>The default is no value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -104,9 +104,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Skip Existing</para>
-		/// <para>指定是在缺少统计数据的位置进行计算，还是重新生成统计数据（即使已经存在）。</para>
-		/// <para>取消选中 - 即使统计数据已经存在仍要重新计算，现有统计数据将被覆盖。 这是默认设置。</para>
-		/// <para>选中 - 只有当统计数据不存在时才会计算统计数据。</para>
+		/// <para>Specifies whether statistics will be calculated only where they are missing or will be regenerated even if they exist.</para>
+		/// <para>Unchecked—Statistics will be calculated even if they already exist, and existing statistics will be overwritten. This is the default.</para>
+		/// <para>Checked—Statistics will only be calculated if they do not already exist.</para>
 		/// <para><see cref="SkipExistingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -138,14 +138,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SkipExistingEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Statistics will only be calculated if they do not already exist.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("OVERWRITE")]
 			OVERWRITE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Statistics will be calculated even if they already exist, and existing statistics will be overwritten. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("SKIP_EXISTING")]

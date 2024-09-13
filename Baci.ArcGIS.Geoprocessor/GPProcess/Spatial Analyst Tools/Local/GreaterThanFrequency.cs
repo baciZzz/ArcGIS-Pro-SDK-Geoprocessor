@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Greater Than Frequency</para>
-	/// <para>大于频数</para>
-	/// <para>逐个像元评估一组栅格大于其他栅格的次数。</para>
+	/// <para>Greater Than Frequency</para>
+	/// <para>Evaluates on a cell-by-cell basis the number of times a set of rasters is greater than another raster.</para>
 	/// </summary>
 	public class GreaterThanFrequency : AbstractGPProcess
 	{
@@ -21,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InValueRaster">
 		/// <para>Input value raster</para>
-		/// <para>针对输入值栅格中的每个像元位置，计算输入列表中的栅格具有较大值的次数（频数）。</para>
+		/// <para>For each cell location in the input value raster, the number of occurrences (frequency) where a raster in the input list has a greater value is counted.</para>
 		/// </param>
 		/// <param name="InRasters">
 		/// <para>Input rasters</para>
-		/// <para>将要与值栅格进行比较的栅格的列表。</para>
+		/// <para>The list of rasters that will be compared to the value raster.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>对于输出栅格中的每个像元，该值表示栅格列表中的相应像元大于值栅格的次数。</para>
+		/// <para>The output raster.</para>
+		/// <para>For each cell in the output raster, the value represents the number of times that the corresponding cells in the list of rasters is greater than the value raster.</para>
 		/// </param>
 		public GreaterThanFrequency(object InValueRaster, object InRasters, object OutRaster)
 		{
@@ -40,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 大于频数</para>
+		/// <para>Tool Display Name : Greater Than Frequency</para>
 		/// </summary>
-		public override string DisplayName() => "大于频数";
+		public override string DisplayName() => "Greater Than Frequency";
 
 		/// <summary>
 		/// <para>Tool Name : GreaterThanFrequency</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input value raster</para>
-		/// <para>针对输入值栅格中的每个像元位置，计算输入列表中的栅格具有较大值的次数（频数）。</para>
+		/// <para>For each cell location in the input value raster, the number of occurrences (frequency) where a raster in the input list has a greater value is counted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input rasters</para>
-		/// <para>将要与值栅格进行比较的栅格的列表。</para>
+		/// <para>The list of rasters that will be compared to the value raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -100,8 +100,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>对于输出栅格中的每个像元，该值表示栅格列表中的相应像元大于值栅格的次数。</para>
+		/// <para>The output raster.</para>
+		/// <para>For each cell in the output raster, the value represents the number of times that the corresponding cells in the list of rasters is greater than the value raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -109,9 +109,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Process as multiband</para>
-		/// <para>指定如何处理输入多波段栅格波段。</para>
-		/// <para>未选中 - 来自多波段栅格输入的每个波段将被单独处理为单波段栅格。 这是默认设置。</para>
-		/// <para>选中 - 每个多波段栅格输入都将作为多波段栅格进行处理。 将使用其他输入的相应波段数对一个输入的每个波段执行操作。</para>
+		/// <para>Specifies how the input multiband raster bands will be processed.</para>
+		/// <para>Unchecked—Each band from a multiband raster input will be processed separately as a single band raster. This is the default.</para>
+		/// <para>Checked—Each multiband raster input will be processed as a multiband raster. The operation will be performed for each band from one input using the corresponding band number from the other inputs.</para>
 		/// <para><see cref="ProcessAsMultibandEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -136,14 +136,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ProcessAsMultibandEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Each band from a multiband raster input will be processed separately as a single band raster. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("SINGLE_BAND")]
 			SINGLE_BAND,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Each multiband raster input will be processed as a multiband raster. The operation will be performed for each band from one input using the corresponding band number from the other inputs.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MULTI_BAND")]

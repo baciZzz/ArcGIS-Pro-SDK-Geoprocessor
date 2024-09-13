@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Generate Indoor Pathways</para>
-	/// <para>生成室内路径</para>
-	/// <para>用于在一个或多个设施点中的所选楼层上生成根据障碍物（例如墙壁或圆柱）切割的初步路径。</para>
+	/// <para>Generate Indoor Pathways</para>
+	/// <para>Generates preliminary pathways that are cut according to obstructions, such as walls or columns, on selected levels in one or more facilities.</para>
 	/// </summary>
 	public class GenerateIndoorPathways : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		/// <param name="InLevelFeatures">
 		/// <para>Input Level Features</para>
-		/// <para>表示设施点中楼层的输入面要素。 在 Indoors 模型中，此项将为 Levels 图层。 该工具支持应用于图层的选择和定义查询。</para>
+		/// <para>The input polygon features representing levels in facilities. In the Indoors model, this will be the Levels layer. The tool honors selections and definition queries applied to the layer.</para>
 		/// </param>
 		/// <param name="InDetailFeatures">
 		/// <para>Input Detail Features</para>
-		/// <para>表示建筑细节的输入折线要素，可能会作为设施点内要行驶的障碍。 在 Indoors 模型中，此项将为 Details 图层</para>
+		/// <para>The input polyline features representing architectural details that can serve as barriers to travel within a facility. In the Indoors model, this will be the Details layer</para>
 		/// </param>
 		/// <param name="TargetPathways">
 		/// <para>Target PrelimPathways</para>
-		/// <para>将写入生成的路径折线的要素类或要素图层。 在 Indoors 模型中，此项将为 PrelimPathways 图层。</para>
+		/// <para>The feature class or feature layer to which generated pathway polylines will be written. In the Indoors model, this will be the PrelimPathways layer.</para>
 		/// </param>
 		public GenerateIndoorPathways(object InLevelFeatures, object InDetailFeatures, object TargetPathways)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 生成室内路径</para>
+		/// <para>Tool Display Name : Generate Indoor Pathways</para>
 		/// </summary>
-		public override string DisplayName() => "生成室内路径";
+		public override string DisplayName() => "Generate Indoor Pathways";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateIndoorPathways</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Input Level Features</para>
-		/// <para>表示设施点中楼层的输入面要素。 在 Indoors 模型中，此项将为 Levels 图层。 该工具支持应用于图层的选择和定义查询。</para>
+		/// <para>The input polygon features representing levels in facilities. In the Indoors model, this will be the Levels layer. The tool honors selections and definition queries applied to the layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Input Detail Features</para>
-		/// <para>表示建筑细节的输入折线要素，可能会作为设施点内要行驶的障碍。 在 Indoors 模型中，此项将为 Details 图层</para>
+		/// <para>The input polyline features representing architectural details that can serve as barriers to travel within a facility. In the Indoors model, this will be the Details layer</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Target PrelimPathways</para>
-		/// <para>将写入生成的路径折线的要素类或要素图层。 在 Indoors 模型中，此项将为 PrelimPathways 图层。</para>
+		/// <para>The feature class or feature layer to which generated pathway polylines will be written. In the Indoors model, this will be the PrelimPathways layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -108,8 +108,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Lattice Rotation</para>
-		/// <para>从正西方向开始顺时针旋转输入楼层的主要途经方向的度数。 如果保留空白，则该工具将基于每个楼层的最小边界矩形计算一个值。</para>
-		/// <para>该值必须介于 0.0 到 180.0 之间</para>
+		/// <para>The number of degrees by which the input floors&apos; primary travel direction is rotated clockwise from due west. If left blank, the tool will calculate a value based on the minimum bounding rectangle of each floor.</para>
+		/// <para>The value must be between 0.0 and 180.0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -118,8 +118,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Lattice Density</para>
-		/// <para>在生成的路径格网中，节点之间允许的最长距离，以米为单位。 默认值为 0.6。</para>
-		/// <para>该值必须介于 0.25 到 0.9 之间</para>
+		/// <para>The longest distance, in meters, allowed between nodes in the generated lattice of pathways. The default value is 0.6.</para>
+		/// <para>The value must be between 0.25 and 0.9.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Restricted Unit Features</para>
-		/// <para>表示设施点内的受限空间和非受限空间的输入面要素。 在 Indoors 模型中，此项将为 Units 图层。</para>
+		/// <para>The input polygon features representing restricted and unrestricted spaces within a facility. In the Indoors model, this will be the Units layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Restricted Unit Expression</para>
-		/// <para>一个 SQL 表达式，用于选择该工具不会在其中生成路径的受限单元要素参数值。</para>
+		/// <para>An SQL expression used to select the Restricted Unit Features parameter values in which the tool will not generate pathways.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Detail Expression</para>
-		/// <para>一个 SQL 表达式，用于选择该工具不会在其中生成路径的输入细节要素参数值。</para>
+		/// <para>An SQL expression used to select the Input Detail Features parameter values across which the tool will not generate pathways.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]

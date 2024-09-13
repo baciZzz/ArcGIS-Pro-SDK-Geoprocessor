@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Multipatch to Raster</para>
-	/// <para>多面体转栅格</para>
-	/// <para>将多面体要素转换为栅格数据集。</para>
+	/// <para>Multipatch to Raster</para>
+	/// <para>Converts multipatch features to a raster dataset.</para>
 	/// </summary>
 	public class MultipatchToRaster : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InMultipatchFeatures">
 		/// <para>Input multipatch features</para>
-		/// <para>要转换为栅格的输入多面体要素。</para>
+		/// <para>The input multipatch features to be converted to a raster.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>要创建的输出栅格数据集。</para>
-		/// <para>此栅格为浮点类型。</para>
-		/// <para>如果不希望将输出栅格保存到地理数据库，请为 TIFF 文件格式指定 .tif，为 CRF 文件格式指定 .CRF，为 ERDAS IMAGINE 文件格式指定 .img，而对于 Esri Grid 栅格格式，无需指定扩展名。</para>
+		/// <para>The output raster dataset to be created.</para>
+		/// <para>It will be of floating point type.</para>
+		/// <para>If the output raster will not be saved to a geodatabase, specify .tif for TIFF file format, .CRF for CRF file format, .img for ERDAS IMAGINE file format, or no extension for Esri Grid raster format.</para>
 		/// </param>
 		public MultipatchToRaster(object InMultipatchFeatures, object OutRaster)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 多面体转栅格</para>
+		/// <para>Tool Display Name : Multipatch to Raster</para>
 		/// </summary>
-		public override string DisplayName() => "多面体转栅格";
+		public override string DisplayName() => "Multipatch to Raster";
 
 		/// <summary>
 		/// <para>Tool Name : MultipatchToRaster</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input multipatch features</para>
-		/// <para>要转换为栅格的输入多面体要素。</para>
+		/// <para>The input multipatch features to be converted to a raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -83,9 +83,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>要创建的输出栅格数据集。</para>
-		/// <para>此栅格为浮点类型。</para>
-		/// <para>如果不希望将输出栅格保存到地理数据库，请为 TIFF 文件格式指定 .tif，为 CRF 文件格式指定 .CRF，为 ERDAS IMAGINE 文件格式指定 .img，而对于 Esri Grid 栅格格式，无需指定扩展名。</para>
+		/// <para>The output raster dataset to be created.</para>
+		/// <para>It will be of floating point type.</para>
+		/// <para>If the output raster will not be saved to a geodatabase, specify .tif for TIFF file format, .CRF for CRF file format, .img for ERDAS IMAGINE file format, or no extension for Esri Grid raster format.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -93,8 +93,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>正在创建的输出栅格的像元大小。</para>
-		/// <para>此参数可以通过数值进行定义，也可以从现有栅格数据集获取。如果未将像元大小明确指定为参数值，则将使用环境像元大小值（如果已指定）；否则，将使用其他规则通过其他输出计算像元大小。有关详细信息，请参阅“用法”。</para>
+		/// <para>The cell size of the output raster being created.</para>
+		/// <para>This parameter can be defined by a numeric value or obtained from an existing raster dataset. If the cell size hasn’t been explicitly specified as the parameter value, the environment cell size value is used, if specified; otherwise, additional rules are used to calculate it from the other inputs. See Usages for more detail.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -106,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Cell assignment method</para>
-		/// <para>指定在从像元中心位置延伸一条垂直线与输入多面体要素相交的情况下，当在像元中心位置检测到多个 z 值时，是否将最大或最小 z 值用于像元。</para>
-		/// <para>最大高度—将最大 z 值分配到像元。 这是默认设置。</para>
-		/// <para>最小高度—将最小 z 值分配到像元。</para>
+		/// <para>Specifies whether the maximum or minimum z-value will be used for a cell when more than one z-value is detected at the cell center location when a vertical line is extended from the cell center location to intersect the input multipatch feature.</para>
+		/// <para>Maximum height—The maximum z-value will be assigned to the cell. This is the default.</para>
+		/// <para>Minimum height—The minimum z-value will be assigned to the cell.</para>
 		/// <para><see cref="CellAssignmentMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -133,17 +133,17 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum CellAssignmentMethodEnum 
 		{
 			/// <summary>
-			/// <para>最大高度—将最大 z 值分配到像元。 这是默认设置。</para>
+			/// <para>Maximum height—The maximum z-value will be assigned to the cell. This is the default.</para>
 			/// </summary>
 			[GPValue("MAXIMUM_HEIGHT")]
-			[Description("最大高度")]
+			[Description("Maximum height")]
 			Maximum_height,
 
 			/// <summary>
-			/// <para>最小高度—将最小 z 值分配到像元。</para>
+			/// <para>Minimum height—The minimum z-value will be assigned to the cell.</para>
 			/// </summary>
 			[GPValue("MINIMUM_HEIGHT")]
-			[Description("最小高度")]
+			[Description("Minimum height")]
 			Minimum_height,
 
 		}

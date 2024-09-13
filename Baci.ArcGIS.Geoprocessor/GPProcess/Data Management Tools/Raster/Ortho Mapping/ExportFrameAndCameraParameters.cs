@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Frame And Camera Parameters</para>
-	/// <para>导出帧和照相机参数</para>
-	/// <para>从包含帧影像的镶嵌数据集中导出帧和照相机参数。</para>
+	/// <para>Export Frame And Camera Parameters</para>
+	/// <para>Exports frame and camera parameters from a mosaic dataset that contains frame imagery.</para>
 	/// </summary>
 	public class ExportFrameAndCameraParameters : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputMosaicDataset">
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>输入镶嵌数据集。</para>
+		/// <para>The input mosaic dataset.</para>
 		/// </param>
 		/// <param name="OutputFile">
 		/// <para>Output File</para>
-		/// <para>包含帧和照相机参数的输出文件。 受支持的文件格式包括 .csv 和 .txt。</para>
+		/// <para>The output file containing the frame and camera parameters. Supported file formats include .csv and .txt.</para>
 		/// </param>
 		public ExportFrameAndCameraParameters(object InputMosaicDataset, object OutputFile)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 导出帧和照相机参数</para>
+		/// <para>Tool Display Name : Export Frame And Camera Parameters</para>
 		/// </summary>
-		public override string DisplayName() => "导出帧和照相机参数";
+		public override string DisplayName() => "Export Frame And Camera Parameters";
 
 		/// <summary>
 		/// <para>Tool Name : ExportFrameAndCameraParameters</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>输入镶嵌数据集。</para>
+		/// <para>The input mosaic dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output File</para>
-		/// <para>包含帧和照相机参数的输出文件。 受支持的文件格式包括 .csv 和 .txt。</para>
+		/// <para>The output file containing the frame and camera parameters. Supported file formats include .csv and .txt.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -87,9 +87,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Format</para>
-		/// <para>指定帧和照相机参数的输出文件格式。</para>
-		/// <para>Esri 帧和照相机表—帧和照相机参数将导出为 Esri 帧和照相机表（.csv 文件）。 这是默认设置。</para>
-		/// <para>Pix4D 校准照相机参数—帧和照相机参数将使用 Pix4D 校准照相机参数格式导出（.txt 文件）。</para>
+		/// <para>Specifies the output file format for the frame and camera parameters.</para>
+		/// <para>Esri Frame and Camera Table—The frame and camera parameters will be exported as an Esri Frames and Camera table (.csv file). This is the default.</para>
+		/// <para>Pix4D Calibrated Camera Parameters—The frame and camera parameters will be exported using the Pix4D calibrated camera parameters format (.txt file).</para>
 		/// <para><see cref="OutputFormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -105,17 +105,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum OutputFormatEnum 
 		{
 			/// <summary>
-			/// <para>Esri 帧和照相机表—帧和照相机参数将导出为 Esri 帧和照相机表（.csv 文件）。 这是默认设置。</para>
+			/// <para>Esri Frame and Camera Table—The frame and camera parameters will be exported as an Esri Frames and Camera table (.csv file). This is the default.</para>
 			/// </summary>
 			[GPValue("ESRI_FRAME_AND_CAMERA_TABLE")]
-			[Description("Esri 帧和照相机表")]
+			[Description("Esri Frame and Camera Table")]
 			Esri_Frame_and_Camera_Table,
 
 			/// <summary>
-			/// <para>Pix4D 校准照相机参数—帧和照相机参数将使用 Pix4D 校准照相机参数格式导出（.txt 文件）。</para>
+			/// <para>Pix4D Calibrated Camera Parameters—The frame and camera parameters will be exported using the Pix4D calibrated camera parameters format (.txt file).</para>
 			/// </summary>
 			[GPValue("PIX4D_CALIBRATED_CAMERA_PARAMETERS")]
-			[Description("Pix4D 校准照相机参数")]
+			[Description("Pix4D Calibrated Camera Parameters")]
 			Pix4D_Calibrated_Camera_Parameters,
 
 		}

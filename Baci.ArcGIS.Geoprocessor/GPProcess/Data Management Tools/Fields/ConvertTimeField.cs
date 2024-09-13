@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Convert Time Field</para>
-	/// <para>转换时间字段</para>
-	/// <para>将存储在一个字段中的日期和时间值传输到另一个字段。 该工具可用于在不同的字段类型（文本、数字或日期字段）之间进行转换，或将值转换为不同的格式（例如 dd/MM/yy HH:mm:ss 到 yyyy-MM-dd）。</para>
+	/// <para>Convert Time Field</para>
+	/// <para>Transfers date and time values stored in a field to another field.  The tool can be used to convert between different field types (text, numeric, or date fields) or to convert the values to a different format such as dd/MM/yy HH:mm:ss to yyyy-MM-dd.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,15 +23,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>包含要转换时间值的字段的图层或表。</para>
+		/// <para>The layer or table that contains the field containing the time values that will be converted.</para>
 		/// </param>
 		/// <param name="InputTimeField">
 		/// <para>Input Time Field</para>
-		/// <para>含有时间值的字段。 字段类型可以是短型、长型、浮点型、双精度、文本或日期。</para>
+		/// <para>The field containing the time values. The field can be of type short, long, float, double, text, or date.</para>
 		/// </param>
 		/// <param name="OutputTimeField">
 		/// <para>Output Time Field Name</para>
-		/// <para>要添加的字段的名称，其将用于存储转换后的时间值。</para>
+		/// <para>The name of the field to be added in which the converted time values will be stored.</para>
 		/// </param>
 		public ConvertTimeField(object InTable, object InputTimeField, object OutputTimeField)
 		{
@@ -41,9 +41,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 转换时间字段</para>
+		/// <para>Tool Display Name : Convert Time Field</para>
 		/// </summary>
-		public override string DisplayName() => "转换时间字段";
+		public override string DisplayName() => "Convert Time Field";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertTimeField</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>包含要转换时间值的字段的图层或表。</para>
+		/// <para>The layer or table that contains the field containing the time values that will be converted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Time Field</para>
-		/// <para>含有时间值的字段。 字段类型可以是短型、长型、浮点型、双精度、文本或日期。</para>
+		/// <para>The field containing the time values. The field can be of type short, long, float, double, text, or date.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -95,26 +95,26 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Time Format</para>
-		/// <para>输入时间字段参数值中时间值的格式。 可从下拉列表中选择标准时间格式，也可以指定自定义格式。 当输入时间字段为日期类型时，不支持该参数。</para>
-		/// <para>格式字符串区分大小写。</para>
-		/// <para>如果时间字段的数据类型为日期，则不需要时间格式。</para>
-		/// <para>如果时间字段的数据类型是数值（短整型、长整型、浮点型或双精度），将在下拉列表中提供标准数值时间格式。</para>
-		/// <para>如果时间字段的数据类型是字符串，将在下拉列表中提供标准字符串时间格式。 如果使用字符串字段，您也可以为其指定自定义时间格式。 例如，可采用标准格式将时间值存储在字符串字段中，如 yyyy/MM/dd HH:mm:ss 或以自定义格式存储，如 dd/MM/yyyy HH:mm:ss。 如果使用自定义格式，您还可以指定 a.m. 或 p.m. 指示符。 以下列出了部分常用格式：</para>
-		/// <para>yyyy - 年，以四位数表示。</para>
-		/// <para>MM - 数字形式的月份，个位数月份有前导零。</para>
-		/// <para>MMM - 月，以三个字母的缩略形式表示。</para>
-		/// <para>dd - 数字形式的每月日期，且单位数日期具有前导零。</para>
-		/// <para>ddd - 星期，以三个字母的缩略形式表示。</para>
-		/// <para>hh - 小时，且单位数小时具有前导零；12 小时制。</para>
-		/// <para>HH - 小时，且单位数小时具有前导零；24 小时制。</para>
-		/// <para>mm - 分钟，且单位数分钟有前导零。</para>
-		/// <para>ss - 秒，且单位数秒有前导零。</para>
-		/// <para>t - 单字符时间标记字符串，例如，A 或 P。</para>
-		/// <para>tt - 多字符时间标记字符串，例如，AM 或 PM。</para>
-		/// <para>unix_us - Unix 时间，以微秒为单位。</para>
-		/// <para>unix_ms - Unix 时间，以毫秒为单位。</para>
-		/// <para>unix_s - Unix 时间，以秒为单位。</para>
-		/// <para>unix_hex - 以十六进制表示的 Unix 时间。</para>
+		/// <para>The format of the time values in the Input Time Field parameter value. You can choose a standard time format from the drop-down list or specify a custom format. The parameter is not supported when the input time field is of type date.</para>
+		/// <para>The format strings are case sensitive.</para>
+		/// <para>If the data type of the time field is date, no time format is required.</para>
+		/// <para>If the data type of the time field is numeric (short, long, float, or double), a list of standard numeric time formats is provided in the drop-down list.</para>
+		/// <para>If the data type of the time field is string, a list of standard string time formats is provided in the drop-down list. For string fields, you can also specify a custom time format. For example, the time values may have been stored in a string field in one of the standard formats such as yyyy/MM/dd HH:mm:ss or in a custom format such as dd/MM/yyyy HH:mm:ss. For the custom format, you can also specify the a.m. or p.m. designator. Some commonly used formats are listed below:</para>
+		/// <para>yyyy—Year represented by four digits</para>
+		/// <para>MM—Month as digits with leading zero for single-digit months</para>
+		/// <para>MMM—Month as a three-letter abbreviation</para>
+		/// <para>dd—Day of month as digits with leading zero for single-digit days</para>
+		/// <para>ddd—Day of week as a three-letter abbreviation</para>
+		/// <para>hh—Hours with leading zero for single-digit hours; 12-hour clock</para>
+		/// <para>HH—Hours with leading zero for single-digit hours; 24-hour clock</para>
+		/// <para>mm—Minutes with leading zero for single-digit minutes</para>
+		/// <para>ss—Seconds with leading zero for single-digit seconds</para>
+		/// <para>t—One character time marker string, such as A or P</para>
+		/// <para>tt—Multicharacter time marker string, such as AM or PM</para>
+		/// <para>unix_us—Unix time in microseconds</para>
+		/// <para>unix_ms—Unix time in milliseconds</para>
+		/// <para>unix_s—Unix time in seconds</para>
+		/// <para>unix_hex—Unix time in hexadecimal</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Time Field Name</para>
-		/// <para>要添加的字段的名称，其将用于存储转换后的时间值。</para>
+		/// <para>The name of the field to be added in which the converted time values will be stored.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -130,13 +130,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Time Field Type</para>
-		/// <para>指定输出时间字段的字段类型。</para>
-		/// <para>日期—此字段类型将为日期类型。 日期字段支持日期和时间值。</para>
-		/// <para>文本—此字段类型将为文本类型。 文本字段支持字符串。</para>
-		/// <para>长整型（32 位整型）—此字段类型将为长整型。 长整型字段支持介于 -2,147,483,648 和 2,147,483,647 之间的整数。</para>
-		/// <para>短整型（16 位整型）—此字段类型将为短整型。 短整型字段支持介于 -32,768 和 32,767 之间的整数。</para>
-		/// <para>双精度型（64 位浮点型）—此字段类型将为双精度型。 双精度型字段支持介于 -2.2E308 和 1.8E308 之间的小数。</para>
-		/// <para>浮点型（32 位浮点型）—此字段类型将为浮点型。 浮点型字段支持介于 -3.4E38 和 1.2E38 之间的小数。</para>
+		/// <para>Specifies the field type of the output time field.</para>
+		/// <para>Date—The field type will be date. Date fields support date and time values.</para>
+		/// <para>Text—The field type will be text. Text fields support a string of characters.</para>
+		/// <para>Long (32-bit integer)—The field type will be long. Long fields support whole numbers between -2,147,483,648 and 2,147,483,647.</para>
+		/// <para>Short (16-bit integer)—The field type will be short. Short fields support whole numbers between -32,768 and 32,767.</para>
+		/// <para>Double (64-bit floating point)—The field type will be double. Double fields support fractional numbers between -2.2E308 and 1.8E308.</para>
+		/// <para>Float (32-bit floating point)—The field type will be float. Float fields support fractional numbers between -3.4E38 and 1.2E38.</para>
 		/// <para><see cref="OutputTimeTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -146,8 +146,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Time Format</para>
-		/// <para>输出时间值的格式。 支持的输出时间格式取决于输出时间字段类型参数值。 自定义格式还可用于将值转换为不同格式或提取值的一部分（例如年份）。 有关自定义格式的列表，请参阅输入时间格式参数帮助。 当输出时间字段类型参数值为日期时，不使用此参数。</para>
-		/// <para>如果输出时间字段的数据类型长度不足以存储转换的时间值，将会截断输出值。</para>
+		/// <para>The format of the output time values. Supported output time formats depend on the Output Time Field Type parameter value. A custom format can also be used to convert the value to a different format or to extract a portion of the value (such as the year). For a list of custom formats, see the Input Time Format parameter help. This parameter is not used when the Output Time Field Type parameter value is Date.</para>
+		/// <para>If the data type of the output time field isn&apos;t long enough to store the converted time value, the output value will be truncated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -177,45 +177,45 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum OutputTimeTypeEnum 
 		{
 			/// <summary>
-			/// <para>日期—此字段类型将为日期类型。 日期字段支持日期和时间值。</para>
+			/// <para>Date—The field type will be date. Date fields support date and time values.</para>
 			/// </summary>
 			[GPValue("DATE")]
-			[Description("日期")]
+			[Description("Date")]
 			Date,
 
 			/// <summary>
-			/// <para>文本—此字段类型将为文本类型。 文本字段支持字符串。</para>
+			/// <para>Text—The field type will be text. Text fields support a string of characters.</para>
 			/// </summary>
 			[GPValue("TEXT")]
-			[Description("文本")]
+			[Description("Text")]
 			Text,
 
 			/// <summary>
-			/// <para>长整型（32 位整型）—此字段类型将为长整型。 长整型字段支持介于 -2,147,483,648 和 2,147,483,647 之间的整数。</para>
+			/// <para>Long (32-bit integer)—The field type will be long. Long fields support whole numbers between -2,147,483,648 and 2,147,483,647.</para>
 			/// </summary>
 			[GPValue("LONG")]
-			[Description("长整型（32 位整型）")]
+			[Description("Long (32-bit integer)")]
 			LONG,
 
 			/// <summary>
-			/// <para>短整型（16 位整型）—此字段类型将为短整型。 短整型字段支持介于 -32,768 和 32,767 之间的整数。</para>
+			/// <para>Short (16-bit integer)—The field type will be short. Short fields support whole numbers between -32,768 and 32,767.</para>
 			/// </summary>
 			[GPValue("SHORT")]
-			[Description("短整型（16 位整型）")]
+			[Description("Short (16-bit integer)")]
 			SHORT,
 
 			/// <summary>
-			/// <para>双精度型（64 位浮点型）—此字段类型将为双精度型。 双精度型字段支持介于 -2.2E308 和 1.8E308 之间的小数。</para>
+			/// <para>Double (64-bit floating point)—The field type will be double. Double fields support fractional numbers between -2.2E308 and 1.8E308.</para>
 			/// </summary>
 			[GPValue("DOUBLE")]
-			[Description("双精度型（64 位浮点型）")]
+			[Description("Double (64-bit floating point)")]
 			DOUBLE,
 
 			/// <summary>
-			/// <para>浮点型（32 位浮点型）—此字段类型将为浮点型。 浮点型字段支持介于 -3.4E38 和 1.2E38 之间的小数。</para>
+			/// <para>Float (32-bit floating point)—The field type will be float. Float fields support fractional numbers between -3.4E38 and 1.2E38.</para>
 			/// </summary>
 			[GPValue("FLOAT")]
-			[Description("浮点型（32 位浮点型）")]
+			[Description("Float (32-bit floating point)")]
 			FLOAT,
 
 		}

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 {
 	/// <summary>
 	/// <para>Delete Reviewer Session</para>
-	/// <para>删除 Reviewer 会话</para>
-	/// <para>从 Reviewer 工作空间中永久删除一个或多个会话以及所有相关记录。</para>
+	/// <para>Delete Reviewer Session</para>
+	/// <para>Permanently deletes one or more sessions and all related records from a Reviewer workspace.</para>
 	/// </summary>
 	public class DeleteReviewerSession : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// </summary>
 		/// <param name="ReviewerWorkspace">
 		/// <para>Reviewer Workspace</para>
-		/// <para>将从中删除 Reviewer 会话的工作空间。</para>
+		/// <para>The workspace from which the Reviewer session will be deleted.</para>
 		/// </param>
 		/// <param name="Session">
 		/// <para>Session</para>
-		/// <para>Reviewer 会话标识符和名称。会话必须存在于 Reviewer 工作空间中，例如 Session 1 : data_qc。</para>
+		/// <para>The Reviewer session identifier and name. The session must exist in the Reviewer workspace, for example, Session 1 : data_qc.</para>
 		/// </param>
 		public DeleteReviewerSession(object ReviewerWorkspace, object Session)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 删除 Reviewer 会话</para>
+		/// <para>Tool Display Name : Delete Reviewer Session</para>
 		/// </summary>
-		public override string DisplayName() => "删除 Reviewer 会话";
+		public override string DisplayName() => "Delete Reviewer Session";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteReviewerSession</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 
 		/// <summary>
 		/// <para>Reviewer Workspace</para>
-		/// <para>将从中删除 Reviewer 会话的工作空间。</para>
+		/// <para>The workspace from which the Reviewer session will be deleted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 
 		/// <summary>
 		/// <para>Session</para>
-		/// <para>Reviewer 会话标识符和名称。会话必须存在于 Reviewer 工作空间中，例如 Session 1 : data_qc。</para>
+		/// <para>The Reviewer session identifier and name. The session must exist in the Reviewer workspace, for example, Session 1 : data_qc.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]

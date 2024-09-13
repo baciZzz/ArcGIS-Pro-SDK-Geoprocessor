@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Files To LAS Dataset</para>
-	/// <para>将文件添加到 LAS 数据集</para>
-	/// <para>将一个或多个 LAS 文件和表面约束要素的引用添加到 LAS 数据集。</para>
+	/// <para>Add Files To LAS Dataset</para>
+	/// <para>Adds references for one or more LAS files and  surface constraint features to a LAS dataset.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InLasDataset">
 		/// <para>Input LAS Dataset</para>
-		/// <para>待处理的 LAS 数据集。</para>
+		/// <para>The LAS dataset to process.</para>
 		/// </param>
 		public AddFilesToLasDataset(object InLasDataset)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 将文件添加到 LAS 数据集</para>
+		/// <para>Tool Display Name : Add Files To LAS Dataset</para>
 		/// </summary>
-		public override string DisplayName() => "将文件添加到 LAS 数据集";
+		public override string DisplayName() => "Add Files To LAS Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : AddFilesToLasDataset</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
-		/// <para>待处理的 LAS 数据集。</para>
+		/// <para>The LAS dataset to process.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLasDatasetLayer()]
@@ -75,8 +75,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>LAS Files or Folders</para>
-		/// <para>输入文件可引用包含 LAS 数据的各个 LAS 文件和文件夹的任意组合。</para>
-		/// <para>在“工具”对话框中，可将文件夹指定为输入，具体方法如下：在 Windows 资源管理器中选择文件夹，然后将其拖动到参数的输入框上。</para>
+		/// <para>Input files can reference any combination of individual LAS files and folders containing LAS data.</para>
+		/// <para>In the tool dialog box, a folder can also be specified as an input by selecting the folder in Windows Explorer and dragging it onto the parameter&apos;s input box.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -85,9 +85,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Include subfolders</para>
-		/// <para>指定 LAS 数据集是否引用位于输入文件夹子目录中的 .las 文件。</para>
-		/// <para>未选中 - 仅位于输入文件夹中的 .las 文件会添加到 LAS 数据集。 这是默认设置。</para>
-		/// <para>选中 - 位于输入文件夹子目录中的所有 .las 文件都将被添加到 LAS 数据集。</para>
+		/// <para>Specifies whether .las files residing in the subdirectories of an input folder will be referenced by the LAS dataset.</para>
+		/// <para>Unchecked—Only .las files residing in an input folder will be added to the LAS dataset. This is the default.</para>
+		/// <para>Checked—All .las files residing in the subdirectories of an input folder will be added to the LAS dataset.</para>
 		/// <para><see cref="FolderRecursionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -97,16 +97,16 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Surface Constraints</para>
-		/// <para>将构成由 LAS 数据集生成的三角化网格面定义的要素。</para>
-		/// <para>输入要素 - 其几何将整合到 LAS 数据集的三角化网格面的要素。</para>
-		/// <para>高度字段 - 通过选择 Shape.Z，可以从要素属性表或几何中的任何数值字段获取要素的高程源。 如果无需高度，则指定关键字 &lt;None&gt; 来创建 z-less 要素，其高程由表面内插得到。</para>
-		/// <para>类型 - 定义由 LAS 数据集生成的三角化网格面中的要素角色。 具有硬或软标识的选项表示要素边是否表示坡度的明显中断或平缓变化。</para>
-		/// <para>表面要素类型 - 定义如何将要素几何加入到表面的三角网中的表面要素类型。 具有硬或软标识的选项表示要素边是否表示坡度的明显中断或平缓变化。</para>
-		/// <para>锚点 - 不会被细化掉的高程点。 此选项仅可用于单点要素几何。</para>
-		/// <para>硬断线或软断线 - 强制高度值的隔断线。</para>
-		/// <para>硬裁剪或软裁剪 - 定义 LAS 数据集边界的面数据集。</para>
-		/// <para>硬擦除或软擦除 - 定义 LAS 数据集中的孔的面数据集。</para>
-		/// <para>硬替换或软替换 - 定义高度恒定的区域的面数据集。</para>
+		/// <para>The features that will contribute to the definition of the triangulated surface generated from the LAS dataset.</para>
+		/// <para>Input Features—The features with geometry that will be incorporated into the LAS dataset&apos;s triangulated surface.</para>
+		/// <para>Height Field—The feature&apos;s elevation source can be derived from any numeric field in the feature&apos;s attribute table or the geometry by selecting Shape.Z. If no height is necessary, specify the keyword &lt;None&gt; to create z-less features with elevation that will be interpolated from the surface.</para>
+		/// <para>Type—Defines the feature&apos;s role in the triangulated surface generated from the LAS dataset. Options with hard or soft designation refer to whether the feature edges represent distinct breaks in slope or a gradual change.</para>
+		/// <para>Surface Feature Type—The surface feature type that defines how the feature geometry will be incorporated into the triangulation for the surface. Options with hard or soft designation refer to whether the feature edges represent distinct breaks in slope or a gradual change.</para>
+		/// <para>anchorpoints—Elevation points that will not be thinned away. This option is only available for single-point feature geometry.</para>
+		/// <para>hardline or softline—Breaklines that enforce a height value.</para>
+		/// <para>hardclip or softclip—Polygon dataset that defines the boundary of the LAS dataset.</para>
+		/// <para>harderase or softerase—Polygon dataset that defines holes in the LAS dataset.</para>
+		/// <para>hardreplace or softreplace—Polygon dataset that defines areas of constant height.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -137,14 +137,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum FolderRecursionEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—All .las files residing in the subdirectories of an input folder will be added to the LAS dataset.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RECURSION")]
 			RECURSION,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Only .las files residing in an input folder will be added to the LAS dataset. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_RECURSION")]

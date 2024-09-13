@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Combine</para>
-	/// <para>合并</para>
-	/// <para>合并多个栅格，从而为输入值的各种唯一组合生成唯一输出值。</para>
+	/// <para>Combine</para>
+	/// <para>Combines multiple rasters so that a unique output value is assigned to each unique combination of input values.</para>
 	/// </summary>
 	public class Combine : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRasters">
 		/// <para>Input rasters</para>
-		/// <para>要合并的输入栅格列表。</para>
+		/// <para>The list of input rasters to be combined.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>输出组合栅格。</para>
-		/// <para>为输入值的各种唯一组合生成唯一整数值。</para>
+		/// <para>The output combined raster.</para>
+		/// <para>A unique integer value is assigned to each unique combination of input values.</para>
 		/// </param>
 		public Combine(object InRasters, object OutRaster)
 		{
@@ -35,14 +35,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 合并</para>
+		/// <para>Tool Display Name : Combine</para>
 		/// </summary>
-		public override string DisplayName() => "合并";
+		public override string DisplayName() => "Combine";
 
 		/// <summary>
-		/// <para>Tool Name : 合并</para>
+		/// <para>Tool Name : Combine</para>
 		/// </summary>
-		public override string ToolName() => "合并";
+		public override string ToolName() => "Combine";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Combine</para>
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input rasters</para>
-		/// <para>要合并的输入栅格列表。</para>
+		/// <para>The list of input rasters to be combined.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -83,8 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出组合栅格。</para>
-		/// <para>为输入值的各种唯一组合生成唯一整数值。</para>
+		/// <para>The output combined raster.</para>
+		/// <para>A unique integer value is assigned to each unique combination of input values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

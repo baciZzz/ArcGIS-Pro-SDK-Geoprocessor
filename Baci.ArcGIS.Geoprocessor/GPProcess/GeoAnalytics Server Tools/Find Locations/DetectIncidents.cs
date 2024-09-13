@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Detect Incidents</para>
-	/// <para>检测事件</para>
-	/// <para>创建用于检测满足给定条件的要素的图层。</para>
+	/// <para>Detect Incidents</para>
+	/// <para>Creates a layer that detects features that meet a given condition.</para>
 	/// </summary>
 	public class DetectIncidents : AbstractGPProcess
 	{
@@ -21,20 +21,20 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input Layer</para>
-		/// <para>包含潜在事件的输入要素。</para>
+		/// <para>The input features that contain potential incidents.</para>
 		/// </param>
 		/// <param name="OutputName">
 		/// <para>Output Name</para>
-		/// <para>输出要素服务的名称。</para>
+		/// <para>The name of the output feature service.</para>
 		/// </param>
 		/// <param name="TrackFields">
 		/// <para>Track Fields</para>
-		/// <para>将用于标识唯一轨迹的一个或多个字段。</para>
+		/// <para>A field or fields that will be used to identify unique tracks.</para>
 		/// </param>
 		/// <param name="StartCondition">
 		/// <para>Start Condition</para>
-		/// <para>将用于标识事件的条件。以 Arcade 格式写入表达式，其中可包括 [+ - * / ] 运算符和多个字段。</para>
-		/// <para>如果将图层添加到地图中，则可以使用字段和助手过滤器来构建表达式。</para>
+		/// <para>The condition that will be used to identify incidents. Expressions are written in Arcade and can include [+ - * / ] operators and multiple fields.</para>
+		/// <para>If the layer is added to the map, the Fields and Helpers filters can be used to build an expression.</para>
 		/// </param>
 		public DetectIncidents(object InputLayer, object OutputName, object TrackFields, object StartCondition)
 		{
@@ -45,9 +45,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 检测事件</para>
+		/// <para>Tool Display Name : Detect Incidents</para>
 		/// </summary>
-		public override string DisplayName() => "检测事件";
+		public override string DisplayName() => "Detect Incidents";
 
 		/// <summary>
 		/// <para>Tool Name : DetectIncidents</para>
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>包含潜在事件的输入要素。</para>
+		/// <para>The input features that contain potential incidents.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRecordSet()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>输出要素服务的名称。</para>
+		/// <para>The name of the output feature service.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Track Fields</para>
-		/// <para>将用于标识唯一轨迹的一个或多个字段。</para>
+		/// <para>A field or fields that will be used to identify unique tracks.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -109,8 +109,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Start Condition</para>
-		/// <para>将用于标识事件的条件。以 Arcade 格式写入表达式，其中可包括 [+ - * / ] 运算符和多个字段。</para>
-		/// <para>如果将图层添加到地图中，则可以使用字段和助手过滤器来构建表达式。</para>
+		/// <para>The condition that will be used to identify incidents. Expressions are written in Arcade and can include [+ - * / ] operators and multiple fields.</para>
+		/// <para>If the layer is added to the map, the Fields and Helpers filters can be used to build an expression.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPCalculatorExpression()]
@@ -118,9 +118,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>End Condition</para>
-		/// <para>将用于结束事件的条件。如果未指定结束条件，则开始条件不再为 true 时，事件将结束。</para>
-		/// <para>以 Arcade 格式写入表达式，其中可包括运算符和多个字段。</para>
-		/// <para>如果将图层添加到地图中，则可以使用字段和助手过滤器来构建表达式。</para>
+		/// <para>The condition that will be used to end incidents. If no end condition is specified, incidents will end when the start condition is no longer true.</para>
+		/// <para>Expressions are written in Arcade and can include operators and multiple fields.</para>
+		/// <para>If the layer is added to the map, the Fields and Helpers filters can be used to build an expression.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCalculatorExpression()]
@@ -128,9 +128,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Output Mode</para>
-		/// <para>用于指定将返回的要素。</para>
-		/// <para>所有要素—将返回所有输入要素。这是默认设置。</para>
-		/// <para>事件点—仅将返回被发现是事件的要素。</para>
+		/// <para>Specifies the features that will be returned.</para>
+		/// <para>All features—All the input features will be returned. This is the default.</para>
+		/// <para>Incidents—Only features that were found to be incidents will be returned.</para>
 		/// <para><see cref="OutputModeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -140,9 +140,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Data Store</para>
-		/// <para>指定将用于保存输出的 ArcGIS Data Store。 默认设置为时空大数据存储。 在时空大数据存储中存储的所有结果都将存储在 WGS84 中。 在关系数据存储中存储的结果都将保持各自的坐标系。</para>
-		/// <para>时空大数据存储—输出将存储在时空大数据存储中。 这是默认设置。</para>
-		/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
+		/// <para>Specifies the ArcGIS Data Store where the output will be saved. The default is Spatiotemporal big data store. All results stored in a spatiotemporal big data store will be stored in WGS84. Results stored in a relational data store will maintain their coordinate system.</para>
+		/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
+		/// <para>Relational data store—Output will be stored in a relational data store.</para>
 		/// <para><see cref="DataStoreEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -160,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Time Boundary Split</para>
-		/// <para>用于分割输入数据以进行分析的时间跨度。 您可通过时间界限分析定义的时间跨度内的值。 例如，如果您使用始于 1980 年 1 月 1 日的 1 天的时间界限，则轨迹将在每天开始时被分割。 此参数仅适用于 ArcGIS Enterprise 10.7 及更高版本。</para>
+		/// <para>A time span to split the input data into for analysis. A time boundary allows you to analyze values within a defined time span. For example, if you use a time boundary of 1 day, starting on January 1, 1980, tracks will be split at the beginning of every day. This parameter is only available with ArcGIS Enterprise 10.7 and later.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -169,7 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Time Boundary Reference</para>
-		/// <para>用于分割输入数据以进行分析的参考时间。 将为整个数据跨度创建时间界限，且不需要在开始时产生参考时间。 如果未指定参考时间，则将使用 1970 年 1 月 1 日。 此参数仅适用于 ArcGIS Enterprise 10.7 及更高版本。</para>
+		/// <para>The reference time used to split the input data into for analysis. Time boundaries will be created for the entire span of the data, and the reference time does not need to occur at the start. If no reference time is specified, January 1, 1970, is used. This parameter is only available with ArcGIS Enterprise 10.7 and later.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -192,17 +192,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum OutputModeEnum 
 		{
 			/// <summary>
-			/// <para>所有要素—将返回所有输入要素。这是默认设置。</para>
+			/// <para>All features—All the input features will be returned. This is the default.</para>
 			/// </summary>
 			[GPValue("ALL_FEATURES")]
-			[Description("所有要素")]
+			[Description("All features")]
 			All_features,
 
 			/// <summary>
-			/// <para>事件点—仅将返回被发现是事件的要素。</para>
+			/// <para>Incidents—Only features that were found to be incidents will be returned.</para>
 			/// </summary>
 			[GPValue("INCIDENTS")]
-			[Description("事件点")]
+			[Description("Incidents")]
 			Incidents,
 
 		}
@@ -213,17 +213,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum DataStoreEnum 
 		{
 			/// <summary>
-			/// <para>时空大数据存储—输出将存储在时空大数据存储中。 这是默认设置。</para>
+			/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
 			/// </summary>
 			[GPValue("SPATIOTEMPORAL_DATA_STORE")]
-			[Description("时空大数据存储")]
+			[Description("Spatiotemporal big data store")]
 			Spatiotemporal_big_data_store,
 
 			/// <summary>
-			/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
+			/// <para>Relational data store—Output will be stored in a relational data store.</para>
 			/// </summary>
 			[GPValue("RELATIONAL_DATA_STORE")]
-			[Description("关系数据存储")]
+			[Description("Relational data store")]
 			Relational_data_store,
 
 		}

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Reconstruct Tracks</para>
-	/// <para>重新构建轨迹</para>
-	/// <para>从启用时间的输入数据创建线或面轨迹。</para>
+	/// <para>Reconstruct Tracks</para>
+	/// <para>Creates line or polygon tracks from time-enabled input data.</para>
 	/// </summary>
 	public class ReconstructTracks : AbstractGPProcess
 	{
@@ -21,21 +21,21 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input Layer</para>
-		/// <para>要重新构建为轨迹的点或面。输入必须为启用时间的图层，用于表示时刻。</para>
+		/// <para>The points or polygons to be reconstructed into tracks. The input must be a time-enabled layer that represents an instant in time.</para>
 		/// </param>
 		/// <param name="OutputName">
 		/// <para>Output Name</para>
-		/// <para>输出要素服务的名称。</para>
+		/// <para>The name of the output feature service.</para>
 		/// </param>
 		/// <param name="TrackFields">
 		/// <para>Track Fields</para>
-		/// <para>将用于标识唯一轨迹的一个或多个字段。</para>
+		/// <para>One or more fields that will be used to identify unique tracks.</para>
 		/// </param>
 		/// <param name="Method">
 		/// <para>Method</para>
-		/// <para>指定将用于重新构建轨迹的条件。如果使用了缓冲区，则方法参数将用于确定缓冲区的类型。</para>
-		/// <para>测地线— 如果空间参考可以平移，则轨迹将在适当的时候穿过日期变更线。如果空间参考不可平移，则轨迹将被限制在坐标系的范围之内且不可环绕。</para>
-		/// <para>平面—将创建平面缓冲区。</para>
+		/// <para>Specifies the criteria that will be used to reconstruct tracks. If a buffer is used, the Method parameter determines the type of buffer.</para>
+		/// <para>Geodesic— If the spatial reference can be panned, tracks will cross the date line when appropriate. If the spatial reference cannot be panned, tracks will be limited to the coordinate system extent and may not wrap.</para>
+		/// <para>Planar—Planar buffers will be created.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </param>
 		public ReconstructTracks(object InputLayer, object OutputName, object TrackFields, object Method)
@@ -47,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 重新构建轨迹</para>
+		/// <para>Tool Display Name : Reconstruct Tracks</para>
 		/// </summary>
-		public override string DisplayName() => "重新构建轨迹";
+		public override string DisplayName() => "Reconstruct Tracks";
 
 		/// <summary>
 		/// <para>Tool Name : ReconstructTracks</para>
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>要重新构建为轨迹的点或面。输入必须为启用时间的图层，用于表示时刻。</para>
+		/// <para>The points or polygons to be reconstructed into tracks. The input must be a time-enabled layer that represents an instant in time.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>输出要素服务的名称。</para>
+		/// <para>The name of the output feature service.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Track Fields</para>
-		/// <para>将用于标识唯一轨迹的一个或多个字段。</para>
+		/// <para>One or more fields that will be used to identify unique tracks.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -112,9 +112,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>指定将用于重新构建轨迹的条件。如果使用了缓冲区，则方法参数将用于确定缓冲区的类型。</para>
-		/// <para>测地线— 如果空间参考可以平移，则轨迹将在适当的时候穿过日期变更线。如果空间参考不可平移，则轨迹将被限制在坐标系的范围之内且不可环绕。</para>
-		/// <para>平面—将创建平面缓冲区。</para>
+		/// <para>Specifies the criteria that will be used to reconstruct tracks. If a buffer is used, the Method parameter determines the type of buffer.</para>
+		/// <para>Geodesic— If the spatial reference can be panned, tracks will cross the date line when appropriate. If the spatial reference cannot be panned, tracks will be limited to the coordinate system extent and may not wrap.</para>
+		/// <para>Planar—Planar buffers will be created.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -124,9 +124,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Buffer Type</para>
-		/// <para>指定缓冲距离将如何定义。</para>
-		/// <para>字段—将使用单个字段来定义缓冲距离。</para>
-		/// <para>表达式—使用字段和数学运算符的方程将用于定义缓冲距离。</para>
+		/// <para>Specifies how the buffer distance will be defined.</para>
+		/// <para>Field—A single field will be used to define the buffer distance.</para>
+		/// <para>Expression—An equation using fields and mathematical operators will be used to define the buffer distance.</para>
 		/// <para><see cref="BufferTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Buffer Field</para>
-		/// <para>将用于缓冲输入要素的字段。字段值采用输入空间参考的单位，除非您所使用的是地理坐标系，在这种情况下，单位将为米。</para>
+		/// <para>The field that will be used to buffer the input features. Field values are applied in the units of the spatial reference of the input unless you are using a geographic coordinate system, in which case they will be in meters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -146,8 +146,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Buffer Expression</para>
-		/// <para>将用于缓冲输入要素的表达式。字段必须为数字形式，并且表达式可以包含 [+ - * / ] 运算符和多个字段。将应用经计算的值，且采用输入空间参考的单位，除非您所使用的是地理坐标系，在这种情况下，单位为米。</para>
-		/// <para>在 ArcGIS Enterprise 10.5 和 10.5.1 中，表达式将格式化为 as_kilometers(distance) * 2 + as_meters(15)。在 ArcGIS Enterprise 10.6 或更高版本中，请使用 Arcade 表达式，例如 as_kilometers($feature.distance) * 2 + as_meters(15)。</para>
+		/// <para>The expression that will be used to buffer input features. Fields must be numeric, and the expression can include [+ - * / ] operators and multiple fields. Calculated values are applied in the units of the spatial reference of the input unless you are using a geographic coordinate system, in which case they will be in meters.</para>
+		/// <para>In ArcGIS Enterprise 10.5 and 10.5.1, expressions are formatted as as_kilometers(distance) * 2 + as_meters(15). In ArcGIS Enterprise 10.6 or later, use Arcade expressions such as as_kilometers($feature.distance) * 2 + as_meters(15).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCalculatorExpression()]
@@ -155,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Time Split</para>
-		/// <para>时间差距大于按时间分割的持续时间的要素将被分割成单独的轨迹。</para>
+		/// <para>Features that are farther apart in time than the time-split duration will be split into separate tracks.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -165,30 +165,30 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Summary Fields</para>
-		/// <para>将根据指定字段进行计算的统计数据。</para>
-		/// <para>计数 - 非空值的数目。 可用于数值字段或字符串。 [null, 0, 2] 的计数为 2。</para>
-		/// <para>总和 - 字段内数值的总和。 [null, null, 3] 的总和为 3。</para>
-		/// <para>平均值 - 数值的平均值。 [0, 2, null] 的平均值为 1。</para>
-		/// <para>最小值 - 数值字段的最小值。 [0, 2, null] 的最小值为 0。</para>
-		/// <para>最大值 - 数值字段的最大值。 [0, 2, null] 的最大值为 2。</para>
-		/// <para>标准差 - 数值字段的标准差。 [1] 的标准差为 null。 [null, 1,1,1] 的标准差为 null。</para>
-		/// <para>方差 - 轨迹中数值字段内数值的方差。 [1] 的方差为 null。 [null, 1, 1, 1] 的方差为 null。</para>
-		/// <para>范围 - 数值字段的范围。 其计算方法为最大值减去最小值。 [0, null, 1] 的范围为 1。 [null, 4] 的范围为 0。</para>
-		/// <para>任何 - 字符串型字段中的示例字符串。</para>
-		/// <para>第一个 - 轨迹中指定字段的第一个值。 此选项适用于 ArcGIS Enterprise 10.8.1。</para>
-		/// <para>最后一个 - 轨迹中指定字段的最后一个值。 此选项适用于 ArcGIS Enterprise 10.8.1。</para>
-		/// <para>将根据指定字段进行计算的统计数据。</para>
-		/// <para>COUNT - 非空值的数目。 可用于数值字段或字符串。 [null, 0, 2] 的计数为 2。</para>
-		/// <para>SUM - 字段内数值的总和。 [null, null, 3] 的总和为 3。</para>
-		/// <para>MEAN - 数值的平均值。 [0,2, null] 的平均值为 1。</para>
-		/// <para>MIN - 数值字段的最小值。 [0, 2, null] 的最小值为 0。</para>
-		/// <para>MAX - 数值字段的最大值。 [0, 2, null] 的最大值为 2。</para>
-		/// <para>STDDEV - 数值字段的标准差。 [1] 的标准差为 null。 [null, 1,1,1] 的标准差为 null。</para>
-		/// <para>VAR - 轨迹中数值字段内数值的方差。 [1] 的方差为 null。 [null, 1,1,1] 的方差为 null。</para>
-		/// <para>RANGE - 数值字段的范围。 其计算方法为最大值减去最小值。 [0, null, 1] 的范围为 1。 [null, 4] 的范围为 0。</para>
-		/// <para>ANY - 字符串型字段中的示例字符串。</para>
-		/// <para>FIRST - 轨迹中指定字段的第一个值。 此选项适用于 ArcGIS Enterprise 10.8.1。</para>
-		/// <para>LAST - 轨迹中指定字段的最后一个值。 此选项适用于 ArcGIS Enterprise 10.8.1。</para>
+		/// <para>The statistics that will be calculated on specified fields.</para>
+		/// <para>Count—The number of nonnull values. It can be used on numeric fields or strings. The count of [null, 0, 2] is 2.</para>
+		/// <para>Sum—The sum of numeric values in a field. The sum of [null, null, 3] is 3.</para>
+		/// <para>Mean—The mean of numeric values. The mean of [0, 2, null] is 1.</para>
+		/// <para>Min—The minimum value of a numeric field. The minimum of [0, 2, null] is 0.</para>
+		/// <para>Max—The maximum value of a numeric field. The maximum value of [0, 2, null] is 2.</para>
+		/// <para>Standard Deviation—The standard deviation of a numeric field. The standard deviation of [1] is null. The standard deviation of [null, 1,1,1] is null.</para>
+		/// <para>Variance—The variance of a numeric field in a track. The variance of [1] is null. The variance of [null, 1, 1, 1] is null.</para>
+		/// <para>Range—The range of a numeric field. This is calculated as the minimum value subtracted from the maximum value. The range of [0, null, 1] is 1. The range of [null, 4] is 0.</para>
+		/// <para>Any—A sample string from a field of type string.</para>
+		/// <para>First—The first value of a specified field in a track. This option is available with ArcGIS Enterprise 10.8.1.</para>
+		/// <para>Last—The last value of a specified field in a track. This option is available with ArcGIS Enterprise 10.8.1.</para>
+		/// <para>The statistics that will be calculated on specified fields.</para>
+		/// <para>COUNT—The number of nonnull values. It can be used on numeric fields or strings. The count of [null, 0, 2] is 2.</para>
+		/// <para>SUM—The sum of numeric values in a field. The sum of [null, null, 3] is 3.</para>
+		/// <para>MEAN—The mean of numeric values. The mean of [0,2, null] is 1.</para>
+		/// <para>MIN—The minimum value of a numeric field. The minimum of [0, 2, null] is 0.</para>
+		/// <para>MAX—The maximum value of a numeric field. The maximum value of [0, 2, null] is 2.</para>
+		/// <para>STDDEV—The standard deviation of a numeric field. The standard deviation of [1] is null. The standard deviation of [null, 1,1,1] is null.</para>
+		/// <para>VAR—The variance of a numeric field in a track. The variance of [1] is null. The variance of [null, 1,1,1] is null.</para>
+		/// <para>RANGE—The range of a numeric field. This is calculated as the minimum value subtracted from the maximum value. The range of [0, null, 1] is 1. The range of [null, 4] is 0.</para>
+		/// <para>ANY—A sample string from a field of type string.</para>
+		/// <para>FIRST—The first value of a specified field in a track. This option is available with ArcGIS Enterprise 10.8.1.</para>
+		/// <para>LAST—The last value of a specified field in a track. This option is available with ArcGIS Enterprise 10.8.1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -204,9 +204,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Data Store</para>
-		/// <para>指定将用于保存输出的 ArcGIS Data Store。 默认设置为时空大数据存储。 在时空大数据存储中存储的所有结果都将存储在 WGS84 中。 在关系数据存储中存储的结果都将保持各自的坐标系。</para>
-		/// <para>时空大数据存储—输出将存储在时空大数据存储中。 这是默认设置。</para>
-		/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
+		/// <para>Specifies the ArcGIS Data Store where the output will be saved. The default is Spatiotemporal big data store. All results stored in a spatiotemporal big data store will be stored in WGS84. Results stored in a relational data store will maintain their coordinate system.</para>
+		/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
+		/// <para>Relational data store—Output will be stored in a relational data store.</para>
 		/// <para><see cref="DataStoreEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -217,7 +217,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Distance Split</para>
-		/// <para>距离差距大于距离分割值的要素将被分割成单独的轨迹。此参数仅适用于 ArcGIS Enterprise 10.6 及更高版本。</para>
+		/// <para>Features that are farther apart in distance than the distance split value will be split into separate tracks. This parameter is only available with ArcGIS Enterprise 10.6 and later.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -227,7 +227,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Time Boundary Split</para>
-		/// <para>用于分割输入数据以进行分析的时间跨度。 您可通过时间界限分析定义的时间跨度内的值。 例如，如果您使用始于 1980 年 1 月 1 日的 1 天的时间界限，则轨迹将在每天开始时被分割。 此参数仅适用于 ArcGIS Enterprise 10.7 及更高版本。</para>
+		/// <para>A time span to split the input data into for analysis. A time boundary allows you to analyze values within a defined time span. For example, if you use a time boundary of 1 day, starting on January 1, 1980, tracks will be split at the beginning of every day. This parameter is only available with ArcGIS Enterprise 10.7 and later.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -237,7 +237,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Time Boundary Reference</para>
-		/// <para>用于分割输入数据以进行分析的参考时间。 将为整个数据跨度创建时间界限，且不需要在开始时产生参考时间。 如果未指定参考时间，则将使用 1970 年 1 月 1 日。 此参数仅适用于 ArcGIS Enterprise 10.7 及更高版本。</para>
+		/// <para>The reference time used to split the input data into for analysis. Time boundaries will be created for the entire span of the data, and the reference time does not need to occur at the start. If no reference time is specified, January 1, 1970, is used. This parameter is only available with ArcGIS Enterprise 10.7 and later.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -246,7 +246,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Split Expression</para>
-		/// <para>可根据值、几何或时间值来分割轨迹的表达式。将对验证为 true 的表达式进行分割。此参数仅适用于 ArcGIS Enterprise 10.9 及更高版本。</para>
+		/// <para>An expression that splits tracks based on values, geometry or time values. Expressions that validate to true will be split. This parameter is only available with ArcGIS Enterprise 10.9 and later.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCalculatorExpression()]
@@ -255,10 +255,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Split Type</para>
-		/// <para>指定在分割轨迹时，在两个要素之间创建轨迹段的方式。分割类型将应用于分割表达式、距离分割和时间分割。此参数仅适用于 ArcGIS Enterprise 10.9 及更高版本。</para>
-		/// <para>间距—在两个要素之间未创建任何段。这是默认设置。</para>
-		/// <para>之后完成—将在两个要素之间创建一个段，该段在分割后结束。</para>
-		/// <para>之前开始—将在两个要素之间创建一个段，该段在分割前结束。</para>
+		/// <para>Specifies how the track segment between two features is created when a track is split. The split type is applied to split expressions, distance splits, and time splits. This parameter is only available with ArcGIS Enterprise 10.9 and later.</para>
+		/// <para>Gap—No segment is created between the two features. This is the default.</para>
+		/// <para>Finish After—A segment is created between the two features that ends after the split.</para>
+		/// <para>Start Before—A segment is created between the two features that ends before the split.</para>
 		/// <para><see cref="SplitTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -284,17 +284,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>测地线— 如果空间参考可以平移，则轨迹将在适当的时候穿过日期变更线。如果空间参考不可平移，则轨迹将被限制在坐标系的范围之内且不可环绕。</para>
+			/// <para>Geodesic— If the spatial reference can be panned, tracks will cross the date line when appropriate. If the spatial reference cannot be panned, tracks will be limited to the coordinate system extent and may not wrap.</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
-			[Description("测地线")]
+			[Description("Geodesic")]
 			Geodesic,
 
 			/// <summary>
-			/// <para>平面—将创建平面缓冲区。</para>
+			/// <para>Planar—Planar buffers will be created.</para>
 			/// </summary>
 			[GPValue("PLANAR")]
-			[Description("平面")]
+			[Description("Planar")]
 			Planar,
 
 		}
@@ -305,17 +305,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum BufferTypeEnum 
 		{
 			/// <summary>
-			/// <para>字段—将使用单个字段来定义缓冲距离。</para>
+			/// <para>Field—A single field will be used to define the buffer distance.</para>
 			/// </summary>
 			[GPValue("FIELD")]
-			[Description("字段")]
+			[Description("Field")]
 			Field,
 
 			/// <summary>
-			/// <para>表达式—使用字段和数学运算符的方程将用于定义缓冲距离。</para>
+			/// <para>Expression—An equation using fields and mathematical operators will be used to define the buffer distance.</para>
 			/// </summary>
 			[GPValue("EXPRESSION")]
-			[Description("表达式")]
+			[Description("Expression")]
 			Expression,
 
 		}
@@ -326,17 +326,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum DataStoreEnum 
 		{
 			/// <summary>
-			/// <para>时空大数据存储—输出将存储在时空大数据存储中。 这是默认设置。</para>
+			/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
 			/// </summary>
 			[GPValue("SPATIOTEMPORAL_DATA_STORE")]
-			[Description("时空大数据存储")]
+			[Description("Spatiotemporal big data store")]
 			Spatiotemporal_big_data_store,
 
 			/// <summary>
-			/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
+			/// <para>Relational data store—Output will be stored in a relational data store.</para>
 			/// </summary>
 			[GPValue("RELATIONAL_DATA_STORE")]
-			[Description("关系数据存储")]
+			[Description("Relational data store")]
 			Relational_data_store,
 
 		}
@@ -347,24 +347,24 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum SplitTypeEnum 
 		{
 			/// <summary>
-			/// <para>间距—在两个要素之间未创建任何段。这是默认设置。</para>
+			/// <para>Gap—No segment is created between the two features. This is the default.</para>
 			/// </summary>
 			[GPValue("GAP")]
-			[Description("间距")]
+			[Description("Gap")]
 			Gap,
 
 			/// <summary>
-			/// <para>之后完成—将在两个要素之间创建一个段，该段在分割后结束。</para>
+			/// <para>Finish After—A segment is created between the two features that ends after the split.</para>
 			/// </summary>
 			[GPValue("FINISH_LAST")]
-			[Description("之后完成")]
+			[Description("Finish After")]
 			Finish_After,
 
 			/// <summary>
-			/// <para>之前开始—将在两个要素之间创建一个段，该段在分割前结束。</para>
+			/// <para>Start Before—A segment is created between the two features that ends before the split.</para>
 			/// </summary>
 			[GPValue("START_NEXT")]
-			[Description("之前开始")]
+			[Description("Start Before")]
 			Start_Before,
 
 		}

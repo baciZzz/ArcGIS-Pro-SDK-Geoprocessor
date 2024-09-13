@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Table To Table</para>
-	/// <para>表至表</para>
-	/// <para>可将表的行导出到不同表中。</para>
+	/// <para>Table To Table</para>
+	/// <para>Exports the rows of a table   to a different table.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.ConversionTools.ExportTable"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
 	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.ConversionTools.ExportTable))]
@@ -23,16 +23,16 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InRows">
 		/// <para>Input Rows</para>
-		/// <para>要导出到新表格的输入表。</para>
+		/// <para>The input table to be exported to a new table.</para>
 		/// </param>
 		/// <param name="OutPath">
 		/// <para>Output Location</para>
-		/// <para>将写入输出表的目标位置。</para>
+		/// <para>The destination where the output table will be written.</para>
 		/// </param>
 		/// <param name="OutName">
 		/// <para>Output Name</para>
-		/// <para>输出表的名称。</para>
-		/// <para>如果输出位置为文件夹，则需要包含扩展名，例如 .csv、.txt 或 .dbf，以将表格导出为该格式。 如果输出位置为地理数据库，则无需指定扩展名。</para>
+		/// <para>The name of the output table.</para>
+		/// <para>If the output location is a folder, include an extension such as .csv, .txt, or .dbf to export the table to that format. If the output location is a geodatabase, do not specify an extension.</para>
 		/// </param>
 		public TableToTable(object InRows, object OutPath, object OutName)
 		{
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 表至表</para>
+		/// <para>Tool Display Name : Table To Table</para>
 		/// </summary>
-		public override string DisplayName() => "表至表";
+		public override string DisplayName() => "Table To Table";
 
 		/// <summary>
 		/// <para>Tool Name : TableToTable</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Rows</para>
-		/// <para>要导出到新表格的输入表。</para>
+		/// <para>The input table to be exported to a new table.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Location</para>
-		/// <para>将写入输出表的目标位置。</para>
+		/// <para>The destination where the output table will be written.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -94,8 +94,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>输出表的名称。</para>
-		/// <para>如果输出位置为文件夹，则需要包含扩展名，例如 .csv、.txt 或 .dbf，以将表格导出为该格式。 如果输出位置为地理数据库，则无需指定扩展名。</para>
+		/// <para>The name of the output table.</para>
+		/// <para>If the output location is a folder, include an extension such as .csv, .txt, or .dbf to export the table to that format. If the output location is a geodatabase, do not specify an extension.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>用于选择记录子集的 SQL 表达式。</para>
+		/// <para>An SQL expression that will be used to select a subset of records.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -111,20 +111,20 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Field Map</para>
-		/// <para>输出中将包括的具有相应字段属性和源字段的属性字段。 默认情况下，将包括输入的所有字段。</para>
-		/// <para>可以添加、删除、重命名和重新排序字段，且可以更改其属性。</para>
-		/// <para>合并规则用于指定如何将两个或更多个输入字段的值合并或组合为一个输出值。 有多种合并规则可用于确定如何用值填充输出字段。</para>
-		/// <para>First - 使用输入字段的第一个值。</para>
-		/// <para>Last - 使用输入字段的最后一个值。</para>
-		/// <para>Join - 串连（连接）输入字段的值。</para>
-		/// <para>Sum - 计算输入字段值的总和。</para>
-		/// <para>Mean - 计算输入字段值的平均值。</para>
-		/// <para>Median - 计算输入字段值的中值。</para>
-		/// <para>Mode - 使用具有最高频率的值。</para>
-		/// <para>Min - 使用所有输入字段值中的最小值。</para>
-		/// <para>Max - 使用所有输入字段值中的最大值。</para>
-		/// <para>Standard deviation - 对所有输入字段值使用标准差分类方法。</para>
-		/// <para>Count - 查找计算中所包含的记录数。</para>
+		/// <para>The attribute fields that will be in the output with the corresponding field properties and source fields. By default, all fields from the inputs will be included.</para>
+		/// <para>Fields can be added, deleted, renamed, and reordered, and you can change their properties.</para>
+		/// <para>Merge rules allow you to specify how values from two or more input fields are merged or combined into a single output value. There are several merge rules you can use to determine how the output field will be populated with values.</para>
+		/// <para>First—Use the input fields&apos; first value.</para>
+		/// <para>Last—Use the input fields&apos; last value.</para>
+		/// <para>Join—Concatenate (join) the input field values.</para>
+		/// <para>Sum—Calculate the total of the input field values.</para>
+		/// <para>Mean—Calculate the mean (average) of the input field values.</para>
+		/// <para>Median—Calculate the median (middle) of the input field values.</para>
+		/// <para>Mode—Use the value with the highest frequency.</para>
+		/// <para>Min—Use the minimum value of all the input field values.</para>
+		/// <para>Max—Use the maximum value of all the input field values.</para>
+		/// <para>Standard deviation—Use the standard deviation classification method on all the input field values.</para>
+		/// <para>Count—Find the number of records included in the calculation.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFieldMapping()]
@@ -133,8 +133,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Config Keyword</para>
-		/// <para>指定关系数据库管理系统 (RDBMS) 中的地理数据库的默认存储参数（配置）。此设置仅在使用企业级地理数据库表时可用。</para>
-		/// <para>配置关键字由数据库管理员进行设置。</para>
+		/// <para>Specifies the default storage parameters (configurations) for geodatabases in a relational database management system (RDBMS). This setting is applicable only when using enterprise geodatabase tables.</para>
+		/// <para>Configuration keywords are set by the database administrator.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

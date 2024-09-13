@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Fuzzy Membership</para>
-	/// <para>模糊隶属度</para>
-	/// <para>根据指定的模糊化算法，将输入栅格转换为 0 到 1 数值范围以指示其对某一集合的隶属度。</para>
+	/// <para>Fuzzy Membership</para>
+	/// <para>Transforms  the input raster   into a 0 to 1 scale, indicating the strength of a membership in a set, based on a specified fuzzification algorithm.</para>
 	/// </summary>
 	public class FuzzyMembership : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>值域从 0 到 1 的输入栅格。</para>
-		/// <para>它可以是整型栅格或浮点型栅格。</para>
+		/// <para>The input raster whose values will be scaled from 0 to 1.</para>
+		/// <para>It can be an integer or a floating-point raster.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>输出为浮点型栅格，取值范围是 0 到 1。</para>
+		/// <para>The output will be a floating-point raster with values ranging from 0 to 1.</para>
 		/// </param>
 		public FuzzyMembership(object InRaster, object OutRaster)
 		{
@@ -35,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 模糊隶属度</para>
+		/// <para>Tool Display Name : Fuzzy Membership</para>
 		/// </summary>
-		public override string DisplayName() => "模糊隶属度";
+		public override string DisplayName() => "Fuzzy Membership";
 
 		/// <summary>
 		/// <para>Tool Name : FuzzyMembership</para>
@@ -71,8 +71,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>值域从 0 到 1 的输入栅格。</para>
-		/// <para>它可以是整型栅格或浮点型栅格。</para>
+		/// <para>The input raster whose values will be scaled from 0 to 1.</para>
+		/// <para>It can be an integer or a floating-point raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出为浮点型栅格，取值范围是 0 到 1。</para>
+		/// <para>The output will be a floating-point raster with values ranging from 0 to 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -92,29 +92,29 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Membership type</para>
-		/// <para>指定用于模糊化输入栅格的算法。</para>
-		/// <para>隶属度类型的某些设置使用散度参数来确定模糊隶属度从 1 变为 0 的下降速度。散度参数的默认值在下表中进行了详细说明。</para>
-		/// <para>Gaussian—在中点处指定隶属度值 1。对于沿正态曲线偏离中点的值，隶属度将降为 0。高斯函数与近邻 (Near) 函数类似，但高斯函数的散度 (spread) 更小。</para>
-		/// <para>中点 - 默认值为输入栅格的值范围的中点。</para>
-		/// <para>散度 - 默认值是 0.1。通常，值在 [0.01–1] 内变化。</para>
-		/// <para>Small—用于指示输入栅格中的小值在模糊集内的隶属度较高。在中点处指定隶属度值 0.5。</para>
-		/// <para>中点 - 默认值为输入栅格的值范围的中点。</para>
-		/// <para>散度 - 默认值是 5。</para>
-		/// <para>Large—用于指示输入栅格中的大值在模糊集内的隶属度较高。在中点处指定隶属度值 0.5。</para>
-		/// <para>中点 - 默认值为输入栅格的值范围的中点。</para>
-		/// <para>散度 - 默认值是 5。</para>
-		/// <para>Near—计算距离某个中间值较近的值的隶属度。在中点处指定隶属度值 1。对于偏离中点的值，隶属度将降为 0。</para>
-		/// <para>中点 - 默认值为输入栅格的值范围的中点。</para>
-		/// <para>散度 - 默认值是 0.1。通常，值在 [0.001–1] 的范围内变化。</para>
-		/// <para>MSLarge—根据输入数据的平均值和标准差计算隶属度，输入数据中的大值具有较高隶属度。 计算结果可能与“大值”函数类似，具体取决于如何定义平均值和标准差的乘数。</para>
-		/// <para>平均值乘数 - 默认值是 1。</para>
-		/// <para>标准差乘数 - 默认值是 2。</para>
-		/// <para>MSSmall—根据输入数据的平均值和标准差计算隶属度，输入数据中的小值具有较高隶属度。此为默认隶属度类型。 计算结果可能与“小值”函数类似，具体取决于如何定义平均值和标准差的乘数。</para>
-		/// <para>平均值乘数 - 默认值是 1。</para>
-		/// <para>标准差乘数 - 默认值是 2。</para>
-		/// <para>Linear—根据对输入栅格进行的线性变换计算隶属度。 在最小值处指定隶属度值 0，在最大值处指定隶属度值 1。</para>
-		/// <para>最小值 - 默认值是 1。</para>
-		/// <para>最大值 - 默认值是 2。</para>
+		/// <para>Specifies the algorithm used in fuzzification of the input raster.</para>
+		/// <para>Certain settings for Membership type employ a Spread parameter to determine how rapidly the fuzzy membership values decrease from 1 to 0. The default values for the spread are detailed in the table below.</para>
+		/// <para>Gaussian—Assigns a membership value of 1 at the midpoint.The membership decreases to 0 for values that deviate from the midpoint according to a normal curve. Gaussian is similar to the Near function but has a more narrow spread.</para>
+		/// <para>Midpoint — Default is the midpoint of the range of values of the input raster.</para>
+		/// <para>Spread — Default is 0.1. Typically, the values vary between [0.01–1].</para>
+		/// <para>Small—Used to indicate that small values of the input raster have high membership in the fuzzy set.Assigns a membership value of 0.5 at the midpoint.</para>
+		/// <para>Midpoint — Default is the midpoint of the range of values of the input raster.</para>
+		/// <para>Spread — Default is 5.</para>
+		/// <para>Large—Used to indicate that large values of the input raster have high membership in the fuzzy set.Assigns a membership value of 0.5 at the midpoint.</para>
+		/// <para>Midpoint — Default is the midpoint of the range of values of the input raster.</para>
+		/// <para>Spread — Default is 5.</para>
+		/// <para>Near—Calculates memberships for values near some intermediate value.Assigns a membership value of 1 at the midpoint. The membership decreases to 0 for values that deviate from the midpoint.</para>
+		/// <para>Midpoint — Default is the midpoint of the range of values of the input raster.</para>
+		/// <para>Spread — Default is 0.1. Typically, the values vary within the range of [0.001–1].</para>
+		/// <para>MSLarge—Calculates membership based on the mean and standard deviation of the input data where large values have high membership. The result can be similar to the Large function, depending on how the multipliers of the mean and standard deviation are defined.</para>
+		/// <para>Mean multiplier — Default is 1.</para>
+		/// <para>Standard deviation multiplier — Default is 2.</para>
+		/// <para>MSSmall—Calculates membership based on the mean and standard deviation of the input data where small values have high membership. This is the default membership type. The result can be similar to the Small function, depending on how the multipliers of the mean and standard deviation are defined.</para>
+		/// <para>Mean multiplier — Default is 1.</para>
+		/// <para>Standard deviation multiplier — Default is 2.</para>
+		/// <para>Linear—Calculates membership based on the linear transformation of the input raster. Assigns a membership value of 0 at the minimum and a membership of 1 at the maximum.</para>
+		/// <para>Minimum — Default is 1.</para>
+		/// <para>Maximum — Default is 2.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAFuzzyFunction()]
@@ -122,10 +122,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Hedge</para>
-		/// <para>定义模糊限制语将增大或减小可修改模糊集含义的模糊隶属度值。模糊限制语在帮助控制条件或重要属性时非常有用。</para>
-		/// <para>无—不应用模糊限制语。这是默认设置。</para>
-		/// <para>Somewhat—也称为膨胀，被定义为模糊隶属度函数的平方根。该模糊限制语可增大模糊隶属度函数。</para>
-		/// <para>Very—也称为收缩，被定义为模糊隶属度函数的平方。该模糊限制语可减小模糊隶属度函数。</para>
+		/// <para>Defining a hedge increases or decreases the fuzzy membership values which modify the meaning of a fuzzy set. Hedges are useful to help in controlling the criteria or important attributes.</para>
+		/// <para>None—No hedge is applied. This is the default.</para>
+		/// <para>Somewhat—Known as dilation, defined as the square root of the fuzzy membership function. This hedge increases the fuzzy membership functions.</para>
+		/// <para>Very—Also known as concentration, defined as the fuzzy membership function squared. This hedge decreases the fuzzy membership functions.</para>
 		/// <para><see cref="HedgeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -150,21 +150,21 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum HedgeEnum 
 		{
 			/// <summary>
-			/// <para>无—不应用模糊限制语。这是默认设置。</para>
+			/// <para>None—No hedge is applied. This is the default.</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("无")]
+			[Description("None")]
 			None,
 
 			/// <summary>
-			/// <para>Somewhat—也称为膨胀，被定义为模糊隶属度函数的平方根。该模糊限制语可增大模糊隶属度函数。</para>
+			/// <para>Somewhat—Known as dilation, defined as the square root of the fuzzy membership function. This hedge increases the fuzzy membership functions.</para>
 			/// </summary>
 			[GPValue("SOMEWHAT")]
 			[Description("Somewhat")]
 			Somewhat,
 
 			/// <summary>
-			/// <para>Very—也称为收缩，被定义为模糊隶属度函数的平方。该模糊限制语可减小模糊隶属度函数。</para>
+			/// <para>Very—Also known as concentration, defined as the fuzzy membership function squared. This hedge decreases the fuzzy membership functions.</para>
 			/// </summary>
 			[GPValue("VERY")]
 			[Description("Very")]

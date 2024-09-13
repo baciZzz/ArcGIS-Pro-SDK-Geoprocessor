@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Append Routes</para>
-	/// <para>追加路径</para>
-	/// <para>可将输入折线中的路径附加到 LRS 网络中。</para>
+	/// <para>Append Routes</para>
+	/// <para>Appends routes from an input polyline into an LRS Network.</para>
 	/// </summary>
 	public class AppendRoutes : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="SourceRoutes">
 		/// <para>Source Routes</para>
-		/// <para>从中派生路径的输入。 输入可以是折线要素类、shapefile、要素服务或 LRS 网络要素类。</para>
+		/// <para>The input from which the routes will be derived. The input can be a polyline feature class, shapefile, feature service, or LRS Network feature class.</para>
 		/// </param>
 		/// <param name="InLrsNetwork">
 		/// <para>LRS Network</para>
-		/// <para>路径将加载到的目标 LRS 网络。</para>
+		/// <para>The target LRS Network into which the routes will be loaded.</para>
 		/// </param>
 		/// <param name="RouteIdField">
 		/// <para>Route ID Field</para>
-		/// <para>输入折线要素类中将映射到 LRS 网络路径 ID 的字段。 字段类型必须与目标 LRS 网络的 RouteID 字段类型匹配，并且必须是字符串或 GUID 字段类型。 如果是文本字段，则字段长度必须小于或等于目标 RouteID 字段的长度。</para>
+		/// <para>The field in the input polyline feature class that will be mapped to the LRS Network route ID. The field type must match the RouteID field type of the target LRS Network and must be either a string or GUID field type. If it is a text field, the field length must be shorter than or equal to the length of the target RouteID field.</para>
 		/// </param>
 		public AppendRoutes(object SourceRoutes, object InLrsNetwork, object RouteIdField)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 追加路径</para>
+		/// <para>Tool Display Name : Append Routes</para>
 		/// </summary>
-		public override string DisplayName() => "追加路径";
+		public override string DisplayName() => "Append Routes";
 
 		/// <summary>
 		/// <para>Tool Name : AppendRoutes</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Source Routes</para>
-		/// <para>从中派生路径的输入。 输入可以是折线要素类、shapefile、要素服务或 LRS 网络要素类。</para>
+		/// <para>The input from which the routes will be derived. The input can be a polyline feature class, shapefile, feature service, or LRS Network feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>LRS Network</para>
-		/// <para>路径将加载到的目标 LRS 网络。</para>
+		/// <para>The target LRS Network into which the routes will be loaded.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Route ID Field</para>
-		/// <para>输入折线要素类中将映射到 LRS 网络路径 ID 的字段。 字段类型必须与目标 LRS 网络的 RouteID 字段类型匹配，并且必须是字符串或 GUID 字段类型。 如果是文本字段，则字段长度必须小于或等于目标 RouteID 字段的长度。</para>
+		/// <para>The field in the input polyline feature class that will be mapped to the LRS Network route ID. The field type must match the RouteID field type of the target LRS Network and must be either a string or GUID field type. If it is a text field, the field length must be shorter than or equal to the length of the target RouteID field.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Route Name Field</para>
-		/// <para>输入折线要素类中将映射到 LRS 网络路径名称的字段。 该字段必须是字符串字段，并且字段长度必须小于或等于目标路径名称字段的长度。</para>
+		/// <para>The field in the input polyline feature class that will be mapped as the LRS Network route name. The field must be a string field, and the field length must be shorter than or equal to the length of the target route name field.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>From Date Field</para>
-		/// <para>输入折线要素类中的日期字段，将映射为 LRS 网络中的起始日期字段值。 如果该字段未映射，则将为所有追加路径提供一个表示开始时间的空值。</para>
+		/// <para>A date field in the input polyline feature class that will be mapped as the From Date Field value in the LRS Network . If the field is not mapped, a null value representing the beginning of time will be provided for all appended routes.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>To Date Field</para>
-		/// <para>输入折线要素类中的日期字段，将在 LRS 网络中映射为结束日期。 如果结束日期字段未映射，则将为所有追加路径提供一个表示结束时间的空值。</para>
+		/// <para>A date field in the input polyline feature class that will be mapped as the To date in the LRS Network. If a To date field is not mapped, a null value representing the end of time will be provided for all appended routes.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Line ID Field</para>
-		/// <para>输入折线要素类中将映射到 LRS 网络线 ID 的字段。 此参数仅在目标 LRS 网络是 LRS 线网络时使用。 字段类型必须与中心线序列表的 RouteID 字段类型匹配，并且必须是正好 38 个字符的字符串或 GUID 字段类型。</para>
+		/// <para>The field in the input polyline feature class that will be mapped as the LRS Network line ID. This parameter is only used if the target LRS Network is an LRS line network. The field type must match the RouteID field type of the centerline sequence table and must be either a string of exactly 38 characters or a GUID field type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Line Name Field</para>
-		/// <para>输入折线要素类中的字符串字段，将被映射为 LRS 网络线名称。 此参数仅在目标 LRS 网络是 LRS 线网络时使用。</para>
+		/// <para>The string field in the input polyline feature class that will be mapped as the LRS Network line name. This parameter is only used if the target LRS Network is an LRS line network.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -155,8 +155,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Line Order Field</para>
-		/// <para>输入折线要素类中的长整型字段，将被映射为 LRS 网络线顺序。 此参数仅在目标 LRS 网络是 LRS 线网络时使用。</para>
-		/// <para>了解更多有关 Pipeline Referencing 中的线网络和线顺序或 Roads and Highways 中的线网络和线顺序。</para>
+		/// <para>The long integer field in the input polyline feature class that will be mapped as the LRS Network line order. This parameter is only used if the target LRS Network is an LRS line network.</para>
+		/// <para>Learn more about line networks and line order in Pipeline Referencing or line networks and line order in Roads and Highways.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -166,7 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Field Map</para>
-		/// <para>控制源路径字段中的属性信息如何传输到输入 LRS 网络。 无法将字段添加到目标 LRS 网络或从目标 LRS 网络中删除，因为源路径的数据已追加到具有预定义模式的现有 LRS 网络。 虽然您可以为每个输出字段设置合并规则，但该工具会忽略这些规则。</para>
+		/// <para>Controls how attribute information in the source route fields will be transferred to the input LRS Network. Fields cannot be added to or removed from the target LRS Network because the data of the source routes is appended to an existing LRS Network that has a predefined schema. While you can set merge rules for each output field, the tool will ignore those rules.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFieldMapping()]
@@ -174,10 +174,10 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Load Type</para>
-		/// <para>指定具有测量值或时间的附加路径如何与具有相同 ID 的路径重叠，目标网络记录将被加载到网络要素类中。</para>
-		/// <para>添加—追加路径将加载到目标 LRS 网络。 如果源路径中的任何路径 ID 已经存在于目标 LRS 网络中且具有相同的时间，则它将作为重复路径写入输出日志，并且必须在完成加载过程之前更正或过滤掉。 这是默认设置。</para>
-		/// <para>按 ID 停用路径—追加路径将被加载到目标 LRS 网络中，并且目标 LRS 网络中任何与追加路径具有相同路径 ID 和时间重叠的路径都将被淘汰。 如果追加路径覆盖了具有相同路径 ID 的目标路径，则该目标路径将被删除。</para>
-		/// <para>按 ID 替换路径—追加路径将被加载到目标 LRS 网络中，并且目标 LRS 网络中任何与追加路径具有相同路径 ID 的路径都将被删除。</para>
+		/// <para>Specifies how appended routes with measure or temporality overlaps with identical route IDs as Target Network records will be loaded into the network feature class.</para>
+		/// <para>Add—The appended routes will be loaded into the target LRS Network. If any route ID in the source routes already exists in the target LRS Network with the same temporality, it will be written to the output log as a duplicate route and must be corrected or filtered out before completing the loading process. This is the default.</para>
+		/// <para>Retire by route ID—The appended routes will be loaded into the target LRS Network and any routes in the target LRS Network that have the same route ID and temporality overlap as the appended routes will be retired. If the appended route eclipses a target route with the same route ID, the target route will be deleted.</para>
+		/// <para>Replace by route ID—The appended routes will be loaded into the target LRS Network and any routes in the target LRS Network with the same route ID as the appended routes will be deleted.</para>
 		/// <para><see cref="LoadTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -216,24 +216,24 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum LoadTypeEnum 
 		{
 			/// <summary>
-			/// <para>添加—追加路径将加载到目标 LRS 网络。 如果源路径中的任何路径 ID 已经存在于目标 LRS 网络中且具有相同的时间，则它将作为重复路径写入输出日志，并且必须在完成加载过程之前更正或过滤掉。 这是默认设置。</para>
+			/// <para>Add—The appended routes will be loaded into the target LRS Network. If any route ID in the source routes already exists in the target LRS Network with the same temporality, it will be written to the output log as a duplicate route and must be corrected or filtered out before completing the loading process. This is the default.</para>
 			/// </summary>
 			[GPValue("ADD")]
-			[Description("添加")]
+			[Description("Add")]
 			Add,
 
 			/// <summary>
-			/// <para>按 ID 停用路径—追加路径将被加载到目标 LRS 网络中，并且目标 LRS 网络中任何与追加路径具有相同路径 ID 和时间重叠的路径都将被淘汰。 如果追加路径覆盖了具有相同路径 ID 的目标路径，则该目标路径将被删除。</para>
+			/// <para>Retire by route ID—The appended routes will be loaded into the target LRS Network and any routes in the target LRS Network that have the same route ID and temporality overlap as the appended routes will be retired. If the appended route eclipses a target route with the same route ID, the target route will be deleted.</para>
 			/// </summary>
 			[GPValue("RETIRE_BY_ROUTE_ID")]
-			[Description("按 ID 停用路径")]
+			[Description("Retire by route ID")]
 			Retire_by_route_ID,
 
 			/// <summary>
-			/// <para>按 ID 替换路径—追加路径将被加载到目标 LRS 网络中，并且目标 LRS 网络中任何与追加路径具有相同路径 ID 的路径都将被删除。</para>
+			/// <para>Replace by route ID—The appended routes will be loaded into the target LRS Network and any routes in the target LRS Network with the same route ID as the appended routes will be deleted.</para>
 			/// </summary>
 			[GPValue("REPLACE_BY_ROUTE_ID")]
-			[Description("按 ID 替换路径")]
+			[Description("Replace by route ID")]
 			Replace_by_route_ID,
 
 		}

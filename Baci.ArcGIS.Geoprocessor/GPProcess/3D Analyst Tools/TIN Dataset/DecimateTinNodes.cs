@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Decimate TIN Nodes</para>
-	/// <para>抽稀 TIN 结点</para>
-	/// <para>使用源 TIN 的结点子集创建不规则三角网 (TIN) 数据集。</para>
+	/// <para>Decimate TIN Nodes</para>
+	/// <para>Creates a triangulated irregular network (TIN) dataset using a subset of nodes from a source TIN.</para>
 	/// </summary>
 	public class DecimateTinNodes : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTin">
 		/// <para>Input TIN</para>
-		/// <para>待处理的 TIN 数据集。</para>
+		/// <para>The TIN dataset to process.</para>
 		/// </param>
 		/// <param name="OutTin">
 		/// <para>Output TIN</para>
-		/// <para>将要生成的 TIN 数据集。</para>
+		/// <para>The TIN dataset that will be generated.</para>
 		/// </param>
 		/// <param name="Method">
 		/// <para>Decimation Method</para>
-		/// <para>指定用于从输入 TIN 选择结点子集的细化方法。</para>
-		/// <para>Z 容差—创建 TIN，该 TIN 维持 Z 容差参数中所指定的垂直精度。这是默认设置。</para>
-		/// <para>计数—创建未超过最大节点数参数所指定的节点限值的 TIN。</para>
+		/// <para>Specifies the thinning method used for selecting a subset of nodes from the input TIN.</para>
+		/// <para>Z Tolerance—Creates a TIN that will maintain the vertical accuracy specified in the Z Tolerance parameter. This is the default.</para>
+		/// <para>Count—Creates a TIN that will not exceed the node limit specified in the Maximum Number of Nodes parameter.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </param>
 		public DecimateTinNodes(object InTin, object OutTin, object Method)
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 抽稀 TIN 结点</para>
+		/// <para>Tool Display Name : Decimate TIN Nodes</para>
 		/// </summary>
-		public override string DisplayName() => "抽稀 TIN 结点";
+		public override string DisplayName() => "Decimate TIN Nodes";
 
 		/// <summary>
 		/// <para>Tool Name : DecimateTinNodes</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input TIN</para>
-		/// <para>待处理的 TIN 数据集。</para>
+		/// <para>The TIN dataset to process.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTinLayer()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output TIN</para>
-		/// <para>将要生成的 TIN 数据集。</para>
+		/// <para>The TIN dataset that will be generated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETin()]
@@ -94,9 +94,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Decimation Method</para>
-		/// <para>指定用于从输入 TIN 选择结点子集的细化方法。</para>
-		/// <para>Z 容差—创建 TIN，该 TIN 维持 Z 容差参数中所指定的垂直精度。这是默认设置。</para>
-		/// <para>计数—创建未超过最大节点数参数所指定的节点限值的 TIN。</para>
+		/// <para>Specifies the thinning method used for selecting a subset of nodes from the input TIN.</para>
+		/// <para>Z Tolerance—Creates a TIN that will maintain the vertical accuracy specified in the Z Tolerance parameter. This is the default.</para>
+		/// <para>Count—Creates a TIN that will not exceed the node limit specified in the Maximum Number of Nodes parameter.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -106,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Copy Breaklines</para>
-		/// <para>指示是否将输入 TIN 的隔断线复制到输出。</para>
-		/// <para>取消选中 - 不会复制隔断线。这是默认设置。</para>
-		/// <para>选中 - 将复制隔断线。</para>
+		/// <para>Indicates whether breaklines from the input TIN are copied over to the output.</para>
+		/// <para>Unchecked—Breaklines will not be copied. This is the default.</para>
+		/// <para>Checked—Breaklines will be copied.</para>
 		/// <para><see cref="CopyBreaklinesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Z Tolerance</para>
-		/// <para>输出 TIN 中允许的源 TIN 的 Z 值最大偏差，默认为小于 Z 范围的十分之一或数值 10。</para>
+		/// <para>The maximum deviation from the source TIN's Z-value that will be allowed in the output TIN, which defaults to the lesser of either one-tenth of the Z-range or the number 10.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Maximum Number of Nodes</para>
-		/// <para>可存储在输出 TIN 中的最大节点数，默认为源 TIN 中的节点总数减 1。使用 Z 容差方法时，如果 Z 容差值导致生成的 TIN 超出最大节点数，则工具将停止处理。</para>
+		/// <para>The maximum number of nodes that can be stored in the output TIN, which defaults to the total number of nodes in the source TIN minus 1. If the Z-tolerance method is used, the tool will stop processing if the Z tolerance value causes the resulting TIN to exceed the maximum number of nodes.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -149,17 +149,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Z 容差—创建 TIN，该 TIN 维持 Z 容差参数中所指定的垂直精度。这是默认设置。</para>
+			/// <para>Z Tolerance—Creates a TIN that will maintain the vertical accuracy specified in the Z Tolerance parameter. This is the default.</para>
 			/// </summary>
 			[GPValue("Z_TOLERANCE")]
-			[Description("Z 容差")]
+			[Description("Z Tolerance")]
 			Z_Tolerance,
 
 			/// <summary>
-			/// <para>计数—创建未超过最大节点数参数所指定的节点限值的 TIN。</para>
+			/// <para>Count—Creates a TIN that will not exceed the node limit specified in the Maximum Number of Nodes parameter.</para>
 			/// </summary>
 			[GPValue("COUNT")]
-			[Description("计数")]
+			[Description("Count")]
 			Count,
 
 		}
@@ -170,14 +170,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum CopyBreaklinesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Breaklines will be copied.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("BREAKLINES")]
 			BREAKLINES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Breaklines will not be copied. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_BREAKLINES")]

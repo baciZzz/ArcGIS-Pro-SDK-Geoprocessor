@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Dimension Reduction</para>
-	/// <para>降维</para>
-	/// <para>使用主成分分析 (PCA) 或降级线性判别分析 (LDA) 将尽可能多的方差聚合成更少的分量，来降低连续变量集的维数。</para>
+	/// <para>Dimension Reduction</para>
+	/// <para>Reduces the number of dimensions of a set of continuous variables by aggregating the highest possible amount of variance into fewer components using Principal Component Analysis (PCA) or Reduced-Rank Linear Discriminant Analysis (LDA).</para>
 	/// </summary>
 	public class DimensionReduction : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table or Features</para>
-		/// <para>包含要降维的字段的表或要素。</para>
+		/// <para>The table or features containing the fields with the dimension that will be reduced.</para>
 		/// </param>
 		/// <param name="Fields">
 		/// <para>Analysis Fields</para>
-		/// <para>表示要降维的数据的字段。</para>
+		/// <para>The fields representing the data with the dimension that will be reduced.</para>
 		/// </param>
 		public DimensionReduction(object InTable, object Fields)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 降维</para>
+		/// <para>Tool Display Name : Dimension Reduction</para>
 		/// </summary>
-		public override string DisplayName() => "降维";
+		public override string DisplayName() => "Dimension Reduction";
 
 		/// <summary>
 		/// <para>Tool Name : DimensionReduction</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Table or Features</para>
-		/// <para>包含要降维的字段的表或要素。</para>
+		/// <para>The table or features containing the fields with the dimension that will be reduced.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Table or Feature Class</para>
-		/// <para>包含降维的生成分量的输出表或要素类。</para>
+		/// <para>The output table or feature class containing the resulting components of the dimension reduction.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Analysis Fields</para>
-		/// <para>表示要降维的数据的字段。</para>
+		/// <para>The fields representing the data with the dimension that will be reduced.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -96,9 +96,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Dimension Reduction Method</para>
-		/// <para>指定将用于对分析字段进行降维的方法。</para>
-		/// <para>主成分分析 (PCA)—分析字段将划分为多个分量，每个分量将保持在总方差中的最大占比。 这是默认设置。</para>
-		/// <para>降级线性判别分析 (LDA)—分析字段将将分为多个分量，每个分量将保持分类变量的最大类别间可分离性。</para>
+		/// <para>Specifies the method that will be used to reduce the dimensions of the analysis fields.</para>
+		/// <para>Principal Component Analysis (PCA)—The analysis fields will be partitioned into components that each maintain the maximum proportion of the total variance. This is the default.</para>
+		/// <para>Reduced-Rank Linear Discriminant Analysis (LDA)—The analysis fields will be partitioned into components that each maintain the maximum between-category separability of a categorical variable.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -108,9 +108,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Scale Data</para>
-		/// <para>指定是否将调整每个分析的值比例，以使方差等于 1。 这种比例调整可确保每个分析字段在分量中的优先级相同。 比例调整还消除了线性单位的影响，例如，以米和英尺测量的相同数据将生成等效分量。 将转换分析字段的值，以使这两个选项的平均值为零。</para>
-		/// <para>选中 - 将调整每个分析字段的值比例，以使方差等于 1，方法是将每个值除以分析字段的标准差。 这是默认设置。</para>
-		/// <para>未选中 - 不会调整每个分析字段的方差比例。</para>
+		/// <para>Specifies whether the values of each analysis will be scaled to have a variance equal to one. This scaling ensures that each analysis field is given equal priority in the components. Scaling also removes the effect of linear units; for example, the same data measured in meters and feet will result in equivalent components. The values of the analysis fields will be shifted to have mean zero for both options.</para>
+		/// <para>Checked—The values of each analysis field will be scaled to have a variance equal to one by dividing each value by the standard deviation of the analysis field. This is the default.</para>
+		/// <para>Unchecked—The variance of each analysis field will not be scaled.</para>
 		/// <para><see cref="ScaleEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Categorical Field</para>
-		/// <para>表示 LDA 的分类变量的字段。 这些分量将保留将每个输入记录分类为这些类别所需的最大信息量。</para>
+		/// <para>The field representing the categorical variable for LDA. The components will maintain the maximum amount of information needed to classify each input record into these categories.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Minimum Percent Variance to Maintain</para>
-		/// <para>必须在分量中保持的分析字段总方差的最小百分比。 总方差取决于是否使用调整数据比例参数（Python 中为 scale）调整分析字段的比例。</para>
+		/// <para>The minimum percent of total variance of the analysis fields that must be maintained in the components. The total variance depends on whether the analysis fields were scaled using the Scale Data parameter(scale in Python).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Minimum Number of Components</para>
-		/// <para>最小分量数。</para>
+		/// <para>The minimum number of components.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -148,9 +148,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Copy All Fields to Output Dataset</para>
-		/// <para>指定是否复制输入表或要素中的所有字段并将其追加到输出表或要素类中。 分析字段参数中提供的字段将复制到输出中，无论此参数的值为何。</para>
-		/// <para>选中 - 将复制输入表或要素中的所有字段并将其追加到输出表或要素类中。</para>
-		/// <para>未选中 - 仅在输出表或要素类中包含分析字段。 这是默认设置。</para>
+		/// <para>Specifies whether all fields from the input table or features will be copied and appended to the output table or feature class. The fields provided in the Analysis Fields parameter will be copied to the output regardless of the value of this parameter.</para>
+		/// <para>Checked—All fields from the input table or features will be copied and appended to the output table or feature class.</para>
+		/// <para>Unchecked—Only the analysis fields will be included in the output table or feature class. This is the default.</para>
 		/// <para><see cref="AppendFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Eigenvalues Table</para>
-		/// <para>包含每个分量的特征值的输出表。</para>
+		/// <para>The output table containing the eigenvalues of each component.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Eigenvectors Table</para>
-		/// <para>包含每个分量的特征向量的输出表。</para>
+		/// <para>The output table containing the eigenvectors of each component.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -179,7 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Number of Permutations</para>
-		/// <para>确定最佳分量数时要使用的置换检验次数。 默认值为 0，表示不会执行置换检验。</para>
+		/// <para>The number of permutations to be used when determining the optimal number of components. The default value is 0, which indicates that no permutation test will be performed.</para>
 		/// <para><see cref="NumberOfPermutationsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -190,9 +190,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Append Fields to Input Data</para>
-		/// <para>指定是将分量字段追加到输入数据集还是将其保存到输出表或要素类。 如果您将字段追加到输入，则会忽略输出坐标系环境。</para>
-		/// <para>选中 - 包含分量的字段将被追加到输入要素。 此选项会修改输入数据。</para>
-		/// <para>未选中 - 将创建包含分量字段的输出表或要素类。 这是默认设置。</para>
+		/// <para>Specifies whether the component fields will be appended to the input dataset or saved to an output table or feature class. If you append the fields to the input, the output coordinate system environment will be ignored.</para>
+		/// <para>Checked—The fields containing the components will be appended to the input features. This option modifies the input data.</para>
+		/// <para>Unchecked—An output table or feature class will be created containing the component fields. This is the default.</para>
 		/// <para><see cref="AppendToInputEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -224,17 +224,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>主成分分析 (PCA)—分析字段将划分为多个分量，每个分量将保持在总方差中的最大占比。 这是默认设置。</para>
+			/// <para>Principal Component Analysis (PCA)—The analysis fields will be partitioned into components that each maintain the maximum proportion of the total variance. This is the default.</para>
 			/// </summary>
 			[GPValue("PCA")]
-			[Description("主成分分析 (PCA)")]
+			[Description("Principal Component Analysis (PCA)")]
 			PCA,
 
 			/// <summary>
-			/// <para>降级线性判别分析 (LDA)—分析字段将将分为多个分量，每个分量将保持分类变量的最大类别间可分离性。</para>
+			/// <para>Reduced-Rank Linear Discriminant Analysis (LDA)—The analysis fields will be partitioned into components that each maintain the maximum between-category separability of a categorical variable.</para>
 			/// </summary>
 			[GPValue("LDA")]
-			[Description("降级线性判别分析 (LDA)")]
+			[Description("Reduced-Rank Linear Discriminant Analysis (LDA)")]
 			LDA,
 
 		}
@@ -245,14 +245,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum ScaleEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The values of each analysis field will be scaled to have a variance equal to one by dividing each value by the standard deviation of the analysis field. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SCALE_DATA")]
 			SCALE_DATA,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The variance of each analysis field will not be scaled.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SCALE_DATA")]
@@ -266,14 +266,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum AppendFieldsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—All fields from the input table or features will be copied and appended to the output table or feature class.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("APPEND")]
 			APPEND,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Only the analysis fields will be included in the output table or feature class. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_APPEND")]
@@ -329,14 +329,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum AppendToInputEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The fields containing the components will be appended to the input features. This option modifies the input data.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("APPEND_TO_INPUT")]
 			APPEND_TO_INPUT,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—An output table or feature class will be created containing the component fields. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NEW_OUTPUT")]

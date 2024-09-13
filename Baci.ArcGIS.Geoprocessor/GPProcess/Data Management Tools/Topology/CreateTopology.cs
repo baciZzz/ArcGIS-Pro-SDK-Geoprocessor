@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Topology</para>
-	/// <para>创建拓扑</para>
-	/// <para>创建拓扑。拓扑将不包含任何要素类或规则。</para>
+	/// <para>Create Topology</para>
+	/// <para>Creates a topology. The topology will not contain any feature classes or rules.</para>
 	/// </summary>
 	public class CreateTopology : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Feature Dataset</para>
-		/// <para>将创建拓扑的要素数据集。</para>
+		/// <para>The feature dataset in which the topology will be created.</para>
 		/// </param>
 		/// <param name="OutName">
 		/// <para>Output Topology</para>
-		/// <para>要创建的拓扑的名称。该名称在整个地理数据库中必须唯一。</para>
+		/// <para>The name of the topology to be created. This name must be unique across the entire geodatabase.</para>
 		/// </param>
 		public CreateTopology(object InDataset, object OutName)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建拓扑</para>
+		/// <para>Tool Display Name : Create Topology</para>
 		/// </summary>
-		public override string DisplayName() => "创建拓扑";
+		public override string DisplayName() => "Create Topology";
 
 		/// <summary>
 		/// <para>Tool Name : CreateTopology</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Feature Dataset</para>
-		/// <para>将创建拓扑的要素数据集。</para>
+		/// <para>The feature dataset in which the topology will be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureDataset()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Topology</para>
-		/// <para>要创建的拓扑的名称。该名称在整个地理数据库中必须唯一。</para>
+		/// <para>The name of the topology to be created. This name must be unique across the entire geodatabase.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Cluster Tolerance</para>
-		/// <para>将对拓扑设置拓扑容差。该值越大，折点聚集在一起的几率就越大。</para>
+		/// <para>The cluster tolerance to be set on the topology. The larger the value, the more likely vertices will be to cluster together.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

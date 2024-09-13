@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Rule From Relationship Class</para>
-	/// <para>从关系类中移除规则</para>
-	/// <para>从关系类中移除规则。</para>
+	/// <para>Remove Rule From Relationship Class</para>
+	/// <para>Removes a rule from a relationship class.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRelClass">
 		/// <para>Input Relationship Class</para>
-		/// <para>移除规则的关系类</para>
+		/// <para>The relationship class with the rule to remove.</para>
 		/// </param>
 		public RemoveRuleFromRelationshipClass(object InRelClass)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 从关系类中移除规则</para>
+		/// <para>Tool Display Name : Remove Rule From Relationship Class</para>
 		/// </summary>
-		public override string DisplayName() => "从关系类中移除规则";
+		public override string DisplayName() => "Remove Rule From Relationship Class";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveRuleFromRelationshipClass</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Relationship Class</para>
-		/// <para>移除规则的关系类</para>
+		/// <para>The relationship class with the rule to remove.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERelationshipClass()]
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Origin Subtype</para>
-		/// <para>如果源类具有子类型，则需要删除与关系类规则相关联的子类型。</para>
+		/// <para>If the origin class has subtypes, the subtype that is associated with the relationship class rule to be deleted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Destination Subtype</para>
-		/// <para>如果目标类具有子类型，则需要删除与关系类规则相关联的子类型。</para>
+		/// <para>If the destination class has subtypes, the subtype that is associated with the relationship class rule to be deleted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -91,9 +91,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Remove All</para>
-		/// <para>指定要从关系类中移除的关系规则。</para>
-		/// <para>选中 - 所有关系规则都将被从输入关系类中移除。</para>
-		/// <para>未选中 - 仅移除指定的源子类型和目标子类型的规则。这是默认设置。</para>
+		/// <para>Specifies the relationship rules to be removed from the relationship class.</para>
+		/// <para>Checked—All relationship rules will be removed from the input relationship class.</para>
+		/// <para>Unchecked—Only rules from the origin and destination subtypes specified will be removed. This is the default.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]

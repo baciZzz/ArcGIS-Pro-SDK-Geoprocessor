@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Repair Geometry</para>
-	/// <para>修复几何</para>
-	/// <para>检查要素的几何问题并修复它们。 如发现问题，将对其执行修复，并将通过一行描述识别要素及修复的几何问题。</para>
+	/// <para>Repair Geometry</para>
+	/// <para>Inspects features for geometry problems and repairs them.  If a problem is found, a repair will be performed, and a one-line description will identify the feature, as well as the geometry problem that was repaired.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,8 +23,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>将处理的要素类或图层。</para>
-		/// <para>Desktop Basic 许可仅允许存储在文件地理数据库、GeoPackage 或 SpatiaLite 数据库中的 shapefile 和要素类作为有效的输入要素格式。 Desktop Standard 或 Desktop Advanced 许可额外允许存储在企业级数据库或企业级地理数据库中的要素类作为有效的输入要素格式使用。</para>
+		/// <para>The feature class or layer to be processed.</para>
+		/// <para>A Desktop Basic license only allows shapefiles and feature classes stored in a file geodatabase, GeoPackage, or SpatiaLite database as valid input feature formats. A Desktop Standard or Desktop Advanced license also allows feature classes stored in an enterprise database or enterprise geodatabase to be used as valid input feature formats.</para>
 		/// </param>
 		public RepairGeometry(object InFeatures)
 		{
@@ -32,9 +32,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 修复几何</para>
+		/// <para>Tool Display Name : Repair Geometry</para>
 		/// </summary>
-		public override string DisplayName() => "修复几何";
+		public override string DisplayName() => "Repair Geometry";
 
 		/// <summary>
 		/// <para>Tool Name : RepairGeometry</para>
@@ -68,8 +68,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>将处理的要素类或图层。</para>
-		/// <para>Desktop Basic 许可仅允许存储在文件地理数据库、GeoPackage 或 SpatiaLite 数据库中的 shapefile 和要素类作为有效的输入要素格式。 Desktop Standard 或 Desktop Advanced 许可额外允许存储在企业级数据库或企业级地理数据库中的要素类作为有效的输入要素格式使用。</para>
+		/// <para>The feature class or layer to be processed.</para>
+		/// <para>A Desktop Basic license only allows shapefiles and feature classes stored in a file geodatabase, GeoPackage, or SpatiaLite database as valid input feature formats. A Desktop Standard or Desktop Advanced license also allows feature classes stored in an enterprise database or enterprise geodatabase to be used as valid input feature formats.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -77,10 +77,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Delete Features with Null Geometry</para>
-		/// <para>指定是否删除几何为空的要素。</para>
-		/// <para>选中 - 将从输入中删除几何为空的要素。 这是默认设置。</para>
-		/// <para>未选中 - 不从输入中删除几何为空的要素。</para>
-		/// <para>对于存储在企业级数据库、企业级地理数据库、GeoPackage 或 SpatiaLite 数据库中的数据，删除几何为空的要素不可用。</para>
+		/// <para>Specifies whether features with null geometries will be deleted.</para>
+		/// <para>Checked—Features with null geometry will be deleted from the input. This is the default.</para>
+		/// <para>Unchecked—Features with null geometry will not be deleted from the input.</para>
+		/// <para>Delete null is not available for data stored in an enterprise database, enterprise geodatabase, GeoPackage, or SpatiaLite database.</para>
 		/// <para><see cref="DeleteNullEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -97,9 +97,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Validation Method</para>
-		/// <para>指定用于识别几何问题的几何验证方法。</para>
-		/// <para>Esri—将使用 Esri 几何验证方法。 这是默认设置。</para>
-		/// <para>OGC—将使用 OGC 几何验证方法。</para>
+		/// <para>Specifies the geometry validation method that will be used to identify geometry problems.</para>
+		/// <para>Esri—The Esri geometry validation method will be used. This is the default.</para>
+		/// <para>OGC—The OGC geometry validation method will be used.</para>
 		/// <para><see cref="ValidationMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -124,14 +124,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DeleteNullEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Features with null geometry will be deleted from the input. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DELETE_NULL")]
 			DELETE_NULL,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Features with null geometry will not be deleted from the input.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("KEEP_NULL")]
@@ -145,14 +145,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ValidationMethodEnum 
 		{
 			/// <summary>
-			/// <para>Esri—将使用 Esri 几何验证方法。 这是默认设置。</para>
+			/// <para>Esri—The Esri geometry validation method will be used. This is the default.</para>
 			/// </summary>
 			[GPValue("ESRI")]
 			[Description("Esri")]
 			Esri,
 
 			/// <summary>
-			/// <para>OGC—将使用 OGC 几何验证方法。</para>
+			/// <para>OGC—The OGC geometry validation method will be used.</para>
 			/// </summary>
 			[GPValue("OGC")]
 			[Description("OGC")]

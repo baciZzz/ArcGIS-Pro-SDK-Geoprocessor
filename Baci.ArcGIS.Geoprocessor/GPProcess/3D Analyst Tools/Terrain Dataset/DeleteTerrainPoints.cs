@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Delete Terrain Points</para>
-	/// <para>删除 Terrain 点</para>
-	/// <para>从参与 terrain 数据集的一个或多个要素中删除指定的感兴趣区域内的点。</para>
+	/// <para>Delete Terrain Points</para>
+	/// <para>Deletes points within a specified area of interest from one or more features that participate in a terrain dataset.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,15 +23,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTerrain">
 		/// <para>Input Terrain</para>
-		/// <para>待处理的 terrain 数据集。</para>
+		/// <para>The terrain dataset to process.</para>
 		/// </param>
 		/// <param name="DataSource">
 		/// <para>Input Terrain Data Source</para>
-		/// <para>点将被移除的一个或多个要素类。</para>
+		/// <para>One or more feature classes from which points will be removed.</para>
 		/// </param>
 		/// <param name="PolygonFeaturesOrExtent">
 		/// <para>Area of Interest</para>
-		/// <para>指定要从中移除点的区域。可使用面要素类或范围。</para>
+		/// <para>Specifies the area from which points will be removed. A polygon feature class or an extent can be used.</para>
 		/// </param>
 		public DeleteTerrainPoints(object InTerrain, object DataSource, object PolygonFeaturesOrExtent)
 		{
@@ -41,9 +41,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 删除 Terrain 点</para>
+		/// <para>Tool Display Name : Delete Terrain Points</para>
 		/// </summary>
-		public override string DisplayName() => "删除 Terrain 点";
+		public override string DisplayName() => "Delete Terrain Points";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteTerrainPoints</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Terrain</para>
-		/// <para>待处理的 terrain 数据集。</para>
+		/// <para>The terrain dataset to process.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTerrainLayer()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Terrain Data Source</para>
-		/// <para>点将被移除的一个或多个要素类。</para>
+		/// <para>One or more feature classes from which points will be removed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Area of Interest</para>
-		/// <para>指定要从中移除点的区域。可使用面要素类或范围。</para>
+		/// <para>Specifies the area from which points will be removed. A polygon feature class or an extent can be used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]

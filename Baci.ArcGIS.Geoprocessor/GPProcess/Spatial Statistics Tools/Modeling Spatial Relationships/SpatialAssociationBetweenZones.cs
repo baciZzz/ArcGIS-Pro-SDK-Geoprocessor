@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Spatial Association Between Zones</para>
-	/// <para>区域之间的空间关联</para>
-	/// <para>测量同一研究区的两个区域化之间的空间关联程度，其中每个区域化由一组称为区域的类别组成。 区域化之间的关联取决于每个区域化的区域之间的区域重叠。 当一个区域化的每个区域与另一个区域化的区域紧密对应时，关联程度最高。 同样，如果一个区域化的区域与另一个区域化的许多不同区域存在较大程度的重叠，则空间关联性最低。 该工具的主要输出是分类变量之间的空间关联的全局度量：范围介于 0（无对应）到 1（区域在空间上完全对齐）的单个数字。 （可选）可以为任一区域化的特定区域或区域化之间的特定区域组合计算和可视化此全局关联。</para>
+	/// <para>Spatial Association Between Zones</para>
+	/// <para>Measures the degree of spatial association between two regionalizations of the same study area in which each regionalization is composed of a set of categories, called zones.  The association between the regionalizations is determined by the area overlap between zones of each regionalization. The association is highest when each zone of one regionalization closely corresponds to a zone of the other regionalization.  Similarly, spatial association is lowest when the zones of one regionalization have large overlap with many different zones of the other regionalization.   The primary output of the tool is a global measure of spatial association between the categorical variables: a single number ranging from 0 (no correspondence) to 1 (perfect spatial alignment of zones). Optionally, this global association can be calculated and visualized for specific zones of either regionalization or for specific combinations of zones between regionalizations.</para>
 	/// </summary>
 	public class SpatialAssociationBetweenZones : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InputFeatureOrRaster">
 		/// <para>Input Polygon Feature or Raster Zones</para>
-		/// <para>表示第一个区域化的区域的数据集。 可以使用面要素或栅格来定义区域。</para>
+		/// <para>The dataset representing the zones of the first regionalization. The zones can be defined using polygon features or a raster.</para>
 		/// </param>
 		/// <param name="CategoricalZoneField">
 		/// <para>Categorical Zone Field</para>
-		/// <para>表示输入区域的区域类别的字段。 该字段的每个唯一值定义一个单独区域。 对于要素，该字段必须为整型或文本字段。 对于栅格，VALUE 字段同样受支持。</para>
+		/// <para>The field representing the zone category of the input zones. Each unique value of this field defines an individual zone. For features, the field must be integer or text. For rasters, the VALUE field is also supported.</para>
 		/// </param>
 		/// <param name="OverlayFeatureOrRaster">
 		/// <para>Overlay Polygon Feature or Raster Zones</para>
-		/// <para>表示第二个区域化的区域的数据集。 区域可以是面要素或栅格。</para>
+		/// <para>The dataset representing the zones of the second regionalization. The zones can be polygon features or a raster.</para>
 		/// </param>
 		/// <param name="CategoricalOverlayZoneField">
 		/// <para>Categorical Overlay Zone Field</para>
-		/// <para>表示叠加区域的区域类别的字段。 该字段的每个唯一值定义一个单独区域。 对于要素，该字段必须为整型或文本字段。 对于栅格，VALUE 字段同样受支持。</para>
+		/// <para>The field representing the zone category of the overlay zones. Each unique value of this field defines an individual zone. For features, the field must be integer or text. For rasters, the VALUE field is also supported.</para>
 		/// </param>
 		public SpatialAssociationBetweenZones(object InputFeatureOrRaster, object CategoricalZoneField, object OverlayFeatureOrRaster, object CategoricalOverlayZoneField)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 区域之间的空间关联</para>
+		/// <para>Tool Display Name : Spatial Association Between Zones</para>
 		/// </summary>
-		public override string DisplayName() => "区域之间的空间关联";
+		public override string DisplayName() => "Spatial Association Between Zones";
 
 		/// <summary>
 		/// <para>Tool Name : SpatialAssociationBetweenZones</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Polygon Feature or Raster Zones</para>
-		/// <para>表示第一个区域化的区域的数据集。 可以使用面要素或栅格来定义区域。</para>
+		/// <para>The dataset representing the zones of the first regionalization. The zones can be defined using polygon features or a raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Categorical Zone Field</para>
-		/// <para>表示输入区域的区域类别的字段。 该字段的每个唯一值定义一个单独区域。 对于要素，该字段必须为整型或文本字段。 对于栅格，VALUE 字段同样受支持。</para>
+		/// <para>The field representing the zone category of the input zones. Each unique value of this field defines an individual zone. For features, the field must be integer or text. For rasters, the VALUE field is also supported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Overlay Polygon Feature or Raster Zones</para>
-		/// <para>表示第二个区域化的区域的数据集。 区域可以是面要素或栅格。</para>
+		/// <para>The dataset representing the zones of the second regionalization. The zones can be polygon features or a raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Categorical Overlay Zone Field</para>
-		/// <para>表示叠加区域的区域类别的字段。 该字段的每个唯一值定义一个单独区域。 对于要素，该字段必须为整型或文本字段。 对于栅格，VALUE 字段同样受支持。</para>
+		/// <para>The field representing the zone category of the overlay zones. Each unique value of this field defines an individual zone. For features, the field must be integer or text. For rasters, the VALUE field is also supported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -118,8 +118,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Features</para>
-		/// <para>包含输入区域和叠加区域的所有交集的空间关联度量的输出面要素。</para>
-		/// <para>可使用输出要素衡量输入区域和叠加区域的特定组合之间的关联，例如玉米生产区域（农作物类型）与排水良好的土壤区域（土壤排水分类）之间的关联。 仅当输入区域和叠加区域均为面要素时，此参数才会启用。</para>
+		/// <para>The output polygon features containing spatial association measures at all intersections of the input and overlay zones.</para>
+		/// <para>The output features can be used to measure the association between specific combinations of input and overlay zones, such as the association between areas of corn production (crop type) and areas of well-drained soil (soil drainage class). This parameter is only enabled if the input and overlay zones are both polygon features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -127,8 +127,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Raster</para>
-		/// <para>包含输入区域和叠加区域之间的空间关联度量的输出栅格。</para>
-		/// <para>输出栅格将具有三个字段，用于指示输入区域和叠加区域的交集的空间关联度量、输入区域内叠加区域的对应程度以及叠加区域内输入区域的对应程度。 仅当输入区域和叠加区域中至少有一个是栅格时，此参数才会启用。</para>
+		/// <para>The output raster containing spatial association measures between the input and overlay zones.</para>
+		/// <para>The output raster will have three fields to indicate the spatial association measures for intersections of the input and overlay zones, correspondence of overlay zones within input zones, and correspondence of input zones within overlay zones. This parameter is only enabled if at least one of the input and overlay zones is a raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -136,8 +136,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Correspondence of Overlay Zones within Input Zones</para>
-		/// <para>包含输入区域内叠加区域的对应度量的输出面要素。</para>
-		/// <para>此输出将具有与输入区域相同的几何，并且可用于识别哪些输入区域整体上与叠加区域紧密对应。 然后可以使用输出要素来研究特定区域组合。 仅当输入区域和叠加区域均为面要素时，此参数才会启用。</para>
+		/// <para>The output polygon features containing the correspondence measures of the overlay zones within the input zones.</para>
+		/// <para>This output will have the same geometry as the input zones and can be used to identify which input zones closely correspond overall to the overlay zones. Specific zone combinations can then be investigated with the output features. This parameter is only enabled if the input and overlay zones are both polygon features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -145,8 +145,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Correspondence of Input Zones within Overlay Zones</para>
-		/// <para>包含叠加区域内输入区域的对应度量的输出面要素。</para>
-		/// <para>此输出将具有与叠加区域相同的几何，并且可用于识别哪些叠加区域整体上与输入区域紧密对应。 然后可以使用输出要素来研究特定区域组合。 仅当输入区域和叠加区域均为面要素时，此参数才会启用。</para>
+		/// <para>The output polygon features containing the correspondence measures of the input zones within the overlay zones.</para>
+		/// <para>This output will have the same geometry as the overlay zones and can be used to identify which overlay zones closely correspond overall to the input zones. Specific zone combinations can then be investigated with the output features. This parameter is only enabled if the input and overlay zones are both polygon features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]

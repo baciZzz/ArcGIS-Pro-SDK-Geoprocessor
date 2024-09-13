@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Number Features</para>
-	/// <para>对要素进行编号</para>
-	/// <para>将序号添加到输入要素集的新字段或现有字段中。</para>
+	/// <para>Number Features</para>
+	/// <para>Adds a sequential number to a new or existing field of a set of input features.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>将对输入要素进行编号。</para>
+		/// <para>The input features that will be numbered.</para>
 		/// </param>
 		/// <param name="FieldToNumber">
 		/// <para>Field to Number (Existing or New)</para>
-		/// <para>将对输入字段进行编号。 该字段可以是现有的短型、长型或文本字段，也可以是新字段。</para>
+		/// <para>The input field that will be numbered. The field can be an existing short, long, or text field, or a new field.</para>
 		/// </param>
 		public NumberFeatures(object InFeatures, object FieldToNumber)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 对要素进行编号</para>
+		/// <para>Tool Display Name : Number Features</para>
 		/// </summary>
-		public override string DisplayName() => "对要素进行编号";
+		public override string DisplayName() => "Number Features";
 
 		/// <summary>
 		/// <para>Tool Name : NumberFeatures</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>将对输入要素进行编号。</para>
+		/// <para>The input features that will be numbered.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Field to Number (Existing or New)</para>
-		/// <para>将对输入字段进行编号。 该字段可以是现有的短型、长型或文本字段，也可以是新字段。</para>
+		/// <para>The input field that will be numbered. The field can be an existing short, long, or text field, or a new field.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Area to Number</para>
-		/// <para>限制要编号的要素的面；将仅对此面内的要素进行编号。</para>
+		/// <para>The area that will limit the features to number; only features within this area will be numbered.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -104,16 +104,16 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Spatial Sort Method</para>
-		/// <para>指定如何对要素进行空间排序以进行编号。 不会对表中的要素重新排序。</para>
-		/// <para>右上角—要素将从右上角开始排序。 这是默认设置。</para>
-		/// <para>左上角—要素将从左上角开始排序。</para>
-		/// <para>右下角—要素将从右下角开始排序。</para>
-		/// <para>左下角—要素将从左下角开始排序。</para>
-		/// <para>皮亚诺曲线—要素将使用空间填充曲线算法（也称为皮亚诺曲线）进行排序。</para>
-		/// <para>居中—要素将从中心点开始排序（如果没有提供中心，将使用平均中心）。</para>
-		/// <para>顺时针—要素将从中心点开始排序，并按顺时针移动。</para>
-		/// <para>逆时针—要素将从中心点开始排序，并按逆时针移动。</para>
-		/// <para>无—不会使用空间排序。 将使用与要素类相同的顺序。</para>
+		/// <para>Specifies how features will be spatially sorted for the purpose of numbering. Features are not reordered in the table.</para>
+		/// <para>Upper right—Features will be sorted starting at the upper right corner. This is the default.</para>
+		/// <para>Upper left—Features will be sorted starting at the upper left corner.</para>
+		/// <para>Lower right—Features will be sorted starting at the lower right corner.</para>
+		/// <para>Lower left—Features will be sorted starting at the lower left corner.</para>
+		/// <para>Peano curve—Features will be sorted using a space-filling curve algorithm, also known as a Peano curve.</para>
+		/// <para>Center—Features will be sorted starting from a center point (the mean center will be used if no center is supplied).</para>
+		/// <para>Clockwise—Features will be sorted starting from a center point and moving clockwise.</para>
+		/// <para>Counterclockwise—Features will be sorted starting from a center point and moving counterclockwise.</para>
+		/// <para>None—No spatial sort will be used. The same order as the feature class will be used.</para>
 		/// <para><see cref="SpatialSortMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -123,10 +123,10 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Field Type For New Field</para>
-		/// <para>指定将用于新字段的字段类型。 仅当输入表中不存在字段名称时才使用此参数。</para>
-		/// <para>短整型—该字段的类型将为短型。 这是默认设置。</para>
-		/// <para>长整型—该字段的类型将为长型。</para>
-		/// <para>文本—该字段的类型将为文本。</para>
+		/// <para>Specifies the field type that will be used for the new field. This parameter is only used when the field name does not exist in the input table.</para>
+		/// <para>Short—The field will be of short type. This is the default.</para>
+		/// <para>Long—The field will be of long type.</para>
+		/// <para>Text—The field will be of text type.</para>
 		/// <para><see cref="NewFieldTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Starting With</para>
-		/// <para>将用于开始编号的值。</para>
+		/// <para>The value that will be used to begin numbering.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -151,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Increment By</para>
-		/// <para>将用作从上一个值增加的值。</para>
+		/// <para>The value that will be used to increment by from the previous value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -159,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Center Point</para>
-		/// <para>将用于排序和编号要素的中心点。</para>
+		/// <para>The center point that will be used to sort and number features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -170,9 +170,9 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Add Distance and Bearing to Center</para>
-		/// <para>指定是否将距中心点距离和方向角字段添加到输出中。</para>
-		/// <para>不添加距离和方位角—不会将距离或方位字段添加到输出中。 这是默认设置。</para>
-		/// <para>添加距离和方位角—DIST_TO_CENTER 和 ANGLE_TO_CENTER 字段将被添加到输出中。</para>
+		/// <para>Specifies whether fields will be added to the output for distance and bearing to a center point.</para>
+		/// <para>Do not add distance and bearing—No distance or bearing fields will be added to the output. This is the default.</para>
+		/// <para>Add distance and bearing—DIST_TO_CENTER and ANGLE_TO_CENTER fields will be added to the output.</para>
 		/// <para><see cref="AddDistanceAndBearingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -197,66 +197,66 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		public enum SpatialSortMethodEnum 
 		{
 			/// <summary>
-			/// <para>右上角—要素将从右上角开始排序。 这是默认设置。</para>
+			/// <para>Upper right—Features will be sorted starting at the upper right corner. This is the default.</para>
 			/// </summary>
 			[GPValue("UR")]
-			[Description("右上角")]
+			[Description("Upper right")]
 			Upper_right,
 
 			/// <summary>
-			/// <para>左上角—要素将从左上角开始排序。</para>
+			/// <para>Upper left—Features will be sorted starting at the upper left corner.</para>
 			/// </summary>
 			[GPValue("UL")]
-			[Description("左上角")]
+			[Description("Upper left")]
 			Upper_left,
 
 			/// <summary>
-			/// <para>右下角—要素将从右下角开始排序。</para>
+			/// <para>Lower right—Features will be sorted starting at the lower right corner.</para>
 			/// </summary>
 			[GPValue("LR")]
-			[Description("右下角")]
+			[Description("Lower right")]
 			Lower_right,
 
 			/// <summary>
-			/// <para>左下角—要素将从左下角开始排序。</para>
+			/// <para>Lower left—Features will be sorted starting at the lower left corner.</para>
 			/// </summary>
 			[GPValue("LL")]
-			[Description("左下角")]
+			[Description("Lower left")]
 			Lower_left,
 
 			/// <summary>
-			/// <para>皮亚诺曲线—要素将使用空间填充曲线算法（也称为皮亚诺曲线）进行排序。</para>
+			/// <para>Peano curve—Features will be sorted using a space-filling curve algorithm, also known as a Peano curve.</para>
 			/// </summary>
 			[GPValue("PEANO")]
-			[Description("皮亚诺曲线")]
+			[Description("Peano curve")]
 			Peano_curve,
 
 			/// <summary>
-			/// <para>居中—要素将从中心点开始排序（如果没有提供中心，将使用平均中心）。</para>
+			/// <para>Center—Features will be sorted starting from a center point (the mean center will be used if no center is supplied).</para>
 			/// </summary>
 			[GPValue("CENTER")]
-			[Description("居中")]
+			[Description("Center")]
 			Center,
 
 			/// <summary>
-			/// <para>逆时针—要素将从中心点开始排序，并按逆时针移动。</para>
+			/// <para>Counterclockwise—Features will be sorted starting from a center point and moving counterclockwise.</para>
 			/// </summary>
 			[GPValue("COUNTERCLOCKWISE")]
-			[Description("逆时针")]
+			[Description("Counterclockwise")]
 			Counterclockwise,
 
 			/// <summary>
-			/// <para>顺时针—要素将从中心点开始排序，并按顺时针移动。</para>
+			/// <para>Clockwise—Features will be sorted starting from a center point and moving clockwise.</para>
 			/// </summary>
 			[GPValue("CLOCKWISE")]
-			[Description("顺时针")]
+			[Description("Clockwise")]
 			Clockwise,
 
 			/// <summary>
-			/// <para>无—不会使用空间排序。 将使用与要素类相同的顺序。</para>
+			/// <para>None—No spatial sort will be used. The same order as the feature class will be used.</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("无")]
+			[Description("None")]
 			None,
 
 		}
@@ -267,24 +267,24 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		public enum NewFieldTypeEnum 
 		{
 			/// <summary>
-			/// <para>短整型—该字段的类型将为短型。 这是默认设置。</para>
+			/// <para>Short—The field will be of short type. This is the default.</para>
 			/// </summary>
 			[GPValue("SHORT")]
-			[Description("短整型")]
+			[Description("Short")]
 			Short,
 
 			/// <summary>
-			/// <para>长整型—该字段的类型将为长型。</para>
+			/// <para>Long—The field will be of long type.</para>
 			/// </summary>
 			[GPValue("LONG")]
-			[Description("长整型")]
+			[Description("Long")]
 			Long,
 
 			/// <summary>
-			/// <para>文本—该字段的类型将为文本。</para>
+			/// <para>Text—The field will be of text type.</para>
 			/// </summary>
 			[GPValue("TEXT")]
-			[Description("文本")]
+			[Description("Text")]
 			Text,
 
 		}

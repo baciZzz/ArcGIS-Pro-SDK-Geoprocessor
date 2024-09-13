@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Analyze</para>
-	/// <para>分析</para>
-	/// <para>更新业务表、要素表和增量表的数据库统计数据，以及这些表的索引的统计数据。</para>
+	/// <para>Analyze</para>
+	/// <para>Updates database statistics of business tables, feature tables, and delta tables, along with the statistics of those tables' indexes.</para>
 	/// </summary>
 	public class Analyze : AbstractGPProcess
 	{
@@ -21,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>要分析的表或要素类。</para>
+		/// <para>The table or feature class to be analyzed.</para>
 		/// </param>
 		/// <param name="Components">
 		/// <para>Components to Analyze</para>
-		/// <para>要分析的组件类型。</para>
-		/// <para>业务表—更新业务规则统计数据。</para>
-		/// <para>要素表—更新要素统计数据。</para>
-		/// <para>栅格表—更新栅格表统计数据。</para>
-		/// <para>添加表—更新所添加数据集的统计数据。</para>
-		/// <para>删除表—更新所删除数据集的统计数据。</para>
+		/// <para>The component type to be analyzed.</para>
+		/// <para>Business table—Updates business rules statistics.</para>
+		/// <para>Feature table—Updates feature statistics.</para>
+		/// <para>Raster table—Updates statistics on raster tables.</para>
+		/// <para>Adds table—Updates statistics on added datasets.</para>
+		/// <para>Deletes table—Updates statistics on deleted datasets.</para>
 		/// <para><see cref="ComponentsEnum"/></para>
 		/// </param>
 		public Analyze(object InDataset, object Components)
@@ -40,14 +40,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 分析</para>
+		/// <para>Tool Display Name : Analyze</para>
 		/// </summary>
-		public override string DisplayName() => "分析";
+		public override string DisplayName() => "Analyze";
 
 		/// <summary>
-		/// <para>Tool Name : 分析</para>
+		/// <para>Tool Name : Analyze</para>
 		/// </summary>
-		public override string ToolName() => "分析";
+		public override string ToolName() => "Analyze";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Analyze</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>要分析的表或要素类。</para>
+		/// <para>The table or feature class to be analyzed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -84,12 +84,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Components to Analyze</para>
-		/// <para>要分析的组件类型。</para>
-		/// <para>业务表—更新业务规则统计数据。</para>
-		/// <para>要素表—更新要素统计数据。</para>
-		/// <para>栅格表—更新栅格表统计数据。</para>
-		/// <para>添加表—更新所添加数据集的统计数据。</para>
-		/// <para>删除表—更新所删除数据集的统计数据。</para>
+		/// <para>The component type to be analyzed.</para>
+		/// <para>Business table—Updates business rules statistics.</para>
+		/// <para>Feature table—Updates feature statistics.</para>
+		/// <para>Raster table—Updates statistics on raster tables.</para>
+		/// <para>Adds table—Updates statistics on added datasets.</para>
+		/// <para>Deletes table—Updates statistics on deleted datasets.</para>
 		/// <para><see cref="ComponentsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -121,38 +121,38 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ComponentsEnum 
 		{
 			/// <summary>
-			/// <para>业务表—更新业务规则统计数据。</para>
+			/// <para>Business table—Updates business rules statistics.</para>
 			/// </summary>
 			[GPValue("BUSINESS")]
-			[Description("业务表")]
+			[Description("Business table")]
 			Business_table,
 
 			/// <summary>
-			/// <para>要素表—更新要素统计数据。</para>
+			/// <para>Feature table—Updates feature statistics.</para>
 			/// </summary>
 			[GPValue("FEATURE")]
-			[Description("要素表")]
+			[Description("Feature table")]
 			Feature_table,
 
 			/// <summary>
-			/// <para>栅格表—更新栅格表统计数据。</para>
+			/// <para>Raster table—Updates statistics on raster tables.</para>
 			/// </summary>
 			[GPValue("RASTER")]
-			[Description("栅格表")]
+			[Description("Raster table")]
 			Raster_table,
 
 			/// <summary>
-			/// <para>添加表—更新所添加数据集的统计数据。</para>
+			/// <para>Adds table—Updates statistics on added datasets.</para>
 			/// </summary>
 			[GPValue("ADDS")]
-			[Description("添加表")]
+			[Description("Adds table")]
 			Adds_table,
 
 			/// <summary>
-			/// <para>删除表—更新所删除数据集的统计数据。</para>
+			/// <para>Deletes table—Updates statistics on deleted datasets.</para>
 			/// </summary>
 			[GPValue("DELETES")]
-			[Description("删除表")]
+			[Description("Deletes table")]
 			Deletes_table,
 
 		}

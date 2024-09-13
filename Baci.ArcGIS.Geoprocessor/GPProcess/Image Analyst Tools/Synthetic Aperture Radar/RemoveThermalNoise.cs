@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Remove Thermal Noise</para>
-	/// <para>移除热噪声</para>
-	/// <para>校正输入合成孔径雷达 (SAR) 数据中由热噪声引起的反向散射干扰，从而生成更加流畅的图像。</para>
+	/// <para>Remove Thermal Noise</para>
+	/// <para>Corrects backscatter disturbances caused by thermal noise in the input synthetic aperture radar (SAR) data, resulting in a more seamless image.</para>
 	/// </summary>
 	public class RemoveThermalNoise : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRadarData">
 		/// <para>Input Radar Data</para>
-		/// <para>输入雷达数据。</para>
+		/// <para>The input radar data.</para>
 		/// </param>
 		/// <param name="OutRadarData">
 		/// <para>Output Radar Data</para>
-		/// <para>热噪声校正雷达数据。</para>
+		/// <para>The thermal noise-corrected radar data.</para>
 		/// </param>
 		public RemoveThermalNoise(object InRadarData, object OutRadarData)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 移除热噪声</para>
+		/// <para>Tool Display Name : Remove Thermal Noise</para>
 		/// </summary>
-		public override string DisplayName() => "移除热噪声";
+		public override string DisplayName() => "Remove Thermal Noise";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveThermalNoise</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Radar Data</para>
-		/// <para>输入雷达数据。</para>
+		/// <para>The input radar data.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Radar Data</para>
-		/// <para>热噪声校正雷达数据。</para>
+		/// <para>The thermal noise-corrected radar data.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -86,8 +86,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Polarization Bands</para>
-		/// <para>要校正的极化波段。</para>
-		/// <para>默认情况下，第一个波段处于选中状态。</para>
+		/// <para>The polarization bands to be corrected.</para>
+		/// <para>The first band is selected by default.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]

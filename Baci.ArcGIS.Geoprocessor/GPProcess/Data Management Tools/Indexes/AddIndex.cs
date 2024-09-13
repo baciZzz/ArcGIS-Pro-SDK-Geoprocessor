@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Attribute Index</para>
-	/// <para>添加属性索引</para>
-	/// <para>将属性索引添加到现有表、要素类、shapefile 或属性关系类中。</para>
+	/// <para>Add Attribute Index</para>
+	/// <para>Adds an attribute index to an existing table, feature class, shapefile, or attributed relationship class.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>包含要建立索引的字段的表。</para>
+		/// <para>The table containing the fields to be indexed.</para>
 		/// </param>
 		/// <param name="Fields">
 		/// <para>Fields to Index</para>
-		/// <para>要加入到索引中的字段的列表。可指定任意数量的字段。</para>
+		/// <para>The list of fields that will participate in the index. Any number of fields can be specified.</para>
 		/// </param>
 		public AddIndex(object InTable, object Fields)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 添加属性索引</para>
+		/// <para>Tool Display Name : Add Attribute Index</para>
 		/// </summary>
-		public override string DisplayName() => "添加属性索引";
+		public override string DisplayName() => "Add Attribute Index";
 
 		/// <summary>
 		/// <para>Tool Name : AddIndex</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>包含要建立索引的字段的表。</para>
+		/// <para>The table containing the fields to be indexed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Fields to Index</para>
-		/// <para>要加入到索引中的字段的列表。可指定任意数量的字段。</para>
+		/// <para>The list of fields that will participate in the index. Any number of fields can be specified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Index Name</para>
-		/// <para>新索引的名称。向地理数据库要素类和表添加索引时，必须指定索引名称。对于其他类型输入，可以忽略名称。</para>
+		/// <para>The name of the new index. An index name is necessary when adding an index to geodatabase feature classes and tables. For other types of input, the name is ignored.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -98,9 +98,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Unique</para>
-		/// <para>指定索引中的值是否唯一。</para>
-		/// <para>未选中 - 索引中的所有值并不都唯一。这是默认设置。</para>
-		/// <para>选中 - 索引中的所有值都唯一。</para>
+		/// <para>Specifies whether the values in the index are unique.</para>
+		/// <para>Unchecked—All values in the index are not unique. This is the default.</para>
+		/// <para>Checked—All values in the index are unique.</para>
 		/// <para><see cref="UniqueEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -110,9 +110,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Ascending</para>
-		/// <para>指定是否按升序建立索引。</para>
-		/// <para>未选中 - 不按升序建立值的索引。这是默认设置。</para>
-		/// <para>选中 - 按升序建立索引。</para>
+		/// <para>Specifies whether values are indexed in ascending order.</para>
+		/// <para>Unchecked—Values are not indexed in ascending order. This is the default.</para>
+		/// <para>Checked—Values are indexed in ascending order.</para>
 		/// <para><see cref="AscendingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -144,14 +144,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum UniqueEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—All values in the index are unique.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UNIQUE")]
 			UNIQUE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—All values in the index are not unique. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NON_UNIQUE")]
@@ -165,14 +165,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AscendingEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Values are indexed in ascending order.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ASCENDING")]
 			ASCENDING,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Values are not indexed in ascending order. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NON_ASCENDING")]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Locate Outliers</para>
-	/// <para>定位异常值</para>
-	/// <para>标识 terrain、TIN 或 LAS 数据集中超出高程值定义范围的异常高程测量或存在与周围表面不一致的坡度特征的异常高程测量。</para>
+	/// <para>Locate Outliers</para>
+	/// <para>Identifies anomalous elevation measurements from terrain, TIN, or LAS datasets that exceed a defined range of elevation values or have slope characteristics that are inconsistent with the surrounding surface.</para>
 	/// </summary>
 	public class LocateOutliers : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InSurface">
 		/// <para>Input  Surface</para>
-		/// <para>将要分析的 terrain、TIN 或 LAS 数据集。</para>
+		/// <para>The terrain, TIN, or LAS dataset that will be analyzed.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>将生成的要素类。</para>
+		/// <para>The feature class that will be produced.</para>
 		/// </param>
 		public LocateOutliers(object InSurface, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 定位异常值</para>
+		/// <para>Tool Display Name : Locate Outliers</para>
 		/// </summary>
-		public override string DisplayName() => "定位异常值";
+		public override string DisplayName() => "Locate Outliers";
 
 		/// <summary>
 		/// <para>Tool Name : LocateOutliers</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input  Surface</para>
-		/// <para>将要分析的 terrain、TIN 或 LAS 数据集。</para>
+		/// <para>The terrain, TIN, or LAS dataset that will be analyzed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>将生成的要素类。</para>
+		/// <para>The feature class that will be produced.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -86,9 +86,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Apply Hard Limit</para>
-		/// <para>指定使用 Z 最小绝对值和 Z 最大绝对值寻找异常值。</para>
-		/// <para>未选中 - 不使用 Z 最小绝对值和 Z 最大绝对值寻找异常值。这是默认设置。</para>
-		/// <para>选中 - 使用 Z 最小绝对值和 Z 最大绝对值寻找异常值。</para>
+		/// <para>Specifies use of absolute z minimum and maximum to find outliers.</para>
+		/// <para>Unchecked—Do not use the absolute z minimum and maximum to find outliers. This is the default.</para>
+		/// <para>Checked—Use the absolute z minimum and maximum to find outliers.</para>
 		/// <para><see cref="ApplyHardLimitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Absolute Z Minimum</para>
-		/// <para>如果应用了硬限制，那么任何一个点的高程低于此值将被视为异常值。默认值为 0。</para>
+		/// <para>If hard limits are applied, any point with an elevation below this value will be considered an outlier. The default is 0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Absolute Z Maximum</para>
-		/// <para>如果应用了硬限制，那么任何一个点的高程高于此值将被视为异常值。默认值为 0。</para>
+		/// <para>If hard limits are applied, any point with an elevation above this value will be considered an outlier. The default is 0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -114,9 +114,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Apply Comparison Filter</para>
-		/// <para>比较过滤器包含三个用于确定异常点的参数：Z 容差、坡度容差和超出容差比。</para>
-		/// <para>未选中 - 在评估点时不使用三个比较参数（“Z 容差”、“坡度容差”和“超出容差比”）。</para>
-		/// <para>选中 - 在评估点时使用三个比较参数（“Z 容差”、“坡度容差”和“超出容差比”）。这是默认设置。</para>
+		/// <para>The comparison filter consists of three parameters for determining outliers: Z Tolerance, Slope Tolerance, and Exceed Tolerance Ratio.</para>
+		/// <para>Unchecked—Do not use the three comparison parameters (Z Tolerance, Slope Tolerance, and Exceed Tolerance Ratio) in assessing points.</para>
+		/// <para>Checked—Use the three comparison parameters (Z Tolerance, Slope Tolerance, and Exceed Tolerance Ratio) in assessing points. This is the default.</para>
 		/// <para><see cref="ApplyComparisonFilterEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Z Tolerance</para>
-		/// <para>在应用了比较过滤器的情况下比较邻近点的 Z 值。默认值为 0。</para>
+		/// <para>Compares z-values of neighboring points if the comparison filter is applied. The default is 0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Slope Tolerance</para>
-		/// <para>用于标识异常值点的连续点之间坡度变化的阈值。坡度用百分比表示，默认为 150。</para>
+		/// <para>The threshold of slope variance between consecutive points that will be used to identify outlier points. Slope is expressed as a percentage, with the default being 150.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Exceed Tolerance Ratio</para>
-		/// <para>将确定每个异常值点的条件定义为其邻域内必须超出指定比较过滤器的点比例的函数。例如，默认值 0.5 表示查询点周围至少有一半的点必须超出比较过滤器，这样查询点才会被视为异常值。值 0.7 表示至少 70% 的相邻点必须超出容差。</para>
+		/// <para>Defines the criteria for determining each outlier point as a function of the ratio of points in its natural neighborhood that must exceed the specified comparison filters. For example, the default value of 0.5 means at least half of the points surrounding the query point must exceed the comparison filters for the query point to be considered an outlier. A value of 0.7 means at least 70 percent of the neighbor points must exceed the tolerances.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Outlier Cap</para>
-		/// <para>异常值点的最大数量可被写入至输出。一旦达到了该值，将无法搜索其他异常值。默认值为 2500。</para>
+		/// <para>The maximum number of outlier points that can be written to the output. Once this value is reached, no further outliers are sought. The default is 2,500.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -173,14 +173,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ApplyHardLimitEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Use the absolute z minimum and maximum to find outliers.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("APPLY_HARD_LIMIT")]
 			APPLY_HARD_LIMIT,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Do not use the absolute z minimum and maximum to find outliers. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_APPLY_HARD_LIMIT")]
@@ -194,14 +194,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ApplyComparisonFilterEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Use the three comparison parameters (Z Tolerance, Slope Tolerance, and Exceed Tolerance Ratio) in assessing points. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("APPLY_COMPARISON_FILTER")]
 			APPLY_COMPARISON_FILTER,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Do not use the three comparison parameters (Z Tolerance, Slope Tolerance, and Exceed Tolerance Ratio) in assessing points.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_APPLY_COMPARISON_FILTER")]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Create Signatures</para>
-	/// <para>创建特征文件</para>
-	/// <para>创建由输入样本数据和一组栅格波段定义的类的 ASCII 特征文件。</para>
+	/// <para>Create Signatures</para>
+	/// <para>Creates an ASCII signature file of classes defined by input sample data and a set of raster bands.</para>
 	/// </summary>
 	public class CreateSignatures : AbstractGPProcess
 	{
@@ -21,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRasterBands">
 		/// <para>Input raster bands</para>
-		/// <para>要创建特征文件的输入栅格波段。</para>
-		/// <para>可为整型或浮点型。</para>
+		/// <para>The input raster bands for which to create the signatures.</para>
+		/// <para>They can be integer or floating point type.</para>
 		/// </param>
 		/// <param name="InSampleData">
 		/// <para>Input raster or feature sample data</para>
-		/// <para>描绘类样本集的输入。</para>
-		/// <para>该输入可以是整型栅格，或要素数据集。</para>
+		/// <para>The input delineating the set of class samples.</para>
+		/// <para>The input can be an integer raster or a feature dataset.</para>
 		/// </param>
 		/// <param name="OutSignatureFile">
 		/// <para>Output signature file</para>
-		/// <para>输出特征文件。</para>
-		/// <para>必须指定 .gsg 扩展名。</para>
+		/// <para>The output signature file.</para>
+		/// <para>A .gsg extension must be specified.</para>
 		/// </param>
 		public CreateSignatures(object InRasterBands, object InSampleData, object OutSignatureFile)
 		{
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建特征文件</para>
+		/// <para>Tool Display Name : Create Signatures</para>
 		/// </summary>
-		public override string DisplayName() => "创建特征文件";
+		public override string DisplayName() => "Create Signatures";
 
 		/// <summary>
 		/// <para>Tool Name : CreateSignatures</para>
@@ -78,8 +78,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster bands</para>
-		/// <para>要创建特征文件的输入栅格波段。</para>
-		/// <para>可为整型或浮点型。</para>
+		/// <para>The input raster bands for which to create the signatures.</para>
+		/// <para>They can be integer or floating point type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -91,8 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or feature sample data</para>
-		/// <para>描绘类样本集的输入。</para>
-		/// <para>该输入可以是整型栅格，或要素数据集。</para>
+		/// <para>The input delineating the set of class samples.</para>
+		/// <para>The input can be an integer raster or a feature dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -104,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output signature file</para>
-		/// <para>输出特征文件。</para>
-		/// <para>必须指定 .gsg 扩展名。</para>
+		/// <para>The output signature file.</para>
+		/// <para>A .gsg extension must be specified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -115,9 +115,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Compute covariance matrices</para>
-		/// <para>指定除计算平均值以外是否还要计算协方差矩阵。</para>
-		/// <para>选中 - 将为输入样本数据的所有类计算协方差矩阵和平均值。这是默认设置。</para>
-		/// <para>未选中 - 只计算输入样本数据的所有类的平均值。</para>
+		/// <para>Specifies whether covariance matrices in addition to the means are calculated.</para>
+		/// <para>Checked—Both the covariance matrices and the means for all classes of the input sample data will be computed. This is the default.</para>
+		/// <para>Unchecked—Only the means for all classes of the input sample data will be calculated.</para>
 		/// <para><see cref="ComputeCovarianceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -127,8 +127,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Sample field</para>
-		/// <para>用来向采样位置（类）分配值的输入栅格或要素样本数据的字段。</para>
-		/// <para>只有整型或字符串字段是有效字段。指定的数字或字符串将在输出特征文件中用作类名。</para>
+		/// <para>Field of the input raster or feature sample data to assign values to the sampled locations (classes).</para>
+		/// <para>Only integer or string fields are valid fields. The specified number or string will be used as the Class name in the output signature file.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -153,14 +153,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ComputeCovarianceEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Both the covariance matrices and the means for all classes of the input sample data will be computed. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("COVARIANCE")]
 			COVARIANCE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Only the means for all classes of the input sample data will be calculated.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("MEAN_ONLY")]

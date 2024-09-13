@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Role</para>
-	/// <para>创建角色</para>
-	/// <para>创建数据库角色，以允许在角色中添加用户或移除用户。</para>
+	/// <para>Create Role</para>
+	/// <para>Creates a database role, allowing you to add users to or remove them from the role.</para>
 	/// </summary>
 	public class CreateRole : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputDatabase">
 		/// <para>Input Database Connection</para>
-		/// <para>到数据库或企业级地理数据库的连接文件。数据库管理员用户的身份进行连接。</para>
+		/// <para>The connection file to a database or enterprise geodatabase. Connect as a database administrator user.</para>
 		/// </param>
 		/// <param name="Role">
 		/// <para>Role</para>
-		/// <para>要创建的数据库角色的名称。如果该角色是现有角色，输入要在其中添加用户或一处用户的角色的名称。</para>
+		/// <para>The name of the database role to create. If it's an existing role, type the name for the role you want to add users to or remove them from.</para>
 		/// </param>
 		public CreateRole(object InputDatabase, object Role)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建角色</para>
+		/// <para>Tool Display Name : Create Role</para>
 		/// </summary>
-		public override string DisplayName() => "创建角色";
+		public override string DisplayName() => "Create Role";
 
 		/// <summary>
 		/// <para>Tool Name : CreateRole</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
-		/// <para>到数据库或企业级地理数据库的连接文件。数据库管理员用户的身份进行连接。</para>
+		/// <para>The connection file to a database or enterprise geodatabase. Connect as a database administrator user.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Role</para>
-		/// <para>要创建的数据库角色的名称。如果该角色是现有角色，输入要在其中添加用户或一处用户的角色的名称。</para>
+		/// <para>The name of the database role to create. If it's an existing role, type the name for the role you want to add users to or remove them from.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -88,9 +88,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Grant To or Revoke From User(s)</para>
-		/// <para>指定是将角色添加到用户或用户列表，还是从角色中移除用户或用户列表。</para>
-		/// <para>授予角色—该角色将授予指定的一个或多个用户，使其成为角色的成员。这是默认设置。</para>
-		/// <para>撤消角色—该角色将从指定的一个或多个用户中撤消，以将其从角色中移除。</para>
+		/// <para>Specifies whether the role will be added to a user or list of users or a user or list of users will be removed from the role.</para>
+		/// <para>Grant role—The role will be granted to the specified user or users, making them a member of the role. This is the default.</para>
+		/// <para>Revoke role—The role will be revoked from the specified user or users, removing them from the role.</para>
 		/// <para><see cref="GrantRevokeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>User Name(s)</para>
-		/// <para>要更改角色成员资格的用户的名称。要指定多个用户，请输入以逗号（无空格）分隔的用户名称。</para>
+		/// <para>The name of the user whose role membership will change. To specify multiple users, type the user names separated by commas (no spaces).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -130,17 +130,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum GrantRevokeEnum 
 		{
 			/// <summary>
-			/// <para>授予角色—该角色将授予指定的一个或多个用户，使其成为角色的成员。这是默认设置。</para>
+			/// <para>Grant role—The role will be granted to the specified user or users, making them a member of the role. This is the default.</para>
 			/// </summary>
 			[GPValue("GRANT")]
-			[Description("授予角色")]
+			[Description("Grant role")]
 			Grant_role,
 
 			/// <summary>
-			/// <para>撤消角色—该角色将从指定的一个或多个用户中撤消，以将其从角色中移除。</para>
+			/// <para>Revoke role—The role will be revoked from the specified user or users, removing them from the role.</para>
 			/// </summary>
 			[GPValue("REVOKE")]
-			[Description("撤消角色")]
+			[Description("Revoke role")]
 			Revoke_role,
 
 		}

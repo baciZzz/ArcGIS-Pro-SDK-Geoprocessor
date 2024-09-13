@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add XY Coordinates</para>
-	/// <para>添加 XY 坐标</para>
-	/// <para>将字段 POINT_X 和 POINT_Y 添加到点输入要素并计算其值。如果启用了输入要素的 Z 值和 M 值，还将追加 POINT_Z 和 POINT_M 字段。</para>
+	/// <para>Add XY Coordinates</para>
+	/// <para>Adds the fields POINT_X and POINT_Y to the point input features and calculates their values. It also appends the POINT_Z and POINT_M fields if the input features are Z- and M-enabled.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.DataManagementTools.CalculateGeometryAttributes"/> tool provides enhanced functionality or performance</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -25,7 +25,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>x,y 坐标将作为 POINT_X 和 POINT_Y 字段追加到点要素。</para>
+		/// <para>The point features whose x,y coordinates will be appended as POINT_X and POINT_Y fields.</para>
 		/// </param>
 		public AddXY(object InFeatures)
 		{
@@ -33,9 +33,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 添加 XY 坐标</para>
+		/// <para>Tool Display Name : Add XY Coordinates</para>
 		/// </summary>
-		public override string DisplayName() => "添加 XY 坐标";
+		public override string DisplayName() => "Add XY Coordinates";
 
 		/// <summary>
 		/// <para>Tool Name : AddXY</para>
@@ -69,7 +69,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>x,y 坐标将作为 POINT_X 和 POINT_Y 字段追加到点要素。</para>
+		/// <para>The point features whose x,y coordinates will be appended as POINT_X and POINT_Y fields.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]

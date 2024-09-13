@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Thin</para>
-	/// <para>细化</para>
-	/// <para>通过减少表示要素宽度的像元数来对栅格化的线状要素进行细化。</para>
+	/// <para>Thin</para>
+	/// <para>Thins rasterized linear features by reducing the number of cells representing the width of the features.</para>
 	/// </summary>
 	public class Thin : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>要进行细化的输入栅格。</para>
-		/// <para>必须为整型。</para>
+		/// <para>The input raster to be thinned.</para>
+		/// <para>It must be of integer type.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>细化的输出栅格。</para>
-		/// <para>输出始终为整型。</para>
+		/// <para>The output thinned raster.</para>
+		/// <para>The output is always of integer type.</para>
 		/// </param>
 		public Thin(object InRaster, object OutRaster)
 		{
@@ -36,14 +36,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 细化</para>
+		/// <para>Tool Display Name : Thin</para>
 		/// </summary>
-		public override string DisplayName() => "细化";
+		public override string DisplayName() => "Thin";
 
 		/// <summary>
-		/// <para>Tool Name : 细化</para>
+		/// <para>Tool Name : Thin</para>
 		/// </summary>
-		public override string ToolName() => "细化";
+		public override string ToolName() => "Thin";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Thin</para>
@@ -72,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>要进行细化的输入栅格。</para>
-		/// <para>必须为整型。</para>
+		/// <para>The input raster to be thinned.</para>
+		/// <para>It must be of integer type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -85,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>细化的输出栅格。</para>
-		/// <para>输出始终为整型。</para>
+		/// <para>The output thinned raster.</para>
+		/// <para>The output is always of integer type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -94,9 +94,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Background value</para>
-		/// <para>指定用于识别背景像元的像元值。线状要素将基于前景像元生成。</para>
-		/// <para>零—背景由 0 像元、负值像元或 NoData 像元组成。值大于 0 的所有像元均为前景像元。</para>
-		/// <para>NoData— 背景由 NoData 像元组成。所有具备有效值的单元均属于前景单元。</para>
+		/// <para>Specifies the cell value that will identify the background cells. The linear features are formed from the foreground cells.</para>
+		/// <para>Zero—The background is composed of cells of 0 or less, or NoData. All cells whose value is greater than 0 are the foreground.</para>
+		/// <para>NoData— The background is composed of NoData cells. All cells with valid values belong to the foreground.</para>
 		/// <para><see cref="BackgroundValueEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -106,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Filter input first</para>
-		/// <para>指定是否要在细化的第一阶段使用过滤器。</para>
-		/// <para>未选中 - 不应用任何过滤器。这是默认设置。</para>
-		/// <para>选中 - 将过滤栅格以平滑前景像元和背景像元间的边界。此选项将排除输出栅格中次要的不规则内容。</para>
+		/// <para>Specifies whether a filter will be applied as the first phase of thinning.</para>
+		/// <para>Unchecked—No filter will be applied. This is the default.</para>
+		/// <para>Checked—The raster will be filtered to smooth the boundaries between foreground and background cells. This option will eliminate minor irregularities from the output raster.</para>
 		/// <para><see cref="FilterEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -118,10 +118,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Shape for corners</para>
-		/// <para>指定在转弯处或交汇点处使用平滑拐角还是尖锐拐角。</para>
-		/// <para>在样条化曲线或创建尖锐交点和拐角等矢量转换过程中，同样会使用此选项。</para>
-		/// <para>圆形— 尝试对拐角处和交汇点处进行平滑。对等值线或河流等自然要素进行矢量化时，最好选中此选项。</para>
-		/// <para>尖锐— 尝试保留直角拐角和交汇点。对街道等人造要素进行矢量化时，最好选中此选项。</para>
+		/// <para>Specifies whether round or sharp turns will be made at turns or junctions.</para>
+		/// <para>It is also used during the vector conversion process to spline curves or create sharp intersections and corners.</para>
+		/// <para>Round— Attempts to smooth corners and junctions. This is best for vectorizing natural features, such as contours or streams.</para>
+		/// <para>Sharp— Attempts to preserve rectangular corners and junctions. This is best for vectorizing man-made features such as streets.</para>
 		/// <para><see cref="CornersEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -131,8 +131,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Maximum thickness of input linear features</para>
-		/// <para>输入栅格中线状要素的最大线宽（以地图单位表示）。</para>
-		/// <para>默认线宽是像元大小的十倍。</para>
+		/// <para>The maximum thickness, in map units, of linear features in the input raster.</para>
+		/// <para>The default thickness is ten times the cell size.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -157,14 +157,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum BackgroundValueEnum 
 		{
 			/// <summary>
-			/// <para>零—背景由 0 像元、负值像元或 NoData 像元组成。值大于 0 的所有像元均为前景像元。</para>
+			/// <para>Zero—The background is composed of cells of 0 or less, or NoData. All cells whose value is greater than 0 are the foreground.</para>
 			/// </summary>
 			[GPValue("ZERO")]
-			[Description("零")]
+			[Description("Zero")]
 			Zero,
 
 			/// <summary>
-			/// <para>NoData— 背景由 NoData 像元组成。所有具备有效值的单元均属于前景单元。</para>
+			/// <para>NoData— The background is composed of NoData cells. All cells with valid values belong to the foreground.</para>
 			/// </summary>
 			[GPValue("NODATA")]
 			[Description("NoData")]
@@ -178,14 +178,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum FilterEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—No filter will be applied. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_FILTER")]
 			NO_FILTER,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The raster will be filtered to smooth the boundaries between foreground and background cells. This option will eliminate minor irregularities from the output raster.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FILTER")]
@@ -199,17 +199,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum CornersEnum 
 		{
 			/// <summary>
-			/// <para>圆形— 尝试对拐角处和交汇点处进行平滑。对等值线或河流等自然要素进行矢量化时，最好选中此选项。</para>
+			/// <para>Round— Attempts to smooth corners and junctions. This is best for vectorizing natural features, such as contours or streams.</para>
 			/// </summary>
 			[GPValue("ROUND")]
-			[Description("圆形")]
+			[Description("Round")]
 			Round,
 
 			/// <summary>
-			/// <para>尖锐— 尝试保留直角拐角和交汇点。对街道等人造要素进行矢量化时，最好选中此选项。</para>
+			/// <para>Sharp— Attempts to preserve rectangular corners and junctions. This is best for vectorizing man-made features such as streets.</para>
 			/// </summary>
 			[GPValue("SHARP")]
-			[Description("尖锐")]
+			[Description("Sharp")]
 			Sharp,
 
 		}

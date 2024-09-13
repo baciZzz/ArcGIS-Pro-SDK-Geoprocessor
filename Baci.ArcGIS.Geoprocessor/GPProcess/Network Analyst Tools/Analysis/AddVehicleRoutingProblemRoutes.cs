@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Add Vehicle Routing Problem Routes</para>
-	/// <para>添加车辆配送路径</para>
-	/// <para>在 Vehicle Routing Problem (VRP) 图层中创建路径。 该工具会将行追加到 Routes 子图层，并可以在创建唯一名称字段时添加具有特定设置的行。</para>
+	/// <para>Add Vehicle Routing Problem Routes</para>
+	/// <para>Creates routes in a Vehicle Routing Problem (VRP) layer. This tool will append rows to the Routes sublayer and can add rows with specific settings while creating a unique name field.</para>
 	/// </summary>
 	public class AddVehicleRoutingProblemRoutes : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="InVrpLayer">
 		/// <para>Input Vehicle Routing Problem Layer</para>
-		/// <para>将添加路径的车辆配送分析图层。</para>
+		/// <para>The  vehicle routing problem analysis layer to which routes will be added.</para>
 		/// </param>
 		/// <param name="NumberOfRoutes">
 		/// <para>Number of Routes</para>
-		/// <para>要添加的路径数。</para>
+		/// <para>The number of routes to add.</para>
 		/// </param>
 		/// <param name="RouteNamePrefix">
 		/// <para>Route Name Prefix</para>
-		/// <para>添加至每个路径图层项目标题的限定符。 例如，路径名称前缀 WeekdayRoute 将用作每个路径名称的起始文本，并附加对象 ID。</para>
+		/// <para>A qualifier added to the title of every route layer item. For example, a route name prefix WeekdayRoute would be used as the starting text for every route’s name with Object ID appended to it.</para>
 		/// </param>
 		public AddVehicleRoutingProblemRoutes(object InVrpLayer, object NumberOfRoutes, object RouteNamePrefix)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 添加车辆配送路径</para>
+		/// <para>Tool Display Name : Add Vehicle Routing Problem Routes</para>
 		/// </summary>
-		public override string DisplayName() => "添加车辆配送路径";
+		public override string DisplayName() => "Add Vehicle Routing Problem Routes";
 
 		/// <summary>
 		/// <para>Tool Name : AddVehicleRoutingProblemRoutes</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Input Vehicle Routing Problem Layer</para>
-		/// <para>将添加路径的车辆配送分析图层。</para>
+		/// <para>The  vehicle routing problem analysis layer to which routes will be added.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPNALayer()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Number of Routes</para>
-		/// <para>要添加的路径数。</para>
+		/// <para>The number of routes to add.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Route Name Prefix</para>
-		/// <para>添加至每个路径图层项目标题的限定符。 例如，路径名称前缀 WeekdayRoute 将用作每个路径名称的起始文本，并附加对象 ID。</para>
+		/// <para>A qualifier added to the title of every route layer item. For example, a route name prefix WeekdayRoute would be used as the starting text for every route’s name with Object ID appended to it.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Start Depot Name</para>
-		/// <para>路径的起始站点名称。 如果起始站点名称值为空，则路径会将分配的第一个停靠点作为起始点。 车辆的起始位置未知或者与您的问题不相关时，可以忽略起始站点。 但是，当起始站点名称值为空时，则终止站点名称值不能同时为空。 如果停靠点或站点跨多个时区，则不允许使用虚拟起始站点。</para>
+		/// <para>The name of the starting depot for the route. If the Start Depot Name value is null, the route will begin from the first order assigned. Omitting the start depot is useful when the vehicle's starting location is unknown or irrelevant to your problem. However, when the Start Depot Name value is null, the End Depot Name value cannot also be null. Virtual start depots are not allowed if orders or depots are in multiple time zones.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>End Depot Name</para>
-		/// <para>路径的终止站点名称。 如果终止站点名称值为空，则路径将在分配的最后一个停靠点处结束。 当终止站点名称值为空时，则起始站点名称值不能同时为空。</para>
+		/// <para>The name of the ending depot for the route. If the End Depot Name value is null, the route will end at the last order assigned. When the End Depot Name value is null, the Start Depot Name value cannot also be null.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -115,8 +115,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Earliest Start Time</para>
-		/// <para>路径允许的最早开始时间。</para>
-		/// <para>求解程序通过将该参数与起始站点的时间窗（在 Depots 图层中由 TimeWindowStart 字段提供）结合使用来确定可行的路径开始时间。 该参数的默认仅时间值是 8:00:00 a.m.，解释为分析图层 Default Date 属性给定的日期的上午 8:00:00。 如果未指定任何值，则将使用默认值。</para>
+		/// <para>The earliest allowable start time for the route.</para>
+		/// <para>This parameter is used by the solver in conjunction with the time window of the starting depot, provided in the Depots layer by the TimeWindowStart field, for determining feasible route start times. This parameter has a default time-only value of 8:00:00 a.m., interpreted as 8:00:00 a.m. on the date given by the Default Date property of the analysis layer. If no value is specified, the default value is used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Latest Start Time</para>
-		/// <para>路径允许的最晚开始时间。 该参数的默认仅时间值是 10:00:00 a.m.，解释为分析图层 Default Date 属性提供的日期的上午 10:00:00。 如果未指定任何值，则将使用默认值。</para>
+		/// <para>The latest allowable start time for the route. This parameter has a default time-only value of 10:00:00 a.m., interpreted as 10:00:00 a.m. on the date provided by the Default Date property of the analysis layer. If no value is specified, the default value is used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Max Order Count</para>
-		/// <para>路径上允许的最大停靠点数。 默认值为 30。 如果未指定任何值，则将使用默认值。</para>
+		/// <para>The maximum allowable number of orders on the route. The default value is 30. If no value is specified, the default value is used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Capacities</para>
-		/// <para>车辆的最大装载量（体积、重量、数量等）。 空值等于零。 最多允许 9 个容量字段，但仅使用对车辆需求进行建模所需的数量。</para>
+		/// <para>The maximum amount (volume, weight, quantity, and so on) that can be carried by the vehicle. A null value is the same as zero. A maximum of nine capacity fields are allowed, but use only the number necessary to model the needs of the vehicles.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -148,10 +148,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Route Constraints</para>
-		/// <para>对路径施加的限制，用于限制总时间、总行驶时间和总距离。</para>
-		/// <para>最长总时间 - 允许的最大路径持续时间。 路径持续时间包括行驶时间以及在停靠点、站点和休息点的服务和等待时间。</para>
-		/// <para>最大总行驶时间 - 路径允许的最大行驶时间。 行驶时间只包括在网络上行驶时所用的时间，不包括服务或等待时间。 该字段值不能大于 MaxTotalTime 字段值。</para>
-		/// <para>最大总距离 - 路径允许的最大行驶距离。</para>
+		/// <para>The constraints placed on routes to limit total time, total travel time, and total distance.</para>
+		/// <para>Max Total Time—The maximum allowable route duration. The route duration includes travel times as well as service and wait times at orders, depots, and breaks.</para>
+		/// <para>Max Total Travel Time—The maximum allowable travel time for the route. The travel time includes only the time spent driving on the network and does not include service or wait times. This field value can&apos;t be larger than the MaxTotalTime  field value.</para>
+		/// <para>Max Total Distance—The maximum allowable travel distance for the route.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -159,12 +159,12 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Costs</para>
-		/// <para>VRP 解决方案中路径产生的成本。</para>
-		/// <para>固定成本 - 仅当解决方案中使用路径（即，路径分配有停靠点）时才产生的固定货币成本。</para>
-		/// <para>单位时间成本 - 路径总持续时间（包括行驶时间以及在停靠点、站点和休息点的服务时间和等待时间）中每单位工作时间产生的货币成本。</para>
-		/// <para>单位距离成本 - 在路径长度（总行驶距离）上行驶单位距离产生的货币成本。</para>
-		/// <para>加班时间开始时间 - 开始计算加班时间之前的规定工作时间。</para>
-		/// <para>单位加班时间成本 - 每单位加班工作时间产生的货币成本。 该字段可以包含空值；空值表示单位加班时间成本值与单位时间成本值相同。</para>
+		/// <para>The costs incurred by the route in a VRP solution.</para>
+		/// <para>Fixed Cost—A fixed monetary cost that is incurred only if the route is used in a solution (that is, it has orders assigned to it).</para>
+		/// <para>Cost Per Unit Time—The monetary cost incurred per unit of work time for the total route duration, including travel times and service and wait times at orders, depots, and breaks.</para>
+		/// <para>Cost Per Unit Distance—The monetary cost incurred per unit of distance traveled for the route length (total travel distance).</para>
+		/// <para>Overtime Start Time—The duration of regular work time before overtime computation begins.</para>
+		/// <para>Cost Per Unit Overtime—The monetary cost incurred per time unit of overtime work. This field can contain null values; a null value indicates that the Cost Per Unit Overtime value is the same as the Cost Per Unit Time value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -172,10 +172,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Additional Route Time</para>
-		/// <para>附件路径时间选项。</para>
-		/// <para>起始站点服务时间 - 起始站点的服务时间。 该字段可用于为车辆装货所用的时间建立模型。</para>
-		/// <para>结束站点服务时间 - 结束站点的服务时间。 该字段可用于为车辆卸货所用的时间建立模型。</para>
-		/// <para>到达/离开延迟 - 将车辆加速到正常行驶速度、减速到停止状态以及离开和进入网络（例如，出入停车场）所需的行驶时间。 通过包含到达/离开延迟值，可防止 VRP 求解程序发送多条路径来为完全重合的停靠点提供服务。</para>
+		/// <para>Additional route time options.</para>
+		/// <para>Start Depot Service Time—The service time at the starting depot. This can be used to model the time spent loading the vehicle.</para>
+		/// <para>End Depot Service Time—The service time at the ending depot. This can be used to model the time spent unloading the vehicle.</para>
+		/// <para>Arrive/Depart Delay—The amount of travel time needed to accelerate the vehicle to normal travel speeds, decelerate it to a stop, and move it off and on the network (for example, in and out of parking). By including an Arrive/Depart Delay value, the VRP solver is deterred from sending many routes to service physically coincident orders.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -183,9 +183,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Append To Existing Routes</para>
-		/// <para>指定是否将新的路径追加到现有路径属性表中。</para>
-		/// <para>选中 - 新的路径将追加到路径属性表的现有集合中。 这是默认设置。</para>
-		/// <para>未选中 - 现有路径将被删除并替换为新路径。</para>
+		/// <para>Specifies whether new routes will be appended to the existing routes attribute table.</para>
+		/// <para>Checked—New routes will be appended to the existing set in the routes attribute table. This is the default.</para>
+		/// <para>Unchecked—Existing routes will be deleted and replaced with new routes.</para>
 		/// <para><see cref="AppendToExistingRoutesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -208,14 +208,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum AppendToExistingRoutesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—New routes will be appended to the existing set in the routes attribute table. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("APPEND")]
 			APPEND,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Existing routes will be deleted and replaced with new routes.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("CLEAR")]

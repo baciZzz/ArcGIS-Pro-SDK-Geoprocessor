@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Update</para>
-	/// <para>更新</para>
-	/// <para>计算输入要素和更新要素的几何交集。 输入要素的属性和几何根据输出要素类中的更新要素来进行更新。</para>
+	/// <para>Update</para>
+	/// <para>Computes the geometric intersection of the input features and update features. The attributes and geometry of the input features are updated by the update features in the output feature class.</para>
 	/// </summary>
 	public class Update : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>输入要素类或图层。 该几何类型必须为面。</para>
+		/// <para>The input feature class or layer. The geometry type must be polygon.</para>
 		/// </param>
 		/// <param name="UpdateFeatures">
 		/// <para>Update Features</para>
-		/// <para>更新输入要素时使用的要素。 该几何类型必须为面。</para>
+		/// <para>The features that will be used to update the input features. The geometry type must be polygon.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>将包含结果的要素类。</para>
+		/// <para>The feature class that will contain the results.</para>
 		/// </param>
 		public Update(object InFeatures, object UpdateFeatures, object OutFeatureClass)
 		{
@@ -39,14 +39,14 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 更新</para>
+		/// <para>Tool Display Name : Update</para>
 		/// </summary>
-		public override string DisplayName() => "更新";
+		public override string DisplayName() => "Update";
 
 		/// <summary>
-		/// <para>Tool Name : 更新</para>
+		/// <para>Tool Name : Update</para>
 		/// </summary>
-		public override string ToolName() => "更新";
+		public override string ToolName() => "Update";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.Update</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>输入要素类或图层。 该几何类型必须为面。</para>
+		/// <para>The input feature class or layer. The geometry type must be polygon.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Update Features</para>
-		/// <para>更新输入要素时使用的要素。 该几何类型必须为面。</para>
+		/// <para>The features that will be used to update the input features. The geometry type must be polygon.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>将包含结果的要素类。</para>
+		/// <para>The feature class that will contain the results.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -105,9 +105,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Borders</para>
-		/// <para>指定是否保留更新面要素的边界。</para>
-		/// <para>选中 - 更新要素参数值的外边界将保留在输出要素类参数值中。 这是默认设置。</para>
-		/// <para>未选中 - 更新要素参数值的外边界在插入输入要素参数值之后将不会保留。 更新要素的项目值优先于输入要素参数值属性。</para>
+		/// <para>Specifies whether the boundary of the update polygon features will be kept.</para>
+		/// <para>Checked—The outside border of the Update Features parameter value will be kept in the Output Feature Class parameter value. This is the default.</para>
+		/// <para>Unchecked—The outside border of the Update Features parameter value will not be kept after it is inserted into the Input Features parameter value. Item values of the Update Features parameter value take precedence over Input Features parameter value attributes.</para>
 		/// <para><see cref="KeepBordersEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -117,8 +117,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>XY Tolerance</para>
-		/// <para>所有要素坐标（节点和折点）之间的最小距离以及坐标可以沿 x 和/或 y 方向移动的距离。</para>
-		/// <para>更改此参数的值可能会导致出现故障或意外结果。 建议不要修改此参数。 已将其从工具对话框的视图中移除。 默认情况下，将使用输入要素类的空间参考 x,y 容差属性。</para>
+		/// <para>The minimum distance separating all feature coordinates (nodes and vertices) as well as the distance a coordinate can move in x or y (or both).</para>
+		/// <para>Changing this parameter&apos;s value may cause failure or unexpected results. It is recommended that you do not modify this parameter. It has been removed from view on the tool dialog box. By default, the input feature class&apos;s spatial reference x,y tolerance property is used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -141,14 +141,14 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum KeepBordersEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The outside border of the Update Features parameter value will be kept in the Output Feature Class parameter value. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("BORDERS")]
 			BORDERS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The outside border of the Update Features parameter value will not be kept after it is inserted into the Input Features parameter value. Item values of the Update Features parameter value take precedence over Input Features parameter value attributes.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_BORDERS")]

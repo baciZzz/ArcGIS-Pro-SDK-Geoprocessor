@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Create Network Dataset From Template</para>
-	/// <para>通过模板创建网络数据集</para>
-	/// <para>使用输入模板文件 (.xml) 中包含的方案创建新的网络数据集。在执行该工具之前，必须确保创建网络数据集所需的所有要素类和输入表已经存在。</para>
+	/// <para>Create Network Dataset From Template</para>
+	/// <para>Creates a new network dataset with the schema contained in the input template file (.xml). All the feature classes and input tables required for creating the network dataset must already exist before this tool is executed.</para>
 	/// </summary>
 	public class CreateNetworkDatasetFromTemplate : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="NetworkDatasetTemplate">
 		/// <para>Network Dataset Template</para>
-		/// <para>使用从网络数据集创建模板工具创建的模板文件 (.xml) 中包含要创建的输出网络数据集方案。</para>
+		/// <para>The template file (.xml) created by the Create Template From Network Dataset tool containing the schema of the output network dataset to be created.</para>
 		/// </param>
 		/// <param name="OutputFeatureDataset">
 		/// <para>Output Feature Dataset</para>
-		/// <para>要素数据集中包含将加入所创建的网络数据集的要素类。将根据网络数据集模板中指定的名称在此数据集中创建网络。</para>
+		/// <para>The feature dataset containing the feature classes that will take part in the network dataset being created. The network will be created in this dataset using the name specified in the network dataset template.</para>
 		/// </param>
 		public CreateNetworkDatasetFromTemplate(object NetworkDatasetTemplate, object OutputFeatureDataset)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 通过模板创建网络数据集</para>
+		/// <para>Tool Display Name : Create Network Dataset From Template</para>
 		/// </summary>
-		public override string DisplayName() => "通过模板创建网络数据集";
+		public override string DisplayName() => "Create Network Dataset From Template";
 
 		/// <summary>
 		/// <para>Tool Name : CreateNetworkDatasetFromTemplate</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Network Dataset Template</para>
-		/// <para>使用从网络数据集创建模板工具创建的模板文件 (.xml) 中包含要创建的输出网络数据集方案。</para>
+		/// <para>The template file (.xml) created by the Create Template From Network Dataset tool containing the schema of the output network dataset to be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Feature Dataset</para>
-		/// <para>要素数据集中包含将加入所创建的网络数据集的要素类。将根据网络数据集模板中指定的名称在此数据集中创建网络。</para>
+		/// <para>The feature dataset containing the feature classes that will take part in the network dataset being created. The network will be created in this dataset using the name specified in the network dataset template.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureDataset()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Classify Movement Events</para>
-	/// <para>分类移动事件</para>
-	/// <para>识别输入点轨迹数据集中的转弯事件、加速事件和速度。</para>
+	/// <para>Classify Movement Events</para>
+	/// <para>Identifies turn events, acceleration events, and speed from an input point track dataset.</para>
 	/// </summary>
 	public class ClassifyMovementEvents : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>启用时间的点要素图层，具有用于注记与每个点关联的轨迹的字段。 几何、对象标识符、轨迹名称和时间将传递到输出要素类。 输入必须采用投影坐标系。</para>
+		/// <para>A time-enabled point feature layer with a field annotating the track with which each point is associated. The geometry, object identifier, track name, and time will be transferred to the output feature class. The input must be in a projected coordinate system.</para>
 		/// </param>
 		/// <param name="IdField">
 		/// <para>ID Field</para>
-		/// <para>输入要素中的字段，用于获取每个点轨迹的唯一标识符。 该字段将复制到输出要素类。</para>
+		/// <para>A field from the input features that will be used to obtain the unique identifiers per point track. The field will be copied to the output feature class.</para>
 		/// </param>
 		/// <param name="OutFeatureclass">
 		/// <para>Output Feature Class</para>
-		/// <para>将包含计算的移动事件的输出要素类。</para>
+		/// <para>The output feature class that will contain the calculated movement events.</para>
 		/// </param>
 		public ClassifyMovementEvents(object InFeatures, object IdField, object OutFeatureclass)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 分类移动事件</para>
+		/// <para>Tool Display Name : Classify Movement Events</para>
 		/// </summary>
-		public override string DisplayName() => "分类移动事件";
+		public override string DisplayName() => "Classify Movement Events";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyMovementEvents</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>启用时间的点要素图层，具有用于注记与每个点关联的轨迹的字段。 几何、对象标识符、轨迹名称和时间将传递到输出要素类。 输入必须采用投影坐标系。</para>
+		/// <para>A time-enabled point feature layer with a field annotating the track with which each point is associated. The geometry, object identifier, track name, and time will be transferred to the output feature class. The input must be in a projected coordinate system.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>ID Field</para>
-		/// <para>输入要素中的字段，用于获取每个点轨迹的唯一标识符。 该字段将复制到输出要素类。</para>
+		/// <para>A field from the input features that will be used to obtain the unique identifiers per point track. The field will be copied to the output feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>将包含计算的移动事件的输出要素类。</para>
+		/// <para>The output feature class that will contain the calculated movement events.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -104,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Curvature</para>
-		/// <para>将事件分类为转弯事件所需的最小值。 在计算曲率后，大于此值的任何计算曲率都会导致在 turn_event 字段中填充相关的转弯事件，而小于此值的值将导致 turn_event 字段分类为行驶中。</para>
-		/// <para>转弯使用曲率和点数参数进行计算。 系统将基于从轨迹中上一个点到当前点以及从当前点到轨迹中下一个点的方位角来计算每个点。 如果该值超过曲率参数中指定的值，则系统会将其视为转弯。 否则，系统会将其视为行驶中。 对于代表大型对象的轨迹，建议您增加点数值，以解决转弯执行时间较长的问题。</para>
+		/// <para>The minimum value that is necessary for an event to be classified as a turn event. After the curvature is calculated, any calculated curvature greater than this value will cause the turn_event field to be populated with the relevant turn event, while values less than this will cause the turn_event field to be classified as traveling.</para>
+		/// <para>Turns are calculated using the Curvature and Number Of Points parameters. Each point is evaluated based on the bearing from the previous point in the track to the current point and from the current point to the next point in the track. If the value exceeds the value specified for the Curvature parameter, it is considered a turn. Otherwise, it is considered to be traveling. For tracks representing large objects, it is recommended that you increase the Number Of Points value to account for the longer amount of time to conduct a turn.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Number Of Points</para>
-		/// <para>计算方位角差值时，位于给定点之前和之后的待计算点数。 使用采样速率（亚秒）较高的数据时，可能需要增加点数参数值，以考虑在该短暂时间内可能发生的移动减少。 假设每秒对输入数据采样一次，则值 1 适用于汽车和行人。 对于航空器和船舶，必须使用较大的值；对这些使用值 5。</para>
+		/// <para>The number of points that will be evaluated before and after a given point when calculating the bearing difference. When using data with a high sampling rate (subsecond), you may need to increase the Number Of Points parameter value to account for the decreased movement that is possible in that brief time period. A value of 1 is suitable for automobiles and pedestrians assuming a one-second sampling on the input data. Larger values are necessary for aircraft and ships; use a value of 5 for these.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Regions Of Interest</para>
-		/// <para>感兴趣区域。 此输入要素图层必须为面要素类。 如果提供了一个值，roi 字段将添加到输出要素类参数。</para>
+		/// <para>The regions of interest. This input feature layer must be a polygon feature class. If a value is provided, a roi field will be added to the Output Feature Class parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Regions Of Interest ID Field</para>
-		/// <para>来自感兴趣区域参数的字段，包含每个感兴趣区域的唯一标识符。</para>
+		/// <para>A field from the Regions Of Interest parameter that contains the unique identifiers for each region of interest.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -142,9 +142,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Create Turn Event Identifiers</para>
-		/// <para>指定在输出要素类中是否将创建转弯事件标识符。</para>
-		/// <para>选中 - 将创建唯一转弯事件标识符。</para>
-		/// <para>未选中 - 不创建唯一转弯事件标识符。 这是默认设置。</para>
+		/// <para>Specifies whether turn event identifiers will be created for the output feature class.</para>
+		/// <para>Checked—Unique turn event identifiers will be created.</para>
+		/// <para>Unchecked—Unique turn event identifiers will not be created. This is the default.</para>
 		/// <para><see cref="IncludeTurnIdsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -154,9 +154,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Exclude Non-Turn Events</para>
-		/// <para>指定是否排除 turn_event 字段值为 Traveling 的要素。</para>
-		/// <para>选中 - 将排除 turn_event 字段值为 Traveling 的要素。</para>
-		/// <para>未选中 - 不排除 turn_event 字段值为 Traveling 的要素；将返回所有要素。 这是默认设置。</para>
+		/// <para>Specifies whether features with a turn_event field value of Traveling will be excluded.</para>
+		/// <para>Checked—Features with a turn_event field value of Traveling will be excluded.</para>
+		/// <para>Unchecked—Features with a turn_event field value of Traveling will not be excluded; all features will be returned. This is the default.</para>
 		/// <para><see cref="ExcludeNonTurnEventsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -166,9 +166,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Turn Events Feature Representation</para>
-		/// <para>指定如何表示输出转弯事件。</para>
-		/// <para>所有要素—将返回与转弯事件相关的所有点。 这是默认设置。</para>
-		/// <para>转弯中点—将返回转弯事件的平均中心。</para>
+		/// <para>Specifies how the output turn events will be represented.</para>
+		/// <para>All features—All points associated with the turn event will be returned. This is the default.</para>
+		/// <para>Turn midpoint—The mean center of the turn event will be returned.</para>
 		/// <para><see cref="TurnEventsRepresentationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -193,14 +193,14 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		public enum IncludeTurnIdsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Unique turn event identifiers will be created.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_TURN_IDS")]
 			INCLUDE_TURN_IDS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Unique turn event identifiers will not be created. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_TURN_IDS")]
@@ -214,14 +214,14 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		public enum ExcludeNonTurnEventsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Features with a turn_event field value of Traveling will be excluded.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ONLY_TURN_EVENTS")]
 			ONLY_TURN_EVENTS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Features with a turn_event field value of Traveling will not be excluded; all features will be returned. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ALL_FEATURES")]
@@ -235,17 +235,17 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		public enum TurnEventsRepresentationEnum 
 		{
 			/// <summary>
-			/// <para>所有要素—将返回与转弯事件相关的所有点。 这是默认设置。</para>
+			/// <para>All features—All points associated with the turn event will be returned. This is the default.</para>
 			/// </summary>
 			[GPValue("ALL_FEATURES")]
-			[Description("所有要素")]
+			[Description("All features")]
 			All_features,
 
 			/// <summary>
-			/// <para>转弯中点—将返回转弯事件的平均中心。</para>
+			/// <para>Turn midpoint—The mean center of the turn event will be returned.</para>
 			/// </summary>
 			[GPValue("TURN_MIDPOINT")]
-			[Description("转弯中点")]
+			[Description("Turn midpoint")]
 			Turn_midpoint,
 
 		}

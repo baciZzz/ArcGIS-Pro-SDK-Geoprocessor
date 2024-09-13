@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Interpolate Shape</para>
-	/// <para>插值 Shape</para>
-	/// <para>通过从表面插入 Z 值创建 3D 要素。</para>
+	/// <para>Interpolate Shape</para>
+	/// <para>Creates 3D features by interpolating z-values from a surface.</para>
 	/// </summary>
 	public class InterpolateShape : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InSurface">
 		/// <para>Input Surface</para>
-		/// <para>用于插入 Z 值的表面。</para>
+		/// <para>The surface to use for interpolating z-values.</para>
 		/// </param>
 		/// <param name="InFeatureClass">
 		/// <para>Input Features</para>
-		/// <para>待处理的输入要素。</para>
+		/// <para>The input features to process.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>将生成的要素类。</para>
+		/// <para>The feature class that will be produced.</para>
 		/// </param>
 		public InterpolateShape(object InSurface, object InFeatureClass, object OutFeatureClass)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 插值 Shape</para>
+		/// <para>Tool Display Name : Interpolate Shape</para>
 		/// </summary>
-		public override string DisplayName() => "插值 Shape";
+		public override string DisplayName() => "Interpolate Shape";
 
 		/// <summary>
 		/// <para>Tool Name : InterpolateShape</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input Surface</para>
-		/// <para>用于插入 Z 值的表面。</para>
+		/// <para>The surface to use for interpolating z-values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>待处理的输入要素。</para>
+		/// <para>The input features to process.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>将生成的要素类。</para>
+		/// <para>The feature class that will be produced.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Sampling Distance</para>
-		/// <para>用于内插 z 值的间距。默认情况下，该参数是栅格数据集的像元大小或三角化网格面的自然增密。</para>
+		/// <para>The spacing at which z-values will be interpolated. By default, this is a raster dataset's cell size or a triangulated surface's natural densification.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Z Factor</para>
-		/// <para>Z 值将乘上的系数。 此值通常用于转换 z 线性单位来匹配 x,y 线性单位。 默认值为 1，此时高程值保持不变。 如果输入表面的空间参考具有已指定线性单位的 z 基准，则此参数不可用。</para>
+		/// <para>The factor by which z-values will be multiplied. This is typically used to convert z linear units to match x,y linear units. The default is 1, which leaves elevation values unchanged. This parameter is not available if the spatial reference of the input surface has a z datum with a specified linear unit.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -117,15 +117,15 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>用于确定输出要素的高程值的插值方法。可用选项取决于正在使用的表面类型。</para>
-		/// <para>双线性法—可使用双线性插值法来确定查询点的值。如果输入为栅格表面，则其为默认值。</para>
-		/// <para>最邻近法—可使用最邻近插值法来确定查询点的值。如果使用此方法，则将仅针对输入要素的折点对表面值进行插值。此选项仅适用于栅格表面。</para>
-		/// <para>线性— TIN、terrain 和 LAS 数据集的默认插值方法。根据由三角形（包含查询点 XY 位置）定义的平面获取高程。</para>
-		/// <para>自然邻域法— 通过将基于区域的权重应用于查询点的自然邻域获取高程。</para>
-		/// <para>合并最小 Z 值— 根据在查询点自然邻域中找到的最小 z 值获取高程。</para>
-		/// <para>合并最大 Z 值— 根据在查询点自然邻域中找到的最大 z 值获取高程。</para>
-		/// <para>合并最近的 Z 值— 根据查询点自然邻域中的最近值获取高程。</para>
-		/// <para>合并最接近平均值的 z 值— 根据距查询点所有自然邻域的平均值最近的 z 值获取高程。</para>
+		/// <para>Interpolation method used to determine elevation values for the output features. The available options depend on the surface type being used.</para>
+		/// <para>Bilinear—Determines the value of the query point using bilinear interpolation. This is the default when the input is a raster surface.</para>
+		/// <para>Nearest Neighbor—Determines the value of the query point using nearest neighbor interpolation. When this method is used, surface values will only be interpolated for the input feature&apos;s vertices. This option is only available for a raster surface.</para>
+		/// <para>Linear— Default interpolation method for TIN, terrain, and LAS dataset. It obtains elevation from the plane defined by the triangle that contains the XY location of a query point.</para>
+		/// <para>Natural Neighbors— Obtains elevation by applying area-based weights to the natural neighbors of a query point.</para>
+		/// <para>Conflate Minimum Z— Obtains elevation from the smallest z-value found among the natural neighbors of a query point.</para>
+		/// <para>Conflate Maximum Z— Obtains elevation from the largest z-value found among the natural neighbors of a query point.</para>
+		/// <para>Conflate Nearest Z— Obtains elevation from the nearest value among the natural neighbors of a query point.</para>
+		/// <para>Conflate Z Closest To Mean— Obtains elevation from the z-value that is closest to the average of all the natural neighbors of a query point.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -135,9 +135,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Interpolate Vertices Only</para>
-		/// <para>指定是否仅沿输入要素的折点进行插值，从而忽略采样距离选项。如果输入表面为栅格并且选择最邻近插值法，则只能在要素折点处插值 z 值。</para>
-		/// <para>已选中 - 沿折点插值。</para>
-		/// <para>取消选中 - 使用采样距离插值。这是默认设置。</para>
+		/// <para>Specifies whether the interpolation will only occur along the vertices of an input feature, thereby ignoring the sample distance option. When the input surface is a raster and nearest neighbor interpolation method is selected, the z-values can only be interpolated at the feature vertices.</para>
+		/// <para>Checked—Interpolates along the vertices.</para>
+		/// <para>Unchecked—Interpolates using the sampling distance. This is the default.</para>
 		/// <para><see cref="VerticesOnlyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Pyramid Level Resolution</para>
-		/// <para>将使用 terrain 金字塔等级的 z 容差或窗口大小分辨率。 默认值为 0，或全分辨率。</para>
+		/// <para>The z-tolerance or window-size resolution of the terrain pyramid level that will be used. The default is 0, or full resolution.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -155,9 +155,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Preserve features partially outside surface</para>
-		/// <para>指定是否将在输出中保留一个或多个折点落在栅格数据区域范围之外的要素。此参数仅当输入表面为栅格并且使用最邻近插值法时可用。</para>
-		/// <para>选中 - 落在栅格表面范围之外的每个折点都将具有各自的 z 值，此值派生自针对栅格表面内的折点计算的 z 值趋势。</para>
-		/// <para>未选中 - 将在输出中跳过至少一个折点落在栅格表面范围之外的要素。这是默认设置。</para>
+		/// <para>Specifies whether features with one or more vertices that fall outside the raster&apos;s data area will be retained in the output. This parameter is only available when the input surface is a raster and the nearest neighbor interpolation method is used.</para>
+		/// <para>Checked—Each vertex that falls outside the raster surface will have its z-value derived from the trend of z-values calculated for the vertices within the raster surface.</para>
+		/// <para>Unchecked—Features with at least one vertex that falls outside the raster surface will be skipped in the output. This is the default.</para>
 		/// <para><see cref="PreserveFeaturesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -182,59 +182,59 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>线性— TIN、terrain 和 LAS 数据集的默认插值方法。根据由三角形（包含查询点 XY 位置）定义的平面获取高程。</para>
+			/// <para>Linear— Default interpolation method for TIN, terrain, and LAS dataset. It obtains elevation from the plane defined by the triangle that contains the XY location of a query point.</para>
 			/// </summary>
 			[GPValue("LINEAR")]
-			[Description("线性")]
+			[Description("Linear")]
 			Linear,
 
 			/// <summary>
-			/// <para>自然邻域法— 通过将基于区域的权重应用于查询点的自然邻域获取高程。</para>
+			/// <para>Natural Neighbors— Obtains elevation by applying area-based weights to the natural neighbors of a query point.</para>
 			/// </summary>
 			[GPValue("NATURAL_NEIGHBORS")]
-			[Description("自然邻域法")]
+			[Description("Natural Neighbors")]
 			Natural_Neighbors,
 
 			/// <summary>
-			/// <para>合并最小 Z 值— 根据在查询点自然邻域中找到的最小 z 值获取高程。</para>
+			/// <para>Conflate Minimum Z— Obtains elevation from the smallest z-value found among the natural neighbors of a query point.</para>
 			/// </summary>
 			[GPValue("CONFLATE_ZMIN")]
-			[Description("合并最小 Z 值")]
+			[Description("Conflate Minimum Z")]
 			Conflate_Minimum_Z,
 
 			/// <summary>
-			/// <para>合并最大 Z 值— 根据在查询点自然邻域中找到的最大 z 值获取高程。</para>
+			/// <para>Conflate Maximum Z— Obtains elevation from the largest z-value found among the natural neighbors of a query point.</para>
 			/// </summary>
 			[GPValue("CONFLATE_ZMAX")]
-			[Description("合并最大 Z 值")]
+			[Description("Conflate Maximum Z")]
 			Conflate_Maximum_Z,
 
 			/// <summary>
-			/// <para>合并最近的 Z 值— 根据查询点自然邻域中的最近值获取高程。</para>
+			/// <para>Conflate Nearest Z— Obtains elevation from the nearest value among the natural neighbors of a query point.</para>
 			/// </summary>
 			[GPValue("CONFLATE_NEAREST")]
-			[Description("合并最近的 Z 值")]
+			[Description("Conflate Nearest Z")]
 			Conflate_Nearest_Z,
 
 			/// <summary>
-			/// <para>合并最接近平均值的 z 值— 根据距查询点所有自然邻域的平均值最近的 z 值获取高程。</para>
+			/// <para>Conflate Z Closest To Mean— Obtains elevation from the z-value that is closest to the average of all the natural neighbors of a query point.</para>
 			/// </summary>
 			[GPValue("CONFLATE_CLOSEST_TO_MEAN")]
-			[Description("合并最接近平均值的 z 值")]
+			[Description("Conflate Z Closest To Mean")]
 			Conflate_Z_Closest_To_Mean,
 
 			/// <summary>
-			/// <para>双线性法—可使用双线性插值法来确定查询点的值。如果输入为栅格表面，则其为默认值。</para>
+			/// <para>Bilinear—Determines the value of the query point using bilinear interpolation. This is the default when the input is a raster surface.</para>
 			/// </summary>
 			[GPValue("BILINEAR")]
-			[Description("双线性法")]
+			[Description("Bilinear")]
 			Bilinear,
 
 			/// <summary>
-			/// <para>最邻近法—可使用最邻近插值法来确定查询点的值。如果使用此方法，则将仅针对输入要素的折点对表面值进行插值。此选项仅适用于栅格表面。</para>
+			/// <para>Nearest Neighbor—Determines the value of the query point using nearest neighbor interpolation. When this method is used, surface values will only be interpolated for the input feature&apos;s vertices. This option is only available for a raster surface.</para>
 			/// </summary>
 			[GPValue("NEAREST")]
-			[Description("最邻近法")]
+			[Description("Nearest Neighbor")]
 			Nearest_Neighbor,
 
 		}
@@ -245,14 +245,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum VerticesOnlyEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Interpolates along the vertices.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("VERTICES_ONLY")]
 			VERTICES_ONLY,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Interpolates using the sampling distance. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DENSIFY")]
@@ -266,14 +266,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum PreserveFeaturesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Each vertex that falls outside the raster surface will have its z-value derived from the trend of z-values calculated for the vertices within the raster surface.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PRESERVE")]
 			PRESERVE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Features with at least one vertex that falls outside the raster surface will be skipped in the output. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXCLUDE")]

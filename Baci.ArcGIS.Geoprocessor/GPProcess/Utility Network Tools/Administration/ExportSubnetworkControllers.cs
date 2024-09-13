@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Export Subnetwork Controllers</para>
-	/// <para>导出子网控制器</para>
-	/// <para>将公共设施网络中的子网控制器导出为 .csv 文件。</para>
+	/// <para>Export Subnetwork Controllers</para>
+	/// <para>Exports subnetwork controllers from a utility network to a .csv file.</para>
 	/// </summary>
 	public class ExportSubnetworkControllers : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>将从中导出子网控制器的公共设施网络。</para>
+		/// <para>The utility network from which subnetwork controllers will be exported.</para>
 		/// </param>
 		/// <param name="OutCsvFile">
 		/// <para>Output File</para>
-		/// <para>要生成的 .csv 文件的位置和名称。</para>
+		/// <para>The location and name of the .csv file to be generated.</para>
 		/// </param>
 		public ExportSubnetworkControllers(object InUtilityNetwork, object OutCsvFile)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 导出子网控制器</para>
+		/// <para>Tool Display Name : Export Subnetwork Controllers</para>
 		/// </summary>
-		public override string DisplayName() => "导出子网控制器";
+		public override string DisplayName() => "Export Subnetwork Controllers";
 
 		/// <summary>
 		/// <para>Tool Name : ExportSubnetworkControllers</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>将从中导出子网控制器的公共设施网络。</para>
+		/// <para>The utility network from which subnetwork controllers will be exported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Output File</para>
-		/// <para>要生成的 .csv 文件的位置和名称。</para>
+		/// <para>The location and name of the .csv file to be generated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

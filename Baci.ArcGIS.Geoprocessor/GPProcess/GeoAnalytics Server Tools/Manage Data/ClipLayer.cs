@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Clip Layer</para>
-	/// <para>裁剪图层</para>
-	/// <para>从指定的多边形中提取输入要素。</para>
+	/// <para>Clip Layer</para>
+	/// <para>Extracts input features from within specified polygons.</para>
 	/// </summary>
 	public class ClipLayer : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input Layer</para>
-		/// <para>包含要进行缓冲的点、线或面要素的数据集。</para>
+		/// <para>The dataset containing the point, line, or polygon features to be clipped.</para>
 		/// </param>
 		/// <param name="Clip_Layer">
 		/// <para>Clip  Layer</para>
-		/// <para>包含用于剪切输入要素的面要素的数据集。</para>
+		/// <para>The dataset containing the polygon features used to clip the input features.</para>
 		/// </param>
 		/// <param name="OutputName">
 		/// <para>Output Name</para>
-		/// <para>输出要素服务的名称。</para>
+		/// <para>The name of the output feature service.</para>
 		/// </param>
 		public ClipLayer(object InputLayer, object Clip_Layer, object OutputName)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 裁剪图层</para>
+		/// <para>Tool Display Name : Clip Layer</para>
 		/// </summary>
-		public override string DisplayName() => "裁剪图层";
+		public override string DisplayName() => "Clip Layer";
 
 		/// <summary>
 		/// <para>Tool Name : ClipLayer</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>包含要进行缓冲的点、线或面要素的数据集。</para>
+		/// <para>The dataset containing the point, line, or polygon features to be clipped.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Clip  Layer</para>
-		/// <para>包含用于剪切输入要素的面要素的数据集。</para>
+		/// <para>The dataset containing the polygon features used to clip the input features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>输出要素服务的名称。</para>
+		/// <para>The name of the output feature service.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -112,9 +112,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Data Store</para>
-		/// <para>指定将用于保存输出的 ArcGIS Data Store。 默认设置为时空大数据存储。 在时空大数据存储中存储的所有结果都将存储在 WGS84 中。 在关系数据存储中存储的结果都将保持各自的坐标系。</para>
-		/// <para>时空大数据存储—输出将存储在时空大数据存储中。 这是默认设置。</para>
-		/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
+		/// <para>Specifies the ArcGIS Data Store where the output will be saved. The default is Spatiotemporal big data store. All results stored in a spatiotemporal big data store will be stored in WGS84. Results stored in a relational data store will maintain their coordinate system.</para>
+		/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
+		/// <para>Relational data store—Output will be stored in a relational data store.</para>
 		/// <para><see cref="DataStoreEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -140,17 +140,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum DataStoreEnum 
 		{
 			/// <summary>
-			/// <para>时空大数据存储—输出将存储在时空大数据存储中。 这是默认设置。</para>
+			/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
 			/// </summary>
 			[GPValue("SPATIOTEMPORAL_DATA_STORE")]
-			[Description("时空大数据存储")]
+			[Description("Spatiotemporal big data store")]
 			Spatiotemporal_big_data_store,
 
 			/// <summary>
-			/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
+			/// <para>Relational data store—Output will be stored in a relational data store.</para>
 			/// </summary>
 			[GPValue("RELATIONAL_DATA_STORE")]
-			[Description("关系数据存储")]
+			[Description("Relational data store")]
 			Relational_data_store,
 
 		}

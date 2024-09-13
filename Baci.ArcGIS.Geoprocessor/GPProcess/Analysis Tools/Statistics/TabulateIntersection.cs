@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Tabulate Intersection</para>
-	/// <para>交集制表</para>
-	/// <para>计算两个要素类之间的交集并对相交要素的面积、长度或数量进行交叉制表。</para>
+	/// <para>Tabulate Intersection</para>
+	/// <para>Computes the intersection between two feature classes and cross tabulates the area, length, or count of the intersecting features.</para>
 	/// </summary>
 	public class TabulateIntersection : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="InZoneFeatures">
 		/// <para>Input Zone Features</para>
-		/// <para>用于标识区域的要素。</para>
+		/// <para>The features used to identify zones.</para>
 		/// </param>
 		/// <param name="ZoneFields">
 		/// <para>Zone Fields</para>
-		/// <para>将用于定义区域的属性字段。</para>
+		/// <para>The attribute field or fields that will be used to define zones.</para>
 		/// </param>
 		/// <param name="InClassFeatures">
 		/// <para>Input Class Features</para>
-		/// <para>用于标识类的要素。</para>
+		/// <para>The features used to identify classes.</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
-		/// <para>将包含区域和类之间交集的交叉表的表。</para>
+		/// <para>The table that will contain the cross tabulation of intersections between zones and classes.</para>
 		/// </param>
 		public TabulateIntersection(object InZoneFeatures, object ZoneFields, object InClassFeatures, object OutTable)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 交集制表</para>
+		/// <para>Tool Display Name : Tabulate Intersection</para>
 		/// </summary>
-		public override string DisplayName() => "交集制表";
+		public override string DisplayName() => "Tabulate Intersection";
 
 		/// <summary>
 		/// <para>Tool Name : TabulateIntersection</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Zone Features</para>
-		/// <para>用于标识区域的要素。</para>
+		/// <para>The features used to identify zones.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Zone Fields</para>
-		/// <para>将用于定义区域的属性字段。</para>
+		/// <para>The attribute field or fields that will be used to define zones.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Class Features</para>
-		/// <para>用于标识类的要素。</para>
+		/// <para>The features used to identify classes.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>将包含区域和类之间交集的交叉表的表。</para>
+		/// <para>The table that will contain the cross tabulation of intersections between zones and classes.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Class Fields</para>
-		/// <para>用于定义类的属性字段。</para>
+		/// <para>The attribute field or fields used to define classes.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Sum Fields</para>
-		/// <para>输入类要素参数中用于求和的字段。</para>
+		/// <para>The fields to sum from the Input Class Features parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -138,8 +138,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>XY Tolerance</para>
-		/// <para>确定要素或其顶点被视作相同的范围的距离。 默认情况下，为输入区域要素的 XY 容差。</para>
-		/// <para>更改此参数的值可能会导致出现故障或意外结果。 建议不要修改此参数。 已将其从工具对话框的视图中移除。 默认情况下，将使用输入要素类的空间参考 x,y 容差属性。</para>
+		/// <para>The distance that determines the range in which features or their vertices are considered equal. By default, this is the XY Tolerance of the Input Zone Features parameter.</para>
+		/// <para>Changing this parameter&apos;s value may cause failure or unexpected results. It is recommended that you do not modify this parameter. It has been removed from view on the tool dialog box. By default, the input feature class&apos;s spatial reference x,y tolerance property is used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -147,32 +147,32 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Units</para>
-		/// <para>指定计算面积或长度测量值所使用的单位。 当输入类要素为点时，不支持设置输出单位。</para>
-		/// <para>未知—未知单位。</para>
-		/// <para>英寸—将以英寸为单位。</para>
-		/// <para>英尺—单位将为英尺。</para>
-		/// <para>码—将以码为单位。</para>
-		/// <para>英里—单位将为英里。</para>
-		/// <para>海里—单位将为海里。</para>
-		/// <para>毫米—将以毫米为单位。</para>
-		/// <para>厘米—将以厘米为单位。</para>
-		/// <para>分米—将以分米为单位。</para>
-		/// <para>米—单位将为米。</para>
-		/// <para>千米—单位将为公里。</para>
-		/// <para>十进制度—单位将为十进制度。</para>
-		/// <para>点—将以磅为单位。</para>
-		/// <para>公亩—将以公亩为单位。</para>
-		/// <para>英亩—将以英亩为单位。</para>
-		/// <para>公顷—将以公顷为单位。</para>
-		/// <para>平方英寸—将以平方英寸为单位。</para>
-		/// <para>平方英尺—将以平方英尺为单位。</para>
-		/// <para>平方码—将以平方码为单位。</para>
-		/// <para>平方英里—将以平方英里为单位。</para>
-		/// <para>平方毫米—将以平方毫米为单位。</para>
-		/// <para>平方厘米—将以平方厘米为单位。</para>
-		/// <para>平方分米—将以平方分米为单位。</para>
-		/// <para>平方米—将以平方米为单位。</para>
-		/// <para>平方千米—将以平方公里为单位。</para>
+		/// <para>Specifies the units that will be used to calculate area or length measurements. Setting output units when the input class features are points is not supported.</para>
+		/// <para>Unknown—The units will be unknown.</para>
+		/// <para>Inches—The units will be inches.</para>
+		/// <para>Feet—The units will be feet.</para>
+		/// <para>Yards—The units will be yards.</para>
+		/// <para>Miles—The units will be miles.</para>
+		/// <para>Nautical miles—The units will be nautical miles.</para>
+		/// <para>Millimeters—The units will be millimeters.</para>
+		/// <para>Centimeters—The units will be centimeters.</para>
+		/// <para>Decimeters—The units will be decimeters.</para>
+		/// <para>Meters—The units will be meters.</para>
+		/// <para>Kilometers—The units will be kilometers.</para>
+		/// <para>Decimal degrees—The units will be decimal degrees.</para>
+		/// <para>Points—The units will be points.</para>
+		/// <para>Ares—The units will be ares.</para>
+		/// <para>Acres—The units will be acres.</para>
+		/// <para>Hectares—The units will be hectares.</para>
+		/// <para>Square inches—The units will be square inches.</para>
+		/// <para>Square feet—The units will be square feet.</para>
+		/// <para>Square yards—The units will be square yards.</para>
+		/// <para>Square miles—The units will be square miles.</para>
+		/// <para>Square millimeters—The units will be square millimeters.</para>
+		/// <para>Square centimeters—The units will be square centimeters.</para>
+		/// <para>Square decimeters—The units will be square decimeters.</para>
+		/// <para>Square meters—The units will be square meters.</para>
+		/// <para>Square kilometers—The units will be square kilometers.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

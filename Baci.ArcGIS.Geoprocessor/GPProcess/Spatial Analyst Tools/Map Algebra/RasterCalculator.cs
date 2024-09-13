@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Raster Calculator</para>
-	/// <para>栅格计算器</para>
-	/// <para>使用 Python 语法构建和执行单个地图代数表达式。</para>
+	/// <para>Raster Calculator</para>
+	/// <para>Builds and executes a single Map Algebra expression using Python syntax.</para>
 	/// </summary>
 	public class RasterCalculator : AbstractGPProcess
 	{
@@ -21,14 +21,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="Expression">
 		/// <para>Map Algebra expression</para>
-		/// <para>您要运行的“地图代数”表达式。</para>
-		/// <para>通过指定输入、值、运算符和要使用的工具来构成表达式。 可直接输入表达式，也可使用控件来帮助您创建表达式。</para>
-		/// <para>栅格列表识别了可以在地图代数表达式中使用的数据集。</para>
-		/// <para>工具列表为您提供可从中选择的常用工具集合。</para>
+		/// <para>The Map Algebra expression you want to run.</para>
+		/// <para>The expression is composed by specifying the inputs, values, operators, and tools to use. You can type in the expression directly or use the controls to help you create it.</para>
+		/// <para>The Rasters list identifies the datasets available to use in the Map Algebra expression.</para>
+		/// <para>The Tools list provides a selection of commonly used tools to choose from.</para>
 		/// </param>
 		/// <param name="OutputRaster">
 		/// <para>Output raster</para>
-		/// <para>由“地图代数”表达式生成的输出栅格。</para>
+		/// <para>The output raster resulting from the Map Algebra expression.</para>
 		/// </param>
 		public RasterCalculator(object Expression, object OutputRaster)
 		{
@@ -37,9 +37,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 栅格计算器</para>
+		/// <para>Tool Display Name : Raster Calculator</para>
 		/// </summary>
-		public override string DisplayName() => "栅格计算器";
+		public override string DisplayName() => "Raster Calculator";
 
 		/// <summary>
 		/// <para>Tool Name : RasterCalculator</para>
@@ -73,10 +73,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Map Algebra expression</para>
-		/// <para>您要运行的“地图代数”表达式。</para>
-		/// <para>通过指定输入、值、运算符和要使用的工具来构成表达式。 可直接输入表达式，也可使用控件来帮助您创建表达式。</para>
-		/// <para>栅格列表识别了可以在地图代数表达式中使用的数据集。</para>
-		/// <para>工具列表为您提供可从中选择的常用工具集合。</para>
+		/// <para>The Map Algebra expression you want to run.</para>
+		/// <para>The expression is composed by specifying the inputs, values, operators, and tools to use. You can type in the expression directly or use the controls to help you create it.</para>
+		/// <para>The Rasters list identifies the datasets available to use in the Map Algebra expression.</para>
+		/// <para>The Tools list provides a selection of commonly used tools to choose from.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRasterCalculatorExpression()]
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>由“地图代数”表达式生成的输出栅格。</para>
+		/// <para>The output raster resulting from the Map Algebra expression.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

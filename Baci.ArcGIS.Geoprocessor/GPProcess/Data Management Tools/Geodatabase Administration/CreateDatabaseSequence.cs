@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Database Sequence</para>
-	/// <para>创建数据库序列</para>
-	/// <para>在地理数据库中创建数据库序列。可以在访问地理数据库的自定义应用程序中使用序列。</para>
+	/// <para>Create Database Sequence</para>
+	/// <para>Creates a database sequence in a geodatabase. You can use the sequences in custom applications that access the geodatabase.</para>
 	/// </summary>
 	public class CreateDatabaseSequence : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InWorkspace">
 		/// <para>Input Workspace</para>
-		/// <para>用于连接到要在其中创建序列的企业级地理数据库的数据库连接文件 (.sde)，或文件地理数据库的路径（包括文件地理数据库名称）。</para>
-		/// <para>对于数据库连接，在数据库连接中指定的用户是序列的所有者，因此必须在数据库中具有以下权限：</para>
-		/// <para>Db2 - 对其方案的 CREATEIN 权限</para>
-		/// <para>Oracle - CREATE SEQUENCE 系统权限</para>
-		/// <para>PostgreSQL - 对其方案的权限</para>
-		/// <para>SAP HANA - 必须是标准用户</para>
-		/// <para>SQL Server - CREATE SEQUENCE 权限以及对其方案的 ALTER OR CONTROL 权限</para>
+		/// <para>The database connection file (.sde) to connect to the enterprise geodatabase in which you want to create a sequence or the path to the file geodatabase (including the file geodatabase name).</para>
+		/// <para>For database connections, the user specified in the database connection will be the owner of the sequence and, therefore, must have the following permissions in the database:</para>
+		/// <para>Db2—CREATEIN privilege on their schema</para>
+		/// <para>Oracle—CREATE SEQUENCE system privilege</para>
+		/// <para>PostgreSQL—Authority on their schema</para>
+		/// <para>SAP HANA—Must be a standard user</para>
+		/// <para>SQL Server—CREATE SEQUENCE privilege and ALTER OR CONTROL permission on their schema</para>
 		/// </param>
 		/// <param name="SeqName">
 		/// <para>Sequence Name</para>
-		/// <para>要分配给数据库序列的名称。对于企业级地理数据库，该名称必须符合当前使用的数据库平台的序列名称要求，并且在数据库中必须唯一。对于文件地理数据库，该名称在文件地理数据库中必须唯一。牢记此名称，因为在自定义应用程序和表达式中调用序列时小使用该名称。</para>
+		/// <para>The name you want to assign to the database sequence. For enterprise geodatabases, the name must meet sequence name requirements for the database platform you're using and must be unique in the database. For file geodatabases, the name must be unique to the file geodatabase. It is important that you remember this name, as it is the name you use in your custom applications and expressions to invoke the sequence.</para>
 		/// </param>
 		public CreateDatabaseSequence(object InWorkspace, object SeqName)
 		{
@@ -40,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建数据库序列</para>
+		/// <para>Tool Display Name : Create Database Sequence</para>
 		/// </summary>
-		public override string DisplayName() => "创建数据库序列";
+		public override string DisplayName() => "Create Database Sequence";
 
 		/// <summary>
 		/// <para>Tool Name : CreateDatabaseSequence</para>
@@ -76,13 +76,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Workspace</para>
-		/// <para>用于连接到要在其中创建序列的企业级地理数据库的数据库连接文件 (.sde)，或文件地理数据库的路径（包括文件地理数据库名称）。</para>
-		/// <para>对于数据库连接，在数据库连接中指定的用户是序列的所有者，因此必须在数据库中具有以下权限：</para>
-		/// <para>Db2 - 对其方案的 CREATEIN 权限</para>
-		/// <para>Oracle - CREATE SEQUENCE 系统权限</para>
-		/// <para>PostgreSQL - 对其方案的权限</para>
-		/// <para>SAP HANA - 必须是标准用户</para>
-		/// <para>SQL Server - CREATE SEQUENCE 权限以及对其方案的 ALTER OR CONTROL 权限</para>
+		/// <para>The database connection file (.sde) to connect to the enterprise geodatabase in which you want to create a sequence or the path to the file geodatabase (including the file geodatabase name).</para>
+		/// <para>For database connections, the user specified in the database connection will be the owner of the sequence and, therefore, must have the following permissions in the database:</para>
+		/// <para>Db2—CREATEIN privilege on their schema</para>
+		/// <para>Oracle—CREATE SEQUENCE system privilege</para>
+		/// <para>PostgreSQL—Authority on their schema</para>
+		/// <para>SAP HANA—Must be a standard user</para>
+		/// <para>SQL Server—CREATE SEQUENCE privilege and ALTER OR CONTROL permission on their schema</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Sequence Name</para>
-		/// <para>要分配给数据库序列的名称。对于企业级地理数据库，该名称必须符合当前使用的数据库平台的序列名称要求，并且在数据库中必须唯一。对于文件地理数据库，该名称在文件地理数据库中必须唯一。牢记此名称，因为在自定义应用程序和表达式中调用序列时小使用该名称。</para>
+		/// <para>The name you want to assign to the database sequence. For enterprise geodatabases, the name must meet sequence name requirements for the database platform you're using and must be unique in the database. For file geodatabases, the name must be unique to the file geodatabase. It is important that you remember this name, as it is the name you use in your custom applications and expressions to invoke the sequence.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Sequence Start ID</para>
-		/// <para>序列的起始编号。如果未提供起始编号，则序列从 1 开始。如果您确实提供了起始编号，则其必须大于 0。</para>
+		/// <para>The starting number of the sequence. If you do not provide a starting number, the sequence starts with 1. If you do provide a starting number, it must be greater than 0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Sequence Increment Value</para>
-		/// <para>描述序号的递增方式。例如，如果序列从 10 开始且增量值为 5，则序列中的下一个值为 15，之后下一个值为 20。如果未指定增量值，则序列增量值将为 1。</para>
+		/// <para>Describes how the sequence numbers will increment. For example, if the sequence starts at 10 and the increment value is 5, the next value in the sequence is 15, and the next value after that is 20. If you do not specify an increment value, sequence values will increment by 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]

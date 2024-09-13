@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Subtype</para>
-	/// <para>移除子类型</para>
-	/// <para>使用子类型编码从输入表中移除子类型。</para>
+	/// <para>Remove Subtype</para>
+	/// <para>Removes a subtype from the input table using its code.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>包含子类型定义的要素类或表。</para>
+		/// <para>The feature class or table containing the subtype definition.</para>
 		/// </param>
 		/// <param name="SubtypeCode">
 		/// <para>Subtype Code</para>
-		/// <para>从输入表或要素类中移除子类型的子类型编码。</para>
+		/// <para>The subtype code to remove a subtype from the input table or feature class.</para>
 		/// </param>
 		public RemoveSubtype(object InTable, object SubtypeCode)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 移除子类型</para>
+		/// <para>Tool Display Name : Remove Subtype</para>
 		/// </summary>
-		public override string DisplayName() => "移除子类型";
+		public override string DisplayName() => "Remove Subtype";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveSubtype</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>包含子类型定义的要素类或表。</para>
+		/// <para>The feature class or table containing the subtype definition.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Subtype Code</para>
-		/// <para>从输入表或要素类中移除子类型的子类型编码。</para>
+		/// <para>The subtype code to remove a subtype from the input table or feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]

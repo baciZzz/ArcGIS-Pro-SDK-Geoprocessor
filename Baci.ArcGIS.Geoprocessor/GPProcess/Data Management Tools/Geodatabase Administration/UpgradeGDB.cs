@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Upgrade Geodatabase</para>
-	/// <para>升级地理数据库</para>
-	/// <para>将地理数据库升级至最新的 ArcGIS 版本以使用新功能。</para>
+	/// <para>Upgrade Geodatabase</para>
+	/// <para>Upgrades a geodatabase to the latest ArcGIS release to take advantage of new functionality.</para>
 	/// </summary>
 	public class UpgradeGDB : AbstractGPProcess
 	{
@@ -21,20 +21,20 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputWorkspace">
 		/// <para>Input Geodatabase</para>
-		/// <para>要进行升级的地理数据库。 当升级企业级地理数据库时，指定以地理数据库管理员身份连接到地理数据库的数据库连接文件 (.sde)。</para>
+		/// <para>The geodatabase to upgrade. When upgrading an enterprise geodatabase, specify a database connection file (.sde) that connects to the geodatabase as the geodatabase administrator.</para>
 		/// </param>
 		/// <param name="InputPrerequisiteCheck">
 		/// <para>Perform Pre-Requisite Check</para>
-		/// <para>指定是否会在升级地理数据库之前执行先决条件检查。</para>
-		/// <para>未选中 - 不会执行先决条件检查。 这是默认设置。</para>
-		/// <para>选中 - 将在升级地理数据库之前执行先决条件检查。</para>
+		/// <para>Specifies whether the prerequisite check will be run before upgrading the geodatabase.</para>
+		/// <para>Unchecked—The prerequisite check will not be run. This is the default.</para>
+		/// <para>Checked—The prerequisite check will be run before upgrading the geodatabase.</para>
 		/// <para><see cref="InputPrerequisiteCheckEnum"/></para>
 		/// </param>
 		/// <param name="InputUpgradegdbCheck">
 		/// <para>Upgrade Geodatabase</para>
-		/// <para>指定是否会将输入地理数据库升级以与您正在运行工具所基于的 ArcGIS 客户端版本相匹配。</para>
-		/// <para>未选中 - 不会升级地理数据库。 这是默认设置。</para>
-		/// <para>选中 - 将升级地理数据库。</para>
+		/// <para>Specifies whether the input geodatabase will be upgraded to match the release of the ArcGIS client from which you are running the tool.</para>
+		/// <para>Unchecked—The geodatabase will not be upgraded. This is the default.</para>
+		/// <para>Checked—The geodatabase will be upgraded.</para>
 		/// <para><see cref="InputUpgradegdbCheckEnum"/></para>
 		/// </param>
 		public UpgradeGDB(object InputWorkspace, object InputPrerequisiteCheck, object InputUpgradegdbCheck)
@@ -45,9 +45,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 升级地理数据库</para>
+		/// <para>Tool Display Name : Upgrade Geodatabase</para>
 		/// </summary>
-		public override string DisplayName() => "升级地理数据库";
+		public override string DisplayName() => "Upgrade Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : UpgradeGDB</para>
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Geodatabase</para>
-		/// <para>要进行升级的地理数据库。 当升级企业级地理数据库时，指定以地理数据库管理员身份连接到地理数据库的数据库连接文件 (.sde)。</para>
+		/// <para>The geodatabase to upgrade. When upgrading an enterprise geodatabase, specify a database connection file (.sde) that connects to the geodatabase as the geodatabase administrator.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -91,9 +91,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Perform Pre-Requisite Check</para>
-		/// <para>指定是否会在升级地理数据库之前执行先决条件检查。</para>
-		/// <para>未选中 - 不会执行先决条件检查。 这是默认设置。</para>
-		/// <para>选中 - 将在升级地理数据库之前执行先决条件检查。</para>
+		/// <para>Specifies whether the prerequisite check will be run before upgrading the geodatabase.</para>
+		/// <para>Unchecked—The prerequisite check will not be run. This is the default.</para>
+		/// <para>Checked—The prerequisite check will be run before upgrading the geodatabase.</para>
 		/// <para><see cref="InputPrerequisiteCheckEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -103,9 +103,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Upgrade Geodatabase</para>
-		/// <para>指定是否会将输入地理数据库升级以与您正在运行工具所基于的 ArcGIS 客户端版本相匹配。</para>
-		/// <para>未选中 - 不会升级地理数据库。 这是默认设置。</para>
-		/// <para>选中 - 将升级地理数据库。</para>
+		/// <para>Specifies whether the input geodatabase will be upgraded to match the release of the ArcGIS client from which you are running the tool.</para>
+		/// <para>Unchecked—The geodatabase will not be upgraded. This is the default.</para>
+		/// <para>Checked—The geodatabase will be upgraded.</para>
 		/// <para><see cref="InputUpgradegdbCheckEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -137,14 +137,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum InputPrerequisiteCheckEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The prerequisite check will be run before upgrading the geodatabase.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PREREQUISITE_CHECK")]
 			PREREQUISITE_CHECK,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The prerequisite check will not be run. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_PREREQUISITE_CHECK")]
@@ -158,14 +158,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum InputUpgradegdbCheckEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The geodatabase will be upgraded.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPGRADE")]
 			UPGRADE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The geodatabase will not be upgraded. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_UPGRADE")]

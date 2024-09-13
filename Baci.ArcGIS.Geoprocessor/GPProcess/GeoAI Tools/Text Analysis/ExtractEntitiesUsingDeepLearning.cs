@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 {
 	/// <summary>
 	/// <para>Extract Entities Using Deep Learning</para>
-	/// <para>使用深度学习提取实体</para>
-	/// <para>用于在文件夹中的文本文件上运行经过训练的指定实体识别器模型，以提取表中的实体和位置（例如地址、地点名称或人名、日期和货币值）。 如果所提取的实体包含地址，则该工具将使用指定的定位器对地址进行地理编码并生成要素类作为输出。</para>
+	/// <para>Extract Entities Using Deep Learning</para>
+	/// <para>Runs a trained named entity recognizer model on text files in a folder to extract entities and locations (such as addresses, place or person names, dates, and monetary values) in a table. If the extracted entities contain an address, the tool geocodes the addresses using the specified locator and produces a feature class as an output.</para>
 	/// </summary>
 	public class ExtractEntitiesUsingDeepLearning : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		/// </summary>
 		/// <param name="InFolder">
 		/// <para>Input Folder</para>
-		/// <para>包含待执行已命名实体提取的文本文件的文件夹。</para>
+		/// <para>The folder containing the text files on which named entity extraction will be performed.</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
-		/// <para>将包含已提取实体的输出要素类或表。 如果提供了定位器且模型提取了地址，则系统将通过对已提取地址进行地理编码来生成要素类。</para>
+		/// <para>The output feature class or table that will contain the extracted entities. If a locator is provided and the model extracts addresses, the feature class will be produced by geocoding the extracted addresses.</para>
 		/// </param>
 		/// <param name="InModelDefinitionFile">
 		/// <para>Input Model Definition File</para>
-		/// <para>将用于分类的训练模型。 模型定义文件可以是本地存储的 Esri 模型定义 JSON 文件 (.emd) 或深度学习模型包 (.dlpk)。</para>
+		/// <para>The trained model that will be used for classification. The model definition file can be an Esri model definition JSON file (.emd) or a deep learning model package (.dlpk) stored locally.</para>
 		/// </param>
 		public ExtractEntitiesUsingDeepLearning(object InFolder, object OutTable, object InModelDefinitionFile)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 使用深度学习提取实体</para>
+		/// <para>Tool Display Name : Extract Entities Using Deep Learning</para>
 		/// </summary>
-		public override string DisplayName() => "使用深度学习提取实体";
+		public override string DisplayName() => "Extract Entities Using Deep Learning";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractEntitiesUsingDeepLearning</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Input Folder</para>
-		/// <para>包含待执行已命名实体提取的文本文件的文件夹。</para>
+		/// <para>The folder containing the text files on which named entity extraction will be performed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>将包含已提取实体的输出要素类或表。 如果提供了定位器且模型提取了地址，则系统将通过对已提取地址进行地理编码来生成要素类。</para>
+		/// <para>The output feature class or table that will contain the extracted entities. If a locator is provided and the model extracts addresses, the feature class will be produced by geocoding the extracted addresses.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Input Model Definition File</para>
-		/// <para>将用于分类的训练模型。 模型定义文件可以是本地存储的 Esri 模型定义 JSON 文件 (.emd) 或深度学习模型包 (.dlpk)。</para>
+		/// <para>The trained model that will be used for classification. The model definition file can be an Esri model definition JSON file (.emd) or a deep learning model package (.dlpk) stored locally.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -101,8 +101,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Model Arguments</para>
-		/// <para>将使用其他参数（例如，置信度阈值）调整模型的灵敏度。</para>
-		/// <para>将使用该工具填充参数名称。</para>
+		/// <para>Additional arguments, such as a confidence threshold, that will be used to adjust the sensitivity of the model.</para>
+		/// <para>The names of the arguments will be populated by the tool.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -110,8 +110,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Batch Size</para>
-		/// <para>一次需要处理的训练样本数。 默认值为 4。</para>
-		/// <para>增加批处理大小可以提高工具性能；但是，随着批处理大小的增加，会占用更多内存。 如果发生内存不足错误，请使用较小的批处理大小。</para>
+		/// <para>The number of training samples that will be processed at one time. The default value is 4.</para>
+		/// <para>Increasing the batch size can improve tool performance; however, as the batch size increases, more memory is used. If an out of memory error occurs, use a smaller batch size.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -120,8 +120,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Location Zone</para>
-		/// <para>预计地址所在的地理区域或地区。 指定的文本将被追加到模型所提取的地址中。</para>
-		/// <para>定位器将使用位置区域信息来识别地址所在的地区或地理区域并生成更理想的结果。</para>
+		/// <para>The geographic region or zone in which the addresses are expected to be located. The specified text will be appended to the address extracted by the model.</para>
+		/// <para>The locator uses the location zone information to identify the region or geographic area in which the address is located and produces better results.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Input Locator</para>
-		/// <para>将用于对输入文本文档中发现的地址进行地理编码的定位器。 将为成功进行地理编码并存储在输出要素类中的每个地址生成一个点。</para>
+		/// <para>The locator that will be used to geocode addresses found in the input text documents. A point is generated for each address that is geocoded successfully and stored in the output feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEAddressLocator()]

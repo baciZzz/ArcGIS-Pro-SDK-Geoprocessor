@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Upgrade Workflow Database</para>
-	/// <para>升级工作流数据库</para>
-	/// <para>使用最新方案和配置升级现有 Workflow Manager (Classic) 数据库。Workflow Manager (Classic) 数据库用于存储工作管理系统的作业和配置信息，以及一个用于存储作业感兴趣位置 (LOI) 几何的要素类。</para>
+	/// <para>Upgrade Workflow Database</para>
+	/// <para>Upgrades an existing Workflow Manager (Classic) database with the latest  schema and configuration. The Workflow Manager (Classic) database is used to store the job and configuration information for your work management system and one feature class that is used to store the geometries for the location of interest (LOI) for your jobs.</para>
 	/// </summary>
 	public class UpgradeWorkflowDatabase : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		/// <param name="InputDatabaseConnection">
 		/// <para>Input Database Connection</para>
-		/// <para>Workflow Manager (Classic) 数据库企业级地理数据库连接文件的位置，其中包含 Workflow Manager (Classic) 系统表。该连接文件必须直接连接到数据库，并且应由数据库所有者建立此连接。</para>
+		/// <para>The location of the enterprise geodatabase connection file to the Workflow Manager (Classic) database, which contains Workflow Manager (Classic) system tables. The connection file must connect directly to the database, and the connection should be made as a database owner.</para>
 		/// </param>
 		public UpgradeWorkflowDatabase(object InputDatabaseConnection)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 升级工作流数据库</para>
+		/// <para>Tool Display Name : Upgrade Workflow Database</para>
 		/// </summary>
-		public override string DisplayName() => "升级工作流数据库";
+		public override string DisplayName() => "Upgrade Workflow Database";
 
 		/// <summary>
 		/// <para>Tool Name : UpgradeWorkflowDatabase</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
-		/// <para>Workflow Manager (Classic) 数据库企业级地理数据库连接文件的位置，其中包含 Workflow Manager (Classic) 系统表。该连接文件必须直接连接到数据库，并且应由数据库所有者建立此连接。</para>
+		/// <para>The location of the enterprise geodatabase connection file to the Workflow Manager (Classic) database, which contains Workflow Manager (Classic) system tables. The connection file must connect directly to the database, and the connection should be made as a database owner.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -75,9 +75,9 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>User Store</para>
-		/// <para>指定将从中检索用户和角色的用户存储。可从门户导入用户，并将其分配至 Workflow Manager (Classic) 资料档案库中创建的角色。门户用户配置文件信息无法通过 ArcGIS Workflow Manager (Classic) Administrator 进行编辑。可使用传统选项在 Workflow Manager (Classic) 资料档案库中创建用户和角色。使用传统选项时，可从 ArcGIS Workflow Manager (Classic) Administrator 的活动目录中导入用户和角色。</para>
-		/// <para>门户—从您当前登录的门户导入用户。</para>
-		/// <para>传统—可使用 ArcGIS Workflow Manager (Classic) Administrator 在 Workflow Manager (Classic) 资料档案库中创建用户和角色。使用此选项时，将从活动目录导入用户和角色。这是默认设置。</para>
+		/// <para>Specifies the user store from which the users and roles will be retrieved. The users can be imported from a portal and are assigned to roles created in the Workflow Manager (Classic) repository. The portal user profile information cannot be edited using ArcGIS Workflow Manager (Classic) Administrator. The users and roles can be created in the Workflow Manager (Classic) repository using the Traditional option. When using the Traditional option, the users and roles can be imported from the Active Directory in ArcGIS Workflow Manager (Classic) Administrator.</para>
+		/// <para>Portal—The users will be imported from the portal you are currently signed in to.</para>
+		/// <para>Traditional—The users and roles will be created in the Workflow Manager (Classic) repository using ArcGIS Workflow Manager (Classic) Administrator. Users and roles can be imported from the Active Directory when this option is used. This is the default.</para>
 		/// <para><see cref="UserStoreEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -111,17 +111,17 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		public enum UserStoreEnum 
 		{
 			/// <summary>
-			/// <para>传统—可使用 ArcGIS Workflow Manager (Classic) Administrator 在 Workflow Manager (Classic) 资料档案库中创建用户和角色。使用此选项时，将从活动目录导入用户和角色。这是默认设置。</para>
+			/// <para>Traditional—The users and roles will be created in the Workflow Manager (Classic) repository using ArcGIS Workflow Manager (Classic) Administrator. Users and roles can be imported from the Active Directory when this option is used. This is the default.</para>
 			/// </summary>
 			[GPValue("TRADITIONAL")]
-			[Description("传统")]
+			[Description("Traditional")]
 			Traditional,
 
 			/// <summary>
-			/// <para>门户—从您当前登录的门户导入用户。</para>
+			/// <para>Portal—The users will be imported from the portal you are currently signed in to.</para>
 			/// </summary>
 			[GPValue("PORTAL")]
-			[Description("门户")]
+			[Description("Portal")]
 			Portal,
 
 		}

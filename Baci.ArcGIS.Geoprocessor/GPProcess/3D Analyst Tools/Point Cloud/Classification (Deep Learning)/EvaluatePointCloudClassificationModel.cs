@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Evaluate Point Cloud Classification Model</para>
-	/// <para>评估点云分类模型</para>
-	/// <para>使用分类良好的点云作为基线来评估一个或多个点云分类模型的质量，从而比较从每个模型获得的分类结果。</para>
+	/// <para>Evaluate Point Cloud Classification Model</para>
+	/// <para>Evaluates the quality of one or more point cloud classification models using a well-classified point cloud as a baseline for comparing the classification results obtained from each model.</para>
 	/// </summary>
 	public class EvaluatePointCloudClassificationModel : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTrainedModel">
 		/// <para>Input Model Definition</para>
-		/// <para>将在评估过程中使用的点云分类模型和批量大小。</para>
+		/// <para>The point cloud classification models and batch sizes that will be used during the evaluation process.</para>
 		/// </param>
 		/// <param name="InPointCloud">
 		/// <para>Reference Point Cloud</para>
-		/// <para>将用于评估分类模型的点云。</para>
+		/// <para>The point cloud that will be used to evaluate the classification models.</para>
 		/// </param>
 		/// <param name="TargetFolder">
 		/// <para>Target Folder</para>
-		/// <para>将用于存储汇总评估结果的文件的目录。</para>
+		/// <para>The directory that will store the files which summarize the evaluation results.</para>
 		/// </param>
 		/// <param name="BaseName">
 		/// <para>Base Name</para>
-		/// <para>将用于汇总评估结果的每个输出文件的文件名前缀。</para>
+		/// <para>The file name prefix that will be used for each of the output files summarizing the evaluation results.</para>
 		/// </param>
 		public EvaluatePointCloudClassificationModel(object InTrainedModel, object InPointCloud, object TargetFolder, object BaseName)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 评估点云分类模型</para>
+		/// <para>Tool Display Name : Evaluate Point Cloud Classification Model</para>
 		/// </summary>
-		public override string DisplayName() => "评估点云分类模型";
+		public override string DisplayName() => "Evaluate Point Cloud Classification Model";
 
 		/// <summary>
 		/// <para>Tool Name : EvaluatePointCloudClassificationModel</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Model Definition</para>
-		/// <para>将在评估过程中使用的点云分类模型和批量大小。</para>
+		/// <para>The point cloud classification models and batch sizes that will be used during the evaluation process.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Reference Point Cloud</para>
-		/// <para>将用于评估分类模型的点云。</para>
+		/// <para>The point cloud that will be used to evaluate the classification models.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Target Folder</para>
-		/// <para>将用于存储汇总评估结果的文件的目录。</para>
+		/// <para>The directory that will store the files which summarize the evaluation results.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Base Name</para>
-		/// <para>将用于汇总评估结果的每个输出文件的文件名前缀。</para>
+		/// <para>The file name prefix that will be used for each of the output files summarizing the evaluation results.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Processing Boundary</para>
-		/// <para>用于描绘将用于评估分类模型的参考点云部分的面要素。</para>
+		/// <para>The polygon feature that delineates the portions of the reference point cloud that will be used for evaluating the classification models.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Point Cloud Class Remapping</para>
-		/// <para>参考点云中的类代码必须与正在评估的模型中的类代码相匹配。 当类代码不匹配时，使用此参数将点云中的不同类代码与正在评估的模型中支持的类相关联。</para>
+		/// <para>The class codes from the reference point cloud must match the class codes in the models being evaluated. When the class codes do not match, use this parameter to associate the differing class codes in the point cloud with the classes that are supported in the models being evaluated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Reference Surface</para>
-		/// <para>将用于为点云数据中的每个点提供相对高度值的栅格表面。 与栅格不重叠的点将在分析中忽略。</para>
+		/// <para>The raster surface that will be used to provide relative height values for each point in the point cloud data. Points that do not overlap with the raster will be omitted from the analysis.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -162,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Excluded Class Codes</para>
-		/// <para>将从处理过程中排除的类代码。 可以指定 0 到 255 范围内的任何值。</para>
+		/// <para>The class codes that will be excluded from processing. Any value in the range of 0 to 255 can be specified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]

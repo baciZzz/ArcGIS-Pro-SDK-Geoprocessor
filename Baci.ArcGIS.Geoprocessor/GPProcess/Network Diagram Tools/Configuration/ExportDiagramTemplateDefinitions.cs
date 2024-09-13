@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Export Diagram Template Definitions</para>
-	/// <para>导出逻辑示意图模板定义</para>
-	/// <para>将网络逻辑示意图规则、布局定义和网络逻辑示意图图层定义分别导出到 .ndbd 和 .ndld 文件。</para>
+	/// <para>Export Diagram Template Definitions</para>
+	/// <para>Exports the network diagram rule and layout definitions and the network diagram layer definition to .ndbd and .ndld files, respectively.</para>
 	/// </summary>
 	public class ExportDiagramTemplateDefinitions : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>参考要导出的逻辑示意图模板定义的 utility network or trace network。</para>
+		/// <para>The utility network or trace network referencing the diagram template definitions to export.</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>具有要导出的定义的逻辑示意图模板的名称。</para>
+		/// <para>The name of the diagram template with definitions to be exported.</para>
 		/// </param>
 		public ExportDiagramTemplateDefinitions(object InUtilityNetwork, object TemplateName)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 导出逻辑示意图模板定义</para>
+		/// <para>Tool Display Name : Export Diagram Template Definitions</para>
 		/// </summary>
-		public override string DisplayName() => "导出逻辑示意图模板定义";
+		public override string DisplayName() => "Export Diagram Template Definitions";
 
 		/// <summary>
 		/// <para>Tool Name : ExportDiagramTemplateDefinitions</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>参考要导出的逻辑示意图模板定义的 utility network or trace network。</para>
+		/// <para>The utility network or trace network referencing the diagram template definitions to export.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>具有要导出的定义的逻辑示意图模板的名称。</para>
+		/// <para>The name of the diagram template with definitions to be exported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Output Rule and Layout Definitions File</para>
-		/// <para>要创建的网络逻辑示意图规则和布局定义文件 (.ndbd)。</para>
+		/// <para>The network diagram rule and layout definitions file (.ndbd) to be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Output Diagram Layer Definition File</para>
-		/// <para>要创建的网络逻辑示意图图层定义文件 (.ndld)。</para>
+		/// <para>The network diagram layer definition file (.ndld) to be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]

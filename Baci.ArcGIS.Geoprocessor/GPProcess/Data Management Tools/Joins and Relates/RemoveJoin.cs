@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Join</para>
-	/// <para>移除连接</para>
-	/// <para>从要素图层或表视图中移除连接。</para>
+	/// <para>Remove Join</para>
+	/// <para>Removes a join from a feature layer or table view.</para>
 	/// </summary>
 	public class RemoveJoin : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InLayerOrView">
 		/// <para>Layer Name or Table View</para>
-		/// <para>要移除连接的图层或表视图。</para>
+		/// <para>The layer or table view from which the join will be removed.</para>
 		/// </param>
 		public RemoveJoin(object InLayerOrView)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 移除连接</para>
+		/// <para>Tool Display Name : Remove Join</para>
 		/// </summary>
-		public override string DisplayName() => "移除连接";
+		public override string DisplayName() => "Remove Join";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveJoin</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Layer Name or Table View</para>
-		/// <para>要移除连接的图层或表视图。</para>
+		/// <para>The layer or table view from which the join will be removed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -74,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Join</para>
-		/// <para>要移除的连接。</para>
+		/// <para>The join to be removed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

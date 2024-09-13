@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Set Root Junction By Attribute Rule</para>
-	/// <para>添加按属性设置根交汇点规则</para>
-	/// <para>用于添加逻辑示意图规则，以在基于现有模板构建逻辑示意图的过程中自动标记逻辑示意图交汇点。此规则可指定基于特定交汇点源类或对象表的根交汇点，并使用其属性进行过滤。</para>
+	/// <para>Add Set Root Junction By Attribute Rule</para>
+	/// <para>Adds a diagram rule to automatically flag diagram junctions as root junctions during diagram building based on an existing template. This rule specifies root junctions based on a particular junction source class or object table and filters using their attributes.</para>
 	/// </summary>
 	public class AddSetRootJunctionByAttributeRule : AbstractGPProcess
 	{
@@ -21,22 +21,22 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
+		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>要修改的逻辑示意图模板名称</para>
+		/// <para>The name of the diagram template that will be modified.</para>
 		/// </param>
 		/// <param name="IsActive">
 		/// <para>Active</para>
-		/// <para>指定在基于指定模板生成并更新逻辑示意图时，规则是否将处于激活状态。</para>
-		/// <para>选中 - 在基于输入模板生成并更新逻辑示意图的过程中，添加的规则将会变为激活状态。 这是默认设置。</para>
-		/// <para>未选中 - 在基于输入模板生成或更新逻辑示意图的过程中，添加的规则将不会变为激活状态。</para>
+		/// <para>Specifies whether the rule will be active when generating and updating diagrams based on the specified template.</para>
+		/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
+		/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </param>
 		/// <param name="JunctionSource">
 		/// <para>Junction Source to Select</para>
-		/// <para>要处理的网络交汇点源类或对象表。与属于此源类或对象表的网络要素相关的所有逻辑示意图交汇点均为根交汇点候选项。</para>
+		/// <para>The network junction source class or object table to process. All diagram junctions related to network features or objects that belong to this source class or table are root junction candidates.</para>
 		/// </param>
 		public AddSetRootJunctionByAttributeRule(object InUtilityNetwork, object TemplateName, object IsActive, object JunctionSource)
 		{
@@ -47,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 添加按属性设置根交汇点规则</para>
+		/// <para>Tool Display Name : Add Set Root Junction By Attribute Rule</para>
 		/// </summary>
-		public override string DisplayName() => "添加按属性设置根交汇点规则";
+		public override string DisplayName() => "Add Set Root Junction By Attribute Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AddSetRootJunctionByAttributeRule</para>
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
+		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>要修改的逻辑示意图模板名称</para>
+		/// <para>The name of the diagram template that will be modified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -99,9 +99,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Active</para>
-		/// <para>指定在基于指定模板生成并更新逻辑示意图时，规则是否将处于激活状态。</para>
-		/// <para>选中 - 在基于输入模板生成并更新逻辑示意图的过程中，添加的规则将会变为激活状态。 这是默认设置。</para>
-		/// <para>未选中 - 在基于输入模板生成或更新逻辑示意图的过程中，添加的规则将不会变为激活状态。</para>
+		/// <para>Specifies whether the rule will be active when generating and updating diagrams based on the specified template.</para>
+		/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
+		/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Junction Source to Select</para>
-		/// <para>要处理的网络交汇点源类或对象表。与属于此源类或对象表的网络要素相关的所有逻辑示意图交汇点均为根交汇点候选项。</para>
+		/// <para>The network junction source class or object table to process. All diagram junctions related to network features or objects that belong to this source class or table are root junction candidates.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>可选 SQL 表达式，用于从根交汇点候选项中过滤出基于输入模板的逻辑示意图中的预期根交汇点。有关 SQL 语法的详细信息，请参阅在 ArcGIS 中使用的查询表达式的 SQL 参考。</para>
+		/// <para>An optional SQL expression used to filter out the expected root junctions from the root junction candidates in the diagrams based on the input template. For more information on SQL syntax, see SQL reference for query expressions used in ArcGIS.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Description</para>
-		/// <para>规则的描述。</para>
+		/// <para>The description of the rule.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -155,14 +155,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsActiveEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ACTIVE")]
 			ACTIVE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INACTIVE")]

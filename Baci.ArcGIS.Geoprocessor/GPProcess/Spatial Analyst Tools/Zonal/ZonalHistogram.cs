@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Zonal Histogram</para>
-	/// <para>区域直方图</para>
-	/// <para>创建显示各唯一区域值输入中的像元值频数分布的表和直方图。</para>
+	/// <para>Zonal Histogram</para>
+	/// <para>Creates a table and a histogram graph that show the frequency distribution of cell values on the value input for each unique zone.</para>
 	/// </summary>
 	public class ZonalHistogram : AbstractGPProcess
 	{
@@ -21,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InZoneData">
 		/// <para>Input raster or feature zone data</para>
-		/// <para>定义区域的数据集。</para>
-		/// <para>可通过整型栅格或要素图层来定义区域。</para>
+		/// <para>The dataset that defines the zones.</para>
+		/// <para>The zones can be defined by an integer raster or a feature layer.</para>
 		/// </param>
 		/// <param name="ZoneField">
 		/// <para>Zone field</para>
-		/// <para>包含定义每个区域的值的字段。</para>
-		/// <para>该字段可以是区域数据集的整型字段或字符串型字段。</para>
+		/// <para>The field that contains the values that define each zone.</para>
+		/// <para>It can be an integer or a string field of the zone dataset.</para>
 		/// </param>
 		/// <param name="InValueRaster">
 		/// <para>Input value raster</para>
-		/// <para>包含用于创建直方图的值的栅格。</para>
+		/// <para>The raster that contains the values used to create the histogram.</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output table</para>
-		/// <para>输出表文件。</para>
-		/// <para>表的格式由输出位置和路径确定。 默认情况下，如果在地理数据库工作空间中，则输出将是一个地理数据库表；如果在文件工作空间中，则输出将为 dBASE 表。</para>
-		/// <para>根据表中的信息创建可选图形输出。</para>
+		/// <para>The output table file.</para>
+		/// <para>The format of the table is determined by the output location and path. By default, the output will be a geodatabase table if in a geodatabase workspace, and a dBASE table if in a file workspace.</para>
+		/// <para>The optional graph output is created from the information in the table.</para>
 		/// </param>
 		public ZonalHistogram(object InZoneData, object ZoneField, object InValueRaster, object OutTable)
 		{
@@ -48,9 +48,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 区域直方图</para>
+		/// <para>Tool Display Name : Zonal Histogram</para>
 		/// </summary>
-		public override string DisplayName() => "区域直方图";
+		public override string DisplayName() => "Zonal Histogram";
 
 		/// <summary>
 		/// <para>Tool Name : ZonalHistogram</para>
@@ -84,8 +84,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or feature zone data</para>
-		/// <para>定义区域的数据集。</para>
-		/// <para>可通过整型栅格或要素图层来定义区域。</para>
+		/// <para>The dataset that defines the zones.</para>
+		/// <para>The zones can be defined by an integer raster or a feature layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -97,8 +97,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Zone field</para>
-		/// <para>包含定义每个区域的值的字段。</para>
-		/// <para>该字段可以是区域数据集的整型字段或字符串型字段。</para>
+		/// <para>The field that contains the values that define each zone.</para>
+		/// <para>It can be an integer or a string field of the zone dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input value raster</para>
-		/// <para>包含用于创建直方图的值的栅格。</para>
+		/// <para>The raster that contains the values used to create the histogram.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -120,9 +120,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output table</para>
-		/// <para>输出表文件。</para>
-		/// <para>表的格式由输出位置和路径确定。 默认情况下，如果在地理数据库工作空间中，则输出将是一个地理数据库表；如果在文件工作空间中，则输出将为 dBASE 表。</para>
-		/// <para>根据表中的信息创建可选图形输出。</para>
+		/// <para>The output table file.</para>
+		/// <para>The format of the table is determined by the output location and path. By default, the output will be a geodatabase table if in a geodatabase workspace, and a dBASE table if in a file workspace.</para>
+		/// <para>The optional graph output is created from the information in the table.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -130,8 +130,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output graph name</para>
-		/// <para>用于显示的输出图形的名称。</para>
-		/// <para>将在独立表下的内容窗格中列出该图。</para>
+		/// <para>The name of the output graph for display.</para>
+		/// <para>The graph is listed in the Contents pane under Standalone Tables.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -139,9 +139,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Zones as rows in output table</para>
-		/// <para>指定输入值栅格中的值在输出表中的表示方式。</para>
-		/// <para>未选中 - 区域将表示为字段。这是默认设置。</para>
-		/// <para>选中 - 区域将表示为行。</para>
+		/// <para>Specifies how the values from the input value raster will be represented in the output table.</para>
+		/// <para>Unchecked—Zones will be represented as fields. This is the default.</para>
+		/// <para>Checked—Zones will be represented as rows.</para>
 		/// <para><see cref="ZonesAsRowsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -166,14 +166,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ZonesAsRowsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Zones will be represented as fields. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ZONES_AS_FIELDS")]
 			ZONES_AS_FIELDS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Zones will be represented as rows.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ZONES_AS_ROWS")]

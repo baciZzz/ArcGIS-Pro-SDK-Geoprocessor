@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Analyze Mosaic Dataset</para>
-	/// <para>分析镶嵌数据集</para>
-	/// <para>检查镶嵌数据集是否存在错误以及可能的改进。</para>
+	/// <para>Analyze Mosaic Dataset</para>
+	/// <para>Performs checks on a mosaic dataset for errors and possible improvements.</para>
 	/// </summary>
 	public class AnalyzeMosaicDataset : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>想要分析的镶嵌数据集。</para>
+		/// <para>The mosaic dataset you want to analyze.</para>
 		/// </param>
 		public AnalyzeMosaicDataset(object InMosaicDataset)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 分析镶嵌数据集</para>
+		/// <para>Tool Display Name : Analyze Mosaic Dataset</para>
 		/// </summary>
-		public override string DisplayName() => "分析镶嵌数据集";
+		public override string DisplayName() => "Analyze Mosaic Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : AnalyzeMosaicDataset</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>想要分析的镶嵌数据集。</para>
+		/// <para>The mosaic dataset you want to analyze.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Query Definition</para>
-		/// <para>限制在此镶嵌数据集中对特定栅格数据集进行分析的 SQL 语句。</para>
+		/// <para>An SQL statement that confines your analysis to specific raster datasets within this mosaic dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -81,17 +81,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Checks Performed</para>
-		/// <para>选择想要分析是否存在已知问题的镶嵌数据集部分。</para>
-		/// <para>轮廓线几何— 对每个选定镶嵌数据集项目的轮廓线几何进行分析。该项为默认选中。</para>
-		/// <para>函数链— 对每个选定镶嵌数据集项目的函数链进行分析。</para>
-		/// <para>栅格— 分析原始栅格数据集。该项为默认选中。</para>
-		/// <para>损坏的路径— 检查是否存在损坏的路径。该项为默认选中。</para>
-		/// <para>源的有效性— 对与选定镶嵌数据集中每个镶嵌数据集项目相关联的源数据的潜在问题进行分析。此方法可以有效检测同步工作流期间可能发生的问题。</para>
-		/// <para>失效概视图— 基础源数据更改后概视图失效。分析镶嵌数据集后，可通过右键单击错误，然后在快捷菜单中单击选择关联项目来选择失效的项目。</para>
-		/// <para>金字塔— 对与选定镶嵌数据集中的每个镶嵌数据集项目相关联的栅格金字塔进行分析。测试辅助文件存储在栅格代理位置时是否会断开连接。</para>
-		/// <para>统计— 测试如果辅助统计文件存储在栅格代理位置中是否会断开连接。当启用 Gram-Schmidt 全色锐化方法时，对与栅格相关联的协方差矩阵进行分析。将镶嵌数据集项目的辐射像素深度与镶嵌数据集的像素深度进行对比分析。</para>
-		/// <para>性能— 提高性能的因素包括传输期间压缩和通过多种栅格函数缓存项目。</para>
-		/// <para>信息— 生成有关镶嵌数据集的常规信息。</para>
+		/// <para>Choose which parts of the mosaic dataset you want to analyze for known issues.</para>
+		/// <para>Footprint geometry— Analyze the footprint geometry of each selected mosaic dataset item. This is checked on by default.</para>
+		/// <para>Function chains— Analyze the function chains for each selected mosaic dataset item.</para>
+		/// <para>Raster— Analyze the original raster datasets. This is checked on by default.</para>
+		/// <para>Broken paths— Check for broken paths. This is checked on by default.</para>
+		/// <para>Source validity— Analyze potential problems with the source data associated with each mosaic dataset item in the selected mosaic dataset. This is a good way to detect issues that may arise during synchronization workflows.</para>
+		/// <para>Stale overviews— Overviews are stale when the underlying source data has changed. Once the mosaic dataset is analyzed, you can select which items are stale by right-clicking on the error and clicking Select Associated Items on the context menu.</para>
+		/// <para>Pyramids— Analyze the raster pyramids associated with each mosaic dataset item in the selected mosaic dataset. Test for disconnected auxiliary files, which can occur when they are stored in a raster proxy location.</para>
+		/// <para>Statistics— Test for disconnected auxiliary statistics files if they are stored in the raster proxy location. Analyze the covariance matrix associated with the raster, when the Gram-Schmidt pan-sharpening method is enabled. Analyze the radiometric pixel depth of a mosaic dataset item against the pixel depth of the mosaic dataset.</para>
+		/// <para>Performance— Factors that increase performance include compression during transmission and caching items with many raster functions.</para>
+		/// <para>Information— Generate general information about the mosaic dataset.</para>
 		/// <para><see cref="CheckerKeywordsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -124,73 +124,73 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CheckerKeywordsEnum 
 		{
 			/// <summary>
-			/// <para>轮廓线几何— 对每个选定镶嵌数据集项目的轮廓线几何进行分析。该项为默认选中。</para>
+			/// <para>Footprint geometry— Analyze the footprint geometry of each selected mosaic dataset item. This is checked on by default.</para>
 			/// </summary>
 			[GPValue("FOOTPRINT")]
-			[Description("轮廓线几何")]
+			[Description("Footprint geometry")]
 			Footprint_geometry,
 
 			/// <summary>
-			/// <para>函数链— 对每个选定镶嵌数据集项目的函数链进行分析。</para>
+			/// <para>Function chains— Analyze the function chains for each selected mosaic dataset item.</para>
 			/// </summary>
 			[GPValue("FUNCTION")]
-			[Description("函数链")]
+			[Description("Function chains")]
 			Function_chains,
 
 			/// <summary>
-			/// <para>栅格— 分析原始栅格数据集。该项为默认选中。</para>
+			/// <para>Raster— Analyze the original raster datasets. This is checked on by default.</para>
 			/// </summary>
 			[GPValue("RASTER")]
-			[Description("栅格")]
+			[Description("Raster")]
 			Raster,
 
 			/// <summary>
-			/// <para>损坏的路径— 检查是否存在损坏的路径。该项为默认选中。</para>
+			/// <para>Broken paths— Check for broken paths. This is checked on by default.</para>
 			/// </summary>
 			[GPValue("PATHS")]
-			[Description("损坏的路径")]
+			[Description("Broken paths")]
 			Broken_paths,
 
 			/// <summary>
-			/// <para>源的有效性— 对与选定镶嵌数据集中每个镶嵌数据集项目相关联的源数据的潜在问题进行分析。此方法可以有效检测同步工作流期间可能发生的问题。</para>
+			/// <para>Source validity— Analyze potential problems with the source data associated with each mosaic dataset item in the selected mosaic dataset. This is a good way to detect issues that may arise during synchronization workflows.</para>
 			/// </summary>
 			[GPValue("SOURCE_VALIDITY")]
-			[Description("源的有效性")]
+			[Description("Source validity")]
 			Source_validity,
 
 			/// <summary>
-			/// <para>失效概视图— 基础源数据更改后概视图失效。分析镶嵌数据集后，可通过右键单击错误，然后在快捷菜单中单击选择关联项目来选择失效的项目。</para>
+			/// <para>Stale overviews— Overviews are stale when the underlying source data has changed. Once the mosaic dataset is analyzed, you can select which items are stale by right-clicking on the error and clicking Select Associated Items on the context menu.</para>
 			/// </summary>
 			[GPValue("STALE")]
-			[Description("失效概视图")]
+			[Description("Stale overviews")]
 			Stale_overviews,
 
 			/// <summary>
-			/// <para>金字塔— 对与选定镶嵌数据集中的每个镶嵌数据集项目相关联的栅格金字塔进行分析。测试辅助文件存储在栅格代理位置时是否会断开连接。</para>
+			/// <para>Pyramids— Analyze the raster pyramids associated with each mosaic dataset item in the selected mosaic dataset. Test for disconnected auxiliary files, which can occur when they are stored in a raster proxy location.</para>
 			/// </summary>
 			[GPValue("PYRAMIDS")]
-			[Description("金字塔")]
+			[Description("Pyramids")]
 			Pyramids,
 
 			/// <summary>
-			/// <para>统计— 测试如果辅助统计文件存储在栅格代理位置中是否会断开连接。当启用 Gram-Schmidt 全色锐化方法时，对与栅格相关联的协方差矩阵进行分析。将镶嵌数据集项目的辐射像素深度与镶嵌数据集的像素深度进行对比分析。</para>
+			/// <para>Statistics— Test for disconnected auxiliary statistics files if they are stored in the raster proxy location. Analyze the covariance matrix associated with the raster, when the Gram-Schmidt pan-sharpening method is enabled. Analyze the radiometric pixel depth of a mosaic dataset item against the pixel depth of the mosaic dataset.</para>
 			/// </summary>
 			[GPValue("STATISTICS")]
-			[Description("统计")]
+			[Description("Statistics")]
 			Statistics,
 
 			/// <summary>
-			/// <para>性能— 提高性能的因素包括传输期间压缩和通过多种栅格函数缓存项目。</para>
+			/// <para>Performance— Factors that increase performance include compression during transmission and caching items with many raster functions.</para>
 			/// </summary>
 			[GPValue("PERFORMANCE")]
-			[Description("性能")]
+			[Description("Performance")]
 			Performance,
 
 			/// <summary>
-			/// <para>信息— 生成有关镶嵌数据集的常规信息。</para>
+			/// <para>Information— Generate general information about the mosaic dataset.</para>
 			/// </summary>
 			[GPValue("INFORMATION")]
-			[Description("信息")]
+			[Description("Information")]
 			Information,
 
 		}

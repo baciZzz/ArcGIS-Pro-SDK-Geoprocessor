@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Update Portal Dataset Owner</para>
-	/// <para>更新门户数据集所有者</para>
-	/// <para>用于将数据集的门户所有者更新为其他用户。</para>
+	/// <para>Update Portal Dataset Owner</para>
+	/// <para>Updates the portal owner of a dataset to another user.</para>
 	/// </summary>
 	public class UpdatePortalDatasetOwner : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>将更新门户所有者的输入数据集。</para>
+		/// <para>The input dataset for which the portal owner will be updated.</para>
 		/// </param>
 		/// <param name="TargetOwner">
 		/// <para>Target Owner</para>
-		/// <para>将成为数据集的新门户所有者的门户用户的名称。</para>
+		/// <para>The name of the portal user who will be the new portal owner of the dataset.</para>
 		/// </param>
 		public UpdatePortalDatasetOwner(object InDataset, object TargetOwner)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 更新门户数据集所有者</para>
+		/// <para>Tool Display Name : Update Portal Dataset Owner</para>
 		/// </summary>
-		public override string DisplayName() => "更新门户数据集所有者";
+		public override string DisplayName() => "Update Portal Dataset Owner";
 
 		/// <summary>
 		/// <para>Tool Name : UpdatePortalDatasetOwner</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>将更新门户所有者的输入数据集。</para>
+		/// <para>The input dataset for which the portal owner will be updated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Owner</para>
-		/// <para>将成为数据集的新门户所有者的门户用户的名称。</para>
+		/// <para>The name of the portal user who will be the new portal owner of the dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Create Space Time Cube</para>
-	/// <para>创建时空立方体</para>
-	/// <para>通过将一组点聚合到空间时间条柱的方法将其汇总到 netCDF 数据结构中。在每个条柱内计算点计数并聚合指定属性。对于所有条柱位置，评估计数趋势和汇总字段值。</para>
+	/// <para>Create Space Time Cube</para>
+	/// <para>Summarizes a set of points into a netCDF data structure by aggregating them into space-time bins.  Within each bin, the points are counted, and specified attributes are aggregated.  For all bin locations, the trend for counts and summary field values are evaluated.</para>
 	/// </summary>
 	public class CreateSpaceTimeCube : AbstractGPProcess
 	{
@@ -21,20 +21,20 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		/// <param name="PointLayer">
 		/// <para>Point Layer</para>
-		/// <para>将聚合到时空条柱的输入点要素类。</para>
+		/// <para>The input point feature class that will be aggregated into space-time bins.</para>
 		/// </param>
 		/// <param name="OutputName">
 		/// <para>Output Name</para>
-		/// <para>将创建的输出 netCDF 数据立方体，以包含输入要素点数据的计数和汇总。</para>
+		/// <para>The output netCDF data cube that will be created to contain counts and summaries of the input feature point data.</para>
 		/// </param>
 		/// <param name="DistanceInterval">
 		/// <para>Distance Interval</para>
-		/// <para>条柱尺寸将用于聚合点图层。将对相同距离间隔和时间间隔内的所有点进行聚合。</para>
-		/// <para>确定条柱大小的距离。</para>
+		/// <para>The size of the bins will be used to aggregate the Point Layer. All points that fall within the same Distance Interval and Time Interval will be aggregated.</para>
+		/// <para>The distance that will determine the bin size.</para>
 		/// </param>
 		/// <param name="TimeStepInterval">
 		/// <para>Time Interval</para>
-		/// <para>用来表示单个时间步长的秒数、分钟数、小时数、天数、周数或年数。将对相同时间间隔和距离间隔内的所有点进行聚合。此参数的有效条目示例为 1 周、13 天或 1 个月。</para>
+		/// <para>The number of seconds, minutes, hours, days, weeks, or years that will represent a single time step. All points within the same Time Interval and Distance Interval will be aggregated. Examples of valid entries for this parameter are 1 Weeks, 13 Days, or 1 Months.</para>
 		/// </param>
 		public CreateSpaceTimeCube(object PointLayer, object OutputName, object DistanceInterval, object TimeStepInterval)
 		{
@@ -45,9 +45,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建时空立方体</para>
+		/// <para>Tool Display Name : Create Space Time Cube</para>
 		/// </summary>
-		public override string DisplayName() => "创建时空立方体";
+		public override string DisplayName() => "Create Space Time Cube";
 
 		/// <summary>
 		/// <para>Tool Name : CreateSpaceTimeCube</para>
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Point Layer</para>
-		/// <para>将聚合到时空条柱的输入点要素类。</para>
+		/// <para>The input point feature class that will be aggregated into space-time bins.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>将创建的输出 netCDF 数据立方体，以包含输入要素点数据的计数和汇总。</para>
+		/// <para>The output netCDF data cube that will be created to contain counts and summaries of the input feature point data.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -100,8 +100,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Distance Interval</para>
-		/// <para>条柱尺寸将用于聚合点图层。将对相同距离间隔和时间间隔内的所有点进行聚合。</para>
-		/// <para>确定条柱大小的距离。</para>
+		/// <para>The size of the bins will be used to aggregate the Point Layer. All points that fall within the same Distance Interval and Time Interval will be aggregated.</para>
+		/// <para>The distance that will determine the bin size.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Time Interval</para>
-		/// <para>用来表示单个时间步长的秒数、分钟数、小时数、天数、周数或年数。将对相同时间间隔和距离间隔内的所有点进行聚合。此参数的有效条目示例为 1 周、13 天或 1 个月。</para>
+		/// <para>The number of seconds, minutes, hours, days, weeks, or years that will represent a single time step. All points within the same Time Interval and Distance Interval will be aggregated. Examples of valid entries for this parameter are 1 Weeks, 13 Days, or 1 Months.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTimeUnit()]
@@ -119,10 +119,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Time Interval Alignment</para>
-		/// <para>指定如何根据时间间隔 （Python 中的 time_step_interval）参数进行聚合。</para>
-		/// <para>结束时间—时间步长将与最后一次时间事件对齐，并向后聚合时间。</para>
-		/// <para>开始时间—时间步长将与第一次时间事件对齐，并向前聚合时间。</para>
-		/// <para>参考时间—时间步长将与指定日期或时间对齐。如果输入要素中的所有点具有的时间戳大于指定的参考时间（或时间戳刚好位于输入要素的开始时间），则时间步长间隔将以该参考时间为起始时间，并向前聚合时间（与使用起始时间对齐的情况相同）。如果输入要素中的所有点具有的时间戳小于指定的参考时间（或时间戳刚好位于输入要素的结束时间），则时间步长间隔将以该参考时间为结束时间，并向后聚合时间（与使用结束时间对齐的情况相同）。如果指定的参考时间处于数据时间范围的中间，则将以提供的参考时间结束创建时间步长间隔（与使用结束时间对齐的情况相同）；其他间隔将在参考时间前后进行创建，直到覆盖数据的完整时间范围为止。</para>
+		/// <para>Specifies how aggregation will occur based on the Time Interval (time_step_interval in Python) parameter.</para>
+		/// <para>End time—Time steps will align to the last time event and aggregate back in time.</para>
+		/// <para>Start time—Time steps will align to the first time event and aggregate forward in time.</para>
+		/// <para>Reference time—Time steps will align to a specified date or time. If all points in the input features have a time stamp larger than the specified reference time (or it falls exactly on the start time of the input features), the time-step interval will begin with that reference time and aggregate forward in time (as occurs with the Start time alignment). If all points in the input features have a time stamp smaller than the specified reference time (or it falls exactly on the end time of the input features), the time-step interval will end with that reference time and aggregate backward in time (as occurs with the End time alignment). If the specified reference time is in the middle of the time extent of the data, a time-step interval will be created ending with the reference time provided (as occurs with the End time alignment); additional intervals will be created both before and after the reference time until the full time extent of the data is covered.</para>
 		/// <para><see cref="TimeStepIntervalAlignmentEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Reference Time</para>
-		/// <para>将用于对齐时间步长间隔的日期或时间。例如，如果要按星期从星期一至星期天对数据进行归类，请将星期天的午夜设置为参考时间，以确保条柱在星期天和星期一之间的午夜进行划分。</para>
+		/// <para>The date or time that will be used to align the time-step intervals. For example, to bin the data weekly, Monday to Sunday, set a reference time of Sunday at midnight to ensure that bins break between Sunday and Monday at midnight.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -140,19 +140,19 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Summary Fields</para>
-		/// <para>包含将用于在聚合到时空立方体时计算指定统计数据的属性值的数值字段。可以指定多项统计和字段组合。空值将被排除在所有统计计算之外。</para>
-		/// <para>可用统计数据类型如下：</para>
-		/// <para>总和 - 添加每个条柱中指定字段的合计值。</para>
-		/// <para>平均值 - 计算每个条柱中指定字段的平均值。</para>
-		/// <para>最小值 - 查找每个条柱中指定字段所有记录的最小值。</para>
-		/// <para>最大值 - 查找每个条柱中指定字段所有记录的最大值。</para>
-		/// <para>标准差 - 查找每个条柱中指定字段的值的标准差。</para>
-		/// <para>可用填充类型如下：</para>
-		/// <para>零 - 用零填充空条柱。</para>
-		/// <para>Spatial_Neighbors - 用空间相邻要素平均值填充空条柱。</para>
-		/// <para>时空邻域 - 用时空相邻要素平均值填充空条柱。</para>
-		/// <para>时间趋势 - 使用一元样条插值算法填充空条柱。</para>
-		/// <para>任何汇总字段中出现的空值都将导致从分析中排除这些要素。如果每个条柱中的点数均为分析策略的一部分，需要考虑创建单独的立方体，针对计数（不含汇总字段）创建一个，并针对汇总字段创建一个。如果每个汇总字段的空值集不相同，需要考虑为每个汇总字段创建一个单独的立方体。</para>
+		/// <para>The numeric field containing attribute values that will be used to calculate the specified statistic when aggregating into a space time cube. Multiple statistic and field combinations can be specified. Null values are excluded from all statistical calculations.</para>
+		/// <para>Available statistic types are the following:</para>
+		/// <para>Sum—Adds the total value for the specified field within each bin.</para>
+		/// <para>Mean—Calculates the average for the specified field within each bin.</para>
+		/// <para>Minimum—Finds the smallest value for all records of the specified field within each bin.</para>
+		/// <para>Maximum—Finds the largest value for all records of the specified field within each bin.</para>
+		/// <para>Standard deviation—Finds the standard deviation on values in the specified field within each bin.</para>
+		/// <para>Available fill types are the following:</para>
+		/// <para>Zeros—Fills empty bins with zeros.</para>
+		/// <para>Spatial_Neighbors—Fills empty bins with the average value of spatial neighbors.</para>
+		/// <para>Space Time Neighbors—Fills empty bins with the average value of space-time neighbors.</para>
+		/// <para>Temporal Trend—Fills empty bins using an interpolated univariate spline algorithm.</para>
+		/// <para>Null values present in any of the summary fields will result in those features being excluded from the analysis. If count of points in each bin is part of your analysis strategy, consider creating separate cubes, one for the count (without summary fields) and one for summary fields. If the set of null values is different for each summary field, consider creating a separate cube for each summary field.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -183,24 +183,24 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum TimeStepIntervalAlignmentEnum 
 		{
 			/// <summary>
-			/// <para>结束时间—时间步长将与最后一次时间事件对齐，并向后聚合时间。</para>
+			/// <para>End time—Time steps will align to the last time event and aggregate back in time.</para>
 			/// </summary>
 			[GPValue("END_TIME")]
-			[Description("结束时间")]
+			[Description("End time")]
 			End_time,
 
 			/// <summary>
-			/// <para>开始时间—时间步长将与第一次时间事件对齐，并向前聚合时间。</para>
+			/// <para>Start time—Time steps will align to the first time event and aggregate forward in time.</para>
 			/// </summary>
 			[GPValue("START_TIME")]
-			[Description("开始时间")]
+			[Description("Start time")]
 			Start_time,
 
 			/// <summary>
-			/// <para>参考时间—时间步长将与指定日期或时间对齐。如果输入要素中的所有点具有的时间戳大于指定的参考时间（或时间戳刚好位于输入要素的开始时间），则时间步长间隔将以该参考时间为起始时间，并向前聚合时间（与使用起始时间对齐的情况相同）。如果输入要素中的所有点具有的时间戳小于指定的参考时间（或时间戳刚好位于输入要素的结束时间），则时间步长间隔将以该参考时间为结束时间，并向后聚合时间（与使用结束时间对齐的情况相同）。如果指定的参考时间处于数据时间范围的中间，则将以提供的参考时间结束创建时间步长间隔（与使用结束时间对齐的情况相同）；其他间隔将在参考时间前后进行创建，直到覆盖数据的完整时间范围为止。</para>
+			/// <para>Reference time—Time steps will align to a specified date or time. If all points in the input features have a time stamp larger than the specified reference time (or it falls exactly on the start time of the input features), the time-step interval will begin with that reference time and aggregate forward in time (as occurs with the Start time alignment). If all points in the input features have a time stamp smaller than the specified reference time (or it falls exactly on the end time of the input features), the time-step interval will end with that reference time and aggregate backward in time (as occurs with the End time alignment). If the specified reference time is in the middle of the time extent of the data, a time-step interval will be created ending with the reference time provided (as occurs with the End time alignment); additional intervals will be created both before and after the reference time until the full time extent of the data is covered.</para>
 			/// </summary>
 			[GPValue("REFERENCE_TIME")]
-			[Description("参考时间")]
+			[Description("Reference time")]
 			Reference_time,
 
 		}

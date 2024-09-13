@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Refresh Excel</para>
-	/// <para>刷新 Excel</para>
-	/// <para>刷新 ArcGIS Pro 中的 Microsoft Excel 文件。</para>
+	/// <para>Refresh Excel</para>
+	/// <para>Refreshes a Microsoft Excel file  in ArcGIS Pro.</para>
 	/// </summary>
 	public class RefreshExcel : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InExcelFile">
 		/// <para>Input Excel File</para>
-		/// <para>将刷新 Excel 文件。</para>
+		/// <para>The Excel file that will be refreshed.</para>
 		/// </param>
 		public RefreshExcel(object InExcelFile)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 刷新 Excel</para>
+		/// <para>Tool Display Name : Refresh Excel</para>
 		/// </summary>
-		public override string DisplayName() => "刷新 Excel";
+		public override string DisplayName() => "Refresh Excel";
 
 		/// <summary>
 		/// <para>Tool Name : RefreshExcel</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Excel File</para>
-		/// <para>将刷新 Excel 文件。</para>
+		/// <para>The Excel file that will be refreshed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

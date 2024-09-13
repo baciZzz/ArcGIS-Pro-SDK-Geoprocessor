@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Grouping Analysis</para>
-	/// <para>分组分析</para>
-	/// <para>根据要素属性和可选的空间或时态约束对要素进行分组。</para>
+	/// <para>Grouping Analysis</para>
+	/// <para>Groups features based on feature attributes and optional spatial or temporal constraints.</para>
 	/// </summary>
 	[Obsolete()]
 	public class GroupingAnalysis : AbstractGPProcess
@@ -22,33 +22,33 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InputFeatures">
 		/// <para>Input Features</para>
-		/// <para>要创建组的要素类或要素图层。</para>
+		/// <para>The feature class or feature layer for which you want to create groups.</para>
 		/// </param>
 		/// <param name="UniqueIDField">
 		/// <para>Unique ID Field</para>
-		/// <para>包含输入要素类中每个要素不同值的整型字段。如果没有“唯一 ID”字段，则可以创建一个，方法是向要素类表添加一个整型字段，然后将此字段的值计算为与 FID 或 OBJECTID 字段的值相等。</para>
+		/// <para>An integer field containing a different value for every feature in the input feature class. If you don't have a Unique ID field, you can create one by adding an integer field to your feature class table and calculating the field values to equal the FID or OBJECTID field.</para>
 		/// </param>
 		/// <param name="OutputFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>创建的新输出要素类，其中包含所有要素、指定的分析字段以及一个用于指明每个要素所属组的字段。</para>
+		/// <para>The new output feature class created containing all features, the analysis fields specified, and a field indicating to which group each feature belongs.</para>
 		/// </param>
 		/// <param name="NumberOfGroups">
 		/// <para>Number of Groups</para>
-		/// <para>要创建的组数。 如果多于 15 个组，将禁用输出报表参数。</para>
+		/// <para>The number of groups to create. The Output Report parameter will be disabled for more than 15 groups.</para>
 		/// </param>
 		/// <param name="AnalysisFields">
 		/// <para>Analysis Fields</para>
-		/// <para>用于区分各个组的字段的列表。 如果多于 15 个字段，将禁用输出报表参数。</para>
+		/// <para>A list of fields you want to use to distinguish one group from another. The Output Report parameter will be disabled for more than 15 fields.</para>
 		/// </param>
 		/// <param name="SpatialConstraints">
 		/// <para>Spatial Constraints</para>
-		/// <para>指定是否使用要素之间的空间关系约束创建的组及其约束方式。</para>
-		/// <para>仅邻接边—组中包含相邻的面要素。 只有共享一条边的面才属于同一个群组。</para>
-		/// <para>邻接边拐角—组中包含相邻的面要素。 只有共享一条边或一个折点的面才属于同一个群组。</para>
-		/// <para>Delaunay 三角测量—同一个组中的要素至少具有一个与该组中的另一要素共用的自然邻域。 自然邻域关系基于 Delaunay 三角测量。 从概念上讲，Delaunay 三角测量可以根据要素质心创建不重叠的三角网。 每个要素是一个三角形结点，具有公共边的结点被视为邻域。</para>
-		/// <para>K - 最近邻—同一个组中的要素将相互邻近；每个要素至少是该组中某一其他要素的邻域。 邻域关系基于最近的 K 要素，您可以在此为相邻要素的数目参数指定整型值 K。</para>
-		/// <para>通过文件获取空间权重—空间关系和可选的时态关系通过空间权重文件 (.swm) 进行定义。 使用生成空间权重矩阵或生成网络空间权重工具创建空间权重矩阵文件。</para>
-		/// <para>无空间约束—只能使用数据空间邻域法对要素进行分组。 要素不必在空间或时间上彼此邻近，即可成为同一组的一部分。</para>
+		/// <para>Specifies if and how spatial relationships among features should constrain the groups created.</para>
+		/// <para>Contiguity edges only—Groups contain contiguous polygon features. Only polygons that share an edge can be part of the same group.</para>
+		/// <para>Contiguity edges corners—Groups contain contiguous polygon features. Only polygons that share an edge or a vertex can be part of the same group.</para>
+		/// <para>Delaunay triangulation—Features in the same group will have at least one natural neighbor in common with another feature in the group. Natural neighbor relationships are based on Delaunay Triangulation. Conceptually, Delaunay Triangulation creates a nonoverlapping mesh of triangles from feature centroids. Each feature is a triangle node and nodes that share edges are considered neighbors.</para>
+		/// <para>K nearest neighbors—Features in the same group will be near each other; each feature will be a neighbor of at least one other feature in the group. Neighbor relationships are based on the nearest K features, where you specify an Integer value, K, for the Number of Neighbors parameter.</para>
+		/// <para>Get spatial weights from file—Spatial, and optionally temporal, relationships are defined by a spatial weights file (.swm). Create the spatial weights matrix file using the Generate Spatial Weights Matrix tool or the Generate Network Spatial Weights tool.</para>
+		/// <para>No spatial constraint—Features will be grouped using data space proximity only. Features do not have to be near each other in space or time to be part of the same group.</para>
 		/// <para><see cref="SpatialConstraintsEnum"/></para>
 		/// </param>
 		public GroupingAnalysis(object InputFeatures, object UniqueIDField, object OutputFeatureClass, object NumberOfGroups, object AnalysisFields, object SpatialConstraints)
@@ -62,9 +62,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 分组分析</para>
+		/// <para>Tool Display Name : Grouping Analysis</para>
 		/// </summary>
-		public override string DisplayName() => "分组分析";
+		public override string DisplayName() => "Grouping Analysis";
 
 		/// <summary>
 		/// <para>Tool Name : GroupingAnalysis</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>要创建组的要素类或要素图层。</para>
+		/// <para>The feature class or feature layer for which you want to create groups.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Unique ID Field</para>
-		/// <para>包含输入要素类中每个要素不同值的整型字段。如果没有“唯一 ID”字段，则可以创建一个，方法是向要素类表添加一个整型字段，然后将此字段的值计算为与 FID 或 OBJECTID 字段的值相等。</para>
+		/// <para>An integer field containing a different value for every feature in the input feature class. If you don't have a Unique ID field, you can create one by adding an integer field to your feature class table and calculating the field values to equal the FID or OBJECTID field.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>创建的新输出要素类，其中包含所有要素、指定的分析字段以及一个用于指明每个要素所属组的字段。</para>
+		/// <para>The new output feature class created containing all features, the analysis fields specified, and a field indicating to which group each feature belongs.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Number of Groups</para>
-		/// <para>要创建的组数。 如果多于 15 个组，将禁用输出报表参数。</para>
+		/// <para>The number of groups to create. The Output Report parameter will be disabled for more than 15 groups.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Analysis Fields</para>
-		/// <para>用于区分各个组的字段的列表。 如果多于 15 个字段，将禁用输出报表参数。</para>
+		/// <para>A list of fields you want to use to distinguish one group from another. The Output Report parameter will be disabled for more than 15 fields.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -142,13 +142,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Spatial Constraints</para>
-		/// <para>指定是否使用要素之间的空间关系约束创建的组及其约束方式。</para>
-		/// <para>仅邻接边—组中包含相邻的面要素。 只有共享一条边的面才属于同一个群组。</para>
-		/// <para>邻接边拐角—组中包含相邻的面要素。 只有共享一条边或一个折点的面才属于同一个群组。</para>
-		/// <para>Delaunay 三角测量—同一个组中的要素至少具有一个与该组中的另一要素共用的自然邻域。 自然邻域关系基于 Delaunay 三角测量。 从概念上讲，Delaunay 三角测量可以根据要素质心创建不重叠的三角网。 每个要素是一个三角形结点，具有公共边的结点被视为邻域。</para>
-		/// <para>K - 最近邻—同一个组中的要素将相互邻近；每个要素至少是该组中某一其他要素的邻域。 邻域关系基于最近的 K 要素，您可以在此为相邻要素的数目参数指定整型值 K。</para>
-		/// <para>通过文件获取空间权重—空间关系和可选的时态关系通过空间权重文件 (.swm) 进行定义。 使用生成空间权重矩阵或生成网络空间权重工具创建空间权重矩阵文件。</para>
-		/// <para>无空间约束—只能使用数据空间邻域法对要素进行分组。 要素不必在空间或时间上彼此邻近，即可成为同一组的一部分。</para>
+		/// <para>Specifies if and how spatial relationships among features should constrain the groups created.</para>
+		/// <para>Contiguity edges only—Groups contain contiguous polygon features. Only polygons that share an edge can be part of the same group.</para>
+		/// <para>Contiguity edges corners—Groups contain contiguous polygon features. Only polygons that share an edge or a vertex can be part of the same group.</para>
+		/// <para>Delaunay triangulation—Features in the same group will have at least one natural neighbor in common with another feature in the group. Natural neighbor relationships are based on Delaunay Triangulation. Conceptually, Delaunay Triangulation creates a nonoverlapping mesh of triangles from feature centroids. Each feature is a triangle node and nodes that share edges are considered neighbors.</para>
+		/// <para>K nearest neighbors—Features in the same group will be near each other; each feature will be a neighbor of at least one other feature in the group. Neighbor relationships are based on the nearest K features, where you specify an Integer value, K, for the Number of Neighbors parameter.</para>
+		/// <para>Get spatial weights from file—Spatial, and optionally temporal, relationships are defined by a spatial weights file (.swm). Create the spatial weights matrix file using the Generate Spatial Weights Matrix tool or the Generate Network Spatial Weights tool.</para>
+		/// <para>No spatial constraint—Features will be grouped using data space proximity only. Features do not have to be near each other in space or time to be part of the same group.</para>
 		/// <para><see cref="SpatialConstraintsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -158,9 +158,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Distance Method</para>
-		/// <para>指定计算每个要素与邻近要素之间的距离的方式。</para>
-		/// <para>欧氏—两点间的直线距离</para>
-		/// <para>曼哈顿—沿垂直轴度量的两点间的距离（城市街区），计算方法是对两点的 x 和 y 坐标的差值（绝对值）求和。</para>
+		/// <para>Specifies how distances are calculated from each feature to neighboring features.</para>
+		/// <para>Euclidean—The straight-line distance between two points (as the crow flies)</para>
+		/// <para>Manhattan—The distance between two points measured along axes at right angles (city block); calculated by summing the (absolute) difference between the x- and y-coordinates</para>
 		/// <para><see cref="DistanceMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Number of Neighbors</para>
-		/// <para>当空间约束参数为 K 最近邻域或邻接方法中的一种（仅邻接边或邻接边拐角）时，将启用此参数。 默认的相邻要素数是 8，并且对于 K 最近邻域，此数目不能小于 2。 该值反映在构建组时要考虑的最近邻域候选要素的准确数量。 除非组中的一个其他要素是 K 最近邻域，否则不会将该要素包括在组中。 仅邻接边和邻接边拐角的默认值为 0。 对于邻接方法，该值反映了要考虑的最小邻域候选数量。 如果要素的相邻要素的数目小于指定的相邻要素的数目，则将根据要素质心邻近性获得附加相邻要素。</para>
+		/// <para>This parameter is enabled whenever the Spatial Constraints parameter is K nearest neighbors or one of the contiguity methods (Contiguity edges only or Contiguity edges corners). The default number of neighbors is 8 and cannot be smaller than 2 for K nearest neighbors. This value reflects the exact number of nearest neighbor candidates to consider when building groups. A feature will not be included in a group unless one of the other features in that group is a K nearest neighbor. The default for Contiguity edges only and Contiguity edges corners is 0. For the contiguity methods, this value reflects the minimum number of neighbor candidates to consider. Additional nearby neighbors for features with less than the Number of Neighbors specified will be based on feature centroid proximity.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -178,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Weights Matrix File</para>
-		/// <para>包含空间权重（其定义要素间的空间关系）的文件的路径。</para>
+		/// <para>The path to a file containing spatial weights that define spatial relationships among features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -188,10 +188,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Initialization Method</para>
-		/// <para>指定当选择的空间约束参数为无空间约束时如何获取初始种子。 种子用来进行分组。 例如，如果您指明需要三个组，则分析将从三个种子开始。</para>
-		/// <para>查找种子位置—选择种子要素以便优化性能。</para>
-		/// <para>通过字段获取种子—初始化字段中的非零条目将被用作发展群组的起点。</para>
-		/// <para>使用随机种子—将随机选择初始种子要素。</para>
+		/// <para>Specifies how initial seeds are obtained when the Spatial Constraint parameter selected is No spatial constraint. Seeds are used to grow groups. If you indicate you want three groups, for example, the analysis will begin with three seeds.</para>
+		/// <para>Find seed locations—Seed features will be selected to optimize performance.</para>
+		/// <para>Get seeds from field—Nonzero entries in the Initialization Field will be used as starting points to grow groups.</para>
+		/// <para>Use random seeds—Initial seed features will be randomly selected.</para>
 		/// <para><see cref="InitializationMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -201,7 +201,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Initialization Field</para>
-		/// <para>用于标识种子要素的数值型字段。 将使用此字段中具有 1 值的要素发展群组。</para>
+		/// <para>The numeric field identifying seed features. Features with a value of 1 for this field will be used to grow groups.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -211,7 +211,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Report File</para>
-		/// <para>所要创建的用于汇总组特征的 PDF 报表文件的完整路径。 此报表提供了许多图表，以帮助您比较每个组的特征。 创建报表文件会大大增加处理时间。</para>
+		/// <para>The full path for the PDF report file to be created summarizing group characteristics. This report provides a number of graphs to help you compare the characteristics of each group. Creating the report file can add substantial processing time.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -221,9 +221,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Evaluate Optimal Number of Groups</para>
-		/// <para>指定工具是否将评估最佳组数（2 到 15）。</para>
-		/// <para>选中 - 对从 2 到 15 的组数进行评估。</para>
-		/// <para>取消选中 - 不对组数进行评估。 这是默认设置。</para>
+		/// <para>Specifies whether the tool will assess the optimal number of groups, 2 through 15.</para>
+		/// <para>Checked—Groupings from 2 to 15 will be evaluated.</para>
+		/// <para>Unchecked—No evaluation of the number of groups will be performed. This is the default.</para>
 		/// <para><see cref="EvaluateOptimalNumberOfGroupsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -269,45 +269,45 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum SpatialConstraintsEnum 
 		{
 			/// <summary>
-			/// <para>仅邻接边—组中包含相邻的面要素。 只有共享一条边的面才属于同一个群组。</para>
+			/// <para>Contiguity edges only—Groups contain contiguous polygon features. Only polygons that share an edge can be part of the same group.</para>
 			/// </summary>
 			[GPValue("CONTIGUITY_EDGES_ONLY")]
-			[Description("仅邻接边")]
+			[Description("Contiguity edges only")]
 			Contiguity_edges_only,
 
 			/// <summary>
-			/// <para>邻接边拐角—组中包含相邻的面要素。 只有共享一条边或一个折点的面才属于同一个群组。</para>
+			/// <para>Contiguity edges corners—Groups contain contiguous polygon features. Only polygons that share an edge or a vertex can be part of the same group.</para>
 			/// </summary>
 			[GPValue("CONTIGUITY_EDGES_CORNERS")]
-			[Description("邻接边拐角")]
+			[Description("Contiguity edges corners")]
 			Contiguity_edges_corners,
 
 			/// <summary>
-			/// <para>Delaunay 三角测量—同一个组中的要素至少具有一个与该组中的另一要素共用的自然邻域。 自然邻域关系基于 Delaunay 三角测量。 从概念上讲，Delaunay 三角测量可以根据要素质心创建不重叠的三角网。 每个要素是一个三角形结点，具有公共边的结点被视为邻域。</para>
+			/// <para>Delaunay triangulation—Features in the same group will have at least one natural neighbor in common with another feature in the group. Natural neighbor relationships are based on Delaunay Triangulation. Conceptually, Delaunay Triangulation creates a nonoverlapping mesh of triangles from feature centroids. Each feature is a triangle node and nodes that share edges are considered neighbors.</para>
 			/// </summary>
 			[GPValue("DELAUNAY_TRIANGULATION")]
-			[Description("Delaunay 三角测量")]
+			[Description("Delaunay triangulation")]
 			Delaunay_triangulation,
 
 			/// <summary>
-			/// <para>K - 最近邻—同一个组中的要素将相互邻近；每个要素至少是该组中某一其他要素的邻域。 邻域关系基于最近的 K 要素，您可以在此为相邻要素的数目参数指定整型值 K。</para>
+			/// <para>K nearest neighbors—Features in the same group will be near each other; each feature will be a neighbor of at least one other feature in the group. Neighbor relationships are based on the nearest K features, where you specify an Integer value, K, for the Number of Neighbors parameter.</para>
 			/// </summary>
 			[GPValue("K_NEAREST_NEIGHBORS")]
-			[Description("K - 最近邻")]
+			[Description("K nearest neighbors")]
 			K_nearest_neighbors,
 
 			/// <summary>
-			/// <para>通过文件获取空间权重—空间关系和可选的时态关系通过空间权重文件 (.swm) 进行定义。 使用生成空间权重矩阵或生成网络空间权重工具创建空间权重矩阵文件。</para>
+			/// <para>Get spatial weights from file—Spatial, and optionally temporal, relationships are defined by a spatial weights file (.swm). Create the spatial weights matrix file using the Generate Spatial Weights Matrix tool or the Generate Network Spatial Weights tool.</para>
 			/// </summary>
 			[GPValue("GET_SPATIAL_WEIGHTS_FROM_FILE")]
-			[Description("通过文件获取空间权重")]
+			[Description("Get spatial weights from file")]
 			Get_spatial_weights_from_file,
 
 			/// <summary>
-			/// <para>无空间约束—只能使用数据空间邻域法对要素进行分组。 要素不必在空间或时间上彼此邻近，即可成为同一组的一部分。</para>
+			/// <para>No spatial constraint—Features will be grouped using data space proximity only. Features do not have to be near each other in space or time to be part of the same group.</para>
 			/// </summary>
 			[GPValue("NO_SPATIAL_CONSTRAINT")]
-			[Description("无空间约束")]
+			[Description("No spatial constraint")]
 			No_spatial_constraint,
 
 		}
@@ -318,17 +318,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum DistanceMethodEnum 
 		{
 			/// <summary>
-			/// <para>欧氏—两点间的直线距离</para>
+			/// <para>Euclidean—The straight-line distance between two points (as the crow flies)</para>
 			/// </summary>
 			[GPValue("EUCLIDEAN")]
-			[Description("欧氏")]
+			[Description("Euclidean")]
 			Euclidean,
 
 			/// <summary>
-			/// <para>曼哈顿—沿垂直轴度量的两点间的距离（城市街区），计算方法是对两点的 x 和 y 坐标的差值（绝对值）求和。</para>
+			/// <para>Manhattan—The distance between two points measured along axes at right angles (city block); calculated by summing the (absolute) difference between the x- and y-coordinates</para>
 			/// </summary>
 			[GPValue("MANHATTAN")]
-			[Description("曼哈顿")]
+			[Description("Manhattan")]
 			Manhattan,
 
 		}
@@ -339,24 +339,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum InitializationMethodEnum 
 		{
 			/// <summary>
-			/// <para>查找种子位置—选择种子要素以便优化性能。</para>
+			/// <para>Find seed locations—Seed features will be selected to optimize performance.</para>
 			/// </summary>
 			[GPValue("FIND_SEED_LOCATIONS")]
-			[Description("查找种子位置")]
+			[Description("Find seed locations")]
 			Find_seed_locations,
 
 			/// <summary>
-			/// <para>通过字段获取种子—初始化字段中的非零条目将被用作发展群组的起点。</para>
+			/// <para>Get seeds from field—Nonzero entries in the Initialization Field will be used as starting points to grow groups.</para>
 			/// </summary>
 			[GPValue("GET_SEEDS_FROM_FIELD")]
-			[Description("通过字段获取种子")]
+			[Description("Get seeds from field")]
 			Get_seeds_from_field,
 
 			/// <summary>
-			/// <para>使用随机种子—将随机选择初始种子要素。</para>
+			/// <para>Use random seeds—Initial seed features will be randomly selected.</para>
 			/// </summary>
 			[GPValue("USE_RANDOM_SEEDS")]
-			[Description("使用随机种子")]
+			[Description("Use random seeds")]
 			Use_random_seeds,
 
 		}
@@ -367,14 +367,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum EvaluateOptimalNumberOfGroupsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Groupings from 2 to 15 will be evaluated.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EVALUATE")]
 			EVALUATE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—No evaluation of the number of groups will be performed. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_EVALUATE")]

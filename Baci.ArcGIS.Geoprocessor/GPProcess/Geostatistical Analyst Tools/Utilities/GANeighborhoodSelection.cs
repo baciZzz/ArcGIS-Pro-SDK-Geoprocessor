@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Neighborhood Selection</para>
-	/// <para>邻域选择</para>
-	/// <para>基于用户定义的邻域创建点图层。</para>
+	/// <para>Neighborhood Selection</para>
+	/// <para>Creates a layer of points based on a user-defined neighborhood.</para>
 	/// </summary>
 	public class GANeighborhoodSelection : AbstractGPProcess
 	{
@@ -21,35 +21,35 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input point features</para>
-		/// <para>用于创建邻域选择的点。</para>
+		/// <para>Points used to create a neighborhood selection.</para>
 		/// </param>
 		/// <param name="OutLayer">
 		/// <para>Output layer</para>
-		/// <para>存储邻域选择的图层。</para>
+		/// <para>Layer to store the neighborhood selection.</para>
 		/// </param>
 		/// <param name="PointCoord">
 		/// <para>Input point</para>
-		/// <para>邻域中心的 x,y 坐标。</para>
+		/// <para>The neighborhood center's x,y coordinate.</para>
 		/// </param>
 		/// <param name="NeighborsMax">
 		/// <para>Maximum neighbors to include</para>
-		/// <para>每个扇区中所要使用的点数。如果某个扇区具有所需点数，则使用该扇区中的所有点。</para>
+		/// <para>The number of points to use in each sector. If a sector has the required number of points, all points in that sector are used.</para>
 		/// </param>
 		/// <param name="NeighborsMin">
 		/// <para>Include at least</para>
-		/// <para>每个扇区中所要使用的最小点数。如果任何指定扇区中的点数都没有达到所需的最小值，则会选择扇区之外最近的可用点。</para>
+		/// <para>The minimum number of points to use in each sector. If the minimum number of required points are not available in any given sector, the nearest available point outside the sector will be selected.</para>
 		/// </param>
 		/// <param name="MinorSemiaxis">
 		/// <para>Minor semiaxis</para>
-		/// <para>搜索邻域短半轴的尺寸。</para>
+		/// <para>Size of the minor semiaxis of the search neighborhood.</para>
 		/// </param>
 		/// <param name="MajorSemiaxis">
 		/// <para>Major semiaxis</para>
-		/// <para>搜索邻域长半轴的尺寸。</para>
+		/// <para>Size of the major semiaxis of the search neighborhood.</para>
 		/// </param>
 		/// <param name="Angle">
 		/// <para>Angle</para>
-		/// <para>邻域轴的旋转角度。</para>
+		/// <para>The angle of rotation of the neighborhood axis.</para>
 		/// </param>
 		public GANeighborhoodSelection(object InDataset, object OutLayer, object PointCoord, object NeighborsMax, object NeighborsMin, object MinorSemiaxis, object MajorSemiaxis, object Angle)
 		{
@@ -64,9 +64,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 邻域选择</para>
+		/// <para>Tool Display Name : Neighborhood Selection</para>
 		/// </summary>
-		public override string DisplayName() => "邻域选择";
+		public override string DisplayName() => "Neighborhood Selection";
 
 		/// <summary>
 		/// <para>Tool Name : GANeighborhoodSelection</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input point features</para>
-		/// <para>用于创建邻域选择的点。</para>
+		/// <para>Points used to create a neighborhood selection.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output layer</para>
-		/// <para>存储邻域选择的图层。</para>
+		/// <para>Layer to store the neighborhood selection.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input point</para>
-		/// <para>邻域中心的 x,y 坐标。</para>
+		/// <para>The neighborhood center's x,y coordinate.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPPoint()]
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Maximum neighbors to include</para>
-		/// <para>每个扇区中所要使用的点数。如果某个扇区具有所需点数，则使用该扇区中的所有点。</para>
+		/// <para>The number of points to use in each sector. If a sector has the required number of points, all points in that sector are used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Include at least</para>
-		/// <para>每个扇区中所要使用的最小点数。如果任何指定扇区中的点数都没有达到所需的最小值，则会选择扇区之外最近的可用点。</para>
+		/// <para>The minimum number of points to use in each sector. If the minimum number of required points are not available in any given sector, the nearest available point outside the sector will be selected.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -144,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Minor semiaxis</para>
-		/// <para>搜索邻域短半轴的尺寸。</para>
+		/// <para>Size of the minor semiaxis of the search neighborhood.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Major semiaxis</para>
-		/// <para>搜索邻域长半轴的尺寸。</para>
+		/// <para>Size of the major semiaxis of the search neighborhood.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -162,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Angle</para>
-		/// <para>邻域轴的旋转角度。</para>
+		/// <para>The angle of rotation of the neighborhood axis.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -171,11 +171,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Shape type</para>
-		/// <para>邻域的几何。</para>
-		/// <para>一个扇区— 单个椭圆</para>
-		/// <para>四个扇区— 分为四个扇区的椭圆</para>
-		/// <para>偏移四个扇区— 分为四个扇区且偏移 45 度的椭圆</para>
-		/// <para>八个扇区— 分为八个扇区的椭圆</para>
+		/// <para>The geometry of the neighborhood.</para>
+		/// <para>One sector— Single ellipse</para>
+		/// <para>Four sectors— Ellipse divided into four sectors</para>
+		/// <para>Four shifted sectors— Ellipse divided into four sectors and shifted 45 degrees</para>
+		/// <para>Eight sectors— Ellipse divided into eight sectors</para>
 		/// <para><see cref="ShapeTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -200,31 +200,31 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum ShapeTypeEnum 
 		{
 			/// <summary>
-			/// <para>一个扇区— 单个椭圆</para>
+			/// <para>One sector— Single ellipse</para>
 			/// </summary>
 			[GPValue("ONE_SECTOR")]
-			[Description("一个扇区")]
+			[Description("One sector")]
 			One_sector,
 
 			/// <summary>
-			/// <para>四个扇区— 分为四个扇区的椭圆</para>
+			/// <para>Four sectors— Ellipse divided into four sectors</para>
 			/// </summary>
 			[GPValue("FOUR_SECTORS")]
-			[Description("四个扇区")]
+			[Description("Four sectors")]
 			Four_sectors,
 
 			/// <summary>
-			/// <para>偏移四个扇区— 分为四个扇区且偏移 45 度的椭圆</para>
+			/// <para>Four shifted sectors— Ellipse divided into four sectors and shifted 45 degrees</para>
 			/// </summary>
 			[GPValue("FOUR_SECTORS_SHIFTED")]
-			[Description("偏移四个扇区")]
+			[Description("Four shifted sectors")]
 			Four_shifted_sectors,
 
 			/// <summary>
-			/// <para>八个扇区— 分为八个扇区的椭圆</para>
+			/// <para>Eight sectors— Ellipse divided into eight sectors</para>
 			/// </summary>
 			[GPValue("EIGHT_SECTORS")]
-			[Description("八个扇区")]
+			[Description("Eight sectors")]
 			Eight_sectors,
 
 		}

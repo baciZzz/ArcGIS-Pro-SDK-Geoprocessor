@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Get Cell Value</para>
-	/// <para>获取像元值</para>
-	/// <para>使用 x，y 坐标获取给定像素的值。</para>
+	/// <para>Get Cell Value</para>
+	/// <para>Retrieves the value of a given pixel using its x, y coordinates.</para>
 	/// </summary>
 	public class GetCellValue : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>要查询的栅格。</para>
+		/// <para>The raster that you want to query.</para>
 		/// </param>
 		/// <param name="LocationPoint">
 		/// <para>Location</para>
-		/// <para>像素位置的 x 和 y 坐标。</para>
+		/// <para>The X and Y coordinates of the pixel location.</para>
 		/// </param>
 		public GetCellValue(object InRaster, object LocationPoint)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 获取像元值</para>
+		/// <para>Tool Display Name : Get Cell Value</para>
 		/// </summary>
-		public override string DisplayName() => "获取像元值";
+		public override string DisplayName() => "Get Cell Value";
 
 		/// <summary>
 		/// <para>Tool Name : GetCellValue</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>要查询的栅格。</para>
+		/// <para>The raster that you want to query.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Location</para>
-		/// <para>像素位置的 x 和 y 坐标。</para>
+		/// <para>The X and Y coordinates of the pixel location.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPPoint()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Bands</para>
-		/// <para>指定要查询的波段。留空以查询多波段数据集中的所有波段。</para>
+		/// <para>Specify the bands that you want to query. Leave blank to query all bands in a multiband dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]

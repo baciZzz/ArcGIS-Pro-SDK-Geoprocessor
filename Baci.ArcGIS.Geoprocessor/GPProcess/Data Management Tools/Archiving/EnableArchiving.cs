@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Enable Archiving</para>
-	/// <para>启用存档</para>
-	/// <para>启用表、要素类或要素数据集的存档。</para>
+	/// <para>Enable Archiving</para>
+	/// <para>Enables archiving on a table, feature class, or feature dataset.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>将启用存档的数据集的名称。</para>
+		/// <para>The name of the dataset on which archiving will be enabled.</para>
 		/// </param>
 		public EnableArchiving(object InDataset)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 启用存档</para>
+		/// <para>Tool Display Name : Enable Archiving</para>
 		/// </summary>
-		public override string DisplayName() => "启用存档";
+		public override string DisplayName() => "Enable Archiving";
 
 		/// <summary>
 		/// <para>Tool Name : EnableArchiving</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>将启用存档的数据集的名称。</para>
+		/// <para>The name of the dataset on which archiving will be enabled.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]

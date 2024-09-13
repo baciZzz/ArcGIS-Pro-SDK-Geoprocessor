@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Batch Import Data</para>
-	/// <para>批量导入数据</para>
-	/// <para>将 KML、KMZ、shapefile、Excel 工作表、表格文本文件、GeoJSON 和 GPX 文件导入存储在单个地理数据库中的要素类。</para>
+	/// <para>Batch Import Data</para>
+	/// <para>Imports KML, KMZ, shapefiles, Excel worksheets, tabular text files, GeoJSON, and GPX files to feature classes stored in a single geodatabase.</para>
 	/// </summary>
 	public class BatchImportData : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		/// <param name="InData">
 		/// <para>Input Data</para>
-		/// <para>包含数据文件或要转换为地理数据库要素类的数据文件的目录。</para>
+		/// <para>The folders containing the data files or the data files to convert to geodatabase feature classes.</para>
 		/// </param>
 		/// <param name="TargetGdb">
 		/// <para>Target Geodatabase</para>
-		/// <para>将存储输出要素类的目标地理数据库。</para>
+		/// <para>The target geodatabase where output feature classes will be stored.</para>
 		/// </param>
 		public BatchImportData(object InData, object TargetGdb)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 批量导入数据</para>
+		/// <para>Tool Display Name : Batch Import Data</para>
 		/// </summary>
-		public override string DisplayName() => "批量导入数据";
+		public override string DisplayName() => "Batch Import Data";
 
 		/// <summary>
 		/// <para>Tool Name : BatchImportData</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Data</para>
-		/// <para>包含数据文件或要转换为地理数据库要素类的数据文件的目录。</para>
+		/// <para>The folders containing the data files or the data files to convert to geodatabase feature classes.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Target Geodatabase</para>
-		/// <para>将存储输出要素类的目标地理数据库。</para>
+		/// <para>The target geodatabase where output feature classes will be stored.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -89,19 +89,19 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Filter</para>
-		/// <para>应用过滤器以限制导入文件夹的文件。 过滤器的以下通配符适用于输入数据的完整路径：可以通过使用竖线或管道分隔符 (|) 将每个模式分隔开来，从而将多个模式添加到过滤器。 模式比较不区分大小写，因此如果使用 *airport.shp、*AIRPORT.SHP 或 *Airport.shp 模式将导入相同的 shapefile。</para>
-		/// <para>* - 匹配任何字符</para>
-		/// <para>? - 匹配单个字符</para>
-		/// <para>[range] - 匹配范围内的单个字符</para>
-		/// <para>[!range] - 匹配不再范围内的任意字符</para>
-		/// <para>以下是过滤器示例：</para>
-		/// <para>要导入所有 shapefile，请使用 *.shp。</para>
-		/// <para>要导入所有 shapefile 和所有 .kml 文件，请使用 *.shp|*.kml。</para>
-		/// <para>要导入文件路径或文件名中包含 airport 的所有文件，请使用 *airport*。</para>
-		/// <para>要导入文件路径或文件名中包含 airport 的所有 .geojson 文件，请使用 *airport*.geojson。</para>
-		/// <para>要导入名称中包含 airport 且其后追加有任意两个字符的所有 .kmz 文件，请使用 *airport??.kmz.</para>
-		/// <para>要导入文件路径或文件名中包含 1990 到 1997 的所有文件，请使用 *199[0-7]*。</para>
-		/// <para>要导入文件路径中包含确切文件名 airfacilities 的所有 shapefile，请使用 *\airfacilities\*.shp。</para>
+		/// <para>Applies a filter to limit which files are imported from folders. The following wildcard characters for the filter work on the full path to the input data:Multiple patterns can be added to the filter by separating each pattern with the vertical bar or pipe delimiter (|). Pattern comparisons are not case sensitive, so using the *airport.shp, *AIRPORT.SHP, or *Airport.shp pattern, for example, will import the same shapefile.</para>
+		/// <para>*—Match any character</para>
+		/// <para>?—Match a single character</para>
+		/// <para>[range]—Match a single character in the range</para>
+		/// <para>[!range]—Match any character not in the range</para>
+		/// <para>The following are filter examples:</para>
+		/// <para>To import all shapefiles, use *.shp.</para>
+		/// <para>To import all shapefiles and all .kml files, use *.shp|*.kml.</para>
+		/// <para>To import all files that have airport in the file path or file name, use *airport*.</para>
+		/// <para>To import all .geojson files that have airport in the file path or file name, use *airport*.geojson.</para>
+		/// <para>To import all .kmz files that have airport appended with any two characters in the name, use *airport??.kmz.</para>
+		/// <para>To import all files that have 1990 through 1997 in the file path or file name, use *199[0-7]*.</para>
+		/// <para>To import all shapefiles that have the exact folder name airfacilities in their file path, use *\airfacilities\*.shp.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -110,9 +110,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Include Sub Folders</para>
-		/// <para>指定是否递归搜索子文件夹。</para>
-		/// <para>选中 - 浏览所有子文件夹。 这是默认设置。</para>
-		/// <para>取消选中 - 仅浏览顶级文件夹。</para>
+		/// <para>Specifies whether subfolders will be recursively explored.</para>
+		/// <para>Checked—All subfolders will be explored. This is the default.</para>
+		/// <para>Unchecked—Only the top-level folder will be explored.</para>
 		/// <para><see cref="IncludeSubFoldersEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -130,10 +130,10 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Include Ground Overlay</para>
-		/// <para>指定是否在输出中包含 KML 或 KMZ 地面叠加层（栅格、航空照片等）。</para>
-		/// <para>KMZ 指向提供栅格影像的服务时，请谨慎使用。 该工具将尝试按所有可用比例转换栅格影像。 此过程也许会较漫长且可能超出服务能力范围。</para>
-		/// <para>选中 - 将在输出中包含地面叠加层。 这是默认设置。</para>
-		/// <para>未选中 - 地面叠加层不包括在输出中。</para>
+		/// <para>Specifies whether KML or KMZ ground overlays (raster, air photos, and so on) will be included in the output.</para>
+		/// <para>Use caution if the KMZ points to a service that serves raster imagery. The tool will attempt to translate the raster imagery at all available scales. This process may be lengthy and possibly overwhelm the service.</para>
+		/// <para>Checked—Ground overlays will be included in the output. This is the default.</para>
+		/// <para>Unchecked—Ground overlays will not be included in the output.</para>
 		/// <para><see cref="IncludeGroundoverlayEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -150,14 +150,14 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		public enum IncludeSubFoldersEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—All subfolders will be explored. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SUBFOLDERS")]
 			SUBFOLDERS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Only the top-level folder will be explored.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SUBFOLDERS")]
@@ -171,14 +171,14 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		public enum IncludeGroundoverlayEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Ground overlays will be included in the output. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("GROUNDOVERLAY")]
 			GROUNDOVERLAY,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Ground overlays will not be included in the output.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_GROUNDOVERLAY")]

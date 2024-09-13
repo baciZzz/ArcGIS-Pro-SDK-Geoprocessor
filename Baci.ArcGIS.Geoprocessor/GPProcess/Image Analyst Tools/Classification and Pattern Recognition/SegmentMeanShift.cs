@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Segment Mean Shift</para>
-	/// <para>Mean Shift 影像分割</para>
-	/// <para>将相邻并具有相似光谱特征的像素组合到一个分割块中。</para>
+	/// <para>Segment Mean Shift</para>
+	/// <para>Groups into segments adjacent pixels that have similar spectral characteristics.</para>
 	/// </summary>
 	public class SegmentMeanShift : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>要分割的栅格数据集。它可以是多光谱影像或灰度影像。</para>
+		/// <para>The raster dataset to segment. This can be a multispectral or grayscale image.</para>
 		/// </param>
 		/// <param name="OutRasterDataset">
 		/// <para>Output Raster Dataset</para>
-		/// <para>为输出数据集指定名称和扩展名。</para>
-		/// <para>如果输入是一个多光谱影像，则输出将为 8 位的 RGB 影像。如果输入是一个灰度影像，则输出将为 8 位的灰度影像。</para>
+		/// <para>Specify a name and extension for the output dataset.</para>
+		/// <para>If the input was a multispectral image, the output will be an 8-bit RGB image. If the input was a grayscale image, the output will be an 8-bit grayscale image.</para>
 		/// </param>
 		public SegmentMeanShift(object InRaster, object OutRasterDataset)
 		{
@@ -35,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Mean Shift 影像分割</para>
+		/// <para>Tool Display Name : Segment Mean Shift</para>
 		/// </summary>
-		public override string DisplayName() => "Mean Shift 影像分割";
+		public override string DisplayName() => "Segment Mean Shift";
 
 		/// <summary>
 		/// <para>Tool Name : SegmentMeanShift</para>
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>要分割的栅格数据集。它可以是多光谱影像或灰度影像。</para>
+		/// <para>The raster dataset to segment. This can be a multispectral or grayscale image.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -79,8 +79,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Raster Dataset</para>
-		/// <para>为输出数据集指定名称和扩展名。</para>
-		/// <para>如果输入是一个多光谱影像，则输出将为 8 位的 RGB 影像。如果输入是一个灰度影像，则输出将为 8 位的灰度影像。</para>
+		/// <para>Specify a name and extension for the output dataset.</para>
+		/// <para>If the input was a multispectral image, the output will be an 8-bit RGB image. If the input was a grayscale image, the output will be an 8-bit grayscale image.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -88,8 +88,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Spectral Detail</para>
-		/// <para>为影像中要素的光谱差异指定的重要性级别。</para>
-		/// <para>值的有效范围从 1.0 到 20.0。 如果具有希望单独分类的要素并且其光谱特性相似，则适合使用较高的值。 值越小，创建的光谱性输出越平滑。 例如，在森林场景中使用的光谱详细级别越高，树种之间的差异就越大。</para>
+		/// <para>The level of importance given to the spectral differences of features in the imagery.</para>
+		/// <para>Valid values range from 1.0 to 20.0. A higher value is appropriate when there are features to classify separately that have similar spectral characteristics. Smaller values create spectrally smoother outputs. For example, with higher spectral detail in a forested scene, there will be greater discrimination between the tree species.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -97,8 +97,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Spatial Detail</para>
-		/// <para>为影像中要素之间的邻近性指定的重要性级别。</para>
-		/// <para>值的有效范围为 1.0 到 20。 如果感兴趣要素小且聚集在一起，则适合使用较高的值。 值越小，创建的空间性输出越平滑。 例如，在城市场景中，可以使用较小的空间细节对不可渗透表面进行分类，也可以使用较高的空间细节将建筑物和道路归为不同的类。</para>
+		/// <para>The level of importance given to the proximity between features in the imagery.</para>
+		/// <para>Valid values range from 1.0 to 20. A higher value is appropriate for a scene in which the features of interest are small and clustered together. Smaller values create spatially smoother outputs. For example, in an urban scene, impervious surfaces can be classified using a smaller spatial detail, or buildings and roads can be classified as separate classes using a higher spatial detail.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -106,8 +106,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Minimum Segment Size In Pixels</para>
-		/// <para>最小分割大小。将小于此大小的分割与其最适合的邻近分割合并。这与工程的最小制图单位有关。</para>
-		/// <para>单位为像素。</para>
+		/// <para>The minimum size of a segment. Merge segments smaller than this size with their best fitting neighbor segment. This is related to the minimum mapping unit for your project.</para>
+		/// <para>Units are in pixels.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -115,12 +115,12 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Band Indexes</para>
-		/// <para>用于分割影像的波段，以空格分隔。如果未指定波段索引，则按照以下标准进行确定：</para>
-		/// <para>如果栅格仅有 3 个波段，则使用这 3 个波段</para>
-		/// <para>如果栅格具有 3 个以上波段，则工具将根据栅格的属性分配红色、绿色和蓝色波段。</para>
-		/// <para>如果栅格数据集的属性中未标识红色、绿色和蓝色波段，则使用波段 1、2 和 3。</para>
-		/// <para>波段顺序不会对结果产生影响。</para>
-		/// <para>选择最能区分感兴趣要素的波段。</para>
+		/// <para>The bands that will be used to segment the imagery, separated by a space. If no band indexes are specified, they are determined by the following criteria:</para>
+		/// <para>If the raster has only 3 bands, those 3 bands are used</para>
+		/// <para>If the raster has more than 3 bands, the tool assigns the red, green, and blue bands according to the raster&apos;s properties.</para>
+		/// <para>If the red, green, and blue bands are not identified in the raster dataset&apos;s properties, bands 1, 2, and 3 are used.</para>
+		/// <para>The band order will not change the result.</para>
+		/// <para>Select bands that offer the most differentiation between the features of interest.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -128,9 +128,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Maximum Segment Size In Pixels</para>
-		/// <para>最大分割大小。将分割大于指定大小的分割。使用此参数可防止较大分割在输出栅格中导致的伪影。</para>
-		/// <para>单位为像素。</para>
-		/// <para>默认值为 -1，表示不限制分割大小。</para>
+		/// <para>The maximum size of a segment. Segments that are larger than the specified size will be divided. Use this parameter to prevent artifacts in the output raster resulting from large segments.</para>
+		/// <para>Units are in pixels.</para>
+		/// <para>The default value is -1, meaning there is no limit on the segment size.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]

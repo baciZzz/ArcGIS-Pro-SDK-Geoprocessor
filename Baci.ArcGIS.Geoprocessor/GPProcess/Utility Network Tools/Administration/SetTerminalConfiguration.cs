@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Set Terminal Configuration</para>
-	/// <para>设置终端配置</para>
-	/// <para>用于为资产类型级别要素类分配终端配置。</para>
+	/// <para>Set Terminal Configuration</para>
+	/// <para>Assigns a  terminal configuration to an asset type in a utility network.</para>
 	/// </summary>
 	public class SetTerminalConfiguration : AbstractGPProcess
 	{
@@ -21,27 +21,27 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>包含将针对特定资产类型设置的终端配置的公共设施网络。</para>
+		/// <para>The utility network containing the terminal configuration that will be set on a specific asset type.</para>
 		/// </param>
 		/// <param name="DomainNetwork">
 		/// <para>Domain Network</para>
-		/// <para>资产类型所属的域网络。</para>
+		/// <para>The domain network to which the asset type belongs.</para>
 		/// </param>
 		/// <param name="DeviceFeatureclass">
 		/// <para>Input Table</para>
-		/// <para>资产类型所属的公共设施网络要素类或表。</para>
+		/// <para>The utility network feature class or table to which the asset type belongs.</para>
 		/// </param>
 		/// <param name="Assetgroup">
 		/// <para>Asset Group</para>
-		/// <para>资产类型所属的资产组。</para>
+		/// <para>The asset group to which the asset type belongs.</para>
 		/// </param>
 		/// <param name="Assettype">
 		/// <para>Asset Type</para>
-		/// <para>接收终端配置的资产类型。</para>
+		/// <para>The asset type that will receive the terminal configuration.</para>
 		/// </param>
 		/// <param name="TerminalConfiguration">
 		/// <para>Terminal Configuration</para>
-		/// <para>要分配到资产类型的终端配置。</para>
+		/// <para>The terminal configuration to be assigned to the asset type.</para>
 		/// </param>
 		public SetTerminalConfiguration(object InUtilityNetwork, object DomainNetwork, object DeviceFeatureclass, object Assetgroup, object Assettype, object TerminalConfiguration)
 		{
@@ -54,9 +54,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 设置终端配置</para>
+		/// <para>Tool Display Name : Set Terminal Configuration</para>
 		/// </summary>
-		public override string DisplayName() => "设置终端配置";
+		public override string DisplayName() => "Set Terminal Configuration";
 
 		/// <summary>
 		/// <para>Tool Name : SetTerminalConfiguration</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>包含将针对特定资产类型设置的终端配置的公共设施网络。</para>
+		/// <para>The utility network containing the terminal configuration that will be set on a specific asset type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Domain Network</para>
-		/// <para>资产类型所属的域网络。</para>
+		/// <para>The domain network to which the asset type belongs.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>资产类型所属的公共设施网络要素类或表。</para>
+		/// <para>The utility network feature class or table to which the asset type belongs.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Asset Group</para>
-		/// <para>资产类型所属的资产组。</para>
+		/// <para>The asset group to which the asset type belongs.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Asset Type</para>
-		/// <para>接收终端配置的资产类型。</para>
+		/// <para>The asset type that will receive the terminal configuration.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Terminal Configuration</para>
-		/// <para>要分配到资产类型的终端配置。</para>
+		/// <para>The terminal configuration to be assigned to the asset type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

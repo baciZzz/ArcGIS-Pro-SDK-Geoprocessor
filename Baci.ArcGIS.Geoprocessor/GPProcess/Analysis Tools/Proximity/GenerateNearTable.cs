@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Generate Near Table</para>
-	/// <para>生成近邻表</para>
-	/// <para>计算一个或多个要素类或图层中的要素间距离和其他邻近性信息。 与可修改输入的近邻分析工具不同，生成近邻表可将结果写入新的独立表中，并支持查找多个邻近要素。</para>
+	/// <para>Generate Near Table</para>
+	/// <para>Calculates distances and other proximity information between features in one or more feature classes or layers. Unlike the Near tool, which modifies the input, Generate Near Table writes results to a new stand-alone table and supports finding more than one near feature.</para>
 	/// </summary>
 	public class GenerateNearTable : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>输入要素可以是点、折线、面或多点类型。</para>
+		/// <para>The input features that can be point, polyline, polygon, or multipoint type.</para>
 		/// </param>
 		/// <param name="NearFeatures">
 		/// <para>Near Features</para>
-		/// <para>一个或多个包含邻近要素候选项的要素类的图层。 邻近要素可以是点、折线、面或多点。 如果指定了多个图层或要素类，则 NEAR_FC 字段将被添加到输入表中，并将存储含有找到的最近要素的源要素类的路径。 同一要素类或图层可同时用作输入要素和邻近要素。</para>
+		/// <para>One or more layers of a feature class containing near feature candidates. The near features can be point, polyline, polygon, or multipoint. If multiple layers or feature classes are specified, a NEAR_FC field will be added to the input table and will store the paths of the source feature class containing the nearest feature found. The same feature class or layer can be used as both input and near features.</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
-		/// <para>包含分析结果的输出表。</para>
+		/// <para>The output table containing the result of the analysis.</para>
 		/// </param>
 		public GenerateNearTable(object InFeatures, object NearFeatures, object OutTable)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 生成近邻表</para>
+		/// <para>Tool Display Name : Generate Near Table</para>
 		/// </summary>
-		public override string DisplayName() => "生成近邻表";
+		public override string DisplayName() => "Generate Near Table";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateNearTable</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>输入要素可以是点、折线、面或多点类型。</para>
+		/// <para>The input features that can be point, polyline, polygon, or multipoint type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Near Features</para>
-		/// <para>一个或多个包含邻近要素候选项的要素类的图层。 邻近要素可以是点、折线、面或多点。 如果指定了多个图层或要素类，则 NEAR_FC 字段将被添加到输入表中，并将存储含有找到的最近要素的源要素类的路径。 同一要素类或图层可同时用作输入要素和邻近要素。</para>
+		/// <para>One or more layers of a feature class containing near feature candidates. The near features can be point, polyline, polygon, or multipoint. If multiple layers or feature classes are specified, a NEAR_FC field will be added to the input table and will store the paths of the source feature class containing the nearest feature found. The same feature class or layer can be used as both input and near features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>包含分析结果的输出表。</para>
+		/// <para>The output table containing the result of the analysis.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Search Radius</para>
-		/// <para>将用于搜索邻近要素的半径。 如果未指定任何值，则所有邻近要素都将是候选项。 如果输入了距离，但单位留空或设为未知，则将使用输入要素的坐标系的单位。 如果方法参数使用了测地线选项，则使用线性单位（如公里或英里）。</para>
+		/// <para>The radius that will be used to search for near features. If no value is specified, all near features will be candidates. If a distance is entered, but the unit is left blank or set to Unknown, the units of the coordinate system of the input features will be used. If the Geodesic option is used for the Method parameter, use a linear unit such as kilometers or miles.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -111,9 +111,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Location</para>
-		/// <para>指定是否将输入要素的位置以及邻近要素的最近位置的 x 坐标和 y 坐标写入 FROM_X、FROM_Y、NEAR_X 和 NEAR_Y 字段。</para>
-		/// <para>未选中 - 这些位置将不会被写入到输出表中。 这是默认设置。</para>
-		/// <para>选中 - 位置将被写入到输出表中。</para>
+		/// <para>Specifies whether x- and y-coordinates of the input feature&apos;s location and nearest location of the near feature will be written to the FROM_X, FROM_Y, NEAR_X, and NEAR_Y fields.</para>
+		/// <para>Unchecked—Locations will not be written to the output table. This is the default.</para>
+		/// <para>Checked—Locations will be written to the output table.</para>
 		/// <para><see cref="LocationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -123,9 +123,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Angle</para>
-		/// <para>指定是否计算邻近角并将其写入输出表的 NEAR_ANGLE 字段。 邻近角测量与直线（该直线连接输入要素与其最近要素的最近位置）方向之间的夹角。 当方法参数使用平面方法时，角度在 -180° 到 180° 的范围内，0°代表东，90°代表北，180°（或 -180°）代表西，-90° 代表南。 当方法参数使用测地线方法时，角度在 -180° 到 180° 的范围内，0° 代表北，90° 代表东，180°（或 -180°）代表南，-90° 代表西。</para>
-		/// <para>未选中 - NEAR_ANGLE 字段不会添加到输出表。 这是默认设置。</para>
-		/// <para>选中 - NEAR_ANGLE 字段将添加到输出表。</para>
+		/// <para>Specifies whether the near angle will be calculated and written to the NEAR_ANGLE field in the output table. A near angle measures direction of the line connecting an input feature to its nearest feature at their closest locations. When the Planar method is used for the Method parameter, the angle is within the range of -180° to 180°, with 0° to the east, 90° to the north, 180° (or -180°) to the west, and -90° to the south. When the Geodesic method is used for the Method parameter, the angle is within the range of -180° to 180°, with 0° to the north, 90° to the east, 180° (or -180°) to the south, and -90° to the west.</para>
+		/// <para>Unchecked—The NEAR_ANGLE field will not be added to the output table. This is the default.</para>
+		/// <para>Checked—The NEAR_ANGLE field will be added to the output table.</para>
 		/// <para><see cref="AngleEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -135,9 +135,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Find only closest feature</para>
-		/// <para>指定是否仅将最近的要素写入输出表。</para>
-		/// <para>选中 - 仅将最近的邻近要素写入输出表。 这是默认设置。</para>
-		/// <para>未选中 - 多个邻近要素将被写入输出表（可在最接近匹配项的最大数量参数中指定上限）。</para>
+		/// <para>Specifies whether only the closest feature will be written to the output table.</para>
+		/// <para>Checked—Only the closest near feature will be written to the output table. This is the default.</para>
+		/// <para>Unchecked—Multiple near features will be written to the output table (a limit can be specified in the Maximum number of closest matches parameter).</para>
 		/// <para><see cref="ClosestEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Maximum number of closest matches</para>
-		/// <para>限制对于每个输入要素报告的邻近要素的数量。 如果已选中仅查找最近的要素参数，则此参数处于非活动状态。</para>
+		/// <para>Limits the number of near features reported for each input feature. This parameter is inactive if the Find only closest feature parameter is checked.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -155,9 +155,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>指定是使用椭球体上的最短路径（测地线）还是使用地平（平面）距离方法。 建议将测地线方法用于在不适合进行距离测量的坐标系（例如 Web 墨卡托及任何地理坐标系）中存储的数据，以及地理区域跨度较大的数据集。</para>
-		/// <para>平面—要素之间将使用平面距离。 这是默认设置。</para>
-		/// <para>测地线—将在要素之间使用测地线距离。 这种方法考虑到椭球体的曲率，并可以正确处理国际日期变更线和极点附近的数据。</para>
+		/// <para>Specifies whether a shortest path on a spheroid (geodesic) or a flat earth (planar) distance method will be used. It is recommended that you use the Geodesic method for data stored in a coordinate system that is not appropriate for distance measurements (for example, Web Mercator and any geographic coordinate system) and for a dataset that spans a large geographic area.</para>
+		/// <para>Planar—Planar distance will be used between features. This is the default.</para>
+		/// <para>Geodesic—Geodesic distance will be used between features. This method takes into account the curvature of the spheroid and correctly deals with data near the international date line and the poles.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -182,14 +182,14 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum LocationEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Locations will be written to the output table.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("LOCATION")]
 			LOCATION,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Locations will not be written to the output table. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_LOCATION")]
@@ -203,14 +203,14 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum AngleEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The NEAR_ANGLE field will be added to the output table.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ANGLE")]
 			ANGLE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The NEAR_ANGLE field will not be added to the output table. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ANGLE")]
@@ -224,14 +224,14 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum ClosestEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Only the closest near feature will be written to the output table. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CLOSEST")]
 			CLOSEST,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Multiple near features will be written to the output table (a limit can be specified in the Maximum number of closest matches parameter).</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ALL")]
@@ -245,17 +245,17 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>平面—要素之间将使用平面距离。 这是默认设置。</para>
+			/// <para>Planar—Planar distance will be used between features. This is the default.</para>
 			/// </summary>
 			[GPValue("PLANAR")]
-			[Description("平面")]
+			[Description("Planar")]
 			Planar,
 
 			/// <summary>
-			/// <para>测地线—将在要素之间使用测地线距离。 这种方法考虑到椭球体的曲率，并可以正确处理国际日期变更线和极点附近的数据。</para>
+			/// <para>Geodesic—Geodesic distance will be used between features. This method takes into account the curvature of the spheroid and correctly deals with data near the international date line and the poles.</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
-			[Description("测地线")]
+			[Description("Geodesic")]
 			Geodesic,
 
 		}

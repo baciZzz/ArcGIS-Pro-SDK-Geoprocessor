@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Boundary</para>
-	/// <para>构建边界</para>
-	/// <para>添加新栅格数据集到范围超出先前 coverage 的镶嵌数据集时更新边界的范围。</para>
+	/// <para>Build Boundary</para>
+	/// <para>Updates the extent of the boundary when adding new raster datasets to a mosaic dataset that extend beyond its previous coverage.</para>
 	/// </summary>
 	public class BuildBoundary : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>选择想重新计算边界的镶嵌数据集。</para>
+		/// <para>Select the mosaic dataset where you want to recompute the boundary.</para>
 		/// </param>
 		public BuildBoundary(object InMosaicDataset)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 构建边界</para>
+		/// <para>Tool Display Name : Build Boundary</para>
 		/// </summary>
-		public override string DisplayName() => "构建边界";
+		public override string DisplayName() => "Build Boundary";
 
 		/// <summary>
 		/// <para>Tool Name : BuildBoundary</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>选择想重新计算边界的镶嵌数据集。</para>
+		/// <para>Select the mosaic dataset where you want to recompute the boundary.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Query Definition</para>
-		/// <para>用于计算边界以选择栅格数据集的 SQL 查询。将此选项与追加至现有边界选项结合使用可以节约添加新栅格数据集的时间。</para>
+		/// <para>An SQL query to compute a boundary for select raster datasets. Use this option in conjunction with the Append to Existing Boundary option to save time when adding new raster datasets.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -81,9 +81,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Append To Existing Boundary</para>
-		/// <para>向现有镶嵌数据集添加新栅格数据集时使用此选项。它会将新栅格数据集的边界与现有边界合并，而不是计算整个边界。</para>
-		/// <para>选中 - 将覆盖区周长追加到现有边界。由于不重新计算整个边界，因此在向镶嵌数据集添加其他栅格数据时，使用该选项可以节省时间。如果选择了栅格，则将重新计算边界以便仅包括所选覆盖区。这是默认设置。</para>
-		/// <para>未选中 - 重新计算整个边界。</para>
+		/// <para>Use this option when adding new raster datasets to an existing mosaic dataset. Instead of calculating the entire boundary, it will merge the boundary of the new raster datasets with the existing boundary.</para>
+		/// <para>Checked—Append the perimeter of footprints to the existing boundary. This can save time when adding additional raster data to the mosaic dataset, as the entire boundary will not be recalculated. If there are rasters selected, the boundary will be recalculated to include only the selected footprints. This is the default.</para>
+		/// <para>Unchecked—Recompute the boundary in its entirety.</para>
 		/// <para><see cref="AppendToExistingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -94,11 +94,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Simplification Method</para>
-		/// <para>指定将用于减少折点数量的简化方法，因为密集的边界可能会影响性能。</para>
-		/// <para>选择为简化边界所使用的简化方法。</para>
-		/// <para>无—不会执行简化方法。 这是默认设置。</para>
-		/// <para>凸包—镶嵌数据集的最小边界几何将用于简化边界。 如果存在断开的轮廓线，则每个连续的轮廓线组的最小边界几何将用于简化边界。</para>
-		/// <para>包络—镶嵌数据集的包络矩形将提供简化的边界。 如果存在断开的轮廓线，则每个连续轮廓线组的包络矩形将用于简化边界。</para>
+		/// <para>Specifies the simplification method that will be used to reduce the number of vertices, since a dense boundary can affect performance.</para>
+		/// <para>Choose the simplification method to use to simplify the boundary.</para>
+		/// <para>None—No simplification method will be implemented. This is the default.</para>
+		/// <para>Convex hull—The minimum bounding geometry of the mosaic dataset will be used to simplify the boundary. If there are disconnected footprints, a minimum bounding geometry for each continuous group of footprints will be used to simplify the boundary.</para>
+		/// <para>Envelope—The envelope of the mosaic dataset will provide a simplified boundary. If there are disconnected footprints, an envelope for each continuous group of footprints will be used to simplify the boundary.</para>
 		/// <para><see cref="SimplificationMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -131,14 +131,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AppendToExistingEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Append the perimeter of footprints to the existing boundary. This can save time when adding additional raster data to the mosaic dataset, as the entire boundary will not be recalculated. If there are rasters selected, the boundary will be recalculated to include only the selected footprints. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("APPEND")]
 			APPEND,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Recompute the boundary in its entirety.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("OVERWRITE")]
@@ -152,24 +152,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SimplificationMethodEnum 
 		{
 			/// <summary>
-			/// <para>无—不会执行简化方法。 这是默认设置。</para>
+			/// <para>None—No simplification method will be implemented. This is the default.</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("无")]
+			[Description("None")]
 			None,
 
 			/// <summary>
-			/// <para>凸包—镶嵌数据集的最小边界几何将用于简化边界。 如果存在断开的轮廓线，则每个连续的轮廓线组的最小边界几何将用于简化边界。</para>
+			/// <para>Convex hull—The minimum bounding geometry of the mosaic dataset will be used to simplify the boundary. If there are disconnected footprints, a minimum bounding geometry for each continuous group of footprints will be used to simplify the boundary.</para>
 			/// </summary>
 			[GPValue("CONVEX_HULL")]
-			[Description("凸包")]
+			[Description("Convex hull")]
 			Convex_hull,
 
 			/// <summary>
-			/// <para>包络—镶嵌数据集的包络矩形将提供简化的边界。 如果存在断开的轮廓线，则每个连续轮廓线组的包络矩形将用于简化边界。</para>
+			/// <para>Envelope—The envelope of the mosaic dataset will provide a simplified boundary. If there are disconnected footprints, an envelope for each continuous group of footprints will be used to simplify the boundary.</para>
 			/// </summary>
 			[GPValue("ENVELOPE")]
-			[Description("包络")]
+			[Description("Envelope")]
 			Envelope,
 
 		}

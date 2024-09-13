@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Distance From Boundary</para>
-	/// <para>与边界的距离</para>
+	/// <para>Distance From Boundary</para>
 	/// <para>Entities within distance of given boundary.</para>
 	/// </summary>
 	[Obsolete()]
@@ -37,9 +37,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 与边界的距离</para>
+		/// <para>Tool Display Name : Distance From Boundary</para>
 		/// </summary>
-		public override string DisplayName() => "与边界的距离";
+		public override string DisplayName() => "Distance From Boundary";
 
 		/// <summary>
 		/// <para>Tool Name : WithinDistanceOfBoundary</para>

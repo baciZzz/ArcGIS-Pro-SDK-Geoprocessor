@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Sort</para>
-	/// <para>排序</para>
-	/// <para>根据一个或多个字段值对要素类或表中的记录按升序或降序进行重新排序。重新排序的结果将被写入到新数据集中。</para>
+	/// <para>Sort</para>
+	/// <para>Reorders records in a feature class or table, in ascending or descending order, based on one or multiple fields. The reordered result is written to a new dataset.</para>
 	/// </summary>
 	public class Sort : AbstractGPProcess
 	{
@@ -21,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>要根据一个或多个排序字段中的字段值对记录进行重新排序的输入数据集。</para>
+		/// <para>The input dataset whose records will be reordered based on the field values in the sort field or fields.</para>
 		/// </param>
 		/// <param name="OutDataset">
 		/// <para>Output Dataset</para>
-		/// <para>输出要素类或表。</para>
+		/// <para>The output feature class or table.</para>
 		/// </param>
 		/// <param name="SortField">
 		/// <para>Field(s)</para>
-		/// <para>指定包含对输入记录重新排序所用的值的一个或多个字段，以及记录的排序方向。</para>
-		/// <para>按 Shape 字段排序或按多个字段排序仅在具有 Desktop Advanced 许可时适用。按任何单个属性字段（不包括 Shape 字段）排序在所有级别许可下都适用。</para>
-		/// <para>升序 - 按照值从低到高的顺序对记录进行排序。</para>
-		/// <para>降序 - 按照值从高到低的顺序对记录进行排序。</para>
+		/// <para>Specifies the field or fields whose values will be used to reorder the input records and the direction the records will be sorted.</para>
+		/// <para>Sorting by the Shape field or by multiple fields is only available with an Desktop Advanced license. Sorting by any single attribute field (excluding Shape) is available at all license levels.</para>
+		/// <para>Ascending—Records are sorted from low value to high value.</para>
+		/// <para>Descending—Records are sorted from high value to low value.</para>
 		/// </param>
 		public Sort(object InDataset, object OutDataset, object SortField)
 		{
@@ -42,14 +42,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 排序</para>
+		/// <para>Tool Display Name : Sort</para>
 		/// </summary>
-		public override string DisplayName() => "排序";
+		public override string DisplayName() => "Sort";
 
 		/// <summary>
-		/// <para>Tool Name : 排序</para>
+		/// <para>Tool Name : Sort</para>
 		/// </summary>
-		public override string ToolName() => "排序";
+		public override string ToolName() => "Sort";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Sort</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>要根据一个或多个排序字段中的字段值对记录进行重新排序的输入数据集。</para>
+		/// <para>The input dataset whose records will be reordered based on the field values in the sort field or fields.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Dataset</para>
-		/// <para>输出要素类或表。</para>
+		/// <para>The output feature class or table.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -94,10 +94,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field(s)</para>
-		/// <para>指定包含对输入记录重新排序所用的值的一个或多个字段，以及记录的排序方向。</para>
-		/// <para>按 Shape 字段排序或按多个字段排序仅在具有 Desktop Advanced 许可时适用。按任何单个属性字段（不包括 Shape 字段）排序在所有级别许可下都适用。</para>
-		/// <para>升序 - 按照值从低到高的顺序对记录进行排序。</para>
-		/// <para>降序 - 按照值从高到低的顺序对记录进行排序。</para>
+		/// <para>Specifies the field or fields whose values will be used to reorder the input records and the direction the records will be sorted.</para>
+		/// <para>Sorting by the Shape field or by multiple fields is only available with an Desktop Advanced license. Sorting by any single attribute field (excluding Shape) is available at all license levels.</para>
+		/// <para>Ascending—Records are sorted from low value to high value.</para>
+		/// <para>Descending—Records are sorted from high value to low value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -106,12 +106,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Spatial Sort Method</para>
-		/// <para>指定对要素进行空间排序的方法。仅当将 Shape 字段作为排序字段之一时，排序方法才可用。</para>
-		/// <para>右上角—从右上角开始排序。这是默认设置。</para>
-		/// <para>左上角—从左上角开始排序。</para>
-		/// <para>右下角—从右下角开始排序。</para>
-		/// <para>左下角—从左下角开始排序。</para>
-		/// <para>皮亚诺曲线—使用空间填充曲线算法（也称为皮亚诺曲线）排序。</para>
+		/// <para>Specifies how features are spatially sorted. The sort method is only enabled when the Shape field is selected as one of the sort fields.</para>
+		/// <para>Upper right—Sorting starts at the upper right corner. This is the default.</para>
+		/// <para>Upper left—Sorting starts at the upper left corner.</para>
+		/// <para>Lower right—Sorting starts at the lower right corner.</para>
+		/// <para>Lower left—Sorting starts at the lower left corner.</para>
+		/// <para>Peano curve—Sorting uses a space filling curve algorithm, also known as a Peano curve.</para>
 		/// <para><see cref="SpatialSortMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -136,38 +136,38 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SpatialSortMethodEnum 
 		{
 			/// <summary>
-			/// <para>左上角—从左上角开始排序。</para>
+			/// <para>Upper left—Sorting starts at the upper left corner.</para>
 			/// </summary>
 			[GPValue("UL")]
-			[Description("左上角")]
+			[Description("Upper left")]
 			Upper_left,
 
 			/// <summary>
-			/// <para>右上角—从右上角开始排序。这是默认设置。</para>
+			/// <para>Upper right—Sorting starts at the upper right corner. This is the default.</para>
 			/// </summary>
 			[GPValue("UR")]
-			[Description("右上角")]
+			[Description("Upper right")]
 			Upper_right,
 
 			/// <summary>
-			/// <para>左下角—从左下角开始排序。</para>
+			/// <para>Lower left—Sorting starts at the lower left corner.</para>
 			/// </summary>
 			[GPValue("LL")]
-			[Description("左下角")]
+			[Description("Lower left")]
 			Lower_left,
 
 			/// <summary>
-			/// <para>右下角—从右下角开始排序。</para>
+			/// <para>Lower right—Sorting starts at the lower right corner.</para>
 			/// </summary>
 			[GPValue("LR")]
-			[Description("右下角")]
+			[Description("Lower right")]
 			Lower_right,
 
 			/// <summary>
-			/// <para>皮亚诺曲线—使用空间填充曲线算法（也称为皮亚诺曲线）排序。</para>
+			/// <para>Peano curve—Sorting uses a space filling curve algorithm, also known as a Peano curve.</para>
 			/// </summary>
 			[GPValue("PEANO")]
-			[Description("皮亚诺曲线")]
+			[Description("Peano curve")]
 			Peano_curve,
 
 		}

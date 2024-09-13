@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Increase Maximum Edges</para>
-	/// <para>增加最大边数</para>
-	/// <para>增加转弯要素类中每个转弯所允许的最大边数。</para>
+	/// <para>Increase Maximum Edges</para>
+	/// <para>Increases the maximum number of edges per turn in a turn feature class.</para>
 	/// </summary>
 	public class IncreaseMaximumEdges : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="InTurnFeatures">
 		/// <para>Input Turn Feature Class</para>
-		/// <para>要增加最大边数的转弯要素类。</para>
+		/// <para>The turn feature class that is having its maximum number of edges raised.</para>
 		/// </param>
 		/// <param name="MaximumEdges">
 		/// <para>Maximum Edges</para>
-		/// <para>输入转弯要素类中新的最大边数。该值至少应比现有最大边数大 1，但不能大于 50。</para>
+		/// <para>The new maximum number of edges in the input turn feature class. The value must be at least one higher than the existing maximum number of edges and cannot be greater than 50.</para>
 		/// </param>
 		public IncreaseMaximumEdges(object InTurnFeatures, object MaximumEdges)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 增加最大边数</para>
+		/// <para>Tool Display Name : Increase Maximum Edges</para>
 		/// </summary>
-		public override string DisplayName() => "增加最大边数";
+		public override string DisplayName() => "Increase Maximum Edges";
 
 		/// <summary>
 		/// <para>Tool Name : IncreaseMaximumEdges</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Input Turn Feature Class</para>
-		/// <para>要增加最大边数的转弯要素类。</para>
+		/// <para>The turn feature class that is having its maximum number of edges raised.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Maximum Edges</para>
-		/// <para>输入转弯要素类中新的最大边数。该值至少应比现有最大边数大 1，但不能大于 50。</para>
+		/// <para>The new maximum number of edges in the input turn feature class. The value must be at least one higher than the existing maximum number of edges and cannot be greater than 50.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]

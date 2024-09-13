@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Analyze Changes Using CCDC</para>
-	/// <para>使用 CCDC 分析变化</para>
-	/// <para>使用连续变化检测和分类 (CCDC) 方法评估像素值随时间的变化，并生成包含模型结果的变化分析栅格。</para>
+	/// <para>Analyze Changes Using CCDC</para>
+	/// <para>Evaluates changes in pixel values over time using the Continuous Change Detection and Classification (CCDC) method and generates a change analysis raster containing the model results.</para>
 	/// </summary>
 	public class AnalyzeChangesUsingCCDC : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InMultidimensionalRaster">
 		/// <para>Input Multidimensional Raster</para>
-		/// <para>输入多维栅格数据集。</para>
+		/// <para>The input multidimensional raster dataset.</para>
 		/// </param>
 		/// <param name="OutCcdcResult">
 		/// <para>Output CCDC Analysis Raster</para>
-		/// <para>输出云栅格格式 (CRF) 多维栅格数据集。</para>
-		/// <para>包含来自 CCDC 分析的模型信息的输出变化分析栅格。</para>
+		/// <para>The output Cloud Raster Format (CRF) multidimensional raster dataset.</para>
+		/// <para>The output change analysis raster containing model information from the CCDC analysis.</para>
 		/// </param>
 		public AnalyzeChangesUsingCCDC(object InMultidimensionalRaster, object OutCcdcResult)
 		{
@@ -35,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 使用 CCDC 分析变化</para>
+		/// <para>Tool Display Name : Analyze Changes Using CCDC</para>
 		/// </summary>
-		public override string DisplayName() => "使用 CCDC 分析变化";
+		public override string DisplayName() => "Analyze Changes Using CCDC";
 
 		/// <summary>
 		/// <para>Tool Name : AnalyzeChangesUsingCCDC</para>
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>
-		/// <para>输入多维栅格数据集。</para>
+		/// <para>The input multidimensional raster dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -79,8 +79,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output CCDC Analysis Raster</para>
-		/// <para>输出云栅格格式 (CRF) 多维栅格数据集。</para>
-		/// <para>包含来自 CCDC 分析的模型信息的输出变化分析栅格。</para>
+		/// <para>The output Cloud Raster Format (CRF) multidimensional raster dataset.</para>
+		/// <para>The output change analysis raster containing model information from the CCDC analysis.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Bands for Detecting Change</para>
-		/// <para>用于变化检测的波段 ID。如果未提供波段 ID，则将使用输入栅格数据集中的所有波段。</para>
+		/// <para>The band IDs to use for change detection. If no band IDs are provided, all the bands from the input raster dataset will be used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Bands for Temporal Masking</para>
-		/// <para>要在时间掩膜 (Tmask) 中使用的波段 ID。建议使用绿色波段和 SWIR 波段。如果未提供波段 ID，则不会进行任何掩膜。</para>
+		/// <para>The band IDs to be used in the temporal mask (Tmask). It is recommended that you use the green band and the SWIR band. If no band IDs are provided, no masking will occur.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Chi-squared Threshold for Detecting Changes</para>
-		/// <para>卡方统计变化概率阈值。如果观测值算得的变化概率高于此阈值，则将其标记为异常，即潜在的变化事件。默认值为 0.99。</para>
+		/// <para>The chi-square statistic change probability threshold. If an observation has a calculated change probability that is above this threshold, it is flagged as an anomaly, which is a potential change event. The default value is 0.99.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Minimum Consecutive Anomaly Observations</para>
-		/// <para>在事件被视为变化之前必须进行的最小连续异常观测次数。像素必须针对指定数量的连续时间片标记为异常，然后才能将其视为真正的变化。默认值为 6。</para>
+		/// <para>The minimum number of consecutive anomaly observations that must occur before an event is considered a change. A pixel must be flagged as an anomaly for the specified number of consecutive time slices before it is considered a true change. The default value is 6.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Updating Fitting Frequency (in years)</para>
-		/// <para>使用新观测值更新时间序列模型的频率（以年为单位）。默认值为 1。</para>
+		/// <para>The frequency, in years, at which to update the time series model with new observations. The default value is 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

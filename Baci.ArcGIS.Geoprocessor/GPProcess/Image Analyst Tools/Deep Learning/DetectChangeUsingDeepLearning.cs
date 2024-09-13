@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Detect Change Using Deep Learning</para>
-	/// <para>使用深度学习检测变化</para>
-	/// <para>运行经过训练的深度学习模型，以检测两个栅格之间的变化。</para>
+	/// <para>Detect Change Using Deep Learning</para>
+	/// <para>Runs a trained deep learning model to detect change between two rasters.</para>
 	/// </summary>
 	public class DetectChangeUsingDeepLearning : AbstractGPProcess
 	{
@@ -21,20 +21,20 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="FromRaster">
 		/// <para>From Raster</para>
-		/// <para>先前栅格的输入图像。</para>
+		/// <para>The input images of the previous raster.</para>
 		/// </param>
 		/// <param name="ToRaster">
 		/// <para>To Raster</para>
-		/// <para>最近栅格的输入图像。</para>
+		/// <para>The input images of the recent raster.</para>
 		/// </param>
 		/// <param name="OutClassifiedRaster">
 		/// <para>Output Classified Raster</para>
-		/// <para>显示变化的输出分类栅格。</para>
+		/// <para>The output classified raster that shows the change.</para>
 		/// </param>
 		/// <param name="InModelDefinition">
 		/// <para>Model Definition</para>
-		/// <para>Esri 模型定义参数值可以是 Esri 模型定义 JSON 文件 (.emd)、JSON 字符串或深度学习模型包 (.dlpk)。 当在服务器上使用此工具时，JSON 字符串十分有用，因为您可以直接粘贴 JSON 字符串，而无需上传 .emd 文件。 .dlpk 文件必须存储在本地。</para>
-		/// <para>其中包含深度学习二进制模型文件的路径、待使用的 Python 栅格函数的路径以及其他参数，例如首选切片大小或填充。</para>
+		/// <para>The Esri model definition parameter value can be an Esri model definition JSON file (.emd), a JSON string, or a deep learning model package (.dlpk). A JSON string is useful when this tool is used on the server so you can paste the JSON string rather than upload the .emd file. The .dlpk file must be stored locally.</para>
+		/// <para>It contains the path to the deep learning binary model file, the path to the Python raster function to be used, and other parameters such as preferred tile size or padding.</para>
 		/// </param>
 		public DetectChangeUsingDeepLearning(object FromRaster, object ToRaster, object OutClassifiedRaster, object InModelDefinition)
 		{
@@ -45,9 +45,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 使用深度学习检测变化</para>
+		/// <para>Tool Display Name : Detect Change Using Deep Learning</para>
 		/// </summary>
-		public override string DisplayName() => "使用深度学习检测变化";
+		public override string DisplayName() => "Detect Change Using Deep Learning";
 
 		/// <summary>
 		/// <para>Tool Name : DetectChangeUsingDeepLearning</para>
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>From Raster</para>
-		/// <para>先前栅格的输入图像。</para>
+		/// <para>The input images of the previous raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>To Raster</para>
-		/// <para>最近栅格的输入图像。</para>
+		/// <para>The input images of the recent raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Classified Raster</para>
-		/// <para>显示变化的输出分类栅格。</para>
+		/// <para>The output classified raster that shows the change.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -105,8 +105,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Model Definition</para>
-		/// <para>Esri 模型定义参数值可以是 Esri 模型定义 JSON 文件 (.emd)、JSON 字符串或深度学习模型包 (.dlpk)。 当在服务器上使用此工具时，JSON 字符串十分有用，因为您可以直接粘贴 JSON 字符串，而无需上传 .emd 文件。 .dlpk 文件必须存储在本地。</para>
-		/// <para>其中包含深度学习二进制模型文件的路径、待使用的 Python 栅格函数的路径以及其他参数，例如首选切片大小或填充。</para>
+		/// <para>The Esri model definition parameter value can be an Esri model definition JSON file (.emd), a JSON string, or a deep learning model package (.dlpk). A JSON string is useful when this tool is used on the server so you can paste the JSON string rather than upload the .emd file. The .dlpk file must be stored locally.</para>
+		/// <para>It contains the path to the deep learning binary model file, the path to the Python raster function to be used, and other parameters such as preferred tile size or padding.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Arguments</para>
-		/// <para>函数参数在 Python 栅格函数类中定义。 您可以在此列出其他深度学习参数和用于试验和优化的参数，例如用于调整灵敏度的置信度阈值。 参数名称将通过读取 Python 模块进行填充。</para>
+		/// <para>The function arguments are defined in the Python raster function class. This is where you list additional deep learning parameters and arguments for experiments and refinement, such as a confidence threshold for adjusting sensitivity. The names of the arguments are populated from reading the Python module.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]

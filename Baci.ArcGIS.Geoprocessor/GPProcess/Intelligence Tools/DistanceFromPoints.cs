@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Distance From Points</para>
-	/// <para>与点的距离</para>
+	/// <para>Distance From Points</para>
 	/// <para>Find like entities within distance from an location.</para>
 	/// </summary>
 	[Obsolete()]
@@ -37,9 +37,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 与点的距离</para>
+		/// <para>Tool Display Name : Distance From Points</para>
 		/// </summary>
-		public override string DisplayName() => "与点的距离";
+		public override string DisplayName() => "Distance From Points";
 
 		/// <summary>
 		/// <para>Tool Name : DistanceFromPoints</para>

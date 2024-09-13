@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>DOF To Obstacle Features</para>
-	/// <para>DOF 至障碍物要素</para>
-	/// <para>将美国联邦航空管理局 (FAA) 数字障碍文件 (DOF) 转换为障碍点和障碍物缓冲区要素。</para>
+	/// <para>DOF To Obstacle Features</para>
+	/// <para>Converts the U.S. Federal Aviation Administration (FAA) Digital Obstacle File (DOF) to obstruction points and obstruction buffer features.</para>
 	/// </summary>
 	public class DOFToObstacleFeatures : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>要转换为障碍物要素的输入 DOF 表。</para>
+		/// <para>The input DOF table to convert into obstacle features.</para>
 		/// </param>
 		/// <param name="OutObstacleFeatures">
 		/// <para>Output Obstacle Features</para>
-		/// <para>使用输入表创建的点障碍物要素。</para>
+		/// <para>The point obstacle features created from the Input Table.</para>
 		/// </param>
 		/// <param name="OutObstacleBuffers">
 		/// <para>Output Obstacle Buffers</para>
-		/// <para>创建的距离缓冲区是输入表中 AGL 字段值的 10 倍。</para>
+		/// <para>The distance buffers created at 10 times the value of the AGL field in the Input Table.</para>
 		/// </param>
 		public DOFToObstacleFeatures(object InTable, object OutObstacleFeatures, object OutObstacleBuffers)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : DOF 至障碍物要素</para>
+		/// <para>Tool Display Name : DOF To Obstacle Features</para>
 		/// </summary>
-		public override string DisplayName() => "DOF 至障碍物要素";
+		public override string DisplayName() => "DOF To Obstacle Features";
 
 		/// <summary>
 		/// <para>Tool Name : DOFToObstacleFeatures</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>要转换为障碍物要素的输入 DOF 表。</para>
+		/// <para>The input DOF table to convert into obstacle features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Output Obstacle Features</para>
-		/// <para>使用输入表创建的点障碍物要素。</para>
+		/// <para>The point obstacle features created from the Input Table.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Output Obstacle Buffers</para>
-		/// <para>创建的距离缓冲区是输入表中 AGL 字段值的 10 倍。</para>
+		/// <para>The distance buffers created at 10 times the value of the AGL field in the Input Table.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Clip Features</para>
-		/// <para>要从输入表中裁剪的区域。 将仅创建和缓冲此区域内的障碍物。</para>
+		/// <para>An area to clip from the Input Table. Only obstacles within this area will be created and buffered.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]

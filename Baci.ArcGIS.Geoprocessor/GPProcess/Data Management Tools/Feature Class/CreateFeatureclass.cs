@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Feature Class</para>
-	/// <para>创建要素类</para>
-	/// <para>在地理数据库中创建空要素类，或在文件夹中创建 shapefile。</para>
+	/// <para>Create Feature Class</para>
+	/// <para>Creates an empty feature class in a geodatabase or a shapefile in a folder.</para>
 	/// </summary>
 	public class CreateFeatureclass : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="OutPath">
 		/// <para>Feature Class Location</para>
-		/// <para>将在其中创建输出要素类的企业级地理数据库、文件地理数据库或文件夹。此工作空间必须已经存在。</para>
+		/// <para>The enterprise or file geodatabase or the folder in which the output feature class will be created. This workspace must already exist.</para>
 		/// </param>
 		/// <param name="OutName">
 		/// <para>Feature Class Name</para>
-		/// <para>要创建的要素类的名称。</para>
+		/// <para>The name of the feature class to be created.</para>
 		/// </param>
 		public CreateFeatureclass(object OutPath, object OutName)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建要素类</para>
+		/// <para>Tool Display Name : Create Feature Class</para>
 		/// </summary>
-		public override string DisplayName() => "创建要素类";
+		public override string DisplayName() => "Create Feature Class";
 
 		/// <summary>
 		/// <para>Tool Name : CreateFeatureclass</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Feature Class Location</para>
-		/// <para>将在其中创建输出要素类的企业级地理数据库、文件地理数据库或文件夹。此工作空间必须已经存在。</para>
+		/// <para>The enterprise or file geodatabase or the folder in which the output feature class will be created. This workspace must already exist.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Feature Class Name</para>
-		/// <para>要创建的要素类的名称。</para>
+		/// <para>The name of the feature class to be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -87,12 +87,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Geometry Type</para>
-		/// <para>用于指定要素类的几何类型。</para>
-		/// <para>点—几何类型为点。</para>
-		/// <para>多点—几何类型为多点。</para>
-		/// <para>Polygon—几何类型为面。</para>
-		/// <para>折线—几何类型为折线。</para>
-		/// <para>多面体—几何类型为多面体。</para>
+		/// <para>Specifies the geometry type of the feature class.</para>
+		/// <para>Point—The geometry type is point.</para>
+		/// <para>Multipoint—The geometry type is multipoint.</para>
+		/// <para>Polygon—The geometry type is polygon.</para>
+		/// <para>Polyline—The geometry type is polyline.</para>
+		/// <para>Multipatch—The geometry type is multipatch.</para>
 		/// <para><see cref="GeometryTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Template Dataset</para>
-		/// <para>用作模板以定义新要素类的属性字段的要素类或表。</para>
+		/// <para>The feature class or table used as a template to define the attribute fields of the new feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -110,10 +110,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Has M</para>
-		/// <para>指定要素类是否包含线性测量值（m 值）。</para>
-		/// <para>不支持—输出要素类将不具有 M 值。这是默认设置。</para>
-		/// <para>支持—输出要素类将具有 M 值。</para>
-		/// <para>与模板要素类相同—如果在模板要素类参数（Python 中的 template 参数）中指定的数据集具有 M 值，则输出要素类将具有 M 值。</para>
+		/// <para>Specifies whether the feature class contains linear measurement values (m-values).</para>
+		/// <para>No—The output feature class will not have M-values. This is the default.</para>
+		/// <para>Yes—The output feature class will have M-values.</para>
+		/// <para>Same as the template feature class—The output feature class will have M-values if the dataset specified in the Template Feature Class parameter (template parameter in Python) has M-values.</para>
 		/// <para><see cref="HasMEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -123,10 +123,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Has Z</para>
-		/// <para>指定要素类是否包含高程值（z 值）。</para>
-		/// <para>不支持—输出要素类将不具有 Z 值。这是默认设置。</para>
-		/// <para>支持—输出要素类将具有 Z 值。</para>
-		/// <para>与模板要素类相同—如果模板要素类参数（Python 中的 template 参数）中指定的数据集具有 Z 值，则输出要素类将具有 Z 值。</para>
+		/// <para>Specifies whether the feature class contains elevation values (z-values).</para>
+		/// <para>No—The output feature class will not have Z-values. This is the default.</para>
+		/// <para>Yes—The output feature class will have Z-values.</para>
+		/// <para>Same as the template feature class—The output feature class will have Z-values if the dataset specified in the Template Feature Class parameter (template parameter in Python) has Z-values.</para>
 		/// <para><see cref="HasZEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -136,9 +136,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Coordinate System</para>
-		/// <para>输出要素数据集的空间参考。在空间参考属性对话框中，可以选择、导入或新建坐标系。要设置空间参考的各个方面（例如，x,y 值域、z 值域、m 值域、分辨率或容差），请使用环境对话框。</para>
-		/// <para>如果未提供空间参考，则输出将具有一个未定义的空间参考。</para>
-		/// <para>模板要素类的空间参考对输出空间参考没有影响。如果想在模板要素类的坐标系中输出，请将坐标系参数设置为模板要素类的空间参考。</para>
+		/// <para>The spatial reference of the output feature dataset. On the Spatial Reference Properties dialog box, you can select, import, or create a new coordinate system. To set aspects of the spatial reference, such as the x,y-, z-, or m-domain, resolution, or tolerance, use the Environments dialog box.</para>
+		/// <para>If a spatial reference is not provided, the output will have an undefined spatial reference.</para>
+		/// <para>The spatial reference of the Template Feature Class has no effect on the output spatial reference. If you want your output to be in the coordinate system of the Template Feature Class, set the Coordinate System parameter to the spatial reference of the Template Feature Class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
-		/// <para>配置关键字仅适用于企业级地理数据库数据。它用于确定数据库表的存储参数。</para>
+		/// <para>The configuration keyword applies to enterprise geodatabase data only. It determines the storage parameters of the database table.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -155,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Spatial Grid 1</para>
-		/// <para>已在 ArcGIS Pro 中弃用此参数。将忽略您输入的任何值。</para>
+		/// <para>This parameter has been deprecated in ArcGIS Pro. Any value you enter is ignored.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -164,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Spatial Grid 2</para>
-		/// <para>已在 ArcGIS Pro 中弃用此参数。将忽略您输入的任何值。</para>
+		/// <para>This parameter has been deprecated in ArcGIS Pro. Any value you enter is ignored.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -173,7 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Spatial Grid 3</para>
-		/// <para>已在 ArcGIS Pro 中弃用此参数。将忽略您输入的任何值。</para>
+		/// <para>This parameter has been deprecated in ArcGIS Pro. Any value you enter is ignored.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -189,7 +189,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Feature Class Alias</para>
-		/// <para>将创建输出要素类的备用名称。</para>
+		/// <para>The alternate name for the output feature class that will be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -212,38 +212,38 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum GeometryTypeEnum 
 		{
 			/// <summary>
-			/// <para>点—几何类型为点。</para>
+			/// <para>Point—The geometry type is point.</para>
 			/// </summary>
 			[GPValue("POINT")]
-			[Description("点")]
+			[Description("Point")]
 			Point,
 
 			/// <summary>
-			/// <para>多点—几何类型为多点。</para>
+			/// <para>Multipoint—The geometry type is multipoint.</para>
 			/// </summary>
 			[GPValue("MULTIPOINT")]
-			[Description("多点")]
+			[Description("Multipoint")]
 			Multipoint,
 
 			/// <summary>
-			/// <para>Polygon—几何类型为面。</para>
+			/// <para>Polygon—The geometry type is polygon.</para>
 			/// </summary>
 			[GPValue("POLYGON")]
 			[Description("Polygon")]
 			Polygon,
 
 			/// <summary>
-			/// <para>折线—几何类型为折线。</para>
+			/// <para>Polyline—The geometry type is polyline.</para>
 			/// </summary>
 			[GPValue("POLYLINE")]
-			[Description("折线")]
+			[Description("Polyline")]
 			Polyline,
 
 			/// <summary>
-			/// <para>多面体—几何类型为多面体。</para>
+			/// <para>Multipatch—The geometry type is multipatch.</para>
 			/// </summary>
 			[GPValue("MULTIPATCH")]
-			[Description("多面体")]
+			[Description("Multipatch")]
 			Multipatch,
 
 		}
@@ -254,24 +254,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum HasMEnum 
 		{
 			/// <summary>
-			/// <para>不支持—输出要素类将不具有 M 值。这是默认设置。</para>
+			/// <para>No—The output feature class will not have M-values. This is the default.</para>
 			/// </summary>
 			[GPValue("DISABLED")]
-			[Description("不支持")]
+			[Description("No")]
 			No,
 
 			/// <summary>
-			/// <para>与模板要素类相同—如果在模板要素类参数（Python 中的 template 参数）中指定的数据集具有 M 值，则输出要素类将具有 M 值。</para>
+			/// <para>Same as the template feature class—The output feature class will have M-values if the dataset specified in the Template Feature Class parameter (template parameter in Python) has M-values.</para>
 			/// </summary>
 			[GPValue("SAME_AS_TEMPLATE")]
-			[Description("与模板要素类相同")]
+			[Description("Same as the template feature class")]
 			Same_as_the_template_feature_class,
 
 			/// <summary>
-			/// <para>支持—输出要素类将具有 M 值。</para>
+			/// <para>Yes—The output feature class will have M-values.</para>
 			/// </summary>
 			[GPValue("ENABLED")]
-			[Description("支持")]
+			[Description("Yes")]
 			Yes,
 
 		}
@@ -282,24 +282,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum HasZEnum 
 		{
 			/// <summary>
-			/// <para>不支持—输出要素类将不具有 Z 值。这是默认设置。</para>
+			/// <para>No—The output feature class will not have Z-values. This is the default.</para>
 			/// </summary>
 			[GPValue("DISABLED")]
-			[Description("不支持")]
+			[Description("No")]
 			No,
 
 			/// <summary>
-			/// <para>与模板要素类相同—如果模板要素类参数（Python 中的 template 参数）中指定的数据集具有 Z 值，则输出要素类将具有 Z 值。</para>
+			/// <para>Same as the template feature class—The output feature class will have Z-values if the dataset specified in the Template Feature Class parameter (template parameter in Python) has Z-values.</para>
 			/// </summary>
 			[GPValue("SAME_AS_TEMPLATE")]
-			[Description("与模板要素类相同")]
+			[Description("Same as the template feature class")]
 			Same_as_the_template_feature_class,
 
 			/// <summary>
-			/// <para>支持—输出要素类将具有 Z 值。</para>
+			/// <para>Yes—The output feature class will have Z-values.</para>
 			/// </summary>
 			[GPValue("ENABLED")]
-			[Description("支持")]
+			[Description("Yes")]
 			Yes,
 
 		}

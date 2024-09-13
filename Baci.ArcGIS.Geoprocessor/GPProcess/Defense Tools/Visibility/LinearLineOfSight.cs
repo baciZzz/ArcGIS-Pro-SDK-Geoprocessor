@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Linear Line Of Sight</para>
-	/// <para>线性通视分析</para>
-	/// <para>在观察点和目标之间创建视线。</para>
+	/// <para>Linear Line Of Sight</para>
+	/// <para>Creates lines of sight between observers and targets.</para>
 	/// </summary>
 	public class LinearLineOfSight : AbstractGPProcess
 	{
@@ -21,31 +21,31 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		/// <param name="InObserverFeatures">
 		/// <para>Observers</para>
-		/// <para>输入观察点。</para>
+		/// <para>The input observer points.</para>
 		/// </param>
 		/// <param name="InTargetFeatures">
 		/// <para>Targets</para>
-		/// <para>输入目标点。</para>
+		/// <para>The input target points.</para>
 		/// </param>
 		/// <param name="InSurface">
 		/// <para>Input Elevation Surface</para>
-		/// <para>输入高程栅格表面。</para>
+		/// <para>The input elevation raster surface.</para>
 		/// </param>
 		/// <param name="OutLosFeatureClass">
 		/// <para>Output Line Of Sight Feature Class</para>
-		/// <para>用于显示可见和不可见表面区域线的输出要素类。</para>
+		/// <para>The output feature class showing lines of visible and nonvisible surface areas.</para>
 		/// </param>
 		/// <param name="OutSightLineFeatureClass">
 		/// <para>Output Sight Line Feature Class</para>
-		/// <para>用于显示观察点与目标之间的直接视线的输出线要素类。</para>
+		/// <para>The output line feature class showing the direct line of sight between observer and target.</para>
 		/// </param>
 		/// <param name="OutObserverFeatureClass">
 		/// <para>Output Observer Feature Class</para>
-		/// <para>输出观察点要素类。</para>
+		/// <para>The output observer point feature class.</para>
 		/// </param>
 		/// <param name="OutTargetFeatureClass">
 		/// <para>Output Target Feature Class</para>
-		/// <para>输出目标点要素类。</para>
+		/// <para>The output target point feature class.</para>
 		/// </param>
 		public LinearLineOfSight(object InObserverFeatures, object InTargetFeatures, object InSurface, object OutLosFeatureClass, object OutSightLineFeatureClass, object OutObserverFeatureClass, object OutTargetFeatureClass)
 		{
@@ -59,9 +59,9 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 线性通视分析</para>
+		/// <para>Tool Display Name : Linear Line Of Sight</para>
 		/// </summary>
-		public override string DisplayName() => "线性通视分析";
+		public override string DisplayName() => "Linear Line Of Sight";
 
 		/// <summary>
 		/// <para>Tool Name : LinearLineOfSight</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Observers</para>
-		/// <para>输入观察点。</para>
+		/// <para>The input observer points.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Targets</para>
-		/// <para>输入目标点。</para>
+		/// <para>The input target points.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Elevation Surface</para>
-		/// <para>输入高程栅格表面。</para>
+		/// <para>The input elevation raster surface.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Output Line Of Sight Feature Class</para>
-		/// <para>用于显示可见和不可见表面区域线的输出要素类。</para>
+		/// <para>The output feature class showing lines of visible and nonvisible surface areas.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Output Sight Line Feature Class</para>
-		/// <para>用于显示观察点与目标之间的直接视线的输出线要素类。</para>
+		/// <para>The output line feature class showing the direct line of sight between observer and target.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Output Observer Feature Class</para>
-		/// <para>输出观察点要素类。</para>
+		/// <para>The output observer point feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Output Target Feature Class</para>
-		/// <para>输出目标点要素类。</para>
+		/// <para>The output target point feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -158,7 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Obstruction Features</para>
-		/// <para>可能会遮挡视线的输入多面体要素。</para>
+		/// <para>The input multipatch feature that may obstruct the lines of sight.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -167,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Observer Height Above Surface (meters)</para>
-		/// <para>观察点表面高程以上的高度。 默认值为 2。</para>
+		/// <para>The height added to the surface elevation of the observer. The default is 2.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -176,7 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Target Height Above Surface (meters)</para>
-		/// <para>目标表面高程以上的高度。 默认值为 0。</para>
+		/// <para>The height added to the surface elevation of the target. The default is 0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -185,9 +185,9 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Add Profile Graph Attachment To Sight Line</para>
-		/// <para>指定工具是否将观察点和目标之间的剖面（横截面地形图）附件添加到要素。</para>
-		/// <para>无剖面图—不会添加剖面图。 这是默认设置。</para>
-		/// <para>添加剖面图—将添加剖面图。</para>
+		/// <para>Specifies whether the tool will add an attachment to the feature with the profile (cross section terrain graph) between observer and target.</para>
+		/// <para>No profile graph—No profile graph will be added. This is the default.</para>
+		/// <para>Adds a profile graph—A profile graph will be added.</para>
 		/// <para><see cref="AddProfileAttachmentEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]

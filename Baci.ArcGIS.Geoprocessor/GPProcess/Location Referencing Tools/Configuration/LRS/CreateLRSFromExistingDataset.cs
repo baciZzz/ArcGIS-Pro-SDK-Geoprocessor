@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Create LRS From Existing Dataset</para>
-	/// <para>基于现有数据集创建 LRS</para>
-	/// <para>使用现有数据集在指定工作空间中创建线性参考系统 (LRS)。</para>
+	/// <para>Create LRS From Existing Dataset</para>
+	/// <para>Creates a linear referencing system (LRS) in the specified workspace using existing datasets.</para>
 	/// </summary>
 	public class CreateLRSFromExistingDataset : AbstractGPProcess
 	{
@@ -21,95 +21,95 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="LrsName">
 		/// <para>LRS Name</para>
-		/// <para>要创建的 LRS 的名称。 该名称不能已存在于地理数据库中。</para>
+		/// <para>The name of the LRS to create. The name cannot already exist in the geodatabase.</para>
 		/// </param>
 		/// <param name="CenterlineFeatureClass">
 		/// <para>Centerline - Feature Class</para>
-		/// <para>在 LRS 中用作中心线的要素类。</para>
+		/// <para>The feature class to use as the centerline in the LRS.</para>
 		/// </param>
 		/// <param name="CenterlineCenterlineIdField">
 		/// <para>Centerline - Centerline ID Field</para>
-		/// <para>包含中心线 ID 的 GUID 字段。 字段类型必须与中心线序列表中的 centerlineID 字段类型匹配。</para>
+		/// <para>The GUID field containing the centerline ID. The field type must match the centerlineID field type in the centerline sequence table.</para>
 		/// </param>
 		/// <param name="CenterlineSequenceTable">
 		/// <para>Centerline Sequence - Table</para>
-		/// <para>在 LRS 中用作中心线序列的表。</para>
+		/// <para>The table to use as the centerline sequence in the LRS.</para>
 		/// </param>
 		/// <param name="CenterlineSequenceCenterlineIdField">
 		/// <para>Centerline Sequence - Centerline ID Field</para>
-		/// <para>包含中心线序列 ID 的 GUID 字段。 字段类型必须与中心线要素类中的 centerlineID 字段类型和长度匹配。</para>
+		/// <para>The GUID field containing the centerline sequence ID. The field type must match the centerlineID field type and length in the centerline feature class.</para>
 		/// </param>
 		/// <param name="CenterlineSequenceRouteIdField">
 		/// <para>Centerline Sequence - Route ID Field</para>
-		/// <para>包含中心线序列路径 ID 的 GUID 或文本字段。 字段类型必须与校准点和红线要素类中的 routeID 字段类型和长度匹配。</para>
+		/// <para>The GUID or text field containing the centerline sequence route ID. The field type must match the routeID field type and length in the calibration point and redline feature classes.</para>
 		/// </param>
 		/// <param name="CenterlineSequenceFromDateField">
 		/// <para>Centerline Sequence - From Date Field</para>
-		/// <para>包含中心线序列开始日期的日期字段。</para>
+		/// <para>A date field containing the centerline sequence from date.</para>
 		/// </param>
 		/// <param name="CenterlineSequenceToDateField">
 		/// <para>Centerline Sequence - To Date Field</para>
-		/// <para>包含中心线序列结束日期的日期字段。</para>
+		/// <para>A date field containing the centerline sequence to date.</para>
 		/// </param>
 		/// <param name="CenterlineSequenceNetworkIdField">
 		/// <para>Centerline Sequence - Network ID Field</para>
-		/// <para>包含中心线序列网络 ID 的字段。 支持短整型字段类型。</para>
+		/// <para>The field containing the centerline sequence network ID. The short integer field type is supported.</para>
 		/// </param>
 		/// <param name="CalibrationPointFeatureClass">
 		/// <para>Calibration Point - Feature Class</para>
-		/// <para>在 LRS 中用作校准点的要素类。</para>
+		/// <para>The feature class to use as the calibration point in the LRS.</para>
 		/// </param>
 		/// <param name="CalibrationPointMeasureField">
 		/// <para>Calibration Point - Measure Field</para>
-		/// <para>包含校准点测量值的字段。 支持双精度字段类型。</para>
+		/// <para>The field containing the calibration point measure. The double field type is supported.</para>
 		/// </param>
 		/// <param name="CalibrationPointFromDateField">
 		/// <para>Calibration Point - From Date Field</para>
-		/// <para>包含校准点开始日期的日期字段。</para>
+		/// <para>A date field containing the calibration point from date.</para>
 		/// </param>
 		/// <param name="CalibrationPointToDateField">
 		/// <para>Calibration Point - To Date Field</para>
-		/// <para>包含校准点结束日期的日期字段。</para>
+		/// <para>A date field containing the calibration point to date.</para>
 		/// </param>
 		/// <param name="CalibrationPointRouteIdField">
 		/// <para>Calibration Point - Route ID Field</para>
-		/// <para>包含校准点路径 ID 的字段。 支持 GUID 和文本字段类型。 字段类型必须与中心线序列表和红线要素类中的 routeID 字段类型和长度匹配。</para>
+		/// <para>The field containing the calibration point route ID. GUID and text field types are supported. The field type must match the routeID field type and length in the centerline sequence table and the redline feature class.</para>
 		/// </param>
 		/// <param name="CalibrationPointNetworkIdField">
 		/// <para>Calibration Point - Network ID Field</para>
-		/// <para>包含校准点网络 ID 的字段。 支持短整型字段类型。</para>
+		/// <para>The field containing the calibration point network ID. The short integer field type is supported.</para>
 		/// </param>
 		/// <param name="RedlineFeatureClass">
 		/// <para>Redline - Feature Class</para>
-		/// <para>在 LRS 中用作红线的要素类。</para>
+		/// <para>The feature class to use as the redline in the LRS.</para>
 		/// </param>
 		/// <param name="RedlineFromMeasureField">
 		/// <para>Redline - From Measure Field</para>
-		/// <para>包含红线测量始于的字段。 支持双精度字段类型。</para>
+		/// <para>The field containing the redline from measure. The double field type is supported.</para>
 		/// </param>
 		/// <param name="RedlineToMeasureField">
 		/// <para>Redline - To Measure Field</para>
-		/// <para>包含红线测量止于的字段。 支持双精度字段类型。</para>
+		/// <para>The field containing the redline to measure. The double field type is supported.</para>
 		/// </param>
 		/// <param name="RedlineRouteIdField">
 		/// <para>Redline - Route ID Field</para>
-		/// <para>包含红线路径 ID 的字段。 支持 GUID 和文本字段类型。 字段类型必须与校准点要素类和中心线序列表中的 routeID 字段类型和长度匹配。</para>
+		/// <para>The field containing the redline route ID. GUID and text field types are supported. The field type must match the routeID field type and length in the calibration point feature class and centerline sequence table.</para>
 		/// </param>
 		/// <param name="RedlineRouteNameField">
 		/// <para>Redline - Route Name Field</para>
-		/// <para>包含红线路径名称的文本字段。</para>
+		/// <para>A text field containing the redline route name.</para>
 		/// </param>
 		/// <param name="RedlineEffectiveDateField">
 		/// <para>Redline - Effective Date Field</para>
-		/// <para>包含红线生效日期的日期字段。</para>
+		/// <para>A date field containing the redline effective date.</para>
 		/// </param>
 		/// <param name="RedlineActivityTypeField">
 		/// <para>Redline - Activity Type Field</para>
-		/// <para>包含红线活动类型的字段。 支持短整型字段类型。</para>
+		/// <para>The field containing the redline activity type. The short integer field type is supported.</para>
 		/// </param>
 		/// <param name="RedlineNetworkIdField">
 		/// <para>Redline - Network ID Field</para>
-		/// <para>包含红线网络 ID 的字段。 支持短整型字段类型。</para>
+		/// <para>The field containing the redline network ID. The short integer field type is supported.</para>
 		/// </param>
 		public CreateLRSFromExistingDataset(object LrsName, object CenterlineFeatureClass, object CenterlineCenterlineIdField, object CenterlineSequenceTable, object CenterlineSequenceCenterlineIdField, object CenterlineSequenceRouteIdField, object CenterlineSequenceFromDateField, object CenterlineSequenceToDateField, object CenterlineSequenceNetworkIdField, object CalibrationPointFeatureClass, object CalibrationPointMeasureField, object CalibrationPointFromDateField, object CalibrationPointToDateField, object CalibrationPointRouteIdField, object CalibrationPointNetworkIdField, object RedlineFeatureClass, object RedlineFromMeasureField, object RedlineToMeasureField, object RedlineRouteIdField, object RedlineRouteNameField, object RedlineEffectiveDateField, object RedlineActivityTypeField, object RedlineNetworkIdField)
 		{
@@ -139,9 +139,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 基于现有数据集创建 LRS</para>
+		/// <para>Tool Display Name : Create LRS From Existing Dataset</para>
 		/// </summary>
-		public override string DisplayName() => "基于现有数据集创建 LRS";
+		public override string DisplayName() => "Create LRS From Existing Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : CreateLRSFromExistingDataset</para>
@@ -175,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>LRS Name</para>
-		/// <para>要创建的 LRS 的名称。 该名称不能已存在于地理数据库中。</para>
+		/// <para>The name of the LRS to create. The name cannot already exist in the geodatabase.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -183,7 +183,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Centerline - Feature Class</para>
-		/// <para>在 LRS 中用作中心线的要素类。</para>
+		/// <para>The feature class to use as the centerline in the LRS.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -194,7 +194,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Centerline - Centerline ID Field</para>
-		/// <para>包含中心线 ID 的 GUID 字段。 字段类型必须与中心线序列表中的 centerlineID 字段类型匹配。</para>
+		/// <para>The GUID field containing the centerline ID. The field type must match the centerlineID field type in the centerline sequence table.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -205,7 +205,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Centerline Sequence - Table</para>
-		/// <para>在 LRS 中用作中心线序列的表。</para>
+		/// <para>The table to use as the centerline sequence in the LRS.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -214,7 +214,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Centerline Sequence - Centerline ID Field</para>
-		/// <para>包含中心线序列 ID 的 GUID 字段。 字段类型必须与中心线要素类中的 centerlineID 字段类型和长度匹配。</para>
+		/// <para>The GUID field containing the centerline sequence ID. The field type must match the centerlineID field type and length in the centerline feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -225,7 +225,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Centerline Sequence - Route ID Field</para>
-		/// <para>包含中心线序列路径 ID 的 GUID 或文本字段。 字段类型必须与校准点和红线要素类中的 routeID 字段类型和长度匹配。</para>
+		/// <para>The GUID or text field containing the centerline sequence route ID. The field type must match the routeID field type and length in the calibration point and redline feature classes.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -236,7 +236,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Centerline Sequence - From Date Field</para>
-		/// <para>包含中心线序列开始日期的日期字段。</para>
+		/// <para>A date field containing the centerline sequence from date.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -247,7 +247,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Centerline Sequence - To Date Field</para>
-		/// <para>包含中心线序列结束日期的日期字段。</para>
+		/// <para>A date field containing the centerline sequence to date.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -258,7 +258,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Centerline Sequence - Network ID Field</para>
-		/// <para>包含中心线序列网络 ID 的字段。 支持短整型字段类型。</para>
+		/// <para>The field containing the centerline sequence network ID. The short integer field type is supported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -269,7 +269,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Calibration Point - Feature Class</para>
-		/// <para>在 LRS 中用作校准点的要素类。</para>
+		/// <para>The feature class to use as the calibration point in the LRS.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -280,7 +280,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Calibration Point - Measure Field</para>
-		/// <para>包含校准点测量值的字段。 支持双精度字段类型。</para>
+		/// <para>The field containing the calibration point measure. The double field type is supported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -291,7 +291,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Calibration Point - From Date Field</para>
-		/// <para>包含校准点开始日期的日期字段。</para>
+		/// <para>A date field containing the calibration point from date.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -302,7 +302,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Calibration Point - To Date Field</para>
-		/// <para>包含校准点结束日期的日期字段。</para>
+		/// <para>A date field containing the calibration point to date.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -313,7 +313,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Calibration Point - Route ID Field</para>
-		/// <para>包含校准点路径 ID 的字段。 支持 GUID 和文本字段类型。 字段类型必须与中心线序列表和红线要素类中的 routeID 字段类型和长度匹配。</para>
+		/// <para>The field containing the calibration point route ID. GUID and text field types are supported. The field type must match the routeID field type and length in the centerline sequence table and the redline feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -324,7 +324,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Calibration Point - Network ID Field</para>
-		/// <para>包含校准点网络 ID 的字段。 支持短整型字段类型。</para>
+		/// <para>The field containing the calibration point network ID. The short integer field type is supported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -335,7 +335,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Redline - Feature Class</para>
-		/// <para>在 LRS 中用作红线的要素类。</para>
+		/// <para>The feature class to use as the redline in the LRS.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -346,7 +346,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Redline - From Measure Field</para>
-		/// <para>包含红线测量始于的字段。 支持双精度字段类型。</para>
+		/// <para>The field containing the redline from measure. The double field type is supported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -357,7 +357,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Redline - To Measure Field</para>
-		/// <para>包含红线测量止于的字段。 支持双精度字段类型。</para>
+		/// <para>The field containing the redline to measure. The double field type is supported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -368,7 +368,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Redline - Route ID Field</para>
-		/// <para>包含红线路径 ID 的字段。 支持 GUID 和文本字段类型。 字段类型必须与校准点要素类和中心线序列表中的 routeID 字段类型和长度匹配。</para>
+		/// <para>The field containing the redline route ID. GUID and text field types are supported. The field type must match the routeID field type and length in the calibration point feature class and centerline sequence table.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -379,7 +379,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Redline - Route Name Field</para>
-		/// <para>包含红线路径名称的文本字段。</para>
+		/// <para>A text field containing the redline route name.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -390,7 +390,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Redline - Effective Date Field</para>
-		/// <para>包含红线生效日期的日期字段。</para>
+		/// <para>A date field containing the redline effective date.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -401,7 +401,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Redline - Activity Type Field</para>
-		/// <para>包含红线活动类型的字段。 支持短整型字段类型。</para>
+		/// <para>The field containing the redline activity type. The short integer field type is supported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -412,7 +412,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Redline - Network ID Field</para>
-		/// <para>包含红线网络 ID 的字段。 支持短整型字段类型。</para>
+		/// <para>The field containing the redline network ID. The short integer field type is supported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Change Privileges</para>
-	/// <para>更改权限</para>
-	/// <para>建立或更改输入企业级数据库数据集、独立要素类或表的用户访问权限。</para>
+	/// <para>Change Privileges</para>
+	/// <para>Establishes or changes user access privileges to the input enterprise database datasets, stand-alone feature classes, or tables.</para>
 	/// </summary>
 	public class ChangePrivileges : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>将更改访问权限的数据集、要素类或表。</para>
+		/// <para>The datasets, feature classes, or tables whose access privileges will be changed.</para>
 		/// </param>
 		/// <param name="User">
 		/// <para>User</para>
-		/// <para>要修改其权限的数据库用户名。</para>
+		/// <para>The database user name whose privileges are being modified.</para>
 		/// </param>
 		public ChangePrivileges(object InDataset, object User)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 更改权限</para>
+		/// <para>Tool Display Name : Change Privileges</para>
 		/// </summary>
-		public override string DisplayName() => "更改权限";
+		public override string DisplayName() => "Change Privileges";
 
 		/// <summary>
 		/// <para>Tool Name : ChangePrivileges</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>将更改访问权限的数据集、要素类或表。</para>
+		/// <para>The datasets, feature classes, or tables whose access privileges will be changed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>User</para>
-		/// <para>要修改其权限的数据库用户名。</para>
+		/// <para>The database user name whose privileges are being modified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -86,10 +86,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>View (Select)</para>
-		/// <para>建立用户的查看权限。</para>
-		/// <para>不更改查看权限—不更改用户现有查看权限。如果用户具有查看权限，则将继续持有查看权限。如果用户不具备查看权限，则将继续不持有查看权限。</para>
-		/// <para>授予查看权限—允许用户查看数据集。</para>
-		/// <para>撤消查看权限—撤消用户查看数据集的所有权限。</para>
+		/// <para>Establishes the user&apos;s view privileges.</para>
+		/// <para>Do not change to view privileges—No change to the user&apos;s existing view privilege. If the user has view privileges, they will continue to have view privileges. If the user doesn&apos;t have view privileges, they will continue to not have view privileges.</para>
+		/// <para>Grant view privileges—Allows user to view datasets.</para>
+		/// <para>Revoke view privileges—Removes all user privileges to view datasets.</para>
 		/// <para><see cref="ViewEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -99,10 +99,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Edit (Update/Insert/Delete)</para>
-		/// <para>建立用户的编辑权限。</para>
-		/// <para>不更改编辑权限— 不更改用户现有编辑权限。如果用户具有编辑权限，则将继续持有编辑权限。如果用户不具备编辑权限，则将继续不持有编辑权限。这是默认设置。</para>
-		/// <para>授予编辑权限—允许用户编辑输入数据集。</para>
-		/// <para>撤消编辑权限—撤消用户的编辑权限。用户仍然可以查看输入数据集。</para>
+		/// <para>Establishes the user&apos;s edit privileges.</para>
+		/// <para>Do not change edit privileges— No change to the user&apos;s existing edit privilege. If the user has edit privileges, they will continue to have edit privileges. If the user doesn&apos;t have edit privileges, they will continue to not have edit privileges. This is the default.</para>
+		/// <para>Grant edit privileges—Allows the user to edit the input datasets.</para>
+		/// <para>Revoke edit privileges—Removes the user&apos;s edit privileges. The user may still view the input dataset.</para>
 		/// <para><see cref="EditEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -134,24 +134,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ViewEnum 
 		{
 			/// <summary>
-			/// <para>不更改查看权限—不更改用户现有查看权限。如果用户具有查看权限，则将继续持有查看权限。如果用户不具备查看权限，则将继续不持有查看权限。</para>
+			/// <para>Do not change to view privileges—No change to the user&apos;s existing view privilege. If the user has view privileges, they will continue to have view privileges. If the user doesn&apos;t have view privileges, they will continue to not have view privileges.</para>
 			/// </summary>
 			[GPValue("AS_IS")]
-			[Description("不更改查看权限")]
+			[Description("Do not change to view privileges")]
 			Do_not_change_to_view_privileges,
 
 			/// <summary>
-			/// <para>授予查看权限—允许用户查看数据集。</para>
+			/// <para>Grant view privileges—Allows user to view datasets.</para>
 			/// </summary>
 			[GPValue("GRANT")]
-			[Description("授予查看权限")]
+			[Description("Grant view privileges")]
 			Grant_view_privileges,
 
 			/// <summary>
-			/// <para>撤消查看权限—撤消用户查看数据集的所有权限。</para>
+			/// <para>Revoke view privileges—Removes all user privileges to view datasets.</para>
 			/// </summary>
 			[GPValue("REVOKE")]
-			[Description("撤消查看权限")]
+			[Description("Revoke view privileges")]
 			Revoke_view_privileges,
 
 		}
@@ -162,24 +162,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum EditEnum 
 		{
 			/// <summary>
-			/// <para>不更改编辑权限— 不更改用户现有编辑权限。如果用户具有编辑权限，则将继续持有编辑权限。如果用户不具备编辑权限，则将继续不持有编辑权限。这是默认设置。</para>
+			/// <para>Do not change edit privileges— No change to the user&apos;s existing edit privilege. If the user has edit privileges, they will continue to have edit privileges. If the user doesn&apos;t have edit privileges, they will continue to not have edit privileges. This is the default.</para>
 			/// </summary>
 			[GPValue("AS_IS")]
-			[Description("不更改编辑权限")]
+			[Description("Do not change edit privileges")]
 			Do_not_change_edit_privileges,
 
 			/// <summary>
-			/// <para>授予编辑权限—允许用户编辑输入数据集。</para>
+			/// <para>Grant edit privileges—Allows the user to edit the input datasets.</para>
 			/// </summary>
 			[GPValue("GRANT")]
-			[Description("授予编辑权限")]
+			[Description("Grant edit privileges")]
 			Grant_edit_privileges,
 
 			/// <summary>
-			/// <para>撤消编辑权限—撤消用户的编辑权限。用户仍然可以查看输入数据集。</para>
+			/// <para>Revoke edit privileges—Removes the user&apos;s edit privileges. The user may still view the input dataset.</para>
 			/// </summary>
 			[GPValue("REVOKE")]
-			[Description("撤消编辑权限")]
+			[Description("Revoke edit privileges")]
 			Revoke_edit_privileges,
 
 		}

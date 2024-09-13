@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Subtype</para>
-	/// <para>添加子类型</para>
-	/// <para>将新的子类型添加到输入表的子类型中。</para>
+	/// <para>Add Subtype</para>
+	/// <para>Adds a new subtype to the subtypes in the input table.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,15 +23,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>要更新的子类型定义所在的要素类或表。</para>
+		/// <para>The feature class or table containing the subtype definition to be updated.</para>
 		/// </param>
 		/// <param name="SubtypeCode">
 		/// <para>Subtype Code</para>
-		/// <para>要添加的子类型的唯一整数值。</para>
+		/// <para>A unique integer value for the subtype to be added.</para>
 		/// </param>
 		/// <param name="SubtypeDescription">
 		/// <para>Subtype Name</para>
-		/// <para>子类型编码描述。</para>
+		/// <para>A description of the subtype code.</para>
 		/// </param>
 		public AddSubtype(object InTable, object SubtypeCode, object SubtypeDescription)
 		{
@@ -41,9 +41,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 添加子类型</para>
+		/// <para>Tool Display Name : Add Subtype</para>
 		/// </summary>
-		public override string DisplayName() => "添加子类型";
+		public override string DisplayName() => "Add Subtype";
 
 		/// <summary>
 		/// <para>Tool Name : AddSubtype</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>要更新的子类型定义所在的要素类或表。</para>
+		/// <para>The feature class or table containing the subtype definition to be updated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Subtype Code</para>
-		/// <para>要添加的子类型的唯一整数值。</para>
+		/// <para>A unique integer value for the subtype to be added.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Subtype Name</para>
-		/// <para>子类型编码描述。</para>
+		/// <para>A description of the subtype code.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

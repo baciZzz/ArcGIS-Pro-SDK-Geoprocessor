@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Spatial Index</para>
-	/// <para>移除空间索引</para>
-	/// <para>从 shapefile 或文件地理数据库、移动地理数据库或企业级地理数据库要素类中删除空间索引。</para>
+	/// <para>Remove Spatial Index</para>
+	/// <para>Deletes the spatial index from a shapefile or file geodatabase, mobile geodatabase, or an enterprise geodatabase feature class.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>将从中移除空间索引的 shapefile 或文件地理数据库、移动地理数据库或企业级地理数据库要素类。</para>
+		/// <para>The shapefile or file geodatabase, mobile geodatabase, or an enterprise geodatabase feature class from which a spatial index will be removed.</para>
 		/// </param>
 		public RemoveSpatialIndex(object InFeatures)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 移除空间索引</para>
+		/// <para>Tool Display Name : Remove Spatial Index</para>
 		/// </summary>
-		public override string DisplayName() => "移除空间索引";
+		public override string DisplayName() => "Remove Spatial Index";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveSpatialIndex</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>将从中移除空间索引的 shapefile 或文件地理数据库、移动地理数据库或企业级地理数据库要素类。</para>
+		/// <para>The shapefile or file geodatabase, mobile geodatabase, or an enterprise geodatabase feature class from which a spatial index will be removed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]

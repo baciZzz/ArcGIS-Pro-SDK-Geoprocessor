@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Angle Directed Layout</para>
-	/// <para>添加遵循角度布局</para>
-	/// <para>用于将“遵循角度”布局算法添加到基于给定模板生成逻辑示意图结束时自动进行链接的布局列表。此工具还会针对基于该模板的任意逻辑示意图预设“遵循角度”布局算法参数。</para>
+	/// <para>Add Angle Directed Layout</para>
+	/// <para>Adds the Angle Directed Layout algorithm to the list of layouts to be automatically chained at the end of the generation of diagrams based on a given template. This tool also presets the Angle Directed Layout algorithm parameters for any diagram based on that template.</para>
 	/// </summary>
 	public class AddAngleDirectedLayout : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
+		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>要修改的逻辑示意图模板名称</para>
+		/// <para>The name of the diagram template that will be modified.</para>
 		/// </param>
 		/// <param name="IsActive">
 		/// <para>Active</para>
-		/// <para>指定是否将在基于指定模板生成逻辑示意图时自动运行布局算法。</para>
-		/// <para>选中 - 添加的布局算法会在基于输入逻辑示意图模板参数值生成任何逻辑示意图的过程中自动运行。 这是默认设置。为布局算法指定的参数值是在生成逻辑示意图的过程中用于运行布局的参数值。 如果要对基于输入模板的任何逻辑示意图运行此算法，则还会默认加载这些参数值。</para>
-		/// <para>未选中 - 如果要对基于输入模板的任何逻辑示意图运行此算法，则还将默认加载当前为添加的布局逻辑示意图指定的所有参数值。</para>
+		/// <para>Specifies whether the layout algorithm will automatically run when generating diagrams based on the specified template.</para>
+		/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter value. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+		/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </param>
 		public AddAngleDirectedLayout(object InUtilityNetwork, object TemplateName, object IsActive)
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 添加遵循角度布局</para>
+		/// <para>Tool Display Name : Add Angle Directed Layout</para>
 		/// </summary>
-		public override string DisplayName() => "添加遵循角度布局";
+		public override string DisplayName() => "Add Angle Directed Layout";
 
 		/// <summary>
 		/// <para>Tool Name : AddAngleDirectedLayout</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
+		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>要修改的逻辑示意图模板名称</para>
+		/// <para>The name of the diagram template that will be modified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -94,9 +94,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Active</para>
-		/// <para>指定是否将在基于指定模板生成逻辑示意图时自动运行布局算法。</para>
-		/// <para>选中 - 添加的布局算法会在基于输入逻辑示意图模板参数值生成任何逻辑示意图的过程中自动运行。 这是默认设置。为布局算法指定的参数值是在生成逻辑示意图的过程中用于运行布局的参数值。 如果要对基于输入模板的任何逻辑示意图运行此算法，则还会默认加载这些参数值。</para>
-		/// <para>未选中 - 如果要对基于输入模板的任何逻辑示意图运行此算法，则还将默认加载当前为添加的布局逻辑示意图指定的所有参数值。</para>
+		/// <para>Specifies whether the layout algorithm will automatically run when generating diagrams based on the specified template.</para>
+		/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter value. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+		/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -106,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Preserve container layout</para>
-		/// <para>指定算法将如何处理容器。</para>
-		/// <para>选中 - 将对逻辑示意图的上方图执行布局算法，以保留容器。</para>
-		/// <para>未选中 - 将对逻辑示意图中的内容要素和非内容要素执行布局算法。 这是默认设置。</para>
+		/// <para>Specifies how the algorithm will process containers.</para>
+		/// <para>Checked—The layout algorithm will execute on the top graph of the diagram so containers are preserved.</para>
+		/// <para>Unchecked—The layout algorithm will execute on both content and noncontent features in the diagram. This is the default.</para>
 		/// <para><see cref="AreContainersPreservedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Number of Iterations</para>
-		/// <para>要处理的迭代次数。默认值为 1。</para>
+		/// <para>The number of iterations to process. The default is 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -126,10 +126,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Number of Directions</para>
-		/// <para>对齐逻辑示意图边及其连接的交汇点将使用的方向数。</para>
-		/// <para>12 个方向—将移动边，以使其逐渐接近 12 个轴中的一个（轴从边的起始交汇点处开始，倾斜角度分别为 30 度、60 度、90 度、120 度、150 度、180 度、210 度、240 度、270 度、300 度、330 度或 360 度）。</para>
-		/// <para>8 个方向—将移动边，以使其逐渐接近 8 个轴中的一个（轴从边的起始交汇点处开始，倾斜角度分别为 45 度、90 度、135 度、180 度、225 度、270 度、315 度或 360 度）。这是默认设置。</para>
-		/// <para>4 个方向—将移动边，以使其逐渐接近 4 个轴中的一个（轴从边的起始交汇点处开始，倾斜角度分别为 90 度、180 度、270 度或 360 度）。</para>
+		/// <para>The number of directions that will be used to align the diagram edges and their connected junctions.</para>
+		/// <para>12 directions—The edges will move so they progressively approach one of the 12 axes, starting with the edge&apos;s origin junction and inclined at 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, or 360 degrees.</para>
+		/// <para>8 directions—The edges will move so they progressively approach one of the 8 axes, starting with the edge&apos;s origin junction and inclined at 45, 90, 135, 180, 225, 270, 315, or 360 degrees. This is the default.</para>
+		/// <para>4 directions—The edges will move so they progressively approach one of the 4 axes, starting with the edge&apos;s origin junction and inclined at 90, 180, 270, or 360 degrees.</para>
 		/// <para><see cref="NumberOfDirectionsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -159,14 +159,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsActiveEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter value. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ACTIVE")]
 			ACTIVE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INACTIVE")]
@@ -180,14 +180,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum AreContainersPreservedEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The layout algorithm will execute on the top graph of the diagram so containers are preserved.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PRESERVE_CONTAINERS")]
 			PRESERVE_CONTAINERS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The layout algorithm will execute on both content and noncontent features in the diagram. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("IGNORE_CONTAINERS")]
@@ -201,24 +201,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum NumberOfDirectionsEnum 
 		{
 			/// <summary>
-			/// <para>12 个方向—将移动边，以使其逐渐接近 12 个轴中的一个（轴从边的起始交汇点处开始，倾斜角度分别为 30 度、60 度、90 度、120 度、150 度、180 度、210 度、240 度、270 度、300 度、330 度或 360 度）。</para>
+			/// <para>12 directions—The edges will move so they progressively approach one of the 12 axes, starting with the edge&apos;s origin junction and inclined at 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, or 360 degrees.</para>
 			/// </summary>
 			[GPValue("TWELVE_DIRECTIONS")]
-			[Description("12 个方向")]
+			[Description("12 directions")]
 			_12_directions,
 
 			/// <summary>
-			/// <para>8 个方向—将移动边，以使其逐渐接近 8 个轴中的一个（轴从边的起始交汇点处开始，倾斜角度分别为 45 度、90 度、135 度、180 度、225 度、270 度、315 度或 360 度）。这是默认设置。</para>
+			/// <para>8 directions—The edges will move so they progressively approach one of the 8 axes, starting with the edge&apos;s origin junction and inclined at 45, 90, 135, 180, 225, 270, 315, or 360 degrees. This is the default.</para>
 			/// </summary>
 			[GPValue("EIGHT_DIRECTIONS")]
-			[Description("8 个方向")]
+			[Description("8 directions")]
 			_8_directions,
 
 			/// <summary>
-			/// <para>4 个方向—将移动边，以使其逐渐接近 4 个轴中的一个（轴从边的起始交汇点处开始，倾斜角度分别为 90 度、180 度、270 度或 360 度）。</para>
+			/// <para>4 directions—The edges will move so they progressively approach one of the 4 axes, starting with the edge&apos;s origin junction and inclined at 90, 180, 270, or 360 degrees.</para>
 			/// </summary>
 			[GPValue("FOUR_DIRECTIONS")]
-			[Description("4 个方向")]
+			[Description("4 directions")]
 			_4_directions,
 
 		}

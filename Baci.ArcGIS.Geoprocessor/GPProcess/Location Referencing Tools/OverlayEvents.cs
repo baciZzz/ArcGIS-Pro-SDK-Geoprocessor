@@ -11,8 +11,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Overlay Events</para>
-	/// <para>叠加事件</para>
-	/// <para>针对目标网络覆盖一个或多个线性事件要素图层，并输出表示输入动态分段的要素类或表。</para>
+	/// <para>Overlay Events</para>
+	/// <para>Overlays one or more linear event feature layers onto a target network </para>
+	/// <para>and outputs a feature class or table that represents the dynamic segmentation of the inputs.</para>
 	/// </summary>
 	public class OverlayEvents : AbstractGPProcess
 	{
@@ -21,15 +22,15 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InRouteFeatures">
 		/// <para>Input Route Features</para>
-		/// <para>将针对其动态分割事件图层的目标网络。</para>
+		/// <para>The target network onto which the event layers will be dynamically segmented.</para>
 		/// </param>
 		/// <param name="EventLayers">
 		/// <para>Event Layers</para>
-		/// <para>要针对目标网络动态分割的事件图层。</para>
+		/// <para>The event layers that will be dynamically segmented together onto a target network.</para>
 		/// </param>
 		/// <param name="OutputDataset">
 		/// <para>Output Dataset</para>
-		/// <para>包含将要创建的输出事件记录的表或要素类。</para>
+		/// <para>The table or feature class containing the output event records that will be created.</para>
 		/// </param>
 		public OverlayEvents(object InRouteFeatures, object EventLayers, object OutputDataset)
 		{
@@ -39,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 叠加事件</para>
+		/// <para>Tool Display Name : Overlay Events</para>
 		/// </summary>
-		public override string DisplayName() => "叠加事件";
+		public override string DisplayName() => "Overlay Events";
 
 		/// <summary>
 		/// <para>Tool Name : OverlayEvents</para>
@@ -75,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Input Route Features</para>
-		/// <para>将针对其动态分割事件图层的目标网络。</para>
+		/// <para>The target network onto which the event layers will be dynamically segmented.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Event Layers</para>
-		/// <para>要针对目标网络动态分割的事件图层。</para>
+		/// <para>The event layers that will be dynamically segmented together onto a target network.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Output Dataset</para>
-		/// <para>包含将要创建的输出事件记录的表或要素类。</para>
+		/// <para>The table or feature class containing the output event records that will be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -103,9 +104,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Include Geometry</para>
-		/// <para>指定输出数据集值是否将包括事件几何。</para>
-		/// <para>未选中 - 输出数据集值将不包括事件几何。 事件记录将存储为表。 这是默认设置。</para>
-		/// <para>选中 - 输出数据集值将包括事件几何。 事件记录将存储为要素类。</para>
+		/// <para>Specifies whether the Output Dataset value will include event geometry.</para>
+		/// <para>Unchecked—The Output Dataset value will not include event geometry. Event records will be stored as a table. This is the default.</para>
+		/// <para>Checked—The Output Dataset value will include event geometry. Event records will be stored as a feature class.</para>
 		/// <para><see cref="IncludeGeometryEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -115,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Network Fields</para>
-		/// <para>来自网络图层的字段将包含在输出中。</para>
+		/// <para>Fields from the network layer that will be included in the output.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -140,14 +141,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum IncludeGeometryEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The Output Dataset value will include event geometry. Event records will be stored as a feature class.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_GEOMETRY")]
 			INCLUDE_GEOMETRY,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The Output Dataset value will not include event geometry. Event records will be stored as a table. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXCLUDE_GEOMETRY")]

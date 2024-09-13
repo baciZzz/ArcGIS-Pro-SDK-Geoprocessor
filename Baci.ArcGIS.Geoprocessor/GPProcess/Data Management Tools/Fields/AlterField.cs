@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Alter Field</para>
-	/// <para>更改字段</para>
-	/// <para>重命名字段和字段别名，或更改字段属性。</para>
+	/// <para>Alter Field</para>
+	/// <para>Renames fields and field aliases or alters field properties.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>包含待更改字段的输入地理数据库表或要素类。</para>
+		/// <para>The input geodatabase table or feature class that contains the field to alter.</para>
 		/// </param>
 		/// <param name="Field">
 		/// <para>Field Name</para>
-		/// <para>待更改字段的名称。 如果字段为必填字段，则只有字段别名是可更改的。</para>
+		/// <para>The name of the field to alter. If the field is a required field, only the field alias can be altered.</para>
 		/// </param>
 		public AlterField(object InTable, object Field)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 更改字段</para>
+		/// <para>Tool Display Name : Alter Field</para>
 		/// </summary>
-		public override string DisplayName() => "更改字段";
+		public override string DisplayName() => "Alter Field";
 
 		/// <summary>
 		/// <para>Tool Name : AlterField</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>包含待更改字段的输入地理数据库表或要素类。</para>
+		/// <para>The input geodatabase table or feature class that contains the field to alter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field Name</para>
-		/// <para>待更改字段的名称。 如果字段为必填字段，则只有字段别名是可更改的。</para>
+		/// <para>The name of the field to alter. If the field is a required field, only the field alias can be altered.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>New Field Name</para>
-		/// <para>字段的新名称。</para>
+		/// <para>The new name for the field.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>New Field Alias</para>
-		/// <para>字段的新字段别名。</para>
+		/// <para>The new field alias for the field.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -105,16 +105,16 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>New Field Type</para>
-		/// <para>指定字段的新字段类型。 此参数仅在输入表为空（不包括记录）的情况下适用。</para>
-		/// <para>文本—此字段类型将为文本类型。 文本字段支持字符串。</para>
-		/// <para>浮点型（32 位浮点型）—此字段类型将为浮点型。 浮点型字段支持介于 -3.4E38 和 1.2E38 之间的小数。</para>
-		/// <para>双精度型（64 位浮点型）—此字段类型将为双精度型。 双精度型字段支持介于 -2.2E308 和 1.8E308 之间的小数。</para>
-		/// <para>短整型（16 位整型）—此字段类型将为短整型。 短整型字段支持介于 -32,768 和 32,767 之间的整数。</para>
-		/// <para>长整型（32 位整数）—此字段类型将为长整型。 长整型字段支持介于 -2,147,483,648 和 2,147,483,647 之间的整数。</para>
-		/// <para>日期—此字段类型将为日期类型。 日期字段支持日期和时间值。</para>
-		/// <para>Blob（二进制数据）—此字段类型将为 BLOB。 BLOB 字段支持存储为长度较长的一系列二进制数的数据。 您需要一个自定义的加载器、查看器或第三方应用程序将这些项加载到 BLOB 字段中或者查看 BLOB 字段的内容。</para>
-		/// <para>栅格影像—此字段类型将为栅格。 栅格字段格可在地理数据库中存储栅格数据或者将该数据与地理数据库一同存储。 可以存储 ArcGIS 软件支持的所有栅格数据集格式，但建议您仅使用小影像。</para>
-		/// <para>GUID（全局唯一标识符）—此字段类型将为 GUID。 GUID 字段可存储注册表样式的字符串，该字符串包含用大括号括起来的 36 个字符。</para>
+		/// <para>Specifies the new field type for the field. This parameter is only applicable if the input table is empty (does not contain records).</para>
+		/// <para>Text—The field type will be text. Text fields support a string of characters.</para>
+		/// <para>Float (32-bit floating point)—The field type will be float. Float fields support fractional numbers between -3.4E38 and 1.2E38.</para>
+		/// <para>Double (64-bit floating point)—The field type will be double. Double fields support fractional numbers between -2.2E308 and 1.8E308.</para>
+		/// <para>Short (16-bit integer)—The field type will be short. Short fields support whole numbers between -32,768 and 32,767.</para>
+		/// <para>Long (32-bit integer)—The field type will be long. Long fields support whole numbers between -2,147,483,648 and 2,147,483,647.</para>
+		/// <para>Date—The field type will be date. Date fields support date and time values.</para>
+		/// <para>Blob (binary data)—The field type will be BLOB. BLOB fields support data stored as a long sequence of binary numbers. You need a custom loader or viewer or a third-party application to load items into a BLOB field or view the contents of a BLOB field.</para>
+		/// <para>Raster imagery—The field type will be raster. Raster fields can store raster data in or alongside the geodatabase. All ArcGIS software-supported raster dataset formats can be stored, but it is recommended that only small images be used.</para>
+		/// <para>GUID (globally unique identifier)—The field type will be GUID. GUID fields store registry-style strings consisting of 36 characters enclosed in curly brackets.</para>
 		/// <para><see cref="FieldTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>New Field Length</para>
-		/// <para>字段的新长度。 它为字段的每条记录设置最大允许字符数。 此参数仅适用于 Text 或 Blob（二进制数据）类型的字段。 如果表为空，则可以增大或减小字段长度。 如果表不为空，则仅可在当前值的基础上增加长度。</para>
+		/// <para>The new length of the field. This sets the maximum number of allowable characters for each record of the field. This parameter is only applicable to fields of type Text or Blob (binary data). If the table is empty, the field length can be increased or decreased. If the table is not empty, the length can only be increased from the current value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -132,9 +132,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>New Field IsNullable</para>
-		/// <para>指定该字段是否可包含空值。 只有地理数据库中的字段支持空值。 此参数仅在表为空（不包括记录）的情况下适用。</para>
-		/// <para>选中 - 字段可包含空值。 这是默认设置。</para>
-		/// <para>未选中 - 字段不可包含空值。</para>
+		/// <para>Specifies whether the field can contain null values. Null values are only supported for fields in a geodatabase. This parameter is only applicable if the table is empty (does not contain records).</para>
+		/// <para>Checked—The field can contain null values. This is the default.</para>
+		/// <para>Unchecked—The field cannot contain null values.</para>
 		/// <para><see cref="FieldIsNullableEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -144,9 +144,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Clear Alias</para>
-		/// <para>指定是否清除输入字段的别名。 要清除字段别名，新建字段别名参数值必须为空。</para>
-		/// <para>选中 - 将清除字段别名（设为空值）。 字段别名参数必须为空。</para>
-		/// <para>未选中 - 不会清除字段别名。 这是默认设置。</para>
+		/// <para>Specifies whether the alias for the input field will be cleared. The New Field Alias parameter value must be empty to clear the alias of the field.</para>
+		/// <para>Checked—The field alias will be cleared (set to null). The field alias parameter must be empty.</para>
+		/// <para>Unchecked—The field alias will not be cleared. This is the default.</para>
 		/// <para><see cref="ClearFieldAliasEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -178,66 +178,66 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum FieldTypeEnum 
 		{
 			/// <summary>
-			/// <para>文本—此字段类型将为文本类型。 文本字段支持字符串。</para>
+			/// <para>Text—The field type will be text. Text fields support a string of characters.</para>
 			/// </summary>
 			[GPValue("TEXT")]
-			[Description("文本")]
+			[Description("Text")]
 			Text,
 
 			/// <summary>
-			/// <para>浮点型（32 位浮点型）—此字段类型将为浮点型。 浮点型字段支持介于 -3.4E38 和 1.2E38 之间的小数。</para>
+			/// <para>Float (32-bit floating point)—The field type will be float. Float fields support fractional numbers between -3.4E38 and 1.2E38.</para>
 			/// </summary>
 			[GPValue("FLOAT")]
-			[Description("浮点型（32 位浮点型）")]
+			[Description("Float (32-bit floating point)")]
 			FLOAT,
 
 			/// <summary>
-			/// <para>双精度型（64 位浮点型）—此字段类型将为双精度型。 双精度型字段支持介于 -2.2E308 和 1.8E308 之间的小数。</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("DOUBLE")]
-			[Description("双精度型（64 位浮点型）")]
+			[Description("Double  (64-bit floating point)")]
 			DOUBLE,
 
 			/// <summary>
-			/// <para>短整型（16 位整型）—此字段类型将为短整型。 短整型字段支持介于 -32,768 和 32,767 之间的整数。</para>
+			/// <para>Short (16-bit integer)—The field type will be short. Short fields support whole numbers between -32,768 and 32,767.</para>
 			/// </summary>
 			[GPValue("SHORT")]
-			[Description("短整型（16 位整型）")]
+			[Description("Short (16-bit integer)")]
 			SHORT,
 
 			/// <summary>
-			/// <para>长整型（32 位整数）—此字段类型将为长整型。 长整型字段支持介于 -2,147,483,648 和 2,147,483,647 之间的整数。</para>
+			/// <para>Long (32-bit integer)—The field type will be long. Long fields support whole numbers between -2,147,483,648 and 2,147,483,647.</para>
 			/// </summary>
 			[GPValue("LONG")]
-			[Description("长整型（32 位整数）")]
+			[Description("Long (32-bit integer)")]
 			LONG,
 
 			/// <summary>
-			/// <para>日期—此字段类型将为日期类型。 日期字段支持日期和时间值。</para>
+			/// <para>Date—The field type will be date. Date fields support date and time values.</para>
 			/// </summary>
 			[GPValue("DATE")]
-			[Description("日期")]
+			[Description("Date")]
 			Date,
 
 			/// <summary>
-			/// <para>Blob（二进制数据）—此字段类型将为 BLOB。 BLOB 字段支持存储为长度较长的一系列二进制数的数据。 您需要一个自定义的加载器、查看器或第三方应用程序将这些项加载到 BLOB 字段中或者查看 BLOB 字段的内容。</para>
+			/// <para>Blob (binary data)—The field type will be BLOB. BLOB fields support data stored as a long sequence of binary numbers. You need a custom loader or viewer or a third-party application to load items into a BLOB field or view the contents of a BLOB field.</para>
 			/// </summary>
 			[GPValue("BLOB")]
-			[Description("Blob（二进制数据）")]
+			[Description("Blob (binary data)")]
 			BLOB,
 
 			/// <summary>
-			/// <para>栅格影像—此字段类型将为栅格。 栅格字段格可在地理数据库中存储栅格数据或者将该数据与地理数据库一同存储。 可以存储 ArcGIS 软件支持的所有栅格数据集格式，但建议您仅使用小影像。</para>
+			/// <para>Raster imagery—The field type will be raster. Raster fields can store raster data in or alongside the geodatabase. All ArcGIS software-supported raster dataset formats can be stored, but it is recommended that only small images be used.</para>
 			/// </summary>
 			[GPValue("RASTER")]
-			[Description("栅格影像")]
+			[Description("Raster imagery")]
 			Raster_imagery,
 
 			/// <summary>
-			/// <para>GUID（全局唯一标识符）—此字段类型将为 GUID。 GUID 字段可存储注册表样式的字符串，该字符串包含用大括号括起来的 36 个字符。</para>
+			/// <para>GUID (globally unique identifier)—The field type will be GUID. GUID fields store registry-style strings consisting of 36 characters enclosed in curly brackets.</para>
 			/// </summary>
 			[GPValue("GUID")]
-			[Description("GUID（全局唯一标识符）")]
+			[Description("GUID (globally unique identifier)")]
 			GUID,
 
 		}
@@ -248,14 +248,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum FieldIsNullableEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The field can contain null values. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("NULLABLE")]
 			NULLABLE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The field cannot contain null values.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NON_NULLABLE")]
@@ -269,14 +269,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ClearFieldAliasEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The field alias will be cleared (set to null). The field alias parameter must be empty.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CLEAR_ALIAS")]
 			CLEAR_ALIAS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The field alias will not be cleared. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_CLEAR")]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Create Parcel Records</para>
-	/// <para>创建宗地记录</para>
-	/// <para>使用记录名称字段或表达式为输入宗地结构要素创建宗地记录。</para>
+	/// <para>Create Parcel Records</para>
+	/// <para>Creates parcel records for the input parcel fabric features  using a record name field or an expression.</para>
 	/// </summary>
 	public class CreateParcelRecords : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="InParcelFeatures">
 		/// <para>Parcel Features</para>
-		/// <para>用于创建宗地记录的输入宗地要素。 输入宗地要素可来自文件地理数据库、企业级地理数据库或移动地理数据库中的宗地结构。</para>
+		/// <para>The input parcel features that will be used to create parcel records. The input parcel features can be from a parcel fabric in a file, enterprise, or mobile geodatabase.</para>
 		/// </param>
 		public CreateParcelRecords(object InParcelFeatures)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建宗地记录</para>
+		/// <para>Tool Display Name : Create Parcel Records</para>
 		/// </summary>
-		public override string DisplayName() => "创建宗地记录";
+		public override string DisplayName() => "Create Parcel Records";
 
 		/// <summary>
 		/// <para>Tool Name : CreateParcelRecords</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Parcel Features</para>
-		/// <para>用于创建宗地记录的输入宗地要素。 输入宗地要素可来自文件地理数据库、企业级地理数据库或移动地理数据库中的宗地结构。</para>
+		/// <para>The input parcel features that will be used to create parcel records. The input parcel features can be from a parcel fabric in a file, enterprise, or mobile geodatabase.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Record Field</para>
-		/// <para>包含记录名称的属性字段。 属性字段必须是文本字段，并且必须包含与其关联的宗地要素相对应的宗地记录名称。</para>
+		/// <para>The attribute field that contains the record names. The attribute field must be a text field and must contain parcel record names that correspond to their associated parcel features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Record Expression</para>
-		/// <para>此 Arcade 表达式使用字段、字符串运算符和数学运算符表示记录名称。 例如，表达式 Left($feature.Name,4) 从宗地结构面要素类的宗地名称字段中提取前四个字符来创建记录名称。</para>
+		/// <para>An Arcade expression that uses fields, string operators, and mathematical operators to represent the record names. For example, the expression Left($feature.Name,4) extracts the first four characters from the parcel name field in the parcel fabric polygon feature class to create the record names.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCalculatorExpression()]
@@ -107,9 +107,9 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Record Name Method</para>
-		/// <para>指定用于创建宗地记录的方法。</para>
-		/// <para>字段—将使用输入宗地要素上文本字段中的记录名称创建宗地记录。 这是默认设置。</para>
-		/// <para>表达式—将使用 Arcade 表达式创建宗地记录。</para>
+		/// <para>Specifies the method that will be used to create parcel records.</para>
+		/// <para>Field—Parcel records will be created using record names from a text field on the input parcel features. This is the default.</para>
+		/// <para>Expression—Parcel records will be created using an Arcade expression.</para>
 		/// <para><see cref="RecordNameMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -125,17 +125,17 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		public enum RecordNameMethodEnum 
 		{
 			/// <summary>
-			/// <para>字段—将使用输入宗地要素上文本字段中的记录名称创建宗地记录。 这是默认设置。</para>
+			/// <para>Field—Parcel records will be created using record names from a text field on the input parcel features. This is the default.</para>
 			/// </summary>
 			[GPValue("FIELD")]
-			[Description("字段")]
+			[Description("Field")]
 			Field,
 
 			/// <summary>
-			/// <para>表达式—将使用 Arcade 表达式创建宗地记录。</para>
+			/// <para>Expression—Parcel records will be created using an Arcade expression.</para>
 			/// </summary>
 			[GPValue("EXPRESSION")]
-			[Description("表达式")]
+			[Description("Expression")]
 			Expression,
 
 		}

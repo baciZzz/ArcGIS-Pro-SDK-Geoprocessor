@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Update Is Connected</para>
-	/// <para>更新已连接</para>
-	/// <para>可基于连通性更新指定公共设施网络中所有网络要素的 IsConnected 属性。</para>
+	/// <para>Update Is Connected</para>
+	/// <para>Updates the IsConnected attribute on all the network features for the specified utility network based on connectivity.</para>
 	/// </summary>
 	public class UpdateIsConnected : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Utility Network</para>
-		/// <para>将更新 IsConnected 属性的公共设施网络。</para>
+		/// <para>The utility network where the IsConnected attribute will be updated.</para>
 		/// </param>
 		public UpdateIsConnected(object InUtilityNetwork)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 更新已连接</para>
+		/// <para>Tool Display Name : Update Is Connected</para>
 		/// </summary>
-		public override string DisplayName() => "更新已连接";
+		public override string DisplayName() => "Update Is Connected";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateIsConnected</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Utility Network</para>
-		/// <para>将更新 IsConnected 属性的公共设施网络。</para>
+		/// <para>The utility network where the IsConnected attribute will be updated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]

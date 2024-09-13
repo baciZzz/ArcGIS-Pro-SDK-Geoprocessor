@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Collapse Road Detail</para>
-	/// <para>折叠道路详细信息</para>
-	/// <para>折叠那些阻断道路网大趋势的路段小的开放构造（例如交通环岛），并将它们替换为简化的说明。</para>
+	/// <para>Collapse Road Detail</para>
+	/// <para>Collapses small, open  configurations of road segments that interrupt the general trend of a road network, such as traffic circles, and replaces them with a simplified depiction.</para>
 	/// </summary>
 	public class CollapseRoadDetail : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>要折叠的包含小的封闭道路详细信息的输入要素（如交通环岛）。</para>
+		/// <para>The input features containing small enclosed road details, such as traffic circles, to be collapsed.</para>
 		/// </param>
 		/// <param name="CollapseDistance">
 		/// <para>Collapse Distance</para>
-		/// <para>折叠时使用的道路详细信息直径或跨越道路详细信息的距离。</para>
+		/// <para>The diameter of, or distance across, the road detail that will be considered for collapse.</para>
 		/// </param>
 		/// <param name="OutputFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>包含折叠要素（根据折叠设置进行修改的要素）和所有未受影响要素的输出要素类。</para>
+		/// <para>The output feature class containing the collapsed features—features that were modified to accommodate the collapse—and all unaffected features.</para>
 		/// </param>
 		public CollapseRoadDetail(object InFeatures, object CollapseDistance, object OutputFeatureClass)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 折叠道路详细信息</para>
+		/// <para>Tool Display Name : Collapse Road Detail</para>
 		/// </summary>
-		public override string DisplayName() => "折叠道路详细信息";
+		public override string DisplayName() => "Collapse Road Detail";
 
 		/// <summary>
 		/// <para>Tool Name : CollapseRoadDetail</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>要折叠的包含小的封闭道路详细信息的输入要素（如交通环岛）。</para>
+		/// <para>The input features containing small enclosed road details, such as traffic circles, to be collapsed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Collapse Distance</para>
-		/// <para>折叠时使用的道路详细信息直径或跨越道路详细信息的距离。</para>
+		/// <para>The diameter of, or distance across, the road detail that will be considered for collapse.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>包含折叠要素（根据折叠设置进行修改的要素）和所有未受影响要素的输出要素类。</para>
+		/// <para>The output feature class containing the collapsed features—features that were modified to accommodate the collapse—and all unaffected features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Locking Field</para>
-		/// <para>包含要素锁定信息的字段。 值 1 表示不会折叠要素。</para>
+		/// <para>The field that contains locking information for the features. A value of 1 indicates that a feature will not be collapsed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]

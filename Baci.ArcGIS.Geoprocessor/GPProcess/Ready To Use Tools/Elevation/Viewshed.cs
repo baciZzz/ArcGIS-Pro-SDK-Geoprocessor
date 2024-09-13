@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 {
 	/// <summary>
 	/// <para>Viewshed</para>
-	/// <para>视域</para>
-	/// <para>针对给定的输入观察点集，返回可见区域多边形。</para>
+	/// <para>Viewshed</para>
+	/// <para>Returns polygons of visible areas for a given set of input observation points.</para>
 	/// </summary>
 	public class Viewshed : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// </summary>
 		/// <param name="Inputpoints">
 		/// <para>Input Point Features</para>
-		/// <para>用作观察点位置的点要素。</para>
+		/// <para>The point features to use as the observer locations.</para>
 		/// </param>
 		public Viewshed(object Inputpoints)
 		{
@@ -29,14 +29,14 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 视域</para>
+		/// <para>Tool Display Name : Viewshed</para>
 		/// </summary>
-		public override string DisplayName() => "视域";
+		public override string DisplayName() => "Viewshed";
 
 		/// <summary>
-		/// <para>Tool Name : 视域</para>
+		/// <para>Tool Name : Viewshed</para>
 		/// </summary>
-		public override string ToolName() => "视域";
+		public override string ToolName() => "Viewshed";
 
 		/// <summary>
 		/// <para>Tool Excute Name : agolservices.Viewshed</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Input Point Features</para>
-		/// <para>用作观察点位置的点要素。</para>
+		/// <para>The point features to use as the observer locations.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Maximum Distance</para>
-		/// <para>用于计算视域的最大距离。</para>
+		/// <para>The maximum distance to calculate the viewshed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -81,12 +81,12 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Maximum Distance Units</para>
-		/// <para>指定最大距离参数的单位。</para>
-		/// <para>米—单位为米。 这是默认设置。</para>
-		/// <para>千米—单位为千米。</para>
-		/// <para>英尺—单位为英尺。</para>
-		/// <para>码—单位为码。</para>
-		/// <para>英里—单位为英里。</para>
+		/// <para>Specifies the units for the Maximum Distance parameter.</para>
+		/// <para>Meters—The units are meters. This is the default.</para>
+		/// <para>Kilometers—The units are kilometers.</para>
+		/// <para>Feet—The units are feet.</para>
+		/// <para>Yards—The units are yards.</para>
+		/// <para>Miles—The units are miles.</para>
 		/// <para><see cref="MaximumdistanceunitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -96,13 +96,13 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>DEM Resolution</para>
-		/// <para>指定用于计算的源高程数据的近似空间分辨率（像元大小）。</para>
-		/// <para>分辨率关键字是数字高程模型空间分辨率的近似值。 许多高程源以弧秒为单位进行分布；关键字是以米为单位的近似值更方便理解。</para>
-		/// <para>最精细—适用于所使用范围的最精细单位。</para>
-		/// <para>10 米—高程源分辨率为 1/3 弧秒，或大约 10 米。</para>
-		/// <para>24 米—高程源是分辨率为 24 米的 Airbus WorldDEM4Ortho 数据集。</para>
-		/// <para>30 米—高程源分辨率为 1 弧秒，或大约 30 米。</para>
-		/// <para>90 米—高程源分辨率为 3 弧秒，或大约 90 米。 这是默认设置。</para>
+		/// <para>Specifies the approximate spatial resolution (cell size) of the source elevation data used for the calculation.</para>
+		/// <para>The resolution keyword is an approximation of the spatial resolution of the digital elevation model. Many elevation sources are distributed in units of arc seconds; the keyword is an approximation in meters for easier understanding.</para>
+		/// <para>Finest—The finest units available for the extent are used.</para>
+		/// <para>10 meters—The elevation source resolution is 1/3 arc second or approximately 10 meters.</para>
+		/// <para>24 meters—The elevation source is the Airbus WorldDEM4Ortho dataset at 24 meters resolution.</para>
+		/// <para>30 meters—The elevation source resolution is 1 arc second or approximately 30 meters.</para>
+		/// <para>90 meters—The elevation source resolution is 3 arc seconds or approximately 90 meters. This is the default.</para>
 		/// <para><see cref="DemresolutionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Observer Height</para>
-		/// <para>观察点表面以上的高度。 默认值 1.75 米是人的平均身高。 如果您要从较高位置（如瞭望塔或高建筑物）进行观察，请使用该高度。</para>
+		/// <para>The height above the surface of the observer. The default value of 1.75 meters is an average height of a person. If you are looking from an elevated location such as an observation tower or a tall building, use that height instead.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -120,12 +120,12 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Observer Height Units</para>
-		/// <para>指定观察点高度参数的单位。</para>
-		/// <para>米—单位为米。 这是默认设置。</para>
-		/// <para>千米—单位为千米。</para>
-		/// <para>英尺—单位为英尺。</para>
-		/// <para>码—单位为码。</para>
-		/// <para>英里—单位为英里。</para>
+		/// <para>Specifies the units for the Observer Height parameter.</para>
+		/// <para>Meters—The units are meters. This is the default.</para>
+		/// <para>Kilometers—The units are kilometers.</para>
+		/// <para>Feet—The units are feet.</para>
+		/// <para>Yards—The units are yards.</para>
+		/// <para>Miles—The units are miles.</para>
 		/// <para><see cref="ObserverheightunitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Surface Offset</para>
-		/// <para>正在查看的对象表面上方的高度。 默认值为 0。 如果正在查看建筑物或风力涡轮机，则使用其高度。</para>
+		/// <para>The height above the surface of the object you are viewing. The default value is 0. If you are viewing buildings or wind turbines, use their height.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -143,12 +143,12 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Surface Offset Units</para>
-		/// <para>指定表面偏移参数的单位。</para>
-		/// <para>米—单位为米。 这是默认设置。</para>
-		/// <para>千米—单位为千米。</para>
-		/// <para>英尺—单位为英尺。</para>
-		/// <para>码—单位为码。</para>
-		/// <para>英里—单位为英里。</para>
+		/// <para>Specifies the units for the Surface Offset parameter.</para>
+		/// <para>Meters—The units are meters. This is the default.</para>
+		/// <para>Kilometers—The units are kilometers.</para>
+		/// <para>Feet—The units are feet.</para>
+		/// <para>Yards—The units are yards.</para>
+		/// <para>Miles—The units are miles.</para>
 		/// <para><see cref="SurfaceoffsetunitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -158,10 +158,10 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Generalize Viewshed Polygons</para>
-		/// <para>指定是否对视域面进行概化。</para>
-		/// <para>视域计算基于栅格高程模型，以创建带阶梯状边缘的结果。 要创建更美观的外观并提高性能，则默认行为是概化面。 对于超过 DEM 分辨率一半的所有地点，这种概化将不会更改结果的准确性。</para>
-		/// <para>选中 - 将概化视域面。 这是默认设置。</para>
-		/// <para>未选中 - 不会概化视域面。</para>
+		/// <para>Specifies whether the viewshed polygons will be generalized.</para>
+		/// <para>The viewshed calculation is based on a raster elevation model that creates a result with stair-stepped edges. To create a more pleasing appearance and improve performance, the default behavior generalizes the polygons. This generalization will not change the accuracy of the result for any location more than one half of the DEM resolution.</para>
+		/// <para>Checked—The viewshed polygons will be generalized. This is the default.</para>
+		/// <para>Unchecked—The viewshed polygons will not be generalized.</para>
 		/// <para><see cref="GeneralizeviewshedpolygonsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -184,38 +184,38 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		public enum MaximumdistanceunitsEnum 
 		{
 			/// <summary>
-			/// <para>米—单位为米。 这是默认设置。</para>
+			/// <para>Meters—The units are meters. This is the default.</para>
 			/// </summary>
 			[GPValue("Meters")]
-			[Description("米")]
+			[Description("Meters")]
 			Meters,
 
 			/// <summary>
-			/// <para>千米—单位为千米。</para>
+			/// <para>Kilometers—The units are kilometers.</para>
 			/// </summary>
 			[GPValue("Kilometers")]
-			[Description("千米")]
+			[Description("Kilometers")]
 			Kilometers,
 
 			/// <summary>
-			/// <para>英尺—单位为英尺。</para>
+			/// <para>Feet—The units are feet.</para>
 			/// </summary>
 			[GPValue("Feet")]
-			[Description("英尺")]
+			[Description("Feet")]
 			Feet,
 
 			/// <summary>
-			/// <para>码—单位为码。</para>
+			/// <para>Yards—The units are yards.</para>
 			/// </summary>
 			[GPValue("Yards")]
-			[Description("码")]
+			[Description("Yards")]
 			Yards,
 
 			/// <summary>
-			/// <para>英里—单位为英里。</para>
+			/// <para>Miles—The units are miles.</para>
 			/// </summary>
 			[GPValue("Miles")]
-			[Description("英里")]
+			[Description("Miles")]
 			Miles,
 
 		}
@@ -226,38 +226,38 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		public enum DemresolutionEnum 
 		{
 			/// <summary>
-			/// <para>最精细—适用于所使用范围的最精细单位。</para>
+			/// <para>Finest—The finest units available for the extent are used.</para>
 			/// </summary>
 			[GPValue("FINEST")]
-			[Description("最精细")]
+			[Description("Finest")]
 			Finest,
 
 			/// <summary>
-			/// <para>10 米—高程源分辨率为 1/3 弧秒，或大约 10 米。</para>
+			/// <para>10 meters—The elevation source resolution is 1/3 arc second or approximately 10 meters.</para>
 			/// </summary>
 			[GPValue("10m")]
-			[Description("10 米")]
+			[Description("10 meters")]
 			_10_meters,
 
 			/// <summary>
-			/// <para>24 米—高程源是分辨率为 24 米的 Airbus WorldDEM4Ortho 数据集。</para>
+			/// <para>24 meters—The elevation source is the Airbus WorldDEM4Ortho dataset at 24 meters resolution.</para>
 			/// </summary>
 			[GPValue("24m")]
-			[Description("24 米")]
+			[Description("24 meters")]
 			_24_meters,
 
 			/// <summary>
-			/// <para>30 米—高程源分辨率为 1 弧秒，或大约 30 米。</para>
+			/// <para>30 meters—The elevation source resolution is 1 arc second or approximately 30 meters.</para>
 			/// </summary>
 			[GPValue("30m")]
-			[Description("30 米")]
+			[Description("30 meters")]
 			_30_meters,
 
 			/// <summary>
-			/// <para>90 米—高程源分辨率为 3 弧秒，或大约 90 米。 这是默认设置。</para>
+			/// <para>90 meters—The elevation source resolution is 3 arc seconds or approximately 90 meters. This is the default.</para>
 			/// </summary>
 			[GPValue("90m")]
-			[Description("90 米")]
+			[Description("90 meters")]
 			_90_meters,
 
 		}
@@ -268,38 +268,38 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		public enum ObserverheightunitsEnum 
 		{
 			/// <summary>
-			/// <para>米—单位为米。 这是默认设置。</para>
+			/// <para>Meters—The units are meters. This is the default.</para>
 			/// </summary>
 			[GPValue("Meters")]
-			[Description("米")]
+			[Description("Meters")]
 			Meters,
 
 			/// <summary>
-			/// <para>千米—单位为千米。</para>
+			/// <para>Kilometers—The units are kilometers.</para>
 			/// </summary>
 			[GPValue("Kilometers")]
-			[Description("千米")]
+			[Description("Kilometers")]
 			Kilometers,
 
 			/// <summary>
-			/// <para>英尺—单位为英尺。</para>
+			/// <para>Feet—The units are feet.</para>
 			/// </summary>
 			[GPValue("Feet")]
-			[Description("英尺")]
+			[Description("Feet")]
 			Feet,
 
 			/// <summary>
-			/// <para>码—单位为码。</para>
+			/// <para>Yards—The units are yards.</para>
 			/// </summary>
 			[GPValue("Yards")]
-			[Description("码")]
+			[Description("Yards")]
 			Yards,
 
 			/// <summary>
-			/// <para>英里—单位为英里。</para>
+			/// <para>Miles—The units are miles.</para>
 			/// </summary>
 			[GPValue("Miles")]
-			[Description("英里")]
+			[Description("Miles")]
 			Miles,
 
 		}
@@ -310,38 +310,38 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		public enum SurfaceoffsetunitsEnum 
 		{
 			/// <summary>
-			/// <para>米—单位为米。 这是默认设置。</para>
+			/// <para>Meters—The units are meters. This is the default.</para>
 			/// </summary>
 			[GPValue("Meters")]
-			[Description("米")]
+			[Description("Meters")]
 			Meters,
 
 			/// <summary>
-			/// <para>千米—单位为千米。</para>
+			/// <para>Kilometers—The units are kilometers.</para>
 			/// </summary>
 			[GPValue("Kilometers")]
-			[Description("千米")]
+			[Description("Kilometers")]
 			Kilometers,
 
 			/// <summary>
-			/// <para>英尺—单位为英尺。</para>
+			/// <para>Feet—The units are feet.</para>
 			/// </summary>
 			[GPValue("Feet")]
-			[Description("英尺")]
+			[Description("Feet")]
 			Feet,
 
 			/// <summary>
-			/// <para>码—单位为码。</para>
+			/// <para>Yards—The units are yards.</para>
 			/// </summary>
 			[GPValue("Yards")]
-			[Description("码")]
+			[Description("Yards")]
 			Yards,
 
 			/// <summary>
-			/// <para>英里—单位为英里。</para>
+			/// <para>Miles—The units are miles.</para>
 			/// </summary>
 			[GPValue("Miles")]
-			[Description("英里")]
+			[Description("Miles")]
 			Miles,
 
 		}
@@ -352,14 +352,14 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		public enum GeneralizeviewshedpolygonsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The viewshed polygons will be generalized. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("GENERALIZE")]
 			GENERALIZE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The viewshed polygons will not be generalized.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_GENERALIZE")]

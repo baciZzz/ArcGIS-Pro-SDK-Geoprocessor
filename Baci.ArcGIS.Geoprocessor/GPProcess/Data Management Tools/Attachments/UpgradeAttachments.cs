@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Upgrade Attachments</para>
-	/// <para>升级附件</para>
-	/// <para>升级数据上的附件功能。</para>
+	/// <para>Upgrade Attachments</para>
+	/// <para>Upgrades the attachments functionality on the data.</para>
 	/// </summary>
 	public class UpgradeAttachments : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>启用了附件的要素类。</para>
+		/// <para>The feature class with attachments enabled.</para>
 		/// </param>
 		public UpgradeAttachments(object InDataset)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 升级附件</para>
+		/// <para>Tool Display Name : Upgrade Attachments</para>
 		/// </summary>
-		public override string DisplayName() => "升级附件";
+		public override string DisplayName() => "Upgrade Attachments";
 
 		/// <summary>
 		/// <para>Tool Name : UpgradeAttachments</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>启用了附件的要素类。</para>
+		/// <para>The feature class with attachments enabled.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]

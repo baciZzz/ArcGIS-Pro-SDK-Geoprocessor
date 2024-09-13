@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Area Solar Radiation</para>
-	/// <para>太阳辐射区域</para>
-	/// <para>基于栅格表面获得入射太阳辐射。</para>
+	/// <para>Area Solar Radiation</para>
+	/// <para>Derives incoming solar radiation from a raster surface.</para>
 	/// </summary>
 	public class AreaSolarRadiation : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InSurfaceRaster">
 		/// <para>Input raster</para>
-		/// <para>输入高程表面栅格。</para>
+		/// <para>The input elevation surface raster.</para>
 		/// </param>
 		/// <param name="OutGlobalRadiationRaster">
 		/// <para>Output global radiation raster</para>
-		/// <para>用于表示为输入表面的每个位置所计算的全局辐射或全部日照入射量（直射 + 散射）的输出栅格。</para>
-		/// <para>输出单位为瓦特小时每平方米 (WH/m2)。</para>
+		/// <para>The output raster representing the global radiation or total amount of incoming solar insolation (direct + diffuse) calculated for each location of the input surface.</para>
+		/// <para>The output has units of watt hours per square meter (WH/m2).</para>
 		/// </param>
 		public AreaSolarRadiation(object InSurfaceRaster, object OutGlobalRadiationRaster)
 		{
@@ -35,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 太阳辐射区域</para>
+		/// <para>Tool Display Name : Area Solar Radiation</para>
 		/// </summary>
-		public override string DisplayName() => "太阳辐射区域";
+		public override string DisplayName() => "Area Solar Radiation";
 
 		/// <summary>
 		/// <para>Tool Name : AreaSolarRadiation</para>
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>输入高程表面栅格。</para>
+		/// <para>The input elevation surface raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -83,8 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output global radiation raster</para>
-		/// <para>用于表示为输入表面的每个位置所计算的全局辐射或全部日照入射量（直射 + 散射）的输出栅格。</para>
-		/// <para>输出单位为瓦特小时每平方米 (WH/m2)。</para>
+		/// <para>The output raster representing the global radiation or total amount of incoming solar insolation (direct + diffuse) calculated for each location of the input surface.</para>
+		/// <para>The output has units of watt hours per square meter (WH/m2).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -92,8 +92,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Latitude</para>
-		/// <para>位置区域的纬度。 单位为十进制度，北半球为正值，南半球为负值。</para>
-		/// <para>对于包含空间参考的输入表面栅格，会自动计算平均纬度；否则，纬度将默认为 45 度。</para>
+		/// <para>The latitude for the site area. The units are decimal degrees with positive values for the northern hemisphere and negative values for the southern hemisphere.</para>
+		/// <para>For input surface rasters containing a spatial reference, the mean latitude is automatically calculated; otherwise, the latitude default is 45 degrees.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -104,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Sky size / Resolution</para>
-		/// <para>视域、天空图和阳光图栅格的分辨率或天空大小。 单位为像元。</para>
-		/// <para>默认为 200 x 200 像元的栅格。</para>
+		/// <para>The resolution or sky size for the viewshed, sky map, and sun map rasters. The units are cells.</para>
+		/// <para>The default is a raster of 200 by 200 cells.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -116,13 +116,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Time configuration</para>
-		/// <para>指定将用于计算的时间段。</para>
-		/// <para>特殊日期 - 将计算夏至、冬至和春秋分（春分和秋分的日照是相同的）的太阳日照。</para>
-		/// <para>一天内 - 将对一天内的指定时间段执行计算。选择儒略日，然后输入起始时间和结束时间。 起始时间和结束时间相同时，将计算瞬时日照。 起始时间在日出前而结束时间在日出后时，将计算全天的日照。</para>
-		/// <para>要输入正确日期，可以使用日历按钮打开日历对话框。</para>
-		/// <para>多天 - 将对一年中的特定多天时间段执行计算。指定起始年、起始日和结束日。 如果结束日小于起始日，则将结束日视为在下一年中。 默认时间配置起始于当前儒略年的第 5 天，结束于第 160 天。</para>
-		/// <para>要输入正确日期，可以使用日历按钮打开日历对话框。</para>
-		/// <para>整年 - 将使用计算的每月间隔对整年执行计算。如果选中为每种间隔创建输出选项，将为每月创建输出文件；否则，将为整年创建一个输出。</para>
+		/// <para>Specifies the time period that will be used for the calculations.</para>
+		/// <para>Special days—Solar insolation will be calculated for the solstice days (summer and winter) and the equinox days (when the insolation for both spring and fall equinox are the same).</para>
+		/// <para>Within day—Calculations will be performed for a specified time period within a single day.Select the Julian day and enter the start and end times. When the start time and the end time are the same, instantaneous insolation will be calculated. When the start time is before sunrise and the end time is after sunset, insolation will be calculated for the whole day.</para>
+		/// <para>To enter the correct day, use the calendar button to open the Calendar dialog box.</para>
+		/// <para>Multiple days—Calculations will be performed for a specific multiple-day period within a year.Specify the start year, start day, and end day. When the end day is smaller than the start day, the end day is considered to be in the following year. The default time configuration starts on day 5 and ends on day 160 of the current Julian year.</para>
+		/// <para>To enter the correct days, use the calendar button to open the Calendar dialog box.</para>
+		/// <para>Whole year—Calculations will be performed for an entire year using monthly intervals for calculations.If the Create outputs for each interval option is checked, output files will be created for each month; otherwise, a single output will be created for the whole year.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSATimeConfiguration()]
@@ -130,8 +130,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Day interval</para>
-		/// <para>用于为太阳图计算天空分区的一年中的时间间隔（单位：天）。</para>
-		/// <para>默认值为 14（两周）。</para>
+		/// <para>The time interval through the year (units: days) that will be used to calculate sky sectors for the sun map.</para>
+		/// <para>The default value is 14 (biweekly).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -141,8 +141,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Hour interval</para>
-		/// <para>用于为太阳图计算天空分区的一天中的时间间隔（单位：小时）。</para>
-		/// <para>默认值为 0.5。</para>
+		/// <para>The time interval through the day (units: hours) that will be used to calculate sky sectors for the sun map.</para>
+		/// <para>The default value is 0.5.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -151,9 +151,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Create outputs for each interval</para>
-		/// <para>指定将针对所有位置计算单一总日射值，还是针对指定的小时和天间隔计算多个值。</para>
-		/// <para>未选中 - 针对整个时间配置计算一个总日照值。 这是默认设置。</para>
-		/// <para>选中 - 针对整个时间配置中的各时间间隔计算多个日照值。 输出数取决于小时或天间隔。 例如，使用每月间隔计算整年时，结果将包含针对各位置的 12 个输出辐射值。 输出栅格将包含多个波段，这些波段对应于每个时间间隔的辐射或持续时间值。</para>
+		/// <para>Specifies whether a single total insolation value will be calculated for all locations or multiple values will be calculated for the specified hour and day interval.</para>
+		/// <para>Unchecked—A single total radiation value will be calculated for the entire time configuration. This is the default.</para>
+		/// <para>Checked—Multiple radiation values will be calculated for each time interval over the entire time configuration. The number of outputs depends on the hour or day interval. For example, for a whole year with monthly intervals, the result will contain 12 output radiation values for each location. The output raster will contain multiple bands that correspond to the radiation or duration values for each time interval.</para>
 		/// <para><see cref="EachIntervalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -163,11 +163,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Z factor</para>
-		/// <para>一个表面 z 单位中地面 x,y 单位的数量。</para>
-		/// <para>z 单位与输入表面的 x,y 单位不同时，可使用 z 因子调整 z 单位的测量单位。 计算最终输出表面时，将用 z 因子乘以输入表面的 z 值。</para>
-		/// <para>如果 x,y 单位和 z 单位采用相同的测量单位，则 z 因子为 1。 这是默认设置。</para>
-		/// <para>如果 x,y 单位和 z 单位采用不同的测量单位，则必须将 z 因子设置为适当的因子，否则会得到错误的结果。</para>
-		/// <para>例如，如果 z 单位是英尺，而 x,y 单位是米，则可以使用 z 因子 0.3048 将 z 单位从英尺转换为米（1 英尺 = 0.3048 米）。</para>
+		/// <para>The number of ground x,y units in one surface z-unit.</para>
+		/// <para>The z-factor adjusts the units of measure for the z-units when they are different from the x,y units of the input surface. The z-values of the input surface are multiplied by the z-factor when calculating the final output surface.</para>
+		/// <para>If the x,y units and z-units are in the same units of measure, the z-factor is 1. This is the default.</para>
+		/// <para>If the x,y units and z-units are in different units of measure, the z-factor must be set to the appropriate factor or the results will be incorrect.</para>
+		/// <para>For example, if the z-units are feet and the x,y units are meters, use a z-factor of 0.3048 to convert the z-units from feet to meters (1 foot = 0.3048 meter).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -177,9 +177,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Slope and aspect input type</para>
-		/// <para>指定如何获取坡度和坡向信息以进行分析。</para>
-		/// <para>基于输入表面栅格—将根据输入表面栅格计算坡度和坡向栅格。 这是默认设置。</para>
-		/// <para>基于平面—常数值零将用于坡度和坡向。</para>
+		/// <para>Specifies how slope and aspect information will be derived for analysis.</para>
+		/// <para>From the input surface raster—The slope and aspect rasters will be calculated from the input surface raster. This is the default.</para>
+		/// <para>From a flat surface—Constant values of zero will be used for slope and aspect.</para>
 		/// <para><see cref="SlopeAspectInputTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -190,8 +190,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Calculation directions</para>
-		/// <para>计算视域时将使用的方位角方向数。</para>
-		/// <para>有效值必须是 8 的倍数（8、16、24、32，依此类推）。 默认值为 32 个方向，该值适用于复杂地形。</para>
+		/// <para>The number of azimuth directions that will be used when calculating the viewshed.</para>
+		/// <para>Valid values must be multiples of 8 (8, 16, 24, 32, and so on). The default value is 32 directions, which is adequate for complex topography.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -203,8 +203,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Zenith divisions</para>
-		/// <para>用于创建天空图中的天空分区的天顶分割数。</para>
-		/// <para>默认值为八个分割（相对于天顶）。 值必须大于零并且小于天空大小值的一半。</para>
+		/// <para>The number of zenith divisions that will be used to create sky sectors in the sky map.</para>
+		/// <para>The default is eight divisions (relative to zenith). Values must be greater than zero and less than half the sky size value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -215,8 +215,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Azimuth divisions</para>
-		/// <para>用于创建天空图中的天空分区的方位角分割数。</para>
-		/// <para>默认值为八个分割（相对于北方）。 有效值必须是 8 的倍数。 值必须大于零且小于 160。</para>
+		/// <para>The number of azimuth divisions that will be used to create sky sectors in the sky map.</para>
+		/// <para>The default is eight divisions (relative to north). Valid values must be multiples of 8. Values must be greater than zero and less than 160.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -226,9 +226,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Diffuse model type</para>
-		/// <para>指定将使用的散射辐射模型的类型。</para>
-		/// <para>统一阴天天空—将使用均匀散射模型。 所有天空方向的入射散射辐射均相同。 这是默认设置。</para>
-		/// <para>标准阴天天空—将使用标准阴天散射模型。 入射散射辐射通量随天顶角而变化。</para>
+		/// <para>Specifies the type of diffuse radiation model that will be used.</para>
+		/// <para>Uniform overcast sky—The uniform diffuse model will be used. The incoming diffuse radiation is the same from all sky directions. This is the default.</para>
+		/// <para>Standard overcast sky—The standard overcast diffuse model will be used. The incoming diffuse radiation flux varies with the zenith angle.</para>
 		/// <para><see cref="DiffuseModelTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -239,8 +239,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Diffuse proportion</para>
-		/// <para>散射的总正常辐射通量的比例。 值的范围介于 0 到 1 之间。</para>
-		/// <para>根据大气条件设置该值。 默认值为 0.3，适用于普通晴朗的天空条件。</para>
+		/// <para>The proportion of global normal radiation flux that is diffuse. Values range from 0 to 1.</para>
+		/// <para>Set this value according to atmospheric conditions. The default value is 0.3 for generally clear sky conditions.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -252,8 +252,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Transmittivity</para>
-		/// <para>穿过大气层的辐射部分（所有波长的平均值）。 值的范围介于 0（无透射）到 1（完全透射）之间。</para>
-		/// <para>默认值为 0.5，适用于普通晴朗的天空。</para>
+		/// <para>The fraction of radiation that passes through the atmosphere (averaged overall wavelengths). Values range from 0 (no transmission) to 1 (all transmission).</para>
+		/// <para>The default is 0.5 for a generally clear sky.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -265,8 +265,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output direct radiation raster</para>
-		/// <para>表示每个位置的直接入射的太阳辐射的输出栅格。</para>
-		/// <para>输出单位为瓦特小时每平方米 (WH/m2)。</para>
+		/// <para>The output raster representing the direct incoming solar radiation for each location.</para>
+		/// <para>The output has units of watt hours per square meter (WH/m2).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -275,8 +275,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output diffuse radiation raster</para>
-		/// <para>表示每个位置的散射入射的太阳辐射的输出栅格。</para>
-		/// <para>输出单位为瓦特小时每平方米 (WH/m2)。</para>
+		/// <para>The output raster representing the diffuse incoming solar radiation for each location.</para>
+		/// <para>The output has units of watt hours per square meter (WH/m2).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -285,8 +285,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output direct duration raster</para>
-		/// <para>表示直接入射太阳辐射的持续时间的输出栅格。</para>
-		/// <para>输出单位为小时。</para>
+		/// <para>The output raster representing the duration of direct incoming solar radiation.</para>
+		/// <para>The output has units of hours.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -310,14 +310,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum EachIntervalEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—A single total radiation value will be calculated for the entire time configuration. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOINTERVAL")]
 			NOINTERVAL,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Multiple radiation values will be calculated for each time interval over the entire time configuration. The number of outputs depends on the hour or day interval. For example, for a whole year with monthly intervals, the result will contain 12 output radiation values for each location. The output raster will contain multiple bands that correspond to the radiation or duration values for each time interval.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INTERVAL")]
@@ -331,17 +331,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum SlopeAspectInputTypeEnum 
 		{
 			/// <summary>
-			/// <para>基于输入表面栅格—将根据输入表面栅格计算坡度和坡向栅格。 这是默认设置。</para>
+			/// <para>From the input surface raster—The slope and aspect rasters will be calculated from the input surface raster. This is the default.</para>
 			/// </summary>
 			[GPValue("FROM_DEM")]
-			[Description("基于输入表面栅格")]
+			[Description("From the input surface raster")]
 			From_the_input_surface_raster,
 
 			/// <summary>
-			/// <para>基于平面—常数值零将用于坡度和坡向。</para>
+			/// <para>From a flat surface—Constant values of zero will be used for slope and aspect.</para>
 			/// </summary>
 			[GPValue("FLAT_SURFACE")]
-			[Description("基于平面")]
+			[Description("From a flat surface")]
 			From_a_flat_surface,
 
 		}
@@ -352,17 +352,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum DiffuseModelTypeEnum 
 		{
 			/// <summary>
-			/// <para>统一阴天天空—将使用均匀散射模型。 所有天空方向的入射散射辐射均相同。 这是默认设置。</para>
+			/// <para>Uniform overcast sky—The uniform diffuse model will be used. The incoming diffuse radiation is the same from all sky directions. This is the default.</para>
 			/// </summary>
 			[GPValue("UNIFORM_SKY")]
-			[Description("统一阴天天空")]
+			[Description("Uniform overcast sky")]
 			Uniform_overcast_sky,
 
 			/// <summary>
-			/// <para>标准阴天天空—将使用标准阴天散射模型。 入射散射辐射通量随天顶角而变化。</para>
+			/// <para>Standard overcast sky—The standard overcast diffuse model will be used. The incoming diffuse radiation flux varies with the zenith angle.</para>
 			/// </summary>
 			[GPValue("STANDARD_OVERCAST_SKY")]
-			[Description("标准阴天天空")]
+			[Description("Standard overcast sky")]
 			Standard_overcast_sky,
 
 		}

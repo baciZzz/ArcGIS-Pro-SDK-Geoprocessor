@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Enable Enterprise Geodatabase</para>
-	/// <para>启用企业级地理数据库</para>
-	/// <para>在现有数据库中创建地理数据库系统表、存储过程、函数和类型，以启用数据库中的地理数据库功能。</para>
+	/// <para>Enable Enterprise Geodatabase</para>
+	/// <para>Creates geodatabase system tables, stored procedures, functions, and types in an existing database, which enable geodatabase functionality in the database.</para>
 	/// </summary>
 	public class EnableEnterpriseGeodatabase : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputDatabase">
 		/// <para>Input Database Connection</para>
-		/// <para>为数据库（将在其中启用地理数据库功能）提供的路径和连接文件名。 必须以具有地理数据库管理员资格的用户身份进行连接。</para>
+		/// <para>The path and connection file name for the database in which geodatabase functionality will be enabled. You must connect as a user that qualifies as a geodatabase administrator.</para>
 		/// </param>
 		/// <param name="AuthorizationFile">
 		/// <para>Authorization File</para>
-		/// <para>授权 ArcGIS Server 时创建的密钥代码文件的路径和文件名。 此文件位于 Linux 的 \\Program Files\ESRI\License&lt;release#&gt;\sysgen 文件夹或 Windows 的 /arcgis/server/framework/runtime/.wine/drive_c/Program Files/ESRI/License&lt;release#&gt;/sysgen 目录中。 如果尚未执行此操作，则请授权 ArcGIS Server 来创建此文件。</para>
-		/// <para>从 ArcGIS Server 计算机将密钥代码文件复制到工具可访问的位置。</para>
+		/// <para>The path and file name of the keycodes file that was created when ArcGIS Server was authorized. This file is in the \\Program Files\ESRI\License&lt;release#&gt;\sysgen folder on Windows or the /arcgis/server/framework/runtime/.wine/drive_c/Program Files/ESRI/License&lt;release#&gt;/sysgen directory on Linux. If you have not done so, authorize ArcGIS Server to create this file.</para>
+		/// <para>Copy the keycodes file from the ArcGIS Server machine to a location accessible to the tool.</para>
 		/// </param>
 		public EnableEnterpriseGeodatabase(object InputDatabase, object AuthorizationFile)
 		{
@@ -35,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 启用企业级地理数据库</para>
+		/// <para>Tool Display Name : Enable Enterprise Geodatabase</para>
 		/// </summary>
-		public override string DisplayName() => "启用企业级地理数据库";
+		public override string DisplayName() => "Enable Enterprise Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : EnableEnterpriseGeodatabase</para>
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
-		/// <para>为数据库（将在其中启用地理数据库功能）提供的路径和连接文件名。 必须以具有地理数据库管理员资格的用户身份进行连接。</para>
+		/// <para>The path and connection file name for the database in which geodatabase functionality will be enabled. You must connect as a user that qualifies as a geodatabase administrator.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -81,8 +81,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Authorization File</para>
-		/// <para>授权 ArcGIS Server 时创建的密钥代码文件的路径和文件名。 此文件位于 Linux 的 \\Program Files\ESRI\License&lt;release#&gt;\sysgen 文件夹或 Windows 的 /arcgis/server/framework/runtime/.wine/drive_c/Program Files/ESRI/License&lt;release#&gt;/sysgen 目录中。 如果尚未执行此操作，则请授权 ArcGIS Server 来创建此文件。</para>
-		/// <para>从 ArcGIS Server 计算机将密钥代码文件复制到工具可访问的位置。</para>
+		/// <para>The path and file name of the keycodes file that was created when ArcGIS Server was authorized. This file is in the \\Program Files\ESRI\License&lt;release#&gt;\sysgen folder on Windows or the /arcgis/server/framework/runtime/.wine/drive_c/Program Files/ESRI/License&lt;release#&gt;/sysgen directory on Linux. If you have not done so, authorize ArcGIS Server to create this file.</para>
+		/// <para>Copy the keycodes file from the ArcGIS Server machine to a location accessible to the tool.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

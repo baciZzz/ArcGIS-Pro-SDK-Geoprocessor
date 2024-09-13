@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Calculate UTM Zone</para>
-	/// <para>计算 UTM 带</para>
-	/// <para>根据中心点计算每个要素的 UTM 带，并在指定字段中存储该空间参考字符串。该字段可与空间地图系列结合使用，以将空间参考更新为每个地图的正确 UTM 带。</para>
+	/// <para>Calculate UTM Zone</para>
+	/// <para>Calculates the UTM zone of each feature based on the center point and stores this spatial reference string in a specified field. This field can be used with a spatial map series  to update the spatial reference to the correct UTM zone for each map.</para>
 	/// </summary>
 	public class CalculateUTMZone : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>输入要素图层。</para>
+		/// <para>The input feature layer.</para>
 		/// </param>
 		/// <param name="InField">
 		/// <para>UTM Zone Field</para>
-		/// <para>用于存储坐标系的空间参考字符串的字符串字段。字段应具有足够的长度（大于 600 个字符）来保存空间参考字符串。</para>
+		/// <para>The string field that stores the spatial reference string for the coordinate system. The field should have sufficient length (more than 600 characters) to hold the spatial reference string.</para>
 		/// </param>
 		public CalculateUTMZone(object InFeatures, object InField)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 计算 UTM 带</para>
+		/// <para>Tool Display Name : Calculate UTM Zone</para>
 		/// </summary>
-		public override string DisplayName() => "计算 UTM 带";
+		public override string DisplayName() => "Calculate UTM Zone";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateUTMZone</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>输入要素图层。</para>
+		/// <para>The input feature layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>UTM Zone Field</para>
-		/// <para>用于存储坐标系的空间参考字符串的字符串字段。字段应具有足够的长度（大于 600 个字符）来保存空间参考字符串。</para>
+		/// <para>The string field that stores the spatial reference string for the coordinate system. The field should have sufficient length (more than 600 characters) to hold the spatial reference string.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]

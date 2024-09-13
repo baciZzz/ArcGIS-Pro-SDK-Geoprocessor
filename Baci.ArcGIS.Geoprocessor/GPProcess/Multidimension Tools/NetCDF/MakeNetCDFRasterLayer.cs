@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Make NetCDF Raster Layer</para>
-	/// <para>创建 NetCDF 栅格图层</para>
-	/// <para>根据 NetCDF 文件创建栅格图层。</para>
+	/// <para>Make NetCDF Raster Layer</para>
+	/// <para>Makes a raster layer from a netCDF file.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.MultidimensionTools.MakeMultidimensionalRasterLayer"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
 	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.MultidimensionTools.MakeMultidimensionalRasterLayer))]
@@ -23,23 +23,23 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		/// <param name="InNetcdfFile">
 		/// <para>Input netCDF File</para>
-		/// <para>输入的 NetCDF 文件。</para>
+		/// <para>The input netCDF file.</para>
 		/// </param>
 		/// <param name="Variable">
 		/// <para>Variable</para>
-		/// <para>向输出栅格分配单元值时使用的 netCDF 文件的变量。 这是将会显示出来的变量，如温度或降雨量。</para>
+		/// <para>The variable of the netCDF file used to assign cell values to the output raster. This is the variable that will be displayed, such as temperature or rainfall.</para>
 		/// </param>
 		/// <param name="XDimension">
 		/// <para>X Dimension</para>
-		/// <para>定义输出图层的 x 坐标或经度坐标时使用的 netCDF 维度。</para>
+		/// <para>A netCDF dimension used to define the x, or longitude, coordinates of the output layer.</para>
 		/// </param>
 		/// <param name="YDimension">
 		/// <para>Y Dimension</para>
-		/// <para>定义输出图层的 y 坐标或纬度坐标时使用的 netCDF 维度。</para>
+		/// <para>A netCDF dimension used to define the y, or latitude, coordinates of the output layer.</para>
 		/// </param>
 		/// <param name="OutRasterLayer">
 		/// <para>Output Raster Layer</para>
-		/// <para>输出栅格图层的名称。</para>
+		/// <para>The name of the output raster layer.</para>
 		/// </param>
 		public MakeNetCDFRasterLayer(object InNetcdfFile, object Variable, object XDimension, object YDimension, object OutRasterLayer)
 		{
@@ -51,9 +51,9 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建 NetCDF 栅格图层</para>
+		/// <para>Tool Display Name : Make NetCDF Raster Layer</para>
 		/// </summary>
-		public override string DisplayName() => "创建 NetCDF 栅格图层";
+		public override string DisplayName() => "Make NetCDF Raster Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeNetCDFRasterLayer</para>
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Input netCDF File</para>
-		/// <para>输入的 NetCDF 文件。</para>
+		/// <para>The input netCDF file.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Variable</para>
-		/// <para>向输出栅格分配单元值时使用的 netCDF 文件的变量。 这是将会显示出来的变量，如温度或降雨量。</para>
+		/// <para>The variable of the netCDF file used to assign cell values to the output raster. This is the variable that will be displayed, such as temperature or rainfall.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>X Dimension</para>
-		/// <para>定义输出图层的 x 坐标或经度坐标时使用的 netCDF 维度。</para>
+		/// <para>A netCDF dimension used to define the x, or longitude, coordinates of the output layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Y Dimension</para>
-		/// <para>定义输出图层的 y 坐标或纬度坐标时使用的 netCDF 维度。</para>
+		/// <para>A netCDF dimension used to define the y, or latitude, coordinates of the output layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Output Raster Layer</para>
-		/// <para>输出栅格图层的名称。</para>
+		/// <para>The name of the output raster layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRasterLayer()]
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Band Dimension</para>
-		/// <para>在输出栅格中创建波段时所使用的 netCDF 维度。 如果需要多波段栅格图层，则请设置此维度值。 例如，可将高度设置为波段维度，从而使创建的多波段栅格中的每个波段都表示该高度上的温度。</para>
+		/// <para>A netCDF dimension used to create bands in the output raster. Set this dimension if a multiband raster layer is required. For instance, altitude might be set as the band dimension to create a multiband raster where each band represents temperature at that altitude.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -137,9 +137,9 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Dimension Values</para>
-		/// <para>在输出图层中显示变量时要使用的维度（如时间）的值（如 01/30/05）。 默认情况下，将使用维度的第一个值。</para>
-		/// <para>维度 - netCDF 维度。</para>
-		/// <para>值 - 可用的维度值。</para>
+		/// <para>The value (such as 01/30/05) of the dimension (such as time) or dimensions to use when displaying the variable in the output layer. By default, the first value of the dimension or dimensions will be used.</para>
+		/// <para>Dimension—A netCDF dimension.</para>
+		/// <para>Value—The dimension value to use.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -147,9 +147,9 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Value Selection Method</para>
-		/// <para>指定将使用的维度值选择方法。</para>
-		/// <para>按值—输入值将与实际维度值匹配。</para>
-		/// <para>按索引—输入值将与维度值的位置或索引匹配。 索引的第一个值为 0；即位置从 0 开始。</para>
+		/// <para>Specifies the dimension value selection method that will be used.</para>
+		/// <para>By value—The input value will be matched with the actual dimension value.</para>
+		/// <para>By index—The input value will be matched with the position or index of a dimension value. The index is 0 based; that is, the position starts at 0.</para>
 		/// <para><see cref="ValueSelectionMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -159,10 +159,10 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Cell Registration</para>
-		/// <para>指定像元配准的位置。</para>
-		/// <para>居中—在像元中心进行像元配准。 这是默认设置。</para>
-		/// <para>左下角—在像元左下角进行像元配准。</para>
-		/// <para>左上角—在像元左上角进行像元配准。</para>
+		/// <para>Specifies the location of the cell registration.</para>
+		/// <para>Center—Cell registration at the center of the cell. This is the default.</para>
+		/// <para>Lower Left—Cell registration at the lower left of the cell.</para>
+		/// <para>Upper Left—Cell registration at the upper left of the cell.</para>
 		/// <para><see cref="CellRegistrationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -187,17 +187,17 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		public enum ValueSelectionMethodEnum 
 		{
 			/// <summary>
-			/// <para>按索引—输入值将与维度值的位置或索引匹配。 索引的第一个值为 0；即位置从 0 开始。</para>
+			/// <para>By index—The input value will be matched with the position or index of a dimension value. The index is 0 based; that is, the position starts at 0.</para>
 			/// </summary>
 			[GPValue("BY_INDEX")]
-			[Description("按索引")]
+			[Description("By index")]
 			By_index,
 
 			/// <summary>
-			/// <para>按值—输入值将与实际维度值匹配。</para>
+			/// <para>By value—The input value will be matched with the actual dimension value.</para>
 			/// </summary>
 			[GPValue("BY_VALUE")]
-			[Description("按值")]
+			[Description("By value")]
 			By_value,
 
 		}
@@ -208,24 +208,24 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		public enum CellRegistrationEnum 
 		{
 			/// <summary>
-			/// <para>居中—在像元中心进行像元配准。 这是默认设置。</para>
+			/// <para>Center—Cell registration at the center of the cell. This is the default.</para>
 			/// </summary>
 			[GPValue("CENTER")]
-			[Description("居中")]
+			[Description("Center")]
 			Center,
 
 			/// <summary>
-			/// <para>左下角—在像元左下角进行像元配准。</para>
+			/// <para>Lower Left—Cell registration at the lower left of the cell.</para>
 			/// </summary>
 			[GPValue("LOWER_LEFT")]
-			[Description("左下角")]
+			[Description("Lower Left")]
 			Lower_Left,
 
 			/// <summary>
-			/// <para>左上角—在像元左上角进行像元配准。</para>
+			/// <para>Upper Left—Cell registration at the upper left of the cell.</para>
 			/// </summary>
 			[GPValue("UPPER_LEFT")]
-			[Description("左上角")]
+			[Description("Upper Left")]
 			Upper_Left,
 
 		}

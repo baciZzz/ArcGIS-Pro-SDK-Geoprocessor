@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Change Terrain Resolution Bounds</para>
-	/// <para>更改 Terrain 分辨率界限</para>
-	/// <para>更改要素类在给定 terrain 数据集中强制所处的金字塔等级。</para>
+	/// <para>Change Terrain Resolution Bounds</para>
+	/// <para>Changes the pyramid levels at which a feature class will be enforced for a given terrain dataset.</para>
 	/// </summary>
 	public class ChangeTerrainResolutionBounds : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTerrain">
 		/// <para>Input Terrain</para>
-		/// <para>待处理的 terrain 数据集。</para>
+		/// <para>The terrain dataset to process.</para>
 		/// </param>
 		/// <param name="FeatureClass">
 		/// <para>Input Feature Class</para>
-		/// <para>金字塔等级分辨率将被修改的 terrain 引用的要素类。</para>
+		/// <para>The feature class referenced by the terrain that will have its pyramid-level resolutions modified.</para>
 		/// </param>
 		public ChangeTerrainResolutionBounds(object InTerrain, object FeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 更改 Terrain 分辨率界限</para>
+		/// <para>Tool Display Name : Change Terrain Resolution Bounds</para>
 		/// </summary>
-		public override string DisplayName() => "更改 Terrain 分辨率界限";
+		public override string DisplayName() => "Change Terrain Resolution Bounds";
 
 		/// <summary>
 		/// <para>Tool Name : ChangeTerrainResolutionBounds</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Terrain</para>
-		/// <para>待处理的 terrain 数据集。</para>
+		/// <para>The terrain dataset to process.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTerrainLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>金字塔等级分辨率将被修改的 terrain 引用的要素类。</para>
+		/// <para>The feature class referenced by the terrain that will have its pyramid-level resolutions modified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Lower Pyramid Resolution</para>
-		/// <para>所选要素类的新金字塔等级分辨率下限。</para>
+		/// <para>The new lower pyramid-level resolution for the chosen feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Upper Pyramid Resolution</para>
-		/// <para>所选要素类的新金字塔等级分辨率上限。</para>
+		/// <para>The new upper pyramid-level resolution for the chosen feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -102,9 +102,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Contributes to Overview</para>
-		/// <para>指定要素类是否参与 terrain 数据集的概视图。</para>
-		/// <para>选中 - 在 terrain 数据集的概视图显示中强制显示要素类。这是默认设置。</para>
-		/// <para>未选中 - 在 terrain 数据集的概视图显示中忽略要素类。</para>
+		/// <para>Specifies whether the feature class will contribute to the overview of the terrain dataset.</para>
+		/// <para>Checked—Enforces the feature class at the overview display of the terrain dataset. This is the default.</para>
+		/// <para>Unchecked—Omits the feature class from the overview display of the terrain dataset.</para>
 		/// <para><see cref="OverviewEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -136,14 +136,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum OverviewEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Enforces the feature class at the overview display of the terrain dataset. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("OVERVIEW")]
 			OVERVIEW,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Omits the feature class from the overview display of the terrain dataset.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_OVERVIEW")]

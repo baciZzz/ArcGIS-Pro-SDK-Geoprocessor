@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Import Subnetwork Controllers</para>
-	/// <para>导入子网控制器</para>
-	/// <para>用于将 .csv 文件中的子网控制器导入到公共设施网络。</para>
+	/// <para>Import Subnetwork Controllers</para>
+	/// <para>Imports subnetwork controllers from a .csv file into a utility network.</para>
 	/// </summary>
 	public class ImportSubnetworkControllers : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>将导入子网控制器的公共设施网络。</para>
+		/// <para>The utility network to which the subnetwork controllers will be imported.</para>
 		/// </param>
 		/// <param name="CsvFile">
 		/// <para>Input File</para>
-		/// <para>包含要导入的子网控制器的 .csv 文件。</para>
+		/// <para>The .csv file containing the subnetwork controllers to import.</para>
 		/// </param>
 		public ImportSubnetworkControllers(object InUtilityNetwork, object CsvFile)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 导入子网控制器</para>
+		/// <para>Tool Display Name : Import Subnetwork Controllers</para>
 		/// </summary>
-		public override string DisplayName() => "导入子网控制器";
+		public override string DisplayName() => "Import Subnetwork Controllers";
 
 		/// <summary>
 		/// <para>Tool Name : ImportSubnetworkControllers</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>将导入子网控制器的公共设施网络。</para>
+		/// <para>The utility network to which the subnetwork controllers will be imported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input File</para>
-		/// <para>包含要导入的子网控制器的 .csv 文件。</para>
+		/// <para>The .csv file containing the subnetwork controllers to import.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

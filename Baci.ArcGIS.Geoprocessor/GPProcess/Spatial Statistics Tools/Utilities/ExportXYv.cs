@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Export Feature Attribute To ASCII</para>
-	/// <para>将要素属性导出到 ASCII</para>
-	/// <para>将要素类坐标和属性值导出到以空格、逗号、制表符或分号进行分隔的 ASCII 文本文件中。</para>
+	/// <para>Export Feature Attribute To ASCII</para>
+	/// <para>Exports feature class coordinates and attribute values to a space-, comma-, tab-, or semicolon-delimited ASCII text file.</para>
 	/// </summary>
 	public class ExportXYv : AbstractGPProcess
 	{
@@ -21,30 +21,30 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InputFeatureClass">
 		/// <para>Input Feature Class</para>
-		/// <para>将从中导出要素坐标和属性值的要素类。</para>
+		/// <para>The feature class from which the feature coordinates and attribute values will be exported.</para>
 		/// </param>
 		/// <param name="ValueField">
 		/// <para>Value Field</para>
-		/// <para>输入要素类中包含要导出到 ASCII 文本文件的值的一个或多个字段。</para>
+		/// <para>The field or fields in the input feature class containing the values to export to an ASCII text file.</para>
 		/// </param>
 		/// <param name="Delimiter">
 		/// <para>Delimiter</para>
-		/// <para>指定要素坐标和属性值在输出 ASCII 文件中的分隔方式。</para>
-		/// <para>空格—要素坐标和属性值将在输出中以空格进行分隔。这是默认设置。</para>
-		/// <para>逗号—要素坐标和属性值将在输出中以逗号进行分隔。</para>
-		/// <para>分号—要素坐标和属性值将在输出中以分号进行分隔。</para>
-		/// <para>制表符—要素坐标和属性值将在输出中以制表符进行分隔。</para>
+		/// <para>Specifies how feature coordinates and attribute values will be separated in the output ASCII file.</para>
+		/// <para>Space—Feature coordinates and attribute values will be separated by a space in the output. This is the default.</para>
+		/// <para>Comma—Feature coordinates and attribute values will be separated by a comma in the output.</para>
+		/// <para>Semicolon—Feature coordinates and attribute values will be separated by a semicolon in the output.</para>
+		/// <para>Tab—Feature coordinates and attribute values will be separated by a tab in the output.</para>
 		/// <para><see cref="DelimiterEnum"/></para>
 		/// </param>
 		/// <param name="OutputASCIIFile">
 		/// <para>Output ASCII File</para>
-		/// <para>将包含要素坐标和属性值的 ASCII 文本文件。</para>
+		/// <para>The ASCII text file that will contain the feature coordinates and attribute values.</para>
 		/// </param>
 		/// <param name="AddFieldNamesToOutput">
 		/// <para>Add Field Names to Output</para>
-		/// <para>指定是否将字段名称作为第一行包含在输出文本文件中。</para>
-		/// <para>选中 - 将字段名称写入输出文本文件。</para>
-		/// <para>未选中 - 字段名称将不会写入输出文本文件。这是默认设置。</para>
+		/// <para>Specifies whether field names will be included as the first line in the output text file.</para>
+		/// <para>Checked—Field names will be written to the output text file.</para>
+		/// <para>Unchecked—Field names will not be written to the output text file. This is the default.</para>
 		/// <para><see cref="AddFieldNamesToOutputEnum"/></para>
 		/// </param>
 		public ExportXYv(object InputFeatureClass, object ValueField, object Delimiter, object OutputASCIIFile, object AddFieldNamesToOutput)
@@ -57,9 +57,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 将要素属性导出到 ASCII</para>
+		/// <para>Tool Display Name : Export Feature Attribute To ASCII</para>
 		/// </summary>
-		public override string DisplayName() => "将要素属性导出到 ASCII";
+		public override string DisplayName() => "Export Feature Attribute To ASCII";
 
 		/// <summary>
 		/// <para>Tool Name : ExportXYv</para>
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>将从中导出要素坐标和属性值的要素类。</para>
+		/// <para>The feature class from which the feature coordinates and attribute values will be exported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Value Field</para>
-		/// <para>输入要素类中包含要导出到 ASCII 文本文件的值的一个或多个字段。</para>
+		/// <para>The field or fields in the input feature class containing the values to export to an ASCII text file.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -111,11 +111,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Delimiter</para>
-		/// <para>指定要素坐标和属性值在输出 ASCII 文件中的分隔方式。</para>
-		/// <para>空格—要素坐标和属性值将在输出中以空格进行分隔。这是默认设置。</para>
-		/// <para>逗号—要素坐标和属性值将在输出中以逗号进行分隔。</para>
-		/// <para>分号—要素坐标和属性值将在输出中以分号进行分隔。</para>
-		/// <para>制表符—要素坐标和属性值将在输出中以制表符进行分隔。</para>
+		/// <para>Specifies how feature coordinates and attribute values will be separated in the output ASCII file.</para>
+		/// <para>Space—Feature coordinates and attribute values will be separated by a space in the output. This is the default.</para>
+		/// <para>Comma—Feature coordinates and attribute values will be separated by a comma in the output.</para>
+		/// <para>Semicolon—Feature coordinates and attribute values will be separated by a semicolon in the output.</para>
+		/// <para>Tab—Feature coordinates and attribute values will be separated by a tab in the output.</para>
 		/// <para><see cref="DelimiterEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output ASCII File</para>
-		/// <para>将包含要素坐标和属性值的 ASCII 文本文件。</para>
+		/// <para>The ASCII text file that will contain the feature coordinates and attribute values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -135,9 +135,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Add Field Names to Output</para>
-		/// <para>指定是否将字段名称作为第一行包含在输出文本文件中。</para>
-		/// <para>选中 - 将字段名称写入输出文本文件。</para>
-		/// <para>未选中 - 字段名称将不会写入输出文本文件。这是默认设置。</para>
+		/// <para>Specifies whether field names will be included as the first line in the output text file.</para>
+		/// <para>Checked—Field names will be written to the output text file.</para>
+		/// <para>Unchecked—Field names will not be written to the output text file. This is the default.</para>
 		/// <para><see cref="AddFieldNamesToOutputEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -162,31 +162,31 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum DelimiterEnum 
 		{
 			/// <summary>
-			/// <para>空格—要素坐标和属性值将在输出中以空格进行分隔。这是默认设置。</para>
+			/// <para>Space—Feature coordinates and attribute values will be separated by a space in the output. This is the default.</para>
 			/// </summary>
 			[GPValue("SPACE")]
-			[Description("空格")]
+			[Description("Space")]
 			Space,
 
 			/// <summary>
-			/// <para>逗号—要素坐标和属性值将在输出中以逗号进行分隔。</para>
+			/// <para>Comma—Feature coordinates and attribute values will be separated by a comma in the output.</para>
 			/// </summary>
 			[GPValue("COMMA")]
-			[Description("逗号")]
+			[Description("Comma")]
 			Comma,
 
 			/// <summary>
-			/// <para>分号—要素坐标和属性值将在输出中以分号进行分隔。</para>
+			/// <para>Semicolon—Feature coordinates and attribute values will be separated by a semicolon in the output.</para>
 			/// </summary>
 			[GPValue("SEMI-COLON")]
-			[Description("分号")]
+			[Description("Semicolon")]
 			Semicolon,
 
 			/// <summary>
-			/// <para>制表符—要素坐标和属性值将在输出中以制表符进行分隔。</para>
+			/// <para>Tab—Feature coordinates and attribute values will be separated by a tab in the output.</para>
 			/// </summary>
 			[GPValue("TAB")]
-			[Description("制表符")]
+			[Description("Tab")]
 			Tab,
 
 		}
@@ -197,14 +197,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum AddFieldNamesToOutputEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Field names will be written to the output text file.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADD_FIELD_NAMES")]
 			ADD_FIELD_NAMES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Field names will not be written to the output text file. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_FIELD_NAMES")]

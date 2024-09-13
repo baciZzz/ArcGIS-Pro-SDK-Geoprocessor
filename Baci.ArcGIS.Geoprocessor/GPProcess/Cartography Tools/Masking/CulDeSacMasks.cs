@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Cul-De-Sac Masks</para>
-	/// <para>死胡同掩膜</para>
-	/// <para>由符号化的输入线图层创建一个面掩膜要素类。</para>
+	/// <para>Cul-De-Sac Masks</para>
+	/// <para>Creates a feature class of polygon masks from a symbolized input line layer.</para>
 	/// </summary>
 	public class CulDeSacMasks : AbstractGPProcess
 	{
@@ -21,31 +21,31 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input Layer</para>
-		/// <para>创建掩膜所使用的输入线图层。</para>
+		/// <para>The input line layer from which the masks will be created.</para>
 		/// </param>
 		/// <param name="OutputFc">
 		/// <para>Output Feature Class</para>
-		/// <para>含有掩膜要素的要素类。</para>
+		/// <para>The feature class that will contain the mask features.</para>
 		/// </param>
 		/// <param name="ReferenceScale">
 		/// <para>Reference Scale</para>
-		/// <para>用于在使用页面单位指定掩膜时计算掩膜几何的参考比例。该比例通常是地图的参考比例。</para>
+		/// <para>The reference scale used for calculating the masking geometry when masks are specified in page units. This is typically the reference scale of the map.</para>
 		/// </param>
 		/// <param name="SpatialReference">
 		/// <para>Calculation coordinate system</para>
-		/// <para>将创建掩膜面的地图的空间参考。该空间参考不是要分配给输出要素类的空间参考。它是地图的空间参考；由于投影要素时，符号系统的位置可能发生变化，所以在该空间参考内将使用掩膜面。</para>
+		/// <para>The spatial reference of the map in which the masking polygons will be created. This is not the spatial reference that will be assigned to the output feature class. It is the spatial reference of the map in which the masking polygons will be used, since the position of symbology may change when features are projected.</para>
 		/// </param>
 		/// <param name="Margin">
 		/// <para>Margin</para>
-		/// <para>在用于创建掩膜面的符号化输入要素周围的间距（使用页面单位）。通常，创建掩膜面时，在符号的周围留有小边距，以提高显示效果。边距值可使用页面单位或地图单位指定。通常，您需要使用页面单位来指定边距值。</para>
-		/// <para>边距值不能为负。</para>
+		/// <para>The space in page units surrounding the symbolized input features used to create the mask polygons. Typically, masking polygons are created with a small margin around the symbol to improve visual appearance. Margin values are specified in either page units or map units. Most of the time, you will specify your margin distance value in page units.</para>
+		/// <para>The margin cannot be negative.</para>
 		/// </param>
 		/// <param name="Attributes">
 		/// <para>Transfer Attributes</para>
-		/// <para>指定将从输入要素传递到输出要素的属性。</para>
-		/// <para>仅要素 ID—仅输入要素的 FID 字段将传递到输出要素。这是默认设置。</para>
-		/// <para>除要素 ID 外的所有属性—输入要素中，除 FID 以外的所有属性都将传递到输出要素。</para>
-		/// <para>所有属性—输入要素的所有属性都将传递到输出要素。</para>
+		/// <para>Specifies the attributes that will be transferred from the input features to the output features.</para>
+		/// <para>Only feature IDs—Only the FID field from the input features will be transferred to the output features. This is the default.</para>
+		/// <para>All attributes except feature IDs—All the attributes except the FID from the input features will be transferred to the output features.</para>
+		/// <para>All attributes—All the attributes from the input features will be transferred to the output features.</para>
 		/// <para><see cref="AttributesEnum"/></para>
 		/// </param>
 		public CulDeSacMasks(object InputLayer, object OutputFc, object ReferenceScale, object SpatialReference, object Margin, object Attributes)
@@ -59,9 +59,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 死胡同掩膜</para>
+		/// <para>Tool Display Name : Cul-De-Sac Masks</para>
 		/// </summary>
-		public override string DisplayName() => "死胡同掩膜";
+		public override string DisplayName() => "Cul-De-Sac Masks";
 
 		/// <summary>
 		/// <para>Tool Name : CulDeSacMasks</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>创建掩膜所使用的输入线图层。</para>
+		/// <para>The input line layer from which the masks will be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLayer()]
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>含有掩膜要素的要素类。</para>
+		/// <para>The feature class that will contain the mask features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Reference Scale</para>
-		/// <para>用于在使用页面单位指定掩膜时计算掩膜几何的参考比例。该比例通常是地图的参考比例。</para>
+		/// <para>The reference scale used for calculating the masking geometry when masks are specified in page units. This is typically the reference scale of the map.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Calculation coordinate system</para>
-		/// <para>将创建掩膜面的地图的空间参考。该空间参考不是要分配给输出要素类的空间参考。它是地图的空间参考；由于投影要素时，符号系统的位置可能发生变化，所以在该空间参考内将使用掩膜面。</para>
+		/// <para>The spatial reference of the map in which the masking polygons will be created. This is not the spatial reference that will be assigned to the output feature class. It is the spatial reference of the map in which the masking polygons will be used, since the position of symbology may change when features are projected.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSpatialReference()]
@@ -129,8 +129,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Margin</para>
-		/// <para>在用于创建掩膜面的符号化输入要素周围的间距（使用页面单位）。通常，创建掩膜面时，在符号的周围留有小边距，以提高显示效果。边距值可使用页面单位或地图单位指定。通常，您需要使用页面单位来指定边距值。</para>
-		/// <para>边距值不能为负。</para>
+		/// <para>The space in page units surrounding the symbolized input features used to create the mask polygons. Typically, masking polygons are created with a small margin around the symbol to improve visual appearance. Margin values are specified in either page units or map units. Most of the time, you will specify your margin distance value in page units.</para>
+		/// <para>The margin cannot be negative.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -140,10 +140,10 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Transfer Attributes</para>
-		/// <para>指定将从输入要素传递到输出要素的属性。</para>
-		/// <para>仅要素 ID—仅输入要素的 FID 字段将传递到输出要素。这是默认设置。</para>
-		/// <para>除要素 ID 外的所有属性—输入要素中，除 FID 以外的所有属性都将传递到输出要素。</para>
-		/// <para>所有属性—输入要素的所有属性都将传递到输出要素。</para>
+		/// <para>Specifies the attributes that will be transferred from the input features to the output features.</para>
+		/// <para>Only feature IDs—Only the FID field from the input features will be transferred to the output features. This is the default.</para>
+		/// <para>All attributes except feature IDs—All the attributes except the FID from the input features will be transferred to the output features.</para>
+		/// <para>All attributes—All the attributes from the input features will be transferred to the output features.</para>
 		/// <para><see cref="AttributesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -168,24 +168,24 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum AttributesEnum 
 		{
 			/// <summary>
-			/// <para>除要素 ID 外的所有属性—输入要素中，除 FID 以外的所有属性都将传递到输出要素。</para>
+			/// <para>All attributes except feature IDs—All the attributes except the FID from the input features will be transferred to the output features.</para>
 			/// </summary>
 			[GPValue("NO_FID")]
-			[Description("除要素 ID 外的所有属性")]
+			[Description("All attributes except feature IDs")]
 			All_attributes_except_feature_IDs,
 
 			/// <summary>
-			/// <para>仅要素 ID—仅输入要素的 FID 字段将传递到输出要素。这是默认设置。</para>
+			/// <para>Only feature IDs—Only the FID field from the input features will be transferred to the output features. This is the default.</para>
 			/// </summary>
 			[GPValue("ONLY_FID")]
-			[Description("仅要素 ID")]
+			[Description("Only feature IDs")]
 			Only_feature_IDs,
 
 			/// <summary>
-			/// <para>所有属性—输入要素的所有属性都将传递到输出要素。</para>
+			/// <para>All attributes except feature IDs—All the attributes except the FID from the input features will be transferred to the output features.</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("所有属性")]
+			[Description("All attributes")]
 			All_attributes,
 
 		}

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Copy Dataset From Multifile Feature Connection</para>
-	/// <para>从多文件要素连接复制数据集</para>
-	/// <para>用于将数据集从多文件要素连接 (MFC) 复制到要素类。</para>
+	/// <para>Copy Dataset From Multifile Feature Connection</para>
+	/// <para>Copies a dataset from a multifile feature connection (MFC) to a feature class.</para>
 	/// </summary>
 	public class CopyDatasetFromBDC : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input Dataset</para>
-		/// <para>要复制的点、线、面或表数据集。</para>
+		/// <para>The point, line, polygon, or table dataset to be copied.</para>
 		/// </param>
 		/// <param name="Output">
 		/// <para>Output Dataset</para>
-		/// <para>要从多文件要素连接复制的输出数据集。</para>
+		/// <para>The output dataset to be copied from a multifile feature connection.</para>
 		/// </param>
 		public CopyDatasetFromBDC(object InputLayer, object Output)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 从多文件要素连接复制数据集</para>
+		/// <para>Tool Display Name : Copy Dataset From Multifile Feature Connection</para>
 		/// </summary>
-		public override string DisplayName() => "从多文件要素连接复制数据集";
+		public override string DisplayName() => "Copy Dataset From Multifile Feature Connection";
 
 		/// <summary>
 		/// <para>Tool Name : CopyDatasetFromBDC</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>要复制的点、线、面或表数据集。</para>
+		/// <para>The point, line, polygon, or table dataset to be copied.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Output Dataset</para>
-		/// <para>要从多文件要素连接复制的输出数据集。</para>
+		/// <para>The output dataset to be copied from a multifile feature connection.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]

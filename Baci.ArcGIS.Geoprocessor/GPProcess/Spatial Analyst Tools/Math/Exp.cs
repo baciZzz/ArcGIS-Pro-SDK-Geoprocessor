@@ -12,7 +12,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 	/// <summary>
 	/// <para>Exp</para>
 	/// <para>Exp</para>
-	/// <para>计算栅格中各像元以 e 为底的指数。</para>
+	/// <para>Calculates the base e exponential of the cells in a raster.</para>
 	/// </summary>
 	public class Exp : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRasterOrConstant">
 		/// <para>Input raster or constant value</para>
-		/// <para>要查找以 e 为底的指数的输入值。</para>
-		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input values for which to find the base e exponential.</para>
+		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>像元值是输入值以 e 为底的指数。</para>
+		/// <para>The output raster.</para>
+		/// <para>The cell values are the base e exponential of the input values.</para>
 		/// </param>
 		public Exp(object InRasterOrConstant, object OutRaster)
 		{
@@ -72,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value</para>
-		/// <para>要查找以 e 为底的指数的输入值。</para>
-		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input values for which to find the base e exponential.</para>
+		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -85,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>像元值是输入值以 e 为底的指数。</para>
+		/// <para>The output raster.</para>
+		/// <para>The cell values are the base e exponential of the input values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

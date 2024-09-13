@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Nibble</para>
-	/// <para>蚕食</para>
-	/// <para>用最邻近点的值替换掩膜范围内的栅格像元的值。</para>
+	/// <para>Nibble</para>
+	/// <para>Replaces cells of a raster corresponding to a mask with the values of the nearest neighbors.</para>
 	/// </summary>
 	public class Nibble : AbstractGPProcess
 	{
@@ -21,20 +21,20 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>将被蚕食的输入栅格。</para>
-		/// <para>输入栅格可以是整型，也可以是浮点型。</para>
+		/// <para>The input raster that will be nibbled.</para>
+		/// <para>The input raster can be either integer or floating point type.</para>
 		/// </param>
 		/// <param name="InMaskRaster">
 		/// <para>Input raster mask</para>
-		/// <para>用作掩膜的栅格。</para>
-		/// <para>掩膜栅格中的 NoData 像元能够识别输入栅格中将被蚕食或被最近邻域的值替换的像元。</para>
-		/// <para>掩膜栅格可以是整型，也可以是浮点型。</para>
+		/// <para>The raster used as the mask.</para>
+		/// <para>Cells that are NoData in the mask raster identify the cells in the Input raster that will be nibbled, or replaced, by the value of the closest nearest neighbour.</para>
+		/// <para>The mask raster can be either integer or floating point type.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>输出已蚕食的栅格。</para>
-		/// <para>识别的输入像元将被用其最邻近点的值进行替换。</para>
-		/// <para>如果输入栅格为整型，那么输出栅格也为整型。如果输入栅格为浮点型，则输出栅格也为浮点型。</para>
+		/// <para>The output nibbled raster.</para>
+		/// <para>The identified input cells will be replaced with the values of their nearest neighbors.</para>
+		/// <para>If the Input raster is integer, the output raster will be integer. If it is floating point, the output will be floating point.</para>
 		/// </param>
 		public Nibble(object InRaster, object InMaskRaster, object OutRaster)
 		{
@@ -44,14 +44,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 蚕食</para>
+		/// <para>Tool Display Name : Nibble</para>
 		/// </summary>
-		public override string DisplayName() => "蚕食";
+		public override string DisplayName() => "Nibble";
 
 		/// <summary>
-		/// <para>Tool Name : 蚕食</para>
+		/// <para>Tool Name : Nibble</para>
 		/// </summary>
-		public override string ToolName() => "蚕食";
+		public override string ToolName() => "Nibble";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Nibble</para>
@@ -80,8 +80,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>将被蚕食的输入栅格。</para>
-		/// <para>输入栅格可以是整型，也可以是浮点型。</para>
+		/// <para>The input raster that will be nibbled.</para>
+		/// <para>The input raster can be either integer or floating point type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -93,9 +93,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster mask</para>
-		/// <para>用作掩膜的栅格。</para>
-		/// <para>掩膜栅格中的 NoData 像元能够识别输入栅格中将被蚕食或被最近邻域的值替换的像元。</para>
-		/// <para>掩膜栅格可以是整型，也可以是浮点型。</para>
+		/// <para>The raster used as the mask.</para>
+		/// <para>Cells that are NoData in the mask raster identify the cells in the Input raster that will be nibbled, or replaced, by the value of the closest nearest neighbour.</para>
+		/// <para>The mask raster can be either integer or floating point type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -107,9 +107,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出已蚕食的栅格。</para>
-		/// <para>识别的输入像元将被用其最邻近点的值进行替换。</para>
-		/// <para>如果输入栅格为整型，那么输出栅格也为整型。如果输入栅格为浮点型，则输出栅格也为浮点型。</para>
+		/// <para>The output nibbled raster.</para>
+		/// <para>The identified input cells will be replaced with the values of their nearest neighbors.</para>
+		/// <para>If the Input raster is integer, the output raster will be integer. If it is floating point, the output will be floating point.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -117,9 +117,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Use NoData values if they are the nearest neighbor</para>
-		/// <para>指定是否允许将输入栅格中的 NoData 像元蚕食为由掩膜栅格定义的区域。</para>
-		/// <para>选中 - 可以将 NoData 和数据值蚕食为在掩膜栅格中定义的区域。如果输入栅格中的 NoData 值是最邻近点，则可自由地将其蚕食掉为掩膜中定义的区域。这是默认设置。</para>
-		/// <para>未选中 - 只能将数据值蚕食为在掩膜栅格中定义的区域。即使输入栅格中的 NoData 值是最邻近点，也不允许将其蚕食为掩膜栅格中定义的区域。</para>
+		/// <para>Specifies whether NoData cells in the input raster are allowed to nibble into the area defined by the mask raster.</para>
+		/// <para>Checked—Both NoData and data values can nibble into areas defined in the mask raster. NoData values in the input raster are free to nibble into areas defined in the mask if they are the nearest neighbor. This is the default.</para>
+		/// <para>Unchecked—Only data values are free to nibble into areas defined in the mask raster. NoData values in the input raster are not allowed to nibble into areas defined in the mask raster even if they are the nearest neighbor.</para>
 		/// <para><see cref="NibbleValuesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -129,9 +129,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Nibble NoData cells</para>
-		/// <para>指定输入栅格中处于掩膜内的 NoData 像元在输出栅格中是否保持为 NoData。</para>
-		/// <para>未选中 - 输入栅格中处于掩膜内的 NoData 像元在输出中将保持为 NoData。这是默认设置。</para>
-		/// <para>选中 - 可以将输入栅格中处于掩膜内的 NoData 像元蚕食为有效的输出像元值。</para>
+		/// <para>Specifies whether NoData cells in the input raster that are within the mask will remain NoData in the output raster.</para>
+		/// <para>Unchecked—NoData cells in the input raster that are within the mask will remain NoData in the output. This is the default.</para>
+		/// <para>Checked—NoData cells in the input raster that are within the mask can be nibbled into valid output cell values.</para>
 		/// <para><see cref="NibbleNodataEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -141,8 +141,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input zone raster</para>
-		/// <para>输入区域栅格。在每个区域中，掩膜内的输入像元仅会被同一区域内的最近像元值替换。</para>
-		/// <para>区域是指栅格中具有相同值的所有像元，无论这些像元是否相连。输入区域图层定义了区域的形状、值和位置。区域栅格可以是整型，也可以是浮点型。</para>
+		/// <para>The input zone raster. For each zone, input cells that are within the mask will be replaced only by the nearest cell values within that same zone.</para>
+		/// <para>A zone is all the cells in a raster that have the same value, whether or not they are contiguous. The input zone layer defines the shape, values, and locations of the zones. The zone raster can be either integer or floating point type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
@@ -169,14 +169,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum NibbleValuesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Both NoData and data values can nibble into areas defined in the mask raster. NoData values in the input raster are free to nibble into areas defined in the mask if they are the nearest neighbor. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ALL_VALUES")]
 			ALL_VALUES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Only data values are free to nibble into areas defined in the mask raster. NoData values in the input raster are not allowed to nibble into areas defined in the mask raster even if they are the nearest neighbor.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DATA_ONLY")]
@@ -190,14 +190,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum NibbleNodataEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—NoData cells in the input raster that are within the mask will remain NoData in the output. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("PRESERVE_NODATA")]
 			PRESERVE_NODATA,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—NoData cells in the input raster that are within the mask can be nibbled into valid output cell values.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PROCESS_NODATA")]

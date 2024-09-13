@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Store Diagram</para>
-	/// <para>存储逻辑示意图</para>
-	/// <para>用于在数据库中存储临时网络逻辑示意图。 可以分配访问权限和标签以控制逻辑示意图的安全性和可搜索性。</para>
+	/// <para>Store Diagram</para>
+	/// <para>Stores a temporary network diagram in the database. Access rights and tags can be assigned to control security and searchability of the diagram.</para>
 	/// </summary>
 	public class StoreDiagram : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InNetworkDiagramLayer">
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>要存储的临时网络逻辑示意图。</para>
+		/// <para>The temporary network diagram layer to be stored.</para>
 		/// </param>
 		/// <param name="OutName">
 		/// <para>Network Diagram Name</para>
-		/// <para>输出网络逻辑示意图的名称。</para>
+		/// <para>The name of the output network diagram.</para>
 		/// </param>
 		public StoreDiagram(object InNetworkDiagramLayer, object OutName)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 存储逻辑示意图</para>
+		/// <para>Tool Display Name : Store Diagram</para>
 		/// </summary>
-		public override string DisplayName() => "存储逻辑示意图";
+		public override string DisplayName() => "Store Diagram";
 
 		/// <summary>
 		/// <para>Tool Name : StoreDiagram</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>要存储的临时网络逻辑示意图。</para>
+		/// <para>The temporary network diagram layer to be stored.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDiagramLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Network Diagram Name</para>
-		/// <para>输出网络逻辑示意图的名称。</para>
+		/// <para>The name of the output network diagram.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDiagramLayer()]
@@ -86,10 +86,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Network Diagram Access Rights</para>
-		/// <para>指定输入逻辑示意图的访问权限等级。</para>
-		/// <para>公共—其他用户均具有逻辑示意图的完全访问权限；所有人都可以查看、编辑、更新和覆盖逻辑示意图。 但是，除了逻辑示意图所有者和门户 utility network 所有者之外（如果逻辑示意图与企业级地理数据库中的 utility network 相关），没有人能够使用更改逻辑示意图属性工具来更改访问权限等级。 这是默认设置。</para>
-		/// <para>受保护—其他用户具有逻辑示意图的只读访问权限。 无法编辑、更新或覆盖逻辑示意图。</para>
-		/// <para>私有—其他用户没有访问逻辑示意图的权限。 查找逻辑示意图窗格中将对其他用户隐藏相应的逻辑示意图项目。</para>
+		/// <para>Specifies the access right level of the input diagram.</para>
+		/// <para>Public—Other users will have full access to the diagram; everyone can see, edit, update, and overwrite the diagram. However, no one except the diagram owner and the portal utility network owner—in the case of diagrams related to a utility network in an enterprise geodatabase—can use the Alter Diagram Properties tool to change the access right level. This is the default.</para>
+		/// <para>Protected—Other users will have read-only access to the diagram. They cannot edit, update, or overwrite the diagram.</para>
+		/// <para>Private— Other users will not have access to the diagram. The corresponding diagram item will be hidden from other users in the Find Diagrams pane.</para>
 		/// <para><see cref="AccessRightTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -99,8 +99,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Tags (optional)</para>
-		/// <para>标签可帮助使用查找逻辑示意图窗格来查询存储的逻辑示意图。</para>
-		/// <para>可以使用 # 字符分隔各个标签，有助于进行高效的逻辑示意图搜索。</para>
+		/// <para>Tags help with querying the stored diagram using the Find Diagrams pane.</para>
+		/// <para>Use the # character to separate each tag and aid in efficient diagram searches.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -114,24 +114,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum AccessRightTypeEnum 
 		{
 			/// <summary>
-			/// <para>公共—其他用户均具有逻辑示意图的完全访问权限；所有人都可以查看、编辑、更新和覆盖逻辑示意图。 但是，除了逻辑示意图所有者和门户 utility network 所有者之外（如果逻辑示意图与企业级地理数据库中的 utility network 相关），没有人能够使用更改逻辑示意图属性工具来更改访问权限等级。 这是默认设置。</para>
+			/// <para>Public—Other users will have full access to the diagram; everyone can see, edit, update, and overwrite the diagram. However, no one except the diagram owner and the portal utility network owner—in the case of diagrams related to a utility network in an enterprise geodatabase—can use the Alter Diagram Properties tool to change the access right level. This is the default.</para>
 			/// </summary>
 			[GPValue("PUBLIC")]
-			[Description("公共")]
+			[Description("Public")]
 			Public,
 
 			/// <summary>
-			/// <para>受保护—其他用户具有逻辑示意图的只读访问权限。 无法编辑、更新或覆盖逻辑示意图。</para>
+			/// <para>Protected—Other users will have read-only access to the diagram. They cannot edit, update, or overwrite the diagram.</para>
 			/// </summary>
 			[GPValue("PROTECTED")]
-			[Description("受保护")]
+			[Description("Protected")]
 			Protected,
 
 			/// <summary>
-			/// <para>私有—其他用户没有访问逻辑示意图的权限。 查找逻辑示意图窗格中将对其他用户隐藏相应的逻辑示意图项目。</para>
+			/// <para>Private— Other users will not have access to the diagram. The corresponding diagram item will be hidden from other users in the Find Diagrams pane.</para>
 			/// </summary>
 			[GPValue("PRIVATE")]
-			[Description("私有")]
+			[Description("Private")]
 			Private,
 
 		}

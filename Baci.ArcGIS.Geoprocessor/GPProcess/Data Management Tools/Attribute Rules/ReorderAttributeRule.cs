@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Reorder Attribute Rule</para>
-	/// <para>重新排序属性规则</para>
-	/// <para>重新排列属性规则的赋值顺序。</para>
+	/// <para>Reorder Attribute Rule</para>
+	/// <para>Reorders the evaluation order of an attribute rule.</para>
 	/// </summary>
 	public class ReorderAttributeRule : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>包含属性规则的表。</para>
+		/// <para>The table that contains the attribute rule.</para>
 		/// </param>
 		/// <param name="Name">
 		/// <para>Calculation Rule Name</para>
-		/// <para>将更改其赋值顺序的计算规则的名称。</para>
+		/// <para>The name of the calculation rule that will have its evaluation order altered.</para>
 		/// </param>
 		/// <param name="EvaluationOrder">
 		/// <para>Evaluation Order</para>
-		/// <para>规则的新赋值顺序值。例如，如果您有 5 个规则，且此规则被安排最后一个执行（第五个位置），但您希望在第二个位置对其进行赋值，请输入值 2。对于位置 2 之后的规则，其赋值顺序值将被重新分配以遵循该规则（例如，位置 2 变为位置 3，位置 3 变为位置 4，位置 4 变为位置 5）。</para>
+		/// <para>The new evaluation order value for the rule. For example, if you have 5 rules and this rule is ordered to execute last (the fifth position) but you want it to be evaluated in the second position, enter the value 2. The evaluation order values for the rules after position 2 will be reassigned to follow this rule (for example, position 2 becomes position 3, position 3 becomes position 4, and position 4 becomes position 5).</para>
 		/// </param>
 		public ReorderAttributeRule(object InTable, object Name, object EvaluationOrder)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 重新排序属性规则</para>
+		/// <para>Tool Display Name : Reorder Attribute Rule</para>
 		/// </summary>
-		public override string DisplayName() => "重新排序属性规则";
+		public override string DisplayName() => "Reorder Attribute Rule";
 
 		/// <summary>
 		/// <para>Tool Name : ReorderAttributeRule</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>包含属性规则的表。</para>
+		/// <para>The table that contains the attribute rule.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Calculation Rule Name</para>
-		/// <para>将更改其赋值顺序的计算规则的名称。</para>
+		/// <para>The name of the calculation rule that will have its evaluation order altered.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Evaluation Order</para>
-		/// <para>规则的新赋值顺序值。例如，如果您有 5 个规则，且此规则被安排最后一个执行（第五个位置），但您希望在第二个位置对其进行赋值，请输入值 2。对于位置 2 之后的规则，其赋值顺序值将被重新分配以遵循该规则（例如，位置 2 变为位置 3，位置 3 变为位置 4，位置 4 变为位置 5）。</para>
+		/// <para>The new evaluation order value for the rule. For example, if you have 5 rules and this rule is ordered to execute last (the fifth position) but you want it to be evaluated in the second position, enter the value 2. The evaluation order values for the rules after position 2 will be reassigned to follow this rule (for example, position 2 becomes position 3, position 3 becomes position 4, and position 4 becomes position 5).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Split Raster</para>
-	/// <para>分割栅格</para>
-	/// <para>按照块或面中的要素将栅格数据集分为多个更小的部分。</para>
+	/// <para>Split Raster</para>
+	/// <para>Divides a raster dataset  into smaller pieces, by tiles or features from a polygon.</para>
 	/// </summary>
 	public class SplitRaster : AbstractGPProcess
 	{
@@ -21,39 +21,39 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>要进行分割的栅格。</para>
+		/// <para>The raster to split.</para>
 		/// </param>
 		/// <param name="OutFolder">
 		/// <para>Output Folder</para>
-		/// <para>新栅格数据集的目标。</para>
+		/// <para>The destination for the new raster datasets.</para>
 		/// </param>
 		/// <param name="OutBaseName">
 		/// <para>Output Base Name</para>
-		/// <para>您将创建的每个栅格数据集的前缀。将对每个前缀追加一个数字（从 0 开始）。</para>
+		/// <para>The prefix for each of the raster datasets you will create. A number will be appended to each prefix, starting with 0.</para>
 		/// </param>
 		/// <param name="SplitMethod">
 		/// <para>Split Method</para>
-		/// <para>确定如何分割栅格数据集。</para>
-		/// <para>块大小—指定分块的宽度和高度。</para>
-		/// <para>块数量— 指定块的宽度和高度。</para>
-		/// <para>面要素— 使用要素类中的各个面几何来分割栅格。</para>
+		/// <para>Determines how to split the raster dataset.</para>
+		/// <para>Size of tile—Specify the width and height of the tile.</para>
+		/// <para>Number of tiles— Specify the number of raster tiles to create by breaking the dataset into a number of columns and rows.</para>
+		/// <para>Polygon features— Use the individual polygon geometries in a feature class to split the raster.</para>
 		/// <para><see cref="SplitMethodEnum"/></para>
 		/// </param>
 		/// <param name="Format">
 		/// <para>Output Format</para>
-		/// <para>输出栅格数据集的格式。</para>
-		/// <para>Geotiff (*.tif)—标记图像文件格式。这是默认设置。</para>
-		/// <para>Bitmap (*.bmp)—Microsoft 位图。</para>
-		/// <para>ENVI (*.dat)—ENVI DAT。</para>
-		/// <para>Esri BIL (*.bil)—Esri 波段按行交叉。</para>
-		/// <para>Esri BIP (*.bip)—Esri 波段按像素交叉。</para>
-		/// <para>Esri BSQ (*.bsq)—Esri 波段顺序格式。</para>
-		/// <para>GIF (*.gif)—图形交换格式。</para>
-		/// <para>Esri GRID—Esri Grid。</para>
-		/// <para>ERDAS IMAGINE (*.img)—ERDAS IMAGINE。</para>
-		/// <para>JPEG 2000 (*.jp2)—JPEG 2000。</para>
-		/// <para>JPEG (*.jpeg)—联合图像专家组。</para>
-		/// <para>PNG (*.png)—可移植网络图形。</para>
+		/// <para>The format for the output raster datasets.</para>
+		/// <para>Geotiff (*.tif)—Tagged Image File Format. This is the default.</para>
+		/// <para>Bitmap (*.bmp)—Microsoft Bitmap.</para>
+		/// <para>ENVI (*.dat)—ENVI DAT.</para>
+		/// <para>Esri BIL (*.bil)—Esri Band Interleaved by Line.</para>
+		/// <para>Esri BIP (*.bip)—Esri Band Interleaved by Pixel.</para>
+		/// <para>Esri BSQ (*.bsq)—Esri Band Sequential.</para>
+		/// <para>GIF (*.gif)—Graphic Interchange Format.</para>
+		/// <para>Esri GRID—Esri Grid.</para>
+		/// <para>ERDAS IMAGINE (*.img)—ERDAS IMAGINE.</para>
+		/// <para>JPEG 2000 (*.jp2)—JPEG 2000.</para>
+		/// <para>JPEG (*.jpeg)—Joint Photographic Experts Group.</para>
+		/// <para>PNG (*.png)—Portable Network Graphics.</para>
 		/// </param>
 		public SplitRaster(object InRaster, object OutFolder, object OutBaseName, object SplitMethod, object Format)
 		{
@@ -65,9 +65,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 分割栅格</para>
+		/// <para>Tool Display Name : Split Raster</para>
 		/// </summary>
-		public override string DisplayName() => "分割栅格";
+		public override string DisplayName() => "Split Raster";
 
 		/// <summary>
 		/// <para>Tool Name : SplitRaster</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>要进行分割的栅格。</para>
+		/// <para>The raster to split.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Folder</para>
-		/// <para>新栅格数据集的目标。</para>
+		/// <para>The destination for the new raster datasets.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Base Name</para>
-		/// <para>您将创建的每个栅格数据集的前缀。将对每个前缀追加一个数字（从 0 开始）。</para>
+		/// <para>The prefix for each of the raster datasets you will create. A number will be appended to each prefix, starting with 0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -125,10 +125,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Split Method</para>
-		/// <para>确定如何分割栅格数据集。</para>
-		/// <para>块大小—指定分块的宽度和高度。</para>
-		/// <para>块数量— 指定块的宽度和高度。</para>
-		/// <para>面要素— 使用要素类中的各个面几何来分割栅格。</para>
+		/// <para>Determines how to split the raster dataset.</para>
+		/// <para>Size of tile—Specify the width and height of the tile.</para>
+		/// <para>Number of tiles— Specify the number of raster tiles to create by breaking the dataset into a number of columns and rows.</para>
+		/// <para>Polygon features— Use the individual polygon geometries in a feature class to split the raster.</para>
 		/// <para><see cref="SplitMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -138,19 +138,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Format</para>
-		/// <para>输出栅格数据集的格式。</para>
-		/// <para>Geotiff (*.tif)—标记图像文件格式。这是默认设置。</para>
-		/// <para>Bitmap (*.bmp)—Microsoft 位图。</para>
-		/// <para>ENVI (*.dat)—ENVI DAT。</para>
-		/// <para>Esri BIL (*.bil)—Esri 波段按行交叉。</para>
-		/// <para>Esri BIP (*.bip)—Esri 波段按像素交叉。</para>
-		/// <para>Esri BSQ (*.bsq)—Esri 波段顺序格式。</para>
-		/// <para>GIF (*.gif)—图形交换格式。</para>
-		/// <para>Esri GRID—Esri Grid。</para>
-		/// <para>ERDAS IMAGINE (*.img)—ERDAS IMAGINE。</para>
-		/// <para>JPEG 2000 (*.jp2)—JPEG 2000。</para>
-		/// <para>JPEG (*.jpeg)—联合图像专家组。</para>
-		/// <para>PNG (*.png)—可移植网络图形。</para>
+		/// <para>The format for the output raster datasets.</para>
+		/// <para>Geotiff (*.tif)—Tagged Image File Format. This is the default.</para>
+		/// <para>Bitmap (*.bmp)—Microsoft Bitmap.</para>
+		/// <para>ENVI (*.dat)—ENVI DAT.</para>
+		/// <para>Esri BIL (*.bil)—Esri Band Interleaved by Line.</para>
+		/// <para>Esri BIP (*.bip)—Esri Band Interleaved by Pixel.</para>
+		/// <para>Esri BSQ (*.bsq)—Esri Band Sequential.</para>
+		/// <para>GIF (*.gif)—Graphic Interchange Format.</para>
+		/// <para>Esri GRID—Esri Grid.</para>
+		/// <para>ERDAS IMAGINE (*.img)—ERDAS IMAGINE.</para>
+		/// <para>JPEG 2000 (*.jp2)—JPEG 2000.</para>
+		/// <para>JPEG (*.jpeg)—Joint Photographic Experts Group.</para>
+		/// <para>PNG (*.png)—Portable Network Graphics.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -159,10 +159,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Resampling Technique</para>
-		/// <para>根据您拥有的数据类型选择相应的技术。</para>
-		/// <para>最近—最快的重采样方法，可最大程度减少像素值的变化。适用于离散数据，例如土地覆被。</para>
-		/// <para>双线性法—可采用平均化（距离权重）周围 4 个像素的值计算每个像素的值。适用于连续数据。</para>
-		/// <para>三次—通过根据周围的 16 像素拟合平滑曲线来计算每个像素的值。生成平滑影像，但可创建位于源数据中超出范围外的值。适用于连续数据。</para>
+		/// <para>Choose an appropriate technique based on the type of data you have.</para>
+		/// <para>Nearest—The fastest resampling method, and it minimizes changes to pixel values. Suitable for discrete data, such as land cover.</para>
+		/// <para>Bilinear—Calculates the value of each pixel by averaging (weighted for distance) the values of the surrounding 4 pixels. Suitable for continuous data.</para>
+		/// <para>Cubic—Calculates the value of each pixel by fitting a smooth curve based on the surrounding 16 pixels. Produces the smoothest image, but can create values outside of the range found in the source data. Suitable for continuous data.</para>
 		/// <para><see cref="ResamplingTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -172,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Number of Output Rasters</para>
-		/// <para>要将栅格数据集分割成的列 (x) 数和行 (y) 数。X 坐标是列数，Y 坐标是行数。</para>
+		/// <para>The number of columns (x) and rows (y) to split the raster dataset into. The X coordinate is the number of columns and the Y coordinate is number of rows.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPPoint()]
@@ -180,7 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Size of Output Rasters</para>
-		/// <para>输出分块的 x 尺寸和 y 尺寸。默认的测量单位是像素。可通过输出栅格大小和重叠的单位参数来更改测量单位。X 坐标是输出块的 X（水平）维度，Y 坐标是输出块的 Y（垂直）维度。</para>
+		/// <para>The x and y dimensions of the output tiles. The default unit of measurement is in pixels. You can change this with the Units for Output Raster Size and Overlap parameter. The X coordinate is the X (horizontal) dimension the output tiles and the Y coordinate is the Y (vertical) dimension of output tiles.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPPoint()]
@@ -188,7 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Overlap</para>
-		/// <para>这些分块不必完全对齐；使用此参数设置分块之间的重叠数量。默认的测量单位是像素。可通过输出栅格大小和重叠的单位参数来更改测量单位。</para>
+		/// <para>The tiles do not have to line up perfectly; set the amount of overlap between tiles with this parameter. The default unit of measurement is in pixels. You can change this with the Units for Output Raster Size and Overlap parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -197,13 +197,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Units for Output Raster Size and Overlap</para>
-		/// <para>设置输出栅格大小参数和重叠参数的测量单位。</para>
-		/// <para>像素—单位为像素。这是默认设置。</para>
-		/// <para>米—单位为米。</para>
-		/// <para>英尺—单位为英尺。</para>
-		/// <para>度—单位为十进制度。</para>
-		/// <para>英里—单位为英里。</para>
-		/// <para>千米—单位为千米。</para>
+		/// <para>Set the units of measurement for the Size of Output Rasters parameter and the Overlap parameter.</para>
+		/// <para>Pixels—The unit is in pixels. This is the default.</para>
+		/// <para>Meters—The unit is in meters.</para>
+		/// <para>Feet—The unit is in feet.</para>
+		/// <para>Degrees—The unit is in decimal degrees.</para>
+		/// <para>Miles—The unit is in miles.</para>
+		/// <para>Kilometers—The unit is in kilometers.</para>
 		/// <para><see cref="UnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -214,7 +214,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Cell Size</para>
-		/// <para>输出栅格的空间分辨率。如果留空，输出像元大小将与输入栅格相匹配。更改像元大小值时，分块大小将重置为图像大小，分块计数将重置为 1。</para>
+		/// <para>The spatial resolution of the output raster. If left blank, the output cell size will match the input raster. When you change the cell size values, the tile size is reset to the image size and the tile count is reset to 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPPoint()]
@@ -223,7 +223,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Lower left origin</para>
-		/// <para>更改左下角原点的坐标，即切片方案的开始位置。如果留空，左下角原点将与输入栅格相同。</para>
+		/// <para>Change the coordinates for the lower left origin point, where the tiling scheme will begin. If left blank, the lower left origin would be the same as the input raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPPoint()]
@@ -232,7 +232,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Split Polygon Feature Class</para>
-		/// <para>将用于分割栅格数据集的要素类。</para>
+		/// <para>A feature class that will be used to split the raster dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -240,10 +240,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Clip Type</para>
-		/// <para>在分割栅格数据集之前，限制其范围。</para>
-		/// <para>无— 使用输入栅格数据集的全图范围。</para>
-		/// <para>范围—指定裁剪边界的边界框。</para>
-		/// <para>要素类—指定用于裁剪范围的要素类。</para>
+		/// <para>Limits the extent of your raster dataset before you split it.</para>
+		/// <para>None— Use the full extent of the input raster dataset.</para>
+		/// <para>Extent—Specify bounding box as your clipping boundary.</para>
+		/// <para>Feature class—Specify a feature class to clip the extent.</para>
 		/// <para><see cref="ClipTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -254,11 +254,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Template Extent</para>
-		/// <para>用于定义裁剪边界的范围或数据集。数据集可以是一个栅格或一个要素类。</para>
-		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
-		/// <para>当前显示范围 - 该范围与数据框或可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
-		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
-		/// <para>浏览 - 该范围将基于现有数据集。</para>
+		/// <para>An extent or a dataset used to define the clipping boundary. The dataset can be a raster or feature class.</para>
+		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
+		/// <para>Current Display Extent—The extent is equal to the data frame or visible display. The option is not available when there is no active map.</para>
+		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
+		/// <para>Browse—The extent will be based on an existing dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -267,7 +267,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>NoData Value</para>
-		/// <para>具有指定值的所有像素将在输出栅格数据集中被设置为 NoData。</para>
+		/// <para>All the pixels with the specified value will be set to NoData in the output raster dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -298,24 +298,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SplitMethodEnum 
 		{
 			/// <summary>
-			/// <para>块大小—指定分块的宽度和高度。</para>
+			/// <para>Size of tile—Specify the width and height of the tile.</para>
 			/// </summary>
 			[GPValue("SIZE_OF_TILE")]
-			[Description("块大小")]
+			[Description("Size of tile")]
 			Size_of_tile,
 
 			/// <summary>
-			/// <para>块数量— 指定块的宽度和高度。</para>
+			/// <para>Number of tiles— Specify the number of raster tiles to create by breaking the dataset into a number of columns and rows.</para>
 			/// </summary>
 			[GPValue("NUMBER_OF_TILES")]
-			[Description("块数量")]
+			[Description("Number of tiles")]
 			Number_of_tiles,
 
 			/// <summary>
-			/// <para>面要素— 使用要素类中的各个面几何来分割栅格。</para>
+			/// <para>Polygon features— Use the individual polygon geometries in a feature class to split the raster.</para>
 			/// </summary>
 			[GPValue("POLYGON_FEATURES")]
-			[Description("面要素")]
+			[Description("Polygon features")]
 			Polygon_features,
 
 		}
@@ -326,24 +326,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ResamplingTypeEnum 
 		{
 			/// <summary>
-			/// <para>最近—最快的重采样方法，可最大程度减少像素值的变化。适用于离散数据，例如土地覆被。</para>
+			/// <para>Nearest—The fastest resampling method, and it minimizes changes to pixel values. Suitable for discrete data, such as land cover.</para>
 			/// </summary>
 			[GPValue("NEAREST")]
-			[Description("最近")]
+			[Description("Nearest")]
 			Nearest,
 
 			/// <summary>
-			/// <para>双线性法—可采用平均化（距离权重）周围 4 个像素的值计算每个像素的值。适用于连续数据。</para>
+			/// <para>Bilinear—Calculates the value of each pixel by averaging (weighted for distance) the values of the surrounding 4 pixels. Suitable for continuous data.</para>
 			/// </summary>
 			[GPValue("BILINEAR")]
-			[Description("双线性法")]
+			[Description("Bilinear")]
 			Bilinear,
 
 			/// <summary>
-			/// <para>三次—通过根据周围的 16 像素拟合平滑曲线来计算每个像素的值。生成平滑影像，但可创建位于源数据中超出范围外的值。适用于连续数据。</para>
+			/// <para>Cubic—Calculates the value of each pixel by fitting a smooth curve based on the surrounding 16 pixels. Produces the smoothest image, but can create values outside of the range found in the source data. Suitable for continuous data.</para>
 			/// </summary>
 			[GPValue("CUBIC")]
-			[Description("三次")]
+			[Description("Cubic")]
 			Cubic,
 
 		}
@@ -354,45 +354,45 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum UnitsEnum 
 		{
 			/// <summary>
-			/// <para>像素—单位为像素。这是默认设置。</para>
+			/// <para>Pixels—The unit is in pixels. This is the default.</para>
 			/// </summary>
 			[GPValue("PIXELS")]
-			[Description("像素")]
+			[Description("Pixels")]
 			Pixels,
 
 			/// <summary>
-			/// <para>米—单位为米。</para>
+			/// <para>Meters—The unit is in meters.</para>
 			/// </summary>
 			[GPValue("METERS")]
-			[Description("米")]
+			[Description("Meters")]
 			Meters,
 
 			/// <summary>
-			/// <para>英尺—单位为英尺。</para>
+			/// <para>Feet—The unit is in feet.</para>
 			/// </summary>
 			[GPValue("FEET")]
-			[Description("英尺")]
+			[Description("Feet")]
 			Feet,
 
 			/// <summary>
-			/// <para>度—单位为十进制度。</para>
+			/// <para>Degrees—The unit is in decimal degrees.</para>
 			/// </summary>
 			[GPValue("DEGREES")]
-			[Description("度")]
+			[Description("Degrees")]
 			Degrees,
 
 			/// <summary>
-			/// <para>千米—单位为千米。</para>
+			/// <para>Kilometers—The unit is in kilometers.</para>
 			/// </summary>
 			[GPValue("KILOMETERS")]
-			[Description("千米")]
+			[Description("Kilometers")]
 			Kilometers,
 
 			/// <summary>
-			/// <para>英里—单位为英里。</para>
+			/// <para>Miles—The unit is in miles.</para>
 			/// </summary>
 			[GPValue("MILES")]
-			[Description("英里")]
+			[Description("Miles")]
 			Miles,
 
 		}
@@ -403,24 +403,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ClipTypeEnum 
 		{
 			/// <summary>
-			/// <para>无— 使用输入栅格数据集的全图范围。</para>
+			/// <para>None— Use the full extent of the input raster dataset.</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("无")]
+			[Description("None")]
 			None,
 
 			/// <summary>
-			/// <para>范围—指定裁剪边界的边界框。</para>
+			/// <para>Extent—Specify bounding box as your clipping boundary.</para>
 			/// </summary>
 			[GPValue("EXTENT")]
-			[Description("范围")]
+			[Description("Extent")]
 			Extent,
 
 			/// <summary>
-			/// <para>要素类—指定用于裁剪范围的要素类。</para>
+			/// <para>Feature class—Specify a feature class to clip the extent.</para>
 			/// </summary>
 			[GPValue("FEATURE_CLASS")]
-			[Description("要素类")]
+			[Description("Feature class")]
 			Feature_class,
 
 		}

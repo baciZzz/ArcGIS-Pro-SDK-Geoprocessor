@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Align Marker To Stroke Or Fill</para>
-	/// <para>对齐标记</para>
-	/// <para>将点要素类的标记符号图层与指定搜索距离内某个线或面要素类中最近的笔划或填充符号图层对齐。</para>
+	/// <para>Align Marker To Stroke Or Fill</para>
+	/// <para>Aligns the marker symbol layers of a point feature class to the nearest stroke or fill symbol layers in a line or polygon feature class within a specified search distance.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,15 +23,15 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InPointFeatures">
 		/// <para>Input Point Features</para>
-		/// <para>包含要与邻近线或面对齐的点符号的输入点要素图层。 通过在标记符号图层的已连接到角度属性的特性中存储角度来对齐符号。 必须连接到未应用表达式的单个字段。</para>
+		/// <para>The input point feature layer containing point symbols to be aligned to nearby lines or polygons. Symbols are aligned by storing an angle in the attribute connected to the angle property of the marker symbol layer. This must be connected to a single field with no expression applied.</para>
 		/// </param>
 		/// <param name="InLineOrPolygonFeatures">
 		/// <para>Input Line or Polygon Features</para>
-		/// <para>将要与输入点符号对齐的输入线或面要素图层。</para>
+		/// <para>The input line or polygon feature layer to which the input point symbols will be aligned.</para>
 		/// </param>
 		/// <param name="SearchDistance">
 		/// <para>Search Distance</para>
-		/// <para>图形标记边到图形笔划或填充边之间的搜索距离。 必须指定大于或等于零的搜索距离。</para>
+		/// <para>The search distance from graphical marker edge to graphical stroke or fill edge. A distance greater than or equal to zero must be specified.</para>
 		/// </param>
 		public AlignMarkerToStrokeOrFill(object InPointFeatures, object InLineOrPolygonFeatures, object SearchDistance)
 		{
@@ -41,9 +41,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 对齐标记</para>
+		/// <para>Tool Display Name : Align Marker To Stroke Or Fill</para>
 		/// </summary>
-		public override string DisplayName() => "对齐标记";
+		public override string DisplayName() => "Align Marker To Stroke Or Fill";
 
 		/// <summary>
 		/// <para>Tool Name : AlignMarkerToStrokeOrFill</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Point Features</para>
-		/// <para>包含要与邻近线或面对齐的点符号的输入点要素图层。 通过在标记符号图层的已连接到角度属性的特性中存储角度来对齐符号。 必须连接到未应用表达式的单个字段。</para>
+		/// <para>The input point feature layer containing point symbols to be aligned to nearby lines or polygons. Symbols are aligned by storing an angle in the attribute connected to the angle property of the marker symbol layer. This must be connected to a single field with no expression applied.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLayer()]
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Line or Polygon Features</para>
-		/// <para>将要与输入点符号对齐的输入线或面要素图层。</para>
+		/// <para>The input line or polygon feature layer to which the input point symbols will be aligned.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLayer()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Search Distance</para>
-		/// <para>图形标记边到图形笔划或填充边之间的搜索距离。 必须指定大于或等于零的搜索距离。</para>
+		/// <para>The search distance from graphical marker edge to graphical stroke or fill edge. A distance greater than or equal to zero must be specified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -105,9 +105,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Marker Orientation</para>
-		/// <para>指定如何相对于笔划或填充符号图层的边来定向标记符号图层。</para>
-		/// <para>垂直—标记符号图层将与笔划或填充边垂直对齐。 这是默认设置。</para>
-		/// <para>平行—标记符号图层将与笔划或填充边平行对齐。</para>
+		/// <para>Specifies how the marker symbol layer will be oriented relative to the stroke or fill symbol layer&apos;s edge.</para>
+		/// <para>Perpendicular—Marker symbol layers will be aligned perpendicularly to the stroke or fill edge. This is the default.</para>
+		/// <para>Parallel—Marker symbol layers will be aligned parallel to the stroke or fill edge.</para>
 		/// <para><see cref="MarkerOrientationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -139,17 +139,17 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum MarkerOrientationEnum 
 		{
 			/// <summary>
-			/// <para>垂直—标记符号图层将与笔划或填充边垂直对齐。 这是默认设置。</para>
+			/// <para>Perpendicular—Marker symbol layers will be aligned perpendicularly to the stroke or fill edge. This is the default.</para>
 			/// </summary>
 			[GPValue("PERPENDICULAR")]
-			[Description("垂直")]
+			[Description("Perpendicular")]
 			Perpendicular,
 
 			/// <summary>
-			/// <para>平行—标记符号图层将与笔划或填充边平行对齐。</para>
+			/// <para>Parallel—Marker symbol layers will be aligned parallel to the stroke or fill edge.</para>
 			/// </summary>
 			[GPValue("PARALLEL")]
-			[Description("平行")]
+			[Description("Parallel")]
 			Parallel,
 
 		}

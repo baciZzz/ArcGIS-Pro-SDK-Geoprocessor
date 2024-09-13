@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Cloud Storage Connection File</para>
-	/// <para>创建云存储连接文件</para>
-	/// <para>用于为支持 ArcGIS 的云存储创建连接文件。 此工具允许现有栅格地理处理工具将云栅格格式 (CRF) 数据集写入云存储存储段，或者读取存储在云存储中的栅格数据集（不限于 CRF）作为输入。</para>
+	/// <para>Create Cloud Storage Connection File</para>
+	/// <para>Creates a connection file for ArcGIS-supported cloud storage. This tool allows existing raster geoprocessing tools to write cloud raster format (CRF) datasets into the cloud storage bucket or read raster datasets (not limited to CRF) stored in the cloud storage as input.</para>
 	/// </summary>
 	public class CreateCloudStorageConnectionFile : AbstractGPProcess
 	{
@@ -21,28 +21,28 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="OutFolderPath">
 		/// <para>Connection File Location</para>
-		/// <para>将在其中创建连接文件的文件夹路径。</para>
+		/// <para>The folder path where the connection file will be created.</para>
 		/// </param>
 		/// <param name="OutName">
 		/// <para>Connection File Name</para>
-		/// <para>云存储连接文件的名称。</para>
+		/// <para>The name of the cloud storage connection file.</para>
 		/// </param>
 		/// <param name="ServiceProvider">
 		/// <para>Service Provider</para>
-		/// <para>指定将使用的云存储服务提供商。</para>
-		/// <para>Azure—服务提供商将为 Microsoft Azure。</para>
-		/// <para>Amazon—服务提供商将为 Amazon S3。</para>
-		/// <para>Google—服务提供商将为 Google 云存储。</para>
-		/// <para>Alibaba—服务提供商将为 Alibaba 云存储。</para>
-		/// <para>WebHDFS—服务提供商将为 WebHDFS。</para>
-		/// <para>MinIO—服务提供商将为 MinIO。</para>
-		/// <para>Azure Data Lake—服务提供商将为 Azure Data Lake。</para>
-		/// <para>Ozone—服务提供程序为 Ozone。</para>
+		/// <para>Specifies the cloud storage service provider that will be used.</para>
+		/// <para>Azure—The service provider will be Microsoft Azure.</para>
+		/// <para>Amazon—The service provider will be Amazon S3.</para>
+		/// <para>Google—The service provider will be Google Cloud Storage.</para>
+		/// <para>Alibaba—The service provider will be Alibaba Cloud Storage.</para>
+		/// <para>WebHDFS—The service provider will be WebHDFS.</para>
+		/// <para>MinIO—The service provider will be MinIO.</para>
+		/// <para>Azure Data Lake—The service provider will be Azure Data Lake.</para>
+		/// <para>Ozone—The service provider will be Ozone.</para>
 		/// <para><see cref="ServiceProviderEnum"/></para>
 		/// </param>
 		/// <param name="BucketName">
 		/// <para>Bucket (Container) Name</para>
-		/// <para>将存储栅格数据集的云存储容器的名称。 许多云提供商也将其称为存储段。</para>
+		/// <para>The name of the cloud storage container where the raster dataset will be stored. Many cloud providers also call it a bucket.</para>
 		/// </param>
 		public CreateCloudStorageConnectionFile(object OutFolderPath, object OutName, object ServiceProvider, object BucketName)
 		{
@@ -53,9 +53,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建云存储连接文件</para>
+		/// <para>Tool Display Name : Create Cloud Storage Connection File</para>
 		/// </summary>
-		public override string DisplayName() => "创建云存储连接文件";
+		public override string DisplayName() => "Create Cloud Storage Connection File";
 
 		/// <summary>
 		/// <para>Tool Name : CreateCloudStorageConnectionFile</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Connection File Location</para>
-		/// <para>将在其中创建连接文件的文件夹路径。</para>
+		/// <para>The folder path where the connection file will be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Connection File Name</para>
-		/// <para>云存储连接文件的名称。</para>
+		/// <para>The name of the cloud storage connection file.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -105,15 +105,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Service Provider</para>
-		/// <para>指定将使用的云存储服务提供商。</para>
-		/// <para>Azure—服务提供商将为 Microsoft Azure。</para>
-		/// <para>Amazon—服务提供商将为 Amazon S3。</para>
-		/// <para>Google—服务提供商将为 Google 云存储。</para>
-		/// <para>Alibaba—服务提供商将为 Alibaba 云存储。</para>
-		/// <para>WebHDFS—服务提供商将为 WebHDFS。</para>
-		/// <para>MinIO—服务提供商将为 MinIO。</para>
-		/// <para>Azure Data Lake—服务提供商将为 Azure Data Lake。</para>
-		/// <para>Ozone—服务提供程序为 Ozone。</para>
+		/// <para>Specifies the cloud storage service provider that will be used.</para>
+		/// <para>Azure—The service provider will be Microsoft Azure.</para>
+		/// <para>Amazon—The service provider will be Amazon S3.</para>
+		/// <para>Google—The service provider will be Google Cloud Storage.</para>
+		/// <para>Alibaba—The service provider will be Alibaba Cloud Storage.</para>
+		/// <para>WebHDFS—The service provider will be WebHDFS.</para>
+		/// <para>MinIO—The service provider will be MinIO.</para>
+		/// <para>Azure Data Lake—The service provider will be Azure Data Lake.</para>
+		/// <para>Ozone—The service provider will be Ozone.</para>
 		/// <para><see cref="ServiceProviderEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Bucket (Container) Name</para>
-		/// <para>将存储栅格数据集的云存储容器的名称。 许多云提供商也将其称为存储段。</para>
+		/// <para>The name of the cloud storage container where the raster dataset will be stored. Many cloud providers also call it a bucket.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Access Key ID (Account Name)</para>
-		/// <para>特定云存储类型的访问密钥 ID 字符串。 与 Azure 一样，也可以是帐户名称。</para>
+		/// <para>The access key ID string for the specific cloud storage type. It can also be the account name, as is the case with Azure.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Secret Access Key (Account Key)</para>
-		/// <para>用于验证与云存储的连接的保密访问密钥字符串。</para>
+		/// <para>The secret access key string to authenticate the connection to cloud storage.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPEncryptedString()]
@@ -148,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Region (Environment)</para>
-		/// <para>云存储的区域字符串。 如果提供区域，则该值必须使用由云存储选择定义的格式。 默认值是所选云提供商的默认帐户。</para>
+		/// <para>The region string for the cloud storage. If provided, the value must use the format defined by the cloud storage choice. The default is the selected cloud provider's default account.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -157,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Service End Point</para>
-		/// <para>云存储的服务端点 (URI)，例如 oss-us-west-1.aliyuncs.com。 如果未提供值，则将使用所选云存储类型的默认端点。 如有必要，也可以使用 CNAME 重定向端点。</para>
+		/// <para>The service endpoint (URI) of the cloud storage, such as oss-us-west-1.aliyuncs.com. If a value is not provided, the default endpoint for the selected cloud storage type will be used. The CNAME redirected endpoint can also be used if needed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -165,47 +165,47 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Provider Options</para>
-		/// <para>与特定类型的云服务有关的配置选项。 有些服务提供选项，有些服务则不提供选项。 如果需要打开选项，仅需设置此参数。</para>
-		/// <para>Azure 和 Microsoft Azure Data Lake</para>
-		/// <para>AZURE_SAS - 指定共享访问签名。 确保其值经过 URL 编码，并且不包含前导 &apos;?&apos; 或 &apos;&amp;&apos; 字符。 使用此选项时，保密访问密匙（帐户密钥）参数必须为空。</para>
-		/// <para>AZURE_NO_SIGN_REQUEST（默认值：False）- 匿名连接到不需要身份验证访问权限的存储段（容器）。 使用此选项时，保密访问密匙（帐户密钥）参数必须为空。</para>
-		/// <para>AZURE_STORAGE_CONNECTION_STRING - 指定 Azure 存储连接字符串。 此字符串将嵌入帐户名、密钥和端点。 使用此选项时，访问密钥 ID（帐户名）和保密访问密匙（帐户密钥）参数必须为空。</para>
-		/// <para>CPL_AZURE_USE_HTTPS（默认值：True）- 设置为 False 以使用 HTTP 请求。 某些服务器可能配置为仅支持 HTTPS 请求。</para>
-		/// <para>Amazon 和 MinIO</para>
-		/// <para>AWS_NO_SIGN_REQUEST（默认值：False）- 匿名连接到不需要身份验证访问权限的存储段（容器）。</para>
-		/// <para>AWS_SESSION_TOKEN - 指定临时登录凭据。</para>
-		/// <para>AWS_DEFAULT_PROFILE - 当缺少访问密钥或 ID 时，将自动使用 AWS 凭据配置文件。 此选项可用于指定要使用的配置文件。</para>
-		/// <para>AWS_REQUEST_PAYER - 通过将此选项设置为请求者，可以访问请求者付费存储段。</para>
-		/// <para>AWS_Virtual_Hosting（默认：True）- 如果使用仅支持路径样式请求的 Amazon S3 和 S3 兼容云提供商，需将此选项设置为 True。 如果支持虚拟主机，建议您使用虚拟主机</para>
-		/// <para>CPL_VSIS3_USE_BASE_RMDIR_RECURSIVE（默认：True）- 一些较早的 S3 兼容实施不支持批量删除操作。 对于这些提供商，将此选项设置为 False。</para>
-		/// <para>AWS_HTTPS（默认值：True）- 设置为 False 以使用 HTTP 请求。 某些服务器可能配置为仅支持 HTTPS 请求</para>
+		/// <para>The configuration options pertaining to the specific type of cloud service. Some services offer options, some do not. You only need to set this parameter if you want to turn on the options.</para>
+		/// <para>Azure and Microsoft Azure Data Lake</para>
+		/// <para>AZURE_SAS—Specify a shared access signature. Ensure that its value is URL encoded and does not contain leading &apos;?&apos; or &apos;&amp;&apos; characters. When using this option, the Secret Access Key (Account Key) parameter must be empty.</para>
+		/// <para>AZURE_NO_SIGN_REQUEST (default: False)—Anonymously connect to buckets (containers) that don&apos;t require authenticated access. When using this option, the Secret Access Key (Account Key) parameter must be empty.</para>
+		/// <para>AZURE_STORAGE_CONNECTION_STRING—Specify an Azure Storage connection string. This string embeds the account name, key, and endpoint. When using this option, the Access Key ID (Account Name) and Secret Access Key (Account Key) parameters must be empty.</para>
+		/// <para>CPL_AZURE_USE_HTTPS (default: True)—Set to False to use HTTP requests. Some servers may be configured to only support HTTPS requests.</para>
+		/// <para>Amazon and MinIO</para>
+		/// <para>AWS_NO_SIGN_REQUEST (default: False)—Anonymously connect to buckets (containers) that don&apos;t require authenticated access.</para>
+		/// <para>AWS_SESSION_TOKEN—Specify temporary credentials.</para>
+		/// <para>AWS_DEFAULT_PROFILE—AWS credential profiles are automatically used when the access key or ID is missing. This option can be used to specify the profile to use.</para>
+		/// <para>AWS_REQUEST_PAYER—Requester Pays buckets can be accessed by setting this option to requester.</para>
+		/// <para>AWS_Virtual_Hosting (default: True)—If you use Amazon S3 or S3-compatible cloud providers that support only path-style requests, set this option to True. It is recommended that you use virtual hosting if it&apos;s supported.</para>
+		/// <para>CPL_VSIS3_USE_BASE_RMDIR_RECURSIVE (default: True)—Some older S3-compatible implementations do not support the Bulk Delete operation. Set this option to False for these providers.</para>
+		/// <para>AWS_HTTPS (default: True)—Set to False to use HTTP requests. Some servers may be configured to only support HTTPS requests</para>
 		/// <para>Google</para>
-		/// <para>GS_NO_SIGN_REQUEST（默认值：True）- 匿名连接到不需要身份验证访问权限的存储段（容器）。</para>
-		/// <para>GS_USER_PROJECT - 可以通过设置 OAuth2 密钥和计费工程来访问请求者付费存储段。 使用此选项设置项目并使用其他选项设置 OAuth2 密钥，而不是 HMAC 密钥作为秘密访问密钥或 ID。</para>
-		/// <para>GS_OAUTH2_REFRESH_TOKEN - 指定 OAuth2 刷新访问令牌。 使用 GS_OAUTH2_CLIENT_ID 和 GS_OAUTH2_CLIENT_SECRET 设置 OAuth2 客户端凭据。</para>
-		/// <para>GOOGLE_APPLICATION_CREDENTIALS - 使用包含私钥和客户端电子邮件地址的 .json 文件指定服务帐户 OAuth2 凭据。</para>
-		/// <para>GS_OAUTH2_ PRIVATE_KEY - 使用私钥字符串指定服务帐户 OAuth2 凭据。 必须设置 GS_AUTH2_CLIENT_EMAIL。</para>
-		/// <para>GS_OAUTH2_ PRIVATE_KEY_FILE - 使用来自文件的私钥指定服务帐户 OAuth2 凭据。 必须设置 GS_AUTH2_CLIENT_EMAIL。</para>
-		/// <para>GS_AUTH2_CLIENT_EMAIL - 使用客户端电子邮件地址指定服务帐户 OAuth2 凭据。</para>
-		/// <para>GS_AUTH2_SCOPE - 指定服务帐户 OAuth2 范围。 有效值为 https://www.googleapis.com/auth/devstorage.read_write（默认）和 https://www.googleapis.com/auth/devstorage.read_only。</para>
-		/// <para>GDAL_HTTP_HEADER_FILE - 指定存储在外部文件中的不记名身份验证凭据。</para>
+		/// <para>GS_NO_SIGN_REQUEST (default: True)—Anonymously connect to buckets (containers) that do not require authenticated access.</para>
+		/// <para>GS_USER_PROJECT—Requester Pays buckets can be accessed by setting OAuth2 keys and a project for billing. Set the project using this option and set OAuth2 keys using other options and not HMAC keys as a secret access key or ID.</para>
+		/// <para>GS_OAUTH2_REFRESH_TOKEN—Specify OAuth2 Refresh Access Token. Set OAuth2 client credentials using GS_OAUTH2_CLIENT_ID and GS_OAUTH2_CLIENT_SECRET.</para>
+		/// <para>GOOGLE_APPLICATION_CREDENTIALS—Specify Service Account OAuth2 credentials using a .json file containing a private key and client email address.</para>
+		/// <para>GS_OAUTH2_ PRIVATE_KEY—Specify Service Account OAuth2 credentials using a private key string. GS_AUTH2_CLIENT_EMAIL must be set.</para>
+		/// <para>GS_OAUTH2_ PRIVATE_KEY_FILE—Specify Service Account OAuth2 credentials using a private key from a file. GS_AUTH2_CLIENT_EMAIL must be set.</para>
+		/// <para>GS_AUTH2_CLIENT_EMAIL—Specify Service Account OAuth2 credentials using a client email address.</para>
+		/// <para>GS_AUTH2_SCOPE—Specify Service Account OAuth2 scope. Valid values are https://www.googleapis.com/auth/devstorage.read_write (default) and https://www.googleapis.com/auth/devstorage.read_only.</para>
+		/// <para>GDAL_HTTP_HEADER_FILE—Specify bearer authentication credentials stored in an external file.</para>
 		/// <para>Alibaba</para>
-		/// <para>OSS_Virtual_Hosting（默认：True）- 如果使用仅支持路径样式请求的 Alibaba 和 S3 兼容云提供商，需将此选项设置为 True。 如果支持虚拟主机，建议您使用虚拟主机</para>
-		/// <para>OSS_HTTPS（默认值：True）- 设置为 False 以使用 HTTP 请求。 某些服务器可能配置为仅支持 HTTPS 请求。</para>
+		/// <para>OSS_Virtual_Hosting (default: True)—If you use Alibaba or S3-compatible cloud providers that support only path-style requests, set this option to True. It is recommended that you use virtual hosting if it&apos;s supported.</para>
+		/// <para>OSS_HTTPS (default: True)—Set to False to use HTTP requests. Some servers may be configured to only support HTTPS requests.</para>
 		/// <para>WebHDFS</para>
-		/// <para>WEBHDFS_REPLICATION（整数）- 创建文件时使用复制值</para>
-		/// <para>WEBHDFS_PERMISSION（小数）- 创建文件时使用权限掩膜。</para>
-		/// <para>如果提供了多个身份验证参数，则优先级如下：</para>
-		/// <para>Azure - AZURE_STORAGE_CONNECTION_STRING、帐户名或密钥、AZURE_SAS、AZURE_NO_SIGN_REQUEST、RBAC。</para>
-		/// <para>Amazon - AWS_NO_SIGN_REQUEST、访问 ID 或密钥，或 AWS_SESSION_TOKEN、AWS 凭据配置文件、IAM 角色。</para>
-		/// <para>Google - GS_NO_SIGN_REQUEST、访问 ID 或密钥、GDAL_HTTP_HEADER_FILE、(GS_OAUTH2_REFRESH_TOKEN or GS_OAUTH2_CLIENT_ID and GS_OAUTH2_CLIENT_SECRET)、GOOGLE_APPLICATION_CREDENTIALS、(GS_OAUTH2_PRIVATE_KEY or GS_OAUTH2_CLIENT_EMAIL)、(GS_OAUTH2_PRIVATE_KEY_FILE or GS_OAUTH2_CLIENT_EMAIL) 或 IAM Role。</para>
+		/// <para>WEBHDFS_REPLICATION (integer)—The replication value is used when creating a file</para>
+		/// <para>WEBHDFS_PERMISSION (decimal)—A permission mask is used when creating a file.</para>
+		/// <para>If multiple authentication parameters are provided, precedence is as follows:</para>
+		/// <para>Azure—AZURE_STORAGE_CONNECTION_STRING, account name or key, AZURE_SAS, AZURE_NO_SIGN_REQUEST, RBAC.</para>
+		/// <para>Amazon—AWS_NO_SIGN_REQUEST, access ID or key or AWS_SESSION_TOKEN, AWS Credential Profile, IAM Role.</para>
+		/// <para>Google—GS_NO_SIGN_REQUEST, access ID or key, GDAL_HTTP_HEADER_FILE, (GS_OAUTH2_REFRESH_TOKEN or GS_OAUTH2_CLIENT_ID and GS_OAUTH2_CLIENT_SECRET), GOOGLE_APPLICATION_CREDENTIALS, (GS_OAUTH2_PRIVATE_KEY or GS_OAUTH2_CLIENT_EMAIL), (GS_OAUTH2_PRIVATE_KEY_FILE or GS_OAUTH2_CLIENT_EMAIL), or IAM Role.</para>
 		/// <para>Ozone</para>
-		/// <para>AWS_DEFAULT_PROFILE - 当缺少访问密钥或 ID 时，将自动使用 AWS 凭据配置文件。 此选项可用于指定要使用的配置文件。</para>
-		/// <para>AWS_Virtual_Hosting（默认：True）- 如果使用仅支持路径样式请求的 Amazon S3 和 S3 兼容云提供商，需将此选项设置为 True。 如果支持虚拟主机，建议您使用虚拟主机</para>
-		/// <para>AWS_HTTPS（默认值：True）- 设置为 False 以使用 HTTP 请求。 某些服务器可能配置为仅支持 HTTPS 请求</para>
-		/// <para>CPL_VSIS3_USE_BASE_RMDIR_RECURSIVE（默认：True）- 一些较早的 S3 兼容实施不支持批量删除操作。 对于这些提供商，将此选项设置为 False。</para>
-		/// <para>x-amz-storage-class - 为写入单个容器的 Ozone 指定 REDUCED_REDUNDANCY，因为它具有单个数据节点。</para>
-		/// <para>除以上列出的提供商选项，ARC_DEEP_CRAWL（默认：True）选项可以与所有服务提供商配合使用。 如果为 True，则用于识别云中没有扩展的 CRF 和启用云的栅格产品。 此操作代价较高，强烈建议将此选项设置为 False，以获得更快的目录浏览和抓取速度。</para>
+		/// <para>AWS_DEFAULT_PROFILE—AWS credential profiles are automatically used when the access key or ID is missing. This option can be used to specify the profile to use.</para>
+		/// <para>AWS_Virtual_Hosting (default: True)—If you use Amazon S3 or S3-compatible cloud providers that support only path-style requests, set this option to True. It is recommended that you use virtual hosting if it&apos;s supported.</para>
+		/// <para>AWS_HTTPS (default: True)—Set to False to use HTTP requests. Some servers may be configured to only support HTTPS requests</para>
+		/// <para>CPL_VSIS3_USE_BASE_RMDIR_RECURSIVE (default: True)—Some older S3-compatible implementations do not support the Bulk Delete operation. Set this option to False for these providers.</para>
+		/// <para>x-amz-storage-class—Specify REDUCED_REDUNDANCY for writing to a single container ozone as it has a single data node.</para>
+		/// <para>In addition to the provider options listed above, the ARC_DEEP_CRAWL (default: True) option can be used with all the service providers. If True, it is used to identify CRFs with no extension and cloud-enabled raster products in the cloud. This is an expensive operation and it is recommended that you set this option to False for faster catalog browsing and crawling.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -220,7 +220,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Folder</para>
-		/// <para>存储段（容器）名称参数值中将存储栅格数据集的文件夹。</para>
+		/// <para>The folder in the Bucket (Container) Name parameter value where the raster dataset will be stored.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -234,56 +234,56 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ServiceProviderEnum 
 		{
 			/// <summary>
-			/// <para>Azure—服务提供商将为 Microsoft Azure。</para>
+			/// <para>Azure—The service provider will be Microsoft Azure.</para>
 			/// </summary>
 			[GPValue("AZURE")]
 			[Description("Azure")]
 			Azure,
 
 			/// <summary>
-			/// <para>Amazon—服务提供商将为 Amazon S3。</para>
+			/// <para>Amazon—The service provider will be Amazon S3.</para>
 			/// </summary>
 			[GPValue("AMAZON")]
 			[Description("Amazon")]
 			Amazon,
 
 			/// <summary>
-			/// <para>Google—服务提供商将为 Google 云存储。</para>
+			/// <para>Google—The service provider will be Google Cloud Storage.</para>
 			/// </summary>
 			[GPValue("GOOGLE")]
 			[Description("Google")]
 			Google,
 
 			/// <summary>
-			/// <para>Alibaba—服务提供商将为 Alibaba 云存储。</para>
+			/// <para>Alibaba—The service provider will be Alibaba Cloud Storage.</para>
 			/// </summary>
 			[GPValue("ALIBABA")]
 			[Description("Alibaba")]
 			Alibaba,
 
 			/// <summary>
-			/// <para>WebHDFS—服务提供商将为 WebHDFS。</para>
+			/// <para>WebHDFS—The service provider will be WebHDFS.</para>
 			/// </summary>
 			[GPValue("WEBHDFS")]
 			[Description("WebHDFS")]
 			WebHDFS,
 
 			/// <summary>
-			/// <para>MinIO—服务提供商将为 MinIO。</para>
+			/// <para>MinIO—The service provider will be MinIO.</para>
 			/// </summary>
 			[GPValue("MINIO")]
 			[Description("MinIO")]
 			MinIO,
 
 			/// <summary>
-			/// <para>Azure Data Lake—服务提供商将为 Azure Data Lake。</para>
+			/// <para>Azure Data Lake—The service provider will be Azure Data Lake.</para>
 			/// </summary>
 			[GPValue("AZUREDATALAKE")]
 			[Description("Azure Data Lake")]
 			Azure_Data_Lake,
 
 			/// <summary>
-			/// <para>Ozone—服务提供程序为 Ozone。</para>
+			/// <para>Ozone—The service provider will be Ozone.</para>
 			/// </summary>
 			[GPValue("OZONE")]
 			[Description("Ozone")]

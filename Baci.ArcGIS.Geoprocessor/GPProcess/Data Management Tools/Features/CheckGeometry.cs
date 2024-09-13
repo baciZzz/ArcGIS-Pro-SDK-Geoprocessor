@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Check Geometry</para>
-	/// <para>检查几何</para>
-	/// <para>可生成要素类中所发生几何问题的报告。</para>
+	/// <para>Check Geometry</para>
+	/// <para>Generates a report of geometry problems in a feature class.</para>
 	/// </summary>
 	public class CheckGeometry : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>将处理的要素类或图层。</para>
-		/// <para>Desktop Basic 许可仅允许存储在文件地理数据库、GeoPackage 或 SpatiaLite 数据库中的 shapefile 和要素类作为有效的输入要素格式。 Desktop Standard 或 Desktop Advanced 许可额外允许存储在企业级数据库或企业级地理数据库中的要素类作为有效的输入要素格式使用。</para>
+		/// <para>The feature class or layer to be processed.</para>
+		/// <para>A Desktop Basic license only allows shapefiles and feature classes stored in a file geodatabase, GeoPackage, or SpatiaLite database as valid input feature formats. A Desktop Standard or Desktop Advanced license also allows feature classes stored in an enterprise database or enterprise geodatabase to be used as valid input feature formats.</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
-		/// <para>所发现问题的报告（作为表的形式）。</para>
+		/// <para>The report (as a table) of the problems discovered.</para>
 		/// </param>
 		public CheckGeometry(object InFeatures, object OutTable)
 		{
@@ -35,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 检查几何</para>
+		/// <para>Tool Display Name : Check Geometry</para>
 		/// </summary>
-		public override string DisplayName() => "检查几何";
+		public override string DisplayName() => "Check Geometry";
 
 		/// <summary>
 		/// <para>Tool Name : CheckGeometry</para>
@@ -71,8 +71,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>将处理的要素类或图层。</para>
-		/// <para>Desktop Basic 许可仅允许存储在文件地理数据库、GeoPackage 或 SpatiaLite 数据库中的 shapefile 和要素类作为有效的输入要素格式。 Desktop Standard 或 Desktop Advanced 许可额外允许存储在企业级数据库或企业级地理数据库中的要素类作为有效的输入要素格式使用。</para>
+		/// <para>The feature class or layer to be processed.</para>
+		/// <para>A Desktop Basic license only allows shapefiles and feature classes stored in a file geodatabase, GeoPackage, or SpatiaLite database as valid input feature formats. A Desktop Standard or Desktop Advanced license also allows feature classes stored in an enterprise database or enterprise geodatabase to be used as valid input feature formats.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>所发现问题的报告（作为表的形式）。</para>
+		/// <para>The report (as a table) of the problems discovered.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -88,9 +88,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Validation Method</para>
-		/// <para>指定用于识别几何问题的几何验证方法。</para>
-		/// <para>Esri—将使用 Esri 几何验证方法。 这是默认设置。</para>
-		/// <para>OGC—将使用 OGC 几何验证方法。</para>
+		/// <para>Specifies the geometry validation method that will be used to identify geometry problems.</para>
+		/// <para>Esri—The Esri geometry validation method will be used. This is the default.</para>
+		/// <para>OGC—The OGC geometry validation method will be used.</para>
 		/// <para><see cref="ValidationMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -115,14 +115,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ValidationMethodEnum 
 		{
 			/// <summary>
-			/// <para>Esri—将使用 Esri 几何验证方法。 这是默认设置。</para>
+			/// <para>Esri—The Esri geometry validation method will be used. This is the default.</para>
 			/// </summary>
 			[GPValue("ESRI")]
 			[Description("Esri")]
 			Esri,
 
 			/// <summary>
-			/// <para>OGC—将使用 OGC 几何验证方法。</para>
+			/// <para>OGC—The OGC geometry validation method will be used.</para>
 			/// </summary>
 			[GPValue("OGC")]
 			[Description("OGC")]

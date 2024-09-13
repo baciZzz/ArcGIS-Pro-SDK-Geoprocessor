@@ -11,8 +11,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Generate Blind Spot Areas</para>
-	/// <para>生成盲区</para>
-	/// <para>可基于开始和结束时间，为输入情报、监测、侦察 (ISR) 或巡逻可见缓冲区要素创建输出不可见区域或盲区。 输出盲点图层与时间滑块配合使用，以可视化并浏览在特定时间对 ISR 或巡逻资产不可见的区域。 例如，输出可以显示沿巡逻路线的哨所在给定输入时间段内，警卫无法观察到的区域。</para>
+	/// <para>Generate Blind Spot Areas</para>
+	/// <para>Creates an output nonvisible area, or blind spot, for input Intelligence, Surveillance, Reconnaissance (ISR) or patrol visible buffer features based on start and end times. The output blind spot layer is used with the  time slider to visualize and explore areas that are not visible to ISR or patrol assets at specified times.</para>
+	/// <para>For example, the output can show areas that a guard is not able to observe for given input time periods at posts along a patrol route.</para>
 	/// </summary>
 	public class GenerateBlindSpotAreas : AbstractGPProcess
 	{
@@ -21,11 +22,11 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>输入可见缓冲区要素。</para>
+		/// <para>The input visible buffer features.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Features</para>
-		/// <para>输出盲点区域要素。</para>
+		/// <para>The output blind spot area features.</para>
 		/// </param>
 		public GenerateBlindSpotAreas(object InFeatures, object OutFeatureClass)
 		{
@@ -34,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 生成盲区</para>
+		/// <para>Tool Display Name : Generate Blind Spot Areas</para>
 		/// </summary>
-		public override string DisplayName() => "生成盲区";
+		public override string DisplayName() => "Generate Blind Spot Areas";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateBlindSpotAreas</para>
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>输入可见缓冲区要素。</para>
+		/// <para>The input visible buffer features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -81,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Output Features</para>
-		/// <para>输出盲点区域要素。</para>
+		/// <para>The output blind spot area features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -89,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Clip Features</para>
-		/// <para>要素用于定义输入边界。</para>
+		/// <para>The features used to define the input boundary.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Start Time Field</para>
-		/// <para>字段包含资产可用的起始日期和时间。</para>
+		/// <para>The field containing the start date and time when the asset is available.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -110,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>End Time Field</para>
-		/// <para>字段包含资产不再可用的结束日期和时间。</para>
+		/// <para>The field containing the end date and time when the asset is no longer available.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]

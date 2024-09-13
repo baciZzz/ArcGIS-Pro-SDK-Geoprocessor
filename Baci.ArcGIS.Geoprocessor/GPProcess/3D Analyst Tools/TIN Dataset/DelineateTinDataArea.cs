@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Delineate TIN Data Area</para>
-	/// <para>描绘 TIN 数据区</para>
-	/// <para>基于三角形的边长度重新定义不规则三角网 (TIN) 的数据区或内插区。</para>
+	/// <para>Delineate TIN Data Area</para>
+	/// <para>Redefines the data area, or interpolation zone, of a triangulated irregular network (TIN) based on its triangle edge length.</para>
 	/// </summary>
 	public class DelineateTinDataArea : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTin">
 		/// <para>Input TIN</para>
-		/// <para>待处理的 TIN 数据集。</para>
+		/// <para>The TIN dataset to process.</para>
 		/// </param>
 		/// <param name="MaxEdgeLength">
 		/// <para>Maximum Edge Length</para>
-		/// <para>用于在 TIN 数据区中定义 TIN 三角形边的最大长度的二维距离。如果三角形的一个或多个边大于此值，则会将其视为处于 TIN 插值区之外，并且不会在地图中进行渲染或用于表面分析。</para>
+		/// <para>The two-dimensional distance that defines the maximum length of a TIN triangle edge in the TIN's data area. Triangles with one or more edges that exceed this value will be considered outside the TIN's interpolation zone and will not be rendered in maps or used in surface analysis.</para>
 		/// </param>
 		public DelineateTinDataArea(object InTin, object MaxEdgeLength)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 描绘 TIN 数据区</para>
+		/// <para>Tool Display Name : Delineate TIN Data Area</para>
 		/// </summary>
-		public override string DisplayName() => "描绘 TIN 数据区";
+		public override string DisplayName() => "Delineate TIN Data Area";
 
 		/// <summary>
 		/// <para>Tool Name : DelineateTinDataArea</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input TIN</para>
-		/// <para>待处理的 TIN 数据集。</para>
+		/// <para>The TIN dataset to process.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTinLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Maximum Edge Length</para>
-		/// <para>用于在 TIN 数据区中定义 TIN 三角形边的最大长度的二维距离。如果三角形的一个或多个边大于此值，则会将其视为处于 TIN 插值区之外，并且不会在地图中进行渲染或用于表面分析。</para>
+		/// <para>The two-dimensional distance that defines the maximum length of a TIN triangle edge in the TIN's data area. Triangles with one or more edges that exceed this value will be considered outside the TIN's interpolation zone and will not be rendered in maps or used in surface analysis.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -86,9 +86,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>描绘 TIN 数据区时将对 TIN 边进行求值。</para>
-		/// <para>周边边—从 TIN 的外部范围向内遍历各个三角形，如果边界三角形的边在当前迭代中小于最大边长，则将停止遍历。这是默认设置。</para>
-		/// <para>所有边—按边长对整个 TIN 三角形集合进行分类。</para>
+		/// <para>The TIN edges that will be evaluated when delineating the TIN&apos;s data area.</para>
+		/// <para>Perimeter Edges—Iterates through triangles from the TIN&apos;s outer extent inward and will stop when the current iteration of boundary triangle edges does not exceed the Maximum Edge Length. This is the default.</para>
+		/// <para>All Edges—Classifies the entire collection of TIN triangles by edge length.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -120,17 +120,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>周边边—从 TIN 的外部范围向内遍历各个三角形，如果边界三角形的边在当前迭代中小于最大边长，则将停止遍历。这是默认设置。</para>
+			/// <para>Perimeter Edges—Iterates through triangles from the TIN&apos;s outer extent inward and will stop when the current iteration of boundary triangle edges does not exceed the Maximum Edge Length. This is the default.</para>
 			/// </summary>
 			[GPValue("PERIMETER_ONLY")]
-			[Description("周边边")]
+			[Description("Perimeter Edges")]
 			Perimeter_Edges,
 
 			/// <summary>
-			/// <para>所有边—按边长对整个 TIN 三角形集合进行分类。</para>
+			/// <para>All Edges—Classifies the entire collection of TIN triangles by edge length.</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("所有边")]
+			[Description("All Edges")]
 			All_Edges,
 
 		}

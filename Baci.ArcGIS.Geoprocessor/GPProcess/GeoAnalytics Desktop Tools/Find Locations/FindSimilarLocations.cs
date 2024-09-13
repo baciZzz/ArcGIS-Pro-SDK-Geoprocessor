@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Find Similar Locations</para>
-	/// <para>查找相似位置</para>
-	/// <para>根据要素属性识别与单个或多个输入要素最相似或者最不相似的候选要素。</para>
+	/// <para>Find Similar Locations</para>
+	/// <para>Identifies the candidate features that are most similar or dissimilar to one or more input features based on feature attributes.</para>
 	/// </summary>
 	public class FindSimilarLocations : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input Layer</para>
-		/// <para>包含要匹配的要素的参考图层（或图层上的选择）。该工具用于搜索与这些要素类似的其他要素。如果提供了多个要素，则会根据属性平均值进行匹配。</para>
+		/// <para>The reference layer (or a selection on a layer) containing the features to be matched. The tool searches for other features similar to these features. When more than one feature is provided, matching is based on attribute averages.</para>
 		/// </param>
 		/// <param name="SearchLayer">
 		/// <para>Search Layer</para>
-		/// <para>候选图层（或者图层上的选择）包含候选匹配要素。该工具会在这些候选要素中查找与输入图层参数最相似（或最不相似）的要素。</para>
+		/// <para>The candidate layer (or a selection on a layer) containing candidate-matching features. The tool searches for features most similar (or dissimilar) to the Input Layer parameter among these candidates.</para>
 		/// </param>
 		/// <param name="Output">
 		/// <para>Output Dataset</para>
-		/// <para>输出要素类的名称。输出要素类包含每个输入图层参数的记录，以及查找到的所有与解决方案相匹配的要素的记录。</para>
+		/// <para>The name of the output feature class. The output feature class contains a record for each of the Input Layer parameters and for all the solution-matching features found.</para>
 		/// </param>
 		/// <param name="AnalysisFields">
 		/// <para>Analysis Fields</para>
-		/// <para>表示匹配条件的数值属性列表。</para>
+		/// <para>A list of numeric attributes representing the matching criteria.</para>
 		/// </param>
 		public FindSimilarLocations(object InputLayer, object SearchLayer, object Output, object AnalysisFields)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 查找相似位置</para>
+		/// <para>Tool Display Name : Find Similar Locations</para>
 		/// </summary>
-		public override string DisplayName() => "查找相似位置";
+		public override string DisplayName() => "Find Similar Locations";
 
 		/// <summary>
 		/// <para>Tool Name : FindSimilarLocations</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>包含要匹配的要素的参考图层（或图层上的选择）。该工具用于搜索与这些要素类似的其他要素。如果提供了多个要素，则会根据属性平均值进行匹配。</para>
+		/// <para>The reference layer (or a selection on a layer) containing the features to be matched. The tool searches for other features similar to these features. When more than one feature is provided, matching is based on attribute averages.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Search Layer</para>
-		/// <para>候选图层（或者图层上的选择）包含候选匹配要素。该工具会在这些候选要素中查找与输入图层参数最相似（或最不相似）的要素。</para>
+		/// <para>The candidate layer (or a selection on a layer) containing candidate-matching features. The tool searches for features most similar (or dissimilar) to the Input Layer parameter among these candidates.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Output Dataset</para>
-		/// <para>输出要素类的名称。输出要素类包含每个输入图层参数的记录，以及查找到的所有与解决方案相匹配的要素的记录。</para>
+		/// <para>The name of the output feature class. The output feature class contains a record for each of the Input Layer parameters and for all the solution-matching features found.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Analysis Fields</para>
-		/// <para>表示匹配条件的数值属性列表。</para>
+		/// <para>A list of numeric attributes representing the matching criteria.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -112,10 +112,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Most Or Least Similar</para>
-		/// <para>用于指定要查找的要素与输入图层参数最相似还是最不相似。</para>
-		/// <para>最相似—查找最相似的要素。</para>
-		/// <para>最不相似—查找最不相似的要素。</para>
-		/// <para>两者—查找最相似的要素和最不相似的要素。</para>
+		/// <para>Specifies whether the features to be found are most similar or least similar to the Input Layer parameter.</para>
+		/// <para>Most similar—Finds the features that are most similar.</para>
+		/// <para>Least similar—Finds the features that are least similar.</para>
+		/// <para>Both—Finds the features that are most similar and the features that are least similar.</para>
 		/// <para><see cref="MostOrLeastSimilarEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -125,9 +125,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Match Method</para>
-		/// <para>用于指定是根据值还是余弦关系进行匹配。</para>
-		/// <para>属性值—相似性或相异性取决于所有分析字段属性的标准化属性值平方差的总和。</para>
-		/// <para>属性剖面—将根据余弦相似性函数来计算所有分析字段属性的相似性或相异性。</para>
+		/// <para>Specifies whether matches will be based on values or cosine relationships.</para>
+		/// <para>Attribute values—Similarity or dissimilarity will be based on the sum of squared standardized attribute value differences for all the Analysis Fields attributes.</para>
+		/// <para>Attribute profiles—Similarity or dissimilarity will be computed as a function of cosine similarity for all the Analysis Fields attributes.</para>
 		/// <para><see cref="MatchMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Number Of Results</para>
-		/// <para>要查找的匹配解决方案的数量。输入 0 或一个大于搜索图层要素总数的数字，将返回所有候选要素的等级（最多 10,000 个）。</para>
+		/// <para>The number of solution matches to be found. Entering zero or a number larger than the total number of Search Layer features will return rankings for all the candidate features, with a maximum of 10,000.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Append Fields</para>
-		/// <para>将包含输出的可选属性列表。例如，您可以包含名称标识符、分类字段或者日期字段。这些字段不用于确定相似性；它们包含在输出参数属性中仅供参考之用。默认情况下，将添加所有字段。</para>
+		/// <para>An optional list of attributes to include with the output. You can include a name identifier, categorical field, or date field, for example. These fields are not used to determine similarity; they are only included in the output parameter attributes for your reference. By default, all fields are added.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -171,24 +171,24 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum MostOrLeastSimilarEnum 
 		{
 			/// <summary>
-			/// <para>最相似—查找最相似的要素。</para>
+			/// <para>Most similar—Finds the features that are most similar.</para>
 			/// </summary>
 			[GPValue("MOST_SIMILAR")]
-			[Description("最相似")]
+			[Description("Most similar")]
 			Most_similar,
 
 			/// <summary>
-			/// <para>最不相似—查找最不相似的要素。</para>
+			/// <para>Least similar—Finds the features that are least similar.</para>
 			/// </summary>
 			[GPValue("LEAST_SIMILAR")]
-			[Description("最不相似")]
+			[Description("Least similar")]
 			Least_similar,
 
 			/// <summary>
-			/// <para>两者—查找最相似的要素和最不相似的要素。</para>
+			/// <para>Both—Finds the features that are most similar and the features that are least similar.</para>
 			/// </summary>
 			[GPValue("BOTH")]
-			[Description("两者")]
+			[Description("Both")]
 			Both,
 
 		}
@@ -199,17 +199,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum MatchMethodEnum 
 		{
 			/// <summary>
-			/// <para>属性值—相似性或相异性取决于所有分析字段属性的标准化属性值平方差的总和。</para>
+			/// <para>Attribute values—Similarity or dissimilarity will be based on the sum of squared standardized attribute value differences for all the Analysis Fields attributes.</para>
 			/// </summary>
 			[GPValue("ATTRIBUTE_VALUES")]
-			[Description("属性值")]
+			[Description("Attribute values")]
 			Attribute_values,
 
 			/// <summary>
-			/// <para>属性剖面—将根据余弦相似性函数来计算所有分析字段属性的相似性或相异性。</para>
+			/// <para>Attribute profiles—Similarity or dissimilarity will be computed as a function of cosine similarity for all the Analysis Fields attributes.</para>
 			/// </summary>
 			[GPValue("ATTRIBUTE_PROFILES")]
-			[Description("属性剖面")]
+			[Description("Attribute profiles")]
 			Attribute_profiles,
 
 		}

@@ -12,7 +12,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 	/// <summary>
 	/// <para>While</para>
 	/// <para>While</para>
-	/// <para>用于迭代直至条件变为真或条件变为假。</para>
+	/// <para>Iterates until a condition becomes true or until a condition comes false.</para>
 	/// </summary>
 	public class IterateCondition : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="InValues">
 		/// <para>Input Values</para>
-		/// <para>要评估的输入值，用于确定是否继续迭代。</para>
+		/// <para>The input values to evaluate to determine whether to continue to iterate.</para>
 		/// </param>
 		public IterateCondition(object InValues)
 		{
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Input Values</para>
-		/// <para>要评估的输入值，用于确定是否继续迭代。</para>
+		/// <para>The input values to evaluate to determine whether to continue to iterate.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -73,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Continue if inputs are</para>
-		/// <para>指定是否要迭代直至输入值均为 true 或均为 false。</para>
-		/// <para>True—该工具将迭代直至所有输入值均为 true。这是默认设置。</para>
-		/// <para>False— 该工具将迭代直至所有输入值均为 false。</para>
+		/// <para>Specifies whether to iterate until the input values are all true or are all false.</para>
+		/// <para>True—The tool will iterate until all the input values are true. This is the default.</para>
+		/// <para>False— The tool will iterate until all the input values are false.</para>
 		/// <para><see cref="ConditionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -98,14 +98,14 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		public enum ConditionEnum 
 		{
 			/// <summary>
-			/// <para>True—该工具将迭代直至所有输入值均为 true。这是默认设置。</para>
+			/// <para>True—The tool will iterate until all the input values are true. This is the default.</para>
 			/// </summary>
 			[GPValue("TRUE")]
 			[Description("True")]
 			True,
 
 			/// <summary>
-			/// <para>False— 该工具将迭代直至所有输入值均为 false。</para>
+			/// <para>False— The tool will iterate until all the input values are false.</para>
 			/// </summary>
 			[GPValue("FALSE")]
 			[Description("False")]

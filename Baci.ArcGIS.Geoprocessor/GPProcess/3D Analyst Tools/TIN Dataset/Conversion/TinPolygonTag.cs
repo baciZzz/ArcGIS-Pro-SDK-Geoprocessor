@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>TIN Polygon Tag</para>
-	/// <para>TIN 面标签</para>
-	/// <para>使用不规则三角网 (TIN) 数据集中的标签值创建面要素。</para>
+	/// <para>TIN Polygon Tag</para>
+	/// <para>Creates polygon features using tag values in a triangulated irregular network (TIN) dataset.</para>
 	/// </summary>
 	public class TinPolygonTag : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTin">
 		/// <para>Input TIN</para>
-		/// <para>待处理的 TIN 数据集。</para>
+		/// <para>The TIN dataset to process.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>将生成的要素类。</para>
+		/// <para>The feature class that will be produced.</para>
 		/// </param>
 		public TinPolygonTag(object InTin, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : TIN 面标签</para>
+		/// <para>Tool Display Name : TIN Polygon Tag</para>
 		/// </summary>
-		public override string DisplayName() => "TIN 面标签";
+		public override string DisplayName() => "TIN Polygon Tag";
 
 		/// <summary>
 		/// <para>Tool Name : TinPolygonTag</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input TIN</para>
-		/// <para>待处理的 TIN 数据集。</para>
+		/// <para>The TIN dataset to process.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTinLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>将生成的要素类。</para>
+		/// <para>The feature class that will be produced.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Tag Value Field</para>
-		/// <para>将标签属性存储在输出要素类中的字段的名称。默认字段名称为 Tag_Value.</para>
+		/// <para>The name of the field storing the tag attribute in the output feature class. The default field name is Tag_Value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

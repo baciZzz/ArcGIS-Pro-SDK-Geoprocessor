@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Trend</para>
-	/// <para>趋势面法</para>
-	/// <para>使用趋势面法将点插值成栅格表面。</para>
+	/// <para>Trend</para>
+	/// <para>Interpolates a raster surface from points using a trend technique.</para>
 	/// </summary>
 	public class Trend : AbstractGPProcess
 	{
@@ -21,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InPointFeatures">
 		/// <para>Input point features</para>
-		/// <para>包含要插值到表面栅格中的 z 值的输入点要素。</para>
+		/// <para>The input point features containing the z-values to be interpolated into a surface raster.</para>
 		/// </param>
 		/// <param name="ZField">
 		/// <para>Z value field</para>
-		/// <para>存放每个点的高度值或量级值的字段。</para>
-		/// <para>如果输入点要素包含 z 值，则该字段可以是数值型字段或者 Shape 字段。</para>
-		/// <para>如果回归类型为 Logistic，则该字段的值只能为 0 或 1。</para>
+		/// <para>The field that holds a height or magnitude value for each point.</para>
+		/// <para>This can be a numeric field or the Shape field if the input point features contain z-values.</para>
+		/// <para>If the regression type is Logistic, the values in the field can only be 0 or 1.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>输出插值后的表面栅格。</para>
-		/// <para>其总为浮点栅格。</para>
+		/// <para>The output interpolated surface raster.</para>
+		/// <para>It is always a floating-point raster.</para>
 		/// </param>
 		public Trend(object InPointFeatures, object ZField, object OutRaster)
 		{
@@ -42,14 +42,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 趋势面法</para>
+		/// <para>Tool Display Name : Trend</para>
 		/// </summary>
-		public override string DisplayName() => "趋势面法";
+		public override string DisplayName() => "Trend";
 
 		/// <summary>
-		/// <para>Tool Name : 趋势面法</para>
+		/// <para>Tool Name : Trend</para>
 		/// </summary>
-		public override string ToolName() => "趋势面法";
+		public override string ToolName() => "Trend";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Trend</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input point features</para>
-		/// <para>包含要插值到表面栅格中的 z 值的输入点要素。</para>
+		/// <para>The input point features containing the z-values to be interpolated into a surface raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -90,9 +90,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Z value field</para>
-		/// <para>存放每个点的高度值或量级值的字段。</para>
-		/// <para>如果输入点要素包含 z 值，则该字段可以是数值型字段或者 Shape 字段。</para>
-		/// <para>如果回归类型为 Logistic，则该字段的值只能为 0 或 1。</para>
+		/// <para>The field that holds a height or magnitude value for each point.</para>
+		/// <para>This can be a numeric field or the Shape field if the input point features contain z-values.</para>
+		/// <para>If the regression type is Logistic, the values in the field can only be 0 or 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -102,8 +102,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出插值后的表面栅格。</para>
-		/// <para>其总为浮点栅格。</para>
+		/// <para>The output interpolated surface raster.</para>
+		/// <para>It is always a floating-point raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -111,8 +111,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>将创建的输出栅格的像元大小。</para>
-		/// <para>此参数可以通过数值进行定义，也可以从现有栅格数据集获取。 如果未将像元大小明确指定为参数值，则将使用环境像元大小值（如果已指定）；否则，将使用其他规则通过其他输出计算像元大小。 有关详细信息，请参阅用法部分。</para>
+		/// <para>The cell size of the output raster that will be created.</para>
+		/// <para>This parameter can be defined by a numeric value or obtained from an existing raster dataset. If the cell size hasn&apos;t been explicitly specified as the parameter value, the environment cell size value will be used if specified; otherwise, additional rules will be used to calculate it from the other inputs. See the usage section for more detail.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -124,8 +124,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Polynomial order</para>
-		/// <para>多项式的阶。</para>
-		/// <para>该值必须是介于 1 到 12 之间的整数。值为 1 会对点进行平面拟合，而较高的值则会拟合出更为复杂的曲面。默认值为 1。</para>
+		/// <para>The order of the polynomial.</para>
+		/// <para>This must be an integer between 1 and 12. A value of 1 will fit a flat plane to the points, and a higher value will fit a more complex surface. The default is 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -136,9 +136,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Type of regression</para>
-		/// <para>要执行的回归类型。</para>
-		/// <para>线性—执行多项式回归，对输入点进行最小二乘曲面拟合。这种类型适用于连续型数据。</para>
-		/// <para>逻辑—执行逻辑趋势面分析。为二元数据生成连续的概率曲面。</para>
+		/// <para>The type of regression to be performed.</para>
+		/// <para>Linear—Polynomial regression is performed to fit a least-squares surface to the set of input points. This is applicable for continuous types of data.</para>
+		/// <para>Logistic—Logistic trend surface analysis is performed. It generates a continuous probability surface for binary, or dichotomous, types of data.</para>
 		/// <para><see cref="RegressionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -148,8 +148,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output RMS file</para>
-		/// <para>包含插值的 RMS 误差和卡方相关信息的输出文本文件的文件名。</para>
-		/// <para>扩展名必须为 .txt。</para>
+		/// <para>File name for the output text file that contains information about the RMS error and the Chi-Square of the interpolation.</para>
+		/// <para>The extension must be .txt.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -174,17 +174,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum RegressionTypeEnum 
 		{
 			/// <summary>
-			/// <para>线性—执行多项式回归，对输入点进行最小二乘曲面拟合。这种类型适用于连续型数据。</para>
+			/// <para>Linear—Polynomial regression is performed to fit a least-squares surface to the set of input points. This is applicable for continuous types of data.</para>
 			/// </summary>
 			[GPValue("LINEAR")]
-			[Description("线性")]
+			[Description("Linear")]
 			Linear,
 
 			/// <summary>
-			/// <para>逻辑—执行逻辑趋势面分析。为二元数据生成连续的概率曲面。</para>
+			/// <para>Logistic—Logistic trend surface analysis is performed. It generates a continuous probability surface for binary, or dichotomous, types of data.</para>
 			/// </summary>
 			[GPValue("LOGISTIC")]
-			[Description("逻辑")]
+			[Description("Logistic")]
 			Logistic,
 
 		}

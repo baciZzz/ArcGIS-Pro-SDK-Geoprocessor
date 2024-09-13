@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Compute Camera Model</para>
-	/// <para>计算相机模型</para>
-	/// <para>通过原始影像的 EXIF 标头估计并优化外部和内部照相机模型。 之后，该模型将应用于镶嵌数据集且可以选择使用工具生成的高分辨率数字表面模型 (DSM) 实现更好的正射校正。</para>
+	/// <para>Compute Camera Model</para>
+	/// <para>Estimates the exterior camera model and interior camera model from the EXIF header of the raw image and refines the camera models. The model is then applied to the mosaic dataset with an option to use a tool-generated, high-resolution digital surface model (DSM) to achieve better orthorectification.</para>
 	/// </summary>
 	public class ComputeCameraModel : AbstractGPProcess
 	{
@@ -21,8 +21,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>将在其上构建和计算相机模型的镶嵌数据集。</para>
-		/// <para>尽管并非强制，但建议您先针对输入镶嵌数据集运行应用区域网平差工具。</para>
+		/// <para>The mosaic dataset on which the camera model will be built and calculated.</para>
+		/// <para>Although not mandatory, it is recommended that you run the Apply Block Adjustment tool on the input mosaic dataset first.</para>
 		/// </param>
 		public ComputeCameraModel(object InMosaicDataset)
 		{
@@ -30,9 +30,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 计算相机模型</para>
+		/// <para>Tool Display Name : Compute Camera Model</para>
 		/// </summary>
-		public override string DisplayName() => "计算相机模型";
+		public override string DisplayName() => "Compute Camera Model";
 
 		/// <summary>
 		/// <para>Tool Name : ComputeCameraModel</para>
@@ -66,8 +66,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>将在其上构建和计算相机模型的镶嵌数据集。</para>
-		/// <para>尽管并非强制，但建议您先针对输入镶嵌数据集运行应用区域网平差工具。</para>
+		/// <para>The mosaic dataset on which the camera model will be built and calculated.</para>
+		/// <para>Although not mandatory, it is recommended that you run the Apply Block Adjustment tool on the input mosaic dataset first.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output DSM</para>
-		/// <para>从镶嵌数据集中调整后的图像生成的 DSM 栅格数据集。 如果选中了应用校正，则此 DSM 将用于替代几何函数中的 DEM，以实现更好的正射校正。</para>
+		/// <para>A DSM raster dataset generated from the adjusted images in the mosaic dataset. If Apply Adjustment is checked, this DSM will replace the DEM in the geometric function to achieve better orthorectification.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -83,12 +83,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>GPS Location Accuracy</para>
-		/// <para>指定输入图像的精度级别。 此工具将在邻域内搜索影像以计算匹配点并自动根据精度级别应用校正策略。</para>
-		/// <para>高 GPS 精度—GPS 精度介于 0 到 10 米之间，该工具可使用最多 4 x 3 张图像。</para>
-		/// <para>中等 GPS 精度—GPS 精度为 10 到 20 米，该工具最多使用 4 x 6 图像。</para>
-		/// <para>低 GPS 精度—GPS 精度介于 20 到 50 米之间，该工具可使用最多 4 x 12 张图像。</para>
-		/// <para>极低 GPS 精度—GPS 精度大于 50 米，该工具可使用最多 4 x 20 张影像。</para>
-		/// <para>极高 GPS 精度—影像是使用高精度的差分 GPS（例如 RTK 或 PPK）收集的。 此选项将在进行区域网平差期间保持影像位置固定。</para>
+		/// <para>Specifies the accuracy level of the input images. The tool will search for images in the neighborhood to compute matching points and automatically apply an adjustment strategy based on the accuracy level.</para>
+		/// <para>High GPS accuracy— The GPS accuracy is 0 to 10 meters, and the tool uses a maximum of 4 by 3 images.</para>
+		/// <para>Medium GPS accuracy—The GPS accuracy is 10 to 20 meters, and the tool uses a maximum of 4 by 6 images.</para>
+		/// <para>Low GPS accuracy—The GPS accuracy is 20 to 50 meters, and the tool uses a maximum of 4 by 12 images.</para>
+		/// <para>Very low GPS accuracy—The GPS accuracy is more than 50 meters, and the tool uses a maximum of 4 by 20 images.</para>
+		/// <para>Very high GPS accuracy—Imagery was collected with high-accuracy, differential GPS, such as RTK or PPK. This option will hold image locations fixed during block adjustment.</para>
 		/// <para><see cref="GpsAccuracyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -98,9 +98,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Estimate Camera Model</para>
-		/// <para>指定是否通过将镶嵌数据集源分辨率乘以八来计算平差，以估计照相机模型。 在此级别下计算平差将加快速度但会降低精度。</para>
-		/// <para>选中 - 将估计照相机模型。 这是默认设置。</para>
-		/// <para>未选中 - 将不会估计照相机模型。</para>
+		/// <para>Specifies whether the camera model will be estimated by computing the adjustment based on eight times the mosaic dataset&apos;s source resolution. Computing the adjustment at this level will be faster but less accurate.</para>
+		/// <para>Checked—The camera model will be estimated. This is the default.</para>
+		/// <para>Unchecked—The camera model will not be estimated.</para>
 		/// <para><see cref="EstimateEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -110,9 +110,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Refine Camera Model</para>
-		/// <para>指定是否在镶嵌数据集分辨率下计算平差，以优化照相机模型。 在此级别下计算平差可提供最精确的结果。</para>
-		/// <para>选中 - 将在源分辨率下计算平差，以优化照相机模型。 这是默认设置。</para>
-		/// <para>未选中 - 将不会优化照相机模型。 使用此选项可加快速度，因此最好在不需要在源分辨率下执行计算时使用。</para>
+		/// <para>Specifies whether the camera model will be refined by computing the adjustment at the mosaic dataset resolution. Computing the adjustment at this level will provide the most accurate result.</para>
+		/// <para>Checked—The camera model will be refined by computing the adjustment at the source resolution. This is the default.</para>
+		/// <para>Unchecked—The camera model will not be refined. This option will be faster, so it is a good option when the computation does not need to be performed at the source resolution.</para>
 		/// <para><see cref="RefineEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -122,9 +122,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Apply Adjustment</para>
-		/// <para>指定是否将已校正变换应用于镶嵌数据集。</para>
-		/// <para>选中 - 已计算的平差将应用于输入镶嵌数据集。 这是默认设置。</para>
-		/// <para>未选中 - 已计算的平差将不会应用于输入镶嵌数据集。</para>
+		/// <para>Specifies whether the adjusted transformation will be applied to the mosaic dataset.</para>
+		/// <para>Checked—The calculated adjustment will be applied to the input mosaic dataset. This is the default.</para>
+		/// <para>Unchecked—The calculated adjustment will not be applied to the input mosaic dataset.</para>
 		/// <para><see cref="ApplyAdjustmentEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Residual</para>
-		/// <para>要将计算出的控制点保持为有效控制点时所容许的最大残差值。 默认值为 5。</para>
+		/// <para>The maximum residual value allowed to keep a computed control point as a valid control point. The default is 5.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -142,8 +142,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Initial Tie Point Resolution</para>
-		/// <para>估计照相机模型时用于生成连接点的分辨率因子。 默认值为 8，也就是源像素分辨率的八倍。</para>
-		/// <para>对于仅有较小要素差异的影像（例如农田），可以使用较低的值（例如 2）。</para>
+		/// <para>The resolution factor at which tie points will be generated when estimating the camera model. The default value is 8, which means eight times the source pixel resolution.</para>
+		/// <para>For images with only minor differentiation of features, such as agriculture fields, a lower value such as 2 can be used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -151,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Control Point Table</para>
-		/// <para>可选的控制点要素类。</para>
+		/// <para>The optional control points feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -160,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Solution Table</para>
-		/// <para>可选的校正解决方案表。 该解决方案表包含校正误差的均方根 (RMS) 和解决方案矩阵。</para>
+		/// <para>The optional adjustment solution table. The solution table contains the root mean square (RMS) of the adjustment error and solution matrix.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -169,7 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Solution Point Table</para>
-		/// <para>可选的解决方案点要素类。 该解决方案点是用于生成校正解决方案的最终控制点。</para>
+		/// <para>The optional solution point feature class. The solution points are the final controls points used to generate the adjustment solution.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -178,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Flight Path</para>
-		/// <para>可选的飞行路径线要素类。</para>
+		/// <para>The optional flight path line feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -187,8 +187,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Area Overlap</para>
-		/// <para>要将两个图像视为重复项的二者之间的重叠百分比。</para>
-		/// <para>例如，如果该值为 0.9，则意味着如果一个影像的 90% 被另一个影像覆盖，则系统会将其视为重复项并将其移除。</para>
+		/// <para>The percentage of overlap between two images to consider them duplicates.</para>
+		/// <para>For example, if the value is 0.9, it means if an image is 90 percent covered by another image, it will be considered a duplicate and removed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -197,7 +197,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Minimum Control Point Coverage</para>
-		/// <para>用于指示图像上的控制点覆盖范围的百分比。 如果覆盖范围小于最小百分比，则系统将无法解析该图像并将其移除。 默认值为 0.05，相当于 5%。</para>
+		/// <para>The percentage indicating the control point's coverage on an image. If the coverage is less than the minimum percentage, the image will be unresolved and removed. The default is 0.05, which is 5 percent.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -206,9 +206,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Remove Off-Strip Images</para>
-		/// <para>用于指定当图像偏离航线条带过远时，是否自动将这些图像移除。</para>
-		/// <para>未选中 - 将不移除图像。 这是默认设置。</para>
-		/// <para>选中 - 将移除偏离航线条带过远的图像。</para>
+		/// <para>Specifies whether images will be automatically removed if they are too far from the flight strip.</para>
+		/// <para>Unchecked—Images will not be removed. This is the default.</para>
+		/// <para>Checked—Images that are too far away from the flight strip will be removed.</para>
 		/// <para><see cref="RemoveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -219,7 +219,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Tie Point Table</para>
-		/// <para>用于计算照相机模型的连接点表。 如果未指定连接点表，则该工具将计算其自己的连接点并估计照相机模型。</para>
+		/// <para>The tie point table used to compute the camera model. If a tie point table is not specified, the tool will compute its own tie points and estimate the camera model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -228,7 +228,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Additional Options</para>
-		/// <para>用于校正引擎的其他选项。 这些选项仅供第三方校正引擎使用。</para>
+		/// <para>Additional options for the adjustment engine. These options are only used by third-party adjustment engines.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -259,38 +259,38 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum GpsAccuracyEnum 
 		{
 			/// <summary>
-			/// <para>高 GPS 精度—GPS 精度介于 0 到 10 米之间，该工具可使用最多 4 x 3 张图像。</para>
+			/// <para>High GPS accuracy— The GPS accuracy is 0 to 10 meters, and the tool uses a maximum of 4 by 3 images.</para>
 			/// </summary>
 			[GPValue("HIGH")]
-			[Description("高 GPS 精度")]
+			[Description("High GPS accuracy")]
 			High_GPS_accuracy,
 
 			/// <summary>
-			/// <para>中等 GPS 精度—GPS 精度为 10 到 20 米，该工具最多使用 4 x 6 图像。</para>
+			/// <para>Medium GPS accuracy—The GPS accuracy is 10 to 20 meters, and the tool uses a maximum of 4 by 6 images.</para>
 			/// </summary>
 			[GPValue("MEDIUM")]
-			[Description("中等 GPS 精度")]
+			[Description("Medium GPS accuracy")]
 			Medium_GPS_accuracy,
 
 			/// <summary>
-			/// <para>低 GPS 精度—GPS 精度介于 20 到 50 米之间，该工具可使用最多 4 x 12 张图像。</para>
+			/// <para>Low GPS accuracy—The GPS accuracy is 20 to 50 meters, and the tool uses a maximum of 4 by 12 images.</para>
 			/// </summary>
 			[GPValue("LOW")]
-			[Description("低 GPS 精度")]
+			[Description("Low GPS accuracy")]
 			Low_GPS_accuracy,
 
 			/// <summary>
-			/// <para>极低 GPS 精度—GPS 精度大于 50 米，该工具可使用最多 4 x 20 张影像。</para>
+			/// <para>Very low GPS accuracy—The GPS accuracy is more than 50 meters, and the tool uses a maximum of 4 by 20 images.</para>
 			/// </summary>
 			[GPValue("VERY_LOW")]
-			[Description("极低 GPS 精度")]
+			[Description("Very low GPS accuracy")]
 			Very_low_GPS_accuracy,
 
 			/// <summary>
-			/// <para>极高 GPS 精度—影像是使用高精度的差分 GPS（例如 RTK 或 PPK）收集的。 此选项将在进行区域网平差期间保持影像位置固定。</para>
+			/// <para>Very high GPS accuracy—Imagery was collected with high-accuracy, differential GPS, such as RTK or PPK. This option will hold image locations fixed during block adjustment.</para>
 			/// </summary>
 			[GPValue("VERY_HIGH")]
-			[Description("极高 GPS 精度")]
+			[Description("Very high GPS accuracy")]
 			Very_high_GPS_accuracy,
 
 		}
@@ -301,14 +301,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum EstimateEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The camera model will be estimated. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ESTIMATE")]
 			ESTIMATE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The camera model will not be estimated.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ESTIMATE")]
@@ -322,14 +322,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum RefineEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The camera model will be refined by computing the adjustment at the source resolution. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REFINE")]
 			REFINE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The camera model will not be refined. This option will be faster, so it is a good option when the computation does not need to be performed at the source resolution.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_REFINE")]
@@ -343,14 +343,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ApplyAdjustmentEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The calculated adjustment will be applied to the input mosaic dataset. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("APPLY")]
 			APPLY,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The calculated adjustment will not be applied to the input mosaic dataset.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_APPLY")]
@@ -364,14 +364,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum RemoveEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Images that are too far away from the flight strip will be removed.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REMOVE")]
 			REMOVE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Images will not be removed. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_REMOVE")]

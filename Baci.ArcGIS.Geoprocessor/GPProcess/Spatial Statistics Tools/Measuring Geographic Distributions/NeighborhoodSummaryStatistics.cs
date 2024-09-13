@@ -11,8 +11,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Neighborhood Summary Statistics</para>
-	/// <para>邻域汇总统计数据</para>
-	/// <para>使用每个要素周围的局部邻域来计算一个或多个数值字段的汇总统计数据。 局部统计数据包括平均值、中位数、标准差、四分位距、偏度和分位数不平衡。 所有统计数据都可以使用核来进行地理加权，以对更靠近焦点要素的相邻要素产生更大影响。 可以使用各种邻域类型，其中包括距离范围、相邻要素的数目、面邻接、Delaunay 三角测量和空间权重矩阵文件 (.swm)。 还会针对与每个要素的相邻要素的距离来计算汇总统计数据。</para>
+	/// <para>Neighborhood Summary Statistics</para>
+	/// <para>Calculates summary  statistics of one or more numeric fields using local neighborhoods around each feature.  The local statistics include mean (average), median, standard deviation, interquartile range, skewness, and quantile imbalance. All statistics can be geographically weighted using kernels to give more influence to neighbors closer to the focal feature.  Various neighborhood types can be used, including distance band, number of neighbors, polygon contiguity, Delaunay triangulation, and spatial weights matrix files (.swm).</para>
+	/// <para>Summary statistics are also calculated for the distances to the neighbors of each feature.</para>
 	/// </summary>
 	public class NeighborhoodSummaryStatistics : AbstractGPProcess
 	{
@@ -21,11 +22,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>将用于计算局部统计数据的点或面要素。</para>
+		/// <para>The point or polygon features that will be used to calculate the local statistics.</para>
 		/// </param>
 		/// <param name="OutputFeatures">
 		/// <para>Output Features</para>
-		/// <para>包含局部统计数据作为字段的输出要素类。 各分析字段的每个统计数据将存储为一个单独的字段。</para>
+		/// <para>The output feature class containing the local statistics as fields. Each statistic of each analysis field will be stored as an individual field.</para>
 		/// </param>
 		public NeighborhoodSummaryStatistics(object InFeatures, object OutputFeatures)
 		{
@@ -34,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 邻域汇总统计数据</para>
+		/// <para>Tool Display Name : Neighborhood Summary Statistics</para>
 		/// </summary>
-		public override string DisplayName() => "邻域汇总统计数据";
+		public override string DisplayName() => "Neighborhood Summary Statistics";
 
 		/// <summary>
 		/// <para>Tool Name : NeighborhoodSummaryStatistics</para>
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>将用于计算局部统计数据的点或面要素。</para>
+		/// <para>The point or polygon features that will be used to calculate the local statistics.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -81,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Features</para>
-		/// <para>包含局部统计数据作为字段的输出要素类。 各分析字段的每个统计数据将存储为一个单独的字段。</para>
+		/// <para>The output feature class containing the local statistics as fields. Each statistic of each analysis field will be stored as an individual field.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -89,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Analysis Fields</para>
-		/// <para>将为其计算局部统计数据的一个或多个字段。 如果未提供任何分析字段，则将仅基于到相邻要素的距离计算局部统计数据。</para>
+		/// <para>One or more fields for which local statistics will be calculated. If no analysis fields are provided, only local statistics based on distances to neighbors will be calculated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -99,14 +100,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Local Summary Statistic</para>
-		/// <para>指定将为每个分析字段计算的局部汇总统计数据。</para>
-		/// <para>全部—将计算所有的局部统计数据。 这是默认设置。</para>
-		/// <para>平均值—将计算局部均值（平均值）。</para>
-		/// <para>中值—将计算局部中值。</para>
-		/// <para>标准差—将计算局部标准差。</para>
-		/// <para>四分位距—将计算局部四分位距。</para>
-		/// <para>偏度—将计算局部偏度。</para>
-		/// <para>不平衡分位数—将计算局部不平衡分位数。</para>
+		/// <para>Specifies the local summary statistic that will be calculated for each analysis field.</para>
+		/// <para>All—All local statistics will be calculated. This is the default.</para>
+		/// <para>Mean—The local mean (average) will be calculated.</para>
+		/// <para>Median— The local median will be calculated.</para>
+		/// <para>Standard deviation—The local standard deviation will be calculated.</para>
+		/// <para>Interquartile range— The local interquartile range will be calculated.</para>
+		/// <para>Skewness— The local skewness will be calculated.</para>
+		/// <para>Quantile imbalance— The local quantile imbalance will be calculated.</para>
 		/// <para><see cref="LocalSummaryStatisticEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -116,9 +117,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Include Focal Feature in Calculations</para>
-		/// <para>指定在计算每个要素的局部统计数据时是否包含焦点要素。</para>
-		/// <para>选中 - 在计算局部统计数据时，将包含焦点要素及其所有相邻要素。 这是默认设置。</para>
-		/// <para>未选中 - 在计算局部统计数据时，将不包含焦点要素。 仅包含该要素的相邻要素。</para>
+		/// <para>Specifies whether the focal feature will be included when calculating local statistics for each feature.</para>
+		/// <para>Checked—The focal feature and all of its neighbors will be included when calculating local statistics. This is the default.</para>
+		/// <para>Unchecked—The focal feature will not be included when calculating local statistics. Only neighbors of the feature will be included.</para>
 		/// <para><see cref="IncludeFocalFeatureEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -128,9 +129,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Ignore Null Values in Calculations</para>
-		/// <para>指定在计算中包含还是忽略分析字段中的空值。</para>
-		/// <para>选中 - 将忽略分析字段中的空值，并且仅使用非空值来计算统计数据。 这是默认设置。</para>
-		/// <para>未选中 - 将在计算中包含分析字段中的空值，并且如果在计算中使用的任何值为空，则任何局部统计数据都将计算为空。</para>
+		/// <para>Specifies whether null values in the analysis fields will be included or ignored in the calculations.</para>
+		/// <para>Checked—Null values in the analysis fields will be ignored, and statistics will be calculated using only non-null values. This is the default.</para>
+		/// <para>Unchecked—Null values in the analysis fields will be included in the calculations, and any local statistic will be calculated as null if any of the values used in the calculation are null.</para>
 		/// <para><see cref="IgnoreNullsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -140,14 +141,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Neighborhood Type</para>
-		/// <para>指定如何为每个输入要素选择相邻要素。 要计算局部统计数据，必须为每个输入要素标识相邻要素，并且这些相邻要素将用于计算每个要素的局部统计数据。 对于点要素，默认值为 Delaunay 三角测量。 对于面要素，默认值为邻接边拐角。</para>
-		/// <para>仅当具有 Desktop Advanced 许可时，Delaunay 三角测量选项才可用。</para>
-		/// <para>距离范围—每个要素指定临界距离内的要素将作为相邻要素包含在内。</para>
-		/// <para>相邻要素的数目—最近要素将作为相邻要素包含在内。</para>
-		/// <para>仅邻接边—共享边的面要素将作为相邻要素包含在内。</para>
-		/// <para>邻接边拐角—共享边或拐角的面要素将作为相邻要素包含在内。 这是面要素的默认选项。</para>
-		/// <para>Delaunay 三角测量—其 Delaunay 三角测量共享边的要素将作为相邻要素包含在内。 这是点要素的默认选项。</para>
-		/// <para>通过文件获取空间权重—将由指定空间权重文件定义相邻要素和权重。</para>
+		/// <para>Specifies how neighbors will be chosen for each input feature. To calculate local statistics, neighboring features must be identified for each input feature, and these neighbors are used to calculate the local statistics for each feature. For point features, the default is Delaunay triangulation. For polygon features, the default is Contiguity edges corners.</para>
+		/// <para>The Delaunay triangulation option is only available with a Desktop Advanced license.</para>
+		/// <para>Distance band—Features within a specified critical distance of each feature will be included as neighbors.</para>
+		/// <para>Number of neighbors— The closest features will be included as neighbors.</para>
+		/// <para>Contiguity edges only— Polygon features that share an edge will be included as neighbors.</para>
+		/// <para>Contiguity edges corners— Polygon features that share an edge or a corner will be included as neighbors. This is the default for polygon features.</para>
+		/// <para>Delaunay triangulation—Features whose Delaunay triangulation share an edge will be included as neighbors. This is the default for point features.</para>
+		/// <para>Get spatial weights from file— Neighbors and weights will be defined by a specified spatial weights file.</para>
 		/// <para><see cref="NeighborhoodTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -157,7 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Distance Band</para>
-		/// <para>此距离内的所有要素都将作为相邻要素包含在内。 如果未提供任何值，则将在处理过程中估算一个值，并将其作为地理处理消息包含在内。 如果指定距离导致相邻要素的数目超过 1,000，则将仅包含最近的 1,000 个要素作为相邻要素。</para>
+		/// <para>All features within this distance will be included as neighbors. If no value is provided, one will be estimated during processing and included as a geoprocessing message. If the specified distance results in more than 1,000 neighbors, only the closest 1,000 features will be included as neighbors.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -166,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Number of Neighbors</para>
-		/// <para>针对每次局部计算将包含的相邻要素数目。 该数值不包含焦点要素。 如果计算中包含焦点要素，则将使用一个附加相邻要素。 默认值为 8。</para>
+		/// <para>The number of neighbors that will be included for each local calculation. The number does not include the focal feature. If the focal feature is included in calculations, one additional neighbor will be used. The default is 8.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -175,7 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Weights Matrix File</para>
-		/// <para>空间权重矩阵文件的路径和文件名，该文件用于定义要素之间的空间关系以及潜在的时态关系。</para>
+		/// <para>The path and file name of the spatial weights matrix file that defines spatial, and potentially temporal, relationships among features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -185,10 +186,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Local Weighting Scheme</para>
-		/// <para>指定将在计算局部统计数据时应用于相邻要素的加权方案。</para>
-		/// <para>未加权—将不会对相邻要素进行加权。 这是默认设置。</para>
-		/// <para>双平方—将使用双平方核方案对相邻要素进行加权。</para>
-		/// <para>高斯函数—将使用高斯核方案对相邻要素进行加权。</para>
+		/// <para>Specifies the weighting scheme that will be applied to neighbors when calculating local statistics.</para>
+		/// <para>Unweighted—Neighbors will not be weighted. This is the default.</para>
+		/// <para>Bisquare—Neighbors will be weighted using a bisquare kernel scheme.</para>
+		/// <para>Gaussian—Neighbors will be weighted using a Gaussian kernel scheme.</para>
 		/// <para><see cref="LocalWeightingSchemeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -198,7 +199,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Kernel Bandwidth</para>
-		/// <para>双平方或高斯局部加权方案的带宽。 如果未提供任何值，则将在处理过程中估算一个值，并将其作为地理处理消息包含在内。</para>
+		/// <para>The bandwidth of the bisquare or Gaussian local weighting schemes. If no value is provided, one will be estimated during processing and included as a geoprocessing message.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -222,52 +223,52 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum LocalSummaryStatisticEnum 
 		{
 			/// <summary>
-			/// <para>全部—将计算所有的局部统计数据。 这是默认设置。</para>
+			/// <para>All—All local statistics will be calculated. This is the default.</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("全部")]
+			[Description("All")]
 			All,
 
 			/// <summary>
-			/// <para>平均值—将计算局部均值（平均值）。</para>
+			/// <para>Mean—The local mean (average) will be calculated.</para>
 			/// </summary>
 			[GPValue("MEAN")]
-			[Description("平均值")]
+			[Description("Mean")]
 			Mean,
 
 			/// <summary>
-			/// <para>中值—将计算局部中值。</para>
+			/// <para>Median— The local median will be calculated.</para>
 			/// </summary>
 			[GPValue("MEDIAN")]
-			[Description("中值")]
+			[Description("Median")]
 			Median,
 
 			/// <summary>
-			/// <para>标准差—将计算局部标准差。</para>
+			/// <para>Standard deviation—The local standard deviation will be calculated.</para>
 			/// </summary>
 			[GPValue("STD_DEV")]
-			[Description("标准差")]
+			[Description("Standard deviation")]
 			Standard_deviation,
 
 			/// <summary>
-			/// <para>四分位距—将计算局部四分位距。</para>
+			/// <para>Interquartile range— The local interquartile range will be calculated.</para>
 			/// </summary>
 			[GPValue("IQR")]
-			[Description("四分位距")]
+			[Description("Interquartile range")]
 			Interquartile_range,
 
 			/// <summary>
-			/// <para>偏度—将计算局部偏度。</para>
+			/// <para>Skewness— The local skewness will be calculated.</para>
 			/// </summary>
 			[GPValue("SKEWNESS")]
-			[Description("偏度")]
+			[Description("Skewness")]
 			Skewness,
 
 			/// <summary>
-			/// <para>不平衡分位数—将计算局部不平衡分位数。</para>
+			/// <para>Quantile imbalance— The local quantile imbalance will be calculated.</para>
 			/// </summary>
 			[GPValue("QUANTILE_IMBALANCE")]
-			[Description("不平衡分位数")]
+			[Description("Quantile imbalance")]
 			Quantile_imbalance,
 
 		}
@@ -278,14 +279,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum IncludeFocalFeatureEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The focal feature and all of its neighbors will be included when calculating local statistics. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_FOCAL")]
 			INCLUDE_FOCAL,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The focal feature will not be included when calculating local statistics. Only neighbors of the feature will be included.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXCLUDE_FOCAL")]
@@ -299,14 +300,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum IgnoreNullsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Null values in the analysis fields will be ignored, and statistics will be calculated using only non-null values. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("IGNORE_NULLS")]
 			IGNORE_NULLS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Null values in the analysis fields will be included in the calculations, and any local statistic will be calculated as null if any of the values used in the calculation are null.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INCLUDE_NULLS")]
@@ -320,45 +321,45 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum NeighborhoodTypeEnum 
 		{
 			/// <summary>
-			/// <para>距离范围—每个要素指定临界距离内的要素将作为相邻要素包含在内。</para>
+			/// <para>Distance band—Features within a specified critical distance of each feature will be included as neighbors.</para>
 			/// </summary>
 			[GPValue("DISTANCE_BAND")]
-			[Description("距离范围")]
+			[Description("Distance band")]
 			Distance_band,
 
 			/// <summary>
-			/// <para>相邻要素的数目—最近要素将作为相邻要素包含在内。</para>
+			/// <para>Number of neighbors— The closest features will be included as neighbors.</para>
 			/// </summary>
 			[GPValue("NUMBER_OF_NEIGHBORS")]
-			[Description("相邻要素的数目")]
+			[Description("Number of neighbors")]
 			Number_of_neighbors,
 
 			/// <summary>
-			/// <para>仅邻接边—共享边的面要素将作为相邻要素包含在内。</para>
+			/// <para>Contiguity edges only— Polygon features that share an edge will be included as neighbors.</para>
 			/// </summary>
 			[GPValue("CONTIGUITY_EDGES_ONLY")]
-			[Description("仅邻接边")]
+			[Description("Contiguity edges only")]
 			Contiguity_edges_only,
 
 			/// <summary>
-			/// <para>邻接边拐角—共享边或拐角的面要素将作为相邻要素包含在内。 这是面要素的默认选项。</para>
+			/// <para>Contiguity edges corners— Polygon features that share an edge or a corner will be included as neighbors. This is the default for polygon features.</para>
 			/// </summary>
 			[GPValue("CONTIGUITY_EDGES_CORNERS")]
-			[Description("邻接边拐角")]
+			[Description("Contiguity edges corners")]
 			Contiguity_edges_corners,
 
 			/// <summary>
-			/// <para>Delaunay 三角测量—其 Delaunay 三角测量共享边的要素将作为相邻要素包含在内。 这是点要素的默认选项。</para>
+			/// <para>Delaunay triangulation—Features whose Delaunay triangulation share an edge will be included as neighbors. This is the default for point features.</para>
 			/// </summary>
 			[GPValue("DELAUNAY_TRIANGULATION")]
-			[Description("Delaunay 三角测量")]
+			[Description("Delaunay triangulation")]
 			Delaunay_triangulation,
 
 			/// <summary>
-			/// <para>通过文件获取空间权重—将由指定空间权重文件定义相邻要素和权重。</para>
+			/// <para>Get spatial weights from file— Neighbors and weights will be defined by a specified spatial weights file.</para>
 			/// </summary>
 			[GPValue("GET_SPATIAL_WEIGHTS_FROM_FILE")]
-			[Description("通过文件获取空间权重")]
+			[Description("Get spatial weights from file")]
 			Get_spatial_weights_from_file,
 
 		}
@@ -369,24 +370,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum LocalWeightingSchemeEnum 
 		{
 			/// <summary>
-			/// <para>未加权—将不会对相邻要素进行加权。 这是默认设置。</para>
+			/// <para>Unweighted—Neighbors will not be weighted. This is the default.</para>
 			/// </summary>
 			[GPValue("UNWEIGHTED")]
-			[Description("未加权")]
+			[Description("Unweighted")]
 			Unweighted,
 
 			/// <summary>
-			/// <para>双平方—将使用双平方核方案对相邻要素进行加权。</para>
+			/// <para>Bisquare—Neighbors will be weighted using a bisquare kernel scheme.</para>
 			/// </summary>
 			[GPValue("BISQUARE")]
-			[Description("双平方")]
+			[Description("Bisquare")]
 			Bisquare,
 
 			/// <summary>
-			/// <para>高斯函数—将使用高斯核方案对相邻要素进行加权。</para>
+			/// <para>Gaussian—Neighbors will be weighted using a Gaussian kernel scheme.</para>
 			/// </summary>
 			[GPValue("GAUSSIAN")]
-			[Description("高斯函数")]
+			[Description("Gaussian")]
 			Gaussian,
 
 		}

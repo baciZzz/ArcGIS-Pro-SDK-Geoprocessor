@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Grid Index Features</para>
-	/// <para>格网索引要素</para>
-	/// <para>创建一个可用作索引的矩形面要素格网，以在空间地图系列中指定页面。可创建一个仅包含与另一要素图层相交的面要素的格网。</para>
+	/// <para>Grid Index Features</para>
+	/// <para>Creates a grid of rectangular polygon features that can be used as an index to specify pages in a spatial map series. A grid can be created that includes only polygon features that intersect another feature layer.</para>
 	/// </summary>
 	public class GridIndexFeatures : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>生成的面索引要素的要素类。</para>
-		/// <para>输出要素类的坐标系按照以下方法确定：</para>
-		/// <para>如果坐标系是通过输出坐标系环境指定的，则输出要素类将使用此坐标系。</para>
-		/// <para>如果坐标系不是通过输出坐标系环境指定的，则输出要素类将使用活动地图（ArcGIS Pro 已打开）。</para>
-		/// <para>如果坐标系不是通过输出坐标系环境指定的，并且没有活动地图（ArcGIS Pro 未打开），则输出要素类将使用第一个输入要素的坐标系。</para>
-		/// <para>如果坐标系不是通过输出坐标系环境指定的，并且没有活动地图（ArcGIS Pro 未打开），也没有指定的输入要素，则输出要素类的坐标系将为未知。</para>
+		/// <para>The resulting feature class of polygon index features.</para>
+		/// <para>The coordinate system of the output feature class is determined in the following order:</para>
+		/// <para>If a coordinate system is specified by the Output Coordinate System environment, the output feature class will use this coordinate system.</para>
+		/// <para>If a coordinate system is not specified by the Output Coordinate System environment, the output feature class will use the coordinate system of the active map (ArcGIS Pro is open).</para>
+		/// <para>If a coordinate system is not specified by the Output Coordinate System environment, and there is no active map (ArcGIS Pro is not open), the output feature class will use the coordinate system of the first input feature.</para>
+		/// <para>If a coordinate system is not specified by the Output Coordinate System environment, there is no active map (ArcGIS Pro is not open), and there are no specified input features, the coordinate system of the output feature class will be unknown.</para>
 		/// </param>
 		public GridIndexFeatures(object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 格网索引要素</para>
+		/// <para>Tool Display Name : Grid Index Features</para>
 		/// </summary>
-		public override string DisplayName() => "格网索引要素";
+		public override string DisplayName() => "Grid Index Features";
 
 		/// <summary>
 		/// <para>Tool Name : GridIndexFeatures</para>
@@ -70,12 +70,12 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>生成的面索引要素的要素类。</para>
-		/// <para>输出要素类的坐标系按照以下方法确定：</para>
-		/// <para>如果坐标系是通过输出坐标系环境指定的，则输出要素类将使用此坐标系。</para>
-		/// <para>如果坐标系不是通过输出坐标系环境指定的，则输出要素类将使用活动地图（ArcGIS Pro 已打开）。</para>
-		/// <para>如果坐标系不是通过输出坐标系环境指定的，并且没有活动地图（ArcGIS Pro 未打开），则输出要素类将使用第一个输入要素的坐标系。</para>
-		/// <para>如果坐标系不是通过输出坐标系环境指定的，并且没有活动地图（ArcGIS Pro 未打开），也没有指定的输入要素，则输出要素类的坐标系将为未知。</para>
+		/// <para>The resulting feature class of polygon index features.</para>
+		/// <para>The coordinate system of the output feature class is determined in the following order:</para>
+		/// <para>If a coordinate system is specified by the Output Coordinate System environment, the output feature class will use this coordinate system.</para>
+		/// <para>If a coordinate system is not specified by the Output Coordinate System environment, the output feature class will use the coordinate system of the active map (ArcGIS Pro is open).</para>
+		/// <para>If a coordinate system is not specified by the Output Coordinate System environment, and there is no active map (ArcGIS Pro is not open), the output feature class will use the coordinate system of the first input feature.</para>
+		/// <para>If a coordinate system is not specified by the Output Coordinate System environment, there is no active map (ArcGIS Pro is not open), and there are no specified input features, the coordinate system of the output feature class will be unknown.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>输入要素可用于定义将创建的面格网的范围。</para>
+		/// <para>The input features to be used to define the extent of the polygon grid that will be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -91,9 +91,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Generate Polygon Grid that intersects input feature layers or datasets</para>
-		/// <para>指定是否将输出格网要素类限制为与输入要素图层或数据集相交的区域。输入要素的交集将用作创建索引要素。</para>
-		/// <para>选中 - 将输出格网要素类限制为与输入要素图层或数据集相交的区域。当指定输入要素时，此为默认设置。</para>
-		/// <para>未选中 - 将使用指定的坐标、行和列来创建输出格网要素类。</para>
+		/// <para>Specifies whether the output grid feature class is limited to areas that intersect input feature layers or datasets. The intersection of input features will be used to create index features.</para>
+		/// <para>Checked—Limits the output grid feature class to areas that intersect input feature layers or datasets. When input features are specified, this is the default.</para>
+		/// <para>Unchecked—An output grid feature class is created using specified coordinates, rows, and columns.</para>
 		/// <para><see cref="IntersectFeatureEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -103,9 +103,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Use Page Unit and Scale</para>
-		/// <para>指定索引面的大小输入是否使用页面单位。</para>
-		/// <para>已选中 - 索引面的高度和宽度使用页面单位来计算。</para>
-		/// <para>未选中 - 索引面的高度和宽度使用地图单位来计算。这是默认设置。</para>
+		/// <para>Specifies whether index polygon size input is in page units.</para>
+		/// <para>Checked—Index polygon height and width are calculated in page units.</para>
+		/// <para>Unchecked—Index polygon height and width are calculated in map units. This is the default.</para>
 		/// <para><see cref="UsePageUnitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Map Scale</para>
-		/// <para>地图比例。如果索引面的高度和宽度要使用页面单位来计算，则必须指定比例。如果该工具在活动 ArcGIS Pro 会话以外使用，则默认比例值为 1。</para>
+		/// <para>The map scale. The scale must be specified if the index polygon height and width are to be calculated in page units. If the tool is used outside an active ArcGIS Pro session, the default scale value is 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Polygon Width</para>
-		/// <para>使用地图单位或页面单位指定的索引面的宽度。如果使用页面单位，则默认值为 1 英寸。如果使用地图单位，则默认值为 1 度。</para>
+		/// <para>The width of the index polygon specified in either map or page units. If page units are used, the default value is 1 inch. If map units are used, the default value is 1 degree.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Polygon Height</para>
-		/// <para>使用地图单位或页面单位指定的索引面的高度。如果使用页面单位，则默认值为 1 英寸。如果使用地图单位，则默认值为 1 度。</para>
+		/// <para>The height of the index polygon specified in either map or page units. If page units are used, the default value is 1 inch. If map units are used, the default value is 1 degree.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Polygon Grid Origin Coordinate</para>
-		/// <para>输出格网要素类的左下角原点的坐标值。如果输入要素已指定，则默认值由这些要素的范围的并集来确定。如果未指定输入要素，则默认坐标为 0 和 0。</para>
+		/// <para>The coordinate value for the lower left origin of the output grid feature class. If input features are specified, the default value is determined by the extent of the union of extents for these features. If there are no input features specified, the default coordinates are 0 and 0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPPoint()]
@@ -148,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Number of Rows</para>
-		/// <para>沿原点的 y 方向创建的行数。默认值为 10。</para>
+		/// <para>The number of rows to create in the y direction from the point of origin. The default is 10.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -157,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Number of Columns</para>
-		/// <para>沿原点的 x 方向创建的列数。默认值为 10。</para>
+		/// <para>The number of columns to create in the x direction from the point of origin. The default is 10.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -166,7 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Starting Page Number</para>
-		/// <para>各格网索引要素将分配到连续的页码，起始页码需要指定。默认值为 1。</para>
+		/// <para>Each grid index feature is assigned a sequential page number starting with a specified starting page number. The default is 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -175,9 +175,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Start labeling from the Origin</para>
-		/// <para>指定页码（标注）的开始位置。</para>
-		/// <para>选中 - 页码（标注）以输出格网左下角的面要素开头。</para>
-		/// <para>未选中 - 页码（标注）以输出格网左上角的面要素开头。这是默认设置。</para>
+		/// <para>Specifies where page numbers (labels) begin.</para>
+		/// <para>Checked—Page numbers (labels) begin with the polygon feature in the lower left corner of the output grid.</para>
+		/// <para>Unchecked—Page numbers (labels) begin with the polygon feature in the upper left corner of the output grid. This is the default.</para>
 		/// <para><see cref="LabelFromOriginEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -202,14 +202,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum IntersectFeatureEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Limits the output grid feature class to areas that intersect input feature layers or datasets. When input features are specified, this is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INTERSECTFEATURE")]
 			INTERSECTFEATURE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—An output grid feature class is created using specified coordinates, rows, and columns.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_INTERSECTFEATURE")]
@@ -223,14 +223,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum UsePageUnitEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Index polygon height and width are calculated in page units.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("USEPAGEUNIT")]
 			USEPAGEUNIT,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Index polygon height and width are calculated in map units. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_USEPAGEUNIT")]
@@ -244,14 +244,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum LabelFromOriginEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Page numbers (labels) begin with the polygon feature in the lower left corner of the output grid.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("LABELFROMORIGIN")]
 			LABELFROMORIGIN,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Page numbers (labels) begin with the polygon feature in the upper left corner of the output grid. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_LABELFROMORIGIN")]

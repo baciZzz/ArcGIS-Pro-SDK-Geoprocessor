@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>TIN Line</para>
-	/// <para>TIN 线</para>
-	/// <para>可将不规则三角网 (TIN) 数据集的隔断线导出到 3D 线要素类。</para>
+	/// <para>TIN Line</para>
+	/// <para>Exports breaklines from a triangulated irregular network (TIN) dataset to a 3D line feature class.</para>
 	/// </summary>
 	public class TinLine : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTin">
 		/// <para>Input TIN</para>
-		/// <para>待处理的 TIN 数据集。</para>
+		/// <para>The TIN dataset to process.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>将生成的要素类。</para>
+		/// <para>The feature class that will be produced.</para>
 		/// </param>
 		public TinLine(object InTin, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : TIN 线</para>
+		/// <para>Tool Display Name : TIN Line</para>
 		/// </summary>
-		public override string DisplayName() => "TIN 线";
+		public override string DisplayName() => "TIN Line";
 
 		/// <summary>
 		/// <para>Tool Name : TinLine</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input TIN</para>
-		/// <para>待处理的 TIN 数据集。</para>
+		/// <para>The TIN dataset to process.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTinLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>将生成的要素类。</para>
+		/// <para>The feature class that will be produced.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Code Field</para>
-		/// <para>定义隔断线类型的输出要素类中的字段名称。默认字段名称为 Code。</para>
+		/// <para>The name of the field in the output feature class that defines the breakline type. The default field name is Code.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

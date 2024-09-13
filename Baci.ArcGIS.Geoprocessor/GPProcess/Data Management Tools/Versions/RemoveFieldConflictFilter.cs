@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Field Conflict Filter</para>
-	/// <para>移除字段冲突过滤器</para>
-	/// <para>移除地理数据库表或要素类中给定字段的字段冲突过滤器。</para>
+	/// <para>Remove Field Conflict Filter</para>
+	/// <para>Removes a field conflict filter for a given field in a geodatabase table or feature class.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="Table">
 		/// <para>Input Table</para>
-		/// <para>表或要素类，其中包含将作为冲突过滤器移除的字段。</para>
+		/// <para>Table or feature class containing the field or fields to be removed as conflict filters.</para>
 		/// </param>
 		/// <param name="Fields">
 		/// <para>Field Name</para>
-		/// <para>将作为冲突过滤器移除的字段或字段列表。</para>
+		/// <para>Field or list of fields to be removed as conflict filters.</para>
 		/// </param>
 		public RemoveFieldConflictFilter(object Table, object Fields)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 移除字段冲突过滤器</para>
+		/// <para>Tool Display Name : Remove Field Conflict Filter</para>
 		/// </summary>
-		public override string DisplayName() => "移除字段冲突过滤器";
+		public override string DisplayName() => "Remove Field Conflict Filter";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveFieldConflictFilter</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>表或要素类，其中包含将作为冲突过滤器移除的字段。</para>
+		/// <para>Table or feature class containing the field or fields to be removed as conflict filters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field Name</para>
-		/// <para>将作为冲突过滤器移除的字段或字段列表。</para>
+		/// <para>Field or list of fields to be removed as conflict filters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]

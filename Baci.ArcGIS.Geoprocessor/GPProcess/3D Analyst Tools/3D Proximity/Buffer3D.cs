@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Buffer 3D</para>
-	/// <para>3D 缓冲</para>
-	/// <para>围绕点或线创建三维缓冲区以生成球形或圆柱形的多面体要素。</para>
+	/// <para>Buffer 3D</para>
+	/// <para>Creates a 3-dimensional buffer around points or lines to produce spherical or cylindrical multipatch features.</para>
 	/// </summary>
 	public class Buffer3D : AbstractGPProcess
 	{
@@ -21,25 +21,25 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>待缓冲的线或点要素。</para>
+		/// <para>The line or point features to be buffered.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>包含 3D 缓冲区的输出多面体。</para>
+		/// <para>The output multipatch containing the 3D buffers.</para>
 		/// </param>
 		/// <param name="BufferDistanceOrField">
 		/// <para>Distance</para>
-		/// <para>输入要素的缓冲距离，可以是线性距离或从输入要素属性表中的数值字段获取。如果已通过输入字段指定缓冲距离，则将通过要素空间参考获得其测量单位。如果已将线性距离指定为数值，则支持以下测量单位：</para>
-		/// <para>未知—未知</para>
-		/// <para>英寸—英寸</para>
-		/// <para>英尺—英尺</para>
-		/// <para>码—码</para>
-		/// <para>英里—英里</para>
-		/// <para>毫米—毫米</para>
-		/// <para>厘米—厘米</para>
-		/// <para>分米—分米</para>
-		/// <para>米—米</para>
-		/// <para>千米—千米</para>
+		/// <para>The distance of the buffer around the input features, which can be provided as either a linear distance or be derived from a numeric field in the input feature&apos;s attribute table. If the buffer distance is specified from an input field, its unit of measurement will be derived from the feature&apos;s spatial reference. If the linear distance is specified as a numeric value, the following units of measure are supported:</para>
+		/// <para>Unknown—Unknown</para>
+		/// <para>Inches—Inches</para>
+		/// <para>Feet—Feet</para>
+		/// <para>Yards—Yards</para>
+		/// <para>Miles—Miles</para>
+		/// <para>Millimeters—Millimeters</para>
+		/// <para>Centimeters—Centimeters</para>
+		/// <para>Decimeters—Decimeters</para>
+		/// <para>Meters—Meters</para>
+		/// <para>Kilometers—Kilometers</para>
 		/// </param>
 		public Buffer3D(object InFeatures, object OutFeatureClass, object BufferDistanceOrField)
 		{
@@ -49,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 3D 缓冲</para>
+		/// <para>Tool Display Name : Buffer 3D</para>
 		/// </summary>
-		public override string DisplayName() => "3D 缓冲";
+		public override string DisplayName() => "Buffer 3D";
 
 		/// <summary>
 		/// <para>Tool Name : Buffer3D</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>待缓冲的线或点要素。</para>
+		/// <para>The line or point features to be buffered.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>包含 3D 缓冲区的输出多面体。</para>
+		/// <para>The output multipatch containing the 3D buffers.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -102,17 +102,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Distance</para>
-		/// <para>输入要素的缓冲距离，可以是线性距离或从输入要素属性表中的数值字段获取。如果已通过输入字段指定缓冲距离，则将通过要素空间参考获得其测量单位。如果已将线性距离指定为数值，则支持以下测量单位：</para>
-		/// <para>未知—未知</para>
-		/// <para>英寸—英寸</para>
-		/// <para>英尺—英尺</para>
-		/// <para>码—码</para>
-		/// <para>英里—英里</para>
-		/// <para>毫米—毫米</para>
-		/// <para>厘米—厘米</para>
-		/// <para>分米—分米</para>
-		/// <para>米—米</para>
-		/// <para>千米—千米</para>
+		/// <para>The distance of the buffer around the input features, which can be provided as either a linear distance or be derived from a numeric field in the input feature&apos;s attribute table. If the buffer distance is specified from an input field, its unit of measurement will be derived from the feature&apos;s spatial reference. If the linear distance is specified as a numeric value, the following units of measure are supported:</para>
+		/// <para>Unknown—Unknown</para>
+		/// <para>Inches—Inches</para>
+		/// <para>Feet—Feet</para>
+		/// <para>Yards—Yards</para>
+		/// <para>Miles—Miles</para>
+		/// <para>Millimeters—Millimeters</para>
+		/// <para>Centimeters—Centimeters</para>
+		/// <para>Decimeters—Decimeters</para>
+		/// <para>Meters—Meters</para>
+		/// <para>Kilometers—Kilometers</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -121,9 +121,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Joint Type</para>
-		/// <para>线段折点之间的缓冲区形状。此参数只对线输入要素有效。</para>
-		/// <para>平直—折点之间的连接线形状是平直的。这是默认设置。</para>
-		/// <para>圆形—折点之间的连接线形状为圆形。</para>
+		/// <para>The shape of the buffer between the vertices of the line segments. This parameter is only valid for input line features.</para>
+		/// <para>Straight—The shape of connections between vertices will be straight. This is the default.</para>
+		/// <para>Round—The shape of connections between vertices will be round.</para>
 		/// <para><see cref="BufferJointTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Buffer Quality</para>
-		/// <para>用于表示生成的多面体要素的线段数。默认为 20，但可输入 6 到 60 范围内的任何数字。缓冲质量值越高，生成的 3D 要素越平滑，但同时也会增加处理时间。</para>
+		/// <para>The number of segments used to represent the resulting multipatch features. The default is 20, but any number between the range of 6 to 60 can be entered. A higher Buffer Quality value produces smoother 3D features, but also lengthens the processing time.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -142,17 +142,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Simplification (Maximum Allowable Offset)</para>
-		/// <para>简化输入线，方法是保持它们在其原始形态的指定偏移范围内的形状。如果未指定值，则不会进行简化。支持以下测量单位：</para>
-		/// <para>未知—未知</para>
-		/// <para>英寸—英寸</para>
-		/// <para>英尺—英尺</para>
-		/// <para>码—码</para>
-		/// <para>英里—英里</para>
-		/// <para>毫米—毫米</para>
-		/// <para>厘米—厘米</para>
-		/// <para>分米—分米</para>
-		/// <para>米—米</para>
-		/// <para>千米—千米</para>
+		/// <para>Simplifies the input lines by maintaining their shape within the specified offset of its original form. Simplification will not take place if no value is specified. The following units of measurement are supported:</para>
+		/// <para>Unknown—Unknown</para>
+		/// <para>Inches—Inches</para>
+		/// <para>Feet—Feet</para>
+		/// <para>Yards—Yards</para>
+		/// <para>Miles—Miles</para>
+		/// <para>Millimeters—Millimeters</para>
+		/// <para>Centimeters—Centimeters</para>
+		/// <para>Decimeters—Decimeters</para>
+		/// <para>Meters—Meters</para>
+		/// <para>Kilometers—Kilometers</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -175,17 +175,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum BufferJointTypeEnum 
 		{
 			/// <summary>
-			/// <para>平直—折点之间的连接线形状是平直的。这是默认设置。</para>
+			/// <para>Straight—The shape of connections between vertices will be straight. This is the default.</para>
 			/// </summary>
 			[GPValue("STRAIGHT")]
-			[Description("平直")]
+			[Description("Straight")]
 			Straight,
 
 			/// <summary>
-			/// <para>圆形—折点之间的连接线形状为圆形。</para>
+			/// <para>Round—The shape of connections between vertices will be round.</para>
 			/// </summary>
 			[GPValue("ROUND")]
-			[Description("圆形")]
+			[Description("Round")]
 			Round,
 
 		}

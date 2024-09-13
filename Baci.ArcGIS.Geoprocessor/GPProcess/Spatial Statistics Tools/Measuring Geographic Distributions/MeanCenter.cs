@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Mean Center</para>
-	/// <para>平均中心</para>
-	/// <para>识别一组要素的地理中心（或密度中心）。</para>
+	/// <para>Mean Center</para>
+	/// <para>Identifies the geographic center (or the center of concentration) for a set of features.</para>
 	/// </summary>
 	public class MeanCenter : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InputFeatureClass">
 		/// <para>Input Feature Class</para>
-		/// <para>将对其计算平均中心的要素类。</para>
+		/// <para>A feature class for which the mean center will be calculated.</para>
 		/// </param>
 		/// <param name="OutputFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>将包含用于表示输入要素类的平均中心的要素的点要素类。</para>
+		/// <para>A point feature class that will contain the features representing the mean centers of the input feature class.</para>
 		/// </param>
 		public MeanCenter(object InputFeatureClass, object OutputFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 平均中心</para>
+		/// <para>Tool Display Name : Mean Center</para>
 		/// </summary>
-		public override string DisplayName() => "平均中心";
+		public override string DisplayName() => "Mean Center";
 
 		/// <summary>
 		/// <para>Tool Name : MeanCenter</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>将对其计算平均中心的要素类。</para>
+		/// <para>A feature class for which the mean center will be calculated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>将包含用于表示输入要素类的平均中心的要素的点要素类。</para>
+		/// <para>A point feature class that will contain the features representing the mean centers of the input feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Weight Field</para>
-		/// <para>用于创建加权平均中心的数字字段。</para>
+		/// <para>The numeric field used to create a weighted mean center.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Case Field</para>
-		/// <para>用于对要素进行分组以独立计算平均中心的字段。案例分组字段可以为整型、日期型或字符串型。</para>
+		/// <para>Field used to group features for separate mean center calculations. The case field can be of integer, date, or string type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Dimension Field</para>
-		/// <para>此数值字段包含一些用于计算平均值的属性值。</para>
+		/// <para>A numeric field containing attribute values from which an average value will be calculated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]

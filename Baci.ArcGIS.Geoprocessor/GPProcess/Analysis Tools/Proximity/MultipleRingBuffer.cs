@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Multiple Ring Buffer</para>
-	/// <para>多环缓冲区</para>
-	/// <para>在输入要素周围的指定距离内创建多个缓冲区。 使用缓冲距离值可以合并和融合这些缓冲区，以便创建非重叠缓冲区。</para>
+	/// <para>Multiple Ring Buffer</para>
+	/// <para>Creates multiple buffers at specified distances around the input features. These buffers can be merged and dissolved using the buffer distance values to create nonoverlapping buffers.</para>
 	/// </summary>
 	public class MultipleRingBuffer : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="InputFeatures">
 		/// <para>Input Features</para>
-		/// <para>要进行缓冲的输入点、线或面要素。</para>
+		/// <para>The input point, line, or polygon features to be buffered.</para>
 		/// </param>
 		/// <param name="OutputFeatureClass">
 		/// <para>Output Feature class</para>
-		/// <para>含有多个缓冲区的输出要素类。</para>
+		/// <para>The output feature class that will contain multiple buffers.</para>
 		/// </param>
 		/// <param name="Distances">
 		/// <para>Distances</para>
-		/// <para>缓冲距离列表。</para>
+		/// <para>The list of buffer distances.</para>
 		/// </param>
 		public MultipleRingBuffer(object InputFeatures, object OutputFeatureClass, object Distances)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 多环缓冲区</para>
+		/// <para>Tool Display Name : Multiple Ring Buffer</para>
 		/// </summary>
-		public override string DisplayName() => "多环缓冲区";
+		public override string DisplayName() => "Multiple Ring Buffer";
 
 		/// <summary>
 		/// <para>Tool Name : MultipleRingBuffer</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>要进行缓冲的输入点、线或面要素。</para>
+		/// <para>The input point, line, or polygon features to be buffered.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Feature class</para>
-		/// <para>含有多个缓冲区的输出要素类。</para>
+		/// <para>The output feature class that will contain multiple buffers.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Distances</para>
-		/// <para>缓冲距离列表。</para>
+		/// <para>The list of buffer distances.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -99,20 +99,20 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Distance Unit</para>
-		/// <para>指定与距离值一起使用的线性单位。</para>
-		/// <para>默认值—系统将使用输入要素空间参考的线性单位。 如果已设置了输出坐标系地理处理环境，则将使用环境的线性单位。 如果输入要素的空间参考未知或未定义，则线性单位将被忽略。 这是默认设置。</para>
-		/// <para>英寸—将以英寸为单位。</para>
-		/// <para>英尺—单位将为英尺。</para>
-		/// <para>码—单位将为码。</para>
-		/// <para>英里—单位将为英里。</para>
-		/// <para>海里—单位将为海里。</para>
-		/// <para>毫米—将以毫米为单位。</para>
-		/// <para>厘米—将以厘米为单位。</para>
-		/// <para>分米—将以分米为单位。</para>
-		/// <para>米—单位将为米。</para>
-		/// <para>千米—单位将为公里。</para>
-		/// <para>十进制度—将以十进制度为单位。</para>
-		/// <para>磅—将以磅为单位。</para>
+		/// <para>Specifies the linear unit that will be used with the distance values.</para>
+		/// <para>Default—The linear unit of the input features&apos; spatial reference will be used. If the Output Coordinate System geoprocessing environment has been set, the linear unit of the environment will be used. The linear unit is ignored if the input features have an unknown or undefined spatial reference. This is the default.</para>
+		/// <para>Inches—The unit will be inches.</para>
+		/// <para>Feet—The unit will be feet.</para>
+		/// <para>Yards—The unit will be yards.</para>
+		/// <para>Miles—The unit will be miles.</para>
+		/// <para>Nautical miles—The unit will be nautical miles.</para>
+		/// <para>Millimeters—The unit will be millimeters.</para>
+		/// <para>Centimeters—The unit will be centimeters.</para>
+		/// <para>Decimeters—The unit will be decimeters.</para>
+		/// <para>Meters—The unit will be meters.</para>
+		/// <para>Kilometers—The unit will be kilometers.</para>
+		/// <para>Decimal degrees—The unit will be decimal degrees.</para>
+		/// <para>Points—The unit will be points.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Buffer Distance Field Name</para>
-		/// <para>输出要素类中的字段名称，其中将存储用于创建每个缓冲区要素的缓冲距离。 默认设置为 distance。 字段将为双精度型。</para>
+		/// <para>The name of the field in the output feature class that will store the buffer distance used to create each buffer feature. The default is distance. The field will be of type Double.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -129,9 +129,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Dissolve Option</para>
-		/// <para>指定确定是否要像围绕输入要素的环一样融合缓冲区。</para>
-		/// <para>非重叠（环）—将像围绕输入要素的环一样（将其视为输入要素周围的圆环）融合缓冲区。 最小缓冲区将覆盖其输入要素加上缓冲距离的区域，后续缓冲区将是围绕最小缓冲区的圆环，该最小缓冲区不覆盖输入要素或较小缓冲区的区域。 相同距离的所有缓冲区都将融合到单个要素中。 这是默认设置。</para>
-		/// <para>重叠（圆盘）—不融合缓冲区。 不论是否重叠，都会保存所有缓冲区域。 每个缓冲区均会覆盖其输入要素加上任何较小缓冲区的区域。</para>
+		/// <para>Specifies whether buffers will be dissolved to resemble rings around the input features.</para>
+		/// <para>Non-overlapping (rings)—Buffers will be dissolved to resemble rings around the input features that do not overlap (think of these as rings or donuts around the input features). The smallest buffer will cover the area of its input feature plus the buffer distance, and subsequent buffers will be rings around the smallest buffer that do not cover the area of the input feature or smaller buffers. All buffers of the same distance will be dissolved into a single feature. This is the default.</para>
+		/// <para>Overlapping (disks)—Buffers will not be dissolved. All buffer areas will be maintained regardless of overlap. Each buffer will cover its input feature plus the area of any smaller buffers.</para>
 		/// <para><see cref="DissolveOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -141,9 +141,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Outside Polygons Only</para>
-		/// <para>指定缓冲区是否覆盖输入要素。 此参数仅对面输入要素有效。</para>
-		/// <para>未选中 - 缓冲区会叠加或覆盖输入要素。 这是默认设置。</para>
-		/// <para>选中 - 缓冲区将是围绕输入要素的环，并且不会叠加或覆盖输入要素（输入面内部的区域将从缓冲区中擦除）。</para>
+		/// <para>Specifies whether the buffers will cover the input features. This parameter is valid only for polygon input features.</para>
+		/// <para>Unchecked—Buffers will overlap or cover the input features. This is the default.</para>
+		/// <para>Checked—Buffers will be rings around the input features, and will not overlap or cover the input features (the area inside the input polygon will be erased from the buffer).</para>
 		/// <para><see cref="OutsidePolygonsOnlyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -153,9 +153,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>指定用于创建缓冲区的方法。</para>
-		/// <para>平面—缓冲区将使用欧氏缓冲区方法创建。 当输入具有投影坐标系时，此为默认设置。</para>
-		/// <para>测地线—缓冲区将使用形状不变的测地线缓冲区方法创建。 当输入具有地理坐标系时，此为默认设置。</para>
+		/// <para>Specifies the method used to create the buffer.</para>
+		/// <para>Planar—Buffers will be created using a Euclidean buffer method. This is the default when the input has a projected coordinate system.</para>
+		/// <para>Geodesic—Buffers will be created using a shape-preserving geodesic buffer method. This is the default when the input has a geographic coordinate system.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -180,17 +180,17 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum DissolveOptionEnum 
 		{
 			/// <summary>
-			/// <para>非重叠（环）—将像围绕输入要素的环一样（将其视为输入要素周围的圆环）融合缓冲区。 最小缓冲区将覆盖其输入要素加上缓冲距离的区域，后续缓冲区将是围绕最小缓冲区的圆环，该最小缓冲区不覆盖输入要素或较小缓冲区的区域。 相同距离的所有缓冲区都将融合到单个要素中。 这是默认设置。</para>
+			/// <para>Non-overlapping (rings)—Buffers will be dissolved to resemble rings around the input features that do not overlap (think of these as rings or donuts around the input features). The smallest buffer will cover the area of its input feature plus the buffer distance, and subsequent buffers will be rings around the smallest buffer that do not cover the area of the input feature or smaller buffers. All buffers of the same distance will be dissolved into a single feature. This is the default.</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("非重叠（环）")]
+			[Description("Non-overlapping (rings)")]
 			ALL,
 
 			/// <summary>
-			/// <para>重叠（圆盘）—不融合缓冲区。 不论是否重叠，都会保存所有缓冲区域。 每个缓冲区均会覆盖其输入要素加上任何较小缓冲区的区域。</para>
+			/// <para>Overlapping (disks)—Buffers will not be dissolved. All buffer areas will be maintained regardless of overlap. Each buffer will cover its input feature plus the area of any smaller buffers.</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("重叠（圆盘）")]
+			[Description("Overlapping (disks)")]
 			NONE,
 
 		}
@@ -201,14 +201,14 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum OutsidePolygonsOnlyEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Buffers will be rings around the input features, and will not overlap or cover the input features (the area inside the input polygon will be erased from the buffer).</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("OUTSIDE_ONLY")]
 			OUTSIDE_ONLY,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Buffers will overlap or cover the input features. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("FULL")]
@@ -222,17 +222,17 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>平面—缓冲区将使用欧氏缓冲区方法创建。 当输入具有投影坐标系时，此为默认设置。</para>
+			/// <para>Planar—Buffers will be created using a Euclidean buffer method. This is the default when the input has a projected coordinate system.</para>
 			/// </summary>
 			[GPValue("PLANAR")]
-			[Description("平面")]
+			[Description("Planar")]
 			Planar,
 
 			/// <summary>
-			/// <para>测地线—缓冲区将使用形状不变的测地线缓冲区方法创建。 当输入具有地理坐标系时，此为默认设置。</para>
+			/// <para>Geodesic—Buffers will be created using a shape-preserving geodesic buffer method. This is the default when the input has a geographic coordinate system.</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
-			[Description("测地线")]
+			[Description("Geodesic")]
 			Geodesic,
 
 		}

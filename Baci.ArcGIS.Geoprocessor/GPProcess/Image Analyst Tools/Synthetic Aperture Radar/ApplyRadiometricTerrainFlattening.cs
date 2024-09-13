@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Apply Radiometric Terrain Flattening</para>
-	/// <para>应用辐射地形扁率</para>
-	/// <para>校正输入合成孔径雷达 (SAR) 数据中因地形引起的辐射变形。</para>
+	/// <para>Apply Radiometric Terrain Flattening</para>
+	/// <para>Corrects the input synthetic aperture radar (SAR) data for radiometric distortions due to topography.</para>
 	/// </summary>
 	public class ApplyRadiometricTerrainFlattening : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRadarData">
 		/// <para>Input Radar Data</para>
-		/// <para>输入雷达数据。</para>
-		/// <para>必须通过辐射方法将数据校准到 beta nought。</para>
+		/// <para>The input radar data.</para>
+		/// <para>The data must be radiometrically calibrated to beta nought.</para>
 		/// </param>
 		/// <param name="OutRadarData">
 		/// <para>Output Radar Data</para>
-		/// <para>应用辐射地形扁率的雷达数据。</para>
+		/// <para>The radiometrically terrain-flattened radar data.</para>
 		/// </param>
 		/// <param name="InDemRaster">
 		/// <para>DEM Raster</para>
-		/// <para>输入 DEM。</para>
-		/// <para>将使用 DEM 估算局部照明区域和局部入射角。</para>
+		/// <para>The input DEM.</para>
+		/// <para>The DEM will be used to estimate the local illuminated area and the local incidence angle.</para>
 		/// </param>
 		public ApplyRadiometricTerrainFlattening(object InRadarData, object OutRadarData, object InDemRaster)
 		{
@@ -41,9 +41,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 应用辐射地形扁率</para>
+		/// <para>Tool Display Name : Apply Radiometric Terrain Flattening</para>
 		/// </summary>
-		public override string DisplayName() => "应用辐射地形扁率";
+		public override string DisplayName() => "Apply Radiometric Terrain Flattening";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyRadiometricTerrainFlattening</para>
@@ -77,8 +77,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Radar Data</para>
-		/// <para>输入雷达数据。</para>
-		/// <para>必须通过辐射方法将数据校准到 beta nought。</para>
+		/// <para>The input radar data.</para>
+		/// <para>The data must be radiometrically calibrated to beta nought.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Radar Data</para>
-		/// <para>应用辐射地形扁率的雷达数据。</para>
+		/// <para>The radiometrically terrain-flattened radar data.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -94,8 +94,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>DEM Raster</para>
-		/// <para>输入 DEM。</para>
-		/// <para>将使用 DEM 估算局部照明区域和局部入射角。</para>
+		/// <para>The input DEM.</para>
+		/// <para>The DEM will be used to estimate the local illuminated area and the local incidence angle.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -103,9 +103,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Apply geoid correction</para>
-		/// <para>指定是否将输入 DEM 的垂直参考系统转换为椭球体高度。 大多数高程数据集均参考海平面正高，因此在这些情况下，需要进行校正以将海平面正高转换为椭球体高度。</para>
-		/// <para>选中 - 将进行大地水准面校正以将正高转换为椭球体高度（根据 EGM96 大地水准面）。 这是默认设置。</para>
-		/// <para>未选中 - 不会进行大地水准面校正。 只有在使用椭球体高度表示 DEM 的情况下，才使用此选项。</para>
+		/// <para>Specifies whether the vertical reference system of the input DEM will be transformed to ellipsoidal height. Most elevation datasets are referenced to sea level orthometric height, so a correction is required in these cases to convert to ellipsoidal height.</para>
+		/// <para>Checked—A geoid correction will be made to convert orthometric height to ellipsoidal height (based on EGM96 geoid). This is the default.</para>
+		/// <para>Unchecked—No geoid correction will be made. Use this option only if the DEM is expressed in ellipsoidal height.</para>
 		/// <para><see cref="GeoidEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -115,8 +115,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Polarization Bands</para>
-		/// <para>将应用辐射地形扁率的极化波段。</para>
-		/// <para>默认情况下，第一个波段处于选中状态。</para>
+		/// <para>The polarization bands that will be radiometrically terrain flattened.</para>
+		/// <para>The first band is selected by default.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -124,9 +124,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Calibration Type</para>
-		/// <para>指定是否将使用 sigma naught 或 gamma nought 对输出应用地形扁率。</para>
-		/// <para>Gamma nought—将使用 DEM 对区域进行精确计算来校正 beta nought 反向散射。 这是默认设置。</para>
-		/// <para>Sigma nought—将使用与 DEM 局部相切的平面单位面积来校正 beta nought 反向散射。</para>
+		/// <para>Specifies whether the output will be terrain flattened using sigma nought or gamma nought.</para>
+		/// <para>Gamma nought— The beta nought backscatter will be corrected using an accurate computation of an area using a DEM. This is the default.</para>
+		/// <para>Sigma nought— The beta nought backscatter will be corrected using the unit area of a plane that is locally tangent to the DEM.</para>
 		/// <para><see cref="CalibrationTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Out Scattering Area</para>
-		/// <para>散射区域雷达数据集。</para>
+		/// <para>The scattering area radar dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Out Geometric Distortion</para>
-		/// <para>4 波段几何畸变雷达数据集。 第一波段为地形坡度，第二波段为视角，第三波段为收缩率，第四波段为局部入射角。</para>
+		/// <para>The 4-band geometric distortion radar dataset. The first band is the terrain slope, the second band is look angle, the third band is the foreshortening ratio, and the fourth band is the local incidence angle.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -154,13 +154,13 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Out Geometric Distortion Mask</para>
-		/// <para>1 波段几何畸变掩膜雷达数据集。 像素使用六个唯一值进行分类，每种畸变类型一个：</para>
-		/// <para>未指定 - 值为 0</para>
-		/// <para>收缩 - 值为 1</para>
-		/// <para>延长 - 值为 2</para>
-		/// <para>阴影 - 值为 3</para>
-		/// <para>重叠 - 值为 4</para>
-		/// <para>重叠和阴影 - 值为 5</para>
+		/// <para>The 1-band geometric distortion mask radar dataset. The pixels are classified using six unique values, one for each distortion type:</para>
+		/// <para>Undetermined —Value of 0</para>
+		/// <para>Foreshortening —Value of 1</para>
+		/// <para>Lengthening —Value of 2</para>
+		/// <para>Shadow —Value of 3</para>
+		/// <para>Layover —Value of 4</para>
+		/// <para>Layover and shadow —Value of 5</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -184,14 +184,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum GeoidEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—A geoid correction will be made to convert orthometric height to ellipsoidal height (based on EGM96 geoid). This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("GEOID")]
 			GEOID,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—No geoid correction will be made. Use this option only if the DEM is expressed in ellipsoidal height.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]
@@ -205,14 +205,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum CalibrationTypeEnum 
 		{
 			/// <summary>
-			/// <para>Sigma nought—将使用与 DEM 局部相切的平面单位面积来校正 beta nought 反向散射。</para>
+			/// <para>Sigma nought— The beta nought backscatter will be corrected using the unit area of a plane that is locally tangent to the DEM.</para>
 			/// </summary>
 			[GPValue("SIGMA_NOUGHT")]
 			[Description("Sigma nought")]
 			Sigma_nought,
 
 			/// <summary>
-			/// <para>Gamma nought—将使用 DEM 对区域进行精确计算来校正 beta nought 反向散射。 这是默认设置。</para>
+			/// <para>Gamma nought— The beta nought backscatter will be corrected using an accurate computation of an area using a DEM. This is the default.</para>
 			/// </summary>
 			[GPValue("GAMMA_NOUGHT")]
 			[Description("Gamma nought")]

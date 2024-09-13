@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Optimal Path As Raster</para>
-	/// <para>最佳路径为栅格</para>
-	/// <para>将从源到目的地的最佳路径计算为栅格。</para>
+	/// <para>Optimal Path As Raster</para>
+	/// <para>Calculates the optimal path from a source to a destination as a raster.</para>
 	/// </summary>
 	public class OptimalPathAsRaster : AbstractGPProcess
 	{
@@ -21,22 +21,22 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		/// <param name="Inputdestinationrasterorfeatures">
 		/// <para>Input raster or feature destination data</para>
-		/// <para>用于标识确定通向最小成本源的最小积累成本路径时基于的位置的栅格或要素数据集。</para>
-		/// <para>对于栅格，输入类型必须为整型，并且必须由具有有效值（零为有效值）的像元组成。 并且必须为其余的像元指定 NoData。 对于要素服务，输入类型可以为点、线或面。</para>
+		/// <para>A raster or feature dataset identifying locations from which the least accumulative cost path is determined to the least costly source.</para>
+		/// <para>For a raster, the input type must be integer, and it must consist of cells that have valid values (zero is a valid value). The remaining cells must be assigned NoData. For a feature service, the input type can be point, line or polygon.</para>
 		/// </param>
 		/// <param name="Inputdistanceaccumulationraster">
 		/// <para>Input distance accumulation raster</para>
-		/// <para>距离累积栅格用于确定从源到目的地的最佳路径。</para>
-		/// <para>距离累积栅格通常使用距离累积或距离分配工具进行创建。 距离累积栅格中的每个像元表示表面上从每个像元到源像元集的最小累积成本距离。</para>
+		/// <para>The distance accumulation raster is used to determine the optimal path from the sources to the destinations.</para>
+		/// <para>The distance accumulation raster is usually created with the Distance Accumulation or Distance Allocation tool. Each cell in the distance accumulation raster represents the minimum accumulative cost distance over a surface from each cell to a set of source cells.</para>
 		/// </param>
 		/// <param name="Inputbackdirectionraster">
 		/// <para>Input back direction or flow direction raster</para>
-		/// <para>反向栅格包含以度为单位的计算方向。 该方向用于标识沿最佳路径返回最小累积成本源同时避开障碍的下一个像元。</para>
-		/// <para>值范围为 0 度到 360 度。 值 0 将会留供源像元使用。 正东(右侧)是 90 度，且值以顺时针方向增加(180 是南方、270 是西方、360 是北方)。</para>
+		/// <para>The back direction raster contains calculated directions in degrees. The direction identifies the next cell along the optimal path back to the least accumulative cost source while avoiding barriers.</para>
+		/// <para>The range of values is from 0 degrees to 360 degrees. The value 0 is reserved for the source cells. Due east (right) is 90 degrees, and the values increase clockwise (180 is south, 270 is west, and 360 is north).</para>
 		/// </param>
 		/// <param name="Outputrastername">
 		/// <para>Output Raster Name</para>
-		/// <para>包含最佳路径的输出栅格服务的名称。</para>
+		/// <para>The name of output raster service that contains the optimal paths.</para>
 		/// </param>
 		public OptimalPathAsRaster(object Inputdestinationrasterorfeatures, object Inputdistanceaccumulationraster, object Inputbackdirectionraster, object Outputrastername)
 		{
@@ -47,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 最佳路径为栅格</para>
+		/// <para>Tool Display Name : Optimal Path As Raster</para>
 		/// </summary>
-		public override string DisplayName() => "最佳路径为栅格";
+		public override string DisplayName() => "Optimal Path As Raster";
 
 		/// <summary>
 		/// <para>Tool Name : OptimalPathAsRaster</para>
@@ -83,8 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input raster or feature destination data</para>
-		/// <para>用于标识确定通向最小成本源的最小积累成本路径时基于的位置的栅格或要素数据集。</para>
-		/// <para>对于栅格，输入类型必须为整型，并且必须由具有有效值（零为有效值）的像元组成。 并且必须为其余的像元指定 NoData。 对于要素服务，输入类型可以为点、线或面。</para>
+		/// <para>A raster or feature dataset identifying locations from which the least accumulative cost path is determined to the least costly source.</para>
+		/// <para>For a raster, the input type must be integer, and it must consist of cells that have valid values (zero is a valid value). The remaining cells must be assigned NoData. For a feature service, the input type can be point, line or polygon.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -93,8 +93,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input distance accumulation raster</para>
-		/// <para>距离累积栅格用于确定从源到目的地的最佳路径。</para>
-		/// <para>距离累积栅格通常使用距离累积或距离分配工具进行创建。 距离累积栅格中的每个像元表示表面上从每个像元到源像元集的最小累积成本距离。</para>
+		/// <para>The distance accumulation raster is used to determine the optimal path from the sources to the destinations.</para>
+		/// <para>The distance accumulation raster is usually created with the Distance Accumulation or Distance Allocation tool. Each cell in the distance accumulation raster represents the minimum accumulative cost distance over a surface from each cell to a set of source cells.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -103,8 +103,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input back direction or flow direction raster</para>
-		/// <para>反向栅格包含以度为单位的计算方向。 该方向用于标识沿最佳路径返回最小累积成本源同时避开障碍的下一个像元。</para>
-		/// <para>值范围为 0 度到 360 度。 值 0 将会留供源像元使用。 正东(右侧)是 90 度，且值以顺时针方向增加(180 是南方、270 是西方、360 是北方)。</para>
+		/// <para>The back direction raster contains calculated directions in degrees. The direction identifies the next cell along the optimal path back to the least accumulative cost source while avoiding barriers.</para>
+		/// <para>The range of values is from 0 degrees to 360 degrees. The value 0 is reserved for the source cells. Due east (right) is 90 degrees, and the values increase clockwise (180 is south, 270 is west, and 360 is north).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Raster Name</para>
-		/// <para>包含最佳路径的输出栅格服务的名称。</para>
+		/// <para>The name of output raster service that contains the optimal paths.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Destination field</para>
-		/// <para>要用于获得目标位置的值的字段。</para>
+		/// <para>The field that will be used to obtain values for the destination locations.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -129,10 +129,10 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Path type</para>
-		/// <para>用于指定对输入目标数据上的值和区域在成本路径计算中的解释方式进行定义的关键字。</para>
-		/// <para>每个区域—对于输入目标数据中的每个区域，系统会确定最小成本路径并将该路径保存在输出栅格上。 利用该选项，每个区域的最小成本路径可起始于区域内成本距离权重最小的像元。 这是默认设置。</para>
-		/// <para>最佳单一—对于输入目标数据上的所有像元，最小成本路径将派生自距源像元具有最小成本路径的最小值的像元。</para>
-		/// <para>每个像元—对于输入目标数据中每一个具有有效值的像元，系统会确定最小成本路径并将该路径保存在输出栅格上。 利用该选项，系统会分别处理输入目标数据中的每个像元，并确定每个像元的最小成本路径。</para>
+		/// <para>Specifies a keyword defining the manner in which the values and zones in the input destination data will be interpreted in the cost path calculations.</para>
+		/// <para>Each zone—For each zone in the input destination data, a least-cost path will be determined and saved on the output raster. With this option, the least-cost path for each zone begins at the cell with the lowest cost distance weighting in the zone. This is the default.</para>
+		/// <para>Best single—For all cells in the input destination data, the least-cost path will be derived from the cell with the minimum of the least-cost paths to source cells.</para>
+		/// <para>Each cell—For each cell with valid values in the input destination data, a least-cost will be is determined and saved on the output raster. With this option, each cell of the input destination data is treated separately, and a least-cost path is determined for each cell.</para>
 		/// <para><see cref="PathtypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -164,24 +164,24 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public enum PathtypeEnum 
 		{
 			/// <summary>
-			/// <para>最佳单一—对于输入目标数据上的所有像元，最小成本路径将派生自距源像元具有最小成本路径的最小值的像元。</para>
+			/// <para>Best single—For all cells in the input destination data, the least-cost path will be derived from the cell with the minimum of the least-cost paths to source cells.</para>
 			/// </summary>
 			[GPValue("BEST_SINGLE")]
-			[Description("最佳单一")]
+			[Description("Best single")]
 			Best_single,
 
 			/// <summary>
-			/// <para>每个像元—对于输入目标数据中每一个具有有效值的像元，系统会确定最小成本路径并将该路径保存在输出栅格上。 利用该选项，系统会分别处理输入目标数据中的每个像元，并确定每个像元的最小成本路径。</para>
+			/// <para>Each cell—For each cell with valid values in the input destination data, a least-cost will be is determined and saved on the output raster. With this option, each cell of the input destination data is treated separately, and a least-cost path is determined for each cell.</para>
 			/// </summary>
 			[GPValue("EACH_CELL")]
-			[Description("每个像元")]
+			[Description("Each cell")]
 			Each_cell,
 
 			/// <summary>
-			/// <para>每个区域—对于输入目标数据中的每个区域，系统会确定最小成本路径并将该路径保存在输出栅格上。 利用该选项，每个区域的最小成本路径可起始于区域内成本距离权重最小的像元。 这是默认设置。</para>
+			/// <para>Each zone—For each zone in the input destination data, a least-cost path will be determined and saved on the output raster. With this option, the least-cost path for each zone begins at the cell with the lowest cost distance weighting in the zone. This is the default.</para>
 			/// </summary>
 			[GPValue("EACH_ZONE")]
-			[Description("每个区域")]
+			[Description("Each zone")]
 			Each_zone,
 
 		}

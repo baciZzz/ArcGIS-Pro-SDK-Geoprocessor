@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Remove Dataset From Multifile Feature Connection</para>
-	/// <para>从多文件要素连接移除数据集</para>
-	/// <para>用于从现有多文件要素连接 (MFC) 中移除一个或多个数据集。 此工具仅从 MFC 文件中移除数据集，而不会修改源数据。</para>
+	/// <para>Remove Dataset From Multifile Feature Connection</para>
+	/// <para>Removes one or more datasets from an existing multifile feature connection (MFC). This tool only removes the dataset from the MFC file, the source data is not modified.</para>
 	/// </summary>
 	public class RemoveDatasetFromBDC : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		/// <param name="BdcDatasets">
 		/// <para>Multifile Feature Connection Datasets</para>
-		/// <para>要从 .mfc 文件移除的数据集。</para>
+		/// <para>The datasets to remove from the .mfc file.</para>
 		/// </param>
 		public RemoveDatasetFromBDC(object BdcDatasets)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 从多文件要素连接移除数据集</para>
+		/// <para>Tool Display Name : Remove Dataset From Multifile Feature Connection</para>
 		/// </summary>
-		public override string DisplayName() => "从多文件要素连接移除数据集";
+		public override string DisplayName() => "Remove Dataset From Multifile Feature Connection";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveDatasetFromBDC</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Multifile Feature Connection Datasets</para>
-		/// <para>要从 .mfc 文件移除的数据集。</para>
+		/// <para>The datasets to remove from the .mfc file.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]

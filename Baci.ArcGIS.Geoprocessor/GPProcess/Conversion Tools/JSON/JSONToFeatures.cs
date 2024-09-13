@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>JSON To Features</para>
-	/// <para>JSON 转要素</para>
-	/// <para>用于将 Esri JSON (.json) 格式文件或 GeoJSON (.geojson) 格式文件中的要素集合转换成要素类。</para>
+	/// <para>JSON To Features</para>
+	/// <para>Converts feature collections in an Esri JSON formatted file (.json) or a GeoJSON formatted file (.geojson) to a feature class.</para>
 	/// </summary>
 	public class JSONToFeatures : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InJsonFile">
 		/// <para>Input JSON or GeoJSON</para>
-		/// <para>要转换为要素类的输入 .json 或 .geojson 文件。</para>
-		/// <para>输入文件扩展名将决定为了实现正确转换，工具应使用的格式。 对于 Esri JSON 格式的文件，应使用 .json 扩展名；对于 GeoJSON 格式的文件，应使用 .geojson 扩展名。</para>
+		/// <para>The input .json or .geojson file to convert to a feature class.</para>
+		/// <para>The input file extension determines the format used by the tool for proper conversion. For Esri JSON formatted file, use the .json extension; for GeoJSON formatted files, use the .geojson extension.</para>
 		/// </param>
 		/// <param name="OutFeatures">
 		/// <para>Output Feature Class</para>
-		/// <para>将包含来自输入 .json 或 .geojson 文件的要素的输出要素类。</para>
+		/// <para>The output feature class that will contain the features from the input .json or .geojson file.</para>
 		/// </param>
 		public JSONToFeatures(object InJsonFile, object OutFeatures)
 		{
@@ -35,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : JSON 转要素</para>
+		/// <para>Tool Display Name : JSON To Features</para>
 		/// </summary>
-		public override string DisplayName() => "JSON 转要素";
+		public override string DisplayName() => "JSON To Features";
 
 		/// <summary>
 		/// <para>Tool Name : JSONToFeatures</para>
@@ -71,8 +71,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input JSON or GeoJSON</para>
-		/// <para>要转换为要素类的输入 .json 或 .geojson 文件。</para>
-		/// <para>输入文件扩展名将决定为了实现正确转换，工具应使用的格式。 对于 Esri JSON 格式的文件，应使用 .json 扩展名；对于 GeoJSON 格式的文件，应使用 .geojson 扩展名。</para>
+		/// <para>The input .json or .geojson file to convert to a feature class.</para>
+		/// <para>The input file extension determines the format used by the tool for proper conversion. For Esri JSON formatted file, use the .json extension; for GeoJSON formatted files, use the .geojson extension.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>将包含来自输入 .json 或 .geojson 文件的要素的输出要素类。</para>
+		/// <para>The output feature class that will contain the features from the input .json or .geojson file.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -90,11 +90,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Geometry Type</para>
-		/// <para>要从 GeoJSON 转换为要素的几何类型。 此参数仅在输入为 .geojson 文件时使用。 如果　.geojson　文件不包含任何所选几何类型，则输出要素类将为空。</para>
-		/// <para>点—点将转换为要素。</para>
-		/// <para>多点—多点将转换为要素。</para>
-		/// <para>折线—折线将转换为要素。</para>
-		/// <para>面—面将转换为要素。</para>
+		/// <para>Specifies the geometry type that will be used to convert from GeoJSON to features. This parameter is only used when the input is a .geojson file. If the .geojson file does not contain any of the selected geometry type, the output feature class will be empty.</para>
+		/// <para>Point—Points will be converted to features.</para>
+		/// <para>Multipoint—Multipoints will be converted to features.</para>
+		/// <para>Polyline—Polylines will be converted to features.</para>
+		/// <para>Polygon—Polygons will be converted to features.</para>
 		/// <para><see cref="GeometryTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -119,31 +119,31 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum GeometryTypeEnum 
 		{
 			/// <summary>
-			/// <para>点—点将转换为要素。</para>
+			/// <para>Point—Points will be converted to features.</para>
 			/// </summary>
 			[GPValue("POINT")]
-			[Description("点")]
+			[Description("Point")]
 			Point,
 
 			/// <summary>
-			/// <para>多点—多点将转换为要素。</para>
+			/// <para>Multipoint—Multipoints will be converted to features.</para>
 			/// </summary>
 			[GPValue("MULTIPOINT")]
-			[Description("多点")]
+			[Description("Multipoint")]
 			Multipoint,
 
 			/// <summary>
-			/// <para>面—面将转换为要素。</para>
+			/// <para>Polygon—Polygons will be converted to features.</para>
 			/// </summary>
 			[GPValue("POLYGON")]
-			[Description("面")]
+			[Description("Polygon")]
 			Polygon,
 
 			/// <summary>
-			/// <para>折线—折线将转换为要素。</para>
+			/// <para>Polyline—Polylines will be converted to features.</para>
 			/// </summary>
 			[GPValue("POLYLINE")]
-			[Description("折线")]
+			[Description("Polyline")]
 			Polyline,
 
 		}

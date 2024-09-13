@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Dissolve Network</para>
-	/// <para>融合网络</para>
-	/// <para>创建可最大程度减少正确构建输入网络数据集模型所需线要素数目的网络数据集。提高输出网络数据集的效率，便可减少求解分析、绘制结果和生成驾车指示所需的时间。此工具将输出新网络数据集和源要素类；输入网络数据集及其源要素保持不变。</para>
+	/// <para>Dissolve Network</para>
+	/// <para>Creates a network dataset that minimizes the number of line features required to correctly model the input network dataset. The more efficient output network dataset reduces the time required to solve analyses, draw results, and generate driving directions. This tool outputs a new network dataset and source feature classes; the input network dataset and its source features remain unchanged.</para>
 	/// </summary>
 	public class DissolveNetwork : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="InNetworkDataset">
 		/// <para>Input Network Dataset</para>
-		/// <para>要融合的网络数据集。</para>
-		/// <para>输入网络数据集必须是只有一个边源的文件地理数据库或个人地理数据库网络数据集。允许任意数目的交汇点源和转弯源。边源必须具有：</para>
-		/// <para>端点连通性策略</para>
-		/// <para>包括“无”或“高程字段”的高程策略</para>
-		/// <para>必须先构建输入网络数据集，之后才能在此工具中使用。</para>
+		/// <para>The network dataset to be dissolved.</para>
+		/// <para>The input network dataset must be a file or personal geodatabase network dataset with exactly one edge source. Any number of junction sources and turn sources is allowed. The edge source must have:</para>
+		/// <para>End point connectivity policy</para>
+		/// <para>An elevation policy of either None or Elevation Fields</para>
+		/// <para>The input network dataset must be built before it can be used in this tool.</para>
 		/// </param>
 		/// <param name="OutWorkspaceLocation">
 		/// <para>Output Geodatabase Workspace</para>
-		/// <para>要创建融合的网络数据集的地理数据库工作空间。工作空间必须为 ArcGIS 10 或更高版本地理数据库，并且必须是与输入网络数据集所在的地理数据库不同的地理数据库。</para>
+		/// <para>The geodatabase workspace in which to create the dissolved network dataset. The workspace must be an ArcGIS 10 geodatabase or later, and it must be a different geodatabase than the one where the input network dataset resides.</para>
 		/// </param>
 		public DissolveNetwork(object InNetworkDataset, object OutWorkspaceLocation)
 		{
@@ -38,9 +38,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 融合网络</para>
+		/// <para>Tool Display Name : Dissolve Network</para>
 		/// </summary>
-		public override string DisplayName() => "融合网络";
+		public override string DisplayName() => "Dissolve Network";
 
 		/// <summary>
 		/// <para>Tool Name : DissolveNetwork</para>
@@ -74,11 +74,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Input Network Dataset</para>
-		/// <para>要融合的网络数据集。</para>
-		/// <para>输入网络数据集必须是只有一个边源的文件地理数据库或个人地理数据库网络数据集。允许任意数目的交汇点源和转弯源。边源必须具有：</para>
-		/// <para>端点连通性策略</para>
-		/// <para>包括“无”或“高程字段”的高程策略</para>
-		/// <para>必须先构建输入网络数据集，之后才能在此工具中使用。</para>
+		/// <para>The network dataset to be dissolved.</para>
+		/// <para>The input network dataset must be a file or personal geodatabase network dataset with exactly one edge source. Any number of junction sources and turn sources is allowed. The edge source must have:</para>
+		/// <para>End point connectivity policy</para>
+		/// <para>An elevation policy of either None or Elevation Fields</para>
+		/// <para>The input network dataset must be built before it can be used in this tool.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Geodatabase Workspace</para>
-		/// <para>要创建融合的网络数据集的地理数据库工作空间。工作空间必须为 ArcGIS 10 或更高版本地理数据库，并且必须是与输入网络数据集所在的地理数据库不同的地理数据库。</para>
+		/// <para>The geodatabase workspace in which to create the dissolved network dataset. The workspace must be an ArcGIS 10 geodatabase or later, and it must be a different geodatabase than the one where the input network dataset resides.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]

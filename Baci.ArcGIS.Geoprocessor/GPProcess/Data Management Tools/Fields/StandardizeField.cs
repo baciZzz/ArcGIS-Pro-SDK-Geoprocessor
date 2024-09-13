@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Standardize Field</para>
-	/// <para>标准化字段</para>
-	/// <para>通过将字段中的值转换为遵循指定比例的值来标准化这些值。标准化方法包括 z 得分、最小值-最大值、最大绝对值和稳健标准化。</para>
+	/// <para>Standardize Field</para>
+	/// <para>Standardizes values in fields by converting them to values that follow a specified scale. Standardization methods include z-score, minimum-maximum, absolute maximum, and robust standardization.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>表格，其中包含具有要标准化的值的字段。</para>
+		/// <para>The table containing the field with the values to be standardized.</para>
 		/// </param>
 		/// <param name="Fields">
 		/// <para>Field to Standardize</para>
-		/// <para>包含要标准化的值的字段。对于每个字段，可以指定输出字段名称。如果未提供输出字段名称，则该工具将使用字段名称和所选方法来创建输出字段名称。</para>
+		/// <para>The fields containing the values to be standardized. For each field, an output field name can be specified. If an output field name is not provided, the tool will create an output field name using the field name and selected method.</para>
 		/// </param>
 		public StandardizeField(object InTable, object Fields)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 标准化字段</para>
+		/// <para>Tool Display Name : Standardize Field</para>
 		/// </summary>
-		public override string DisplayName() => "标准化字段";
+		public override string DisplayName() => "Standardize Field";
 
 		/// <summary>
 		/// <para>Tool Name : StandardizeField</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>表格，其中包含具有要标准化的值的字段。</para>
+		/// <para>The table containing the field with the values to be standardized.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field to Standardize</para>
-		/// <para>包含要标准化的值的字段。对于每个字段，可以指定输出字段名称。如果未提供输出字段名称，则该工具将使用字段名称和所选方法来创建输出字段名称。</para>
+		/// <para>The fields containing the values to be standardized. For each field, an output field name can be specified. If an output field name is not provided, the tool will create an output field name using the field name and selected method.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -89,11 +89,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Standardization Method</para>
-		/// <para>指定用于标准化指定字段中包含的值的方法。</para>
-		/// <para>Z 得分—将使用标准得分，即高于或低于平均值的标准差的数量。计算为 Z 得分公式，该公式将计算某列中的值与平均值之间的差值，然后除以列中的值的标准差。这是默认设置。</para>
-		/// <para>最小值 - 最大值—这些值将转换为用户指定的最小值和最大值之间的比例。</para>
-		/// <para>绝对最大值—将该列中的每个值除以该列中的最大绝对值。</para>
-		/// <para>稳健标准化— Z 得分公式的稳健变体可用于标准化指定字段中的值。此变量将使用中位数和四分位数范围来代替平均值和标准差。</para>
+		/// <para>Specifies the method to use to standardize the values contained in the specified fields.</para>
+		/// <para>Z-Score—The standard score, which is the number of standard deviations above or below the mean, is used. The calculation is the Z-Score formula, which calculates the difference between the value and the mean of the values in the column, divided by the standard deviation of the values in the column. This is the default.</para>
+		/// <para>Minimum-maximum—The values are converted to a scale between the user-specified minimum and maximum values.</para>
+		/// <para>Absolute maximum—Each value in the column is divided by the maximum absolute value in the column.</para>
+		/// <para>Robust standardization— A robust variant of the Z-Score formula is used to standardize the values in the specified fields. This variant uses median and interquartile range in place of mean and standard deviation.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Minimum Value</para>
-		/// <para>标准化方法参数的最小值-最大值方法所使用的值，用于指定所提供输出值的比例中的最小值。</para>
+		/// <para>The value used by the Minimum-maximum method of the Standardization Method parameter to specify the minimum value in the scale of the provided output values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Value</para>
-		/// <para>标准化方法参数的最小值-最大值方法所使用的值，用于指定所提供输出值的比例中的最大值。</para>
+		/// <para>The value used by the Minimum-maximum method of the Standardization Method parameter to specify the maximum value in the scale of the provided output values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -141,31 +141,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Z 得分—将使用标准得分，即高于或低于平均值的标准差的数量。计算为 Z 得分公式，该公式将计算某列中的值与平均值之间的差值，然后除以列中的值的标准差。这是默认设置。</para>
+			/// <para>Z-Score—The standard score, which is the number of standard deviations above or below the mean, is used. The calculation is the Z-Score formula, which calculates the difference between the value and the mean of the values in the column, divided by the standard deviation of the values in the column. This is the default.</para>
 			/// </summary>
 			[GPValue("Z-SCORE")]
-			[Description("Z 得分")]
+			[Description("Z-Score")]
 			Z_SCORE,
 
 			/// <summary>
-			/// <para>最小值 - 最大值—这些值将转换为用户指定的最小值和最大值之间的比例。</para>
+			/// <para>Minimum-maximum—The values are converted to a scale between the user-specified minimum and maximum values.</para>
 			/// </summary>
 			[GPValue("MIN-MAX")]
-			[Description("最小值 - 最大值")]
+			[Description("Minimum-maximum")]
 			MIN_MAX,
 
 			/// <summary>
-			/// <para>绝对最大值—将该列中的每个值除以该列中的最大绝对值。</para>
+			/// <para>Absolute maximum—Each value in the column is divided by the maximum absolute value in the column.</para>
 			/// </summary>
 			[GPValue("MAXABS")]
-			[Description("绝对最大值")]
+			[Description("Absolute maximum")]
 			Absolute_maximum,
 
 			/// <summary>
-			/// <para>稳健标准化— Z 得分公式的稳健变体可用于标准化指定字段中的值。此变量将使用中位数和四分位数范围来代替平均值和标准差。</para>
+			/// <para>Robust standardization— A robust variant of the Z-Score formula is used to standardize the values in the specified fields. This variant uses median and interquartile range in place of mean and standard deviation.</para>
 			/// </summary>
 			[GPValue("ROBUST")]
-			[Description("稳健标准化")]
+			[Description("Robust standardization")]
 			Robust_standardization,
 
 		}

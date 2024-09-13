@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Calculate Route Concurrencies</para>
-	/// <para>计算路径并发</para>
-	/// <para>计算和报告 LRS 网络中的并发路径弧段。</para>
+	/// <para>Calculate Route Concurrencies</para>
+	/// <para>Calculates and reports concurrent route sections in an LRS Network.</para>
 	/// </summary>
 	public class CalculateRouteConcurrencies : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InRouteFeatures">
 		/// <para>Input Route Features</para>
-		/// <para>将在其中计算路径并发的 LRS 网络要素类。</para>
+		/// <para>The LRS Network feature class in which route concurrencies will be calculated.</para>
 		/// </param>
 		/// <param name="OutDataset">
 		/// <para>Output Dataset</para>
-		/// <para>计算结果将发布到的要素类或表。</para>
+		/// <para>The feature class or table to which the calculated results will be posted.</para>
 		/// </param>
 		public CalculateRouteConcurrencies(object InRouteFeatures, object OutDataset)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 计算路径并发</para>
+		/// <para>Tool Display Name : Calculate Route Concurrencies</para>
 		/// </summary>
-		public override string DisplayName() => "计算路径并发";
+		public override string DisplayName() => "Calculate Route Concurrencies";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateRouteConcurrencies</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Input Route Features</para>
-		/// <para>将在其中计算路径并发的 LRS 网络要素类。</para>
+		/// <para>The LRS Network feature class in which route concurrencies will be calculated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Output Dataset</para>
-		/// <para>计算结果将发布到的要素类或表。</para>
+		/// <para>The feature class or table to which the calculated results will be posted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Temporal View Date</para>
-		/// <para>网络的时态视图日期（如果已指定）。 将此字段留空可以显示所有时间。</para>
+		/// <para>The temporal view date for the network, if one is specified. Leaving this field blank shows all time.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -96,9 +96,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Set route dominance based on priority rules</para>
-		/// <para>指定是否使用配置的路径优先级规则来设置优先级。</para>
-		/// <para>选中 - 将使用配置的路径优先级规则来确定每个并发弧段中的主要路径。 这是默认设置。</para>
-		/// <para>未选中 - 不会使用配置的路径优先级规则来确定每个并发弧段中的主要路径。</para>
+		/// <para>Specifies whether configured route dominance rules will be used to set dominance.</para>
+		/// <para>Checked—Configured route dominance rules will be used to determine the dominant route in each concurrent section. This is the default.</para>
+		/// <para>Unchecked—Configured route dominance rules will not be used to determine the dominant route in each concurrent section.</para>
 		/// <para><see cref="FindDominanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -108,9 +108,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Include Geometry</para>
-		/// <para>指定输出数据集中是否包含几何。</para>
-		/// <para>选中 - 输出数据集中将包含几何。</para>
-		/// <para>未选中 - 结果中将不包含几何。 这是默认设置。</para>
+		/// <para>Specifies whether geometry will be included in the output dataset.</para>
+		/// <para>Checked—Geometry will be included in the output dataset.</para>
+		/// <para>Unchecked—Geometry will not be included in the output dataset. This is the default.</para>
 		/// <para><see cref="IncludeGeometryEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -135,14 +135,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum FindDominanceEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Configured route dominance rules will be used to determine the dominant route in each concurrent section. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FIND_DOMINANCE")]
 			FIND_DOMINANCE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Configured route dominance rules will not be used to determine the dominant route in each concurrent section.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_FIND_DOMINANCE")]
@@ -156,14 +156,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum IncludeGeometryEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Geometry will be included in the output dataset.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_GEOMETRY")]
 			INCLUDE_GEOMETRY,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Geometry will not be included in the output dataset. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXCLUDE_GEOMETRY")]

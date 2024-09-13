@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Download Rasters</para>
-	/// <para>下载栅格</para>
-	/// <para>下载影像服务或镶嵌数据集中的源文件。</para>
+	/// <para>Download Rasters</para>
+	/// <para>Downloads the source  files from an image service or mosaic dataset.</para>
 	/// </summary>
 	public class DownloadRasters : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InImageService">
 		/// <para>Input</para>
-		/// <para>要下载的影像服务或镶嵌数据集。</para>
+		/// <para>The image service or mosaic dataset to download.</para>
 		/// </param>
 		/// <param name="OutFolder">
 		/// <para>Output Folder</para>
-		/// <para>影像服务或镶嵌数据集的目标。</para>
+		/// <para>The destination for the image service or mosaic dataset.</para>
 		/// </param>
 		public DownloadRasters(object InImageService, object OutFolder)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 下载栅格</para>
+		/// <para>Tool Display Name : Download Rasters</para>
 		/// </summary>
-		public override string DisplayName() => "下载栅格";
+		public override string DisplayName() => "Download Rasters";
 
 		/// <summary>
 		/// <para>Tool Name : DownloadRasters</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input</para>
-		/// <para>要下载的影像服务或镶嵌数据集。</para>
+		/// <para>The image service or mosaic dataset to download.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Folder</para>
-		/// <para>影像服务或镶嵌数据集的目标。</para>
+		/// <para>The destination for the image service or mosaic dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Query Definition</para>
-		/// <para>SQL 表达式，用于将下载限制到满足表达式的栅格数据集。</para>
+		/// <para>An SQL expression to limit the download to raster datasets that satisfy the expression.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -94,11 +94,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Selection Feature</para>
-		/// <para>将下载限制到要素类范围或边界框。将下载与该范围相交的所有栅格数据集。</para>
-		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
-		/// <para>当前显示范围 - 该范围与数据框或可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
-		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
-		/// <para>浏览 - 该范围将基于现有数据集。</para>
+		/// <para>Limits the download to an extent of a feature class or bounding box. All raster datasets that intersect the extent will be downloaded.</para>
+		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
+		/// <para>Current Display Extent—The extent is equal to the data frame or visible display. The option is not available when there is no active map.</para>
+		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
+		/// <para>Browse—The extent will be based on an existing dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -106,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Clipping Using Selection Feature</para>
-		/// <para>指定是否想根据要素的几何来裁剪下载的图像。这样就会裁剪与裁剪几何相交的任何栅格，然后将其下载。当感兴趣区域不是矩形时，这个选项非常有用。在裁剪已下载的影像时，需要指定裁剪影像的输出格式。</para>
-		/// <para>取消选中 - 基于指定的最小外接矩形对文件进行裁剪。这是默认设置。</para>
-		/// <para>选中 - 基于选择要素的几何对文件进行裁剪。</para>
+		/// <para>Specify if you want to clip the downloaded images based on the geometry of a feature. Any raster that intersects the clipping geometry will be clipped and then downloaded. This is useful when your area of interest is not a rectangle. When downloaded images are clipped, you need to specify an output format for the clipped images.</para>
+		/// <para>Unchecked—The files will be clipped based on the minimum bounding rectangle that has been specified. This is the default.</para>
+		/// <para>Checked—The files will be clipped based on the geometry of the Selection Feature.</para>
 		/// <para><see cref="ClippingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -118,9 +118,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Convert Rasters</para>
-		/// <para>选择始终将栅格转换为指定格式，还是仅在需要时进行转换。</para>
-		/// <para>取消选中 - 不会将栅格数据集转换为新的格式。</para>
-		/// <para>选中 - 将下载的栅格数据集转换为其他格式。如果使用选择要素限制范围，您将需要在输出格式参数中指定格式。</para>
+		/// <para>Choose whether to always convert your rasters to the specified format, or to only convert when it is necessary.</para>
+		/// <para>Unchecked—Do not convert the raster datasets to a new format.</para>
+		/// <para>Checked—Convert the downloaded raster datasets into another format. If you used Selection Feature to limit the extent, then you need to specify a format in the Output Format parameter.</para>
 		/// <para><see cref="ConvertRastersEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -130,18 +130,18 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Format</para>
-		/// <para>为已下载的栅格数据集选择输出格式。</para>
-		/// <para>Tiff—标记图像文件格式。这是默认设置。</para>
-		/// <para>Bil—Esri 波段按行交叉格式。</para>
-		/// <para>Bsq—Esri 波段顺序格式。</para>
-		/// <para>Bip—Esri 波段按像元交叉格式。</para>
-		/// <para>Bmp—位图。</para>
-		/// <para>ENVI Dat—ENVI DAT 文件。</para>
-		/// <para>Imagine 图像—ERDAS IMAGINE。</para>
-		/// <para>Jpeg—联合图像专家组。如果已选择，也可指定压缩质量。压缩质量的有效值范围是 0 到 100。</para>
-		/// <para>Gif—图形交换格式。</para>
-		/// <para>Jp2—JPEG 2000。如果已选择，也可指定压缩质量。压缩质量的有效值范围是 0 到 100。</para>
-		/// <para>Png—可移植网络图形。</para>
+		/// <para>Choose a output format for the downloaded raster datasets.</para>
+		/// <para>Tiff—Tagged Image File Format. This is the default.</para>
+		/// <para>Bil—Esri band interleaved by line.</para>
+		/// <para>Bsq—Esri band sequential.</para>
+		/// <para>Bip—Esri band interleaved by pixel.</para>
+		/// <para>Bmp—Bitmap.</para>
+		/// <para>ENVI Dat—ENVI DAT file.</para>
+		/// <para>Imagine image—ERDAS IMAGINE.</para>
+		/// <para>Jpeg—Joint Photographics Experts Group. If chosen, you can also specify the compression quality. The valid compression quality value ranges are from 0 to 100.</para>
+		/// <para>Gif—Graphic interchange format.</para>
+		/// <para>Jp2—JPEG 2000. If chosen, you can also specify the compression quality. The valid compression quality value ranges are from 0 to 100.</para>
+		/// <para>Png—Portable Network Graphics.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -150,15 +150,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Compression Method</para>
-		/// <para>选择使用指定输出格式的压缩方法。</para>
-		/// <para>无—不会发生任何压缩。这是默认设置。</para>
-		/// <para>Jpeg—使用公共 JPEG 压缩算法的有损压缩。如果选择 JPEG，还可以指定压缩质量。压缩质量的有效值范围是 0 到 100。这种压缩方式可用于 JPEG 文件和 TIFF 文件。</para>
-		/// <para>Lzw—保留所有栅格像元值的无损压缩。</para>
-		/// <para>Packbits—用于 TIFF 文件的 PackBits 压缩。</para>
-		/// <para>Rle—用于 IMG 文件的游程编码。</para>
-		/// <para>Ccitt Group 3—用于 1 位数据的无损压缩。</para>
-		/// <para>Ccitt Group 4—用于 1 位数据的无损压缩。</para>
-		/// <para>Ccitt 1D—用于 1 位数据的无损压缩。</para>
+		/// <para>Choose the compression method to use with the specified Output Format.</para>
+		/// <para>None—No compression will occur. This is the default.</para>
+		/// <para>Jpeg—Lossy compression that uses the public JPEG compression algorithm. If you choose JPEG, you can also specify the compression quality. The valid compression quality value ranges are from 0 to 100. This compression can be used for JPEG files and TIFF files.</para>
+		/// <para>Lzw—Lossless compression that preserves all raster cell values.</para>
+		/// <para>Packbits—PackBits compression for TIFF files.</para>
+		/// <para>Rle—Run-length encoding for IMG files.</para>
+		/// <para>Ccitt Group 3—Lossless compression for 1-bit data.</para>
+		/// <para>Ccitt Group 4—Lossless compression for 1-bit data.</para>
+		/// <para>Ccitt 1D—Lossless compression for 1-bit data.</para>
 		/// <para><see cref="CompressionMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Compression Quality</para>
-		/// <para>设置一个 1 到 100 之间的值。值越高则图像质量越好，但压缩程度也越低。</para>
+		/// <para>Set a value from 1 - 100. Higher values will have better image quality, but less compression.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -176,9 +176,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maintain Folder Structure</para>
-		/// <para>确定所下载栅格的文件夹结构。</para>
-		/// <para>选中 - 复制用于存储源栅格数据集的层次文件夹结构。</para>
-		/// <para>取消选中 - 栅格数据集将下载到输出文件夹中作为平面文件夹结构</para>
+		/// <para>Determines the folder structure of the downloaded rasters.</para>
+		/// <para>Checked—replicates the hierarchical folder structure used to store the source raster datasets.</para>
+		/// <para>Unchecked—raster datasets will be downloaded into the output folder as a flat folder structure</para>
 		/// <para><see cref="MAINTAINFOLDEREnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -210,14 +210,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ClippingEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The files will be clipped based on the geometry of the Selection Feature.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CLIPPING")]
 			CLIPPING,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The files will be clipped based on the minimum bounding rectangle that has been specified. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CLIPPING")]
@@ -231,14 +231,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ConvertRastersEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Convert the downloaded raster datasets into another format. If you used Selection Feature to limit the extent, then you need to specify a format in the Output Format parameter.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ALWAYS_CONVERT")]
 			ALWAYS_CONVERT,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Do not convert the raster datasets to a new format.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("CONVERT_AS_REQUIRED")]
@@ -252,56 +252,56 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CompressionMethodEnum 
 		{
 			/// <summary>
-			/// <para>无—不会发生任何压缩。这是默认设置。</para>
+			/// <para>None—No compression will occur. This is the default.</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("无")]
+			[Description("None")]
 			None,
 
 			/// <summary>
-			/// <para>Jpeg—使用公共 JPEG 压缩算法的有损压缩。如果选择 JPEG，还可以指定压缩质量。压缩质量的有效值范围是 0 到 100。这种压缩方式可用于 JPEG 文件和 TIFF 文件。</para>
+			/// <para>Jpeg—Lossy compression that uses the public JPEG compression algorithm. If you choose JPEG, you can also specify the compression quality. The valid compression quality value ranges are from 0 to 100. This compression can be used for JPEG files and TIFF files.</para>
 			/// </summary>
 			[GPValue("JPEG")]
 			[Description("Jpeg")]
 			Jpeg,
 
 			/// <summary>
-			/// <para>Lzw—保留所有栅格像元值的无损压缩。</para>
+			/// <para>Lzw—Lossless compression that preserves all raster cell values.</para>
 			/// </summary>
 			[GPValue("LZW")]
 			[Description("Lzw")]
 			Lzw,
 
 			/// <summary>
-			/// <para>Packbits—用于 TIFF 文件的 PackBits 压缩。</para>
+			/// <para>Packbits—PackBits compression for TIFF files.</para>
 			/// </summary>
 			[GPValue("PACKBITS")]
 			[Description("Packbits")]
 			Packbits,
 
 			/// <summary>
-			/// <para>Rle—用于 IMG 文件的游程编码。</para>
+			/// <para>Rle—Run-length encoding for IMG files.</para>
 			/// </summary>
 			[GPValue("RLE")]
 			[Description("Rle")]
 			Rle,
 
 			/// <summary>
-			/// <para>Ccitt Group 3—用于 1 位数据的无损压缩。</para>
+			/// <para>Ccitt Group 3—Lossless compression for 1-bit data.</para>
 			/// </summary>
 			[GPValue("CCITT_GROUP3")]
 			[Description("Ccitt Group 3")]
 			Ccitt_Group_3,
 
 			/// <summary>
-			/// <para>Ccitt Group 4—用于 1 位数据的无损压缩。</para>
+			/// <para>Ccitt Group 4—Lossless compression for 1-bit data.</para>
 			/// </summary>
 			[GPValue("CCITT_GROUP4")]
 			[Description("Ccitt Group 4")]
 			Ccitt_Group_4,
 
 			/// <summary>
-			/// <para>Ccitt 1D—用于 1 位数据的无损压缩。</para>
+			/// <para>Ccitt 1D—Lossless compression for 1-bit data.</para>
 			/// </summary>
 			[GPValue("CCITT_1D")]
 			[Description("Ccitt 1D")]
@@ -315,14 +315,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MAINTAINFOLDEREnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—replicates the hierarchical folder structure used to store the source raster datasets.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MAINTAIN_FOLDER")]
 			MAINTAIN_FOLDER,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—raster datasets will be downloaded into the output folder as a flat folder structure</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_MAINTAIN_FOLDER")]

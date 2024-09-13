@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Export Diagram Content</para>
-	/// <para>导出逻辑示意图内容</para>
-	/// <para>以反映基本连通性的简单格式 (JSON) 导出逻辑示意图内容。 还可以导出其他可选信息，例如逻辑示意图属性、逻辑示意图要素几何、网络元素属性和聚合元素。</para>
+	/// <para>Export Diagram Content</para>
+	/// <para>Exports diagram content in a simple format (JSON) that reflects basic connectivity. Additional optional information such as diagram properties, diagram feature geometry, network element attributes, and aggregated elements can also be exported.</para>
 	/// </summary>
 	public class ExportDiagramContent : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network or Network Diagram Layer</para>
-		/// <para>公共设施网络或追踪网络图层、公共设施网络或追踪网络数据元素或与要导出的网络逻辑示意图相关的网络逻辑示意图图层。</para>
+		/// <para>The utility network or trace network layer, utility network or trace network data element, or network diagram layer related to the network diagram to export.</para>
 		/// </param>
 		/// <param name="NetworkDiagramName">
 		/// <para>Network Diagram Name</para>
-		/// <para>要导出的网络逻辑示意图的名称。</para>
+		/// <para>The name of the network diagram to export.</para>
 		/// </param>
 		/// <param name="OutFile">
 		/// <para>Output File</para>
-		/// <para>将使用导出的逻辑示意图内容创建的输出 .json 文件。</para>
+		/// <para>The output .json file that will be created with the exported diagram content.</para>
 		/// </param>
 		public ExportDiagramContent(object InUtilityNetwork, object NetworkDiagramName, object OutFile)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 导出逻辑示意图内容</para>
+		/// <para>Tool Display Name : Export Diagram Content</para>
 		/// </summary>
-		public override string DisplayName() => "导出逻辑示意图内容";
+		public override string DisplayName() => "Export Diagram Content";
 
 		/// <summary>
 		/// <para>Tool Name : ExportDiagramContent</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network or Network Diagram Layer</para>
-		/// <para>公共设施网络或追踪网络图层、公共设施网络或追踪网络数据元素或与要导出的网络逻辑示意图相关的网络逻辑示意图图层。</para>
+		/// <para>The utility network or trace network layer, utility network or trace network data element, or network diagram layer related to the network diagram to export.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Network Diagram Name</para>
-		/// <para>要导出的网络逻辑示意图的名称。</para>
+		/// <para>The name of the network diagram to export.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Output File</para>
-		/// <para>将使用导出的逻辑示意图内容创建的输出 .json 文件。</para>
+		/// <para>The output .json file that will be created with the exported diagram content.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -101,9 +101,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Include diagram properties</para>
-		/// <para>指定是否导出逻辑示意图属性。</para>
-		/// <para>选中 - 将导出逻辑示意图属性（统计信息、创建和更新日期等）。</para>
-		/// <para>未选中 - 不会导出逻辑示意图属性。 这是默认设置。</para>
+		/// <para>Specifies whether the diagram properties will be exported.</para>
+		/// <para>Checked—The diagram properties (statistics, creation and update dates, and so on) will be exported.</para>
+		/// <para>Unchecked—The diagram properties will not be exported. This is the default.</para>
 		/// <para><see cref="IncludeDiagramPropertiesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -113,9 +113,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Include geometries</para>
-		/// <para>指定是否导出逻辑示意图要素的几何。</para>
-		/// <para>选中 - 每个逻辑示意图要素将与其几何一起导出。</para>
-		/// <para>未选中 - 将导出每个逻辑示意图要素而不导出其几何。 这是默认设置。</para>
+		/// <para>Specifies whether the geometry of the diagram features will be exported.</para>
+		/// <para>Checked—Each diagram feature will be exported with its geometry.</para>
+		/// <para>Unchecked—Each diagram feature will be exported without its geometry. This is the default.</para>
 		/// <para><see cref="IncludeGeometriesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -125,9 +125,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Include attributes</para>
-		/// <para>指定是否将导出关联网络元素的属性。</para>
-		/// <para>选中 - 将导出关联的网络元素属性。</para>
-		/// <para>未选中 - 不会导出关联的网络元素属性。 这是默认设置。</para>
+		/// <para>Specifies whether the attributes of the associated network elements will be exported.</para>
+		/// <para>Checked—The associated network element attributes will be exported.</para>
+		/// <para>Unchecked—The associated network element attributes will not be exported. This is the default.</para>
 		/// <para><see cref="IncludeAttributesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -137,9 +137,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Include aggregations</para>
-		/// <para>指定导出每个逻辑示意图要素时是否导出其聚合的网络元素的列表。</para>
-		/// <para>选中 - 将导出每个逻辑示意图要素及其聚合的网络元素的列表及其资产组和资产类型值。</para>
-		/// <para>未选中 - 不会导出逻辑示意图要素聚合。 这是默认设置。</para>
+		/// <para>Specifies whether each diagram feature will be exported with a list of network elements it aggregates.</para>
+		/// <para>Checked—Each diagram feature will be exported with a list of network elements it aggregates with their asset group and asset type values.</para>
+		/// <para>Unchecked—The diagram feature aggregations will not be exported. This is the default.</para>
 		/// <para><see cref="IncludeAggregationsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -149,9 +149,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Use domain and subtype descriptions</para>
-		/// <para>指定将导出编码属性域和子类型值的方式。 当选中包括属性或包括聚合参数时，将激活此参数。</para>
-		/// <para>选中 - 将使用字符串描述，而非原始值来导出编码属性域和子类型值。</para>
-		/// <para>未选中 - 编码属性域和子类型值将导出为原始值。 这是默认设置。</para>
+		/// <para>Specifies how coded domain and subtype values will be exported. This parameter is activated when the Include attributes or Include aggregations parameter is checked.</para>
+		/// <para>Checked—Coded domain and subtype values will be exported using their string descriptions rather than raw values.</para>
+		/// <para>Unchecked—Coded domain and subtype values will be exported as raw values. This is the default.</para>
 		/// <para><see cref="UseDomainsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -167,14 +167,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IncludeDiagramPropertiesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The diagram properties (statistics, creation and update dates, and so on) will be exported.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_DIAGRAM_PROPERTIES")]
 			INCLUDE_DIAGRAM_PROPERTIES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The diagram properties will not be exported. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXCLUDE_DIAGRAM_PROPERTIES")]
@@ -188,14 +188,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IncludeGeometriesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Each diagram feature will be exported with its geometry.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_GEOMETRIES")]
 			INCLUDE_GEOMETRIES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Each diagram feature will be exported without its geometry. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXCLUDE_GEOMETRIES")]
@@ -209,14 +209,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IncludeAttributesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The associated network element attributes will be exported.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_ATTRIBUTES")]
 			INCLUDE_ATTRIBUTES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The associated network element attributes will not be exported. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXCLUDE_ATTRIBUTES")]
@@ -230,14 +230,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IncludeAggregationsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Each diagram feature will be exported with a list of network elements it aggregates with their asset group and asset type values.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_AGGREGATIONS")]
 			INCLUDE_AGGREGATIONS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The diagram feature aggregations will not be exported. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXCLUDE_AGGREGATIONS")]
@@ -251,14 +251,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum UseDomainsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Coded domain and subtype values will be exported using their string descriptions rather than raw values.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("USE_CODED_VALUE_NAMES")]
 			USE_CODED_VALUE_NAMES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Coded domain and subtype values will be exported as raw values. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DONT_USE_CODED_VALUE_NAMES")]

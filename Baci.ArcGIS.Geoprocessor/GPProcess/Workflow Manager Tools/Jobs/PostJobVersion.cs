@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Post Job Version</para>
-	/// <para>提交作业版本</para>
-	/// <para>将当前版本中的编辑内容提交到作业的父版本。</para>
+	/// <para>Post Job Version</para>
+	/// <para>Post the current version edits to the parent version of the job.</para>
 	/// </summary>
 	public class PostJobVersion : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		/// <param name="InputJobid">
 		/// <para>Input Job ID</para>
-		/// <para>要将其作业版本的编辑内容提交到父版本的作业 ID。</para>
+		/// <para>The ID for the job whose edits from the job's version are going to be posted to it's parent version.</para>
 		/// </param>
 		public PostJobVersion(object InputJobid)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 提交作业版本</para>
+		/// <para>Tool Display Name : Post Job Version</para>
 		/// </summary>
-		public override string DisplayName() => "提交作业版本";
+		public override string DisplayName() => "Post Job Version";
 
 		/// <summary>
 		/// <para>Tool Name : PostJobVersion</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Input Job ID</para>
-		/// <para>要将其作业版本的编辑内容提交到父版本的作业 ID。</para>
+		/// <para>The ID for the job whose edits from the job's version are going to be posted to it's parent version.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Input Database Path</para>
-		/// <para>包含作业信息的 Workflow Manager (Classic) 数据库连接文件。如果未指定连接文件，将使用当前默认的 Workflow Manager (Classic) 数据库。</para>
+		/// <para>The Workflow Manager (Classic) database connection file that contains the job information. If no connection file is specified, the current default Workflow Manager (Classic) database will be used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]

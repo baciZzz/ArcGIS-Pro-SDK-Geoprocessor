@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Export Rules</para>
-	/// <para>导出规则</para>
-	/// <para>用于将公共设施网络中的连通性、结构附件和包含规则导出为逗号分隔值文件。</para>
+	/// <para>Export Rules</para>
+	/// <para>Exports connectivity, structural attachment, and containment rules from a utility network into a comma-separated values file.</para>
 	/// </summary>
 	public class ExportRules : AbstractGPProcess
 	{
@@ -21,22 +21,22 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>要从中导出规则的公共设施网络。</para>
+		/// <para>The utility network to export the rules from.</para>
 		/// </param>
 		/// <param name="RuleType">
 		/// <para>Rule Type</para>
-		/// <para>要导出的规则类型。</para>
-		/// <para>所有—将导出公共设施网络中的所有规则。</para>
-		/// <para>交汇点-交汇点连通性—将导出交汇点-交汇点连通性关联规则。</para>
-		/// <para>交汇点-边连通性—将导出交汇点-边连通性关联规则。</para>
-		/// <para>包含—将导出包含关联规则。</para>
-		/// <para>结构附件—将导出结构附件关联规则。</para>
-		/// <para>边-交汇点-边连通性—将导出边-交汇点-边连通性关联规则。</para>
+		/// <para>The type of rule to export.</para>
+		/// <para>All—All the rules in the utility network will be exported.</para>
+		/// <para>Junction-junction connectivity—Junction-junction connectivity association rules will be exported.</para>
+		/// <para>Junction-edge connectivity—Junction-edge connectivity rules will be exported.</para>
+		/// <para>Containment—Containment association rules will be exported.</para>
+		/// <para>Structural attachment—Structural attachment association rules will be exported.</para>
+		/// <para>Edge-junction-edge connectivity—Edge-junction-edge connectivity association rules will be exported.</para>
 		/// <para><see cref="RuleTypeEnum"/></para>
 		/// </param>
 		/// <param name="OutCsvFile">
 		/// <para>Output File</para>
-		/// <para>待创建的 .csv 文件的文件夹位置和名称。</para>
+		/// <para>The folder location and name of the .csv file to be created.</para>
 		/// </param>
 		public ExportRules(object InUtilityNetwork, object RuleType, object OutCsvFile)
 		{
@@ -46,9 +46,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 导出规则</para>
+		/// <para>Tool Display Name : Export Rules</para>
 		/// </summary>
-		public override string DisplayName() => "导出规则";
+		public override string DisplayName() => "Export Rules";
 
 		/// <summary>
 		/// <para>Tool Name : ExportRules</para>
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>要从中导出规则的公共设施网络。</para>
+		/// <para>The utility network to export the rules from.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -90,13 +90,13 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Rule Type</para>
-		/// <para>要导出的规则类型。</para>
-		/// <para>所有—将导出公共设施网络中的所有规则。</para>
-		/// <para>交汇点-交汇点连通性—将导出交汇点-交汇点连通性关联规则。</para>
-		/// <para>交汇点-边连通性—将导出交汇点-边连通性关联规则。</para>
-		/// <para>包含—将导出包含关联规则。</para>
-		/// <para>结构附件—将导出结构附件关联规则。</para>
-		/// <para>边-交汇点-边连通性—将导出边-交汇点-边连通性关联规则。</para>
+		/// <para>The type of rule to export.</para>
+		/// <para>All—All the rules in the utility network will be exported.</para>
+		/// <para>Junction-junction connectivity—Junction-junction connectivity association rules will be exported.</para>
+		/// <para>Junction-edge connectivity—Junction-edge connectivity rules will be exported.</para>
+		/// <para>Containment—Containment association rules will be exported.</para>
+		/// <para>Structural attachment—Structural attachment association rules will be exported.</para>
+		/// <para>Edge-junction-edge connectivity—Edge-junction-edge connectivity association rules will be exported.</para>
 		/// <para><see cref="RuleTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Output File</para>
-		/// <para>待创建的 .csv 文件的文件夹位置和名称。</para>
+		/// <para>The folder location and name of the .csv file to be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -122,45 +122,45 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum RuleTypeEnum 
 		{
 			/// <summary>
-			/// <para>所有—将导出公共设施网络中的所有规则。</para>
+			/// <para>All—All the rules in the utility network will be exported.</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("所有")]
+			[Description("All")]
 			All,
 
 			/// <summary>
-			/// <para>交汇点-交汇点连通性—将导出交汇点-交汇点连通性关联规则。</para>
+			/// <para>Junction-junction connectivity—Junction-junction connectivity association rules will be exported.</para>
 			/// </summary>
 			[GPValue("JUNCTION_JUNCTION_CONNECTIVITY")]
-			[Description("交汇点-交汇点连通性")]
+			[Description("Junction-junction connectivity")]
 			JUNCTION_JUNCTION_CONNECTIVITY,
 
 			/// <summary>
-			/// <para>交汇点-边连通性—将导出交汇点-边连通性关联规则。</para>
+			/// <para>Junction-edge connectivity—Junction-edge connectivity rules will be exported.</para>
 			/// </summary>
 			[GPValue("JUNCTION_EDGE_CONNECTIVITY")]
-			[Description("交汇点-边连通性")]
+			[Description("Junction-edge connectivity")]
 			JUNCTION_EDGE_CONNECTIVITY,
 
 			/// <summary>
-			/// <para>包含—将导出包含关联规则。</para>
+			/// <para>Containment—Containment association rules will be exported.</para>
 			/// </summary>
 			[GPValue("CONTAINMENT")]
-			[Description("包含")]
+			[Description("Containment")]
 			Containment,
 
 			/// <summary>
-			/// <para>结构附件—将导出结构附件关联规则。</para>
+			/// <para>Structural attachment—Structural attachment association rules will be exported.</para>
 			/// </summary>
 			[GPValue("STRUCTURAL_ATTACHMENT")]
-			[Description("结构附件")]
+			[Description("Structural attachment")]
 			Structural_attachment,
 
 			/// <summary>
-			/// <para>边-交汇点-边连通性—将导出边-交汇点-边连通性关联规则。</para>
+			/// <para>Edge-junction-edge connectivity—Edge-junction-edge connectivity association rules will be exported.</para>
 			/// </summary>
 			[GPValue("EDGE_JUNCTION_EDGE_CONNECTIVITY")]
-			[Description("边-交汇点-边连通性")]
+			[Description("Edge-junction-edge connectivity")]
 			EDGE_JUNCTION_EDGE_CONNECTIVITY,
 
 		}

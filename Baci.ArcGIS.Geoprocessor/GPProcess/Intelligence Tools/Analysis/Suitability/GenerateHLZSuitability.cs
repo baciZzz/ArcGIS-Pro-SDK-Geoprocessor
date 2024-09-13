@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Generate HLZ Suitability</para>
-	/// <para>生成 HLZ 适宜性</para>
-	/// <para>根据重分类坡度、重分类土地覆被和障碍物缓冲区创建直升机降落区 (HLZ) 适宜性栅格图层。</para>
+	/// <para>Generate HLZ Suitability</para>
+	/// <para>Creates a helicopter landing zone (HLZ) suitability raster layer from reclassified slope, reclassified land cover, and obstacle buffers.</para>
 	/// </summary>
 	public class GenerateHLZSuitability : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		/// <param name="InSlopeRaster">
 		/// <para>Input Slope Raster</para>
-		/// <para>值为 1（可接受）和 2（可谨慎接受）的重分类坡度栅格。所有其他值将从分析中排除。</para>
+		/// <para>The reclassified slope raster with values 1 (acceptable) and 2 (acceptable with caution). All other values will be excluded from the analysis.</para>
 		/// </param>
 		/// <param name="InLandCoverRaster">
 		/// <para>Input Land Cover Raster</para>
-		/// <para>值为 1（可接受）和 2（可谨慎接受）的重分类土地覆被栅格。所有其他值将从分析中排除。</para>
+		/// <para>The reclassified land cover raster with values 1 (acceptable) and 2 (acceptable with caution). All other values will be excluded from the analysis.</para>
 		/// </param>
 		/// <param name="InObstacleBufferFeatures">
 		/// <para>Input Obstacle Buffer Features</para>
-		/// <para>表示到达和离开障碍物周围安全缓冲区的障碍物区域要素。</para>
+		/// <para>Obstacle area features representing approach and departure safety buffers around obstacles.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output Raster</para>
-		/// <para>输出栅格数据集。</para>
+		/// <para>The output raster dataset.</para>
 		/// </param>
 		public GenerateHLZSuitability(object InSlopeRaster, object InLandCoverRaster, object InObstacleBufferFeatures, object OutRaster)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 生成 HLZ 适宜性</para>
+		/// <para>Tool Display Name : Generate HLZ Suitability</para>
 		/// </summary>
-		public override string DisplayName() => "生成 HLZ 适宜性";
+		public override string DisplayName() => "Generate HLZ Suitability";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateHLZSuitability</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Slope Raster</para>
-		/// <para>值为 1（可接受）和 2（可谨慎接受）的重分类坡度栅格。所有其他值将从分析中排除。</para>
+		/// <para>The reclassified slope raster with values 1 (acceptable) and 2 (acceptable with caution). All other values will be excluded from the analysis.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRasterLayer()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Land Cover Raster</para>
-		/// <para>值为 1（可接受）和 2（可谨慎接受）的重分类土地覆被栅格。所有其他值将从分析中排除。</para>
+		/// <para>The reclassified land cover raster with values 1 (acceptable) and 2 (acceptable with caution). All other values will be excluded from the analysis.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRasterLayer()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Obstacle Buffer Features</para>
-		/// <para>表示到达和离开障碍物周围安全缓冲区的障碍物区域要素。</para>
+		/// <para>Obstacle area features representing approach and departure safety buffers around obstacles.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Output Raster</para>
-		/// <para>输出栅格数据集。</para>
+		/// <para>The output raster dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

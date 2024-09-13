@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Flow Direction</para>
-	/// <para>流向</para>
-	/// <para>使用 D8、多流向 (MFD) 或 D-Infinity (DINF) 方法创建从每个像元到其下坡相邻点的流向的栅格。</para>
+	/// <para>Flow Direction</para>
+	/// <para>Creates a raster of flow direction from each cell to its downslope neighbor, or neighbors, using the D8, Multiple Flow Direction (MFD), or D-Infinity (DINF) method.</para>
 	/// </summary>
 	public class FlowDirection : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InSurfaceRaster">
 		/// <para>Input surface raster</para>
-		/// <para>输入栅格表示连续表面。</para>
+		/// <para>The input raster representing a continuous surface.</para>
 		/// </param>
 		/// <param name="OutFlowDirectionRaster">
 		/// <para>Output flow direction raster</para>
-		/// <para>输出栅格显示了使用 D8、MFD 或 DINF 方法创建的从每个像元到其下坡相邻像元的流向。</para>
-		/// <para>输出为整型。</para>
+		/// <para>The output raster that shows the flow direction from each cell to its downslope neighbors or neighbors using the D8, MFD, or DINF method.</para>
+		/// <para>This output is of integer type.</para>
 		/// </param>
 		public FlowDirection(object InSurfaceRaster, object OutFlowDirectionRaster)
 		{
@@ -35,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 流向</para>
+		/// <para>Tool Display Name : Flow Direction</para>
 		/// </summary>
-		public override string DisplayName() => "流向";
+		public override string DisplayName() => "Flow Direction";
 
 		/// <summary>
 		/// <para>Tool Name : FlowDirection</para>
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input surface raster</para>
-		/// <para>输入栅格表示连续表面。</para>
+		/// <para>The input raster representing a continuous surface.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -83,8 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output flow direction raster</para>
-		/// <para>输出栅格显示了使用 D8、MFD 或 DINF 方法创建的从每个像元到其下坡相邻像元的流向。</para>
-		/// <para>输出为整型。</para>
+		/// <para>The output raster that shows the flow direction from each cell to its downslope neighbors or neighbors using the D8, MFD, or DINF method.</para>
+		/// <para>This output is of integer type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -92,9 +92,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Force all edge cells to flow outward</para>
-		/// <para>指定边缘像元始终向外流还是遵循正常流动规则。</para>
-		/// <para>未选中 - 如果边缘像元内部的最大降幅大于零，则将照常确定流向；否则流向将朝向边缘。 应从表面栅格的边缘向内流的像元也将执行此行为。 这是默认设置。</para>
-		/// <para>选中 - 表面栅格边缘的所有像元将从表面栅格向外流。</para>
+		/// <para>Specifies whether edge cells will always flow outward or follow normal flow rules.</para>
+		/// <para>Unchecked—If the maximum drop on the inside of an edge cell is greater than zero, the flow direction will be determined as usual; otherwise, the flow direction will be toward the edge. Cells that should flow from the edge of the surface raster inward will do so. This is the default.</para>
+		/// <para>Checked—All cells at the edge of the surface raster will flow outward from the surface raster.</para>
 		/// <para><see cref="ForceFlowEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -104,9 +104,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output drop raster</para>
-		/// <para>可选输出下降率栅格数据。</para>
-		/// <para>下降率栅格用于返回从沿流向的各像元到像元中心间的路径长度的最大高程变化率（以百分比表示）。</para>
-		/// <para>输出为浮点型。</para>
+		/// <para>An optional output drop raster.</para>
+		/// <para>The drop raster returns the ratio of the maximum change in elevation from each cell along the direction of flow to the path length between centers of cells, expressed in percentages.</para>
+		/// <para>This output is of floating-point type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -114,10 +114,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Flow direction type</para>
-		/// <para>指定计算流向时将使用的流向法的类型。</para>
-		/// <para>D8—流向将由 D8 方法确定。 此方法会将流向分配至最陡的下坡相邻点。 这是默认设置。</para>
-		/// <para>MFD—流向将基于 MFD 流量法。 流向将根据自适应分区指数跨下坡邻域进行分区。</para>
-		/// <para>DINF—流向将基于 DINF 方法。 此方法将流向分配给三角形面的最陡坡度。</para>
+		/// <para>Specifies the type of flow method that will be used when computing flow directions.</para>
+		/// <para>D8—Flow direction will be determined by the D8 method. This method assigns flow direction to the steepest downslope neighbor. This is the default.</para>
+		/// <para>MFD—Flow direction will be based on the MFD flow method. Flow direction will be partitioned across downslope neighbors according to an adaptive partition exponent.</para>
+		/// <para>DINF—Flow direction will be based on the DINF flow method. This method assigns flow direction to the steepest slope of a triangular facet.</para>
 		/// <para><see cref="FlowDirectionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -142,14 +142,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ForceFlowEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—If the maximum drop on the inside of an edge cell is greater than zero, the flow direction will be determined as usual; otherwise, the flow direction will be toward the edge. Cells that should flow from the edge of the surface raster inward will do so. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NORMAL")]
 			NORMAL,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—All cells at the edge of the surface raster will flow outward from the surface raster.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FORCE")]
@@ -163,21 +163,21 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum FlowDirectionTypeEnum 
 		{
 			/// <summary>
-			/// <para>D8—流向将由 D8 方法确定。 此方法会将流向分配至最陡的下坡相邻点。 这是默认设置。</para>
+			/// <para>D8—Flow direction will be determined by the D8 method. This method assigns flow direction to the steepest downslope neighbor. This is the default.</para>
 			/// </summary>
 			[GPValue("D8")]
 			[Description("D8")]
 			D8,
 
 			/// <summary>
-			/// <para>MFD—流向将基于 MFD 流量法。 流向将根据自适应分区指数跨下坡邻域进行分区。</para>
+			/// <para>MFD—Flow direction will be based on the MFD flow method. Flow direction will be partitioned across downslope neighbors according to an adaptive partition exponent.</para>
 			/// </summary>
 			[GPValue("MFD")]
 			[Description("MFD")]
 			MFD,
 
 			/// <summary>
-			/// <para>DINF—流向将基于 DINF 方法。 此方法将流向分配给三角形面的最陡坡度。</para>
+			/// <para>DINF—Flow direction will be based on the DINF flow method. This method assigns flow direction to the steepest slope of a triangular facet.</para>
 			/// </summary>
 			[GPValue("DINF")]
 			[Description("DINF")]

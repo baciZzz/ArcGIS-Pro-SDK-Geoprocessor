@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Generate Obstacle Features</para>
-	/// <para>生成障碍物要素</para>
-	/// <para>将具有高度字段的要素转换为 3D 障碍物要素和障碍物限制缓冲区，以用于评估直升机降落区。</para>
+	/// <para>Generate Obstacle Features</para>
+	/// <para>Converts features with a height field to a 3D obstacle feature and an obstacle restriction buffer for use in evaluating helicopter landing zones.</para>
 	/// </summary>
 	public class GenerateObstacleFeatures : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>用于创建障碍物要素的输入源要素。</para>
+		/// <para>The input source features used to create obstacle features.</para>
 		/// </param>
 		/// <param name="HeightField">
 		/// <para>Height Field</para>
-		/// <para>包含高度值的输入要素中的字段。 字段类型可以是数字或文本。 如果使用文本字段，则字段值必须为数字。</para>
+		/// <para>A field from the Input Features parameter containing height values. The field type can be numeric or text. If a text field is used, the field values must be numeric.</para>
 		/// </param>
 		/// <param name="OutObstacleFeatures">
 		/// <para>Output Obstacle Features</para>
-		/// <para>输出 3D 障碍物要素。</para>
+		/// <para>The output 3D obstacle features.</para>
 		/// </param>
 		/// <param name="OutObstacleBuffers">
 		/// <para>Output Obstacle Buffers</para>
-		/// <para>输出障碍物缓冲区要素</para>
+		/// <para>The output obstacle buffer features</para>
 		/// </param>
 		public GenerateObstacleFeatures(object InFeatures, object HeightField, object OutObstacleFeatures, object OutObstacleBuffers)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 生成障碍物要素</para>
+		/// <para>Tool Display Name : Generate Obstacle Features</para>
 		/// </summary>
-		public override string DisplayName() => "生成障碍物要素";
+		public override string DisplayName() => "Generate Obstacle Features";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateObstacleFeatures</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>用于创建障碍物要素的输入源要素。</para>
+		/// <para>The input source features used to create obstacle features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Height Field</para>
-		/// <para>包含高度值的输入要素中的字段。 字段类型可以是数字或文本。 如果使用文本字段，则字段值必须为数字。</para>
+		/// <para>A field from the Input Features parameter containing height values. The field type can be numeric or text. If a text field is used, the field values must be numeric.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Output Obstacle Features</para>
-		/// <para>输出 3D 障碍物要素。</para>
+		/// <para>The output 3D obstacle features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Output Obstacle Buffers</para>
-		/// <para>输出障碍物缓冲区要素</para>
+		/// <para>The output obstacle buffer features</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Clip Features</para>
-		/// <para>用于裁剪输出障碍物要素的区域。 将仅处理位于裁剪要素范围内的要素。</para>
+		/// <para>An area to clip the Output Obstacle Features. Only features within the Clip Features will be processed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]

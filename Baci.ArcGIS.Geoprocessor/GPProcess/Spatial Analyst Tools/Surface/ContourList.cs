@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Contour List</para>
-	/// <para>等值线列表</para>
-	/// <para>根据栅格表面创建所选等值线值的要素类。</para>
+	/// <para>Contour List</para>
+	/// <para>Creates a feature class of selected contour values from a raster surface.</para>
 	/// </summary>
 	public class ContourList : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>输入表面栅格。</para>
+		/// <para>The input surface raster.</para>
 		/// </param>
 		/// <param name="OutPolylineFeatures">
 		/// <para>Output polyline features</para>
-		/// <para>输出等值线折线要素。</para>
+		/// <para>The output contour polyline features.</para>
 		/// </param>
 		/// <param name="ContourValues">
 		/// <para>Contour values</para>
-		/// <para>要创建等值线的 z 值的列表。</para>
+		/// <para>List of z-values for which to create contours.</para>
 		/// </param>
 		public ContourList(object InRaster, object OutPolylineFeatures, object ContourValues)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 等值线列表</para>
+		/// <para>Tool Display Name : Contour List</para>
 		/// </summary>
-		public override string DisplayName() => "等值线列表";
+		public override string DisplayName() => "Contour List";
 
 		/// <summary>
 		/// <para>Tool Name : ContourList</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>输入表面栅格。</para>
+		/// <para>The input surface raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output polyline features</para>
-		/// <para>输出等值线折线要素。</para>
+		/// <para>The output contour polyline features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Contour values</para>
-		/// <para>要创建等值线的 z 值的列表。</para>
+		/// <para>List of z-values for which to create contours.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]

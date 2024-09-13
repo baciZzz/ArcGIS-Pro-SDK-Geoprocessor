@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Despeckle</para>
-	/// <para>去斑</para>
-	/// <para>校正输入合成孔径雷达 (SAR) 数据中的散斑，这是一种类似于斑白效果的高频噪声。</para>
+	/// <para>Despeckle</para>
+	/// <para>Corrects the input synthetic aperture radar (SAR) data for speckle, which is high-frequency noise that resembles a salt and pepper effect.</para>
 	/// </summary>
 	public class Despeckle : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRadarData">
 		/// <para>Input Radar Data</para>
-		/// <para>输入雷达数据。</para>
+		/// <para>The input radar data.</para>
 		/// </param>
 		/// <param name="OutRadarData">
 		/// <para>Output Radar Data</para>
-		/// <para>去斑雷达数据。</para>
+		/// <para>The despeckled radar data.</para>
 		/// </param>
 		public Despeckle(object InRadarData, object OutRadarData)
 		{
@@ -34,14 +34,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 去斑</para>
+		/// <para>Tool Display Name : Despeckle</para>
 		/// </summary>
-		public override string DisplayName() => "去斑";
+		public override string DisplayName() => "Despeckle";
 
 		/// <summary>
-		/// <para>Tool Name : 去斑</para>
+		/// <para>Tool Name : Despeckle</para>
 		/// </summary>
-		public override string ToolName() => "去斑";
+		public override string ToolName() => "Despeckle";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.Despeckle</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Radar Data</para>
-		/// <para>输入雷达数据。</para>
+		/// <para>The input radar data.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Radar Data</para>
-		/// <para>去斑雷达数据。</para>
+		/// <para>The despeckled radar data.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -86,8 +86,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Polarization Bands</para>
-		/// <para>要过滤的极化波段。</para>
-		/// <para>默认情况下，第一个波段处于选中状态。</para>
+		/// <para>The polarization bands to be filtered.</para>
+		/// <para>The first band is selected by default.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -95,13 +95,13 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Filter Type</para>
-		/// <para>指定将应用的平滑算法或滤波器类型。</para>
-		/// <para>Lee—空间滤波器将应用于图像中的每个像素以减少散斑噪声。 此选项对基于在方形窗口中计算的局部统计量的数据进行过滤。 对具有相加或相乘组件的斑点数据进行平滑处理时，此滤波器将非常有用。 （上述“使用方法”部分中的参考 1）</para>
-		/// <para>增强型 Lee—将应用保留图像清晰度和细节的空间滤波器来减少散斑噪声。 此选项是 Lee 滤波器的改进版本。 如需在减少斑点的同时保留纹理信息，此滤波器将十分有用。 （上述“使用方法”部分中的参考 2）</para>
-		/// <para>优化型 Lee—空间滤波器将根据局部统计数据应用于所选像素，以减少散斑噪声。 此滤波器使用非方形滤波器窗口来匹配边缘的方向。 如需在减少斑点的同时保留边缘，此滤波器将十分有用。 这是默认设置。 （上述“使用方法”部分中的参考 3）</para>
-		/// <para>Frost—将应用一个使用单个滤波器窗口中局部统计量的、呈指数衰减的圆周状对称的滤波器来减少斑点噪声。 这不会影响边缘的图像要素。 如需在减少斑点的同时保留边缘，此滤波器将十分有用。 （上述“使用方法”部分中的参考 4）</para>
-		/// <para>Kuan—空间滤波器（Kuan 滤波器）将应用于图像中的每个像素以减少散斑噪声。 此滤波器根据使用相邻像素所计算得出的居中像素值的局部统计量过滤数据。 如需在减少斑点的同时保留边缘，此滤波器将十分有用。 （上述“使用方法”部分中的参考 5）</para>
-		/// <para>Gamma MAP—将应用贝叶斯分析和 Gamma 分布滤波器来减少散斑噪声。 如需在减少斑点的同时保留边缘，此滤波器将十分有用。 （上述“使用方法”部分中的参考 6）</para>
+		/// <para>Specifies the type of smoothing algorithm or filter that will be applied.</para>
+		/// <para>Lee—A spatial filter will be applied to each pixel in an image to reduce the speckle noise. This option filters the data based on local statistics calculated within a square window. This filter is useful for smoothing speckled data that has an additive or multiplicative component. (Reference 1 in the Usage section above)</para>
+		/// <para>Enhanced Lee—A spatial filter that preserves the sharpness and detail of the image will be applied to reduce the speckle noise. This option is a refined version of the Lee filter. This filter is useful for reducing speckle while preserving texture information. (Reference 2 in the Usage section above)</para>
+		/// <para>Refined Lee—A spatial filter will be applied to selected pixels, based on local statistics, to reduce the speckle noise. This filter uses a nonsquare filter window to match the direction of edges. It is useful for reducing speckle while preserving edges. This is the default. (Reference 3 in the Usage section above)</para>
+		/// <para>Frost—An exponentially damped circularly symmetric filter that uses local statistics within individual filter windows will be applied to reduce the speckle noise. This does not affect image features at the edges. This filter is useful for reducing speckle while preserving edges. (Reference 4 in the Usage section above)</para>
+		/// <para>Kuan—A spatial filter, the Kuan filter, will be applied to each pixel in an image to reduce the speckle noise. This filters the data based on local statistics of the centered pixel value that is calculated using the neighboring pixels. This filter is useful for reducing speckle while preserving edges. (Reference 5 in the Usage section above)</para>
+		/// <para>Gamma MAP—A Bayesian analysis and Gamma distribution filter will be applied to reduce the speckle noise. This filter is useful for reducing speckle while preserving edges. (Reference 6 in the Usage section above)</para>
 		/// <para><see cref="FilterTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -111,13 +111,13 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Filter Size</para>
-		/// <para>指定将用于过滤噪声的像素窗口的大小。</para>
-		/// <para>3 x 3—将使用 3 x 3 滤波器大小。 这是默认设置。</para>
-		/// <para>5 x 5—将使用 5 x 5 滤波器大小。</para>
-		/// <para>7 x 7—将使用 7 x 7 滤波器大小。</para>
-		/// <para>9 x 9—将使用 9 x 9 滤波器大小。</para>
-		/// <para>11 x 11—将使用 11 x 11 滤波器大小。</para>
-		/// <para>此参数只有在滤波器类型参数设置为 Lee、增强型 Lee、Frost、Kuan 或 Gamma MAP 时才有效。</para>
+		/// <para>Specifies the size of the pixel window that will be used to filter noise.</para>
+		/// <para>3 x 3—A 3-by-3 filter size will be used. This is the default.</para>
+		/// <para>5 x 5—A 5-by-5 filter size will be used.</para>
+		/// <para>7 x 7—A 7-by-7 filter size will be used.</para>
+		/// <para>9 x 9—A 9-by-9 filter size will be used.</para>
+		/// <para>11 x 11—An 11-by-11 filter size will be used.</para>
+		/// <para>This parameter is only valid when the Filter Type parameter is set to Lee, Enhanced Lee, Frost, Kuan, or Gamma MAP.</para>
 		/// <para><see cref="FilterSizeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -127,11 +127,11 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Noise Model</para>
-		/// <para>指定用于减少雷达影像质量的噪声类型。</para>
-		/// <para>相乘噪声—将降低在捕获或传输过程中用于相乘为相关信号的随机信号噪声的质量。 这是默认设置。</para>
-		/// <para>相加噪声—将降低在捕获或传输过程中用于相加为相关信号的随机信号噪声的质量。</para>
-		/// <para>相加和相乘噪声—将降低两种噪声模型组合的质量。</para>
-		/// <para>此参数只有在滤波器类型参数设置为 Lee 时才有效。</para>
+		/// <para>Specifies the type of noise that is reducing the quality of the radar image.</para>
+		/// <para>Multiplicative noise—Random signal noise that is multiplied into the relevant signal during capture or transmission is reducing the quality. This is the default.</para>
+		/// <para>Additive noise—Random signal noise that is added into the relevant signal during capture or transmission is reducing the quality.</para>
+		/// <para>Additive and multiplicative noise—A combination of both noise models is reducing the quality.</para>
+		/// <para>This parameter is only valid when the Filter Type parameter is set to Lee.</para>
 		/// <para><see cref="NoiseModelEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -141,8 +141,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Noise Variance</para>
-		/// <para>雷达影像的噪声方差。 默认值为 0.25。</para>
-		/// <para>此参数只有在滤波器类型参数设置为 Lee，且噪声模型参数设置为相加噪声或相加和相乘噪声时才有效。</para>
+		/// <para>The noise variance of the radar image. The default is 0.25.</para>
+		/// <para>This parameter is only valid when the Filter Type parameter is set to Lee and the Noise Model parameter is set to Additive noise or Additive and multiplicative noise.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -150,8 +150,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Additive Noise Mean</para>
-		/// <para>相加噪声的平均值。 噪声均值越大，平滑效果越差，而噪声均值越小，平滑效果越好。 默认值为 0。</para>
-		/// <para>此参数只有在滤波器类型参数设置为 Lee，且噪声模型参数设置为相加和相乘噪声时才有效。</para>
+		/// <para>The mean value of additive noise. A larger noise mean value will produce less smoothing, while a smaller value results in more smoothing. The default value is 0.</para>
+		/// <para>This parameter is only valid when the Filter Type parameter is set to Lee and the Noise Model parameter is set to Additive and multiplicative noise.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -159,8 +159,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Multiplicative Noise Mean</para>
-		/// <para>相乘噪声的平均值。 噪声均值越大，平滑效果越差，而噪声均值越小，平滑效果越好。 默认值为 1。</para>
-		/// <para>此参数只有在滤波器类型参数设置为 Lee，且噪声模型参数设置为相乘噪声或相加和相乘噪声时才有效。</para>
+		/// <para>The mean value of multiplicative noise. A larger noise mean value will produce less smoothing, while a smaller value results in more smoothing. The default value is 1.</para>
+		/// <para>This parameter is only valid when the Filter Type parameter is set to Lee and the Noise Model parameter is set to Multiplicative noise or Additive and multiplicative noise.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -168,8 +168,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Number of Looks</para>
-		/// <para>影像的查看次数，而查看次数用于控制影像平滑和估算噪声方差。 较小的值会导致较多的平滑处理，而较大的值则会保留较多的影像要素。 默认值为 1。</para>
-		/// <para>此参数只有在滤波器类型参数设置为增强型 Lee、Kuan 或 Gamma MAP，或滤波器类型参数设置为 Lee 且噪声模型参数设置为相乘时才有效。</para>
+		/// <para>The number of looks value of the image, which controls image smoothing and estimates noise variance. A smaller value results in more smoothing, while a larger value retains more image features. The default value is 1.</para>
+		/// <para>This parameter is only valid when the Filter Type parameter is set to Enhanced Lee, Kuan, or Gamma MAP, or when the Filter Type parameter is set to Lee and the Noise Model parameter is set to Multiplicative.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -177,7 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Damping Factor</para>
-		/// <para>将应用的平滑指数衰减等级。 阻尼值大于 1 时，可以更好的保留边缘，但平滑效果交差。 值小于 1 时，平滑度更高。 值等于 0 的效果与低通滤波器相似。 默认值为 1。</para>
+		/// <para>The exponential damping level of smoothing that will be applied. A damping value greater than 1 will result in better edge preservation but less smoothing. Values less than 1 will result in more smoothing. A value of 0 will produce results similar to a low-pass filter. The default is 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -200,42 +200,42 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum FilterTypeEnum 
 		{
 			/// <summary>
-			/// <para>Lee—空间滤波器将应用于图像中的每个像素以减少散斑噪声。 此选项对基于在方形窗口中计算的局部统计量的数据进行过滤。 对具有相加或相乘组件的斑点数据进行平滑处理时，此滤波器将非常有用。 （上述“使用方法”部分中的参考 1）</para>
+			/// <para>Lee—A spatial filter will be applied to each pixel in an image to reduce the speckle noise. This option filters the data based on local statistics calculated within a square window. This filter is useful for smoothing speckled data that has an additive or multiplicative component. (Reference 1 in the Usage section above)</para>
 			/// </summary>
 			[GPValue("LEE")]
 			[Description("Lee")]
 			Lee,
 
 			/// <summary>
-			/// <para>增强型 Lee—将应用保留图像清晰度和细节的空间滤波器来减少散斑噪声。 此选项是 Lee 滤波器的改进版本。 如需在减少斑点的同时保留纹理信息，此滤波器将十分有用。 （上述“使用方法”部分中的参考 2）</para>
+			/// <para>Enhanced Lee—A spatial filter that preserves the sharpness and detail of the image will be applied to reduce the speckle noise. This option is a refined version of the Lee filter. This filter is useful for reducing speckle while preserving texture information. (Reference 2 in the Usage section above)</para>
 			/// </summary>
 			[GPValue("ENHANCED_LEE")]
-			[Description("增强型 Lee")]
+			[Description("Enhanced Lee")]
 			Enhanced_Lee,
 
 			/// <summary>
-			/// <para>优化型 Lee—空间滤波器将根据局部统计数据应用于所选像素，以减少散斑噪声。 此滤波器使用非方形滤波器窗口来匹配边缘的方向。 如需在减少斑点的同时保留边缘，此滤波器将十分有用。 这是默认设置。 （上述“使用方法”部分中的参考 3）</para>
+			/// <para>Refined Lee—A spatial filter will be applied to selected pixels, based on local statistics, to reduce the speckle noise. This filter uses a nonsquare filter window to match the direction of edges. It is useful for reducing speckle while preserving edges. This is the default. (Reference 3 in the Usage section above)</para>
 			/// </summary>
 			[GPValue("REFINED_LEE")]
-			[Description("优化型 Lee")]
+			[Description("Refined Lee")]
 			Refined_Lee,
 
 			/// <summary>
-			/// <para>Frost—将应用一个使用单个滤波器窗口中局部统计量的、呈指数衰减的圆周状对称的滤波器来减少斑点噪声。 这不会影响边缘的图像要素。 如需在减少斑点的同时保留边缘，此滤波器将十分有用。 （上述“使用方法”部分中的参考 4）</para>
+			/// <para>Frost—An exponentially damped circularly symmetric filter that uses local statistics within individual filter windows will be applied to reduce the speckle noise. This does not affect image features at the edges. This filter is useful for reducing speckle while preserving edges. (Reference 4 in the Usage section above)</para>
 			/// </summary>
 			[GPValue("FROST")]
 			[Description("Frost")]
 			Frost,
 
 			/// <summary>
-			/// <para>Kuan—空间滤波器（Kuan 滤波器）将应用于图像中的每个像素以减少散斑噪声。 此滤波器根据使用相邻像素所计算得出的居中像素值的局部统计量过滤数据。 如需在减少斑点的同时保留边缘，此滤波器将十分有用。 （上述“使用方法”部分中的参考 5）</para>
+			/// <para>Kuan—A spatial filter, the Kuan filter, will be applied to each pixel in an image to reduce the speckle noise. This filters the data based on local statistics of the centered pixel value that is calculated using the neighboring pixels. This filter is useful for reducing speckle while preserving edges. (Reference 5 in the Usage section above)</para>
 			/// </summary>
 			[GPValue("KUAN")]
 			[Description("Kuan")]
 			Kuan,
 
 			/// <summary>
-			/// <para>Gamma MAP—将应用贝叶斯分析和 Gamma 分布滤波器来减少散斑噪声。 如需在减少斑点的同时保留边缘，此滤波器将十分有用。 （上述“使用方法”部分中的参考 6）</para>
+			/// <para>Gamma MAP—A Bayesian analysis and Gamma distribution filter will be applied to reduce the speckle noise. This filter is useful for reducing speckle while preserving edges. (Reference 6 in the Usage section above)</para>
 			/// </summary>
 			[GPValue("GAMMA_MAP")]
 			[Description("Gamma MAP")]
@@ -249,35 +249,35 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum FilterSizeEnum 
 		{
 			/// <summary>
-			/// <para>3 x 3—将使用 3 x 3 滤波器大小。 这是默认设置。</para>
+			/// <para>3 x 3—A 3-by-3 filter size will be used. This is the default.</para>
 			/// </summary>
 			[GPValue("3x3")]
 			[Description("3 x 3")]
 			_3_x_3,
 
 			/// <summary>
-			/// <para>5 x 5—将使用 5 x 5 滤波器大小。</para>
+			/// <para>5 x 5—A 5-by-5 filter size will be used.</para>
 			/// </summary>
 			[GPValue("5x5")]
 			[Description("5 x 5")]
 			_5_x_5,
 
 			/// <summary>
-			/// <para>7 x 7—将使用 7 x 7 滤波器大小。</para>
+			/// <para>7 x 7—A 7-by-7 filter size will be used.</para>
 			/// </summary>
 			[GPValue("7x7")]
 			[Description("7 x 7")]
 			_7_x_7,
 
 			/// <summary>
-			/// <para>9 x 9—将使用 9 x 9 滤波器大小。</para>
+			/// <para>9 x 9—A 9-by-9 filter size will be used.</para>
 			/// </summary>
 			[GPValue("9x9")]
 			[Description("9 x 9")]
 			_9_x_9,
 
 			/// <summary>
-			/// <para>11 x 11—将使用 11 x 11 滤波器大小。</para>
+			/// <para>11 x 11—An 11-by-11 filter size will be used.</para>
 			/// </summary>
 			[GPValue("11x11")]
 			[Description("11 x 11")]
@@ -291,24 +291,24 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum NoiseModelEnum 
 		{
 			/// <summary>
-			/// <para>相乘噪声—将降低在捕获或传输过程中用于相乘为相关信号的随机信号噪声的质量。 这是默认设置。</para>
+			/// <para>Multiplicative noise—Random signal noise that is multiplied into the relevant signal during capture or transmission is reducing the quality. This is the default.</para>
 			/// </summary>
 			[GPValue("MULTIPLICATIVE_NOISE")]
-			[Description("相乘噪声")]
+			[Description("Multiplicative noise")]
 			Multiplicative_noise,
 
 			/// <summary>
-			/// <para>相加噪声—将降低在捕获或传输过程中用于相加为相关信号的随机信号噪声的质量。</para>
+			/// <para>Additive noise—Random signal noise that is added into the relevant signal during capture or transmission is reducing the quality.</para>
 			/// </summary>
 			[GPValue("ADDITIVE_NOISE")]
-			[Description("相加噪声")]
+			[Description("Additive noise")]
 			Additive_noise,
 
 			/// <summary>
-			/// <para>相加和相乘噪声—将降低两种噪声模型组合的质量。</para>
+			/// <para>Additive and multiplicative noise—A combination of both noise models is reducing the quality.</para>
 			/// </summary>
 			[GPValue("ADDITIVE_AND_MULTIPLICATIVE_NOISE")]
-			[Description("相加和相乘噪声")]
+			[Description("Additive and multiplicative noise")]
 			Additive_and_multiplicative_noise,
 
 		}

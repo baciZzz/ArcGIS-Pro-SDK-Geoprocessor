@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Validate Network Topology</para>
-	/// <para>验证网络拓扑</para>
-	/// <para>对网络中的要素进行编辑后，用于验证公共设施网络的网络拓扑。</para>
+	/// <para>Validate Network Topology</para>
+	/// <para>Validates the network topology of a utility network after there have been edits to features in the network.</para>
 	/// </summary>
 	public class ValidateNetworkTopology : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>将验证网络拓扑的公共设施网络。</para>
+		/// <para>The utility network for which the network topology will be validated.</para>
 		/// </param>
 		public ValidateNetworkTopology(object InUtilityNetwork)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 验证网络拓扑</para>
+		/// <para>Tool Display Name : Validate Network Topology</para>
 		/// </summary>
-		public override string DisplayName() => "验证网络拓扑";
+		public override string DisplayName() => "Validate Network Topology";
 
 		/// <summary>
 		/// <para>Tool Name : ValidateNetworkTopology</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>将验证网络拓扑的公共设施网络。</para>
+		/// <para>The utility network for which the network topology will be validated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,13 +73,13 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Extent</para>
-		/// <para>用于验证网络拓扑的地理范围。</para>
-		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
-		/// <para>输入的并集 - 该范围将基于所有输入的最大范围。</para>
-		/// <para>输入的交集 - 该范围将基于所有输入共用的最小区域。</para>
-		/// <para>当前显示范围 - 该范围与可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
-		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
-		/// <para>浏览 - 该范围将基于现有数据集。</para>
+		/// <para>The geographical extent used to validate the network topology.</para>
+		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
+		/// <para>Union of Inputs—The extent will be based on the maximum extent of all inputs.</para>
+		/// <para>Intersection of Inputs—The extent will be based on the minimum area common to all inputs.</para>
+		/// <para>Current Display Extent—The extent is equal to the visible display. The option is not available when there is no active map.</para>
+		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
+		/// <para>Browse—The extent will be based on an existing dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]

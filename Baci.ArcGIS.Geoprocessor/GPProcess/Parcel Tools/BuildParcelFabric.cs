@@ -11,8 +11,9 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Build Parcel Fabric</para>
-	/// <para>构建宗地结构</para>
-	/// <para>在宗地结构中构建宗地。 宗地可根据面或线进行构建。 如果宗地是根据面构建的，则该工具会创建宗地线和宗地点。 如果宗地是根据线构建的，则该工具会创建缺失的面和点。 根据线构建宗地时，需要宗地种子。</para>
+	/// <para>Build Parcel Fabric</para>
+	/// <para>Builds parcels in a parcel fabric.  Parcels can be built from polygons or lines. If parcels are built from polygons, the tool creates parcel lines and parcel points. If parcels are built from lines, the tool creates the missing polygons and points.</para>
+	/// <para>When building parcels from lines, parcel seeds are required.</para>
 	/// </summary>
 	public class BuildParcelFabric : AbstractGPProcess
 	{
@@ -21,7 +22,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="InParcelFabric">
 		/// <para>Input Parcel Fabric</para>
-		/// <para>将为其构建宗地的宗地结构。 宗地结构可来自文件地理数据库、企业级地理数据库、移动地理数据库或要素服务。</para>
+		/// <para>The parcel fabric for which to parcels will be built. The parcel fabric can be from a file, enterprise, or mobile geodatabase, or from a a feature service.</para>
 		/// </param>
 		public BuildParcelFabric(object InParcelFabric)
 		{
@@ -29,9 +30,9 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 构建宗地结构</para>
+		/// <para>Tool Display Name : Build Parcel Fabric</para>
 		/// </summary>
-		public override string DisplayName() => "构建宗地结构";
+		public override string DisplayName() => "Build Parcel Fabric";
 
 		/// <summary>
 		/// <para>Tool Name : BuildParcelFabric</para>
@@ -65,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>
-		/// <para>将为其构建宗地的宗地结构。 宗地结构可来自文件地理数据库、企业级地理数据库、移动地理数据库或要素服务。</para>
+		/// <para>The parcel fabric for which to parcels will be built. The parcel fabric can be from a file, enterprise, or mobile geodatabase, or from a a feature service.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPParcelLayer()]
@@ -73,13 +74,13 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Extent</para>
-		/// <para>要处理的数据集的范围。 仅会处理指定范围内的要素。</para>
-		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
-		/// <para>输入的并集 - 该范围将基于所有输入的最大范围。</para>
-		/// <para>输入的交集 - 该范围将基于所有输入共用的最小区域。</para>
-		/// <para>当前显示范围 - 该范围与可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
-		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
-		/// <para>浏览 - 该范围将基于现有数据集。</para>
+		/// <para>The extent of the dataset to be processed. Only features that fall within the specified extent will be processed.</para>
+		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
+		/// <para>Union of Inputs—The extent will be based on the maximum extent of all inputs.</para>
+		/// <para>Intersection of Inputs—The extent will be based on the minimum area common to all inputs.</para>
+		/// <para>Current Display Extent—The extent is equal to the visible display. The option is not available when there is no active map.</para>
+		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
+		/// <para>Browse—The extent will be based on an existing dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -94,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Record Name</para>
-		/// <para>现有宗地记录的名称。 仅会构建与此记录相关联的宗地。</para>
+		/// <para>The name of the existing parcel record. Only parcels associated with this record will be built.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

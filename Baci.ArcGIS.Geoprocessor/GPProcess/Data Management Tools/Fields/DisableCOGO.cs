@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Disable COGO</para>
-	/// <para>禁用 COGO</para>
-	/// <para>可禁用线要素类上的 COGO 并移除 COGO 字段和启用了 COGO 的标注和符号系统。可删除 COGO 字段。</para>
+	/// <para>Disable COGO</para>
+	/// <para>Disables COGO  on a line feature class and removes COGO fields and COGO-enabled labeling and symbology. COGO fields can be deleted.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InLineFeatures">
 		/// <para>Input Line Features</para>
-		/// <para>将禁用 COGO 的线要素类。</para>
+		/// <para>The line feature class that will have COGO disabled.</para>
 		/// </param>
 		public DisableCOGO(object InLineFeatures)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 禁用 COGO</para>
+		/// <para>Tool Display Name : Disable COGO</para>
 		/// </summary>
-		public override string DisplayName() => "禁用 COGO";
+		public override string DisplayName() => "Disable COGO";
 
 		/// <summary>
 		/// <para>Tool Name : DisableCOGO</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Line Features</para>
-		/// <para>将禁用 COGO 的线要素类。</para>
+		/// <para>The line feature class that will have COGO disabled.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]

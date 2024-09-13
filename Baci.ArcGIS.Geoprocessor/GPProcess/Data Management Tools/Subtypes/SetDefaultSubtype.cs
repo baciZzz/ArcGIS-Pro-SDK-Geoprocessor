@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Set Default Subtype</para>
-	/// <para>设置默认子类型</para>
-	/// <para>为输入表的子类型设置默认值或默认编码。</para>
+	/// <para>Set Default Subtype</para>
+	/// <para>Sets the default value or code for the input table's subtype.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>要设置子类型默认值的输入表或要素类。</para>
+		/// <para>The input table or feature class whose subtype default value will be set.</para>
 		/// </param>
 		/// <param name="SubtypeCode">
 		/// <para>Subtype Code</para>
-		/// <para>子类型的唯一默认值。</para>
+		/// <para>The unique default value for a subtype.</para>
 		/// </param>
 		public SetDefaultSubtype(object InTable, object SubtypeCode)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 设置默认子类型</para>
+		/// <para>Tool Display Name : Set Default Subtype</para>
 		/// </summary>
-		public override string DisplayName() => "设置默认子类型";
+		public override string DisplayName() => "Set Default Subtype";
 
 		/// <summary>
 		/// <para>Tool Name : SetDefaultSubtype</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>要设置子类型默认值的输入表或要素类。</para>
+		/// <para>The input table or feature class whose subtype default value will be set.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Subtype Code</para>
-		/// <para>子类型的唯一默认值。</para>
+		/// <para>The unique default value for a subtype.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]

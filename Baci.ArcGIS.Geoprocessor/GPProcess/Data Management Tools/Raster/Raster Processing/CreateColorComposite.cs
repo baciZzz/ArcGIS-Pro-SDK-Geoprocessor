@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Color Composite</para>
-	/// <para>创建彩色合成</para>
-	/// <para>从多波段栅格数据集创建三波段栅格数据集。</para>
+	/// <para>Create Color Composite</para>
+	/// <para>Creates a three-band raster dataset from a multiband raster dataset.</para>
 	/// </summary>
 	public class CreateColorComposite : AbstractGPProcess
 	{
@@ -21,36 +21,36 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>输入多波段栅格数据。</para>
+		/// <para>The input multiband raster data.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output Raster</para>
-		/// <para>输出三波段合成栅格。</para>
+		/// <para>The output three-band composite raster.</para>
 		/// </param>
 		/// <param name="Method">
 		/// <para>Method</para>
-		/// <para>指定将用于提取波段的方法。</para>
-		/// <para>波段名称—将使用表示电磁光谱（如红色、近红外或热红外）或偏振（如 VH、VV、HH 或 HV）上波长间隔的波段名称。 这是默认设置。</para>
-		/// <para>波段 ID—将使用波段号（例如 B1、B2 或 B3）。</para>
+		/// <para>Specifies the method that will be used to extract bands.</para>
+		/// <para>Band names—The band name representing the wavelength interval on the electromagnetic spectrum (such as Red, Near Infrared, or Thermal Infrared) or the polarization (such as VH, VV, HH, or HV) will be used. This is the default.</para>
+		/// <para>Band IDs— The band number (such as B1, B2, or B3) will be used.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </param>
 		/// <param name="RedExpression">
 		/// <para>Red Expression</para>
-		/// <para>分配给第一个波段的计算。</para>
-		/// <para>波段名称、波段 ID 或使用波段的代数表达式。</para>
-		/// <para>受支持的运算符为一元运算符：加号 (+)、减号 (-)、乘号 (*) 和除号 (/)。</para>
+		/// <para>The calculation assigned to the first band.</para>
+		/// <para>A band name, band ID, or an algebraic expression using the bands.</para>
+		/// <para>The supported operators are unary: plus (+), minus (-), times (*), and divide (/).</para>
 		/// </param>
 		/// <param name="GreenExpression">
 		/// <para>Green Expression</para>
-		/// <para>分配给第二个波段的计算。</para>
-		/// <para>波段名称、波段 ID 或使用波段的代数表达式。</para>
-		/// <para>受支持的运算符为一元运算符：加号 (+)、减号 (-)、乘号 (*) 和除号 (/)。</para>
+		/// <para>The calculation assigned to the second band.</para>
+		/// <para>A band name, band ID, or an algebraic expression using the bands.</para>
+		/// <para>The supported operators are unary: plus (+), minus (-), times (*), and divide (/).</para>
 		/// </param>
 		/// <param name="BlueExpression">
 		/// <para>Blue Expression</para>
-		/// <para>分配给第三个波段的计算。</para>
-		/// <para>波段名称、波段 ID 或使用波段的代数表达式。</para>
-		/// <para>受支持的运算符为一元运算符：加号 (+)、减号 (-)、乘号 (*) 和除号 (/)。</para>
+		/// <para>The calculation assigned to the third band.</para>
+		/// <para>A band name, band ID, or an algebraic expression using the bands.</para>
+		/// <para>The supported operators are unary: plus (+), minus (-), times (*), and divide (/).</para>
 		/// </param>
 		public CreateColorComposite(object InRaster, object OutRaster, object Method, object RedExpression, object GreenExpression, object BlueExpression)
 		{
@@ -63,9 +63,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建彩色合成</para>
+		/// <para>Tool Display Name : Create Color Composite</para>
 		/// </summary>
-		public override string DisplayName() => "创建彩色合成";
+		public override string DisplayName() => "Create Color Composite";
 
 		/// <summary>
 		/// <para>Tool Name : CreateColorComposite</para>
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>输入多波段栅格数据。</para>
+		/// <para>The input multiband raster data.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Raster</para>
-		/// <para>输出三波段合成栅格。</para>
+		/// <para>The output three-band composite raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -115,9 +115,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>指定将用于提取波段的方法。</para>
-		/// <para>波段名称—将使用表示电磁光谱（如红色、近红外或热红外）或偏振（如 VH、VV、HH 或 HV）上波长间隔的波段名称。 这是默认设置。</para>
-		/// <para>波段 ID—将使用波段号（例如 B1、B2 或 B3）。</para>
+		/// <para>Specifies the method that will be used to extract bands.</para>
+		/// <para>Band names—The band name representing the wavelength interval on the electromagnetic spectrum (such as Red, Near Infrared, or Thermal Infrared) or the polarization (such as VH, VV, HH, or HV) will be used. This is the default.</para>
+		/// <para>Band IDs— The band number (such as B1, B2, or B3) will be used.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -127,9 +127,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Red Expression</para>
-		/// <para>分配给第一个波段的计算。</para>
-		/// <para>波段名称、波段 ID 或使用波段的代数表达式。</para>
-		/// <para>受支持的运算符为一元运算符：加号 (+)、减号 (-)、乘号 (*) 和除号 (/)。</para>
+		/// <para>The calculation assigned to the first band.</para>
+		/// <para>A band name, band ID, or an algebraic expression using the bands.</para>
+		/// <para>The supported operators are unary: plus (+), minus (-), times (*), and divide (/).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -137,9 +137,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Green Expression</para>
-		/// <para>分配给第二个波段的计算。</para>
-		/// <para>波段名称、波段 ID 或使用波段的代数表达式。</para>
-		/// <para>受支持的运算符为一元运算符：加号 (+)、减号 (-)、乘号 (*) 和除号 (/)。</para>
+		/// <para>The calculation assigned to the second band.</para>
+		/// <para>A band name, band ID, or an algebraic expression using the bands.</para>
+		/// <para>The supported operators are unary: plus (+), minus (-), times (*), and divide (/).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -147,9 +147,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Blue Expression</para>
-		/// <para>分配给第三个波段的计算。</para>
-		/// <para>波段名称、波段 ID 或使用波段的代数表达式。</para>
-		/// <para>受支持的运算符为一元运算符：加号 (+)、减号 (-)、乘号 (*) 和除号 (/)。</para>
+		/// <para>The calculation assigned to the third band.</para>
+		/// <para>A band name, band ID, or an algebraic expression using the bands.</para>
+		/// <para>The supported operators are unary: plus (+), minus (-), times (*), and divide (/).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -172,17 +172,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>波段名称—将使用表示电磁光谱（如红色、近红外或热红外）或偏振（如 VH、VV、HH 或 HV）上波长间隔的波段名称。 这是默认设置。</para>
+			/// <para>Band names—The band name representing the wavelength interval on the electromagnetic spectrum (such as Red, Near Infrared, or Thermal Infrared) or the polarization (such as VH, VV, HH, or HV) will be used. This is the default.</para>
 			/// </summary>
 			[GPValue("BAND_NAMES")]
-			[Description("波段名称")]
+			[Description("Band names")]
 			Band_names,
 
 			/// <summary>
-			/// <para>波段 ID—将使用波段号（例如 B1、B2 或 B3）。</para>
+			/// <para>Band IDs— The band number (such as B1, B2, or B3) will be used.</para>
 			/// </summary>
 			[GPValue("BAND_IDS")]
-			[Description("波段 ID")]
+			[Description("Band IDs")]
 			Band_IDs,
 
 		}

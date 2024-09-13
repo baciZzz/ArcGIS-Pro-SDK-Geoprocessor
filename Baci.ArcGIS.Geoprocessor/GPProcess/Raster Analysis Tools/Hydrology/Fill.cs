@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Fill</para>
-	/// <para>填洼</para>
-	/// <para>通过填充表面栅格中的汇来移除数据中的小缺陷。</para>
+	/// <para>Fill</para>
+	/// <para>Fills sinks in a surface raster to remove small imperfections in the data.</para>
 	/// </summary>
 	public class Fill : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		/// <param name="Inputsurfaceraster">
 		/// <para>Input Surface Raster</para>
-		/// <para>输入栅格表示连续表面。</para>
+		/// <para>The input raster representing a continuous surface.</para>
 		/// </param>
 		/// <param name="Outputname">
 		/// <para>Output Name</para>
-		/// <para>输出填充栅格服务的名称。</para>
-		/// <para>默认名称基于工具名称以及输入图层名称。 如果该图层名称已存在，则系统将提示您提供其他名称。</para>
+		/// <para>The name of the output fill raster service.</para>
+		/// <para>The default name is based on the tool name and the input layer name. If the layer name already exists, you will be prompted to provide another name.</para>
 		/// </param>
 		public Fill(object Inputsurfaceraster, object Outputname)
 		{
@@ -35,14 +35,14 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 填洼</para>
+		/// <para>Tool Display Name : Fill</para>
 		/// </summary>
-		public override string DisplayName() => "填洼";
+		public override string DisplayName() => "Fill";
 
 		/// <summary>
-		/// <para>Tool Name : 填洼</para>
+		/// <para>Tool Name : Fill</para>
 		/// </summary>
-		public override string ToolName() => "填洼";
+		public override string ToolName() => "Fill";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.Fill</para>
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Surface Raster</para>
-		/// <para>输入栅格表示连续表面。</para>
+		/// <para>The input raster representing a continuous surface.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -80,8 +80,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>输出填充栅格服务的名称。</para>
-		/// <para>默认名称基于工具名称以及输入图层名称。 如果该图层名称已存在，则系统将提示您提供其他名称。</para>
+		/// <para>The name of the output fill raster service.</para>
+		/// <para>The default name is based on the tool name and the input layer name. If the layer name already exists, you will be prompted to provide another name.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Z Limit</para>
-		/// <para>要填充的凹陷点与其倾泻点之间的最大高程差。</para>
+		/// <para>Maximum elevation difference between a sink and its pour point to be filled.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

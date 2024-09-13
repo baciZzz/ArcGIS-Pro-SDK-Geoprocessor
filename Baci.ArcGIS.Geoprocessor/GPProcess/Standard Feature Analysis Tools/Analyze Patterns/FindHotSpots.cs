@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 {
 	/// <summary>
 	/// <para>Find Hot Spots</para>
-	/// <para>查找热点</para>
-	/// <para>识别您的数据中具有统计显著性的高值（热点）或低值（冷点）或数据计数的空间聚类。使用此工具可查找诸如高和低房屋价值、犯罪密度、交通事故死亡率、失业率以及生物多样性等聚类的热点和冷点。</para>
+	/// <para>Find Hot Spots</para>
+	/// <para>Identifies statistically significant spatial clustering of high values (hot spots) or low values (cold spots), or data counts,  in your data. Use this tool to uncover hot  and cold spots of high and low home values, crime densities, traffic accident fatalities, unemployment or biodiversity, for example.</para>
 	/// </summary>
 	public class FindHotSpots : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// </summary>
 		/// <param name="Analysislayer">
 		/// <para>Input Features</para>
-		/// <para>将要计算热点的点或面要素图层。</para>
+		/// <para>The point or polygon feature layer for which hot spots will be calculated.</para>
 		/// </param>
 		/// <param name="Outputname">
 		/// <para>Output Name</para>
-		/// <para>要在门户中创建的输出图层的名称。</para>
+		/// <para>The name of the output layer to create on your portal.</para>
 		/// </param>
 		public FindHotSpots(object Analysislayer, object Outputname)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 查找热点</para>
+		/// <para>Tool Display Name : Find Hot Spots</para>
 		/// </summary>
-		public override string DisplayName() => "查找热点";
+		public override string DisplayName() => "Find Hot Spots";
 
 		/// <summary>
 		/// <para>Tool Name : FindHotSpots</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>将要计算热点的点或面要素图层。</para>
+		/// <para>The point or polygon feature layer for which hot spots will be calculated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>要在门户中创建的输出图层的名称。</para>
+		/// <para>The name of the output layer to create on your portal.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -89,11 +89,11 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Analysis Field</para>
-		/// <para>要评估的数值字段（事件数、犯罪率和测试得分等）。所选的字段可代表下列各项：</para>
-		/// <para>计数（如交通事故数）</para>
-		/// <para>比率（每平方英里的犯罪数）</para>
-		/// <para>平均值（如数学测验的平均得分）</para>
-		/// <para>指数（如顾客满意度得分）</para>
+		/// <para>A numeric field (number of incidents, crime rates, test scores, and so on) to be evaluated. The field you select might represent the following:</para>
+		/// <para>Counts (such as the number of traffic accidents)</para>
+		/// <para>Rates (such as the number of crimes per square mile)</para>
+		/// <para>Averages (such as the mean math test score)</para>
+		/// <para>Indices (such as a customer satisfaction score)</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Divide By Field</para>
-		/// <para>输入图层中用于对数据进行归一化的数值字段。例如，如果点代表犯罪案件，则其除以总人口数可得到人均犯罪分析，而不是原始犯罪计数。</para>
+		/// <para>The numeric field in the input layer that will be used to normalize your data. For example, if your points represent crimes, dividing by total population would result in an analysis of crimes per capita rather than raw crime counts.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Bounding Polygons</para>
-		/// <para>当分析图层为点且未指定分析字段时，您可以提供定义事件可能发生地点的面要素。例如，如果您正在分析港口中的船只事故，港口的轮廓可以为事故可能发生的地点提供一个良好的边界。当没有提供边界区域时，则分析中将仅包含至少含有一个点的位置。</para>
+		/// <para>When the analysis layer is points and no analysis field is specified, you can provide polygon features that define where incidents could have occurred. For example, if you are analyzing boating accidents in a harbor, the outline of the harbor might provide a good boundary for where accidents could occur. When no bounding areas are provided, only locations with at least one point will be included in the analysis.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Aggregation Polygons</para>
-		/// <para>当输入图层包含点且未指定分析字段时，您可以提供要聚合和分析点的面要素，例如行政单位。计算每个面内的点数，并分析每个面中的点计数。</para>
+		/// <para>When the input layer contains points and no analysis field is specified, you can provide polygon features into which the points will be aggregated and analyzed, such as administrative units. The number of points that fall within each polygon is counted and the point count in each polygon is analyzed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Table To Ellipse</para>
-	/// <para>表转椭圆</para>
-	/// <para>创建要素类，该要素类包含根据表的 x 坐标字段、y 坐标字段、长轴字段、短轴字段和方位角字段中的值的大地测量和平面椭圆要素。</para>
+	/// <para>Table To Ellipse</para>
+	/// <para>Creates a feature class containing geodetic or planar ellipses from the values in an x-coordinate field, y-coordinate field, major axis and minor axis fields, and azimuth field of a table.</para>
 	/// </summary>
 	public class TableToEllipse : AbstractGPProcess
 	{
@@ -21,37 +21,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>输入表。可以是文本文件、CSV 文件、Excel 文件、dBASE 表或地理数据库表。</para>
+		/// <para>The input table. It can be a text file, CSV file, Excel file, dBASE table, or geodatabase table.</para>
 		/// </param>
 		/// <param name="OutFeatureclass">
 		/// <para>Output Feature Class</para>
-		/// <para>输出要素类，其中包含大地测量和平面椭圆。</para>
+		/// <para>The output feature class containing geodetic or planar ellipse.</para>
 		/// </param>
 		/// <param name="XField">
 		/// <para>X Field</para>
-		/// <para>输入表中的数值型字段，其中包含在空间参考参数所指定的输出坐标系中用于定位的椭圆中心点的 x 坐标（或经线）。</para>
+		/// <para>A numerical field in the input table containing the x-coordinates (or longitudes) of the center points of ellipses to be positioned in the output coordinate system specified by the Spatial Reference parameter.</para>
 		/// </param>
 		/// <param name="YField">
 		/// <para>Y Field</para>
-		/// <para>输入表中的数值型字段，其中包含在空间参考参数所指定的输出坐标系中用于定位的椭圆中心点的 y 坐标（或纬线）。</para>
+		/// <para>A numerical field in the input table containing the y-coordinates (or latitudes) of the center points of ellipses to be positioned in the output coordinate system specified by the Spatial Reference parameter.</para>
 		/// </param>
 		/// <param name="MajorField">
 		/// <para>Major Field</para>
-		/// <para>输入表中包含椭圆长轴长度的数值型字段。</para>
+		/// <para>A numerical field in the input table containing major axis lengths of the ellipses.</para>
 		/// </param>
 		/// <param name="MinorField">
 		/// <para>Minor Field</para>
-		/// <para>输入表中包含椭圆短轴长度的数值型字段。</para>
+		/// <para>A numerical field in the input table containing minor axis lengths of the ellipses.</para>
 		/// </param>
 		/// <param name="DistanceUnits">
 		/// <para>Distance Units</para>
-		/// <para>指定长轴字段和短轴字段参数将使用的单位。</para>
-		/// <para>米—单位将为米。</para>
-		/// <para>千米—单位将为公里。</para>
-		/// <para>英里—单位将为英里。</para>
-		/// <para>海里—单位将为海里。</para>
-		/// <para>英尺—单位将为英尺。</para>
-		/// <para>美国测量英尺—单位将为美国测量英尺。</para>
+		/// <para>Specifies the units that will be used for the Major Field and Minor Field parameters.</para>
+		/// <para>Meters—The units will be meters.</para>
+		/// <para>Kilometers—The units will be kilometers.</para>
+		/// <para>Miles—The units will be miles.</para>
+		/// <para>Nautical miles—The units will be nautical miles.</para>
+		/// <para>Feet—The units will be feet.</para>
+		/// <para>U.S. survey feet—The units will be U.S. survey feet.</para>
 		/// <para><see cref="DistanceUnitsEnum"/></para>
 		/// </param>
 		public TableToEllipse(object InTable, object OutFeatureclass, object XField, object YField, object MajorField, object MinorField, object DistanceUnits)
@@ -66,9 +66,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 表转椭圆</para>
+		/// <para>Tool Display Name : Table To Ellipse</para>
 		/// </summary>
-		public override string DisplayName() => "表转椭圆";
+		public override string DisplayName() => "Table To Ellipse";
 
 		/// <summary>
 		/// <para>Tool Name : TableToEllipse</para>
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>输入表。可以是文本文件、CSV 文件、Excel 文件、dBASE 表或地理数据库表。</para>
+		/// <para>The input table. It can be a text file, CSV file, Excel file, dBASE table, or geodatabase table.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>输出要素类，其中包含大地测量和平面椭圆。</para>
+		/// <para>The output feature class containing geodetic or planar ellipse.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>X Field</para>
-		/// <para>输入表中的数值型字段，其中包含在空间参考参数所指定的输出坐标系中用于定位的椭圆中心点的 x 坐标（或经线）。</para>
+		/// <para>A numerical field in the input table containing the x-coordinates (or longitudes) of the center points of ellipses to be positioned in the output coordinate system specified by the Spatial Reference parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Y Field</para>
-		/// <para>输入表中的数值型字段，其中包含在空间参考参数所指定的输出坐标系中用于定位的椭圆中心点的 y 坐标（或纬线）。</para>
+		/// <para>A numerical field in the input table containing the y-coordinates (or latitudes) of the center points of ellipses to be positioned in the output coordinate system specified by the Spatial Reference parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Major Field</para>
-		/// <para>输入表中包含椭圆长轴长度的数值型字段。</para>
+		/// <para>A numerical field in the input table containing major axis lengths of the ellipses.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -148,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Minor Field</para>
-		/// <para>输入表中包含椭圆短轴长度的数值型字段。</para>
+		/// <para>A numerical field in the input table containing minor axis lengths of the ellipses.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -158,13 +158,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Distance Units</para>
-		/// <para>指定长轴字段和短轴字段参数将使用的单位。</para>
-		/// <para>米—单位将为米。</para>
-		/// <para>千米—单位将为公里。</para>
-		/// <para>英里—单位将为英里。</para>
-		/// <para>海里—单位将为海里。</para>
-		/// <para>英尺—单位将为英尺。</para>
-		/// <para>美国测量英尺—单位将为美国测量英尺。</para>
+		/// <para>Specifies the units that will be used for the Major Field and Minor Field parameters.</para>
+		/// <para>Meters—The units will be meters.</para>
+		/// <para>Kilometers—The units will be kilometers.</para>
+		/// <para>Miles—The units will be miles.</para>
+		/// <para>Nautical miles—The units will be nautical miles.</para>
+		/// <para>Feet—The units will be feet.</para>
+		/// <para>U.S. survey feet—The units will be U.S. survey feet.</para>
 		/// <para><see cref="DistanceUnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -174,7 +174,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Azimuth Field</para>
-		/// <para>输入表中的数值型字段，其中包含输出椭圆的长轴旋转的方位角值。 这些值是以北为基准方向按顺时针方向进行测量的。</para>
+		/// <para>A numerical field in the input table containing azimuth angle values for the major axis rotations of the output ellipses. The values are measured clockwise from north.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -184,7 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Azimuth Units</para>
-		/// <para>指定方位角字段参数将使用的单位。</para>
+		/// <para>Specifies the units that will be used for the Azimuth Field parameter.</para>
 		/// <para><see cref="AzimuthUnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -194,7 +194,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>ID</para>
-		/// <para>输入表中的字段。此字段和值均包含在输出中，可用于连接输出要素和输入表中的记录。</para>
+		/// <para>A field in the input table. This field and the values are included in the output and can be used to join the output features with the records in the input table.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -204,7 +204,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Spatial Reference</para>
-		/// <para>输出要素类的空间参考。默认值为 GCS_WGS_1984 或输入坐标系（如果非“Unknown”）。</para>
+		/// <para>The spatial reference of the output feature class. The default is GCS_WGS_1984 or the input coordinate system if it is not Unknown.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
@@ -212,9 +212,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Preserve attributes</para>
-		/// <para>指定是否将其余输入字段添加到输出要素类。</para>
-		/// <para>未选中 - 不会将其余输入字段添加到输出要素类。 这是默认设置。</para>
-		/// <para>选中 - 将其余输入字段添加到输出要素类。 还将向输出要素类添加新字段 ORIG_FID 以存储输入要素 ID 值。</para>
+		/// <para>Specifies whether the remaining input fields will be added to the output feature class.</para>
+		/// <para>Unchecked—The remaining input fields will not be added to the output feature class. This is the default.</para>
+		/// <para>Checked—The remaining input fields will be added to the output feature class. A new field, ORIG_FID, will also be added to the output feature class to store the input feature ID values.</para>
 		/// <para><see cref="AttributesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -224,11 +224,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Geometry Type</para>
-		/// <para>指定输出要素类的几何类型。</para>
-		/// <para>LINE—将创建输出折线要素类。 这是默认设置。</para>
-		/// <para>POLYGON—将创建输出面要素类。</para>
-		/// <para>LINE—线</para>
-		/// <para>POLYGON—面</para>
+		/// <para>Specifies the geometry type for the output feature class.</para>
+		/// <para>LINE—An output polyline feature class will be created. This is the default.</para>
+		/// <para>POLYGON—An output polygon feature class will be created.</para>
+		/// <para>LINE—Line</para>
+		/// <para>POLYGON—Polygon</para>
 		/// <para><see cref="GeometryTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -238,11 +238,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>指定是基于测地线测量还是平面测量来生成椭圆。</para>
-		/// <para>GEODESIC—生成测地线椭圆 椭圆将准确地表示地球表面的形状。 这是默认设置。</para>
-		/// <para>PLANAR—将在投影平面上生成平面椭圆。 它通常不像测地线椭圆那样准确地表示地球表面的形状。 此选项不适用于地理坐标系。</para>
-		/// <para>GEODESIC—测地线</para>
-		/// <para>PLANAR—平面</para>
+		/// <para>Specifies whether the ellipse will be generated based on geodesic or planar measurements.</para>
+		/// <para>GEODESIC—A geodesic ellipse will be generated. The ellipse will accurately represent the shape on the surface of the earth. This is the default.</para>
+		/// <para>PLANAR—A planar ellipse will be generated on the projected plane. It usually does not accurately represent the shape on the surface of the earth as a geodesic ellipse does. This option is not available for geographic coordinate systems.</para>
+		/// <para>GEODESIC—Geodesic</para>
+		/// <para>PLANAR—Planar</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -267,45 +267,45 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DistanceUnitsEnum 
 		{
 			/// <summary>
-			/// <para>米—单位将为米。</para>
+			/// <para>Meters—The units will be meters.</para>
 			/// </summary>
 			[GPValue("METERS")]
-			[Description("米")]
+			[Description("Meters")]
 			Meters,
 
 			/// <summary>
-			/// <para>千米—单位将为公里。</para>
+			/// <para>Kilometers—The units will be kilometers.</para>
 			/// </summary>
 			[GPValue("KILOMETERS")]
-			[Description("千米")]
+			[Description("Kilometers")]
 			Kilometers,
 
 			/// <summary>
-			/// <para>英里—单位将为英里。</para>
+			/// <para>Miles—The units will be miles.</para>
 			/// </summary>
 			[GPValue("MILES")]
-			[Description("英里")]
+			[Description("Miles")]
 			Miles,
 
 			/// <summary>
-			/// <para>海里—单位将为海里。</para>
+			/// <para>Nautical miles—The units will be nautical miles.</para>
 			/// </summary>
 			[GPValue("NAUTICAL_MILES")]
-			[Description("海里")]
+			[Description("Nautical miles")]
 			Nautical_miles,
 
 			/// <summary>
-			/// <para>英尺—单位将为英尺。</para>
+			/// <para>Feet—The units will be feet.</para>
 			/// </summary>
 			[GPValue("FEET")]
-			[Description("英尺")]
+			[Description("Feet")]
 			Feet,
 
 			/// <summary>
-			/// <para>美国测量英尺—单位将为美国测量英尺。</para>
+			/// <para>U.S. survey feet—The units will be U.S. survey feet.</para>
 			/// </summary>
 			[GPValue("US_SURVEY_FEET")]
-			[Description("美国测量英尺")]
+			[Description("U.S. survey feet")]
 			US_survey_feet,
 
 		}
@@ -319,28 +319,28 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			/// <para></para>
 			/// </summary>
 			[GPValue("DEGREES")]
-			[Description("十进制度")]
+			[Description("Decimal degrees")]
 			Decimal_degrees,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("MILS")]
-			[Description("密耳")]
+			[Description("Mils")]
 			Mils,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("RADS")]
-			[Description("弧度")]
+			[Description("Radians")]
 			Radians,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("GRADS")]
-			[Description("百分度")]
+			[Description("Gradians")]
 			Gradians,
 
 		}
@@ -351,14 +351,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AttributesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The remaining input fields will be added to the output feature class. A new field, ORIG_FID, will also be added to the output feature class to store the input feature ID values.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ATTRIBUTES")]
 			ATTRIBUTES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The remaining input fields will not be added to the output feature class. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ATTRIBUTES")]
@@ -372,14 +372,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum GeometryTypeEnum 
 		{
 			/// <summary>
-			/// <para>LINE—将创建输出折线要素类。 这是默认设置。</para>
+			/// <para>LINE—An output polyline feature class will be created. This is the default.</para>
 			/// </summary>
 			[GPValue("LINE")]
 			[Description("LINE")]
 			LINE,
 
 			/// <summary>
-			/// <para>POLYGON—将创建输出面要素类。</para>
+			/// <para>POLYGON—An output polygon feature class will be created.</para>
 			/// </summary>
 			[GPValue("POLYGON")]
 			[Description("POLYGON")]
@@ -393,14 +393,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>GEODESIC—生成测地线椭圆 椭圆将准确地表示地球表面的形状。 这是默认设置。</para>
+			/// <para>GEODESIC—A geodesic ellipse will be generated. The ellipse will accurately represent the shape on the surface of the earth. This is the default.</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
 			[Description("GEODESIC")]
 			GEODESIC,
 
 			/// <summary>
-			/// <para>PLANAR—将在投影平面上生成平面椭圆。 它通常不像测地线椭圆那样准确地表示地球表面的形状。 此选项不适用于地理坐标系。</para>
+			/// <para>PLANAR—A planar ellipse will be generated on the projected plane. It usually does not accurately represent the shape on the surface of the earth as a geodesic ellipse does. This option is not available for geographic coordinate systems.</para>
 			/// </summary>
 			[GPValue("PLANAR")]
 			[Description("PLANAR")]

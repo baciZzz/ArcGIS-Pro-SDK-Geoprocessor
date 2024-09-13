@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Upgrade Dataset</para>
-	/// <para>升级数据集</para>
-	/// <para>将镶嵌数据集、网络数据集、注记数据集、尺寸数据集、宗地结构、追踪网络或公共设施网络的方案升级到 ArcGIS 的当前版本。 通过升级数据集，可使数据集能够使用当前软件版本中的新增功能。</para>
+	/// <para>Upgrade Dataset</para>
+	/// <para>Upgrades the schema of a mosaic dataset, network dataset, annotation dataset, dimension dataset, parcel fabric, trace network, or utility network to the current ArcGIS release. Upgrading the dataset allows the dataset to use new functionality in the current software release.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Dataset to upgrade</para>
-		/// <para>将升级到当前 ArcGIS 客户端版本的数据集。</para>
+		/// <para>The dataset that will be upgraded to the current ArcGIS client release.</para>
 		/// </param>
 		public UpgradeDataset(object InDataset)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 升级数据集</para>
+		/// <para>Tool Display Name : Upgrade Dataset</para>
 		/// </summary>
-		public override string DisplayName() => "升级数据集";
+		public override string DisplayName() => "Upgrade Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : UpgradeDataset</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Dataset to upgrade</para>
-		/// <para>将升级到当前 ArcGIS 客户端版本的数据集。</para>
+		/// <para>The dataset that will be upgraded to the current ArcGIS client release.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]

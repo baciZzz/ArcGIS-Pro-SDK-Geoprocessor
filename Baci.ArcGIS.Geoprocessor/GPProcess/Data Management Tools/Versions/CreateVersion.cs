@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Version</para>
-	/// <para>创建版本</para>
-	/// <para>在指定的地理数据库中创建新版本。</para>
+	/// <para>Create Version</para>
+	/// <para>Creates a new version in the specified geodatabase.</para>
 	/// </summary>
 	[Obsolete()]
 	public class CreateVersion : AbstractGPProcess
@@ -22,16 +22,16 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InWorkspace">
 		/// <para>Input Workspace</para>
-		/// <para>包含父版本并将包含新版本的企业级地理数据库。</para>
-		/// <para>对于分支版本化，请使用要素服务 URL（即 https://mysite.mydomain/server/rest/services/ElectricNetwork/FeatureServer）。</para>
+		/// <para>The enterprise geodatabase that contains the parent version and will contain the new version.</para>
+		/// <para>For branch versioning, use a feature service URL (that is, https://mysite.mydomain/server/rest/services/ElectricNetwork/FeatureServer).</para>
 		/// </param>
 		/// <param name="ParentVersion">
 		/// <para>Parent Version</para>
-		/// <para>新版本所基于的地理数据库或地理数据库的版本。</para>
+		/// <para>The geodatabase, or version of a geodatabase, on which the new version will be based.</para>
 		/// </param>
 		/// <param name="VersionName">
 		/// <para>Version Name</para>
-		/// <para>要创建的版本的名称。</para>
+		/// <para>The name of the version to be created.</para>
 		/// </param>
 		public CreateVersion(object InWorkspace, object ParentVersion, object VersionName)
 		{
@@ -41,9 +41,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建版本</para>
+		/// <para>Tool Display Name : Create Version</para>
 		/// </summary>
-		public override string DisplayName() => "创建版本";
+		public override string DisplayName() => "Create Version";
 
 		/// <summary>
 		/// <para>Tool Name : CreateVersion</para>
@@ -77,8 +77,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Workspace</para>
-		/// <para>包含父版本并将包含新版本的企业级地理数据库。</para>
-		/// <para>对于分支版本化，请使用要素服务 URL（即 https://mysite.mydomain/server/rest/services/ElectricNetwork/FeatureServer）。</para>
+		/// <para>The enterprise geodatabase that contains the parent version and will contain the new version.</para>
+		/// <para>For branch versioning, use a feature service URL (that is, https://mysite.mydomain/server/rest/services/ElectricNetwork/FeatureServer).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Parent Version</para>
-		/// <para>新版本所基于的地理数据库或地理数据库的版本。</para>
+		/// <para>The geodatabase, or version of a geodatabase, on which the new version will be based.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Version Name</para>
-		/// <para>要创建的版本的名称。</para>
+		/// <para>The name of the version to be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -104,10 +104,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Access Permission</para>
-		/// <para>版本的访问权限级别可防止版本被所有者以外的用户编辑或查看。</para>
-		/// <para>私有（仅限所有者）—只有所有者或地理数据库管理员可以查看和修改版本或已版本化的数据。</para>
-		/// <para>公共（任意用户）—任何用户都可查看版本。任何具有数据集读/写（更新、插入和删除）权限的用户都可以修改版本中的数据集。</para>
-		/// <para>受保护的（仅所有者可编辑）—任何用户都可以查看版本，但只有所有者或地理数据库管理员可以编辑版本或版本中的数据集。</para>
+		/// <para>The permission access level for the version to protect it from being edited or viewed by users other than the owner.</para>
+		/// <para>Private (owner only)—Only the owner or the geodatabase administrator can view and modify the version or versioned data.</para>
+		/// <para>Public (any user)—Any user can view the version. Any user who has been granted read/write (update, insert, and delete) permissions on datasets can modify datasets in the version.</para>
+		/// <para>Protected (only the owner can edit)—Any user can view the version, but only the owner or the geodatabase administrator can edit the version or datasets in the version.</para>
 		/// <para><see cref="AccessPermissionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -139,24 +139,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AccessPermissionEnum 
 		{
 			/// <summary>
-			/// <para>私有（仅限所有者）—只有所有者或地理数据库管理员可以查看和修改版本或已版本化的数据。</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("PRIVATE")]
-			[Description("私有（仅限所有者）")]
+			[Description("Private (owner  only)")]
 			PRIVATE,
 
 			/// <summary>
-			/// <para>公共（任意用户）—任何用户都可查看版本。任何具有数据集读/写（更新、插入和删除）权限的用户都可以修改版本中的数据集。</para>
+			/// <para>Public (any user)—Any user can view the version. Any user who has been granted read/write (update, insert, and delete) permissions on datasets can modify datasets in the version.</para>
 			/// </summary>
 			[GPValue("PUBLIC")]
-			[Description("公共（任意用户）")]
+			[Description("Public (any user)")]
 			PUBLIC,
 
 			/// <summary>
-			/// <para>受保护的（仅所有者可编辑）—任何用户都可以查看版本，但只有所有者或地理数据库管理员可以编辑版本或版本中的数据集。</para>
+			/// <para>Protected (only the owner can edit)—Any user can view the version, but only the owner or the geodatabase administrator can edit the version or datasets in the version.</para>
 			/// </summary>
 			[GPValue("PROTECTED")]
-			[Description("受保护的（仅所有者可编辑）")]
+			[Description("Protected (only the owner can edit)")]
 			PROTECTED,
 
 		}

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Contingent Value</para>
-	/// <para>添加条件值</para>
-	/// <para>向要素类或表中的字段组添加条件值。</para>
+	/// <para>Add Contingent Value</para>
+	/// <para>Adds a contingent value to a field group on a feature class or table.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,22 +23,22 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="TargetTable">
 		/// <para>Target Table</para>
-		/// <para>要添加条件值的输入地理数据库要素类或表。</para>
+		/// <para>The input geodatabase feature class or table to which the contingent value will be added.</para>
 		/// </param>
 		/// <param name="FieldGroupName">
 		/// <para>Field Group Name</para>
-		/// <para>要添加条件值的字段组。</para>
+		/// <para>The field group to which the contingent value will be added.</para>
 		/// </param>
 		/// <param name="Values">
 		/// <para>Values</para>
-		/// <para>将用于新条件值的字段名、字段值类型和相关字段值。</para>
-		/// <para>字段名 - 参与字段组的字段名称</para>
-		/// <para>字段值类型 - 条件值的类型。 “Any”和“Null”类型将忽略字段值字段中指定的任何值。</para>
-		/// <para>Any - 该值可以为任意字段值。</para>
-		/// <para>Null - 该值为空。</para>
-		/// <para>编码值 - 该值来自于编码值属性域。</para>
-		/// <para>范围 - 该值为范围属性域的最小/最大子集。</para>
-		/// <para>字段值 - 特定字段值。 如果字段值类型为编码值，请指定编码描述。 如果字段值类型为范围，则请以“最小值;最大值”（例如 10;100）的格式指定最小值和最大值。</para>
+		/// <para>The field name, field value type, and associated field values to be used for the new contingent value.</para>
+		/// <para>Field Name—The name of the field that participates in the field group</para>
+		/// <para>Field Value Type—The type of contingent value. The Any and Null types will ignore any value specified in the Field Value field.</para>
+		/// <para>Any—The value can be any field value.</para>
+		/// <para>Null—The value is null.</para>
+		/// <para>Coded Value—The value is from a coded value domain.</para>
+		/// <para>Range—The value is a min/max subset of a range domain.</para>
+		/// <para>Field Value—The specific field value. If the Field Value Type is Coded Value, specify the code description. If the Field Value Type is Range, specify the minimum and maximum values in the format min;max (for example, 10;100).</para>
 		/// </param>
 		public AddContingentValue(object TargetTable, object FieldGroupName, object Values)
 		{
@@ -48,9 +48,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 添加条件值</para>
+		/// <para>Tool Display Name : Add Contingent Value</para>
 		/// </summary>
-		public override string DisplayName() => "添加条件值";
+		public override string DisplayName() => "Add Contingent Value";
 
 		/// <summary>
 		/// <para>Tool Name : AddContingentValue</para>
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Table</para>
-		/// <para>要添加条件值的输入地理数据库要素类或表。</para>
+		/// <para>The input geodatabase feature class or table to which the contingent value will be added.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field Group Name</para>
-		/// <para>要添加条件值的字段组。</para>
+		/// <para>The field group to which the contingent value will be added.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -100,14 +100,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Values</para>
-		/// <para>将用于新条件值的字段名、字段值类型和相关字段值。</para>
-		/// <para>字段名 - 参与字段组的字段名称</para>
-		/// <para>字段值类型 - 条件值的类型。 “Any”和“Null”类型将忽略字段值字段中指定的任何值。</para>
-		/// <para>Any - 该值可以为任意字段值。</para>
-		/// <para>Null - 该值为空。</para>
-		/// <para>编码值 - 该值来自于编码值属性域。</para>
-		/// <para>范围 - 该值为范围属性域的最小/最大子集。</para>
-		/// <para>字段值 - 特定字段值。 如果字段值类型为编码值，请指定编码描述。 如果字段值类型为范围，则请以“最小值;最大值”（例如 10;100）的格式指定最小值和最大值。</para>
+		/// <para>The field name, field value type, and associated field values to be used for the new contingent value.</para>
+		/// <para>Field Name—The name of the field that participates in the field group</para>
+		/// <para>Field Value Type—The type of contingent value. The Any and Null types will ignore any value specified in the Field Value field.</para>
+		/// <para>Any—The value can be any field value.</para>
+		/// <para>Null—The value is null.</para>
+		/// <para>Coded Value—The value is from a coded value domain.</para>
+		/// <para>Range—The value is a min/max subset of a range domain.</para>
+		/// <para>Field Value—The specific field value. If the Field Value Type is Coded Value, specify the code description. If the Field Value Type is Range, specify the minimum and maximum values in the format min;max (for example, 10;100).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Subtype</para>
-		/// <para>要添加条件值的输入表子类型。</para>
+		/// <para>The input table subtype to which the contingent value will be added.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -123,9 +123,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Retire Value</para>
-		/// <para>指定是否停用条件值。 如果不再创建条件值，但其仍可在现有字段中使用，则将此条件值视为停用状态。 停用一个条件值后，它仍然会显示在字段的有限值列表中（例如，在属性窗格中），但处于非活动状态，此时您将无法将其选为字段值。 例如，将石棉用作建筑材料时。 新的构造无法使用石棉作为建筑材料，但是现有结构可能仍然具有此属性。</para>
-		/// <para>选中 - 将停用条件值。</para>
-		/// <para>未选中 - 不会停用条件值。 这是默认设置。</para>
+		/// <para>Specifies whether the contingent value will be retired. The contingent value is considered retired when it is no longer created but can still be used in an existing field. When a contingent value is retired, it will still be shown in the list of valid values for a field, such as in the Attribute pane, but it will be inactive and you won&apos;t be able to select it as a field value. An example is using asbestos as a building material. New construction cannot use asbestos as a building material, but existing structures may still have this attribute.</para>
+		/// <para>Checked—The contingent value will be retired.</para>
+		/// <para>Unchecked—The contingent value will not be retired. This is the default.</para>
 		/// <para><see cref="RetireValueEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -157,14 +157,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum RetireValueEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The contingent value will be retired.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RETIRE")]
 			RETIRE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The contingent value will not be retired. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_RETIRE")]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Disable Derived Measure Fields</para>
-	/// <para>禁用派生的测量字段</para>
-	/// <para>禁用用于存储派生网络路径 ID、路径名称和测量字段的字段。</para>
+	/// <para>Disable Derived Measure Fields</para>
+	/// <para>Disables fields that store the derived network route ID, route name, and measure fields.</para>
 	/// </summary>
 	public class DisableDerivedMeasureFields : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InFeatureClass">
 		/// <para>LRS Event Feature Class</para>
-		/// <para>已注册到 LRS 的现有事件要素类或要素图层。</para>
+		/// <para>An existing event feature class or feature layer that is registered to an LRS.</para>
 		/// </param>
 		public DisableDerivedMeasureFields(object InFeatureClass)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 禁用派生的测量字段</para>
+		/// <para>Tool Display Name : Disable Derived Measure Fields</para>
 		/// </summary>
-		public override string DisplayName() => "禁用派生的测量字段";
+		public override string DisplayName() => "Disable Derived Measure Fields";
 
 		/// <summary>
 		/// <para>Tool Name : DisableDerivedMeasureFields</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>LRS Event Feature Class</para>
-		/// <para>已注册到 LRS 的现有事件要素类或要素图层。</para>
+		/// <para>An existing event feature class or feature layer that is registered to an LRS.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]

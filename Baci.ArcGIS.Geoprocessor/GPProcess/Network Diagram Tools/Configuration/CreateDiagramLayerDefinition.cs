@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Create Diagram Layer Definition</para>
-	/// <para>创建逻辑示意图图层定义</para>
-	/// <para>使用活动地图中的网络要素图层设置，为输入逻辑示意图模板创建逻辑示意图图层定义。</para>
+	/// <para>Create Diagram Layer Definition</para>
+	/// <para>Creates a diagram layer definition for the input diagram template using the settings of the network feature layers in the active map.</para>
 	/// </summary>
 	public class CreateDiagramLayerDefinition : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>活动地图中的 utility network or trace network 图层。</para>
+		/// <para>The utility network or trace network layer in the active map.</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>要修改的逻辑示意图模板名称</para>
+		/// <para>The name of the diagram template that will be modified.</para>
 		/// </param>
 		public CreateDiagramLayerDefinition(object InUtilityNetwork, object TemplateName)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建逻辑示意图图层定义</para>
+		/// <para>Tool Display Name : Create Diagram Layer Definition</para>
 		/// </summary>
-		public override string DisplayName() => "创建逻辑示意图图层定义";
+		public override string DisplayName() => "Create Diagram Layer Definition";
 
 		/// <summary>
 		/// <para>Tool Name : CreateDiagramLayerDefinition</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>活动地图中的 utility network or trace network 图层。</para>
+		/// <para>The utility network or trace network layer in the active map.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>要修改的逻辑示意图模板名称</para>
+		/// <para>The name of the diagram template that will be modified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -86,9 +86,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>System Junctions</para>
-		/// <para>指定是否在基于指定模板的逻辑示意图中表示系统交汇点和系统交汇点对象。</para>
-		/// <para>选中 - 网络线沿线的系统交汇点和网络边对象沿线的系统交汇点对象在逻辑示意图中分别由“系统交汇点”图层和“系统交汇点对象”图层表示。这是默认设置。</para>
-		/// <para>未选中 - 将不会在逻辑示意图中表示系统交汇点和系统交汇点对象。</para>
+		/// <para>Specifies whether system junctions and system junction objects will be represented in the diagrams based on the specified template.</para>
+		/// <para>Checked—The system junctions along the network lines and the system junction objects along the network edge objects will be represented in the diagrams by a System Junction layer and a System Junction Objects layer, respectively. This is the default.</para>
+		/// <para>Unchecked—System junctions and system junction objects will not be represented in the diagrams.</para>
 		/// <para><see cref="SystemJunctionsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -99,9 +99,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Connectivity Associations</para>
-		/// <para>指定是否在基于指定模板的逻辑示意图中表示连通性关联。</para>
-		/// <para>选中 - 连通性关联在逻辑示意图中由“连通性关联”图层表示。这是默认设置。</para>
-		/// <para>未选中 - 将不会在逻辑示意图中表示连通性关联。</para>
+		/// <para>Specifies whether connectivity associations will be represented in the diagrams based on the specified template.</para>
+		/// <para>Checked—Connectivity associations will be represented in the diagrams by the Connectivity Associations layer. This is the default.</para>
+		/// <para>Unchecked— Connectivity associations will not be represented in the diagrams.</para>
 		/// <para><see cref="ConnectivityAssociationsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -112,9 +112,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Structural Attachments</para>
-		/// <para>指定是否在基于指定模板的逻辑示意图中表示结构附件。</para>
-		/// <para>选中 - 结构附件关联在逻辑示意图中由“结构附件”图层表示。这是默认设置。</para>
-		/// <para>未选中 - 将不会在逻辑示意图中表示结构附件关联。</para>
+		/// <para>Specifies whether structural attachment associations will be represented in the diagrams based on the specified template.</para>
+		/// <para>Checked—Structural attachment associations will be represented in the diagrams by the Structural Attachments layer. This is the default.</para>
+		/// <para>Unchecked—Structural attachment associations will not be represented in the diagrams.</para>
 		/// <para><see cref="StructuralAttachmentsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -125,9 +125,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Reduction Edges</para>
-		/// <para>指定是否在基于指定模板的逻辑示意图中表示减少边。</para>
-		/// <para>选中 - 缩减边在逻辑示意图中由“缩减边”图层表示。这是默认设置。</para>
-		/// <para>未选中 - 将不会在逻辑示意图中表示缩减边。</para>
+		/// <para>Specifies whether reduction edges will be represented in the diagrams based on the specified template.</para>
+		/// <para>Checked—Reduction edges will be represented in the diagrams by the Reduction Edges layer. This is the default.</para>
+		/// <para>Unchecked—Reduction edges will not be represented in the diagrams.</para>
 		/// <para><see cref="ReductionEdgesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -138,10 +138,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Points for edges reduced as junctions or collapsed polygons</para>
-		/// <para>指定是否添加图层以将容器面、线网络要素或网络边对象表示为逻辑示意图中的点要素。</para>
-		/// <para>子类型图层列使用如下：</para>
-		/// <para>选中 - 图层将通过子类型图层组创建。</para>
-		/// <para>未选中 - 图层将以简单图层形式创建。这是默认设置。</para>
+		/// <para>Specifies whether layers will be added to represent container polygon features, network line features, or network edge objects as point features in the diagrams.</para>
+		/// <para>The Subtype Layer column is used as follows:</para>
+		/// <para>Checked—The layer will be created with subtype group layers.</para>
+		/// <para>Unchecked—The layer will be created as a simple layer. This is the default.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -150,10 +150,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Polygons for containers</para>
-		/// <para>指定是否添加图层以将容器点要素或容器交汇点对象表示为逻辑示意图中的面要素。</para>
-		/// <para>子类型图层列使用如下：</para>
-		/// <para>选中 - 图层将通过子类型图层组创建。</para>
-		/// <para>未选中 - 图层将以简单图层形式创建。这是默认设置。</para>
+		/// <para>Specifies whether layers will be added to represent container point features or container junction objects as polygon features in the diagrams.</para>
+		/// <para>The Subtype Layer column is used as follows:</para>
+		/// <para>Checked—The layer will be created with subtype group layers.</para>
+		/// <para>Unchecked—The layer will be created as a simple layer. This is the default.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -176,10 +176,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Points for junction objects</para>
-		/// <para>指定是否添加图层以将交汇点对象表示为逻辑示意图中的点要素。</para>
-		/// <para>子类型图层列使用如下：</para>
-		/// <para>选中 - 图层将通过子类型图层组创建。</para>
-		/// <para>未选中 - 图层将以简单图层形式创建。这是默认设置。</para>
+		/// <para>Specifies whether layers will be added to represent junction objects as point features in the diagrams.</para>
+		/// <para>The Subtype Layer column is used as follows:</para>
+		/// <para>Checked—The layer will be created with subtype group layers.</para>
+		/// <para>Unchecked—The layer will be created as a simple layer. This is the default.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -188,10 +188,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Polylines for edge objects</para>
-		/// <para>指定是否添加图层以将边对象表示为逻辑示意图中的折线要素。</para>
-		/// <para>子类型图层列使用如下：</para>
-		/// <para>选中 - 图层将通过子类型图层组创建。</para>
-		/// <para>未选中 - 图层将以简单图层形式创建。这是默认设置。</para>
+		/// <para>Specifies whether layers will be added to represent edge objects as polyline features in the diagrams.</para>
+		/// <para>The Subtype Layer column is used as follows:</para>
+		/// <para>Checked—The layer will be created with subtype group layers.</para>
+		/// <para>Unchecked—The layer will be created as a simple layer. This is the default.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -200,9 +200,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Overwrite all layers</para>
-		/// <para>指定是覆盖还是保留逻辑示意图图层下的所有现有图层，输入网络地图中的图层和明确指定的其他子图层除外。</para>
-		/// <para>选中 - 将初始化或完全重置（覆盖）逻辑示意图图层定义，包括输入地图和其他子图层部分的指定设置中的图层。这是默认设置。</para>
-		/// <para>未选中 - 将保留逻辑示意图图层下的所有现有图层，输入网络地图中的图层以及在其他子图层部分中明确指定的图层除外。</para>
+		/// <para>Specifies whether all existing layers under the diagram layer will be overwritten or preserved, except those in the input network map and explicitly specified additional sublayers.</para>
+		/// <para>Checked—The diagram layer definition is initialized or entirely reset (overwritten) including layers in the input map and in specified settings in the Additional Sublayers section. This is the default.</para>
+		/// <para>Unchecked— All existing layers under the diagram layer will be preserved except those in the input network map as well as those explicitly specified in the Additional Sublayers section.</para>
 		/// <para><see cref="OverwriteAllLayersEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -218,14 +218,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum SystemJunctionsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The system junctions along the network lines and the system junction objects along the network edge objects will be represented in the diagrams by a System Junction layer and a System Junction Objects layer, respectively. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SHOW")]
 			SHOW,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—System junctions and system junction objects will not be represented in the diagrams.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("HIDE")]
@@ -239,14 +239,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum ConnectivityAssociationsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Connectivity associations will be represented in the diagrams by the Connectivity Associations layer. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SHOW")]
 			SHOW,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked— Connectivity associations will not be represented in the diagrams.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("HIDE")]
@@ -260,14 +260,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum StructuralAttachmentsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Structural attachment associations will be represented in the diagrams by the Structural Attachments layer. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SHOW")]
 			SHOW,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Structural attachment associations will not be represented in the diagrams.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("HIDE")]
@@ -281,14 +281,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum ReductionEdgesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Reduction edges will be represented in the diagrams by the Reduction Edges layer. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SHOW")]
 			SHOW,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Reduction edges will not be represented in the diagrams.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("HIDE")]
@@ -302,14 +302,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum OverwriteAllLayersEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The diagram layer definition is initialized or entirely reset (overwritten) including layers in the input map and in specified settings in the Additional Sublayers section. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("OVERWRITE_ALL")]
 			OVERWRITE_ALL,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked— All existing layers under the diagram layer will be preserved except those in the input network map as well as those explicitly specified in the Additional Sublayers section.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("MERGE")]

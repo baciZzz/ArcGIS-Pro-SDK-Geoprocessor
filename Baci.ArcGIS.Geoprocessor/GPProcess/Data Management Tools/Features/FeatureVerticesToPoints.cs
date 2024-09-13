@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Feature Vertices To Points</para>
-	/// <para>要素折点转点</para>
-	/// <para>创建包含从输入要素的指定折点或位置生成的点的要素类。</para>
+	/// <para>Feature Vertices To Points</para>
+	/// <para>Creates a feature class containing points generated from specified vertices or locations of the input features.</para>
 	/// </summary>
 	public class FeatureVerticesToPoints : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>线或面输入要素。</para>
+		/// <para>The input features that can be line or polygon.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>输出点要素类。</para>
+		/// <para>The output point feature class.</para>
 		/// </param>
 		public FeatureVerticesToPoints(object InFeatures, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 要素折点转点</para>
+		/// <para>Tool Display Name : Feature Vertices To Points</para>
 		/// </summary>
-		public override string DisplayName() => "要素折点转点";
+		public override string DisplayName() => "Feature Vertices To Points";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureVerticesToPoints</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>线或面输入要素。</para>
+		/// <para>The input features that can be line or polygon.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>输出点要素类。</para>
+		/// <para>The output point feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -86,13 +86,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Point Type</para>
-		/// <para>指定输出点的创建位置。</para>
-		/// <para>所有折点—在每个输入要素折点处创建一个点。 这是默认设置。</para>
-		/// <para>中点—在每个输入线或面边界的中点（不一定是折点）处创建一个点。</para>
-		/// <para>起始折点—在每个输入要素的起点（第一个折点）处创建一个点。</para>
-		/// <para>端折点—在每个输入要素的终点（最后一个折点）处创建一个点。</para>
-		/// <para>起始和终止折点—在每个输入要素的起始点和终点处各创建一个点，共创建两个点。</para>
-		/// <para>悬挂折点—在输入线的起点或终点（如果该点不与另一条线的任何位置相连）创建一个悬挂点。 该选项不适用于面输入。</para>
+		/// <para>Specifies where an output point will be created.</para>
+		/// <para>All vertices—A point will be created at each input feature vertex. This is the default.</para>
+		/// <para>Midpoint—A point will be created at the midpoint, not necessarily a vertex, of each input line or polygon boundary.</para>
+		/// <para>Start vertex—A point will be created at the start point (first vertex) of each input feature.</para>
+		/// <para>End vertex—A point will be created at the end point (last vertex) of each input feature.</para>
+		/// <para>Both start and end vertex—Two points will be created, one at the start point and another at the endpoint of each input feature.</para>
+		/// <para>Dangling vertex—A dangle point will be created for any start or end point of an input line, if that point is not connected to another line at any location along that line. This option does not apply to polygon input.</para>
 		/// <para><see cref="PointLocationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -117,45 +117,45 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum PointLocationEnum 
 		{
 			/// <summary>
-			/// <para>所有折点—在每个输入要素折点处创建一个点。 这是默认设置。</para>
+			/// <para>All vertices—A point will be created at each input feature vertex. This is the default.</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("所有折点")]
+			[Description("All vertices")]
 			All_vertices,
 
 			/// <summary>
-			/// <para>中点—在每个输入线或面边界的中点（不一定是折点）处创建一个点。</para>
+			/// <para>Midpoint—A point will be created at the midpoint, not necessarily a vertex, of each input line or polygon boundary.</para>
 			/// </summary>
 			[GPValue("MID")]
-			[Description("中点")]
+			[Description("Midpoint")]
 			Midpoint,
 
 			/// <summary>
-			/// <para>起始折点—在每个输入要素的起点（第一个折点）处创建一个点。</para>
+			/// <para>Start vertex—A point will be created at the start point (first vertex) of each input feature.</para>
 			/// </summary>
 			[GPValue("START")]
-			[Description("起始折点")]
+			[Description("Start vertex")]
 			Start_vertex,
 
 			/// <summary>
-			/// <para>端折点—在每个输入要素的终点（最后一个折点）处创建一个点。</para>
+			/// <para>End vertex—A point will be created at the end point (last vertex) of each input feature.</para>
 			/// </summary>
 			[GPValue("END")]
-			[Description("端折点")]
+			[Description("End vertex")]
 			End_vertex,
 
 			/// <summary>
-			/// <para>起始和终止折点—在每个输入要素的起始点和终点处各创建一个点，共创建两个点。</para>
+			/// <para>Both start and end vertex—Two points will be created, one at the start point and another at the endpoint of each input feature.</para>
 			/// </summary>
 			[GPValue("BOTH_ENDS")]
-			[Description("起始和终止折点")]
+			[Description("Both start and end vertex")]
 			Both_start_and_end_vertex,
 
 			/// <summary>
-			/// <para>悬挂折点—在输入线的起点或终点（如果该点不与另一条线的任何位置相连）创建一个悬挂点。 该选项不适用于面输入。</para>
+			/// <para>Dangling vertex—A dangle point will be created for any start or end point of an input line, if that point is not connected to another line at any location along that line. This option does not apply to polygon input.</para>
 			/// </summary>
 			[GPValue("DANGLE")]
-			[Description("悬挂折点")]
+			[Description("Dangling vertex")]
 			Dangling_vertex,
 
 		}

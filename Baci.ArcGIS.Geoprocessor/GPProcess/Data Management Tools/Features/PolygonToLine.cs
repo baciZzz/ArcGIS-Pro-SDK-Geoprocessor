@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Polygon To Line</para>
-	/// <para>面转线</para>
-	/// <para>创建的要素类中将包含由面边界转换而来的线（无论是否考虑邻近面）。</para>
+	/// <para>Polygon To Line</para>
+	/// <para>Creates a feature class containing lines that are converted from polygon boundaries with or without considering neighboring polygons.</para>
 	/// </summary>
 	public class PolygonToLine : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>几何必须为面的输入要素。</para>
+		/// <para>The input features that must be polygon.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>输出线要素类。</para>
+		/// <para>The output line feature class.</para>
 		/// </param>
 		public PolygonToLine(object InFeatures, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 面转线</para>
+		/// <para>Tool Display Name : Polygon To Line</para>
 		/// </summary>
-		public override string DisplayName() => "面转线";
+		public override string DisplayName() => "Polygon To Line";
 
 		/// <summary>
 		/// <para>Tool Name : PolygonToLine</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>几何必须为面的输入要素。</para>
+		/// <para>The input features that must be polygon.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>输出线要素类。</para>
+		/// <para>The output line feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -88,9 +88,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Identify and store polygon neighboring information</para>
-		/// <para>指定是否识别并存储面邻域信息。</para>
-		/// <para>选中 - 识别面邻域关系并将该关系存储在输出中。如果某个面的不同线段与不同的面共用边界，那么该边界将被分割成各个唯一公用的线段，这些线段的两个邻近面 FID 值将存储在输出中，如图中所示。这是默认设置。</para>
-		/// <para>未选中 - 忽略面邻域关系；每个面边界均将变为线要素，并且边界原始面要素 ID 将存储在输出中。</para>
+		/// <para>Specifies whether or not to identify and store polygon neighboring information.</para>
+		/// <para>Checked— Polygon neighboring relationship will be identified and stored in the output. If different segments of a polygon share boundary with different polygons, the boundary will be split such that each uniquely shared segment will become a line with its two neighboring polygon FIDs stored in the output, as shown in the illustration. This is the default.</para>
+		/// <para>Unchecked— Polygon neighboring relationship will be ignored; every polygon boundary will become a line feature with its original polygon feature ID stored in the output.</para>
 		/// <para><see cref="NeighborOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -115,14 +115,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum NeighborOptionEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked— Polygon neighboring relationship will be identified and stored in the output. If different segments of a polygon share boundary with different polygons, the boundary will be split such that each uniquely shared segment will become a line with its two neighboring polygon FIDs stored in the output, as shown in the illustration. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("IDENTIFY_NEIGHBORS")]
 			IDENTIFY_NEIGHBORS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked— Polygon neighboring relationship will be ignored; every polygon boundary will become a line feature with its original polygon feature ID stored in the output.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("IGNORE_NEIGHBORS")]

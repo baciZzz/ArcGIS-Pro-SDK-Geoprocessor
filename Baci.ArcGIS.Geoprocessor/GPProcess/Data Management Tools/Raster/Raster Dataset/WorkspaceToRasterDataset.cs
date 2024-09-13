@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Workspace To Raster Dataset</para>
-	/// <para>工作空间转栅格数据集</para>
-	/// <para>将文件夹中的所有栅格数据集合并为一个栅格数据集。</para>
+	/// <para>Workspace To Raster Dataset</para>
+	/// <para>Merges all of the raster datasets in a folder into one raster dataset.</para>
 	/// </summary>
 	public class WorkspaceToRasterDataset : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InWorkspace">
 		/// <para>Input Workspace</para>
-		/// <para>包含要合并的栅格数据集的文件夹。</para>
+		/// <para>The folder containing the raster datasets to merge.</para>
 		/// </param>
 		/// <param name="InRasterDataset">
 		/// <para>Target Raster Dataset</para>
-		/// <para>要在其中合并输入工作空间内所有栅格数据集的现有栅格数据集。</para>
+		/// <para>An existing raster dataset in which to merge all of the raster datasets from the input workspace.</para>
 		/// </param>
 		public WorkspaceToRasterDataset(object InWorkspace, object InRasterDataset)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 工作空间转栅格数据集</para>
+		/// <para>Tool Display Name : Workspace To Raster Dataset</para>
 		/// </summary>
-		public override string DisplayName() => "工作空间转栅格数据集";
+		public override string DisplayName() => "Workspace To Raster Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : WorkspaceToRasterDataset</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Workspace</para>
-		/// <para>包含要合并的栅格数据集的文件夹。</para>
+		/// <para>The folder containing the raster datasets to merge.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Raster Dataset</para>
-		/// <para>要在其中合并输入工作空间内所有栅格数据集的现有栅格数据集。</para>
+		/// <para>An existing raster dataset in which to merge all of the raster datasets from the input workspace.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -86,9 +86,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Include Sub-directories</para>
-		/// <para>指定是否包含子目录。</para>
-		/// <para>未选中 - 不包含子目录。 这是默认设置。</para>
-		/// <para>选中 - 加载时将包含子目录中的所有栅格数据集。</para>
+		/// <para>Specifies whether subdirectories will be included.</para>
+		/// <para>Unchecked—Subdirectories will not be included. This is the default.</para>
+		/// <para>Checked—All raster datasets in the subdirectories will be included when loading.</para>
 		/// <para><see cref="IncludeSubdirectoriesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -98,14 +98,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Operator</para>
-		/// <para>指定将用于镶嵌重叠区域的方法。</para>
-		/// <para>第一个—叠置区域的输出像元值为镶嵌到该位置的第一个栅格数据集中的值。</para>
-		/// <para>最后一个—叠置区域的输出像元值为镶嵌到该位置的最后一个栅格数据集中的值。 这是默认设置。</para>
-		/// <para>混合—叠置区域的输出像元值为叠置区域中各像元值的水平加权计算结果。</para>
-		/// <para>平均值—重叠区域的输出像元值为叠置像元的平均值。</para>
-		/// <para>最小值—重叠区域的输出像元值为叠置像元的最小值。</para>
-		/// <para>最大值—重叠区域的输出像元值为叠置像元的最大值。</para>
-		/// <para>总和—重叠区域的输出像元值为叠置像元的总和。</para>
+		/// <para>Specifies the method that will be used to mosaic overlapping areas.</para>
+		/// <para>First—The output cell value of the overlapping areas will be the value from the first raster dataset mosaicked into that location.</para>
+		/// <para>Last—The output cell value of the overlapping areas will be the value from the last raster dataset mosaicked into that location. This is the default.</para>
+		/// <para>Blend—The output cell value of the overlapping areas will be a horizontally weighted calculation of the values of the cells in the overlapping area.</para>
+		/// <para>Mean—The output cell value of the overlapping areas will be the average value of the overlapping cells.</para>
+		/// <para>Minimum—The output cell value of the overlapping areas will be the minimum value of the overlapping cells.</para>
+		/// <para>Maximum—The output cell value of the overlapping areas will be the maximum value of the overlapping cells.</para>
+		/// <para>Sum—The output cell value of the overlapping areas will be the total sum of the overlapping cells.</para>
 		/// <para><see cref="MosaicTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -115,11 +115,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Colormap Mode</para>
-		/// <para>指定对输入栅格中应用于镶嵌输出的色彩映射表进行选择的方法。</para>
-		/// <para>第一个—列表中第一个栅格数据集中的色彩映射表将应用于输出栅格镶嵌。 这是默认设置。</para>
-		/// <para>最后一个—列表中最后一个栅格数据集中的色彩映射表将应用于输出栅格镶嵌。</para>
-		/// <para>匹配—镶嵌时将考虑所有色彩映射表。 如果已经使用了所有可能的值（对于位深度），则该工具将与具有最接近的可用色彩的值进行匹配。</para>
-		/// <para>拒绝—仅镶嵌不具有关联色彩映射表的栅格数据集。</para>
+		/// <para>Specifies the method that will be used to choose which color map from the input rasters will be applied to the mosaic output.</para>
+		/// <para>First—The color map from the first raster dataset in the list will be applied to the output raster mosaic. This is the default.</para>
+		/// <para>Last—The color map from the last raster dataset in the list will be applied to the output raster mosaic.</para>
+		/// <para>Match—All the color maps will be considered when mosaicking. If all possible values are already used (for the bit depth), the tool will match the value with the closest available color.</para>
+		/// <para>Reject—Only the raster datasets that do not have a color map associated with them will be mosaicked.</para>
 		/// <para><see cref="ColormapEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -129,9 +129,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Ignore Background Value</para>
-		/// <para>使用此选项移除在栅格数据周围创建的不需要的值。 指定的值与栅格数据集中的其他有用数据不同。 例如，栅格边界上为零的值不同于栅格数据集内的零值。</para>
-		/// <para>指定的像素值在输出栅格数据集中将被设置为 NoData。</para>
-		/// <para>对于基于文件的栅格，为了忽略背景值，忽略背景值必须设置为与 NoData 相同的值。企业级和文件地理数据库栅格无需经过此额外步骤即可忽略背景值。</para>
+		/// <para>Use this option to remove the unwanted values created around the raster data. The value specified will be distinguished from other valuable data in the raster dataset. For example, a value of zero along the raster dataset&apos;s borders will be distinguished from zero values in the raster dataset.</para>
+		/// <para>The pixel value specified will be set to NoData in the output raster dataset.</para>
+		/// <para>For file-based rasters the Ignore Background Value must be set to the same value as NoData in order for the background value to be ignored. Enterprise and file geodatabase rasters will work without this extra step.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>NoData Value</para>
-		/// <para>具有指定值的所有像素将在输出栅格数据集中被设置为 NoData。</para>
+		/// <para>All the pixels with the specified value will be set to NoData in the output raster dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -147,9 +147,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Convert 1 bit data to 8 bit</para>
-		/// <para>指定是否将输入 1 位栅格数据集转换为 8 位栅格数据集。 使用这种转换方法时，输入栅格数据集中的值 1 将在输出栅格数据集中更改为 255。 这在将 1 位栅格数据集导入地理数据库时十分有用。 1 位栅格数据集存储在文件系统中时包含 8 位金字塔图层，但在地理数据库中，1 位栅格数据集只能包含 1 位金字塔图层，这会降低显示质量。 通过在地理数据库中将数据转换为 8 位，可将金字塔图层构建为 8 位而非 1 位，从而在显示画面中生成适合的栅格数据集。</para>
-		/// <para>未选中 - 不发生任何转换。 这是默认设置。</para>
-		/// <para>选中 - 将转换输入栅格。</para>
+		/// <para>Specifies whether the input 1-bit raster dataset will be converted to an 8-bit raster dataset. In this conversion, the value 1 in the input raster dataset will be changed to 255 in the output raster dataset. This is useful when importing a 1-bit raster dataset to a geodatabase. One-bit raster datasets have 8-bit pyramid layers when stored in a file system, but in a geodatabase, 1-bit raster datasets can only have 1-bit pyramid layers, which results in a lower-quality display. By converting the data to 8 bit in a geodatabase, the pyramid layers are built as 8 bit instead of 1 bit, resulting in a proper raster dataset in the display.</para>
+		/// <para>Unchecked—No conversion will occur. This is the default.</para>
+		/// <para>Checked—The input raster will be converted.</para>
 		/// <para><see cref="OnebitToEightbitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -159,10 +159,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaicking Tolerance</para>
-		/// <para>发生镶嵌时，目标及源像素并不总是准确地排成直线。 如果像素未对齐，则需要确定是重新采样还是平移数据。 镶嵌容差可控制是否对像素执行重采样，或者是否平移像素。</para>
-		/// <para>如果（传入的数据集与目标数据集之间的）像素偏差大于该容差，则执行重采样。 如果（传入的数据集与目标数据集之间的）像素偏差小于该容差，则不执行重采样，而是执行平移。</para>
-		/// <para>容差的单位为像素，有效值范围为 0 到 0.5。 容差为 0.5 会保证发生平移。 存在像素偏差时，容差为零会保证执行重采样。</para>
-		/// <para>例如，源像素和目标像素的偏差值为 0.25。 如果将镶嵌容差设置为 0.2，由于像素偏差大于该容差，因此将执行重采样。 如果将镶嵌容差设置为 0.3，则会平移像素。</para>
+		/// <para>When mosaicking occurs, the target and the source pixels do not always line up exactly. When there is a misalignment of pixels, you need to decide whether to resample or shift the data. The mosaicking tolerance controls whether resampling of the pixels will occur or the pixels will be shifted.</para>
+		/// <para>If the difference in pixel alignment (of the incoming dataset and the target dataset) is greater than the tolerance, resampling will occur. If the difference in pixel alignment (of the incoming dataset and the target dataset) is less than the tolerance, resampling will not occur and a shift will be performed.</para>
+		/// <para>The unit of tolerance is a pixel with a valid value range of 0 to 0.5. A tolerance of 0.5 will guarantee a shift occurs. A tolerance of zero guarantees resampling will occur if there is a misalignment in pixels.</para>
+		/// <para>For example, the source and target pixels have a misalignment of 0.25. If the mosaicking tolerance is set to 0.2, resampling will occur since the pixel misalignment is greater than the tolerance. If the mosaicking tolerance is set to 0.3, the pixels will be shifted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -170,11 +170,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Color Matching Method</para>
-		/// <para>应用于栅格的色彩匹配方法。</para>
-		/// <para>无—当镶嵌栅格数据集时，此选项不会使用色彩匹配操作。</para>
-		/// <para>匹配统计数据—此方法将使用重叠区域中的描述统计；然后将变换应用于整个目标数据集。</para>
-		/// <para>匹配直方图—此方法将引用重叠区域与源重叠区域的直方图进行匹配；然后将变换应用于整个目标数据集。</para>
-		/// <para>线性相关—此方法将对重叠像素进行匹配，然后对源数据集的其余部分进行插值；不具有一对一关系的像素将使用加权平均值。</para>
+		/// <para>The color matching method to apply to the rasters.</para>
+		/// <para>None—This option will not use the color matching operation when mosaicking your raster datasets.</para>
+		/// <para>Match statistics—This method will use descriptive statistics from the overlapping areas; the transformation will then be applied to the entire target dataset.</para>
+		/// <para>Match histogram—This method will match the histogram from the reference overlap area to the source overlap area; the transformation will then be applied to the entire target dataset.</para>
+		/// <para>Linear correlation—This method will match overlapping pixels and then interpolated the rest of the source dataset; pixels without a one-to-one relationship will use a weighted average.</para>
 		/// <para><see cref="MatchingmethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -184,9 +184,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Colormap to RGB</para>
-		/// <para>指定如果输入栅格数据集包含色彩映射表，是否将输入栅格数据集转换为三波段输出栅格数据集。 这在镶嵌包含不同色彩映射表的栅格时很有用。</para>
-		/// <para>未选中 - 不发生任何转换。 这是默认设置。</para>
-		/// <para>选中 - 将转换输入数据集。</para>
+		/// <para>Specifies whether the input raster dataset will be converted to a three-band output raster dataset if the input raster dataset includes a color map. This is useful when mosaicking rasters with different color maps.</para>
+		/// <para>Unchecked—No conversion will occur. This is the default.</para>
+		/// <para>Checked—The input dataset will be converted.</para>
 		/// <para><see cref="ColormapToRGBEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -209,14 +209,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum IncludeSubdirectoriesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—All raster datasets in the subdirectories will be included when loading.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_SUBDIRECTORIES")]
 			INCLUDE_SUBDIRECTORIES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Subdirectories will not be included. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]
@@ -230,52 +230,52 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MosaicTypeEnum 
 		{
 			/// <summary>
-			/// <para>第一个—叠置区域的输出像元值为镶嵌到该位置的第一个栅格数据集中的值。</para>
+			/// <para>First—The output cell value of the overlapping areas will be the value from the first raster dataset mosaicked into that location.</para>
 			/// </summary>
 			[GPValue("FIRST")]
-			[Description("第一个")]
+			[Description("First")]
 			First,
 
 			/// <summary>
-			/// <para>最后一个—叠置区域的输出像元值为镶嵌到该位置的最后一个栅格数据集中的值。 这是默认设置。</para>
+			/// <para>Last—The output cell value of the overlapping areas will be the value from the last raster dataset mosaicked into that location. This is the default.</para>
 			/// </summary>
 			[GPValue("LAST")]
-			[Description("最后一个")]
+			[Description("Last")]
 			Last,
 
 			/// <summary>
-			/// <para>混合—叠置区域的输出像元值为叠置区域中各像元值的水平加权计算结果。</para>
+			/// <para>Blend—The output cell value of the overlapping areas will be a horizontally weighted calculation of the values of the cells in the overlapping area.</para>
 			/// </summary>
 			[GPValue("BLEND")]
-			[Description("混合")]
+			[Description("Blend")]
 			Blend,
 
 			/// <summary>
-			/// <para>平均值—重叠区域的输出像元值为叠置像元的平均值。</para>
+			/// <para>Mean—The output cell value of the overlapping areas will be the average value of the overlapping cells.</para>
 			/// </summary>
 			[GPValue("MEAN")]
-			[Description("平均值")]
+			[Description("Mean")]
 			Mean,
 
 			/// <summary>
-			/// <para>最小值—重叠区域的输出像元值为叠置像元的最小值。</para>
+			/// <para>Minimum—The output cell value of the overlapping areas will be the minimum value of the overlapping cells.</para>
 			/// </summary>
 			[GPValue("MINIMUM")]
-			[Description("最小值")]
+			[Description("Minimum")]
 			Minimum,
 
 			/// <summary>
-			/// <para>最大值—重叠区域的输出像元值为叠置像元的最大值。</para>
+			/// <para>Maximum—The output cell value of the overlapping areas will be the maximum value of the overlapping cells.</para>
 			/// </summary>
 			[GPValue("MAXIMUM")]
-			[Description("最大值")]
+			[Description("Maximum")]
 			Maximum,
 
 			/// <summary>
-			/// <para>总和—重叠区域的输出像元值为叠置像元的总和。</para>
+			/// <para>Sum—The output cell value of the overlapping areas will be the total sum of the overlapping cells.</para>
 			/// </summary>
 			[GPValue("SUM")]
-			[Description("总和")]
+			[Description("Sum")]
 			Sum,
 
 		}
@@ -286,31 +286,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ColormapEnum 
 		{
 			/// <summary>
-			/// <para>拒绝—仅镶嵌不具有关联色彩映射表的栅格数据集。</para>
+			/// <para>Reject—Only the raster datasets that do not have a color map associated with them will be mosaicked.</para>
 			/// </summary>
 			[GPValue("REJECT")]
-			[Description("拒绝")]
+			[Description("Reject")]
 			Reject,
 
 			/// <summary>
-			/// <para>第一个—列表中第一个栅格数据集中的色彩映射表将应用于输出栅格镶嵌。 这是默认设置。</para>
+			/// <para>First—The color map from the first raster dataset in the list will be applied to the output raster mosaic. This is the default.</para>
 			/// </summary>
 			[GPValue("FIRST")]
-			[Description("第一个")]
+			[Description("First")]
 			First,
 
 			/// <summary>
-			/// <para>最后一个—列表中最后一个栅格数据集中的色彩映射表将应用于输出栅格镶嵌。</para>
+			/// <para>Last—The color map from the last raster dataset in the list will be applied to the output raster mosaic.</para>
 			/// </summary>
 			[GPValue("LAST")]
-			[Description("最后一个")]
+			[Description("Last")]
 			Last,
 
 			/// <summary>
-			/// <para>匹配—镶嵌时将考虑所有色彩映射表。 如果已经使用了所有可能的值（对于位深度），则该工具将与具有最接近的可用色彩的值进行匹配。</para>
+			/// <para>Match—All the color maps will be considered when mosaicking. If all possible values are already used (for the bit depth), the tool will match the value with the closest available color.</para>
 			/// </summary>
 			[GPValue("MATCH")]
-			[Description("匹配")]
+			[Description("Match")]
 			Match,
 
 		}
@@ -321,14 +321,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum OnebitToEightbitEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The input raster will be converted.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("OneBitTo8Bit")]
 			OneBitTo8Bit,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—No conversion will occur. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]
@@ -342,31 +342,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MatchingmethodEnum 
 		{
 			/// <summary>
-			/// <para>无—当镶嵌栅格数据集时，此选项不会使用色彩匹配操作。</para>
+			/// <para>None—This option will not use the color matching operation when mosaicking your raster datasets.</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("无")]
+			[Description("None")]
 			None,
 
 			/// <summary>
-			/// <para>匹配统计数据—此方法将使用重叠区域中的描述统计；然后将变换应用于整个目标数据集。</para>
+			/// <para>Match statistics—This method will use descriptive statistics from the overlapping areas; the transformation will then be applied to the entire target dataset.</para>
 			/// </summary>
 			[GPValue("STATISTIC_MATCHING")]
-			[Description("匹配统计数据")]
+			[Description("Match statistics")]
 			Match_statistics,
 
 			/// <summary>
-			/// <para>匹配直方图—此方法将引用重叠区域与源重叠区域的直方图进行匹配；然后将变换应用于整个目标数据集。</para>
+			/// <para>Match histogram—This method will match the histogram from the reference overlap area to the source overlap area; the transformation will then be applied to the entire target dataset.</para>
 			/// </summary>
 			[GPValue("HISTOGRAM_MATCHING")]
-			[Description("匹配直方图")]
+			[Description("Match histogram")]
 			Match_histogram,
 
 			/// <summary>
-			/// <para>线性相关—此方法将对重叠像素进行匹配，然后对源数据集的其余部分进行插值；不具有一对一关系的像素将使用加权平均值。</para>
+			/// <para>Linear correlation—This method will match overlapping pixels and then interpolated the rest of the source dataset; pixels without a one-to-one relationship will use a weighted average.</para>
 			/// </summary>
 			[GPValue("LINEARCORRELATION_MATCHING")]
-			[Description("线性相关")]
+			[Description("Linear correlation")]
 			Linear_correlation,
 
 		}
@@ -377,14 +377,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ColormapToRGBEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The input dataset will be converted.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ColormapToRGB")]
 			ColormapToRGB,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—No conversion will occur. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]

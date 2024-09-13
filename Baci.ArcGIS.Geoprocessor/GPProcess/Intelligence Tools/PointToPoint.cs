@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Point To Point</para>
-	/// <para>点对点</para>
+	/// <para>Point To Point</para>
 	/// <para>Find like entities within a distance of each other.</para>
 	/// </summary>
 	[Obsolete()]
@@ -22,7 +22,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		/// <param name="InputPointFeatures">
 		/// <para>Input Points</para>
-		/// <para>输入点图层。 这些点与要在搜索距离内找到的点相似。</para>
+		/// <para>The input point layer. These points are the similar points to be found within the search Distance.</para>
 		/// </param>
 		/// <param name="InputSearchDistance">
 		/// <para>Distance</para>
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 点对点</para>
+		/// <para>Tool Display Name : Point To Point</para>
 		/// </summary>
-		public override string DisplayName() => "点对点";
+		public override string DisplayName() => "Point To Point";
 
 		/// <summary>
 		/// <para>Tool Name : PointToPoint</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Points</para>
-		/// <para>输入点图层。 这些点与要在搜索距离内找到的点相似。</para>
+		/// <para>The input point layer. These points are the similar points to be found within the search Distance.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]

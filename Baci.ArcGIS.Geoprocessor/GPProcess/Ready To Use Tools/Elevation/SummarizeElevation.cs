@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 {
 	/// <summary>
 	/// <para>Summarize Elevation</para>
-	/// <para>汇总高程</para>
-	/// <para>计算各个输入要素的高程汇总统计数据。</para>
+	/// <para>Summarize Elevation</para>
+	/// <para>Calculates summary statistics of elevation for each input feature.</para>
 	/// </summary>
 	public class SummarizeElevation : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// </summary>
 		/// <param name="Inputfeatures">
 		/// <para>Input Features</para>
-		/// <para>要为其汇总高程的输入点、线或面要素。</para>
+		/// <para>The input point, line, or area features for which the elevation will be summarized.</para>
 		/// </param>
 		public SummarizeElevation(object Inputfeatures)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 汇总高程</para>
+		/// <para>Tool Display Name : Summarize Elevation</para>
 		/// </summary>
-		public override string DisplayName() => "汇总高程";
+		public override string DisplayName() => "Summarize Elevation";
 
 		/// <summary>
 		/// <para>Tool Name : SummarizeElevation</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>要为其汇总高程的输入点、线或面要素。</para>
+		/// <para>The input point, line, or area features for which the elevation will be summarized.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Feature ID Field</para>
-		/// <para>用于输入要素的唯一 ID 字段。</para>
+		/// <para>The unique ID field to use for the input features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -81,13 +81,13 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>DEM Resolution</para>
-		/// <para>指定用于计算的源高程数据的近似空间分辨率（像元大小）。</para>
-		/// <para>分辨率关键字是数字高程模型空间分辨率的近似值。 许多高程源以弧秒为单位进行分布；关键字是以米为单位的近似值更方便理解。</para>
-		/// <para>最精细—适用于所使用范围的最精细单位。</para>
-		/// <para>10 米—高程源分辨率为 1/3 弧秒，或大约 10 米。</para>
-		/// <para>24 米—高程源是分辨率为 24 米的 Airbus WorldDEM4Ortho 数据集。</para>
-		/// <para>30 米—高程源分辨率为 1 弧秒，或大约 30 米。</para>
-		/// <para>90 米—高程源分辨率为 3 弧秒，或大约 90 米。 这是默认设置。</para>
+		/// <para>Specifies the approximate spatial resolution (cell size) of the source elevation data used for the calculation.</para>
+		/// <para>The resolution keyword is an approximation of the spatial resolution of the digital elevation model. Many elevation sources are distributed in units of arc seconds; the keyword is an approximation in meters for easier understanding.</para>
+		/// <para>Finest—The finest units available for the extent are used.</para>
+		/// <para>10 meters—The elevation source resolution is 1/3 arc second or approximately 10 meters.</para>
+		/// <para>24 meters—The elevation source is the Airbus WorldDEM4Ortho dataset at 24 meters resolution.</para>
+		/// <para>30 meters—The elevation source resolution is 1 arc second or approximately 30 meters.</para>
+		/// <para>90 meters—The elevation source resolution is 3 arc seconds or approximately 90 meters. This is the default.</para>
 		/// <para><see cref="DemresolutionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -97,9 +97,9 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Include Slope and Aspect</para>
-		/// <para>指定除了高程值之外是否还在输出中包含输入要素的坡度和坡向值。</para>
-		/// <para>选中 - 输出中将包含坡度和坡向值。</para>
-		/// <para>未选中 - 输出中不会包含坡度和坡向值。 这是默认设置。</para>
+		/// <para>Specifies whether slope and aspect values for the input features will be included in the output in addition to the elevation values.</para>
+		/// <para>Checked—Slope and aspect values will be included in the output.</para>
+		/// <para>Unchecked—Slope and aspect values will not be included in the output. This is the default.</para>
 		/// <para><see cref="IncludeslopeaspectEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -122,38 +122,38 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		public enum DemresolutionEnum 
 		{
 			/// <summary>
-			/// <para>最精细—适用于所使用范围的最精细单位。</para>
+			/// <para>Finest—The finest units available for the extent are used.</para>
 			/// </summary>
 			[GPValue("FINEST")]
-			[Description("最精细")]
+			[Description("Finest")]
 			Finest,
 
 			/// <summary>
-			/// <para>10 米—高程源分辨率为 1/3 弧秒，或大约 10 米。</para>
+			/// <para>10 meters—The elevation source resolution is 1/3 arc second or approximately 10 meters.</para>
 			/// </summary>
 			[GPValue("10m")]
-			[Description("10 米")]
+			[Description("10 meters")]
 			_10_meters,
 
 			/// <summary>
-			/// <para>24 米—高程源是分辨率为 24 米的 Airbus WorldDEM4Ortho 数据集。</para>
+			/// <para>24 meters—The elevation source is the Airbus WorldDEM4Ortho dataset at 24 meters resolution.</para>
 			/// </summary>
 			[GPValue("24m")]
-			[Description("24 米")]
+			[Description("24 meters")]
 			_24_meters,
 
 			/// <summary>
-			/// <para>30 米—高程源分辨率为 1 弧秒，或大约 30 米。</para>
+			/// <para>30 meters—The elevation source resolution is 1 arc second or approximately 30 meters.</para>
 			/// </summary>
 			[GPValue("30m")]
-			[Description("30 米")]
+			[Description("30 meters")]
 			_30_meters,
 
 			/// <summary>
-			/// <para>90 米—高程源分辨率为 3 弧秒，或大约 90 米。 这是默认设置。</para>
+			/// <para>90 meters—The elevation source resolution is 3 arc seconds or approximately 90 meters. This is the default.</para>
 			/// </summary>
 			[GPValue("90m")]
-			[Description("90 米")]
+			[Description("90 meters")]
 			_90_meters,
 
 		}
@@ -164,14 +164,14 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		public enum IncludeslopeaspectEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Slope and aspect values will be included in the output.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SLOPE_ASPECT")]
 			SLOPE_ASPECT,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Slope and aspect values will not be included in the output. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SLOPE_ASPECT")]

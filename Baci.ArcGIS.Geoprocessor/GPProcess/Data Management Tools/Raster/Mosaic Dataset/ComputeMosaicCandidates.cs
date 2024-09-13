@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Compute Mosaic Candidates</para>
-	/// <para>计算镶嵌候选项</para>
-	/// <para>在镶嵌数据集中找到最能代表镶嵌区域的影像候选项。</para>
+	/// <para>Compute Mosaic Candidates</para>
+	/// <para>Finds the image candidates within in the mosaic dataset that best represents the mosaic area.</para>
 	/// </summary>
 	public class ComputeMosaicCandidates : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Input mosaic dataset</para>
-		/// <para>带密集重叠影像的输入镶嵌数据集。</para>
+		/// <para>The input mosaic dataset with densely overlapped images.</para>
 		/// </param>
 		public ComputeMosaicCandidates(object InMosaicDataset)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 计算镶嵌候选项</para>
+		/// <para>Tool Display Name : Compute Mosaic Candidates</para>
 		/// </summary>
-		public override string DisplayName() => "计算镶嵌候选项";
+		public override string DisplayName() => "Compute Mosaic Candidates";
 
 		/// <summary>
 		/// <para>Tool Name : ComputeMosaicCandidates</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input mosaic dataset</para>
-		/// <para>带密集重叠影像的输入镶嵌数据集。</para>
+		/// <para>The input mosaic dataset with densely overlapped images.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,8 +73,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Area Overlap</para>
-		/// <para>您想要的镶嵌数据集和镶嵌数据集中每个影像的轮廓线之间的最大重叠数量。如果重叠的百分比高于此阈值，则影像因为有太多冗余信息而将被排除。</para>
-		/// <para>百分比以小数表示。例如，百分比为 60 的最大重叠将表示为 0.6。</para>
+		/// <para>The maximum amount of overlap that you want between the mosaic dataset and the footprint of each image in the mosaic dataset. If the percentage of overlap is higher than this threshold, the image is excluded since it will have too much redundant information.</para>
+		/// <para>The percentage is expressed as a decimal. For example, a maximum overlap of 60 percent is expressed as 0.6.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -82,8 +82,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Area Loss Allowed</para>
-		/// <para>这是可以被候选影像排除的区域的最大百分比。在根据最大区域重叠选择了最佳候选影像后，此工具会检查最大排除区域是否小于指定阈值。如果排除区域大于指定阈值，则该工具将添加更多候选影像来填补一些丢失的空白。大多数被排除的区域很可能是沿着镶嵌数据集边界的。</para>
-		/// <para>百分比以小数表示。例如，百分比为 5 的最大排除区域将表示为 0.05。</para>
+		/// <para>This is the maximum percentage of area that can be excluded by the candidate images. After the tool chooses the best candidate images based on the Maximum Area Overlap, it will then check to see if the maximum excluded area is below the threshold specified. If the excluded area is greater than the specified threshold, the tool will add more candidate images to fill in some of the voids that were missing. Most of these excluded areas will likely be along the border of the mosaic dataset.</para>
+		/// <para>The percentage is expressed as a decimal. For example, a maximum excluded area of 5 percent is expressed as 0.05.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

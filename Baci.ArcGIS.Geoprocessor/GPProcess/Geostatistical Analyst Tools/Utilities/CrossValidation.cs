@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Cross Validation</para>
-	/// <para>交叉验证</para>
-	/// <para>先移除一个数据位置，然后使用其余位置处的数据预测关联数据。该工具的主要用途是，比较预测值与实测值以获取有关某些模型参数的有用信息。</para>
+	/// <para>Cross Validation</para>
+	/// <para>Removes one data location and predicts the associated data using the data at the rest of the locations. The primary use for this tool is to compare the predicted value to the observed value in order to obtain useful information about some of your model parameters.</para>
 	/// </summary>
 	public class CrossValidation : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InGeostatLayer">
 		/// <para>Input geostatistical layer</para>
-		/// <para>要分析的地统计图层。</para>
+		/// <para>The geostatistical layer to be analyzed.</para>
 		/// </param>
 		public CrossValidation(object InGeostatLayer)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 交叉验证</para>
+		/// <para>Tool Display Name : Cross Validation</para>
 		/// </summary>
-		public override string DisplayName() => "交叉验证";
+		public override string DisplayName() => "Cross Validation";
 
 		/// <summary>
 		/// <para>Tool Name : CrossValidation</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>
-		/// <para>要分析的地统计图层。</para>
+		/// <para>The geostatistical layer to be analyzed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPGALayer()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output point feature class</para>
-		/// <para>将交叉验证统计信息存储在地统计图层中的各个位置。</para>
+		/// <para>Stores the cross-validation statistics at each location in the geostatistical layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]

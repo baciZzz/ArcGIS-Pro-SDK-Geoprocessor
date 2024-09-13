@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Force Directed Layout</para>
-	/// <para>添加力导向布局</para>
-	/// <para>用于将力导向布局算法添加到基于给定模板构建逻辑示意图结束时自动进行链接的布局列表中。此工具还会针对基于该模板的任意逻辑示意图预设力导向布局算法参数。</para>
+	/// <para>Add Force Directed Layout</para>
+	/// <para>Adds the Force Directed Layout algorithm to the list of layouts to be automatically chained at the end of the building of diagrams based on a given template. This tool also presets the Force Directed Layout algorithm parameters for any diagram based on that template.</para>
 	/// </summary>
 	public class AddForceDirectedLayout : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
+		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>要修改的逻辑示意图模板名称</para>
+		/// <para>The name of the diagram template that will be modified.</para>
 		/// </param>
 		/// <param name="IsActive">
 		/// <para>Active</para>
-		/// <para>指定是否将在基于指定模板生成逻辑示意图时自动运行布局算法。</para>
-		/// <para>选中 - 添加的布局算法会在基于输入逻辑示意图模板参数值生成任何逻辑示意图的过程中自动运行。 这是默认设置。为布局算法指定的参数值是在生成逻辑示意图的过程中用于运行布局的参数值。 如果要对基于输入模板的任何逻辑示意图运行此算法，则还会默认加载这些参数值。</para>
-		/// <para>未选中 - 如果要对基于输入模板的任何逻辑示意图运行此算法，则还将默认加载当前为添加的布局逻辑示意图指定的所有参数值。</para>
+		/// <para>Specifies whether the layout algorithm will automatically run when generating diagrams based on the specified template.</para>
+		/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter value. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+		/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </param>
 		public AddForceDirectedLayout(object InUtilityNetwork, object TemplateName, object IsActive)
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 添加力导向布局</para>
+		/// <para>Tool Display Name : Add Force Directed Layout</para>
 		/// </summary>
-		public override string DisplayName() => "添加力导向布局";
+		public override string DisplayName() => "Add Force Directed Layout";
 
 		/// <summary>
 		/// <para>Tool Name : AddForceDirectedLayout</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
+		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>要修改的逻辑示意图模板名称</para>
+		/// <para>The name of the diagram template that will be modified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -94,9 +94,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Active</para>
-		/// <para>指定是否将在基于指定模板生成逻辑示意图时自动运行布局算法。</para>
-		/// <para>选中 - 添加的布局算法会在基于输入逻辑示意图模板参数值生成任何逻辑示意图的过程中自动运行。 这是默认设置。为布局算法指定的参数值是在生成逻辑示意图的过程中用于运行布局的参数值。 如果要对基于输入模板的任何逻辑示意图运行此算法，则还会默认加载这些参数值。</para>
-		/// <para>未选中 - 如果要对基于输入模板的任何逻辑示意图运行此算法，则还将默认加载当前为添加的布局逻辑示意图指定的所有参数值。</para>
+		/// <para>Specifies whether the layout algorithm will automatically run when generating diagrams based on the specified template.</para>
+		/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter value. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+		/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -106,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Preserve container layout</para>
-		/// <para>指定算法将如何处理容器。</para>
-		/// <para>选中 - 将对逻辑示意图的上方图执行布局算法，以保留容器。</para>
-		/// <para>未选中 - 将对逻辑示意图中的内容要素和非内容要素执行布局算法。 这是默认设置。</para>
+		/// <para>Specifies how the algorithm will process containers.</para>
+		/// <para>Checked—The layout algorithm will execute on the top graph of the diagram so containers are preserved.</para>
+		/// <para>Unchecked—The layout algorithm will execute on both content and noncontent features in the diagram. This is the default.</para>
 		/// <para><see cref="AreContainersPreservedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Number of Iterations</para>
-		/// <para>要处理的迭代次数。默认值为 20。</para>
+		/// <para>The number of iterations to process. The default is 20.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Repel Factor</para>
-		/// <para>用于在接近的逻辑示意图交汇点之间添加距离。排斥系数越大，则将在接近重叠的逻辑示意图交汇点之间添加的距离越大。默认值为 1。</para>
+		/// <para>Adds distance between diagram junctions that are close together. The larger the repel factor, the greater the distance that will be added between nearly overlapping diagram junctions. The default is 1.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -134,10 +134,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Degree of Freedom</para>
-		/// <para>指定每次算法迭代过程中，用于移动逻辑示意图交汇点的面积。</para>
-		/// <para>低—用于移动逻辑示意图交汇点的面积将受到限制。这是默认设置。</para>
-		/// <para>高—用于移动逻辑示意图交汇点的面积将比较大。</para>
-		/// <para>中—用于移动逻辑示意图交汇点的面积将为中等大小。</para>
+		/// <para>Specifies the area used to move the diagram junctions during each algorithm iteration.</para>
+		/// <para>Low—The area used to move the diagram junctions will be limited. This is the default.</para>
+		/// <para>High—The area used to move the diagram junctions will be large.</para>
+		/// <para>Medium—The area used to move the diagram junctions will be moderate.</para>
 		/// <para><see cref="DegreeFreedomEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -161,15 +161,15 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Break Point Relative Position (%)</para>
-		/// <para>边显示类型设置为弯曲边（Python 中的 edges_display_type = &quot;CURVED_EDGES&quot;）时，将沿逻辑示意图边插入的用于计算弯曲边几何的两个拐点的相对位置。以介于 15 和 40 之间的百分比表示；默认值为 30。例如，如果中断点相对位置 (%) 参数值为介于 15 和 40 之间的 N，则以下情况适用：</para>
-		/// <para>X 为边的自交汇点的 x 坐标，Y 为水平树边的至交汇点的 y 坐标：</para>
-		/// <para>第一个拐点将定位在 [XY] 线段长度的 N％</para>
-		/// <para>第二个拐点将定位在 [XY] 线段长度的 (100 - N)％</para>
-		/// <para>Y 为边的自交汇点的 y 坐标，X 为垂直树边的至交汇点的 x 坐标：</para>
-		/// <para>第一个拐点将定位在 [YX] 线段长度的 N％</para>
-		/// <para>第二个拐点将定位在 [XY] 线段长度的 (100 - N)％</para>
-		/// <para>上述自交汇点和至交汇点的概念与树方向相关；与网络要素或对象边的拓扑无关。</para>
-		/// <para>边显示类型参数设置为规则边（Python 中的 edges_display_type = &quot;REGULAR_EDGES&quot;）时，将忽略该参数。</para>
+		/// <para>The relative position of the two inflexion points that will be inserted along the diagram edges to compute the curved edges geometry when Edge Display Type is set to Curved edges (edges_display_type = &quot;CURVED_EDGES&quot; in Python). It is a percentage between 15 and 40; the default is 30. For example, with a Break Point Relative Position (%) parameter value of N between 15 and 40, the following is true:</para>
+		/// <para>X being the x-coordinate of the edge&apos;s from junction and Y being the y-coordinate of the edge&apos;s to junction for a horizontal tree:</para>
+		/// <para>The first inflexion point will be positioned at N% of the length of the [XY] segment</para>
+		/// <para>The second inflexion point will be positioned at (100 - N)% of the length of the [XY] segment</para>
+		/// <para>Y being the y-coordinate of the edge&apos;s from junction and X being the x-coordinate of the edge&apos;s to junction for a vertical tree:</para>
+		/// <para>The first inflexion point will be positioned at N% of the length of the [YX] segment</para>
+		/// <para>The second inflexion point will be positioned at (100 - N)% of the length of the [XY] segment</para>
+		/// <para>The concept of the from and to junctions above is relative to the tree direction; it is not related to the topology of the network feature or object edge.</para>
+		/// <para>This parameter is ignored when the Edge Display Type parameter is set to Regular edges (edges_display_type = &quot;REGULAR_EDGES&quot; in Python).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -177,9 +177,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Edge Display Type</para>
-		/// <para>指定逻辑示意图边的显示类型。</para>
-		/// <para>规则边—所有逻辑示意图边均显示为直线。这是默认设置。</para>
-		/// <para>弯曲边—所有逻辑示意图边均显示为曲线。</para>
+		/// <para>Specifies the type of display for the diagram edges.</para>
+		/// <para>Regular edges—All diagram edges display as straight lines. This is the default.</para>
+		/// <para>Curved edges—All diagram edges are curved.</para>
 		/// <para><see cref="EdgeDisplayTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -195,14 +195,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsActiveEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter value. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ACTIVE")]
 			ACTIVE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INACTIVE")]
@@ -216,14 +216,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum AreContainersPreservedEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The layout algorithm will execute on the top graph of the diagram so containers are preserved.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PRESERVE_CONTAINERS")]
 			PRESERVE_CONTAINERS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The layout algorithm will execute on both content and noncontent features in the diagram. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("IGNORE_CONTAINERS")]
@@ -237,24 +237,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum DegreeFreedomEnum 
 		{
 			/// <summary>
-			/// <para>低—用于移动逻辑示意图交汇点的面积将受到限制。这是默认设置。</para>
+			/// <para>Low—The area used to move the diagram junctions will be limited. This is the default.</para>
 			/// </summary>
 			[GPValue("LOW")]
-			[Description("低")]
+			[Description("Low")]
 			Low,
 
 			/// <summary>
-			/// <para>中—用于移动逻辑示意图交汇点的面积将为中等大小。</para>
+			/// <para>Medium—The area used to move the diagram junctions will be moderate.</para>
 			/// </summary>
 			[GPValue("MEDIUM")]
-			[Description("中")]
+			[Description("Medium")]
 			Medium,
 
 			/// <summary>
-			/// <para>高—用于移动逻辑示意图交汇点的面积将比较大。</para>
+			/// <para>High—The area used to move the diagram junctions will be large.</para>
 			/// </summary>
 			[GPValue("HIGH")]
-			[Description("高")]
+			[Description("High")]
 			High,
 
 		}
@@ -265,17 +265,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum EdgeDisplayTypeEnum 
 		{
 			/// <summary>
-			/// <para>规则边—所有逻辑示意图边均显示为直线。这是默认设置。</para>
+			/// <para>Regular edges—All diagram edges display as straight lines. This is the default.</para>
 			/// </summary>
 			[GPValue("REGULAR_EDGES")]
-			[Description("规则边")]
+			[Description("Regular edges")]
 			Regular_edges,
 
 			/// <summary>
-			/// <para>弯曲边—所有逻辑示意图边均显示为曲线。</para>
+			/// <para>Curved edges—All diagram edges are curved.</para>
 			/// </summary>
 			[GPValue("CURVED_EDGES")]
-			[Description("弯曲边")]
+			[Description("Curved edges")]
 			Curved_edges,
 
 		}

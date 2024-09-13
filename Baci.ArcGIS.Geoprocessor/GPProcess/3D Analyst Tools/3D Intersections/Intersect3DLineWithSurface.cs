@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Intersect 3D Line With Surface</para>
-	/// <para>3D 线与表面相交</para>
-	/// <para>计算 3D 线要素与一个或多个表面的几何交集，并以分割线要素和点的形式返回交集。</para>
+	/// <para>Intersect 3D Line With Surface</para>
+	/// <para>Computes the geometric intersection of 3D line features and one or more surfaces to return the intersection as segmented line features and points.</para>
 	/// </summary>
 	public class Intersect3DLineWithSurface : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InLineFeatures">
 		/// <para>Input Line Features</para>
-		/// <para>输入 3D 线要素。</para>
+		/// <para>The input 3D line features.</para>
 		/// </param>
 		/// <param name="InSurfaces">
 		/// <para>Input Surfaces</para>
-		/// <para>将用于确定交点的一个或多个表面。</para>
+		/// <para>One or more surfaces that will be used to determine the points of intersection.</para>
 		/// </param>
 		/// <param name="OutLineFeatureClass">
 		/// <para>Output Lines</para>
-		/// <para>表示输入线要素在与表面的交点处分割的输出线要素。</para>
+		/// <para>The output line features that represent the input line features split at the points of intersection with the surface.</para>
 		/// </param>
 		public Intersect3DLineWithSurface(object InLineFeatures, object InSurfaces, object OutLineFeatureClass)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 3D 线与表面相交</para>
+		/// <para>Tool Display Name : Intersect 3D Line With Surface</para>
 		/// </summary>
-		public override string DisplayName() => "3D 线与表面相交";
+		public override string DisplayName() => "Intersect 3D Line With Surface";
 
 		/// <summary>
 		/// <para>Tool Name : Intersect3DLineWithSurface</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Line Features</para>
-		/// <para>输入 3D 线要素。</para>
+		/// <para>The input 3D line features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Surfaces</para>
-		/// <para>将用于确定交点的一个或多个表面。</para>
+		/// <para>One or more surfaces that will be used to determine the points of intersection.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Lines</para>
-		/// <para>表示输入线要素在与表面的交点处分割的输出线要素。</para>
+		/// <para>The output line features that represent the input line features split at the points of intersection with the surface.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Points</para>
-		/// <para>表示输入线与表面的交点的可选点要素。</para>
+		/// <para>The optional point features that represent the input line's intersection with a surface .</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]

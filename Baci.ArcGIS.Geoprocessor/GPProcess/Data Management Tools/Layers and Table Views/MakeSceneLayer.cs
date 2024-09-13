@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make Scene Layer</para>
-	/// <para>创建场景图层</para>
-	/// <para>从场景图层包 (.slpk) 创建场景图层或场景服务。</para>
+	/// <para>Make Scene Layer</para>
+	/// <para>Creates a scene layer from a scene layer package (.slpk) or scene service.</para>
 	/// </summary>
 	public class MakeSceneLayer : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>输入场景图层包 (.slpk) 或场景服务，基于该包或服务创建新场景图层。</para>
+		/// <para>The input scene layer package (.slpk) or scene service from which the new scene layer will be created.</para>
 		/// </param>
 		/// <param name="OutLayer">
 		/// <para>Output Layer</para>
-		/// <para>要创建的场景图层的名称。</para>
+		/// <para>The name of the scene layer to be created.</para>
 		/// </param>
 		public MakeSceneLayer(object InDataset, object OutLayer)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建场景图层</para>
+		/// <para>Tool Display Name : Make Scene Layer</para>
 		/// </summary>
-		public override string DisplayName() => "创建场景图层";
+		public override string DisplayName() => "Make Scene Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeSceneLayer</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>输入场景图层包 (.slpk) 或场景服务，基于该包或服务创建新场景图层。</para>
+		/// <para>The input scene layer package (.slpk) or scene service from which the new scene layer will be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Layer</para>
-		/// <para>要创建的场景图层的名称。</para>
+		/// <para>The name of the scene layer to be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSceneServiceLayer()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Linear Spectral Unmixing</para>
-	/// <para>线性光谱分离</para>
-	/// <para>用于执行亚像素分类和计算单个像素的不同土地覆被类型的分数丰度。</para>
+	/// <para>Linear Spectral Unmixing</para>
+	/// <para>Performs subpixel classification and calculates the fractional abundance of different land cover types for individual pixels.</para>
 	/// </summary>
 	public class LinearSpectralUnmixing : AbstractGPProcess
 	{
@@ -21,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>输入栅格数据集。</para>
+		/// <para>The input raster dataset.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output Raster</para>
-		/// <para>输出多波段栅格数据集。</para>
+		/// <para>The output multiband raster dataset.</para>
 		/// </param>
 		/// <param name="InSpectralProfileFile">
 		/// <para>Input Training Features or Spectral Profile</para>
-		/// <para>不同土地覆被类的光谱信息。</para>
-		/// <para>可通过以下形式提供该信息：面要素、由训练样本管理器生成的训练样本要素类、生成自训练最大似然法分类器工具的分类器定义文件 (.ecd) 或包含类光谱图的 JSON 文件 (.json)。</para>
+		/// <para>The spectral information for the different land cover classes.</para>
+		/// <para>This can be provided as polygon features, a training sample feature class generated from the Training Samples Manager, a classifier definition file (.ecd) generated from the Train Maximum Likelihood Classifier tool, or a JSON file (.json) that contains the class spectral profiles.</para>
 		/// </param>
 		public LinearSpectralUnmixing(object InRaster, object OutRaster, object InSpectralProfileFile)
 		{
@@ -40,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 线性光谱分离</para>
+		/// <para>Tool Display Name : Linear Spectral Unmixing</para>
 		/// </summary>
-		public override string DisplayName() => "线性光谱分离";
+		public override string DisplayName() => "Linear Spectral Unmixing";
 
 		/// <summary>
 		/// <para>Tool Name : LinearSpectralUnmixing</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>输入栅格数据集。</para>
+		/// <para>The input raster dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output Raster</para>
-		/// <para>输出多波段栅格数据集。</para>
+		/// <para>The output multiband raster dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -92,8 +92,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input Training Features or Spectral Profile</para>
-		/// <para>不同土地覆被类的光谱信息。</para>
-		/// <para>可通过以下形式提供该信息：面要素、由训练样本管理器生成的训练样本要素类、生成自训练最大似然法分类器工具的分类器定义文件 (.ecd) 或包含类光谱图的 JSON 文件 (.json)。</para>
+		/// <para>The spectral information for the different land cover classes.</para>
+		/// <para>This can be provided as polygon features, a training sample feature class generated from the Training Samples Manager, a classifier definition file (.ecd) generated from the Train Maximum Likelihood Classifier tool, or a JSON file (.json) that contains the class spectral profiles.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -102,9 +102,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output Value Option</para>
-		/// <para>指定将如何定义输出像素值。</para>
-		/// <para>总和为一—每个像素的类值都将以十进制格式提供，且所有类的总和等于 1。 例如，类 1 = 0.16；类 2 = 0.24；类 3 = 0.60。</para>
-		/// <para>非负数—不会存在负输出值。</para>
+		/// <para>Specifies how the output pixel values will be defined.</para>
+		/// <para>Sum to one—Class values for each pixel will be provided in decimal format with the sum of all classes equal to 1. For example, Class1 = 0.16; Class2 = 0.24; Class3 = 0.60.</para>
+		/// <para>Non-negative—There will be no negative output values.</para>
 		/// <para><see cref="ValueOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -129,17 +129,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ValueOptionEnum 
 		{
 			/// <summary>
-			/// <para>总和为一—每个像素的类值都将以十进制格式提供，且所有类的总和等于 1。 例如，类 1 = 0.16；类 2 = 0.24；类 3 = 0.60。</para>
+			/// <para>Sum to one—Class values for each pixel will be provided in decimal format with the sum of all classes equal to 1. For example, Class1 = 0.16; Class2 = 0.24; Class3 = 0.60.</para>
 			/// </summary>
 			[GPValue("SUM_TO_ONE")]
-			[Description("总和为一")]
+			[Description("Sum to one")]
 			Sum_to_one,
 
 			/// <summary>
-			/// <para>非负数—不会存在负输出值。</para>
+			/// <para>Non-negative—There will be no negative output values.</para>
 			/// </summary>
 			[GPValue("NON_NEGATIVE")]
-			[Description("非负数")]
+			[Description("Non-negative")]
 			NON_NEGATIVE,
 
 		}

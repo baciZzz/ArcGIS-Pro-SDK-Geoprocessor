@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Transects Along Lines</para>
-	/// <para>沿线生成样带</para>
-	/// <para>将沿线以固定间隔创建垂直样带线。</para>
+	/// <para>Generate Transects Along Lines</para>
+	/// <para>Creates perpendicular transect lines at a regular interval along lines.</para>
 	/// </summary>
 	public class GenerateTransectsAlongLines : AbstractGPProcess
 	{
@@ -21,20 +21,20 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>将沿其生成垂直样带线的线要素。</para>
+		/// <para>The line features along which perpendicular transect lines will be generated.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>沿输入要素生成的输出垂直样带线。</para>
+		/// <para>The output perpendicular transect lines generated along the input features.</para>
 		/// </param>
 		/// <param name="Interval">
 		/// <para>Distance Between Transects</para>
-		/// <para>样带将放置于距离要素始点的间隔。</para>
+		/// <para>The interval from the beginning of the feature at which transects will be placed.</para>
 		/// </param>
 		/// <param name="TransectLength">
 		/// <para>Transect Length</para>
-		/// <para>样带线的长度或宽度。将沿输入线放置每条样带，放置方式为其一半长度落在线的一侧，另一半长度落在线的另一侧。</para>
-		/// <para>这是每条样带线的总长度，而非样带从输入线延伸的距离。要指定样带线应从输入线延伸的距离（例如 100 米），请将此值乘以 2 以指定样带长度（200 米）。</para>
+		/// <para>The length or width of the transect line. Each transect will be placed in such a way along the input line that half its length falls on one side of the line, and half its length falls on the other side of the line.</para>
+		/// <para>This is the overall length of each transect line, not the distance that the transect extends from the input line. To specify how far the transect line should extend from the input line—for example, 100 meters—double this value to specify the transect length (200 meters).</para>
 		/// </param>
 		public GenerateTransectsAlongLines(object InFeatures, object OutFeatureClass, object Interval, object TransectLength)
 		{
@@ -45,9 +45,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 沿线生成样带</para>
+		/// <para>Tool Display Name : Generate Transects Along Lines</para>
 		/// </summary>
-		public override string DisplayName() => "沿线生成样带";
+		public override string DisplayName() => "Generate Transects Along Lines";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateTransectsAlongLines</para>
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>将沿其生成垂直样带线的线要素。</para>
+		/// <para>The line features along which perpendicular transect lines will be generated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>沿输入要素生成的输出垂直样带线。</para>
+		/// <para>The output perpendicular transect lines generated along the input features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Distance Between Transects</para>
-		/// <para>样带将放置于距离要素始点的间隔。</para>
+		/// <para>The interval from the beginning of the feature at which transects will be placed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -108,8 +108,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Transect Length</para>
-		/// <para>样带线的长度或宽度。将沿输入线放置每条样带，放置方式为其一半长度落在线的一侧，另一半长度落在线的另一侧。</para>
-		/// <para>这是每条样带线的总长度，而非样带从输入线延伸的距离。要指定样带线应从输入线延伸的距离（例如 100 米），请将此值乘以 2 以指定样带长度（200 米）。</para>
+		/// <para>The length or width of the transect line. Each transect will be placed in such a way along the input line that half its length falls on one side of the line, and half its length falls on the other side of the line.</para>
+		/// <para>This is the overall length of each transect line, not the distance that the transect extends from the input line. To specify how far the transect line should extend from the input line—for example, 100 meters—double this value to specify the transect length (200 meters).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -117,9 +117,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Generate transects at line start and end</para>
-		/// <para>指定是否在输入线的起点和终点生成样带。</para>
-		/// <para>选中 - 将在输入线的起点和终点生成样带。</para>
-		/// <para>未选中 - 将不会在输入线的起点和终点生成样带。这是默认设置。</para>
+		/// <para>Specifies whether transects will be generated at the start and end of the input line.</para>
+		/// <para>Checked—Transects will be generated at the start and end of the input line.</para>
+		/// <para>Unchecked—Transects will not be generated at the start and end of the input line. This is the default.</para>
 		/// <para><see cref="IncludeEndsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -144,14 +144,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum IncludeEndsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Transects will be generated at the start and end of the input line.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("END_POINTS")]
 			END_POINTS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Transects will not be generated at the start and end of the input line. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_END_POINTS")]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Smooth Polygon</para>
-	/// <para>平滑面</para>
-	/// <para>平滑面轮廓中的尖角以改善美学或制图质量。</para>
+	/// <para>Smooth Polygon</para>
+	/// <para>Smooths sharp angles in polygon outlines to improve aesthetic or cartographic quality.</para>
 	/// </summary>
 	public class SmoothPolygon : AbstractGPProcess
 	{
@@ -21,22 +21,22 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>要对其进行平滑处理的面要素。</para>
+		/// <para>The polygon features to be smoothed.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>要创建的输出面要素类。</para>
+		/// <para>The output polygon feature class to be created.</para>
 		/// </param>
 		/// <param name="Algorithm">
 		/// <para>Smoothing Algorithm</para>
-		/// <para>指定平滑算法。</para>
-		/// <para>指数核的多项式近似 (PAEK)—此为 Polynomial Approximation with Exponential Kernel（指数核的多项式近似）的首字母缩略词。 将计算不经过输入面折点的平滑面。 这是默认设置。</para>
-		/// <para>贝塞尔插值—拟合折点间的贝塞尔曲线。 生成的面将经过输入面的折点。 该算法不需要容差。 在输出中，将创建近似的贝塞尔曲线。</para>
+		/// <para>Specifies the smoothing algorithm.</para>
+		/// <para>Polynomial Approximation with Exponential Kernel (PAEK)—This is the acronym for Polynomial Approximation with Exponential Kernel. A smoothed polygon that will not pass through the input polygon vertices will be calculated. This is the default.</para>
+		/// <para>Bezier interpolation—Bezier curves will be fitted between vertices. The resulting polygons pass through the vertices of the input polygons. This algorithm does not require a tolerance. Bezier curves will be approximated in the output.</para>
 		/// <para><see cref="AlgorithmEnum"/></para>
 		/// </param>
 		/// <param name="Tolerance">
 		/// <para>Smoothing Tolerance</para>
-		/// <para>指数核的多项式近似 (PAEK) 算法使用的容差。 必须指定一个容差，且值必须大于零。 可以选择首选单位；默认为要素单位。 使用贝塞尔插值法时，该参数将不可用。</para>
+		/// <para>A tolerance used by the Polynomial Approximation with Exponential Kernel (PAEK) algorithm. A tolerance must be specified, and it must be greater than zero. You can choose a preferred unit; the default is the feature unit. This parameter is unavailable when the Bezier interpolation algorithm is used.</para>
 		/// </param>
 		public SmoothPolygon(object InFeatures, object OutFeatureClass, object Algorithm, object Tolerance)
 		{
@@ -47,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 平滑面</para>
+		/// <para>Tool Display Name : Smooth Polygon</para>
 		/// </summary>
-		public override string DisplayName() => "平滑面";
+		public override string DisplayName() => "Smooth Polygon";
 
 		/// <summary>
 		/// <para>Tool Name : SmoothPolygon</para>
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>要对其进行平滑处理的面要素。</para>
+		/// <para>The polygon features to be smoothed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>要创建的输出面要素类。</para>
+		/// <para>The output polygon feature class to be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -102,9 +102,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Smoothing Algorithm</para>
-		/// <para>指定平滑算法。</para>
-		/// <para>指数核的多项式近似 (PAEK)—此为 Polynomial Approximation with Exponential Kernel（指数核的多项式近似）的首字母缩略词。 将计算不经过输入面折点的平滑面。 这是默认设置。</para>
-		/// <para>贝塞尔插值—拟合折点间的贝塞尔曲线。 生成的面将经过输入面的折点。 该算法不需要容差。 在输出中，将创建近似的贝塞尔曲线。</para>
+		/// <para>Specifies the smoothing algorithm.</para>
+		/// <para>Polynomial Approximation with Exponential Kernel (PAEK)—This is the acronym for Polynomial Approximation with Exponential Kernel. A smoothed polygon that will not pass through the input polygon vertices will be calculated. This is the default.</para>
+		/// <para>Bezier interpolation—Bezier curves will be fitted between vertices. The resulting polygons pass through the vertices of the input polygons. This algorithm does not require a tolerance. Bezier curves will be approximated in the output.</para>
 		/// <para><see cref="AlgorithmEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Smoothing Tolerance</para>
-		/// <para>指数核的多项式近似 (PAEK) 算法使用的容差。 必须指定一个容差，且值必须大于零。 可以选择首选单位；默认为要素单位。 使用贝塞尔插值法时，该参数将不可用。</para>
+		/// <para>A tolerance used by the Polynomial Approximation with Exponential Kernel (PAEK) algorithm. A tolerance must be specified, and it must be greater than zero. You can choose a preferred unit; the default is the feature unit. This parameter is unavailable when the Bezier interpolation algorithm is used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -122,10 +122,10 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Preserve endpoint for rings</para>
-		/// <para>这是一个不再使用的旧参数。 之前曾将其用于指定是否保留孤立面环的端点。 为了脚本和模型的兼容性，工具语法中仍然包含此参数，但其已从工具对话框中隐藏。</para>
-		/// <para>指定是否保留孤立面环的端点。 此选项仅可用于 PAEK 算法。</para>
-		/// <para>选中 - 将保留孤立面环的端点。 这是默认设置。</para>
-		/// <para>未选中 - 不保留孤立面环的端点，将对其进行平滑处理。</para>
+		/// <para>This is a legacy parameter that is no longer used. It was formerly used to specify whether the endpoint of an isolated polygon ring would be preserved. This parameter is still included in the tool&apos;s syntax for compatibility in scripts and models but is hidden from the tool&apos;s dialog box.</para>
+		/// <para>Specifies whether the endpoints of isolated polygon rings will be preserved. This option works with the PAEK algorithm only.</para>
+		/// <para>Checked—The endpoint of an isolated polygon ring will be preserved. This is the default.</para>
+		/// <para>Unchecked—The endpoint of an isolated polygon ring will not be preserved; it will be smoothed.</para>
 		/// <para><see cref="EndpointOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -135,10 +135,10 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Handling Topological Errors</para>
-		/// <para>指定如何处理拓扑错误（可能是在该过程中引发的，如线的交叉或重叠）。</para>
-		/// <para>不检查拓扑错误—不会识别拓扑错误。 这是默认设置。</para>
-		/// <para>检查并标记拓扑错误—标记拓扑错误（如果发现拓扑错误）。</para>
-		/// <para>解决拓扑错误—解决拓扑错误（如果发现拓扑错误）。</para>
+		/// <para>Specifies how topological errors (possibly introduced in the process, such as line crossing or overlapping) will be handled.</para>
+		/// <para>Do not check for topological errors—Topological errors will not be identified. This is the default.</para>
+		/// <para>Check and flag topological errors—If topological errors are found, they will be flagged.</para>
+		/// <para>Resolve topological errors—If topological errors are found, they will be resolved.</para>
 		/// <para><see cref="ErrorOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -148,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Barrier Layers</para>
-		/// <para>包含将充当平滑障碍的要素的输入。 生成的平滑面不会接触或越过障碍要素。</para>
+		/// <para>Inputs containing features that will act as barriers for smoothing. The resulting smoothed polygons will not touch or cross barrier features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -171,17 +171,17 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum AlgorithmEnum 
 		{
 			/// <summary>
-			/// <para>指数核的多项式近似 (PAEK)—此为 Polynomial Approximation with Exponential Kernel（指数核的多项式近似）的首字母缩略词。 将计算不经过输入面折点的平滑面。 这是默认设置。</para>
+			/// <para>Polynomial Approximation with Exponential Kernel (PAEK)—This is the acronym for Polynomial Approximation with Exponential Kernel. A smoothed polygon that will not pass through the input polygon vertices will be calculated. This is the default.</para>
 			/// </summary>
 			[GPValue("PAEK")]
-			[Description("指数核的多项式近似 (PAEK)")]
+			[Description("Polynomial Approximation with Exponential Kernel (PAEK)")]
 			PAEK,
 
 			/// <summary>
-			/// <para>贝塞尔插值—拟合折点间的贝塞尔曲线。 生成的面将经过输入面的折点。 该算法不需要容差。 在输出中，将创建近似的贝塞尔曲线。</para>
+			/// <para>Bezier interpolation—Bezier curves will be fitted between vertices. The resulting polygons pass through the vertices of the input polygons. This algorithm does not require a tolerance. Bezier curves will be approximated in the output.</para>
 			/// </summary>
 			[GPValue("BEZIER_INTERPOLATION")]
-			[Description("贝塞尔插值")]
+			[Description("Bezier interpolation")]
 			Bezier_interpolation,
 
 		}
@@ -192,14 +192,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum EndpointOptionEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The endpoint of an isolated polygon ring will be preserved. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FIXED_ENDPOINT")]
 			FIXED_ENDPOINT,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The endpoint of an isolated polygon ring will not be preserved; it will be smoothed.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_FIXED")]
@@ -213,24 +213,24 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum ErrorOptionEnum 
 		{
 			/// <summary>
-			/// <para>不检查拓扑错误—不会识别拓扑错误。 这是默认设置。</para>
+			/// <para>Do not check for topological errors—Topological errors will not be identified. This is the default.</para>
 			/// </summary>
 			[GPValue("NO_CHECK")]
-			[Description("不检查拓扑错误")]
+			[Description("Do not check for topological errors")]
 			Do_not_check_for_topological_errors,
 
 			/// <summary>
-			/// <para>检查并标记拓扑错误—标记拓扑错误（如果发现拓扑错误）。</para>
+			/// <para>Check and flag topological errors—If topological errors are found, they will be flagged.</para>
 			/// </summary>
 			[GPValue("FLAG_ERRORS")]
-			[Description("检查并标记拓扑错误")]
+			[Description("Check and flag topological errors")]
 			Check_and_flag_topological_errors,
 
 			/// <summary>
-			/// <para>解决拓扑错误—解决拓扑错误（如果发现拓扑错误）。</para>
+			/// <para>Resolve topological errors—If topological errors are found, they will be resolved.</para>
 			/// </summary>
 			[GPValue("RESOLVE_ERRORS")]
-			[Description("解决拓扑错误")]
+			[Description("Resolve topological errors")]
 			Resolve_topological_errors,
 
 		}

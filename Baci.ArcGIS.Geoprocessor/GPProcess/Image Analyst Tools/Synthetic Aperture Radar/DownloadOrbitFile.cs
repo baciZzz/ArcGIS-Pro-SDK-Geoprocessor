@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Download Orbit File</para>
-	/// <para>下载轨道文件</para>
-	/// <para>下载输入合成孔径雷达 (SAR) 数据的更新轨道文件。</para>
+	/// <para>Download Orbit File</para>
+	/// <para>Downloads the updated orbit  files for the  input synthetic aperture radar (SAR) data.</para>
 	/// </summary>
 	public class DownloadOrbitFile : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRadarData">
 		/// <para>Input Radar Data</para>
-		/// <para>输入雷达数据。</para>
+		/// <para>The input radar data.</para>
 		/// </param>
 		public DownloadOrbitFile(object InRadarData)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 下载轨道文件</para>
+		/// <para>Tool Display Name : Download Orbit File</para>
 		/// </summary>
-		public override string DisplayName() => "下载轨道文件";
+		public override string DisplayName() => "Download Orbit File";
 
 		/// <summary>
 		/// <para>Tool Name : DownloadOrbitFile</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Radar Data</para>
-		/// <para>输入雷达数据。</para>
+		/// <para>The input radar data.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Orbit Type</para>
-		/// <para>指定将下载的轨道状态矢量类型。</para>
-		/// <para>Sentinel 回归—将下载近似轨道状态矢量数据。 这在数据采集几个小时后可用。</para>
-		/// <para>Sentinel 精密—将下载优化轨道状态矢量数据。 这在数据采集 20 天后可用。 这是默认设置。</para>
+		/// <para>Specifies the orbit state vector type that will be downloaded.</para>
+		/// <para>Sentinel Restituted—Approximate orbit state vector data will be downloaded. This is available several hours after data acquisition.</para>
+		/// <para>Sentinel Precise—Refined orbit state vector data will be downloaded. This is available 20 days after data acquisition. This is the default.</para>
 		/// <para><see cref="OrbitTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Username</para>
-		/// <para>用户名凭据。</para>
+		/// <para>The username credential.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Password</para>
-		/// <para>密码凭据。</para>
+		/// <para>The password credential.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPEncryptedString()]
@@ -116,17 +116,17 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum OrbitTypeEnum 
 		{
 			/// <summary>
-			/// <para>Sentinel 回归—将下载近似轨道状态矢量数据。 这在数据采集几个小时后可用。</para>
+			/// <para>Sentinel Restituted—Approximate orbit state vector data will be downloaded. This is available several hours after data acquisition.</para>
 			/// </summary>
 			[GPValue("SENTINEL_RESTITUTED")]
-			[Description("Sentinel 回归")]
+			[Description("Sentinel Restituted")]
 			Sentinel_Restituted,
 
 			/// <summary>
-			/// <para>Sentinel 精密—将下载优化轨道状态矢量数据。 这在数据采集 20 天后可用。 这是默认设置。</para>
+			/// <para>Sentinel Precise—Refined orbit state vector data will be downloaded. This is available 20 days after data acquisition. This is the default.</para>
 			/// </summary>
 			[GPValue("SENTINEL_PRECISE")]
-			[Description("Sentinel 精密")]
+			[Description("Sentinel Precise")]
 			Sentinel_Precise,
 
 		}

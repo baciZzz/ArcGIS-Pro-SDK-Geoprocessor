@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Apply Geometric Terrain Correction</para>
-	/// <para>应用几何地形校正</para>
-	/// <para>使用距离多普勒反向地理编码算法输入对合成孔径雷达 (SAR) 数据进行正射校正。</para>
+	/// <para>Apply Geometric Terrain Correction</para>
+	/// <para>Orthorectifies the input synthetic aperture radar (SAR) data using a range-Doppler backgeocoding algorithm.</para>
 	/// </summary>
 	public class ApplyGeometricTerrainCorrection : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRadarData">
 		/// <para>Input Radar  Data</para>
-		/// <para>输入雷达数据。</para>
+		/// <para>The input radar data.</para>
 		/// </param>
 		/// <param name="OutRadarData">
 		/// <para>Output Radar Data</para>
-		/// <para>校正后的几何地形雷达数据。</para>
+		/// <para>The corrected geometric terrain radar data.</para>
 		/// </param>
 		public ApplyGeometricTerrainCorrection(object InRadarData, object OutRadarData)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 应用几何地形校正</para>
+		/// <para>Tool Display Name : Apply Geometric Terrain Correction</para>
 		/// </summary>
-		public override string DisplayName() => "应用几何地形校正";
+		public override string DisplayName() => "Apply Geometric Terrain Correction";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyGeometricTerrainCorrection</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Radar  Data</para>
-		/// <para>输入雷达数据。</para>
+		/// <para>The input radar data.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Radar Data</para>
-		/// <para>校正后的几何地形雷达数据。</para>
+		/// <para>The corrected geometric terrain radar data.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -86,8 +86,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Polarization Bands</para>
-		/// <para>要校正的极化波段。</para>
-		/// <para>默认情况下，第一个波段处于选中状态。</para>
+		/// <para>The polarization bands to be corrected.</para>
+		/// <para>The first band is selected by default.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -95,9 +95,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>DEM Raster</para>
-		/// <para>输入 DEM。</para>
-		/// <para>如果未指定 DEM 或在指定 DEM 未覆盖的区域中，将创建从元数据连接点插值的近似 DEM。</para>
-		/// <para>仅对完全海洋雷达场景使用连接点方法；当雷达场景中包含陆地要素时，必须指定 DEM。</para>
+		/// <para>The input DEM.</para>
+		/// <para>If no DEM is specified or in areas that are not covered by a specified DEM, an approximated DEM, interpolated from metadata tie points, will be created.</para>
+		/// <para>Use the tie-point approach for full ocean radar scenes only; specify a DEM whenever land features are included in the radar scene.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -105,9 +105,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Apply geoid correction</para>
-		/// <para>指定是否将输入 DEM 的垂直参考系统转换为椭球体高度。 大多数高程数据集均参考海平面正高，因此在这些情况下，需要进行校正以将海平面正高转换为椭球体高度。</para>
-		/// <para>选中 - 将进行大地水准面校正以将正高转换为椭球体高度（根据 EGM96 大地水准面）。 这是默认设置。</para>
-		/// <para>未选中 - 不会进行大地水准面校正。 只有在使用椭球体高度表示 DEM 的情况下，才使用此选项。</para>
+		/// <para>Specifies whether the vertical reference system of the input DEM will be transformed to ellipsoidal height. Most elevation datasets are referenced to sea level orthometric height, so a correction is required in these cases to convert to ellipsoidal height.</para>
+		/// <para>Checked—A geoid correction will be made to convert orthometric height to ellipsoidal height (based on EGM96 geoid). This is the default.</para>
+		/// <para>Unchecked—No geoid correction will be made. Use this option only if the DEM is expressed in ellipsoidal height.</para>
 		/// <para><see cref="GeoidEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -132,14 +132,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum GeoidEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—A geoid correction will be made to convert orthometric height to ellipsoidal height (based on EGM96 geoid). This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("GEOID")]
 			GEOID,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—No geoid correction will be made. Use this option only if the DEM is expressed in ellipsoidal height.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]

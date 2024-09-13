@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Overwrite Diagram</para>
-	/// <para>覆盖逻辑示意图</para>
-	/// <para>可使用当前在指定地图中选择的网络元素来覆盖网络逻辑示意图的内容。这些网络元素会变成逻辑示意图的全新初始内容。</para>
+	/// <para>Overwrite Diagram</para>
+	/// <para>Overwrites the contents of a network diagram with the network elements currently selected in the specified map. These network elements become the new initial content of the diagram.</para>
 	/// </summary>
 	public class OverwriteDiagram : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InNetworkDiagramLayer">
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>要覆盖的网络逻辑示意图。</para>
+		/// <para>The network diagram to overwrite.</para>
 		/// </param>
 		/// <param name="Map">
 		/// <para>Input Map</para>
-		/// <para>引用用于覆盖输入网络逻辑示意图的所选网络元素集的地图。</para>
+		/// <para>The map referencing the set of selected network elements to use to overwrite the input network diagram.</para>
 		/// </param>
 		public OverwriteDiagram(object InNetworkDiagramLayer, object Map)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 覆盖逻辑示意图</para>
+		/// <para>Tool Display Name : Overwrite Diagram</para>
 		/// </summary>
-		public override string DisplayName() => "覆盖逻辑示意图";
+		public override string DisplayName() => "Overwrite Diagram";
 
 		/// <summary>
 		/// <para>Tool Name : OverwriteDiagram</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>要覆盖的网络逻辑示意图。</para>
+		/// <para>The network diagram to overwrite.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDiagramLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Map</para>
-		/// <para>引用用于覆盖输入网络逻辑示意图的所选网络元素集的地图。</para>
+		/// <para>The map referencing the set of selected network elements to use to overwrite the input network diagram.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMap()]

@@ -11,8 +11,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Compress File Geodatabase Data</para>
-	/// <para>压缩文件地理数据库数据</para>
-	/// <para>压缩地理数据库中的所有内容、要素数据集中的所有内容或各个独立要素类/表。</para>
+	/// <para>Compress File Geodatabase Data</para>
+	/// <para>Compresses all the contents in a geodatabase, all the contents in a feature</para>
+	/// <para>dataset, or an individual stand-alone feature class or table.</para>
 	/// </summary>
 	public class CompressFileGeodatabaseData : AbstractGPProcess
 	{
@@ -21,13 +22,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InData">
 		/// <para>Input file geodatabase data</para>
-		/// <para>要压缩的地理数据库、要素数据集、要素类或表。</para>
+		/// <para>The geodatabase, feature dataset, feature class, or table to compress.</para>
 		/// </param>
 		/// <param name="Lossless">
 		/// <para>Lossless compression</para>
-		/// <para>提示是否使用无损压缩。</para>
-		/// <para>未选中 - 不使用无损压缩。</para>
-		/// <para>选中 - 使用无损压缩。这是默认设置。注：10.0 版之前的文件地理数据库不支持无损压缩。此选项不可更改，未选中且不可用。</para>
+		/// <para>Indicates whether lossless compression will be used.</para>
+		/// <para>Unchecked—Lossless compression will not be used.</para>
+		/// <para>Checked—Lossless compression will be used. This is the default.Note: For pre-10.0 file geodatabases, lossless compression is not supported. This option cannot be changed and is unchecked and disabled.</para>
 		/// <para><see cref="LosslessEnum"/></para>
 		/// </param>
 		public CompressFileGeodatabaseData(object InData, object Lossless)
@@ -37,9 +38,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 压缩文件地理数据库数据</para>
+		/// <para>Tool Display Name : Compress File Geodatabase Data</para>
 		/// </summary>
-		public override string DisplayName() => "压缩文件地理数据库数据";
+		public override string DisplayName() => "Compress File Geodatabase Data";
 
 		/// <summary>
 		/// <para>Tool Name : CompressFileGeodatabaseData</para>
@@ -73,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input file geodatabase data</para>
-		/// <para>要压缩的地理数据库、要素数据集、要素类或表。</para>
+		/// <para>The geodatabase, feature dataset, feature class, or table to compress.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -82,9 +83,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Lossless compression</para>
-		/// <para>提示是否使用无损压缩。</para>
-		/// <para>未选中 - 不使用无损压缩。</para>
-		/// <para>选中 - 使用无损压缩。这是默认设置。注：10.0 版之前的文件地理数据库不支持无损压缩。此选项不可更改，未选中且不可用。</para>
+		/// <para>Indicates whether lossless compression will be used.</para>
+		/// <para>Unchecked—Lossless compression will not be used.</para>
+		/// <para>Checked—Lossless compression will be used. This is the default.Note: For pre-10.0 file geodatabases, lossless compression is not supported. This option cannot be changed and is unchecked and disabled.</para>
 		/// <para><see cref="LosslessEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Disable Network Topology</para>
-	/// <para>禁用网络拓扑</para>
-	/// <para>禁用现有公共设施网络的网络拓扑。</para>
+	/// <para>Disable Network Topology</para>
+	/// <para>Disables the network topology for an existing utility network.</para>
 	/// </summary>
 	public class DisableNetworkTopology : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>将禁用网络拓扑的公共设施网络。</para>
+		/// <para>The utility network where the network topology will be disabled.</para>
 		/// </param>
 		public DisableNetworkTopology(object InUtilityNetwork)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 禁用网络拓扑</para>
+		/// <para>Tool Display Name : Disable Network Topology</para>
 		/// </summary>
-		public override string DisplayName() => "禁用网络拓扑";
+		public override string DisplayName() => "Disable Network Topology";
 
 		/// <summary>
 		/// <para>Tool Name : DisableNetworkTopology</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>将禁用网络拓扑的公共设施网络。</para>
+		/// <para>The utility network where the network topology will be disabled.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]

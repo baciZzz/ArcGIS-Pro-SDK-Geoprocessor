@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Calculate Polygon Main Angle</para>
-	/// <para>计算面的主角度</para>
-	/// <para>计算输入面要素的主角度并将所得值分配给要素类中的指定字段。</para>
+	/// <para>Calculate Polygon Main Angle</para>
+	/// <para>Calculates the dominant angles of  input polygon features and assigns the values to a specified field in the feature class.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>输入面要素。</para>
+		/// <para>The input polygon features.</para>
 		/// </param>
 		/// <param name="AngleField">
 		/// <para>Angle Field</para>
-		/// <para>将使用面的主角度值进行更新的字段。</para>
+		/// <para>The field that will be updated with the polygon main angle values.</para>
 		/// </param>
 		public CalculatePolygonMainAngle(object InFeatures, object AngleField)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 计算面的主角度</para>
+		/// <para>Tool Display Name : Calculate Polygon Main Angle</para>
 		/// </summary>
-		public override string DisplayName() => "计算面的主角度";
+		public override string DisplayName() => "Calculate Polygon Main Angle";
 
 		/// <summary>
 		/// <para>Tool Name : CalculatePolygonMainAngle</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>输入面要素。</para>
+		/// <para>The input polygon features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Angle Field</para>
-		/// <para>将使用面的主角度值进行更新的字段。</para>
+		/// <para>The field that will be updated with the polygon main angle values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -100,10 +100,10 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Rotation Method</para>
-		/// <para>控制旋转的方法和原点。</para>
-		/// <para>地理—以正北方向作为起点，顺时针旋转的角度。</para>
-		/// <para>算术—以正东方向作为起点，逆时针旋转的角度。</para>
-		/// <para>图形—以正北方向作为起点，逆时针旋转的角度。这是默认设置。</para>
+		/// <para>Controls the method and origin point of rotation.</para>
+		/// <para>Geographic—Angle is calculated clockwise with 0 at top/north.</para>
+		/// <para>Arithmetic—Angle is calculated counterclockwise with 0 at the right/east.</para>
+		/// <para>Graphic—Angle is calculated counterclockwise with 0 at top/north. This is the default.</para>
 		/// <para><see cref="RotationMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -128,24 +128,24 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum RotationMethodEnum 
 		{
 			/// <summary>
-			/// <para>地理—以正北方向作为起点，顺时针旋转的角度。</para>
+			/// <para>Geographic—Angle is calculated clockwise with 0 at top/north.</para>
 			/// </summary>
 			[GPValue("GEOGRAPHIC")]
-			[Description("地理")]
+			[Description("Geographic")]
 			Geographic,
 
 			/// <summary>
-			/// <para>算术—以正东方向作为起点，逆时针旋转的角度。</para>
+			/// <para>Arithmetic—Angle is calculated counterclockwise with 0 at the right/east.</para>
 			/// </summary>
 			[GPValue("ARITHMETIC")]
-			[Description("算术")]
+			[Description("Arithmetic")]
 			Arithmetic,
 
 			/// <summary>
-			/// <para>图形—以正北方向作为起点，逆时针旋转的角度。这是默认设置。</para>
+			/// <para>Graphic—Angle is calculated counterclockwise with 0 at top/north. This is the default.</para>
 			/// </summary>
 			[GPValue("GRAPHIC")]
-			[Description("图形")]
+			[Description("Graphic")]
 			Graphic,
 
 		}

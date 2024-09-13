@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Apply Compression Layout</para>
-	/// <para>应用压缩布局</para>
-	/// <para>用于将逻辑示意图要素压缩到逻辑示意图的中部。</para>
+	/// <para>Apply Compression Layout</para>
+	/// <para>Compresses the diagram features toward the middle of the diagram.</para>
 	/// </summary>
 	public class ApplyCompressionLayout : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InNetworkDiagramLayer">
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>将应用布局的网络逻辑示意图。</para>
+		/// <para>The network diagram to which the layout will be applied.</para>
 		/// </param>
 		public ApplyCompressionLayout(object InNetworkDiagramLayer)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 应用压缩布局</para>
+		/// <para>Tool Display Name : Apply Compression Layout</para>
 		/// </summary>
-		public override string DisplayName() => "应用压缩布局";
+		public override string DisplayName() => "Apply Compression Layout";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyCompressionLayout</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>将应用布局的网络逻辑示意图。</para>
+		/// <para>The network diagram to which the layout will be applied.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDiagramLayer()]
@@ -73,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Preserve container layout</para>
-		/// <para>指定压缩布局算法将如何处理容器。</para>
-		/// <para>选中 - 将对逻辑示意图的上方图执行压缩布局算法，以保留容器。 这是默认设置。</para>
-		/// <para>未选中 - 将对逻辑示意图中的内容要素和非内容要素执行压缩布局算法。</para>
+		/// <para>Specifies how containers will be processed by the Compression layout algorithm.</para>
+		/// <para>Checked—The Compression layout algorithm will execute on the top graph of the diagram so containers are preserved. This is the default.</para>
+		/// <para>Unchecked—The Compression layout algorithm will execute on both content and noncontent features in the diagram.</para>
 		/// <para><see cref="AreContainersPreservedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Maximum Distance for Grouping</para>
-		/// <para>分组距离用于确定两个连接的交汇点是否足够近，可将其视为相同交汇点组的一部分。交汇点组表示执行期间可作为组进行移动的多个交汇点。组可包含交汇点和容器。要将两个交汇点分为一组，则必须在逻辑示意图中通过边将其相连。默认值为 20（采用逻辑示意图坐标系的单位）。</para>
+		/// <para>The grouping distance is used to determine whether two connected junctions are close enough to be considered part of the same junctions group. A junctions group represents many junctions that are moved as a group during execution. The group can contain both junctions and containers. To group two junctions, they must also be connected in the diagram by an edge. The default is 20 units in the diagram's coordinate system.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -93,10 +93,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Vertex Removal Rule</para>
-		/// <para>指定逻辑示意图中要移除的沿边的折点。</para>
-		/// <para>所有折点—将从逻辑示意图中移除所有边上的所有折点。</para>
-		/// <para>所有外部折点—将保留检测到的交汇点组内的所有边折点，而移除外部的边折点。如果逻辑示意图中的容器具有与容器面相交的边，则将在边与容器面的交叉点处添加折点。这是默认设置。</para>
-		/// <para>所有外部折点（第一个除外）—将保留检测到的交汇点组内的所有边折点，而移除外部的边折点。如果逻辑示意图中的容器具有与容器面相交的边，则将保留边上与容器面相交的第一个（或最后一个）外部折点。将在边与容器面的交叉点处自动插入折点。</para>
+		/// <para>Specifies which vertices along edges in the diagram will be removed.</para>
+		/// <para>All vertices—All vertices on all edges will be removed from the diagram.</para>
+		/// <para>All outer vertices—Any edge vertices that are within the detected junctions&apos; groups will be maintained, while edge vertices that are outside will be removed.When there are containers in the diagram that have edges that intersect the container polygons, a vertex is added at the intersection of the edge and container polygon. This is the default.</para>
+		/// <para>All outer vertices except the first one—Any edge vertices that are within the detected junctions&apos; groups will be maintained, while edge vertices that are outside will be removed.When there are containers in the diagram that have edges that intersect the container polygons, the first (or last) outside vertex is preserved on edges that intersect a container polygon. A vertex is automatically inserted at the intersection of the edges and container polygons.</para>
 		/// <para><see cref="VerticesRemovalRuleEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -113,9 +113,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Run in asynchronous mode on the server</para>
-		/// <para>指定布局算法在服务器上将异步运行还是同步运行。</para>
-		/// <para>选中 - 布局算法将在服务器上异步运行。 服务器资源可通过该选项来运行超时较长的布局算法。 当执行耗时且可能导致服务器超时的布局（例如，部分重叠边）并应用于大型逻辑示意图（超过 25,000 个要素）时，建议进行异步运行。</para>
-		/// <para>未选中 - 布局算法将在服务器上同步运行。 如果执行时超过服务默认超时值（600 秒），则布局算法可能失败，无法完成。 这是默认设置。</para>
+		/// <para>Specifies whether the layout algorithm will run asynchronously or synchronously on the server.</para>
+		/// <para>Checked—The layout algorithm will run asynchronously on the server. This option dedicates server resources to run the layout algorithm with a longer time-out. Running asynchronously is recommended when executing layouts that are time consuming and may exceed the server time-out (for example, Partial Overlapping Edges) and applying to large diagrams (more than 25,000 features).</para>
+		/// <para>Unchecked—The layout algorithm will run synchronously on the server. It can fail without completion if its execution exceeds the service default time-out value of 600 seconds. This is the default.</para>
 		/// <para><see cref="RunAsyncEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -132,14 +132,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum AreContainersPreservedEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The Compression layout algorithm will execute on the top graph of the diagram so containers are preserved. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PRESERVE_CONTAINERS")]
 			PRESERVE_CONTAINERS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The Compression layout algorithm will execute on both content and noncontent features in the diagram.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("IGNORE_CONTAINERS")]
@@ -153,24 +153,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum VerticesRemovalRuleEnum 
 		{
 			/// <summary>
-			/// <para>所有折点—将从逻辑示意图中移除所有边上的所有折点。</para>
+			/// <para>All vertices—All vertices on all edges will be removed from the diagram.</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("所有折点")]
+			[Description("All vertices")]
 			All_vertices,
 
 			/// <summary>
-			/// <para>所有外部折点—将保留检测到的交汇点组内的所有边折点，而移除外部的边折点。如果逻辑示意图中的容器具有与容器面相交的边，则将在边与容器面的交叉点处添加折点。这是默认设置。</para>
+			/// <para>All outer vertices—Any edge vertices that are within the detected junctions&apos; groups will be maintained, while edge vertices that are outside will be removed.When there are containers in the diagram that have edges that intersect the container polygons, a vertex is added at the intersection of the edge and container polygon. This is the default.</para>
 			/// </summary>
 			[GPValue("OUTER")]
-			[Description("所有外部折点")]
+			[Description("All outer vertices")]
 			All_outer_vertices,
 
 			/// <summary>
-			/// <para>所有外部折点（第一个除外）—将保留检测到的交汇点组内的所有边折点，而移除外部的边折点。如果逻辑示意图中的容器具有与容器面相交的边，则将保留边上与容器面相交的第一个（或最后一个）外部折点。将在边与容器面的交叉点处自动插入折点。</para>
+			/// <para>All outer vertices except the first one—Any edge vertices that are within the detected junctions&apos; groups will be maintained, while edge vertices that are outside will be removed.When there are containers in the diagram that have edges that intersect the container polygons, the first (or last) outside vertex is preserved on edges that intersect a container polygon. A vertex is automatically inserted at the intersection of the edges and container polygons.</para>
 			/// </summary>
 			[GPValue("OUTER_EXCEPT_FIRST")]
-			[Description("所有外部折点（第一个除外）")]
+			[Description("All outer vertices except the first one")]
 			All_outer_vertices_except_the_first_one,
 
 		}
@@ -181,14 +181,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum RunAsyncEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The layout algorithm will run asynchronously on the server. This option dedicates server resources to run the layout algorithm with a longer time-out. Running asynchronously is recommended when executing layouts that are time consuming and may exceed the server time-out (for example, Partial Overlapping Edges) and applying to large diagrams (more than 25,000 features).</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RUN_ASYNCHRONOUSLY")]
 			RUN_ASYNCHRONOUSLY,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The layout algorithm will run synchronously on the server. It can fail without completion if its execution exceeds the service default time-out value of 600 seconds. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("RUN_SYNCHRONOUSLY")]

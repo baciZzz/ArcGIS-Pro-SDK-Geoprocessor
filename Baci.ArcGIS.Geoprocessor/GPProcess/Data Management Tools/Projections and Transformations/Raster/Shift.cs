@@ -12,7 +12,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Shift</para>
 	/// <para>Shift</para>
-	/// <para>可根据 x 和 y 平移量将栅格移动（滑动）到新的地理位置。如果需要平移栅格数据集以与其他数据文件对齐，则该工具非常有用。</para>
+	/// <para>Moves (slides) the raster to a new geographic location based on x and y shift values. This tool is helpful if your raster dataset needs to be shifted to align with another data file.</para>
 	/// </summary>
 	public class Shift : AbstractGPProcess
 	{
@@ -21,36 +21,36 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>输入栅格数据集。</para>
+		/// <para>The input raster dataset.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output Raster Dataset</para>
-		/// <para>输出栅格数据集。</para>
-		/// <para>以文件格式存储栅格数据集时，请指定文件扩展名，具体如下：</para>
-		/// <para>.bil - Esri BIL</para>
-		/// <para>.bip - Esri BIP</para>
-		/// <para>.bmp - BMP</para>
-		/// <para>.bsq - Esri BSQ</para>
-		/// <para>.dat - ENVI DAT</para>
-		/// <para>.gif - GIF</para>
-		/// <para>.img - ERDAS IMAGINE</para>
-		/// <para>.jpg - JPEG</para>
-		/// <para>.jp2 - JPEG 2000</para>
-		/// <para>.png - PNG</para>
-		/// <para>.tif - TIFF</para>
-		/// <para>.mrf - MRF</para>
-		/// <para>.crf - CRF</para>
-		/// <para>Esri Grid 无扩展名</para>
-		/// <para>将栅格数据集存储到地理数据库时，请勿向栅格数据集的名称添加文件扩展名。</para>
-		/// <para>将栅格数据集存储为 JPEG 格式文件、JPEG 2000 格式文件、TIFF 格式文件或地理数据库时，可在地理处理环境中指定压缩类型和压缩质量值。</para>
+		/// <para>The output raster dataset.</para>
+		/// <para>When storing the raster dataset in a file format, specify the file extension as follows:</para>
+		/// <para>.bil—Esri BIL</para>
+		/// <para>.bip—Esri BIP</para>
+		/// <para>.bmp—BMP</para>
+		/// <para>.bsq—Esri BSQ</para>
+		/// <para>.dat—ENVI DAT</para>
+		/// <para>.gif—GIF</para>
+		/// <para>.img—ERDAS IMAGINE</para>
+		/// <para>.jpg—JPEG</para>
+		/// <para>.jp2—JPEG 2000</para>
+		/// <para>.png—PNG</para>
+		/// <para>.tif—TIFF</para>
+		/// <para>.mrf—MRF</para>
+		/// <para>.crf—CRF</para>
+		/// <para>No extension for Esri Grid</para>
+		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset.</para>
+		/// <para>When storing a raster dataset to a JPEG format file, a JPEG 2000 format file, a TIFF format file, or a geodatabase, you can specify Compression Type and Compression Quality values in the geoprocessing environments.</para>
 		/// </param>
 		/// <param name="XValue">
 		/// <para>Shift X Coordinates by</para>
-		/// <para>x 坐标的平移值。</para>
+		/// <para>The value used to shift the x-coordinates.</para>
 		/// </param>
 		/// <param name="YValue">
 		/// <para>Shift Y Coordinates by</para>
-		/// <para>y 坐标的平移值。</para>
+		/// <para>The value used to shift the y-coordinates.</para>
 		/// </param>
 		public Shift(object InRaster, object OutRaster, object XValue, object YValue)
 		{
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>输入栅格数据集。</para>
+		/// <para>The input raster dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -105,24 +105,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Raster Dataset</para>
-		/// <para>输出栅格数据集。</para>
-		/// <para>以文件格式存储栅格数据集时，请指定文件扩展名，具体如下：</para>
-		/// <para>.bil - Esri BIL</para>
-		/// <para>.bip - Esri BIP</para>
-		/// <para>.bmp - BMP</para>
-		/// <para>.bsq - Esri BSQ</para>
-		/// <para>.dat - ENVI DAT</para>
-		/// <para>.gif - GIF</para>
-		/// <para>.img - ERDAS IMAGINE</para>
-		/// <para>.jpg - JPEG</para>
-		/// <para>.jp2 - JPEG 2000</para>
-		/// <para>.png - PNG</para>
-		/// <para>.tif - TIFF</para>
-		/// <para>.mrf - MRF</para>
-		/// <para>.crf - CRF</para>
-		/// <para>Esri Grid 无扩展名</para>
-		/// <para>将栅格数据集存储到地理数据库时，请勿向栅格数据集的名称添加文件扩展名。</para>
-		/// <para>将栅格数据集存储为 JPEG 格式文件、JPEG 2000 格式文件、TIFF 格式文件或地理数据库时，可在地理处理环境中指定压缩类型和压缩质量值。</para>
+		/// <para>The output raster dataset.</para>
+		/// <para>When storing the raster dataset in a file format, specify the file extension as follows:</para>
+		/// <para>.bil—Esri BIL</para>
+		/// <para>.bip—Esri BIP</para>
+		/// <para>.bmp—BMP</para>
+		/// <para>.bsq—Esri BSQ</para>
+		/// <para>.dat—ENVI DAT</para>
+		/// <para>.gif—GIF</para>
+		/// <para>.img—ERDAS IMAGINE</para>
+		/// <para>.jpg—JPEG</para>
+		/// <para>.jp2—JPEG 2000</para>
+		/// <para>.png—PNG</para>
+		/// <para>.tif—TIFF</para>
+		/// <para>.mrf—MRF</para>
+		/// <para>.crf—CRF</para>
+		/// <para>No extension for Esri Grid</para>
+		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset.</para>
+		/// <para>When storing a raster dataset to a JPEG format file, a JPEG 2000 format file, a TIFF format file, or a geodatabase, you can specify Compression Type and Compression Quality values in the geoprocessing environments.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Shift X Coordinates by</para>
-		/// <para>x 坐标的平移值。</para>
+		/// <para>The value used to shift the x-coordinates.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Shift Y Coordinates by</para>
-		/// <para>y 坐标的平移值。</para>
+		/// <para>The value used to shift the y-coordinates.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Snap Raster</para>
-		/// <para>用于对齐输出栅格数据集像元的栅格数据集。</para>
+		/// <para>The raster dataset used to align the cells of the output raster dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRasterLayer()]

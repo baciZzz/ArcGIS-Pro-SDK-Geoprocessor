@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 {
 	/// <summary>
 	/// <para>Generate Sector Lines</para>
-	/// <para>生成扇区线</para>
-	/// <para>创建线要素，以表示蜂窝基站天线扇区的范围。</para>
+	/// <para>Generate Sector Lines</para>
+	/// <para>Creates line features that represent the extent of cell site antenna sectors.</para>
 	/// </summary>
 	public class GenerateSectorLines : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// </summary>
 		/// <param name="InSiteFeatures">
 		/// <para>Input Cell Site Points</para>
-		/// <para>通过蜂窝基站记录转要素类或手机记录转要素类工具获得的点要素类。</para>
+		/// <para>The point feature class derived from the Cell Site Records to Feature Class or Cell Phone Records to Feature Class tool.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Sector Lines</para>
-		/// <para>包含扇区线的输出要素类。</para>
+		/// <para>The output feature class containing the sector lines.</para>
 		/// </param>
 		public GenerateSectorLines(object InSiteFeatures, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 生成扇区线</para>
+		/// <para>Tool Display Name : Generate Sector Lines</para>
 		/// </summary>
-		public override string DisplayName() => "生成扇区线";
+		public override string DisplayName() => "Generate Sector Lines";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateSectorLines</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Input Cell Site Points</para>
-		/// <para>通过蜂窝基站记录转要素类或手机记录转要素类工具获得的点要素类。</para>
+		/// <para>The point feature class derived from the Cell Site Records to Feature Class or Cell Phone Records to Feature Class tool.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Output Sector Lines</para>
-		/// <para>包含扇区线的输出要素类。</para>
+		/// <para>The output feature class containing the sector lines.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]

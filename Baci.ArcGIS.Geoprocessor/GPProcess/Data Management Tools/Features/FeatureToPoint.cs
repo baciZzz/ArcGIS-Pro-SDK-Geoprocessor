@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Feature To Point</para>
-	/// <para>要素转点</para>
-	/// <para>创建包含从输入要素的代表位置生成的点的要素类。</para>
+	/// <para>Feature To Point</para>
+	/// <para>Creates a feature class containing points generated from the representative locations of input features.</para>
 	/// </summary>
 	public class FeatureToPoint : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>输入要素可以是多点、线、面或注记。</para>
+		/// <para>The input features that can be multipoint, line, polygon, or annotation.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>输出点要素类。</para>
+		/// <para>The output point feature class.</para>
 		/// </param>
 		public FeatureToPoint(object InFeatures, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 要素转点</para>
+		/// <para>Tool Display Name : Feature To Point</para>
 		/// </summary>
-		public override string DisplayName() => "要素转点";
+		public override string DisplayName() => "Feature To Point";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureToPoint</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>输入要素可以是多点、线、面或注记。</para>
+		/// <para>The input features that can be multipoint, line, polygon, or annotation.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>输出点要素类。</para>
+		/// <para>The output point feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -86,9 +86,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Inside</para>
-		/// <para>指定是使用输入要素的代表中心，还是使用包含在输入要素中的位置作为输出点位置。</para>
-		/// <para>未选中 - 使用输入要素的代表中心作为输出点位置。 此位置并不总是包含在输入要素中。 这是默认设置。</para>
-		/// <para>选中 - 使用包含在输入要素中的位置作为输出点位置。</para>
+		/// <para>Specifies whether to use representative centers of input features or locations contained by input features as the output point locations.</para>
+		/// <para>Unchecked—Uses the representative center of an input feature as its output point location. This location may not always be contained by the input feature. This is the default.</para>
+		/// <para>Checked—Uses a location contained by an input feature as its output point location.</para>
 		/// <para><see cref="PointLocationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -113,14 +113,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum PointLocationEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Uses a location contained by an input feature as its output point location.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INSIDE")]
 			INSIDE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Uses the representative center of an input feature as its output point location. This location may not always be contained by the input feature. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("CENTROID")]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Merge Layers</para>
-	/// <para>合并图层</para>
-	/// <para>合并要素图层以创建单个输出图层。</para>
+	/// <para>Merge Layers</para>
+	/// <para>Combines feature layers to create a single output layer.</para>
 	/// </summary>
 	public class MergeLayers : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input Layer</para>
-		/// <para>将与合并图层进行合并的点、线或面要素或者表格。</para>
+		/// <para>The point, line, or polygon features or table to merge with the merge layer.</para>
 		/// </param>
 		/// <param name="MergeLayer">
 		/// <para>Merge Layer</para>
-		/// <para>将与输入图层进行合并的点、线或面要素或者表格。合并图层必须包含与输入图层相同的要素类型和时间类型。</para>
+		/// <para>The point, line, or polygon features or table to merge with the input layer. The merge layer must contain the same feature type and time type as the input layer.</para>
 		/// </param>
 		/// <param name="OutputName">
 		/// <para>Output Name</para>
-		/// <para>输出要素服务的名称。</para>
+		/// <para>The name of the output feature service.</para>
 		/// </param>
 		public MergeLayers(object InputLayer, object MergeLayer, object OutputName)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 合并图层</para>
+		/// <para>Tool Display Name : Merge Layers</para>
 		/// </summary>
-		public override string DisplayName() => "合并图层";
+		public override string DisplayName() => "Merge Layers";
 
 		/// <summary>
 		/// <para>Tool Name : MergeLayers</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>将与合并图层进行合并的点、线或面要素或者表格。</para>
+		/// <para>The point, line, or polygon features or table to merge with the merge layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRecordSet()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Merge Layer</para>
-		/// <para>将与输入图层进行合并的点、线或面要素或者表格。合并图层必须包含与输入图层相同的要素类型和时间类型。</para>
+		/// <para>The point, line, or polygon features or table to merge with the input layer. The merge layer must contain the same feature type and time type as the input layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRecordSet()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>输出要素服务的名称。</para>
+		/// <para>The name of the output feature service.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -103,12 +103,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Merging Attributes</para>
-		/// <para>用于描述如何修改合并图层中的字段并将其与输入图层中的字段相匹配的值列表。可以将输入图层中的所有字段写入输出图层。如果未定义合并属性，则会将合并图层中的所有字段写入输出图层。</para>
-		/// <para>如果某个字段存在于一个图层中但不存在于另一个图层中，则输出图层将仍包含这两个字段。对于不含该字段的输入要素，输出字段中将包含空值。例如，如果输入图层中含有名为 TYPE 的字段，但合并图层中不含有 TYPE，则输出图层中将含有 TYPE，但从合并图层复制的所有要素的 TYPE 值均将为空。</para>
-		/// <para>可以使用以下合并类型来控制将合并图层中的字段写入输出图层的方式：</para>
-		/// <para>移除 - 合并图层字段将从输出图层中移除。</para>
-		/// <para>重命名 - 合并图层字段将在输出中重命名。您无法将合并图层中的字段重命名为输入图层中的字段。要使字段名保持不变，请使用匹配选项。</para>
-		/// <para>匹配 - 系统将重命名合并图层字段并将其与输入图层中的字段匹配。例如，输入图层中具有名为 CODE 的字段，同时合并图层中具有名为 STATUS 的字段。可将 STATUS 与 CODE 进行匹配，随后输出中将包含 CODE 字段，其中含有从合并图层复制的要素所用的 STATUS 字段值。数值支持类型转换。不支持将数值字段与字符串字段进行匹配。</para>
+		/// <para>A list of values that describe how fields from the merge layer are to be modified and matched with fields in the input layer. All fields from the input layer will be written to the output layer. If no merging attributes are defined, all fields from the merge layer will be written to the output layer.</para>
+		/// <para>If a field exists in one layer but not the other, the output layer will still contain two fields. The output field will contain null values for the input features that did not have the field. For example, if the input layer contains a field named TYPE but the merge layer does not contain TYPE, the output will contain TYPE, but its values will be null for all the features copied from the merge layer.</para>
+		/// <para>You can control how fields in the merge layer are written to the output layer using the following merge types:</para>
+		/// <para>Remove—The merge layer field will be removed from the output layer.</para>
+		/// <para>Rename—The merge layer field will be renamed in the output. You cannot rename a field from the merge layer to a field from the input layer. To make field names equivalent, use the match option.</para>
+		/// <para>Match—The merge layer field is renamed and matched to a field from the input layer. For example, the input layer has a field named CODE and the merge layer has a field named STATUS. You can match STATUS to CODE, and the output will contain the CODE field with values of the STATUS field used for features copied from the merge layer. Type casting is supported for numeric values. Matching numeric fields to string fields is not supported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -124,9 +124,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Data Store</para>
-		/// <para>指定将用于保存输出的 ArcGIS Data Store。 默认设置为时空大数据存储。 在时空大数据存储中存储的所有结果都将存储在 WGS84 中。 在关系数据存储中存储的结果都将保持各自的坐标系。</para>
-		/// <para>时空大数据存储—输出将存储在时空大数据存储中。 这是默认设置。</para>
-		/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
+		/// <para>Specifies the ArcGIS Data Store where the output will be saved. The default is Spatiotemporal big data store. All results stored in a spatiotemporal big data store will be stored in WGS84. Results stored in a relational data store will maintain their coordinate system.</para>
+		/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
+		/// <para>Relational data store—Output will be stored in a relational data store.</para>
 		/// <para><see cref="DataStoreEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -152,17 +152,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum DataStoreEnum 
 		{
 			/// <summary>
-			/// <para>时空大数据存储—输出将存储在时空大数据存储中。 这是默认设置。</para>
+			/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
 			/// </summary>
 			[GPValue("SPATIOTEMPORAL_DATA_STORE")]
-			[Description("时空大数据存储")]
+			[Description("Spatiotemporal big data store")]
 			Spatiotemporal_big_data_store,
 
 			/// <summary>
-			/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
+			/// <para>Relational data store—Output will be stored in a relational data store.</para>
 			/// </summary>
 			[GPValue("RELATIONAL_DATA_STORE")]
-			[Description("关系数据存储")]
+			[Description("Relational data store")]
 			Relational_data_store,
 
 		}

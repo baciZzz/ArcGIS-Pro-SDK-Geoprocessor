@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Set Edge Connectivity</para>
-	/// <para>设置边连通性</para>
-	/// <para>定义要素与给定资产类型的线或边对象的连接方式。</para>
+	/// <para>Set Edge Connectivity</para>
+	/// <para>Defines how features will connect to a line or edge object of a given asset type.</para>
 	/// </summary>
 	public class SetEdgeConnectivity : AbstractGPProcess
 	{
@@ -21,29 +21,29 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>公共设施网络，其中包含要设置边连通性的资产类型。</para>
+		/// <para>The utility network that contains the asset type with the edge connectivity to set.</para>
 		/// </param>
 		/// <param name="DomainNetwork">
 		/// <para>Domain Network</para>
-		/// <para>域网络，其中包含要设置边连通性的资产类型。</para>
+		/// <para>The domain network that contains the asset type with the edge connectivity to set.</para>
 		/// </param>
 		/// <param name="LineFeatureclass">
 		/// <para>Input Table</para>
-		/// <para>输入要素类或表名称，该要素类或表包含要设置边连通性的资产类型。</para>
+		/// <para>The name of the input feature class or table that contains the asset type with the edge connectivity to set.</para>
 		/// </param>
 		/// <param name="Assetgroup">
 		/// <para>Asset Group</para>
-		/// <para>资产组，其中包含要设置边连通性的资产类型。</para>
+		/// <para>The asset group that contains the asset type with the edge connectivity to set.</para>
 		/// </param>
 		/// <param name="Assettype">
 		/// <para>Asset Type</para>
-		/// <para>需要设置边连通性的资产类型。</para>
+		/// <para>The asset type that requires the edge connectivity to set.</para>
 		/// </param>
 		/// <param name="EdgeConnectivity">
 		/// <para>Edge Connectivity</para>
-		/// <para>指定将分配给资产类型的边连通性类型。</para>
-		/// <para>任意折点—要素将连接到边上的任何位置，包括端折点。</para>
-		/// <para>端折点—要素将仅连接到边的端折点。</para>
+		/// <para>Specifies the edge connectivity type that will be assigned to the asset type.</para>
+		/// <para>Any vertex—Features will connect anywhere along the edge including end vertices.</para>
+		/// <para>End vertex—Features will only connect to the end vertex of an edge.</para>
 		/// <para><see cref="EdgeConnectivityEnum"/></para>
 		/// </param>
 		public SetEdgeConnectivity(object InUtilityNetwork, object DomainNetwork, object LineFeatureclass, object Assetgroup, object Assettype, object EdgeConnectivity)
@@ -57,9 +57,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 设置边连通性</para>
+		/// <para>Tool Display Name : Set Edge Connectivity</para>
 		/// </summary>
-		public override string DisplayName() => "设置边连通性";
+		public override string DisplayName() => "Set Edge Connectivity";
 
 		/// <summary>
 		/// <para>Tool Name : SetEdgeConnectivity</para>
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>公共设施网络，其中包含要设置边连通性的资产类型。</para>
+		/// <para>The utility network that contains the asset type with the edge connectivity to set.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Domain Network</para>
-		/// <para>域网络，其中包含要设置边连通性的资产类型。</para>
+		/// <para>The domain network that contains the asset type with the edge connectivity to set.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>输入要素类或表名称，该要素类或表包含要设置边连通性的资产类型。</para>
+		/// <para>The name of the input feature class or table that contains the asset type with the edge connectivity to set.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Asset Group</para>
-		/// <para>资产组，其中包含要设置边连通性的资产类型。</para>
+		/// <para>The asset group that contains the asset type with the edge connectivity to set.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Asset Type</para>
-		/// <para>需要设置边连通性的资产类型。</para>
+		/// <para>The asset type that requires the edge connectivity to set.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -133,9 +133,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Edge Connectivity</para>
-		/// <para>指定将分配给资产类型的边连通性类型。</para>
-		/// <para>任意折点—要素将连接到边上的任何位置，包括端折点。</para>
-		/// <para>端折点—要素将仅连接到边的端折点。</para>
+		/// <para>Specifies the edge connectivity type that will be assigned to the asset type.</para>
+		/// <para>Any vertex—Features will connect anywhere along the edge including end vertices.</para>
+		/// <para>End vertex—Features will only connect to the end vertex of an edge.</para>
 		/// <para><see cref="EdgeConnectivityEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -167,17 +167,17 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum EdgeConnectivityEnum 
 		{
 			/// <summary>
-			/// <para>任意折点—要素将连接到边上的任何位置，包括端折点。</para>
+			/// <para>Any vertex—Features will connect anywhere along the edge including end vertices.</para>
 			/// </summary>
 			[GPValue("ANY_VERTEX")]
-			[Description("任意折点")]
+			[Description("Any vertex")]
 			Any_vertex,
 
 			/// <summary>
-			/// <para>端折点—要素将仅连接到边的端折点。</para>
+			/// <para>End vertex—Features will only connect to the end vertex of an edge.</para>
 			/// </summary>
 			[GPValue("END_VERTEX")]
-			[Description("端折点")]
+			[Description("End vertex")]
 			End_vertex,
 
 		}

@@ -11,8 +11,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Disable Referent Fields</para>
-	/// <para>禁用参考字段</para>
-	/// <para>禁用现有线性参考系统 (LRS) 事件要素类或要素图层的参考字段。 它不会删除参考列；它将从 Lrs_Metadata 表中移除参考列信息。</para>
+	/// <para>Disable Referent Fields</para>
+	/// <para>Disables referent fields for an existing linear referencing system (LRS) event</para>
+	/// <para>feature class or feature layer. It does not delete the referent columns; it removes the referent column information from the Lrs_Metadata table.</para>
 	/// </summary>
 	public class DisableReferentFields : AbstractGPProcess
 	{
@@ -21,7 +22,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InFeatureClass">
 		/// <para>LRS Event Feature Class</para>
-		/// <para>LRS 事件的输入要素类或要素图层。</para>
+		/// <para>The input feature class or feature layer for the LRS event.</para>
 		/// </param>
 		public DisableReferentFields(object InFeatureClass)
 		{
@@ -29,9 +30,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 禁用参考字段</para>
+		/// <para>Tool Display Name : Disable Referent Fields</para>
 		/// </summary>
-		public override string DisplayName() => "禁用参考字段";
+		public override string DisplayName() => "Disable Referent Fields";
 
 		/// <summary>
 		/// <para>Tool Name : DisableReferentFields</para>
@@ -65,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>LRS Event Feature Class</para>
-		/// <para>LRS 事件的输入要素类或要素图层。</para>
+		/// <para>The input feature class or feature layer for the LRS event.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]

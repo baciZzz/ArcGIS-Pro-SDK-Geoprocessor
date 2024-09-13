@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Generate Unit Openings</para>
-	/// <para>生成单元开口</para>
-	/// <para>可将单元开口创建为线要素，从而对入口的位置和物理范围进行建模。</para>
+	/// <para>Generate Unit Openings</para>
+	/// <para>Creates unit openings as line features that model the location and physical extent of an entrance.</para>
 	/// </summary>
 	public class GenerateUnitOpenings : AbstractGPProcess
 	{
@@ -21,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		/// <param name="InUnitFeatures">
 		/// <para>Input Unit Features</para>
-		/// <para>输入面要素，表示一个或多个设施点的单元覆盖区。 在 Indoors 模型中，此项将为 Units 图层。 该工具将仅处理包含所选要素的级别。</para>
+		/// <para>The input polygon features representing unit footprints for one or more facilities. In the Indoors model, this is the Units layer. The tool only processes the levels that contain the selected features.</para>
 		/// </param>
 		/// <param name="InDetailFeatures">
 		/// <para>Input Detail Features</para>
-		/// <para>输入折线要素，表示建筑细节折线。</para>
+		/// <para>The input polyline features representing the architectural detail polylines.</para>
 		/// </param>
 		/// <param name="DoorDetailExpression">
 		/// <para>Door Detail Expression</para>
-		/// <para>一个 SQL 表达式，用于标识表示门的细节折线。</para>
+		/// <para>An SQL expression used to identify which detail polylines represent doors.</para>
 		/// </param>
 		/// <param name="WallDetailExpression">
 		/// <para>Wall Detail Expression</para>
-		/// <para>一个 SQL 表达式，用于标识表示墙壁的细节折线。</para>
+		/// <para>An SQL expression used to identify which detail polylines represent walls.</para>
 		/// </param>
 		/// <param name="TargetOpenings">
 		/// <para>Target Openings</para>
-		/// <para>将写入生成的折线的现有要素类或要素图层。 在 Indoors 模型中，此项将为 Details 图层。</para>
+		/// <para>The existing polyline feature class or feature layer to which generated polylines will be written. In the Indoors model this is the Details layer.</para>
 		/// </param>
 		public GenerateUnitOpenings(object InUnitFeatures, object InDetailFeatures, object DoorDetailExpression, object WallDetailExpression, object TargetOpenings)
 		{
@@ -49,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 生成单元开口</para>
+		/// <para>Tool Display Name : Generate Unit Openings</para>
 		/// </summary>
-		public override string DisplayName() => "生成单元开口";
+		public override string DisplayName() => "Generate Unit Openings";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateUnitOpenings</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Input Unit Features</para>
-		/// <para>输入面要素，表示一个或多个设施点的单元覆盖区。 在 Indoors 模型中，此项将为 Units 图层。 该工具将仅处理包含所选要素的级别。</para>
+		/// <para>The input polygon features representing unit footprints for one or more facilities. In the Indoors model, this is the Units layer. The tool only processes the levels that contain the selected features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Input Detail Features</para>
-		/// <para>输入折线要素，表示建筑细节折线。</para>
+		/// <para>The input polyline features representing the architectural detail polylines.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Door Detail Expression</para>
-		/// <para>一个 SQL 表达式，用于标识表示门的细节折线。</para>
+		/// <para>An SQL expression used to identify which detail polylines represent doors.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSQLExpression()]
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Wall Detail Expression</para>
-		/// <para>一个 SQL 表达式，用于标识表示墙壁的细节折线。</para>
+		/// <para>An SQL expression used to identify which detail polylines represent walls.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSQLExpression()]
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Target Openings</para>
-		/// <para>将写入生成的折线的现有要素类或要素图层。 在 Indoors 模型中，此项将为 Details 图层。</para>
+		/// <para>The existing polyline feature class or feature layer to which generated polylines will be written. In the Indoors model this is the Details layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Wall Thickness Tolerance</para>
-		/// <para>工具将从单元要素的边向内和向外搜索以找到门要素的距离。 默认的测量单位为英尺。 默认值为 2 英尺，但是范围为 0 到 6 英尺。</para>
+		/// <para>The distance the tool will search inward and outward from the edge of a unit feature to find a door feature. The default unit of measurement is feet. The default value is 2 feet but can range from 0 to 6 feet.</para>
 		/// <para><see cref="WallThicknessToleranceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -141,9 +141,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Delete Existing Openings</para>
-		/// <para>指定在创建新的开口要素之前，是否将删除 USE_TYPE 字段值为 Opening 的现有开口要素。 如果删除，则该工具会将现有开口替换为新开口（如果其位于同一位置）。</para>
-		/// <para>选中 - 将删除现有开口。</para>
-		/// <para>未选中 - 将不删除现有开口。 这是默认设置。</para>
+		/// <para>Specifies whether existing opening features with a USE_TYPE field value of Opening will be deleted before creating new opening features. If deleted, the tool will replace existing openings with new openings if they are at the same location.</para>
+		/// <para>Checked—Existing openings will be deleted.</para>
+		/// <para>Unchecked—Existing openings will not be deleted. This is the default.</para>
 		/// <para><see cref="DeleteExistingOpeningsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -210,14 +210,14 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		public enum DeleteExistingOpeningsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Existing openings will not be deleted. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("KEEP_EXISTING")]
 			KEEP_EXISTING,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Existing openings will be deleted.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DELETE_EXISTING")]

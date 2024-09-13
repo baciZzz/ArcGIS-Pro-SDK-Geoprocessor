@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Set Value For Range Domain</para>
-	/// <para>设置范围属性域的值</para>
-	/// <para>设置现有范围属性域的最小值和最大值。</para>
+	/// <para>Set Value For Range Domain</para>
+	/// <para>Sets the minimum and maximum values for an existing Range domain.</para>
 	/// </summary>
 	public class SetValueForRangeDomain : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InWorkspace">
 		/// <para>Input Workspace</para>
-		/// <para>包含要更新的属性域的地理数据库。</para>
+		/// <para>The geodatabase containing the domain to be updated.</para>
 		/// </param>
 		/// <param name="DomainName">
 		/// <para>Domain Name</para>
-		/// <para>要更新的范围属性域的名称。</para>
+		/// <para>The name of the range domain to be updated.</para>
 		/// </param>
 		/// <param name="MinValue">
 		/// <para>Minimum Value</para>
-		/// <para>范围属性域的最小值。</para>
+		/// <para>The minimum value of the range domain.</para>
 		/// </param>
 		/// <param name="MaxValue">
 		/// <para>Maximum Value</para>
-		/// <para>范围属性域的最大值。</para>
+		/// <para>The maximum value of the range domain.</para>
 		/// </param>
 		public SetValueForRangeDomain(object InWorkspace, object DomainName, object MinValue, object MaxValue)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 设置范围属性域的值</para>
+		/// <para>Tool Display Name : Set Value For Range Domain</para>
 		/// </summary>
-		public override string DisplayName() => "设置范围属性域的值";
+		public override string DisplayName() => "Set Value For Range Domain";
 
 		/// <summary>
 		/// <para>Tool Name : SetValueForRangeDomain</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Workspace</para>
-		/// <para>包含要更新的属性域的地理数据库。</para>
+		/// <para>The geodatabase containing the domain to be updated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Domain Name</para>
-		/// <para>要更新的范围属性域的名称。</para>
+		/// <para>The name of the range domain to be updated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Minimum Value</para>
-		/// <para>范围属性域的最小值。</para>
+		/// <para>The minimum value of the range domain.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Value</para>
-		/// <para>范围属性域的最大值。</para>
+		/// <para>The maximum value of the range domain.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

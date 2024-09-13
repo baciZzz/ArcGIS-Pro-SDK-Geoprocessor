@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Table To dBASE</para>
-	/// <para>表转 dBASE</para>
-	/// <para>将一个或多个表转换为 dBASE 表。</para>
+	/// <para>Table To dBASE</para>
+	/// <para>Converts one or more tables to dBASE tables.</para>
 	/// </summary>
 	public class TableToDBASE : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InputTable">
 		/// <para>Input Tables</para>
-		/// <para>要转换为 dBASE 表格的表列表。</para>
+		/// <para>The list of tables to be converted to dBASE tables.</para>
 		/// </param>
 		/// <param name="OutputFolder">
 		/// <para>Output Folder</para>
-		/// <para>用于保存输出 dBASE 表的目标文件夹。</para>
+		/// <para>The destination folder where the output dBASE tables will be placed.</para>
 		/// </param>
 		public TableToDBASE(object InputTable, object OutputFolder)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 表转 dBASE</para>
+		/// <para>Tool Display Name : Table To dBASE</para>
 		/// </summary>
-		public override string DisplayName() => "表转 dBASE";
+		public override string DisplayName() => "Table To dBASE";
 
 		/// <summary>
 		/// <para>Tool Name : TableToDBASE</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Tables</para>
-		/// <para>要转换为 dBASE 表格的表列表。</para>
+		/// <para>The list of tables to be converted to dBASE tables.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Folder</para>
-		/// <para>用于保存输出 dBASE 表的目标文件夹。</para>
+		/// <para>The destination folder where the output dBASE tables will be placed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]

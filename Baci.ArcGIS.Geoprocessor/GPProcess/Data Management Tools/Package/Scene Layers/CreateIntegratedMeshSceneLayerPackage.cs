@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Integrated Mesh Scene Layer Content</para>
-	/// <para>创建集成网格场景图层内容</para>
-	/// <para>可根据 OpenSceneGraph 二进制 (OSGB) 数据创建场景图层内容（.slpk 或 .i3sREST）。</para>
+	/// <para>Create Integrated Mesh Scene Layer Content</para>
+	/// <para>Creates  scene layer content (.slpk or .i3sREST) from OpenSceneGraph binary (OSGB) data.</para>
 	/// </summary>
 	public class CreateIntegratedMeshSceneLayerPackage : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>OSGB 格式文件或包含 OSGB 格式文件的文件夹，将导入到集成网格场景图层包中。 此参数允许选择多个 OSGB 格式文件或选择包含 OSGB 格式文件的多个文件夹。</para>
+		/// <para>The OSGB format files, or folders containing OSGB format files, that will be imported into the integrated mesh scene layer package. This parameter allows a selection of multiple OSGB format files or a selection of multiple folders containing OSGB format files.</para>
 		/// </param>
 		public CreateIntegratedMeshSceneLayerPackage(object InDataset)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建集成网格场景图层内容</para>
+		/// <para>Tool Display Name : Create Integrated Mesh Scene Layer Content</para>
 		/// </summary>
-		public override string DisplayName() => "创建集成网格场景图层内容";
+		public override string DisplayName() => "Create Integrated Mesh Scene Layer Content";
 
 		/// <summary>
 		/// <para>Tool Name : CreateIntegratedMeshSceneLayerPackage</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>OSGB 格式文件或包含 OSGB 格式文件的文件夹，将导入到集成网格场景图层包中。 此参数允许选择多个 OSGB 格式文件或选择包含 OSGB 格式文件的多个文件夹。</para>
+		/// <para>The OSGB format files, or folders containing OSGB format files, that will be imported into the integrated mesh scene layer package. This parameter allows a selection of multiple OSGB format files or a selection of multiple folders containing OSGB format files.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -74,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Scene Layer Package</para>
-		/// <para>将创建的集成网格场景图层包。 如果未指定目标云连接参数值，则此参数为必需项。</para>
+		/// <para>The integrated mesh scene layer package that will be created. This parameter is required if a Target Cloud Connection parameter value is not specified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Anchor Point</para>
-		/// <para>将用于定位 OSGB 模型中心的点要素、.3mx、.xml 或 .wld3 文件。 如果要素类中存在多个点，则将仅使用第一个点对数据进行地理配准。</para>
+		/// <para>The point feature or .3mx, .xml, or .wld3 file that will be used to position the center of the OSGB model. If there are multiple points in the feature class, only the first point will be used to georeference the data.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -93,9 +93,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>File Suffix</para>
-		/// <para>指定将针对输入数据集进行处理的文件。</para>
-		/// <para>所有受支持的文件—将对所有二进制文件（不考虑其扩展名）进行处理以确定其是否为 OSGB 格式。</para>
-		/// <para>带有 * osgb 扩展名的文件—将仅处理具有 .osgb 扩展名的文件。</para>
+		/// <para>Specifies the files that will be processed for the input dataset.</para>
+		/// <para>All supported files—All binary files, regardless of their extension, will be processed to determine if they are in the OSGB format.</para>
+		/// <para>Files with *.osgb extension—Only files with the .osgb extension will be processed.</para>
 		/// <para><see cref="FileSuffixEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -105,10 +105,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Coordinate System</para>
-		/// <para>输出场景图层包的坐标系。 它可以是任意投影坐标系或自定义坐标系。 支持的地理坐标系包括 WGS 1984 和 China Geodetic Coordinate System 2000。 WGS 1984 和 EGM96 大地水准面分别是默认的水平和垂直坐标系。 可通过以下任一方式指定坐标系：</para>
-		/// <para>指定 .prj 文件的路径。</para>
-		/// <para>引用具有所需坐标系的数据集。</para>
-		/// <para>使用 arcpy.SpatialReference 对象。</para>
+		/// <para>The coordinate system of the output scene layer package. It can be any projected or custom coordinate system. Supported geographic coordinate systems include WGS 1984 and China Geodetic Coordinate System 2000. WGS 1984 and EGM96 Geoid are the default horizontal and vertical coordinate systems, respectively. The coordinate system can be specified in any of the following ways:</para>
+		/// <para>Specify the path to a .prj file.</para>
+		/// <para>Reference a dataset with the desired coordinate system.</para>
+		/// <para>Use an arcpy.SpatialReference object.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Texture Size</para>
-		/// <para>每个场景图层节点的最大纹理大小（以像素为单位）。</para>
+		/// <para>The maximum texture size in pixels for each scene layer node.</para>
 		/// <para><see cref="MaxTextureSizeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -126,11 +126,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Texture Optimization</para>
-		/// <para>指定根据使用场景图层包的目标平台优化的纹理。可能需要大量时间来处理包括 KTX2 的优化。 要获得最快结果，请使用桌面或无选项。</para>
-		/// <para>全部—所有用于桌面、Web 和移动平台的纹理格式都将进行优化，包括 JPEG、DXT 和 KTX2。</para>
-		/// <para>桌面—支持 Windows、Linux 和 Mac 的纹理都将进行优化，包括 JPEG 和 DXT，可用于 Windows 上的 ArcGIS Pro 客户端和 Windows、Linux 和 Mac 上的 ArcGIS Runtime 桌面客户端。 这是默认设置。</para>
-		/// <para>移动—支持 Android 和 iOS 的纹理将进行优化，包括 JPEG 和 KTX2，可用于 ArcGIS Runtime 移动应用程序。</para>
-		/// <para>无—JPEG 纹理将进行优化，可用于桌面和 web 平台。</para>
+		/// <para>Specifies the textures that will be optimized according to the target platform where the scene layer package is used.Optimizations that include KTX2 may take significant time to process. For fastest results, use the Desktop or None options.</para>
+		/// <para>All—All texture formats will be optimized including JPEG, DXT, and KTX2 for use in desktop, web, and mobile platforms.</para>
+		/// <para>Desktop—Windows, Linux, and Mac supported textures will be optimized including JPEG and DXT for use in ArcGIS Pro clients on Windows and ArcGIS Runtime desktop clients on Windows, Linux, and Mac. This is the default.</para>
+		/// <para>Mobile—Android and iOS supported textures will be optimized including JPEG and KTX2 for use in ArcGIS Runtime mobile applications.</para>
+		/// <para>None—JPEG textures will be optimized for use in desktop and web platforms.</para>
 		/// <para><see cref="TextureOptimizationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Cloud Connection</para>
-		/// <para>将输出场景图层内容 (.i3sREST) 的目标云连接文件 (.acs)。</para>
+		/// <para>The target cloud connection file (.acs) where the scene layer content (.i3sREST) will be output.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
@@ -148,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>输出到云存储时场景图层内容的输出名称。 仅在已指定目标云连接参数值的情况下，此参数才适用。</para>
+		/// <para>The output name of the scene layer content when output to a cloud store. This parameter is only available when a Target Cloud Connection parameter value is specified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -171,17 +171,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum FileSuffixEnum 
 		{
 			/// <summary>
-			/// <para>带有 * osgb 扩展名的文件—将仅处理具有 .osgb 扩展名的文件。</para>
+			/// <para>Files with *.osgb extension—Only files with the .osgb extension will be processed.</para>
 			/// </summary>
 			[GPValue("osgb")]
-			[Description("带有 * osgb 扩展名的文件")]
+			[Description("Files with *.osgb extension")]
 			osgb,
 
 			/// <summary>
-			/// <para>所有受支持的文件—将对所有二进制文件（不考虑其扩展名）进行处理以确定其是否为 OSGB 格式。</para>
+			/// <para>All supported files—All binary files, regardless of their extension, will be processed to determine if they are in the OSGB format.</para>
 			/// </summary>
 			[GPValue("*")]
-			[Description("所有受支持的文件")]
+			[Description("All supported files")]
 			All_supported_files,
 
 		}
@@ -220,31 +220,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum TextureOptimizationEnum 
 		{
 			/// <summary>
-			/// <para>全部—所有用于桌面、Web 和移动平台的纹理格式都将进行优化，包括 JPEG、DXT 和 KTX2。</para>
+			/// <para>All—All texture formats will be optimized including JPEG, DXT, and KTX2 for use in desktop, web, and mobile platforms.</para>
 			/// </summary>
 			[GPValue("All")]
-			[Description("全部")]
+			[Description("All")]
 			All,
 
 			/// <summary>
-			/// <para>桌面—支持 Windows、Linux 和 Mac 的纹理都将进行优化，包括 JPEG 和 DXT，可用于 Windows 上的 ArcGIS Pro 客户端和 Windows、Linux 和 Mac 上的 ArcGIS Runtime 桌面客户端。 这是默认设置。</para>
+			/// <para>Desktop—Windows, Linux, and Mac supported textures will be optimized including JPEG and DXT for use in ArcGIS Pro clients on Windows and ArcGIS Runtime desktop clients on Windows, Linux, and Mac. This is the default.</para>
 			/// </summary>
 			[GPValue("Desktop")]
-			[Description("桌面")]
+			[Description("Desktop")]
 			Desktop,
 
 			/// <summary>
-			/// <para>移动—支持 Android 和 iOS 的纹理将进行优化，包括 JPEG 和 KTX2，可用于 ArcGIS Runtime 移动应用程序。</para>
+			/// <para>Mobile—Android and iOS supported textures will be optimized including JPEG and KTX2 for use in ArcGIS Runtime mobile applications.</para>
 			/// </summary>
 			[GPValue("Mobile")]
-			[Description("移动")]
+			[Description("Mobile")]
 			Mobile,
 
 			/// <summary>
-			/// <para>无—JPEG 纹理将进行优化，可用于桌面和 web 平台。</para>
+			/// <para>None—JPEG textures will be optimized for use in desktop and web platforms.</para>
 			/// </summary>
 			[GPValue("None")]
-			[Description("无")]
+			[Description("None")]
 			None,
 
 		}

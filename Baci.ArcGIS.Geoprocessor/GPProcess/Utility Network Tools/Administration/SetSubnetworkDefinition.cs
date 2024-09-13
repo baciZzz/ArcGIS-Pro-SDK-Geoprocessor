@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Set Subnetwork Definition</para>
-	/// <para>设置子网定义</para>
-	/// <para>用于为公共设施网络中的子网设置域网络层的属性。</para>
+	/// <para>Set Subnetwork Definition</para>
+	/// <para>Sets the domain network tier's properties for a subnetwork in a utility network.</para>
 	/// </summary>
 	public class SetSubnetworkDefinition : AbstractGPProcess
 	{
@@ -21,21 +21,21 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>包含层的子网的输入公共设施网络。</para>
+		/// <para>The input utility network that contains the tier's subnetwork.</para>
 		/// </param>
 		/// <param name="DomainNetwork">
 		/// <para>Domain Network</para>
-		/// <para>包含层的域网络。</para>
+		/// <para>The domain network that contains the tier.</para>
 		/// </param>
 		/// <param name="TierName">
 		/// <para>Tier Name</para>
-		/// <para>包含子网的层的名称。</para>
+		/// <para>The name of the tier that contains the subnetwork.</para>
 		/// </param>
 		/// <param name="SupportDisjointSubnetwork">
 		/// <para>Support Disjoint Subnetwork</para>
-		/// <para>指定输入层是否支持不相交子网。 不相交子网是属于同一个层的两个或多个子网，具有相同的子网名称，但不可遍历。 此参数仅适用于具有分区层定义的域网络内的层。 将为具有等级层定义的域网络中的层选中此参数以支持不相交子网。</para>
-		/// <para>选中 - 输入层将支持不相交子网。</para>
-		/// <para>未选中 - 输入层将不支持不相交子网。 这是默认设置。</para>
+		/// <para>Specifies whether the input tier will support disjoint subnetworks. Disjoint subnetworks are two or more subnetworks that belong to the same tier and have the same subnetwork name but are not traversable. This parameter is only available for tiers in domain networks with a partitioned tier definition. This parameter is checked for tiers in a domain network with a hierarchical tier definition to support disjoint subnetworks.</para>
+		/// <para>Checked—The input tier will support disjoint subnetworks.</para>
+		/// <para>Unchecked—The input tier will not support disjoint subnetworks. This is the default.</para>
 		/// <para><see cref="SupportDisjointSubnetworkEnum"/></para>
 		/// </param>
 		public SetSubnetworkDefinition(object InUtilityNetwork, object DomainNetwork, object TierName, object SupportDisjointSubnetwork)
@@ -47,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 设置子网定义</para>
+		/// <para>Tool Display Name : Set Subnetwork Definition</para>
 		/// </summary>
-		public override string DisplayName() => "设置子网定义";
+		public override string DisplayName() => "Set Subnetwork Definition";
 
 		/// <summary>
 		/// <para>Tool Name : SetSubnetworkDefinition</para>
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>包含层的子网的输入公共设施网络。</para>
+		/// <para>The input utility network that contains the tier's subnetwork.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Domain Network</para>
-		/// <para>包含层的域网络。</para>
+		/// <para>The domain network that contains the tier.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Tier Name</para>
-		/// <para>包含子网的层的名称。</para>
+		/// <para>The name of the tier that contains the subnetwork.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -107,9 +107,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Support Disjoint Subnetwork</para>
-		/// <para>指定输入层是否支持不相交子网。 不相交子网是属于同一个层的两个或多个子网，具有相同的子网名称，但不可遍历。 此参数仅适用于具有分区层定义的域网络内的层。 将为具有等级层定义的域网络中的层选中此参数以支持不相交子网。</para>
-		/// <para>选中 - 输入层将支持不相交子网。</para>
-		/// <para>未选中 - 输入层将不支持不相交子网。 这是默认设置。</para>
+		/// <para>Specifies whether the input tier will support disjoint subnetworks. Disjoint subnetworks are two or more subnetworks that belong to the same tier and have the same subnetwork name but are not traversable. This parameter is only available for tiers in domain networks with a partitioned tier definition. This parameter is checked for tiers in a domain network with a hierarchical tier definition to support disjoint subnetworks.</para>
+		/// <para>Checked—The input tier will support disjoint subnetworks.</para>
+		/// <para>Unchecked—The input tier will not support disjoint subnetworks. This is the default.</para>
 		/// <para><see cref="SupportDisjointSubnetworkEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Valid Devices</para>
-		/// <para>将被标识为子网有效设备的资产组/资产类型对。</para>
+		/// <para>The asset group/asset type pairs identified as valid devices for the subnetwork.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Valid Device Subnetwork Controllers</para>
-		/// <para>在子网中标识为有效设备子网控制器的资产组/资产类型对。</para>
+		/// <para>The asset group/asset type pairs identified as valid device subnetwork controllers in the subnetwork.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Valid Lines</para>
-		/// <para>将被标识为子网有效线的资产组/资产类型对。</para>
+		/// <para>The asset group/asset type pairs identified as valid lines for the subnetwork.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -149,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Aggregated Lines For SubnetLine Feature Class</para>
-		/// <para>所含几何将聚合以生成 SubnetLine 要素的有效线。 此列表为有效线参数中所指定值的子集。</para>
+		/// <para>The valid lines with geometry that will be aggregated to generate the SubnetLine features. This list is a subset of the values specified in the Valid Lines parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -159,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Subnetwork Diagram Templates</para>
-		/// <para>将用于为各个子网生成子网逻辑示意图的模板。</para>
+		/// <para>The templates that will be used to generate subnetwork system diagrams for each subnetwork.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -168,71 +168,71 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Summaries</para>
-		/// <para>设置汇总属性字段以在插入或更新 SubnetLine 要素时存储函数结果。</para>
-		/// <para>汇总组件如下：</para>
-		/// <para>函数 - 从大量计算函数中进行选择。</para>
-		/// <para>属性 - 按系统中定义的任何网络属性进行过滤。</para>
-		/// <para>过滤器名称 - 按属性名称过滤函数结果。</para>
-		/// <para>过滤器运算符 - 从大量运算符中进行选择。</para>
-		/// <para>过滤器类型 - 从大量过滤类型中进行选择。</para>
-		/// <para>过滤器值 - 提供输入过滤属性的特定值。</para>
-		/// <para>汇总属性 - SubnetLine 要素类中将保留函数结果的字段。 根据所选的函数和网络属性类型，只有用户添加的适用子网属性类型才对此参数有效。 如果 SubnetLine 要素类中不存在用于存储汇总结果的字段，则可以使用添加字段工具进行创建。 一个字段仅可支持一个汇总结果；每个汇总都需要在 SubnetLine 要素类中具有自己的字段。 请参阅下列基于所选函数的汇总属性字段的有效字段类型矩阵：函数</para>
-		/// <para>短整型</para>
-		/// <para>长整型</para>
-		/// <para>双精度</para>
-		/// <para>日期</para>
+		/// <para>Sets the summary attribute field to store function results when inserting or updating SubnetLine features.</para>
+		/// <para>Summaries components are as follows:</para>
+		/// <para>Function—Choose from a number of calculation functions.</para>
+		/// <para>Attribute—Filter by any network attribute defined in the system.</para>
+		/// <para>Filter Name—Filter the function results by attribute name.</para>
+		/// <para>Filter Operator—Choose from a number of operators.</para>
+		/// <para>Filter Type—Choose from a number of filter types.</para>
+		/// <para>Filter Value—Provide a specific value for the input filter attribute.</para>
+		/// <para>Summary Attribute—The field in the SubnetLine feature class that will persist the function result. Depending on the selected function and network attribute type, only the applicable type of user-added subnetwork attributes will be valid for this parameter. If a field to store the summary result does not exist in the SubnetLine feature class, the Add Field tool can be used to create one. A field can only support the result of one summary; each summary requires its own field in the SubnetLine feature class. See the following matrix of valid field types for the summary attribute field based on the function chosen:Function</para>
+		/// <para>Short</para>
+		/// <para>Long</para>
+		/// <para>Double</para>
+		/// <para>Date</para>
 		/// <para>AVG</para>
-		/// <para>双精度</para>
-		/// <para>双精度</para>
-		/// <para>双精度</para>
+		/// <para>Double</para>
+		/// <para>Double</para>
+		/// <para>Double</para>
 		/// <para>N/A</para>
 		/// <para>MIN</para>
-		/// <para>短整型</para>
-		/// <para>长整型</para>
-		/// <para>双精度</para>
-		/// <para>日期</para>
+		/// <para>Short</para>
+		/// <para>Long</para>
+		/// <para>Double</para>
+		/// <para>Date</para>
 		/// <para>MAX</para>
-		/// <para>短整型</para>
-		/// <para>长整型</para>
-		/// <para>双精度</para>
-		/// <para>日期</para>
+		/// <para>Short</para>
+		/// <para>Long</para>
+		/// <para>Double</para>
+		/// <para>Date</para>
 		/// <para>SUBTRACT</para>
-		/// <para>长整型</para>
-		/// <para>长整型</para>
-		/// <para>双精度</para>
+		/// <para>Long</para>
+		/// <para>Long</para>
+		/// <para>Double</para>
 		/// <para>N/A</para>
 		/// <para>COUNT</para>
-		/// <para>长整型</para>
-		/// <para>长整型</para>
-		/// <para>长整型</para>
+		/// <para>Long</para>
+		/// <para>Long</para>
+		/// <para>Long</para>
 		/// <para>N/A</para>
 		/// <para>ADD</para>
-		/// <para>长整型</para>
-		/// <para>长整型</para>
-		/// <para>双精度</para>
+		/// <para>Long</para>
+		/// <para>Long</para>
+		/// <para>Double</para>
 		/// <para>N/A</para>
-		/// <para>汇总函数值选项如下：</para>
-		/// <para>Minimum - 输入值的最小值。</para>
-		/// <para>Maximum - 输入值的最大值。</para>
-		/// <para>Add - 输入值的总和。</para>
-		/// <para>Average - 输入值的平均值。</para>
-		/// <para>Count - 要素数目。</para>
-		/// <para>Subtract - 输入值之间的差值。子网控制器和循环追踪类型不支持剪除功能。</para>
-		/// <para>例如，起点要素的值为 20。 下一个要素的值为 30。 如果使用 Minimum 函数，则结果为 20；使用 Maximum 函数，结果为 30；使用 Add 函数，结果为 50；使用 Average 函数，结果为 25；使用 Count 函数，结果为 2；使用 Subtract 函数，结果为 -10。</para>
-		/// <para>汇总过滤器运算符值选项如下：</para>
-		/// <para>Is equal to - 该属性等于该值。</para>
-		/// <para>Does not equal - 该属性不等于该值。</para>
-		/// <para>Is greater than - 该属性大于该值。</para>
-		/// <para>Is greater than or equal to - 该属性大于或等于该值。</para>
-		/// <para>Is less than - 该属性小于该值。</para>
-		/// <para>Is less than or equal to - 该属性小于或等于该值。</para>
-		/// <para>Includes the values - 值中的所有位都存在于属性中的“按位与”运算（按位与 == 值）。</para>
-		/// <para>Does not include the values - 值中的所有位并非都存在于属性中的“按位与”运算（按位与 != 值）。</para>
-		/// <para>Includes any - 值中至少有一位存在于属性中的“按位与”运算（按位与 == True）。</para>
-		/// <para>Does not include any - 值中的所有位均未存在于属性中的“按位与”运算（按位与 == False）。</para>
-		/// <para>汇总过滤器类型值选项如下：</para>
-		/// <para>特定值 - 按特定值过滤。</para>
-		/// <para>网络属性 - 按网络属性过滤。</para>
+		/// <para>The summaries Function value options are as follows:</para>
+		/// <para>Minimum—The minimum of the input values.</para>
+		/// <para>Maximum—The maximum of the input values.</para>
+		/// <para>Add—The sum of the input values.</para>
+		/// <para>Average—The average of the input values.</para>
+		/// <para>Count—The number of features.</para>
+		/// <para>Subtract—The difference between the input values.Subnetwork controllers and loops trace types do not support the subtract function.</para>
+		/// <para>For example, the starting point feature has a value of 20. The next feature has a value of 30. If you use the minimum function, the result is 20, maximum is 30, add is 50, average is 25, count is 2, and subtract is -10.</para>
+		/// <para>The summaries Filter Operator value options are as follows:</para>
+		/// <para>Is equal to—The attribute is equal to the value.</para>
+		/// <para>Does not equal—The attribute is not equal to the value.</para>
+		/// <para>Is greater than—The attribute is greater than the value.</para>
+		/// <para>Is greater than or equal to—The attribute is greater than or equal to the value.</para>
+		/// <para>Is less than—The attribute is less than the value.</para>
+		/// <para>Is less than or equal to—The attribute is less than or equal to the value.</para>
+		/// <para>Includes the values—A bitwise AND operation in which all bits in the value are present in the attribute (bitwise AND == value).</para>
+		/// <para>Does not include the values—A bitwise AND operation in which not all of the bits in the value are present in the attribute (bitwise AND != value).</para>
+		/// <para>Includes any—A bitwise AND operation in which at least one bit in the value is present in the attribute (bitwise AND == True).</para>
+		/// <para>Does not include any—A bitwise AND operation in which none of the bits in the value are present in the attribute (bitwise AND == False).</para>
+		/// <para>The summaries Filter Type value options are as follows:</para>
+		/// <para>Specific Value—Filter by a specific value.</para>
+		/// <para>Network Attribute—Filter by a network attribute.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -242,27 +242,27 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Condition Barriers</para>
-		/// <para>基于与网络属性的比较或对类别字符串的检查，对要素设置可遍历性障碍条件。 条件障碍使用网络属性、运算符和类型以及属性值。 例如，当要素的 Device Status 属性等于 Open 的特定值时，将停止追踪。 当要素满足此条件时，追踪将停止。 如果您要使用多个属性，可使用 Combine Using 参数来定义 And 或 Or 条件。</para>
-		/// <para>条件障碍组件如下：</para>
-		/// <para>名称 - 按系统中定义的任何网络属性进行过滤。</para>
-		/// <para>运算符 - 从大量运算符中进行选择。</para>
-		/// <para>类型 - 从名称参数中指定的值中选择特定值或网络属性。</para>
-		/// <para>值 - 提供会基于运算符值导致终止的输入属性类型的特定值。</para>
-		/// <para>组合方法 - 如果要添加多个属性，则设置此值。您可以使用 And 或 Or 条件来对它们进行组合。</para>
-		/// <para>条件障碍运算符值选项如下：</para>
-		/// <para>Is equal to - 该属性等于该值。</para>
-		/// <para>Does not equal - 该属性不等于该值。</para>
-		/// <para>Is greater than - 该属性大于该值。</para>
-		/// <para>Is greater than or equal to - 该属性大于或等于该值。</para>
-		/// <para>Is less than - 该属性小于该值。</para>
-		/// <para>Is less than or equal to - 该属性小于或等于该值。</para>
-		/// <para>Includes the values - 值中的所有位都存在于属性中的“按位与”运算（按位与 == 值）。</para>
-		/// <para>Does not include the values - 值中的所有位并非都存在于属性中的“按位与”运算（按位与 != 值）。</para>
-		/// <para>Includes any - 值中至少有一位存在于属性中的“按位与”运算（按位与 == True）。</para>
-		/// <para>Does not include any - 值中的所有位均未存在于属性中的“按位与”运算（按位与 == False）。</para>
-		/// <para>条件障碍类型值选项如下：</para>
-		/// <para>特定值 - 按特定值过滤。</para>
-		/// <para>网络属性 - 按网络属性过滤。</para>
+		/// <para>Sets a traversability barrier condition on features based on a comparison to a network attribute or check for a category string. A condition barrier uses a network attribute, an operator and a type, and an attribute value. For example, stop a trace when a feature has the Device Status attribute equal to the specific value of Open. When a feature meets this condition, the trace stops. If you&apos;re using more than one attribute, you can use the Combine using parameter to define an And or an Or condition.</para>
+		/// <para>Condition barrier components are as follows:</para>
+		/// <para>Name—Filter by any network attribute defined in the system.</para>
+		/// <para>Operator—Choose from a number of operators.</para>
+		/// <para>Type—Choose a specific value or network attribute from the value that is specified in the Name parameter.</para>
+		/// <para>Value—Provide a specific value for the input attribute type that would cause termination based on the operator value.</para>
+		/// <para>Combine using—Set this value if you have multiple attributes to add. You can combine them using an And or an Or condition.</para>
+		/// <para>The condition barriers Operator value options are as follows:</para>
+		/// <para>Is equal to—The attribute is equal to the value.</para>
+		/// <para>Does not equal—The attribute is not equal to the value.</para>
+		/// <para>Is greater than—The attribute is greater than the value.</para>
+		/// <para>Is greater than or equal to—The attribute is greater than or equal to the value.</para>
+		/// <para>Is less than—The attribute is less than the value.</para>
+		/// <para>Is less than or equal to—The attribute is less than or equal to the value.</para>
+		/// <para>Includes the values—A bitwise AND operation in which all bits in the value are present in the attribute (bitwise AND == value).</para>
+		/// <para>Does not include the values—A bitwise AND operation in which not all of the bits in the value are present in the attribute (bitwise AND != value).</para>
+		/// <para>Includes any—A bitwise AND operation in which at least one bit in the value is present in the attribute (bitwise AND == True).</para>
+		/// <para>Does not include any—A bitwise AND operation in which none of the bits in the value are present in the attribute (bitwise AND == False).</para>
+		/// <para>The condition barriersType value options are as follows:</para>
+		/// <para>Specific Value—Filter by a specific value.</para>
+		/// <para>Network Attribute—Filter by a network attribute.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -272,34 +272,34 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Function Barriers</para>
-		/// <para>基于函数对要素设置可遍历性障碍。 函数障碍可用于执行以下操作：限制追踪距离起点的行程或设置停止追踪的最大值。 例如，所经过的每条线的长度和为目前经过的总距离。 当经过的总长度达到指定值时，追踪将停止。</para>
-		/// <para>函数障碍组件如下：</para>
-		/// <para>函数 - 从大量计算函数中进行选择。</para>
-		/// <para>属性 - 按系统中定义的任何网络属性进行过滤。</para>
-		/// <para>运算符 - 从大量运算符中进行选择。</para>
-		/// <para>值 - 提供将导致终止的输入属性类型（若发现）的特定值。</para>
-		/// <para>使用局部值 - 计算每个方向的值，而不是整体全局值，例如计算 Shape length 总和的函数障碍，其中，如果值大于或等于 4，则追踪终止。 在全局情况下，遍历两条值为 2 的边之后，Shape length 总和即已达到 4，因此追踪会停止。 如果使用本地值，每条路径上的本地值会变化，且追踪将继续。</para>
-		/// <para>选中 - 将使用局部值。</para>
-		/// <para>未选中 - 将使用全局值。 这是默认设置。</para>
-		/// <para>函数障碍函数值选项如下：</para>
-		/// <para>Minimum - 输入值的最小值。</para>
-		/// <para>Maximum - 输入值的最大值。</para>
-		/// <para>Add - 输入值的总和。</para>
-		/// <para>Average - 输入值的平均值。</para>
-		/// <para>Count - 要素数目。</para>
-		/// <para>Subtract - 输入值之间的差值。子网控制器和循环追踪类型不支持剪除功能。</para>
-		/// <para>例如，起点要素的值为 20。 下一个要素的值为 30。 如果使用 Minimum 函数，则结果为 20；使用 Maximum 函数，结果为 30；使用 Add 函数，结果为 50；使用 Average 函数，结果为 25；使用 Count 函数，结果为 2；使用 Subtract 函数，结果为 -10。</para>
-		/// <para>函数障碍运算符值选项如下：</para>
-		/// <para>Is equal to - 该属性等于该值。</para>
-		/// <para>Does not equal - 该属性不等于该值。</para>
-		/// <para>Is greater than - 该属性大于该值。</para>
-		/// <para>Is greater than or equal to - 该属性大于或等于该值。</para>
-		/// <para>Is less than - 该属性小于该值。</para>
-		/// <para>Is less than or equal to - 该属性小于或等于该值。</para>
-		/// <para>Includes the values - 值中的所有位都存在于属性中的“按位与”运算（按位与 == 值）。</para>
-		/// <para>Does not include the values - 值中的所有位并非都存在于属性中的“按位与”运算（按位与 != 值）。</para>
-		/// <para>Includes any - 值中至少有一位存在于属性中的“按位与”运算（按位与 == True）。</para>
-		/// <para>Does not include any - 值中的所有位均未存在于属性中的“按位与”运算（按位与 == False）。</para>
+		/// <para>Sets a traversability barrier on features based on a function. Function barriers can be used to do such things as restrict how far the trace travels from the starting point, or set a maximum value to stop a trace. For example, the length of each line traveled is added to the total distance traveled so far. When the total length traveled reaches the value specified, the trace stops.</para>
+		/// <para>Function barrier components are as follows:</para>
+		/// <para>Function—Choose from a number of calculation functions.</para>
+		/// <para>Attribute—Filter by any network attribute defined in the system.</para>
+		/// <para>Operator—Choose from a number of operators.</para>
+		/// <para>Value—Provide a specific value for the input attribute type that, if discovered, will cause the termination.</para>
+		/// <para>Use Local Values—Calculate values in each direction as opposed to an overall global value, for example, a function barrier that is calculating the sum of Shape length in which the trace terminates if the value is greater than or equal to 4. In the global case, after you have traversed two edges with a value of 2, you have already reached a Shape length sum of 4, so the trace stops. If local values are used, the local values along each path change, and the trace continues.</para>
+		/// <para>Checked—Local values will be used.</para>
+		/// <para>Unchecked—Global values will be used. This is the default.</para>
+		/// <para>The function barrier Function value options are as follows:</para>
+		/// <para>Minimum—The minimum of the input values.</para>
+		/// <para>Maximum—The maximum of the input values.</para>
+		/// <para>Add—The sum of the input values.</para>
+		/// <para>Average—The average of the input values.</para>
+		/// <para>Count—The number of features.</para>
+		/// <para>Subtract—The difference between the input values.Subnetwork controllers and loops trace types do not support the subtract function.</para>
+		/// <para>For example, the starting point feature has a value of 20. The next feature has a value of 30. If you use the minimum function, the result is 20, maximum is 30, add is 50, average is 25, count is 2, and subtract is -10.</para>
+		/// <para>The function barrier Operator value options are as follows:</para>
+		/// <para>Is equal to—The attribute is equal to the value.</para>
+		/// <para>Does not equal—The attribute is not equal to the value.</para>
+		/// <para>Is greater than—The attribute is greater than the value.</para>
+		/// <para>Is greater than or equal to—The attribute is greater than or equal to the value.</para>
+		/// <para>Is less than—The attribute is less than the value.</para>
+		/// <para>Is less than or equal to—The attribute is less than or equal to the value.</para>
+		/// <para>Includes the values—A bitwise AND operation in which all bits in the value are present in the attribute (bitwise AND == value).</para>
+		/// <para>Does not include the values—A bitwise AND operation in which not all of the bits in the value are present in the attribute (bitwise AND != value).</para>
+		/// <para>Includes any—A bitwise AND operation in which at least one bit in the value is present in the attribute (bitwise AND == True).</para>
+		/// <para>Does not include any—A bitwise AND operation in which none of the bits in the value are present in the attribute (bitwise AND == False).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -309,9 +309,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Include Barrier Features</para>
-		/// <para>指定追踪结果中是否包含可遍历性障碍要素。 即使已在子网定义中进行了预设，可遍历性障碍仍可选。 此参数不适用于具备终端的设备要素。</para>
-		/// <para>选中 - 追踪结果中将包含可遍历性障碍要素。 这是默认设置。</para>
-		/// <para>未选中 - 追踪结果中将不包含可遍历性障碍要素。</para>
+		/// <para>Specifies whether the traversability barrier features will be included in the trace results. Traversability barriers are optional even if they have been preset in the subnetwork definition. This parameter does not apply to device features with terminals.</para>
+		/// <para>Checked—Traversability barrier features will be included in the trace results. This is the default.</para>
+		/// <para>Unchecked—Traversability barrier features will not be included in the trace results.</para>
 		/// <para><see cref="IncludeBarriersEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -322,10 +322,10 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Apply Traversability To</para>
-		/// <para>要强制使用的可遍历性的类型。 可遍历性范围指明是否在交汇点、边或这两处强制使用可遍历性。 例如，如果定义了用于停止追踪的条件障碍，其中 Device Status 等于 Open 并将遍历范围仅设置为边，则即使追踪遇到开路设备，追踪也不会停止，因为 Device Status 仅适用于交汇点。 换言之，此参数会向追踪指出是否要忽略交汇点、边或这两者。</para>
-		/// <para>交汇点和边 - 可遍历性将同时应用于交汇点和边。</para>
-		/// <para>仅交汇点 - 可遍历性将仅应用于交汇点。</para>
-		/// <para>仅边 - 可遍历性将仅应用于边。</para>
+		/// <para>The type of traversability to enforce. Traversability scope dictates whether traversability is enforced at junctions, edges, or both. For example, if a condition barrier is defined to stop the trace if Device Status is equal to Open and traversability scope is set to edges only, the trace will not stop—even if it encounters an open device—because Device Status is only applicable to junctions. In other words, this parameter indicates to the trace whether to ignore junctions, edges, or both.</para>
+		/// <para>Both junctions and edges—Traversability will be applied to both junctions and edges.</para>
+		/// <para>Junctions only—Traversability will be applied to junctions only.</para>
+		/// <para>Edges only—Traversability will be applied to edges only.</para>
 		/// <para><see cref="TraversabilityScopeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -336,30 +336,30 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Propagators</para>
-		/// <para>指定要传播的网络属性以及传播将在追踪过程中的发生方式。 传播的类属性表示子网控制器上已传播至子网余下要素的关键值。 例如，在配电模型中，您可传播相位值。</para>
-		/// <para>传播程序组件如下：</para>
-		/// <para>Attribute - 选择按系统中定义的任何网络属性进行过滤。</para>
-		/// <para>Substitution Attribute - 使用替换值而不是 bitset 网络属性值。 替换是基于正在传递的网络属性中的位数进行编码的。 替换是指同相位的某个位到另一个位的映射。 例如对于相 AC 而言，可通过一个替换将位 A 映射到 B，将位 C 映射到 null。 在该示例中，1010（相 AC）的替换是 0000-0010-0000-0000 (512)。 该替换将捕捉映射，以通知您相 A 被映射到 B，且相 C 被映射到 null 而非相反（即相 A 未映射到 null，且相 C 未映射到 B）。</para>
-		/// <para>Function - 从大量计算函数中进行选择。</para>
-		/// <para>Operator - 从大量运算符中进行选择。</para>
-		/// <para>Value - 提供会基于运算符值导致终止的输入属性类型的特定值。</para>
-		/// <para>Propagated Attribute - 网络类中用于存储所计算传播值的字段的名称。 字段类型应该与为 Attribute 值选择的网络属性的字段类型相同。</para>
-		/// <para>传播程序 function 值选项如下：</para>
-		/// <para>PROPAGATED_BITWISE_AND—比较一个要素与下一个要素的值。</para>
-		/// <para>PROPAGATED_MIN—获取最小值。</para>
-		/// <para>PROPAGATED_MAX—获取最大值。</para>
-		/// <para>传播程序 operator 值选项如下：</para>
-		/// <para>IS_EQUAL_TO—属性与值相等。</para>
-		/// <para>DOES_NOT_EQUAL—属性与值不等。</para>
-		/// <para>IS_GREATER_THAN—属性大于值。</para>
-		/// <para>IS_GREATER_THAN_OR_EQUAL_TO—属性大于或等于值。</para>
-		/// <para>IS_LESS_THAN—属性小于值。</para>
-		/// <para>IS_LESS_THAN_OR_EQUAL_TO—属性小于或等于值。</para>
-		/// <para>INCLUDES_THE_VALUES—值中的所有位都存在于属性中的“按位与”运算（按位与 == 值）。</para>
-		/// <para>DOES_NOT_INCLUDE_THE_VALUES—并非值中的所有位都存在于属性中的“按位与”运算（按位与 != 值）。</para>
-		/// <para>INCLUDES_ANY—值中至少有一位存在于属性中的“按位与”运算（按位与 == True）。</para>
-		/// <para>DOES_NOT_INCLUDE_ANY—值中的所有位均未存在于属性中的“按位与”运算（按位与 == False）。</para>
-		/// <para>此参数仅可通过 Python 获得。</para>
+		/// <para>Specifies the network attributes to propagate as well as how that propagation will occur during a trace. Propagated class attributes denote the key values on subnetwork controllers that are disseminated to the rest of the features in the subnetwork. For example, in an electric distribution model, you can propagate the phase value.</para>
+		/// <para>Propagators components are as follows:</para>
+		/// <para>Attribute—Filter by any network attribute defined in the system.</para>
+		/// <para>Substitution Attribute—Use a substituted value instead of bitset network attribute values. Substitutions are encoded based on the number of bits in the network attribute being propagated. A substitution is a mapping of each bit in a phase to another bit. For example, for Phase AC, one substitution could map bit A to B and bit C to null. In this example the substitution for 1010 (Phase AC) is 0000-0010-0000-0000 (512). The substitution captures the mapping so you know that Phase A was mapped to B and Phase C was mapped to null and not the other way around (that is, Phase A was not mapped to null and Phase C was not mapped to B).</para>
+		/// <para>Function—Choose from a number of calculation functions.</para>
+		/// <para>Operator—Choose from a number of operators.</para>
+		/// <para>Value—Provide a specific value for the input attribute type that would cause termination based on the operator value.</para>
+		/// <para>Propagated Attribute—The name of the field in the network class that is used to store the calculated propagated values. The field type should be the same as the field type of the network attribute chosen for the Attribute value.</para>
+		/// <para>The propagators function value options are as follows:</para>
+		/// <para>PROPAGATED_BITWISE_AND—Compare the values from one feature to the next.</para>
+		/// <para>PROPAGATED_MIN—Get the minimum value.</para>
+		/// <para>PROPAGATED_MAX—Get the maximum value.</para>
+		/// <para>The propagators operator value options are as follows:</para>
+		/// <para>IS_EQUAL_TO—The attribute is equal to the value.</para>
+		/// <para>DOES_NOT_EQUAL—The attribute is not equal to the value.</para>
+		/// <para>IS_GREATER_THAN—The attribute is greater than the value.</para>
+		/// <para>IS_GREATER_THAN_OR_EQUAL_TO—The attribute is greater than or equal to the value.</para>
+		/// <para>IS_LESS_THAN—The attribute is less than the value.</para>
+		/// <para>IS_LESS_THAN_OR_EQUAL_TO—The attribute is less than or equal to the value.</para>
+		/// <para>INCLUDES_THE_VALUES—A bitwise AND operation in which all bits in the value are present in the attribute (bitwise AND == value).</para>
+		/// <para>DOES_NOT_INCLUDE_THE_VALUES—A bitwise AND operation in which not all of the bits in the value are present in the attribute (bitwise AND != value).</para>
+		/// <para>INCLUDES_ANY—A bitwise AND operation in which at least one bit in the value is present in the attribute (bitwise AND == True).</para>
+		/// <para>DOES_NOT_INCLUDE_ANY—A bitwise AND operation in which none of the bits in the value are present in the attribute (bitwise AND == False).</para>
+		/// <para>This parameter is only available via Python.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -376,10 +376,10 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Update Structure Network Containers</para>
-		/// <para>指定更新子网进程是否将更新结构网络容器的受支持子网名称属性。</para>
-		/// <para>选中 - 将对结构网络容器进行更新。 这是默认设置。</para>
-		/// <para>未选中 - 不会对结构网络容器进行更新。</para>
-		/// <para>此参数需要公共设施网络版本值为 4 或更高版本。</para>
+		/// <para>Specifies whether the update subnetwork process will update the supported subnetwork name attribute for structure network containers.</para>
+		/// <para>Checked—The structure network containers will be updated. This is the default.</para>
+		/// <para>Unchecked—The structure network containers will not be updated.</para>
+		/// <para>This parameter requires a Utility Network Version value of 4 or later.</para>
 		/// <para><see cref="UpdateStructureFeaturesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -390,10 +390,10 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Update Domain Network Containers</para>
-		/// <para>指定更新子网进程是否将更新域网络容器的受支持子网名称。</para>
-		/// <para>选中 - 将更新域网络容器。 这是默认设置。</para>
-		/// <para>未选中 - 不会更新域网络容器。</para>
-		/// <para>此参数需要公共设施网络版本值为 4 或更高版本。</para>
+		/// <para>Specifies whether the update subnetwork process will update the supported subnetwork name for domain network containers.</para>
+		/// <para>Checked—The domain network containers will be updated. This is the default.</para>
+		/// <para>Unchecked—The domain network containers will not be updated.</para>
+		/// <para>This parameter requires a Utility Network Version value of 4 or later.</para>
 		/// <para><see cref="UpdateContainerFeaturesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -404,10 +404,10 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Edit Mode For Default Version</para>
-		/// <para>指定默认版本上和具有文件和移动地理数据库的子网更新所使用的编辑模式。</para>
-		/// <para>无事件—事件将不会用于默认版本和文件或移动地理数据库中的子网更新。 此编辑模式会将子网名称和传播值更新到位。 这是默认设置。</para>
-		/// <para>具有事件—事件将用于默认版本和文件或移动地理数据库中的子网更新。 当子网更新时，此编辑模式将执行地理数据库行为（例如，属性规则、编辑者追踪等），并为所有适用的要素和对象更新子网名称和传播值。</para>
-		/// <para>此参数需要公共设施网络版本值为 4 或更高版本。</para>
+		/// <para>Specifies the edit mode that will be used for subnetwork updates on the default version and with file and mobile geodatabases.</para>
+		/// <para>Without eventing—Eventing will not be used for subnetwork updates on the default version or in a file or mobile geodatabase. This edit mode updates the subnetwork name and propagated values in place. This is the default.</para>
+		/// <para>With eventing—Eventing will be used for subnetwork updates on the default version and in a file or mobile geodatabase. This edit mode executes geodatabase behavior (for example, attribute rules, editor tracking, and so on) when the subnetwork is updated and updates the subnetwork name and propagated values for all applicable features and objects.</para>
+		/// <para>This parameter requires a Utility Network Version value of 4 or later.</para>
 		/// <para><see cref="EditModeForDefaultVersionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -418,10 +418,10 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Edit Mode For Named Version</para>
-		/// <para>指定将用于指定版本上的子网更新的编辑模式。</para>
-		/// <para>无事件—事件将不会用于指定版本上的子网更新。 对于在此版本中编辑的要素和对象，此编辑模式将更新其子网名称和传播值。 这是默认设置。</para>
-		/// <para>具有事件—事件将用于指定版本上的子网更新。 当子网更新时，此编辑模式将执行地理数据库行为（例如，属性规则、编辑者追踪等），并为所有适用的要素和对象更新子网名称和传播值。</para>
-		/// <para>此参数需要公共设施网络版本值为 4 或更高版本，并且仅适用于企业级地理数据库。</para>
+		/// <para>Specifies the edit mode that will be used for subnetwork updates on a named version.</para>
+		/// <para>Without eventing—Eventing will not be used for subnetwork updates on named versions. This edit mode updates the subnetwork name and propagated values in place for features and objects edited in the version. This is the default.</para>
+		/// <para>With eventing—Eventing will be used for subnetwork updates on named versions. This edit mode executes geodatabase behavior (for example, attribute rules, editor tracking, and so on) when the subnetwork is updated and updates the subnetwork name and propagated values for all applicable features and objects.</para>
+		/// <para>This parameter requires a Utility Network Version value of 4 or later and is only applicable to enterprise geodatabases.</para>
 		/// <para><see cref="EditModeForNamedVersionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -432,8 +432,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Valid Junctions</para>
-		/// <para>资产组/资产类型对将被标识为该子网的有效交汇点。</para>
-		/// <para>此参数需要公共设施网络版本值为 4 或更高版本。</para>
+		/// <para>The asset group/asset type pairs identified as valid junctions for the subnetwork.</para>
+		/// <para>This parameter requires a Utility Network Version value of 4 or later.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -443,8 +443,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Valid Junction Objects</para>
-		/// <para>资产组/资产类型对将被标识为该子网的有效交汇点对象。</para>
-		/// <para>此参数需要公共设施网络版本值为 4 或更高版本。</para>
+		/// <para>The asset group/asset type pairs identified as valid junction objects for the subnetwork.</para>
+		/// <para>This parameter requires a Utility Network Version value of 4 or later.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -454,8 +454,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Valid Junction Object Subnetwork Controllers</para>
-		/// <para>资产组/资产类型对将被标识为该子网的有效交汇点对象子网控制器。</para>
-		/// <para>此参数需要公共设施网络版本值为 4 或更高版本。</para>
+		/// <para>The asset group/asset type pairs identified as valid junction object subnetwork controllers for the subnetwork.</para>
+		/// <para>This parameter requires a Utility Network Version value of 4 or later.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -465,8 +465,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Valid Edge Objects</para>
-		/// <para>已标识为子网的有效边对象的资产组/资产类型对。</para>
-		/// <para>此参数需要公共设施网络版本值为 4 或更高版本。</para>
+		/// <para>The asset group/asset type pairs identified as valid edge objects for the subnetwork.</para>
+		/// <para>This parameter requires a Utility Network Version value of 4 or later.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -476,10 +476,10 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Manage IsDirty</para>
-		/// <para>指定子网表中的 Is dirty 属性是否将由更新子网操作管理。</para>
-		/// <para>选中 - Is dirty 属性将由更新子网操作管理。 这是默认设置。</para>
-		/// <para>未选中 - Is dirty 属性不会由更新子网操作管理。</para>
-		/// <para>此参数需要公共设施网络版本值为 5 或更高版本。</para>
+		/// <para>Specifies whether the Is dirty attribute in the subnetworks table will be managed by the update subnetwork operation.</para>
+		/// <para>Checked—The Is dirty attribute will be managed by the update subnetwork operation. This is the default.</para>
+		/// <para>Unchecked—The Is dirty attribute will not be managed by the update subnetwork operation.</para>
+		/// <para>This parameter requires a Utility Network Version value of 5 or later.</para>
 		/// <para><see cref="ManageSubnetworkIsdirtyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -490,10 +490,10 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Include Containers</para>
-		/// <para>指定是否在追踪结果中包含容器要素和对象。</para>
-		/// <para>选中 - 将在追踪结果中包含容器要素和对象。</para>
-		/// <para>未选中 - 不会在追踪结果中包含容器要素和对象。 这是默认设置。</para>
-		/// <para>此参数需要公共设施网络版本值为 5 或更高版本。</para>
+		/// <para>Specifies whether the container features and objects will be included in the trace results.</para>
+		/// <para>Checked—Container features and objects will be included in the trace results.</para>
+		/// <para>Unchecked—Container features and objects will not be included in the trace results. This is the default.</para>
+		/// <para>This parameter requires a Utility Network Version value of 5 or later.</para>
 		/// <para><see cref="IncludeContainersEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -504,10 +504,10 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Include Content</para>
-		/// <para>指定追踪是否将在结果中返回容器的内容。</para>
-		/// <para>选中 - 将在追踪结果中包含容器要素的内容。</para>
-		/// <para>未选中 - 不会在追踪结果中包含容器要素的内容。 这是默认设置。</para>
-		/// <para>此参数需要公共设施网络版本值为 5 或更高版本。</para>
+		/// <para>Specifies whether the trace will return content of containers in the results.</para>
+		/// <para>Checked—Content of container features and objects will be included in the trace results.</para>
+		/// <para>Unchecked—Content of container features and objects will not be included in the trace results. This is the default.</para>
+		/// <para>This parameter requires a Utility Network Version value of 5 or later.</para>
 		/// <para><see cref="IncludeContentEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -518,10 +518,10 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Include Structures</para>
-		/// <para>指定追踪结果中是否包含结构要素和对象。</para>
-		/// <para>选中 - 追踪结果中将包含结构要素和对象。</para>
-		/// <para>未选中 - 追踪结果中将不包含结构要素和对象。 这是默认设置。</para>
-		/// <para>此参数需要公共设施网络版本值为 5 或更高版本。</para>
+		/// <para>Specifies whether structure features and objects will be included in the trace results.</para>
+		/// <para>Checked—Structure features and objects will be included in the trace results.</para>
+		/// <para>Unchecked—Structure features and objects will not be included in the trace results. This is the default.</para>
+		/// <para>This parameter requires a Utility Network Version value of 5 or later.</para>
 		/// <para><see cref="IncludeStructuresEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -532,10 +532,10 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Validate Locatability</para>
-		/// <para>指定如果遇到非空间交汇点或边对象并且遍历对象的关联层次结构中没有必要的包含、附件或连通性关联，是否在追踪或更新子网操作期间返回错误。 此参数确保可以通过与要素或其他可定位对象的关联来定位追踪或更新子网操作返回的非空间对象。</para>
-		/// <para>选中 - 如果遇到非空间交汇点或边对象并且遍历对象的关联层次结构中没有必要的包含、附件或连通性关联，将返回一条错误。</para>
-		/// <para>未选中 - 追踪不会检查是否存在无法定位的对象并返回结果，无论遍历对象的关联层次结构中是否存在无法定位的对象。 这是默认设置。</para>
-		/// <para>此参数需要公共设施网络版本值为 5 或更高版本。</para>
+		/// <para>Specifies whether an error will be returned during a trace or update subnetwork operation if nonspatial junction or edge objects are encountered without the necessary containment, attachment, or connectivity association in their association hierarchy of the traversed objects. This parameter ensures that nonspatial objects returned by a trace or update subnetwork operation can be located through an association with features or other locatable objects.</para>
+		/// <para>Checked—An error will be returned if nonspatial junction or edge objects are encountered without the necessary containment, attachment, or connectivity association in their association hierarchy of the traversed objects.</para>
+		/// <para>Unchecked—The trace will not check for unlocatable objects and will return results regardless of whether unlocatable objects are present in the association hierarchy of the traversed objects. This is the default.</para>
+		/// <para>This parameter requires a Utility Network Version value of 5 or later.</para>
 		/// <para><see cref="ValidateLocatabilityEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -552,14 +552,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum SupportDisjointSubnetworkEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The input tier will support disjoint subnetworks.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SUPPORT_DISJOINT")]
 			SUPPORT_DISJOINT,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The input tier will not support disjoint subnetworks. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DISJOINT")]
@@ -573,14 +573,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum IncludeBarriersEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Traversability barrier features will be included in the trace results. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_BARRIERS")]
 			INCLUDE_BARRIERS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Traversability barrier features will not be included in the trace results.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXCLUDE_BARRIERS")]
@@ -594,24 +594,24 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum TraversabilityScopeEnum 
 		{
 			/// <summary>
-			/// <para>交汇点和边 - 可遍历性将同时应用于交汇点和边。</para>
+			/// <para>Both junctions and edges—Traversability will be applied to both junctions and edges.</para>
 			/// </summary>
 			[GPValue("BOTH_JUNCTIONS_AND_EDGES")]
-			[Description("交汇点和边")]
+			[Description("Both junctions and edges")]
 			Both_junctions_and_edges,
 
 			/// <summary>
-			/// <para>仅交汇点 - 可遍历性将仅应用于交汇点。</para>
+			/// <para>Junctions only—Traversability will be applied to junctions only.</para>
 			/// </summary>
 			[GPValue("JUNCTIONS_ONLY")]
-			[Description("仅交汇点")]
+			[Description("Junctions only")]
 			Junctions_only,
 
 			/// <summary>
-			/// <para>仅边 - 可遍历性将仅应用于边。</para>
+			/// <para>Edges only—Traversability will be applied to edges only.</para>
 			/// </summary>
 			[GPValue("EDGES_ONLY")]
-			[Description("仅边")]
+			[Description("Edges only")]
 			Edges_only,
 
 		}
@@ -622,14 +622,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum UpdateStructureFeaturesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The structure network containers will be updated. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE")]
 			UPDATE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The structure network containers will not be updated.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_UPDATE")]
@@ -643,14 +643,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum UpdateContainerFeaturesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The domain network containers will be updated. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE")]
 			UPDATE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The domain network containers will not be updated.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_UPDATE")]
@@ -664,17 +664,17 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum EditModeForDefaultVersionEnum 
 		{
 			/// <summary>
-			/// <para>无事件—事件将不会用于默认版本和文件或移动地理数据库中的子网更新。 此编辑模式会将子网名称和传播值更新到位。 这是默认设置。</para>
+			/// <para>Without eventing—Eventing will not be used for subnetwork updates on the default version or in a file or mobile geodatabase. This edit mode updates the subnetwork name and propagated values in place. This is the default.</para>
 			/// </summary>
 			[GPValue("WITHOUT_EVENTING")]
-			[Description("无事件")]
+			[Description("Without eventing")]
 			Without_eventing,
 
 			/// <summary>
-			/// <para>具有事件—事件将用于默认版本和文件或移动地理数据库中的子网更新。 当子网更新时，此编辑模式将执行地理数据库行为（例如，属性规则、编辑者追踪等），并为所有适用的要素和对象更新子网名称和传播值。</para>
+			/// <para>With eventing—Eventing will be used for subnetwork updates on the default version and in a file or mobile geodatabase. This edit mode executes geodatabase behavior (for example, attribute rules, editor tracking, and so on) when the subnetwork is updated and updates the subnetwork name and propagated values for all applicable features and objects.</para>
 			/// </summary>
 			[GPValue("WITH_EVENTING")]
-			[Description("具有事件")]
+			[Description("With eventing")]
 			With_eventing,
 
 		}
@@ -685,17 +685,17 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum EditModeForNamedVersionEnum 
 		{
 			/// <summary>
-			/// <para>无事件—事件将不会用于指定版本上的子网更新。 对于在此版本中编辑的要素和对象，此编辑模式将更新其子网名称和传播值。 这是默认设置。</para>
+			/// <para>Without eventing—Eventing will not be used for subnetwork updates on named versions. This edit mode updates the subnetwork name and propagated values in place for features and objects edited in the version. This is the default.</para>
 			/// </summary>
 			[GPValue("WITHOUT_EVENTING")]
-			[Description("无事件")]
+			[Description("Without eventing")]
 			Without_eventing,
 
 			/// <summary>
-			/// <para>具有事件—事件将用于指定版本上的子网更新。 当子网更新时，此编辑模式将执行地理数据库行为（例如，属性规则、编辑者追踪等），并为所有适用的要素和对象更新子网名称和传播值。</para>
+			/// <para>With eventing—Eventing will be used for subnetwork updates on named versions. This edit mode executes geodatabase behavior (for example, attribute rules, editor tracking, and so on) when the subnetwork is updated and updates the subnetwork name and propagated values for all applicable features and objects.</para>
 			/// </summary>
 			[GPValue("WITH_EVENTING")]
-			[Description("具有事件")]
+			[Description("With eventing")]
 			With_eventing,
 
 		}
@@ -706,14 +706,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum ManageSubnetworkIsdirtyEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The Is dirty attribute will be managed by the update subnetwork operation. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MANAGE")]
 			MANAGE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The Is dirty attribute will not be managed by the update subnetwork operation.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_MANAGE")]
@@ -727,14 +727,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum IncludeContainersEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Container features and objects will be included in the trace results.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_CONTAINERS")]
 			INCLUDE_CONTAINERS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Container features and objects will not be included in the trace results. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXCLUDE_CONTAINERS")]
@@ -748,14 +748,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum IncludeContentEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Content of container features and objects will be included in the trace results.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_CONTENT")]
 			INCLUDE_CONTENT,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Content of container features and objects will not be included in the trace results. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXCLUDE_CONTENT")]
@@ -769,14 +769,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum IncludeStructuresEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Structure features and objects will be included in the trace results.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_STRUCTURES")]
 			INCLUDE_STRUCTURES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Structure features and objects will not be included in the trace results. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXCLUDE_STRUCTURES")]
@@ -790,14 +790,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum ValidateLocatabilityEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—An error will be returned if nonspatial junction or edge objects are encountered without the necessary containment, attachment, or connectivity association in their association hierarchy of the traversed objects.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("VALIDATE_LOCATABILITY")]
 			VALIDATE_LOCATABILITY,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The trace will not check for unlocatable objects and will return results regardless of whether unlocatable objects are present in the association hierarchy of the traversed objects. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_VALIDATE_LOCATABILITY")]

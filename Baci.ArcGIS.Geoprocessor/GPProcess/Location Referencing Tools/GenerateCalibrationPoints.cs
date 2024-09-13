@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Generate Calibration Points</para>
-	/// <para>生成校准点</para>
-	/// <para>为所提供的任何路径形状生成校准点，包括自闭合、自相交和分支路径等复杂形状。</para>
+	/// <para>Generate Calibration Points</para>
+	/// <para>Generates calibration points for any route shape provided, including  complex shapes such as self-closing, self-intersecting, and branched routes.</para>
 	/// </summary>
 	public class GenerateCalibrationPoints : AbstractGPProcess
 	{
@@ -21,27 +21,27 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InPolylineFeatures">
 		/// <para>Input Polyline Features</para>
-		/// <para>将用作计算校准点测量值的源的要素。</para>
+		/// <para>The features that will be used as the source to calculate the measure values for calibration points.</para>
 		/// </param>
 		/// <param name="RouteIdField">
 		/// <para>Route ID Field</para>
-		/// <para>包含可唯一识别每条路径的值的字段。 字段类型必须与校准点要素类中的 Route ID 字段匹配。</para>
+		/// <para>The field containing values that uniquely identify each route. The field type must match the Route ID field in the calibration point feature class.</para>
 		/// </param>
 		/// <param name="FromDateField">
 		/// <para>From Date Field</para>
-		/// <para>包含路径的开始日期值的字段。</para>
+		/// <para>The field containing the from date values of a route.</para>
 		/// </param>
 		/// <param name="ToDateField">
 		/// <para>To Date Field</para>
-		/// <para>包含路径的结束日期值的字段。</para>
+		/// <para>The field containing the to date values of a route.</para>
 		/// </param>
 		/// <param name="InCalibrationPointFeatureClass">
 		/// <para>Calibration Point Feature Class</para>
-		/// <para>要添加新要素的现有校准点要素类。</para>
+		/// <para>The existing calibration point feature class to which new features will be added.</para>
 		/// </param>
 		/// <param name="LrsNetwork">
 		/// <para>LRS Network</para>
-		/// <para>需要在校准点要素类中生成测量值的 LRS 网络。</para>
+		/// <para>The LRS Network for which the measure values will be generated in the calibration points feature class.</para>
 		/// </param>
 		public GenerateCalibrationPoints(object InPolylineFeatures, object RouteIdField, object FromDateField, object ToDateField, object InCalibrationPointFeatureClass, object LrsNetwork)
 		{
@@ -54,9 +54,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 生成校准点</para>
+		/// <para>Tool Display Name : Generate Calibration Points</para>
 		/// </summary>
-		public override string DisplayName() => "生成校准点";
+		public override string DisplayName() => "Generate Calibration Points";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateCalibrationPoints</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Input Polyline Features</para>
-		/// <para>将用作计算校准点测量值的源的要素。</para>
+		/// <para>The features that will be used as the source to calculate the measure values for calibration points.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Route ID Field</para>
-		/// <para>包含可唯一识别每条路径的值的字段。 字段类型必须与校准点要素类中的 Route ID 字段匹配。</para>
+		/// <para>The field containing values that uniquely identify each route. The field type must match the Route ID field in the calibration point feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>From Date Field</para>
-		/// <para>包含路径的开始日期值的字段。</para>
+		/// <para>The field containing the from date values of a route.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>To Date Field</para>
-		/// <para>包含路径的结束日期值的字段。</para>
+		/// <para>The field containing the to date values of a route.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Calibration Point Feature Class</para>
-		/// <para>要添加新要素的现有校准点要素类。</para>
+		/// <para>The existing calibration point feature class to which new features will be added.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>LRS Network</para>
-		/// <para>需要在校准点要素类中生成测量值的 LRS 网络。</para>
+		/// <para>The LRS Network for which the measure values will be generated in the calibration points feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -149,9 +149,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Calibration Direction</para>
-		/// <para>指定创建校准点时在路径上增加校准的方向。</para>
-		/// <para>数字化方向—输入折线要素参数值的数字化方向决定了路径的校准方向。 这是默认设置。</para>
-		/// <para>测量方向—输入折线要素参数值的 m 值增加的方向决定了路径的校准方向。如果输入折线要素参数值不包括 m 值，则将使用数字化方向。</para>
+		/// <para>Specifies the direction of increasing calibration on a route when creating calibration points.</para>
+		/// <para>Digitized direction—The direction of digitization of the Input Polyline Features parameter value determines the direction of calibration for the route. This is the default.</para>
+		/// <para>Measure direction—The direction of increasing m-values of the Input Polyline Features parameter value determines the direction of calibration for the route. If the Input Polyline Features parameter value does not include m-values, the digitized direction will be used instead.</para>
 		/// <para><see cref="CalibrationDirectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -161,10 +161,10 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Calibration Method</para>
-		/// <para>指定在创建校准点时用于确定路径上的测量值的方法。</para>
-		/// <para>几何长度—输入路径要素的几何长度将用作校准方法。 这是默认设置。</para>
-		/// <para>路径上的 M—输入路径要素上的测量值将用作校准方法。</para>
-		/// <para>属性字段—存储在输入路径要素属性字段中的测量值将用作校准方法。</para>
+		/// <para>Specifies the method that will be used to determine the measures on a route when creating calibration points.</para>
+		/// <para>Geometry length—The geometrical length of the input route feature will be used as the calibration method. This is the default.</para>
+		/// <para>M on route—The measure values on the input route feature will be used as the calibration method.</para>
+		/// <para>Attribute fields—The measure values stored in attribute fields of the input route feature will be used as the calibration method.</para>
 		/// <para><see cref="CalibrationMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -188,8 +188,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>From Measure Field</para>
-		/// <para>包含所选路径的测量始于值的字段。</para>
-		/// <para>当将校准方法参数设置为属性字段时，此参数处于活动状态。</para>
+		/// <para>The field containing the from measure for the selected route.</para>
+		/// <para>This parameter is active when the Calibration Method parameter is set to Attribute fields.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -199,8 +199,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>To Measure Field</para>
-		/// <para>包含所选路径的测量止于值的字段。</para>
-		/// <para>当将校准方法参数设置为属性字段时，此参数处于活动状态。</para>
+		/// <para>The field containing the to measure for the selected route.</para>
+		/// <para>This parameter is active when the Calibration Method parameter is set to Attribute fields.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -225,17 +225,17 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum CalibrationDirectionEnum 
 		{
 			/// <summary>
-			/// <para>数字化方向—输入折线要素参数值的数字化方向决定了路径的校准方向。 这是默认设置。</para>
+			/// <para>Digitized direction—The direction of digitization of the Input Polyline Features parameter value determines the direction of calibration for the route. This is the default.</para>
 			/// </summary>
 			[GPValue("DIGITIZED_DIRECTION")]
-			[Description("数字化方向")]
+			[Description("Digitized direction")]
 			Digitized_direction,
 
 			/// <summary>
-			/// <para>测量方向—输入折线要素参数值的 m 值增加的方向决定了路径的校准方向。如果输入折线要素参数值不包括 m 值，则将使用数字化方向。</para>
+			/// <para>Measure direction—The direction of increasing m-values of the Input Polyline Features parameter value determines the direction of calibration for the route. If the Input Polyline Features parameter value does not include m-values, the digitized direction will be used instead.</para>
 			/// </summary>
 			[GPValue("MEASURE_DIRECTION")]
-			[Description("测量方向")]
+			[Description("Measure direction")]
 			Measure_direction,
 
 		}
@@ -246,24 +246,24 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum CalibrationMethodEnum 
 		{
 			/// <summary>
-			/// <para>几何长度—输入路径要素的几何长度将用作校准方法。 这是默认设置。</para>
+			/// <para>Geometry length—The geometrical length of the input route feature will be used as the calibration method. This is the default.</para>
 			/// </summary>
 			[GPValue("GEOMETRY_LENGTH")]
-			[Description("几何长度")]
+			[Description("Geometry length")]
 			Geometry_length,
 
 			/// <summary>
-			/// <para>路径上的 M—输入路径要素上的测量值将用作校准方法。</para>
+			/// <para>M on route—The measure values on the input route feature will be used as the calibration method.</para>
 			/// </summary>
 			[GPValue("M_ON_ROUTE")]
-			[Description("路径上的 M")]
+			[Description("M on route")]
 			M_on_route,
 
 			/// <summary>
-			/// <para>属性字段—存储在输入路径要素属性字段中的测量值将用作校准方法。</para>
+			/// <para>Attribute fields—The measure values stored in attribute fields of the input route feature will be used as the calibration method.</para>
 			/// </summary>
 			[GPValue("ATTRIBUTE_FIELDS")]
-			[Description("属性字段")]
+			[Description("Attribute fields")]
 			Attribute_fields,
 
 		}

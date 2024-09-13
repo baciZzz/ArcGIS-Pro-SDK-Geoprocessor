@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Multipatch Footprint</para>
-	/// <para>多面体覆盖区</para>
-	/// <para>创建多边形覆盖区用以表示多面体要素的二维区域。</para>
+	/// <para>Multipatch Footprint</para>
+	/// <para>Creates polygon footprints representing the two-dimensional  area of multipatch features.</para>
 	/// </summary>
 	public class MultiPatchFootprint : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InFeatureClass">
 		/// <para>Input Feature Class</para>
-		/// <para>将要生成覆盖区的多面体要素。</para>
+		/// <para>The multipatch feature whose footprint will be generated.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>生成的覆盖区面要素类。</para>
+		/// <para>The resulting footprint polygon feature class.</para>
 		/// </param>
 		public MultiPatchFootprint(object InFeatureClass, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 多面体覆盖区</para>
+		/// <para>Tool Display Name : Multipatch Footprint</para>
 		/// </summary>
-		public override string DisplayName() => "多面体覆盖区";
+		public override string DisplayName() => "Multipatch Footprint";
 
 		/// <summary>
 		/// <para>Tool Name : MultiPatchFootprint</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>将要生成覆盖区的多面体要素。</para>
+		/// <para>The multipatch feature whose footprint will be generated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>生成的覆盖区面要素类。</para>
+		/// <para>The resulting footprint polygon feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Group Field</para>
-		/// <para>该字段用于合并多面体要素，以便构成同一覆盖区面。</para>
+		/// <para>The field used for combining multipatch features so that they contribute to the same footprint polygon.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]

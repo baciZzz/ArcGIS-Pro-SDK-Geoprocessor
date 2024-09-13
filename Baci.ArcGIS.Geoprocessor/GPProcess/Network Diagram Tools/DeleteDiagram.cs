@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Delete Diagram</para>
-	/// <para>删除逻辑示意图</para>
-	/// <para>用于删除一个或多个与给定网络相关的存储的网络逻辑示意图，可根据其逻辑示意图模板名称进行过滤。</para>
+	/// <para>Delete Diagram</para>
+	/// <para>Deletes one or more stored network diagrams, which are optionally filtered by their diagram template names, related to a given network.</para>
 	/// </summary>
 	public class DeleteDiagram : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InDiagrams">
 		/// <para>Input Network or Network Diagram Layer</para>
-		/// <para>要删除的输入网络逻辑示意图图层或在删除指定输入逻辑示意图名称集时所基于的 utility network or trace network 图层。</para>
+		/// <para>The input network diagram layer to delete, or the utility network or trace network layer on which the set of specified input diagram names to delete are based.</para>
 		/// </param>
 		public DeleteDiagram(object InDiagrams)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 删除逻辑示意图</para>
+		/// <para>Tool Display Name : Delete Diagram</para>
 		/// </summary>
-		public override string DisplayName() => "删除逻辑示意图";
+		public override string DisplayName() => "Delete Diagram";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteDiagram</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network or Network Diagram Layer</para>
-		/// <para>要删除的输入网络逻辑示意图图层或在删除指定输入逻辑示意图名称集时所基于的 utility network or trace network 图层。</para>
+		/// <para>The input network diagram layer to delete, or the utility network or trace network layer on which the set of specified input diagram names to delete are based.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Template Names</para>
-		/// <para>要处理的相关逻辑示意图的模板的名称。</para>
+		/// <para>The names of the templates for which the related diagrams will be processed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Diagram Names</para>
-		/// <para>要处理的逻辑示意图的名称。</para>
+		/// <para>The names of the diagrams to be processed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]

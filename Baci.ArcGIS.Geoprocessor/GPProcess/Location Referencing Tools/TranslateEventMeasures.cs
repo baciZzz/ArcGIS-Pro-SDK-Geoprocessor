@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Translate Event Measures</para>
-	/// <para>转换事件测量值</para>
-	/// <para>可将点或线事件图层的测量值（m 值）从一种线性参考方法 (LRM) 转换为另一种。</para>
+	/// <para>Translate Event Measures</para>
+	/// <para>Translates the measures (m-values) of a point or line event layer from one linear referencing method (LRM) to another.</para>
 	/// </summary>
 	public class TranslateEventMeasures : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InSourceEvent">
 		/// <para>Source Event Layer</para>
-		/// <para>要转换的输入事件图层。</para>
+		/// <para>The input event layer to be translated.</para>
 		/// </param>
 		/// <param name="InTargetRouteFeatures">
 		/// <para>Input Target Route Features</para>
-		/// <para>要将输入事件转换到的目标 LRS 网络。</para>
+		/// <para>The target LRS Network against which the input events will be translated.</para>
 		/// </param>
 		/// <param name="OutTargetEvent">
 		/// <para>Output Event Layer</para>
-		/// <para>包含转换后事件要素的输出要素类。</para>
+		/// <para>The output feature class that will contain the translated event features.</para>
 		/// </param>
 		public TranslateEventMeasures(object InSourceEvent, object InTargetRouteFeatures, object OutTargetEvent)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 转换事件测量值</para>
+		/// <para>Tool Display Name : Translate Event Measures</para>
 		/// </summary>
-		public override string DisplayName() => "转换事件测量值";
+		public override string DisplayName() => "Translate Event Measures";
 
 		/// <summary>
 		/// <para>Tool Name : TranslateEventMeasures</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Source Event Layer</para>
-		/// <para>要转换的输入事件图层。</para>
+		/// <para>The input event layer to be translated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Input Target Route Features</para>
-		/// <para>要将输入事件转换到的目标 LRS 网络。</para>
+		/// <para>The target LRS Network against which the input events will be translated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Output Event Layer</para>
-		/// <para>包含转换后事件要素的输出要素类。</para>
+		/// <para>The output feature class that will contain the translated event features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -103,10 +103,10 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Concurrent Route Matching</para>
-		/// <para>指定此方法，该方法在当目标 LRS 网络中存在并发路径时用于确定使用哪个路径来转换事件。 仅当目标 LRS 网络上的事件转换位置存在并发路径（共享同一位置的路径）时，才应用此参数。</para>
-		/// <para>任一并发路径—如果在目标 LRS 网络中找到两个或多个并发路径，将使用其中的第一个路径对输入事件图层进行转换。</para>
-		/// <para>使用路径 ID 匹配路径—将源事件的路径 ID 与目标 LRS 网络中并发路径的路径 ID 进行比较。 源事件将根据源事件和目标网络中的路径 ID 的匹配程度进行转换。 输入事件和目标 LRS 网络的路径 ID 必须完全匹配，此方法才能正确转换事件。 此外，输入事件图层必须是已注册的 LRS 事件，才能使用此方法。</para>
-		/// <para>所有并发路径—将针对目标 LRS 网络中该位置的所有并发路径对输入事件进行转换。</para>
+		/// <para>Specifies the method used to determine which route to translate the event against when concurrent routes exist in the target LRS Network. This parameter is only applied when the location of the event translation on the target LRS Network has concurrent routes (routes that share a location).</para>
+		/// <para>Any concurrent route—The input event layer is translated against the first of two or more concurrent routes found in the target LRS Network.</para>
+		/// <para>Route with matching RouteID—The Route ID of the source event is compared to the Route IDs of concurrent routes in the target LRS Network. The source event will translate based on Route ID matches in the source event and target network. The Route IDs of the input event and target LRS Network must be an exact match for this method to correctly translate the event. The input event layer must also be a registered LRS event to use this method.</para>
+		/// <para>All concurrent routes—The input event is translated against all the concurrent routes at that location in the target LRS Network.</para>
 		/// <para><see cref="InConcurrentRouteMatchingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -131,24 +131,24 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum InConcurrentRouteMatchingEnum 
 		{
 			/// <summary>
-			/// <para>任一并发路径—如果在目标 LRS 网络中找到两个或多个并发路径，将使用其中的第一个路径对输入事件图层进行转换。</para>
+			/// <para>Any concurrent route—The input event layer is translated against the first of two or more concurrent routes found in the target LRS Network.</para>
 			/// </summary>
 			[GPValue("ANY")]
-			[Description("任一并发路径")]
+			[Description("Any concurrent route")]
 			Any_concurrent_route,
 
 			/// <summary>
-			/// <para>使用路径 ID 匹配路径—将源事件的路径 ID 与目标 LRS 网络中并发路径的路径 ID 进行比较。 源事件将根据源事件和目标网络中的路径 ID 的匹配程度进行转换。 输入事件和目标 LRS 网络的路径 ID 必须完全匹配，此方法才能正确转换事件。 此外，输入事件图层必须是已注册的 LRS 事件，才能使用此方法。</para>
+			/// <para>Route with matching RouteID—The Route ID of the source event is compared to the Route IDs of concurrent routes in the target LRS Network. The source event will translate based on Route ID matches in the source event and target network. The Route IDs of the input event and target LRS Network must be an exact match for this method to correctly translate the event. The input event layer must also be a registered LRS event to use this method.</para>
 			/// </summary>
 			[GPValue("ROUTE_ID")]
-			[Description("使用路径 ID 匹配路径")]
+			[Description("Route with matching RouteID")]
 			Route_with_matching_RouteID,
 
 			/// <summary>
-			/// <para>所有并发路径—将针对目标 LRS 网络中该位置的所有并发路径对输入事件进行转换。</para>
+			/// <para>All concurrent routes—The input event is translated against all the concurrent routes at that location in the target LRS Network.</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("所有并发路径")]
+			[Description("All concurrent routes")]
 			All_concurrent_routes,
 
 		}

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build LAS Dataset Pyramid</para>
-	/// <para>构建 LAS 数据集金字塔</para>
-	/// <para>构建或更新 LAS 数据集显示缓存，以优化其渲染性能。</para>
+	/// <para>Build LAS Dataset Pyramid</para>
+	/// <para>Constructs or updates a LAS dataset display cache, which optimizes its rendering performance.</para>
 	/// </summary>
 	public class BuildLasDatasetPyramid : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InLasDataset">
 		/// <para>Input LAS Dataset</para>
-		/// <para>待处理的 LAS 数据集。</para>
+		/// <para>The LAS dataset to process.</para>
 		/// </param>
 		public BuildLasDatasetPyramid(object InLasDataset)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 构建 LAS 数据集金字塔</para>
+		/// <para>Tool Display Name : Build LAS Dataset Pyramid</para>
 		/// </summary>
-		public override string DisplayName() => "构建 LAS 数据集金字塔";
+		public override string DisplayName() => "Build LAS Dataset Pyramid";
 
 		/// <summary>
 		/// <para>Tool Name : BuildLasDatasetPyramid</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
-		/// <para>待处理的 LAS 数据集。</para>
+		/// <para>The LAS dataset to process.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLasDatasetLayer()]
@@ -73,11 +73,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Point Selection Method</para>
-		/// <para>指定如何选择每个图格区域中的点以构建金字塔。 如果 LAS 数据集包含金字塔，将禁用此参数。</para>
-		/// <para>最低点—将选择具有最小 z 值的点。</para>
-		/// <para>最高点—将选择具有最大 z 值的点。</para>
-		/// <para>最接近中心—将选择最接近图格区域中心的点。</para>
-		/// <para>类代码和权重—将选择权重值最高的点。</para>
+		/// <para>Specifies how the point in each binned region will be selected to construct the pyramid. This parameter is disabled if the LAS dataset contains a pyramid.</para>
+		/// <para>Lowest Point—The point with the lowest z-value will be selected.</para>
+		/// <para>Highest Point—The point with the highest z-value will be selected.</para>
+		/// <para>Closest to Center—The point that is closest to the center of the binned region will be selected.</para>
+		/// <para>Class Codes and Weights—The point with the highest weight value will be selected.</para>
 		/// <para><see cref="PointSelectionMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Class Codes and Weights</para>
-		/// <para>赋予每个类代码的权重，用于确定在每个稀疏化区域保留哪些点。仅当在点选择方法参数中指定了类代码权重选项时才会启用该参数。具有最高权重的类代码将保留在稀疏化区域中。如果给定稀疏化区域中存在两个具有相同权重的类代码，则将保留具有最小点源 ID 的类代码。</para>
+		/// <para>The weights assigned to each class code that determine which points are retained in each thinning region. This parameter is only enabled when the Class Code Weights option is specified in the Point Selection Method parameter. The class code with the highest weight will be retained in the thinning region. If two class codes with the same weight exist in a given thinning region, the class code with the smallest point source ID will be retained.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -117,31 +117,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum PointSelectionMethodEnum 
 		{
 			/// <summary>
-			/// <para>最接近中心—将选择最接近图格区域中心的点。</para>
+			/// <para>Closest to Center—The point that is closest to the center of the binned region will be selected.</para>
 			/// </summary>
 			[GPValue("CLOSEST_TO_CENTER")]
-			[Description("最接近中心")]
+			[Description("Closest to Center")]
 			Closest_to_Center,
 
 			/// <summary>
-			/// <para>类代码和权重—将选择权重值最高的点。</para>
+			/// <para>Class Codes and Weights—The point with the highest weight value will be selected.</para>
 			/// </summary>
 			[GPValue("CLASS_CODE")]
-			[Description("类代码和权重")]
+			[Description("Class Codes and Weights")]
 			Class_Codes_and_Weights,
 
 			/// <summary>
-			/// <para>最低点—将选择具有最小 z 值的点。</para>
+			/// <para>Lowest Point—The point with the lowest z-value will be selected.</para>
 			/// </summary>
 			[GPValue("Z_MIN")]
-			[Description("最低点")]
+			[Description("Lowest Point")]
 			Lowest_Point,
 
 			/// <summary>
-			/// <para>最高点—将选择具有最大 z 值的点。</para>
+			/// <para>Highest Point—The point with the highest z-value will be selected.</para>
 			/// </summary>
 			[GPValue("Z_MAX")]
-			[Description("最高点")]
+			[Description("Highest Point")]
 			Highest_Point,
 
 		}

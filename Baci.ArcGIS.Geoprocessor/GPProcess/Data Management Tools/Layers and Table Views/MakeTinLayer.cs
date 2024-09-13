@@ -11,8 +11,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make TIN Layer</para>
-	/// <para>创建 TIN 图层</para>
-	/// <para>基于输入 TIN 数据集或图层文件创建不规则三角网 (TIN) 图层。该工具创建的图层是临时图层，如果不将此图层保存到磁盘或保存地图文档，该图层在会话结束后将不会继续存在。</para>
+	/// <para>Make TIN Layer</para>
+	/// <para>Creates a triangulated irregular network (TIN) layer</para>
+	/// <para>from an input TIN dataset or layer file. The layer that is created by the tool is temporary and will not persist after the session ends unless the layer is saved to disk or the map document is saved.</para>
 	/// </summary>
 	public class MakeTinLayer : AbstractGPProcess
 	{
@@ -21,11 +22,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTin">
 		/// <para>Input TIN</para>
-		/// <para>创建新图层时基于的输入 TIN 数据集或图层。</para>
+		/// <para>The input TIN dataset or layer from which the new layer will be created.</para>
 		/// </param>
 		/// <param name="OutLayer">
 		/// <para>Output TIN Layer</para>
-		/// <para>要创建的 TIN 图层的名称。输出图层可用作任何接受 TIN 图层作为输入的地理处理工具的输入。</para>
+		/// <para>The name of the TIN layer to be created. The output layer can be used as an input to any geoprocessing tool that accepts a TIN layer as input.</para>
 		/// </param>
 		public MakeTinLayer(object InTin, object OutLayer)
 		{
@@ -34,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建 TIN 图层</para>
+		/// <para>Tool Display Name : Make TIN Layer</para>
 		/// </summary>
-		public override string DisplayName() => "创建 TIN 图层";
+		public override string DisplayName() => "Make TIN Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeTinLayer</para>
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input TIN</para>
-		/// <para>创建新图层时基于的输入 TIN 数据集或图层。</para>
+		/// <para>The input TIN dataset or layer from which the new layer will be created.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTinLayer()]
@@ -78,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output TIN Layer</para>
-		/// <para>要创建的 TIN 图层的名称。输出图层可用作任何接受 TIN 图层作为输入的地理处理工具的输入。</para>
+		/// <para>The name of the TIN layer to be created. The output layer can be used as an input to any geoprocessing tool that accepts a TIN layer as input.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTinLayer()]

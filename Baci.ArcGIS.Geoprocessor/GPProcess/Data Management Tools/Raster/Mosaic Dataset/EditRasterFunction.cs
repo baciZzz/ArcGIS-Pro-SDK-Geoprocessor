@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Edit Raster Function</para>
-	/// <para>编辑栅格函数</para>
-	/// <para>在镶嵌数据集或包含栅格函数的栅格图层中添加、替换或移除函数链。</para>
+	/// <para>Edit Raster Function</para>
+	/// <para>Adds, replaces, or removes a function chain in a mosaic dataset or a raster layer that contains a raster function.</para>
 	/// </summary>
 	public class EditRasterFunction : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Input Raster</para>
-		/// <para>镶嵌数据集或栅格图层。如果使用栅格图层，则其必须应用函数。</para>
+		/// <para>The mosaic dataset or a raster layer. If you use a raster layer, it must have a function applied.</para>
 		/// </param>
 		public EditRasterFunction(object InMosaicDataset)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 编辑栅格函数</para>
+		/// <para>Tool Display Name : Edit Raster Function</para>
 		/// </summary>
-		public override string DisplayName() => "编辑栅格函数";
+		public override string DisplayName() => "Edit Raster Function";
 
 		/// <summary>
 		/// <para>Tool Name : EditRasterFunction</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>镶嵌数据集或栅格图层。如果使用栅格图层，则其必须应用函数。</para>
+		/// <para>The mosaic dataset or a raster layer. If you use a raster layer, it must have a function applied.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset Items</para>
-		/// <para>将函数链逐个应用到镶嵌数据集中的每个项目或应用到整个镶嵌数据集。</para>
-		/// <para>未选中 - 编辑将影响与镶嵌数据集相关联的函数。这是默认设置。</para>
-		/// <para>选中 - 编辑将影响与镶嵌数据集内所有项目相关联的函数。</para>
+		/// <para>Applies the function chain to every item in the mosaic dataset individually or to the mosaic dataset as a whole.</para>
+		/// <para>Unchecked—Edits affect the functions associated with the mosaic dataset. This is the default.</para>
+		/// <para>Checked—Edits affect the functions associated with all of the items within the mosaic dataset.</para>
 		/// <para><see cref="EditMosaicDatasetItemEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -85,10 +85,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Edit Options</para>
-		/// <para>插入、替换或移除函数链。</para>
-		/// <para>插入—在现有链的函数名称上方插入函数链。在函数名称参数下指定函数链。这是默认设置。</para>
-		/// <para>替换—使用该工具中指定的函数链替换现有函数链。在函数名称参数下指定函数链。</para>
-		/// <para>移除— 移除从 函数名称 参数中指定函数开始的函数链。</para>
+		/// <para>Insert, replace, or remove a function chain.</para>
+		/// <para>Insert—Insert the function chain above the Function Name of the existing chain. Specify the function chain below in the Function Name parameter. This is the default.</para>
+		/// <para>Replace—Replace the existing function chain with the function chain specified in this tool. Specify the function chain below in the Function Name parameter.</para>
+		/// <para>Remove— Remove the function chain starting from the function specified in the Function Name parameter.</para>
 		/// <para><see cref="EditOptionsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Raster Function Template</para>
-		/// <para>选择想要插入或替换的函数链（rft.xml 文件）。</para>
+		/// <para>Choose the function chain (rft.xml file) that you want to insert or replace.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -108,8 +108,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Function Name</para>
-		/// <para>选择要在现有函数链中插入、替换或移除函数链的位置。</para>
-		/// <para>如果插入函数，则将在函数名称参数中指定的函数上方进行插入。</para>
+		/// <para>Choose where to insert, replace, or remove the function chain within the existing function chain.</para>
+		/// <para>If you Insert the function, it will be inserted above the function specified in the Function Name parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -139,14 +139,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum EditMosaicDatasetItemEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Edits affect the functions associated with all of the items within the mosaic dataset.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EDIT_MOSAIC_DATASET_ITEM")]
 			EDIT_MOSAIC_DATASET_ITEM,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Edits affect the functions associated with the mosaic dataset. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EDIT_MOSAIC_DATASET")]
@@ -160,24 +160,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum EditOptionsEnum 
 		{
 			/// <summary>
-			/// <para>插入、替换或移除函数链。</para>
+			/// <para>Insert, replace, or remove a function chain.</para>
 			/// </summary>
 			[GPValue("INSERT")]
-			[Description("插入")]
+			[Description("Insert")]
 			Insert,
 
 			/// <summary>
-			/// <para>替换—使用该工具中指定的函数链替换现有函数链。在函数名称参数下指定函数链。</para>
+			/// <para>Replace—Replace the existing function chain with the function chain specified in this tool. Specify the function chain below in the Function Name parameter.</para>
 			/// </summary>
 			[GPValue("REPLACE")]
-			[Description("替换")]
+			[Description("Replace")]
 			Replace,
 
 			/// <summary>
-			/// <para>移除— 移除从 函数名称 参数中指定函数开始的函数链。</para>
+			/// <para>Remove— Remove the function chain starting from the function specified in the Function Name parameter.</para>
 			/// </summary>
 			[GPValue("REMOVE")]
-			[Description("移除")]
+			[Description("Remove")]
 			Remove,
 
 		}

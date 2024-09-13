@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Field Group</para>
-	/// <para>删除字段组</para>
-	/// <para>用于从表或要素类中删除字段组。</para>
+	/// <para>Delete Field Group</para>
+	/// <para>Deletes a field group from a table or feature class.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="TargetTable">
 		/// <para>Target Table</para>
-		/// <para>将删除字段组的输入地理数据库要素类或表。</para>
+		/// <para>The input geodatabase feature class or table that will have the field group deleted.</para>
 		/// </param>
 		/// <param name="Name">
 		/// <para>Field Group Name</para>
-		/// <para>将删除的字段组的名称。</para>
+		/// <para>The name of the field group that will be deleted.</para>
 		/// </param>
 		public DeleteFieldGroup(object TargetTable, object Name)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 删除字段组</para>
+		/// <para>Tool Display Name : Delete Field Group</para>
 		/// </summary>
-		public override string DisplayName() => "删除字段组";
+		public override string DisplayName() => "Delete Field Group";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteFieldGroup</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Table</para>
-		/// <para>将删除字段组的输入地理数据库要素类或表。</para>
+		/// <para>The input geodatabase feature class or table that will have the field group deleted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field Group Name</para>
-		/// <para>将删除的字段组的名称。</para>
+		/// <para>The name of the field group that will be deleted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

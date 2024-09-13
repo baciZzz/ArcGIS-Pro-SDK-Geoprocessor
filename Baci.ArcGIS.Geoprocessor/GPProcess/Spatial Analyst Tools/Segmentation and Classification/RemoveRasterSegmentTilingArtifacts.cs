@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Remove Raster Segment Tiling Artifacts</para>
-	/// <para>移除栅格影像分割块伪影</para>
-	/// <para>校正作为栅格函数执行的分割过程中被切片边界切割的线段或对象。 该工具对于在影像切片边界附近会有不一致现象的某些区域过程（例如影像分割）有所帮助。</para>
+	/// <para>Remove Raster Segment Tiling Artifacts</para>
+	/// <para>Corrects segments or objects cut by tile boundaries during the segmentation process performed as a raster function. This tool is helpful for some regional processes, such as image segmentation, that have inconsistencies near image tile boundaries.</para>
 	/// </summary>
 	public class RemoveRasterSegmentTilingArtifacts : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InSegmentedRaster">
 		/// <para>Input Segmented RGB Or Gray Raster</para>
-		/// <para>选择要移除的带有块伪影的分割栅格。</para>
+		/// <para>Select the segmented raster with the tiling artifacts that you want to remove.</para>
 		/// </param>
 		/// <param name="OutRasterDataset">
 		/// <para>Output Segmented Raster</para>
-		/// <para>要从中移除块伪影的分割栅格的路径和名称。</para>
+		/// <para>The path and name of the segmented raster from which you are removing tiling artifacts.</para>
 		/// </param>
 		public RemoveRasterSegmentTilingArtifacts(object InSegmentedRaster, object OutRasterDataset)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 移除栅格影像分割块伪影</para>
+		/// <para>Tool Display Name : Remove Raster Segment Tiling Artifacts</para>
 		/// </summary>
-		public override string DisplayName() => "移除栅格影像分割块伪影";
+		public override string DisplayName() => "Remove Raster Segment Tiling Artifacts";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveRasterSegmentTilingArtifacts</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input Segmented RGB Or Gray Raster</para>
-		/// <para>选择要移除的带有块伪影的分割栅格。</para>
+		/// <para>Select the segmented raster with the tiling artifacts that you want to remove.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output Segmented Raster</para>
-		/// <para>要从中移除块伪影的分割栅格的路径和名称。</para>
+		/// <para>The path and name of the segmented raster from which you are removing tiling artifacts.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Tile width used for segmentation</para>
-		/// <para>指定 Mean Shift 影像分割的块宽度。如果留空，则默认宽度为 512 像素。</para>
+		/// <para>Specify the tile width from Segment Mean Shift. If left blank, the default is 512 pixels.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Tile height used for segmentation</para>
-		/// <para>指定 Mean Shift 影像分割的块高度。如果留空，则默认宽度为 512 像素。</para>
+		/// <para>Specify the tile height from Segment Mean Shift. If left blank, the default is 512 pixels.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]

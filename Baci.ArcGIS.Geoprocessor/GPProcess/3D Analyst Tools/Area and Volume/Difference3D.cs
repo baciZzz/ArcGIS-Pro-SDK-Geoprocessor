@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Difference 3D</para>
-	/// <para>3D 差异</para>
-	/// <para>消除目标要素类中部分与减法要素类中闭合的多面体要素体积重叠的多面体要素。</para>
+	/// <para>Difference 3D</para>
+	/// <para>Eliminates portions  of multipatch features in a target feature class that overlap with enclosed volumes of multipatch features in the subtraction feature class.</para>
 	/// </summary>
 	public class Difference3D : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InFeaturesMinuend">
 		/// <para>Input Features</para>
-		/// <para>通过减数要素移除其要素的多面体要素。</para>
+		/// <para>The multipatch features that will have its features removed by the subtrahend features.</para>
 		/// </param>
 		/// <param name="InFeaturesSubtrahend">
 		/// <para>Subtract Features</para>
-		/// <para>将从输入中减去的多面体要素。</para>
+		/// <para>The multipatch features that will be subtracted from the input.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>将包含所生成要素的输出多面体要素类。</para>
+		/// <para>The output multipatch feature class that will contain the resulting features.</para>
 		/// </param>
 		public Difference3D(object InFeaturesMinuend, object InFeaturesSubtrahend, object OutFeatureClass)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 3D 差异</para>
+		/// <para>Tool Display Name : Difference 3D</para>
 		/// </summary>
-		public override string DisplayName() => "3D 差异";
+		public override string DisplayName() => "Difference 3D";
 
 		/// <summary>
 		/// <para>Tool Name : Difference3D</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>通过减数要素移除其要素的多面体要素。</para>
+		/// <para>The multipatch features that will have its features removed by the subtrahend features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Subtract Features</para>
-		/// <para>将从输入中减去的多面体要素。</para>
+		/// <para>The multipatch features that will be subtracted from the input.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>将包含所生成要素的输出多面体要素类。</para>
+		/// <para>The output multipatch feature class that will contain the resulting features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -101,10 +101,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>可选表，存储有关输入要素和差异输出之间关系的信息。此表中会显示下列字段：</para>
-		/// <para>Output_ID - 输出要素的 ID。</para>
-		/// <para>Minuend_ID - 输入要素的 ID。</para>
-		/// <para>Subtrahend - 减法要素的 ID。</para>
+		/// <para>An optional table that stores information about the relationship between the input features and the difference output. The following fields are present in this table:</para>
+		/// <para>Output_ID—The ID of the output feature.</para>
+		/// <para>Minuend_ID—The ID of the input feature.</para>
+		/// <para>Subtrahend—The ID of the subtract feature.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]

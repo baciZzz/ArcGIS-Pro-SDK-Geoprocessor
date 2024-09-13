@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Classify LAS Overlap</para>
-	/// <para>分类 LAS 重叠</para>
-	/// <para>根据航测激光雷达测量的重叠扫描对 LAS 点进行分类。</para>
+	/// <para>Classify LAS Overlap</para>
+	/// <para>Classifies LAS points from overlapping scans of aerial lidar surveys.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InLasDataset">
 		/// <para>Input LAS Dataset</para>
-		/// <para>待处理的切片 LAS 数据集。</para>
+		/// <para>The tiled LAS dataset to process.</para>
 		/// </param>
 		public ClassifyLasOverlap(object InLasDataset)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 分类 LAS 重叠</para>
+		/// <para>Tool Display Name : Classify LAS Overlap</para>
 		/// </summary>
-		public override string DisplayName() => "分类 LAS 重叠";
+		public override string DisplayName() => "Classify LAS Overlap";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyLasOverlap</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
-		/// <para>待处理的切片 LAS 数据集。</para>
+		/// <para>The tiled LAS dataset to process.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLasDatasetLayer()]
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Sample Distance</para>
-		/// <para>将用于评估 LAS 数据的方形区域各维度的距离。 如果指定线性单位为未知，则将由输入 .las 文件的空间参考来定义单位。</para>
+		/// <para>The distance of either dimension of the square area that will be used to evaluate the LAS data. If Unknown is specified as the linear unit, the unit will be defined by the spatial reference of the input .las file.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -83,13 +83,13 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Processing Extent</para>
-		/// <para>待评估数据的范围。</para>
-		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
-		/// <para>输入的并集 - 该范围将基于所有输入的最大范围。</para>
-		/// <para>输入的交集 - 该范围将基于所有输入共用的最小区域。</para>
-		/// <para>当前显示范围 - 该范围与可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
-		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
-		/// <para>浏览 - 该范围将基于现有数据集。</para>
+		/// <para>The extent of the data that will be evaluated.</para>
+		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
+		/// <para>Union of Inputs—The extent will be based on the maximum extent of all inputs.</para>
+		/// <para>Intersection of Inputs—The extent will be based on the minimum area common to all inputs.</para>
+		/// <para>Current Display Extent—The extent is equal to the visible display. The option is not available when there is no active map.</para>
+		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
+		/// <para>Browse—The extent will be based on an existing dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -98,9 +98,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Process entire LAS files that intersect extent</para>
-		/// <para>指定将如何使用感兴趣区以确定 .las 文件的处理方式。 感兴趣区由处理范围参数值和处理边界参数值定义，或由二者共同定义。</para>
-		/// <para>未选中 - 仅处理与感兴趣区相交的 LAS 点。 这是默认设置。</para>
-		/// <para>选中 - 如果 .las 文件的任何部分与感兴趣区相交，则该 .las 文件中的所有点（包括感兴趣区以外的点）都会得到处理。</para>
+		/// <para>Specifies how the area of interest will be used in determining how .las files will be processed. The area of interest is defined by the Processing Extent parameter value, the Processing Boundary parameter value, or a combination of both.</para>
+		/// <para>Unchecked—Only LAS points that intersect the area of interest will be processed. This is the default.</para>
+		/// <para>Checked—If any portion of a .las file intersects the area of interest, all the points in that .las file, including those outside the area of interest, will be processed.</para>
 		/// <para><see cref="ProcessEntireFilesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -111,9 +111,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Compute statistics</para>
-		/// <para>指定是否将计算 LAS 数据集引用的 .las 文件的统计数据。 计算统计数据时会为每个 .las 文件提供一个空间索引，从而提高了分析和显示性能。 统计数据还可通过将 LAS 属性（例如分类代码和返回信息）显示限制为 .las 文件中存在的值来提升过滤和符号系统体验。</para>
-		/// <para>选中 - 将计算统计数据。 这是默认设置。</para>
-		/// <para>未选中 - 不计算统计数据。</para>
+		/// <para>Specifies whether statistics will be computed for the .las files referenced by the LAS dataset. Computing statistics provides a spatial index for each .las file, which improves analysis and display performance. Statistics also enhance the filtering and symbology experience by limiting the display of LAS attributes, such as classification codes and return information, to values that are present in the .las file.</para>
+		/// <para>Checked—Statistics will be computed. This is the default.</para>
+		/// <para>Unchecked—Statistics will not be computed.</para>
 		/// <para><see cref="ComputeStatsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -130,9 +130,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Update pyramid</para>
-		/// <para>指定修改类代码后，LAS 数据集金字塔是否会更新。</para>
-		/// <para>选中 - LAS 数据集金字塔将更新。 这是默认设置。</para>
-		/// <para>未选中 - LAS 数据集金字塔不会更新。</para>
+		/// <para>Specifies whether the LAS dataset pyramid will be updated after the class codes are modified.</para>
+		/// <para>Checked—The LAS dataset pyramid will be updated. This is the default.</para>
+		/// <para>Unchecked—The LAS dataset pyramid will not be updated.</para>
 		/// <para><see cref="UpdatePyramidEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -157,14 +157,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ProcessEntireFilesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—If any portion of a .las file intersects the area of interest, all the points in that .las file, including those outside the area of interest, will be processed.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PROCESS_ENTIRE_FILES")]
 			PROCESS_ENTIRE_FILES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Only LAS points that intersect the area of interest will be processed. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("PROCESS_EXTENT")]
@@ -178,14 +178,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ComputeStatsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Statistics will be computed. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("COMPUTE_STATS")]
 			COMPUTE_STATS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Statistics will not be computed.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_COMPUTE_STATS")]
@@ -199,14 +199,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum UpdatePyramidEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The LAS dataset pyramid will be updated. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE_PYRAMID")]
 			UPDATE_PYRAMID,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The LAS dataset pyramid will not be updated.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_UPDATE_PYRAMID")]

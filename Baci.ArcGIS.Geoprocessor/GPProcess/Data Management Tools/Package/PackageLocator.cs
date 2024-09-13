@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Package Locator</para>
-	/// <para>打包定位器</para>
-	/// <para>将定位器或复合定位器打包，创建一个压缩 .gcpk 文件。</para>
+	/// <para>Package Locator</para>
+	/// <para>Package a locator or composite locator  to create a single compressed .gcpk file.</para>
 	/// </summary>
 	public class PackageLocator : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InLocator">
 		/// <para>Input Locator</para>
-		/// <para>要打包的定位器或复合定位器。</para>
+		/// <para>The locator or composite locator that will be packaged.</para>
 		/// </param>
 		/// <param name="OutputFile">
 		/// <para>Output File</para>
-		/// <para>输出定位器包 (.gcpk) 的名称和位置。</para>
+		/// <para>The name and location of the output locator package (.gcpk).</para>
 		/// </param>
 		public PackageLocator(object InLocator, object OutputFile)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 打包定位器</para>
+		/// <para>Tool Display Name : Package Locator</para>
 		/// </summary>
-		public override string DisplayName() => "打包定位器";
+		public override string DisplayName() => "Package Locator";
 
 		/// <summary>
 		/// <para>Tool Name : PackageLocator</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Locator</para>
-		/// <para>要打包的定位器或复合定位器。</para>
+		/// <para>The locator or composite locator that will be packaged.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEAddressLocator()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output File</para>
-		/// <para>输出定位器包 (.gcpk) 的名称和位置。</para>
+		/// <para>The name and location of the output locator package (.gcpk).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Composite locator only: copy participating locators in enterprise database instead of referencing them</para>
-		/// <para>此参数在 ArcGIS Pro 中不起作用。保留它仅是为了支持向后兼容。</para>
+		/// <para>This parameter has no effect in ArcGIS Pro. It remains only to support backward compatibility.</para>
 		/// <para><see cref="CopyArcsdeLocatorEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Additional Files</para>
-		/// <para>将文件添加到包中。 诸如 .doc、.txt、.pdf 等附加文件可用于提供有关打包内容和目的的详细信息。</para>
+		/// <para>Adds files to a package. Additional files, such as .doc, .txt, .pdf, and so on, are used to provide more information about the contents and purpose of the package.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Summary</para>
-		/// <para>将摘要信息添加到包的属性中。</para>
+		/// <para>Adds summary information to the properties of the package.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Tags</para>
-		/// <para>将标签信息添加到包的属性中。 可以添加多个标签，标签之间用逗号或分号进行分隔。</para>
+		/// <para>Adds tag information to the properties of the package. Multiple tags can be added or separated by a comma or semicolon.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

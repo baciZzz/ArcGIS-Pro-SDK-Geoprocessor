@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Zonal Fill</para>
-	/// <para>区域填充</para>
-	/// <para>使用权重栅格数据的最小像元值沿区域边界填充区域。</para>
+	/// <para>Zonal Fill</para>
+	/// <para>Fills zones using the minimum cell value from a weight raster along the zone boundary.</para>
 	/// </summary>
 	public class ZonalFill : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InZoneRaster">
 		/// <para>Input zone raster</para>
-		/// <para>定义待填充区域的输入栅格。</para>
+		/// <para>The input raster that defines the zones to be filled.</para>
 		/// </param>
 		/// <param name="InWeightRaster">
 		/// <para>Input weight raster</para>
-		/// <para>要分配至各个区域的权重或值。</para>
+		/// <para>Weight, or value, to be assigned to each zone.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>已对区域完成填充的输出栅格。</para>
+		/// <para>The output raster for which the zones have been filled.</para>
 		/// </param>
 		public ZonalFill(object InZoneRaster, object InWeightRaster, object OutRaster)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 区域填充</para>
+		/// <para>Tool Display Name : Zonal Fill</para>
 		/// </summary>
-		public override string DisplayName() => "区域填充";
+		public override string DisplayName() => "Zonal Fill";
 
 		/// <summary>
 		/// <para>Tool Name : ZonalFill</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input zone raster</para>
-		/// <para>定义待填充区域的输入栅格。</para>
+		/// <para>The input raster that defines the zones to be filled.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input weight raster</para>
-		/// <para>要分配至各个区域的权重或值。</para>
+		/// <para>Weight, or value, to be assigned to each zone.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>已对区域完成填充的输出栅格。</para>
+		/// <para>The output raster for which the zones have been filled.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

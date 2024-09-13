@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Features</para>
-	/// <para>删除要素</para>
-	/// <para>从输入中删除所有要素或所选要素子集。</para>
+	/// <para>Delete Features</para>
+	/// <para>Deletes all or the selected subset of features from the input.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>包含要删除要素的要素类、shapefile 或图层。</para>
+		/// <para>The feature class, shapefile, or layer containing features to be deleted.</para>
 		/// </param>
 		public DeleteFeatures(object InFeatures)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 删除要素</para>
+		/// <para>Tool Display Name : Delete Features</para>
 		/// </summary>
-		public override string DisplayName() => "删除要素";
+		public override string DisplayName() => "Delete Features";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteFeatures</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>包含要删除要素的要素类、shapefile 或图层。</para>
+		/// <para>The feature class, shapefile, or layer containing features to be deleted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]

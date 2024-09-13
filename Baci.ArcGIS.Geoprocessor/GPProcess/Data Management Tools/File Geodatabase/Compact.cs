@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Compact</para>
-	/// <para>数据库碎片整理</para>
-	/// <para>文件地理数据库进行碎片整理。数据库碎片整理操作会重新调整地理数据库在磁盘中的存储方式，因而通常会减小地理数据库的大小并提高性能。</para>
+	/// <para>Compact</para>
+	/// <para>Compacts a file geodatabase. Compacting rearranges how the geodatabase is stored on disk, often reducing its size and improving performance.</para>
 	/// </summary>
 	public class Compact : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InWorkspace">
 		/// <para>Input Workspace</para>
-		/// <para>要进行碎片整理的文件地理数据库。</para>
+		/// <para>The file geodatabase to be compacted.</para>
 		/// </param>
 		public Compact(object InWorkspace)
 		{
@@ -29,14 +29,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 数据库碎片整理</para>
+		/// <para>Tool Display Name : Compact</para>
 		/// </summary>
-		public override string DisplayName() => "数据库碎片整理";
+		public override string DisplayName() => "Compact";
 
 		/// <summary>
-		/// <para>Tool Name : 数据库碎片整理</para>
+		/// <para>Tool Name : Compact</para>
 		/// </summary>
-		public override string ToolName() => "数据库碎片整理";
+		public override string ToolName() => "Compact";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Compact</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Workspace</para>
-		/// <para>要进行碎片整理的文件地理数据库。</para>
+		/// <para>The file geodatabase to be compacted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]

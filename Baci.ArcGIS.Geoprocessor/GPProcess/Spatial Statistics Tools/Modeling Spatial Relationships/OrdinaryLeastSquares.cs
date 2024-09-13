@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Ordinary Least Squares (OLS)</para>
-	/// <para>普通最小二乘法 (OLS)</para>
-	/// <para>执行全局“普通最小二乘法 (OLS)”线性回归可生成预测，也可为一个因变量针对它与一组解释变量关系建模。</para>
+	/// <para>Ordinary Least Squares (OLS)</para>
+	/// <para>Performs global Ordinary Least Squares (OLS) linear regression to generate predictions or to model a dependent variable in terms of its relationships to a set of explanatory variables.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools.GeneralizedLinearRegression"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
 	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools.GeneralizedLinearRegression))]
@@ -23,23 +23,23 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InputFeatureClass">
 		/// <para>Input Feature Class</para>
-		/// <para>包含用于分析的因变量和自变量的要素类。</para>
+		/// <para>The feature class containing the dependent and independent variables for analysis.</para>
 		/// </param>
 		/// <param name="UniqueIDField">
 		/// <para>Unique ID Field</para>
-		/// <para>包含输入要素类中每个要素不同值的整型字段。</para>
+		/// <para>An integer field containing a different value for every feature in the Input Feature Class.</para>
 		/// </param>
 		/// <param name="OutputFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>将接收因变量的估计数和残差的输出要素类。</para>
+		/// <para>The output feature class that will receive dependent variable estimates and residuals.</para>
 		/// </param>
 		/// <param name="DependentVariable">
 		/// <para>Dependent Variable</para>
-		/// <para>包含要尝试建模的值的数值字段。</para>
+		/// <para>The numeric field containing values for what you are trying to model.</para>
 		/// </param>
 		/// <param name="ExplanatoryVariables">
 		/// <para>Explanatory Variables</para>
-		/// <para>表示回归模型中解释变量的字段列表。</para>
+		/// <para>A list of fields representing explanatory variables in your regression model.</para>
 		/// </param>
 		public OrdinaryLeastSquares(object InputFeatureClass, object UniqueIDField, object OutputFeatureClass, object DependentVariable, object ExplanatoryVariables)
 		{
@@ -51,9 +51,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 普通最小二乘法 (OLS)</para>
+		/// <para>Tool Display Name : Ordinary Least Squares (OLS)</para>
 		/// </summary>
-		public override string DisplayName() => "普通最小二乘法 (OLS)";
+		public override string DisplayName() => "Ordinary Least Squares (OLS)";
 
 		/// <summary>
 		/// <para>Tool Name : OrdinaryLeastSquares</para>
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>包含用于分析的因变量和自变量的要素类。</para>
+		/// <para>The feature class containing the dependent and independent variables for analysis.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Unique ID Field</para>
-		/// <para>包含输入要素类中每个要素不同值的整型字段。</para>
+		/// <para>An integer field containing a different value for every feature in the Input Feature Class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>将接收因变量的估计数和残差的输出要素类。</para>
+		/// <para>The output feature class that will receive dependent variable estimates and residuals.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Dependent Variable</para>
-		/// <para>包含要尝试建模的值的数值字段。</para>
+		/// <para>The numeric field containing values for what you are trying to model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Explanatory Variables</para>
-		/// <para>表示回归模型中解释变量的字段列表。</para>
+		/// <para>A list of fields representing explanatory variables in your regression model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Coefficient Output Table</para>
-		/// <para>可选表的完整路径,该可选表将接收各解释变量的模型系数、标准化系数、标准误差和概率。</para>
+		/// <para>The full path to an optional table that will receive model coefficients, standardized coefficients, standard errors, and probabilities for each explanatory variable.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Diagnostic Output Table</para>
-		/// <para>将接收模型汇总诊断的可选表的完整路径。</para>
+		/// <para>The full path to an optional table that will receive model summary diagnostics.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -151,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Report File</para>
-		/// <para>工具将创建的可选 PDF 文件的路径。此报表文件包括模型诊断、图表以及有助于您解释 OLS 结果的注释。</para>
+		/// <para>The path to the optional PDF file the tool will create. This report file includes model diagnostics, graphs, and notes to help you interpret the OLS results.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]

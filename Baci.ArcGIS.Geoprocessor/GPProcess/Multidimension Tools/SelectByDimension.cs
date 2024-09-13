@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Select by Dimension</para>
-	/// <para>按维度选择</para>
-	/// <para>基于维度值更新 netCDF 图层显示或 netCDF 表视图。</para>
+	/// <para>Select by Dimension</para>
+	/// <para>Updates the netCDF layer display or netCDF table view based on the dimension value.</para>
 	/// </summary>
 	public class SelectByDimension : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		/// <param name="InLayerOrTable">
 		/// <para>Input Layer or Table</para>
-		/// <para>输入 netCDF 栅格图层、netCDF 要素图层、netCDF 表视图或镶嵌图层。如果输入是镶嵌图层，则必须为多维度。</para>
+		/// <para>The input netCDF raster layer, netCDF feature layer, netCDF table view, or mosaic layer. If the input is a mosaic layer, it must be multidimensional.</para>
 		/// </param>
 		public SelectByDimension(object InLayerOrTable)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 按维度选择</para>
+		/// <para>Tool Display Name : Select by Dimension</para>
 		/// </summary>
-		public override string DisplayName() => "按维度选择";
+		public override string DisplayName() => "Select by Dimension";
 
 		/// <summary>
 		/// <para>Tool Name : SelectByDimension</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Input Layer or Table</para>
-		/// <para>输入 netCDF 栅格图层、netCDF 要素图层、netCDF 表视图或镶嵌图层。如果输入是镶嵌图层，则必须为多维度。</para>
+		/// <para>The input netCDF raster layer, netCDF feature layer, netCDF table view, or mosaic layer. If the input is a mosaic layer, it must be multidimensional.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Dimension Values</para>
-		/// <para>指定部分多维变量时使用的一组维度值对。</para>
-		/// <para>维度 - netCDF 维度。</para>
-		/// <para>值 - 用于指定部分多维变量的维度值。</para>
+		/// <para>A set of dimension-value pairs used to specify a slice of a multidimensional variable.</para>
+		/// <para>Dimension—A netCDF dimension.</para>
+		/// <para>Value—A dimension value that specifies a slice of a multidimensional variable.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -83,9 +83,9 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Value Selection Method</para>
-		/// <para>指定将使用的维度值选择方法。</para>
-		/// <para>按值—输入值将与实际维度值匹配。</para>
-		/// <para>按索引—输入值将与维度值的位置或索引匹配。 索引的第一个值为 0；即位置从 0 开始。</para>
+		/// <para>Specifies the dimension value selection method that will be used.</para>
+		/// <para>By value—The input value will be matched with the actual dimension value.</para>
+		/// <para>By index—The input value will be matched with the position or index of a dimension value. The index is 0 based; that is, the position starts at 0.</para>
 		/// <para><see cref="ValueSelectionMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -108,17 +108,17 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		public enum ValueSelectionMethodEnum 
 		{
 			/// <summary>
-			/// <para>按索引—输入值将与维度值的位置或索引匹配。 索引的第一个值为 0；即位置从 0 开始。</para>
+			/// <para>By index—The input value will be matched with the position or index of a dimension value. The index is 0 based; that is, the position starts at 0.</para>
 			/// </summary>
 			[GPValue("BY_INDEX")]
-			[Description("按索引")]
+			[Description("By index")]
 			By_index,
 
 			/// <summary>
-			/// <para>按值—输入值将与实际维度值匹配。</para>
+			/// <para>By value—The input value will be matched with the actual dimension value.</para>
 			/// </summary>
 			[GPValue("BY_VALUE")]
-			[Description("按值")]
+			[Description("By value")]
 			By_value,
 
 		}

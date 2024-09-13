@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Alter Attribute Rule</para>
-	/// <para>更改属性规则</para>
-	/// <para>更改属性规则的属性。</para>
+	/// <para>Alter Attribute Rule</para>
+	/// <para>Alters the properties of an attribute rule.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>包含要更改的属性规则的表。</para>
+		/// <para>The table containing the attribute rule to be altered.</para>
 		/// </param>
 		/// <param name="Name">
 		/// <para>Rule Name</para>
-		/// <para>要更改的属性规则名称。</para>
+		/// <para>The name of the attribute rule that will be altered.</para>
 		/// </param>
 		public AlterAttributeRule(object InTable, object Name)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 更改属性规则</para>
+		/// <para>Tool Display Name : Alter Attribute Rule</para>
 		/// </summary>
-		public override string DisplayName() => "更改属性规则";
+		public override string DisplayName() => "Alter Attribute Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AlterAttributeRule</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>包含要更改的属性规则的表。</para>
+		/// <para>The table containing the attribute rule to be altered.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Rule Name</para>
-		/// <para>要更改的属性规则名称。</para>
+		/// <para>The name of the attribute rule that will be altered.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Description</para>
-		/// <para>属性规则的描述。 要清除描述的当前值，请从下拉菜单中选择重置选项。</para>
+		/// <para>The description of the attribute rule. To clear the current value of the description, choose the Reset option from the drop-down menu.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Error Number</para>
-		/// <para>属性规则的错误编号。 要清除计算规则错误编号的当前值，请从下拉菜单中选择重置选项。 对于约束和验证规则，错误编号为必需属性，且不能清除。</para>
+		/// <para>The error number of the attribute rule. To clear the current value of the error number for a calculation rule, choose the Reset option from the drop-down menu. Error number is a required property for constraint and validation rules and cannot be cleared.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Error Message</para>
-		/// <para>属性规则的错误消息。 要清除计算规则错误消息的当前值，请从下拉菜单中选择重置选项。 对于约束和验证规则，错误消息为必需属性，且不能清除。</para>
+		/// <para>The error message of the attribute rule. To clear the current value of the error message for a calculation rule, choose the Reset option from the drop-down menu. Error message is a required property for constraint and validation rules and cannot be cleared.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Tags</para>
-		/// <para>属性规则的标签。 要清除所有标签，请单击删除按钮 以从列表中移除所有标签，然后从下拉菜单中选择重置。</para>
+		/// <para>The tags for the attribute rule. To clear all tags, click the delete button to remove each tag from the list, and choose Reset from the drop-down menu.</para>
 		/// <para><see cref="TagsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -129,10 +129,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Triggering Events</para>
-		/// <para>指定将触发属性规则生效的编辑事件。 触发事件仅适用于将批处理参数设置为 false 的约束规则和计算规则类型。 新值将替换现有触发事件。 要保留当前触发事件，请将此参数留空。</para>
-		/// <para>插入—将在添加新要素后应用规则。</para>
-		/// <para>更新—将在更新要素后应用规则。</para>
-		/// <para>删除—将在删除要素后应用规则。</para>
+		/// <para>Specifies the editing events that will trigger the attribute rule to take effect. Triggering events are only applicable for constraint rule and calculation rule types that have the Batch parameter set to false. The new values will replace existing triggering events. To keep the current triggering events, leave this parameter empty.</para>
+		/// <para>Insert—The rule will be applied when a new feature is added.</para>
+		/// <para>Update—The rule will be applied when a feature is updated.</para>
+		/// <para>Delete—The rule will be applied when a feature is deleted.</para>
 		/// <para><see cref="TriggeringEventsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Script Expression</para>
-		/// <para>用于定义规则的 Arcade 表达式。 要保留当前表达式，请将此参数留空。 如果为此参数提供了表达式，该表达式将替换规则的现有 Arcade 表达式。 如果更改了批处理计算或验证规则的脚本表达式，则必须重新评估规则。</para>
+		/// <para>An Arcade expression that defines the rule. To keep the current expression, leave this parameter empty. If an expression is provided for this parameter, it will replace the existing Arcade expression of the rule. If you alter the script expression of a batch calculation or validation rule, the rule must be reevaluated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCalculatorExpression()]
@@ -150,10 +150,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Exclude From Client Evaluation</para>
-		/// <para>指定应用程序是否在将编辑内容应用到工作空间之前在本地评估规则。</para>
-		/// <para>此参数的默认值对应于为规则设置的当前值。 也就是说，如果输入规则将“从客户端评估中排除”参数设置为 false，则将取消选中此参数的默认值，这样将不会自动排除该规则。 该参数不适用于验证规则或批处理计算规则。</para>
-		/// <para>选中 - 将从客户端评估中排除该规则。</para>
-		/// <para>未选中 - 不会从客户端评估中排除该规则。</para>
+		/// <para>Specifies whether the application will evaluate the rule locally before applying the edits to the workspace.</para>
+		/// <para>The default for this parameter corresponds to the current value set for the rule. That is, if the input rule has the exclude from client evaluation parameter set to false, the default for this parameter will be unchecked so the rule will not be automatically excluded. This parameter is not applicable for validation rules or batch calculation rules.</para>
+		/// <para>Checked—The rule will be excluded from client evaluation.</para>
+		/// <para>Unchecked—The rule will not be excluded from client evaluation.</para>
 		/// <para><see cref="ExcludeFromClientEvaluationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -181,7 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			/// <para></para>
 			/// </summary>
 			[GPValue("RESET")]
-			[Description("重置")]
+			[Description("Reset")]
 			Reset,
 
 		}
@@ -192,24 +192,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum TriggeringEventsEnum 
 		{
 			/// <summary>
-			/// <para>插入—将在添加新要素后应用规则。</para>
+			/// <para>Insert—The rule will be applied when a new feature is added.</para>
 			/// </summary>
 			[GPValue("INSERT")]
-			[Description("插入")]
+			[Description("Insert")]
 			Insert,
 
 			/// <summary>
-			/// <para>删除—将在删除要素后应用规则。</para>
+			/// <para>Delete—The rule will be applied when a feature is deleted.</para>
 			/// </summary>
 			[GPValue("DELETE")]
-			[Description("删除")]
+			[Description("Delete")]
 			Delete,
 
 			/// <summary>
-			/// <para>更新—将在更新要素后应用规则。</para>
+			/// <para>Update—The rule will be applied when a feature is updated.</para>
 			/// </summary>
 			[GPValue("UPDATE")]
-			[Description("更新")]
+			[Description("Update")]
 			Update,
 
 		}
@@ -220,14 +220,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ExcludeFromClientEvaluationEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The rule will be excluded from client evaluation.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EXCLUDE")]
 			EXCLUDE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The rule will not be excluded from client evaluation.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INCLUDE")]

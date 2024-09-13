@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Find Overlaps</para>
-	/// <para>查找重叠</para>
-	/// <para>用于查找要素类中的重叠区域并提供重叠数量的计数。</para>
+	/// <para>Find Overlaps</para>
+	/// <para>Finds overlapping areas in a feature class and provides a count for the number of overlaps.</para>
 	/// </summary>
 	public class FindOverlaps : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>将计算其重叠的输入面要素。</para>
+		/// <para>The input polygon features for which overlaps will be computed.</para>
 		/// </param>
 		/// <param name="OutIntersection">
 		/// <para>Output Intersections</para>
-		/// <para>输出交集区域。</para>
+		/// <para>The output intersection areas.</para>
 		/// </param>
 		/// <param name="OutCentroid">
 		/// <para>Output Centroids</para>
-		/// <para>输出交叉点要素的输出质心位置。</para>
+		/// <para>The output centroid locations of the Output Intersections features.</para>
 		/// </param>
 		public FindOverlaps(object InFeatures, object OutIntersection, object OutCentroid)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 查找重叠</para>
+		/// <para>Tool Display Name : Find Overlaps</para>
 		/// </summary>
-		public override string DisplayName() => "查找重叠";
+		public override string DisplayName() => "Find Overlaps";
 
 		/// <summary>
 		/// <para>Tool Name : FindOverlaps</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>将计算其重叠的输入面要素。</para>
+		/// <para>The input polygon features for which overlaps will be computed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Output Intersections</para>
-		/// <para>输出交集区域。</para>
+		/// <para>The output intersection areas.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Output Centroids</para>
-		/// <para>输出交叉点要素的输出质心位置。</para>
+		/// <para>The output centroid locations of the Output Intersections features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Group Field</para>
-		/// <para>输入要素分组字段。</para>
+		/// <para>The Input Features group field.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]

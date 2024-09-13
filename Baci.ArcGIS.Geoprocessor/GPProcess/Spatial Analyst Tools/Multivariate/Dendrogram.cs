@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Dendrogram</para>
-	/// <para>树状图</para>
-	/// <para>构造可显示特征文件中连续合并类之间的属性距离的树示意图（树状图）。</para>
+	/// <para>Dendrogram</para>
+	/// <para>Constructs a tree diagram (dendrogram) showing attribute distances between sequentially merged classes in a signature file.</para>
 	/// </summary>
 	public class Dendrogram : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InSignatureFile">
 		/// <para>Input signature file</para>
-		/// <para>其类特征可用于生成树状图的输入特征文件。</para>
-		/// <para>需要使用 .gsg 扩展名。</para>
+		/// <para>Input signature file whose class signatures are used to produce a dendrogram.</para>
+		/// <para>A .gsg extension is required.</para>
 		/// </param>
 		/// <param name="OutDendrogramFile">
 		/// <para>Output dendrogram file</para>
-		/// <para>输出树状图 ASCII 文件。</para>
-		/// <para>扩展名可以是 .txt 或 .asc。</para>
+		/// <para>The output dendrogram ASCII file.</para>
+		/// <para>The extension can be .txt or .asc.</para>
 		/// </param>
 		public Dendrogram(object InSignatureFile, object OutDendrogramFile)
 		{
@@ -36,14 +36,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 树状图</para>
+		/// <para>Tool Display Name : Dendrogram</para>
 		/// </summary>
-		public override string DisplayName() => "树状图";
+		public override string DisplayName() => "Dendrogram";
 
 		/// <summary>
-		/// <para>Tool Name : 树状图</para>
+		/// <para>Tool Name : Dendrogram</para>
 		/// </summary>
-		public override string ToolName() => "树状图";
+		public override string ToolName() => "Dendrogram";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Dendrogram</para>
@@ -72,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input signature file</para>
-		/// <para>其类特征可用于生成树状图的输入特征文件。</para>
-		/// <para>需要使用 .gsg 扩展名。</para>
+		/// <para>Input signature file whose class signatures are used to produce a dendrogram.</para>
+		/// <para>A .gsg extension is required.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -83,8 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output dendrogram file</para>
-		/// <para>输出树状图 ASCII 文件。</para>
-		/// <para>扩展名可以是 .txt 或 .asc。</para>
+		/// <para>The output dendrogram ASCII file.</para>
+		/// <para>The extension can be .txt or .asc.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -94,9 +94,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Use variance in distance calculations</para>
-		/// <para>指定多维属性空间中各类之间的距离的定义方式。</para>
-		/// <para>选中 - 各类之间的距离将根据其特征平均值之间的方差和欧氏距离来进行计算。</para>
-		/// <para>取消选中 - 各类之间的距离仅由类特征平均值之间的欧氏距离决定。</para>
+		/// <para>Specifies the manner in which the distances between classes in multidimensional attribute space are defined.</para>
+		/// <para>Checked—The distances between classes will be computed based on the variances and the Euclidean distance between the means of their signatures.</para>
+		/// <para>Unchecked—The distances between classes will be determined by the Euclidean distances between the means of the class signatures only.</para>
 		/// <para><see cref="DistanceCalculationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -106,8 +106,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Line width of dendrogram</para>
-		/// <para>通过行字符数设置树状图宽度。</para>
-		/// <para>默认值为 78。</para>
+		/// <para>Sets the width of the dendrogram in number of characters on a line.</para>
+		/// <para>The default is 78.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -131,14 +131,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum DistanceCalculationEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The distances between classes will be computed based on the variances and the Euclidean distance between the means of their signatures.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("VARIANCE")]
 			VARIANCE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The distances between classes will be determined by the Euclidean distances between the means of the class signatures only.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("MEAN_ONLY")]

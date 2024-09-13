@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Near 3D</para>
-	/// <para>3D 邻近</para>
-	/// <para>计算每个输入要素到一个或多个邻近要素类中的最近要素的三维距离。</para>
+	/// <para>Near 3D</para>
+	/// <para>Calculates the three-dimensional distance from each input feature to the nearest feature that resides in one or more near feature classes.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>输入要素类，将使用有关最近要素的信息设置其要素属性。</para>
+		/// <para>The input feature class whose features will be attributed with information about the nearest feature.</para>
 		/// </param>
 		/// <param name="NearFeatures">
 		/// <para>Near Features</para>
-		/// <para>将计算到输入要素邻近性的一个或多个要素。如果指定了多个要素类，则将向输入要素类额外添加一个名为 NEAR_FC 的字段，以识别包含最近要素的邻近要素类。</para>
+		/// <para>The one or more features whose proximity to the input features will be calculated. If multiple feature classes are specified, an additional field named NEAR_FC will be added to the input feature class to identify which near feature class contained the closest feature.</para>
 		/// </param>
 		public Near3D(object InFeatures, object NearFeatures)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 3D 邻近</para>
+		/// <para>Tool Display Name : Near 3D</para>
 		/// </summary>
-		public override string DisplayName() => "3D 邻近";
+		public override string DisplayName() => "Near 3D";
 
 		/// <summary>
 		/// <para>Tool Name : Near3D</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>输入要素类，将使用有关最近要素的信息设置其要素属性。</para>
+		/// <para>The input feature class whose features will be attributed with information about the nearest feature.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Near Features</para>
-		/// <para>将计算到输入要素邻近性的一个或多个要素。如果指定了多个要素类，则将向输入要素类额外添加一个名为 NEAR_FC 的字段，以识别包含最近要素的邻近要素类。</para>
+		/// <para>The one or more features whose proximity to the input features will be calculated. If multiple feature classes are specified, an additional field named NEAR_FC will be added to the input feature class to identify which near feature class contained the closest feature.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Search Radius</para>
-		/// <para>将根据给定输入为其确定最近要素的最大距离。如果未指定值，则将确定在任意距离处的最近要素。</para>
+		/// <para>The maximum distance for which the nearest features from a given input will be determined. If no value is specified, the nearest feature at any distance will be determined.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -100,9 +100,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Location</para>
-		/// <para>确定是否将输入要素和邻近要素上的最近点的坐标添加到输入属性表。</para>
-		/// <para>未选中 - 不会向输入要素添加坐标。这是默认设置。</para>
-		/// <para>选中 - 会向输入要素添加坐标。</para>
+		/// <para>Determines whether the coordinates of the nearest point in the input and near feature will be added to the input&apos;s attribute table.</para>
+		/// <para>Unchecked—The coordinates are not added to the input feature. This is the default.</para>
+		/// <para>Checked—The coordinates are added to the input feature.</para>
 		/// <para><see cref="LocationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -112,9 +112,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Angle</para>
-		/// <para>确定是否将输入要素与最近要素之间的算术水平角和垂直角添加到输入属性表中。</para>
-		/// <para>未选中 - 不会向输入属性表添加角。这是默认设置。</para>
-		/// <para>选中 - 会向输入属性表中的 NEAR_ANG_H 和 NEAR_ANG_V 字段添加算术水平角和垂直角。</para>
+		/// <para>Determines whether the horizontal arithmetic angle and vertical angle between the input feature and the nearest feature will be added to the input attribute table.</para>
+		/// <para>Unchecked—The angles will not be added to the input&apos;s attribute table. This is the default.</para>
+		/// <para>Checked—The horizontal arithmetic angle and vertical angle will be added to the NEAR_ANG_H and NEAR_ANG_V fields in the input&apos;s attribute table.</para>
 		/// <para><see cref="AngleEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -124,9 +124,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Delta</para>
-		/// <para>确定是否向输入属性表添加输入要素与最近要素之间沿 X、Y 和 Z 轴的距离。</para>
-		/// <para>未选中 - 不会向输入属性表添加距离。这是默认设置。</para>
-		/// <para>选中 - 会计算 NEAR_DELTX、NEAR_DELTY 和 NEAR_DELTZ 字段中沿 X、Y 和 Z 轴的距离。</para>
+		/// <para>Determines whether the distances along the X, Y, and Z axes between the input feature and the nearest feature will be added to the input attribute table.</para>
+		/// <para>Unchecked—No distances will be added to the input attribute table. This is the default.</para>
+		/// <para>Checked—Distances along the X, Y, and Z axes will be calculated in the NEAR_DELTX, NEAR_DELTY, and NEAR_DELTZ fields.</para>
 		/// <para><see cref="DeltaEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -158,14 +158,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum LocationEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The coordinates are added to the input feature.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("LOCATION")]
 			LOCATION,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The coordinates are not added to the input feature. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_LOCATION")]
@@ -179,14 +179,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum AngleEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The horizontal arithmetic angle and vertical angle will be added to the NEAR_ANG_H and NEAR_ANG_V fields in the input&apos;s attribute table.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ANGLE")]
 			ANGLE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The angles will not be added to the input&apos;s attribute table. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ANGLE")]
@@ -200,14 +200,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum DeltaEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Distances along the X, Y, and Z axes will be calculated in the NEAR_DELTX, NEAR_DELTY, and NEAR_DELTZ fields.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DELTA")]
 			DELTA,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—No distances will be added to the input attribute table. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DELTA")]

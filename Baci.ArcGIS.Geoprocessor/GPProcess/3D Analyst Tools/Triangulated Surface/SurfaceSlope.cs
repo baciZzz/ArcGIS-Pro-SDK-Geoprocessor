@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Surface Slope</para>
-	/// <para>表面坡度</para>
-	/// <para>创建表示不规则表面的坡度值范围的面要素。</para>
+	/// <para>Surface Slope</para>
+	/// <para>Creates polygon features that represent ranges of slope values for triangulated surfaces.</para>
 	/// </summary>
 	public class SurfaceSlope : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InSurface">
 		/// <para>Input Surface</para>
-		/// <para>TIN、terrain 或 LAS 数据集，其坡度测量值将写入输出面要素。</para>
+		/// <para>The TIN, terrain, or LAS dataset whose slope measurements will be written to the output polygon feature.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>将生成的要素类。</para>
+		/// <para>The feature class that will be produced.</para>
 		/// </param>
 		public SurfaceSlope(object InSurface, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 表面坡度</para>
+		/// <para>Tool Display Name : Surface Slope</para>
 		/// </summary>
-		public override string DisplayName() => "表面坡度";
+		public override string DisplayName() => "Surface Slope";
 
 		/// <summary>
 		/// <para>Tool Name : SurfaceSlope</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Surface</para>
-		/// <para>TIN、terrain 或 LAS 数据集，其坡度测量值将写入输出面要素。</para>
+		/// <para>The TIN, terrain, or LAS dataset whose slope measurements will be written to the output polygon feature.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>将生成的要素类。</para>
+		/// <para>The feature class that will be produced.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -86,9 +86,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Slope Units</para>
-		/// <para>在计算坡度中所用的测量单位。</para>
-		/// <para>百分比—坡度以百分比值形式表示。这是默认设置。</para>
-		/// <para>度—坡度以相对于水平面的倾角形式表示。</para>
+		/// <para>The units of measure to be used in calculating slope.</para>
+		/// <para>Percent—Slope is expressed as a percentage value. This is the default.</para>
+		/// <para>Degree—Slope is expressed as the angle of inclination from a horizontal plane.</para>
 		/// <para><see cref="UnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Class Breaks Table</para>
-		/// <para>包含分类间隔的表，将用于分组输出要素。此表格的第一列指示中断点，而第二列提供分类代码。</para>
+		/// <para>A table containing classification breaks that will be used to group the output features. The first column of this table will indicate the break point, whereas the second will provide the classification code.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Slope Field</para>
-		/// <para>包含坡度值的字段。</para>
+		/// <para>The field containing slope values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Z Factor</para>
-		/// <para>Z 值将乘上的系数。 此值通常用于转换 z 线性单位来匹配 x,y 线性单位。 默认值为 1，此时高程值保持不变。 如果输入表面的空间参考具有已指定线性单位的 z 基准，则此参数不可用。</para>
+		/// <para>The factor by which z-values will be multiplied. This is typically used to convert z linear units to match x,y linear units. The default is 1, which leaves elevation values unchanged. This parameter is not available if the spatial reference of the input surface has a z datum with a specified linear unit.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Pyramid Level Resolution</para>
-		/// <para>将使用 terrain 金字塔等级的 z 容差或窗口大小分辨率。 默认值为 0，或全分辨率。</para>
+		/// <para>The z-tolerance or window-size resolution of the terrain pyramid level that will be used. The default is 0, or full resolution.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -145,17 +145,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum UnitsEnum 
 		{
 			/// <summary>
-			/// <para>百分比—坡度以百分比值形式表示。这是默认设置。</para>
+			/// <para>Percent—Slope is expressed as a percentage value. This is the default.</para>
 			/// </summary>
 			[GPValue("PERCENT")]
-			[Description("百分比")]
+			[Description("Percent")]
 			Percent,
 
 			/// <summary>
-			/// <para>度—坡度以相对于水平面的倾角形式表示。</para>
+			/// <para>Degree—Slope is expressed as the angle of inclination from a horizontal plane.</para>
 			/// </summary>
 			[GPValue("DEGREE")]
-			[Description("度")]
+			[Description("Degree")]
 			Degree,
 
 		}

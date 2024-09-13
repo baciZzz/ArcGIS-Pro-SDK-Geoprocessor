@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Select Layer By Location</para>
-	/// <para>按位置选择图层</para>
-	/// <para>根据与另一个数据集中的要素的空间关系来选择要素。</para>
+	/// <para>Select Layer By Location</para>
+	/// <para>Selects features  based on a spatial relationship to features in another dataset.</para>
 	/// </summary>
 	public class SelectLayerByLocation : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InLayer">
 		/// <para>Input Features</para>
-		/// <para>将根据选择要素参数值进行评估的要素。 选择将应用于这些要素。</para>
+		/// <para>The features that will be evaluated against the Selecting Features parameter values. The selection will be applied to these features.</para>
 		/// </param>
 		public SelectLayerByLocation(object InLayer)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 按位置选择图层</para>
+		/// <para>Tool Display Name : Select Layer By Location</para>
 		/// </summary>
-		public override string DisplayName() => "按位置选择图层";
+		public override string DisplayName() => "Select Layer By Location";
 
 		/// <summary>
 		/// <para>Tool Name : SelectLayerByLocation</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>将根据选择要素参数值进行评估的要素。 选择将应用于这些要素。</para>
+		/// <para>The features that will be evaluated against the Selecting Features parameter values. The selection will be applied to these features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -73,24 +73,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Relationship</para>
-		/// <para>指定要评估的空间关系。</para>
-		/// <para>相交—如果输入图层中的要素与某一选择要素相交，则会选择这些要素。 这是默认设置。</para>
-		/// <para>3D 相交—如果输入图层中的要素在三维空间（x、y 和 z）中与某一选择要素相交，则会选择这些要素。</para>
-		/// <para>相交 (DBMS)—如果输入图层中的要素与某一选择要素相交，则会选择这些要素。此选项仅适用于企业级地理数据库。 当满足所有要求时，选择将在企业级地理数据库 DBMS 中，而不是在客户端上进行处理（有关详细信息，请参阅使用说明）。与在客户端上执行选择相比，此选项可提供更好的性能。</para>
-		/// <para>在某一距离范围内—如果输入图层中的要素在某一选择要素的指定距离内（使用欧氏距离），则将选择这些要素。 使用搜索距离参数指定距离。</para>
-		/// <para>在某一 3D 距离范围内—如果输入图层中的要素在三维空间中的某一选择要素的指定距离内，则会选择这些要素。 使用搜索距离参数指定距离。</para>
-		/// <para>在某一测地线距离范围内—如果输入图层中的要素在某一选择要素的指定距离内，则会选择这些要素。 将使用测地线公式计算要素间的距离，这种方法考虑到椭球体的曲率，并可以正确处理跨越日期变更线和两极及其附近的数据。 使用搜索距离参数指定距离。</para>
-		/// <para>包含—如果输入图层中的要素包含选择要素，则会选择这些要素。</para>
-		/// <para>完全包含—如果输入图层中的要素完全包含选择要素，则会选择这些要素。</para>
-		/// <para>包含 (Clementini)—该空间关系产生的结果同包含，但有一种情况例外：如果选择要素完全位于输入要素的边界上（没有任何一部分完全位于里面或外面），则不会选择要素。Clementini 将边界面定义为用来分隔内部和外部的线，将线的边界定义为其端点，点的边界始终为空。</para>
-		/// <para>位于—如果输入图层中的要素位于选择要素中，则会选择这些要素。</para>
-		/// <para>完全在其他要素范围内—如果输入图层中的要素完全位于或包含在在选择要素之，则会选择这些要素。</para>
-		/// <para>包含于 (Clementini)—结果同位于，但下述情况例外：如果输入图层中的要素完全位于选择图层中要素的边界上，则不会选择该要素。Clementini 将边界面定义为用来分隔内部和外部的线，将线的边界定义为其端点，点的边界始终为空。</para>
-		/// <para>与其他要素相同—如果输入图层中的要素与选择要素相同（在几何形状上），则会选择这些要素。</para>
-		/// <para>边界接触—如果输入图层中要素的边界与某一选择要素接触，则会选择这些要素。 如果输入要素为线或面，则输入要素的边界只能接触选择要素的边界，且输入要素的任何部分均不可跨越选择要素的边界。</para>
-		/// <para>与其他要素共线—如果输入图层中的要素与某一选择要素共线，则会选择这些要素。 输入要素和选择要素必须是线或面。</para>
-		/// <para>与轮廓交叉—如果输入图层中的要素与某一选择要素的轮廓交叉，则会选择这些要素。 输入和选择要素必须是线或面。 如果将面用于输入或选择图层，则会使用面的边界（线）。 将选择在某一点交叉的线，而不会选择共线的线。</para>
-		/// <para>中心在要素范围内—如果输入图层中要素的中心落在某一选择要素内，则会选择这些要素。 要素中心的计算方式如下：对于面和多点，将使用几何的质心；对于线输入，则会使用几何的中点。</para>
+		/// <para>Specifies the spatial relationship to be evaluated.</para>
+		/// <para>Intersect—The features in the input layer will be selected if they intersect a selecting feature. This is the default.</para>
+		/// <para>Intersect 3D—The features in the input layer will be selected if they intersect a selecting feature in three-dimensional space (x, y, and z).</para>
+		/// <para>Intersect (DBMS)—The features in the input layer will be selected if they intersect a selecting feature. This option applies to enterprise geodatabases only. The selection will be processed in the enterprise geodatabase DBMS rather than on the client when all requirements are met (see more information in the usage notes). This option may provide better performance than performing the selection on the client.</para>
+		/// <para>Within a distance—The features in the input layer will be selected if they are within the specified distance (using Euclidean distance) of a selecting feature. Use the Search Distance parameter to specify the distance.</para>
+		/// <para>Within a distance 3D—The features in the input layer will be selected if they are within a specified distance of a selecting feature in three-dimensional space. Use the Search Distance parameter to specify the distance.</para>
+		/// <para>Within a distance geodesic—The features in the input layer will be selected if they are within a specified distance of a selecting feature. Distance between features will be calculated using a geodesic formula that takes into account the curvature of the spheroid and correctly handles data near and across the dateline and poles. Use the Search Distance parameter to specify the distance.</para>
+		/// <para>Contains—The features in the input layer will be selected if they contain a selecting feature.</para>
+		/// <para>Completely contains—The features in the input layer will be selected if they completely contain a selecting feature.</para>
+		/// <para>Contains Clementini—This spatial relationship yields the same results as Contains with the exception that if the selecting feature is entirely on the boundary of the input feature (no part is properly inside or outside), the feature will not be selected. Clementini defines the boundary polygon as the line separating inside and outside, the boundary of a line is defined as its end points, and the boundary of a point is always empty.</para>
+		/// <para>Within—The features in the input layer will be selected if they are within a selecting feature.</para>
+		/// <para>Completely within—The features in the input layer will be selected if they are completely within or contained by a selecting feature.</para>
+		/// <para>Within Clementini—The result will be identical to Within with the exception that if the entirety of the feature in the input layer is on the boundary of the feature in the selecting layer, the feature will not be selected. Clementini defines the boundary polygon as the line separating inside and outside, the boundary of a line is defined as its end points, and the boundary of a point is always empty.</para>
+		/// <para>Are identical to—The features in the input layer will be selected if they are identical (in geometry) to a selecting feature.</para>
+		/// <para>Boundary touches—The features in the input layer will be selected if they have a boundary that touches a selecting feature. When the input features are lines or polygons, the boundary of the input feature can only touch the boundary of the selecting feature, and no part of the input feature can cross the boundary of the selecting feature.</para>
+		/// <para>Share a line segment with—The features in the input layer will be selected if they share a line segment with a selecting feature. The input and selecting features must be line or polygon.</para>
+		/// <para>Crossed by the outline of—The features in the input layer will be selected if they are crossed by the outline of a selecting feature. The input and selecting features must be lines or polygons. If polygons are used for the input or selecting layer, the polygon&apos;s boundary (line) will be used. Lines that cross at a point will be selected; lines that share a line segment will not be selected.</para>
+		/// <para>Have their center in—The features in the input layer will be selected if their center falls within a selecting feature. The center of the feature is calculated as follows: for polygon and multipoint, the geometry&apos;s centroid is used; for line input, the geometry&apos;s midpoint is used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Selecting Features</para>
-		/// <para>输入要素参数中的要素将根据它们与此图层或要素类中要素的关系进行选择。</para>
+		/// <para>The features in the Input Features parameter will be selected based on their relationship to the features from this layer or feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -107,8 +107,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Search Distance</para>
-		/// <para>将被搜索的距离。 仅当关系参数设置为在某一距离范围内、在某一测地线距离范围内、在某一 3D 距离范围内、相交、3D 相交、中心在要素范围内或者包含时，该参数才有效。</para>
-		/// <para>如果选择在某一测地线距离范围内选项，请使用线性单位（如千米或英里）。</para>
+		/// <para>The distance that will be searched. This parameter is only valid if the Relationship parameter is set to Within a distance, Within a distance geodesic, Within a distance 3D, Intersect, Intersect 3D, Have their center in, or Contains.</para>
+		/// <para>If the Within a distance geodesic option is selected, use a linear unit such as kilometers or miles.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -116,12 +116,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Selection Type</para>
-		/// <para>指定如何将选择内容应用于输入，以及如何同现有选择内容进行组合。 该工具不包含清除现有选择内容的选项；请使用按属性选择图层工具上的清除当前选择选项执行此操作。</para>
-		/// <para>新建选择内容—生成的选择内容将替换任何现有选择内容。 这是默认设置。</para>
-		/// <para>添加到当前选择内容—将生成的选择内容添加至现有选择内容。 如果不存在选择内容，该选项的作用同新建选择内容选项。</para>
-		/// <para>从当前选择内容中移除—将生成的选择内容从现有选择内容中移除。 如果不存在选择内容，此操作将不起作用。</para>
-		/// <para>选择当前选择内容的子集—将生成的选择内容与现有选择内容进行组合。 仅两者共有的记录保持选中状态。</para>
-		/// <para>切换当前选择内容—选择内容将被切换。 将所选的所有记录从选择内容中移除，将未选取的所有记录添加到当前选择内容中。如果选择该选项，则将忽略选择要素参数和关系参数。</para>
+		/// <para>Specifies how the selection will be applied to the input and how it will be combined with an existing selection. This tool does not include an option to clear an existing selection; use the Clear the current selection option on the Select Layer By Attribute tool to do that.</para>
+		/// <para>New selection—The resulting selection will replace any existing selection. This is the default.</para>
+		/// <para>Add to the current selection—The resulting selection will be added to an existing selection. If no selection exists, this is the same as the New selection option.</para>
+		/// <para>Remove from the current selection—The resulting selection will be removed from an existing selection. If no selection exists, the operation will have no effect.</para>
+		/// <para>Select subset from the current selection—The resulting selection will be combined with the existing selection. Only records that are common to both remain selected.</para>
+		/// <para>Switch the current selection—The selection will be switched. All records that were selected will be removed from the selection, and all records that were not selected will be added to the selection. The Selecting Features and Relationship parameters are ignored when this option is selected.</para>
 		/// <para><see cref="SelectionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -138,9 +138,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Invert Spatial Relationship</para>
-		/// <para>指定将使用空间关系评估结果，还是使用反转结果。 例如，可使用此参数获取不相交或与另一数据集中的要素不在指定距离范围内的要素的列表。</para>
-		/// <para>未选中 - 将使用查询结果。 这是默认设置。</para>
-		/// <para>选中 - 将使用反转查询结果。 如果使用选择类型参数，则将先反转选择，然后再将其与现有选择组合。</para>
+		/// <para>Specifies whether the spatial relationship evaluation result or the opposite result will be used. For example, this parameter can be used to get a list of features that do not intersect or are not within a given distance of features in another dataset.</para>
+		/// <para>Unchecked—The query result will be used. This is the default.</para>
+		/// <para>Checked—The opposite of the query result will be used. If the Selection Type parameter is used, the reversal of the selection occurs before it is combined with existing selections.</para>
 		/// <para><see cref="InvertSpatialRelationshipEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -179,38 +179,38 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SelectionTypeEnum 
 		{
 			/// <summary>
-			/// <para>新建选择内容—生成的选择内容将替换任何现有选择内容。 这是默认设置。</para>
+			/// <para>New selection—The resulting selection will replace any existing selection. This is the default.</para>
 			/// </summary>
 			[GPValue("NEW_SELECTION")]
-			[Description("新建选择内容")]
+			[Description("New selection")]
 			New_selection,
 
 			/// <summary>
-			/// <para>添加到当前选择内容—将生成的选择内容添加至现有选择内容。 如果不存在选择内容，该选项的作用同新建选择内容选项。</para>
+			/// <para>Add to the current selection—The resulting selection will be added to an existing selection. If no selection exists, this is the same as the New selection option.</para>
 			/// </summary>
 			[GPValue("ADD_TO_SELECTION")]
-			[Description("添加到当前选择内容")]
+			[Description("Add to the current selection")]
 			Add_to_the_current_selection,
 
 			/// <summary>
-			/// <para>从当前选择内容中移除—将生成的选择内容从现有选择内容中移除。 如果不存在选择内容，此操作将不起作用。</para>
+			/// <para>Remove from the current selection—The resulting selection will be removed from an existing selection. If no selection exists, the operation will have no effect.</para>
 			/// </summary>
 			[GPValue("REMOVE_FROM_SELECTION")]
-			[Description("从当前选择内容中移除")]
+			[Description("Remove from the current selection")]
 			Remove_from_the_current_selection,
 
 			/// <summary>
-			/// <para>选择当前选择内容的子集—将生成的选择内容与现有选择内容进行组合。 仅两者共有的记录保持选中状态。</para>
+			/// <para>Select subset from the current selection—The resulting selection will be combined with the existing selection. Only records that are common to both remain selected.</para>
 			/// </summary>
 			[GPValue("SUBSET_SELECTION")]
-			[Description("选择当前选择内容的子集")]
+			[Description("Select subset from the current selection")]
 			Select_subset_from_the_current_selection,
 
 			/// <summary>
-			/// <para>切换当前选择内容—选择内容将被切换。 将所选的所有记录从选择内容中移除，将未选取的所有记录添加到当前选择内容中。如果选择该选项，则将忽略选择要素参数和关系参数。</para>
+			/// <para>Switch the current selection—The selection will be switched. All records that were selected will be removed from the selection, and all records that were not selected will be added to the selection. The Selecting Features and Relationship parameters are ignored when this option is selected.</para>
 			/// </summary>
 			[GPValue("SWITCH_SELECTION")]
-			[Description("切换当前选择内容")]
+			[Description("Switch the current selection")]
 			Switch_the_current_selection,
 
 		}
@@ -221,14 +221,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum InvertSpatialRelationshipEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The opposite of the query result will be used. If the Selection Type parameter is used, the reversal of the selection occurs before it is combined with existing selections.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INVERT")]
 			INVERT,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The query result will be used. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_INVERT")]

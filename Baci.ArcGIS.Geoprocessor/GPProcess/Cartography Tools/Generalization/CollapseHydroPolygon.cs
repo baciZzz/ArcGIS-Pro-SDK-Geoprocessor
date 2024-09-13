@@ -11,8 +11,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Collapse Hydro Polygon</para>
-	/// <para>折叠水文面</para>
-	/// <para>根据折叠宽度将水文面折叠或部分折叠到中心线。</para>
+	/// <para>Collapse Hydro Polygon</para>
+	/// <para>Collapses or partially collapses hydro polygons to a </para>
+	/// <para>centerline based on a collapse width.</para>
 	/// </summary>
 	public class CollapseHydroPolygon : AbstractGPProcess
 	{
@@ -21,11 +22,11 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Hydro Polygon Features</para>
-		/// <para>包含水文面的一个或多个要素图层。</para>
+		/// <para>One or more feature layers containing hydro polygons.</para>
 		/// </param>
 		/// <param name="OutLineFeatureClass">
 		/// <para>Output Line Feature Class</para>
-		/// <para>包含折叠面中心线的线要素类。 它包含所有输入面（包括为折叠的面）的中心线。 该要素类具有 COLLAPSED 属性，用于指定中心线要素是否表示折叠面。</para>
+		/// <para>The line feature class containing the centerlines of the collapsed polygons. It contains centerlines of all input polygons including those that are not collapsed. This feature class has a COLLAPSED attribute that specifies whether the centerline feature represents a collapsed polygon.</para>
 		/// </param>
 		public CollapseHydroPolygon(object InFeatures, object OutLineFeatureClass)
 		{
@@ -34,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 折叠水文面</para>
+		/// <para>Tool Display Name : Collapse Hydro Polygon</para>
 		/// </summary>
-		public override string DisplayName() => "折叠水文面";
+		public override string DisplayName() => "Collapse Hydro Polygon";
 
 		/// <summary>
 		/// <para>Tool Name : CollapseHydroPolygon</para>
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Hydro Polygon Features</para>
-		/// <para>包含水文面的一个或多个要素图层。</para>
+		/// <para>One or more feature layers containing hydro polygons.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Line Feature Class</para>
-		/// <para>包含折叠面中心线的线要素类。 它包含所有输入面（包括为折叠的面）的中心线。 该要素类具有 COLLAPSED 属性，用于指定中心线要素是否表示折叠面。</para>
+		/// <para>The line feature class containing the centerlines of the collapsed polygons. It contains centerlines of all input polygons including those that are not collapsed. This feature class has a COLLAPSED attribute that specifies whether the centerline feature represents a collapsed polygon.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -90,9 +91,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Merge Adjacent Input Polygons</para>
-		/// <para>指定在计算中心线之前是否合并相邻输入面。</para>
-		/// <para>选中 - 在计算中心线之前将合并相邻输入面。 这是默认设置。</para>
-		/// <para>未选中 - 将根据未合并的输入水文面计算中心线。</para>
+		/// <para>Specifies whether adjacent input polygons will be merged before calculating the centerlines.</para>
+		/// <para>Checked—Input hydro polygons will be merged before calculating the centerlines. This is the default.</para>
+		/// <para>Unchecked—Centerlines will be calculated from input hydro polygons that are not merged.</para>
 		/// <para><see cref="MergeAdjacentInputPolygonsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Connecting Hydro Line Features</para>
-		/// <para>连接到要折叠的输入水文面的输入水文线要素。 将创建线要素以保持这些连接。</para>
+		/// <para>Input hydro line features that connect to the input hydro polygons to be collapsed. Line features will be created to maintain these connections.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -112,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Collapse Width</para>
-		/// <para>要考虑折叠的输入水文面的阈值宽度。 所有低于指定宽度的面都将被折叠。 默认值为 0，这将折叠所有要素。</para>
+		/// <para>The threshold width of an input hydro polygon to be considered for collapse. All polygons below the specified width will be collapsed. The default value is 0, which will collapse all features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -120,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Collapse Width Tolerance (%)</para>
-		/// <para>将分析其中要素的百分比容差，并且在确定是否折叠要素时将考虑周围环境。 这是为了最大限度地减少折叠内的振荡。 默认值为 20%。 仅当已指定折叠宽度参数值时才应用此参数。</para>
+		/// <para>A percentage tolerance within which features will be analyzed and the surrounding context will be considered when determining whether to collapse a feature. This is to minimize oscillations within the collapse. The default value is 20 percent. This parameter is applied only when the Collapse Width parameter value is specified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -128,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Minimum Length</para>
-		/// <para>在输出面要素类中保留面所需的最小长度。 最小长度基于为面创建的中心线的长度。 如果面的中心线长于折叠宽度但短于最小长度，则该面将不会包含在输出面要素类中。 默认值为 0。 仅当已指定折叠宽度参数值时才应用此参数。</para>
+		/// <para>The minimum length required for a polygon to be retained in the output polygon feature class. The minimum length is based on the length of the centerline created for the polygon. If the centerline of a polygon is longer than the collapse width but shorter than the minimum length, the polygon will not be included in the output polygon feature class. The default value is 0. This parameter is applied only when the Collapse Width parameter value is specified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -136,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Taper Length Percentage</para>
-		/// <para>输出面要素类和输出线要素类中的面之间的连接长度将锥化。 此参数将锥形长度指定为连接位置处宽度的百分比。 如锥形长度百分比值为 0，则不会锥化。 默认值为 50。仅当已指定折叠宽度参数值时才应用此参数。</para>
+		/// <para>The length that connections between polygons in the output polygon feature class and the output line feature class will be tapered. This parameter specifies the length of the tapering as a percentage of the width at the connection location. A taper length percentage value of 0 will result in no tapering. The default value is 50. This parameter is applied only when the Collapse Width parameter value is specified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -144,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Polygon Feature Class</para>
-		/// <para>此面要素类包含未折叠的输入水文面部分。 仅当已指定折叠宽度参数值时才应用此参数。</para>
+		/// <para>The polygon feature class containing the portions of the input hydro polygons that are not collapsed. This parameter is applied only when the Collapse Width parameter value is specified.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -183,14 +184,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum MergeAdjacentInputPolygonsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Input hydro polygons will be merged before calculating the centerlines. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MERGE_ADJACENT")]
 			MERGE_ADJACENT,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Centerlines will be calculated from input hydro polygons that are not merged.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_MERGE")]

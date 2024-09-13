@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Extract Data Task</para>
-	/// <para>提取数据任务</para>
-	/// <para>将指定感兴趣区域中的所选图层提取为选定的格式和空间参考，然后返回 .zip 文件中的数据。</para>
+	/// <para>Extract Data Task</para>
+	/// <para>Extracts the selected  layers in the specified area of interest to the selected formats and spatial reference, and returns the data in a .zip file.</para>
 	/// </summary>
 	public class ExtractDataTask : AbstractGPProcess
 	{
@@ -21,31 +21,31 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		/// <param name="LayersToClip">
 		/// <para>Layers to Clip</para>
-		/// <para>要裁剪的图层。 图层必须是要素或栅格；不支持图层文件。</para>
+		/// <para>The layers to be clipped. Layers must be feature or raster; layer files are not supported.</para>
 		/// </param>
 		/// <param name="AreaOfInterest">
 		/// <para>Area of Interest</para>
-		/// <para>裁剪图层所依据的一个或多个面。</para>
+		/// <para>One or more polygons by which the layers will be clipped.</para>
 		/// </param>
 		/// <param name="FeatureFormat">
 		/// <para>Feature Format</para>
-		/// <para>指定输出要素的格式。 格式应指定如下：</para>
-		/// <para>名称或格式 - 名称缩写 - 扩展名（如果存在）</para>
-		/// <para>必须使用连字符且连字符前后必须各有一个空格。</para>
-		/// <para>例如：</para>
+		/// <para>Specifies the format of the output features. The format should be specified as follows:</para>
+		/// <para>Name or format - Short Name - extension (if any)</para>
+		/// <para>The hyphens are required and there must be one space before and after the hyphen.</para>
+		/// <para>For example:</para>
 		/// <para>File Geodatabase - GDB - .gdb</para>
 		/// <para>Shapefile - SHP - .shp</para>
 		/// <para>Autodesk AutoCAD - DXF_R2007 - .dxf</para>
 		/// <para>Autodesk AutoCAD - DWG_R2007 - .dwg</para>
 		/// <para>Bentley Microstation Design (V8) - DGN_V8 - .dgn</para>
-		/// <para>支持的名称缩写列表中包含 DGN_V8、DWG_R14、DWG_R2000、DWG_R2004、DWG_R2005、DWG_R2007、DWG_R2010、DXF_R14、DXF_R2000、DXF_R2004、DXF_R2005、DXF_R2007 和 DXF_R2010。</para>
+		/// <para>The list of short names supported includes DGN_V8, DWG_R14, DWG_R2000, DWG_R2004, DWG_R2005, DWG_R2007, DWG_R2010, DXF_R14, DXF_R2000, DXF_R2004, DXF_R2005, DXF_R2007, and DXF_R2010.</para>
 		/// </param>
 		/// <param name="RasterFormat">
 		/// <para>Raster Format</para>
-		/// <para>指定输出栅格数据集的格式。 格式应指定如下：</para>
-		/// <para>格式名称 - 名称缩写 - 扩展名（如果有）。</para>
-		/// <para>必须使用连字符且连字符前后必须各有一个空格。</para>
-		/// <para>例如：</para>
+		/// <para>Specifies the format of the output raster datasets. The format should be specified as follows:</para>
+		/// <para>Name of format - Short Name - extension (if any)</para>
+		/// <para>The hyphens are required and there must be one space before and after the hyphen.</para>
+		/// <para>For example:</para>
 		/// <para>Esri GRID - GRID</para>
 		/// <para>File Geodatabase - GDB - .gdb</para>
 		/// <para>ERDAS IMAGINE - IMG - .img</para>
@@ -55,12 +55,12 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <para>Joint Photographics Experts Group - JPEG - .jpg</para>
 		/// <para>Joint Photographics Experts Group - JPEG - .jp2</para>
 		/// <para>Bitmap - BMP - .bmp</para>
-		/// <para>上述的某些栅格格式存在限制，所以并非所有数据都可以转换为此格式。</para>
+		/// <para>Some of the above raster formats have limitations and not all data can be converted to the format.</para>
 		/// <para><see cref="RasterFormatEnum"/></para>
 		/// </param>
 		/// <param name="OutputZipFile">
 		/// <para>Output Zip File</para>
-		/// <para>包含已提取的数据的 zip 文件。</para>
+		/// <para>The zip file that will contain the extracted data.</para>
 		/// </param>
 		public ExtractDataTask(object LayersToClip, object AreaOfInterest, object FeatureFormat, object RasterFormat, object OutputZipFile)
 		{
@@ -72,9 +72,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 提取数据任务</para>
+		/// <para>Tool Display Name : Extract Data Task</para>
 		/// </summary>
-		public override string DisplayName() => "提取数据任务";
+		public override string DisplayName() => "Extract Data Task";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractDataTask</para>
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Layers to Clip</para>
-		/// <para>要裁剪的图层。 图层必须是要素或栅格；不支持图层文件。</para>
+		/// <para>The layers to be clipped. Layers must be feature or raster; layer files are not supported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Area of Interest</para>
-		/// <para>裁剪图层所依据的一个或多个面。</para>
+		/// <para>One or more polygons by which the layers will be clipped.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -127,16 +127,16 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Feature Format</para>
-		/// <para>指定输出要素的格式。 格式应指定如下：</para>
-		/// <para>名称或格式 - 名称缩写 - 扩展名（如果存在）</para>
-		/// <para>必须使用连字符且连字符前后必须各有一个空格。</para>
-		/// <para>例如：</para>
+		/// <para>Specifies the format of the output features. The format should be specified as follows:</para>
+		/// <para>Name or format - Short Name - extension (if any)</para>
+		/// <para>The hyphens are required and there must be one space before and after the hyphen.</para>
+		/// <para>For example:</para>
 		/// <para>File Geodatabase - GDB - .gdb</para>
 		/// <para>Shapefile - SHP - .shp</para>
 		/// <para>Autodesk AutoCAD - DXF_R2007 - .dxf</para>
 		/// <para>Autodesk AutoCAD - DWG_R2007 - .dwg</para>
 		/// <para>Bentley Microstation Design (V8) - DGN_V8 - .dgn</para>
-		/// <para>支持的名称缩写列表中包含 DGN_V8、DWG_R14、DWG_R2000、DWG_R2004、DWG_R2005、DWG_R2007、DWG_R2010、DXF_R14、DXF_R2000、DXF_R2004、DXF_R2005、DXF_R2007 和 DXF_R2010。</para>
+		/// <para>The list of short names supported includes DGN_V8, DWG_R14, DWG_R2000, DWG_R2004, DWG_R2005, DWG_R2007, DWG_R2010, DXF_R14, DXF_R2000, DXF_R2004, DXF_R2005, DXF_R2007, and DXF_R2010.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -145,10 +145,10 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Raster Format</para>
-		/// <para>指定输出栅格数据集的格式。 格式应指定如下：</para>
-		/// <para>格式名称 - 名称缩写 - 扩展名（如果有）。</para>
-		/// <para>必须使用连字符且连字符前后必须各有一个空格。</para>
-		/// <para>例如：</para>
+		/// <para>Specifies the format of the output raster datasets. The format should be specified as follows:</para>
+		/// <para>Name of format - Short Name - extension (if any)</para>
+		/// <para>The hyphens are required and there must be one space before and after the hyphen.</para>
+		/// <para>For example:</para>
 		/// <para>Esri GRID - GRID</para>
 		/// <para>File Geodatabase - GDB - .gdb</para>
 		/// <para>ERDAS IMAGINE - IMG - .img</para>
@@ -158,7 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <para>Joint Photographics Experts Group - JPEG - .jpg</para>
 		/// <para>Joint Photographics Experts Group - JPEG - .jp2</para>
 		/// <para>Bitmap - BMP - .bmp</para>
-		/// <para>上述的某些栅格格式存在限制，所以并非所有数据都可以转换为此格式。</para>
+		/// <para>Some of the above raster formats have limitations and not all data can be converted to the format.</para>
 		/// <para><see cref="RasterFormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Output Zip File</para>
-		/// <para>包含已提取的数据的 zip 文件。</para>
+		/// <para>The zip file that will contain the extracted data.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

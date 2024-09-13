@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Duplicate Dataset From Multifile Feature Connection</para>
-	/// <para>从多文件要素连接复制数据集</para>
-	/// <para>用于创建多文件要素连接 (MFC) 数据集的副本。</para>
+	/// <para>Duplicate Dataset From Multifile Feature Connection</para>
+	/// <para>Creates a duplicate of a multifile feature connection (MFC) dataset.</para>
 	/// </summary>
 	public class DuplicateDatasetFromBDC : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		/// <param name="BdcDataset">
 		/// <para>Multifile Feature Connection Dataset</para>
-		/// <para>要复制的 MFC 数据集。</para>
+		/// <para>The MFC dataset to be duplicated.</para>
 		/// </param>
 		public DuplicateDatasetFromBDC(object BdcDataset)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 从多文件要素连接复制数据集</para>
+		/// <para>Tool Display Name : Duplicate Dataset From Multifile Feature Connection</para>
 		/// </summary>
-		public override string DisplayName() => "从多文件要素连接复制数据集";
+		public override string DisplayName() => "Duplicate Dataset From Multifile Feature Connection";
 
 		/// <summary>
 		/// <para>Tool Name : DuplicateDatasetFromBDC</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Multifile Feature Connection Dataset</para>
-		/// <para>要复制的 MFC 数据集。</para>
+		/// <para>The MFC dataset to be duplicated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Duplicate Name</para>
-		/// <para>输出 MFC 数据集的名称。</para>
+		/// <para>The name of the output MFC dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

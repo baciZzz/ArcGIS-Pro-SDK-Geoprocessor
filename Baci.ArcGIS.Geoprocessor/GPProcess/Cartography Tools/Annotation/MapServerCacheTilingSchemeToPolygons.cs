@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Map Server Cache Tiling Scheme To Polygons</para>
-	/// <para>地图服务器缓存切片方案转换为面</para>
-	/// <para>基于现有切片方案创建新面要素类。</para>
+	/// <para>Map Server Cache Tiling Scheme To Polygons</para>
+	/// <para>Creates a new polygon feature class from an existing tiling scheme.</para>
 	/// </summary>
 	public class MapServerCacheTilingSchemeToPolygons : AbstractGPProcess
 	{
@@ -21,28 +21,28 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InputMap">
 		/// <para>Input Map</para>
-		/// <para>要使用的当前地图。</para>
+		/// <para>The current map to be used.</para>
 		/// </param>
 		/// <param name="TilingScheme">
 		/// <para>Tiling Scheme</para>
-		/// <para>预定义切片方案 .xml 文件。</para>
+		/// <para>A predefined tiling scheme .xml file.</para>
 		/// </param>
 		/// <param name="OutputFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>输出面要素类。</para>
+		/// <para>The output polygon feature class.</para>
 		/// </param>
 		/// <param name="UseMapExtent">
 		/// <para>Generate polygons that intersect the map extent</para>
-		/// <para>指定是要为切片方案的整个范围创建面要素还是仅生成与地图全图范围相交的切片。</para>
-		/// <para>选中 - 将为地图的全图范围创建面要素。 这是默认设置。</para>
-		/// <para>不选中 - 将为切片方案的全图范围创建面要素。</para>
+		/// <para>Specifies whether polygon features will be created for the entire extent of the tiling scheme or only those tiles that intersect the full extent of the map.</para>
+		/// <para>Checked—Polygon features will be created for the full extent of the map. This is the default.</para>
+		/// <para>Unchecked—Polygon features will be created for the full extent of the tiling scheme.</para>
 		/// <para><see cref="UseMapExtentEnum"/></para>
 		/// </param>
 		/// <param name="ClipToHorizon">
 		/// <para>Clip tiles at the coordinate system horizon</para>
-		/// <para>指定是否将面限制到地图的地理坐标系或投影坐标系的有效使用区域内。</para>
-		/// <para>选中 - 仅在地图的地理坐标系或投影坐标系的有效使用区域内创建面要素。 位于切片方案范围内但位于坐标系视域范围外的切片将被裁剪。 这是默认设置。</para>
-		/// <para>不选中 - 将为切片方案的全图范围创建面要素。 在每个比例级别内，面将具有相同的大小，且不会在坐标系视域中被裁剪。 这可能会在地理坐标系或投影坐标系的有效使用区域之外创建数据。 如果使用切片方案中的某一比例将生成大于要素类的空间域的切片，则将为该要素创建空几何。</para>
+		/// <para>Specifies whether polygons will be constrained to the valid area of use for the geographic or projected coordinate system of the map.</para>
+		/// <para>Checked—Polygon features will only be created within the valid area of use for the geographic or projected coordinate system of the map. Tiles that are within the extent of the tiling scheme but outside the extent of the coordinate system horizon will be clipped. This is the default.</para>
+		/// <para>Unchecked—Polygon features will be created for the full extent of the tiling scheme. Within each scale level, polygons will be of a uniform size and will not be clipped at the coordinate system horizon. This may create data that is outside the valid area of use for the geographic or projected coordinate system. If a scale within the tiling scheme would generate a tile that is larger than the spatial domain of the feature class, null geometry will be created for that feature.</para>
 		/// <para><see cref="ClipToHorizonEnum"/></para>
 		/// </param>
 		public MapServerCacheTilingSchemeToPolygons(object InputMap, object TilingScheme, object OutputFeatureClass, object UseMapExtent, object ClipToHorizon)
@@ -55,9 +55,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 地图服务器缓存切片方案转换为面</para>
+		/// <para>Tool Display Name : Map Server Cache Tiling Scheme To Polygons</para>
 		/// </summary>
-		public override string DisplayName() => "地图服务器缓存切片方案转换为面";
+		public override string DisplayName() => "Map Server Cache Tiling Scheme To Polygons";
 
 		/// <summary>
 		/// <para>Tool Name : MapServerCacheTilingSchemeToPolygons</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Map</para>
-		/// <para>要使用的当前地图。</para>
+		/// <para>The current map to be used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMap()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Tiling Scheme</para>
-		/// <para>预定义切片方案 .xml 文件。</para>
+		/// <para>A predefined tiling scheme .xml file.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>输出面要素类。</para>
+		/// <para>The output polygon feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -118,9 +118,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Generate polygons that intersect the map extent</para>
-		/// <para>指定是要为切片方案的整个范围创建面要素还是仅生成与地图全图范围相交的切片。</para>
-		/// <para>选中 - 将为地图的全图范围创建面要素。 这是默认设置。</para>
-		/// <para>不选中 - 将为切片方案的全图范围创建面要素。</para>
+		/// <para>Specifies whether polygon features will be created for the entire extent of the tiling scheme or only those tiles that intersect the full extent of the map.</para>
+		/// <para>Checked—Polygon features will be created for the full extent of the map. This is the default.</para>
+		/// <para>Unchecked—Polygon features will be created for the full extent of the tiling scheme.</para>
 		/// <para><see cref="UseMapExtentEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -130,9 +130,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Clip tiles at the coordinate system horizon</para>
-		/// <para>指定是否将面限制到地图的地理坐标系或投影坐标系的有效使用区域内。</para>
-		/// <para>选中 - 仅在地图的地理坐标系或投影坐标系的有效使用区域内创建面要素。 位于切片方案范围内但位于坐标系视域范围外的切片将被裁剪。 这是默认设置。</para>
-		/// <para>不选中 - 将为切片方案的全图范围创建面要素。 在每个比例级别内，面将具有相同的大小，且不会在坐标系视域中被裁剪。 这可能会在地理坐标系或投影坐标系的有效使用区域之外创建数据。 如果使用切片方案中的某一比例将生成大于要素类的空间域的切片，则将为该要素创建空几何。</para>
+		/// <para>Specifies whether polygons will be constrained to the valid area of use for the geographic or projected coordinate system of the map.</para>
+		/// <para>Checked—Polygon features will only be created within the valid area of use for the geographic or projected coordinate system of the map. Tiles that are within the extent of the tiling scheme but outside the extent of the coordinate system horizon will be clipped. This is the default.</para>
+		/// <para>Unchecked—Polygon features will be created for the full extent of the tiling scheme. Within each scale level, polygons will be of a uniform size and will not be clipped at the coordinate system horizon. This may create data that is outside the valid area of use for the geographic or projected coordinate system. If a scale within the tiling scheme would generate a tile that is larger than the spatial domain of the feature class, null geometry will be created for that feature.</para>
 		/// <para><see cref="ClipToHorizonEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -142,9 +142,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Generate polygons that match map service caches with anti-aliasing enabled</para>
-		/// <para>指定是否生成与启用了抗锯齿功能的地图服务缓存相匹配的面。 启用抗锯齿功能的地图服务缓存超级切片为 2048 x 2048 像素，而未启用抗锯齿功能的超级切片为 4096 x 4096 像素。 要查看现有缓存中是否启用了抗锯齿功能，请打开切片方案文件 conf.xml 并查看 &lt;Antialiasing&gt; 标记是否已设置为 true。</para>
-		/// <para>选中 - 将生成与启用了抗锯齿功能的地图服务缓存的超级切片范围相匹配的面切片。</para>
-		/// <para>未选中 - 将生成与未启用抗锯齿功能的地图服务缓存的超级切片范围相匹配的面切片。 这是默认设置。</para>
+		/// <para>Specifies whether polygons that match map service caches with antialiasing enabled will be generated. A map service cache supertile is 2048 x 2048 pixels with antialiasing or 4096 x 4096 pixels without. To see if antialiasing was used in an existing cache, open the tiling scheme file, conf.xml, and see if the &lt;Antialiasing&gt; tag is set to true.</para>
+		/// <para>Checked—Polygon tiles will be generated to match the supertile extent of a map service cache with antialiasing enabled.</para>
+		/// <para>Unchecked—Polygon tiles will be generated to match the supertile extent of a map service cache without antialiasing enabled. This is the default.</para>
 		/// <para><see cref="AntialiasingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Scales</para>
-		/// <para>创建面时使用的比例级别。 这些比例级别将根据输入切片方案中的比例级别自动进行填充。 可以使用切片方案中所包含的全部或部分比例级别来创建面。 但是，由于此工具的添加值按钮不可用，要添加更多比例级别，必须修改切片方案文件或创建新的切片方案文件。</para>
+		/// <para>The scale levels at which polygons will be created. These scale levels automatically populate based on the scale levels in the input tiling scheme. You can create polygons for all or only some of the scale levels that are included in your tiling scheme. To add more scale levels, however, you must modify your tiling scheme file or create a new one, as the Add Value button is not available for this tool.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -168,14 +168,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum UseMapExtentEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Polygon features will be created for the full extent of the map. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("USE_MAP_EXTENT")]
 			USE_MAP_EXTENT,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Polygon features will be created for the full extent of the tiling scheme.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("FULL_TILING_SCHEME")]
@@ -189,14 +189,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum ClipToHorizonEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Polygon features will only be created within the valid area of use for the geographic or projected coordinate system of the map. Tiles that are within the extent of the tiling scheme but outside the extent of the coordinate system horizon will be clipped. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CLIP_TO_HORIZON")]
 			CLIP_TO_HORIZON,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Polygon features will be created for the full extent of the tiling scheme. Within each scale level, polygons will be of a uniform size and will not be clipped at the coordinate system horizon. This may create data that is outside the valid area of use for the geographic or projected coordinate system. If a scale within the tiling scheme would generate a tile that is larger than the spatial domain of the feature class, null geometry will be created for that feature.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("UNIFORM_TILE_SIZE")]
@@ -210,14 +210,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum AntialiasingEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Polygon tiles will be generated to match the supertile extent of a map service cache with antialiasing enabled.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ANTIALIASING")]
 			ANTIALIASING,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Polygon tiles will be generated to match the supertile extent of a map service cache without antialiasing enabled. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]

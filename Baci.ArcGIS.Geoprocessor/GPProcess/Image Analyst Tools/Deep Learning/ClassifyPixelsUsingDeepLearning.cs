@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Classify Pixels Using Deep Learning</para>
-	/// <para>使用深度学习分类像素</para>
-	/// <para>用于运行输入栅格上的训练深度学习模型，以生成分类栅格，其中每个有效像素都被分配了一个类标注。</para>
+	/// <para>Classify Pixels Using Deep Learning</para>
+	/// <para>Runs a trained deep learning model on an input raster to produce a classified raster, with each valid pixel having an assigned class label.</para>
 	/// </summary>
 	public class ClassifyPixelsUsingDeepLearning : AbstractGPProcess
 	{
@@ -21,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>待分类的输入栅格数据集。 输入可以是镶嵌数据集、影像服务或影像文件夹中的单个栅格或多个栅格。</para>
+		/// <para>The input raster dataset to classify. The input can be a single raster or multiple rasters in a mosaic dataset, an image service, or a folder of images.</para>
 		/// </param>
 		/// <param name="OutClassifiedRaster">
 		/// <para>Output Classified Raster</para>
-		/// <para>分类栅格的名称或包含分类栅格的镶嵌数据集的名称。</para>
+		/// <para>The name of the classified raster or the mosaic dataset containing the classified rasters.</para>
 		/// </param>
 		/// <param name="InModelDefinition">
 		/// <para>Model Definition</para>
-		/// <para>Esri 模型定义参数值可以是 Esri 模型定义 JSON 文件 (.emd)、JSON 字符串或深度学习模型包 (.dlpk)。 当在服务器上使用此工具时，JSON 字符串十分有用，因为您可以直接粘贴 JSON 字符串，而无需上传 .emd 文件。 .dlpk 文件必须存储在本地。</para>
-		/// <para>其中包含深度学习二进制模型文件的路径、待使用的 Python 栅格函数的路径以及其他参数，例如首选切片大小或填充。</para>
+		/// <para>The Esri model definition parameter value can be an Esri model definition JSON file (.emd), a JSON string, or a deep learning model package (.dlpk). A JSON string is useful when this tool is used on the server so you can paste the JSON string rather than upload the .emd file. The .dlpk file must be stored locally.</para>
+		/// <para>It contains the path to the deep learning binary model file, the path to the Python raster function to be used, and other parameters such as preferred tile size or padding.</para>
 		/// </param>
 		public ClassifyPixelsUsingDeepLearning(object InRaster, object OutClassifiedRaster, object InModelDefinition)
 		{
@@ -40,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 使用深度学习分类像素</para>
+		/// <para>Tool Display Name : Classify Pixels Using Deep Learning</para>
 		/// </summary>
-		public override string DisplayName() => "使用深度学习分类像素";
+		public override string DisplayName() => "Classify Pixels Using Deep Learning";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyPixelsUsingDeepLearning</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>待分类的输入栅格数据集。 输入可以是镶嵌数据集、影像服务或影像文件夹中的单个栅格或多个栅格。</para>
+		/// <para>The input raster dataset to classify. The input can be a single raster or multiple rasters in a mosaic dataset, an image service, or a folder of images.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Classified Raster</para>
-		/// <para>分类栅格的名称或包含分类栅格的镶嵌数据集的名称。</para>
+		/// <para>The name of the classified raster or the mosaic dataset containing the classified rasters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -92,8 +92,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Model Definition</para>
-		/// <para>Esri 模型定义参数值可以是 Esri 模型定义 JSON 文件 (.emd)、JSON 字符串或深度学习模型包 (.dlpk)。 当在服务器上使用此工具时，JSON 字符串十分有用，因为您可以直接粘贴 JSON 字符串，而无需上传 .emd 文件。 .dlpk 文件必须存储在本地。</para>
-		/// <para>其中包含深度学习二进制模型文件的路径、待使用的 Python 栅格函数的路径以及其他参数，例如首选切片大小或填充。</para>
+		/// <para>The Esri model definition parameter value can be an Esri model definition JSON file (.emd), a JSON string, or a deep learning model package (.dlpk). A JSON string is useful when this tool is used on the server so you can paste the JSON string rather than upload the .emd file. The .dlpk file must be stored locally.</para>
+		/// <para>It contains the path to the deep learning binary model file, the path to the Python raster function to be used, and other parameters such as preferred tile size or padding.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Arguments</para>
-		/// <para>函数参数在 Python 栅格函数类中定义。 您可以在此列出其他深度学习参数和用于试验和优化的参数，例如用于调整灵敏度的置信度阈值。 参数名称将通过读取 Python 模块进行填充。</para>
+		/// <para>The function arguments are defined in the Python raster function class. This is where you list additional deep learning parameters and arguments for experiments and refinement, such as a confidence threshold for adjusting sensitivity. The names of the arguments are populated from reading the Python module.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -110,9 +110,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Processing Mode</para>
-		/// <para>指定处理镶嵌数据集或影像服务中的所有栅格项目的方式。 当输入栅格是镶嵌数据集或影像服务时，将应用此参数。</para>
-		/// <para>以镶嵌影像方式处理—将镶嵌在一起并处理镶嵌数据集或影像服务中的所有栅格项目。 这是默认设置。</para>
-		/// <para>单独处理所有栅格项目—将作为独立影像处理镶嵌数据集或影像服务中的所有栅格项目。</para>
+		/// <para>Specifies how all raster items in a mosaic dataset or an image service will be processed. This parameter is applied when the input raster is a mosaic dataset or an image service.</para>
+		/// <para>Process as mosaicked image—All raster items in the mosaic dataset or image service will be mosaicked together and processed. This is the default.</para>
+		/// <para>Process all raster items separately—All raster items in the mosaic dataset or image service will be processed as separate images.</para>
 		/// <para><see cref="ProcessingModeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -122,8 +122,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Folder</para>
-		/// <para>将存储输出分类栅格的文件夹。 将使用此文件夹中的分类栅格来生成镶嵌数据集。</para>
-		/// <para>当输入栅格是要单独处理所有项目的影像文件夹或镶嵌数据集时，此参数为必需项。 默认为工程文件夹中的文件夹。</para>
+		/// <para>The folder where the output classified rasters will be stored. A mosaic dataset will be generated using the classified rasters in this folder.</para>
+		/// <para>This parameter is required when the input raster is a folder of images or a mosaic dataset in which all items are to be processed separately. The default is a folder in the project folder.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
@@ -146,17 +146,17 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum ProcessingModeEnum 
 		{
 			/// <summary>
-			/// <para>以镶嵌影像方式处理—将镶嵌在一起并处理镶嵌数据集或影像服务中的所有栅格项目。 这是默认设置。</para>
+			/// <para>Process as mosaicked image—All raster items in the mosaic dataset or image service will be mosaicked together and processed. This is the default.</para>
 			/// </summary>
 			[GPValue("PROCESS_AS_MOSAICKED_IMAGE")]
-			[Description("以镶嵌影像方式处理")]
+			[Description("Process as mosaicked image")]
 			Process_as_mosaicked_image,
 
 			/// <summary>
-			/// <para>单独处理所有栅格项目—将作为独立影像处理镶嵌数据集或影像服务中的所有栅格项目。</para>
+			/// <para>Process all raster items separately—All raster items in the mosaic dataset or image service will be processed as separate images.</para>
 			/// </summary>
 			[GPValue("PROCESS_ITEMS_SEPARATELY")]
-			[Description("单独处理所有栅格项目")]
+			[Description("Process all raster items separately")]
 			Process_all_raster_items_separately,
 
 		}

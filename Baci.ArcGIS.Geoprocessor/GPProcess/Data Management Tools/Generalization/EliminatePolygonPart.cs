@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Eliminate Polygon Part</para>
-	/// <para>消除面部件</para>
-	/// <para>创建一个新的输出要素类，包含从输入面上删除某些指定大小的部分或孔洞所得的要素。</para>
+	/// <para>Eliminate Polygon Part</para>
+	/// <para>Creates a new output feature class containing the features from the input polygons with some parts or holes of a specified size deleted.</para>
 	/// </summary>
 	public class EliminatePolygonPart : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>其要素将被复制到输出要素类（消除某些部分或洞）的输入要素类或图层。</para>
+		/// <para>The input feature class or layer whose features will be copied to the output feature class, with some parts or holes eliminated.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>包含其余部分的输出面要素类。</para>
+		/// <para>The output polygon feature class containing the remaining parts.</para>
 		/// </param>
 		public EliminatePolygonPart(object InFeatures, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 消除面部件</para>
+		/// <para>Tool Display Name : Eliminate Polygon Part</para>
 		/// </summary>
-		public override string DisplayName() => "消除面部件";
+		public override string DisplayName() => "Eliminate Polygon Part";
 
 		/// <summary>
 		/// <para>Tool Name : EliminatePolygonPart</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>其要素将被复制到输出要素类（消除某些部分或洞）的输入要素类或图层。</para>
+		/// <para>The input feature class or layer whose features will be copied to the output feature class, with some parts or holes eliminated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>包含其余部分的输出面要素类。</para>
+		/// <para>The output polygon feature class containing the remaining parts.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -89,11 +89,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Condition</para>
-		/// <para>指定要消除的部分的确定方式。</para>
-		/// <para>面积—面积小于指定值的部分将被消除。</para>
-		/// <para>百分比—总外部面积百分比小于指定值的部分将被消除。</para>
-		/// <para>面积和百分比—面积和百分比均小于指定值的部分将被消除。只有同时满足面积和百分比两个条件的面部分才会被删除。</para>
-		/// <para>面积或百分比—面积或百分比小于指定值的部分将被消除。如果面部分满足面积或百分比条件之一，该面将被删除。</para>
+		/// <para>Specify how the parts to be eliminated will be determined.</para>
+		/// <para>Area—Parts with an area less than that specified will be eliminated.</para>
+		/// <para>Percent—Parts with a percent of the total outer area less than that specified will be eliminated.</para>
+		/// <para>Area and percent—Parts with an area and percent less than that specified will be eliminated. Only if a polygon part meets both the area and percent criteria will it be deleted.</para>
+		/// <para>Area or percent—Parts with an area or percent less than that specified will be eliminated. If a polygon part meets either the area or percent criteria, it will be deleted.</para>
 		/// <para><see cref="ConditionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Area</para>
-		/// <para>消除小于此面积的部分。</para>
+		/// <para>Eliminate parts smaller than this area.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPArealUnit()]
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Percentage</para>
-		/// <para>消除小于此要素总外部面积百分比的部分。</para>
+		/// <para>Eliminate parts smaller than this percentage of a feature's total outer area.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -122,9 +122,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Eliminate contained parts only</para>
-		/// <para>确定可消除的部分。</para>
-		/// <para>选中 - 仅消除完全包含于其他部分的部分。这是默认设置。</para>
-		/// <para>取消选中 - 可消除任意部分。</para>
+		/// <para>Determines what parts can be eliminated.</para>
+		/// <para>Checked - Only parts totally contained by other parts can be eliminated. This is the default.</para>
+		/// <para>Unchecked - Any parts can be eliminated.</para>
 		/// <para><see cref="PartOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -149,31 +149,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ConditionEnum 
 		{
 			/// <summary>
-			/// <para>面积—面积小于指定值的部分将被消除。</para>
+			/// <para>Area—Parts with an area less than that specified will be eliminated.</para>
 			/// </summary>
 			[GPValue("AREA")]
-			[Description("面积")]
+			[Description("Area")]
 			Area,
 
 			/// <summary>
-			/// <para>百分比—总外部面积百分比小于指定值的部分将被消除。</para>
+			/// <para>Percent—Parts with a percent of the total outer area less than that specified will be eliminated.</para>
 			/// </summary>
 			[GPValue("PERCENT")]
-			[Description("百分比")]
+			[Description("Percent")]
 			Percent,
 
 			/// <summary>
-			/// <para>面积和百分比—面积和百分比均小于指定值的部分将被消除。只有同时满足面积和百分比两个条件的面部分才会被删除。</para>
+			/// <para>Area and percent—Parts with an area and percent less than that specified will be eliminated. Only if a polygon part meets both the area and percent criteria will it be deleted.</para>
 			/// </summary>
 			[GPValue("AREA_AND_PERCENT")]
-			[Description("面积和百分比")]
+			[Description("Area and percent")]
 			Area_and_percent,
 
 			/// <summary>
-			/// <para>面积或百分比—面积或百分比小于指定值的部分将被消除。如果面部分满足面积或百分比条件之一，该面将被删除。</para>
+			/// <para>Area or percent—Parts with an area or percent less than that specified will be eliminated. If a polygon part meets either the area or percent criteria, it will be deleted.</para>
 			/// </summary>
 			[GPValue("AREA_OR_PERCENT")]
-			[Description("面积或百分比")]
+			[Description("Area or percent")]
 			Area_or_percent,
 
 		}
@@ -184,14 +184,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum PartOptionEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked - Only parts totally contained by other parts can be eliminated. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CONTAINED_ONLY")]
 			CONTAINED_ONLY,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked - Any parts can be eliminated.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ANY")]

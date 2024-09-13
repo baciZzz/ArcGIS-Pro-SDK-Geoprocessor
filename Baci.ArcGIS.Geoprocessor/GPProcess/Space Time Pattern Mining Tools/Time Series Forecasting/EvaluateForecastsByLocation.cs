@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Evaluate Forecasts By Location</para>
-	/// <para>按位置评估预测</para>
-	/// <para>用于在多个预测结果中为时空立方体的每个位置选择最准确的结果。这使您可以在具有相同时间序列数据的时间序列预测工具集中使用多个工具，并为每个位置选择最佳预测。</para>
+	/// <para>Evaluate Forecasts By Location</para>
+	/// <para>Selects the most accurate among multiple forecasting results for each location of a space-time cube. This allows you to use multiple tools in the Time Series Forecasting toolset with the same time series data and select the best forecast for each location.</para>
 	/// </summary>
 	public class EvaluateForecastsByLocation : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		/// <param name="InCubes">
 		/// <para>Input Forecast Space Time Cubes</para>
-		/// <para>昆输入时空立方体包含要进行比较的预测。为了进行比较，必须根据相同的原始时间序列数据创建所有预测立方体。</para>
+		/// <para>The input space-time cubes containing forecasts to be compared. To be compared, all forecast cubes must be created from the same original time series data.</para>
 		/// </param>
 		/// <param name="OutputFeatures">
 		/// <para>Output Features</para>
-		/// <para>新的输出要素类表示时空立方体的位置以及包含每个位置上所选方法的预测值的字段。要素的弹出窗口将显示原始时间序列数据的图表以及所有方法的预测。</para>
+		/// <para>The new output feature class representing the locations of the space-time cube and fields containing the forecast values of the selected method at each location. The pop-ups of the features display charts of the original time series data and the forecasts of all methods.</para>
 		/// </param>
 		public EvaluateForecastsByLocation(object InCubes, object OutputFeatures)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 按位置评估预测</para>
+		/// <para>Tool Display Name : Evaluate Forecasts By Location</para>
 		/// </summary>
-		public override string DisplayName() => "按位置评估预测";
+		public override string DisplayName() => "Evaluate Forecasts By Location";
 
 		/// <summary>
 		/// <para>Tool Name : EvaluateForecastsByLocation</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Input Forecast Space Time Cubes</para>
-		/// <para>昆输入时空立方体包含要进行比较的预测。为了进行比较，必须根据相同的原始时间序列数据创建所有预测立方体。</para>
+		/// <para>The input space-time cubes containing forecasts to be compared. To be compared, all forecast cubes must be created from the same original time series data.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Output Features</para>
-		/// <para>新的输出要素类表示时空立方体的位置以及包含每个位置上所选方法的预测值的字段。要素的弹出窗口将显示原始时间序列数据的图表以及所有方法的预测。</para>
+		/// <para>The new output feature class representing the locations of the space-time cube and fields containing the forecast values of the selected method at each location. The pop-ups of the features display charts of the original time series data and the forecasts of all methods.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Output Space Time Cube</para>
-		/// <para>输出时空立方体（.nc 文件）包含原始时间序列数据以及每个位置上的所选方法的预测。可视化 3D 时空立方体工具可用于同时查看原始值和预测值。</para>
+		/// <para>The output space-time cube (.nc file) containing the original time series data with the forecasts of the selected method at each location. The Visualize Space Time Cube in 3D tool can be used to view the original and forecasted values simultaneously.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -98,9 +98,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Evaluate Using Validation Results</para>
-		/// <para>指定将使用最小验证 RMSE 还是最小预测 RMSE 来确定位置的预测方法。</para>
-		/// <para>选中 - 预测方法将使用最小验证 RMSE 进行确定。这是默认设置。</para>
-		/// <para>未选中 - 预测方法将使用最小预测 RMSE 进行确定。</para>
+		/// <para>Specifies whether the forecast method for a location will be determined using the smallest Validation RMSE or smallest Forecast RMSE.</para>
+		/// <para>Checked—The forecast method will be determined using the smallest Validation RMSE. This is the default.</para>
+		/// <para>Unchecked—The forecast method will be determined using the smallest Forecast RMSE.</para>
 		/// <para><see cref="EvaluateUsingValidationResultsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -125,14 +125,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		public enum EvaluateUsingValidationResultsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The forecast method will be determined using the smallest Validation RMSE. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("USE_VALIDATION")]
 			USE_VALIDATION,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The forecast method will be determined using the smallest Forecast RMSE.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_VALIDATION")]

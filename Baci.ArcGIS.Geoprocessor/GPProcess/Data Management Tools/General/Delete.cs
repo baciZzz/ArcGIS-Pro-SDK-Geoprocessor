@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete</para>
-	/// <para>删除</para>
-	/// <para>从磁盘中永久性删除数据。可删除 ArcGIS 支持的所有类型的地理数据以及工具箱和工作空间（文件夹和地理数据库）。如果指定的项为工作空间，则其中包含的所有项也将被删除。</para>
+	/// <para>Delete</para>
+	/// <para>Permanently deletes data from disk. All types of geographic data supported by ArcGIS, as well as toolboxes and workspaces (folders and geodatabases), can be deleted. If the specified item is a workspace, all contained items are also deleted.</para>
 	/// </summary>
 	public class Delete : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InData">
 		/// <para>Input Data Element</para>
-		/// <para>要删除的输入数据。</para>
+		/// <para>The input data to be deleted.</para>
 		/// </param>
 		public Delete(object InData)
 		{
@@ -29,14 +29,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 删除</para>
+		/// <para>Tool Display Name : Delete</para>
 		/// </summary>
-		public override string DisplayName() => "删除";
+		public override string DisplayName() => "Delete";
 
 		/// <summary>
-		/// <para>Tool Name : 删除</para>
+		/// <para>Tool Name : Delete</para>
 		/// </summary>
-		public override string ToolName() => "删除";
+		public override string ToolName() => "Delete";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Delete</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Data Element</para>
-		/// <para>要删除的输入数据。</para>
+		/// <para>The input data to be deleted.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Data type</para>
-		/// <para>磁盘上要删除的数据类型。仅当输入数据位于地理数据库中且存在命名冲突（例如，如果地理数据库包含同名的要素数据集和要素类）时需要此项。在这种情况下，数据类型将用于确定要删除的数据集。</para>
+		/// <para>The type of data on disk to be deleted. This is only necessary when the input data is in a geodatabase and naming conflicts exist, for example, if the geodatabase contains a feature dataset and a feature class with the same name. In this case, the data type is used to clarify which dataset to delete.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

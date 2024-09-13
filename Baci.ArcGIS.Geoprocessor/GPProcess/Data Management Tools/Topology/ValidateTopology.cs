@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Validate Topology</para>
-	/// <para>拓扑验证</para>
-	/// <para>验证地理数据库拓扑。</para>
+	/// <para>Validate Topology</para>
+	/// <para>Validates a geodatabase topology.</para>
 	/// </summary>
 	public class ValidateTopology : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTopology">
 		/// <para>Input Topology</para>
-		/// <para>要验证的地理数据库拓扑。</para>
+		/// <para>The geodatabase topology to be validated.</para>
 		/// </param>
 		public ValidateTopology(object InTopology)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 拓扑验证</para>
+		/// <para>Tool Display Name : Validate Topology</para>
 		/// </summary>
-		public override string DisplayName() => "拓扑验证";
+		public override string DisplayName() => "Validate Topology";
 
 		/// <summary>
 		/// <para>Tool Name : ValidateTopology</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Topology</para>
-		/// <para>要验证的地理数据库拓扑。</para>
+		/// <para>The geodatabase topology to be validated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTopologyLayer()]
@@ -73,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Visible Extent</para>
-		/// <para>指定是将验证地图的当前可见范围，还是拓扑的全图范围。如果工具是在 Python 窗口或 Python 脚本中运行，则不管此参数如何设置都将验证拓扑的整个范围。</para>
-		/// <para>选中 - 仅验证当前可见范围。</para>
-		/// <para>未选中 - 验证拓扑的整个范围。这是默认设置。</para>
+		/// <para>Specifies whether the current visible extent of the map or the full extent of the topology will be validated. If the tool is run in the Python window or in a Python script, the entire extent of the topology will be validated regardless of this parameter setting.</para>
+		/// <para>Checked—Only the current visible extent will be validated</para>
+		/// <para>Unchecked—The entire extent of the topology will be validated. This is the default.</para>
 		/// <para><see cref="VisibleExtentEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -107,14 +107,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum VisibleExtentEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Only the current visible extent will be validated</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("Visible_Extent")]
 			Visible_Extent,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The entire extent of the topology will be validated. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("Full_Extent")]

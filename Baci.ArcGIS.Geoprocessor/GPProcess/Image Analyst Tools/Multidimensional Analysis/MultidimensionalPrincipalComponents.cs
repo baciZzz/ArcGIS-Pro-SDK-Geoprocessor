@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Multidimensional Principal Components</para>
-	/// <para>多维主成分分析</para>
-	/// <para>将多维栅格转换为其主成分、负载和特征值。 该工具可将数据转换为可解释数据方差的数量减少的成分，以便轻松识别空间和时间模式。</para>
+	/// <para>Multidimensional Principal Components</para>
+	/// <para>Transforms multidimensional rasters into  their principal components, loadings, and eigenvalues. The tool transforms the data into a reduced number of components that account for the variance of the data, so that spatial and temporal patterns can be readily identified.</para>
 	/// </summary>
 	public class MultidimensionalPrincipalComponents : AbstractGPProcess
 	{
@@ -21,35 +21,35 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InMultidimensionalRaster">
 		/// <para>Input Multidimensional Raster</para>
-		/// <para>输入多维栅格。</para>
-		/// <para>该工具沿维度处理数据，例如时间序列栅格或由非时间维度 [X, Y, Z] 定义的数据立方体。 如果输入变量包含多个维度（例如深度和时间），则默认使用第一个维度值。</para>
-		/// <para>您可以根据需要使用创建多维栅格图层工具或子集多维栅格工具重新定义多维数据，例如将多维数据配置为一维数据集。</para>
+		/// <para>The input multidimensional raster.</para>
+		/// <para>The tool processes data along one dimension, such as a time series raster or a data cube defined by a nontime dimension [X, Y, Z]. If an input variable includes multiple dimensions, such as depth and time, the first dimension value will be used by default.</para>
+		/// <para>You can use the Make Multidimensional Raster Layer tool or Subset Multidimensional Raster tool to redefine the multidimensional data as needed, such as configuring multidimensional data into a dataset with one dimension.</para>
 		/// </param>
 		/// <param name="Mode">
 		/// <para>Mode</para>
-		/// <para>指定将用于执行主成分分析的方法。</para>
-		/// <para>降维—输入时间序列数据将被视为一组图像。 将计算随时间提取流行模式的主成分。 这是默认设置。</para>
-		/// <para>空间缩减—输入时间序列数据将被视为一组像素。 随着时间的推移提取流行模式和位置的主成分将被计算为存储在表中的一组一维数组。</para>
+		/// <para>Specifies the method that will be used to perform principal component analysis.</para>
+		/// <para>Dimension Reduction—The input time series data will be treated as a set of images. Principal components that extract prevalent pattens over time will be computed. This is the default.</para>
+		/// <para>Spatial Reduction—The input time series data will be treated as a set of pixels. Principal components that extract prevalent pattens and locations over time will be computed as a set of one-dimensional arrays stored in a table.</para>
 		/// <para><see cref="ModeEnum"/></para>
 		/// </param>
 		/// <param name="Dimension">
 		/// <para>Dimension</para>
-		/// <para>用于处理主成分的维度名称。</para>
+		/// <para>The dimension name used to process the principal components.</para>
 		/// </param>
 		/// <param name="OutPc">
 		/// <para>Output Principal Components</para>
-		/// <para>输出栅格数据集的名称。</para>
-		/// <para>当模式参数指定为降维时，将输出一个组件为波段的多波段栅格。 第一个波段是具有最大特征值的第一个主成分，第二个波段是具有第二大特征值的主成分，以此类推。 输出为 CRF 文件格式 (.crf)，其中维护了多维信息。</para>
-		/// <para>当模式参数指定为空间缩减时，将输出一个包含一组表示主成分的时间序列数据的表。</para>
+		/// <para>The name of the output raster dataset.</para>
+		/// <para>When the Mode parameter is specified as Dimension Reduction, the output will be a multiband raster with the components as bands. The first band is the first principal component with the largest eigenvalue, the second band has the principal component with the second largest eigenvalue, and so on. The output is in CRF file format (.crf), which maintains the multidimensional information.</para>
+		/// <para>When the Mode parameter is specified as Spatial Reduction, the output is a table containing a set of time series data representing the principal components.</para>
 		/// </param>
 		/// <param name="OutLoadings">
 		/// <para>Output Loadings</para>
-		/// <para>输出将加载构成主成分的数据。</para>
-		/// <para>当模式参数指定为降维时，将输出一个包含构成主成分的每个输入栅格权重的表。 这些权重定义了输入数据和输出主成分的相关性。 使用 .csv 文件扩展名将负载输出为逗号分隔值文件。</para>
-		/// <para>当模式参数指定为空间缩减时，将输出的栅格中的像素值是构成主成分的权重。 像素值越高，与主成分相关性越高。 由于应用了随机重新投影以降低计算复杂度，因此输出的像元大小可能比输入栅格更大。</para>
-		/// <para>输出将加载构成主成分的数据。</para>
-		/// <para>当 mode 参数指定为 DIMENSION_REDUCTION 时，将输出一个包含构成主成分的每个输入栅格权重的表。 这些权重定义了输入数据和输出主成分的相关性。 使用 .csv 文件扩展名将负载输出为逗号分隔值文件。</para>
-		/// <para>当 mode 参数指定为 SPATIAL_REDUCTION 时，将输出的栅格中的像素值是构成主成分的权重。 像素值越高，与主成分相关性越高。 由于应用了随机重新投影以降低计算复杂度，因此输出的像元大小可能比输入栅格更大。</para>
+		/// <para>The output loadings data contributing to the principal components.</para>
+		/// <para>When the Mode parameter is specified as Dimension Reduction, the output will be a table containing the weights that each input raster contributed to the principal components. These weights define the correlations of the input data and the output principal components. Use the .csv file extension to output the loadings as a comma-separated values file.</para>
+		/// <para>When the Mode parameter is specified as Spatial Reduction, the output is a raster where pixel values are the weights contributing the principal components. Pixels with larger values are more corelated to the principal components. This output may have a larger cell size than the input raster because a random reprojection is applied to reduce the computation complexity.</para>
+		/// <para>The output loadings data contributing to the principal components.</para>
+		/// <para>When the mode parameter is specified as DIMENSION_REDUCTION, the output will be a table containing the weights that each input raster contributed to the principal components. These weights define the correlations of the input data and the output principal components. Use the .csv file extension to output the loadings as a comma-separated values file.</para>
+		/// <para>When the mode parameter is specified as SPATIAL_REDUCTION, the output is a raster where pixel values are the weights contributing the principal components. Pixels with larger values are more corelated to the principal components. This output may have a larger cell size than the input raster because a random reprojection is applied to reduce the computation complexity.</para>
 		/// </param>
 		public MultidimensionalPrincipalComponents(object InMultidimensionalRaster, object Mode, object Dimension, object OutPc, object OutLoadings)
 		{
@@ -61,9 +61,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 多维主成分分析</para>
+		/// <para>Tool Display Name : Multidimensional Principal Components</para>
 		/// </summary>
-		public override string DisplayName() => "多维主成分分析";
+		public override string DisplayName() => "Multidimensional Principal Components";
 
 		/// <summary>
 		/// <para>Tool Name : MultidimensionalPrincipalComponents</para>
@@ -97,9 +97,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>
-		/// <para>输入多维栅格。</para>
-		/// <para>该工具沿维度处理数据，例如时间序列栅格或由非时间维度 [X, Y, Z] 定义的数据立方体。 如果输入变量包含多个维度（例如深度和时间），则默认使用第一个维度值。</para>
-		/// <para>您可以根据需要使用创建多维栅格图层工具或子集多维栅格工具重新定义多维数据，例如将多维数据配置为一维数据集。</para>
+		/// <para>The input multidimensional raster.</para>
+		/// <para>The tool processes data along one dimension, such as a time series raster or a data cube defined by a nontime dimension [X, Y, Z]. If an input variable includes multiple dimensions, such as depth and time, the first dimension value will be used by default.</para>
+		/// <para>You can use the Make Multidimensional Raster Layer tool or Subset Multidimensional Raster tool to redefine the multidimensional data as needed, such as configuring multidimensional data into a dataset with one dimension.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -108,9 +108,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Mode</para>
-		/// <para>指定将用于执行主成分分析的方法。</para>
-		/// <para>降维—输入时间序列数据将被视为一组图像。 将计算随时间提取流行模式的主成分。 这是默认设置。</para>
-		/// <para>空间缩减—输入时间序列数据将被视为一组像素。 随着时间的推移提取流行模式和位置的主成分将被计算为存储在表中的一组一维数组。</para>
+		/// <para>Specifies the method that will be used to perform principal component analysis.</para>
+		/// <para>Dimension Reduction—The input time series data will be treated as a set of images. Principal components that extract prevalent pattens over time will be computed. This is the default.</para>
+		/// <para>Spatial Reduction—The input time series data will be treated as a set of pixels. Principal components that extract prevalent pattens and locations over time will be computed as a set of one-dimensional arrays stored in a table.</para>
 		/// <para><see cref="ModeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Dimension</para>
-		/// <para>用于处理主成分的维度名称。</para>
+		/// <para>The dimension name used to process the principal components.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -128,9 +128,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Principal Components</para>
-		/// <para>输出栅格数据集的名称。</para>
-		/// <para>当模式参数指定为降维时，将输出一个组件为波段的多波段栅格。 第一个波段是具有最大特征值的第一个主成分，第二个波段是具有第二大特征值的主成分，以此类推。 输出为 CRF 文件格式 (.crf)，其中维护了多维信息。</para>
-		/// <para>当模式参数指定为空间缩减时，将输出一个包含一组表示主成分的时间序列数据的表。</para>
+		/// <para>The name of the output raster dataset.</para>
+		/// <para>When the Mode parameter is specified as Dimension Reduction, the output will be a multiband raster with the components as bands. The first band is the first principal component with the largest eigenvalue, the second band has the principal component with the second largest eigenvalue, and so on. The output is in CRF file format (.crf), which maintains the multidimensional information.</para>
+		/// <para>When the Mode parameter is specified as Spatial Reduction, the output is a table containing a set of time series data representing the principal components.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -138,12 +138,12 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Loadings</para>
-		/// <para>输出将加载构成主成分的数据。</para>
-		/// <para>当模式参数指定为降维时，将输出一个包含构成主成分的每个输入栅格权重的表。 这些权重定义了输入数据和输出主成分的相关性。 使用 .csv 文件扩展名将负载输出为逗号分隔值文件。</para>
-		/// <para>当模式参数指定为空间缩减时，将输出的栅格中的像素值是构成主成分的权重。 像素值越高，与主成分相关性越高。 由于应用了随机重新投影以降低计算复杂度，因此输出的像元大小可能比输入栅格更大。</para>
-		/// <para>输出将加载构成主成分的数据。</para>
-		/// <para>当 mode 参数指定为 DIMENSION_REDUCTION 时，将输出一个包含构成主成分的每个输入栅格权重的表。 这些权重定义了输入数据和输出主成分的相关性。 使用 .csv 文件扩展名将负载输出为逗号分隔值文件。</para>
-		/// <para>当 mode 参数指定为 SPATIAL_REDUCTION 时，将输出的栅格中的像素值是构成主成分的权重。 像素值越高，与主成分相关性越高。 由于应用了随机重新投影以降低计算复杂度，因此输出的像元大小可能比输入栅格更大。</para>
+		/// <para>The output loadings data contributing to the principal components.</para>
+		/// <para>When the Mode parameter is specified as Dimension Reduction, the output will be a table containing the weights that each input raster contributed to the principal components. These weights define the correlations of the input data and the output principal components. Use the .csv file extension to output the loadings as a comma-separated values file.</para>
+		/// <para>When the Mode parameter is specified as Spatial Reduction, the output is a raster where pixel values are the weights contributing the principal components. Pixels with larger values are more corelated to the principal components. This output may have a larger cell size than the input raster because a random reprojection is applied to reduce the computation complexity.</para>
+		/// <para>The output loadings data contributing to the principal components.</para>
+		/// <para>When the mode parameter is specified as DIMENSION_REDUCTION, the output will be a table containing the weights that each input raster contributed to the principal components. These weights define the correlations of the input data and the output principal components. Use the .csv file extension to output the loadings as a comma-separated values file.</para>
+		/// <para>When the mode parameter is specified as SPATIAL_REDUCTION, the output is a raster where pixel values are the weights contributing the principal components. Pixels with larger values are more corelated to the principal components. This output may have a larger cell size than the input raster because a random reprojection is applied to reduce the computation complexity.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -151,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Eigenvalues</para>
-		/// <para>输出特征值表。 特征值表示每个成分的方差百分比。 特征值可帮助您定义表示数据集所需的主成分数。</para>
+		/// <para>The output Eigenvalues table. Eigenvalues are values indicating the variance percentage of each component. Eigenvalues help you define the number of principal components that are needed to represent the dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -159,8 +159,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Variable</para>
-		/// <para>计算中使用的输入多维栅格的变量。 如果输入栅格为多维栅格且未指定变量，则默认情况下只会分析第一个变量。</para>
-		/// <para>例如，要查找温度值最高的年份，请将温度指定为要分析的变量。 如果您没有指定任何变量，并且您同时拥有温度和降水量变量，则将分析这两个变量，并且输出多维栅格将包含两个变量。</para>
+		/// <para>The variable of the input multidimensional raster used in computation. If the input raster is multidimensional and no variable is specified, only the first variable will be analyzed, by default.</para>
+		/// <para>For example, to find the years in which temperature values were highest, specify temperature as the variable to be analyzed. If you do not specify any variables and you have both temperature and precipitation variables, both variables will be analyzed, and the output multidimensional raster will include both variables.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -168,8 +168,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Number of Principal Components</para>
-		/// <para>要计算的主成分数，该值通常小于输入栅格数。</para>
-		/// <para>此参数也采用百分比 (%) 形式。 例如，90% 值表示将计算可以解释 90% 数据方差的成分数。</para>
+		/// <para>The number of principal components to compute, usually fewer than the number of input rasters.</para>
+		/// <para>This parameter also takes the form of a percentage (%). For example, a value of 90% means the number of components that can explain 90 percent of variance in the data will be computed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -192,17 +192,17 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum ModeEnum 
 		{
 			/// <summary>
-			/// <para>降维—输入时间序列数据将被视为一组图像。 将计算随时间提取流行模式的主成分。 这是默认设置。</para>
+			/// <para>Dimension Reduction—The input time series data will be treated as a set of images. Principal components that extract prevalent pattens over time will be computed. This is the default.</para>
 			/// </summary>
 			[GPValue("DIMENSION_REDUCTION")]
-			[Description("降维")]
+			[Description("Dimension Reduction")]
 			Dimension_Reduction,
 
 			/// <summary>
-			/// <para>空间缩减—输入时间序列数据将被视为一组像素。 随着时间的推移提取流行模式和位置的主成分将被计算为存储在表中的一组一维数组。</para>
+			/// <para>Spatial Reduction—The input time series data will be treated as a set of pixels. Principal components that extract prevalent pattens and locations over time will be computed as a set of one-dimensional arrays stored in a table.</para>
 			/// </summary>
 			[GPValue("SPATIAL_REDUCTION")]
-			[Description("空间缩减")]
+			[Description("Spatial Reduction")]
 			Spatial_Reduction,
 
 		}

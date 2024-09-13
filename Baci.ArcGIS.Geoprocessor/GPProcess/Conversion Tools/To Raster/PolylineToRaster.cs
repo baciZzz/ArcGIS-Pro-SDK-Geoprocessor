@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Polyline to Raster</para>
-	/// <para>折线转栅格</para>
-	/// <para>将折线要素转换为栅格数据集。</para>
+	/// <para>Polyline to Raster</para>
+	/// <para>Converts polyline features to a raster dataset.</para>
 	/// </summary>
 	public class PolylineToRaster : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>要转换为栅格的折线输入要素数据集。</para>
+		/// <para>The polyline input feature dataset to be converted to a raster.</para>
 		/// </param>
 		/// <param name="ValueField">
 		/// <para>Value field</para>
-		/// <para>用于向输出栅格分配值的字段。</para>
-		/// <para>可以是输入要素数据集属性表中的任何字段。</para>
+		/// <para>The field used to assign values to the output raster.</para>
+		/// <para>It can be any field of the input feature dataset&apos;s attribute table.</para>
 		/// </param>
 		/// <param name="OutRasterdataset">
 		/// <para>Output Raster Dataset</para>
-		/// <para>要创建的输出栅格数据集。</para>
-		/// <para>如果不希望将输出栅格保存到地理数据库，请为 TIFF 文件格式指定 .tif，为 CRF 文件格式指定 .CRF，为 ERDAS IMAGINE 文件格式指定 .img，而对于 Esri Grid 栅格格式，无需指定扩展名。</para>
+		/// <para>The output raster dataset to be created.</para>
+		/// <para>If the output raster will not be saved to a geodatabase, specify .tif for TIFF file format, .CRF for CRF file format, .img for ERDAS IMAGINE file format, or no extension for Esri Grid raster format.</para>
 		/// </param>
 		public PolylineToRaster(object InFeatures, object ValueField, object OutRasterdataset)
 		{
@@ -41,9 +41,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 折线转栅格</para>
+		/// <para>Tool Display Name : Polyline to Raster</para>
 		/// </summary>
-		public override string DisplayName() => "折线转栅格";
+		public override string DisplayName() => "Polyline to Raster";
 
 		/// <summary>
 		/// <para>Tool Name : PolylineToRaster</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>要转换为栅格的折线输入要素数据集。</para>
+		/// <para>The polyline input feature dataset to be converted to a raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -87,8 +87,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Value field</para>
-		/// <para>用于向输出栅格分配值的字段。</para>
-		/// <para>可以是输入要素数据集属性表中的任何字段。</para>
+		/// <para>The field used to assign values to the output raster.</para>
+		/// <para>It can be any field of the input feature dataset&apos;s attribute table.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -98,8 +98,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Raster Dataset</para>
-		/// <para>要创建的输出栅格数据集。</para>
-		/// <para>如果不希望将输出栅格保存到地理数据库，请为 TIFF 文件格式指定 .tif，为 CRF 文件格式指定 .CRF，为 ERDAS IMAGINE 文件格式指定 .img，而对于 Esri Grid 栅格格式，无需指定扩展名。</para>
+		/// <para>The output raster dataset to be created.</para>
+		/// <para>If the output raster will not be saved to a geodatabase, specify .tif for TIFF file format, .CRF for CRF file format, .img for ERDAS IMAGINE file format, or no extension for Esri Grid raster format.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -107,9 +107,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Cell assignment type</para>
-		/// <para>用于确定当多个要素落在一个像元中时如何为像元分配值的方法。</para>
-		/// <para>最大长度—具有覆盖像元的最大长度的要素确定分配给像元的值。</para>
-		/// <para>最大合并长度—如果像元中有多个要素具有相同的值，则合并这些要素的长度。像元中具有最大长度的合并要素确定分配给像元的值。</para>
+		/// <para>The method to determine how the cell will be assigned a value when more than one feature falls within a cell.</para>
+		/// <para>Maximum length—The feature with the longest length that covers the cell will determine the value to assign to the cell.</para>
+		/// <para>Maximum combined length—If there is more than one feature in a cell with the same value, the lengths of these features will be combined. The combined feature with the longest length within the cell will determine the value to assign to the cell.</para>
 		/// <para><see cref="CellAssignmentEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Priority field</para>
-		/// <para>此字段用于确定哪个要素应该优先于像元外的其他要素。使用时，无论选择何种像元分配类型，始终为转换选择优先级为最大正值的要素。</para>
+		/// <para>This field is used to determine which feature should take preference over another feature that falls over a cell. When it is used, the feature with the largest positive priority is always selected for conversion irrespective of the Cell assignment type chosen.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -130,8 +130,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Cellsize</para>
-		/// <para>正在创建的输出栅格的像元大小。</para>
-		/// <para>此参数可以通过数值进行定义，也可以从现有栅格数据集获取。如果未将像元大小明确指定为参数值，则将使用环境像元大小值（如果已指定）；否则，将使用其他规则通过其他输出计算像元大小。有关详细信息，请参阅“用法”。</para>
+		/// <para>The cell size of the output raster being created.</para>
+		/// <para>This parameter can be defined by a numeric value or obtained from an existing raster dataset. If the cell size hasn’t been explicitly specified as the parameter value, the environment cell size value is used, if specified; otherwise, additional rules are used to calculate it from the other inputs. See Usages for more detail.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -143,10 +143,10 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Build raster attribute table</para>
-		/// <para>指定输出栅格是否将具有栅格属性表。</para>
-		/// <para>此参数仅适用于整型栅格。</para>
-		/// <para>选中 - 输出栅格将具有栅格属性表。这是默认设置。</para>
-		/// <para>未选中 - 输出栅格将不具有栅格属性表。</para>
+		/// <para>Specifies whether the output raster will have a raster attribute table.</para>
+		/// <para>This parameter only applies to integer rasters.</para>
+		/// <para>Checked—The output raster will have a raster attribute table. This is the default.</para>
+		/// <para>Unchecked—The output raster will not have a raster attribute table.</para>
 		/// <para><see cref="BuildRatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -171,17 +171,17 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum CellAssignmentEnum 
 		{
 			/// <summary>
-			/// <para>最大长度—具有覆盖像元的最大长度的要素确定分配给像元的值。</para>
+			/// <para>Maximum length—The feature with the longest length that covers the cell will determine the value to assign to the cell.</para>
 			/// </summary>
 			[GPValue("MAXIMUM_LENGTH")]
-			[Description("最大长度")]
+			[Description("Maximum length")]
 			Maximum_length,
 
 			/// <summary>
-			/// <para>最大合并长度—如果像元中有多个要素具有相同的值，则合并这些要素的长度。像元中具有最大长度的合并要素确定分配给像元的值。</para>
+			/// <para>Maximum combined length—If there is more than one feature in a cell with the same value, the lengths of these features will be combined. The combined feature with the longest length within the cell will determine the value to assign to the cell.</para>
 			/// </summary>
 			[GPValue("MAXIMUM_COMBINED_LENGTH")]
-			[Description("最大合并长度")]
+			[Description("Maximum combined length")]
 			Maximum_combined_length,
 
 		}
@@ -192,14 +192,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum BuildRatEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The output raster will have a raster attribute table. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("BUILD")]
 			BUILD,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The output raster will not have a raster attribute table.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_BUILD")]

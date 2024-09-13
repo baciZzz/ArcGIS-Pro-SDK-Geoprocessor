@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Derive Event Measures</para>
-	/// <para>派生事件测量</para>
-	/// <para>使用已配置和启用的 DerivedRouteID 字段填充和更新点和线事件上的这些字段和测量值。</para>
+	/// <para>Derive Event Measures</para>
+	/// <para>Populates and updates the DerivedRouteID field and measure values on point and line events with those fields configured and enabled.</para>
 	/// </summary>
 	public class DeriveEventMeasures : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InRouteFeatures">
 		/// <para>Input Route Features</para>
-		/// <para>LRS 网络包含配置了 DerivedRouteID 和测量字段的事件。</para>
+		/// <para>The LRS Network containing the events with DerivedRouteID and measure fields configured.</para>
 		/// </param>
 		public DeriveEventMeasures(object InRouteFeatures)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 派生事件测量</para>
+		/// <para>Tool Display Name : Derive Event Measures</para>
 		/// </summary>
-		public override string DisplayName() => "派生事件测量";
+		public override string DisplayName() => "Derive Event Measures";
 
 		/// <summary>
 		/// <para>Tool Name : DeriveEventMeasures</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Input Route Features</para>
-		/// <para>LRS 网络包含配置了 DerivedRouteID 和测量字段的事件。</para>
+		/// <para>The LRS Network containing the events with DerivedRouteID and measure fields configured.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -75,9 +75,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Update all event feature classes registered in the selected network</para>
-		/// <para>指定是否更新网络中的所有事件要素类。</para>
-		/// <para>选中 - 将更新在输入路径要素参数值中选择的网络中的所有事件要素类。 这是默认设置。</para>
-		/// <para>未选中 - 不会更新在输入路径要素参数值中选择的网络中的所有事件要素类。 可以使用事件图层参数选择单个事件图层。</para>
+		/// <para>Specifies whether all event feature classes in the network will be updated.</para>
+		/// <para>Checked—All event feature classes in the network selected in the Input Route Features parameter value will be updated. This is the default.</para>
+		/// <para>Unchecked—All event feature classes in the network selected in the Input Route Features parameter value will be not be updated. Individual event layers can be selected using the Event Layers parameter.</para>
 		/// <para><see cref="UpdateAllEventsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Event Layers</para>
-		/// <para>将更新 DerivedRouteID 和测量字段的事件图层。</para>
+		/// <para>The event layers that will have DerivedRouteID and measure fields updated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -124,14 +124,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum UpdateAllEventsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—All event feature classes in the network selected in the Input Route Features parameter value will be updated. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE_ALL")]
 			UPDATE_ALL,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—All event feature classes in the network selected in the Input Route Features parameter value will be not be updated. Individual event layers can be selected using the Event Layers parameter.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("UPDATE_SOME")]

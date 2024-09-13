@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 {
 	/// <summary>
 	/// <para>Train Using AutoML</para>
-	/// <para>使用 AutoML 进行训练</para>
-	/// <para>自动化过程并训练机器学习模型以生成深度学习包（.dlpk 文件）。 这包括探索性数据分析、要素选择、要素工程、模型选择、超参数调整和模型训练。 其输出包括训练数据上最佳模型的性能指标，以及可用于通过使用 AutoML 进行预测工具预测兼容新数据集的经训练的 .dlpk 模型。</para>
+	/// <para>Train Using AutoML</para>
+	/// <para>Automates the process and trains a machine learning model to produce a deep learning package (.dlpk file). This includes exploratory data analysis, feature selection, feature engineering, model selection, hyperparameter tuning, and model training. Its outputs include performance metrics of the best model on the training data, as well as the trained  .dlpk model that can be used to predict on a compatible new dataset using the Predict Using AutoML tool.</para>
 	/// </summary>
 	public class TrainUsingAutoML : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Training Features</para>
-		/// <para>将用于训练模型的输入要素类。</para>
+		/// <para>The input feature class that will be used to train the model.</para>
 		/// </param>
 		/// <param name="OutModel">
 		/// <para>Output Model</para>
-		/// <para>将另存为深度学习包（.dlpk 文件）的输出训练模型。</para>
+		/// <para>The output trained model that will be saved as a deep learning package (.dlpk file).</para>
 		/// </param>
 		/// <param name="VariablePredict">
 		/// <para>Variable to Predict</para>
-		/// <para>来自输入训练要素参数值的字段，其中包含将用于训练模型的值。 该字段包含将用于在未知位置进行预测的变量的已知（训练）值。</para>
+		/// <para>A field from the Input Training Features parameter value that contains the values that will be used to train the model. This field contains known (training) values of the variable that will be used to predict at unknown locations.</para>
 		/// </param>
 		public TrainUsingAutoML(object InFeatures, object OutModel, object VariablePredict)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 使用 AutoML 进行训练</para>
+		/// <para>Tool Display Name : Train Using AutoML</para>
 		/// </summary>
-		public override string DisplayName() => "使用 AutoML 进行训练";
+		public override string DisplayName() => "Train Using AutoML";
 
 		/// <summary>
 		/// <para>Tool Name : TrainUsingAutoML</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Input Training Features</para>
-		/// <para>将用于训练模型的输入要素类。</para>
+		/// <para>The input feature class that will be used to train the model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Output Model</para>
-		/// <para>将另存为深度学习包（.dlpk 文件）的输出训练模型。</para>
+		/// <para>The output trained model that will be saved as a deep learning package (.dlpk file).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Variable to Predict</para>
-		/// <para>来自输入训练要素参数值的字段，其中包含将用于训练模型的值。 该字段包含将用于在未知位置进行预测的变量的已知（训练）值。</para>
+		/// <para>A field from the Input Training Features parameter value that contains the values that will be used to train the model. This field contains known (training) values of the variable that will be used to predict at unknown locations.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -103,9 +103,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Treat Variable as Categorical</para>
-		/// <para>指定要预测的变量参数值是否将被视为分类变量。</para>
-		/// <para>选中 - 要预测的变量参数值将被视为分类变量，工具将执行分类。</para>
-		/// <para>未选中 - 要预测的变量参数值将被视为连续的，工具将执行回归。 这是默认设置。</para>
+		/// <para>Specifies whether the Variable to Predict parameter value will be treated as a categorical variable.</para>
+		/// <para>Checked—The Variable to Predict parameter value will be treated as a categorical variable and the tool will perform classification.</para>
+		/// <para>Unchecked—The Variable to Predict parameter value will be treated as continuous and the tool will perform regression. This is the default.</para>
 		/// <para><see cref="TreatVariableAsCategoricalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Explanatory Training Variables</para>
-		/// <para>表示解释变量的字段列表，可帮助预测要预测的变量参数值的值或类别。 对于任何表示类或类别（例如土地覆被、存在或不存在）的变量，请选中随附的复选框。</para>
+		/// <para>A list of fields representing the explanatory variables that will help predict the value or category of the Variable to Predict parameter value. Check the accompanying check box for any variables that represent classes or categories (such as land cover, presence, or absence).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Explanatory Training Distance Features</para>
-		/// <para>将自动估计该要素与输入训练要素的距离并将其添加为其他解释变量。 将计算每个输入解释训练距离要素与最近的输入训练要素的距离。 支持点和面要素，如果输入解释训练距离要素为面要素或线要素，则距离属性将计算为要素对的最近线段之间的距离。</para>
+		/// <para>The features whose distances from the input training features will be estimated automatically and added as more explanatory variables. Distances will be calculated from each of the input explanatory training distance features to the nearest input training features. Point and polygon features are supported, and if the input explanatory training distance features are polygons, the distance attributes will be calculated as the distance between the closest segments of the pair of features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Explanatory Training Rasters</para>
-		/// <para>将从栅格中提取该栅格的值，并且其将被视为模型的解释变量。 每个图层构成一个解释变量。 对于输入训练要素中的每个要素，将在此确切位置处提取栅格像元的值。 提取连续栅格的栅格值时，将使用双线性栅格重采样。 从分类栅格中提取栅格值时，将使用最邻近分配法。 对于任何表示类或类别（例如土地覆被、存在或不存在）的栅格，请选中分类复选框。</para>
+		/// <para>The rasters whose values will be extracted from the raster and considered as explanatory variables for the model. Each layer forms one explanatory variable. For each feature in the input training features, the value of the raster cell will be extracted at that exact location. Bilinear raster resampling will be used when extracting the raster value for continuous rasters. Nearest neighbor assignment will be used when extracting a raster value from categorical rasters. Check the Categorical check box for any raster that represent classes or categories such as land cover, presence, or absence.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Total Time Limit (Minutes)</para>
-		/// <para>AutoML 模型训练所需的总时间限制（以分钟为单位）。 默认值为 60（1 小时）。</para>
+		/// <para>The total time limit in minutes it takes for AutoML model training. The default is 60 (1 hour).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -151,10 +151,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>AutoML Mode</para>
-		/// <para>指定 AutoML 的目标以及 AutoML 搜索的密集程度。</para>
-		/// <para>基础—“基本”用于解释不同变量和数据的重要性。 不执行要素工程、要素选择和超参数调整。 报告中将包含关于模型学习曲线、为基于树的模型生成的要素重要性图以及所有其他模型的 SHAP 图的完整描述和解释。 此模式需要的处理时间最少。 这是默认设置。</para>
-		/// <para>中级—“中级”用于训练将在实际用例中使用的模型。 它使用 5 倍交叉验证 (CV) 方法并将在报告中生成学习曲线和重要性图的输出，但 SHAP 图不可用。</para>
-		/// <para>高级—“高级”用于机器学习竞技（以获得最佳性能）。 此模式使用 10 倍交叉验证 (CV) 方法并将执行要素工程、要素选择和超参数调整。 在这种模式下，将基于输入训练要素的位置将其分配给到多个不同大小的空间格网，并且相应的格网 ID 将作为附加分类解释变量传递给模型。 该报告仅包括学习曲线，模型可解释性功能不可用。</para>
+		/// <para>Specifies the goal of AutoML and how intensive the AutoML search will be.</para>
+		/// <para>Basic—Basic is used to explain the significance of the different variables and the data. Feature engineering, feature selection, and hyperparameter tuning will not be performed. Full descriptions and explanations for model learning curves, feature importance plots generated for tree-based models, and SHAP plots for all other models will be included in reports. This mode takes the least amount of processing time. This is the default.</para>
+		/// <para>Intermediate—Intermediate is used to train a model that will be used in real-life use cases. It uses 5-fold cross validation (CV) and produces output of learning curves and importance plots in the reports, but SHAP plots are not available.</para>
+		/// <para>Advanced— Advanced is used for machine learning competitions (for maximum performance). This mode uses 10-fold cross validation (CV) and performs feature engineering, feature selection, and hyperparameter tuning. In this mode, input training features are assigned to multiple spatial grids of different sizes based on their location, and the corresponding grid IDs are passed as additional categorical explanatory variables to the model. The report only includes learning curves and model explainability is not available.</para>
 		/// <para><see cref="AutomlModeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -164,14 +164,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Algorithms</para>
-		/// <para>指定将在训练期间使用的算法。</para>
-		/// <para>线性—线性回归监督算法将用于训练回归机器学习模型。如果仅选择线性模型，请确保记录总数小于 10000 且列数小于 1000。 其他模型可以处理更大的数据集，因此建议在运行该工具时将线性模型用作众多模型之一，而不是作为独立模型。</para>
-		/// <para>随机森林—将使用基于随机森林决策树的监督机器学习算法。 它可以用于分类和回归。</para>
-		/// <para>XGBoost—将使用 XGBoost（极端梯度提）监督机器学习算法。 它可以用于分类和回归。</para>
-		/// <para>Light GBM—将使用基于决策树的 Light GBM 梯度提升集成算法。 它可以用于分类和回归。 Light GBM 针对分布式系统的高性能进行了优化。</para>
-		/// <para>决策树—将使用决策树监督机器学习算法，该算法使用对某些问题的 true 和 false 答案对数据进行分类或回归。 决策树易于理解并且具有可解释性。</para>
-		/// <para>极端树—将通过使用决策树的极端树（极度随机树）集成监督机器学习算法。 此方法类似于随机森林，但速度更快。</para>
-		/// <para>默认情况下，将使用所有算法。</para>
+		/// <para>Specifies the algorithms that will be used during the training.</para>
+		/// <para>Linear—The Linear regression supervised algorithm will be used to train a regression machine learning model. In case only linear model is chosen then make sure that the total number of records are less than 10000 and number of columns less than 1000. Other models can handle larger datasets and hence it is suggested to use Linear model as one of the many models and not as a standalone model while running the tool.</para>
+		/// <para>Random Forest—The Random Forest decision tree-based supervised machine learning algorithm will be used. It can be used for both classification and regression.</para>
+		/// <para>XGBoost—The XGBoost (extreme gradient boosting) supervised machine learning algorithm will be used. It can be used for both classification and regression.</para>
+		/// <para>Light GBM—The Light GBM gradient boosting ensemble algorithm, which is based on decision trees, will be used. It can be used for both classification and regression. Light GBM is optimized for high performance with distributed systems.</para>
+		/// <para>Decision Tree— The Decision Tree supervised machine learning algorithm, which classifies or regresses the data using true and false answers to certain questions, will be used. Decision trees are easily understood and are good for explainability.</para>
+		/// <para>Extra Tree— The Extra Tree (extremely randomized trees) ensemble supervised machine learning algorithm, which uses decision trees, will be used. This method is similar to Random Forests but can be faster.</para>
+		/// <para>By default, all of the algorithms will be used.</para>
 		/// <para><see cref="AlgorithmsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -182,7 +182,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Validation Percentage</para>
-		/// <para>将用于验证的输入数据的百分比。 默认值为 10。</para>
+		/// <para>The percentage of input data that will be used for validation. The default value is 10.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -191,7 +191,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Output Report</para>
-		/// <para>指定将生成为 HTML 文件的输出报告。 如果提供的路径不为空，则将在提供路径下的新文件夹中创建报告。 该报告将包含各种模型的详细信息、评估期间使用的超参数的详细信息以及每个模型的性能。 超参数是控制训练过程的参数。 它们在训练期间不会更新，包括模型架构、学习率、时期数等。</para>
+		/// <para>Specifies the output report that will be generated as a HTML file. If the path provided is not empty then the report will be created inside a new folder under the provided path. The report will contain details of the various models as well as details of the hyperparameters that were used during the evaluation and the performance of each model. Hyperparameters are parameters that control the training process. They are not updated during training and include model architecture, learning rate, number of epochs, and so on.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -202,7 +202,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Output Importance Table</para>
-		/// <para>输出表包含有关模型中使用的每个解释变量（字段、距离要素和栅格）的重要性的信息。</para>
+		/// <para>An output table containing information about the importance of each explanatory variable (fields, distance features, and rasters) used in the model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -211,7 +211,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>包含训练要素图层上性能最佳模型的预测值的要素图层。 它可用于通过直观地将预测值与实际地表进行比较来验证模型性能。</para>
+		/// <para>The feature layer containing the predicted values by the best performing model on the training feature layer. It can be used to verify model performance by visually comparing the predicted values with the ground truth.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -235,14 +235,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		public enum TreatVariableAsCategoricalEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The Variable to Predict parameter value will be treated as a categorical variable and the tool will perform classification.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CATEGORICAL")]
 			CATEGORICAL,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The Variable to Predict parameter value will be treated as continuous and the tool will perform regression. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("CONTINUOUS")]
@@ -256,24 +256,24 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		public enum AutomlModeEnum 
 		{
 			/// <summary>
-			/// <para>基础—“基本”用于解释不同变量和数据的重要性。 不执行要素工程、要素选择和超参数调整。 报告中将包含关于模型学习曲线、为基于树的模型生成的要素重要性图以及所有其他模型的 SHAP 图的完整描述和解释。 此模式需要的处理时间最少。 这是默认设置。</para>
+			/// <para>Basic—Basic is used to explain the significance of the different variables and the data. Feature engineering, feature selection, and hyperparameter tuning will not be performed. Full descriptions and explanations for model learning curves, feature importance plots generated for tree-based models, and SHAP plots for all other models will be included in reports. This mode takes the least amount of processing time. This is the default.</para>
 			/// </summary>
 			[GPValue("BASIC")]
-			[Description("基础")]
+			[Description("Basic")]
 			Basic,
 
 			/// <summary>
-			/// <para>中级—“中级”用于训练将在实际用例中使用的模型。 它使用 5 倍交叉验证 (CV) 方法并将在报告中生成学习曲线和重要性图的输出，但 SHAP 图不可用。</para>
+			/// <para>Intermediate—Intermediate is used to train a model that will be used in real-life use cases. It uses 5-fold cross validation (CV) and produces output of learning curves and importance plots in the reports, but SHAP plots are not available.</para>
 			/// </summary>
 			[GPValue("INTERMEDIATE")]
-			[Description("中级")]
+			[Description("Intermediate")]
 			Intermediate,
 
 			/// <summary>
-			/// <para>高级—“高级”用于机器学习竞技（以获得最佳性能）。 此模式使用 10 倍交叉验证 (CV) 方法并将执行要素工程、要素选择和超参数调整。 在这种模式下，将基于输入训练要素的位置将其分配给到多个不同大小的空间格网，并且相应的格网 ID 将作为附加分类解释变量传递给模型。 该报告仅包括学习曲线，模型可解释性功能不可用。</para>
+			/// <para>Advanced— Advanced is used for machine learning competitions (for maximum performance). This mode uses 10-fold cross validation (CV) and performs feature engineering, feature selection, and hyperparameter tuning. In this mode, input training features are assigned to multiple spatial grids of different sizes based on their location, and the corresponding grid IDs are passed as additional categorical explanatory variables to the model. The report only includes learning curves and model explainability is not available.</para>
 			/// </summary>
 			[GPValue("ADVANCED")]
-			[Description("高级")]
+			[Description("Advanced")]
 			Advanced,
 
 		}
@@ -284,45 +284,45 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		public enum AlgorithmsEnum 
 		{
 			/// <summary>
-			/// <para>随机森林—将使用基于随机森林决策树的监督机器学习算法。 它可以用于分类和回归。</para>
+			/// <para>Random Forest—The Random Forest decision tree-based supervised machine learning algorithm will be used. It can be used for both classification and regression.</para>
 			/// </summary>
 			[GPValue("RANDOM FOREST")]
-			[Description("随机森林")]
+			[Description("Random Forest")]
 			Random_Forest,
 
 			/// <summary>
-			/// <para>XGBoost—将使用 XGBoost（极端梯度提）监督机器学习算法。 它可以用于分类和回归。</para>
+			/// <para>XGBoost—The XGBoost (extreme gradient boosting) supervised machine learning algorithm will be used. It can be used for both classification and regression.</para>
 			/// </summary>
 			[GPValue("XGBOOST")]
 			[Description("XGBoost")]
 			XGBoost,
 
 			/// <summary>
-			/// <para>Light GBM—将使用基于决策树的 Light GBM 梯度提升集成算法。 它可以用于分类和回归。 Light GBM 针对分布式系统的高性能进行了优化。</para>
+			/// <para>Light GBM—The Light GBM gradient boosting ensemble algorithm, which is based on decision trees, will be used. It can be used for both classification and regression. Light GBM is optimized for high performance with distributed systems.</para>
 			/// </summary>
 			[GPValue("LIGHT GBM")]
 			[Description("Light GBM")]
 			Light_GBM,
 
 			/// <summary>
-			/// <para>决策树—将使用决策树监督机器学习算法，该算法使用对某些问题的 true 和 false 答案对数据进行分类或回归。 决策树易于理解并且具有可解释性。</para>
+			/// <para>Decision Tree— The Decision Tree supervised machine learning algorithm, which classifies or regresses the data using true and false answers to certain questions, will be used. Decision trees are easily understood and are good for explainability.</para>
 			/// </summary>
 			[GPValue("DECISION TREE")]
-			[Description("决策树")]
+			[Description("Decision Tree")]
 			Decision_Tree,
 
 			/// <summary>
-			/// <para>极端树—将通过使用决策树的极端树（极度随机树）集成监督机器学习算法。 此方法类似于随机森林，但速度更快。</para>
+			/// <para>Extra Tree— The Extra Tree (extremely randomized trees) ensemble supervised machine learning algorithm, which uses decision trees, will be used. This method is similar to Random Forests but can be faster.</para>
 			/// </summary>
 			[GPValue("EXTRA TREE")]
-			[Description("极端树")]
+			[Description("Extra Tree")]
 			Extra_Tree,
 
 			/// <summary>
-			/// <para>线性—线性回归监督算法将用于训练回归机器学习模型。如果仅选择线性模型，请确保记录总数小于 10000 且列数小于 1000。 其他模型可以处理更大的数据集，因此建议在运行该工具时将线性模型用作众多模型之一，而不是作为独立模型。</para>
+			/// <para>Linear—The Linear regression supervised algorithm will be used to train a regression machine learning model. In case only linear model is chosen then make sure that the total number of records are less than 10000 and number of columns less than 1000. Other models can handle larger datasets and hence it is suggested to use Linear model as one of the many models and not as a standalone model while running the tool.</para>
 			/// </summary>
 			[GPValue("LINEAR")]
-			[Description("线性")]
+			[Description("Linear")]
 			Linear,
 
 		}

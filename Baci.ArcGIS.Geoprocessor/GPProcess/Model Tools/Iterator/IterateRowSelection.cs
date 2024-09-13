@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Iterate Row Selection</para>
-	/// <para>迭代行选择</para>
-	/// <para>迭代表中的所有行。</para>
+	/// <para>Iterate Row Selection</para>
+	/// <para>Iterates over rows in a table.</para>
 	/// </summary>
 	public class IterateRowSelection : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>要迭代的记录所在的表。</para>
+		/// <para>The table containing records to iterate through.</para>
 		/// </param>
 		public IterateRowSelection(object InTable)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 迭代行选择</para>
+		/// <para>Tool Display Name : Iterate Row Selection</para>
 		/// </summary>
-		public override string DisplayName() => "迭代行选择";
+		public override string DisplayName() => "Iterate Row Selection";
 
 		/// <summary>
 		/// <para>Tool Name : IterateRowSelection</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>要迭代的记录所在的表。</para>
+		/// <para>The table containing records to iterate through.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Group By Fields</para>
-		/// <para>用于对可供选择的要素进行分组的一个或多个输入字段。可定义多个输入字段，以根据字段的唯一组合进行选择。如果未指定字段，则使用“对象 ID”迭代要素。</para>
+		/// <para>The input field or fields used to group the features for selection. Any number of input fields can be defined, resulting in a selection based on a unique combination of the fields. If a field is not specified, the Object ID is used to iterate over features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -83,9 +83,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Skip Null Values</para>
-		/// <para>指定是否在选择过程中跳过分组字段中的空值。</para>
-		/// <para>选中 - 选择过程中跳过分组字段中的所有空值。</para>
-		/// <para>未选中 - 选择过程中包含分组字段中的所有空值。这是默认设置。</para>
+		/// <para>Specifies if null values in the grouping fields are skipped during selection.</para>
+		/// <para>Checked—Skip through all the null values in the grouping fields during selection.</para>
+		/// <para>Unchecked—Include all the null values in the grouping fields during selection. This is the default.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]

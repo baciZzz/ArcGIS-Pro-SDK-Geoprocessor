@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Import Tile Cache</para>
-	/// <para>导入切片缓存</para>
-	/// <para>从现有切片缓存或切片包中导入切片。目标缓存必须与源切片缓存具有相同的切片方案、空间参考和存储格式。</para>
+	/// <para>Import Tile Cache</para>
+	/// <para>Imports tiles from an existing tile cache or a tile package. The target cache must have the same tiling scheme, spatial reference, and  storage format as the source tile cache.</para>
 	/// </summary>
 	public class ImportTileCache : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InCacheTarget">
 		/// <para>Target Tile Cache</para>
-		/// <para>即将导入切片的现有切片缓存。</para>
+		/// <para>An existing tile cache to which the tiles will be imported.</para>
 		/// </param>
 		/// <param name="InCacheSource">
 		/// <para>Source Tile Cache</para>
-		/// <para>即将从其中导入切片的现有切片缓存或切片包。</para>
+		/// <para>An existing tile cache or a tile package from which the tiles are imported.</para>
 		/// </param>
 		public ImportTileCache(object InCacheTarget, object InCacheSource)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 导入切片缓存</para>
+		/// <para>Tool Display Name : Import Tile Cache</para>
 		/// </summary>
-		public override string DisplayName() => "导入切片缓存";
+		public override string DisplayName() => "Import Tile Cache";
 
 		/// <summary>
 		/// <para>Tool Name : ImportTileCache</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Tile Cache</para>
-		/// <para>即将导入切片的现有切片缓存。</para>
+		/// <para>An existing tile cache to which the tiles will be imported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRasterLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Source Tile Cache</para>
-		/// <para>即将从其中导入切片的现有切片缓存或切片包。</para>
+		/// <para>An existing tile cache or a tile package from which the tiles are imported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Scales [Pixel Size] (Estimated Disk Space)</para>
-		/// <para>导入切片时使用的比例级别列表。</para>
+		/// <para>A list of scale levels at which tiles will be imported.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -95,8 +95,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Area of Interest</para>
-		/// <para>感兴趣区域将对切片在缓存中的导入位置施加空间约束。</para>
-		/// <para>该参数用于为形状不规则的区域导入切片。</para>
+		/// <para>An area of interest will spatially constrain where tiles are imported into the cache.</para>
+		/// <para>This parameter is useful if you want to import tiles for irregularly shaped areas.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -104,9 +104,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Overwrite Tiles</para>
-		/// <para>确定目标缓存中的图像是与原始缓存中的切片合并，还是被其覆盖。</para>
-		/// <para>未选中 - 导入切片后，默认情况下将忽略原始缓存中的透明像素。将导致目标缓存中的图像合并或混合。这是默认设置。</para>
-		/// <para>选中 - 导入过程会替换感兴趣区域的所有像素，并用原始缓存中的切片有效覆盖目标缓存中的切片。</para>
+		/// <para>Determines whether the images in the destination cache will be merged with the tiles from the originating cache or overwritten by them.</para>
+		/// <para>Unchecked—When the tiles are imported, transparent pixels in the originating cache are ignored by default. This results in a merged or blended image in the destination cache. This is the default.</para>
+		/// <para>Checked—The import replaces all pixels in the area of interest, effectively overwriting tiles in the destination cache with tiles from the originating cache.</para>
 		/// <para><see cref="OverwriteEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -138,14 +138,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum OverwriteEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The import replaces all pixels in the area of interest, effectively overwriting tiles in the destination cache with tiles from the originating cache.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("OVERWRITE")]
 			OVERWRITE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—When the tiles are imported, transparent pixels in the originating cache are ignored by default. This results in a merged or blended image in the destination cache. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("MERGE")]

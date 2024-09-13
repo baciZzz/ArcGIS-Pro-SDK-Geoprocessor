@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Features To Graphics</para>
-	/// <para>要素转图形</para>
-	/// <para>将要素图层的符号化要素转换为图形图层中的图形元素。</para>
+	/// <para>Features To Graphics</para>
+	/// <para>Converts a feature layer's symbolized features into graphic elements in a graphics layer.</para>
 	/// </summary>
 	public class FeaturesToGraphics : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InLayer">
 		/// <para>Input Features</para>
-		/// <para>要转换为图形的图层。</para>
+		/// <para>The layer to convert to graphics.</para>
 		/// </param>
 		/// <param name="OutLayer">
 		/// <para>Output Graphics Layer</para>
-		/// <para>包含转换后的图形元素的图形图层。</para>
+		/// <para>The graphics layer containing the converted graphic elements.</para>
 		/// </param>
 		public FeaturesToGraphics(object InLayer, object OutLayer)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 要素转图形</para>
+		/// <para>Tool Display Name : Features To Graphics</para>
 		/// </summary>
-		public override string DisplayName() => "要素转图形";
+		public override string DisplayName() => "Features To Graphics";
 
 		/// <summary>
 		/// <para>Tool Name : FeaturesToGraphics</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>要转换为图形的图层。</para>
+		/// <para>The layer to convert to graphics.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Graphics Layer</para>
-		/// <para>包含转换后的图形元素的图形图层。</para>
+		/// <para>The graphics layer containing the converted graphic elements.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPGraphicsLayer()]
@@ -88,9 +88,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Exclude converted features from drawing</para>
-		/// <para>指定是否使用查询排除转换后的要素。</para>
-		/// <para>选中 - 将排除要素。 这是默认设置。</para>
-		/// <para>未选中 - 不会排除要素；其将被保留。</para>
+		/// <para>Specifies whether the converted features will be excluded using a query.</para>
+		/// <para>Checked—The features will be excluded. This is the default.</para>
+		/// <para>Unchecked—The features will not be excluded; they will be preserved.</para>
 		/// <para><see cref="ExcludeFeaturesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -122,14 +122,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum ExcludeFeaturesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The features will be excluded. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EXCLUDE_FEATURES")]
 			EXCLUDE_FEATURES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The features will not be excluded; they will be preserved.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("KEEP_FEATURES")]

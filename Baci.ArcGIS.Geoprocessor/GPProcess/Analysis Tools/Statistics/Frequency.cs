@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Frequency</para>
-	/// <para>频数</para>
-	/// <para>读取一个表和一组字段并创建一个包含唯一字段值和每个唯一字段值出现次数的新表。</para>
+	/// <para>Frequency</para>
+	/// <para>Reads a table and a set of fields and creates a new table containing unique field values and the number of occurrences of each unique field value.</para>
 	/// </summary>
 	public class Frequency : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>包含用于计算频率统计数据的字段的表。</para>
+		/// <para>The table containing the field(s) that will be used to calculate frequency statistics.</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
-		/// <para>输出表用于存储频数统计数据。</para>
+		/// <para>The output table that will store the frequency statistics.</para>
 		/// </param>
 		/// <param name="FrequencyFields">
 		/// <para>Frequency Field(s)</para>
-		/// <para>该字段用于计算频数统计数据。 字段值的每种唯一组合都将作为新的一行包括在输出表中。</para>
+		/// <para>The field(s) used to calculate frequency statistics. Each unique combination of field values will be included as a new row in the output table.</para>
 		/// </param>
 		public Frequency(object InTable, object OutTable, object FrequencyFields)
 		{
@@ -39,14 +39,14 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 频数</para>
+		/// <para>Tool Display Name : Frequency</para>
 		/// </summary>
-		public override string DisplayName() => "频数";
+		public override string DisplayName() => "Frequency";
 
 		/// <summary>
-		/// <para>Tool Name : 频数</para>
+		/// <para>Tool Name : Frequency</para>
 		/// </summary>
-		public override string ToolName() => "频数";
+		public override string ToolName() => "Frequency";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.Frequency</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>包含用于计算频率统计数据的字段的表。</para>
+		/// <para>The table containing the field(s) that will be used to calculate frequency statistics.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>输出表用于存储频数统计数据。</para>
+		/// <para>The output table that will store the frequency statistics.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Frequency Field(s)</para>
-		/// <para>该字段用于计算频数统计数据。 字段值的每种唯一组合都将作为新的一行包括在输出表中。</para>
+		/// <para>The field(s) used to calculate frequency statistics. Each unique combination of field values will be included as a new row in the output table.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Summary Field(s)</para>
-		/// <para>该属性字段用于求和或添加到输出表。 值将根据频数字段的各种唯一组合进行求和。 空值将被排除在此计算之外。</para>
+		/// <para>The attribute field(s) to sum and add to the output table. Values will be summed for each unique combination of frequency fields. Null values are excluded from this calculation.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]

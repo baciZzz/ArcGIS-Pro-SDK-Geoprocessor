@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Import Mosaic Dataset Geometry</para>
-	/// <para>导入镶嵌数据集几何</para>
-	/// <para>修改镶嵌数据集中轮廓线、边界或接缝线的几何，使其与要素类相匹配。</para>
+	/// <para>Import Mosaic Dataset Geometry</para>
+	/// <para>Modifies the geometry for the footprints, boundary, or seamlines in a mosaic dataset to match those in a feature class.</para>
 	/// </summary>
 	public class ImportMosaicDatasetGeometry : AbstractGPProcess
 	{
@@ -21,28 +21,28 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>要编辑其几何的镶嵌数据集。</para>
+		/// <para>The mosaic dataset whose geometries you want to edit.</para>
 		/// </param>
 		/// <param name="TargetFeatureclassType">
 		/// <para>Target Feature Class</para>
-		/// <para>要更改的几何。</para>
-		/// <para>轮廓线—镶嵌数据集中的轮廓线面</para>
-		/// <para>接缝线—镶嵌数据集中的接缝面</para>
-		/// <para>边界—镶嵌数据集中的边界面</para>
+		/// <para>The geometry that you want to change.</para>
+		/// <para>Footprint—The footprint polygons in the mosaic dataset</para>
+		/// <para>Seamline—The seamline polygons in the mosaic dataset</para>
+		/// <para>Boundary—The boundary polygon in the mosaic dataset</para>
 		/// <para><see cref="TargetFeatureclassTypeEnum"/></para>
 		/// </param>
 		/// <param name="TargetJoinField">
 		/// <para>Target Join Field</para>
-		/// <para>镶嵌数据集中充当连接基础的字段。</para>
+		/// <para>The field in the mosaic dataset to use as a basis for the join.</para>
 		/// </param>
 		/// <param name="InputFeatureclass">
 		/// <para>Input Feature Class</para>
-		/// <para>具有新几何的要素类。</para>
+		/// <para>The feature class with the new geometry.</para>
 		/// </param>
 		/// <param name="InputJoinField">
 		/// <para>Input Join Field</para>
-		/// <para>输入要素类中用作连接基础的字段。</para>
-		/// <para>如果输入要素类具有的记录超过 1,000 条，则应通过运行 Add_Attribute_Index 工具在该字段上添加索引。如果镶嵌数据集非常大而未在连接字段上建立索引，则该工具将花费非常长的时间才能完成。</para>
+		/// <para>The field in the Input Feature Class to use as a basis for the join.</para>
+		/// <para>If the Input Feature Class has more than 1,000 records, add an index on this field by running the Add_Attribute_Index tool. If your mosaic dataset is very large and the join field is not indexed, the tool will take much longer to complete.</para>
 		/// </param>
 		public ImportMosaicDatasetGeometry(object InMosaicDataset, object TargetFeatureclassType, object TargetJoinField, object InputFeatureclass, object InputJoinField)
 		{
@@ -54,9 +54,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 导入镶嵌数据集几何</para>
+		/// <para>Tool Display Name : Import Mosaic Dataset Geometry</para>
 		/// </summary>
-		public override string DisplayName() => "导入镶嵌数据集几何";
+		public override string DisplayName() => "Import Mosaic Dataset Geometry";
 
 		/// <summary>
 		/// <para>Tool Name : ImportMosaicDatasetGeometry</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>要编辑其几何的镶嵌数据集。</para>
+		/// <para>The mosaic dataset whose geometries you want to edit.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMosaicLayer()]
@@ -98,10 +98,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Feature Class</para>
-		/// <para>要更改的几何。</para>
-		/// <para>轮廓线—镶嵌数据集中的轮廓线面</para>
-		/// <para>接缝线—镶嵌数据集中的接缝面</para>
-		/// <para>边界—镶嵌数据集中的边界面</para>
+		/// <para>The geometry that you want to change.</para>
+		/// <para>Footprint—The footprint polygons in the mosaic dataset</para>
+		/// <para>Seamline—The seamline polygons in the mosaic dataset</para>
+		/// <para>Boundary—The boundary polygon in the mosaic dataset</para>
 		/// <para><see cref="TargetFeatureclassTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Join Field</para>
-		/// <para>镶嵌数据集中充当连接基础的字段。</para>
+		/// <para>The field in the mosaic dataset to use as a basis for the join.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>具有新几何的要素类。</para>
+		/// <para>The feature class with the new geometry.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -129,8 +129,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Join Field</para>
-		/// <para>输入要素类中用作连接基础的字段。</para>
-		/// <para>如果输入要素类具有的记录超过 1,000 条，则应通过运行 Add_Attribute_Index 工具在该字段上添加索引。如果镶嵌数据集非常大而未在连接字段上建立索引，则该工具将花费非常长的时间才能完成。</para>
+		/// <para>The field in the Input Feature Class to use as a basis for the join.</para>
+		/// <para>If the Input Feature Class has more than 1,000 records, add an index on this field by running the Add_Attribute_Index tool. If your mosaic dataset is very large and the join field is not indexed, the tool will take much longer to complete.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -153,24 +153,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum TargetFeatureclassTypeEnum 
 		{
 			/// <summary>
-			/// <para>轮廓线—镶嵌数据集中的轮廓线面</para>
+			/// <para>Footprint—The footprint polygons in the mosaic dataset</para>
 			/// </summary>
 			[GPValue("FOOTPRINT")]
-			[Description("轮廓线")]
+			[Description("Footprint")]
 			Footprint,
 
 			/// <summary>
-			/// <para>接缝线—镶嵌数据集中的接缝面</para>
+			/// <para>Seamline—The seamline polygons in the mosaic dataset</para>
 			/// </summary>
 			[GPValue("SEAMLINE")]
-			[Description("接缝线")]
+			[Description("Seamline")]
 			Seamline,
 
 			/// <summary>
-			/// <para>边界—镶嵌数据集中的边界面</para>
+			/// <para>Boundary—The boundary polygon in the mosaic dataset</para>
 			/// </summary>
 			[GPValue("BOUNDARY")]
-			[Description("边界")]
+			[Description("Boundary")]
 			Boundary,
 
 		}

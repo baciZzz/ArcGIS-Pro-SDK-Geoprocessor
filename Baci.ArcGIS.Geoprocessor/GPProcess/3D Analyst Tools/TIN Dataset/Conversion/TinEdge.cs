@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>TIN Edge</para>
-	/// <para>TIN 边</para>
-	/// <para>使用不规则三角网 (TIN) 数据集的三角形边创建 3D 线要素。</para>
+	/// <para>TIN Edge</para>
+	/// <para>Creates 3D line features using the triangle edges of a triangulated irregular network (TIN) dataset.</para>
 	/// </summary>
 	public class TinEdge : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTin">
 		/// <para>Input TIN</para>
-		/// <para>待处理的 TIN 数据集。</para>
+		/// <para>The TIN dataset to process.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>将生成的要素类。</para>
+		/// <para>The feature class that will be produced.</para>
 		/// </param>
 		public TinEdge(object InTin, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : TIN 边</para>
+		/// <para>Tool Display Name : TIN Edge</para>
 		/// </summary>
-		public override string DisplayName() => "TIN 边";
+		public override string DisplayName() => "TIN Edge";
 
 		/// <summary>
 		/// <para>Tool Name : TinEdge</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input TIN</para>
-		/// <para>待处理的 TIN 数据集。</para>
+		/// <para>The TIN dataset to process.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTinLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>将生成的要素类。</para>
+		/// <para>The feature class that will be produced.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -86,14 +86,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Edge Type</para>
-		/// <para>将被导出的三角形边。</para>
-		/// <para>数据区—表示插值区的边。这是默认设置。</para>
-		/// <para>软隔断线—表示坡度平缓中断的边。</para>
-		/// <para>硬隔断线—表示坡度明显中断的边。</para>
-		/// <para>强化的边—不是由 TIN 三角测量引入的边。</para>
-		/// <para>规则边—由 TIN 三角测量创建的边。</para>
-		/// <para>排除的边—从插值区被排除的边。</para>
-		/// <para>所有边—所有边，包括那些从插值区被排除的边。</para>
+		/// <para>The triangle edge that will be exported.</para>
+		/// <para>Data Area—Edges representing the interpolation zone. This is the default.</para>
+		/// <para>Soft Breaklines—Edges representing gradual breaks in slope.</para>
+		/// <para>Hard Breaklines—Edges representing distinct breaks in slope.</para>
+		/// <para>Enforced Edges—Edges that were not introduced by the TIN&apos;s triangulation.</para>
+		/// <para>Regular Edges—Edges that were created by the TIN&apos;s triangulation.</para>
+		/// <para>Excluded Edges—Edges that are excluded from the interpolation zone.</para>
+		/// <para>All Edges—All edges, included those that were excluded from the interpolation zone.</para>
 		/// <para><see cref="EdgeTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -118,52 +118,52 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum EdgeTypeEnum 
 		{
 			/// <summary>
-			/// <para>数据区—表示插值区的边。这是默认设置。</para>
+			/// <para>Data Area—Edges representing the interpolation zone. This is the default.</para>
 			/// </summary>
 			[GPValue("DATA")]
-			[Description("数据区")]
+			[Description("Data Area")]
 			Data_Area,
 
 			/// <summary>
-			/// <para>软隔断线—表示坡度平缓中断的边。</para>
+			/// <para>Soft Breaklines—Edges representing gradual breaks in slope.</para>
 			/// </summary>
 			[GPValue("SOFT")]
-			[Description("软隔断线")]
+			[Description("Soft Breaklines")]
 			Soft_Breaklines,
 
 			/// <summary>
-			/// <para>硬隔断线—表示坡度明显中断的边。</para>
+			/// <para>Hard Breaklines—Edges representing distinct breaks in slope.</para>
 			/// </summary>
 			[GPValue("HARD")]
-			[Description("硬隔断线")]
+			[Description("Hard Breaklines")]
 			Hard_Breaklines,
 
 			/// <summary>
-			/// <para>强化的边—不是由 TIN 三角测量引入的边。</para>
+			/// <para>Enforced Edges—Edges that were not introduced by the TIN&apos;s triangulation.</para>
 			/// </summary>
 			[GPValue("ENFORCED")]
-			[Description("强化的边")]
+			[Description("Enforced Edges")]
 			Enforced_Edges,
 
 			/// <summary>
-			/// <para>规则边—由 TIN 三角测量创建的边。</para>
+			/// <para>Regular Edges—Edges that were created by the TIN&apos;s triangulation.</para>
 			/// </summary>
 			[GPValue("REGULAR")]
-			[Description("规则边")]
+			[Description("Regular Edges")]
 			Regular_Edges,
 
 			/// <summary>
-			/// <para>排除的边—从插值区被排除的边。</para>
+			/// <para>Excluded Edges—Edges that are excluded from the interpolation zone.</para>
 			/// </summary>
 			[GPValue("OUTSIDE")]
-			[Description("排除的边")]
+			[Description("Excluded Edges")]
 			Excluded_Edges,
 
 			/// <summary>
-			/// <para>所有边—所有边，包括那些从插值区被排除的边。</para>
+			/// <para>All Edges—All edges, included those that were excluded from the interpolation zone.</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("所有边")]
+			[Description("All Edges")]
 			All_Edges,
 
 		}

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Class Probability</para>
-	/// <para>类别概率</para>
-	/// <para>创建概率波段的多波段栅格，并为输入特征文件中所表示的每个类对应创建一个波段。</para>
+	/// <para>Class Probability</para>
+	/// <para>Creates a multiband raster of probability bands, with one band being created for each class represented in the input signature file.</para>
 	/// </summary>
 	public class ClassProbability : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRasterBands">
 		/// <para>Input raster bands</para>
-		/// <para>输入栅格波段。</para>
-		/// <para>可为整型或浮点型。</para>
+		/// <para>The input raster bands.</para>
+		/// <para>They can be integer or floating point type.</para>
 		/// </param>
 		/// <param name="InSignatureFile">
 		/// <para>Input signature file</para>
-		/// <para>其类特征可用于生成先验概率波段的输入特征文件。</para>
-		/// <para>需要使用 .gsg 扩展名。</para>
+		/// <para>Input signature file whose class signatures are used to generate the a priori probability bands.</para>
+		/// <para>A .gsg extension is required.</para>
 		/// </param>
 		/// <param name="OutMultibandRaster">
 		/// <para>Output multiband raster</para>
-		/// <para>输出多波段栅格数据集。</para>
-		/// <para>将为整型。</para>
-		/// <para>如果输出是 Esri Grid，则文件名不能超过 9 个字符。</para>
+		/// <para>The output multiband raster dataset.</para>
+		/// <para>It will be of integer type.</para>
+		/// <para>If the output is an Esri Grid, the filename cannot have more than 9 characters.</para>
 		/// </param>
 		public ClassProbability(object InRasterBands, object InSignatureFile, object OutMultibandRaster)
 		{
@@ -43,9 +43,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 类别概率</para>
+		/// <para>Tool Display Name : Class Probability</para>
 		/// </summary>
-		public override string DisplayName() => "类别概率";
+		public override string DisplayName() => "Class Probability";
 
 		/// <summary>
 		/// <para>Tool Name : ClassProbability</para>
@@ -79,8 +79,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster bands</para>
-		/// <para>输入栅格波段。</para>
-		/// <para>可为整型或浮点型。</para>
+		/// <para>The input raster bands.</para>
+		/// <para>They can be integer or floating point type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -92,8 +92,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input signature file</para>
-		/// <para>其类特征可用于生成先验概率波段的输入特征文件。</para>
-		/// <para>需要使用 .gsg 扩展名。</para>
+		/// <para>Input signature file whose class signatures are used to generate the a priori probability bands.</para>
+		/// <para>A .gsg extension is required.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -103,9 +103,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output multiband raster</para>
-		/// <para>输出多波段栅格数据集。</para>
-		/// <para>将为整型。</para>
-		/// <para>如果输出是 Esri Grid，则文件名不能超过 9 个字符。</para>
+		/// <para>The output multiband raster dataset.</para>
+		/// <para>It will be of integer type.</para>
+		/// <para>If the output is an Esri Grid, the filename cannot have more than 9 characters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -113,8 +113,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Maximum output value</para>
-		/// <para>用于调整输出概率波段中的值范围的因子。</para>
-		/// <para>默认情况下，值范围从 0 到 100。</para>
+		/// <para>Factor for scaling the range of values in the output probability bands.</para>
+		/// <para>By default, the values range from 0 to 100.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -123,10 +123,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>A priori probability weighting</para>
-		/// <para>指定将如何确定先验概率。</para>
-		/// <para>等于— 所有类将具有相同的先验概率。</para>
-		/// <para>采样— 先验概率将与特征文件内所有类中采样像元总数的相关的各类的像元数成比例。</para>
-		/// <para>文件—先验概率将会分配给输入 ASCII 先验概率文件中的各个类。</para>
+		/// <para>Specifies how a priori probabilities will be determined.</para>
+		/// <para>Equal— All classes will have the same a priori probability.</para>
+		/// <para>Sample— A priori probabilities will be proportional to the number of cells in each class relative to the total number of cells sampled in all classes in the signature file.</para>
+		/// <para>File—The a priori probabilities will be assigned to each class from an input ASCII a priori probability file.</para>
 		/// <para><see cref="APrioriProbabilitiesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -136,9 +136,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input a priori probability file</para>
-		/// <para>包含用于输入特征类的先验概率的文本文件。</para>
-		/// <para>只有在使用 File 选项时才需要先验概率文件的输入。</para>
-		/// <para>先验文件的扩展名可以是 .txt 或 .asc。</para>
+		/// <para>A text file containing a priori probabilities for the input signature classes.</para>
+		/// <para>An input for the a priori probability file is only required when the File option is used.</para>
+		/// <para>The extension for the a priori file can be .txt or .asc.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -163,24 +163,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum APrioriProbabilitiesEnum 
 		{
 			/// <summary>
-			/// <para>等于— 所有类将具有相同的先验概率。</para>
+			/// <para>Equal— All classes will have the same a priori probability.</para>
 			/// </summary>
 			[GPValue("EQUAL")]
-			[Description("等于")]
+			[Description("Equal")]
 			Equal,
 
 			/// <summary>
-			/// <para>采样— 先验概率将与特征文件内所有类中采样像元总数的相关的各类的像元数成比例。</para>
+			/// <para>Sample— A priori probabilities will be proportional to the number of cells in each class relative to the total number of cells sampled in all classes in the signature file.</para>
 			/// </summary>
 			[GPValue("SAMPLE")]
-			[Description("采样")]
+			[Description("Sample")]
 			Sample,
 
 			/// <summary>
-			/// <para>文件—先验概率将会分配给输入 ASCII 先验概率文件中的各个类。</para>
+			/// <para>File—The a priori probabilities will be assigned to each class from an input ASCII a priori probability file.</para>
 			/// </summary>
 			[GPValue("FILE")]
-			[Description("文件")]
+			[Description("File")]
 			File,
 
 		}

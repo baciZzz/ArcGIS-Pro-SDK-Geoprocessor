@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Multidimensional Transpose</para>
-	/// <para>构建多维转置</para>
-	/// <para>转置多维栅格数据集，以沿着每个维度对多维数据进行划分，从而优化访问所有剖切的像素值时的性能。</para>
+	/// <para>Build Multidimensional Transpose</para>
+	/// <para>Transposes a multidimensional raster dataset, which divides the  multidimensional data along each dimension to optimize performance when accessing pixel values across all slices.</para>
 	/// </summary>
 	[Obsolete()]
 	public class BuildMultidimensionalTranspose : AbstractGPProcess
@@ -22,7 +22,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMultidimensionalRaster">
 		/// <para>Input Multidimensional Raster</para>
-		/// <para>输入 CRF 多维栅格数据集。</para>
+		/// <para>The input CRF multidimensional raster dataset.</para>
 		/// </param>
 		public BuildMultidimensionalTranspose(object InMultidimensionalRaster)
 		{
@@ -30,9 +30,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 构建多维转置</para>
+		/// <para>Tool Display Name : Build Multidimensional Transpose</para>
 		/// </summary>
-		public override string DisplayName() => "构建多维转置";
+		public override string DisplayName() => "Build Multidimensional Transpose";
 
 		/// <summary>
 		/// <para>Tool Name : BuildMultidimensionalTranspose</para>
@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>
-		/// <para>输入 CRF 多维栅格数据集。</para>
+		/// <para>The input CRF multidimensional raster dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -81,9 +81,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Delete Transpose</para>
-		/// <para>指定是否将删除现有转置。</para>
-		/// <para>未选中 - 如果存在转置，则该转置将被新构建的转置覆盖。这是默认设置。</para>
-		/// <para>选中 - 如果存在转置，则该转置将被删除且不会构建新的转置。</para>
+		/// <para>Specifies whether an existing transpose will be deleted.</para>
+		/// <para>Unchecked—If a transpose exists, it will be overwritten by the newly built transpose. This is the default.</para>
+		/// <para>Checked—If a transpose exists, it will be deleted and no new transpose will be built.</para>
 		/// <para><see cref="DeleteTransposeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -108,14 +108,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DeleteTransposeEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—If a transpose exists, it will be deleted and no new transpose will be built.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DELETE_TRANSPOSE")]
 			DELETE_TRANSPOSE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—If a transpose exists, it will be overwritten by the newly built transpose. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DELETE_TRANSPOSE")]

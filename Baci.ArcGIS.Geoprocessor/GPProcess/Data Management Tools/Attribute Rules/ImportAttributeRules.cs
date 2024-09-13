@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Import Attribute Rules</para>
-	/// <para>导入属性规则</para>
-	/// <para>用于将属性规则从逗号分隔值 (.csv) 文件导入到数据集中。</para>
+	/// <para>Import Attribute Rules</para>
+	/// <para>Imports attribute rules from a comma-separated values (.csv) file to a dataset.</para>
 	/// </summary>
 	public class ImportAttributeRules : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="TargetTable">
 		/// <para>Target Table</para>
-		/// <para>将应用属性规则的表或要素类。数据集必须具有规则定义中指定的所有要素。</para>
+		/// <para>The table or feature class to which the attribute rules will be applied. The dataset must have all the features specified in the rule definition.</para>
 		/// </param>
 		/// <param name="CsvFile">
 		/// <para>Input File</para>
-		/// <para>包含待导入规则的 .csv 文件。</para>
+		/// <para>The .csv file containing the rules to import.</para>
 		/// </param>
 		public ImportAttributeRules(object TargetTable, object CsvFile)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 导入属性规则</para>
+		/// <para>Tool Display Name : Import Attribute Rules</para>
 		/// </summary>
-		public override string DisplayName() => "导入属性规则";
+		public override string DisplayName() => "Import Attribute Rules";
 
 		/// <summary>
 		/// <para>Tool Name : ImportAttributeRules</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Table</para>
-		/// <para>将应用属性规则的表或要素类。数据集必须具有规则定义中指定的所有要素。</para>
+		/// <para>The table or feature class to which the attribute rules will be applied. The dataset must have all the features specified in the rule definition.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input File</para>
-		/// <para>包含待导入规则的 .csv 文件。</para>
+		/// <para>The .csv file containing the rules to import.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

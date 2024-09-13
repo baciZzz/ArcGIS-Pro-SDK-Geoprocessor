@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Rank</para>
-	/// <para>等级</para>
-	/// <para>逐个像元地对一组输入栅格中的值进行排名，并根据排名输入栅格中的值确定返回哪些值。</para>
+	/// <para>Rank</para>
+	/// <para>Ranks on a cell-by-cell basis the values from a set of input rasters and determines which values are returned based on the value of the rank input raster.</para>
 	/// </summary>
 	public class Rank : AbstractGPProcess
 	{
@@ -21,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRankRasterOrConstant">
 		/// <para>Input rank raster or constant value</para>
-		/// <para>用于定义要返回的等级位置的输入栅格。</para>
-		/// <para>数字可以作为输入，但是必须先在环境中设置像元大小和范围。</para>
+		/// <para>The input raster that defines the rank position to be returned.</para>
+		/// <para>A number can be used as an input; however, the cell size and extent must first be set in the environment.</para>
 		/// </param>
 		/// <param name="InRasters">
 		/// <para>Input rasters</para>
-		/// <para>将从中获得指定等级位置的栅格像元值的输入栅格列表。</para>
-		/// <para>例如，考虑三个输入栅格中的像元值为 17、8 和 11 的特定位置。 该位置的等级值将被定义为 3。 该工具将先对输入值进行排序。 由于所要请求的等级值为 3，因此输出值将为 17。</para>
+		/// <para>The list of input rasters from which the cell value of the raster at the specified rank position will be obtained.</para>
+		/// <para>For example, consider a particular location where the cell values in the three input rasters are 17, 8 and 11. The rank value for that location is defined as 3. The tool will first sort the input values. Since the rank value being requested is 3, the output value will be 17.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>对于输出栅格上的每个像元，输入栅格上的值按从低到高的顺序排列，输入等级栅格的值用于选择哪一个将成为输出值。</para>
+		/// <para>The output raster.</para>
+		/// <para>For each cell on the output raster, the values on the input rasters are sorted from lowest to highest, and the input rank raster&apos;s value is used to select which will be the output value.</para>
 		/// </param>
 		public Rank(object InRankRasterOrConstant, object InRasters, object OutRaster)
 		{
@@ -42,14 +42,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 等级</para>
+		/// <para>Tool Display Name : Rank</para>
 		/// </summary>
-		public override string DisplayName() => "等级";
+		public override string DisplayName() => "Rank";
 
 		/// <summary>
-		/// <para>Tool Name : 等级</para>
+		/// <para>Tool Name : Rank</para>
 		/// </summary>
-		public override string ToolName() => "等级";
+		public override string ToolName() => "Rank";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Rank</para>
@@ -78,8 +78,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input rank raster or constant value</para>
-		/// <para>用于定义要返回的等级位置的输入栅格。</para>
-		/// <para>数字可以作为输入，但是必须先在环境中设置像元大小和范围。</para>
+		/// <para>The input raster that defines the rank position to be returned.</para>
+		/// <para>A number can be used as an input; however, the cell size and extent must first be set in the environment.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -91,8 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input rasters</para>
-		/// <para>将从中获得指定等级位置的栅格像元值的输入栅格列表。</para>
-		/// <para>例如，考虑三个输入栅格中的像元值为 17、8 和 11 的特定位置。 该位置的等级值将被定义为 3。 该工具将先对输入值进行排序。 由于所要请求的等级值为 3，因此输出值将为 17。</para>
+		/// <para>The list of input rasters from which the cell value of the raster at the specified rank position will be obtained.</para>
+		/// <para>For example, consider a particular location where the cell values in the three input rasters are 17, 8 and 11. The rank value for that location is defined as 3. The tool will first sort the input values. Since the rank value being requested is 3, the output value will be 17.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -104,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>对于输出栅格上的每个像元，输入栅格上的值按从低到高的顺序排列，输入等级栅格的值用于选择哪一个将成为输出值。</para>
+		/// <para>The output raster.</para>
+		/// <para>For each cell on the output raster, the values on the input rasters are sorted from lowest to highest, and the input rank raster&apos;s value is used to select which will be the output value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -113,9 +113,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Process as multiband</para>
-		/// <para>指定如何处理输入多波段栅格波段。</para>
-		/// <para>未选中 - 来自多波段栅格输入的每个波段将被单独处理为单波段栅格。 这是默认设置。</para>
-		/// <para>选中 - 每个多波段栅格输入都将作为多波段栅格进行处理。 将使用其他输入的相应波段数对一个输入的每个波段执行操作。</para>
+		/// <para>Specifies how the input multiband raster bands will be processed.</para>
+		/// <para>Unchecked—Each band from a multiband raster input will be processed separately as a single band raster. This is the default.</para>
+		/// <para>Checked—Each multiband raster input will be processed as a multiband raster. The operation will be performed for each band from one input using the corresponding band number from the other inputs.</para>
 		/// <para><see cref="ProcessAsMultibandEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -140,14 +140,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ProcessAsMultibandEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Each band from a multiband raster input will be processed separately as a single band raster. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("SINGLE_BAND")]
 			SINGLE_BAND,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Each multiband raster input will be processed as a multiband raster. The operation will be performed for each band from one input using the corresponding band number from the other inputs.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MULTI_BAND")]

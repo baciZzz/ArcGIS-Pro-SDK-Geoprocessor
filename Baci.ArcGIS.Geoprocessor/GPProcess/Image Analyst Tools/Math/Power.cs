@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Power</para>
-	/// <para>幂</para>
-	/// <para>对另一个栅格中的像元值进行乘方运算，将结果作为栅格的值。</para>
+	/// <para>Power</para>
+	/// <para>Raises the cell values in a raster to the power of the values found in another raster.</para>
 	/// </summary>
 	public class Power : AbstractGPProcess
 	{
@@ -21,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRasterOrConstant1">
 		/// <para>Input raster or constant value 1</para>
-		/// <para>要进行由第二个输入定义的乘方运算的输入值。</para>
-		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input values to be raised to the power defined by the second input.</para>
+		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
 		/// </param>
 		/// <param name="InRasterOrConstant2">
 		/// <para>Input raster or constant value 2</para>
-		/// <para>用于确定第一个输入中的值的幂的输入。</para>
-		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input that determines the power the values in the first input will be raised to.</para>
+		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>像元值为对第一个输入中的值进行乘方运算得出第二个输入中的值的结果。</para>
+		/// <para>The output raster.</para>
+		/// <para>The cell values are the result of raising the values in the first input to the power of the values in the second input.</para>
 		/// </param>
 		public Power(object InRasterOrConstant1, object InRasterOrConstant2, object OutRaster)
 		{
@@ -42,14 +42,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 幂</para>
+		/// <para>Tool Display Name : Power</para>
 		/// </summary>
-		public override string DisplayName() => "幂";
+		public override string DisplayName() => "Power";
 
 		/// <summary>
-		/// <para>Tool Name : 幂</para>
+		/// <para>Tool Name : Power</para>
 		/// </summary>
-		public override string ToolName() => "幂";
+		public override string ToolName() => "Power";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.Power</para>
@@ -78,8 +78,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 1</para>
-		/// <para>要进行由第二个输入定义的乘方运算的输入值。</para>
-		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input values to be raised to the power defined by the second input.</para>
+		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -91,8 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 2</para>
-		/// <para>用于确定第一个输入中的值的幂的输入。</para>
-		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
+		/// <para>The input that determines the power the values in the first input will be raised to.</para>
+		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -104,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出栅格。</para>
-		/// <para>像元值为对第一个输入中的值进行乘方运算得出第二个输入中的值的结果。</para>
+		/// <para>The output raster.</para>
+		/// <para>The cell values are the result of raising the values in the first input to the power of the values in the second input.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

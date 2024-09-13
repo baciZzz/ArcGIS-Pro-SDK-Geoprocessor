@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Directional Distribution (Standard Deviational Ellipse)</para>
-	/// <para>方向分布（标准差椭圆）</para>
-	/// <para>创建标准差椭圆或椭圆体来汇总地理要素的空间特征：中心趋势、离散和方向趋势。</para>
+	/// <para>Directional Distribution (Standard Deviational Ellipse)</para>
+	/// <para>Creates standard deviational ellipses or ellipsoids to summarize the spatial characteristics of geographic features: central tendency, dispersion, and directional trends.</para>
 	/// </summary>
 	public class DirectionalDistribution : AbstractGPProcess
 	{
@@ -21,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InputFeatureClass">
 		/// <para>Input Feature Class</para>
-		/// <para>要计算标准差椭圆或椭圆体的要素分布所在的要素类。</para>
+		/// <para>A feature class containing a distribution of features for which the standard deviational ellipse or ellipsoid will be calculated.</para>
 		/// </param>
 		/// <param name="OutputEllipseFeatureClass">
 		/// <para>Output Ellipse Feature Class</para>
-		/// <para>将包含输出椭圆要素的面要素类。</para>
+		/// <para>A polygon feature class that will contain the output ellipse feature.</para>
 		/// </param>
 		/// <param name="EllipseSize">
 		/// <para>Ellipse Size</para>
-		/// <para>标准差中输出椭圆的大小。 默认椭圆大小为 1；有效的选择是 1、2 或 3 个标准差。</para>
-		/// <para>1 标准差—1 标准差</para>
-		/// <para>2 标准差—2 标准差</para>
-		/// <para>3 标准差—3 标准差</para>
+		/// <para>The size of output ellipses in standard deviations. The default ellipse size is 1; valid choices are 1, 2, or 3 standard deviations.</para>
+		/// <para>1 standard deviation—1 standard deviation</para>
+		/// <para>2 standard deviations—2 standard deviations</para>
+		/// <para>3 standard deviations—3 standard deviations</para>
 		/// <para><see cref="EllipseSizeEnum"/></para>
 		/// </param>
 		public DirectionalDistribution(object InputFeatureClass, object OutputEllipseFeatureClass, object EllipseSize)
@@ -43,9 +43,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 方向分布（标准差椭圆）</para>
+		/// <para>Tool Display Name : Directional Distribution (Standard Deviational Ellipse)</para>
 		/// </summary>
-		public override string DisplayName() => "方向分布（标准差椭圆）";
+		public override string DisplayName() => "Directional Distribution (Standard Deviational Ellipse)";
 
 		/// <summary>
 		/// <para>Tool Name : DirectionalDistribution</para>
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>要计算标准差椭圆或椭圆体的要素分布所在的要素类。</para>
+		/// <para>A feature class containing a distribution of features for which the standard deviational ellipse or ellipsoid will be calculated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Ellipse Feature Class</para>
-		/// <para>将包含输出椭圆要素的面要素类。</para>
+		/// <para>A polygon feature class that will contain the output ellipse feature.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -95,10 +95,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Ellipse Size</para>
-		/// <para>标准差中输出椭圆的大小。 默认椭圆大小为 1；有效的选择是 1、2 或 3 个标准差。</para>
-		/// <para>1 标准差—1 标准差</para>
-		/// <para>2 标准差—2 标准差</para>
-		/// <para>3 标准差—3 标准差</para>
+		/// <para>The size of output ellipses in standard deviations. The default ellipse size is 1; valid choices are 1, 2, or 3 standard deviations.</para>
+		/// <para>1 standard deviation—1 standard deviation</para>
+		/// <para>2 standard deviations—2 standard deviations</para>
+		/// <para>3 standard deviations—3 standard deviations</para>
 		/// <para><see cref="EllipseSizeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Weight Field</para>
-		/// <para>根据各位置的相对重要性对它们进行加权的数值型字段。</para>
+		/// <para>The numeric field used to weight locations according to their relative importance.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Case Field</para>
-		/// <para>对要素进行分组以分别计算方向分布的字段。 案例分组字段可以为整型、日期型或字符串型。</para>
+		/// <para>The field used to group features for separate directional distribution calculations. The case field can be of integer, date, or string type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -143,24 +143,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum EllipseSizeEnum 
 		{
 			/// <summary>
-			/// <para>1 标准差—1 标准差</para>
+			/// <para>1 standard deviation—1 standard deviation</para>
 			/// </summary>
 			[GPValue("1_STANDARD_DEVIATION")]
-			[Description("1 标准差")]
+			[Description("1 standard deviation")]
 			_1_standard_deviation,
 
 			/// <summary>
-			/// <para>2 标准差—2 标准差</para>
+			/// <para>2 standard deviations—2 standard deviations</para>
 			/// </summary>
 			[GPValue("2_STANDARD_DEVIATIONS")]
-			[Description("2 标准差")]
+			[Description("2 standard deviations")]
 			_2_standard_deviations,
 
 			/// <summary>
-			/// <para>3 标准差—3 标准差</para>
+			/// <para>3 standard deviations—3 standard deviations</para>
 			/// </summary>
 			[GPValue("3_STANDARD_DEVIATIONS")]
-			[Description("3 标准差")]
+			[Description("3 standard deviations")]
 			_3_standard_deviations,
 
 		}

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Generate Reference System Grid From Area</para>
-	/// <para>根据区域生成参考系统格网</para>
-	/// <para>基于军事格网参考系 (MGRS) 或美国国家格网 (USNG) 参考格网创建格网化参考图形 (GRG)。</para>
+	/// <para>Generate Reference System Grid From Area</para>
+	/// <para>Creates Gridded Reference Graphics (GRG) based on Military Grid Reference System (MGRS) or United States National Grid (USNG) reference grids.</para>
 	/// </summary>
 	public class GenerateReferenceSystemGRGFromArea : AbstractGPProcess
 	{
@@ -21,28 +21,28 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Feature</para>
-		/// <para>将基于 GRG 的输入面要素。</para>
+		/// <para>The input polygon feature on which the GRG will be based.</para>
 		/// </param>
 		/// <param name="OutputFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>包含 GRG 的输出面要素类。</para>
+		/// <para>The output polygon feature class containing the GRG.</para>
 		/// </param>
 		/// <param name="GridReferenceSystem">
 		/// <para>Grid Reference System</para>
-		/// <para>指定 GRG 将使用的参考系统。</para>
-		/// <para>军事格网参考系—将使用军事格网参考系。 这是默认设置。</para>
-		/// <para>美国国家格网—将使用美国国家格网。</para>
+		/// <para>Specifies the reference system the GRG will use.</para>
+		/// <para>Military Grid Reference System—The Military Grid Reference System will be used. This is the default.</para>
+		/// <para>United States National Grid—The United States National Grid will be used.</para>
 		/// <para><see cref="GridReferenceSystemEnum"/></para>
 		/// </param>
 		/// <param name="GridSquareSize">
 		/// <para>Grid Square Size</para>
-		/// <para>指定将用于 GRG 中像元的格网方格大小。</para>
-		/// <para>格网区域指示符—格网像元的大小将为“格网区域”。 这是默认设置。</para>
-		/// <para>100,000 米格网—格网像元的大小将为 100,000 米的格网方格。</para>
-		/// <para>10,000 米格网—格网像元的大小将为 10,000 米的格网方格。</para>
-		/// <para>1,000 米格网—格网像元的大小将为 1,000 米的格网方格。</para>
-		/// <para>100 米格网—格网像元的大小将为 100 米的格网方格。</para>
-		/// <para>10 米格网—格网像元的大小将为 10 米的格网方格。</para>
+		/// <para>Specifies the grid square size that will be used for the cells in the GRG.</para>
+		/// <para>Grid Zone Designator—The size of the grid cells will be a Grid Zone. This is the default.</para>
+		/// <para>100,000 m grid—The size of the grid cells will be 100,000-meter grid squares.</para>
+		/// <para>10,000 m grid—The size of the grid cells will be 10,000-meter grid squares.</para>
+		/// <para>1,000 m grid—The size of the grid cells will be 1,000-meter grid squares.</para>
+		/// <para>100 m grid—The size of the grid cells will be 100-meter grid squares.</para>
+		/// <para>10 m grid—The size of the grid cells will be 10-meter grid squares.</para>
 		/// <para><see cref="GridSquareSizeEnum"/></para>
 		/// </param>
 		public GenerateReferenceSystemGRGFromArea(object InFeatures, object OutputFeatureClass, object GridReferenceSystem, object GridSquareSize)
@@ -54,9 +54,9 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 根据区域生成参考系统格网</para>
+		/// <para>Tool Display Name : Generate Reference System Grid From Area</para>
 		/// </summary>
-		public override string DisplayName() => "根据区域生成参考系统格网";
+		public override string DisplayName() => "Generate Reference System Grid From Area";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateReferenceSystemGRGFromArea</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Feature</para>
-		/// <para>将基于 GRG 的输入面要素。</para>
+		/// <para>The input polygon feature on which the GRG will be based.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>包含 GRG 的输出面要素类。</para>
+		/// <para>The output polygon feature class containing the GRG.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -109,9 +109,9 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Grid Reference System</para>
-		/// <para>指定 GRG 将使用的参考系统。</para>
-		/// <para>军事格网参考系—将使用军事格网参考系。 这是默认设置。</para>
-		/// <para>美国国家格网—将使用美国国家格网。</para>
+		/// <para>Specifies the reference system the GRG will use.</para>
+		/// <para>Military Grid Reference System—The Military Grid Reference System will be used. This is the default.</para>
+		/// <para>United States National Grid—The United States National Grid will be used.</para>
 		/// <para><see cref="GridReferenceSystemEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -121,13 +121,13 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Grid Square Size</para>
-		/// <para>指定将用于 GRG 中像元的格网方格大小。</para>
-		/// <para>格网区域指示符—格网像元的大小将为“格网区域”。 这是默认设置。</para>
-		/// <para>100,000 米格网—格网像元的大小将为 100,000 米的格网方格。</para>
-		/// <para>10,000 米格网—格网像元的大小将为 10,000 米的格网方格。</para>
-		/// <para>1,000 米格网—格网像元的大小将为 1,000 米的格网方格。</para>
-		/// <para>100 米格网—格网像元的大小将为 100 米的格网方格。</para>
-		/// <para>10 米格网—格网像元的大小将为 10 米的格网方格。</para>
+		/// <para>Specifies the grid square size that will be used for the cells in the GRG.</para>
+		/// <para>Grid Zone Designator—The size of the grid cells will be a Grid Zone. This is the default.</para>
+		/// <para>100,000 m grid—The size of the grid cells will be 100,000-meter grid squares.</para>
+		/// <para>10,000 m grid—The size of the grid cells will be 10,000-meter grid squares.</para>
+		/// <para>1,000 m grid—The size of the grid cells will be 1,000-meter grid squares.</para>
+		/// <para>100 m grid—The size of the grid cells will be 100-meter grid squares.</para>
+		/// <para>10 m grid—The size of the grid cells will be 10-meter grid squares.</para>
 		/// <para><see cref="GridSquareSizeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -137,9 +137,9 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Large Grid Handling</para>
-		/// <para>指定可能包含许多要素的大型输入区域的处理方式。</para>
-		/// <para>无大格网—在创建 2000 个要素时，处理将停止。 这是默认设置。</para>
-		/// <para>允许大格网—支持大格网。</para>
+		/// <para>Specifies how large input areas that may contain many features will be handled.</para>
+		/// <para>No large grids—Processing will stop when 2000 features are created. This is the default.</para>
+		/// <para>Allow large grids—Large grids are supported.</para>
 		/// <para><see cref="LargeGridHandlingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -164,17 +164,17 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		public enum GridReferenceSystemEnum 
 		{
 			/// <summary>
-			/// <para>军事格网参考系—将使用军事格网参考系。 这是默认设置。</para>
+			/// <para>Military Grid Reference System—The Military Grid Reference System will be used. This is the default.</para>
 			/// </summary>
 			[GPValue("MGRS")]
-			[Description("军事格网参考系")]
+			[Description("Military Grid Reference System")]
 			Military_Grid_Reference_System,
 
 			/// <summary>
-			/// <para>美国国家格网—将使用美国国家格网。</para>
+			/// <para>United States National Grid—The United States National Grid will be used.</para>
 			/// </summary>
 			[GPValue("USNG")]
-			[Description("美国国家格网")]
+			[Description("United States National Grid")]
 			United_States_National_Grid,
 
 		}
@@ -185,45 +185,45 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		public enum GridSquareSizeEnum 
 		{
 			/// <summary>
-			/// <para>格网区域指示符—格网像元的大小将为“格网区域”。 这是默认设置。</para>
+			/// <para>Grid Zone Designator—The size of the grid cells will be a Grid Zone. This is the default.</para>
 			/// </summary>
 			[GPValue("GRID_ZONE_DESIGNATOR")]
-			[Description("格网区域指示符")]
+			[Description("Grid Zone Designator")]
 			Grid_Zone_Designator,
 
 			/// <summary>
-			/// <para>100,000 米格网—格网像元的大小将为 100,000 米的格网方格。</para>
+			/// <para>100,000 m grid—The size of the grid cells will be 100,000-meter grid squares.</para>
 			/// </summary>
 			[GPValue("100000M_GRID")]
-			[Description("100,000 米格网")]
+			[Description("100,000 m grid")]
 			_100000M_GRID,
 
 			/// <summary>
-			/// <para>10,000 米格网—格网像元的大小将为 10,000 米的格网方格。</para>
+			/// <para>10,000 m grid—The size of the grid cells will be 10,000-meter grid squares.</para>
 			/// </summary>
 			[GPValue("10000M_GRID")]
-			[Description("10,000 米格网")]
+			[Description("10,000 m grid")]
 			_10000M_GRID,
 
 			/// <summary>
-			/// <para>1,000 米格网—格网像元的大小将为 1,000 米的格网方格。</para>
+			/// <para>1,000 m grid—The size of the grid cells will be 1,000-meter grid squares.</para>
 			/// </summary>
 			[GPValue("1000M_GRID")]
-			[Description("1,000 米格网")]
+			[Description("1,000 m grid")]
 			_1000M_GRID,
 
 			/// <summary>
-			/// <para>100 米格网—格网像元的大小将为 100 米的格网方格。</para>
+			/// <para>100 m grid—The size of the grid cells will be 100-meter grid squares.</para>
 			/// </summary>
 			[GPValue("100M_GRID")]
-			[Description("100 米格网")]
+			[Description("100 m grid")]
 			_100_m_grid,
 
 			/// <summary>
-			/// <para>10 米格网—格网像元的大小将为 10 米的格网方格。</para>
+			/// <para>10 m grid—The size of the grid cells will be 10-meter grid squares.</para>
 			/// </summary>
 			[GPValue("10M_GRID")]
-			[Description("10 米格网")]
+			[Description("10 m grid")]
 			_10_m_grid,
 
 		}
@@ -234,17 +234,17 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		public enum LargeGridHandlingEnum 
 		{
 			/// <summary>
-			/// <para>无大格网—在创建 2000 个要素时，处理将停止。 这是默认设置。</para>
+			/// <para>No large grids—Processing will stop when 2000 features are created. This is the default.</para>
 			/// </summary>
 			[GPValue("NO_LARGE_GRIDS")]
-			[Description("无大格网")]
+			[Description("No large grids")]
 			No_large_grids,
 
 			/// <summary>
-			/// <para>允许大格网—支持大格网。</para>
+			/// <para>Allow large grids—Large grids are supported.</para>
 			/// </summary>
 			[GPValue("ALLOW_LARGE_GRIDS")]
-			[Description("允许大格网")]
+			[Description("Allow large grids")]
 			Allow_large_grids,
 
 		}

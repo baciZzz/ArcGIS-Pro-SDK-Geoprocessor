@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Create Accuracy Assessment Points</para>
-	/// <para>创建精度评估点</para>
-	/// <para>创建用于分类后精度评估的随机采样点。</para>
+	/// <para>Create Accuracy Assessment Points</para>
+	/// <para>Creates randomly sampled points for post-classification accuracy assessment.</para>
 	/// </summary>
 	public class CreateAccuracyAssessmentPoints : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InClassData">
 		/// <para>Input Raster or Feature Class Data</para>
-		/// <para>输入分类影像或其他专题 GIS 参考数据。 输入可以是栅格或要素类。</para>
-		/// <para>典型数据是单波段、整型数据类型的分类影像。</para>
-		/// <para>如果使用面作为输出，则仅使用未用作训练样本的面。 还可以是 shapefile 或要素类格式的 GIS 土地覆被数据。</para>
+		/// <para>The input classification image or other thematic GIS reference data. The input can be a raster or feature class.</para>
+		/// <para>Typical data is a classification image of a single band, integer data type.</para>
+		/// <para>If using polygons as input, only use those that are not used as training samples. They can also be GIS land-cover data in shapefile or feature class format.</para>
 		/// </param>
 		/// <param name="OutPoints">
 		/// <para>Output Accuracy Assessment Points</para>
-		/// <para>包含要用于精度评估的随机点的输出点 shapefile 或要素类。</para>
+		/// <para>The output point shapefile or feature class that contains the random points to be used for accuracy assessment.</para>
 		/// </param>
 		public CreateAccuracyAssessmentPoints(object InClassData, object OutPoints)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建精度评估点</para>
+		/// <para>Tool Display Name : Create Accuracy Assessment Points</para>
 		/// </summary>
-		public override string DisplayName() => "创建精度评估点";
+		public override string DisplayName() => "Create Accuracy Assessment Points";
 
 		/// <summary>
 		/// <para>Tool Name : CreateAccuracyAssessmentPoints</para>
@@ -72,9 +72,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input Raster or Feature Class Data</para>
-		/// <para>输入分类影像或其他专题 GIS 参考数据。 输入可以是栅格或要素类。</para>
-		/// <para>典型数据是单波段、整型数据类型的分类影像。</para>
-		/// <para>如果使用面作为输出，则仅使用未用作训练样本的面。 还可以是 shapefile 或要素类格式的 GIS 土地覆被数据。</para>
+		/// <para>The input classification image or other thematic GIS reference data. The input can be a raster or feature class.</para>
+		/// <para>Typical data is a classification image of a single band, integer data type.</para>
+		/// <para>If using polygons as input, only use those that are not used as training samples. They can also be GIS land-cover data in shapefile or feature class format.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output Accuracy Assessment Points</para>
-		/// <para>包含要用于精度评估的随机点的输出点 shapefile 或要素类。</para>
+		/// <para>The output point shapefile or feature class that contains the random points to be used for accuracy assessment.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -90,9 +90,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Target Field</para>
-		/// <para>指定输入数据是分类影像还是实际地表数据。</para>
-		/// <para>分类—输入为分类影像。 这是默认设置。</para>
-		/// <para>实际地表—输入为参考数据。</para>
+		/// <para>Specifies whether the input data is a classified image or ground truth data.</para>
+		/// <para>Classified—The input is a classified image. This is the default.</para>
+		/// <para>Ground truth—The input is reference data.</para>
 		/// <para><see cref="TargetFieldEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -102,8 +102,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Number of Random Points</para>
-		/// <para>将生成的随机点总数。</para>
-		/// <para>根据采样策略和类数，实际数量可能会超出此数量但绝不会低于此数量。 默认随机生成的点数为 500。</para>
+		/// <para>The total number of random points that will be generated.</para>
+		/// <para>The actual number may exceed but never fall below this number, depending on sampling strategy and number of classes. The default number of randomly generated points is 500.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -111,10 +111,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Sampling Strategy</para>
-		/// <para>指定将使用的采样方案。</para>
-		/// <para>分层随机—将在每个类中创建随机分布的点，其中每个类中包含的点数与其相对面积成正比。 这是默认设置</para>
-		/// <para>均衡化分层随机—将在每个类中创建随机分布的点，其中每个类具有相同数量的点。</para>
-		/// <para>随机—将在整个图像中创建随机分布的点。</para>
+		/// <para>Specifies the sampling scheme that will be used.</para>
+		/// <para>Stratified random—Randomly distributed points will be created in each class, in which each class has a number of points proportional to its relative area. This is the default</para>
+		/// <para>Equalized stratified random—Randomly distributed points will be created in each class, in which each class has the same number of points.</para>
+		/// <para>Random—Randomly distributed points will be created throughout the image.</para>
 		/// <para><see cref="SamplingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Dimension Field for Feature Class</para>
-		/// <para>用于定义要素维度（时间）的字段。 仅当分类结果为多维栅格并且需要从要素类（例如多年的土地分类面）生成评估点时，才使用此参数。</para>
+		/// <para>A field that defines the dimension (time) of the features. This parameter is used only if the classification result is multidimensional raster and you want to generate assessment points from a feature class, such as land classification polygons for multiple years.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -147,17 +147,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum TargetFieldEnum 
 		{
 			/// <summary>
-			/// <para>分类—输入为分类影像。 这是默认设置。</para>
+			/// <para>Classified—The input is a classified image. This is the default.</para>
 			/// </summary>
 			[GPValue("CLASSIFIED")]
-			[Description("分类")]
+			[Description("Classified")]
 			Classified,
 
 			/// <summary>
-			/// <para>实际地表—输入为参考数据。</para>
+			/// <para>Ground truth—The input is reference data.</para>
 			/// </summary>
 			[GPValue("GROUND_TRUTH")]
-			[Description("实际地表")]
+			[Description("Ground truth")]
 			Ground_truth,
 
 		}
@@ -168,24 +168,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum SamplingEnum 
 		{
 			/// <summary>
-			/// <para>分层随机—将在每个类中创建随机分布的点，其中每个类中包含的点数与其相对面积成正比。 这是默认设置</para>
+			/// <para>Stratified random—Randomly distributed points will be created in each class, in which each class has a number of points proportional to its relative area. This is the default</para>
 			/// </summary>
 			[GPValue("STRATIFIED_RANDOM")]
-			[Description("分层随机")]
+			[Description("Stratified random")]
 			Stratified_random,
 
 			/// <summary>
-			/// <para>均衡化分层随机—将在每个类中创建随机分布的点，其中每个类具有相同数量的点。</para>
+			/// <para>Equalized stratified random—Randomly distributed points will be created in each class, in which each class has the same number of points.</para>
 			/// </summary>
 			[GPValue("EQUALIZED_STRATIFIED_RANDOM")]
-			[Description("均衡化分层随机")]
+			[Description("Equalized stratified random")]
 			Equalized_stratified_random,
 
 			/// <summary>
-			/// <para>随机—将在整个图像中创建随机分布的点。</para>
+			/// <para>Random—Randomly distributed points will be created throughout the image.</para>
 			/// </summary>
 			[GPValue("RANDOM")]
-			[Description("随机")]
+			[Description("Random")]
 			Random,
 
 		}

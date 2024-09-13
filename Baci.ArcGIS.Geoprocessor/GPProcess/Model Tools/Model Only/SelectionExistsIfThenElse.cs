@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>If Selection Exists</para>
-	/// <para>如果选择已存在</para>
-	/// <para>评估输入数据是否有选择以及是否选中了特定数量的记录。</para>
+	/// <para>If Selection Exists</para>
+	/// <para>Evaluates if the input data has a selection and if a certain number of records are selected.</para>
 	/// </summary>
 	public class SelectionExistsIfThenElse : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="InLayerOrView">
 		/// <para>Layer Name or Table View</para>
-		/// <para>评估输入图层或表视图</para>
+		/// <para>Input layer or table view to evaluate.</para>
 		/// </param>
 		/// <param name="SelectionCondition">
 		/// <para>Selection Condition</para>
-		/// <para>指定将用于匹配 SQL 表达式的记录字段值的选择条件。</para>
-		/// <para>Exists—检查是否存在与 SQL 表达式匹配的记录的字段值。 这是默认设置。</para>
-		/// <para>无选择—检查是否未选择与 SQL 表达式匹配的任何记录。</para>
-		/// <para>选择全部—检查是否选择与 SQL 表达式匹配的所有记录。</para>
-		/// <para>等于—选择与 SQL 表达式匹配的记录的字段值是否等于计数值。</para>
-		/// <para>介于—检查与 SQL 表达式匹配的记录的字段值是否介于最小计数值和最大计数值之间。</para>
-		/// <para>小于—选择与 SQL 表达式匹配的记录的字段值是否等于计数值。</para>
-		/// <para>大于—选择与 SQL 表达式匹配的记录的字段值是否大于计数值。</para>
-		/// <para>不等于—选择与 SQL 表达式匹配的记录的字段值是否不等于计数值。</para>
+		/// <para>Specifies the selection condition that will be used for the field values of the records matching the SQL expression.</para>
+		/// <para>Exists—Checks whether the field value exists for the records matching the SQL expression. This is the default.</para>
+		/// <para>No Selection—Checks whether none of the records matching the SQL expression are selected.</para>
+		/// <para>All Selected—Checks whether all of the records matching the SQL expression are selected.</para>
+		/// <para>Is Equal to—Checks whether the field value of the records matching the SQL expression is equal to the count value.</para>
+		/// <para>Is Between—Checks whether the field value of the records matching the SQL expression is between the minimum count value and maximum count value.</para>
+		/// <para>Is Less Than—Checks whether the field value of the records matching the SQL expression is equal to the count value.</para>
+		/// <para>Is Greater Than—Checks whether the field value of the records matching the SQL expression is greater than the count value.</para>
+		/// <para>Is Not Equal to—Checks whether the field value of the records matching the SQL expression is not equal to the count value.</para>
 		/// <para>&lt;para/&gt;</para>
 		/// <para><see cref="SelectionConditionEnum"/></para>
 		/// </param>
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 如果选择已存在</para>
+		/// <para>Tool Display Name : If Selection Exists</para>
 		/// </summary>
-		public override string DisplayName() => "如果选择已存在";
+		public override string DisplayName() => "If Selection Exists";
 
 		/// <summary>
 		/// <para>Tool Name : SelectionExistsIfThenElse</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Layer Name or Table View</para>
-		/// <para>评估输入图层或表视图</para>
+		/// <para>Input layer or table view to evaluate.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -88,15 +88,15 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Selection Condition</para>
-		/// <para>指定将用于匹配 SQL 表达式的记录字段值的选择条件。</para>
-		/// <para>Exists—检查是否存在与 SQL 表达式匹配的记录的字段值。 这是默认设置。</para>
-		/// <para>无选择—检查是否未选择与 SQL 表达式匹配的任何记录。</para>
-		/// <para>选择全部—检查是否选择与 SQL 表达式匹配的所有记录。</para>
-		/// <para>等于—选择与 SQL 表达式匹配的记录的字段值是否等于计数值。</para>
-		/// <para>介于—检查与 SQL 表达式匹配的记录的字段值是否介于最小计数值和最大计数值之间。</para>
-		/// <para>小于—选择与 SQL 表达式匹配的记录的字段值是否等于计数值。</para>
-		/// <para>大于—选择与 SQL 表达式匹配的记录的字段值是否大于计数值。</para>
-		/// <para>不等于—选择与 SQL 表达式匹配的记录的字段值是否不等于计数值。</para>
+		/// <para>Specifies the selection condition that will be used for the field values of the records matching the SQL expression.</para>
+		/// <para>Exists—Checks whether the field value exists for the records matching the SQL expression. This is the default.</para>
+		/// <para>No Selection—Checks whether none of the records matching the SQL expression are selected.</para>
+		/// <para>All Selected—Checks whether all of the records matching the SQL expression are selected.</para>
+		/// <para>Is Equal to—Checks whether the field value of the records matching the SQL expression is equal to the count value.</para>
+		/// <para>Is Between—Checks whether the field value of the records matching the SQL expression is between the minimum count value and maximum count value.</para>
+		/// <para>Is Less Than—Checks whether the field value of the records matching the SQL expression is equal to the count value.</para>
+		/// <para>Is Greater Than—Checks whether the field value of the records matching the SQL expression is greater than the count value.</para>
+		/// <para>Is Not Equal to—Checks whether the field value of the records matching the SQL expression is not equal to the count value.</para>
 		/// <para>&lt;para/&gt;</para>
 		/// <para><see cref="SelectionConditionEnum"/></para>
 		/// </summary>
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Count</para>
-		/// <para>整数计数值。</para>
+		/// <para>The integer count value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Minimum Count</para>
-		/// <para>最小整数计数值。</para>
+		/// <para>The minimum integer count value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Maximum Count</para>
-		/// <para>最大整数计数值。</para>
+		/// <para>The maximum integer count value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -151,59 +151,59 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		public enum SelectionConditionEnum 
 		{
 			/// <summary>
-			/// <para>Exists—检查是否存在与 SQL 表达式匹配的记录的字段值。 这是默认设置。</para>
+			/// <para>Exists—Checks whether the field value exists for the records matching the SQL expression. This is the default.</para>
 			/// </summary>
 			[GPValue("EXISTS")]
 			[Description("Exists")]
 			Exists,
 
 			/// <summary>
-			/// <para>无选择—检查是否未选择与 SQL 表达式匹配的任何记录。</para>
+			/// <para>No Selection—Checks whether none of the records matching the SQL expression are selected.</para>
 			/// </summary>
 			[GPValue("NO_SELECTION")]
-			[Description("无选择")]
+			[Description("No Selection")]
 			No_Selection,
 
 			/// <summary>
-			/// <para>选择全部—检查是否选择与 SQL 表达式匹配的所有记录。</para>
+			/// <para>All Selected—Checks whether all of the records matching the SQL expression are selected.</para>
 			/// </summary>
 			[GPValue("ALL_SELECTED")]
-			[Description("选择全部")]
+			[Description("All Selected")]
 			All_Selected,
 
 			/// <summary>
-			/// <para>等于—选择与 SQL 表达式匹配的记录的字段值是否等于计数值。</para>
+			/// <para>Is Equal to—Checks whether the field value of the records matching the SQL expression is equal to the count value.</para>
 			/// </summary>
 			[GPValue("IS_EQUAL_TO")]
-			[Description("等于")]
+			[Description("Is Equal to")]
 			Is_Equal_to,
 
 			/// <summary>
-			/// <para>介于—检查与 SQL 表达式匹配的记录的字段值是否介于最小计数值和最大计数值之间。</para>
+			/// <para>Is Between—Checks whether the field value of the records matching the SQL expression is between the minimum count value and maximum count value.</para>
 			/// </summary>
 			[GPValue("IS_BETWEEN")]
-			[Description("介于")]
+			[Description("Is Between")]
 			Is_Between,
 
 			/// <summary>
-			/// <para>小于—选择与 SQL 表达式匹配的记录的字段值是否等于计数值。</para>
+			/// <para>Is Less Than—Checks whether the field value of the records matching the SQL expression is equal to the count value.</para>
 			/// </summary>
 			[GPValue("IS_LESS_THAN")]
-			[Description("小于")]
+			[Description("Is Less Than")]
 			Is_Less_Than,
 
 			/// <summary>
-			/// <para>大于—选择与 SQL 表达式匹配的记录的字段值是否大于计数值。</para>
+			/// <para>Is Greater Than—Checks whether the field value of the records matching the SQL expression is greater than the count value.</para>
 			/// </summary>
 			[GPValue("IS_GREATER_THAN")]
-			[Description("大于")]
+			[Description("Is Greater Than")]
 			Is_Greater_Than,
 
 			/// <summary>
-			/// <para>不等于—选择与 SQL 表达式匹配的记录的字段值是否不等于计数值。</para>
+			/// <para>Is Not Equal to—Checks whether the field value of the records matching the SQL expression is not equal to the count value.</para>
 			/// </summary>
 			[GPValue("IS_NOT_EQUAL_TO")]
-			[Description("不等于")]
+			[Description("Is Not Equal to")]
 			Is_Not_Equal_to,
 
 		}

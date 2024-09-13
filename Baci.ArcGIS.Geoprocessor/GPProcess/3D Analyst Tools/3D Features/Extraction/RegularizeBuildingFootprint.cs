@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Regularize Building Footprint</para>
-	/// <para>规则化建筑物覆盖区</para>
-	/// <para>通过消除几何中不需要出现的伪影来对建筑物覆盖区面的形状进行规范化。</para>
+	/// <para>Regularize Building Footprint</para>
+	/// <para>Normalizes the footprint of building polygons by eliminating undesirable artifacts in their geometry.</para>
 	/// </summary>
 	public class RegularizeBuildingFootprint : AbstractGPProcess
 	{
@@ -21,24 +21,24 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>表示建筑物覆盖区的待规则化面。</para>
+		/// <para>The polygons that represent the building footprints to be regularized.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>将生成的要素类。</para>
+		/// <para>The feature class that will be produced.</para>
 		/// </param>
 		/// <param name="Method">
 		/// <para>Method</para>
-		/// <para>指定在输入要素处理过程中要使用的规则化方法。</para>
-		/// <para>直角—将在相邻边之间构造由 90° 角组成的形状。</para>
-		/// <para>直角和对角—将在相邻边之间构造由 45° 和 90° 角组成的形状。</para>
-		/// <para>任意角—将在相邻边之间构造由任意角组成的形状。</para>
-		/// <para>圆形—将在输入要素周围构造最佳拟合圆。</para>
+		/// <para>Specifies the regularization method that will be used in processing the input features.</para>
+		/// <para>Right Angles—Shapes composed of 90° angles between adjoining edges will be constructed.</para>
+		/// <para>Right Angles and Diagonals—Shapes composed of 45° and 90° angles between adjoining edges will be constructed.</para>
+		/// <para>Any Angles—Shapes that form any angles between adjoining edges will be constructed.</para>
+		/// <para>Circle—The best fitting circle around the input features will be constructed.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </param>
 		/// <param name="Tolerance">
 		/// <para>Tolerance</para>
-		/// <para>对于大多数方法，此值表示规则化覆盖区可从其原始要素的边界偏移的最大距离。 指定的值将基于输入要素坐标系的线性单位。 使用圆形方法时，基于在容差类型参数中的选择，此选项也可以解释为相对于规则化结果区域，原始要素与其规则化结果之间的差异。</para>
+		/// <para>For most methods, this value represents the maximum distance that the regularized footprint can deviate from the boundary of its originating feature. The specified value will be based on the linear units of the input feature's coordinate system. When using the Circle method, this option can also be interpreted as a ratio of the difference between the original feature and its regularized result against the area of the regularized result based on the selection that is made in the Tolerance Type parameter.</para>
 		/// </param>
 		public RegularizeBuildingFootprint(object InFeatures, object OutFeatureClass, object Method, object Tolerance)
 		{
@@ -49,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 规则化建筑物覆盖区</para>
+		/// <para>Tool Display Name : Regularize Building Footprint</para>
 		/// </summary>
-		public override string DisplayName() => "规则化建筑物覆盖区";
+		public override string DisplayName() => "Regularize Building Footprint";
 
 		/// <summary>
 		/// <para>Tool Name : RegularizeBuildingFootprint</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>表示建筑物覆盖区的待规则化面。</para>
+		/// <para>The polygons that represent the building footprints to be regularized.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>将生成的要素类。</para>
+		/// <para>The feature class that will be produced.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -103,11 +103,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>指定在输入要素处理过程中要使用的规则化方法。</para>
-		/// <para>直角—将在相邻边之间构造由 90° 角组成的形状。</para>
-		/// <para>直角和对角—将在相邻边之间构造由 45° 和 90° 角组成的形状。</para>
-		/// <para>任意角—将在相邻边之间构造由任意角组成的形状。</para>
-		/// <para>圆形—将在输入要素周围构造最佳拟合圆。</para>
+		/// <para>Specifies the regularization method that will be used in processing the input features.</para>
+		/// <para>Right Angles—Shapes composed of 90° angles between adjoining edges will be constructed.</para>
+		/// <para>Right Angles and Diagonals—Shapes composed of 45° and 90° angles between adjoining edges will be constructed.</para>
+		/// <para>Any Angles—Shapes that form any angles between adjoining edges will be constructed.</para>
+		/// <para>Circle—The best fitting circle around the input features will be constructed.</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Tolerance</para>
-		/// <para>对于大多数方法，此值表示规则化覆盖区可从其原始要素的边界偏移的最大距离。 指定的值将基于输入要素坐标系的线性单位。 使用圆形方法时，基于在容差类型参数中的选择，此选项也可以解释为相对于规则化结果区域，原始要素与其规则化结果之间的差异。</para>
+		/// <para>For most methods, this value represents the maximum distance that the regularized footprint can deviate from the boundary of its originating feature. The specified value will be based on the linear units of the input feature's coordinate system. When using the Circle method, this option can also be interpreted as a ratio of the difference between the original feature and its regularized result against the area of the regularized result based on the selection that is made in the Tolerance Type parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -126,8 +126,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Densification</para>
-		/// <para>用于评估规则化要素为直的或弯的采样间隔。 增密必须小于等于容差值。</para>
-		/// <para>此参数仅用于支持直角标识的方法。</para>
+		/// <para>The sampling interval that will be used to evaluate whether the regularized feature will be straight or bent. The densification must be equal to or less than the tolerance value.</para>
+		/// <para>This parameter is only used with methods that support right angle identification.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Precision</para>
-		/// <para>将在规则化过程中使用的空间格网精度。 值的有效范围为 0.05 到 0.25。</para>
+		/// <para>The precision of the spatial grid that will be used in the regularization process. Valid values range from 0.05 to 0.25.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Diagonal Penalty</para>
-		/// <para>如果使用直角和对角方法，则该值将识别在两条相邻线段之间构造直角或对角边的可能性。 如果使用任意角方法，则该值将识别构造相应对角边的可能性，这些对角边不符合由工具算法确定的首选边。 如果惩罚值设置为 0，则将不使用首选边，由此生成简化的不规则面。 通常，该值越高，则构造对角边的可能性越小。</para>
+		/// <para>When the Right Angles and Diagonals method is used, this value identifies the likelihood of constructing right angles or diagonal edges between two adjoining segments. When the Any Angles method is used, this value identifies the likelihood of constructing diagonal edges that do not conform to the preferred edges determined by the tool's algorithm. If the penalty value is set to 0, the preferred edges will not be used, resulting in the production of a simplified irregular polygon. Generally, the higher the value, the less likely a diagonal edge will be constructed.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Minimum Radius</para>
-		/// <para>适用于规则化圆的最小半径。 值 0 表示无最小尺寸限制。 此选项仅适用于圆形方法。</para>
+		/// <para>The smallest radius allowed for a regularized circle. A value of 0 implies that there is no minimum size limit. This option is only available with the Circle method.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -163,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Maximum Radius</para>
-		/// <para>适用于规则化圆的最大半径。 此选项仅适用于圆形方法。</para>
+		/// <para>The largest radius allowed for a regularized circle. This option is only available with the Circle method.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -172,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Alignment Feature</para>
-		/// <para>将用于对齐规则化面方向的线要素。 每个面将仅与一个线要素对齐。</para>
+		/// <para>The line feature that will be used to align the orientation of the regularized polygons. Each polygon will only be aligned to one line feature.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -182,7 +182,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Alignment Tolerance</para>
-		/// <para>将用于查找最近对齐要素的最大距离阈值。 例如，值 20 米表示将使用 20 米范围内的最近线来对齐规则化面。</para>
+		/// <para>The maximum distance threshold that will be used for finding the nearest alignment feature. For example, a value of 20 meters means the nearest line that is within 20 meters will be used to align the regularized polygon.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -190,9 +190,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Tolerance Type</para>
-		/// <para>指定当方法参数设置为圆形时，容差的应用方式。</para>
-		/// <para>距离分析—表示距正在处理的要素边界的最大距离的容差。 这是默认设置。</para>
-		/// <para>面积比—表示非规则化圆形的原始要素的面积与规则化圆形的面积之比的容差上限。</para>
+		/// <para>Specifies how tolerance will be applied when the Method parameter is set to Circle.</para>
+		/// <para>Distance—The tolerance will represent the maximum distance from the boundary of the feature being processed. This is the default.</para>
+		/// <para>Area Ratio—The tolerance will represent the maximum limit for the ratio between the area of the original feature that differs from the regularized circle and the area of the regularized circle.</para>
 		/// <para><see cref="ToleranceTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -217,31 +217,31 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>直角—将在相邻边之间构造由 90° 角组成的形状。</para>
+			/// <para>Right Angles—Shapes composed of 90° angles between adjoining edges will be constructed.</para>
 			/// </summary>
 			[GPValue("RIGHT_ANGLES")]
-			[Description("直角")]
+			[Description("Right Angles")]
 			Right_Angles,
 
 			/// <summary>
-			/// <para>直角和对角—将在相邻边之间构造由 45° 和 90° 角组成的形状。</para>
+			/// <para>Right Angles and Diagonals—Shapes composed of 45° and 90° angles between adjoining edges will be constructed.</para>
 			/// </summary>
 			[GPValue("RIGHT_ANGLES_AND_DIAGONALS")]
-			[Description("直角和对角")]
+			[Description("Right Angles and Diagonals")]
 			Right_Angles_and_Diagonals,
 
 			/// <summary>
-			/// <para>任意角—将在相邻边之间构造由任意角组成的形状。</para>
+			/// <para>Any Angles—Shapes that form any angles between adjoining edges will be constructed.</para>
 			/// </summary>
 			[GPValue("ANY_ANGLE")]
-			[Description("任意角")]
+			[Description("Any Angles")]
 			Any_Angles,
 
 			/// <summary>
-			/// <para>圆形—将在输入要素周围构造最佳拟合圆。</para>
+			/// <para>Circle—The best fitting circle around the input features will be constructed.</para>
 			/// </summary>
 			[GPValue("CIRCLE")]
-			[Description("圆形")]
+			[Description("Circle")]
 			Circle,
 
 		}
@@ -252,17 +252,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ToleranceTypeEnum 
 		{
 			/// <summary>
-			/// <para>距离分析—表示距正在处理的要素边界的最大距离的容差。 这是默认设置。</para>
+			/// <para>Distance—The tolerance will represent the maximum distance from the boundary of the feature being processed. This is the default.</para>
 			/// </summary>
 			[GPValue("DISTANCE")]
-			[Description("距离分析")]
+			[Description("Distance")]
 			Distance,
 
 			/// <summary>
-			/// <para>面积比—表示非规则化圆形的原始要素的面积与规则化圆形的面积之比的容差上限。</para>
+			/// <para>Area Ratio—The tolerance will represent the maximum limit for the ratio between the area of the original feature that differs from the regularized circle and the area of the regularized circle.</para>
 			/// </summary>
 			[GPValue("AREA_RATIO")]
-			[Description("面积比")]
+			[Description("Area Ratio")]
 			Area_Ratio,
 
 		}

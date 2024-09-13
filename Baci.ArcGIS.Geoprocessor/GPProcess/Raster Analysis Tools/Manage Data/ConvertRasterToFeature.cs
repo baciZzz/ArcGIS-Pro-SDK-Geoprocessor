@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Convert Raster To Feature</para>
-	/// <para>栅格转要素</para>
-	/// <para>将栅格转换为点、线或面的要素数据集。</para>
+	/// <para>Convert Raster To Feature</para>
+	/// <para>Converts a raster to a feature dataset as points, lines, or polygons.</para>
 	/// </summary>
 	public class ConvertRasterToFeature : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		/// <param name="Inputraster">
 		/// <para>Input Raster Layer</para>
-		/// <para>输入栅格图层。</para>
+		/// <para>The input raster layer.</para>
 		/// </param>
 		/// <param name="Outputname">
 		/// <para>Output Name</para>
-		/// <para>包含已转换点、线或面的输出要素类。</para>
+		/// <para>The output feature class that will contain the converted points, lines, or polygons.</para>
 		/// </param>
 		public ConvertRasterToFeature(object Inputraster, object Outputname)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 栅格转要素</para>
+		/// <para>Tool Display Name : Convert Raster To Feature</para>
 		/// </summary>
-		public override string DisplayName() => "栅格转要素";
+		public override string DisplayName() => "Convert Raster To Feature";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertRasterToFeature</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Raster Layer</para>
-		/// <para>输入栅格图层。</para>
+		/// <para>The input raster layer.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -79,10 +79,10 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Field</para>
-		/// <para>用于指定转换值的字段。</para>
-		/// <para>该值可以是整数值或文本值。</para>
-		/// <para>包含浮点值的字段仅限向点数据集输出时使用。</para>
-		/// <para>默认为 Value 字段，其中包含每个栅格像元中的值。</para>
+		/// <para>A field that specifies the conversion value.</para>
+		/// <para>It can be any integer or text value.</para>
+		/// <para>A field containing floating-point values can only be used if the output is to a point dataset.</para>
+		/// <para>The default is the Value field, which contains the value in each raster cell.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -90,11 +90,11 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Type</para>
-		/// <para>指定输出类型。</para>
-		/// <para>点—栅格将转换为点数据集。这是默认设置。</para>
-		/// <para>线—栅格将转换为线要素数据集。</para>
-		/// <para>面—栅格将转换为面要素数据集。</para>
-		/// <para>如果输出类型为线或面，则将显示一个附加参数，用于简化线或面。</para>
+		/// <para>Specifies the output type.</para>
+		/// <para>Point—The raster will be converted to a point dataset. This is the default.</para>
+		/// <para>Line—The raster will be converted to a line feature dataset.</para>
+		/// <para>Polygon—The raster will be converted to a polygon feature dataset.</para>
+		/// <para>If the output type is Line or Polygon, an additional parameter appears allowing the simplification of lines or polygons.</para>
 		/// <para><see cref="OutputtypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -104,9 +104,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Simplify Lines or Polygons</para>
-		/// <para>指定是否将简化（平滑）线或面。使线拥有最少线段数，同时尽可能接近原始栅格像元边，这就是平滑的实现方式。</para>
-		/// <para>选中 - 将对线或面要素进行平滑处理，以生成更为概化的结果。这是默认设置。</para>
-		/// <para>取消选中 - 线或面要素将不会进行平滑处理，并且将遵循栅格数据集的像元边界。</para>
+		/// <para>Specifies whether lines or polygons will be simplified (smoothed). The smoothing is done in such a way that the line contains a minimum number of segments while remaining as close as possible to the original raster cell edges.</para>
+		/// <para>Checked—The line or polygon features will be smoothed to produce a more generalized result. This is the default.</para>
+		/// <para>Unchecked—The line or polygon features will not be smoothed and will follow the cell boundaries of the raster dataset.</para>
 		/// <para><see cref="SimplifylinesorpolygonsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>包含已转换点、线或面的输出要素类。</para>
+		/// <para>The output feature class that will contain the converted points, lines, or polygons.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -131,9 +131,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Create Multipart Features</para>
-		/// <para>指定输出面是由单部分要素还是多部分要素组成。</para>
-		/// <para>选中 - 将根据具有相同值的面创建多部分要素。</para>
-		/// <para>取消选中 - 将为每个面创建单个（单部分）要素。这是默认设置。</para>
+		/// <para>Specifies whether the output polygons will consist of single-part or multipart features.</para>
+		/// <para>Checked— Multipart features will be created based on polygons that have the same value.</para>
+		/// <para>Unchecked— Individual (single-part) features will be created for each polygon. This is the default.</para>
 		/// <para><see cref="CreatemultipartfeaturesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -143,9 +143,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Maximum Vertices Per Polygon Feature</para>
-		/// <para>用于将面细分为更小的面的折点限制。此参数将产生的输出与数据管理工具箱中的切分工具创建的输出类似。</para>
-		/// <para>如果留空，则输出面不会被分割。这是默认设置。</para>
-		/// <para>仅当输出类型为面时，才支持此参数。</para>
+		/// <para>The vertex limit used to subdivide a polygon into smaller polygons. This parameter produces similar output as that created by the Dice tool in the Data Management toolbox.</para>
+		/// <para>If left empty, the output polygons will not be split. This is the default.</para>
+		/// <para>This parameter is only supported if Output Type is Polygon.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -168,24 +168,24 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public enum OutputtypeEnum 
 		{
 			/// <summary>
-			/// <para>点—栅格将转换为点数据集。这是默认设置。</para>
+			/// <para>Point—The raster will be converted to a point dataset. This is the default.</para>
 			/// </summary>
 			[GPValue("POINT")]
-			[Description("点")]
+			[Description("Point")]
 			Point,
 
 			/// <summary>
-			/// <para>线—栅格将转换为线要素数据集。</para>
+			/// <para>Line—The raster will be converted to a line feature dataset.</para>
 			/// </summary>
 			[GPValue("LINE")]
-			[Description("线")]
+			[Description("Line")]
 			Line,
 
 			/// <summary>
-			/// <para>面—栅格将转换为面要素数据集。</para>
+			/// <para>Polygon—The raster will be converted to a polygon feature dataset.</para>
 			/// </summary>
 			[GPValue("POLYGON")]
-			[Description("面")]
+			[Description("Polygon")]
 			Polygon,
 
 		}
@@ -196,14 +196,14 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public enum SimplifylinesorpolygonsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The line or polygon features will be smoothed to produce a more generalized result. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SIMPLIFY")]
 			SIMPLIFY,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The line or polygon features will not be smoothed and will follow the cell boundaries of the raster dataset.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SIMPLIFY")]
@@ -217,14 +217,14 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public enum CreatemultipartfeaturesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked— Multipart features will be created based on polygons that have the same value.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MULTIPLE_OUTER_PART")]
 			MULTIPLE_OUTER_PART,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked— Individual (single-part) features will be created for each polygon. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("SINGLE_OUTER_PART")]

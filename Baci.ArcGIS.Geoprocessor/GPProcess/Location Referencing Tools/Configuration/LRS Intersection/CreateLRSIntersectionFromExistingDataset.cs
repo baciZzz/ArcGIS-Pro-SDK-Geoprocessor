@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Create LRS Intersection From Existing Dataset</para>
-	/// <para>基于现有数据集创建 LRS 交叉点</para>
-	/// <para>将现有交叉点要素类注册为交叉点。</para>
+	/// <para>Create LRS Intersection From Existing Dataset</para>
+	/// <para>Registers an existing intersection feature class as an intersection.</para>
 	/// </summary>
 	public class CreateLRSIntersectionFromExistingDataset : AbstractGPProcess
 	{
@@ -21,51 +21,51 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="ParentNetwork">
 		/// <para>Parent LRS Network</para>
-		/// <para>交叉点将注册到的网络。</para>
+		/// <para>The network to which the intersection will be registered.</para>
 		/// </param>
 		/// <param name="NetworkDescriptionField">
 		/// <para>Network Description Field</para>
-		/// <para>网络图层中的字段，用于命名与其他相交图层的交叉点。</para>
+		/// <para>The field in the network layer that will be used to name the intersections with other intersecting layers.</para>
 		/// </param>
 		/// <param name="InFeatureClass">
 		/// <para>Intersection Feature Class</para>
-		/// <para>要注册的输入点要素类。</para>
+		/// <para>The input point feature class to be registered.</para>
 		/// </param>
 		/// <param name="IntersectionIdField">
 		/// <para>Intersection ID Field</para>
-		/// <para>交叉点要素类参数值中的 ID 字段。 该字段必须具有对于时间片的每个交叉点的唯一 ID。</para>
+		/// <para>The ID field in the Intersection Feature Class parameter value. The field must have a unique ID for each intersection for a time slice.</para>
 		/// </param>
 		/// <param name="IntersectionNameField">
 		/// <para>Intersection Name Field</para>
-		/// <para>交叉点要素类参数值中的字段，是用于显示路径和相交要素描述符的串连字段。</para>
+		/// <para>The field in the Intersection Feature Class parameter value that is a concatenated field showing the descriptors for the route and the intersecting feature.</para>
 		/// </param>
 		/// <param name="RouteIdField">
 		/// <para>Route ID Field</para>
-		/// <para>交叉点要素类参数值中包含 LRS 网络的路径 ID 的字段。</para>
+		/// <para>The field in the Intersection Feature Class parameter value that contains the route ID for the LRS Network.</para>
 		/// </param>
 		/// <param name="FeatureIdField">
 		/// <para>Feature ID Field</para>
-		/// <para>交叉点要素类参数值中包含相交要素 ID 的字段。</para>
+		/// <para>The field in the Intersection Feature Class parameter value that contains the ID for the intersecting feature.</para>
 		/// </param>
 		/// <param name="FeatureClassNameField">
 		/// <para>Feature Class Name Field</para>
-		/// <para>交叉点要素类参数值中包含参与交叉点的要素类名称的字段。</para>
+		/// <para>The field in the Intersection Feature Class parameter value that contains the name of the feature class that participated in the intersection.</para>
 		/// </param>
 		/// <param name="FromDateField">
 		/// <para>From Date Field</para>
-		/// <para>交叉点要素类参数值中的开始日期字段。</para>
+		/// <para>The from date field in the Intersection Feature Class parameter value.</para>
 		/// </param>
 		/// <param name="ToDateField">
 		/// <para>To Date Field</para>
-		/// <para>交叉点要素类参数值中的结束日期字段。</para>
+		/// <para>The to date field in the Intersection Feature Class parameter value.</para>
 		/// </param>
 		/// <param name="IntersectingLayers">
 		/// <para>Intersecting Layers</para>
-		/// <para>与 LRS 网络相交并包含以下信息的要素类：</para>
-		/// <para>交叉点图层 - 与 LRS 网络相交的要素类。</para>
-		/// <para>ID 字段 - 相交图层中用于唯一识别与网络相交的要素的字段。</para>
-		/// <para>描述字段 - 提供相交要素的描述（例如镇或县名称）的字段。</para>
-		/// <para>名称分隔符 - 交叉点的名称分隔符，例如 AND、INTERSECT、+ 或 |。</para>
+		/// <para>The feature class that intersects the LRS Network and contains the following information:</para>
+		/// <para>Intersection Layer—The feature class that intersects the LRS Network.</para>
+		/// <para>ID Field—The field in the intersecting layer used to uniquely identify the feature that intersects the network.</para>
+		/// <para>Description Field—The field that provides the description, such as town or county name, of the intersecting feature.</para>
+		/// <para>Name Separator—The name separator for the intersection, such as AND, INTERSECT, +, or |.</para>
 		/// </param>
 		public CreateLRSIntersectionFromExistingDataset(object ParentNetwork, object NetworkDescriptionField, object InFeatureClass, object IntersectionIdField, object IntersectionNameField, object RouteIdField, object FeatureIdField, object FeatureClassNameField, object FromDateField, object ToDateField, object IntersectingLayers)
 		{
@@ -83,9 +83,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 基于现有数据集创建 LRS 交叉点</para>
+		/// <para>Tool Display Name : Create LRS Intersection From Existing Dataset</para>
 		/// </summary>
-		public override string DisplayName() => "基于现有数据集创建 LRS 交叉点";
+		public override string DisplayName() => "Create LRS Intersection From Existing Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : CreateLRSIntersectionFromExistingDataset</para>
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Parent LRS Network</para>
-		/// <para>交叉点将注册到的网络。</para>
+		/// <para>The network to which the intersection will be registered.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Network Description Field</para>
-		/// <para>网络图层中的字段，用于命名与其他相交图层的交叉点。</para>
+		/// <para>The field in the network layer that will be used to name the intersections with other intersecting layers.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Intersection Feature Class</para>
-		/// <para>要注册的输入点要素类。</para>
+		/// <para>The input point feature class to be registered.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -149,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Intersection ID Field</para>
-		/// <para>交叉点要素类参数值中的 ID 字段。 该字段必须具有对于时间片的每个交叉点的唯一 ID。</para>
+		/// <para>The ID field in the Intersection Feature Class parameter value. The field must have a unique ID for each intersection for a time slice.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -159,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Intersection Name Field</para>
-		/// <para>交叉点要素类参数值中的字段，是用于显示路径和相交要素描述符的串连字段。</para>
+		/// <para>The field in the Intersection Feature Class parameter value that is a concatenated field showing the descriptors for the route and the intersecting feature.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -169,7 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Route ID Field</para>
-		/// <para>交叉点要素类参数值中包含 LRS 网络的路径 ID 的字段。</para>
+		/// <para>The field in the Intersection Feature Class parameter value that contains the route ID for the LRS Network.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -179,7 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Feature ID Field</para>
-		/// <para>交叉点要素类参数值中包含相交要素 ID 的字段。</para>
+		/// <para>The field in the Intersection Feature Class parameter value that contains the ID for the intersecting feature.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -189,7 +189,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Feature Class Name Field</para>
-		/// <para>交叉点要素类参数值中包含参与交叉点的要素类名称的字段。</para>
+		/// <para>The field in the Intersection Feature Class parameter value that contains the name of the feature class that participated in the intersection.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -199,7 +199,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>From Date Field</para>
-		/// <para>交叉点要素类参数值中的开始日期字段。</para>
+		/// <para>The from date field in the Intersection Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -209,7 +209,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>To Date Field</para>
-		/// <para>交叉点要素类参数值中的结束日期字段。</para>
+		/// <para>The to date field in the Intersection Feature Class parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -219,11 +219,11 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Intersecting Layers</para>
-		/// <para>与 LRS 网络相交并包含以下信息的要素类：</para>
-		/// <para>交叉点图层 - 与 LRS 网络相交的要素类。</para>
-		/// <para>ID 字段 - 相交图层中用于唯一识别与网络相交的要素的字段。</para>
-		/// <para>描述字段 - 提供相交要素的描述（例如镇或县名称）的字段。</para>
-		/// <para>名称分隔符 - 交叉点的名称分隔符，例如 AND、INTERSECT、+ 或 |。</para>
+		/// <para>The feature class that intersects the LRS Network and contains the following information:</para>
+		/// <para>Intersection Layer—The feature class that intersects the LRS Network.</para>
+		/// <para>ID Field—The field in the intersecting layer used to uniquely identify the feature that intersects the network.</para>
+		/// <para>Description Field—The field that provides the description, such as town or county name, of the intersecting feature.</para>
+		/// <para>Name Separator—The name separator for the intersection, such as AND, INTERSECT, +, or |.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -232,9 +232,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Consider z-values when generating intersections</para>
-		/// <para>指定生成交叉点时是否使用 z 值。</para>
-		/// <para>选中 - 将在交叉点生成期间使用 Z 值。</para>
-		/// <para>未选中 - 在交叉点生成期间不会使用 Z 值。 这是默认设置。</para>
+		/// <para>Specifies whether z-values will be used when generating intersections.</para>
+		/// <para>Checked—Z-values will be used during generation of intersections.</para>
+		/// <para>Unchecked—Z-values will not be used during generation of intersections. This is the default.</para>
 		/// <para><see cref="ConsiderZEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -244,7 +244,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Z Tolerance</para>
-		/// <para>用于生成交叉点的 z 容差。</para>
+		/// <para>The z-tolerance used to generate intersections.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -252,7 +252,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Measure Field</para>
-		/// <para>交叉点处基本路径上的测量值。</para>
+		/// <para>The measure on the base route at the point of intersection.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -275,14 +275,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum ConsiderZEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Z-values will be used during generation of intersections.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CONSIDER_Z")]
 			CONSIDER_Z,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Z-values will not be used during generation of intersections. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_CONSIDER_Z")]

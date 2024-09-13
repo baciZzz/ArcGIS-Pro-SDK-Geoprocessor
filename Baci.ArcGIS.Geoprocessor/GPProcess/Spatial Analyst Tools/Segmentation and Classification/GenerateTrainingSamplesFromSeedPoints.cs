@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Training Samples From Seed Points</para>
-	/// <para>从种子点生成训练样本</para>
-	/// <para>从种子点（如精度评估点或训练样本点）生成训练样本。 典型用例是从现有源（如专题栅格或要素类）生成训练样本。</para>
+	/// <para>Generate Training Samples From Seed Points</para>
+	/// <para>Generates training samples from seed points, such as accuracy assessment points or training sample points. A typical use case is generating training samples from an existing source, such as a thematic raster or a feature class.</para>
 	/// </summary>
 	public class GenerateTrainingSamplesFromSeedPoints : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InClassData">
 		/// <para>Input Raster or Feature Class Data</para>
-		/// <para>标注训练样本的数据源。</para>
+		/// <para>The data source that labels the training samples.</para>
 		/// </param>
 		/// <param name="InSeedPoints">
 		/// <para>Input Seed Points</para>
-		/// <para>提供训练样本面中心的点 shapefile 或要素类。</para>
+		/// <para>A point shapefile or feature class to provide the centers of training sample polygons.</para>
 		/// </param>
 		/// <param name="OutTrainingFeatureClass">
 		/// <para>Output Training Sample Feature Class</para>
-		/// <para>采用可用于训练工具的格式的输出训练样本要素类，其中包括 shapefile。输出要素类可以是面要素类，也可以是点要素类。</para>
+		/// <para>The output training sample feature class in the format that can be used in training tools, including shapefiles. The output feature class can be either a polygon feature class or a point feature class.</para>
 		/// </param>
 		public GenerateTrainingSamplesFromSeedPoints(object InClassData, object InSeedPoints, object OutTrainingFeatureClass)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 从种子点生成训练样本</para>
+		/// <para>Tool Display Name : Generate Training Samples From Seed Points</para>
 		/// </summary>
-		public override string DisplayName() => "从种子点生成训练样本";
+		public override string DisplayName() => "Generate Training Samples From Seed Points";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateTrainingSamplesFromSeedPoints</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input Raster or Feature Class Data</para>
-		/// <para>标注训练样本的数据源。</para>
+		/// <para>The data source that labels the training samples.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input Seed Points</para>
-		/// <para>提供训练样本面中心的点 shapefile 或要素类。</para>
+		/// <para>A point shapefile or feature class to provide the centers of training sample polygons.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output Training Sample Feature Class</para>
-		/// <para>采用可用于训练工具的格式的输出训练样本要素类，其中包括 shapefile。输出要素类可以是面要素类，也可以是点要素类。</para>
+		/// <para>The output training sample feature class in the format that can be used in training tools, including shapefiles. The output feature class can be either a polygon feature class or a point feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Min Sample Area</para>
-		/// <para>每个训练样本所需的最小区域（以平方米为单位）。最小值必须大于或等于 0。</para>
+		/// <para>The minimum area needed for each training sample, in square meters. The minimum value must be greater than or equal to 0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Max Sample Radius</para>
-		/// <para>训练样本内的任意点到其中心种子点之间的最长距离（以米为单位）。如果设置为 0，则输出训练样本将为点，而非面。最小值必须大于或等于 0。</para>
+		/// <para>The longest distance (in meters) from any point within the training sample to its center seed point. If set to 0, the output training sample will be points instead of polygons. The minimum value must be greater than or equal to 0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

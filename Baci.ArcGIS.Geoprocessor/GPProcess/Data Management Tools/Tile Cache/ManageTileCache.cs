@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Manage Tile Cache</para>
-	/// <para>管理切片缓存</para>
-	/// <para>创建切片缓存或在现有的切片缓存中更新切片。 此工具用于创建切片、替换缺失切片、覆盖过时切片以及删除切片。</para>
+	/// <para>Manage Tile Cache</para>
+	/// <para>Creates a tile cache or updates tiles in an existing tile cache. You can use this tool to create tiles, replace missing tiles, overwrite outdated tiles, and delete tiles.</para>
 	/// </summary>
 	public class ManageTileCache : AbstractGPProcess
 	{
@@ -21,14 +21,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InCacheLocation">
 		/// <para>Cache Location</para>
-		/// <para>创建缓存数据集所在的文件夹、栅格图层或现有切片缓存的路径。</para>
+		/// <para>The folder in which the cache dataset is created, the raster layer, or the path to an existing tile cache.</para>
 		/// </param>
 		/// <param name="ManageMode">
 		/// <para>Manage Mode</para>
-		/// <para>指定将用于管理缓存的模式。</para>
-		/// <para>重新创建所有切片—如果范围发生改变或将图层添加到多图层缓存，则需要更换现有切片并添加新切片。</para>
-		/// <para>重新创建空切片—只对空的切片重新创建。 现有切片将保持不变。</para>
-		/// <para>删除切片—将从缓存中删除切片。 缓存文件夹结构不会删除。</para>
+		/// <para>Specifies the mode that will be used to manage the cache.</para>
+		/// <para>Recreate all tiles—Existing tiles will be replaced and new tiles will be added if the extent has changed or if layers have been added to a multilayer cache.</para>
+		/// <para>Recreate empty tiles—Only tiles that are empty will be created. Existing tiles will be left unchanged.</para>
+		/// <para>Delete tiles—Tiles will be deleted from the cache. The cache folder structure will not be deleted.</para>
 		/// <para><see cref="ManageModeEnum"/></para>
 		/// </param>
 		public ManageTileCache(object InCacheLocation, object ManageMode)
@@ -38,9 +38,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 管理切片缓存</para>
+		/// <para>Tool Display Name : Manage Tile Cache</para>
 		/// </summary>
-		public override string DisplayName() => "管理切片缓存";
+		public override string DisplayName() => "Manage Tile Cache";
 
 		/// <summary>
 		/// <para>Tool Name : ManageTileCache</para>
@@ -74,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Cache Location</para>
-		/// <para>创建缓存数据集所在的文件夹、栅格图层或现有切片缓存的路径。</para>
+		/// <para>The folder in which the cache dataset is created, the raster layer, or the path to an existing tile cache.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -82,10 +82,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Manage Mode</para>
-		/// <para>指定将用于管理缓存的模式。</para>
-		/// <para>重新创建所有切片—如果范围发生改变或将图层添加到多图层缓存，则需要更换现有切片并添加新切片。</para>
-		/// <para>重新创建空切片—只对空的切片重新创建。 现有切片将保持不变。</para>
-		/// <para>删除切片—将从缓存中删除切片。 缓存文件夹结构不会删除。</para>
+		/// <para>Specifies the mode that will be used to manage the cache.</para>
+		/// <para>Recreate all tiles—Existing tiles will be replaced and new tiles will be added if the extent has changed or if layers have been added to a multilayer cache.</para>
+		/// <para>Recreate empty tiles—Only tiles that are empty will be created. Existing tiles will be left unchanged.</para>
+		/// <para>Delete tiles—Tiles will be deleted from the cache. The cache folder structure will not be deleted.</para>
 		/// <para><see cref="ManageModeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Cache Name</para>
-		/// <para>在缓存位置中待创建的缓存数据集的名称。</para>
+		/// <para>The name of the cache dataset to be created in the cache location.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -103,9 +103,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Data Source</para>
-		/// <para>栅格数据集、镶嵌数据集或地图文件。</para>
-		/// <para>如果已将管理模式参数设置为删除切片，则不需要此参数。</para>
-		/// <para>地图文件 (.mapx) 不能包含地图服务或图像服务。</para>
+		/// <para>A raster dataset, mosaic dataset, or map file.</para>
+		/// <para>This parameter is not required when the Manage Mode parameter is set to Delete tiles.</para>
+		/// <para>A map file (.mapx) cannot contain a map service or image service.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -113,12 +113,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Tiling Scheme</para>
-		/// <para>指定将使用的切片方案。</para>
-		/// <para>ArcGIS Online 方案—将使用默认 ArcGIS Online 切片方案。</para>
-		/// <para>导入方案—将导入并使用现有的切片方案。</para>
-		/// <para>高程切片方案—将使用高程服务切片方案。</para>
-		/// <para>WGS84　版本　2　切片方案—将使用 WGS84　版本　2　切片方案。</para>
-		/// <para>WGS84　版本　2　高程切片方案—将使用 WGS84 版本 2 切片方案来构建高程数据的切片缓存。</para>
+		/// <para>Specifies the tiling scheme that will be used.</para>
+		/// <para>ArcGIS Online scheme—The default ArcGIS Online tiling scheme will be used.</para>
+		/// <para>Import scheme—An existing tiling scheme will be imported and used.</para>
+		/// <para>Elevation tiling scheme—The elevation services tiling scheme will be used.</para>
+		/// <para>WGS84 Version 2 tiling scheme—The WGS84 version 2 tiling scheme will be used.</para>
+		/// <para>WGS84 Version 2 elevation tiling scheme— The WGS84 version 2 tiling scheme will be used to build a tile cache for elevation data.</para>
 		/// <para><see cref="TilingSchemeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Import Tiling Scheme</para>
-		/// <para>现有方案文件 (.xml) 的路径或从现有影像服务或地图服务中导入的切片方案。</para>
+		/// <para>The path to an existing scheme file (.xml) or to a tiling scheme imported from an existing image service or map service.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -136,10 +136,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Scales [Pixel Size] (Estimated Disk Space)</para>
-		/// <para>一系列比例级别，将在这些比例级别上创建或删除切片，具体取决于管理模式参数的值。 像素大小将基于切片方案的空间参考。</para>
-		/// <para>默认情况下，仅使用最小缓存比例和最大缓存比例的值。</para>
-		/// <para>更改最小缓存比例或最大缓存比例参数的值将选中或取消选中相应的比例值。</para>
-		/// <para>生成缓存时将忽略选中的比例以及不在最小缓存比例或最大缓存比例参数值范围之内的比例。</para>
+		/// <para>The scale levels at which tiles will be created or deleted, depending on the value of the Manage Mode parameter. The pixel size is based on the spatial reference of the tiling scheme.</para>
+		/// <para>By default, only the values for Minimum Cached Scale and Maximum Cached Scale will be used.</para>
+		/// <para>Altering the value of either the Minimum Cached Scale or the Maximum Cached Scale parameter will check on or off the appropriate scale values.</para>
+		/// <para>Scales that are checked on and are not within the range of the Minimum Cached Scale or Maximum Cached Scale parameter values will be ignored when generating the cache.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -147,9 +147,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Area of Interest</para>
-		/// <para>定义感兴趣区以对将创建或删除的切片进行约束。</para>
-		/// <para>它可能是一个要素类，也可能是以交互方式定义的要素集。</para>
-		/// <para>该参数用于为形状不规则的区域管理切片。 当您要对某些区域进行预缓存或让较少访问的区域保持未缓存的状态时，这也同样有用。</para>
+		/// <para>Defines an area of interest to constrain where tiles will be created or deleted.</para>
+		/// <para>It can be a feature class, or it can be a feature set that you interactively define.</para>
+		/// <para>This parameter is useful if you want to manage tiles for irregularly shaped areas. It&apos;s also useful when you want to precache some areas and leave less-visited areas uncached.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -157,14 +157,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Source Cell Size</para>
-		/// <para>用于定义生成了缓存的数据源的可见性的值。 默认情况下，该值为空。</para>
-		/// <para>如果该值为空，则以下适用：</para>
-		/// <para>对于数据源可见性范围内的缓存级别，缓存是由数据源生成的。</para>
-		/// <para>对于超出数据源可见性范围的缓存级别，缓存是由前一级缓存生成的。</para>
-		/// <para>如果该值大于零，则以下适用：</para>
-		/// <para>对于像元大小小于等于最大源像元大小 (max_cell_size) 的级别，缓存是由数据源生成的。</para>
-		/// <para>对于源像元大小大于最大源像元大小 (max_cell_size) 的级别，缓存是由前一级缓存生成的。</para>
-		/// <para>最大源像元大小值的单位应与源数据集的像元大小单位相同。</para>
+		/// <para>The value that defines the visibility of the data source for which the cache will be generated. By default, the value is empty.</para>
+		/// <para>If the value is empty, the following apply:</para>
+		/// <para>For levels of cache that lie within the visibility ranges of the data source, the cache will be generated from the data source.</para>
+		/// <para>For levels of cache that fall outside the visibility of the data source, the cache will be generated from the previous level of cache.</para>
+		/// <para>If the value is greater than zero, the following apply:</para>
+		/// <para>For levels with cell sizes smaller than or equal to the Maximum Source Cell Size (max_cell_size) value, the cache will be generated from the data source.</para>
+		/// <para>For levels with cell sizes greater than the Maximum Source Cell Size (max_cell_size) value, the cache will be generated from the previous level of cache.</para>
+		/// <para>The unit of the Maximum Source Cell Size value should be the same as the unit of the cell size of the source dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -172,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Minimum Cached Scale</para>
-		/// <para>创建切片的最小比例。 这不必是切片方案中的最小比例。 由最小缓存比例确定生成缓存时将使用哪个比例。</para>
+		/// <para>The minimum scale at which tiles will be created. This value does not have to be the smallest scale in the tiling scheme. The minimum cache scale will determine which scales are used when generating cache.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -181,7 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Cached Scale</para>
-		/// <para>创建切片的最大比例。 这不必是切片方案中的最大比例。 由最大缓存比例确定生成缓存时将使用哪个比例。</para>
+		/// <para>The maximum scale at which tiles will be created. This does not have to be the largest scale in the tiling scheme. The maximum cache scale will determine which scales are used when generating cache.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -212,24 +212,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ManageModeEnum 
 		{
 			/// <summary>
-			/// <para>重新创建所有切片—如果范围发生改变或将图层添加到多图层缓存，则需要更换现有切片并添加新切片。</para>
+			/// <para>Recreate all tiles—Existing tiles will be replaced and new tiles will be added if the extent has changed or if layers have been added to a multilayer cache.</para>
 			/// </summary>
 			[GPValue("RECREATE_ALL_TILES")]
-			[Description("重新创建所有切片")]
+			[Description("Recreate all tiles")]
 			Recreate_all_tiles,
 
 			/// <summary>
-			/// <para>重新创建空切片—只对空的切片重新创建。 现有切片将保持不变。</para>
+			/// <para>Recreate empty tiles—Only tiles that are empty will be created. Existing tiles will be left unchanged.</para>
 			/// </summary>
 			[GPValue("RECREATE_EMPTY_TILES")]
-			[Description("重新创建空切片")]
+			[Description("Recreate empty tiles")]
 			Recreate_empty_tiles,
 
 			/// <summary>
-			/// <para>删除切片—将从缓存中删除切片。 缓存文件夹结构不会删除。</para>
+			/// <para>Delete tiles—Tiles will be deleted from the cache. The cache folder structure will not be deleted.</para>
 			/// </summary>
 			[GPValue("DELETE_TILES")]
-			[Description("删除切片")]
+			[Description("Delete tiles")]
 			Delete_tiles,
 
 		}
@@ -240,38 +240,38 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum TilingSchemeEnum 
 		{
 			/// <summary>
-			/// <para>ArcGIS Online 方案—将使用默认 ArcGIS Online 切片方案。</para>
+			/// <para>ArcGIS Online scheme—The default ArcGIS Online tiling scheme will be used.</para>
 			/// </summary>
 			[GPValue("ARCGISONLINE_SCHEME")]
-			[Description("ArcGIS Online 方案")]
+			[Description("ArcGIS Online scheme")]
 			ArcGIS_Online_scheme,
 
 			/// <summary>
-			/// <para>高程切片方案—将使用高程服务切片方案。</para>
+			/// <para>Elevation tiling scheme—The elevation services tiling scheme will be used.</para>
 			/// </summary>
 			[GPValue("ARCGISONLINE_ELEVATION_SCHEME")]
-			[Description("高程切片方案")]
+			[Description("Elevation tiling scheme")]
 			Elevation_tiling_scheme,
 
 			/// <summary>
-			/// <para>WGS84　版本　2　切片方案—将使用 WGS84　版本　2　切片方案。</para>
+			/// <para>WGS84 Version 2 tiling scheme—The WGS84 version 2 tiling scheme will be used.</para>
 			/// </summary>
 			[GPValue("WGS84_V2_SCHEME")]
-			[Description("WGS84　版本　2　切片方案")]
+			[Description("WGS84 Version 2 tiling scheme")]
 			WGS84_Version_2_tiling_scheme,
 
 			/// <summary>
-			/// <para>WGS84　版本　2　高程切片方案—将使用 WGS84 版本 2 切片方案来构建高程数据的切片缓存。</para>
+			/// <para>WGS84 Version 2 elevation tiling scheme— The WGS84 version 2 tiling scheme will be used to build a tile cache for elevation data.</para>
 			/// </summary>
 			[GPValue("WGS84_V2_ELEVATION_SCHEME")]
-			[Description("WGS84　版本　2　高程切片方案")]
+			[Description("WGS84 Version 2 elevation tiling scheme")]
 			WGS84_Version_2_elevation_tiling_scheme,
 
 			/// <summary>
-			/// <para>导入方案—将导入并使用现有的切片方案。</para>
+			/// <para>Import scheme—An existing tiling scheme will be imported and used.</para>
 			/// </summary>
 			[GPValue("IMPORT_SCHEME")]
-			[Description("导入方案")]
+			[Description("Import scheme")]
 			Import_scheme,
 
 		}

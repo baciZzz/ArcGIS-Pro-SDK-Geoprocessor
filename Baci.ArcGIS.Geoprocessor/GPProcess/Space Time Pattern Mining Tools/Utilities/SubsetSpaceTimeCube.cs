@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Subset Space Time Cube</para>
-	/// <para>子集时空立方体</para>
-	/// <para>按空间或时间对时空立方体进行子集。</para>
+	/// <para>Subset Space Time Cube</para>
+	/// <para>Subsets a space-time cube by space or time.</para>
 	/// </summary>
 	public class SubsetSpaceTimeCube : AbstractGPProcess
 	{
@@ -21,28 +21,28 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		/// <param name="InCube">
 		/// <para>Input Space Time Cube</para>
-		/// <para>要子集化的时空立方体。 时空立方体具有 .nc 文件扩展名，是使用时空模式挖掘工具箱中的各种工具创建的。</para>
+		/// <para>The space-time cube to be subset. Space-time cubes have an .nc file extension and are created using various tools in the Space Time Pattern Mining toolbox.</para>
 		/// </param>
 		/// <param name="OutCube">
 		/// <para>Output Space Time Cube</para>
-		/// <para>输入时空立方体的子集，满足空间子集方法和时间子集方法参数指定的空间和时间标准。 存储在输入时空立方体中的分析变量将从输出时空立方体中排除。</para>
+		/// <para>The subset of the input space-time cube that meets the spatial and temporal criteria specified by the Spatial Subset Method and Temporal Subset Method parameters. The analysis variables stored in the input space-time cube will be excluded from the output space-time cube.</para>
 		/// </param>
 		/// <param name="SpatialSubsetMethod">
 		/// <para>Spatial Subset Method</para>
-		/// <para>指定将用于对输入时空立方体进行空间子集化的方法。 输入时空立方体中满足此空间子集标准的任何位置都将包含在输出时空立方体中。</para>
-		/// <para>要素—具有面、点或线的要素类将用于对输入时空立方体进行子集化。 空间关系参数指定要素图层如何对时空立方体进行子集化。</para>
-		/// <para>范围—范围参数指定的范围将用于对输入时空立方体进行子集化。 输出时空立方体将包括输入时空立方体中与范围相交的所有位置。</para>
-		/// <para>时空立方体—由输入空间子集立方体参数指定的时空立方体的位置将用于对时空立方体进行子集化。 空间关系参数指定此时空立方体如何将输入时空立方体子集化。</para>
-		/// <para>无—空间子集不会应用于输入时空立方体。</para>
+		/// <para>Specifies the method that will be used to spatially subset the input space-time cube. Any location in the input space-time cube that satisfies this spatial subset criteria will be included in the output space-time cube.</para>
+		/// <para>Features—A feature class with polygons, points, or lines will be used to subset the input space-time cube. The Spatial Relationship parameter specifies how the feature layer will subset the space-time cube.</para>
+		/// <para>Extent—The extent specified by the Extent parameter will be used to subset the input space-time cube. The output space-time cube will include all the locations in the input space-time cube that intersect the extent.</para>
+		/// <para>Space Time Cube—The location of the space-time cube specified by the Input Spatial Subset Cube parameter will be used to subset a space-time cube. The Spatial Relationship parameter specifies how this space-time cube will subset the input space-time cube.</para>
+		/// <para>None—A spatial subset will not be applied to the input space-time cube.</para>
 		/// <para><see cref="SpatialSubsetMethodEnum"/></para>
 		/// </param>
 		/// <param name="TemporalSubsetMethod">
 		/// <para>Temporal Subset Method</para>
-		/// <para>指定将用于对时空立方体进行时间子集化的方法。 输入时空立方体中满足此时间子集标准的任何时间步长都将包含在输出时空立方体中。</para>
-		/// <para>用户定义—子集时间跨度参数中的开始时间或结束时间值指定的时间范围将用于对输入时空立方体进行时间子集化。</para>
-		/// <para>时间步长数量—从起点开始和从终点开始的输入时空立方体的多个时间步长将用于在时间上对时空立方体进行子集化。 要移除的时间步数由要移除的时间步长数量参数中的从起点开始或从终点开始值指定。</para>
-		/// <para>时空立方体—由输入时间子集立方体参数指定的时空立方体的时间范围，将用于对输入时空立方体进行时间子集化。</para>
-		/// <para>无—时间子集不会应用于输入时空立方体。</para>
+		/// <para>Specifies the method that will be used to temporally subset a space-time cube. Any time step in the input space-time cube that satisfies the temporal subset criteria will be included in the output space-time cube.</para>
+		/// <para>User defined—The temporal range specified by the Start Time or End Time values in the Time Span of Subset parameter will be used to temporally subset the input space-time cube.</para>
+		/// <para>Number of time steps—A number of time steps from the start and the end of the input space-time cube will be used to temporally subset the space-time cube. The number of time steps to remove is specified by the From the Start or From the End values in the Number of Time Steps to Remove parameter.</para>
+		/// <para>Space time cube—The temporal extent of the space-time cube specified by the Input Temporal Subset Cube parameter will be used to temporally subset the input space-time cube.</para>
+		/// <para>None—A temporal subset will not be applied to the input space-time cube.</para>
 		/// <para><see cref="TemporalSubsetMethodEnum"/></para>
 		/// </param>
 		public SubsetSpaceTimeCube(object InCube, object OutCube, object SpatialSubsetMethod, object TemporalSubsetMethod)
@@ -54,9 +54,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 子集时空立方体</para>
+		/// <para>Tool Display Name : Subset Space Time Cube</para>
 		/// </summary>
-		public override string DisplayName() => "子集时空立方体";
+		public override string DisplayName() => "Subset Space Time Cube";
 
 		/// <summary>
 		/// <para>Tool Name : SubsetSpaceTimeCube</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>
-		/// <para>要子集化的时空立方体。 时空立方体具有 .nc 文件扩展名，是使用时空模式挖掘工具箱中的各种工具创建的。</para>
+		/// <para>The space-time cube to be subset. Space-time cubes have an .nc file extension and are created using various tools in the Space Time Pattern Mining toolbox.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Output Space Time Cube</para>
-		/// <para>输入时空立方体的子集，满足空间子集方法和时间子集方法参数指定的空间和时间标准。 存储在输入时空立方体中的分析变量将从输出时空立方体中排除。</para>
+		/// <para>The subset of the input space-time cube that meets the spatial and temporal criteria specified by the Spatial Subset Method and Temporal Subset Method parameters. The analysis variables stored in the input space-time cube will be excluded from the output space-time cube.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -110,11 +110,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Spatial Subset Method</para>
-		/// <para>指定将用于对输入时空立方体进行空间子集化的方法。 输入时空立方体中满足此空间子集标准的任何位置都将包含在输出时空立方体中。</para>
-		/// <para>要素—具有面、点或线的要素类将用于对输入时空立方体进行子集化。 空间关系参数指定要素图层如何对时空立方体进行子集化。</para>
-		/// <para>范围—范围参数指定的范围将用于对输入时空立方体进行子集化。 输出时空立方体将包括输入时空立方体中与范围相交的所有位置。</para>
-		/// <para>时空立方体—由输入空间子集立方体参数指定的时空立方体的位置将用于对时空立方体进行子集化。 空间关系参数指定此时空立方体如何将输入时空立方体子集化。</para>
-		/// <para>无—空间子集不会应用于输入时空立方体。</para>
+		/// <para>Specifies the method that will be used to spatially subset the input space-time cube. Any location in the input space-time cube that satisfies this spatial subset criteria will be included in the output space-time cube.</para>
+		/// <para>Features—A feature class with polygons, points, or lines will be used to subset the input space-time cube. The Spatial Relationship parameter specifies how the feature layer will subset the space-time cube.</para>
+		/// <para>Extent—The extent specified by the Extent parameter will be used to subset the input space-time cube. The output space-time cube will include all the locations in the input space-time cube that intersect the extent.</para>
+		/// <para>Space Time Cube—The location of the space-time cube specified by the Input Spatial Subset Cube parameter will be used to subset a space-time cube. The Spatial Relationship parameter specifies how this space-time cube will subset the input space-time cube.</para>
+		/// <para>None—A spatial subset will not be applied to the input space-time cube.</para>
 		/// <para><see cref="SpatialSubsetMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -124,11 +124,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Temporal Subset Method</para>
-		/// <para>指定将用于对时空立方体进行时间子集化的方法。 输入时空立方体中满足此时间子集标准的任何时间步长都将包含在输出时空立方体中。</para>
-		/// <para>用户定义—子集时间跨度参数中的开始时间或结束时间值指定的时间范围将用于对输入时空立方体进行时间子集化。</para>
-		/// <para>时间步长数量—从起点开始和从终点开始的输入时空立方体的多个时间步长将用于在时间上对时空立方体进行子集化。 要移除的时间步数由要移除的时间步长数量参数中的从起点开始或从终点开始值指定。</para>
-		/// <para>时空立方体—由输入时间子集立方体参数指定的时空立方体的时间范围，将用于对输入时空立方体进行时间子集化。</para>
-		/// <para>无—时间子集不会应用于输入时空立方体。</para>
+		/// <para>Specifies the method that will be used to temporally subset a space-time cube. Any time step in the input space-time cube that satisfies the temporal subset criteria will be included in the output space-time cube.</para>
+		/// <para>User defined—The temporal range specified by the Start Time or End Time values in the Time Span of Subset parameter will be used to temporally subset the input space-time cube.</para>
+		/// <para>Number of time steps—A number of time steps from the start and the end of the input space-time cube will be used to temporally subset the space-time cube. The number of time steps to remove is specified by the From the Start or From the End values in the Number of Time Steps to Remove parameter.</para>
+		/// <para>Space time cube—The temporal extent of the space-time cube specified by the Input Temporal Subset Cube parameter will be used to temporally subset the input space-time cube.</para>
+		/// <para>None—A temporal subset will not be applied to the input space-time cube.</para>
 		/// <para><see cref="TemporalSubsetMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Input Subset Features</para>
-		/// <para>包含面、点或线以对时空立方体进行子集化的要素类。 输入子集要素与时空立方体之间的空间关系由空间关系参数指定。</para>
+		/// <para>A feature class that contains polygons, points, or lines to subset a space-time cube. The spatial relationship between the input subset features and the space-time cube is specified by the Spatial Relationship parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -146,11 +146,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Spatial Relationship</para>
-		/// <para>指定将在输入子集要素或输入空间子集立方体参数值和输入时空立方体之间应用的空间关系，以对时空立方体进行空间子集化。 可用的空间关系选项将取决于输入时空立方体的几何形状和输入子集要素或输入空间子集立方体。</para>
-		/// <para>相交—输出时空立方体将包括输入时空立方体中与输入子集要素或输入空间子集立方体参数值相交的位置。 这是默认设置。</para>
-		/// <para>包含—输出时空立方体将包括输入时空立方体中包含输入子集要素或输入空间子集立方体参数值的位置。</para>
-		/// <para>位于—输出时空立方体将包括输入时空立方体中输入子集要素或输入空间子集立方体参数值内的位置。</para>
-		/// <para>中心在要素范围内—输出时空立方体将包括输入时空立方体中以输入子集要素或输入空间子集立方体参数值为中心的位置。</para>
+		/// <para>Specifies the spatial relationship that will be applied between the Input Subset Features or Input Spatial Subset Cube parameter value and the input space-time cube to spatially subset the space-time cube. The available spatial relationship options will depend on the geometry of the input space-time cube and the input subset features or the input spatial subset cube.</para>
+		/// <para>Intersect—The output space-time cube will include the locations in the input space-time cube that intersect the Input Subset Features or Input Spatial Subset Cube parameter value. This is the default.</para>
+		/// <para>Contains—The output space-time cube will include the locations in the input space-time cube that contain the Input Subset Features or Input Spatial Subset Cube parameter value.</para>
+		/// <para>Within—The output space-time cube will include the locations in the input space-time cube that are within the Input Subset Features or Input Spatial Subset Cube parameter value.</para>
+		/// <para>Have their center in—The output space-time cube will include the locations in the input space-time cube that have their center in the Input Subset Features or Input Spatial Subset Cube parameter value.</para>
 		/// <para><see cref="SpatialRelationshipEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -160,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Extent</para>
-		/// <para>将对输入时空立方体进行空间子集化的空间范围。 输出时空立方体将包括输入时空立方体中与范围相交的位置。</para>
+		/// <para>The spatial extent that will spatially subset the input space-time cube. The output space-time cube will include the locations in the input space-time cube that intersect the extent.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Input Spatial Subset Cube</para>
-		/// <para>时空立方体将在空间上对输入时空立方体进行子集化。 输入空间子集立方体与时空立方体之间的空间关系由空间关系参数指定。</para>
+		/// <para>A space-time cube that will spatially subset the input space-time cube. The spatial relationship between the input spatial subset cube and the space-time cube is specified by the Spatial Relationship parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -178,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Time Span of Subset</para>
-		/// <para>对输入时空立方体进行时间子集化的时间间隔。 在此时间间隔内或任何包含开始时间或结束时间列值的时间步长都将包含在输出时空立方体中。</para>
+		/// <para>The time interval to temporally subset the input space-time cube. Any time step that is within this time interval or that contains the Start time or End time column values will be included in the output space-time cube.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -187,7 +187,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Number of Time Steps to Remove</para>
-		/// <para>从起点开始和从终点开始的输入时空立方体的时间步长数量，将从输出时空立方体中移除。</para>
+		/// <para>The number of time steps from the start and the end of the input space-time cube that will be removed from the output space-time cube.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -196,7 +196,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Input Temporal Subset Cube</para>
-		/// <para>时空立方体将在时间上对输入时空立方体进行子集化。 时间子集立方体的时间范围定义了输出时空立方体的时间范围。 任何时间步长，只要在输入时间子集立方体的时间范围内或包含有时间子集立方体的开始或结束时间，则都将包含在输出时空立方体中。</para>
+		/// <para>A space-time cube that will temporally subset the input space-time cube. The temporal extent of the temporal subset cube defines the temporal extent of the output space-time cube. Any time step that is within the temporal extent of the input temporal subset cube or that contains the start time or end time of the temporal subset cube will be included in the output space-time cube.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -221,31 +221,31 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		public enum SpatialSubsetMethodEnum 
 		{
 			/// <summary>
-			/// <para>要素—具有面、点或线的要素类将用于对输入时空立方体进行子集化。 空间关系参数指定要素图层如何对时空立方体进行子集化。</para>
+			/// <para>Features—A feature class with polygons, points, or lines will be used to subset the input space-time cube. The Spatial Relationship parameter specifies how the feature layer will subset the space-time cube.</para>
 			/// </summary>
 			[GPValue("FEATURES")]
-			[Description("要素")]
+			[Description("Features")]
 			Features,
 
 			/// <summary>
-			/// <para>范围—范围参数指定的范围将用于对输入时空立方体进行子集化。 输出时空立方体将包括输入时空立方体中与范围相交的所有位置。</para>
+			/// <para>Extent—The extent specified by the Extent parameter will be used to subset the input space-time cube. The output space-time cube will include all the locations in the input space-time cube that intersect the extent.</para>
 			/// </summary>
 			[GPValue("EXTENT")]
-			[Description("范围")]
+			[Description("Extent")]
 			Extent,
 
 			/// <summary>
-			/// <para>时空立方体—由输入空间子集立方体参数指定的时空立方体的位置将用于对时空立方体进行子集化。 空间关系参数指定此时空立方体如何将输入时空立方体子集化。</para>
+			/// <para>Space Time Cube—The location of the space-time cube specified by the Input Spatial Subset Cube parameter will be used to subset a space-time cube. The Spatial Relationship parameter specifies how this space-time cube will subset the input space-time cube.</para>
 			/// </summary>
 			[GPValue("SPACE_TIME_CUBE")]
-			[Description("时空立方体")]
+			[Description("Space Time Cube")]
 			Space_Time_Cube,
 
 			/// <summary>
-			/// <para>无—空间子集不会应用于输入时空立方体。</para>
+			/// <para>None—A spatial subset will not be applied to the input space-time cube.</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("无")]
+			[Description("None")]
 			None,
 
 		}
@@ -256,31 +256,31 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		public enum TemporalSubsetMethodEnum 
 		{
 			/// <summary>
-			/// <para>用户定义—子集时间跨度参数中的开始时间或结束时间值指定的时间范围将用于对输入时空立方体进行时间子集化。</para>
+			/// <para>User defined—The temporal range specified by the Start Time or End Time values in the Time Span of Subset parameter will be used to temporally subset the input space-time cube.</para>
 			/// </summary>
 			[GPValue("USER_DEFINED")]
-			[Description("用户定义")]
+			[Description("User defined")]
 			User_defined,
 
 			/// <summary>
-			/// <para>时间步长数量—从起点开始和从终点开始的输入时空立方体的多个时间步长将用于在时间上对时空立方体进行子集化。 要移除的时间步数由要移除的时间步长数量参数中的从起点开始或从终点开始值指定。</para>
+			/// <para>Number of time steps—A number of time steps from the start and the end of the input space-time cube will be used to temporally subset the space-time cube. The number of time steps to remove is specified by the From the Start or From the End values in the Number of Time Steps to Remove parameter.</para>
 			/// </summary>
 			[GPValue("NUMBER_OF_TIME_STEPS")]
-			[Description("时间步长数量")]
+			[Description("Number of time steps")]
 			Number_of_time_steps,
 
 			/// <summary>
-			/// <para>时空立方体—由输入时间子集立方体参数指定的时空立方体的时间范围，将用于对输入时空立方体进行时间子集化。</para>
+			/// <para>Space time cube—The temporal extent of the space-time cube specified by the Input Temporal Subset Cube parameter will be used to temporally subset the input space-time cube.</para>
 			/// </summary>
 			[GPValue("SPACE_TIME_CUBE")]
-			[Description("时空立方体")]
+			[Description("Space time cube")]
 			Space_time_cube,
 
 			/// <summary>
-			/// <para>无—时间子集不会应用于输入时空立方体。</para>
+			/// <para>None—A temporal subset will not be applied to the input space-time cube.</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("无")]
+			[Description("None")]
 			None,
 
 		}
@@ -291,31 +291,31 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		public enum SpatialRelationshipEnum 
 		{
 			/// <summary>
-			/// <para>相交—输出时空立方体将包括输入时空立方体中与输入子集要素或输入空间子集立方体参数值相交的位置。 这是默认设置。</para>
+			/// <para>Intersect—The output space-time cube will include the locations in the input space-time cube that intersect the Input Subset Features or Input Spatial Subset Cube parameter value. This is the default.</para>
 			/// </summary>
 			[GPValue("INTERSECT")]
-			[Description("相交")]
+			[Description("Intersect")]
 			Intersect,
 
 			/// <summary>
-			/// <para>包含—输出时空立方体将包括输入时空立方体中包含输入子集要素或输入空间子集立方体参数值的位置。</para>
+			/// <para>Contains—The output space-time cube will include the locations in the input space-time cube that contain the Input Subset Features or Input Spatial Subset Cube parameter value.</para>
 			/// </summary>
 			[GPValue("CONTAINS")]
-			[Description("包含")]
+			[Description("Contains")]
 			Contains,
 
 			/// <summary>
-			/// <para>位于—输出时空立方体将包括输入时空立方体中输入子集要素或输入空间子集立方体参数值内的位置。</para>
+			/// <para>Within—The output space-time cube will include the locations in the input space-time cube that are within the Input Subset Features or Input Spatial Subset Cube parameter value.</para>
 			/// </summary>
 			[GPValue("WITHIN")]
-			[Description("位于")]
+			[Description("Within")]
 			Within,
 
 			/// <summary>
-			/// <para>中心在要素范围内—输出时空立方体将包括输入时空立方体中以输入子集要素或输入空间子集立方体参数值为中心的位置。</para>
+			/// <para>Have their center in—The output space-time cube will include the locations in the input space-time cube that have their center in the Input Subset Features or Input Spatial Subset Cube parameter value.</para>
 			/// </summary>
 			[GPValue("HAVE_THEIR_CENTER_IN")]
-			[Description("中心在要素范围内")]
+			[Description("Have their center in")]
 			Have_their_center_in,
 
 		}

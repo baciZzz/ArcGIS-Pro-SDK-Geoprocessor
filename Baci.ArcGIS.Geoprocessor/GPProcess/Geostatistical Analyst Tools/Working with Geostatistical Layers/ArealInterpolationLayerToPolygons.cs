@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Areal Interpolation Layer To Polygons</para>
-	/// <para>面插值图层到面</para>
-	/// <para>将面插值图层的预测值重新聚合为一组新面。</para>
+	/// <para>Areal Interpolation Layer To Polygons</para>
+	/// <para>Reaggregates the predictions of an Areal Interpolation layer to a new set of polygons.</para>
 	/// </summary>
 	public class ArealInterpolationLayerToPolygons : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InArealInterpolationLayer">
 		/// <para>Input areal interpolation geostatistical layer</para>
-		/// <para>由面插值模型生成的输入地统计图层。</para>
+		/// <para>Input geostatistical layer resulting from an Areal Interpolation model.</para>
 		/// </param>
 		/// <param name="InPolygonFeatures">
 		/// <para>Input polygon features</para>
-		/// <para>预测和标准误差进行聚合的面。</para>
+		/// <para>The polygons where predictions and standard errors will be aggregated.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output polygon feature class</para>
-		/// <para>包含对新面聚合的预测和标准误差的输出要素类。</para>
+		/// <para>The output feature class containing the aggregated predictions and standard errors for the new polygons.</para>
 		/// </param>
 		public ArealInterpolationLayerToPolygons(object InArealInterpolationLayer, object InPolygonFeatures, object OutFeatureClass)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 面插值图层到面</para>
+		/// <para>Tool Display Name : Areal Interpolation Layer To Polygons</para>
 		/// </summary>
-		public override string DisplayName() => "面插值图层到面";
+		public override string DisplayName() => "Areal Interpolation Layer To Polygons";
 
 		/// <summary>
 		/// <para>Tool Name : ArealInterpolationLayerToPolygons</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input areal interpolation geostatistical layer</para>
-		/// <para>由面插值模型生成的输入地统计图层。</para>
+		/// <para>Input geostatistical layer resulting from an Areal Interpolation model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPGALayer()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input polygon features</para>
-		/// <para>预测和标准误差进行聚合的面。</para>
+		/// <para>The polygons where predictions and standard errors will be aggregated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output polygon feature class</para>
-		/// <para>包含对新面聚合的预测和标准误差的输出要素类。</para>
+		/// <para>The output feature class containing the aggregated predictions and standard errors for the new polygons.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -101,9 +101,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Append all fields from input features</para>
-		/// <para>确定是否所有字段都将从输入要素复制到输出要素类。</para>
-		/// <para>选中 - 输入要素的所有字段都将复制到输出要素类。这是默认设置。</para>
-		/// <para>未选中 - 仅复制要素 ID 值，并在输出要素类中将其命名为 Source_ID。</para>
+		/// <para>Determines whether all fields will be copied from the input features to the output feature class.</para>
+		/// <para>Checked—All fields from the input features will be copied to the output feature class. This is the default.</para>
+		/// <para>Unchecked—Only the feature ID value will be copied, and it will be named Source_ID on the output feature class.</para>
 		/// <para><see cref="AppendAllFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -128,14 +128,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum AppendAllFieldsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—All fields from the input features will be copied to the output feature class. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ALL")]
 			ALL,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Only the feature ID value will be copied, and it will be named Source_ID on the output feature class.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("FID_ONLY")]

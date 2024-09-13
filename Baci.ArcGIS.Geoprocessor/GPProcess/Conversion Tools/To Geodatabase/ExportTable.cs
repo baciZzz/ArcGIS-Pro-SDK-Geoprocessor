@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Export Table</para>
-	/// <para>导出表</para>
-	/// <para>将表或表视图的行导出到表中。</para>
+	/// <para>Export Table</para>
+	/// <para>Exports the rows of a table or table view to a table.</para>
 	/// </summary>
 	public class ExportTable : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>要导出到新表格的包含行的输入表。</para>
+		/// <para>The input table containing the rows to be exported to a new table.</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
-		/// <para>包含导出行的输出表。</para>
+		/// <para>The output table containing the exported rows.</para>
 		/// </param>
 		public ExportTable(object InTable, object OutTable)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 导出表</para>
+		/// <para>Tool Display Name : Export Table</para>
 		/// </summary>
-		public override string DisplayName() => "导出表";
+		public override string DisplayName() => "Export Table";
 
 		/// <summary>
 		/// <para>Tool Name : ExportTable</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>要导出到新表格的包含行的输入表。</para>
+		/// <para>The input table containing the rows to be exported to a new table.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>包含导出行的输出表。</para>
+		/// <para>The output table containing the exported rows.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>用于选择记录子集的 SQL 表达式。</para>
+		/// <para>An SQL expression used to select a subset of records.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -95,9 +95,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Use Field Alias as Name</para>
-		/// <para>指定是将输入字段名称还是字段别名用作输出字段名称。</para>
-		/// <para>未选中 - 将输入字段名称用作输出字段名称。 这是默认设置。</para>
-		/// <para>选中 - 将输入字段别名用作输出字段名称。</para>
+		/// <para>Specifies whether the input&apos;s field names or field aliases will be used as the output field name.</para>
+		/// <para>Unchecked—The input&apos;s field names will be used as the output field names. This is the default.</para>
+		/// <para>Checked—The input&apos;s field aliases will be used as the output field names.</para>
 		/// <para><see cref="UseFieldAliasAsNameEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -108,20 +108,20 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Field Map</para>
-		/// <para>输出中将包括的具有相应字段属性和源字段的属性字段。 默认情况下，将包括输入的所有字段。</para>
-		/// <para>可以添加、删除、重命名和重新排序字段，且可以更改其属性。</para>
-		/// <para>合并规则用于指定如何将两个或更多个输入字段的值合并或组合为一个输出值。 有多种合并规则可用于确定如何用值填充输出字段。</para>
-		/// <para>First - 使用输入字段的第一个值。</para>
-		/// <para>Last - 使用输入字段的最后一个值。</para>
-		/// <para>Join - 串连（连接）输入字段的值。</para>
-		/// <para>Sum - 计算输入字段值的总和。</para>
-		/// <para>Mean - 计算输入字段值的平均值。</para>
-		/// <para>Median - 计算输入字段值的中值。</para>
-		/// <para>Mode - 使用具有最高频率的值。</para>
-		/// <para>Min - 使用所有输入字段值中的最小值。</para>
-		/// <para>Max - 使用所有输入字段值中的最大值。</para>
-		/// <para>Standard deviation - 对所有输入字段值使用标准差分类方法。</para>
-		/// <para>Count - 查找计算中所包含的记录数。</para>
+		/// <para>The attribute fields that will be in the output with the corresponding field properties and source fields. By default, all fields from the inputs will be included.</para>
+		/// <para>Fields can be added, deleted, renamed, and reordered, and you can change their properties.</para>
+		/// <para>Merge rules allow you to specify how values from two or more input fields are merged or combined into a single output value. There are several merge rules you can use to determine how the output field will be populated with values.</para>
+		/// <para>First—Use the input fields&apos; first value.</para>
+		/// <para>Last—Use the input fields&apos; last value.</para>
+		/// <para>Join—Concatenate (join) the input field values.</para>
+		/// <para>Sum—Calculate the total of the input field values.</para>
+		/// <para>Mean—Calculate the mean (average) of the input field values.</para>
+		/// <para>Median—Calculate the median (middle) of the input field values.</para>
+		/// <para>Mode—Use the value with the highest frequency.</para>
+		/// <para>Min—Use the minimum value of all the input field values.</para>
+		/// <para>Max—Use the maximum value of all the input field values.</para>
+		/// <para>Standard deviation—Use the standard deviation classification method on all the input field values.</para>
+		/// <para>Count—Find the number of records included in the calculation.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFieldMapping()]
@@ -130,9 +130,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Sort Field</para>
-		/// <para>包含对输入记录重新排序所用的值的一个或多个字段，以及记录的排序方向。</para>
-		/// <para>升序 - 将按照值从低到高的顺序对记录进行排序。</para>
-		/// <para>降序 - 将按照值从高到低的顺序对记录进行排序。</para>
+		/// <para>The field or fields whose values will be used to reorder the input records and the direction the records will be sorted.</para>
+		/// <para>Ascending—Records will be sorted from low value to high value.</para>
+		/// <para>Descending—Records will be sorted from high value to low value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -157,14 +157,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum UseFieldAliasAsNameEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The input&apos;s field aliases will be used as the output field names.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("USE_ALIAS")]
 			USE_ALIAS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The input&apos;s field names will be used as the output field names. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_USE_ALIAS")]

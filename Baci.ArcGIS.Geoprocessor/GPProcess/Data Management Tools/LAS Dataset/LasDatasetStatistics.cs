@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>LAS Dataset Statistics</para>
-	/// <para>LAS 数据集统计数据</para>
-	/// <para>计算或更新 LAS 数据集的统计数据并生成可选的统计数据报表。</para>
+	/// <para>LAS Dataset Statistics</para>
+	/// <para>Calculates or updates statistics for a LAS dataset and generates an optional statistics report.</para>
 	/// </summary>
 	public class LasDatasetStatistics : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InLasDataset">
 		/// <para>Input LAS Dataset</para>
-		/// <para>待处理的 LAS 数据集。</para>
+		/// <para>The LAS dataset to process.</para>
 		/// </param>
 		public LasDatasetStatistics(object InLasDataset)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : LAS 数据集统计数据</para>
+		/// <para>Tool Display Name : LAS Dataset Statistics</para>
 		/// </summary>
-		public override string DisplayName() => "LAS 数据集统计数据";
+		public override string DisplayName() => "LAS Dataset Statistics";
 
 		/// <summary>
 		/// <para>Tool Name : LasDatasetStatistics</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
-		/// <para>待处理的 LAS 数据集。</para>
+		/// <para>The LAS dataset to process.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLasDatasetLayer()]
@@ -73,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Skip Existing</para>
-		/// <para>指定是否针对所有激光雷达文件或仅针对那些没有统计数据的文件计算统计数据：</para>
-		/// <para>选中 - 将跳过包含最新统计数据的 LAS 文件，仅为新添加的 LAS 文件或自初始计算后更新的 LAS 文件计算统计数据。这是默认设置。</para>
-		/// <para>未选中 - 为所有 LAS 文件（包括具有最新统计数据的 LAS 文件）计算统计数据。这适合于在 ArcGIS 未检测到的外部应用程序中修改了 LAS 文件的情况。</para>
+		/// <para>Specifies whether statistics will be calculated for all lidar files or only for those that do not have statistics:</para>
+		/// <para>Checked—LAS files with up-to-date statistics will be skipped, and statistics will only be calculated for newly added LAS files or ones that were updated since the initial calculation. This is the default.</para>
+		/// <para>Unchecked—Statistics will be calculated for all LAS files, including ones that have up-to-date statistics. This is useful if the LAS files were modified in an external application that went undetected by ArcGIS.</para>
 		/// <para><see cref="CalculationTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Statistics Report Text File</para>
-		/// <para>包含 LAS 数据集统计数据汇总的输出文本文件。</para>
+		/// <para>The output text file that will contain the summary of the LAS dataset statistics.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETextFile()]
@@ -93,9 +93,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Summary Level</para>
-		/// <para>指定包含在报表中的汇总类型。</para>
-		/// <para>聚合所有文件的统计数据—报表将汇总整个 LAS 数据集的统计数据。这是默认设置。</para>
-		/// <para>每个 LAS 文件的统计数据—报表将汇总 LAS 数据集引用的 LAS 文件的统计数据。</para>
+		/// <para>Specify the type of summary contained in the report.</para>
+		/// <para>Aggregate Statistics for All Files—The report will summarize statistics for the entire LAS dataset. This is the default.</para>
+		/// <para>Statistics for Each LAS File—The report will summarize statistics for the LAS files referenced by the LAS dataset.</para>
 		/// <para><see cref="SummaryLevelEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -105,9 +105,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Delimiter</para>
-		/// <para>将用于指示文本文件表的列中输入条目间隔的分隔符。</para>
-		/// <para>空格—空格将用于分隔字段值。 这是默认设置。</para>
-		/// <para>逗号—逗号将用于分隔字段值。 如果小数分隔符也是逗号，则此选项不适用。</para>
+		/// <para>The delimiter that will be used to indicate the separation of entries in the columns of the text file table.</para>
+		/// <para>Space—A space will be used to delimit field values. This is the default.</para>
+		/// <para>Comma—A comma will be used to delimit field values. This option is not applicable if the decimal separator is also a comma.</para>
 		/// <para><see cref="DelimiterEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -117,9 +117,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Decimal Separator</para>
-		/// <para>文本文件中将用于区分数字的整数部分与其小数部分的小数分隔符。</para>
-		/// <para>点—将使用点作为小数字符。 这是默认设置。</para>
-		/// <para>逗号—将使用逗号作为小数字符。</para>
+		/// <para>The decimal character that will be used in the text file to differentiate the integer of a number from its fractional part.</para>
+		/// <para>Point—A point will be used as the decimal character. This is the default.</para>
+		/// <para>Comma—A comma will be used as the decimal character.</para>
 		/// <para><see cref="DecimalSeparatorEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -151,14 +151,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CalculationTypeEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—LAS files with up-to-date statistics will be skipped, and statistics will only be calculated for newly added LAS files or ones that were updated since the initial calculation. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SKIP_EXISTING_STATS")]
 			SKIP_EXISTING_STATS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Statistics will be calculated for all LAS files, including ones that have up-to-date statistics. This is useful if the LAS files were modified in an external application that went undetected by ArcGIS.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("OVERWRITE_EXISTING_STATS")]
@@ -172,17 +172,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SummaryLevelEnum 
 		{
 			/// <summary>
-			/// <para>聚合所有文件的统计数据—报表将汇总整个 LAS 数据集的统计数据。这是默认设置。</para>
+			/// <para>Aggregate Statistics for All Files—The report will summarize statistics for the entire LAS dataset. This is the default.</para>
 			/// </summary>
 			[GPValue("DATASET")]
-			[Description("聚合所有文件的统计数据")]
+			[Description("Aggregate Statistics for All Files")]
 			Aggregate_Statistics_for_All_Files,
 
 			/// <summary>
-			/// <para>每个 LAS 文件的统计数据—报表将汇总 LAS 数据集引用的 LAS 文件的统计数据。</para>
+			/// <para>Statistics for Each LAS File—The report will summarize statistics for the LAS files referenced by the LAS dataset.</para>
 			/// </summary>
 			[GPValue("LAS_FILES")]
-			[Description("每个 LAS 文件的统计数据")]
+			[Description("Statistics for Each LAS File")]
 			Statistics_for_Each_LAS_File,
 
 		}
@@ -193,17 +193,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DelimiterEnum 
 		{
 			/// <summary>
-			/// <para>逗号—逗号将用于分隔字段值。 如果小数分隔符也是逗号，则此选项不适用。</para>
+			/// <para>Comma—A comma will be used to delimit field values. This option is not applicable if the decimal separator is also a comma.</para>
 			/// </summary>
 			[GPValue("COMMA")]
-			[Description("逗号")]
+			[Description("Comma")]
 			Comma,
 
 			/// <summary>
-			/// <para>空格—空格将用于分隔字段值。 这是默认设置。</para>
+			/// <para>Space—A space will be used to delimit field values. This is the default.</para>
 			/// </summary>
 			[GPValue("SPACE")]
-			[Description("空格")]
+			[Description("Space")]
 			Space,
 
 		}
@@ -214,17 +214,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DecimalSeparatorEnum 
 		{
 			/// <summary>
-			/// <para>点—将使用点作为小数字符。 这是默认设置。</para>
+			/// <para>Point—A point will be used as the decimal character. This is the default.</para>
 			/// </summary>
 			[GPValue("DECIMAL_POINT")]
-			[Description("点")]
+			[Description("Point")]
 			Point,
 
 			/// <summary>
-			/// <para>逗号—将使用逗号作为小数字符。</para>
+			/// <para>Comma—A comma will be used as the decimal character.</para>
 			/// </summary>
 			[GPValue("DECIMAL_COMMA")]
-			[Description("逗号")]
+			[Description("Comma")]
 			Comma,
 
 		}

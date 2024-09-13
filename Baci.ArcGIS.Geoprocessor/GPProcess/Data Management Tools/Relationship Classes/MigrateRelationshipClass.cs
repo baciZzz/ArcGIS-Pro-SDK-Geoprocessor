@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Migrate Relationship Class</para>
-	/// <para>迁移关系类</para>
-	/// <para>将基于 ObjectID 的关系类迁移到基于 GlobalID 的关系类。</para>
+	/// <para>Migrate Relationship Class</para>
+	/// <para>Migrates an ObjectID-based relationship class to a GlobalID-based relationship class.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRelationshipClass">
 		/// <para>Input Relationship Class</para>
-		/// <para>基于 ObjectID 的关系类，将被迁移至基于 GlobalID 的关系类。源要素类和目标要素类或表必须已经具有 GlobalID。</para>
+		/// <para>ObjectID-based relationship class that will be migrated to a GlobalID-based relationship class. The origin and destination feature classes or tables must already have GlobalIDs.</para>
 		/// </param>
 		public MigrateRelationshipClass(object InRelationshipClass)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 迁移关系类</para>
+		/// <para>Tool Display Name : Migrate Relationship Class</para>
 		/// </summary>
-		public override string DisplayName() => "迁移关系类";
+		public override string DisplayName() => "Migrate Relationship Class";
 
 		/// <summary>
 		/// <para>Tool Name : MigrateRelationshipClass</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Relationship Class</para>
-		/// <para>基于 ObjectID 的关系类，将被迁移至基于 GlobalID 的关系类。源要素类和目标要素类或表必须已经具有 GlobalID。</para>
+		/// <para>ObjectID-based relationship class that will be migrated to a GlobalID-based relationship class. The origin and destination feature classes or tables must already have GlobalIDs.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERelationshipClass()]

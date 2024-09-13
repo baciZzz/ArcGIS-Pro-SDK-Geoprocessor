@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Map Tile Package</para>
-	/// <para>创建地图切片包</para>
-	/// <para>从地图生成切片，并将切片进行打包从而创建单个压缩切片包（.tpkx 文件）。</para>
+	/// <para>Create Map Tile Package</para>
+	/// <para>Generates tiles from a map and packages the tiles to create a single compressed tile package (.tpkx file).</para>
 	/// </summary>
 	public class CreateMapTilePackage : AbstractGPProcess
 	{
@@ -21,36 +21,36 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMap">
 		/// <para>Input Map</para>
-		/// <para>用于生成切片并对其进行打包的地图。</para>
+		/// <para>The map from which tiles will be generated and packaged.</para>
 		/// </param>
 		/// <param name="ServiceType">
 		/// <para>Package for ArcGIS Online | Bing Maps | Google Maps</para>
-		/// <para>指定是从现有的地图服务生成切片方案，还是根据 ArcGIS Online、Bing Maps 和 Google Maps 生成地图切片。</para>
-		/// <para>选中 - 将使用 ArcGIS Online/Bing Maps/Google Maps 切片方案。 这是默认设置。ArcGIS Online/Bing Maps/Google Maps 切片方案可用于将缓存切片与这些在线地图服务的切片进行叠加。 加载切片方案时，ArcGIS Desktop 以内置选项形式包括此切片方案。 选择此切片方案时，源地图必须使用 WGS 1984 Web Mercator（辅助球体）投影坐标系。</para>
-		/// <para>如果要将包与 ArcGIS Online、Bing 地图或 Google 地图进行叠加，则需要使用 ArcGIS Online/Bing 地图/Google 地图切片方案。 ArcGIS Online/Bing 地图/Google 地图切片方案的优势在于其在 Web 地图领域内的高熟识度，所以切片将与其他使用此切片方案的组织的切片相一致。 即使您不打算叠加这些广为熟知的地图服务，仍然可以选择此切片方案以便于互操作。</para>
-		/// <para>ArcGIS Online/Bing 地图/Google 地图切片方案可能包含过度放大以至于无法在地图中使用的比例。 在大比例下进行打包将花费很多时间，且会占用大量磁盘存储空间。 例如，切片方案中的最大比例约为 1:1,000。 在此比例下缓存整个美国大陆可能将耗费数周时间并需要数百 GB 的存储空间。 如果尚未准备好在此比例级别下进行打包，则在创建切片包时移除此比例级别。</para>
-		/// <para>未选中 - 使用一个现有地图服务的切片方案。如果您的组织已在服务器上创建现有服务的切片方案并且您想要与其进行匹配，则请选择此选项。 相匹配的切片方案可确保切片在您的 ArcGIS Runtime 应用程序中正确叠加。</para>
-		/// <para>如果选择此选项，则源地图和用于导入切片方案的地图将使用相同的坐标系。</para>
+		/// <para>Specifies whether the tiling scheme will be generated from an existing map service or whether map tiles will be generated for ArcGIS Online, Bing Maps, and Google Maps.</para>
+		/// <para>Checked—The ArcGIS Online/Bing Maps/Google Maps tiling scheme will be used. This is the default.The ArcGIS Online/Bing Maps/Google Maps tiling scheme allows you to overlay cache tiles with tiles from these online mapping services. ArcGIS Desktop includes this tiling scheme as a built-in option when loading a tiling scheme. When you choose this tiling scheme, the source map must use the WGS 1984 Web Mercator (Auxiliary Sphere) projected coordinate system.</para>
+		/// <para>The ArcGIS Online/Bing Maps/Google Maps tiling scheme is required if you&apos;ll be overlaying the package with ArcGIS Online, Bing Maps, or Google Maps. One advantage of the ArcGIS Online/Bing Maps/Google Maps tiling scheme is that it is widely known in the web mapping world, so the tiles will match those of other organizations that have used this tiling scheme. Even if you don&apos;t plan to overlay any of these well-known map services, you may choose the tiling scheme for its interoperability potential.</para>
+		/// <para>The ArcGIS Online/Bing Maps/Google Maps tiling scheme may contain scales that will be zoomed in too far to be of use in your map. Packaging for large scales can take up time and disk storage space. For example, the largest scale in the tiling scheme is about 1:1,000. Packaging the entire continental United States at this scale can take weeks and require hundreds of gigabytes of storage. If you aren&apos;t prepared to package at this scale level, remove this scale level when you create the tile package.</para>
+		/// <para>Unchecked—A tiling scheme from an existing map service will be used.Choose this option if your organization has created a tiling scheme for an existing service on the server and you want to match it. Matching tiling schemes ensures that the tiles will overlay correctly in your ArcGIS Runtime application.</para>
+		/// <para>If you choose this option, use the same coordinate system for the source map as the map with the tiling scheme you&apos;re importing.</para>
 		/// <para><see cref="ServiceTypeEnum"/></para>
 		/// </param>
 		/// <param name="OutputFile">
 		/// <para>Output File</para>
-		/// <para>输出地图切片包。</para>
+		/// <para>The output map tile package.</para>
 		/// </param>
 		/// <param name="FormatType">
 		/// <para>Tiling Format</para>
-		/// <para>指定生成切片将使用的格式。</para>
-		/// <para>PNG—将根据指定的细节层次值使用正确的格式（PNG 8、PNG 24 或 PNG 32）。 这是默认设置。</para>
-		/// <para>PNG（8 位）—将使用 PNG8 格式。 可将此格式用于需要具有透明背景的叠加服务，例如道路和边界。 PNG8 可在磁盘上创建非常小的切片且不损失任何信息。如果地图包含的颜色超过 256 种，请勿使用 PNG 8。 影像、山体阴影、梯度填充、透明度和抗锯齿可以在地图中轻松使用超过 256 种颜色。 符号（如高速公路盾形路牌符号）也可能在其边缘周围具有细微的抗锯齿，从而使地图包含意料之外的更多颜色。</para>
-		/// <para>PNG（24 位）—将使用 PNG24 格式。 可将此格式用于超过 256 种颜色的叠加服务，例如道路和边界。如果少于 256 种颜色，请使用 PNG 8。</para>
-		/// <para>PNG（32 位）—将使用 PNG32 格式。 此格式用于超过 256 种颜色的叠置服务，如道路和边界。 PNG 32 适用于对线或文本启用了抗锯齿的叠加服务。 与 PNG 24 相比，PNG 32 可磁盘上创建更大的切片。</para>
-		/// <para>JPEG—将使用 JPEG 格式。 此格式用于颜色变化较大但不需要透明背景的底图服务。 例如，栅格影像和详细的矢量底图特别适合使用 JPEG。JPEG 为有损图像格式。 在不影响图像显示效果的情况下，它会尝试有选择地移除数据。 这会在磁盘上产生很小的切片，但如果地图包含矢量线作业或标注，它可能会在线周围生成过多的噪声或模糊区域。 如果发生这种情况，可将压缩值从默认的 75 增加到更大的值。 更高的值（如 90）可以生成可接受的线作业质量，同时还可保证 JPEG 格式的小切片优势。如果愿意接受图像中存在少量噪声，则可以使用 JPEG 节省大量的磁盘空间。 较小的切片大小也意味着应用程序可以更快地下载切片。</para>
-		/// <para>混合—将在包的中心使用 JPEG 格式，在包的边缘使用 PNG 32。 要在其他图层上完全叠加栅格包时，请使用混合模式。创建混合包时，将在检测到透明度的位置（也就是地图背景可见的位置）创建 PNG 32 切片。 其余切片使用 JPEG 构建。 这可降低平均文件大小，同时可在其他包上进行完全叠加。 如果在这种情况下不使用混合模式包，则可以在图像叠加其他包的外围区域看到一个不透明的凸边。</para>
+		/// <para>Specifies the format that will be used for the generated tiles.</para>
+		/// <para>PNG—The correct format (PNG 8, PNG 24, or PNG 32) will be used based on the specified Level of Detail value. This is the default.</para>
+		/// <para>PNG 8 bit—PNG8 format will be used. Use this format for overlay services that need to have a transparent background, such as roads and boundaries. PNG 8 creates tiles of very small size on disk with no loss of information. Do not use PNG 8 if the map contains more than 256 colors. Imagery, hillshades, gradient fills, transparency, and antialiasing can easily use more than 256 colors in a map. Even symbols such as highway shields may have subtle antialiasing around the edges that unexpectedly adds colors to a map.</para>
+		/// <para>PNG 24 bit—PNG24 format will be used. Use this format for overlay services, such as roads and boundaries, that have more than 256 colors (if fewer than 256 colors, use PNG 8).</para>
+		/// <para>PNG 32 bit—PNG32 format will be used. Use this format for overlay services, such as roads and boundaries, that have more than 256 colors. PNG 32 is a good choice for overlay services that have antialiasing enabled on lines or text. PNG 32 creates larger tiles on disk than PNG 24.</para>
+		/// <para>JPEG—JPEG format will be used. Use this format for basemap services that have large color variation and do not need a transparent background. For example, raster imagery and detailed vector basemaps tend to work well with JPEG. JPEG is a lossy image format. It attempts to selectively remove data without affecting the appearance of the image. This can cause very small tile sizes on disk, but if a map contains vector line work or labels, it may produce too much noise or blurry area around the lines. If this is the case, you can raise the compression value from the default of 75. A higher value, such as 90, may balance an acceptable quality of line work with the small tile size benefit of the JPEG.If you are willing to accept a minor amount of noise in the images, you may save large amounts of disk space with JPEG. The smaller tile size also means the application can download the tiles faster.</para>
+		/// <para>Mixed—JPEG format will be used in the center of the package and PNG 32 will be used on the edge of the package. Use mixed mode when you want to cleanly overlay raster packages on other layers.When a mixed package is created, PNG 32 tiles are created where transparency is detected (in other words, where the map background is visible). The rest of the tiles are built using JPEG. This keeps the average file size down while providing a clean overlay on top of other packages. If you do not use the mixed mode package in this scenario, a nontransparent collar around the periphery of the image where it overlaps the other package will be visible.</para>
 		/// <para><see cref="FormatTypeEnum"/></para>
 		/// </param>
 		/// <param name="LevelOfDetail">
 		/// <para>Maximum Level Of Detail</para>
-		/// <para>与用于定义缓存切片方案的比例数相对应的整数表达。 此比例值用于定义在切片包中生成缓存切片的最高级别。 较大的值反映可以显示更多细节的较大比例，但占用的存储空间较多。 较小的值反映可以显示较少细节的较小比例，并且占用的存储空间较少。 可能的值范围为 1 至 23。 默认值为 1。 最大细节层次值必须大于最小细节层次值。</para>
+		/// <para>The integer representation corresponding to the number of scales used to define a cache tiling scheme. This scale value defines the maximum level up to which the cache tiles will be generated in the tile package. Larger values reflect larger scales that show more detail but require more storage space. Smaller values reflect smaller scales that show less detail and require less storage space. Possible values are from 1 to 23. The default value is 1. The maximum level of detail value must be greater than the minimum level of detail value.</para>
 		/// </param>
 		public CreateMapTilePackage(object InMap, object ServiceType, object OutputFile, object FormatType, object LevelOfDetail)
 		{
@@ -62,9 +62,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建地图切片包</para>
+		/// <para>Tool Display Name : Create Map Tile Package</para>
 		/// </summary>
-		public override string DisplayName() => "创建地图切片包";
+		public override string DisplayName() => "Create Map Tile Package";
 
 		/// <summary>
 		/// <para>Tool Name : CreateMapTilePackage</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Map</para>
-		/// <para>用于生成切片并对其进行打包的地图。</para>
+		/// <para>The map from which tiles will be generated and packaged.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMap()]
@@ -106,12 +106,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Package for ArcGIS Online | Bing Maps | Google Maps</para>
-		/// <para>指定是从现有的地图服务生成切片方案，还是根据 ArcGIS Online、Bing Maps 和 Google Maps 生成地图切片。</para>
-		/// <para>选中 - 将使用 ArcGIS Online/Bing Maps/Google Maps 切片方案。 这是默认设置。ArcGIS Online/Bing Maps/Google Maps 切片方案可用于将缓存切片与这些在线地图服务的切片进行叠加。 加载切片方案时，ArcGIS Desktop 以内置选项形式包括此切片方案。 选择此切片方案时，源地图必须使用 WGS 1984 Web Mercator（辅助球体）投影坐标系。</para>
-		/// <para>如果要将包与 ArcGIS Online、Bing 地图或 Google 地图进行叠加，则需要使用 ArcGIS Online/Bing 地图/Google 地图切片方案。 ArcGIS Online/Bing 地图/Google 地图切片方案的优势在于其在 Web 地图领域内的高熟识度，所以切片将与其他使用此切片方案的组织的切片相一致。 即使您不打算叠加这些广为熟知的地图服务，仍然可以选择此切片方案以便于互操作。</para>
-		/// <para>ArcGIS Online/Bing 地图/Google 地图切片方案可能包含过度放大以至于无法在地图中使用的比例。 在大比例下进行打包将花费很多时间，且会占用大量磁盘存储空间。 例如，切片方案中的最大比例约为 1:1,000。 在此比例下缓存整个美国大陆可能将耗费数周时间并需要数百 GB 的存储空间。 如果尚未准备好在此比例级别下进行打包，则在创建切片包时移除此比例级别。</para>
-		/// <para>未选中 - 使用一个现有地图服务的切片方案。如果您的组织已在服务器上创建现有服务的切片方案并且您想要与其进行匹配，则请选择此选项。 相匹配的切片方案可确保切片在您的 ArcGIS Runtime 应用程序中正确叠加。</para>
-		/// <para>如果选择此选项，则源地图和用于导入切片方案的地图将使用相同的坐标系。</para>
+		/// <para>Specifies whether the tiling scheme will be generated from an existing map service or whether map tiles will be generated for ArcGIS Online, Bing Maps, and Google Maps.</para>
+		/// <para>Checked—The ArcGIS Online/Bing Maps/Google Maps tiling scheme will be used. This is the default.The ArcGIS Online/Bing Maps/Google Maps tiling scheme allows you to overlay cache tiles with tiles from these online mapping services. ArcGIS Desktop includes this tiling scheme as a built-in option when loading a tiling scheme. When you choose this tiling scheme, the source map must use the WGS 1984 Web Mercator (Auxiliary Sphere) projected coordinate system.</para>
+		/// <para>The ArcGIS Online/Bing Maps/Google Maps tiling scheme is required if you&apos;ll be overlaying the package with ArcGIS Online, Bing Maps, or Google Maps. One advantage of the ArcGIS Online/Bing Maps/Google Maps tiling scheme is that it is widely known in the web mapping world, so the tiles will match those of other organizations that have used this tiling scheme. Even if you don&apos;t plan to overlay any of these well-known map services, you may choose the tiling scheme for its interoperability potential.</para>
+		/// <para>The ArcGIS Online/Bing Maps/Google Maps tiling scheme may contain scales that will be zoomed in too far to be of use in your map. Packaging for large scales can take up time and disk storage space. For example, the largest scale in the tiling scheme is about 1:1,000. Packaging the entire continental United States at this scale can take weeks and require hundreds of gigabytes of storage. If you aren&apos;t prepared to package at this scale level, remove this scale level when you create the tile package.</para>
+		/// <para>Unchecked—A tiling scheme from an existing map service will be used.Choose this option if your organization has created a tiling scheme for an existing service on the server and you want to match it. Matching tiling schemes ensures that the tiles will overlay correctly in your ArcGIS Runtime application.</para>
+		/// <para>If you choose this option, use the same coordinate system for the source map as the map with the tiling scheme you&apos;re importing.</para>
 		/// <para><see cref="ServiceTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output File</para>
-		/// <para>输出地图切片包。</para>
+		/// <para>The output map tile package.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -131,13 +131,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Tiling Format</para>
-		/// <para>指定生成切片将使用的格式。</para>
-		/// <para>PNG—将根据指定的细节层次值使用正确的格式（PNG 8、PNG 24 或 PNG 32）。 这是默认设置。</para>
-		/// <para>PNG（8 位）—将使用 PNG8 格式。 可将此格式用于需要具有透明背景的叠加服务，例如道路和边界。 PNG8 可在磁盘上创建非常小的切片且不损失任何信息。如果地图包含的颜色超过 256 种，请勿使用 PNG 8。 影像、山体阴影、梯度填充、透明度和抗锯齿可以在地图中轻松使用超过 256 种颜色。 符号（如高速公路盾形路牌符号）也可能在其边缘周围具有细微的抗锯齿，从而使地图包含意料之外的更多颜色。</para>
-		/// <para>PNG（24 位）—将使用 PNG24 格式。 可将此格式用于超过 256 种颜色的叠加服务，例如道路和边界。如果少于 256 种颜色，请使用 PNG 8。</para>
-		/// <para>PNG（32 位）—将使用 PNG32 格式。 此格式用于超过 256 种颜色的叠置服务，如道路和边界。 PNG 32 适用于对线或文本启用了抗锯齿的叠加服务。 与 PNG 24 相比，PNG 32 可磁盘上创建更大的切片。</para>
-		/// <para>JPEG—将使用 JPEG 格式。 此格式用于颜色变化较大但不需要透明背景的底图服务。 例如，栅格影像和详细的矢量底图特别适合使用 JPEG。JPEG 为有损图像格式。 在不影响图像显示效果的情况下，它会尝试有选择地移除数据。 这会在磁盘上产生很小的切片，但如果地图包含矢量线作业或标注，它可能会在线周围生成过多的噪声或模糊区域。 如果发生这种情况，可将压缩值从默认的 75 增加到更大的值。 更高的值（如 90）可以生成可接受的线作业质量，同时还可保证 JPEG 格式的小切片优势。如果愿意接受图像中存在少量噪声，则可以使用 JPEG 节省大量的磁盘空间。 较小的切片大小也意味着应用程序可以更快地下载切片。</para>
-		/// <para>混合—将在包的中心使用 JPEG 格式，在包的边缘使用 PNG 32。 要在其他图层上完全叠加栅格包时，请使用混合模式。创建混合包时，将在检测到透明度的位置（也就是地图背景可见的位置）创建 PNG 32 切片。 其余切片使用 JPEG 构建。 这可降低平均文件大小，同时可在其他包上进行完全叠加。 如果在这种情况下不使用混合模式包，则可以在图像叠加其他包的外围区域看到一个不透明的凸边。</para>
+		/// <para>Specifies the format that will be used for the generated tiles.</para>
+		/// <para>PNG—The correct format (PNG 8, PNG 24, or PNG 32) will be used based on the specified Level of Detail value. This is the default.</para>
+		/// <para>PNG 8 bit—PNG8 format will be used. Use this format for overlay services that need to have a transparent background, such as roads and boundaries. PNG 8 creates tiles of very small size on disk with no loss of information. Do not use PNG 8 if the map contains more than 256 colors. Imagery, hillshades, gradient fills, transparency, and antialiasing can easily use more than 256 colors in a map. Even symbols such as highway shields may have subtle antialiasing around the edges that unexpectedly adds colors to a map.</para>
+		/// <para>PNG 24 bit—PNG24 format will be used. Use this format for overlay services, such as roads and boundaries, that have more than 256 colors (if fewer than 256 colors, use PNG 8).</para>
+		/// <para>PNG 32 bit—PNG32 format will be used. Use this format for overlay services, such as roads and boundaries, that have more than 256 colors. PNG 32 is a good choice for overlay services that have antialiasing enabled on lines or text. PNG 32 creates larger tiles on disk than PNG 24.</para>
+		/// <para>JPEG—JPEG format will be used. Use this format for basemap services that have large color variation and do not need a transparent background. For example, raster imagery and detailed vector basemaps tend to work well with JPEG. JPEG is a lossy image format. It attempts to selectively remove data without affecting the appearance of the image. This can cause very small tile sizes on disk, but if a map contains vector line work or labels, it may produce too much noise or blurry area around the lines. If this is the case, you can raise the compression value from the default of 75. A higher value, such as 90, may balance an acceptable quality of line work with the small tile size benefit of the JPEG.If you are willing to accept a minor amount of noise in the images, you may save large amounts of disk space with JPEG. The smaller tile size also means the application can download the tiles faster.</para>
+		/// <para>Mixed—JPEG format will be used in the center of the package and PNG 32 will be used on the edge of the package. Use mixed mode when you want to cleanly overlay raster packages on other layers.When a mixed package is created, PNG 32 tiles are created where transparency is detected (in other words, where the map background is visible). The rest of the tiles are built using JPEG. This keeps the average file size down while providing a clean overlay on top of other packages. If you do not use the mixed mode package in this scenario, a nontransparent collar around the periphery of the image where it overlaps the other package will be visible.</para>
 		/// <para><see cref="FormatTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Level Of Detail</para>
-		/// <para>与用于定义缓存切片方案的比例数相对应的整数表达。 此比例值用于定义在切片包中生成缓存切片的最高级别。 较大的值反映可以显示更多细节的较大比例，但占用的存储空间较多。 较小的值反映可以显示较少细节的较小比例，并且占用的存储空间较少。 可能的值范围为 1 至 23。 默认值为 1。 最大细节层次值必须大于最小细节层次值。</para>
+		/// <para>The integer representation corresponding to the number of scales used to define a cache tiling scheme. This scale value defines the maximum level up to which the cache tiles will be generated in the tile package. Larger values reflect larger scales that show more detail but require more storage space. Smaller values reflect smaller scales that show less detail and require less storage space. Possible values are from 1 to 23. The default value is 1. The maximum level of detail value must be greater than the minimum level of detail value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Service</para>
-		/// <para>将用于切片方案的地图服务或 .xml 文件的名称。 仅当未选中适用于 ArcGIS Online | Bing Maps | Google Maps 的包参数时才需要此参数。</para>
+		/// <para>The name of the map service or the .xml files that will be used for the tiling scheme. This parameter is required only when the Package for ArcGIS Online | Bing Maps | Google Maps parameter is unchecked.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -165,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Summary</para>
-		/// <para>将摘要信息添加到包的属性中。</para>
+		/// <para>Adds summary information to the properties of the package.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -173,7 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Tags</para>
-		/// <para>将标签信息添加到包的属性中。 可以添加多个标签，用逗号或分号分隔。</para>
+		/// <para>Adds tag information to the properties of the package. Multiple tags can be added, separated by a comma or semicolon.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -181,13 +181,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Extent</para>
-		/// <para>指定用于选择或裁剪要素的范围。</para>
-		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
-		/// <para>输入的并集 - 该范围将基于所有输入的最大范围。</para>
-		/// <para>输入的交集 - 该范围将基于所有输入共用的最小区域。</para>
-		/// <para>当前显示范围 - 该范围与可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
-		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
-		/// <para>浏览 - 该范围将基于现有数据集。</para>
+		/// <para>Specifies the extent that will be used to select or clip features.</para>
+		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
+		/// <para>Union of Inputs—The extent will be based on the maximum extent of all inputs.</para>
+		/// <para>Intersection of Inputs—The extent will be based on the minimum area common to all inputs.</para>
+		/// <para>Current Display Extent—The extent is equal to the visible display. The option is not available when there is no active map.</para>
+		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
+		/// <para>Browse—The extent will be based on an existing dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -195,8 +195,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Compression Quality</para>
-		/// <para>用于 JPEG 压缩质量的介于 1 和 100 之间的值。 对于 JPEG 切片格式，默认值为 75；对于其他切片格式，默认值为 0。</para>
-		/// <para>仅 JPEG 和混合格式支持压缩。 如果选择较高的值，则生成的文件较大，但图像质量较好。 如果选择较低的值，则生成的文件较小，但图像质量较差。</para>
+		/// <para>A value between 1 and 100 for the JPEG compression quality. The default value is 75 for JPEG tile format and zero for other formats.</para>
+		/// <para>Compression is supported only for JPEG and mixed formats. Choosing a higher value will result in a larger file size with a higher-quality image. Choosing a lower value will result in a smaller file size with a lower-quality image.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -205,9 +205,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Package type</para>
-		/// <para>指定将创建的切片包类型。</para>
-		/// <para>tpk—切片将使用 Compact 存储格式进行存储。 整个 ArcGIS 平台均支持此格式。</para>
-		/// <para>tpkx—切片将使用 CompactV2 存储格式进行存储，该格式可提供更好的网络共享和云存储目录性能。 ArcGIS 产品的较新版本（例如 ArcGIS Online 7.1、ArcGIS Enterprise 10.7 和 ArcGIS Runtime 100.5）均支持此包结构类型。 这是默认设置。</para>
+		/// <para>Specifies the type of tile package that will be created.</para>
+		/// <para>tpk—Tiles will be stored using Compact storage format. This format is supported across the ArcGIS platform.</para>
+		/// <para>tpkx—Tiles will be stored using CompactV2 storage format, which provides better performance on network shares and cloud store directories. This package structure type is supported by newer versions of ArcGIS products such as ArcGIS Online 7.1, ArcGIS Enterprise 10.7, and ArcGIS Runtime 100.5. This is the default.</para>
 		/// <para><see cref="PackageTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -217,7 +217,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Minimum Level Of Detail</para>
-		/// <para>与用于定义缓存切片方案的比例数相对应的整数表达。 此比例值用于定义在切片包中生成的缓存切片开始可用的级别。 可能的值范围为 0 至 23。 默认值为 0。 最小细节层次值必须小于或等于最大细节层次值。</para>
+		/// <para>The integer representation corresponding to the number of scales used to define a cache tiling scheme. This scale value defines the level at which the cache tiles begin to be available and generated in the tile package. Possible values are from 0 to 23. The default value is 0. The minimum level of detail value must be less than or equal to the maximum level of detail value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -226,7 +226,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Area of Interest</para>
-		/// <para>用于限制创建切片的位置的要素集。 使用感兴趣区域为不规则形状区域或多部件要素创建切片。 不会缓存感兴趣区域要素边界框外的区域。 如果未为此参数提供值，则感兴趣区域将为输入地图的全图范围。</para>
+		/// <para>A feature set that constrains where tiles are created. Use an area of interest to create tiles for irregularly shaped areas or multipart features. The areas outside the bounding box of area of interest features will not be cached. If no value is provided for this parameter, the area of interest will be the full extent of the input map.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -249,14 +249,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ServiceTypeEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The ArcGIS Online/Bing Maps/Google Maps tiling scheme will be used. This is the default.The ArcGIS Online/Bing Maps/Google Maps tiling scheme allows you to overlay cache tiles with tiles from these online mapping services. ArcGIS Desktop includes this tiling scheme as a built-in option when loading a tiling scheme. When you choose this tiling scheme, the source map must use the WGS 1984 Web Mercator (Auxiliary Sphere) projected coordinate system.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ONLINE")]
 			ONLINE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—A tiling scheme from an existing map service will be used.Choose this option if your organization has created a tiling scheme for an existing service on the server and you want to match it. Matching tiling schemes ensures that the tiles will overlay correctly in your ArcGIS Runtime application.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXISTING")]
@@ -270,45 +270,45 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum FormatTypeEnum 
 		{
 			/// <summary>
-			/// <para>PNG—将根据指定的细节层次值使用正确的格式（PNG 8、PNG 24 或 PNG 32）。 这是默认设置。</para>
+			/// <para>PNG—The correct format (PNG 8, PNG 24, or PNG 32) will be used based on the specified Level of Detail value. This is the default.</para>
 			/// </summary>
 			[GPValue("PNG")]
 			[Description("PNG")]
 			PNG,
 
 			/// <summary>
-			/// <para>PNG（8 位）—将使用 PNG8 格式。 可将此格式用于需要具有透明背景的叠加服务，例如道路和边界。 PNG8 可在磁盘上创建非常小的切片且不损失任何信息。如果地图包含的颜色超过 256 种，请勿使用 PNG 8。 影像、山体阴影、梯度填充、透明度和抗锯齿可以在地图中轻松使用超过 256 种颜色。 符号（如高速公路盾形路牌符号）也可能在其边缘周围具有细微的抗锯齿，从而使地图包含意料之外的更多颜色。</para>
+			/// <para>PNG 8 bit—PNG8 format will be used. Use this format for overlay services that need to have a transparent background, such as roads and boundaries. PNG 8 creates tiles of very small size on disk with no loss of information. Do not use PNG 8 if the map contains more than 256 colors. Imagery, hillshades, gradient fills, transparency, and antialiasing can easily use more than 256 colors in a map. Even symbols such as highway shields may have subtle antialiasing around the edges that unexpectedly adds colors to a map.</para>
 			/// </summary>
 			[GPValue("PNG8")]
-			[Description("PNG（8 位）")]
+			[Description("PNG 8 bit")]
 			PNG_8_bit,
 
 			/// <summary>
-			/// <para>PNG（24 位）—将使用 PNG24 格式。 可将此格式用于超过 256 种颜色的叠加服务，例如道路和边界。如果少于 256 种颜色，请使用 PNG 8。</para>
+			/// <para>PNG 24 bit—PNG24 format will be used. Use this format for overlay services, such as roads and boundaries, that have more than 256 colors (if fewer than 256 colors, use PNG 8).</para>
 			/// </summary>
 			[GPValue("PNG24")]
-			[Description("PNG（24 位）")]
+			[Description("PNG 24 bit")]
 			PNG_24_bit,
 
 			/// <summary>
-			/// <para>PNG（32 位）—将使用 PNG32 格式。 此格式用于超过 256 种颜色的叠置服务，如道路和边界。 PNG 32 适用于对线或文本启用了抗锯齿的叠加服务。 与 PNG 24 相比，PNG 32 可磁盘上创建更大的切片。</para>
+			/// <para>PNG 32 bit—PNG32 format will be used. Use this format for overlay services, such as roads and boundaries, that have more than 256 colors. PNG 32 is a good choice for overlay services that have antialiasing enabled on lines or text. PNG 32 creates larger tiles on disk than PNG 24.</para>
 			/// </summary>
 			[GPValue("PNG32")]
-			[Description("PNG（32 位）")]
+			[Description("PNG 32 bit")]
 			PNG_32_bit,
 
 			/// <summary>
-			/// <para>JPEG—将使用 JPEG 格式。 此格式用于颜色变化较大但不需要透明背景的底图服务。 例如，栅格影像和详细的矢量底图特别适合使用 JPEG。JPEG 为有损图像格式。 在不影响图像显示效果的情况下，它会尝试有选择地移除数据。 这会在磁盘上产生很小的切片，但如果地图包含矢量线作业或标注，它可能会在线周围生成过多的噪声或模糊区域。 如果发生这种情况，可将压缩值从默认的 75 增加到更大的值。 更高的值（如 90）可以生成可接受的线作业质量，同时还可保证 JPEG 格式的小切片优势。如果愿意接受图像中存在少量噪声，则可以使用 JPEG 节省大量的磁盘空间。 较小的切片大小也意味着应用程序可以更快地下载切片。</para>
+			/// <para>JPEG—JPEG format will be used. Use this format for basemap services that have large color variation and do not need a transparent background. For example, raster imagery and detailed vector basemaps tend to work well with JPEG. JPEG is a lossy image format. It attempts to selectively remove data without affecting the appearance of the image. This can cause very small tile sizes on disk, but if a map contains vector line work or labels, it may produce too much noise or blurry area around the lines. If this is the case, you can raise the compression value from the default of 75. A higher value, such as 90, may balance an acceptable quality of line work with the small tile size benefit of the JPEG.If you are willing to accept a minor amount of noise in the images, you may save large amounts of disk space with JPEG. The smaller tile size also means the application can download the tiles faster.</para>
 			/// </summary>
 			[GPValue("JPEG")]
 			[Description("JPEG")]
 			JPEG,
 
 			/// <summary>
-			/// <para>混合—将在包的中心使用 JPEG 格式，在包的边缘使用 PNG 32。 要在其他图层上完全叠加栅格包时，请使用混合模式。创建混合包时，将在检测到透明度的位置（也就是地图背景可见的位置）创建 PNG 32 切片。 其余切片使用 JPEG 构建。 这可降低平均文件大小，同时可在其他包上进行完全叠加。 如果在这种情况下不使用混合模式包，则可以在图像叠加其他包的外围区域看到一个不透明的凸边。</para>
+			/// <para>Mixed—JPEG format will be used in the center of the package and PNG 32 will be used on the edge of the package. Use mixed mode when you want to cleanly overlay raster packages on other layers.When a mixed package is created, PNG 32 tiles are created where transparency is detected (in other words, where the map background is visible). The rest of the tiles are built using JPEG. This keeps the average file size down while providing a clean overlay on top of other packages. If you do not use the mixed mode package in this scenario, a nontransparent collar around the periphery of the image where it overlaps the other package will be visible.</para>
 			/// </summary>
 			[GPValue("MIXED")]
-			[Description("混合")]
+			[Description("Mixed")]
 			Mixed,
 
 		}
@@ -319,14 +319,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum PackageTypeEnum 
 		{
 			/// <summary>
-			/// <para>tpk—切片将使用 Compact 存储格式进行存储。 整个 ArcGIS 平台均支持此格式。</para>
+			/// <para>tpk—Tiles will be stored using Compact storage format. This format is supported across the ArcGIS platform.</para>
 			/// </summary>
 			[GPValue("tpk")]
 			[Description("tpk")]
 			tpk,
 
 			/// <summary>
-			/// <para>tpkx—切片将使用 CompactV2 存储格式进行存储，该格式可提供更好的网络共享和云存储目录性能。 ArcGIS 产品的较新版本（例如 ArcGIS Online 7.1、ArcGIS Enterprise 10.7 和 ArcGIS Runtime 100.5）均支持此包结构类型。 这是默认设置。</para>
+			/// <para>tpkx—Tiles will be stored using CompactV2 storage format, which provides better performance on network shares and cloud store directories. This package structure type is supported by newer versions of ArcGIS products such as ArcGIS Online 7.1, ArcGIS Enterprise 10.7, and ArcGIS Runtime 100.5. This is the default.</para>
 			/// </summary>
 			[GPValue("tpkx")]
 			[Description("tpkx")]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Surface Volume</para>
-	/// <para>表面体积</para>
-	/// <para>计算表面和参考平面之间区域的面积和体积。</para>
+	/// <para>Surface Volume</para>
+	/// <para>Calculates the area and volume of the region between a surface and a reference plane.</para>
 	/// </summary>
 	public class SurfaceVolume : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InSurface">
 		/// <para>Input Surface</para>
-		/// <para>待处理的栅格、TIN 或 terrain 表面。</para>
+		/// <para>The raster, TIN, or terrain surface to process.</para>
 		/// </param>
 		public SurfaceVolume(object InSurface)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 表面体积</para>
+		/// <para>Tool Display Name : Surface Volume</para>
 		/// </summary>
-		public override string DisplayName() => "表面体积";
+		public override string DisplayName() => "Surface Volume";
 
 		/// <summary>
 		/// <para>Tool Name : SurfaceVolume</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Surface</para>
-		/// <para>待处理的栅格、TIN 或 terrain 表面。</para>
+		/// <para>The raster, TIN, or terrain surface to process.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Text File</para>
-		/// <para>包含面积和体积计算的以逗号分隔的 ASCII 文本文件。 如果该文件已经存在，新结果将会追加至该文件。</para>
+		/// <para>A comma-delimited ASCII text file containing the area and volume calculations. If the file already exists, the new results will be appended to the file.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -81,9 +81,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Reference Plane</para>
-		/// <para>要为之计算结果的参考平面的方向。</para>
-		/// <para>平面上方—体积和面积计算将表示指定平面高度和位于该平面上方的部分表面之间的空间区域。 这是默认设置。</para>
-		/// <para>平面下方—体积和面积计算将表示指定平面高度和位于该平面下方的部分表面之间的空间区域。</para>
+		/// <para>The direction from the reference plane for which to calculate the results.</para>
+		/// <para>Above the Plane—Volume and area calculations will represent the region of space between the specified plane height and the portions of the surface that are above the plane. This is the default.</para>
+		/// <para>Below the Plane—Volume and area calculations will represent the region of space between the specified plane height and portions of the surface that are below the plane.</para>
 		/// <para><see cref="ReferencePlaneEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Plane Height</para>
-		/// <para>将用于计算面积和体积的平面的 Z 值。</para>
+		/// <para>The Z value of the plane that will be used to calculate area and volume.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Z Factor</para>
-		/// <para>Z 值将乘上的系数。 此值通常用于转换 z 线性单位来匹配 x,y 线性单位。 默认值为 1，此时高程值保持不变。 如果输入表面的空间参考具有已指定线性单位的 z 基准，则此参数不可用。</para>
+		/// <para>The factor by which z-values will be multiplied. This is typically used to convert z linear units to match x,y linear units. The default is 1, which leaves elevation values unchanged. This parameter is not available if the spatial reference of the input surface has a z datum with a specified linear unit.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Pyramid Level Resolution</para>
-		/// <para>将使用 terrain 金字塔等级的 z 容差或窗口大小分辨率。 默认值为 0，或全分辨率。</para>
+		/// <para>The z-tolerance or window-size resolution of the terrain pyramid level that will be used. The default is 0, or full resolution.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -132,17 +132,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ReferencePlaneEnum 
 		{
 			/// <summary>
-			/// <para>平面上方—体积和面积计算将表示指定平面高度和位于该平面上方的部分表面之间的空间区域。 这是默认设置。</para>
+			/// <para>Above the Plane—Volume and area calculations will represent the region of space between the specified plane height and the portions of the surface that are above the plane. This is the default.</para>
 			/// </summary>
 			[GPValue("ABOVE")]
-			[Description("平面上方")]
+			[Description("Above the Plane")]
 			Above_the_Plane,
 
 			/// <summary>
-			/// <para>平面下方—体积和面积计算将表示指定平面高度和位于该平面下方的部分表面之间的空间区域。</para>
+			/// <para>Below the Plane—Volume and area calculations will represent the region of space between the specified plane height and portions of the surface that are below the plane.</para>
 			/// </summary>
 			[GPValue("BELOW")]
-			[Description("平面下方")]
+			[Description("Below the Plane")]
 			Below_the_Plane,
 
 		}

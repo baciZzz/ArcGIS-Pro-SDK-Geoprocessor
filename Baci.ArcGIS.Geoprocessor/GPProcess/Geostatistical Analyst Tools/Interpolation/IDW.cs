@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>IDW</para>
-	/// <para>反距离权重法</para>
-	/// <para>使用要预测位置周围的测量值预测任意未采样位置的值，此方法基于如下假设：彼此接近的事物的相似程度高于彼此远离的事物。</para>
+	/// <para>IDW</para>
+	/// <para>Uses the measured values surrounding the prediction location  to predict a value for any unsampled location, based on the assumption that things that are close to one another are more alike than those that are farther apart.</para>
 	/// </summary>
 	public class IDW : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input features</para>
-		/// <para>包含要插入的 z 值的输入点要素。</para>
+		/// <para>The input point features containing the z-values to be interpolated.</para>
 		/// </param>
 		/// <param name="ZField">
 		/// <para>Z value field</para>
-		/// <para>表示每个点的高度或量级值的字段。如果输入要素包含 z 值或 m 值，则该字段可以是数值字段或 Shape 字段。</para>
+		/// <para>Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contain z-values or m-values.</para>
 		/// </param>
 		public IDW(object InFeatures, object ZField)
 		{
@@ -34,14 +34,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 反距离权重法</para>
+		/// <para>Tool Display Name : IDW</para>
 		/// </summary>
-		public override string DisplayName() => "反距离权重法";
+		public override string DisplayName() => "IDW";
 
 		/// <summary>
-		/// <para>Tool Name : 反距离权重法</para>
+		/// <para>Tool Name : IDW</para>
 		/// </summary>
-		public override string ToolName() => "反距离权重法";
+		public override string ToolName() => "IDW";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.IDW</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input features</para>
-		/// <para>包含要插入的 z 值的输入点要素。</para>
+		/// <para>The input point features containing the z-values to be interpolated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Z value field</para>
-		/// <para>表示每个点的高度或量级值的字段。如果输入要素包含 z 值或 m 值，则该字段可以是数值字段或 Shape 字段。</para>
+		/// <para>Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contain z-values or m-values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output geostatistical layer</para>
-		/// <para>生成的地统计图层。只有未请求任何输出栅格时才需要输出该图层。</para>
+		/// <para>The geostatistical layer produced. This layer is required output only if no output raster is requested.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGALayer()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出栅格。只有未请求任何输出地统计图层时才需要输出该栅格。</para>
+		/// <para>The output raster. This raster is required output only if no output geostatistical layer is requested.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -106,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>要创建的输出栅格的像元大小。</para>
-		/// <para>可以通过像元大小参数在环境中明确设置该值。</para>
-		/// <para>如果未设置，则该值为输入空间参考中输入点要素范围的宽度与高度中的较小值除以 250。</para>
+		/// <para>The cell size at which the output raster will be created.</para>
+		/// <para>This value can be explicitly set in the Environments by the Cell Size parameter.</para>
+		/// <para>If not set, it is the shorter of the width or the height of the extent of the input point features, in the input spatial reference, divided by 250.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Power</para>
-		/// <para>控制周围点对于内插值的重要性的距离指数。幂值越高，远数据点的影响会越小。</para>
+		/// <para>The exponent of distance that controls the significance of surrounding points on the interpolated value. A higher power results in less influence from distant points.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -129,36 +129,36 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Search neighborhood</para>
-		/// <para>定义用于控制输出的周围点。“标准”为默认选项。</para>
-		/// <para>标准</para>
-		/// <para>长半轴 - 搜索邻域的长半轴值。</para>
-		/// <para>短半轴 - 搜索邻域的短半轴值。</para>
-		/// <para>角度 - 移动窗口的轴（圆）或长半轴（椭圆）的旋转角度。</para>
-		/// <para>最大邻点数 - 用于估计未知位置值的最大相邻数。</para>
-		/// <para>最小邻点数 - 用于估计未知位置值的最小相邻数。</para>
-		/// <para>分区类型 - 邻域的几何。</para>
-		/// <para>单扇区 - 单个椭圆。</para>
-		/// <para>四扇区 - 分为四个扇区的椭圆。</para>
-		/// <para>偏移四扇区 - 分为四个扇区且偏移 45 度的椭圆。</para>
-		/// <para>八扇区 - 分为八个扇区的椭圆。</para>
-		/// <para>平滑</para>
-		/// <para>长半轴 - 搜索邻域的长半轴值。</para>
-		/// <para>短半轴 - 搜索邻域的短半轴值。</para>
-		/// <para>角度 - 移动窗口的轴（圆）或长半轴（椭圆）的旋转角度。</para>
-		/// <para>平滑系数 -“平滑插值”选项可在“长半轴”与“平滑系数”相乘所得的距离处创建一个外椭圆和一个内椭圆。使用反曲线函数可对位于最小椭圆外、最大椭圆内的点加权，加权值介于 0 和 1 之间。</para>
-		/// <para>标准圆</para>
-		/// <para>半径 - 搜索圆的半径长度。</para>
-		/// <para>角度 - 移动窗口的轴（圆）或长半轴（椭圆）的旋转角度。</para>
-		/// <para>最大邻点数 - 用于估计未知位置值的最大相邻数。</para>
-		/// <para>最小邻点数 - 用于估计未知位置值的最小相邻数。</para>
-		/// <para>分区类型 - 邻域的几何。</para>
-		/// <para>单扇区 - 单个椭圆。</para>
-		/// <para>四扇区 - 分为四个扇区的椭圆。</para>
-		/// <para>偏移四扇区 - 分为四个扇区且偏移 45 度的椭圆。</para>
-		/// <para>八扇区 - 分为八个扇区的椭圆。</para>
-		/// <para>平滑圆</para>
-		/// <para>半径 - 搜索圆的半径长度。</para>
-		/// <para>平滑系数 -“平滑插值”选项可在“长半轴”与“平滑系数”相乘所得的距离处创建一个外椭圆和一个内椭圆。使用反曲线函数可对位于最小椭圆外、最大椭圆内的点加权，加权值介于 0 和 1 之间。</para>
+		/// <para>Defines which surrounding points will be used to control the output. Standard is the default.</para>
+		/// <para>Standard</para>
+		/// <para>Major semiaxis—The major semiaxis value of the searching neighborhood.</para>
+		/// <para>Minor semiaxis—The minor semiaxis value of the searching neighborhood.</para>
+		/// <para>Angle—The angle of rotation for the axis (circle) or semimajor axis (ellipse) of the moving window.</para>
+		/// <para>Max neighbors—The maximum number of neighbors that will be used to estimate the value at the unknown location.</para>
+		/// <para>Min neighbors—The minimum number of neighbors that will be used to estimate the value at the unknown location.</para>
+		/// <para>Sector Type—The geometry of the neighborhood.</para>
+		/// <para>One sector—Single ellipse.</para>
+		/// <para>Four sectors—Ellipse divided into four sectors.</para>
+		/// <para>Four sectors shifted—Ellipse divided into four sectors and shifted 45 degrees.</para>
+		/// <para>Eight sectors—Ellipse divided into eight sectors.</para>
+		/// <para>Smooth</para>
+		/// <para>Major semiaxis—The major semiaxis value of the searching neighborhood.</para>
+		/// <para>Minor semiaxis—The minor semiaxis value of the searching neighborhood.</para>
+		/// <para>Angle—The angle of rotation for the axis (circle) or semimajor axis (ellipse) of the moving window.</para>
+		/// <para>Smoothing factor—The Smooth Interpolation option creates an outer ellipse and an inner ellipse at a distance equal to the Major Semiaxis multiplied by the Smoothing factor. The points that fall outside the smallest ellipse but inside the largest ellipse are weighted using a sigmoidal function with a value between zero and one.</para>
+		/// <para>Standard Circular</para>
+		/// <para>Radius—The length of the radius of the search circle.</para>
+		/// <para>Angle—The angle of rotation for the axis (circle) or semimajor axis (ellipse) of the moving window.</para>
+		/// <para>Max neighbors—The maximum number of neighbors that will be used to estimate the value at the unknown location.</para>
+		/// <para>Min neighbors—The minimum number of neighbors that will be used to estimate the value at the unknown location.</para>
+		/// <para>Sector Type—The geometry of the neighborhood.</para>
+		/// <para>One sector—Single ellipse.</para>
+		/// <para>Four sectors—Ellipse divided into four sectors.</para>
+		/// <para>Four sectors shifted—Ellipse divided into four sectors and shifted 45 degrees.</para>
+		/// <para>Eight sectors—Ellipse divided into eight sectors.</para>
+		/// <para>Smooth Circular</para>
+		/// <para>Radius—The length of the radius of the search circle.</para>
+		/// <para>Smoothing factor—The Smooth Interpolation option creates an outer ellipse and an inner ellipse at a distance equal to the Major Semiaxis multiplied by the Smoothing factor. The points that fall outside the smallest ellipse but inside the largest ellipse are weighted using a sigmoidal function with a value between zero and one.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGASearchNeighborhood()]
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Weight field</para>
-		/// <para>用于强调某个观测。权重越大，对预测的影响就越大。对于重合的观测，为最可靠的测量值分配最大权重。</para>
+		/// <para>Used to emphasize an observation. The larger the weight, the more impact it has on the prediction. For coincident observations, assign the largest weight to the most reliable measurement.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]

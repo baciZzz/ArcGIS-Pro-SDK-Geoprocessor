@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Dice</para>
-	/// <para>切分</para>
-	/// <para>根据指定的折点限制将要素细分为较小的要素。此工具旨在细分那些容易在绘制、分析、编辑和/或性能等方面产生问题且难以利用标准编辑工具和地理处理工具进行分割的超大型要素。除了其他工具因要素的大小问题而无法顺利完成细分的情况之外，此工具不能用于其他任何情况。</para>
+	/// <para>Dice</para>
+	/// <para>Subdivides a feature into smaller features based on a specified vertex limit. This tool is intended as a way to subdivide extremely large features that cause issues with drawing, analysis, editing, and/or performance but are difficult to split up with standard editing and geoprocessing tools. This tool should not be used in any cases other than those where tools are failing to complete successfully due to the size of features.</para>
 	/// </summary>
 	public class Dice : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>输入要素类或要素图层。几何类型必须为多点、线或面。</para>
+		/// <para>The input feature class or feature layer. The geometry type must be multipoint, line, or polygon.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>切分要素的输出要素类。</para>
+		/// <para>The output feature class of diced features.</para>
 		/// </param>
 		/// <param name="VertexLimit">
 		/// <para>Vertex Limit</para>
-		/// <para>几何超出此折点限制的要素将在写入输出要素类之前被细分。</para>
+		/// <para>Features with geometries that exceed this vertex limit will be subdivided before being written to the output feature class.</para>
 		/// </param>
 		public Dice(object InFeatures, object OutFeatureClass, object VertexLimit)
 		{
@@ -39,14 +39,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 切分</para>
+		/// <para>Tool Display Name : Dice</para>
 		/// </summary>
-		public override string DisplayName() => "切分";
+		public override string DisplayName() => "Dice";
 
 		/// <summary>
-		/// <para>Tool Name : 切分</para>
+		/// <para>Tool Name : Dice</para>
 		/// </summary>
-		public override string ToolName() => "切分";
+		public override string ToolName() => "Dice";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Dice</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>输入要素类或要素图层。几何类型必须为多点、线或面。</para>
+		/// <para>The input feature class or feature layer. The geometry type must be multipoint, line, or polygon.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>切分要素的输出要素类。</para>
+		/// <para>The output feature class of diced features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Vertex Limit</para>
-		/// <para>几何超出此折点限制的要素将在写入输出要素类之前被细分。</para>
+		/// <para>Features with geometries that exceed this vertex limit will be subdivided before being written to the output feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]

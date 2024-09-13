@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Iterate Datasets</para>
-	/// <para>迭代数据集</para>
-	/// <para>迭代工作空间中不同类型的数据集。</para>
+	/// <para>Iterate Datasets</para>
+	/// <para>Iterates over different types of datasets in a workspace.</para>
 	/// </summary>
 	public class IterateDatasets : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="InWorkspace">
 		/// <para>Workspace or Feature Dataset</para>
-		/// <para>存储要迭代的数据集的工作空间或要素数据集。</para>
+		/// <para>A workspace or a feature dataset that stores the dataset to iterate.</para>
 		/// </param>
 		public IterateDatasets(object InWorkspace)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 迭代数据集</para>
+		/// <para>Tool Display Name : Iterate Datasets</para>
 		/// </summary>
-		public override string DisplayName() => "迭代数据集";
+		public override string DisplayName() => "Iterate Datasets";
 
 		/// <summary>
 		/// <para>Tool Name : IterateDatasets</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Workspace or Feature Dataset</para>
-		/// <para>存储要迭代的数据集的工作空间或要素数据集。</para>
+		/// <para>A workspace or a feature dataset that stores the dataset to iterate.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Wildcard</para>
-		/// <para>* 与有助于限制结果的字符的组合。 星号相当于指定全部。 如果未指定通配符，将返回所有输入。 例如，可将其用于将输入名称迭代限制为从某一字符或词语开始（例如，A*、Ari* 或 Land* 等）。</para>
+		/// <para>A combination of * and characters that help to limit the results. The asterisk is the same as specifying ALL. If no wildcard is specified, all inputs will be returned. For example, it can be used to restrict Iteration over input names starting with a certain character or word (for example, A* or Ari* or Land* and so on).</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -81,18 +81,18 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Dataset Type</para>
-		/// <para>要迭代的数据集类型。</para>
-		/// <para>计算机辅助设计 (CAD)—输出将为 CAD 数据集。</para>
-		/// <para>要素—输出将为要素数据集。</para>
-		/// <para>几何网络—输出将为几何网络数据集。</para>
-		/// <para>镶嵌—输出将为镶嵌数据集。</para>
-		/// <para>网络—输出将为网络数据集。</para>
-		/// <para>ArcMap 的宗地结构—输出将为 ArcMap 宗地结构数据集。</para>
-		/// <para>宗地结构—输出将为宗地结构数据集。</para>
-		/// <para>栅格—输出将为栅格数据集。</para>
-		/// <para>地形—输出将为 terrain 数据集。</para>
-		/// <para>不规则三角网 (TIN)—输出将为 TIN 数据集。</para>
-		/// <para>拓扑—输出将为拓扑数据集。</para>
+		/// <para>The dataset type to iterate over.</para>
+		/// <para>Computer Aided Design (CAD)—The output will be a CAD dataset.</para>
+		/// <para>Feature—The output will be a feature dataset.</para>
+		/// <para>Geometric Network—The output will be a geometric network dataset.</para>
+		/// <para>Mosaic—The output will be a mosaic dataset.</para>
+		/// <para>Network—The output will be a network dataset.</para>
+		/// <para>Parcel Fabric For ArcMap—The output will be an ArcMap parcel fabric dataset.</para>
+		/// <para>Parcel Fabric—The output will be a parcel fabric dataset.</para>
+		/// <para>Raster—The output will be a raster dataset .</para>
+		/// <para>Terrain—The output will be a terrain dataset.</para>
+		/// <para>Triangular Irregular Networks (TIN)—The output will be a TIN dataset .</para>
+		/// <para>Topology—The output will be a topology dataset .</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -101,9 +101,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Recursive</para>
-		/// <para>指定是否将递归迭代输入工作空间中的子文件夹。</para>
-		/// <para>选中 - 将递归迭代子文件夹。</para>
-		/// <para>未选中 - 将不会递归迭代子文件夹。</para>
+		/// <para>Specifies whether subfolders in the input workspace will be iterated recursively.</para>
+		/// <para>Checked—Subfolders will be iterated recursively.</para>
+		/// <para>Unchecked—Subfolders will not be iterated recursively.</para>
 		/// <para><see cref="RecursiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -133,14 +133,14 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		public enum RecursiveEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Subfolders will be iterated recursively.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RECURSIVE")]
 			RECURSIVE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Subfolders will not be iterated recursively.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_RECURSIVE")]

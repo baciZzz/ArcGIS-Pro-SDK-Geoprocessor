@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Aggregate Points</para>
-	/// <para>聚合点</para>
-	/// <para>在邻近点要素聚类周围创建面要素。</para>
+	/// <para>Aggregate Points</para>
+	/// <para>Creates polygon features around clusters of proximate point features.</para>
 	/// </summary>
 	public class AggregatePoints : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>要进行邻近性和聚类评估的输入点要素。</para>
+		/// <para>The input point features that will be assessed for proximity and clustering.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>用来保存表示点聚类的面的要素类。</para>
+		/// <para>The feature class created to hold the polygons that represent the point clusters.</para>
 		/// </param>
 		/// <param name="AggregationDistance">
 		/// <para>Aggregation Distance</para>
-		/// <para>将进行聚类的两个点之间的距离。</para>
+		/// <para>The distance between points that will be clustered.</para>
 		/// </param>
 		public AggregatePoints(object InFeatures, object OutFeatureClass, object AggregationDistance)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 聚合点</para>
+		/// <para>Tool Display Name : Aggregate Points</para>
 		/// </summary>
-		public override string DisplayName() => "聚合点";
+		public override string DisplayName() => "Aggregate Points";
 
 		/// <summary>
 		/// <para>Tool Name : AggregatePoints</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>要进行邻近性和聚类评估的输入点要素。</para>
+		/// <para>The input point features that will be assessed for proximity and clustering.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>用来保存表示点聚类的面的要素类。</para>
+		/// <para>The feature class created to hold the polygons that represent the point clusters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Aggregation Distance</para>
-		/// <para>将进行聚类的两个点之间的距离。</para>
+		/// <para>The distance between points that will be clustered.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]

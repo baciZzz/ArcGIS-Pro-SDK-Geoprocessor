@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Define Overviews</para>
-	/// <para>定义概视图</para>
-	/// <para>允许您设置生成镶嵌数据集概视图的方式。构建概视图工具将使用您通过此工具创建的设置。</para>
+	/// <para>Define Overviews</para>
+	/// <para>Lets you set how mosaic dataset overviews are generated. The settings made with this tool are used by the Build Overviews tool.</para>
 	/// </summary>
 	public class DefineOverviews : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>要在其中构建概视图的镶嵌数据集。</para>
+		/// <para>The mosaic dataset that you want to build overviews on.</para>
 		/// </param>
 		public DefineOverviews(object InMosaicDataset)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 定义概视图</para>
+		/// <para>Tool Display Name : Define Overviews</para>
 		/// </summary>
-		public override string DisplayName() => "定义概视图";
+		public override string DisplayName() => "Define Overviews";
 
 		/// <summary>
 		/// <para>Tool Name : DefineOverviews</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>要在其中构建概视图的镶嵌数据集。</para>
+		/// <para>The mosaic dataset that you want to build overviews on.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Location</para>
-		/// <para>用于存储概视图的文件夹或地理数据库。</para>
+		/// <para>The folder or geodatabase to store the overviews.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEWorkspace()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Extent from Dataset</para>
-		/// <para>一个栅格数据集或要素类，用来定义概视图的范围。</para>
+		/// <para>A raster dataset or feature class to define the extent of the overviews.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -91,8 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Extent</para>
-		/// <para>使用下列最小和最大 x 和 y 坐标手动设置范围。</para>
-		/// <para>如果未定义范围，则镶嵌数据集边界将确定概视图的范围。</para>
+		/// <para>Manually set the extent using the following minimum and maximum x and y coordinates.</para>
+		/// <para>The mosaic dataset boundary will determine the extent of the overviews if you do not define an extent.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPEnvelope()]
@@ -100,8 +100,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Pixel Size</para>
-		/// <para>如果不想使用所有栅格金字塔，可指定将生成概视图的基础像素大小。</para>
-		/// <para>此参数的单位与镶嵌数据集的空间参考单位相同。</para>
+		/// <para>If you prefer not to use all the raster&apos;s pyramids, specify a base pixel size at which your overviews will be generated.</para>
+		/// <para>The units for this parameter are the same as the spatial reference of the mosaic dataset.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Number Of Levels</para>
-		/// <para>指定用于生成概视图的概视图等级数。值 -1 将用于确定最佳值。</para>
+		/// <para>Specify the number of levels of overviews that you want to generate overviews. A value of -1 will determine an optimal value for you.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -119,8 +119,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Number Of Rows</para>
-		/// <para>设置每个切片的行数（以像素为单位）。</para>
-		/// <para>较大值将生成更少的较大单个概视图，同时增加需要重新生成较低等级概视图的可能性。较小值将生成更多较小的文件。</para>
+		/// <para>Set the number of rows (in pixels) for each tile.</para>
+		/// <para>Larger values will result in fewer, larger individual overviews, and increase the likelihood that you will need to regenerate lower level overviews. A smaller value will result in more, smaller files.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -129,8 +129,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Number Of Columns</para>
-		/// <para>设置每个切片的列数（以像素为单位）。</para>
-		/// <para>较大值将生成更少的较大单个概视图，同时增加需要重新生成较低等级概视图的可能性。较小值将生成更多较小的文件。</para>
+		/// <para>Set the number of columns (in pixels) for each tile.</para>
+		/// <para>Larger values will result in fewer, larger individual overviews, and increase the likelihood that you will need to regenerate lower level overviews. A smaller value will result in more, smaller files.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Overview Sampling Factor</para>
-		/// <para>设置用于确定下一个概视图大小的比率。例如，如果第一个等级的像元大小为 10，概视图系数为 3，则下一个概视图像素大小将为 30。</para>
+		/// <para>Set a ratio to determine the size of the next overview. For example, if the cell size of the first level is 10, and the overview factor is 3, then the next overview pixel size will be 30.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -149,9 +149,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Force Overview Tiles</para>
-		/// <para>在所有等级生成概视图，或仅在现有金字塔等级之上生成概视图。</para>
-		/// <para>取消选中 - 在栅格金字塔等级之上创建概视图。这是默认设置。</para>
-		/// <para>选中 - 在所有等级创建概视图。</para>
+		/// <para>Generate overviews at all levels, or only above existing pyramid levels.</para>
+		/// <para>Unchecked—Create overviews above the raster pyramid levels. This is the default.</para>
+		/// <para>Checked—Create overviews at all levels.</para>
 		/// <para><see cref="ForceOverviewTilesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -162,10 +162,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Resampling Method</para>
-		/// <para>在概视图中选择聚合像素值的算法。</para>
-		/// <para>最邻近—这是最快的重采样方法，因为此方法可将像素值的更改内容最小化。适用于离散数据，例如土地覆被。如果栅格元数据数据类型为专题型，则最邻近法为默认方法。</para>
-		/// <para>双线性—可采用平均化（距离权重）周围 4 个像素的值计算每个像素的值。适用于连续数据。除非栅格元数据数据类型为专题型，否则这是默认方法。</para>
-		/// <para>三次— 通过根据周围的 16 像素拟合平滑曲线来计算每个像素的值。生成平滑影像，但可创建位于源数据中超出范围外的值。适用于连续数据。</para>
+		/// <para>Choose an algorithm for aggregating pixel values in the overviews.</para>
+		/// <para>Nearest—The fastest resampling method because it minimizes changes to pixel values. Suitable for discrete data, such as land cover. If the Raster MetadataData Type is thematic, then nearest neighbor will be the default.</para>
+		/// <para>Bilinear—Calculates the value of each pixel by averaging (weighted for distance) the values of the surrounding 4 pixels. Suitable for continuous data.This is the default, unless the Raster Metadata Data Type is thematic.</para>
+		/// <para>Cubic— Calculates the value of each pixel by fitting a smooth curve based on the surrounding 16 pixels. Produces the smoothest image, but can create values outside of the range found in the source data. Suitable for continuous data.</para>
 		/// <para><see cref="ResamplingMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -176,11 +176,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Compression Method</para>
-		/// <para>定义存储概视图图像的数据压缩类型。</para>
-		/// <para>JPEG—有损压缩。除非栅格元数据数据类型为专题型，否则这是默认方法。此压缩方法仅在镶嵌数据集符合 JPEG 规范时才有效。</para>
-		/// <para>JPEG 亮度和色度—有损压缩使用亮度 (Y) 和色度（Cb 和 Cr）颜色空间组件。</para>
-		/// <para>无—无数据压缩。</para>
-		/// <para>LZW—无损压缩。如果栅格元数据数据类型为专题型，则最邻近法为默认方法。</para>
+		/// <para>Define the type of data compression to store the overview images.</para>
+		/// <para>JPEG—A lossy compression. This is the default, unless the Raster Metadata Data Type is thematic. This compression method is only valid if the mosaic dataset items adhere to JPEG specifications.</para>
+		/// <para>JPEG Luna and Chroma—A lossy compression using the luma (Y) and chroma (Cb and Cr) color space components.</para>
+		/// <para>None—No data compression.</para>
+		/// <para>LZW—A lossless compression. If the Raster Metadata Data Type is thematic, then nearest neighbor will be the default.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -189,7 +189,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Compression Quality</para>
-		/// <para>选择一个 1 到 100 之间的值。较高的值可生成更高质量的输出，但创建的文件也更大。</para>
+		/// <para>Choose a value from 1 - 100. Higher values generate better quality outputs, but they create larger files.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -220,14 +220,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ForceOverviewTilesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Create overviews at all levels.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FORCE_OVERVIEW_TILES")]
 			FORCE_OVERVIEW_TILES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Create overviews above the raster pyramid levels. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_FORCE_OVERVIEW_TILES")]
@@ -241,24 +241,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ResamplingMethodEnum 
 		{
 			/// <summary>
-			/// <para>最邻近—这是最快的重采样方法，因为此方法可将像素值的更改内容最小化。适用于离散数据，例如土地覆被。如果栅格元数据数据类型为专题型，则最邻近法为默认方法。</para>
+			/// <para>Nearest—The fastest resampling method because it minimizes changes to pixel values. Suitable for discrete data, such as land cover. If the Raster MetadataData Type is thematic, then nearest neighbor will be the default.</para>
 			/// </summary>
 			[GPValue("NEAREST")]
-			[Description("最邻近")]
+			[Description("Nearest")]
 			Nearest,
 
 			/// <summary>
-			/// <para>双线性—可采用平均化（距离权重）周围 4 个像素的值计算每个像素的值。适用于连续数据。除非栅格元数据数据类型为专题型，否则这是默认方法。</para>
+			/// <para>Bilinear—Calculates the value of each pixel by averaging (weighted for distance) the values of the surrounding 4 pixels. Suitable for continuous data.This is the default, unless the Raster Metadata Data Type is thematic.</para>
 			/// </summary>
 			[GPValue("BILINEAR")]
-			[Description("双线性")]
+			[Description("Bilinear")]
 			Bilinear,
 
 			/// <summary>
-			/// <para>三次— 通过根据周围的 16 像素拟合平滑曲线来计算每个像素的值。生成平滑影像，但可创建位于源数据中超出范围外的值。适用于连续数据。</para>
+			/// <para>Cubic— Calculates the value of each pixel by fitting a smooth curve based on the surrounding 16 pixels. Produces the smoothest image, but can create values outside of the range found in the source data. Suitable for continuous data.</para>
 			/// </summary>
 			[GPValue("CUBIC")]
-			[Description("三次")]
+			[Description("Cubic")]
 			Cubic,
 
 		}

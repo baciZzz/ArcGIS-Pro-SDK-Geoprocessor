@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Attachment Match Table</para>
-	/// <para>生成附件匹配表</para>
-	/// <para>用于创建匹配表，以与添加附件和移除附件工具配合使用。</para>
+	/// <para>Generate Attachment Match Table</para>
+	/// <para>Creates a match table to be used with the Add Attachments and Remove Attachments tools.</para>
 	/// </summary>
 	public class GenerateAttachmentMatchTable : AbstractGPProcess
 	{
@@ -21,20 +21,20 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>其中包含要附加文件的记录的输入数据集。</para>
+		/// <para>Input dataset that contains records that will have files attached.</para>
 		/// </param>
 		/// <param name="InFolder">
 		/// <para>Input Folder</para>
-		/// <para>其中包含要附加的文件的文件夹。</para>
+		/// <para>Folder that contains files to attach.</para>
 		/// </param>
 		/// <param name="OutMatchTable">
 		/// <para>Output Match Table</para>
-		/// <para>将生成的包含以下两列的表：MATCHID 和 FILENAME。</para>
+		/// <para>Table that will be generated which contains two columns: MATCHID and FILENAME.</para>
 		/// </param>
 		/// <param name="InKeyField">
 		/// <para>Key Field</para>
-		/// <para>此字段中的值将与输入文件夹中的文件名匹配。匹配行为将忽略文件扩展名，从而使文件扩展名不同的多个文件与输入数据集中的一条记录相匹配。</para>
-		/// <para>例如，如果输入“关键字段”值为 lot5986，则磁盘上名为 lot5986.jpg 的文件将与此条记录匹配。</para>
+		/// <para>The values in this field will match the names of the files in the input folder. The matching behavior will ignore file extensions, which allows multiple files with various file extensions to match with a single record in the input dataset.</para>
+		/// <para>For example, if the input Key Field value is lot5986, a file on disk named lot5986.jpg would match with this record.</para>
 		/// </param>
 		public GenerateAttachmentMatchTable(object InDataset, object InFolder, object OutMatchTable, object InKeyField)
 		{
@@ -45,9 +45,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 生成附件匹配表</para>
+		/// <para>Tool Display Name : Generate Attachment Match Table</para>
 		/// </summary>
-		public override string DisplayName() => "生成附件匹配表";
+		public override string DisplayName() => "Generate Attachment Match Table";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateAttachmentMatchTable</para>
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>其中包含要附加文件的记录的输入数据集。</para>
+		/// <para>Input dataset that contains records that will have files attached.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Folder</para>
-		/// <para>其中包含要附加的文件的文件夹。</para>
+		/// <para>Folder that contains files to attach.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Match Table</para>
-		/// <para>将生成的包含以下两列的表：MATCHID 和 FILENAME。</para>
+		/// <para>Table that will be generated which contains two columns: MATCHID and FILENAME.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -105,8 +105,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Key Field</para>
-		/// <para>此字段中的值将与输入文件夹中的文件名匹配。匹配行为将忽略文件扩展名，从而使文件扩展名不同的多个文件与输入数据集中的一条记录相匹配。</para>
-		/// <para>例如，如果输入“关键字段”值为 lot5986，则磁盘上名为 lot5986.jpg 的文件将与此条记录匹配。</para>
+		/// <para>The values in this field will match the names of the files in the input folder. The matching behavior will ignore file extensions, which allows multiple files with various file extensions to match with a single record in the input dataset.</para>
+		/// <para>For example, if the input Key Field value is lot5986, a file on disk named lot5986.jpg would match with this record.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -116,12 +116,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Data Filter</para>
-		/// <para>此参数用于限制工具认为匹配的文件。如果文件名不符合文件过滤器参数中的条件，则不会被处理，因此文件也不会显示在输出匹配表中。可在此参数中使用通配符 (*) 来获得更灵活的过滤选项。也可以使用多个以分号分隔的过滤器。</para>
-		/// <para>以包含以下文件的目录为例：parcel.tif、parcel.doc、parcel.jpg、houses.jpg 和 report.pdf。</para>
-		/// <para>要将此列表中的可能匹配项限制为 .jpg 文件，则使用 *.jpg。</para>
-		/// <para>要将此列表中的可能匹配项限制为 .pdf 文件和 .doc 文件，则使用 *.pdf; *.doc。</para>
-		/// <para>要将此列表中的可能匹配项限制为以 parcel 开头的文件，则使用 parcel*。</para>
-		/// <para>要将此列表中的可能匹配项限制为包含文本 arc 的文件，则使用 *arc*。</para>
+		/// <para>This parameter is used to limit the files the tool considers for matching. If the file name does not meet the criteria in the file filter parameter it will not be processed and therefore will not show up in the output match table. Wild cards (*) can be used in this parameter for more flexible filtering options. Multiple semicolon-delimited filters can be used as well.</para>
+		/// <para>For example, consider a directory that contains the following files: parcel.tif, parcel.doc, parcel.jpg, houses.jpg, and report.pdf.</para>
+		/// <para>To limit the possible matches in this list to .jpg files, use *.jpg.</para>
+		/// <para>To limit the possible matches in this list to .pdf and .doc files, use *.pdf; *.doc.</para>
+		/// <para>To limit the possible matches in this list to files beginning with parcel, use parcel*.</para>
+		/// <para>To limit the possible matches in this list to files that contain the text arc, use *arc*.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -129,9 +129,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Store Relative Path</para>
-		/// <para>确定输出匹配表字段 FILENAME 是包含数据集的完整路径，还是仅为文件名。</para>
-		/// <para>选中 - 输出 FILENAME 字段将包含相对路径。这是默认设置。</para>
-		/// <para>未选中 - 输出 FILENAME 字段将包含数据的完整路径。</para>
+		/// <para>Determines if the output match table field FILENAME will contain a full path to the dataset or only the file name.</para>
+		/// <para>Checked—The output FILENAME field will contain relative paths. This is the default.</para>
+		/// <para>Unchecked—The output FILENAME field will contain full paths to the data.</para>
 		/// <para><see cref="InUseRelativePathsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -147,14 +147,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum InUseRelativePathsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The output FILENAME field will contain relative paths. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RELATIVE")]
 			RELATIVE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The output FILENAME field will contain full paths to the data.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ABSOLUTE")]

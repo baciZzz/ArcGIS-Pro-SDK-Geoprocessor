@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Maximum Likelihood Classification</para>
-	/// <para>最大似然法分类</para>
-	/// <para>对一组栅格波段执行最大似然法分类并创建分类的输出栅格数据。</para>
+	/// <para>Maximum Likelihood Classification</para>
+	/// <para>Performs a maximum likelihood classification on a set of raster bands and creates a classified raster as output.</para>
 	/// </summary>
 	public class MLClassify : AbstractGPProcess
 	{
@@ -21,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRasterBands">
 		/// <para>Input raster bands</para>
-		/// <para>输入栅格波段。</para>
-		/// <para>虽然波段可以是整数也可以是浮点类型，但特征文件只能是整数类值。</para>
+		/// <para>The input raster bands.</para>
+		/// <para>While the bands can be integer or floating point type, the signature file only allows integer class values.</para>
 		/// </param>
 		/// <param name="InSignatureFile">
 		/// <para>Input signature file</para>
-		/// <para>最大似然法分类器使用其类特征的输入特征文件。</para>
-		/// <para>需要使用 .gsg 扩展名。</para>
+		/// <para>The input signature file whose class signatures are used by the maximum likelihood classifier.</para>
+		/// <para>A .gsg extension is required.</para>
 		/// </param>
 		/// <param name="OutClassifiedRaster">
 		/// <para>Output classified raster</para>
-		/// <para>输出分类的栅格。</para>
-		/// <para>将为整型。</para>
+		/// <para>The output classified raster.</para>
+		/// <para>It will be of integer type.</para>
 		/// </param>
 		public MLClassify(object InRasterBands, object InSignatureFile, object OutClassifiedRaster)
 		{
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 最大似然法分类</para>
+		/// <para>Tool Display Name : Maximum Likelihood Classification</para>
 		/// </summary>
-		public override string DisplayName() => "最大似然法分类";
+		public override string DisplayName() => "Maximum Likelihood Classification";
 
 		/// <summary>
 		/// <para>Tool Name : MLClassify</para>
@@ -78,8 +78,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster bands</para>
-		/// <para>输入栅格波段。</para>
-		/// <para>虽然波段可以是整数也可以是浮点类型，但特征文件只能是整数类值。</para>
+		/// <para>The input raster bands.</para>
+		/// <para>While the bands can be integer or floating point type, the signature file only allows integer class values.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -91,8 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input signature file</para>
-		/// <para>最大似然法分类器使用其类特征的输入特征文件。</para>
-		/// <para>需要使用 .gsg 扩展名。</para>
+		/// <para>The input signature file whose class signatures are used by the maximum likelihood classifier.</para>
+		/// <para>A .gsg extension is required.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -102,8 +102,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output classified raster</para>
-		/// <para>输出分类的栅格。</para>
-		/// <para>将为整型。</para>
+		/// <para>The output classified raster.</para>
+		/// <para>It will be of integer type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -111,23 +111,23 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Reject fraction</para>
-		/// <para>选择剔除分数，该值可确定是否基于正确分配给其中一个类的像元相似度对其进行分类。 在输出分类栅格中，对于正确分配给任意类的相似度低于剔除分数的像元，将为其指定 NoData 值。</para>
-		/// <para>默认值为 0.0，表示将对每个像元进行分类。</para>
-		/// <para>有效输入包括：</para>
-		/// <para>0.0—剔除分数为 0.0</para>
-		/// <para>0.005—剔除分数为 0.005</para>
-		/// <para>0.01—剔除分数为 0.01</para>
-		/// <para>0.025—剔除分数为 0.025</para>
-		/// <para>0.05—剔除分数为 0.05</para>
-		/// <para>0.1—剔除分数为 0.1</para>
-		/// <para>0.25—剔除分数为 0.25</para>
-		/// <para>0.5—剔除分数为 0.5</para>
-		/// <para>0.75—剔除分数为 0.75</para>
-		/// <para>0.9—剔除分数为 0.9</para>
-		/// <para>0.95—剔除分数为 0.95</para>
-		/// <para>0.975—剔除分数为 0.975</para>
-		/// <para>0.99—剔除分数为 0.99</para>
-		/// <para>0.995—剔除分数为 0.995</para>
+		/// <para>Select a reject fraction, which determines whether a cell will be classified based on its likelihood of being correctly assigned to one of the classes. Cells whose likelihood of being correctly assigned to any of the classes is lower than the reject fraction will be given a value of NoData in the output classified raster.</para>
+		/// <para>The default value is 0.0, which means that every cell will be classified.</para>
+		/// <para>Valid entries are:</para>
+		/// <para>0.0— The rejection fraction is 0.0</para>
+		/// <para>0.005— The rejection fraction is 0.005</para>
+		/// <para>0.01— The rejection fraction is 0.01</para>
+		/// <para>0.025— The rejection fraction is 0.025</para>
+		/// <para>0.05— The rejection fraction is 0.05</para>
+		/// <para>0.1— The rejection fraction is 0.1</para>
+		/// <para>0.25— The rejection fraction is 0.25</para>
+		/// <para>0.5— The rejection fraction is 0.5</para>
+		/// <para>0.75— The rejection fraction is 0.75</para>
+		/// <para>0.9— The rejection fraction is 0.9</para>
+		/// <para>0.95— The rejection fraction is 0.95</para>
+		/// <para>0.975— The rejection fraction is 0.975</para>
+		/// <para>0.99— The rejection fraction is 0.99</para>
+		/// <para>0.995— The rejection fraction is 0.995</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -136,10 +136,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>A priori probability weighting</para>
-		/// <para>指定将如何确定先验概率。</para>
-		/// <para>相等— 所有类将具有相同的先验概率。</para>
-		/// <para>采样— 先验概率将与特征文件内所有类中采样像元总数的相关的各类的像元数成比例。</para>
-		/// <para>文件—先验概率将会分配给输入 ASCII 先验概率文件中的各个类。</para>
+		/// <para>Specifies how a priori probabilities will be determined.</para>
+		/// <para>Equal— All classes will have the same a priori probability.</para>
+		/// <para>Sample— A priori probabilities will be proportional to the number of cells in each class relative to the total number of cells sampled in all classes in the signature file.</para>
+		/// <para>File—The a priori probabilities will be assigned to each class from an input ASCII a priori probability file.</para>
 		/// <para><see cref="APrioriProbabilitiesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -149,9 +149,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input a priori probability file</para>
-		/// <para>包含用于输入特征类的先验概率的文本文件。</para>
-		/// <para>只有在使用 File 选项时才需要先验概率文件的输入。</para>
-		/// <para>先验文件的扩展名可以是 .txt 或 .asc。</para>
+		/// <para>A text file containing a priori probabilities for the input signature classes.</para>
+		/// <para>An input for the a priori probability file is only required when the File option is used.</para>
+		/// <para>The extension for the a priori file can be .txt or .asc.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -161,8 +161,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output confidence raster</para>
-		/// <para>以 14 个置信度显示分类确定性的输出置信栅格数据集，其中，最低值表示可靠性最高。 如果未在特定置信度对像元进行分类，则输出置信栅格中将不显示此置信度。</para>
-		/// <para>将为整型。</para>
+		/// <para>The output confidence raster dataset shows the certainty of the classification in 14 levels of confidence, with the lowest values representing the highest reliability. If there are no cells classified at a particular confidence level, that confidence level will not be present in the output confidence raster.</para>
+		/// <para>It will be of integer type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -185,24 +185,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum APrioriProbabilitiesEnum 
 		{
 			/// <summary>
-			/// <para>相等— 所有类将具有相同的先验概率。</para>
+			/// <para>Equal— All classes will have the same a priori probability.</para>
 			/// </summary>
 			[GPValue("EQUAL")]
-			[Description("相等")]
+			[Description("Equal")]
 			Equal,
 
 			/// <summary>
-			/// <para>采样— 先验概率将与特征文件内所有类中采样像元总数的相关的各类的像元数成比例。</para>
+			/// <para>Sample— A priori probabilities will be proportional to the number of cells in each class relative to the total number of cells sampled in all classes in the signature file.</para>
 			/// </summary>
 			[GPValue("SAMPLE")]
-			[Description("采样")]
+			[Description("Sample")]
 			Sample,
 
 			/// <summary>
-			/// <para>文件—先验概率将会分配给输入 ASCII 先验概率文件中的各个类。</para>
+			/// <para>File—The a priori probabilities will be assigned to each class from an input ASCII a priori probability file.</para>
 			/// </summary>
 			[GPValue("FILE")]
-			[Description("文件")]
+			[Description("File")]
 			File,
 
 		}

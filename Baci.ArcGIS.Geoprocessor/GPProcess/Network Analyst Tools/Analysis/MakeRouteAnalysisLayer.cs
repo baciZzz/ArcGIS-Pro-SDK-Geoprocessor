@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Make Route Analysis Layer</para>
-	/// <para>创建路径分析图层</para>
-	/// <para>创建路径网络分析图层并设置其分析属性。 路径分析图层可用于根据指定的网络成本确定一组网络位置之间的最佳路径。 该图层可通过本地网络数据集进行创建，也可通过在线托管路径服务或门户托管路径服务进行创建。</para>
+	/// <para>Make Route Analysis Layer</para>
+	/// <para>Makes a route network analysis layer and sets its analysis properties. A route analysis layer is useful for determining the best route between a set of network locations based on a specified network cost. The layer can be created using a local network dataset or a routing service hosted online or in a portal.</para>
 	/// </summary>
 	public class MakeRouteAnalysisLayer : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="NetworkDataSource">
 		/// <para>Network Data Source</para>
-		/// <para>将对其执行网络分析的网络数据集或服务。 将门户 URL 用于服务。</para>
+		/// <para>The network dataset or service on which the network analysis will be performed. Use the portal URL for a service.</para>
 		/// </param>
 		public MakeRouteAnalysisLayer(object NetworkDataSource)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建路径分析图层</para>
+		/// <para>Tool Display Name : Make Route Analysis Layer</para>
 		/// </summary>
-		public override string DisplayName() => "创建路径分析图层";
+		public override string DisplayName() => "Make Route Analysis Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeRouteAnalysisLayer</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Network Data Source</para>
-		/// <para>将对其执行网络分析的网络数据集或服务。 将门户 URL 用于服务。</para>
+		/// <para>The network dataset or service on which the network analysis will be performed. Use the portal URL for a service.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Layer Name</para>
-		/// <para>要创建的网络分析图层的名称。</para>
+		/// <para>The name of the network analysis layer to create.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -81,8 +81,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Travel Mode</para>
-		/// <para>分析中使用的出行模式名称。 出行模式为一组网络设置（例如行驶限制和 U 形转弯），用于确定行人、车辆、卡车或其他交通媒介在网络中的移动方式。 出行模式在网络数据源中进行定义。</para>
-		/// <para>arcpy.na.TravelMode 对象和包含出行模式有效 JSON 表示的字符串也可用作参数的输入。</para>
+		/// <para>The name of the travel mode to use in the analysis. The travel mode represents a collection of network settings, such as travel restrictions and U-turn policies, that determine how a pedestrian, car, truck, or other medium of transportation moves through the network. Travel modes are defined on your network data source.</para>
+		/// <para>An arcpy.na.TravelMode object and a string containing the valid JSON representation of a travel mode can also be used as input to the parameter.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -91,12 +91,12 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Sequence</para>
-		/// <para>指定在计算最佳路径时是否必须以特定顺序访问输入停靠点。 此选项将路径分析由最短路径问题变为流动推销员问题 (TSP)。</para>
-		/// <para>使用当前顺序—将按照输入顺序访问停靠点。 这是默认设置。</para>
-		/// <para>查找最佳顺序—将重新排序停靠点以查找最佳路径。 此选项将路径分析由最短路径问题变为流动推销员问题 (TSP)。</para>
-		/// <para>保留第一个和最后一个停靠点—按输入顺序保留第一个停靠点和最后一个停靠点。 将重新排序其余的停靠点以查找最佳路径。</para>
-		/// <para>保留第一个停靠点—按输入顺序保留第一个停靠点。 将重新排序其余的停靠点以查找最佳路径。</para>
-		/// <para>保留最后一个停靠点—按输入顺序保留最后一个停靠点。 将重新排序其余的停靠点以查找最佳路径。</para>
+		/// <para>Specifies whether the input stops must be visited in a particular order when calculating the optimal route. This option changes the route analysis from a shortest-path problem to a traveling salesperson problem (TSP).</para>
+		/// <para>Use current order—The stops will be visited in the input order. This is the default.</para>
+		/// <para>Find best order—The stops will be reordered to find the optimal route. This option changes the route analysis from a shortest-path problem to a traveling salesperson problem (TSP).</para>
+		/// <para>Preserve both first and last stop—Preserve the first and last stops by input order. The rest will be reordered to find the optimal route.</para>
+		/// <para>Preserve first stop—Preserve the first stop by input order. The rest will be reordered to find the optimal route.</para>
+		/// <para>Preserve last stop—Preserve the last stop by input order. The rest will be reordered to find the optimal route.</para>
 		/// <para><see cref="SequenceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -106,18 +106,18 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Time of Day</para>
-		/// <para>路径的开始日期和时间。 路径开始时间通常用于查找阻抗属性随当日时间变化的路径。 例如，开始时间 7:00 a.m. 可用于查找被认为是高峰时段流量的路径。 此参数的默认值为 8:00 a.m.。 日期和时间可以指定为 10/21/05 10:30 AM。如果路线跨越多天并且仅指定开始时间，则使用当前日期。</para>
-		/// <para>可使用以下日期来指定一周中的每一天，而无需使用特定的日期：</para>
-		/// <para>今天 - 12/30/1899</para>
-		/// <para>星期日 - 12/31/1899</para>
-		/// <para>星期一 - 1/1/1900</para>
-		/// <para>星期二 - 1/2/1900</para>
-		/// <para>星期三 - 1/3/1900</para>
-		/// <para>星期四 - 1/4/1900</para>
-		/// <para>星期五 - 1/5/1900</para>
-		/// <para>星期六 - 1/6/1900</para>
-		/// <para>例如，要指定行程从星期二 5:00 p.m. 开始，则请将该参数值指定为 1/2/1900 5:00 PM。</para>
-		/// <para>求解结束后，在输出路径中填充路径的开始时间与结束时间。 也会在生成方向时使用这些开始时间和结束时间。</para>
+		/// <para>The start date and time for the route. Route start time is typically used to find routes based on the impedance attribute that varies with the time of the day. For example, a start time of 7:00 a.m. could be used to find a route that considers rush hour traffic. The default value for this parameter is 8:00 a.m. A date and time can be specified as 10/21/05 10:30 AM. If the route spans multiple days and only the start time is specified, the current date is used.</para>
+		/// <para>Instead of using a particular date, a day of the week can be specified using the following dates:</para>
+		/// <para>Today—12/30/1899</para>
+		/// <para>Sunday—12/31/1899</para>
+		/// <para>Monday—1/1/1900</para>
+		/// <para>Tuesday—1/2/1900</para>
+		/// <para>Wednesday—1/3/1900</para>
+		/// <para>Thursday—1/4/1900</para>
+		/// <para>Friday—1/5/1900</para>
+		/// <para>Saturday—1/6/1900</para>
+		/// <para>For example, to specify that travel should begin at 5:00 p.m. on Tuesday, specify the parameter value as 1/2/1900 5:00 PM.</para>
+		/// <para>After the solve, the start and end times of the route are populated in the output routes. These start and end times are also used when directions are generated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -126,9 +126,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Time Zone</para>
-		/// <para>指定时间参数的时区。</para>
-		/// <para>各位置的本地时间—时间参数采用路径的第一个停靠点处的时区。 这是默认设置。如果生成开始于多个时区的多个路径，则开始时间会采用协调世界时间 (UTC) 交错。 例如，时间值为 1 月 2 日 10:00 a.m.， 表示始于东部时区的路径的开始时间为东部标准时间 10:00 a.m. (UTC 3:00 p.m.)，始于中部时区的路径的开始时间为中部标准时间 10:00 a.m. (UTC 4:00 p.m.)。 开始时间偏差一小时（UTC 时间）。输出停靠点要素类中记录的到达与离开的时间和日期将采用每个路径第一个停靠点的本地时区。</para>
-		/// <para>UTC—时间参数是指协调世界时间 (UTC)。 如果您想要在特定的时间（如现在）生成路径，但不确定第一个停靠点所在的时区，请选择此选项。如果您生成跨越多个时区的多个路径，以 UTC 表示的开始时间将发生同步。 例如，时间值为 1 月 2 日 10:00 a.m.， 表示始于东部时区的路径的开始时间为东部标准时间 5:00 a.m. (UTC 10:00 a.m.)，始于中部时区的路径的开始时间为中部标准时间 4:00 a.m. (UTC 10:00 a.m.)。 这两个路径均于 UTC 时间 10:00 a.m. 开始。输出停靠点要素类中记录的到达与离开的时间和日期将采用 UTC 时间。</para>
+		/// <para>Specifies the time zone of the Time of Day parameter.</para>
+		/// <para>Local time at locations—The Time of Day parameter refers to the time zone in which the first stop of a route is located. This is the default.If you are generating many routes that start in multiple times zones, the start times are staggered in coordinated universal time (UTC). For example, a Time of Day value of 10:00 a.m., 2 January, would mean a start time of 10:00 a.m. eastern standard time (3:00 p.m. UTC) for routes beginning in the eastern time zone and 10:00 a.m. central standard time (4:00 p.m. UTC) for routes beginning in the central time zone. The start times are offset by one hour in UTC.The arrival and departure times and dates recorded in the output Stops feature class will refer to the local time zone of the first stop for each route.</para>
+		/// <para>UTC—The Time of Day parameter refers to coordinated universal time (UTC). Choose this option if you want to generate a route for a specific time, such as now, but aren&apos;t certain in which time zone the first stop will be located.If you are generating many routes spanning multiple times zones, the start times in UTC are simultaneous. For example, a Time of Day value of 10:00 a.m., 2 January, would mean a start time of 5:00 a.m. eastern standard time (10:00 a.m. UTC) for routes beginning in the eastern time zone and 4:00 a.m. central standard time (10:00 a.m. UTC) for routes beginning in the central time zone. Both routes would start at 10:00 a.m. UTC.The arrival and departure times and dates recorded in the output Stops feature class will refer to UTC.</para>
 		/// <para><see cref="TimeZoneEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -139,11 +139,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Line Shape</para>
-		/// <para>为分析所输出的路径要素指定要使用的形状类型。</para>
-		/// <para>沿网络—输出路径将具有基础网络源的精确形状。 输出包括线性参考的路径测量值。 测量值从第一个停靠点增加并将记录到达指定位置的累积阻抗。</para>
-		/// <para>无线—将不会为输出路径生成任何形状。</para>
-		/// <para>直线—输出路径形状为两个停靠点之间的一条直线。</para>
-		/// <para>无论选择何种输出 shape 类型，最佳路径始终由网络阻抗（而非欧氏距离）决定。 这表示只是路径形状不同，而对网络进行的基础遍历则相同。</para>
+		/// <para>Specifies the shape type that will be used for the route features that are output by the analysis.</para>
+		/// <para>Along network—The output routes will have the exact shape of the underlying network sources. The output includes route measurements for linear referencing. The measurements increase from the first stop and record the cumulative impedance to reach a given position.</para>
+		/// <para>No lines—No shape will be generated for the output routes.</para>
+		/// <para>Straight lines—The output route shape will be a single straight line between the stops.</para>
+		/// <para>Regardless of the output shape type specified, the best route is always determined by the network impedance, never Euclidean distance. This means that only the route shapes are different, not the underlying traversal of the network.</para>
 		/// <para><see cref="LineShapeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -154,9 +154,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Accumulate Attributes</para>
-		/// <para>分析过程中要累积的成本属性的列表。 这些累积属性仅供参考；求解程序仅使用求解分析时指定的出行模式所使用的成本属性。</para>
-		/// <para>对于每个累积的成本属性，会在网络分析输出要素中填充 Total_[阻抗] 属性。</para>
-		/// <para>如果网络数据源为 ArcGIS Online 服务，或如果网络数据源是不支持累积的 Portal for ArcGIS 版本上的服务，则此参数不可用。</para>
+		/// <para>A list of cost attributes to be accumulated during analysis. These accumulated attributes are for reference only; the solver only uses the cost attribute used by the designated travel mode when solving the analysis.</para>
+		/// <para>For each cost attribute that is accumulated, a Total_[Impedance] property is populated in the network analysis output features.</para>
+		/// <para>This parameter is not available if the network data source is an ArcGIS Online service or the network data source is a service on a version of Portal for ArcGIS that does not support accumulation.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -166,10 +166,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Generate Directions on Solve</para>
-		/// <para>指定运行分析时是否生成方向。</para>
-		/// <para>选中 - 求解时会生成转向指示。 这是默认设置。</para>
-		/// <para>未选中 - 求解时不会生成转向指示。</para>
-		/// <para>对于不需要生成转向指示的分析，保持此选项的未选中状态可以减少求解分析的时间。</para>
+		/// <para>Specifies whether directions will be generated when running the analysis.</para>
+		/// <para>Checked—Turn-by-turn directions will be generated on solve. This is the default.</para>
+		/// <para>Unchecked—Turn-by-turn directions will not be generated on solve.</para>
+		/// <para>For an analysis in which generating turn-by-turn directions is not needed, leaving this option unchecked will reduce the time it takes to solve the analysis.</para>
 		/// <para><see cref="GenerateDirectionsOnSolveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -187,9 +187,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Time Zone for Time Fields</para>
-		/// <para>指定将用于解释输入表中包括的时间字段（例如用于时间窗口的字段）的时区。</para>
-		/// <para>各位置的本地时间—停靠点时间字段中的日期和时间将根据停靠点所在的时区进行解释。 这是默认设置。</para>
-		/// <para>UTC—停靠点时间字段中的日期和时间采用协调世界时间 (UTC)。</para>
+		/// <para>Specifies the time zone that will be used to interpret the time fields included in the input tables, such as the fields used for time windows.</para>
+		/// <para>Local time at locations—The dates and times in the time fields for the stop will be interpreted according to the time zone in which the stop is located. This is the default.</para>
+		/// <para>UTC—The dates and times in the time fields for the stop refer to coordinated universal time (UTC).</para>
 		/// <para><see cref="TimeZoneForTimeFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -200,9 +200,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Ignore Invalid Locations at Solve Time</para>
-		/// <para>指定是否忽略无效的输入位置。 通常，如果无法在网络上定位，则位置无效。 当无效位置被忽略时，求解器将跳过它们并尝试使用剩余位置执行分析。</para>
-		/// <para>选中 - 将忽略无效的输入位置，并且仅使用有效的位置。 这是默认设置。</para>
-		/// <para>未选中 - 将使用所有输入位置。 无效的位置将导致分析失败。</para>
+		/// <para>Specifies whether invalid input locations will be ignored. Typically, locations are invalid if they cannot be located on the network. When invalid locations are ignored, the solver will skip them and attempt to perform the analysis using the remaining locations.</para>
+		/// <para>Checked—Invalid input locations will be ignored and only valid locations will be used. This is the default.</para>
+		/// <para>Unchecked—All input locations will be used. Invalid locations will cause the analysis to fail.</para>
 		/// <para><see cref="IgnoreInvalidLocationsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -228,38 +228,38 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum SequenceEnum 
 		{
 			/// <summary>
-			/// <para>使用当前顺序—将按照输入顺序访问停靠点。 这是默认设置。</para>
+			/// <para>Use current order—The stops will be visited in the input order. This is the default.</para>
 			/// </summary>
 			[GPValue("USE_CURRENT_ORDER")]
-			[Description("使用当前顺序")]
+			[Description("Use current order")]
 			Use_current_order,
 
 			/// <summary>
-			/// <para>查找最佳顺序—将重新排序停靠点以查找最佳路径。 此选项将路径分析由最短路径问题变为流动推销员问题 (TSP)。</para>
+			/// <para>Find best order—The stops will be reordered to find the optimal route. This option changes the route analysis from a shortest-path problem to a traveling salesperson problem (TSP).</para>
 			/// </summary>
 			[GPValue("FIND_BEST_ORDER")]
-			[Description("查找最佳顺序")]
+			[Description("Find best order")]
 			Find_best_order,
 
 			/// <summary>
-			/// <para>保留第一个和最后一个停靠点—按输入顺序保留第一个停靠点和最后一个停靠点。 将重新排序其余的停靠点以查找最佳路径。</para>
+			/// <para>Preserve both first and last stop—Preserve the first and last stops by input order. The rest will be reordered to find the optimal route.</para>
 			/// </summary>
 			[GPValue("PRESERVE_BOTH")]
-			[Description("保留第一个和最后一个停靠点")]
+			[Description("Preserve both first and last stop")]
 			Preserve_both_first_and_last_stop,
 
 			/// <summary>
-			/// <para>保留第一个停靠点—按输入顺序保留第一个停靠点。 将重新排序其余的停靠点以查找最佳路径。</para>
+			/// <para>Preserve first stop—Preserve the first stop by input order. The rest will be reordered to find the optimal route.</para>
 			/// </summary>
 			[GPValue("PRESERVE_FIRST")]
-			[Description("保留第一个停靠点")]
+			[Description("Preserve first stop")]
 			Preserve_first_stop,
 
 			/// <summary>
-			/// <para>保留最后一个停靠点—按输入顺序保留最后一个停靠点。 将重新排序其余的停靠点以查找最佳路径。</para>
+			/// <para>Preserve last stop—Preserve the last stop by input order. The rest will be reordered to find the optimal route.</para>
 			/// </summary>
 			[GPValue("PRESERVE_LAST")]
-			[Description("保留最后一个停靠点")]
+			[Description("Preserve last stop")]
 			Preserve_last_stop,
 
 		}
@@ -270,17 +270,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum TimeZoneEnum 
 		{
 			/// <summary>
-			/// <para>UTC—时间参数是指协调世界时间 (UTC)。 如果您想要在特定的时间（如现在）生成路径，但不确定第一个停靠点所在的时区，请选择此选项。如果您生成跨越多个时区的多个路径，以 UTC 表示的开始时间将发生同步。 例如，时间值为 1 月 2 日 10:00 a.m.， 表示始于东部时区的路径的开始时间为东部标准时间 5:00 a.m. (UTC 10:00 a.m.)，始于中部时区的路径的开始时间为中部标准时间 4:00 a.m. (UTC 10:00 a.m.)。 这两个路径均于 UTC 时间 10:00 a.m. 开始。输出停靠点要素类中记录的到达与离开的时间和日期将采用 UTC 时间。</para>
+			/// <para>UTC—The Time of Day parameter refers to coordinated universal time (UTC). Choose this option if you want to generate a route for a specific time, such as now, but aren&apos;t certain in which time zone the first stop will be located.If you are generating many routes spanning multiple times zones, the start times in UTC are simultaneous. For example, a Time of Day value of 10:00 a.m., 2 January, would mean a start time of 5:00 a.m. eastern standard time (10:00 a.m. UTC) for routes beginning in the eastern time zone and 4:00 a.m. central standard time (10:00 a.m. UTC) for routes beginning in the central time zone. Both routes would start at 10:00 a.m. UTC.The arrival and departure times and dates recorded in the output Stops feature class will refer to UTC.</para>
 			/// </summary>
 			[GPValue("UTC")]
 			[Description("UTC")]
 			UTC,
 
 			/// <summary>
-			/// <para>各位置的本地时间—时间参数采用路径的第一个停靠点处的时区。 这是默认设置。如果生成开始于多个时区的多个路径，则开始时间会采用协调世界时间 (UTC) 交错。 例如，时间值为 1 月 2 日 10:00 a.m.， 表示始于东部时区的路径的开始时间为东部标准时间 10:00 a.m. (UTC 3:00 p.m.)，始于中部时区的路径的开始时间为中部标准时间 10:00 a.m. (UTC 4:00 p.m.)。 开始时间偏差一小时（UTC 时间）。输出停靠点要素类中记录的到达与离开的时间和日期将采用每个路径第一个停靠点的本地时区。</para>
+			/// <para>Local time at locations—The Time of Day parameter refers to the time zone in which the first stop of a route is located. This is the default.If you are generating many routes that start in multiple times zones, the start times are staggered in coordinated universal time (UTC). For example, a Time of Day value of 10:00 a.m., 2 January, would mean a start time of 10:00 a.m. eastern standard time (3:00 p.m. UTC) for routes beginning in the eastern time zone and 10:00 a.m. central standard time (4:00 p.m. UTC) for routes beginning in the central time zone. The start times are offset by one hour in UTC.The arrival and departure times and dates recorded in the output Stops feature class will refer to the local time zone of the first stop for each route.</para>
 			/// </summary>
 			[GPValue("LOCAL_TIME_AT_LOCATIONS")]
-			[Description("各位置的本地时间")]
+			[Description("Local time at locations")]
 			Local_time_at_locations,
 
 		}
@@ -291,24 +291,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum LineShapeEnum 
 		{
 			/// <summary>
-			/// <para>无线—将不会为输出路径生成任何形状。</para>
+			/// <para>No lines—No shape will be generated for the output routes.</para>
 			/// </summary>
 			[GPValue("NO_LINES")]
-			[Description("无线")]
+			[Description("No lines")]
 			No_lines,
 
 			/// <summary>
-			/// <para>直线—输出路径形状为两个停靠点之间的一条直线。</para>
+			/// <para>Straight lines—The output route shape will be a single straight line between the stops.</para>
 			/// </summary>
 			[GPValue("STRAIGHT_LINES")]
-			[Description("直线")]
+			[Description("Straight lines")]
 			Straight_lines,
 
 			/// <summary>
-			/// <para>沿网络—输出路径将具有基础网络源的精确形状。 输出包括线性参考的路径测量值。 测量值从第一个停靠点增加并将记录到达指定位置的累积阻抗。</para>
+			/// <para>Along network—The output routes will have the exact shape of the underlying network sources. The output includes route measurements for linear referencing. The measurements increase from the first stop and record the cumulative impedance to reach a given position.</para>
 			/// </summary>
 			[GPValue("ALONG_NETWORK")]
-			[Description("沿网络")]
+			[Description("Along network")]
 			Along_network,
 
 		}
@@ -319,14 +319,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum GenerateDirectionsOnSolveEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Turn-by-turn directions will be generated on solve. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DIRECTIONS")]
 			DIRECTIONS,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Turn-by-turn directions will not be generated on solve.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DIRECTIONS")]
@@ -340,17 +340,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum TimeZoneForTimeFieldsEnum 
 		{
 			/// <summary>
-			/// <para>UTC—停靠点时间字段中的日期和时间采用协调世界时间 (UTC)。</para>
+			/// <para>UTC—The dates and times in the time fields for the stop refer to coordinated universal time (UTC).</para>
 			/// </summary>
 			[GPValue("UTC")]
 			[Description("UTC")]
 			UTC,
 
 			/// <summary>
-			/// <para>各位置的本地时间—停靠点时间字段中的日期和时间将根据停靠点所在的时区进行解释。 这是默认设置。</para>
+			/// <para>Local time at locations—The dates and times in the time fields for the stop will be interpreted according to the time zone in which the stop is located. This is the default.</para>
 			/// </summary>
 			[GPValue("LOCAL_TIME_AT_LOCATIONS")]
-			[Description("各位置的本地时间")]
+			[Description("Local time at locations")]
 			Local_time_at_locations,
 
 		}
@@ -361,14 +361,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum IgnoreInvalidLocationsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Invalid input locations will be ignored and only valid locations will be used. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SKIP")]
 			SKIP,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—All input locations will be used. Invalid locations will cause the analysis to fail.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("HALT")]

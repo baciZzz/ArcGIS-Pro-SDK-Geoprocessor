@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Point Clustering</para>
-	/// <para>点聚类</para>
+	/// <para>Point Clustering</para>
 	/// <para>Find clusters of point features.</para>
 	/// </summary>
 	[Obsolete()]
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 点聚类</para>
+		/// <para>Tool Display Name : Point Clustering</para>
 		/// </summary>
-		public override string DisplayName() => "点聚类";
+		public override string DisplayName() => "Point Clustering";
 
 		/// <summary>
 		/// <para>Tool Name : PointClustering</para>

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Refresh Multifile Feature Connection</para>
-	/// <para>刷新多文件要素连接</para>
-	/// <para>用于刷新现有多文件要素连接 (MFC)，并注册已添加到源位置的所有新数据集。</para>
+	/// <para>Refresh Multifile Feature Connection</para>
+	/// <para>Refreshes an existing multifile feature connection (MFC) and registers any new datasets that have been added to the source location.</para>
 	/// </summary>
 	public class RefreshBDC : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		/// <param name="BdcFile">
 		/// <para>Multifile Feature Connection File</para>
-		/// <para>要刷新的 MFC 文件。</para>
+		/// <para>The MFC file to refresh.</para>
 		/// </param>
 		public RefreshBDC(object BdcFile)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 刷新多文件要素连接</para>
+		/// <para>Tool Display Name : Refresh Multifile Feature Connection</para>
 		/// </summary>
-		public override string DisplayName() => "刷新多文件要素连接";
+		public override string DisplayName() => "Refresh Multifile Feature Connection";
 
 		/// <summary>
 		/// <para>Tool Name : RefreshBDC</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Multifile Feature Connection File</para>
-		/// <para>要刷新的 MFC 文件。</para>
+		/// <para>The MFC file to refresh.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -75,9 +75,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Visible Geometry Fields</para>
-		/// <para>指定当在其他地理处理工具中使用 MFC 文件时，是否会将用于标识几何的字段作为分析字段包括在内（可见）。 当几何字段不可见时，几何仍将应用于数据集。 可以在 MFC 中修改几何可见性设置。</para>
-		/// <para>选中 - 几何字段将作为分析字段包括在内。 这是默认设置。</para>
-		/// <para>未选中 - 几何字段不会作为分析字段包括在内。</para>
+		/// <para>Specifies whether the fields used to identify the geometry will be included (visible) as fields for analysis when the MFC file is used in other geoprocessing tools. When geometry fields are not visible, geometry is still applied to the dataset. The geometry visibility setting can be modified in the MFC.</para>
+		/// <para>Checked—Geometry fields will be included as fields for analysis. This is the default.</para>
+		/// <para>Unchecked—Geometry fields will not be included as fields for analysis.</para>
 		/// <para><see cref="VisibleGeometryEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -87,9 +87,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Visible Time Fields</para>
-		/// <para>指定当在其他地理处理工具中使用 MFC 文件时，是否会将用于指示时间的字段作为分析字段包括在内（可见）。 当时间字段不可见时，时间仍应用于数据集。 可以在 MFC 中修改时间可见性设置。</para>
-		/// <para>选中 - 时间字段将作为分析字段包括在内。 这是默认设置。</para>
-		/// <para>未选中 - 时间字段不会作为分析字段包括在内。</para>
+		/// <para>Specifies whether the fields used to indicate the time will be included (visible) as fields for analysis when the MFC file is used in other geoprocessing tools. When time fields are not visible, time is still applied to the dataset. The time visibility setting can be modified in the MFC.</para>
+		/// <para>Checked—Time fields will be included as fields for analysis. This is the default.</para>
+		/// <para>Unchecked—Time fields will not be included as fields for analysis.</para>
 		/// <para><see cref="VisibleTimeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -114,14 +114,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum VisibleGeometryEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Geometry fields will be included as fields for analysis. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("GEOMETRY_VISIBLE")]
 			GEOMETRY_VISIBLE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Geometry fields will not be included as fields for analysis.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("GEOMETRY_NOT_VISIBLE")]
@@ -135,14 +135,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum VisibleTimeEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Time fields will be included as fields for analysis. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("TIME_VISIBLE")]
 			TIME_VISIBLE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Time fields will not be included as fields for analysis.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("TIME_NOT_VISIBLE")]

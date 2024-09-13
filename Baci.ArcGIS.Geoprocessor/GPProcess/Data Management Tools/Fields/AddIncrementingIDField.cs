@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Incrementing ID Field</para>
-	/// <para>添加递增 ID 字段</para>
-	/// <para>将向 Dameng、IBM Db2、Microsoft Azure SQL Database、Microsoft SQL Server、Oracle 或 PostgreSQL 数据库中的现有表或要素类中添加由数据库维护的 ID 字段。计划通过要素服务编辑的所有要素类或表都需要数据库维护的 ID 字段。</para>
+	/// <para>Add Incrementing ID Field</para>
+	/// <para>Adds a database-maintained ID field to an existing table or feature class in a Dameng, IBM Db2, Microsoft Azure SQL Database, Microsoft SQL Server, Oracle, or PostgreSQL database. A database-maintained ID field is required for all feature classes or tables you plan to edit through a feature service.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>将添加 ID 字段的表或要素类的位置和名称。</para>
+		/// <para>The location and name of the table or feature class to which an ID field will be added.</para>
 		/// </param>
 		public AddIncrementingIDField(object InTable)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 添加递增 ID 字段</para>
+		/// <para>Tool Display Name : Add Incrementing ID Field</para>
 		/// </summary>
-		public override string DisplayName() => "添加递增 ID 字段";
+		public override string DisplayName() => "Add Incrementing ID Field";
 
 		/// <summary>
 		/// <para>Tool Name : AddIncrementingIDField</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>将添加 ID 字段的表或要素类的位置和名称。</para>
+		/// <para>The location and name of the table or feature class to which an ID field will be added.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field Name</para>
-		/// <para>将要用于 ID 字段的名称。如果未提供输入，则将使用默认值 ObjectID。</para>
+		/// <para>The name to be used for the ID field. If no input is provided, the default ObjectID will be used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

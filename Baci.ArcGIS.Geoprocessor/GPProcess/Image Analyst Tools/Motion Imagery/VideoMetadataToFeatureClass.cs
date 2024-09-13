@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Video Metadata To Feature Class</para>
-	/// <para>视频元数据至要素类</para>
-	/// <para>从兼容 FMV 的视频中提取平台、帧中心、帧轮廓和属性元数据。 输出几何和属性将保存为要素类。</para>
+	/// <para>Video Metadata To Feature Class</para>
+	/// <para>Extracts the platform, frame center, frame outline, and attributes metadata from an FMV-compliant video. The output geometry and attributes are saved as feature classes.</para>
 	/// </summary>
 	public class VideoMetadataToFeatureClass : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InVideo">
 		/// <para>Input Video</para>
-		/// <para>兼容 FMV 的输入视频文件，其中包含对应视频数据中每一帧的基本元数据。 受支持的视频文件类型包括 PS、TS、MPG、MPEG、MP2、MPG2、MPEG2、MP4、MPG4、MPEG4、H264、VOB 和 M2TS。</para>
+		/// <para>The FMV-compliant input video file containing essential metadata for each frame of the video data. The supported video file types include PS, TS, MPG, MPEG, MP2, MPG2, MPEG2, MP4, MPG4, MPEG4, H264, VOB, and M2TS.</para>
 		/// </param>
 		public VideoMetadataToFeatureClass(object InVideo)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 视频元数据至要素类</para>
+		/// <para>Tool Display Name : Video Metadata To Feature Class</para>
 		/// </summary>
-		public override string DisplayName() => "视频元数据至要素类";
+		public override string DisplayName() => "Video Metadata To Feature Class";
 
 		/// <summary>
 		/// <para>Tool Name : VideoMetadataToFeatureClass</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Video</para>
-		/// <para>兼容 FMV 的输入视频文件，其中包含对应视频数据中每一帧的基本元数据。 受支持的视频文件类型包括 PS、TS、MPG、MPEG、MP2、MPG2、MPEG2、MP4、MPG4、MPEG4、H264、VOB 和 M2TS。</para>
+		/// <para>The FMV-compliant input video file containing essential metadata for each frame of the video data. The supported video file types include PS, TS, MPG, MPEG, MP2, MPG2, MPEG2, MP4, MPG4, MPEG4, H264, VOB, and M2TS.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -75,8 +75,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Metadata File</para>
-		/// <para>逗号分隔值 (CSV) 文件，其中包含有关特定时间的视频帧的元数据。</para>
-		/// <para>此元数据文件的格式与视频多路复用器工具所使用的格式相同。</para>
+		/// <para>A comma-separated values (CSV) file containing metadata about the video frames for specific times.</para>
+		/// <para>This metadata file is in the same format used by the Video Multiplexer tool.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Flight Path Feature Class</para>
-		/// <para>包含传感器飞行路径信息的要素类。</para>
+		/// <para>The feature class containing the sensor's flight path information.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -95,9 +95,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Flight Path Feature Class Type</para>
-		/// <para>用于指定飞行路径的要素类类型。</para>
-		/// <para>点—点要素类。</para>
-		/// <para>折线—折线要素类。 这是默认设置。</para>
+		/// <para>Specifies the feature class type for the flight path.</para>
+		/// <para>Point—Point feature class.</para>
+		/// <para>Polyline—Polyline feature class. This is the default.</para>
 		/// <para><see cref="FlightpathTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Image Path Feature Class</para>
-		/// <para>包含影像路径信息的输出要素类。</para>
+		/// <para>The output feature class containing the image path information.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -116,9 +116,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Image Path Feature Class Type</para>
-		/// <para>用于指定影像路径的要素类类型。 如果您所使用的是点输出，则每个视频帧图像的中心都将显示在地图上。</para>
-		/// <para>点—点要素类。</para>
-		/// <para>折线—折线要素类。 这是默认设置。</para>
+		/// <para>Specifies the feature class type for the image path. If you&apos;re using a point output, the center of each video frame image will appear on the map.</para>
+		/// <para>Point—Point feature class.</para>
+		/// <para>Polyline—Polyline feature class. This is the default.</para>
 		/// <para><see cref="ImagepathTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Image Footprint Feature Class</para>
-		/// <para>包含视频影像轮廓线信息的输出要素类。</para>
+		/// <para>The output feature class containing the video image footprint information.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Metadata Capture Start Time</para>
-		/// <para>记录视频开头的开始时间的元数据。 输入格式为 d.hh:mm:ss，且默认开始时间为 0.00:00:00。 此字段中不使用元数据时间戳；将使用视频文件中的时间。</para>
+		/// <para>The metadata recording start time from the beginning of the video. The input format is d.hh:mm:ss, and the default start time is 0.00:00:00. Metadata time stamps are not used in this field; the time of the video file is used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Metadata Capture Stop Time</para>
-		/// <para>记录结束时间的元数据。 其输入格式为 d.hh:mm:ss。 如果未进行设置，则该值将默认为视频结尾的时间。 此字段中不使用元数据时间戳。</para>
+		/// <para>The metadata recording end time. The input format is d.hh:mm:ss. If not set, the value will default to the end of the video. Metadata time stamps are not used in this field.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Minimum Distance Between Features</para>
-		/// <para>连续视频帧中要素之间的距离。 如果将其留空，则将提取每个元数据要素并将其添加到要素类中。</para>
+		/// <para>The distance between the features in sequential video frames. If left blank, every metadata feature will be extracted and added to the feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Minimum Time Between Features</para>
-		/// <para>连续视频帧中要素之间的时间间隔。 如果将其留空，则将提取每个元数据要素并将其添加到要素类中。</para>
+		/// <para>The time interval between the features in sequential video frames. If left blank, every metadata feature will be extracted and added to the feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -184,17 +184,17 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum FlightpathTypeEnum 
 		{
 			/// <summary>
-			/// <para>点—点要素类。</para>
+			/// <para>Point—Point feature class.</para>
 			/// </summary>
 			[GPValue("POINT")]
-			[Description("点")]
+			[Description("Point")]
 			Point,
 
 			/// <summary>
-			/// <para>折线—折线要素类。 这是默认设置。</para>
+			/// <para>Polyline—Polyline feature class. This is the default.</para>
 			/// </summary>
 			[GPValue("POLYLINE")]
-			[Description("折线")]
+			[Description("Polyline")]
 			Polyline,
 
 		}
@@ -205,17 +205,17 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum ImagepathTypeEnum 
 		{
 			/// <summary>
-			/// <para>点—点要素类。</para>
+			/// <para>Point—Point feature class.</para>
 			/// </summary>
 			[GPValue("POINT")]
-			[Description("点")]
+			[Description("Point")]
 			Point,
 
 			/// <summary>
-			/// <para>折线—折线要素类。 这是默认设置。</para>
+			/// <para>Polyline—Polyline feature class. This is the default.</para>
 			/// </summary>
 			[GPValue("POLYLINE")]
-			[Description("折线")]
+			[Description("Polyline")]
 			Polyline,
 
 		}

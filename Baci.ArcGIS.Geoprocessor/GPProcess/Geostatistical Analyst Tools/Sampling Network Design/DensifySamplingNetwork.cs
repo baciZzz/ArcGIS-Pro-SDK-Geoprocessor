@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Densify Sampling Network</para>
-	/// <para>增密采样网络</para>
-	/// <para>使用预定义的地统计克里金图层来确定新监测站的构建位置。也可用于确定哪些监测站应从现有网络中移除。</para>
+	/// <para>Densify Sampling Network</para>
+	/// <para>Uses a predefined geostatistical kriging layer to determine where new monitoring stations should be built.  It can also be used to determine which monitoring stations should be removed from an existing network.</para>
 	/// </summary>
 	public class DensifySamplingNetwork : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InGeostatLayer">
 		/// <para>Input geostatistical layer</para>
-		/// <para>输入由克里金模型生成的地统计图层。</para>
+		/// <para>Input a geostatistical layer resulting from a Kriging model.</para>
 		/// </param>
 		/// <param name="NumberOutputPoints">
 		/// <para>Number of  output points</para>
-		/// <para>指定要生成的采样位置的数量。</para>
+		/// <para>Specify how many sample locations to generate.</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output point feature class</para>
-		/// <para>输出要素类的名称。</para>
+		/// <para>The name of the output feature class.</para>
 		/// </param>
 		public DensifySamplingNetwork(object InGeostatLayer, object NumberOutputPoints, object OutFeatureClass)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 增密采样网络</para>
+		/// <para>Tool Display Name : Densify Sampling Network</para>
 		/// </summary>
-		public override string DisplayName() => "增密采样网络";
+		public override string DisplayName() => "Densify Sampling Network";
 
 		/// <summary>
 		/// <para>Tool Name : DensifySamplingNetwork</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>
-		/// <para>输入由克里金模型生成的地统计图层。</para>
+		/// <para>Input a geostatistical layer resulting from a Kriging model.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPGALayer()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Number of  output points</para>
-		/// <para>指定要生成的采样位置的数量。</para>
+		/// <para>Specify how many sample locations to generate.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output point feature class</para>
-		/// <para>输出要素类的名称。</para>
+		/// <para>The name of the output feature class.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -100,14 +100,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Selection criteria</para>
-		/// <para>采样网络的增密方法。</para>
-		/// <para>预测的标准误差—预测标准误差条件</para>
-		/// <para>标准误差阈值—标准误差阈值条件</para>
-		/// <para>下限四分位数阈值— 下限四分位阈值条件</para>
-		/// <para>上限四分位阈值— 上限四分位阈值条件</para>
-		/// <para>预测标准误差选项会向预测标准误差较大的位置分配额外的权重。如果正在研究的变量存在临界阈值（例如可接受的最高臭氧含量），则标准误差阈值、下限四分位阈值和上限四分位阈值选项将非常有用。标准误差阈值选项会向值接近于阈值的位置分配额外的权重。下限四分位阈值选项会向最不可能超出临界阈值的位置分配额外的权重。上限四分位阈值选项会向最有可能超出临界阈值的位置分配额外的权重。</para>
-		/// <para>当选择条件设置为标准误差阈值、下限四分位阈值或上限四分位阈值时，阈值参数将变为可用，以便您指定感兴趣的阈值。</para>
-		/// <para>每个选项的公式为：&lt;code&gt;Standard error of prediction = stderr Standard error threshold = stderr(s)(1 - 2 · abs(prob[Z(s) &gt; threshold] - 0.5)) Lower quartile threshold = (Z0.75(s) - Z0.25(s)) · (prob[Z(s) &lt; threshold]) Upper quartile threshold = (Z0.75(s) - Z0.25(s)) · (prob[Z(s) &gt; threshold])&lt;/code&gt;</para>
+		/// <para>Methods to densify a sampling network.</para>
+		/// <para>Standard error of prediction—Standard error of prediction criteria</para>
+		/// <para>Standard error threshold—Standard error threshold criteria</para>
+		/// <para>Lower quartile threshold— Lower quartile threshold criteria</para>
+		/// <para>Upper quartile threshold— Upper quartile threshold criteria</para>
+		/// <para>The Standard error of prediction option will give extra weight to locations where the standard error of prediction is large. The Standard error threshold, Lower quartile threshold, and Upper quartile threshold options are useful when there is a critical threshold value for the variable under study (such as the highest admissible ozone level). The Standard error threshold option will give extra weight to locations whose values are close to the threshold. The Lower quartile threshold option will give extra weight to locations that are least likely to exceed the critical threshold. The Upper quartile threshold option will give extra weight to locations that are most likely to exceed the critical threshold.</para>
+		/// <para>When the Selection criteria is set to Standard error threshold, Lower quartile threshold, or Upper quartile threshold, the Threshold value parameter will become available, allowing you specify your threshold of interest.</para>
+		/// <para>The equations for each option are:&lt;code&gt;Standard error of prediction = stderr Standard error threshold = stderr(s)(1 - 2 · abs(prob[Z(s) &gt; threshold] - 0.5)) Lower quartile threshold = (Z0.75(s) - Z0.25(s)) · (prob[Z(s) &lt; threshold]) Upper quartile threshold = (Z0.75(s) - Z0.25(s)) · (prob[Z(s) &gt; threshold])&lt;/code&gt;</para>
 		/// <para><see cref="SelectionCriteriaEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -117,8 +117,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Threshold value</para>
-		/// <para>用来增密采样网络的阈值。</para>
-		/// <para>仅在使用标准误差阈值、下限四分位阈值或上限四分位阈值选择条件时，该参数才适用。</para>
+		/// <para>The threshold value used to densify the sampling network.</para>
+		/// <para>This parameter is only applicable when Standard error threshold, Lower quartile threshold, or Upper quartile threshold selection criteria is used.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input weight raster</para>
-		/// <para>该栅格用于确定要对哪些位置的优先顺序进行权衡。</para>
+		/// <para>A raster used to determine which locations to weight for preference.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRasterLayer()]
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input candidate point features</para>
-		/// <para>可供选择的采样位置。</para>
+		/// <para>Sample locations to pick from.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Inhibition distance</para>
-		/// <para>用于避免样本的放置间距小于该距离。</para>
+		/// <para>Used to prevent any samples being placed within this distance from each other.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -170,31 +170,31 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum SelectionCriteriaEnum 
 		{
 			/// <summary>
-			/// <para>预测的标准误差—预测标准误差条件</para>
+			/// <para>Standard error of prediction—Standard error of prediction criteria</para>
 			/// </summary>
 			[GPValue("STDERR")]
-			[Description("预测的标准误差")]
+			[Description("Standard error of prediction")]
 			Standard_error_of_prediction,
 
 			/// <summary>
-			/// <para>标准误差阈值—标准误差阈值条件</para>
+			/// <para>Standard error threshold—Standard error threshold criteria</para>
 			/// </summary>
 			[GPValue("STDERR_THRESHOLD")]
-			[Description("标准误差阈值")]
+			[Description("Standard error threshold")]
 			Standard_error_threshold,
 
 			/// <summary>
-			/// <para>下限四分位数阈值— 下限四分位阈值条件</para>
+			/// <para>Lower quartile threshold— Lower quartile threshold criteria</para>
 			/// </summary>
 			[GPValue("QUARTILE_THRESHOLD")]
-			[Description("下限四分位数阈值")]
+			[Description("Lower quartile threshold")]
 			Lower_quartile_threshold,
 
 			/// <summary>
-			/// <para>上限四分位阈值— 上限四分位阈值条件</para>
+			/// <para>Upper quartile threshold— Upper quartile threshold criteria</para>
 			/// </summary>
 			[GPValue("QUARTILE_THRESHOLD_UPPER")]
-			[Description("上限四分位阈值")]
+			[Description("Upper quartile threshold")]
 			Upper_quartile_threshold,
 
 		}

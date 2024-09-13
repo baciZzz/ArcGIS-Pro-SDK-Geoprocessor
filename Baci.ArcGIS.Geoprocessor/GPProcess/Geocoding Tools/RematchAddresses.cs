@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 {
 	/// <summary>
 	/// <para>Rematch Addresses</para>
-	/// <para>重新匹配地址</para>
-	/// <para>重新匹配地理编码要素类中的地址。</para>
+	/// <para>Rematch Addresses</para>
+	/// <para>Rematches addresses in a geocoded feature class.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// </summary>
 		/// <param name="InGeocodedFeatureClass">
 		/// <para>Input Feature Class</para>
-		/// <para>要重新匹配的地理编码要素类。</para>
+		/// <para>The geocoded feature class to be rematched.</para>
 		/// </param>
 		public RematchAddresses(object InGeocodedFeatureClass)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 重新匹配地址</para>
+		/// <para>Tool Display Name : Rematch Addresses</para>
 		/// </summary>
-		public override string DisplayName() => "重新匹配地址";
+		public override string DisplayName() => "Rematch Addresses";
 
 		/// <summary>
 		/// <para>Tool Name : RematchAddresses</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>要重新匹配的地理编码要素类。</para>
+		/// <para>The geocoded feature class to be rematched.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Where Clause</para>
-		/// <para>用于选择要素子集的 SQL 表达式。</para>
+		/// <para>An SQL expression used to select a subset of features.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]

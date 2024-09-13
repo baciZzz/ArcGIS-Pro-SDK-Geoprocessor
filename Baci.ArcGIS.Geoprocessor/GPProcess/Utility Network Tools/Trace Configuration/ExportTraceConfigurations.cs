@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Export Trace Configurations</para>
-	/// <para>导出追踪配置</para>
-	/// <para>将公共设施网络中的指定追踪配置导出为 JSON 格式（.json 文件）。</para>
+	/// <para>Export Trace Configurations</para>
+	/// <para>Exports named trace configurations from a utility network to JSON format (.json file).</para>
 	/// </summary>
 	public class ExportTraceConfigurations : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>包含要导出的指定追踪配置的公共设施网络。</para>
+		/// <para>The utility network containing the named trace configuration or configurations to export.</para>
 		/// </param>
 		/// <param name="TraceConfigName">
 		/// <para>Trace Configuration</para>
-		/// <para>要导出的指定追踪配置。</para>
+		/// <para>The named trace configuration or configurations to export.</para>
 		/// </param>
 		/// <param name="OutJsonFile">
 		/// <para>Output  File (.json)</para>
-		/// <para>输出 .json 文件。</para>
+		/// <para>The output .json file.</para>
 		/// </param>
 		public ExportTraceConfigurations(object InUtilityNetwork, object TraceConfigName, object OutJsonFile)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 导出追踪配置</para>
+		/// <para>Tool Display Name : Export Trace Configurations</para>
 		/// </summary>
-		public override string DisplayName() => "导出追踪配置";
+		public override string DisplayName() => "Export Trace Configurations";
 
 		/// <summary>
 		/// <para>Tool Name : ExportTraceConfigurations</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>包含要导出的指定追踪配置的公共设施网络。</para>
+		/// <para>The utility network containing the named trace configuration or configurations to export.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Trace Configuration</para>
-		/// <para>要导出的指定追踪配置。</para>
+		/// <para>The named trace configuration or configurations to export.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Output  File (.json)</para>
-		/// <para>输出 .json 文件。</para>
+		/// <para>The output .json file.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

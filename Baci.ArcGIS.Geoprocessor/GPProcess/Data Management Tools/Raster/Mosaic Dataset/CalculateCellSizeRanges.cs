@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Calculate Cell Size Ranges</para>
-	/// <para>计算像元大小范围</para>
-	/// <para>根据空间分辨率计算镶嵌数据集中栅格数据集的可见性等级。</para>
+	/// <para>Calculate Cell Size Ranges</para>
+	/// <para>Computes the visibility levels of raster datasets in a mosaic dataset based on the spatial resolution.</para>
 	/// </summary>
 	public class CalculateCellSizeRanges : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>要为其计算可见性等级的镶嵌数据集。</para>
+		/// <para>The mosaic dataset to calculate the visibility levels for.</para>
 		/// </param>
 		public CalculateCellSizeRanges(object InMosaicDataset)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 计算像元大小范围</para>
+		/// <para>Tool Display Name : Calculate Cell Size Ranges</para>
 		/// </summary>
-		public override string DisplayName() => "计算像元大小范围";
+		public override string DisplayName() => "Calculate Cell Size Ranges";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateCellSizeRanges</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>要为其计算可见性等级的镶嵌数据集。</para>
+		/// <para>The mosaic dataset to calculate the visibility levels for.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Query Definition</para>
-		/// <para>用于在镶嵌数据集中选择要计算可见性等级的特定栅格的 SQL 表达式。如果未指定任何查询，则计算所有镶嵌数据集项目的像元尺寸范围。</para>
+		/// <para>An SQL expression to select specific rasters in the mosaic dataset on which to calculate visibility levels. If no query is specified, all the mosaic dataset items will have their cell size ranges calculated.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -81,9 +81,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Compute Minimum Cell Sizes</para>
-		/// <para>计算镶嵌数据集中每个选定栅格数据集的最小像素大小。</para>
-		/// <para>选中 - 计算最小像素大小。这是默认设置。</para>
-		/// <para>未选中 - 不计算最小像素大小。</para>
+		/// <para>Compute the minimum pixel size for each selected raster dataset in the mosaic dataset.</para>
+		/// <para>Checked—Compute the minimum pixel size. This is the default.</para>
+		/// <para>Unchecked—Do not compute the minimum pixel size.</para>
 		/// <para><see cref="DoComputeMinEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -94,9 +94,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Compute Maximum Cell Sizes</para>
-		/// <para>计算镶嵌数据集中每个选定栅格的最大像素大小。</para>
-		/// <para>选中 - 计算最大像素大小。这是默认设置。</para>
-		/// <para>未选中 - 不计算最大像素大小。</para>
+		/// <para>Compute the maximum pixel size for each selected raster in the mosaic dataset.</para>
+		/// <para>Checked—Compute the maximum pixel size. This is the default.</para>
+		/// <para>Unchecked—Do not compute the maximum pixel size.</para>
 		/// <para><see cref="DoComputeMaxEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -107,9 +107,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Cell Size Range Factor</para>
-		/// <para>设置应用于原始分辨率的倍增系数。默认值为 10，表示分辨率为 30 米的影像将在适用于 300 米的比例下可见。像元大小和比例的关系如下：</para>
-		/// <para>像元大小 = 比例 * 0.0254 / 96</para>
-		/// <para>比例 = 像元大小 * 96 / 0.0254</para>
+		/// <para>Set a multiplication factor to apply to the native resolution. The default is 10, meaning that an image with a resolution of 30 meters will be visible at a scale appropriate for 300 meters. The relationship between cell size and scale is as follows:</para>
+		/// <para>Cell Size = Scale * 0.0254 / 96</para>
+		/// <para>Scale = Cell Size * 96 / 0.0254</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Cell Size Tolerance Factor</para>
-		/// <para>使用此系数将分辨率相似（即具有相同标称分辨率）的影像划分为一组。例如，可通过将此系数设为 0.1 将 1 m 影像和 0.9 m 影像组合在一起，因为它们之间的差距不超过各自的 10%。</para>
+		/// <para>Use this to group images with similar resolutions as having the same nominal resolution. For example 1 m imagery and 0.9 m imagery can be grouped together by setting this factor to 0.1, because they are within 10% of each other.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -127,9 +127,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Update Missing Values Only</para>
-		/// <para>仅计算缺失像元大小范围的值。</para>
-		/// <para>未选中 - 计算镶嵌数据集中选定栅格的最小及最大像元大小值。这是默认设置。</para>
-		/// <para>选中 - 仅当像元大小的最小及最大值不存在时，才对其进行计算。</para>
+		/// <para>Calculate only the missing cell size range values.</para>
+		/// <para>Unchecked—Calculate cell size minimum and maximum values for selected rasters within the mosaic dataset. This is the default.</para>
+		/// <para>Checked—Calculate cell size minimum and maximum values only if they do not exist.</para>
 		/// <para><see cref="UpdateMissingOnlyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -162,14 +162,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DoComputeMinEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Compute the minimum pixel size. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MIN_CELL_SIZES")]
 			MIN_CELL_SIZES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Do not compute the minimum pixel size.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_MIN_CELL_SIZES")]
@@ -183,14 +183,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DoComputeMaxEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Compute the maximum pixel size. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MAX_CELL_SIZES")]
 			MAX_CELL_SIZES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Do not compute the maximum pixel size.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_MAX_CELL_SIZES")]
@@ -204,14 +204,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum UpdateMissingOnlyEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Calculate cell size minimum and maximum values only if they do not exist.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE_MISSING_ONLY")]
 			UPDATE_MISSING_ONLY,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Calculate cell size minimum and maximum values for selected rasters within the mosaic dataset. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("UPDATE_ALL")]

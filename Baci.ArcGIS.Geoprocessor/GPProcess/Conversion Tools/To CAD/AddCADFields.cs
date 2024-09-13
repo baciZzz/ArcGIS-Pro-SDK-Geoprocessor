@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Add CAD Fields</para>
-	/// <para>添加 CAD 字段</para>
-	/// <para>一步添加多个保留的 CAD 字段。 要素转 CAD 工具使用此工具创建的字段生成具有特定属性的 CAD 实体。 执行此工具后，必须计算或键入合适的字段值。</para>
+	/// <para>Add CAD Fields</para>
+	/// <para>Adds several reserved CAD fields in one step. Fields created by this tool are used by the Export To CAD tool to generate CAD entities with specific properties.   After executing this tool, you must calculate or type the appropriate field values.</para>
 	/// </summary>
 	public class AddCADFields : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InputTable">
 		/// <para>Input Table</para>
-		/// <para>将添加特定于 CAD 的字段的输入表、要素类或 shapefile。</para>
+		/// <para>Input table, feature class, or shapefile that will have the CAD-specific fields added to it</para>
 		/// </param>
 		/// <param name="Entities">
 		/// <para>Entity Properties</para>
-		/// <para>将特定于 CAD 的“实体”属性字段的列表添加到输入表</para>
-		/// <para>选中 - 将特定于 CAD 的“实体”属性字段的列表添加到输入表。 这是默认设置。</para>
-		/// <para>取消选中 - 特定于 CAD 的“实体”属性字段的列表不会添加到输入表</para>
+		/// <para>Adds the list of CAD-specific Entity property fields to the input table</para>
+		/// <para>Checked—Adds the list of CAD-specific Entity property fields to the input table. This is the default.</para>
+		/// <para>Unchecked—Does not add the list of CAD-specific Entity property fields to the input table</para>
 		/// <para><see cref="EntitiesEnum"/></para>
 		/// </param>
 		public AddCADFields(object InputTable, object Entities)
@@ -37,9 +37,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 添加 CAD 字段</para>
+		/// <para>Tool Display Name : Add CAD Fields</para>
 		/// </summary>
-		public override string DisplayName() => "添加 CAD 字段";
+		public override string DisplayName() => "Add CAD Fields";
 
 		/// <summary>
 		/// <para>Tool Name : AddCADFields</para>
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>将添加特定于 CAD 的字段的输入表、要素类或 shapefile。</para>
+		/// <para>Input table, feature class, or shapefile that will have the CAD-specific fields added to it</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -81,9 +81,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Entity Properties</para>
-		/// <para>将特定于 CAD 的“实体”属性字段的列表添加到输入表</para>
-		/// <para>选中 - 将特定于 CAD 的“实体”属性字段的列表添加到输入表。 这是默认设置。</para>
-		/// <para>取消选中 - 特定于 CAD 的“实体”属性字段的列表不会添加到输入表</para>
+		/// <para>Adds the list of CAD-specific Entity property fields to the input table</para>
+		/// <para>Checked—Adds the list of CAD-specific Entity property fields to the input table. This is the default.</para>
+		/// <para>Unchecked—Does not add the list of CAD-specific Entity property fields to the input table</para>
 		/// <para><see cref="EntitiesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -93,9 +93,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Layer Properties</para>
-		/// <para>将特定于 CAD 的“图层”属性字段的列表添加到输入表</para>
-		/// <para>选中 - 将特定于 CAD 的“图层”属性字段的列表添加到输入表。 这是默认设置。</para>
-		/// <para>取消选中 - 特定于 CAD 的“图层”属性字段的列表不会添加到输入表</para>
+		/// <para>Adds the list of CAD-specific Layer property fields to the input table</para>
+		/// <para>Checked—Adds the list of CAD-specific Layer property fields to the input table. This is the default.</para>
+		/// <para>Unchecked—Does not add the list of CAD-specific Layer property fields to the input table.</para>
 		/// <para><see cref="LayerpropsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -105,9 +105,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Text Properties</para>
-		/// <para>将特定于 CAD 的“文本”属性字段的列表添加到输入表</para>
-		/// <para>选中 - 将特定于 CAD 的“文本”属性字段的列表添加到输入表。 这是默认设置。</para>
-		/// <para>取消选中 - 特定于 CAD 的“文本”属性字段的列表不会添加到输入表。</para>
+		/// <para>Adds the list of CAD-specific Text property fields to the input table</para>
+		/// <para>Checked—Adds the list of CAD-specific Text property fields to the input table. This is the default.</para>
+		/// <para>Unchecked—Does not add the list of CAD-specific Text property fields to the input table.</para>
 		/// <para><see cref="TextpropsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -117,9 +117,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Document Properties</para>
-		/// <para>将特定于 CAD 的“文档”属性字段的列表添加到输入表</para>
-		/// <para>选中 - 将特定于 CAD 的“文档”属性字段的列表添加到输入表。 这是默认设置。</para>
-		/// <para>取消选中 - 特定于 CAD 的“文档”属性字段的列表不会添加到输入表。</para>
+		/// <para>Adds the list of CAD-specific Document property fields to the input table</para>
+		/// <para>Checked—Adds the list of CAD-specific Document property fields to the input table. This is the default.</para>
+		/// <para>Unchecked—Does not add the list of CAD-specific Document property fields to the input table.</para>
 		/// <para><see cref="DocpropsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -129,9 +129,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Add CAD XData Property Fields</para>
-		/// <para>将特定于 CAD 的 XData 属性字段的列表添加到输入表</para>
-		/// <para>选中 - 将特定于 CAD 的 XData 属性字段的列表添加到输入表。 这是默认设置。</para>
-		/// <para>取消选中 - 特定于 CAD 的 XData 属性字段的列表不会添加到输入表。</para>
+		/// <para>Adds the list of CAD-specific XData property fields to the input table</para>
+		/// <para>Checked—Adds the list of CAD-specific XData property fields to the input table. This is the default.</para>
+		/// <para>Unchecked—Does not add the list of CAD-specific XData property fields to the input table.</para>
 		/// <para><see cref="XdatapropsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -163,14 +163,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum EntitiesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Adds the list of CAD-specific Entity property fields to the input table. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADD_ENTITY_PROPERTIES")]
 			ADD_ENTITY_PROPERTIES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Does not add the list of CAD-specific Entity property fields to the input table</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ENTITY_PROPERTIES")]
@@ -184,14 +184,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum LayerpropsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Adds the list of CAD-specific Layer property fields to the input table. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADD_LAYER_PROPERTIES")]
 			ADD_LAYER_PROPERTIES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Does not add the list of CAD-specific Layer property fields to the input table.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_LAYER_PROPERTIES")]
@@ -205,14 +205,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum TextpropsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Adds the list of CAD-specific Text property fields to the input table. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADD_TEXT_PROPERTIES")]
 			ADD_TEXT_PROPERTIES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Does not add the list of CAD-specific Text property fields to the input table.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_TEXT_PROPERTIES")]
@@ -226,14 +226,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum DocpropsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Adds the list of CAD-specific Document property fields to the input table. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADD_DOCUMENT_PROPERTIES")]
 			ADD_DOCUMENT_PROPERTIES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Does not add the list of CAD-specific Document property fields to the input table.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DOCUMENT_PROPERTIES")]
@@ -247,14 +247,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum XdatapropsEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—Adds the list of CAD-specific XData property fields to the input table. This is the default.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADD_XDATA_PROPERTIES")]
 			ADD_XDATA_PROPERTIES,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—Does not add the list of CAD-specific XData property fields to the input table.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_XDATA_PROPERTIES")]

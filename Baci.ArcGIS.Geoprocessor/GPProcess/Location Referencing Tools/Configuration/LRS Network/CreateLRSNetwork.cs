@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Create LRS Network</para>
-	/// <para>创建 LRS 网络</para>
-	/// <para>在 ArcGIS Location Referencing 线性参考系统 (LRS) 中创建 LRS 网络。</para>
+	/// <para>Create LRS Network</para>
+	/// <para>Creates an LRS Network in an ArcGIS Location Referencing linear referencing system (LRS).</para>
 	/// </summary>
 	public class CreateLRSNetwork : AbstractGPProcess
 	{
@@ -21,31 +21,31 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InPath">
 		/// <para>Input Location</para>
-		/// <para>将包含新 LRS 网络的输入工作空间。 工作空间必须为包含 Location Referencing LRS 的地理数据库。 除了顶级地理数据库之外，还支持要素数据集作为有效路径。</para>
+		/// <para>The input workspace that will contain the new LRS Network. This workspace must be a geodatabase that contains a Location Referencing LRS. In addition to the top level of a geodatabase, a feature dataset is also supported as a valid path.</para>
 		/// </param>
 		/// <param name="LrsName">
 		/// <para>LRS Name</para>
-		/// <para>要注册的新 LRS 网络的 LRS。 该 LRS 必须与输入位置参数值位于同一地理数据库中。</para>
+		/// <para>The LRS to which the new LRS Network will be registered. The LRS must reside in the same geodatabase as the Input Location parameter value.</para>
 		/// </param>
 		/// <param name="NetworkName">
 		/// <para>LRS Network Name</para>
-		/// <para>将创建的 LRS 网络的名称，以及将创建并注册到 LRS 网络的要素类的名称。 LRS 网络名称不得超过 26 个字符，并且不能包含除下划线以外的特殊字符。</para>
+		/// <para>The name of the LRS Network that will be created, as well as the name of the feature class that will be created and registered with the LRS Network. The LRS Network name must be 26 or fewer characters and cannot contain special characters other than underscores.</para>
 		/// </param>
 		/// <param name="RouteIdField">
 		/// <para>Route ID Field</para>
-		/// <para>输出要素类中将映射为 LRS 网络路径 ID 的字段。 字段类型派生自中心线序列表的 RouteId 字段，必须是字符串或 GUID 类型。</para>
+		/// <para>The field in the output feature class that will be mapped as the LRS Network route ID. The field type is derived from the RouteId field of the centerline sequence table and must be either string or GUID type.</para>
 		/// </param>
 		/// <param name="RouteNameField">
 		/// <para>Route Name Field</para>
-		/// <para>输出要素类中将映射为 LRS 网络路径名称的字符串字段。</para>
+		/// <para>A string field in the output feature class that will be mapped as the LRS Network route name.</para>
 		/// </param>
 		/// <param name="FromDateField">
 		/// <para>From Date Field</para>
-		/// <para>输出要素类中的日期字段，将映射为 LRS 网络的开始日期。</para>
+		/// <para>A date field in the output feature class that will be mapped as the LRS Network from date.</para>
 		/// </param>
 		/// <param name="ToDateField">
 		/// <para>To Date Field</para>
-		/// <para>输出要素类中的日期字段，将映射为 LRS 网络的“结束日期”。</para>
+		/// <para>A date field in the output feature class that will be mapped as the LRS Network to date.</para>
 		/// </param>
 		public CreateLRSNetwork(object InPath, object LrsName, object NetworkName, object RouteIdField, object RouteNameField, object FromDateField, object ToDateField)
 		{
@@ -59,9 +59,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 创建 LRS 网络</para>
+		/// <para>Tool Display Name : Create LRS Network</para>
 		/// </summary>
-		public override string DisplayName() => "创建 LRS 网络";
+		public override string DisplayName() => "Create LRS Network";
 
 		/// <summary>
 		/// <para>Tool Name : CreateLRSNetwork</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Input Location</para>
-		/// <para>将包含新 LRS 网络的输入工作空间。 工作空间必须为包含 Location Referencing LRS 的地理数据库。 除了顶级地理数据库之外，还支持要素数据集作为有效路径。</para>
+		/// <para>The input workspace that will contain the new LRS Network. This workspace must be a geodatabase that contains a Location Referencing LRS. In addition to the top level of a geodatabase, a feature dataset is also supported as a valid path.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>LRS Name</para>
-		/// <para>要注册的新 LRS 网络的 LRS。 该 LRS 必须与输入位置参数值位于同一地理数据库中。</para>
+		/// <para>The LRS to which the new LRS Network will be registered. The LRS must reside in the same geodatabase as the Input Location parameter value.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>LRS Network Name</para>
-		/// <para>将创建的 LRS 网络的名称，以及将创建并注册到 LRS 网络的要素类的名称。 LRS 网络名称不得超过 26 个字符，并且不能包含除下划线以外的特殊字符。</para>
+		/// <para>The name of the LRS Network that will be created, as well as the name of the feature class that will be created and registered with the LRS Network. The LRS Network name must be 26 or fewer characters and cannot contain special characters other than underscores.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Route ID Field</para>
-		/// <para>输出要素类中将映射为 LRS 网络路径 ID 的字段。 字段类型派生自中心线序列表的 RouteId 字段，必须是字符串或 GUID 类型。</para>
+		/// <para>The field in the output feature class that will be mapped as the LRS Network route ID. The field type is derived from the RouteId field of the centerline sequence table and must be either string or GUID type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Route Name Field</para>
-		/// <para>输出要素类中将映射为 LRS 网络路径名称的字符串字段。</para>
+		/// <para>A string field in the output feature class that will be mapped as the LRS Network route name.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>From Date Field</para>
-		/// <para>输出要素类中的日期字段，将映射为 LRS 网络的开始日期。</para>
+		/// <para>A date field in the output feature class that will be mapped as the LRS Network from date.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -144,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>To Date Field</para>
-		/// <para>输出要素类中的日期字段，将映射为 LRS 网络的“结束日期”。</para>
+		/// <para>A date field in the output feature class that will be mapped as the LRS Network to date.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -152,9 +152,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Derive From Line Network</para>
-		/// <para>指定是否将网络配置为 LRS 派生网络。</para>
-		/// <para>选中 - 输出将是 LRS 派生网络和支持 LRS 派生网络的要素类。 还必须提供线网络名称参数值。</para>
-		/// <para>未选中 - 输出将不是 LRS 派生网络。 这是默认设置。</para>
+		/// <para>Specifies whether the network will be configured as an LRS derived network.</para>
+		/// <para>Checked—The output will be an LRS derived network and a feature class to support the LRS derived network. The Line Network Name parameter value must also be provided.</para>
+		/// <para>Unchecked—The output will not be an LRS derived network. This is the default.</para>
 		/// <para><see cref="DeriveFromLineNetworkEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -164,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Line Network Name</para>
-		/// <para>输出 LRS 派生网络将注册到的 LRS 线网络的名称。 该输入 LRS 线网络必须与线网络名称值位于同一地理数据库工作空间中。 此参数仅在选中从线网络派生参数时使用。</para>
+		/// <para>The name of the LRS line network to which the output LRS derived network will be registered. The input LRS line network must reside in the same geodatabase workspace as the Line Network Name value. This parameter is only used if the Derive From Line Network parameter is checked.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -173,9 +173,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Include Fields to Support Lines</para>
-		/// <para>指定是否将添加支持线的字段。</para>
-		/// <para>选中 - 输出将是 LRS 线网络，并且输出要素类将包括支持线的字段。 还必须提供线 ID 字段、线名称字段和线顺序字段参数值。</para>
-		/// <para>未选中 - 输出将不是 LRS 线网络。 这是默认设置。</para>
+		/// <para>Specifies whether fields that support lines will be added.</para>
+		/// <para>Checked—The output will be an LRS line network, and the output feature class will include fields that support lines. The Line ID Field, Line Name Field, and Line Order Field parameter values must also be provided.</para>
+		/// <para>Unchecked—The output will not be an LRS line network. This is the default.</para>
 		/// <para><see cref="IncludeFieldsToSupportLinesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -185,7 +185,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Line ID Field</para>
-		/// <para>输出要素类中将映射为 LRS 网络线 ID 的字段。 此参数仅在选中包括字段以支持线参数时使用。 字段类型派生自中心线序列表的 RouteId 字段，可以是正好 38 个字符的字符串，也可以是 GUID 字段类型。</para>
+		/// <para>The field in the output feature class that will be mapped as the LRS Network line ID. This parameter is only used if the Include Fields to Support Lines parameter is checked. The field type is derived from the RouteId field of the centerline sequence table and will either be a string of exactly 38 characters or a GUID field type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -193,7 +193,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Line Name Field</para>
-		/// <para>输出要素类中将映射为 LRS 网络线名称的字符串字段。 此参数仅在选中包括字段以支持线参数时使用。</para>
+		/// <para>A string field in the output feature class that will be mapped as the LRS Network line name. This parameter is only used if the Include Fields to Support Lines parameter is checked.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -201,7 +201,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Line Order Field</para>
-		/// <para>输出要素类中将映射为 LRS 网络线顺序的字段。 此参数仅在选中包括字段以支持线参数时使用。 该字段必须是长整型字段类型。</para>
+		/// <para>The field in the output feature class that will be mapped as the LRS Network line order. This parameter is only used if the Include Fields to Support Lines parameter is checked. This will be a long integer field type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -209,18 +209,18 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Measure Unit</para>
-		/// <para>指定 LRS 网络将使用的测量单位（m 单位）。</para>
-		/// <para>英里(美制测量)—测量单位为英里。 这是默认设置。</para>
-		/// <para>英寸(美制测量)—测量单位为英寸。</para>
-		/// <para>英尺(美制测量)—测量单位为英尺。</para>
-		/// <para>码(美制测量)—测量单位为码。</para>
-		/// <para>海里(美制测量)—测量单位为海里。</para>
-		/// <para>英尺(国际)—测量单位为国际英尺。</para>
-		/// <para>毫米—测量单位为毫米。</para>
-		/// <para>厘米—测量单位为厘米。</para>
-		/// <para>米—测量单位为米。</para>
-		/// <para>千米—测量单位为千米。</para>
-		/// <para>分米—测量单位为分米。</para>
+		/// <para>Specifies the unit of measure (m-unit) the LRS Network will use.</para>
+		/// <para>Miles (US Survey)—The unit of measure will be miles. This is the default.</para>
+		/// <para>Inches (US Survey)—The unit of measure will be inches.</para>
+		/// <para>Feet (US Survey)—The unit of measure will be feet.</para>
+		/// <para>Yards (US Survey)—The unit of measure will be yards.</para>
+		/// <para>Nautical miles (US Survey)—The unit of measure will be nautical miles.</para>
+		/// <para>Feet (International)—The unit of measure will be international feet.</para>
+		/// <para>Millimeters—The unit of measure will be millimeters.</para>
+		/// <para>Centimeters—The unit of measure will be centimeters</para>
+		/// <para>Meters—The unit of measure will be meters.</para>
+		/// <para>Kilometers—The unit of measure will be kilometers.</para>
+		/// <para>Decimeters—The unit of measure will be decimeters.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -251,14 +251,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum DeriveFromLineNetworkEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The output will be an LRS derived network and a feature class to support the LRS derived network. The Line Network Name parameter value must also be provided.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DERIVE")]
 			DERIVE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The output will not be an LRS derived network. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_DERIVE")]
@@ -272,14 +272,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum IncludeFieldsToSupportLinesEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>Checked—The output will be an LRS line network, and the output feature class will include fields that support lines. The Line ID Field, Line Name Field, and Line Order Field parameter values must also be provided.</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE")]
 			INCLUDE,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>Unchecked—The output will not be an LRS line network. This is the default.</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_INCLUDE")]

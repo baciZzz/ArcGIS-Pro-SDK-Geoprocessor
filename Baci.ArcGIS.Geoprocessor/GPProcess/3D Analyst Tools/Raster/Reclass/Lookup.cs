@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Lookup</para>
-	/// <para>查找表</para>
-	/// <para>通过在输入栅格数据表中查找其另一个字段的值来创建栅格。</para>
+	/// <para>Lookup</para>
+	/// <para>Creates a raster by looking up values in another field in the table of the input raster.</para>
 	/// </summary>
 	public class Lookup : AbstractGPProcess
 	{
@@ -21,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>包含创建新栅格所要使用的字段的输入栅格。</para>
+		/// <para>The input raster that contains a field from which to create a new raster.</para>
 		/// </param>
 		/// <param name="LookupField">
 		/// <para>Lookup field</para>
-		/// <para>包含新栅格所需值的字段。</para>
-		/// <para>它可以是数值或字符串类型。</para>
+		/// <para>Field containing the desired values for the new raster.</para>
+		/// <para>It can be a numeric or string type.</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>输出栅格的值由输入栅格的指定字段确定。</para>
+		/// <para>The output raster whose values are determined by the specified field of the input raster.</para>
 		/// </param>
 		public Lookup(object InRaster, object LookupField, object OutRaster)
 		{
@@ -40,14 +40,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 查找表</para>
+		/// <para>Tool Display Name : Lookup</para>
 		/// </summary>
-		public override string DisplayName() => "查找表";
+		public override string DisplayName() => "Lookup";
 
 		/// <summary>
-		/// <para>Tool Name : 查找表</para>
+		/// <para>Tool Name : Lookup</para>
 		/// </summary>
-		public override string ToolName() => "查找表";
+		public override string ToolName() => "Lookup";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Lookup</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>包含创建新栅格所要使用的字段的输入栅格。</para>
+		/// <para>The input raster that contains a field from which to create a new raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -88,8 +88,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Lookup field</para>
-		/// <para>包含新栅格所需值的字段。</para>
-		/// <para>它可以是数值或字符串类型。</para>
+		/// <para>Field containing the desired values for the new raster.</para>
+		/// <para>It can be a numeric or string type.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>输出栅格的值由输入栅格的指定字段确定。</para>
+		/// <para>The output raster whose values are determined by the specified field of the input raster.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

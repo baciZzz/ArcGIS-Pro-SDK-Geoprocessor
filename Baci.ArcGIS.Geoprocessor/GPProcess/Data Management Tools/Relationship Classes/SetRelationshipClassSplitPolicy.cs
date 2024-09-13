@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Set Relationship Class Split Policy</para>
-	/// <para>设置关系类分割策略</para>
-	/// <para>用于定义相关要素的分割策略。</para>
+	/// <para>Set Relationship Class Split Policy</para>
+	/// <para>Defines the split policy for related features.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,14 +23,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRelClass">
 		/// <para>Input Relationship Class</para>
-		/// <para>将在其上设置分割策略的关系类。原始要素类必须为折线或面要素类，而目标必须为非空间表。</para>
+		/// <para>The relationship class on which the split policy will be set. The origin feature class must be a polyline or polygon feature class and the destination must be a nonspatial table.</para>
 		/// </param>
 		/// <param name="SplitPolicy">
 		/// <para>Split Policy</para>
-		/// <para>指定要应用于关系类的分割策略。</para>
-		/// <para>默认（复合）— 如果要素类分割模型为“删除/插入/插入”，则将删除关系和部件对象。如果要素类分割模型为“更新/插入”，则将保留最大生成要素上的关系。这是复合关系类的默认分割策略。</para>
-		/// <para>默认（简单）— 将保留最大生成要素上的关系。这是简单关系类的默认分割策略。</para>
-		/// <para>复制相关对象—将生成相关对象的副本并将其分配给生成的两个部件。关系类必须基于全局 ID，才能使用此分割策略。</para>
+		/// <para>Specifies the split policy to apply to the relationship class.</para>
+		/// <para>Default (composite)— If the feature class split model is Delete/Insert/Insert, the relationships and the part objects will be deleted. If the feature class split model is Update/Insert, the relationships on the largest resulting feature will be preserved. This is the default split policy for composite relationship classes.</para>
+		/// <para>Default (simple)— The relationships on the largest resulting feature will be preserved. This is the default split policy for simple relationship classes.</para>
+		/// <para>Duplicate related objects—Copies of the related objects will be generated and assigned to both resulting parts. The relationship class must be Global ID based to use this split policy.</para>
 		/// <para><see cref="SplitPolicyEnum"/></para>
 		/// </param>
 		public SetRelationshipClassSplitPolicy(object InRelClass, object SplitPolicy)
@@ -40,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 设置关系类分割策略</para>
+		/// <para>Tool Display Name : Set Relationship Class Split Policy</para>
 		/// </summary>
-		public override string DisplayName() => "设置关系类分割策略";
+		public override string DisplayName() => "Set Relationship Class Split Policy";
 
 		/// <summary>
 		/// <para>Tool Name : SetRelationshipClassSplitPolicy</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Relationship Class</para>
-		/// <para>将在其上设置分割策略的关系类。原始要素类必须为折线或面要素类，而目标必须为非空间表。</para>
+		/// <para>The relationship class on which the split policy will be set. The origin feature class must be a polyline or polygon feature class and the destination must be a nonspatial table.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERelationshipClass()]
@@ -84,10 +84,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Split Policy</para>
-		/// <para>指定要应用于关系类的分割策略。</para>
-		/// <para>默认（复合）— 如果要素类分割模型为“删除/插入/插入”，则将删除关系和部件对象。如果要素类分割模型为“更新/插入”，则将保留最大生成要素上的关系。这是复合关系类的默认分割策略。</para>
-		/// <para>默认（简单）— 将保留最大生成要素上的关系。这是简单关系类的默认分割策略。</para>
-		/// <para>复制相关对象—将生成相关对象的副本并将其分配给生成的两个部件。关系类必须基于全局 ID，才能使用此分割策略。</para>
+		/// <para>Specifies the split policy to apply to the relationship class.</para>
+		/// <para>Default (composite)— If the feature class split model is Delete/Insert/Insert, the relationships and the part objects will be deleted. If the feature class split model is Update/Insert, the relationships on the largest resulting feature will be preserved. This is the default split policy for composite relationship classes.</para>
+		/// <para>Default (simple)— The relationships on the largest resulting feature will be preserved. This is the default split policy for simple relationship classes.</para>
+		/// <para>Duplicate related objects—Copies of the related objects will be generated and assigned to both resulting parts. The relationship class must be Global ID based to use this split policy.</para>
 		/// <para><see cref="SplitPolicyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -110,24 +110,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SplitPolicyEnum 
 		{
 			/// <summary>
-			/// <para>复制相关对象—将生成相关对象的副本并将其分配给生成的两个部件。关系类必须基于全局 ID，才能使用此分割策略。</para>
+			/// <para>Duplicate related objects—Copies of the related objects will be generated and assigned to both resulting parts. The relationship class must be Global ID based to use this split policy.</para>
 			/// </summary>
 			[GPValue("DUPLICATE_RELATED_OBJECTS")]
-			[Description("复制相关对象")]
+			[Description("Duplicate related objects")]
 			Duplicate_related_objects,
 
 			/// <summary>
-			/// <para>默认（简单）— 将保留最大生成要素上的关系。这是简单关系类的默认分割策略。</para>
+			/// <para>Default (simple)— The relationships on the largest resulting feature will be preserved. This is the default split policy for simple relationship classes.</para>
 			/// </summary>
 			[GPValue("DEFAULT_SIMPLE")]
-			[Description("默认（简单）")]
+			[Description("Default (simple)")]
 			DEFAULT_SIMPLE,
 
 			/// <summary>
-			/// <para>默认（复合）— 如果要素类分割模型为“删除/插入/插入”，则将删除关系和部件对象。如果要素类分割模型为“更新/插入”，则将保留最大生成要素上的关系。这是复合关系类的默认分割策略。</para>
+			/// <para>Default (composite)— If the feature class split model is Delete/Insert/Insert, the relationships and the part objects will be deleted. If the feature class split model is Update/Insert, the relationships on the largest resulting feature will be preserved. This is the default split policy for composite relationship classes.</para>
 			/// </summary>
 			[GPValue("DEFAULT_COMPOSITE")]
-			[Description("默认（复合）")]
+			[Description("Default (composite)")]
 			DEFAULT_COMPOSITE,
 
 		}
