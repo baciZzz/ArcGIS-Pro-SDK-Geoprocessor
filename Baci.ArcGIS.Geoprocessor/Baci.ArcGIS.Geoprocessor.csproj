@@ -2077,7 +2077,6 @@
     <Compile Include="Models\Enums\DomainTypeEnum.cs" />
     <Compile Include="Models\Enums\ParamTypeEnum.cs" />
     <Compile Include="Models\Enums\ToolTypeEnum.cs" />
-    <Compile Include="Models\Enums\VersionLang.cs" />
     <Compile Include="Models\IGPProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

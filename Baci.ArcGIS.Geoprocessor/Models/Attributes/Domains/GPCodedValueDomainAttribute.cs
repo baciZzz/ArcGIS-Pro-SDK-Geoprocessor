@@ -25,14 +25,24 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.Domains
         public List<CodedValue> Items { get; set; } = new List<CodedValue>();
 
     }
+
+    /// <summary>
+    /// 
+    /// </summary>
     public class CodedValue
     {
-        public DataTypeEnum Type { get; set; } = DataTypeEnum.GPString;
-
+        //public DomainTypeEnum Type { get; set; } = DomainTypeEnum.string;
+        /// <summary>
+        /// Code
+        /// </summary>
         public string Code { get; set; } = string.Empty;
-
+        /// <summary>
+        /// Value
+        /// </summary>
         public string Value { get; set; } = string.Empty;
-
+        /// <summary>
+        /// Description
+        /// </summary>
         public string Description { get; set; } = string.Empty;
     }
 }
