@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>矢量切片图层</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPVectorLayerAttribute : DataTypeAttribute
+	public class GPVectorLayerAttribute : BaseDataTypeAttribute
 	{
 
 	}

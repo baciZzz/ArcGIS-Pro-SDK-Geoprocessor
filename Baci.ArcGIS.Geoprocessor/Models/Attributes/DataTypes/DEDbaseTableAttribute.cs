@@ -13,8 +13,8 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>以 dBASE 格式存储的属性数据。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEDbaseTableAttribute : DataTypeAttribute
-	{
+	public class DEDbaseTableAttribute : BaseDataTypeAttribute
+    {
 
 	}
 }

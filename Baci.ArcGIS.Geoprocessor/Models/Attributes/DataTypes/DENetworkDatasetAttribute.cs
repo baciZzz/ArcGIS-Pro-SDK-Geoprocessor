@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>拓扑连接网络元素（边、交汇点和转弯）的集合，源于网络源并与网络属性的集合相关联。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DENetworkDatasetAttribute : DataTypeAttribute
+	public class DENetworkDatasetAttribute : BaseDataTypeAttribute
 	{
 
 	}

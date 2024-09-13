@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>指定用于模糊化输入栅格的算法。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPSAFuzzyFunctionAttribute : DataTypeAttribute
+	public class GPSAFuzzyFunctionAttribute : BaseDataTypeAttribute
 	{
 
 	}

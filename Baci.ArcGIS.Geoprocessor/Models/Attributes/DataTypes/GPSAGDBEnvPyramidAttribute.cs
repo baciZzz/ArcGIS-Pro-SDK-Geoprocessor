@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>指定是否构建金字塔。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPSAGDBEnvPyramidAttribute : DataTypeAttribute
+	public class GPSAGDBEnvPyramidAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>参考框架，例如 UTM 系统，由一组点、线或面，以及一组用于定义二维和三维空间中点的位置的规则组成。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPCoordinateSystemAttribute : DataTypeAttribute
+	public class GPCoordinateSystemAttribute : BaseDataTypeAttribute
 	{
 
 	}

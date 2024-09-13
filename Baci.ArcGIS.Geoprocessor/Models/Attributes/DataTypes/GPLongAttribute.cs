@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>一个整数值。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPLongAttribute : DataTypeAttribute
+	public class GPLongAttribute : BaseDataTypeAttribute
 	{
 
 	}

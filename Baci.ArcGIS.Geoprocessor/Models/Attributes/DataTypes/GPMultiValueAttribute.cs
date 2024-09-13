@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 {
-    public class GPMultiValueAttribute : DataTypeAttribute
+    public class GPMultiValueAttribute : BaseDataTypeAttribute
     {
 
     }

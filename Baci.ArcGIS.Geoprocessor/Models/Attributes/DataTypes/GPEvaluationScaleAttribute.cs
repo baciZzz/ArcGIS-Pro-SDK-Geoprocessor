@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>加权叠加操作中应用于输入值的级别值范围和增量值。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPEvaluationScaleAttribute : DataTypeAttribute
+	public class GPEvaluationScaleAttribute : BaseDataTypeAttribute
 	{
 
 	}

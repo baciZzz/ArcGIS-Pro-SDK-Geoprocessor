@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>指定 TIN 的节点子集，以创建该 TIN 的概化版本。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GP3DADecimateAttribute : DataTypeAttribute
+	public class GP3DADecimateAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>网络出行模式</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class NetworkTravelModeAttribute : DataTypeAttribute
+	public class NetworkTravelModeAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>指定数据在磁盘上的存储位置。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEFolderAttribute : DataTypeAttribute
+	public class DEFolderAttribute : BaseDataTypeAttribute
 	{
 
 	}

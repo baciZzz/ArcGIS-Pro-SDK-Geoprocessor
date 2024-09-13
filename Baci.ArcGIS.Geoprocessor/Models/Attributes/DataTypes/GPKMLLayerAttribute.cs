@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>KML 图层</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPKMLLayerAttribute : DataTypeAttribute
+	public class GPKMLLayerAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>影像服务。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEImageServerAttribute : DataTypeAttribute
+	public class DEImageServerAttribute : BaseDataTypeAttribute
 	{
 
 	}

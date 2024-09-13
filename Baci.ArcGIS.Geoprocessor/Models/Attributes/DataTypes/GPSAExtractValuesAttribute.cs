@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>提取值参数。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPSAExtractValuesAttribute : DataTypeAttribute
+	public class GPSAExtractValuesAttribute : BaseDataTypeAttribute
 	{
 
 	}

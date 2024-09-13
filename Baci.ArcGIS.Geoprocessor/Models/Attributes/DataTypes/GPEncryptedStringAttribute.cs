@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>密码加密的字符串。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPEncryptedStringAttribute : DataTypeAttribute
+	public class GPEncryptedStringAttribute : BaseDataTypeAttribute
 	{
 
 	}

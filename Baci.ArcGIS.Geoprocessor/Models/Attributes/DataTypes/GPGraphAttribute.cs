@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>图表。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPGraphAttribute : DataTypeAttribute
+	public class GPGraphAttribute : BaseDataTypeAttribute
 	{
 
 	}

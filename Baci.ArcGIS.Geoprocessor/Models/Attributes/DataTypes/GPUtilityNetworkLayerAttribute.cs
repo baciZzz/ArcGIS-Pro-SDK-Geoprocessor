@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>公共设施网络图层</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPUtilityNetworkLayerAttribute : DataTypeAttribute
+	public class GPUtilityNetworkLayerAttribute : BaseDataTypeAttribute
 	{
 
 	}

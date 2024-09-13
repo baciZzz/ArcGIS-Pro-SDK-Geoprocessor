@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>线性单位类型和值，例如米或英尺。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPLinearUnitAttribute : DataTypeAttribute
+	public class GPLinearUnitAttribute : BaseDataTypeAttribute
 	{
 
 	}

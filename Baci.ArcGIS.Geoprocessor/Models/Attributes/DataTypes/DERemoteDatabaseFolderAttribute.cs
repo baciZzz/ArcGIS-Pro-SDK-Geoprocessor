@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>ArcCatalog 中的数据库连接文件夹。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DERemoteDatabaseFolderAttribute : DataTypeAttribute
+	public class DERemoteDatabaseFolderAttribute : BaseDataTypeAttribute
 	{
 
 	}

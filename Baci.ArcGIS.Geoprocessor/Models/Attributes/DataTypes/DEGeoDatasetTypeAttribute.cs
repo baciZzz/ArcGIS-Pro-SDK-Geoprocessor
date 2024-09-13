@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>地理数据库中具有共同主题的数据集合。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEGeoDatasetTypeAttribute : DataTypeAttribute
+	public class DEGeoDatasetTypeAttribute : BaseDataTypeAttribute
 	{
 
 	}

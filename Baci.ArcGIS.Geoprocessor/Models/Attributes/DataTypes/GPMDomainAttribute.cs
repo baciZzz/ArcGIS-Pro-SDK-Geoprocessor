@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>M 坐标的最低和最高可能值的范围。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPMDomainAttribute : DataTypeAttribute
+	public class GPMDomainAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -13,8 +13,8 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>目录树中的顶级结点。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DECatalogRootAttribute : DataTypeAttribute
-	{
+	public class DECatalogRootAttribute : BaseDataTypeAttribute
+    {
 
 	}
 }

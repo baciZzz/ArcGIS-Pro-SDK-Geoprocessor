@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>用于表达和解决网络路径问题的特殊图层组。 Network Analyst 图层中存储的各子图层代表路径问题和解决方案的某些方面。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPNALayerAttribute : DataTypeAttribute
+	public class GPNALayerAttribute : BaseDataTypeAttribute
 	{
 
 	}

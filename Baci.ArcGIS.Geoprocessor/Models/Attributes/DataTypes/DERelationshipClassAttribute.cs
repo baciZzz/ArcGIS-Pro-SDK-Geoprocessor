@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>地理数据库中对象间关系的详细信息。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DERelationshipClassAttribute : DataTypeAttribute
+	public class DERelationshipClassAttribute : BaseDataTypeAttribute
 	{
 
 	}

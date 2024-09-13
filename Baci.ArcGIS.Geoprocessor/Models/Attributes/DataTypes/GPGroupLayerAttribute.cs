@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>显示为单个图层，并按照单个图层处理的图层集合。 图层组使组织地图、指定高级绘制顺序选项和共享图层以用于其他地图变得更加容易。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPGroupLayerAttribute : DataTypeAttribute
+	public class GPGroupLayerAttribute : BaseDataTypeAttribute
 	{
 
 	}

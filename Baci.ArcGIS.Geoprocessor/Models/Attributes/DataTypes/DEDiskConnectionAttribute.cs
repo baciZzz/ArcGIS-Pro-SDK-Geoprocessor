@@ -13,8 +13,8 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>数据存储设备的访问路径。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEDiskConnectionAttribute : DataTypeAttribute
-	{
+	public class DEDiskConnectionAttribute : BaseDataTypeAttribute
+    {
 
 	}
 }

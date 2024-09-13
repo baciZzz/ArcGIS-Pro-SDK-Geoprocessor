@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>文本值。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPStringAttribute : DataTypeAttribute
+	public class GPStringAttribute : BaseDataTypeAttribute
 	{
 
 	}

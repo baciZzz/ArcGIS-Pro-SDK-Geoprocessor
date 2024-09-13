@@ -13,8 +13,8 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>共享公共的地理区域和相同的空间参考系统的要素类集合。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEFeatureDatasetAttribute : DataTypeAttribute
-	{
+	public class DEFeatureDatasetAttribute : BaseDataTypeAttribute
+    {
 
 	}
 }

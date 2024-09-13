@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>由拓扑连接的边和交汇点要素表示的线状网络。 要素连通性以其几何重叠为基础。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEGeometricNetworkAttribute : DataTypeAttribute
+	public class DEGeometricNetworkAttribute : BaseDataTypeAttribute
 	{
 
 	}

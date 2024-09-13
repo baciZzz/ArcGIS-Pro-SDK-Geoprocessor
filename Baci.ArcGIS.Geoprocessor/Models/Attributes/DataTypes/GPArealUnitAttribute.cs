@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>面积单位类型和值，例如平方米或英亩。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPArealUnitAttribute : DataTypeAttribute
+	public class GPArealUnitAttribute : BaseDataTypeAttribute
 	{
 
 	}

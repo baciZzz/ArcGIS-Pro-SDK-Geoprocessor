@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>容器，例如地理数据库或文件夹。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEWorkspaceAttribute : DataTypeAttribute
+	public class DEWorkspaceAttribute : BaseDataTypeAttribute
 	{
 
 	}

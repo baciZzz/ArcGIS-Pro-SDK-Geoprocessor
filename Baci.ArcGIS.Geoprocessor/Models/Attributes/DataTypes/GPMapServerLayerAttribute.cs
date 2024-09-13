@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>地图服务器图层</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPMapServerLayerAttribute : DataTypeAttribute
+	public class GPMapServerLayerAttribute : BaseDataTypeAttribute
 	{
 
 	}

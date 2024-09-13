@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>一个或多个输入表中的字段集合。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPFieldMappingAttribute : DataTypeAttribute
+	public class GPFieldMappingAttribute : BaseDataTypeAttribute
 	{
 
 	}

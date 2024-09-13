@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>该数据结构用于加快在地理数据集和数据库中搜索记录的速度。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class IndexAttribute : DataTypeAttribute
+	public class IndexAttribute : BaseDataTypeAttribute
 	{
 
 	}

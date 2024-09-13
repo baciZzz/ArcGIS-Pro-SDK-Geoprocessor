@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>栅格表面，其像元值由公式或常量表示。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPRasterFormulatedAttribute : DataTypeAttribute
+	public class GPRasterFormulatedAttribute : BaseDataTypeAttribute
 	{
 
 	}

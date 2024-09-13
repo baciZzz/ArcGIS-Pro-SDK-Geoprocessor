@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>用于查看和编辑的表格数据表现形式，存储在内存或磁盘中。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPTableViewAttribute : DataTypeAttribute
+	public class GPTableViewAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>引用地理数据库的粗粒度对象。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEGeoDataServerAttribute : DataTypeAttribute
+	public class DEGeoDataServerAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>日期值。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPDateAttribute : DataTypeAttribute
+	public class GPDateAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>指定存储在块中的数据的宽度和高度。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPSAGDBEnvTileSizeAttribute : DataTypeAttribute
+	public class GPSAGDBEnvTileSizeAttribute : BaseDataTypeAttribute
 	{
 
 	}

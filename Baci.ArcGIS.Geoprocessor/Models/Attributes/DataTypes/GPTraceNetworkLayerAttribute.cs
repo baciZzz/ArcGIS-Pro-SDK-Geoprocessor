@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>追踪网络图层</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPTraceNetworkLayerAttribute : DataTypeAttribute
+	public class GPTraceNetworkLayerAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>场景图层</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPSceneServiceLayerAttribute : DataTypeAttribute
+	public class GPSceneServiceLayerAttribute : BaseDataTypeAttribute
 	{
 
 	}

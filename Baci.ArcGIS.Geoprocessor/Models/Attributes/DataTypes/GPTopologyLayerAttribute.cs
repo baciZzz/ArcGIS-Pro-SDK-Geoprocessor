@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>对拓扑的引用，包括符号系统和渲染属性。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPTopologyLayerAttribute : DataTypeAttribute
+	public class GPTopologyLayerAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>对多个子图层的引用，包括符号系统和渲染属性。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPCompositeLayerAttribute : DataTypeAttribute
+	public class GPCompositeLayerAttribute : BaseDataTypeAttribute
 	{
 
 	}

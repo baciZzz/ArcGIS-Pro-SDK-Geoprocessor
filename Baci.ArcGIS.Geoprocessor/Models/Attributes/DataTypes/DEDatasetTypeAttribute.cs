@@ -13,8 +13,8 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>相关数据的集合，通常被分组或存储在一起。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEDatasetTypeAttribute : DataTypeAttribute
-	{
+	public class DEDatasetTypeAttribute : BaseDataTypeAttribute
+    {
 
 	}
 }

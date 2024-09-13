@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>磁盘上用于存储坐标系的文件夹。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DESpatialReferencesFolderAttribute : DataTypeAttribute
+	public class DESpatialReferencesFolderAttribute : BaseDataTypeAttribute
 	{
 
 	}

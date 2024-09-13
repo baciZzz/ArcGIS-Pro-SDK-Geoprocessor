@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>WMS 地图。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEWMSMapAttribute : DataTypeAttribute
+	public class DEWMSMapAttribute : BaseDataTypeAttribute
 	{
 
 	}

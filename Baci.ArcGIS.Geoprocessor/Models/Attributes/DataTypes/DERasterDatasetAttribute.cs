@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>根据一个或多个栅格构建的单个数据集。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DERasterDatasetAttribute : DataTypeAttribute
+	public class DERasterDatasetAttribute : BaseDataTypeAttribute
 	{
 
 	}

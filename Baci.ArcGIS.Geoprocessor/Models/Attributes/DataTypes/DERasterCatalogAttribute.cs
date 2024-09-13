@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>以表形式定义的栅格数据集的集合。 每个表记录定义目录中的一个单独栅格数据集。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DERasterCatalogAttribute : DataTypeAttribute
+	public class DERasterCatalogAttribute : BaseDataTypeAttribute
 	{
 
 	}

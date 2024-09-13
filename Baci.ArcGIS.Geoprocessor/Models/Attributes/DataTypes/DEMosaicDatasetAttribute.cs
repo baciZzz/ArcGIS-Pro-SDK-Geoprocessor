@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>栅格和影像数据的集合，可以存储、查看和查询数据。 镶嵌数据集是地理数据库中的数据模型，用于管理一组以目录形式存储并以镶嵌图像方式查看的栅格数据集（图像）。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEMosaicDatasetAttribute : DataTypeAttribute
+	public class DEMosaicDatasetAttribute : BaseDataTypeAttribute
 	{
 
 	}

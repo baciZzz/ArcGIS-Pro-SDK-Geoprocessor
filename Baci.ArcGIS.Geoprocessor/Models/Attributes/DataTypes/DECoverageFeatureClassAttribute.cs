@@ -13,8 +13,8 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>Coverage 要素类，例如点、弧线、节点、路线、路线系统、弧段、面和区域。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DECoverageFeatureClassAttribute : DataTypeAttribute
-	{
+	public class DECoverageFeatureClassAttribute : BaseDataTypeAttribute
+    {
 
 	}
 }

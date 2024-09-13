@@ -13,8 +13,8 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>Revit 文件格式的空间数据。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEBimFileWorkspaceAttribute : DataTypeAttribute
-	{
+	public class DEBimFileWorkspaceAttribute : BaseDataTypeAttribute
+    {
 
 	}
 }

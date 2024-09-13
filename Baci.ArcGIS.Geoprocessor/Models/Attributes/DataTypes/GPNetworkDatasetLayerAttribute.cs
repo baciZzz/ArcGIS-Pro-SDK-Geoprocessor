@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>对网络数据集的引用，包括符号系统和渲染属性。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPNetworkDatasetLayerAttribute : DataTypeAttribute
+	public class GPNetworkDatasetLayerAttribute : BaseDataTypeAttribute
 	{
 
 	}

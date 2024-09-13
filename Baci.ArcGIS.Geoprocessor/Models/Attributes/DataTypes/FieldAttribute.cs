@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>表中的列，用于存储单个属性的值。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class FieldAttribute : DataTypeAttribute
+	public class FieldAttribute : BaseDataTypeAttribute
 	{
 
 	}

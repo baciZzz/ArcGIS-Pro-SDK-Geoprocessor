@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>指定用于定义数据源的最小外接矩形的坐标对（xmin, ymin and xmax, ymax）。 所有数据源的坐标都在此边界内。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPExtentAttribute : DataTypeAttribute
+	public class GPExtentAttribute : BaseDataTypeAttribute
 	{
 
 	}

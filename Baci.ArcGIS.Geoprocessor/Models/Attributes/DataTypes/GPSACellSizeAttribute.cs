@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>ArcGIS Spatial Analyst extension 使用的像元大小。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPSACellSizeAttribute : DataTypeAttribute
+	public class GPSACellSizeAttribute : BaseDataTypeAttribute
 	{
 
 	}

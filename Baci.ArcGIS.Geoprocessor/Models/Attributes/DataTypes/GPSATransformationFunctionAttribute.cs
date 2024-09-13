@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>变换函数类型</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPSATransformationFunctionAttribute : DataTypeAttribute
+	public class GPSATransformationFunctionAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>定义和操纵 INFO 表中数据的语法。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPINFOExpressionAttribute : DataTypeAttribute
+	public class GPINFOExpressionAttribute : BaseDataTypeAttribute
 	{
 
 	}

@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>指定用于栅格的压缩类型。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPSAGDBEnvCompressionAttribute : DataTypeAttribute
+	public class GPSAGDBEnvCompressionAttribute : BaseDataTypeAttribute
 	{
 
 	}

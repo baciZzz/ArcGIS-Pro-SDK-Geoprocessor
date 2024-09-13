@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>在 Network Analyst 图层（如中转点、设施点和事故点）和点要素类中的位置属性之间建立映射。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class NAClassFieldMapAttribute : DataTypeAttribute
+	public class NAClassFieldMapAttribute : BaseDataTypeAttribute
 	{
 
 	}

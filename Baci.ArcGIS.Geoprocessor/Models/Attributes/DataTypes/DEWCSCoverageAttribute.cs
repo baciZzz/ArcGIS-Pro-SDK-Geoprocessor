@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>网络覆盖服务 (WCS) 是网络上共享栅格数据集的开放式规范。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEWCSCoverageAttribute : DataTypeAttribute
+	public class DEWCSCoverageAttribute : BaseDataTypeAttribute
 	{
 
 	}

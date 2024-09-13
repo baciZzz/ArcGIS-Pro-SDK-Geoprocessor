@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>地理处理服务器。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEGPServerAttribute : DataTypeAttribute
+	public class DEGPServerAttribute : BaseDataTypeAttribute
 	{
 
 	}

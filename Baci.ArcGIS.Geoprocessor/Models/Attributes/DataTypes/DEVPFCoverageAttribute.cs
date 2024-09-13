@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>以矢量产品格式存储的空间数据。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEVPFCoverageAttribute : DataTypeAttribute
+	public class DEVPFCoverageAttribute : BaseDataTypeAttribute
 	{
 
 	}

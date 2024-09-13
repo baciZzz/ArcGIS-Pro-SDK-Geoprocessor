@@ -39,7 +39,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.Domains
         /// <summary>
         /// GUID {xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}
         /// </summary>
-        public string Guid { get; set; } = string.Empty;
+        public string GUID { get; set; } = string.Empty;
 
         /// <summary>
         /// Use Raster Fields

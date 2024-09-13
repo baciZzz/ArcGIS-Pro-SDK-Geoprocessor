@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>指定用于通过将栅格各自乘以指定的权重并合计在一起来叠加多个栅格的数据。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPSAWeightedSumAttribute : DataTypeAttribute
+	public class GPSAWeightedSumAttribute : BaseDataTypeAttribute
 	{
 
 	}

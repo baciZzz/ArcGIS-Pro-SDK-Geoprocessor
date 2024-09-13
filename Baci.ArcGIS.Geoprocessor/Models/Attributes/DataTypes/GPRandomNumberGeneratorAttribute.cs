@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>指定创建随机值时使用的种子和生成器。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPRandomNumberGeneratorAttribute : DataTypeAttribute
+	public class GPRandomNumberGeneratorAttribute : BaseDataTypeAttribute
 	{
 
 	}

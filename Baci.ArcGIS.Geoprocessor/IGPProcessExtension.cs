@@ -15,12 +15,12 @@ namespace System
             bool showResultDig = false, GPToolExecuteEventHandler gPToolExecuteEventHandler = null,
             GPExecuteToolFlags gPExecuteToolFlags = GPExecuteToolFlags.None) where T : IGPProcess
         {
-            var parameterInfo = Geoprocessing.MakeValueArray(gPProcess.Parameters);
+            var parameterInfo = Geoprocessing.MakeValueArray(gPProcess.Parameters());
 
-            var result = await Baci.ArcGIS._Geoprocessor.ExcuteAsync(gPProcess.ExcuteName, parameterInfo, gPProcess.Environments,
+            var result = await Baci.ArcGIS._Geoprocessor.ExcuteAsync(gPProcess.ExcuteName(), parameterInfo, gPProcess.Environments(),
                 cancellationTokenSource, gPToolExecuteEventHandler, gPExecuteToolFlags);
 
-            gPProcess.GPResult = result;
+            gPProcess.SetGPResult(result);
 
             DerivedParameterReflow(gPProcess, result);
 

@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>高程表面图层</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPElevationSurfaceLayerAttribute : DataTypeAttribute
+	public class GPElevationSurfaceLayerAttribute : BaseDataTypeAttribute
 	{
 
 	}

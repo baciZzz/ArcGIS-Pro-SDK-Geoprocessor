@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>表格数据。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DETableAttribute : DataTypeAttribute
+	public class DETableAttribute : BaseDataTypeAttribute
 	{
 
 	}

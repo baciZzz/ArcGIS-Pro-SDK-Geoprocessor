@@ -13,8 +13,8 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>栅格工具使用的像元大小。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class analysis_cell_sizeAttribute : DataTypeAttribute
-	{
+	public class analysis_cell_sizeAttribute : BaseDataTypeAttribute
+    {
 
 	}
 }

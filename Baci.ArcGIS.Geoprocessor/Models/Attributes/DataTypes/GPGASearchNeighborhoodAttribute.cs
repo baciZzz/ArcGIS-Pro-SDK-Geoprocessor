@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>定义地统计图层的搜索邻域参数。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPGASearchNeighborhoodAttribute : DataTypeAttribute
+	public class GPGASearchNeighborhoodAttribute : BaseDataTypeAttribute
 	{
 
 	}

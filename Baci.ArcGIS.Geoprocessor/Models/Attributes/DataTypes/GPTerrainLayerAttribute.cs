@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>对 terrain 的引用，包括符号系统和渲染属性。 用于绘制 terrain。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPTerrainLayerAttribute : DataTypeAttribute
+	public class GPTerrainLayerAttribute : BaseDataTypeAttribute
 	{
 
 	}

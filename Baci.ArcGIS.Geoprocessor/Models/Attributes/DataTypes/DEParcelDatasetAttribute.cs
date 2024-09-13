@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>宗地结构</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEParcelDatasetAttribute : DataTypeAttribute
+	public class DEParcelDatasetAttribute : BaseDataTypeAttribute
 	{
 
 	}

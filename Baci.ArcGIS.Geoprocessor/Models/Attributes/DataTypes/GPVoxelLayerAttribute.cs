@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>体素图层</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPVoxelLayerAttribute : DataTypeAttribute
+	public class GPVoxelLayerAttribute : BaseDataTypeAttribute
 	{
 
 	}

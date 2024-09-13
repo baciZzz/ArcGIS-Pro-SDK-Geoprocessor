@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>Globe 服务器。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class DEGlobeServerAttribute : DataTypeAttribute
+	public class DEGlobeServerAttribute : BaseDataTypeAttribute
 	{
 
 	}

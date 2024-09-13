@@ -13,7 +13,7 @@ namespace Baci.ArcGIS.Geoprocessor.Models.Attributes.DataTypes
 	/// <para>定义地统计图层的数据源和字段的集合。</para>
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-	public class GPGAValueTableAttribute : DataTypeAttribute
+	public class GPGAValueTableAttribute : BaseDataTypeAttribute
 	{
 
 	}
